@@ -6,6 +6,7 @@ import path from 'path-extra';
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
+import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import {delay} from "../common/utils";
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -18,6 +19,7 @@ import * as AlertModalActions from './AlertModalActions';
 import {getTranslate} from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
 import { closeProject } from "./MyProjects/ProjectLoadingActions";
+import { batchActions } from 'redux-batched-actions';
 
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
@@ -105,7 +107,7 @@ export function finalize() {
     console.log('ProjectInformationCheckActions.finalize()');
     const translate = getTranslate(getState());
     dispatch(AlertModalActions.openAlertDialog(translate("projects.preparing_project_alert"), true));
-    await delay(200);
+    await delay(100);
 
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       try {
@@ -129,13 +131,43 @@ export function finalize() {
  *   project information reducer.
  */
 function saveCheckingDetailsToProjectInformationReducer() {
-  return (async (dispatch) => {
+  return (async (dispatch, getState) => {
     await dispatch(ProjectDetailsActions.setProjectBookIdAndBookName());
-    dispatch(ProjectDetailsActions.setProjectResourceId());
-    dispatch(ProjectDetailsActions.setProjectNickname());
-    dispatch(ProjectDetailsActions.setLanguageDetails());
-    dispatch(ProjectDetailsActions.updateContributors());
-    dispatch(ProjectDetailsActions.updateCheckers());
+    const {
+      resourceId,
+      nickname,
+      languageDirection,
+      languageId,
+      languageName,
+      contributors,
+      checkers,
+    } = getState().projectInformationCheckReducer;
+
+    const actions = [
+      {
+        type: consts.SAVE_RESOURCE_ID_IN_MANIFEST,
+        resourceId
+      },
+      {
+        type: consts.SAVE_NICKNAME_IN_MANIFEST,
+        nickname
+      },
+      {
+        type: consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST,
+        languageDirection,
+        languageId,
+        languageName
+      },
+      {
+        type: consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST,
+        translators: contributors
+      },
+      {
+        type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
+        checkers
+      },
+    ];
+    dispatch(batchActions(actions));
     dispatch(clearProjectInformationReducer());
   });
 }
@@ -455,7 +487,7 @@ export function clearProjectInformationReducer() {
 }
 
 /**
- * only opens the project infomation/details screen in the project validation stepper.
+ * only opens the project information/details screen in the project validation stepper.
  * @param {String} projectPath
  * @param {Boolean} initiallyEnableSaveIfValid - if true then initial save button will be set enabled when
  *                        project details screen is shown.  But default the save button starts of disabled
@@ -464,7 +496,8 @@ export function clearProjectInformationReducer() {
 export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
-    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+    const settings = ProjectSettingsHelpers.getProjectSettings(projectPath);
+    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest, settings));
     dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
@@ -482,6 +515,9 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
  */
 export function saveAndCloseProjectInformationCheckIfValid() {
   return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    dispatch(AlertModalActions.openAlertDialog(translate("saving_changes"), true));
+    await delay(50);
     if (ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted(getState())) { // protect against race conditions on slower PCs
       await dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
@@ -492,6 +528,7 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(closeProject());
       dispatch(MyProjectsActions.getMyProjects());
     }
+    dispatch(AlertModalActions.closeAlertDialog());
   });
 }
 

@@ -13,6 +13,7 @@ import * as projectStructureValidatoinHelpers from '../../helpers/ProjectValidat
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getTranslate } from '../../selectors';
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
+import * as ProjectSettingsHelpers from '../../helpers/ProjectSettingsHelpers';
 import {
   doesProjectNameMatchSpec,
   openOnlyProjectDetailsScreen,
@@ -56,7 +57,8 @@ export const setUpProjectDetails = (projectPath, dispatch) => {
   return new Promise((resolve) => {
     dispatch(ProjectLoadingActions.closeProject());
     let manifest = manifestHelpers.getProjectManifest(projectPath);
-    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+    let settings = ProjectSettingsHelpers.getProjectSettings(projectPath);
+    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest, settings));
     resolve();
   });
 };

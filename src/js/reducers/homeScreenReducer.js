@@ -13,22 +13,11 @@ const initialState = {
   errorFeedbackMessage: '',
   errorFeedbackDetails: '',
   errorFeedbackCategory: '',
-  feedbackCloseCallback: null,
-  loadingProject: false
+  feedbackCloseCallback: null
 };
 
 const homeScreenReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.START_PROJECT_LOADING:
-      return {
-        ...state,
-        loadingProject: true
-      };
-    case types.END_PROJECT_LOADING:
-      return {
-        ...state,
-        loadingProject: false
-      };
     case types.TOGGLE_HOME_VIEW:
       return {
         ...state,
@@ -103,10 +92,10 @@ const homeScreenReducer = (state = initialState, action) => {
         feedbackCloseCallback: action.val
       };
     case types.RESET_HOME_SCREEN:
-      return {
-        ...initialState,
-        showWelcomeSplash: false
-      };
+        return {
+          ...initialState,
+          showWelcomeSplash: false
+        };
     default:
       return state;
   }
