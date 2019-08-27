@@ -24,13 +24,11 @@ import {delay} from "../common/utils";
  * TODO: tool data should eventually move into the respective tools.
  * @param {Array} actionsBatch - array to load with actions for later batching
  */
-function loadCheckData(dispatch) {
-  const actionsBatch = [];
+function loadCheckData(actionsBatch) {
   actionsBatch.push(loadComments());
   actionsBatch.push(loadReminders());
   actionsBatch.push(loadSelections());
   actionsBatch.push(loadInvalidated());
-  dispatch(batchActions(actionsBatch));
 }
 
 /**
@@ -40,16 +38,17 @@ function loadCheckData(dispatch) {
  */
 export const changeCurrentContextId = contextId => {
   return async (dispatch, getState) => {
-    dispatch({
-      type: consts.CHANGE_CURRENT_CONTEXT_ID,
-      contextId
-    });
     if (contextId) {
       const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
       const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
       console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
       console.log("changeCurrentContextId() - loading Check Data");
-      loadCheckData(dispatch);
+      const actionsBatch = [{
+        type: consts.CHANGE_CURRENT_CONTEXT_ID,
+        contextId
+      }];
+      loadCheckData(actionsBatch);
+      dispatch(batchActions(actionsBatch));
       const state = getState();
       console.log("changeCurrentContextId() - saveContextId");
       saveContextId(state, contextId);
@@ -73,6 +72,11 @@ export const changeCurrentContextId = contextId => {
         } catch(e) {
           console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
         }
+      });
+    } else {
+      dispatch({
+        type: consts.CHANGE_CURRENT_CONTEXT_ID,
+        contextId
       });
     }
   };
