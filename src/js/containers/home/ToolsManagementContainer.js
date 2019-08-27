@@ -166,8 +166,7 @@ ToolsManagementContainer.propTypes = {
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({
       loggedInUser: PropTypes.bool
-    }).isRequired,
-    homeScreenReducer: PropTypes.object.isRequired
+    }).isRequired
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,

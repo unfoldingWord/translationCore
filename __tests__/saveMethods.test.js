@@ -44,4 +44,46 @@ describe('Tests for saveMethods', () => {
     expect(json).toEqual(state.projectDetailsReducer.manifest);
     fs.unlinkSync(manifestPath);
   });
+
+  it('should not save the settings file since projectSaveLocation is empty', () => {
+    const state = {
+      projectDetailsReducer: {
+        settings: {
+          last_opened: new Date(),
+        }
+      }
+    };
+    saveMethods.saveProjectSettings(state);
+    const settingsPath = 'settings.json';
+    expect(fs.existsSync(settingsPath)).not.toBeTruthy();
+  });
+
+  it('should not save the settings file since settings are empty', () => {
+    const state = {
+      projectDetailsReducer: {
+        settings: {},
+        projectSaveLocation: '/tmp',
+      }
+    };
+    saveMethods.saveProjectSettings(state);
+    const settingsPath = path.join(state.projectDetailsReducer.projectSaveLocation, 'settings.json');
+    expect(fs.existsSync(settingsPath)).not.toBeTruthy();
+  });
+
+  it('should save the settings file', () => {
+    const state = {
+      projectDetailsReducer: {
+        settings: {
+          last_opened: new Date().toString(),
+        },
+        projectSaveLocation: '/tmp'
+      }
+    };
+    saveMethods.saveProjectSettings(state);
+    const settingsPath = path.join(state.projectDetailsReducer.projectSaveLocation, 'settings.json');
+    expect(fs.existsSync(settingsPath)).toBeTruthy();
+    const json = fs.readJsonSync(settingsPath);
+    expect(json).toEqual(state.projectDetailsReducer.settings);
+    fs.unlinkSync(settingsPath);
+  });
 });

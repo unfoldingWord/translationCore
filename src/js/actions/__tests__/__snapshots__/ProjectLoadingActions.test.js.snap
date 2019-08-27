@@ -3,9 +3,6 @@
 exports[`ProjectLoadingActions.migrateValidateLoadProject should just open project if project name is valid 1`] = `
 Array [
   Object {
-    "type": "START_PROJECT_LOADING",
-  },
-  Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
@@ -118,6 +115,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -266,16 +269,15 @@ Array [
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
   Object {
-    "type": "END_PROJECT_LOADING",
+    "propertyName": "last_opened",
+    "type": "ADD_PROJECT_SETTINGS_PROPERTY",
+    "value": "2019-08-22T17:06:12.493Z",
   },
 ]
 `;
 
 exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details screen if project name is not valid 1`] = `
 Array [
-  Object {
-    "type": "START_PROJECT_LOADING",
-  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -389,6 +391,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -513,6 +521,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -689,16 +703,15 @@ Array [
     "value": "CURRENT_MIN_COMPATIBLE_VERSION",
   },
   Object {
-    "type": "END_PROJECT_LOADING",
+    "propertyName": "last_opened",
+    "type": "ADD_PROJECT_SETTINGS_PROPERTY",
+    "value": "2019-08-22T17:06:12.493Z",
   },
 ]
 `;
 
 exports[`loadProject displays the details screen of an invalid project name 1`] = `
 Array [
-  Object {
-    "type": "START_PROJECT_LOADING",
-  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -812,6 +825,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -936,6 +955,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -1098,9 +1123,6 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "END_PROJECT_LOADING",
-  },
-  Object {
     "meta": Object {
       "batch": true,
     },
@@ -1196,10 +1218,10 @@ Array [
   Object {
     "projects": Array [
       Object {
-        "accessTimeAgo": "now",
         "bookAbbr": "tit",
         "bookName": "Titus",
         "isSelected": true,
+        "lastOpened": null,
         "projectName": "en_tit",
         "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_tit",
         "target_language": Object {
@@ -1214,17 +1236,11 @@ Array [
     ],
     "type": "GET_MY_PROJECTS",
   },
-  Object {
-    "type": "END_PROJECT_LOADING",
-  },
 ]
 `;
 
 exports[`loadProject opens a valid project 1`] = `
 Array [
-  Object {
-    "type": "START_PROJECT_LOADING",
-  },
   Object {
     "alertMessage": "projects.loading_project_alert",
     "loading": true,
@@ -1338,6 +1354,12 @@ Array [
       },
     },
     "type": "STORE_MANIFEST",
+  },
+  Object {
+    "settings": Object {
+      "last_opened": null,
+    },
+    "type": "STORE_PROJECT_SETTINGS",
   },
   Object {
     "languageName": "English",
@@ -1472,9 +1494,6 @@ Array [
     "type": "ADD_NEW_BIBLE_TO_RESOURCES",
   },
   Object {
-    "type": "END_PROJECT_LOADING",
-  },
-  Object {
     "meta": Object {
       "batch": true,
     },
@@ -1570,10 +1589,10 @@ Array [
   Object {
     "projects": Array [
       Object {
-        "accessTimeAgo": "now",
         "bookAbbr": "tit",
         "bookName": "Titus",
         "isSelected": true,
+        "lastOpened": null,
         "projectName": "en_ult_tit_book",
         "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_ult_tit_book",
         "target_language": Object {
@@ -1587,9 +1606,6 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
-  },
-  Object {
-    "type": "END_PROJECT_LOADING",
   },
 ]
 `;

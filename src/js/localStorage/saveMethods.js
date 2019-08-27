@@ -258,7 +258,7 @@ export function saveLocalUserdata(state) {
 }
 
 /**
- * saves the current projects manifest file when the manifest state is changed.
+ * saves the current project's manifest file when the manifest state is changed.
  * @param {object} state - app state.
  */
 export function saveProjectManifest(state) {
@@ -269,6 +269,19 @@ export function saveProjectManifest(state) {
     fs.outputJsonSync(savePath, manifest, { spaces: 2 });
   }
 }
+
+ /**
+  * saves the current project's settings file when the settings state is changed.
+  * @param {object} state - app state.
+  */
+ export function saveProjectSettings(state) {
+   const { settings, projectSaveLocation } = state.projectDetailsReducer;
+   if (projectSaveLocation && settings && Object.keys(settings).length > 0) {
+     const fileName = 'settings.json';
+     const savePath = path.join(projectSaveLocation, fileName);
+     fs.outputJsonSync(savePath, settings, { spaces: 2 });
+   }
+ }
 
 /**
 * saves selection data for a context that is not current

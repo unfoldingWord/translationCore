@@ -283,6 +283,14 @@ export const getProjectManifest = (state) =>
   fromProjectDetailsReducer.getManifest(state.projectDetailsReducer);
 
 /**
+ * Returns the settings of the project
+ * @param {object} state
+ * @return {object}
+ */
+export const getProjectSettings = (state) =>
+  fromProjectDetailsReducer.getSettings(state.projectDetailsReducer);
+
+/**
  * Retrieves selections.
  * This needs better documentation. What are selections?
  * @param {object} state

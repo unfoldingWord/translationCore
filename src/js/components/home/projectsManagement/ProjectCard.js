@@ -1,17 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
+import moment from 'moment';
+import TranslateIcon from 'material-ui/svg-icons/action/translate';
 // components
 import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from './ProjectCardMenu';
 import Hint from '../../Hint';
-import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import TruncateAcronym from './TruncateAcronym.js';
 
 class ProjectCard extends React.Component {
   constructor (props) {
     super(props);
     this.handleOnSelect = this.handleOnSelect.bind(this);
+    this.state = {
+      lastOpenedTimeAgo:  this.getLastOpenedTimeAgo()
+    };
+  }
+
+  componentDidMount(){
+    // add interval listener to update last opened time ago every 60 seconds
+    if (this.props.projectDetails.lastOpened)
+      this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
+  }
+
+  componentWillUnmount(){
+    // remove the interval listener
+    if (this.interval)
+      clearInterval(this.interval);
+  }
+
+  getLastOpenedTimeAgo() {
+    if (this.props.projectDetails.lastOpened) {
+      return moment().to(this.props.projectDetails.lastOpened);
+    } else {
+      return this.props.translate('projects.never_opened');
+    }
+  }
+
+  updateLastOpenedTimeAgo() {
+    this.setState({
+      lastOpenedTimeAgo: this.getLastOpenedTimeAgo()
+    });
   }
 
   /**
@@ -31,21 +61,17 @@ class ProjectCard extends React.Component {
     const {
       projectName,
       projectSaveLocation,
-      accessTimeAgo,
       bookAbbr,
       bookName,
       target_language,
       isSelected
     } = this.props.projectDetails;
-    const targetLanguageBookName = target_language.book &&
-    target_language.book.name ?
-      target_language.book.name :
-      null;
+    const targetLanguageBookName = target_language.book && target_language.book.name ? target_language.book.name : null;
 
     let cardDetails = [
       {
         glyph: 'time',
-        text: accessTimeAgo
+        text: this.getLastOpenedTimeAgo()
       },
       {
         glyph: 'book',

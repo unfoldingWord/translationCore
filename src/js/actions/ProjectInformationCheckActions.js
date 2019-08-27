@@ -6,6 +6,7 @@ import path from 'path-extra';
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from "../helpers/ProjectDetailsHelpers";
+import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import {delay} from "../common/utils";
 // actions
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -486,7 +487,7 @@ export function clearProjectInformationReducer() {
 }
 
 /**
- * only opens the project infomation/details screen in the project validation stepper.
+ * only opens the project information/details screen in the project validation stepper.
  * @param {String} projectPath
  * @param {Boolean} initiallyEnableSaveIfValid - if true then initial save button will be set enabled when
  *                        project details screen is shown.  But default the save button starts of disabled
@@ -495,7 +496,8 @@ export function clearProjectInformationReducer() {
 export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
-    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest));
+    const settings = ProjectSettingsHelpers.getProjectSettings(projectPath);
+    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest, settings));
     dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
