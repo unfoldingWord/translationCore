@@ -22,7 +22,6 @@ import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 import {loadTools} from "../actions/ToolActions";
-import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from "../helpers/logger";
 //consts
