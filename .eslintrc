@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/errors"],
   "plugins": [
     "react",
     "jest"
@@ -12,13 +12,39 @@
     }
   },
   "rules": {
+    "indent": ["error", 2],
+    "import/first": ["error", "always"],
     "react/no-find-dom-node": "warn",
-    "no-undef": "warn",
+    "no-undef": "error",
+    "no-unused-vars":"error",
+    "no-debugger": "warn",
+    "react/prop-types": "error",
+    "curly": "error",
+    "guard-for-in": "error",
     "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
     "no-console": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "single", {"allowTemplateLiterals": true}],
+    "comma-dangle": ["error", "always-multiline"],
+    "keyword-spacing": "error",
+    "no-multi-spaces": "error",
+    "arrow-body-style": ["error", "as-needed"],
+    "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+    "no-return-assign": ["error", "always"],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": ["function", "if", "for", "while", "switch", "try", ] },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": ["block", "block-like", "multiline-expression"] },
+      { "blankLine": "always", "prev": ["block", "block-like", "multiline-expression"]  , "next":["const", "let", "var"]}
+  ],
+  "no-unused-expressions": "error",
+  "func-names":"off",
+  "no-underscore-dangle": "off",
+  "consistent-return": "error",
+  "radix": "off"
   },
   "parser": "babel-eslint",
   "parserOptions": {
