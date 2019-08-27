@@ -22,6 +22,8 @@ import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 import {loadTools} from "../actions/ToolActions";
+import packageJson from '../../../package.json';
+import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from "../helpers/logger";
 //consts
 import { APP_VERSION, LOG_FILES_PATH } from "../common/constants";
@@ -30,7 +32,6 @@ const version = `v${APP_VERSION} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
 
 class Main extends Component {
-
   componentWillMount() {
     const {
       appLanguage,
@@ -67,6 +68,7 @@ class Main extends Component {
   render() {
     const {isLocaleLoaded} = this.props;
     if(isLocaleLoaded) {
+      const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
       return (
         <MuiThemeProvider>
           <div className="fill-height">
@@ -78,7 +80,7 @@ class Main extends Component {
             <PopoverContainer/>
             <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
               <Row style={{margin: 0}}>
-                <StatusBarContainer/>
+                <LocalizedStatusBarContainer/>
               </Row>
               <BodyContainer/>
             </Grid>
