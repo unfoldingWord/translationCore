@@ -42,7 +42,6 @@ export const changeCurrentContextId = contextId => {
       const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
       const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
       console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
-      console.log("changeCurrentContextId() - loading Check Data");
       const actionsBatch = [{
         type: consts.CHANGE_CURRENT_CONTEXT_ID,
         contextId
@@ -50,15 +49,15 @@ export const changeCurrentContextId = contextId => {
       loadCheckData(actionsBatch);
       dispatch(batchActions(actionsBatch));
       const state = getState();
-      console.log("changeCurrentContextId() - saveContextId");
+      console.log("changeCurrentContextId() - saveContextId"); // TODO: remove
       saveContextId(state, contextId);
       const apis = getToolsByKey(state);
       const groupsData = getGroupsData(state);
       for (const toolName in apis) {
-        console.log(`changeCurrentContextId() - validateVerse(${toolName})`);
+        console.log(`changeCurrentContextId() - validateVerse(${toolName})`); // TODO: remove
         apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
       }
-      console.log(`changeCurrentContextId() - validation done`);
+      console.log(`changeCurrentContextId() - validation done`); // TODO: remove
 
       // commit project changes
       const projectDir = getProjectSaveLocation(state);
