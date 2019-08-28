@@ -49,15 +49,12 @@ export const changeCurrentContextId = contextId => {
       loadCheckData(actionsBatch);
       dispatch(batchActions(actionsBatch));
       const state = getState();
-      console.log("changeCurrentContextId() - saveContextId"); // TODO: remove
       saveContextId(state, contextId);
       const apis = getToolsByKey(state);
       const groupsData = getGroupsData(state);
       for (const toolName in apis) {
-        console.log(`changeCurrentContextId() - validateVerse(${toolName})`); // TODO: remove
         apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
       }
-      console.log(`changeCurrentContextId() - validation done`); // TODO: remove
 
       // commit project changes
       const projectDir = getProjectSaveLocation(state);
