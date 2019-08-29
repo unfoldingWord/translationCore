@@ -244,23 +244,23 @@
     "conflict_reference": "ਇਹ ਇੱਕ ਲੀਨ ਸੰਘਰਸ਼ ਲਈ ਅਧਿਆਇ ${chapter}, ਆਇਤ ${verse}.",
     "missing_verses_instructions": "ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਤੋਂ ਕੁਝ ਆਇਤਾਂ ਗਾਇਬ ਹਨ",
     "only_nt_supported": "ਇਹ ਵਰਜਨ ${app} ਸਿਰਫ ਨਵੇਂ ਨੇਮ ਪ੍ਰੋਜੈਕਟ ਦਾ ਸਮਰਥਨ ਕਰਦਾ ਹੈ",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "\nਇਸ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ${app}  ਪੁਰਾਣੇ ਵਰਜਨ ਤੋਂ ਡਾਟਾ ਸ਼ਾਮਲ ਹੈ ਜੋ ਇਸ ਰੀਲੀਜ਼ ਵਿੱਚ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ. ਇਸ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਖੋਲ੍ਹਣ ਜਾਂ ਜਾਂਚ ਨੂੰ ਮੁੜ ਚਾਲੂ ਕਰਨ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ${help_desk_email} ਨਾਲ ਸੰਪਰਕ ਕਰੋ.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(3 ਜਾ  4 ਪੱਤਰ ਪਛਾਣ<br />ਕੋਡ, e.g. KJV, NIV, ਆਦਿ.)",
+      "field_invalid_length": "3-4 ਅੱਖਰ ਲੰਬਾ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ",
+      "invalid_characters": "ਸਿਰਫ ਮੂਲ  ਲਾਤੀਨੀ ਪੱਤਰਾਂ ਲਈ ਸਹਾਇਕ ਹੈ"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "conflicting_project": "ਇਸ ਪਛਾਣਕਰਤਾ ਵਾਲਾ ਇੱਕ ਪ੍ਰੋਜੈਕਟ ਪਹਿਲਾਂ ਹੀ ਇਸ ਭਾਸ਼ਾ ਅਤੇ ਕਿਤਾਬ ਲਈ ਮੌਜੂਦ ਹੈ",
+    "newer_project": "ਇਹ ਪ੍ਰੋਜੈਕਟ ਅਨੁਵਾਦ ਕੋਰ ਦੇ ਨਵੇਂ ਵਰਜ਼ਨ ਵਿੱਚ ਬਣਾਇਆ ਗਿਆ ਸੀ. ਕਿਰਪਾ ਕਰਕੇ ਨਵੇਂ ਵਰਜ਼ਨ ਤੇ ਅਪਡੇਟ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ."
   },
   "book_list": {
     "ot": {
-      "gen": "Genesis (${book_id})",
-      "exo": "Exodus (${book_id})",
-      "lev": "Leviticus (${book_id})",
-      "num": "Numbers (${book_id})",
-      "deu": "Deuteronomy (${book_id})",
-      "jos": "Joshua (${book_id})",
+      "gen": "ਉਤਪਤ (${book_id})",
+      "exo": "\nਕੂਚ (${book_id}",
+      "lev": "ਲੇਵੀਆਂ ਦੀ ਪੋਥੀ (${book_id}",
+      "num": "ਗਿਣਤੀ  (${book_id}",
+      "deu": "ਬਿਵਸਥਾ ਸਾਰ (${book_id})",
+      "jos": "ਯਹੋਸ਼ੁਆ (${book_id}",
       "jdg": "Judges (${book_id})",
       "rut": "Ruth (${book_id})",
       "1sa": "1 Samuel (${book_id})",
@@ -313,9 +313,9 @@
       "1ti": "1 Timothy (${book_id})",
       "2ti": "2 Timothy (${book_id})",
       "tit": "Titus (${book_id})",
-      "phm": "Philemon (${book_id})",
-      "heb": "Hebrews (${book_id})",
-      "jas": "James (${book_id})",
+      "phm": "ਫਿਲੇਮੋਨ (${book_id})",
+      "heb": "ਇਬਰਾਨੀਆ (${book_id}",
+      "jas": "ਯਾਕੂਬ (${book_id}",
       "1pe": "1 Peter (${book_id})",
       "2pe": "2 Peter (${book_id})",
       "1jn": "1 John (${book_id})",
