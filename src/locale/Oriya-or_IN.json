@@ -45,7 +45,7 @@
   "no_internet": "ସର୍ଭର ସହିତ ସଂଯୋଗ କରିବାରେ ଅସମର୍ଥ I ଦୟାକରି ଆପଣଙ୍କ ଇଣ୍ଟରନେଟ୍ କନେକ୍‌ସନ୍ ଜାଞ୍ଚ୍ କରନ୍ତୁ I",
   "alert": "ସାବଧାନ",
   "using_internet": "ଆପଣ ଇଣ୍ଟରନେଟ୍‌ରେ ତଥ୍ୟର ପ୍ରସାରଣ କରିବାକୁ ଯାଉଛନ୍ତି I କ'ଣ ଆପଣ ବାସ୍ତବରେ ଏହା କରିବାକୁ ଚାହୁଁଛନ୍ତି କି ?",
-  "do_not_show_again": "Do not show this warning again.",
+  "do_not_show_again": "ଏହି ଚେତାବନୀକୁ ପୁନର୍ବାର ଦେଖାନ୍ତୁ ନାହିଁ I",
   "quit_app": "Quit ${app}",
   "toggle_developer_tools": "Toggle developer tools",
   "actions": "Actions",
