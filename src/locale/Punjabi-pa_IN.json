@@ -137,7 +137,7 @@
     "error_setting_up_project": "ਓਹ ਹੋ! ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਲੋਡ ਕਰਨ ਲਈ ਸੈਟਅਪ ਕਰਨ ਵਿੱਚ ਸਾਨੂੰ ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਸਹਾਇਤਾ ਲਈ ਹੈਲਪ ਡੈਸਕ  (${email})  ਨਾਲ ਸੰਪਰਕ ਕਰੋ.",
     "error_loading": "ਓਹ ਹੋ! ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਲੋਡ ਕਰਨ ਲਈ ਸੈਟਅਪ ਕਰਨ ਵਿੱਚ ਸਾਨੂੰ ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਸਹਾਇਤਾ ਲਈ ਹੈਲਪ ਡੈਸਕ  (${email})  ਨਾਲ ਸੰਪਰਕ ਕਰੋ.",
     "no_project": "ਕੋਈ ਵੀ ਪ੍ਰੋਜੈਕਟ ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ ਹੈ",
-    "import_from_d43": "Import from ${door43}",
+    "import_from_d43": "ਅਯਾਤ ਤੱਕ ${door43}",
     "select_project_from_list": "Select a project from the list.",
     "to_import_project": "To import a project, click",
     "to_export_project": "To upload or export a project or edit the project details click",
