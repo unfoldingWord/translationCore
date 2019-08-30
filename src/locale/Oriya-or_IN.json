@@ -89,12 +89,12 @@
     "checking_for_app": "Checking for software updates...",
     "file_size": "\"ଡାଉନ୍‌ଲୋଡ୍ ଆକାର: ${file_size}\"",
     "download": "\"ଡାଉନ୍‌ଲୋଡ୍\"",
-    "downloading": "Downloading Update",
+    "downloading": "\"ଅଦ୍ୟତନ ଡାଉନ୍‌ଲୋଡିଙ୍ଗ ହେଉଅଛି\"",
     "downloading_version": "ସଂସ୍କରଣ ${version} ଡାଉନ୍‌ଲୋଡିଙ୍ଗ କରାଯାଉଅଛି",
     "download_error": "ଅଦ୍ୟତନ ଫାଇଲ୍‍ ଡାଉନ୍‍ଲୋଡ୍‍ କରିବାରେ ଅଷମ",
-    "source_label": "Source:",
-    "local_timestamp": "Local:",
-    "online_timestamp": "Online:"
+    "source_label": "ଉତ୍ସ:",
+    "local_timestamp": "ସ୍ଥାନୀୟ:",
+    "online_timestamp": "ଅନ୍‌ଲାଇନ୍:"
   },
   "users": {
     "category": "Category:",
