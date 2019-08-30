@@ -185,8 +185,8 @@
     "no_obs_error": "${app} ਜਾਂਚ ਦਾ ਸਮਰਥਨ ਨਹੀਂ ਕਰਦਾc {obs} ਇਹ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾਵੇਗਾ.\n",
     "no_tn_error": "${app} ਜਾਂਚ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ ${tn} ਇਹ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾਵੇਗਾ.",
     "no_tw_error": "${app} ਜਾਂਚ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ. ${tw} ਇਹ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾਵੇਗਾ.",
-    "no_tq_error": "${app} does not support checking for ${tq}. It will not be loaded.",
-    "no_manifest_error": "Unable to find the manifest for project ${project_name}. It will not be loaded.",
+    "no_tq_error": "${app} ਜਾਂਚ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ. ${tq} ਇਹ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾਵੇਗਾ.",
+    "no_manifest_error": "ਪ੍ਰੋਜੈਕਟ ${project_name} ਲਈ ਮੈਨੀਫੈਸਟ ਨੂੰ ਲੱਭਣ ਵਿੱਚ ਅਸਮਰੱਥ. ਇਹ ਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾਵੇਗਾ.",
     "not_found": "Error occurred while importing your project.<br />The project file ${projectName} was not found in ${fromPath}.",
     "not_project_url_error": "The URL ${project_url} does not reference a valid project.",
     "not_usfm_file_error": "The project you selected (${project_path}) is an invalid USFM project. ",
@@ -509,8 +509,8 @@
     "figs-inclusive": "ਸੰਮਿਲਿਤ \"ਅਸੀਂ\"\n",
     "figs-nominaladj": "ਨਾਮਾਤਰ ਵਿਸ਼ੇਸ਼ਣ",
     "figs-possession": "ਅਧਿਕਾਰਤ",
-    "figs-rpronouns": "Reflexive Pronouns",
-    "figs-we": "Forms of We",
-    "figs-they": "Forms of They"
+    "figs-rpronouns": "ਪ੍ਰਤੀਕਿ੍ਤਮਕ ਪੜਨਾਵ",
+    "figs-we": "ਸਾਡੇ ਫਾਰਮ",
+    "figs-they": "ਓੁਹਨਾ ਦੇ ਫਾਰਮ"
   }
 }
