@@ -52,8 +52,8 @@ export const changeCurrentContextId = contextId => {
       saveContextId(state, contextId);
       const apis = getToolsByKey(state);
       const groupsData = getGroupsData(state);
-      for (const toolName in apis) {
-        apis[toolName].api.trigger('validateVerse', chapter, verse, null, groupsData);
+      if (tool in apis) { // only need to validate verse in current tool
+        apis[tool].api.trigger('validateVerse', chapter, verse, null, groupsData);
       }
 
       // commit project changes
