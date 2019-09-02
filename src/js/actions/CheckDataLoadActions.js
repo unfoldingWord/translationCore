@@ -48,11 +48,11 @@ export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkD
  * @param {object} contextId - groupData unique context Id.
  * @return {object} returns the object loaded from the file system.
  */
-export async function loadCheckData(loadPath, contextId) {
+export function loadCheckData(loadPath, contextId) {
   let checkDataObject;
 
-  if (loadPath && contextId && await fs.exists(loadPath)) {
-    let files = await fs.readdir(loadPath);
+  if (loadPath && contextId && fs.existsSync(loadPath)) {
+    let files = fs.readdirSync(loadPath);
     files = files.filter(file => { // filter the filenames to only use .json
       return path.extname(file) === '.json';
     });
@@ -64,7 +64,7 @@ export async function loadCheckData(loadPath, contextId) {
       // check each file for contextId
       try {
         let readPath = path.join(loadPath, file);
-        let _checkDataObject = await fs.readJsonSync(readPath);
+        let _checkDataObject = fs.readJsonSync(readPath);
         if(_checkDataObject && _checkDataObject.contextId &&
           _checkDataObject.contextId.groupId === contextId.groupId &&
           (isQuoteArray ? isEqual(_checkDataObject.contextId.quote, contextId.quote) : (_checkDataObject.contextId.quote === contextId.quote)) &&
@@ -87,12 +87,11 @@ export async function loadCheckData(loadPath, contextId) {
 /**
  * Loads the latest comment file from the file system for the specify contextID.
  * @param {Object} state - store state object.
- * @param {object} contextId - the contextId object.
  * @return {Object} Dispatches an action that loads the commentsReducer with data.
  */
-export async function loadComments(state, contextId) {
-  let loadPath = generateLoadPath(state.projectDetailsReducer, {contextId}, 'comments');
-  let commentsObject = await loadCheckData(loadPath, contextId);
+export function loadComments(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
+  let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
   if (commentsObject) {
     return {
       type: consts.ADD_COMMENT,
@@ -113,16 +112,15 @@ export async function loadComments(state, contextId) {
 /**
  * Loads the latest invalidated file from the file system for the specify contextID.
  * @param {Object} state - store state object.
- * @param {object} contextId - the contextId object.
  * @return {Object} Dispatches an action that loads the invalidatedReducer with data.
  */
-export async function loadInvalidated(state, contextId) {
-  let loadPath = generateLoadPath(state.projectDetailsReducer, {contextId}, 'invalidated');
-  let invalidatedObject = await loadCheckData(loadPath, contextId);
+export function loadInvalidated(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
+  let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
   const {
     gatewayLanguageCode,
     gatewayLanguageQuote
-  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state, contextId);
+  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
 
   if (invalidatedObject) {
     return {
@@ -148,16 +146,15 @@ export async function loadInvalidated(state, contextId) {
 /**
  * Loads the latest reminders file from the file system for the specify contextID.
  * @param {Object} state - store state object.
- * @param {object} contextId - the contextId object.
  * @return {Object} Dispatches an action that loads the remindersReducer with data.
  */
-export async function loadReminders(state, contextId) {
-  let loadPath = generateLoadPath(state.projectDetailsReducer, {contextId}, 'reminders');
-  let remindersObject = await loadCheckData(loadPath, contextId);
+export function loadReminders(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
+  let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
   const {
     gatewayLanguageCode,
     gatewayLanguageQuote
-  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state, contextId);
+  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
 
   if (remindersObject) {
     return {
@@ -183,12 +180,11 @@ export async function loadReminders(state, contextId) {
 /**
  * Loads the latest selections file from the file system for the specific contextID.
  * @param {Object} state - store state object.
- * @param {object} contextId - the contextId object.
  * @return {Object} Dispatches an action that loads the selectionsReducer with data.
  */
-export async function loadSelections(state, contextId) {
-  const loadPath = generateLoadPath(state.projectDetailsReducer, {contextId}, 'selections');
-  const selectionsObject = await loadCheckData(loadPath, contextId);
+export function loadSelections(state) {
+  const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
+  const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
 
   if (selectionsObject) {
     const {
