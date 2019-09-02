@@ -23,12 +23,13 @@ import {delay} from "../common/utils";
 /**
  * TODO: tool data should eventually move into the respective tools.
  * @param {Array} actionsBatch - array to load with actions for later batching
+ * @param {object} state
  */
-function loadCheckData(actionsBatch) {
-  actionsBatch.push(loadComments());
-  actionsBatch.push(loadReminders());
-  actionsBatch.push(loadSelections());
-  actionsBatch.push(loadInvalidated());
+function loadCheckData(actionsBatch, state) {
+  actionsBatch.push(loadComments(state));
+  actionsBatch.push(loadReminders(state));
+  actionsBatch.push(loadSelections(state));
+  actionsBatch.push(loadInvalidated(state));
 }
 
 /**
@@ -38,21 +39,22 @@ function loadCheckData(actionsBatch) {
  */
 export const changeCurrentContextId = contextId => {
   return async (dispatch, getState) => {
+    dispatch({
+      type: consts.CHANGE_CURRENT_CONTEXT_ID,
+      contextId
+    });
     if (contextId) {
       const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
       const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
       console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
-      const actionsBatch = [{
-        type: consts.CHANGE_CURRENT_CONTEXT_ID,
-        contextId
-      }];
-      loadCheckData(actionsBatch);
-      dispatch(batchActions(actionsBatch));
+      const actionsBatch = [];
       const state = getState();
+      loadCheckData(actionsBatch, state);
+      dispatch(batchActions(actionsBatch));
       saveContextId(state, contextId);
       const apis = getToolsByKey(state);
-      const groupsData = getGroupsData(state);
       if (tool in apis) { // only need to validate verse in current tool
+        const groupsData = getGroupsData(state);
         apis[tool].api.trigger('validateVerse', chapter, verse, null, groupsData);
       }
 
@@ -68,11 +70,6 @@ export const changeCurrentContextId = contextId => {
         } catch(e) {
           console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
         }
-      });
-    } else {
-      dispatch({
-        type: consts.CHANGE_CURRENT_CONTEXT_ID,
-        contextId
       });
     }
   };
