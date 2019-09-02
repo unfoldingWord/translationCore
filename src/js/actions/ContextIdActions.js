@@ -23,13 +23,19 @@ import {delay} from "../common/utils";
 /**
  * TODO: tool data should eventually move into the respective tools.
  * @param {Array} actionsBatch - array to load with actions for later batching
- * @param {object} state
+ * @param {object} contextId - the contextId object.
  */
-function loadCheckData(actionsBatch, state) {
-  actionsBatch.push(loadComments(state));
-  actionsBatch.push(loadReminders(state));
-  actionsBatch.push(loadSelections(state));
-  actionsBatch.push(loadInvalidated(state));
+async function loadCheckData(actionsBatch, contextId) {
+  return async (dispatch, getState) => {
+    const state = getState();
+    actionsBatch.push(await loadSelections(state, contextId));
+    // dispatch(batchActions(actionsBatch)); // process the minimum for context change
+    // actionsBatch = []; // now start collecting additional data
+    actionsBatch.push(await loadComments(state, contextId));
+    actionsBatch.push(await loadReminders(state, contextId));
+    actionsBatch.push(await loadInvalidated(state, contextId));
+    dispatch(batchActions(actionsBatch)); // process the batch
+  };
 }
 
 /**
@@ -39,19 +45,16 @@ function loadCheckData(actionsBatch, state) {
  */
 export const changeCurrentContextId = contextId => {
   return async (dispatch, getState) => {
-    dispatch({
-      type: consts.CHANGE_CURRENT_CONTEXT_ID,
-      contextId
-    });
     if (contextId) {
       const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
       const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
       console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
       const state = getState();
-      delay(50).then(() => {
-        const actionsBatch = [];
-        loadCheckData(actionsBatch, state);
-        dispatch(batchActions(actionsBatch));
+      const actionsBatch = [{
+        type: consts.CHANGE_CURRENT_CONTEXT_ID,
+        contextId
+      }];
+      dispatch(loadCheckData(actionsBatch, contextId)).then(() => {
         saveContextId(state, contextId);
         const apis = getToolsByKey(state);
         if (tool in apis) { // only need to validate verse in current tool
@@ -72,6 +75,11 @@ export const changeCurrentContextId = contextId => {
         } catch(e) {
           console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
         }
+      });
+    } else {
+      dispatch({
+        type: consts.CHANGE_CURRENT_CONTEXT_ID,
+        contextId
       });
     }
   };
