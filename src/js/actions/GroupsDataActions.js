@@ -38,8 +38,10 @@ export const addGroupData = (groupId, groupsData) => {
 export const findGroupDataItem = (contextId, groupData) => {
   let index = -1;
   for (let i = 0, l = groupData.length; i < l; i++) {
-    if (isEqual(groupData[i].contextId.reference, contextId.reference) &&
-          groupData[i].contextId.occurrence === contextId.occurrence) {
+    const grpContextId = groupData[i].contextId;
+    if ((grpContextId.quote === contextId.quote) &&
+        isEqual(grpContextId.reference, contextId.reference) &&
+        (grpContextId.occurrence === contextId.occurrence)) {
       index = i;
       break;
     }
