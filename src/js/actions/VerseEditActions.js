@@ -272,7 +272,6 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
     dispatch(AlertModalActions.closeAlertDialog());
     if (showSelectionInvalidated || showAlignmentsInvalidated) {
       dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
-      //TODO: add await here
     }
     dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
                                            currentCheckContextId, actionsBatch));
