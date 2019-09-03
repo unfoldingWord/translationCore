@@ -35,16 +35,6 @@ injectFileLogging(LOG_FILES_PATH, version);
 class Main extends Component {
   constructor(props) {
     super(props);
-    // load app locale
-    const localeDir = path.join(__dirname, '../../locale');
-    props.loadLocalization(localeDir, props.appLanguage, props.initialize, props.addTranslationForLanguage, props.setActiveLanguage);
-  }
-
-  shouldComponentUpdate(nextProps) {
-    const {loadingProject} = nextProps.reducers.homeScreenReducer;
-    if (loadingProject === true) {
-      return false;
-    } else return true;
   }
 
   componentWillMount() {
@@ -59,6 +49,9 @@ class Main extends Component {
       getAnchorTags,
       loadTools
     } = this.props;
+        // load app locale
+        const localeDir = path.join(__dirname, '../../locale');
+        this.props.loadLocalization(localeDir, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
 
     loadTools(path.join(__dirname, '../../../tC_apps'));
 
