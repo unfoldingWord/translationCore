@@ -14,28 +14,23 @@ export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
  * @param {Object} userObj - Must contain fields username and password
  * @return {Promise} - Returns a promise with a user object.
  */
-export const login = (userObj) => {
-  api.getUser(userObj)
-    .then(user =>
-      api.listTokens(userObj)
-        .then(function (tokens) {
-          return tokens.find((el) => el.name === tokenStub.name);
-        })
-        .then(function (token) {
-          return token ? token : api.createToken(tokenStub, userObj);
-        })
-        .then(function (token) {
-          user.token = token.sha1;
-          let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
+export function login(userObj) {
+  return api.getUser(userObj).then(user =>
+    api.listTokens(userObj).then(function (tokens) {
+      return tokens.find((el) => el.name === tokenStub.name);
+    }).then(function (token) {
+      return token ? token : api.createToken(tokenStub, userObj);
+    }).then(function (token) {
+      user.token = token.sha1;
+      let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
 
-          try {
-            localStorage.setItem('user', encryptedToken);
-          } catch (e) {
-          //
-          }
-          return user;
-        })
-    );
+      try {
+        localStorage.setItem('user', encryptedToken);
+      } catch (e) {
+      //
+      }
+      return user;
+    }));
 };
 
 /**

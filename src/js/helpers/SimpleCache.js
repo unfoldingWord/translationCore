@@ -4,10 +4,9 @@
  * @return {boolean}
  */
 function storageAvailable(type) {
-  let storage = window[type];
-
   try {
-    let x = '__storage_test__';
+    var storage = window[type],
+      x = '__storage_test__';
     storage.setItem(x, x);
     storage.removeItem(x);
     return true;

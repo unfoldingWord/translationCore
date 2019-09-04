@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-import 'babel-polyfill'; // polyfill for regenerator runtime which allows async/await usage
 import { getTranslate } from '../selectors';
 import consts from './ActionTypes';
 // actions

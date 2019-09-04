@@ -9,24 +9,22 @@ jest.mock('gogs-client');
 jest.mock('../Repo');
 
 describe('GogsApiHelpers.login', () => {
-  it('should login a user and get a user object with token back.',
-    async function () {
-      const userObject = {
-        password: 'apassword',
-        username: 'auser',
-      };
-      const loggedInUser = await GogsApiHelpers.login(userObject);
+  it('should login a user and get a user object with token back.', function () {
+    const userObject = {
+      password: 'apassword',
+      username: 'auser',
+    };
 
-      expect(loggedInUser).toEqual({
-        id: 4232,
-        login: 'auser',
-        full_name: 'John Smith',
-        email: 'auser@noreply.door43.org',
-        avatar_url: 'https://git.door43.org/img/avatar_default.png',
-        username: 'auser',
-        token: '7a16e1e1c93dd1f3574dcc709487689c64a3a084',
-      });
+    return expect(GogsApiHelpers.login(userObject)).resolves.toEqual({
+      id: 4232,
+      login: 'auser',
+      full_name: 'John Smith',
+      email: 'auser@noreply.door43.org',
+      avatar_url: 'https://git.door43.org/img/avatar_default.png',
+      username: 'auser',
+      token: '7a16e1e1c93dd1f3574dcc709487689c64a3a084',
     });
+  });
 });
 
 describe('GogsApiHelpers.createRepo', () => {
@@ -38,7 +36,7 @@ describe('GogsApiHelpers.createRepo', () => {
     const reponame = 'fr_eph_text_ulb';
     const repo = await GogsApiHelpers.createRepo(userObject, reponame);
 
-    expect(repo).toEqual(expect.objectContaining({
+    return expect(repo).toEqual(expect.objectContaining({
       name: reponame,
       full_name: `${userObject.username}/${reponame}`,
       description: 'tc-desktop: ' + reponame,
@@ -194,7 +192,7 @@ describe('GogsApiHelpers.changeGitToPointToNewRepo', () => {
       throw new Error('Git error');
     });
     await expect(GogsApiHelpers.changeGitToPointToNewRepo(
-      projectSaveLocation, user)).rejects.toEqual(new Error('Git error'));
+      projectSaveLocation, user)).rejects.toThrow('Git error');
   });
 });
 

@@ -1,6 +1,6 @@
-jest.unmock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
+jest.unmock('fs-extra');
 
 describe('Tests for locale files', () => {
   test('Verify that no locale files have % in them', () => {

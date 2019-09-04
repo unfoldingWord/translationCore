@@ -1,26 +1,9 @@
-import SimpleCache, {
-  INSTANCE_STORAGE, SESSION_STORAGE, LOCAL_STORAGE,
-} from '../SimpleCache';
+import SimpleCache, { INSTANCE_STORAGE } from '../SimpleCache';
 
 describe('default storage', () => {
   it('uses instanceStorage by default', () => {
     const cache = new SimpleCache();
     expect(cache.type()).toEqual(INSTANCE_STORAGE);
-  });
-});
-
-describe('fallback storage', () => {
-  it('falls back to instanceStorage when localStorage is missing', () => {
-    global.console = { warn: jest.fn() };
-    const cache = new SimpleCache(LOCAL_STORAGE);
-    expect(cache.type()).toEqual(INSTANCE_STORAGE);
-    expect(console.warn).toHaveBeenCalled();
-  });
-  it('falls back to instanceStorage when sessionStorage is missing', () => {
-    global.console = { warn: jest.fn() };
-    const cache = new SimpleCache(SESSION_STORAGE);
-    expect(cache.type()).toEqual(INSTANCE_STORAGE);
-    expect(console.warn).toHaveBeenCalled();
   });
 });
 

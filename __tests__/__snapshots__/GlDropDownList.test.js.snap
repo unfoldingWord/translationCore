@@ -2,7 +2,6 @@
 
 exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component render with snapshot 1`] = `
 <div
-  className={undefined}
   style={
     Object {
       "backgroundColor": "transparent",
@@ -20,9 +19,7 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
   }
 >
   <label
-    className={undefined}
     htmlFor="glddl"
-    onClick={undefined}
     style={
       Object {
         "color": "#000000",
@@ -42,7 +39,6 @@ exports[`Test Gateway Language Drop Down List Comparing dropdownlist Component r
     tools.gateway_language
   </label>
   <div
-    className={undefined}
     id="glddl"
     onBlur={[Function]}
     onChange={[Function]}
