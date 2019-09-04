@@ -1,9 +1,10 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
+import {LocalizeProvider} from "react-localize-redux";
 import setupSubscriptions from 'redux-subscriptions';
 import configureStore from '../redux/configureStore';
 import Application from './app';
-import { loadState, saveState } from '../localStorage';
+import {loadState, saveState} from '../localStorage';
 
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();
@@ -19,14 +20,16 @@ const store = configureStore(persistedState);
 //   saveState(store.getState());
 // }, 1000));
 store.subscribe(setupSubscriptions(store)(
-  ({ prevState, newState }) => {
+  ({prevState, newState}) => {
     saveState(prevState, newState);
   }
 ));
 
 module.exports.App = (
   <Provider store={store}>
-    <Application />
+    <LocalizeProvider store={store}>
+      <Application />
+    </LocalizeProvider>
   </Provider>
 );
 module.exports.dispatch = store.dispatch;
