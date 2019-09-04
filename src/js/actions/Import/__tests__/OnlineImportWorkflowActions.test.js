@@ -1,12 +1,12 @@
-jest.mock('fs-extra');
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import {recoverFailedOnlineImport} from '../OnlineImportWorkflowActions';
+import { recoverFailedOnlineImport } from '../OnlineImportWorkflowActions';
 // helpers
 import { IMPORTS_PATH } from '../../../common/constants';
+jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const importProjectName = 'es-419_tit_text_ulb';
@@ -28,89 +28,74 @@ jest.mock('../../../helpers/ProjectMigration', () => jest.fn());
 jest.mock('../ProjectValidationActions', () => (
   {
     ...require.requireActual('../ProjectValidationActions'),
-    validateProject: () => ({ type: 'VALIDATE' }) }));
+    validateProject: () => ({ type: 'VALIDATE' }),
+  }));
 jest.mock('../ProjectImportFilesystemActions', () => ({
-  deleteProjectFromImportsFolder: () => ({type: 'DELETE_PROJECT_FROM_IMORTS'}),
-  move: () => {
-    return ((dispatch) => {
-      return new Promise((resolve) => {
-        dispatch({type: 'MOVE'});
-        resolve();
-      });
-    });
-  }
+  deleteProjectFromImportsFolder: () => ({ type: 'DELETE_PROJECT_FROM_IMORTS' }),
+  move: () => ((dispatch) => new Promise((resolve) => {
+    dispatch({ type: 'MOVE' });
+    resolve();
+  })),
 }));
 jest.mock('../../MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({ type: 'GET_MY_PROJECTS' }) }));
 jest.mock('../../MyProjects/ProjectLoadingActions', () => ({
   closeProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
-  displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' }))
+  displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' })),
 }));
 jest.mock('../../../helpers/TargetLanguageHelpers', ()=> ({
   generateTargetBibleFromTstudioProjectPath: () => {},
-  targetBibleExists:() => false
+  targetBibleExists:() => false,
 }));
-jest.mock('../../../helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({
-  ensureSupportedVersion: () => {}
-}));
+jest.mock('../../../helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({ ensureSupportedVersion: () => {} }));
 
 describe('OnlineImportWorkflowActions.onlineImport', () => {
   let initialState = {};
   const manifest_ = {
     target_language: {
-      id: "es-419",
+      id: 'es-419',
       name: 'es-419',
-      direction: 'ltr'
+      direction: 'ltr',
     },
     generator: {
-      name: "ts-desktop",
-      build: "132"
+      name: 'ts-desktop',
+      build: '132',
     },
     project: {
-      id: "tit",
-      name: 'Titus'
+      id: 'tit',
+      name: 'Titus',
     },
     resource: {
-      id: "ulb",
-      name: 'unfoldingWord Literal Text'
+      id: 'ulb',
+      name: 'unfoldingWord Literal Text',
     },
     tcInitialized: true,
-    tc_version: 5
+    tc_version: 5,
   };
 
   beforeEach(() => {
     fs.__resetMockFS();
     // mock_cloneManifest = null;
     initialState = {
-      importOnlineReducer: {
-        importLink: STANDARD_PROJECT
-      },
-      settingsReducer: {
-        onlineMode: true
-      },
+      importOnlineReducer: { importLink: STANDARD_PROJECT },
+      settingsReducer: { onlineMode: true },
       projectDetailsReducer: {
         manifest: {},
-        projectSaveLocation: projectSaveLocation
+        projectSaveLocation: projectSaveLocation,
       },
-      localImportReducer: {
-        selectedProjectFilename:'path'
-      },
-      loginReducer: {
-        userdata: {
-          userName: 'johndoe'
-        }
-      },
+      localImportReducer: { selectedProjectFilename:'path' },
+      loginReducer: { userdata: { userName: 'johndoe' } },
       projectInformationCheckReducer: {},
-      projectValidationReducer: {}
+      projectValidationReducer: {},
     };
   });
 
   it('on import errors should call required actions', async () => {
-    const fileName = "manifest.json";
+    const fileName = 'manifest.json';
     const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
-    fs.writeJSONSync(path.join(cloneToPath, "manifest.json"), manifest_);
+    fs.writeJSONSync(path.join(cloneToPath, 'manifest.json'), manifest_);
 
     const store = mockStore(initialState);
-    store.dispatch(recoverFailedOnlineImport("import failed"));
+    store.dispatch(recoverFailedOnlineImport('import failed'));
     expect(store.getActions()).toMatchSnapshot();
   });
 });

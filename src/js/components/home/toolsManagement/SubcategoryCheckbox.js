@@ -5,11 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
   root: {
-    color: 'var(--accent-color-dark)',
-    '&$checked': {
-      color: 'var(--accent-color-dark)',
-    },
-    padding: '0px',
+    'color': 'var(--accent-color-dark)',
+    '&$checked': { color: 'var(--accent-color-dark)' },
+    'padding': '0px',
   },
   checked: {},
 };

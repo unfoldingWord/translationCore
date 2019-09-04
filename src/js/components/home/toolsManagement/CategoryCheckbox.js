@@ -8,11 +8,9 @@ import { TRANSLATION_WORDS } from '../../../common/constants';
 
 const styles = {
   root: {
-    color: 'var(--accent-color-dark)',
-    '&$checked': {
-      color: 'var(--accent-color-dark)',
-    },
-    padding: '0px',
+    'color': 'var(--accent-color-dark)',
+    '&$checked': { color: 'var(--accent-color-dark)' },
+    'padding': '0px',
   },
   checked: {},
 };

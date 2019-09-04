@@ -13,15 +13,16 @@ import truncateItem from 'truncate-utf8-bytes';
  */
 function TruncateAcronym(longText, abbrev, len, targetLanguageBookName) {
   const bookName = targetLanguageBookName || longText;
-  if(bookName.length + abbrev.length + 3 > len) {
-   return (
-    <div className='wraptip'> {truncateItem( "(".concat(abbrev, ") ", bookName), len + 3) + "..." }
-      <span className='wraptip-text'>{"(".concat(abbrev, ") ", bookName)}</span>
-    </div>
-   );
+
+  if (bookName.length + abbrev.length + 3 > len) {
+    return (
+      <div className='wraptip'> {truncateItem( '('.concat(abbrev, ') ', bookName), len + 3) + '...' }
+        <span className='wraptip-text'>{'('.concat(abbrev, ') ', bookName)}</span>
+      </div>
+    );
   } else {
-    return(
-      <span> {"(".concat(abbrev, ") ", bookName)}</span>
+    return (
+      <span> {'('.concat(abbrev, ') ', bookName)}</span>
     );
   }
 }

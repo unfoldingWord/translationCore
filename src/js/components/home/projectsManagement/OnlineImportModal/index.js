@@ -14,19 +14,15 @@ export default class OnlineImportModal extends Component {
       translate,
       importOnlineReducer: {
         importLink,
-        repos
+        repos,
       },
-      loginReducer: {
-        userdata
-      },
-      homeScreenReducer: {
-        onlineImportModalVisibility
-      },
+      loginReducer: { userdata },
+      homeScreenReducer: { onlineImportModalVisibility },
       actions: {
         closeOnlineImportModal,
         handleURLInputChange,
-        loadProjectFromLink
-      }
+        loadProjectFromLink,
+      },
     } = this.props;
 
     const buttonActions = [
@@ -48,26 +44,30 @@ export default class OnlineImportModal extends Component {
           loadProjectFromLink();
         }}
       >
-       <Glyphicon glyph={"cloud-download"} style={{}} />&nbsp;{translate('buttons.import_button')}
-      </button>
+        <Glyphicon glyph={'cloud-download'} style={{}} />&nbsp;{translate('buttons.import_button')}
+      </button>,
     ];
 
     const headerContent = (
       <div>
-        <span>{translate('projects.import_from_d43', {door43: translate('_.door43')})}</span>
-          <Glyphicon
-            onClick={closeOnlineImportModal}
-            glyph={"remove"}
-            style={{color: "var(--reverse-color)", cursor: "pointer", fontSize: "18px", float: "right"}}
-          />
-       </div>
+        <span>{translate('projects.import_from_d43', { door43: translate('_.door43') })}</span>
+        <Glyphicon
+          onClick={closeOnlineImportModal}
+          glyph={'remove'}
+          style={{
+            color: 'var(--reverse-color)', cursor: 'pointer', fontSize: '18px', float: 'right',
+          }}
+        />
+      </div>
     );
 
     return (
       <MuiThemeProvider>
         <Dialog
-          contentStyle={{ height: "100%", width: "900px", maxWidth: "900px" }}
-          style={{ padding: "0px" }}
+          contentStyle={{
+            height: '100%', width: '900px', maxWidth: '900px',
+          }}
+          style={{ padding: '0px' }}
           autoDetectWindowHeight={true}
           autoScrollBodyContent={true}
           open={onlineImportModalVisibility}
@@ -75,13 +75,17 @@ export default class OnlineImportModal extends Component {
           modal={false}
         >
           <CardHeader
-            style={{ color: "var(--reverse-color)", backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: "-44px -24px -24px -24px"}}
+            style={{
+              color: 'var(--reverse-color)', backgroundColor: 'var(--accent-color-dark)', padding: '15px', margin: '-44px -24px -24px -24px',
+            }}
           >
             {headerContent}
           </CardHeader><br />
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "20px 20px 0px" }}>
+          <div style={{
+            display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px 20px 0px',
+          }}>
             <p>
-              {translate('projects.supports_any_book', {app: translate('_.app_name')})}
+              {translate('projects.supports_any_book', { app: translate('_.app_name') })}
             </p>
           </div>
           <URLInput
@@ -96,9 +100,9 @@ export default class OnlineImportModal extends Component {
             username={userdata.username}
           />
           <SearchResults repos={repos}
-                         translate={translate}
-                         importLink={importLink}
-                         handleURLInputChange={handleURLInputChange} />
+            translate={translate}
+            importLink={importLink}
+            handleURLInputChange={handleURLInputChange} />
         </Dialog>
       </MuiThemeProvider>
     );
@@ -110,5 +114,5 @@ OnlineImportModal.propTypes = {
   importOnlineReducer: PropTypes.object.isRequired,
   homeScreenReducer: PropTypes.object.isRequired,
   loginReducer: PropTypes.object.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
 };

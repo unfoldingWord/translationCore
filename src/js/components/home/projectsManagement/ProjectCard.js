@@ -5,29 +5,29 @@ import moment from 'moment';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
 // components
 import TemplateCard from '../TemplateCard';
-import ProjectCardMenu from './ProjectCardMenu';
 import Hint from '../../Hint';
+import ProjectCardMenu from './ProjectCardMenu';
 import TruncateAcronym from './TruncateAcronym.js';
 
 class ProjectCard extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.handleOnSelect = this.handleOnSelect.bind(this);
-    this.state = {
-      lastOpenedTimeAgo:  this.getLastOpenedTimeAgo()
-    };
+    this.state = { lastOpenedTimeAgo:  this.getLastOpenedTimeAgo() };
   }
 
   componentDidMount(){
     // add interval listener to update last opened time ago every 60 seconds
-    if (this.props.projectDetails.lastOpened)
+    if (this.props.projectDetails.lastOpened) {
       this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
+    }
   }
 
   componentWillUnmount(){
     // remove the interval listener
-    if (this.interval)
+    if (this.interval) {
       clearInterval(this.interval);
+    }
   }
 
   getLastOpenedTimeAgo() {
@@ -39,24 +39,22 @@ class ProjectCard extends React.Component {
   }
 
   updateLastOpenedTimeAgo() {
-    this.setState({
-      lastOpenedTimeAgo: this.getLastOpenedTimeAgo()
-    });
+    this.setState({ lastOpenedTimeAgo: this.getLastOpenedTimeAgo() });
   }
 
   /**
    * Handles the selection of this project
    */
-  handleOnSelect () {
+  handleOnSelect() {
     const {
       onSelect,
-      projectDetails: { projectName }
+      projectDetails: { projectName },
     } = this.props;
     onSelect(projectName);
     // TODO: selectProject
   }
 
-  render () {
+  render() {
     const { translate, user } = this.props;
     const {
       projectName,
@@ -64,28 +62,28 @@ class ProjectCard extends React.Component {
       bookAbbr,
       bookName,
       target_language,
-      isSelected
+      isSelected,
     } = this.props.projectDetails;
     const targetLanguageBookName = target_language.book && target_language.book.name ? target_language.book.name : null;
 
     let cardDetails = [
       {
         glyph: 'time',
-        text: this.getLastOpenedTimeAgo()
+        text: this.getLastOpenedTimeAgo(),
       },
       {
         glyph: 'book',
         text: bookName && bookAbbr ?
           TruncateAcronym(bookName, bookAbbr, 23, targetLanguageBookName) :
-          'No book info found'
+          'No book info found',
       },
       {
         translateIcon: true,
         text: target_language.name && target_language.id
           ? TruncateAcronym(
             target_language.name, target_language.id, 23)
-          : 'No language info found'
-      }
+          : 'No language info found',
+      },
     ];
 
     // content
@@ -93,12 +91,12 @@ class ProjectCard extends React.Component {
       <div style={{
         display: 'flex',
         justifyContent: 'space-between',
-        marginTop: '-10px'
+        marginTop: '-10px',
       }}>
         <div style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         }}>
           <Hint position={'bottom'} label={projectName}>
             <strong style={{
@@ -107,60 +105,61 @@ class ProjectCard extends React.Component {
               maxWidth: 400,
               textOverflow: 'ellipsis',
               display: 'block',
-              whiteSpace: 'nowrap'
+              whiteSpace: 'nowrap',
             }}> {projectName} </strong>
           </Hint>
           <div style={{
             display: 'flex',
             justifyContent: 'space-between',
             width: '410px',
-            marginBottom: '6px'
+            marginBottom: '6px',
           }}>
             <table style={{ width: '100%' }}>
               <tbody>
-              <tr>
-                {
-                  cardDetails.map((cardDetail, index) => {
-                    let width;
-                    switch (cardDetail.glyph) {
+                <tr>
+                  {
+                    cardDetails.map((cardDetail, index) => {
+                      let width;
+
+                      switch (cardDetail.glyph) {
                       case 'time':
                       case 'book':
                       default:
                         width = '30%';
                         break;
-                    }
-                    return (
-                      <td style={{ width: width, verticalAlign: 'top' }}
+                      }
+                      return (
+                        <td style={{ width: width, verticalAlign: 'top' }}
                           key={index}>
-                        <table style={{ width: '100%' }}>
-                          <tbody>
-                          <tr>
-                            <td
-                              style={{ display: 'flex', alignItems: 'center' }}>
-                              {cardDetail.translateIcon ?
-                                <TranslateIcon style={{
-                                  alignSelf: 'flex-start',
-                                  width: 22,
-                                  minWidth: 22,
-                                  color: '#000000',
-                                  marginRight: '5px',
-                                  marginBottom: '5px'
-                                }}/>
-                                :
-                                <Glyphicon glyph={cardDetail.glyph} style={{
-                                  marginRight: '5px',
-                                  top: '2px'
-                                }}/>
-                              }&nbsp;{cardDetail.text}
-                            </td>
-                          </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    );
-                  })
-                }
-              </tr>
+                          <table style={{ width: '100%' }}>
+                            <tbody>
+                              <tr>
+                                <td
+                                  style={{ display: 'flex', alignItems: 'center' }}>
+                                  {cardDetail.translateIcon ?
+                                    <TranslateIcon style={{
+                                      alignSelf: 'flex-start',
+                                      width: 22,
+                                      minWidth: 22,
+                                      color: '#000000',
+                                      marginRight: '5px',
+                                      marginBottom: '5px',
+                                    }}/>
+                                    :
+                                    <Glyphicon glyph={cardDetail.glyph} style={{
+                                      marginRight: '5px',
+                                      top: '2px',
+                                    }}/>
+                                  }&nbsp;{cardDetail.text}
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      );
+                    })
+                  }
+                </tr>
               </tbody>
             </table>
           </div>
@@ -170,15 +169,15 @@ class ProjectCard extends React.Component {
           flexDirection: 'column',
           justifyContent: 'space-between',
           textAlign: 'right',
-          marginRight: '-6px'
+          marginRight: '-6px',
         }}>
           <ProjectCardMenu projectSaveLocation={projectSaveLocation}
-                           translate={translate}
-                           user={user}/>
+            translate={translate}
+            user={user}/>
           <div>
             <button className='btn-prime' disabled={isSelected}
-                    onClick={this.handleOnSelect}
-                    style={{ width: '90px', marginBottom: '0' }}>
+              onClick={this.handleOnSelect}
+              style={{ width: '90px', marginBottom: '0' }}>
               {translate('buttons.select_button')}
             </button>
           </div>
@@ -198,7 +197,6 @@ class ProjectCard extends React.Component {
       />
     );
   }
-
 }
 
 ProjectCard.propTypes = {

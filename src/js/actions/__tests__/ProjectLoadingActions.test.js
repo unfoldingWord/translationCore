@@ -1,10 +1,9 @@
-jest.mock('fs-extra');
 import configureMockStore from 'redux-mock-store';
 import fs from 'fs-extra';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import * as ProjectLoadingActions from "../MyProjects/ProjectLoadingActions";
-import * as manifestUtils from "../../helpers/ProjectMigration/manifestUtils";
+import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
+import * as manifestUtils from '../../helpers/ProjectMigration/manifestUtils';
 // constants
 import {
   APP_VERSION,
@@ -15,69 +14,40 @@ import {
   PROJECTS_PATH,
 } from '../../common/constants';
 import ActionTypes from '../../actions/ActionTypes';
+jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 jest.mock('../../selectors', () => ({
   ...require.requireActual('../../selectors/'),
-  getCurrentProjectToolsSelectedGL: () => {
-      return 'en';
-  },
-  getActiveLocaleLanguage: () => {
-    return {code: 'en'};
-  },
-  getTranslate: () => {
-    return jest.fn((code) => {
-      return code;
-    });
-  },
-  getSourceBook: () => {
-    return {};
-  },
-  getTargetBook: () => {
-    return {};
-  },
-  getProjectSaveLocation: (state) => {
-    return (state.projectDetailsReducer.projectSaveLocation);
-  },
-  getProjectManifest: (state) => {
-    return (state.projectDetailsReducer.manifest);
-  },
-  getIsUserLoggedIn: (state) => {
-    return (state.loginReducer.loggedInUser);
-  },
+  getCurrentProjectToolsSelectedGL: () => 'en',
+  getActiveLocaleLanguage: () => ({ code: 'en' }),
+  getTranslate: () => jest.fn((code) => code),
+  getSourceBook: () => ({}),
+  getTargetBook: () => ({}),
+  getProjectSaveLocation: (state) => (state.projectDetailsReducer.projectSaveLocation),
+  getProjectManifest: (state) => (state.projectDetailsReducer.manifest),
+  getIsUserLoggedIn: (state) => (state.loginReducer.loggedInUser),
   getActiveHomeScreenSteps: (state) => {
     const isLoggedIn = state.loginReducer.loggedInUser;
     const isProjectLoaded = state.projectDetailsReducer.projectSaveLocation;
     const availableSteps = [true, true, isLoggedIn, isProjectLoaded];
     return availableSteps;
   },
-  getUsername: () => {
-    return 'johndoe';
-  },
-  getToolGatewayLanguage: () => {
-    return 'en';
-  },
-  getTools: () => {
-    return [
-      {
-        name: "translationWords",
-        api: {
-          triggerWillConnect: jest.fn()
-        }
-      },
-      {
-        name: "wordAlignment",
-        api: {
-          triggerWillConnect: jest.fn()
-        }
-      }
-    ];
-  },
+  getUsername: () => 'johndoe',
+  getToolGatewayLanguage: () => 'en',
+  getTools: () => [
+    {
+      name: 'translationWords',
+      api: { triggerWillConnect: jest.fn() },
+    },
+    {
+      name: 'wordAlignment',
+      api: { triggerWillConnect: jest.fn() },
+    },
+  ],
   getSelectedToolApi: jest.fn(),
-  getSupportingToolApis: jest.fn(() => {
-    return [];
-  })
+  getSupportingToolApis: jest.fn(() => []),
 }));
 
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
@@ -85,6 +55,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   const projectName = 'en_tit';
   const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
+
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
@@ -99,47 +70,43 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
           stepIndex: 1,
           nextStepName: 'Project Information',
           previousStepName: 'Cancel',
-          nextDisabled: false
-        }
+          nextDisabled: false,
+        },
       },
       loginReducer: {
         loggedInUser: false,
         userdata: {},
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
       projectDetailsReducer: {
         projectSaveLocation: projectPath,
         manifest,
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
       localImportReducer: {
         selectedProjectFilename: '',
         sourceProjectPath: '',
-        oldSelectedProjectFileName: null
+        oldSelectedProjectFileName: null,
       },
-      projectInformationCheckReducer: {alreadyImported:true},
+      projectInformationCheckReducer: { alreadyImported:true },
       settingsReducer: {
         currentSettings: {},
         toolsSettings: {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "ult",
-                languageId: "en"
-              }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
             ],
-          }
-        }
+          },
+        },
       },
-      projectValidationReducer: {
-        projectValidationStepsArray: [ ]
-      },
-      myProjectsReducer: {
-        projects: []
-      }
+      projectValidationReducer: { projectValidationStepsArray: [ ] },
+      myProjectsReducer: { projects: [] },
     };
   });
 
@@ -158,7 +125,7 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   it('should just open project if project name is valid', async () => {
     // given
     const selectedProjectFilename = 'en_ult_tit_book';
-    const resourceId = "ult";
+    const resourceId = 'ult';
     // rename project to selected
     renameProject(selectedProjectFilename, projectPath, initialState, resourceId);
 
@@ -177,15 +144,18 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
 
   beforeEach(() => {
     manifest = {
-      "generator":{"name":"tc-desktop","build":""},
-      "target_language":{"id":"en","name":"English","direction":"ltr"},
-      "ts_project":{"id":"tit","name":"Titus"},
-      "project":{"id":"tit","name":"Titus"},
-      "type":{"id":"text","name":"Text"},
-      "time_created":"2018-01-31T19:19:27.914Z",
-      "tcInitialized":true,
-      "tc_version":1,
-      "license":"CC BY-SA 4.0"};
+      'generator':{ 'name':'tc-desktop','build':'' },
+      'target_language':{
+        'id':'en','name':'English','direction':'ltr',
+      },
+      'ts_project':{ 'id':'tit','name':'Titus' },
+      'project':{ 'id':'tit','name':'Titus' },
+      'type':{ 'id':'text','name':'Text' },
+      'time_created':'2018-01-31T19:19:27.914Z',
+      'tcInitialized':true,
+      'tc_version':1,
+      'license':'CC BY-SA 4.0',
+    };
   });
 
   it('when edit version and minimum missing, then update', async () => {
@@ -193,14 +163,12 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     const expectUpdate = true;
     const initialState = {
       projectDetailsReducer: {
-        projectSaveLocation: "DUMMY",
+        projectSaveLocation: 'DUMMY',
         manifest,
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
-      resourcesReducer: {
-        bibles: {}
-      }
+      resourcesReducer: { bibles: {} },
     };
     const store = mockStore(initialState);
 
@@ -215,17 +183,15 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     // given
     const expectUpdate = true;
     manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = APP_VERSION;
-    manifest[tc_EDIT_VERSION_KEY] = "0.10.0";
+    manifest[tc_EDIT_VERSION_KEY] = '0.10.0';
     const initialState = {
       projectDetailsReducer: {
-        projectSaveLocation: "DUMMY",
+        projectSaveLocation: 'DUMMY',
         manifest,
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
-      resourcesReducer: {
-        bibles: {}
-      }
+      resourcesReducer: { bibles: {} },
     };
     const store = mockStore(initialState);
 
@@ -239,18 +205,16 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
   it('when minimum version different, then update', async () => {
     // given
     const expectUpdate = true;
-    manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = "0.10.0";
+    manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = '0.10.0';
     manifest[tc_EDIT_VERSION_KEY] = MIN_COMPATIBLE_VERSION;
     const initialState = {
       projectDetailsReducer: {
-        projectSaveLocation: "DUMMY",
+        projectSaveLocation: 'DUMMY',
         manifest,
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
-      resourcesReducer: {
-        bibles: {}
-      }
+      resourcesReducer: { bibles: {} },
     };
     const store = mockStore(initialState);
 
@@ -268,14 +232,12 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     manifest[tc_EDIT_VERSION_KEY] = MIN_COMPATIBLE_VERSION;
     const initialState = {
       projectDetailsReducer: {
-        projectSaveLocation: "DUMMY",
+        projectSaveLocation: 'DUMMY',
         manifest,
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
-      resourcesReducer: {
-        bibles: {}
-      }
+      resourcesReducer: { bibles: {} },
     };
     const store = mockStore(initialState);
 
@@ -285,7 +247,6 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     //then
     validateVersions(store, expectUpdate);
   });
-
 });
 
 describe('loadProject', () => {
@@ -293,6 +254,7 @@ describe('loadProject', () => {
   const projectName = 'en_tit';
   const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
+
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
@@ -306,47 +268,43 @@ describe('loadProject', () => {
           stepIndex: 1,
           nextStepName: 'Project Information',
           previousStepName: 'Cancel',
-          nextDisabled: false
-        }
+          nextDisabled: false,
+        },
       },
       loginReducer: {
         loggedInUser: false,
         userdata: {},
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
       projectDetailsReducer: {
         projectSaveLocation: projectPath,
         manifest,
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
       localImportReducer: {
         selectedProjectFilename: '',
         sourceProjectPath: '',
-        oldSelectedProjectFileName: null
+        oldSelectedProjectFileName: null,
       },
-      projectInformationCheckReducer: {alreadyImported:true},
+      projectInformationCheckReducer: { alreadyImported:true },
       settingsReducer: {
         currentSettings: {},
         toolsSettings: {
           ScripturePane: {
             currentPaneSettings: [
               {
-                bibleId: "ult",
-                languageId: "en"
-              }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
             ],
-          }
-        }
+          },
+        },
       },
-      projectValidationReducer: {
-        projectValidationStepsArray: [ ]
-      },
-      resourcesReducer: {
-        bibles: {}
-      }
+      projectValidationReducer: { projectValidationStepsArray: [ ] },
+      resourcesReducer: { bibles: {} },
     };
   });
 
@@ -364,7 +322,7 @@ describe('loadProject', () => {
   it('opens a valid project', async () => {
     // given
     const selectedProjectFilename = 'en_ult_tit_book';
-    const resourceId = "ult";
+    const resourceId = 'ult';
     // rename project to selected
     renameProject(selectedProjectFilename, projectPath, initialState, resourceId);
 
@@ -385,43 +343,46 @@ describe('loadProject', () => {
 function validateVersions(store, expectUpdate) {
   const actions = store.getActions();
   expect(actions.length).toEqual(expectUpdate ? 2 : 0); // all or nothing
+
   for (let action of actions) {
-    expect(action.type).toEqual("ADD_MANIFEST_PROPERTY");
+    expect(action.type).toEqual('ADD_MANIFEST_PROPERTY');
     const propertyName = action.propertyName;
     const value = action.value;
+
     switch (propertyName) {
-      case tc_EDIT_VERSION_KEY:
-        expect(value).toEqual(APP_VERSION);
-        break;
-      case tc_MIN_COMPATIBLE_VERSION_KEY:
-        expect(value).toEqual(MIN_COMPATIBLE_VERSION);
-        break;
-      default:
-        expect(value).toBeUndefined();
-        break;
+    case tc_EDIT_VERSION_KEY:
+      expect(value).toEqual(APP_VERSION);
+      break;
+    case tc_MIN_COMPATIBLE_VERSION_KEY:
+      expect(value).toEqual(MIN_COMPATIBLE_VERSION);
+      break;
+    default:
+      expect(value).toBeUndefined();
+      break;
     }
   }
 }
 
 function cleanupVersions(actions) {
   for (let action of actions) {
-    if (action.type === "ADD_MANIFEST_PROPERTY") {
+    if (action.type === 'ADD_MANIFEST_PROPERTY') {
       const propertyName = action.propertyName;
       const value = action.value;
+
       switch (propertyName) {
-        case tc_EDIT_VERSION_KEY:
-          if (value === APP_VERSION) {
-            action.value = "CURRENT_APP_VERSION";
-          }
-          break;
-        case tc_MIN_COMPATIBLE_VERSION_KEY:
-          if (value === MIN_COMPATIBLE_VERSION) {
-            action.value = "CURRENT_MIN_COMPATIBLE_VERSION";
-          }
-          break;
-        default:
-          expect(value).toBeUndefined();
-          break;
+      case tc_EDIT_VERSION_KEY:
+        if (value === APP_VERSION) {
+          action.value = 'CURRENT_APP_VERSION';
+        }
+        break;
+      case tc_MIN_COMPATIBLE_VERSION_KEY:
+        if (value === MIN_COMPATIBLE_VERSION) {
+          action.value = 'CURRENT_MIN_COMPATIBLE_VERSION';
+        }
+        break;
+      default:
+        expect(value).toBeUndefined();
+        break;
       }
     }
   }
@@ -438,9 +399,11 @@ function cleanupActions(actions) {
           }
         }
       }
+
       if (action.type === ActionTypes.ADD_PROJECT_SETTINGS_PROPERTY && action.propertyName === tc_LAST_OPENED_KEY) {
         action.value = '2019-08-22T17:06:12.493Z';
       }
+
       if ('pathLocation' in action) {
         action.pathLocation = path.basename(action.pathLocation);
       }

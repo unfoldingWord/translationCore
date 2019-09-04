@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 // components
 import TemplateCard from '../TemplateCard';
 import ToolCardProgress from '../toolsManagement/ToolCardProgress';
 import {
   getSelectedTool,
   getSelectedToolName,
-  getProjectToolProgress
-} from "../../../selectors";
+  getProjectToolProgress,
+} from '../../../selectors';
 
 class ToolCard extends Component {
   constructor(props) {
@@ -18,15 +18,16 @@ class ToolCard extends Component {
   }
 
   componentWillMount() {
-    const {store} = this.context;
+    const { store } = this.context;
     const selectedToolName = getSelectedToolName(store.getState());
-    if(selectedToolName) {
+
+    if (selectedToolName) {
       this.props.actions.getProjectProgressForTools(selectedToolName);
     }
   }
 
   heading(callback) {
-    const {translate} = this.props;
+    const { translate } = this.props;
     const link = this.content() ? <a onClick={callback}>{translate('change_tool')}</a> : <a/>;
     return (
       <span>{translate('current_tool')} {link}</span>
@@ -34,17 +35,22 @@ class ToolCard extends Component {
   }
 
   content() {
-    const {store} = this.context;
+    const { store } = this.context;
     const state = store.getState();
     const tool = getSelectedTool(state);
     let content; // content can be empty to fallback to empty button/message
     let progress = 0;
+
     if (tool && tool.name) {
       progress = getProjectToolProgress(state, tool.name);
       content = (
-        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden'}}>
-            <Glyphicon glyph="check" style={{ fontSize: "120px", margin: '-10px 0 0 -25px'}} />
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0',
+        }}>
+          <div style={{
+            width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden',
+          }}>
+            <Glyphicon glyph="check" style={{ fontSize: '120px', margin: '-10px 0 0 -25px' }} />
           </div>
           <div style={{ width: '400px' }}>
             <strong style={{ fontSize: 'x-large' }}>{tool.title}</strong>
@@ -62,10 +68,13 @@ class ToolCard extends Component {
   }
 
   render() {
-    const {translate} = this.props;
+    const { translate } = this.props;
     const emptyMessage = translate('select_tool');
     const emptyButtonLabel = translate('buttons.tool_button');
-    const emptyButtonOnClick = () => { this.props.actions.goToStep(3) };
+
+    const emptyButtonOnClick = () => {
+      this.props.actions.goToStep(3);
+    };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}
@@ -82,10 +91,8 @@ class ToolCard extends Component {
 ToolCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
 };
-ToolCard.contextTypes = {
-  store: PropTypes.any
-};
+ToolCard.contextTypes = { store: PropTypes.any };
 
 export default connect()(ToolCard);

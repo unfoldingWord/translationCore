@@ -1,11 +1,9 @@
 import types from './ActionTypes';
 
-export const closeAlert = (id) => {
-  return {
-    type: types.CLOSE_ALERT,
-    id
-  };
-};
+export const closeAlert = (id) => ({
+  type: types.CLOSE_ALERT,
+  id,
+});
 
 /**
  * Opens a new alert.
@@ -22,17 +20,15 @@ export const openAlert = (id, message, {
   onCancel = null,
   confirmText = null,
   cancelText = null,
-} = {}) => {
-  return {
-    type: types.OPEN_ALERT,
-    id,
-    message,
-    onConfirm,
-    confirmText,
-    onCancel,
-    cancelText
-  };
-};
+} = {}) => ({
+  type: types.OPEN_ALERT,
+  id,
+  message,
+  onConfirm,
+  confirmText,
+  onCancel,
+  cancelText,
+});
 
 /**
  * Opens a new alert that can be ignored.
@@ -52,20 +48,18 @@ export const openIgnorableAlert = (id, message, {
   onIgnore = null,
   confirmText = null,
   cancelText = null,
-  ignoreText = null
-} = {}) => {
-  return {
-    type: types.OPEN_ALERT,
-    id,
-    message,
-    onConfirm,
-    confirmText,
-    onCancel,
-    cancelText,
-    onIgnore: typeof onIgnore === 'function' ? onIgnore : () => {},
-    ignoreText
-  };
-};
+  ignoreText = null,
+} = {}) => ({
+  type: types.OPEN_ALERT,
+  id,
+  message,
+  onConfirm,
+  confirmText,
+  onCancel,
+  cancelText,
+  onIgnore: typeof onIgnore === 'function' ? onIgnore : () => {},
+  ignoreText,
+});
 
 /**
  * Ignores a specific alert for the rest of the session
@@ -73,10 +67,8 @@ export const openIgnorableAlert = (id, message, {
  * @param {boolean} ignore - ignores or enables the alert
  * @return {*}
  */
-export const ignoreAlert = (id, ignore = true) => {
-  return {
-    type: types.IGNORE_ALERT,
-    id,
-    ignore
-  };
-};
+export const ignoreAlert = (id, ignore = true) => ({
+  type: types.IGNORE_ALERT,
+  id,
+  ignore,
+});

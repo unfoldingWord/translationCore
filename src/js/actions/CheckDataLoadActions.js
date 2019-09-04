@@ -1,9 +1,9 @@
-import consts from './ActionTypes';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
 // helpers
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import consts from './ActionTypes';
 // consts declaration
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -26,6 +26,7 @@ export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkD
   * @example verse - /3
   */
   const PROJECT_SAVE_LOCATION = projectDetailsReducer.projectSaveLocation;
+
   if (PROJECT_SAVE_LOCATION) {
     let bookAbbreviation = contextIdReducer.contextId.reference.bookId;
     let chapter = contextIdReducer.contextId.reference.chapter.toString();
@@ -54,19 +55,22 @@ export function loadCheckData(loadPath, contextId) {
   if (loadPath && contextId && fs.existsSync(loadPath)) {
     let files = fs.readdirSync(loadPath);
 
-    files = files.filter(file => { // filter the filenames to only use .json
-      return path.extname(file) === '.json';
-    });
+    files = files.filter(file => // filter the filenames to only use .json
+      path.extname(file) === '.json'
+    );
+
     let sorted = files.sort().reverse(); // sort the files to put latest first
     const isQuoteArray = Array.isArray(contextId.quote);
 
     for (let i = 0, len = sorted.length; i < len; i++) {
       const file = sorted[i];
+
       // check each file for contextId
       try {
         let readPath = path.join(loadPath, file);
         let _checkDataObject = fs.readJsonSync(readPath);
-        if(_checkDataObject && _checkDataObject.contextId &&
+
+        if (_checkDataObject && _checkDataObject.contextId &&
           _checkDataObject.contextId.groupId === contextId.groupId &&
           (isQuoteArray ? isEqual(_checkDataObject.contextId.quote, contextId.quote) : (_checkDataObject.contextId.quote === contextId.quote)) &&
           _checkDataObject.contextId.occurrence === contextId.occurrence) {
@@ -94,20 +98,21 @@ export function loadComments() {
     let state = getState();
     let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
     let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+
     if (commentsObject) {
       dispatch({
         type: consts.ADD_COMMENT,
         modifiedTimestamp: commentsObject.modifiedTimestamp,
         text: commentsObject.text,
-        userName: commentsObject.userName
+        userName: commentsObject.userName,
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
       dispatch({
         type: consts.ADD_COMMENT,
-        modifiedTimestamp: "",
-        text: "",
-        userName: ""
+        modifiedTimestamp: '',
+        text: '',
+        userName: '',
       });
     }
   };
@@ -123,7 +128,7 @@ export function loadInvalidated() {
     let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     const {
       gatewayLanguageCode,
-      gatewayLanguageQuote
+      gatewayLanguageQuote,
     } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
 
     if (invalidatedObject) {
@@ -133,17 +138,17 @@ export function loadInvalidated() {
         userName: invalidatedObject.userName,
         modifiedTimestamp: invalidatedObject.modifiedTimestamp,
         gatewayLanguageCode,
-        gatewayLanguageQuote
+        gatewayLanguageQuote,
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
       dispatch({
         type: consts.SET_INVALIDATED,
         enabled: false,
-        modifiedTimestamp: "",
-        userName: "",
+        modifiedTimestamp: '',
+        userName: '',
         gatewayLanguageCode: null,
-        gatewayLanguageQuote: null
+        gatewayLanguageQuote: null,
       });
     }
   };
@@ -159,7 +164,7 @@ export function loadReminders() {
     let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
     const {
       gatewayLanguageCode,
-      gatewayLanguageQuote
+      gatewayLanguageQuote,
     } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
 
     if (remindersObject) {
@@ -169,17 +174,17 @@ export function loadReminders() {
         userName: remindersObject.userName,
         modifiedTimestamp: remindersObject.modifiedTimestamp,
         gatewayLanguageCode,
-        gatewayLanguageQuote
+        gatewayLanguageQuote,
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
       dispatch({
         type: consts.SET_REMINDER,
         enabled: false,
-        modifiedTimestamp: "",
-        userName: "",
+        modifiedTimestamp: '',
+        userName: '',
         gatewayLanguageCode: null,
-        gatewayLanguageQuote: null
+        gatewayLanguageQuote: null,
       });
     }
   };
@@ -201,7 +206,7 @@ export function loadSelections() {
         nothingToSelect,
         userName,
         gatewayLanguageCode,
-        gatewayLanguageQuote
+        gatewayLanguageQuote,
       } = selectionsObject;
 
       dispatch({
@@ -211,7 +216,7 @@ export function loadSelections() {
         userName: userName,
         modifiedTimestamp: modifiedTimestamp,
         gatewayLanguageCode: gatewayLanguageCode,
-        gatewayLanguageQuote: gatewayLanguageQuote
+        gatewayLanguageQuote: gatewayLanguageQuote,
       });
     } else {
       // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
@@ -219,7 +224,7 @@ export function loadSelections() {
         type: consts.CHANGE_SELECTIONS,
         modifiedTimestamp: null,
         selections: [],
-        userName: null
+        userName: null,
       });
     }
   };

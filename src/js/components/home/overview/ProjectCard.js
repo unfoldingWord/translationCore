@@ -9,31 +9,32 @@ import TemplateCard from '../TemplateCard';
 import ProjectCardMenu from '../projectsManagement/ProjectCardMenu';
 import Hint from '../../Hint';
 // constants
-import {tc_LAST_OPENED_KEY} from "../../../common/constants";
+import { tc_LAST_OPENED_KEY } from '../../../common/constants';
 
 class ProjectCard extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
-    this.state = {
-      lastOpenedTimeAgo:  this.getLastOpenedTimeAgo()
-    };
+    this.state = { lastOpenedTimeAgo:  this.getLastOpenedTimeAgo() };
   }
 
   componentDidMount(){
     // add interval listener to update last opened time ago every 60 seconds
-    if (this.state.lastOpenedTimeAgo)
+    if (this.state.lastOpenedTimeAgo) {
       this.interval = setInterval(this.updateLastOpenedTimeAgo.bind(this), 60000);
+    }
   }
 
   componentWillUnmount(){
     // remove the interval listener
-    if (this.interval)
+    if (this.interval) {
       clearInterval(this.interval);
+    }
   }
 
   getLastOpenedTimeAgo() {
     if (this.props.reducers.projectDetailsReducer && this.props.reducers.projectDetailsReducer.settings) {
       const lastOpened = this.props.reducers.projectDetailsReducer.settings[tc_LAST_OPENED_KEY];
+
       if (lastOpened) {
         return moment().to(lastOpened);
       } else {
@@ -43,9 +44,7 @@ class ProjectCard extends Component {
   }
 
   updateLastOpenedTimeAgo() {
-    this.setState({
-      lastOpenedTimeAgo: this.getLastOpenedTimeAgo()
-    });
+    this.setState({ lastOpenedTimeAgo: this.getLastOpenedTimeAgo() });
   }
 
   /**
@@ -54,7 +53,7 @@ class ProjectCard extends Component {
   * @return {component} - component returned
   */
   heading(callback) {
-    const {translate} = this.props;
+    const { translate } = this.props;
     const link = this.content() ? <a onClick={callback}>{translate('change_project')}</a> : <a/>;
     return (
       <span>{translate('current_project')} {link}</span>
@@ -88,12 +87,14 @@ class ProjectCard extends Component {
     const { target_language, project } = manifest;
     const bookAbbreviation = project.id;
     const bookName = target_language.book && target_language.book.name ?
-        target_language.book.name :
-        project.name;
+      target_language.book.name :
+      project.name;
     return (
       <div style={{ display: 'flex' }}>
-        <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden' }}>
-          <Glyphicon glyph="folder-open" style={{ fontSize: "120px", margin: '-10px 0 0 -51px' }} />
+        <div style={{
+          width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px 0 -16px', overflow: 'hidden',
+        }}>
+          <Glyphicon glyph="folder-open" style={{ fontSize: '120px', margin: '-10px 0 0 -51px' }} />
         </div>
         <div>
           <Hint position={'bottom'} label={projectName}>
@@ -103,10 +104,12 @@ class ProjectCard extends Component {
               maxWidth: 400,
               textOverflow: 'ellipsis',
               display: 'block',
-              whiteSpace: 'nowrap'
+              whiteSpace: 'nowrap',
             }}> {projectName} </strong>
           </Hint>
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px' }}>
+          <div style={{
+            display: 'flex', justifyContent: 'space-between', width: '410px', marginTop: '18px',
+          }}>
             {this.detail('time', this.getLastOpenedTimeAgo())}
             {this.detail('book', bookName + ' (' + bookAbbreviation + ')')}
             {this.detail('globe', target_language.name + ' (' + target_language.id + ')')}
@@ -122,14 +125,16 @@ class ProjectCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const {translate} = this.props;
+    const { translate } = this.props;
     const { projectDetailsReducer } = this.props.reducers;
     const { userdata } = this.props.reducers.loginReducer;
     const { projectSaveLocation, manifest } = projectDetailsReducer;
 
     if (projectSaveLocation && manifest.project && manifest.target_language) {
       content = (
-        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0',
+        }}>
           {this.contentDetails(projectSaveLocation, manifest)}
           <div style={{ marginRight: '-5px' }}>
             <ProjectCardMenu
@@ -153,10 +158,13 @@ class ProjectCard extends Component {
   }
 
   render() {
-    const {translate} = this.props;
+    const { translate } = this.props;
     const emptyMessage = translate('select_project');
     const emptyButtonLabel = translate('buttons.project_button');
-    const emptyButtonOnClick = () => { this.props.actions.goToStep(2) };
+
+    const emptyButtonOnClick = () => {
+      this.props.actions.goToStep(2);
+    };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}
@@ -173,7 +181,7 @@ class ProjectCard extends Component {
 ProjectCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
 };
 
 export default ProjectCard;

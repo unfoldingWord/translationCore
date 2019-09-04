@@ -1,4 +1,4 @@
-import {withLocalize} from 'react-localize-redux';
+import { withLocalize } from 'react-localize-redux';
 import LocaleSelectListContainer from './LocaleSelectListContainer';
 
 /**

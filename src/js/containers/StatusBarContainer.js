@@ -1,22 +1,21 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import path from "path-extra";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import path from 'path-extra';
 // Components
-import StatusBar from "../components/StatusBar";
+import StatusBar from '../components/StatusBar';
 // Actions
-import * as BodyUIActions from "../actions/BodyUIActions";
+import * as BodyUIActions from '../actions/BodyUIActions';
 import {
   getSelectedToolTitle,
   getIsHomeVisible,
   getProjectName,
   getProjectNickname,
-  getUsername
-} from "../selectors";
+  getUsername,
+} from '../selectors';
 
 class StatusBarContainer extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this._HandleGoToStep = this._HandleGoToStep.bind(this);
   }
@@ -24,20 +23,20 @@ class StatusBarContainer extends React.Component {
   _HandleGoToStep(stepNumber) {
     const {
       goToStep,
-      toggleHomeView
+      toggleHomeView,
     } = this.props;
     goToStep(stepNumber);
     toggleHomeView(true);
   }
 
-  render () {
+  render() {
     const {
       toolTitle,
       projectName,
       projectNickname,
       username,
       homeIsVisible,
-      translate
+      translate,
     } = this.props;
 
     return (
@@ -64,7 +63,7 @@ class StatusBarContainer extends React.Component {
  * @param usePath - optional for testing
  * @return {string} base name
  */
-export function getBaseName (projectPath, usePath = path) {
+export function getBaseName(projectPath, usePath = path) {
   return usePath.basename(projectPath);
 }
 
@@ -76,22 +75,20 @@ StatusBarContainer.propTypes = {
   projectNickname: PropTypes.string.isRequired,
   toolTitle: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    toolTitle: getSelectedToolTitle(state),
-    projectName: getProjectName(state),
-    projectNickname: getProjectNickname(state),
-    username: getUsername(state),
-    homeIsVisible: getIsHomeVisible(state)
-  };
-};
+const mapStateToProps = (state) => ({
+  toolTitle: getSelectedToolTitle(state),
+  projectName: getProjectName(state),
+  projectNickname: getProjectNickname(state),
+  username: getUsername(state),
+  homeIsVisible: getIsHomeVisible(state),
+});
 
 const mapDispatchToProps = {
   goToStep: BodyUIActions.goToStep,
-  toggleHomeView: BodyUIActions.toggleHomeView
+  toggleHomeView: BodyUIActions.toggleHomeView,
 };
 
 export default connect(

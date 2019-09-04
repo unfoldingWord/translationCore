@@ -14,13 +14,15 @@ import BaseDialog from './BaseDialog';
  */
 class SuccessDialog extends React.Component {
   render() {
-    const {translate, open, onClose, message} = this.props;
+    const {
+      translate, open, onClose, message,
+    } = this.props;
     return (
       <BaseDialog open={open}
-                  primaryLabel={translate('buttons.ok_button')}
-                  onSubmit={onClose}
-                  title={translate('success')}
-                  modal={false}>
+        primaryLabel={translate('buttons.ok_button')}
+        onSubmit={onClose}
+        title={translate('success')}
+        modal={false}>
         <span id="message">
           {message}
         </span>
@@ -33,7 +35,7 @@ SuccessDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   open: PropTypes.bool,
   onClose: PropTypes.func,
-  message: PropTypes.any.isRequired
+  message: PropTypes.any.isRequired,
 };
 
 export default SuccessDialog;

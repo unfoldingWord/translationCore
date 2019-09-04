@@ -48,7 +48,6 @@ class PopoverComponent extends Component {
         </Popover>
       </div>
     );
-
   }
 }
 

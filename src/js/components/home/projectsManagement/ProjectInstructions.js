@@ -1,10 +1,10 @@
-import React  from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { FloatingActionButton } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 
-const ProjectInstructions = ({translate}) => (
+const ProjectInstructions = ({ translate }) => (
   <MuiThemeProvider>
     <div>
       <p>{translate('projects.select_project_from_list')}</p>
@@ -13,27 +13,30 @@ const ProjectInstructions = ({translate}) => (
 
         <FloatingActionButton
           disabled={true}
-          disabledColor={"var(--accent-color-dark)"}
+          disabledColor={'var(--accent-color-dark)'}
           mini={true}
-          style={{ margin: "5px", alignSelf: "flex-end", zIndex: "999" }}
+          style={{
+            margin: '5px', alignSelf: 'flex-end', zIndex: '999',
+          }}
         >
           <Glyphicon
-            style={{ fontSize: "18px", color: "var(--reverse-color)" }}
-            glyph={"menu-hamburger"}
+            style={{ fontSize: '18px', color: 'var(--reverse-color)' }}
+            glyph={'menu-hamburger'}
           />
         </FloatingActionButton>
       </div>
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <p style={{ margin: 0 }}>
           {translate('projects.to_export_project')}
-          <Glyphicon glyph="option-vertical" style={{ fontSize: "large", color:'black', margin:'0px 5px' }} />
+          <Glyphicon glyph="option-vertical" style={{
+            fontSize: 'large', color:'black', margin:'0px 5px',
+          }} />
         </p>
       </div>
-      <p>{translate('projects.supported_projects', {tstudio: translate('_.translation_studio')})}</p>
+      <p>{translate('projects.supported_projects', { tstudio: translate('_.translation_studio') })}</p>
     </div>
   </MuiThemeProvider>
 );
-ProjectInstructions.propTypes = {
-  translate: PropTypes.func.isRequired
-};
+
+ProjectInstructions.propTypes = { translate: PropTypes.func.isRequired };
 export default ProjectInstructions;

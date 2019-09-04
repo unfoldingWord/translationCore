@@ -1,22 +1,26 @@
-import path from "path-extra";
-import fs from "fs-extra";
-import types from './ActionTypes';
+import path from 'path-extra';
+import fs from 'fs-extra';
 // actions
-import {getGroupDataForVerse, showInvalidatedWarnings, validateSelections} from "./SelectionsActions";
-import * as AlertModalActions from "./AlertModalActions";
-import {batchActions} from "redux-batched-actions";
+import { batchActions } from 'redux-batched-actions';
 // helpers
-import {generateTimestamp} from '../helpers/index';
+import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import {delay} from "../common/utils";
+import { delay } from '../common/utils';
 import {
   getSelectedToolApi,
   getSelectedToolName,
   getSupportingToolApis,
   getTranslate,
-  getUsername
+  getUsername,
 } from '../selectors';
-import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+import {
+  WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+} from '../common/constants';
+import * as AlertModalActions from './AlertModalActions';
+import {
+  getGroupDataForVerse, showInvalidatedWarnings, validateSelections,
+} from './SelectionsActions';
+import types from './ActionTypes';
 
 /**
  * Records an edit to the currently selected verse in the target bible.
@@ -29,12 +33,10 @@ import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/
  * @param {string|null} [username=null] - The user's alias. If null the current username will be used.
  * @return {Function}
  */
-export const editSelectedTargetVerse = (before, after, tags, username=null) => {
-  return (dispatch, getState) => {
-    const contextId = getState().contextIdReducer.contextId;
-    let {chapter, verse} = contextId.reference;
-    dispatch(editTargetVerse(chapter, verse, before, after, tags, username));
-  };
+export const editSelectedTargetVerse = (before, after, tags, username=null) => (dispatch, getState) => {
+  const contextId = getState().contextIdReducer.contextId;
+  let { chapter, verse } = contextId.reference;
+  dispatch(editTargetVerse(chapter, verse, before, after, tags, username));
 };
 
 /**
@@ -54,17 +56,15 @@ export const editSelectedTargetVerse = (before, after, tags, username=null) => {
     }} verseEdit - record that is saved to file system
  * @return {Function}
  */
-export const writeTranslationWordsVerseEditToFile = (verseEdit) => {
-  return (dispatch, getState) => {
-    verseEdit.gatewayLanguageQuote = verseEdit.gatewayLanguageQuote || "";
-    const {projectSaveLocation} = getState().projectDetailsReducer;
-    const newFilename = verseEdit.modifiedTimestamp + '.json';
-    const verseEditsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'verseEdits',
-      verseEdit.activeBook, verseEdit.contextId.reference.chapter.toString(),
-      verseEdit.contextId.reference.verse.toString());
-    fs.ensureDirSync(verseEditsPath);
-    fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
-  };
+export const writeTranslationWordsVerseEditToFile = (verseEdit) => (dispatch, getState) => {
+  verseEdit.gatewayLanguageQuote = verseEdit.gatewayLanguageQuote || '';
+  const { projectSaveLocation } = getState().projectDetailsReducer;
+  const newFilename = verseEdit.modifiedTimestamp + '.json';
+  const verseEditsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'verseEdits',
+    verseEdit.activeBook, verseEdit.contextId.reference.chapter.toString(),
+    verseEdit.contextId.reference.verse.toString());
+  fs.ensureDirSync(verseEditsPath);
+  fs.outputJSONSync(path.join(verseEditsPath, newFilename.replace(/[:"]/g, '_')), verseEdit);
 };
 
 /**
@@ -77,20 +77,24 @@ export const getCheckVerseEditsInGroupData = (state, contextId, editedChecks) =>
   // in group data reducer set verse edit flag for every check of the verse edited
   const matchedGroupData = getGroupDataForVerse(state, contextId);
   const keys = Object.keys(matchedGroupData);
+
   if (keys.length) {
     for (let i = 0, l = keys.length; i < l; i++) {
       const groupItem = matchedGroupData[keys[i]];
+
       if (groupItem) {
         for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
           const check = groupItem[j];
+
           if (!check.verseEdits) { // only set if not yet set
             const groupId = check.contextId.groupId;
+
             if (!editedChecks[groupId]) {
               editedChecks[groupId] = [];
             }
             editedChecks[groupId].push({
               type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-              contextId: check.contextId
+              contextId: check.contextId,
             });
           }
         }
@@ -108,24 +112,27 @@ export const getCheckVerseEditsInGroupData = (state, contextId, editedChecks) =>
 export const editChecksToBatch = (editedChecks, actionBatch) => {
   const groupIds = Object.keys(editedChecks);
   let groupEditsCount = 0;
+
   // process by group
   for (let j = 0, l = groupIds.length; j < l; j++) {
     const groupId = groupIds[j];
     const verseEdits = editedChecks[groupId];
+
     if (verseEdits.length === 1) { // if only one, then don't need to combine
       actionBatch.push(verseEdits[0]); // batch the only verse edit
       groupEditsCount += 1;
     } else { // combine multiple verse edits into one call
       const references = verseEdits.map(item => (item.contextId.reference)); // just get all the references to change
+
       actionBatch.push({
         type: types.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
         groupId,
-        references
+        references,
       });
       groupEditsCount += references.length;
     }
   }
-  return {groupIds, groupEditsCount};
+  return { groupIds, groupEditsCount };
 };
 
 /**
@@ -133,31 +140,33 @@ export const editChecksToBatch = (editedChecks, actionBatch) => {
  * @param {Object} twVerseEdits - indexed by verse - contextIds for each verse edit
  * @return {Function}
  */
-export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
-  return async (dispatch, getState) => {
-    await delay(400);
-    const versesEdited = Object.keys(twVerseEdits);
-    if (versesEdited && versesEdited.length) {
-      const state = getState();
-      const editedChecks = {};
-      for (let i = 0, lenVE = versesEdited.length; i < lenVE; i++) {
-        const contextId = twVerseEdits[versesEdited[i]];
-        getCheckVerseEditsInGroupData(state, contextId, editedChecks);
-      }
-      const actionBatch = [];
-      const {groupIds, groupEditsCount} = editChecksToBatch(editedChecks, actionBatch);
-      if (actionBatch.length) {
-        const translate = getTranslate(getState());
-        dispatch(AlertModalActions.openAlertDialog(translate("loading_verse_edits"), true));
-        await delay(400);
-        console.log("ensureCheckVerseEditsInGroupData() - edited verses=" + versesEdited.length);
-        dispatch(batchActions(actionBatch));
-        console.log("ensureCheckVerseEditsInGroupData() - total checks changed=" + groupEditsCount);
-        console.log("ensureCheckVerseEditsInGroupData() - batch finished, groupId's edited=" + groupIds.length);
-        dispatch(AlertModalActions.closeAlertDialog());
-      }
+export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => async (dispatch, getState) => {
+  await delay(400);
+  const versesEdited = Object.keys(twVerseEdits);
+
+  if (versesEdited && versesEdited.length) {
+    const state = getState();
+    const editedChecks = {};
+
+    for (let i = 0, lenVE = versesEdited.length; i < lenVE; i++) {
+      const contextId = twVerseEdits[versesEdited[i]];
+      getCheckVerseEditsInGroupData(state, contextId, editedChecks);
     }
-  };
+
+    const actionBatch = [];
+    const { groupIds, groupEditsCount } = editChecksToBatch(editedChecks, actionBatch);
+
+    if (actionBatch.length) {
+      const translate = getTranslate(getState());
+      dispatch(AlertModalActions.openAlertDialog(translate('loading_verse_edits'), true));
+      await delay(400);
+      console.log('ensureCheckVerseEditsInGroupData() - edited verses=' + versesEdited.length);
+      dispatch(batchActions(actionBatch));
+      console.log('ensureCheckVerseEditsInGroupData() - total checks changed=' + groupEditsCount);
+      console.log('ensureCheckVerseEditsInGroupData() - batch finished, groupId\'s edited=' + groupIds.length);
+      dispatch(AlertModalActions.closeAlertDialog());
+    }
+  }
 };
 
 /**
@@ -182,27 +191,28 @@ export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => {
  * @return {Function}
  */
 export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
-                                              currentCheckContextId, batchGroupData) => {
-  return async(dispatch, getState) => {
-    const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
-    const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
-      verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
-      verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
+  currentCheckContextId, batchGroupData) => async (dispatch, getState) => {
+  const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
+  const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
 
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
-    const state = getState();
-    const toolName = getSelectedToolName(state);
-    if (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES) {
-      const editedChecks = {};
-      getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, editedChecks);
-      const {groupEditsCount} = editChecksToBatch(editedChecks, actionsBatch); // optimize edits into batch
-      if (groupEditsCount) {
-        console.log(`doBackgroundVerseEditsUpdates() - ${groupEditsCount} group edits found`);
-      }
+  dispatch(recordTargetVerseEdit(verseEdit.activeBook, chapterWithVerseEdit, verseWithVerseEdit,
+    verseEdit.verseBefore, verseEdit.verseAfter, verseEdit.tags, verseEdit.userName, generateTimestamp(),
+    verseEdit.gatewayLanguageCode, verseEdit.gatewayLanguageQuote, currentCheckContextId));
+
+  const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
+  const state = getState();
+  const toolName = getSelectedToolName(state);
+
+  if (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES) {
+    const editedChecks = {};
+    getCheckVerseEditsInGroupData(state, contextIdWithVerseEdit, editedChecks);
+    const { groupEditsCount } = editChecksToBatch(editedChecks, actionsBatch); // optimize edits into batch
+
+    if (groupEditsCount) {
+      console.log(`doBackgroundVerseEditsUpdates() - ${groupEditsCount} group edits found`);
     }
-    dispatch(batchActions(actionsBatch));
-  };
+  }
+  dispatch(batchActions(actionsBatch));
 };
 
 /**
@@ -229,53 +239,55 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
  * @return {Function}
  */
 export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWithVerseEdit,
-                                                        currentCheckContextId, showSelectionInvalidated,
-                                                        batchGroupData = null) => {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData  : []; // if batch array passed in then use it, otherwise create new array
-    dispatch(AlertModalActions.openAlertDialog(translate("tools.invalidation_checking"), true));
-    await delay(1000);
-    const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
-    const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
-    dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
+  currentCheckContextId, showSelectionInvalidated,
+  batchGroupData = null) => async (dispatch, getState) => {
+  const translate = getTranslate(getState());
+  const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
+  dispatch(AlertModalActions.openAlertDialog(translate('tools.invalidation_checking'), true));
+  await delay(1000);
+  const chapterWithVerseEdit = contextIdWithVerseEdit.reference.chapter;
+  const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
+  dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
-    if (getSelectedToolName(getState()) === WORD_ALIGNMENT) {
-      // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
-      dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
-      // in group data reducer set verse edit flag for the verse edited
-      dispatch({
-        type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
-        contextId: contextIdWithVerseEdit
-      });
-    }
-    let showAlignmentsInvalidated = false;
+  if (getSelectedToolName(getState()) === WORD_ALIGNMENT) {
+    // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
+    dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
+    // in group data reducer set verse edit flag for the verse edited
+    dispatch({
+      type: types.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
+      contextId: contextIdWithVerseEdit,
+    });
+  }
 
-    // TRICKY: this is a temporary hack to validate verse edits.
-    // TODO: This can be removed once the ScripturePane is updated to provide
-    // callbacks for editing so that tools can manually perform the edit and
-    // trigger validation on the specific verse.
-    const newState = getState();
-    const apis = getSupportingToolApis(newState);
-    if (WORD_ALIGNMENT in apis && apis[WORD_ALIGNMENT] !== null) {
-      // for other tools
-      showAlignmentsInvalidated = !apis[WORD_ALIGNMENT].trigger('validateVerse',
-                                                                  chapterWithVerseEdit, verseWithVerseEdit, true);
-    } else {
-      // for wA
-      const api = getSelectedToolApi(newState);
-      if (api !== null) {
-        showAlignmentsInvalidated = !api.trigger('validateVerse',
-                                                  chapterWithVerseEdit, verseWithVerseEdit, true);
-      }
+  let showAlignmentsInvalidated = false;
+
+  // TRICKY: this is a temporary hack to validate verse edits.
+  // TODO: This can be removed once the ScripturePane is updated to provide
+  // callbacks for editing so that tools can manually perform the edit and
+  // trigger validation on the specific verse.
+  const newState = getState();
+  const apis = getSupportingToolApis(newState);
+
+  if (WORD_ALIGNMENT in apis && apis[WORD_ALIGNMENT] !== null) {
+    // for other tools
+    showAlignmentsInvalidated = !apis[WORD_ALIGNMENT].trigger('validateVerse',
+      chapterWithVerseEdit, verseWithVerseEdit, true);
+  } else {
+    // for wA
+    const api = getSelectedToolApi(newState);
+
+    if (api !== null) {
+      showAlignmentsInvalidated = !api.trigger('validateVerse',
+        chapterWithVerseEdit, verseWithVerseEdit, true);
     }
-    dispatch(AlertModalActions.closeAlertDialog());
-    if (showSelectionInvalidated || showAlignmentsInvalidated) {
-      dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
-    }
-    dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
-                                           currentCheckContextId, actionsBatch));
-  };
+  }
+  dispatch(AlertModalActions.closeAlertDialog());
+
+  if (showSelectionInvalidated || showAlignmentsInvalidated) {
+    dispatch(showInvalidatedWarnings(showSelectionInvalidated, showAlignmentsInvalidated));
+  }
+  dispatch(doBackgroundVerseEditsUpdates(verseEdit, contextIdWithVerseEdit,
+    currentCheckContextId, actionsBatch));
 };
 
 /**
@@ -291,51 +303,53 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
  * @param {string[]} tags - an array of tags indicating the reason for the edit
  * @param {string|null} username - The user's alias. If null the current username will be used.
  */
-export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username = null) => {
-  return async (dispatch, getState) => {
-    const {
-      contextIdReducer
-    } = getState();
-    const {contextId: currentCheckContextId} = contextIdReducer;
-    const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-    let {bookId, chapter: currentCheckChapter, verse: currentCheckVerse} = currentCheckContextId.reference;
-    verseWithVerseEdit = (typeof verseWithVerseEdit === 'string') ? parseInt(verseWithVerseEdit) : verseWithVerseEdit; // make sure number
-    const contextIdWithVerseEdit = {
-      ...currentCheckContextId,
-      reference: {
-        ...currentCheckContextId.reference,
-        chapter: chapterWithVerseEdit,
-        verse: verseWithVerseEdit
-      }
-    };
-    // fallback to the current username
-    let userAlias = username;
-    if(userAlias === null) {
-      userAlias = getUsername(getState());
-    }
-    const selectionsValidationResults = {};
-    const actionsBatch = [];
-    dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
-      false, selectionsValidationResults, actionsBatch));
-
-    // create verse edit record to write to file system
-    const modifiedTimestamp = generateTimestamp();
-    const verseEdit = {
-      verseBefore: before,
-      verseAfter: after,
-      tags,
-      userName: userAlias,
-      activeBook: bookId,
-      activeChapter: currentCheckChapter,
-      activeVerse: currentCheckVerse,
-      modifiedTimestamp: modifiedTimestamp,
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-      contextId: contextIdWithVerseEdit
-    };
-    dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
-        selectionsValidationResults.selectionsChanged, actionsBatch));
+export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, username = null) => async (dispatch, getState) => {
+  const { contextIdReducer } = getState();
+  const { contextId: currentCheckContextId } = contextIdReducer;
+  const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+  let {
+    bookId, chapter: currentCheckChapter, verse: currentCheckVerse,
+  } = currentCheckContextId.reference;
+  verseWithVerseEdit = (typeof verseWithVerseEdit === 'string') ? parseInt(verseWithVerseEdit) : verseWithVerseEdit; // make sure number
+  const contextIdWithVerseEdit = {
+    ...currentCheckContextId,
+    reference: {
+      ...currentCheckContextId.reference,
+      chapter: chapterWithVerseEdit,
+      verse: verseWithVerseEdit,
+    },
   };
+    // fallback to the current username
+  let userAlias = username;
+
+  if (userAlias === null) {
+    userAlias = getUsername(getState());
+  }
+
+  const selectionsValidationResults = {};
+  const actionsBatch = [];
+
+  dispatch(validateSelections(after, contextIdWithVerseEdit, chapterWithVerseEdit, verseWithVerseEdit,
+    false, selectionsValidationResults, actionsBatch));
+
+  // create verse edit record to write to file system
+  const modifiedTimestamp = generateTimestamp();
+  const verseEdit = {
+    verseBefore: before,
+    verseAfter: after,
+    tags,
+    userName: userAlias,
+    activeBook: bookId,
+    activeChapter: currentCheckChapter,
+    activeVerse: currentCheckVerse,
+    modifiedTimestamp: modifiedTimestamp,
+    gatewayLanguageCode,
+    gatewayLanguageQuote,
+    contextId: contextIdWithVerseEdit,
+  };
+
+  dispatch(updateVerseEditStatesAndCheckAlignments(verseEdit, contextIdWithVerseEdit, currentCheckContextId,
+    selectionsValidationResults.selectionsChanged, actionsBatch));
 };
 
 /**
@@ -356,7 +370,9 @@ export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before
  * @return {Object} - record to save to file
  */
 export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tags, username, modified, glCode=null, glQuote=null,
-  {reference:{chapter:activeChapter, verse:activeVerse}, quote, groupId, occurrence}) => ({
+  {
+    reference:{ chapter:activeChapter, verse:activeVerse }, quote, groupId, occurrence,
+  }) => ({
   type: types.ADD_VERSE_EDIT,
   before,
   after,
@@ -372,10 +388,10 @@ export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tag
     bookId,
     chapter: parseInt(chapter),
     verse: parseInt(verse),
-    groupId
+    groupId,
   },
   quote,
-  occurrence
+  occurrence,
 });
 
 /**
@@ -390,5 +406,5 @@ export const updateTargetVerse = (chapter, verse, text) => ({
   type: types.UPDATE_TARGET_VERSE,
   editedText: text,
   chapter,
-  verse
+  verse,
 });

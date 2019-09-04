@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { ipcRenderer } from 'electron';
 import DownloadDialog from '../../components/dialogComponents/DownloadDialog';
 import { getTranslate } from '../../selectors/index';
-import {connect} from 'react-redux';
-import { ipcRenderer } from 'electron';
 
 /**
  * Renders a dialog to download the software update.
@@ -17,7 +17,6 @@ import { ipcRenderer } from 'electron';
  * @property {object} update - the available update
  */
 class DownloadUpdateDialogContainer extends React.Component {
-
   constructor(props) {
     super(props);
     this._handleClose = this._handleClose.bind(this);
@@ -31,15 +30,13 @@ class DownloadUpdateDialogContainer extends React.Component {
       indeterminate: true,
       total: props.update.size,
       cancelToken: null,
-      error: false
+      error: false,
     };
-    this.state = {
-      ...this.initialState
-    };
+    this.state = { ...this.initialState };
   }
 
   componentDidCatch(error, info) {
-    const {onClose} = this.props;
+    const { onClose } = this.props;
     console.error(error, info);
     onClose();
   }
@@ -52,9 +49,7 @@ class DownloadUpdateDialogContainer extends React.Component {
    * @private
    */
   _onDownloadStarted(event, downloadId) {
-    this.setState({
-      cancelToken:downloadId
-    });
+    this.setState({ cancelToken:downloadId });
   }
 
   /**
@@ -64,13 +59,12 @@ class DownloadUpdateDialogContainer extends React.Component {
    * @private
    */
   _onDownloadProgress(event, progress) {
-    const {update} = this.props;
+    const { update } = this.props;
+
     this.setState({
       indeterminate: false,
-      headers: {
-        Accept: update.content_type
-      },
-      downloaded: update.size * progress
+      headers: { Accept: update.content_type },
+      downloaded: update.size * progress,
     });
   }
 
@@ -92,7 +86,7 @@ class DownloadUpdateDialogContainer extends React.Component {
     console.error('Download error', error);
     this.setState({
       ...this.initialState,
-      error: true
+      error: true,
     });
   }
 
@@ -105,16 +99,16 @@ class DownloadUpdateDialogContainer extends React.Component {
   }
 
   componentDidMount() {
-    const {update} = this.props;
+    const { update } = this.props;
 
     this.setState({
       ...this.initialState,
-      indeterminate: true
+      indeterminate: true,
     });
 
     ipcRenderer.send('download', {
       filename: update.name,
-      url: update.url
+      url: update.url,
     });
 
     ipcRenderer.once('download-started', this._onDownloadStarted);
@@ -128,9 +122,10 @@ class DownloadUpdateDialogContainer extends React.Component {
    * @private
    */
   _cancelDownload() {
-    const {cancelToken} = this.state;
-    if(cancelToken) {
-      ipcRenderer.send('download-cancel', {id: cancelToken});
+    const { cancelToken } = this.state;
+
+    if (cancelToken) {
+      ipcRenderer.send('download-cancel', { id: cancelToken });
     }
   }
 
@@ -139,20 +134,22 @@ class DownloadUpdateDialogContainer extends React.Component {
    * @private
    */
   _handleClose() {
-    const {onClose} = this.props;
+    const { onClose } = this.props;
     this._cancelDownload();
     onClose();
   }
 
   render() {
-    const {translate, update, open} = this.props;
-    const {downloaded, indeterminate, total, error} = this.state;
+    const {
+      translate, update, open,
+    } = this.props;
+    const {
+      downloaded, indeterminate, total, error,
+    } = this.state;
     let message = (
       <div>
         <p>
-          {translate('updates.downloading_version', {
-            version: update.version
-          })}
+          {translate('updates.downloading_version', { version: update.version })}
         </p>
         <p>
           {Math.round(downloaded/1024/1025)}/{Math.round(total/1024/1025)} MB
@@ -160,7 +157,8 @@ class DownloadUpdateDialogContainer extends React.Component {
       </div>
     );
     const title = translate('updates.downloading');
-    if(error) {
+
+    if (error) {
       message = (
         <p>
           {translate('updates.download_error')}
@@ -168,13 +166,13 @@ class DownloadUpdateDialogContainer extends React.Component {
       );
     }
     return <DownloadDialog message={message}
-                           size={total}
-                           open={open}
-                           indeterminate={indeterminate}
-                           sizeDownloaded={downloaded}
-                           cancelLabel={translate('buttons.cancel_button')}
-                           onCancel={this._handleClose}
-                           title={title}/>;
+      size={total}
+      open={open}
+      indeterminate={indeterminate}
+      sizeDownloaded={downloaded}
+      cancelLabel={translate('buttons.cancel_button')}
+      onCancel={this._handleClose}
+      title={title}/>;
   }
 }
 
@@ -182,9 +180,8 @@ DownloadUpdateDialogContainer.propTypes = {
   open: PropTypes.bool.isRequired,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
-  update: PropTypes.object.isRequired
+  update: PropTypes.object.isRequired,
 };
-const mapStateToProps = (state) => ({
-  translate: getTranslate(state)
-});
+
+const mapStateToProps = (state) => ({ translate: getTranslate(state) });
 export default connect(mapStateToProps)(DownloadUpdateDialogContainer);
