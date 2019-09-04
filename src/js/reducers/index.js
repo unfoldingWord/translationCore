@@ -29,13 +29,13 @@ import missingVersesReducer from './missingVersesReducer';
 import localImportReducer from './localImportReducer';
 import sourceContentUpdatesReducer from './sourceContentUpdatesReducer';
 import softwareUpdateReducer from './softwareUpdateReducer';
-import { localeReducer as locale } from 'react-localize-redux';
+import { localizeReducer as localize } from 'react-localize-redux';
 import localeSettings from './localeSettings';
 import alerts from './alerts';
 
 // combining reducers
 const rootReducers = combineReducers({
-  locale,
+  localize,
   alerts,
   localeSettings,
   toolsReducer,
