@@ -25,14 +25,12 @@ import {delay} from "../common/utils";
 function loadCheckData() {
   return async (dispatch, getState) => {
     const state = getState();
-    console.log("loadCheckData()");
     const actionsBatch = [];
     actionsBatch.push(loadSelections(state));
     actionsBatch.push(loadComments(state));
     actionsBatch.push(loadReminders(state));
     actionsBatch.push(loadInvalidated(state));
     dispatch(batchActions(actionsBatch)); // process the batch
-    console.log("loadCheckData() - changing context done");
   };
 }
 
@@ -62,7 +60,7 @@ export const changeCurrentContextId = contextId => {
           const repo = await Repo.open(projectDir, state.loginReducer.userdata);
           const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
           if (!saveStarted) {
-            console.log(`changeCurrentContextId() - Saving already running, skipping save after ${refStr}`);
+            console.log(`changeCurrentContextId() - GIT Save already running, skipping save after ${refStr}`);
           }
         } catch(e) {
           console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
