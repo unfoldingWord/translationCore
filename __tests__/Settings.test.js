@@ -9,7 +9,7 @@ describe('actions', () => {
     const expectedAction = {
       type: types.SET_SETTING,
       key,
-      value
+      value,
     };
     expect(actions.setSetting(key, value)).toEqual(expectedAction);
   });
@@ -18,7 +18,7 @@ describe('actions', () => {
     const key = 'setting_key';
     const expectedAction = {
       type: types.TOGGLE_SETTING,
-      key
+      key,
     };
     expect(actions.toggleSetting(key)).toEqual(expectedAction);
   });
@@ -31,7 +31,7 @@ describe('actions', () => {
       type: types.UPDATE_TOOL_SETTINGS,
       moduleNamespace,
       settingsPropertyName,
-      toolSettingsData
+      toolSettingsData,
     };
     expect(actions.setToolSettings(moduleNamespace, settingsPropertyName, toolSettingsData)).toEqual(expectedAction);
   });
@@ -41,61 +41,45 @@ describe('reducers', () => {
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
       currentSettings: {
-        showTutorial: false,
-        "usfmExportType": "usfm2",
-        developerMode: false,
-        csvSaveLocation: null,
-        online: true,
-        onlineMode: false
+        'showTutorial': false,
+        'usfmExportType': 'usfm2',
+        'developerMode': false,
+        'csvSaveLocation': null,
+        'online': true,
+        'onlineMode': false,
       },
-      toolsSettings: {}
+      toolsSettings: {},
     });
   });
 
   it('should handle SET_SETTING', () => {
     expect(
-      reducer({currentSettings: {}}, {
+      reducer({ currentSettings: {} }, {
         type: types.SET_SETTING,
         key: 'mySetting',
-        value: 'myValue'
+        value: 'myValue',
       })
-    ).toEqual({
-      currentSettings: {
-        mySetting: 'myValue'
-      }
-    });
+    ).toEqual({ currentSettings: { mySetting: 'myValue' } });
   });
 
   it('should handle TOGGLE_SETTING', () => {
     expect(
-      reducer({currentSettings: { setting: 'string'}}, {
+      reducer({ currentSettings: { setting: 'string' } }, {
         type: types.TOGGLE_SETTING,
-        key: 'setting'
+        key: 'setting',
       })
-    ).toEqual({
-      currentSettings: {
-        setting: false
-      }
-    });
+    ).toEqual({ currentSettings: { setting: false } });
     expect(
-      reducer({currentSettings: { setting: true}}, {
+      reducer({ currentSettings: { setting: true } }, {
         type: types.TOGGLE_SETTING,
-        key: 'setting'
+        key: 'setting',
       })
-    ).toEqual({
-      currentSettings: {
-        setting: false
-      }
-    });
+    ).toEqual({ currentSettings: { setting: false } });
     expect(
-      reducer({currentSettings: { setting: false}}, {
+      reducer({ currentSettings: { setting: false } }, {
         type: types.TOGGLE_SETTING,
-        key: 'setting'
+        key: 'setting',
       })
-    ).toEqual({
-      currentSettings: {
-        setting: true
-      }
-    });
+    ).toEqual({ currentSettings: { setting: true } });
   });
 });

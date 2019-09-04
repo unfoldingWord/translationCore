@@ -1,8 +1,8 @@
 /* eslint-env jest */
 import React from 'react';
-import MyProjects from '../src/js/components/home/projectsManagement/MyProjects';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
+import MyProjects from '../src/js/components/home/projectsManagement/MyProjects';
 
 // Tests for MyProjects React Component
 describe('MyProjects component renders correctly', () => {
@@ -16,9 +16,9 @@ describe('MyProjects component renders correctly', () => {
         bookName: '1 Corinthians',
         target_language: {
           id: 'en',
-          name: 'English'
+          name: 'English',
         },
-        isSelected: false
+        isSelected: false,
       },
       {
         projectName: 'hi_tit',
@@ -28,14 +28,12 @@ describe('MyProjects component renders correctly', () => {
         bookName: 'Titus',
         target_language: {
           id: 'hi',
-          name: 'Hindi'
+          name: 'Hindi',
         },
-        isSelected: false
-      }
+        isSelected: false,
+      },
     ];
-    const userdata = {
-      username: 'manny-test'
-    };
+    const userdata = { username: 'manny-test' };
     const renderedValue = shallow(
       <MuiThemeProvider>
         <MyProjects
@@ -53,9 +51,7 @@ describe('MyProjects component renders correctly', () => {
 describe('MyProjects shows instruction if no projects', () => {
   test('MyProjects component render should match snapshot', () => {
     const myProjects = [];
-    const userdata = {
-      username: 'manny-test'
-    };
+    const userdata = { username: 'manny-test' };
     const blank = shallow(
       <MuiThemeProvider>
         <MyProjects

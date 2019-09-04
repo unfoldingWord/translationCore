@@ -1,15 +1,15 @@
 /* eslint-env jest */
 
 import React from 'react';
+import { shallow, configure } from 'enzyme';
+import { AutoComplete } from 'material-ui';
+import Adapter from 'enzyme-adapter-react-16';
 import * as LanguageID from '../src/js/components/projectValidation/ProjectInformationCheck/LanguageIdTextBox';
 import LanguageIdTextBox from '../src/js/components/projectValidation/ProjectInformationCheck/LanguageIdTextBox';
-import * as LangHelpers from "../src/js/helpers/LanguageHelpers";
-import {shallow, configure} from "enzyme";
-import {AutoComplete} from "material-ui";
-import Adapter from 'enzyme-adapter-react-16';
+import * as LangHelpers from '../src/js/helpers/LanguageHelpers';
 
 beforeAll(() => {
-  configure({adapter: new Adapter()});
+  configure({ adapter: new Adapter() });
 });
 
 describe('Test LanguageIdTextBox.selectLanguage()',()=> {
@@ -23,9 +23,9 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
 
   test('with valid code should update all language fields', () => {
     // given
-    const expectedLanguageID = "ha";
+    const expectedLanguageID = 'ha';
     const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
-    const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
+    const expectedLanguageDir = expectedLanguage.ltr ? 'ltr' : 'rtl';
     const index = -1;
 
     // when
@@ -39,13 +39,13 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
 
   test('with valid index should update all language fields', () => {
     // given
-    const expectedLanguageID = "ar";
+    const expectedLanguageID = 'ar';
     const index = getIndexForCode(expectedLanguageID);
     const expectedLanguage = LangHelpers.getLanguagesSortedByCode()[index];
-    const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
+    const expectedLanguageDir = expectedLanguage.ltr ? 'ltr' : 'rtl';
 
     // when
-    LanguageID.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    LanguageID.selectLanguage({ code: expectedLanguage.code }, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
@@ -55,8 +55,8 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
 
   test('with invalid code should clear language name', () => {
     // given
-    const expectedLanguageID = "zzz";
-    const expectedLanguageName = "";
+    const expectedLanguageID = 'zzz';
+    const expectedLanguageName = '';
     const index = -1;
 
     // when
@@ -70,8 +70,8 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
 
   test('with null should should clear language name and language ID', () => {
     // given
-    const expectedLanguageID = "";
-    const expectedLanguageName = "";
+    const expectedLanguageID = '';
+    const expectedLanguageName = '';
     const index = -1;
 
     // when
@@ -82,7 +82,6 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
     expect(updateLanguageSettings).not.toHaveBeenCalled();
   });
-
 });
 
 describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
@@ -101,7 +100,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
 
   test('should give message for invalid languageID', () => {
     // given
-    const languageID = "zzz";
+    const languageID = 'zzz';
 
     // when
     const results = LanguageID.getErrorMessage(translate, languageID);
@@ -112,7 +111,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
 
   test('should not give message for valid languageID', () => {
     // given
-    const languageID = "hsl";
+    const languageID = 'hsl';
 
     // when
     const results = LanguageID.getErrorMessage(translate, languageID);
@@ -133,8 +132,8 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('with valid language should not show error', () => {
     // given
-    const languageId = "en";
-    const expectedErrorText = "";
+    const languageId = 'en';
+    const expectedErrorText = '';
     const expectedSearchText = languageId;
 
     // when
@@ -146,7 +145,7 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('with invalid language should show error', () => {
     // given
-    const languageId = "enj";
+    const languageId = 'enj';
     const expectedErrorText = 'project_validation.invalid_language_code';
     const expectedSearchText = languageId;
 
@@ -159,7 +158,7 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('with empty language should show error', () => {
     // given
-    const languageId = "";
+    const languageId = '';
     const expectedErrorText = 'project_validation.field_required';
     const expectedSearchText = languageId;
 
@@ -172,13 +171,13 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on text change valid code should update all language fields', () => {
     // given
-    const initialLanguageId = "en";
+    const initialLanguageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageID = "es";
+    const newlLanguageID = 'es';
     const expectedLanguageID = newlLanguageID;
-    const expectedLanguageName = "español";
-    const expectedLanguageDir = "ltr";
+    const expectedLanguageName = 'español';
+    const expectedLanguageDir = 'ltr';
 
     // when
     props.onUpdateInput(newlLanguageID);
@@ -191,12 +190,12 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on text change invalid code should update language id and clear name', () => {
     // given
-    const initialLanguageId = "en";
+    const initialLanguageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageID = "eszz";
+    const newlLanguageID = 'eszz';
     const expectedLanguageID = newlLanguageID;
-    const expectedLanguageName = "";
+    const expectedLanguageName = '';
 
 
     // when
@@ -210,13 +209,13 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on new text Selection should update all language fields', () => {
     // given
-    const initialLanguageId = "en";
+    const initialLanguageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageID = "es";
+    const newlLanguageID = 'es';
     const expectedLanguageID = newlLanguageID;
-    const expectedLanguageName = "español";
-    const expectedLanguageDir = "ltr";
+    const expectedLanguageName = 'español';
+    const expectedLanguageDir = 'ltr';
 
     // when
     props.onNewRequest(newlLanguageID, -1);
@@ -229,14 +228,14 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on new menu Selection should update all language fields', () => {
     // given
-    const newlLanguageID = "ar";
+    const newlLanguageID = 'ar';
     const index = getIndexForCode(newlLanguageID);
-    const initialLanguageId = "en";
+    const initialLanguageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
     const expectedLanguageID = newlLanguageID;
-    const expectedLanguageName = "Arabic";
-    const expectedLanguageDir = "rtl";
+    const expectedLanguageName = 'Arabic';
+    const expectedLanguageDir = 'rtl';
 
     // when
     props.onNewRequest({ code: newlLanguageID }, index);
@@ -249,17 +248,17 @@ describe('Test LanguageIdTextBox component',()=>{
 
   test('on new Selection with null should clear language name and id', () => {
     // given
-    const initialLanguageId = "es";
+    const initialLanguageId = 'es';
     const enzymeWrapper = shallowRenderComponent(initialLanguageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
     const newlLanguageID = null;
-    const expectedLanguageID = "";
-    const expectedLanguageName = "";
+    const expectedLanguageID = '';
+    const expectedLanguageName = '';
 
     // when
     props.onNewRequest(newlLanguageID, -1);
 
-   // then
+    // then
     verifyCalledOnceWith(updateLanguageName, expectedLanguageName);
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
     expect(updateLanguageSettings).not.toHaveBeenCalled();
@@ -296,6 +295,7 @@ describe('Test LanguageIdTextBox component',()=>{
 function verifyCalledOnceWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toEqual(1);
+
   if (!Array.isArray(expectedParameter)) {
     expectedParameter = [expectedParameter];
   }
@@ -305,6 +305,7 @@ function verifyCalledOnceWith(func, expectedParameter) {
 function getIndexForCode(expectedLanguageID) {
   let index = -1;
   const languages = LangHelpers.getLanguagesSortedByCode();
+
   for (let i = 0; i < languages.length; i++) {
     if ((languages[i].code === expectedLanguageID) || (languages[i].idPrompt === expectedLanguageID)) {
       index = i;

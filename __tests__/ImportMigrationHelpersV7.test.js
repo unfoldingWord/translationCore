@@ -3,9 +3,9 @@
 'use strict';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import migrateToVersion7 from "../src/js/helpers/ProjectMigration/migrateToVersion7";
-import * as MigrateToVersion7 from "../src/js/helpers/ProjectMigration/migrateToVersion7";
-import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
+import migrateToVersion7 from '../src/js/helpers/ProjectMigration/migrateToVersion7';
+import * as MigrateToVersion7 from '../src/js/helpers/ProjectMigration/migrateToVersion7';
+import * as Version from '../src/js/helpers/ProjectMigration/VersionUtils';
 jest.mock('fs-extra');
 
 const FIXTURES_PATH = path.join(__dirname, 'fixtures/migration/v6_projects/en_ult_tit_book');
@@ -55,11 +55,11 @@ describe('migrateToVersion7', () => {
     const verseEditsPath = path.join(PROJECT_PATH, '.apps/translationCore/checkData/verseEdits/tit/1/15');
     const expectedNumberVerseEdits = 2;
     const chapterVerses = fs.readJSONSync(path.join(PROJECT_PATH, 'tit', '1.json'));
-    
+
     // when37
     migrateToVersion7(PROJECT_PATH, USER_NAME);
     const verseEdits = fs.readdirSync(verseEditsPath).filter(name => path.extname(name) === '.json').sort();
-    const firstVerseEdit = fs.readJSONSync(path.join(verseEditsPath, verseEdits[0])); 
+    const firstVerseEdit = fs.readJSONSync(path.join(verseEditsPath, verseEdits[0]));
     const lastVerseEdit = fs.readJSONSync(path.join(verseEditsPath, verseEdits[verseEdits.length-1]));
 
     // then
@@ -75,12 +75,12 @@ describe('migrateToVersion7', () => {
 //
 
 const getManifest = function (PROJECT_PATH) {
-  const manifest_path = path.join(PROJECT_PATH, "manifest.json");
+  const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.readJsonSync(manifest_path);
 };
 
 const setManifest = function (PROJECT_PATH, manifest) {
-  const manifest_path = path.join(PROJECT_PATH, "manifest.json");
+  const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.outputJsonSync(manifest_path, manifest);
 };
 

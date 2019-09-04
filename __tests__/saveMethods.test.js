@@ -4,13 +4,7 @@ import * as saveMethods from '../src/js/localStorage/saveMethods';
 
 describe('Tests for saveMethods', () => {
   it('should not save the manifest file since projectSaveLocation is empty', () => {
-    const state = {
-      projectDetailsReducer: {
-        manifest: {
-          id: 'id'
-        }
-      }
-    };
+    const state = { projectDetailsReducer: { manifest: { id: 'id' } } };
     saveMethods.saveProjectManifest(state);
     const manifestPath = 'manifest.json';
     expect(fs.existsSync(manifestPath)).not.toBeTruthy();
@@ -21,7 +15,7 @@ describe('Tests for saveMethods', () => {
       projectDetailsReducer: {
         manifest: {},
         projectSaveLocation: '/tmp',
-      }
+      },
     };
     saveMethods.saveProjectManifest(state);
     const manifestPath = path.join(state.projectDetailsReducer.projectSaveLocation, 'manifest.json');
@@ -31,11 +25,9 @@ describe('Tests for saveMethods', () => {
   it('should save the manifest file', () => {
     const state = {
       projectDetailsReducer: {
-        manifest: {
-          id: 'id'
-        },
-        projectSaveLocation: '/tmp'
-      }
+        manifest: { id: 'id' },
+        projectSaveLocation: '/tmp',
+      },
     };
     saveMethods.saveProjectManifest(state);
     const manifestPath = path.join(state.projectDetailsReducer.projectSaveLocation, 'manifest.json');
@@ -46,13 +38,7 @@ describe('Tests for saveMethods', () => {
   });
 
   it('should not save the settings file since projectSaveLocation is empty', () => {
-    const state = {
-      projectDetailsReducer: {
-        settings: {
-          last_opened: new Date(),
-        }
-      }
-    };
+    const state = { projectDetailsReducer: { settings: { last_opened: new Date() } } };
     saveMethods.saveProjectSettings(state);
     const settingsPath = 'settings.json';
     expect(fs.existsSync(settingsPath)).not.toBeTruthy();
@@ -63,7 +49,7 @@ describe('Tests for saveMethods', () => {
       projectDetailsReducer: {
         settings: {},
         projectSaveLocation: '/tmp',
-      }
+      },
     };
     saveMethods.saveProjectSettings(state);
     const settingsPath = path.join(state.projectDetailsReducer.projectSaveLocation, 'settings.json');
@@ -73,11 +59,9 @@ describe('Tests for saveMethods', () => {
   it('should save the settings file', () => {
     const state = {
       projectDetailsReducer: {
-        settings: {
-          last_opened: new Date().toString(),
-        },
-        projectSaveLocation: '/tmp'
-      }
+        settings: { last_opened: new Date().toString() },
+        projectSaveLocation: '/tmp',
+      },
     };
     saveMethods.saveProjectSettings(state);
     const settingsPath = path.join(state.projectDetailsReducer.projectSaveLocation, 'settings.json');

@@ -1,4 +1,3 @@
-jest.mock('../src/js/helpers/Repo');
 import configureMockStore from 'redux-mock-store';
 import path from 'path-extra';
 import thunk from 'redux-thunk';
@@ -7,13 +6,17 @@ import fs from 'fs-extra';
 import * as actions from '../src/js/actions/WordAlignmentActions';
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
 // constants
-import { PROJECTS_PATH, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH } from '../src/js/common/constants';
+import {
+  PROJECTS_PATH, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH,
+} from '../src/js/common/constants';
+jest.mock('../src/js/helpers/Repo');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('WordAlignmentActions.getUsfm3ExportFile', () => {
   let store;
   const projectName = 'invalidatedAlignments';
+
   beforeEach(() => {
     store = mockStore({});
     // reset mock filesystem data
@@ -24,7 +27,7 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const copyResourceFiles = [
       'en/bibles/ult',
-      'el-x-koine/bibles/ugnt'
+      'el-x-koine/bibles/ugnt',
     ];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, STATIC_RESOURCES_PATH);
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, USER_RESOURCES_PATH);

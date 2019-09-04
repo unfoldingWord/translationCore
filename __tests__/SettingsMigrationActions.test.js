@@ -3,30 +3,24 @@ import thunk from 'redux-thunk';
 import ActionTypes from '../src/js/actions/ActionTypes';
 // actions
 import * as SettingsMigrationActions from '../src/js/actions/SettingsMigrationActions';
+import {
+  ORIGINAL_LANGUAGE, TARGET_LANGUAGE, TARGET_BIBLE,
+} from '../src/js/common/constants';
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-import { ORIGINAL_LANGUAGE, TARGET_LANGUAGE, TARGET_BIBLE } from '../src/js/common/constants';
 
 describe('SettingsMigrationActions.migrateCurrentPaneSettings1', () => {
   test('Migrates old scripture pane settings to use ult string identifier instead of ulb-en string identifier', () => {
     const expectedActions = [
       {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
-        toolSettingsData: ['ult', 'ust']
-      }
+        moduleNamespace: 'ScripturePane',
+        settingsPropertyName: 'currentPaneSettings',
+        toolSettingsData: ['ult', 'ust'],
+      },
     ];
-    const initialState = {
-      settingsReducer: {
-        toolsSettings: {
-          'ScripturePane': {
-            currentPaneSettings: ['ulb-en', 'udb-en']
-          }
-        }
-      }
-    };
+    const initialState = { settingsReducer: { toolsSettings: { 'ScripturePane': { currentPaneSettings: ['ulb-en', 'udb-en'] } } } };
     // set up mock store
     const store = mockStore(initialState);
     // dispatch action
@@ -41,20 +35,12 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings2', () => {
     const expectedActions = [
       {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
-        toolSettingsData: ['ulb', 'ugnt']
-      }
+        moduleNamespace: 'ScripturePane',
+        settingsPropertyName: 'currentPaneSettings',
+        toolSettingsData: ['ulb', 'ugnt'],
+      },
     ];
-    const initialState = {
-      settingsReducer: {
-        toolsSettings: {
-          'ScripturePane': {
-            currentPaneSettings: ['ulb', 'bhp']
-          }
-        }
-      }
-    };
+    const initialState = { settingsReducer: { toolsSettings: { 'ScripturePane': { currentPaneSettings: ['ulb', 'bhp'] } } } };
     // set up mock store
     const store = mockStore(initialState);
     // dispatch action
@@ -69,33 +55,25 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings3', () => {
     const expectedActions = [
       {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
+        moduleNamespace: 'ScripturePane',
+        settingsPropertyName: 'currentPaneSettings',
         toolSettingsData: [
           {
             languageId: 'en',
-            bibleId: 'ulb'
+            bibleId: 'ulb',
           },
           {
             languageId: ORIGINAL_LANGUAGE,
-            bibleId: 'ugnt'
+            bibleId: 'ugnt',
           },
           {
             languageId: TARGET_LANGUAGE,
-            bibleId: TARGET_BIBLE
-          }
-        ]
-      }
+            bibleId: TARGET_BIBLE,
+          },
+        ],
+      },
     ];
-    const initialState = {
-      settingsReducer: {
-        toolsSettings: {
-          'ScripturePane': {
-            currentPaneSettings: ['ulb', 'ugnt', TARGET_LANGUAGE]
-          }
-        }
-      }
-    };
+    const initialState = { settingsReducer: { toolsSettings: { 'ScripturePane': { currentPaneSettings: ['ulb', 'ugnt', TARGET_LANGUAGE] } } } };
     // set up mock store
     const store = mockStore(initialState);
     // dispatch action
@@ -109,24 +87,25 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
   const expectedActions = [
     {
       type: ActionTypes.UPDATE_TOOL_SETTINGS,
-      moduleNamespace: "ScripturePane",
-      settingsPropertyName: "currentPaneSettings",
+      moduleNamespace: 'ScripturePane',
+      settingsPropertyName: 'currentPaneSettings',
       toolSettingsData: [
         {
           languageId: 'en',
-          bibleId: 'ulb'
+          bibleId: 'ulb',
         },
         {
           languageId: 'hi',
-          bibleId: 'ulb'
+          bibleId: 'ulb',
         },
         {
           languageId: TARGET_LANGUAGE,
-          bibleId: TARGET_BIBLE
-        }
-      ]
-    }
+          bibleId: TARGET_BIBLE,
+        },
+      ],
+    },
   ];
+
   test('Does not migrate scripture pane settings for ulb bible id in English', () => {
     const initialState = {
       settingsReducer: {
@@ -135,20 +114,20 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             currentPaneSettings: [
               {
                 languageId: 'en',
-                bibleId: 'ulb'
+                bibleId: 'ulb',
               },
               {
                 languageId: 'hi',
-                bibleId: 'ulb'
+                bibleId: 'ulb',
               },
               {
                 languageId: TARGET_LANGUAGE,
-                bibleId: TARGET_BIBLE
-              }
-            ]
-          }
-        }
-      }
+                bibleId: TARGET_BIBLE,
+              },
+            ],
+          },
+        },
+      },
     };
     // set up mock store
     const store = mockStore(initialState);
@@ -166,20 +145,20 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             currentPaneSettings: [
               {
                 languageId: 'en',
-                bibleId: 'ulb'
+                bibleId: 'ulb',
               },
               {
                 languageId: 'hi',
-                bibleId: 'ult'
+                bibleId: 'ult',
               },
               {
                 languageId: TARGET_LANGUAGE,
-                bibleId: TARGET_BIBLE
-              }
-            ]
-          }
-        }
-      }
+                bibleId: TARGET_BIBLE,
+              },
+            ],
+          },
+        },
+      },
     };
     // set up mock store
     const store = mockStore(initialState);
@@ -193,23 +172,23 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
     const expectedActions = [
       {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
+        moduleNamespace: 'ScripturePane',
+        settingsPropertyName: 'currentPaneSettings',
         toolSettingsData: [
           {
             languageId: 'en',
-            bibleId: 'ust'
+            bibleId: 'ust',
           },
           {
             languageId: 'hi',
-            bibleId: 'udt'
+            bibleId: 'udt',
           },
           {
             languageId: TARGET_LANGUAGE,
-            bibleId: TARGET_BIBLE
-          }
-        ]
-      }
+            bibleId: TARGET_BIBLE,
+          },
+        ],
+      },
     ];
     const initialState = {
       settingsReducer: {
@@ -218,20 +197,20 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             currentPaneSettings: [
               {
                 languageId: 'en',
-                bibleId: 'ust'
+                bibleId: 'ust',
               },
               {
                 languageId: 'hi',
-                bibleId: 'udb'
+                bibleId: 'udb',
               },
               {
                 languageId: TARGET_LANGUAGE,
-                bibleId: TARGET_BIBLE
-              }
-            ]
-          }
-        }
-      }
+                bibleId: TARGET_BIBLE,
+              },
+            ],
+          },
+        },
+      },
     };
     // set up mock store
     const store = mockStore(initialState);
@@ -245,23 +224,23 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
     const expectedActions = [
       {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
+        moduleNamespace: 'ScripturePane',
+        settingsPropertyName: 'currentPaneSettings',
         toolSettingsData: [
           {
             languageId: 'en',
-            bibleId: 'udb'
+            bibleId: 'udb',
           },
           {
             languageId: 'hi',
-            bibleId: 'ulb'
+            bibleId: 'ulb',
           },
           {
             languageId: TARGET_LANGUAGE,
-            bibleId: TARGET_BIBLE
-          }
-        ]
-      }
+            bibleId: TARGET_BIBLE,
+          },
+        ],
+      },
     ];
     const initialState = {
       settingsReducer: {
@@ -270,20 +249,20 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             currentPaneSettings: [
               {
                 languageId: 'en',
-                bibleId: 'udb'
+                bibleId: 'udb',
               },
               {
                 languageId: 'hi',
-                bibleId: 'ulb'
+                bibleId: 'ulb',
               },
               {
                 languageId: TARGET_LANGUAGE,
-                bibleId: TARGET_BIBLE
-              }
-            ]
-          }
-        }
-      }
+                bibleId: TARGET_BIBLE,
+              },
+            ],
+          },
+        },
+      },
     };
     // set up mock store
     const store = mockStore(initialState);
@@ -297,23 +276,23 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
     const expectedActions = [
       {
         type: ActionTypes.UPDATE_TOOL_SETTINGS,
-        moduleNamespace: "ScripturePane",
-        settingsPropertyName: "currentPaneSettings",
+        moduleNamespace: 'ScripturePane',
+        settingsPropertyName: 'currentPaneSettings',
         toolSettingsData: [
           {
             languageId: 'en',
-            bibleId: 'ust'
+            bibleId: 'ust',
           },
           {
             languageId: 'hi',
-            bibleId: 'ulb'
+            bibleId: 'ulb',
           },
           {
             languageId: TARGET_LANGUAGE,
-            bibleId: TARGET_BIBLE
-          }
-        ]
-      }
+            bibleId: TARGET_BIBLE,
+          },
+        ],
+      },
     ];
     const initialState = {
       settingsReducer: {
@@ -322,20 +301,20 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
             currentPaneSettings: [
               {
                 languageId: 'en',
-                bibleId: 'udt'
+                bibleId: 'udt',
               },
               {
                 languageId: 'hi',
-                bibleId: 'ult'
+                bibleId: 'ult',
               },
               {
                 languageId: TARGET_LANGUAGE,
-                bibleId: TARGET_BIBLE
-              }
-            ]
-          }
-        }
-      }
+                bibleId: TARGET_BIBLE,
+              },
+            ],
+          },
+        },
+      },
     };
     // set up mock store
     const store = mockStore(initialState);
@@ -344,5 +323,4 @@ describe('SettingsMigrationActions.migrateCurrentPaneSettings4', () => {
 
     expect(store.getActions()).toEqual(expectedActions);
   });
-
 });

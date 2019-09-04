@@ -2,25 +2,24 @@
 
 import path from 'path';
 // helpers
+import fs from 'fs-extra';
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 import {
   generateChapterGroupData,
-  generateChapterGroupIndex
-} from "../src/js/helpers/groupDataHelpers";
-import ResourceAPI from "../src/js/helpers/ResourceAPI";
-import fs from "fs-extra";
+  generateChapterGroupIndex,
+} from '../src/js/helpers/groupDataHelpers';
+import ResourceAPI from '../src/js/helpers/ResourceAPI';
 import {
   USER_RESOURCES_PATH,
   STATIC_RESOURCES_PATH,
-  TRANSLATION_WORDS
-} from "../src/js/common/constants";
+  TRANSLATION_WORDS,
+} from '../src/js/common/constants';
 
 let mockOtherTnsOlversions = [];
+
 jest.mock('tc-source-content-updater', () => ({
   ...require.requireActual('tc-source-content-updater'),
-  getOtherTnsOLVersions: () => {
-    return mockOtherTnsOlversions;
-  }
+  getOtherTnsOLVersions: () => mockOtherTnsOlversions,
 }));
 
 const resourcesDir = path.join(__dirname, 'fixtures', 'resources');
@@ -75,8 +74,9 @@ describe('ResourcesHelpers.', () => {
       const resourcePathsExpectedVersions = {
         [path.join('en', 'bibles', 'ust')]: 'v10',
         [path.join('en', 'bibles', 'ult')]: 'v12.1',
-        [path.join('el-x-koine', 'bibles', 'ugnt')]: 'v0.2'
+        [path.join('el-x-koine', 'bibles', 'ugnt')]: 'v0.2',
       };
+
       for (let property in resourcePathsExpectedVersions) {
         if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
           let resourcePath = path.join(resourcesDir, property);
@@ -103,8 +103,9 @@ describe('ResourcesHelpers.', () => {
       const resourcePathsExpectedVersions = {
         [path.join('en', 'bibles', 'ust')]: ['v10'],
         [path.join('en', 'bibles', 'ult')]: ['v11', 'v12.1'],
-        [path.join('el-x-koine', 'bibles', 'ugnt')]: ['v0.2']
+        [path.join('el-x-koine', 'bibles', 'ugnt')]: ['v0.2'],
       };
+
       for (let property in resourcePathsExpectedVersions) {
         if (resourcePathsExpectedVersions.hasOwnProperty(property)) {
           let resourcePath = path.join(__dirname, 'fixtures/resources/' + property);
@@ -141,7 +142,7 @@ describe('ResourcesHelpers.', () => {
       expect(ResourcesHelpers.sortVersions([])).toEqual([]); // nothing to sort
       expect(ResourcesHelpers.sortVersions([2, 1])).toEqual([2, 1]); // won't sort
       expect(ResourcesHelpers.sortVersions([2, 1])).toEqual([2, 1]); // won't sort
-      expect(ResourcesHelpers.sortVersions("hello world")).toEqual("hello world"); // won't sort
+      expect(ResourcesHelpers.sortVersions('hello world')).toEqual('hello world'); // won't sort
       expect(ResourcesHelpers.sortVersions(111)).toEqual(111); // won't sort
     });
   });
@@ -150,49 +151,51 @@ describe('ResourcesHelpers.', () => {
     const toolName = TRANSLATION_WORDS;
     const hindiExpectedData = [
       {
-        "id": "good",
-        "name": "अच्छा, भलाई"
+        'id': 'good',
+        'name': 'अच्छा, भलाई',
       },
       {
-        "id": "iniquity",
-        "name": "अधर्म, अधर्मों"
+        'id': 'iniquity',
+        'name': 'अधर्म, अधर्मों',
       },
       {
-        "id": "unrighteous",
-        "name": "अधर्मी, अधर्म"
+        'id': 'unrighteous',
+        'name': 'अधर्मी, अधर्म',
       },
       {
-        "id": "unjust",
-        "name": "अधर्मी, अन्याय से, अन्याय"
-      }
+        'id': 'unjust',
+        'name': 'अधर्मी, अन्याय से, अन्याय',
+      },
     ];
     const englishExpectedData = [
       {
-        "id": "abomination",
-        "name": "abomination, abominable"
+        'id': 'abomination',
+        'name': 'abomination, abominable',
       },
       {
-        "id": "adoption",
-        "name": "adoption, adopt, adopted"
+        'id': 'adoption',
+        'name': 'adoption, adopt, adopted',
       },
       {
-        "id": "adultery",
-        "name": "adultery, adulterous, adulterer, adulteress"
+        'id': 'adultery',
+        'name': 'adultery, adulterous, adulterer, adulteress',
       },
       {
-        "id": "almighty",
-        "name": "Almighty"
-      }
+        'id': 'almighty',
+        'name': 'Almighty',
+      },
     ];
 
     it('Test getGLQuote() properly returns the en gateway language quote for the groupId', () => {
       const currentGLLanguageID = 'en';
+
       for (var groupIndexObject of englishExpectedData) {
         expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(groupIndexObject.name);
       }
     });
     it('Test getGLQuote() properly returns the hi gateway language quote for the groupId', () => {
       const currentGLLanguageID = 'hi';
+
       for (var groupIndexObject of hindiExpectedData) {
         expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(groupIndexObject.name);
       }
@@ -200,6 +203,7 @@ describe('ResourcesHelpers.', () => {
 
     it('Test getGLQuote() doesnt returns the gateway language quote for a non-existent language', () => {
       const currentGLLanguageID = 'languagewedonthaveyet';
+
       for (var groupIndexObject of hindiExpectedData) {
         expect(ResourcesHelpers.getGLQuote(currentGLLanguageID, groupIndexObject.id, toolName)).toBe(null);
       }
@@ -211,29 +215,29 @@ describe('ResourcesHelpers.preserveNeededOrigLangVersions()', () =>{
   beforeEach(() => {
     fs.__resetMockFS();
     // simulate static resources path
-    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, ".."));
-    fs.moveSync(path.join(STATIC_RESOURCES_PATH, "../resources"), STATIC_RESOURCES_PATH);
-    fs.removeSync(path.join(STATIC_RESOURCES_PATH, "en/bibles/ult/v11")); // remove old version
+    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, '..'));
+    fs.moveSync(path.join(STATIC_RESOURCES_PATH, '../resources'), STATIC_RESOURCES_PATH);
+    fs.removeSync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult/v11')); // remove old version
   });
 
-  it("test with older version of ugnt in grc/bible that is needed by tN - should not be removed", () => {
+  it('test with older version of ugnt in grc/bible that is needed by tN - should not be removed', () => {
     // given
     const deleteOldResourceExpected = false;
     const bibleId = 'ugnt';
-    const neededUgntVersion = "v0.1";
-    const unneededUgntVersion = "v0.2";
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/bibles", bibleId), path.join(USER_RESOURCES_PATH, "el-x-koine/bibles", bibleId));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "el-x-koine/bibles", bibleId, "v0.2"), path.join(USER_RESOURCES_PATH, "el-x-koine/bibles", bibleId, neededUgntVersion));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, "en"), path.join(USER_RESOURCES_PATH, "en"));
-    const ugntPath = path.join(USER_RESOURCES_PATH, "el-x-koine/bibles/ugnt");
+    const neededUgntVersion = 'v0.1';
+    const unneededUgntVersion = 'v0.2';
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, neededUgntVersion));
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en'), path.join(USER_RESOURCES_PATH, 'en'));
+    const ugntPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt');
     mockOtherTnsOlversions = [neededUgntVersion];
 
     // when
-    const deleteOldResource = ResourcesHelpers.preserveNeededOrigLangVersions("el-x-koine", "ugnt", ugntPath);
+    const deleteOldResource = ResourcesHelpers.preserveNeededOrigLangVersions('el-x-koine', 'ugnt', ugntPath);
 
     // then
     expect(deleteOldResource).toEqual(deleteOldResourceExpected);
-    expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt', neededUgntVersion, "manifest.json"))).toBeTruthy(); // should not remove folder
-    expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt', unneededUgntVersion, "manifest.json"))).toBeFalsy(); // should remove folder
+    expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt', neededUgntVersion, 'manifest.json'))).toBeTruthy(); // should not remove folder
+    expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt', unneededUgntVersion, 'manifest.json'))).toBeFalsy(); // should remove folder
   });
 });

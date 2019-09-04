@@ -1,34 +1,35 @@
 /* eslint-env jest */
 
+import os from 'os';
 import React from 'react';
 import renderer from 'react-test-renderer';
-import StatusBarContainer from "../src/js/containers/StatusBarContainer";
-import * as statusBarContainer from "../src/js/containers/StatusBarContainer";
-import {Provider} from "react-redux";
-import {applyMiddleware, createStore} from 'redux';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from '../src/js/reducers';
-import * as ProjectDetailsActions from "../src/js/actions/ProjectDetailsActions";
-import * as BodyUIActions from "../src/js/actions/BodyUIActions";
-import consts from '../src/js/actions/ActionTypes';
-import * as LoginActions from "../src/js/actions/LoginActions";
 import path from 'path-extra';
 import Adapter from 'enzyme-adapter-react-16';
-import {configure} from 'enzyme';
-import os from 'os';
+import { configure } from 'enzyme';
+import StatusBarContainer from '../src/js/containers/StatusBarContainer';
+import * as statusBarContainer from '../src/js/containers/StatusBarContainer';
+import reducers from '../src/js/reducers';
+import * as ProjectDetailsActions from '../src/js/actions/ProjectDetailsActions';
+import * as BodyUIActions from '../src/js/actions/BodyUIActions';
+import consts from '../src/js/actions/ActionTypes';
+import * as LoginActions from '../src/js/actions/LoginActions';
 
 const translate = key => key;
 
 // TODO: this test should use a mock store
 
 beforeAll(() => {
-  configure({adapter: new Adapter()});
+  configure({ adapter: new Adapter() });
 });
 
 
 // Tests for ProjectFAB React Component
 describe('Test StatusBarContainer component',()=>{
   let store;
+
   beforeEach(() => {
     // create a new store instance for each test
     store = createStore(
@@ -37,13 +38,13 @@ describe('Test StatusBarContainer component',()=>{
     );
   });
 
-test('StatusBarContainer Component on current system should render button text correctly', () => {
+  test('StatusBarContainer Component on current system should render button text correctly', () => {
     // given
-    const projectName_ = "en_tit_ulb";
-    let projectFolder = "/user/dummy/tc/projects/";
+    const projectName_ = 'en_tit_ulb';
+    let projectFolder = '/user/dummy/tc/projects/';
     const projectPath = projectFolder + projectName_;
-    const toolTitle = "Miracle Tool";
-    const username = "Local User";
+    const toolTitle = 'Miracle Tool';
+    const username = 'Local User';
     setupStore(projectPath, toolTitle, username);
     // when
     const enzymeWrapper = (
@@ -59,18 +60,20 @@ test('StatusBarContainer Component on current system should render button text c
     // given
     const osType = os.type().toLowerCase();
     const isWin = (osType.indexOf('win') === 0);
-    const projectName_ = "en_tit_ulb";
-    let projectFolder = "/user/dummy/tc/projects/";
-    if(isWin) { // if windows, switch to posix
-      projectFolder = "C:\\Users\\Dummy\\tC\\projects\\";
+    const projectName_ = 'en_tit_ulb';
+    let projectFolder = '/user/dummy/tc/projects/';
+
+    if (isWin) { // if windows, switch to posix
+      projectFolder = 'C:\\Users\\Dummy\\tC\\projects\\';
     }
+
     const projectPath = projectFolder + projectName_;
-    const toolTitle = "Miracle Tool";
-    const username = "Local User";
+    const toolTitle = 'Miracle Tool';
+    const username = 'Local User';
     setupStore(projectPath, toolTitle, username);
 
     // when
-    const renderedValue =  renderer.create(
+    const renderedValue = renderer.create(
       <Provider store={store}>
         <StatusBarContainer translate={translate}/>
       </Provider>
@@ -82,8 +85,8 @@ test('StatusBarContainer Component on current system should render button text c
 
   test('StatusBarContainer.getBaseName on mac/linux should render baseName correctly', () => {
     // given
-    const expectedProjectName = "en_tit_ulb";
-    const projectPath = "/user/dummy/tc/projects/" + expectedProjectName;
+    const expectedProjectName = 'en_tit_ulb';
+    const projectPath = '/user/dummy/tc/projects/' + expectedProjectName;
     const posixPath = path.posix;
 
     // when
@@ -95,8 +98,8 @@ test('StatusBarContainer Component on current system should render button text c
 
   test('StatusBarContainer.getBaseName on windows should render baseName correctly', () => {
     // given
-    const expectedProjectName = "en_tit_ulb";
-    const projectPath = "C:\\Users\\Dummy\\tC\\projects\\" + expectedProjectName;
+    const expectedProjectName = 'en_tit_ulb';
+    const projectPath = 'C:\\Users\\Dummy\\tC\\projects\\' + expectedProjectName;
     const winPath = path.win32;
 
     // when
@@ -124,18 +127,15 @@ test('StatusBarContainer Component on current system should render button text c
     store.dispatch({
       type: consts.ADD_TOOL,
       name: 'default',
-      tool: {
-        title: toolTitle
-      }
+      tool: { title: toolTitle },
     });
     store.dispatch({
       type: consts.OPEN_TOOL,
-      name: 'default'
+      name: 'default',
     });
+
     const local = true;
-    const userData = {
-      username: username
-    };
+    const userData = { username: username };
     store.dispatch(LoginActions.loginUser(userData, local));
   }
 });

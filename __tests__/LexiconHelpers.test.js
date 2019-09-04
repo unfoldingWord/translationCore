@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
 import path from 'path';
+import fs from 'fs-extra';
 import ospath from 'ospath';
 // helpers
 import * as LexiconHelpers from '../src/js/helpers/LexiconHelpers';
@@ -16,15 +16,11 @@ describe('LexiconHelpers', () => {
     const entryId = '1';
     const lexiconFilePath = path.join(ospath.home(), 'translationCore', 'resources', languageId, 'lexicons', lexiconId, resourceVersion, 'content', '1.json');
     const lexiconContent = {
-      "brief": "the first letter of the Greek alphabet",
-      "long": "alpha; the first letter of the Greek alphabet."
+      'brief': 'the first letter of the Greek alphabet',
+      'long': 'alpha; the first letter of the Greek alphabet.',
     };
     fs.outputFileSync(lexiconFilePath, lexiconContent);
-    const expectedResult = {
-      [lexiconId]: {
-        [entryId]: lexiconContent
-      }
-    };
+    const expectedResult = { [lexiconId]: { [entryId]: lexiconContent } };
     expect(LexiconHelpers.getLexiconData(lexiconId, entryId)).toEqual(expectedResult);
   });
 
@@ -35,15 +31,11 @@ describe('LexiconHelpers', () => {
     const entryId = '1';
     const lexiconFilePath = path.join(ospath.home(), 'translationCore', 'resources', languageId, 'lexicons', lexiconId, resourceVersion, 'content', '1.json');
     const lexiconContent = {
-      "brief": "father",
-      "long": "<i>Meaning:</i> \"father\", in a literal and immediate, or figurative and remote application.<br/><i>Usage:</i> chief, (fore-) father(-less), × patrimony, principal. Compare names in 'Abi-'.<br/><i>Source:</i> a primitive word;"
+      'brief': 'father',
+      'long': '<i>Meaning:</i> "father", in a literal and immediate, or figurative and remote application.<br/><i>Usage:</i> chief, (fore-) father(-less), × patrimony, principal. Compare names in \'Abi-\'.<br/><i>Source:</i> a primitive word;',
     };
     fs.outputFileSync(lexiconFilePath, lexiconContent);
-    const expectedResult = {
-      [lexiconId]: {
-        [entryId]: lexiconContent
-      }
-    };
+    const expectedResult = { [lexiconId]: { [entryId]: lexiconContent } };
     expect(LexiconHelpers.getLexiconData(lexiconId, entryId)).toEqual(expectedResult);
   });
 });

@@ -1,10 +1,10 @@
 /* eslint-env jest */
-jest.unmock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
 import * as MergeConflictHelpers from '../src/js/helpers/ProjectValidation/MergeConflictHelpers';
 import * as ProjectStructureValidationHelpers from '../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers';
+jest.unmock('fs-extra');
 //projects
 const noMergeConflictsProjectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/no_merge_conflicts_project');
 const oneMergeConflictsProjectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/one_merge_conflict_project');
@@ -14,8 +14,24 @@ const oneMergeConflictsUSFMPath = path.join(__dirname, 'fixtures/project/mergeCo
 const twoMergeConflictsUSFMPath = path.join(__dirname, 'fixtures/project/mergeConflicts/two_merge_conflicts_usfm');
 const unResolveableConflictProjectPath = path.join(__dirname, 'fixtures/project/mergeConflicts/unresolveable_conflict_project');
 
-const twoMergeConflictsObject = [[{ "chapter": "2", "verses": "1", "text": { "1": ["Some random verse with a merge conflict"] }, "checked": true }, { "chapter": "2", "verses": "1", "text": { "1": ["Another random verse with a merge conflict"] }, "checked": false }], [{ "chapter": "2", "verses": "6-8", "text": { "6": ["Ta haka kuma, ka karfafa samari, su zama masu hankali."], "7": ["A kowanne fanni, ka mayar da kan ka abin koyi a cikin kyawawan ayyuka; idan kayi koyarwa, ka nuna mutunci da martaba."], "8": ["Ka bada sako lafiyayye marar abin zargi, yadda masu hamayya da maganar Allah zasu ji kunya, domin rashin samun mugun abin fadi akan mu."] }, "checked": false }, { "chapter": "2", "verses": "6-8", "text": { "6": ["Also detecting multiple verses with merge conflicts"], "7": ["This is a translation correction"], "8": ["Another random version with some changes"] }, "checked": true }]];
-const oneMergeConflictsObject = [[{"chapter":"1","verses":"8","text":{"8":["This is random verse with a merge conflict"]},"checked":true},{"chapter":"1","verses":"8","text":{"8":["This is a another random verse with a merge conlfict"]},"checked":false}]];
+const twoMergeConflictsObject = [[{
+  'chapter': '2', 'verses': '1', 'text': { '1': ['Some random verse with a merge conflict'] }, 'checked': true,
+}, {
+  'chapter': '2', 'verses': '1', 'text': { '1': ['Another random verse with a merge conflict'] }, 'checked': false,
+}], [{
+  'chapter': '2', 'verses': '6-8', 'text': {
+    '6': ['Ta haka kuma, ka karfafa samari, su zama masu hankali.'], '7': ['A kowanne fanni, ka mayar da kan ka abin koyi a cikin kyawawan ayyuka; idan kayi koyarwa, ka nuna mutunci da martaba.'], '8': ['Ka bada sako lafiyayye marar abin zargi, yadda masu hamayya da maganar Allah zasu ji kunya, domin rashin samun mugun abin fadi akan mu.'],
+  }, 'checked': false,
+}, {
+  'chapter': '2', 'verses': '6-8', 'text': {
+    '6': ['Also detecting multiple verses with merge conflicts'], '7': ['This is a translation correction'], '8': ['Another random version with some changes'],
+  }, 'checked': true,
+}]];
+const oneMergeConflictsObject = [[{
+  'chapter':'1','verses':'8','text':{ '8':['This is random verse with a merge conflict'] },'checked':true,
+},{
+  'chapter':'1','verses':'8','text':{ '8':['This is a another random verse with a merge conlfict'] },'checked':false,
+}]];
 
 describe('MergeConflictHelpers.projectHasMergeConflicts', () => {
   test('should not detect merge conflicts in a pre-imported tC project', () => {
@@ -127,7 +143,9 @@ describe('MergeConflictHelpers.getMergeConflicts', () => {
 describe('MergeConflictHelpers.parseMergeConflictVersion', () => {
   test('should parse the version of a merge conflict in the format of the reducer', () => {
     const verseText = 'This is random verse with a merge conflict';
-    const expectedParsedObject = {"chapter": "1", "text": {"8": verseText}, "verses": "8"};
+    const expectedParsedObject = {
+      'chapter': '1', 'text': { '8': verseText }, 'verses': '8',
+    };
     const versionText = `\\v 8 ${verseText}`;
     let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
@@ -139,12 +157,12 @@ describe('MergeConflictHelpers.parseMergeConflictVersion', () => {
     const verseText1 = 'El anciano debe ser irreprensible, esposo de una sola mujer, con hijos fieles, que no sean acusados de ser malos o indisciplinados.';
     const verseText2 = 'Es necesario que el obispo, como administrador de la casa de Dios, sea irreprensible. No debe ser escandaloso o desenfrenado. No se debe enojar fácilmente, ni ser adicto al vino, no violento, ni avaro.';
     const expectedParsedObject = {
-      "chapter": "1",
-      "text": {
-        "6": "El anciano debe ser irreprensible, esposo de una sola mujer, con hijos fieles, que no sean acusados de ser malos o indisciplinados. ",
-        "7": "Es necesario que el obispo, como administrador de la casa de Dios, sea irreprensible. No debe ser escandaloso o desenfrenado. No se debe enojar fácilmente, ni ser adicto al vino, no violento, ni avaro."
+      'chapter': '1',
+      'text': {
+        '6': 'El anciano debe ser irreprensible, esposo de una sola mujer, con hijos fieles, que no sean acusados de ser malos o indisciplinados. ',
+        '7': 'Es necesario que el obispo, como administrador de la casa de Dios, sea irreprensible. No debe ser escandaloso o desenfrenado. No se debe enojar fácilmente, ni ser adicto al vino, no violento, ni avaro.',
       },
-      "verses": "6-7"
+      'verses': '6-7',
     };
     const versionText = `\\v 6 ${verseText1} \\v 7 ${verseText2}`;
     let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(manyMergeConflictsUSFMPath);
@@ -157,7 +175,7 @@ describe('MergeConflictHelpers.parseMergeConflictVersion', () => {
 describe('MergeConflictHelpers.getChapterFromVerseText', () => {
   test('should fine the chapter from which the verse is from', () => {
     const verseText = 'Aka mien ọnọ mọn adiuduan oghi efunru, imọin lẹ ọnuan ni.';
-    const expectedChapter = "3";
+    const expectedChapter = '3';
     let usfmFilePath = ProjectStructureValidationHelpers.isUSFMProject(oneMergeConflictsUSFMPath);
     let usfmData = MergeConflictHelpers.loadUSFM(usfmFilePath);
     const parsedMergeConflict = MergeConflictHelpers.getChapterFromVerseText(verseText, usfmData);

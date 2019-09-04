@@ -1,9 +1,7 @@
 /* eslint-env jest */
-jest.mock('../src/js/helpers/Repo');
-jest.mock('material-ui/Checkbox');
 import path from 'path-extra';
 import fs from 'fs-extra';
-import configureMockStore from "redux-mock-store";
+import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 //helpers
 import * as ProjectDetailsHelpers from '../src/js/helpers/ProjectDetailsHelpers';
@@ -13,8 +11,10 @@ import {
   PROJECT_INDEX_FOLDER_PATH,
   IMPORTS_PATH,
   WORD_ALIGNMENT,
-  TRANSLATION_WORDS
+  TRANSLATION_WORDS,
 } from '../src/js/common/constants';
+jest.mock('../src/js/helpers/Repo');
+jest.mock('material-ui/Checkbox');
 
 // Mock store set up
 const middlewares = [thunk];
@@ -32,55 +32,50 @@ let mock_createNewRepoCallCount = 0;
 
 jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
   ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
-  changeGitToPointToNewRepo: () => {
-    return new Promise((resolve) => {
-      resolve();
-    });
-  },
-  findRepo: () => {
-    return new Promise((resolve, reject) => {
-      if (mock_repoError) {
-        reject('error');
-      } else {
-        resolve(mock_repoExists);
-      }
-    });
-  },
-  renameRepo: () => {
-    return new Promise((resolve) => {
-      mock_renameRepoCallCount++;
-      resolve();
-    });
-  },
-  createNewRepo: () => {
-    return new Promise((resolve) => {
-      mock_createNewRepoCallCount++;
-      resolve();
-    });
-  }
+  changeGitToPointToNewRepo: () => new Promise((resolve) => {
+    resolve();
+  }),
+  findRepo: () => new Promise((resolve, reject) => {
+    if (mock_repoError) {
+      reject('error');
+    } else {
+      resolve(mock_repoExists);
+    }
+  }),
+  renameRepo: () => new Promise((resolve) => {
+    mock_renameRepoCallCount++;
+    resolve();
+  }),
+  createNewRepo: () => new Promise((resolve) => {
+    mock_createNewRepoCallCount++;
+    resolve();
+  }),
 }));
 
 let mock_doOnlineConfirmCallback = false;
+
 jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
   confirmOnlineAction: jest.fn((onConfirm, onCancel) => (dispatch) => {
-    dispatch({type: 'CONFIRM_ONLINE_MODE'});
+    dispatch({ type: 'CONFIRM_ONLINE_MODE' });
+
     if (mock_doOnlineConfirmCallback) {
       onConfirm();
     } else {
       onCancel();
     }
-  })
+  }),
 }));
 
 jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
 
   openOnlyProjectDetailsScreen: (projectSaveLocation) => (dispatch) => {
-    dispatch({type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen'});
-  }
+    dispatch({ type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen' });
+  },
 }));
 
 let mock_alertCallbackButton = 0;
 let mock_alertCallbackButtonText = null;
+
 jest.mock('../src/js/actions/AlertModalActions', () => ({
   ...require.requireActual('../src/js/actions/AlertModalActions'),
   openOptionDialog: jest.fn((message, callback, button1, button2, buttonLinkText) =>
@@ -92,22 +87,23 @@ jest.mock('../src/js/actions/AlertModalActions', () => ({
         button1: button1,
         button2: button2,
         buttonLink: buttonLinkText,
-        callback: callback
+        callback: callback,
       });
       mock_alertCallbackButtonText = null;
+
       switch (mock_alertCallbackButton) {
-        case 1:
-          mock_alertCallbackButtonText = button1;
-          break;
-        case 2:
-          mock_alertCallbackButtonText = button2;
-          break;
-        case 3:
-          mock_alertCallbackButtonText = buttonLinkText;
-          break;
+      case 1:
+        mock_alertCallbackButtonText = button1;
+        break;
+      case 2:
+        mock_alertCallbackButtonText = button2;
+        break;
+      case 3:
+        mock_alertCallbackButtonText = buttonLinkText;
+        break;
       }
       callback(mock_alertCallbackButtonText);
-    })
+    }),
 }));
 
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
@@ -205,7 +201,7 @@ describe('ProjectDetailsHelpers.getToolProgress', () => {
   test('should get the progress for a non alignment tool', () => {
     let toolName = TRANSLATION_WORDS;
     let bookId = 'tit';
-    let userSelectedCategories = ["apostle", "authority", "clean"];
+    let userSelectedCategories = ['apostle', 'authority', 'clean'];
     const pathToCheckDataFiles = path.join(translationWordsProject, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
     expect(ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, userSelectedCategories, bookId)).toBe(0.25);
   });
@@ -239,7 +235,7 @@ describe('ProjectDetailsHelpers.getWordAlignmentProgressForGroupIndex', () => {
 
   test('should get the progress of a partially aligned project with ungenerated verses - 2 verses out of 16', () => {
     const projectSaveLocation = alignmentToolProject;
-    const chapter1path = path.join(projectSaveLocation, ".apps/translationCore/alignmentData/tit/1.json");
+    const chapter1path = path.join(projectSaveLocation, '.apps/translationCore/alignmentData/tit/1.json');
     const chapter1 = fs.readJSONSync(chapter1path);
     delete chapter1[14];
     delete chapter1[15];
@@ -326,14 +322,13 @@ describe('ProjectDetailsHelpers.updateProjectFolderName', () => {
   const bookID = 'tit';
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
   const destinationPath = path.join(projectSaveLocation, bookID);
+
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
   });
   it('should change the project target language name to the new given one', () => {
-    fs.__setMockFS({
-      [sourcePath]: ['tit', 'manifest', 'LICENSE']
-    });
+    fs.__setMockFS({ [sourcePath]: ['tit', 'manifest', 'LICENSE'] });
     expect(fs.existsSync(sourcePath)).toBeTruthy();
     expect(fs.existsSync(destinationPath)).toBeFalsy();
     ProjectDetailsHelpers.updateProjectFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
@@ -342,9 +337,7 @@ describe('ProjectDetailsHelpers.updateProjectFolderName', () => {
   });
 
   it('should not change the project target language name to the new given one if it already exists', () => {
-    fs.__setMockFS({
-      [destinationPath]: ['tit', 'manifest', 'LICENSE']
-    });
+    fs.__setMockFS({ [destinationPath]: ['tit', 'manifest', 'LICENSE'] });
     expect(fs.existsSync(sourcePath)).toBeFalsy();
     expect(fs.existsSync(destinationPath)).toBeTruthy();
     ProjectDetailsHelpers.updateProjectFolderName(bookID, projectSaveLocation, oldSelectedProjectFileName);
@@ -358,16 +351,16 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
     target_language: {
       id: 'fr',
       name: 'francais',
-      direction: 'ltr'
+      direction: 'ltr',
     },
     project: {
       id: 'eph',
-      name: 'Ephesians'
+      name: 'Ephesians',
     },
     resource: {
       id: 'ult',
-      name: 'unfoldingWord Literal Text'
-    }
+      name: 'unfoldingWord Literal Text',
+    },
   };
 
   test('generate new project name', () => {
@@ -385,7 +378,7 @@ describe('ProjectDetailsHelpers.generateNewProjectName', () => {
   test('generate new project name lowercase', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest));
-    manifest.resource.id = "ULT";
+    manifest.resource.id = 'ULT';
     const expectedProjectName = 'fr_ult_eph_book';
 
     // when
@@ -430,12 +423,10 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
   });
 
   test('on click retry, should call retry', () => {
-    const store = mockStore({
-      settingsReducer: {}
-    });
+    const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 1;
-    const expectedClickButton = "buttons.retry";
+    const expectedClickButton = 'buttons.retry';
 
     store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
     expect(store.getActions()).toMatchSnapshot();
@@ -443,12 +434,10 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
   });
 
   test('on click retry, should call continue', () => {
-    const store = mockStore({
-      settingsReducer: {}
-    });
+    const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 2;
-    const expectedClickButton = "buttons.continue_button";
+    const expectedClickButton = 'buttons.continue_button';
 
     store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
     expect(store.getActions()).toMatchSnapshot();
@@ -456,12 +445,10 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
   });
 
   test('on click help desk, should call contactHelpDesk', () => {
-    const store = mockStore({
-      settingsReducer: {}
-    });
+    const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 3;
-    const expectedClickButton = "buttons.contact_helpdesk";
+    const expectedClickButton = 'buttons.contact_helpdesk';
 
     store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
     expect(store.getActions()).toMatchSnapshot();
@@ -480,19 +467,17 @@ describe('ProjectDetailsHelpers.doDcsRenamePrompting', () => {
 
   test('on click rename, should call rename', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
-      }
+        placeholder: 'Leave us your feedback!',
+      },
     });
     mock_alertCallbackButton = 1;
-    const expectedClickButton = "buttons.rename_repo";
+    const expectedClickButton = 'buttons.rename_repo';
 
     await store.dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
     expect(store.getActions()).toMatchSnapshot();
@@ -501,19 +486,17 @@ describe('ProjectDetailsHelpers.doDcsRenamePrompting', () => {
 
   test('on click create, should call create new', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
-      }
+        placeholder: 'Leave us your feedback!',
+      },
     });
     mock_alertCallbackButton = 2;
-    const expectedClickButton = "buttons.create_new_repo";
+    const expectedClickButton = 'buttons.create_new_repo';
 
     await store.dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
     expect(store.getActions()).toMatchSnapshot();
@@ -535,19 +518,15 @@ describe('ProjectDetailsHelpers.handleDcsOperation', () => {
 
   test('should handle repo exists', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
-      settingsReducer: {
-        onlineMode: true
-      }
+      settingsReducer: { onlineMode: true },
     });
     const createNew = false;
     mock_repoExists = true;
@@ -560,19 +539,15 @@ describe('ProjectDetailsHelpers.handleDcsOperation', () => {
 
   test('on repo does not exist, should call create new', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
-      settingsReducer: {
-        onlineMode: true
-      }
+      settingsReducer: { onlineMode: true },
     });
     const createNew = true;
 
@@ -584,19 +559,15 @@ describe('ProjectDetailsHelpers.handleDcsOperation', () => {
 
   test('on repo does not exist, should call rename', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
-      settingsReducer: {
-        onlineMode: true
-      }
+      settingsReducer: { onlineMode: true },
     });
     const createNew = false;
 
@@ -618,23 +589,21 @@ describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
 
   test('on click rename, should render and open project details', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
       projectInformationCheckReducer: {
         alreadyImported: true,
         overwritePermitted: false,
-      }
+      },
     });
     mock_alertCallbackButton = 1;
-    const expectedClickButton = "buttons.rename_local";
+    const expectedClickButton = 'buttons.rename_local';
 
     await store.dispatch(ProjectDetailsHelpers.handleDcsRenameCollision());
     expect(store.getActions()).toMatchSnapshot();
@@ -643,19 +612,17 @@ describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
 
   test('on click continue, should do nothing', async () => {
     const store = mockStore({
-      projectDetailsReducer: {projectSaveLocation: projectPath},
+      projectDetailsReducer: { projectSaveLocation: projectPath },
       loginReducer: {
         loggedInUser: false,
-        userdata: {
-          username: 'dummy-test'
-        },
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
-      }
+        placeholder: 'Leave us your feedback!',
+      },
     });
     mock_alertCallbackButton = 2;
-    const expectedClickButton = "buttons.do_not_rename";
+    const expectedClickButton = 'buttons.do_not_rename';
 
     await store.dispatch(ProjectDetailsHelpers.handleDcsRenameCollision());
     expect(store.getActions()).toMatchSnapshot();
@@ -664,7 +631,6 @@ describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
 });
 
 describe('ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist', () => {
-
   beforeEach(() => {
     mock_repoExists = false;
     mock_repoError = false;
@@ -691,45 +657,54 @@ describe('ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist', () => {
       expect(e).toBeTruthy();
     });
   });
-
 });
 
 describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   test('null project name should not crash', () => {
     const projectName = null;
-    const expectedResults = {"bookId": "", "bookName": "", "languageId": ""};
+    const expectedResults = {
+      'bookId': '', 'bookName': '', 'languageId': '',
+    };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
   });
 
   test('empty project name should not crash', () => {
-    const projectName = "";
-    const expectedResults = {"bookId": "", "bookName": "", "languageId": ""};
+    const projectName = '';
+    const expectedResults = {
+      'bookId': '', 'bookName': '', 'languageId': '',
+    };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
   });
 
   test('short name should succeed', () => {
-    const projectName = "en_tit";
-    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "en"};
+    const projectName = 'en_tit';
+    const expectedResults = {
+      'bookId': 'tit', 'bookName': 'book_list.nt.tit', 'languageId': 'en',
+    };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
   });
 
   test('old tStudio format name should succeed', () => {
-    const projectName = "aaw_php_text_reg";
-    const expectedResults = {"bookId": "php", "bookName": "book_list.nt.php", "languageId": "aaw"};
+    const projectName = 'aaw_php_text_reg';
+    const expectedResults = {
+      'bookId': 'php', 'bookName': 'book_list.nt.php', 'languageId': 'aaw',
+    };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
   });
 
   test('new format name should succeed', () => {
-    const projectName = "el_ult_tit_book";
-    const expectedResults = {"bookId": "tit", "bookName": "book_list.nt.tit", "languageId": "el"};
+    const projectName = 'el_ult_tit_book';
+    const expectedResults = {
+      'bookId': 'tit', 'bookName': 'book_list.nt.tit', 'languageId': 'el',
+    };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
     expect(results).toEqual(expectedResults);
@@ -737,16 +712,12 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
 });
 
 describe('ProjectDetailsHelpers.getInitialBibleDataFolderName', () => {
-  const bookId = "php";
-  const projectFilename = "en_php";
-  const initialBibleDataFolderName = "php";
+  const bookId = 'php';
+  const projectFilename = 'en_php';
+  const initialBibleDataFolderName = 'php';
   const projectPath = path.join (IMPORTS_PATH, projectFilename);
   const projectBibleDataPath = path.join (projectPath, initialBibleDataFolderName);
-  const manifest_ = {
-    project: {
-      id: bookId
-    }
-  };
+  const manifest_ = { project: { id: bookId } };
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -786,16 +757,12 @@ describe('ProjectDetailsHelpers.getInitialBibleDataFolderName', () => {
 });
 
 describe('ProjectDetailsHelpers.fixBibleDataFolderName', () => {
-  const bookId = "php";
-  const projectFilename = "en_php";
-  const initialBibleDataFolderName = "php";
+  const bookId = 'php';
+  const projectFilename = 'en_php';
+  const initialBibleDataFolderName = 'php';
   const projectPath = path.join (IMPORTS_PATH, projectFilename);
   const projectBibleDataPath = path.join (projectPath, initialBibleDataFolderName);
-  const manifest_ = {
-    project: {
-      id: bookId
-    }
-  };
+  const manifest_ = { project: { id: bookId } };
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -809,7 +776,7 @@ describe('ProjectDetailsHelpers.fixBibleDataFolderName', () => {
   });
 
   test('if manifest.project.id changed, it should move file', () => {
-    const newProjectId = "gal";
+    const newProjectId = 'gal';
     const expectedPath = path.join (projectPath, newProjectId);
     const manifest = JSON.parse(JSON.stringify(manifest_));
     manifest.project.id = newProjectId;
@@ -853,16 +820,17 @@ describe('ProjectDetailsHelpers.fixBibleDataFolderName', () => {
 //
 
 function unalignChapter1Verse2(pathToWordAlignmentData) {
-  const chapter1_path = path.join(pathToWordAlignmentData, "1.json");
+  const chapter1_path = path.join(pathToWordAlignmentData, '1.json');
   const chapter1 = fs.readJSONSync(chapter1_path);
   chapter1[2] = chapter1[3]; // make 2nd verse unaligned
   fs.outputJsonSync(chapter1_path, chapter1);
 }
 
 function emptyChapter1Verse1(pathToWordAlignmentData) {
-  const chapter1_path = path.join(pathToWordAlignmentData, "1.json");
+  const chapter1_path = path.join(pathToWordAlignmentData, '1.json');
   const chapter1 = fs.readJSONSync(chapter1_path);
   const verse1Alignments = chapter1[1].alignments;
+
   Object.keys(verse1Alignments).forEach(key => {
     const item = verse1Alignments[key];
     item.bottomWords = [];
@@ -871,15 +839,16 @@ function emptyChapter1Verse1(pathToWordAlignmentData) {
 }
 
 function getAlignments(pathToWordAlignmentData, chapter, verse) {
-  const chapter_path = path.join(pathToWordAlignmentData, chapter + ".json");
+  const chapter_path = path.join(pathToWordAlignmentData, chapter + '.json');
   const chapter_data = fs.readJSONSync(chapter_path);
   return JSON.parse(JSON.stringify(chapter_data[verse]));
 }
 
 function copyVerseAlignmentsToAllVerses(pathToWordAlignmentData, alignments) {
   for (let i = 1; i <= 3; i++) {
-    const chapter_path = path.join(pathToWordAlignmentData, i + ".json");
+    const chapter_path = path.join(pathToWordAlignmentData, i + '.json');
     const chapter_data = fs.readJSONSync(chapter_path);
+
     for (let verse of Object.keys(chapter_data)) {
       chapter_data[verse] = alignments;
     }

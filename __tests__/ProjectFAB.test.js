@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
 import React from 'react';
-import ProjectFAB from '../src/js/components/home/projectsManagement/ProjectsFAB';
 import renderer from 'react-test-renderer';
+import ProjectFAB from '../src/js/components/home/projectsManagement/ProjectsFAB';
 
 // Tests for ProjectFAB React Component
 describe('Test ProjectFAB component', () => {
@@ -23,5 +23,4 @@ describe('Test ProjectFAB component', () => {
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });
-
 });

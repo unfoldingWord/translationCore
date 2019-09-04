@@ -1,8 +1,8 @@
 /* eslint-env jest */
-jest.unmock('fs-extra');
 import path from 'path-extra';
 //helpers
 import * as usfmHelpers from '../src/js/helpers/usfmHelpers';
+jest.unmock('fs-extra');
 
 //valid
 const tc_commas = path.join(__dirname, 'fixtures/usfm/valid/tc_commas.usfm');
@@ -223,14 +223,17 @@ const getVerses = (verses) => {
 
 const getVerseString = (chapters, chapterNum, verseNum) => {
   let verse = chapters[chapterNum][verseNum];
+
   if (verse) {
     if (typeof verse === 'string') {
       return verse.trim();
     }
+
     if (Array.isArray(verse)) {
       return verse.join(' ').trim();
     } else {
       let retValue = '';
+
       for (let object of verse.verseObjects) {
         if ((object.type === 'text') || (object.type === 'quote')) {
           if (retValue) {

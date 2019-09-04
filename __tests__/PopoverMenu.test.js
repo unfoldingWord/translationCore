@@ -2,20 +2,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
-import PopoverMenu from '../src/js/components/PopoverMenu';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import {shallow, mount, configure} from 'enzyme';
+import {
+  shallow, mount, configure,
+} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import PopoverMenu from '../src/js/components/PopoverMenu';
 
 const mountOptions = {
   context: { muiTheme: getMuiTheme() },
-  childContextTypes: { muiTheme: PropTypes.object }
+  childContextTypes: { muiTheme: PropTypes.object },
 };
 
 beforeAll(() => {
-  configure({adapter: new Adapter()});
+  configure({ adapter: new Adapter() });
 });
 
 describe('snapshots', () => {
@@ -48,7 +50,6 @@ describe('snapshots', () => {
   });
 });
 describe('events', () => {
-
   test('default props', () => {
     const wrapper = shallow(
       <MuiThemeProvider>

@@ -5,82 +5,77 @@ import path from 'path-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fs from 'fs-extra';
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
 import { TRANSLATION_WORDS } from '../src/js/common/constants';
-
-jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
-  getGatewayLanguageCodeAndQuote: () => {
-    return {
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
-    };
-  }
-}));
 
 //actions
 import * as CheckDataLoadActions from '../src/js/actions/CheckDataLoadActions';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+
+jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
+  getGatewayLanguageCodeAndQuote: () => ({
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'authority',
+  }),
+}));
+
 const projectSaveLocation = path.join(__dirname, 'fixtures/project/checkDataProject');
-const toolsReducer = {
-  selectedTool: TRANSLATION_WORDS
-};
+const toolsReducer = { selectedTool: TRANSLATION_WORDS };
 const groupsIndexReducer = {
   groupsIndex: [
     {
       id: 'apostle',
-      name: 'apostle, apostles, apostleship'
+      name: 'apostle, apostles, apostleship',
     },
     {
       id: 'authority',
-      name: 'authority, authorities'
+      name: 'authority, authorities',
     },
     {
       id: 'figs_metaphor',
-      name: 'metaphor'
-    }
-  ]
+      name: 'metaphor',
+    },
+  ],
 };
 const projectDetailsReducer = {
   projectSaveLocation,
-  "manifest": {
-    "target_language": {
-      "id": "sw",
-      "name": "Kiswahili",
-      "direction": "ltr"
+  'manifest': {
+    'target_language': {
+      'id': 'sw',
+      'name': 'Kiswahili',
+      'direction': 'ltr',
     },
-    "project": {
-      "id": "tit",
-      "name": "Titus"
+    'project': {
+      'id': 'tit',
+      'name': 'Titus',
     },
-    toolsSelectedGLs: {
-      translationWords: 'en'
-    }
+    'toolsSelectedGLs': { translationWords: 'en' },
   },
-  "currentProjectToolsProgress": {
-    "wordAlignment": 0,
-    "translationWords": 0.21
+  'currentProjectToolsProgress': {
+    'wordAlignment': 0,
+    'translationWords': 0.21,
   },
 };
 const contextIdReducer = {
-  "contextId": {
-    "groupId": "figs_metaphor",
-    "occurrence": 1,
-    "quote": "that he put before them",
-    "information": "Paul speaks about good deeds as if they were objects that God could place in front of people. AT: \"that God prepared for them to do\" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n",
-    "reference": {
-      "bookId": "tit",
-      "chapter": 3,
-      "verse": 8
+  'contextId': {
+    'groupId': 'figs_metaphor',
+    'occurrence': 1,
+    'quote': 'that he put before them',
+    'information': 'Paul speaks about good deeds as if they were objects that God could place in front of people. AT: "that God prepared for them to do" (See: [[:en:ta:vol1:translate:figs_metaphor]]) \n',
+    'reference': {
+      'bookId': 'tit',
+      'chapter': 3,
+      'verse': 8,
     },
-    "tool": "TranslationNotesChecker"
+    'tool': 'TranslationNotesChecker',
   },
-  "before": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.",
-  "after": "Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST",
-  "tags": [
-    "punctuation",
-    "wordChoice"
+  'before': 'Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote.',
+  'after': 'Huu ni ujumbe wa kuaminika. Ninawataka myanene kwa ujasiri mambo haya , ili kwamba wale wanaomwamini Mungu wawe na dhamira juu ya kazi nzuri ambayo aliiweka mbele yao. Mambo haya ni mazuri na yanafaida kwa ajili ya watu wote. TEST',
+  'tags': [
+    'punctuation',
+    'wordChoice',
   ],
-  "modifiedTimestamp": "2017-04-28T14:27:50.848Z"
+  'modifiedTimestamp': '2017-04-28T14:27:50.848Z',
 };
 
 describe('CheckDataLoadActions.generateLoadPath', () => {
@@ -89,21 +84,23 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
   });
 
   it('should generate the output directory for the comments data', () => {
-    const checkDataName = "comments";
+    const checkDataName = 'comments';
+
     expect(CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName))
       .toEqual(path.join(`${projectSaveLocation}/.apps/translationCore/checkData/${checkDataName}/tit/3/8`));
   });
 
   it('runs CheckDataLoadActions.loadCheckData', () => {
-    const checkDataName = "verseEdits";
+    const checkDataName = 'verseEdits';
     let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName);
     let checkData = CheckDataLoadActions.loadCheckData(loadPath, contextIdReducer.contextId);
+
     expect(checkData).toEqual(expect.objectContaining({
       contextId: expect.objectContaining({
         groupId: 'figs_metaphor',
         quote: 'that he put before them',
-        tool: 'TranslationNotesChecker'
-      })
+        tool: 'TranslationNotesChecker',
+      }),
     }));
   });
 
@@ -113,12 +110,12 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
         type: 'ADD_COMMENT',
         modifiedTimestamp: '',
         text: '',
-        userName: ''
-      }
+        userName: '',
+      },
     ];
     const store = mockStore({
       projectDetailsReducer,
-      contextIdReducer
+      contextIdReducer,
     });
 
     store.dispatch(CheckDataLoadActions.loadComments());
@@ -127,10 +124,20 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
 
   it('runs CheckDataLoadActions.loadSelections', () => {
     const expectedActions = [
-      {"type":"CHANGE_SELECTIONS","modifiedTimestamp":"2017-04-25T18:10:38.511Z","selections":[{"text":"ambayo","occurrence":1,"occurrences":1},{"text":"aliiweka","occurrence":1,"occurrences":1},{"text":"mbele","occurrence":1,"occurrences":1},{"text":"yao","occurrence":1,"occurrences":1}]}    ];
+      {
+        'type':'CHANGE_SELECTIONS','modifiedTimestamp':'2017-04-25T18:10:38.511Z','selections':[{
+          'text':'ambayo','occurrence':1,'occurrences':1,
+        },{
+          'text':'aliiweka','occurrence':1,'occurrences':1,
+        },{
+          'text':'mbele','occurrence':1,'occurrences':1,
+        },{
+          'text':'yao','occurrence':1,'occurrences':1,
+        }],
+      } ];
     const store = mockStore({
       projectDetailsReducer,
-      contextIdReducer
+      contextIdReducer,
     });
 
     store.dispatch(CheckDataLoadActions.loadSelections());
@@ -145,14 +152,14 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
         modifiedTimestamp: '',
         userName: '',
         gatewayLanguageCode: null,
-        gatewayLanguageQuote: null
-      }
+        gatewayLanguageQuote: null,
+      },
     ];
     const store = mockStore({
       groupsIndexReducer,
       toolsReducer,
       projectDetailsReducer,
-      contextIdReducer
+      contextIdReducer,
     });
     store.dispatch(CheckDataLoadActions.loadReminders());
     expect(store.getActions()).toEqual(expectedActions);

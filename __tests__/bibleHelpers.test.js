@@ -12,7 +12,7 @@ describe('test isOldTestament(), isNewTestament() and getOrigLangforBook()', () 
     // when
     const resultsOT = bibleHelpers.isOldTestament(bookID);
     const resultsNT = bibleHelpers.isNewTestament(bookID);
-    const {languageId, bibleId} = bibleHelpers.getOrigLangforBook(bookID);
+    const { languageId, bibleId } = bibleHelpers.getOrigLangforBook(bookID);
 
     // then
     expect(resultsOT).toEqual(expectOT);
@@ -32,7 +32,7 @@ describe('test isOldTestament(), isNewTestament() and getOrigLangforBook()', () 
     // when
     const resultsOT = bibleHelpers.isOldTestament(bookID);
     const resultsNT = bibleHelpers.isNewTestament(bookID);
-    const {languageId, bibleId} = bibleHelpers.getOrigLangforBook(bookID);
+    const { languageId, bibleId } = bibleHelpers.getOrigLangforBook(bookID);
 
     // then
     expect(resultsOT).toEqual(expectOT);
@@ -52,7 +52,7 @@ describe('test isOldTestament(), isNewTestament() and getOrigLangforBook()', () 
     // when
     const resultsOT = bibleHelpers.isOldTestament(bookID);
     const resultsNT = bibleHelpers.isNewTestament(bookID);
-    const {languageId, bibleId} = bibleHelpers.getOrigLangforBook(bookID);
+    const { languageId, bibleId } = bibleHelpers.getOrigLangforBook(bookID);
 
     // then
     expect(resultsOT).toEqual(expectOT);
