@@ -14,22 +14,26 @@ import {
   getSelectedToolName,
   getGroupsIndex,
   getGroupsData,
-  getProjectSaveLocation,
-  getToolsByKey
+  getProjectSaveLocation
 } from "../selectors";
 import Repo from "../helpers/Repo";
 import {delay} from "../common/utils";
 
 /**
  * TODO: tool data should eventually move into the respective tools.
- * @param {Array} actionsBatch - array to load with actions for later batching
- * @param {object} state
  */
-function loadCheckData(actionsBatch, state) {
-  actionsBatch.push(loadComments(state));
-  actionsBatch.push(loadReminders(state));
-  actionsBatch.push(loadSelections(state));
-  actionsBatch.push(loadInvalidated(state));
+function loadCheckData() {
+  return async (dispatch, getState) => {
+    const state = getState();
+    console.log("loadCheckData()");
+    const actionsBatch = [];
+    actionsBatch.push(loadSelections(state));
+    actionsBatch.push(loadComments(state));
+    actionsBatch.push(loadReminders(state));
+    actionsBatch.push(loadInvalidated(state));
+    dispatch(batchActions(actionsBatch)); // process the batch
+    console.log("loadCheckData() - changing context done");
+  };
 }
 
 /**
@@ -48,17 +52,8 @@ export const changeCurrentContextId = contextId => {
       const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
       console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
       const state = getState();
-      delay(50).then(() => {
-        const actionsBatch = [];
-        loadCheckData(actionsBatch, state);
-        dispatch(batchActions(actionsBatch));
-        saveContextId(state, contextId);
-        const apis = getToolsByKey(state);
-        if (tool in apis) { // only need to validate verse in current tool
-          const groupsData = getGroupsData(state);
-          apis[tool].api.trigger('validateVerse', chapter, verse, null, groupsData);
-        }
-      });
+      dispatch(loadCheckData());
+      saveContextId(state, contextId);
 
       // commit project changes
       const projectDir = getProjectSaveLocation(state);
