@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { localeReducer as locale } from 'react-localize-redux';
 // List of reducers
+import { localizeReducer as localize } from 'react-localize-redux';
 import toolsReducer from './toolsReducer';
 import modalReducer from './modalReducer';
 import loginReducer from './loginReducer';
@@ -35,7 +35,7 @@ import alerts from './alerts';
 
 // combining reducers
 const rootReducers = combineReducers({
-  locale,
+  localize,
   alerts,
   localeSettings,
   toolsReducer,

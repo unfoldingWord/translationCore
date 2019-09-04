@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { LocalizeProvider } from 'react-localize-redux';
 import setupSubscriptions from 'redux-subscriptions';
 import configureStore from '../redux/configureStore';
 import { loadState, saveState } from '../localStorage';
@@ -27,7 +28,9 @@ store.subscribe(setupSubscriptions(store)(
 
 module.exports.App = (
   <Provider store={store}>
-    <Application />
+    <LocalizeProvider store={store}>
+      <Application />
+    </LocalizeProvider>
   </Provider>
 );
 module.exports.dispatch = store.dispatch;

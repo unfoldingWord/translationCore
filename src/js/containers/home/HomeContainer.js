@@ -190,9 +190,6 @@ const mapDispatchToProps = (dispatch) => {
       closeLocaleScreen: () => {
         dispatch(LocaleActions.closeLocaleScreen());
       },
-      setLocaleLanguage: (languageCode) => {
-        dispatch(LocaleActions.setLanguage(languageCode));
-      },
       getProjectProgressForTools: (toolName) => {
         dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
       },

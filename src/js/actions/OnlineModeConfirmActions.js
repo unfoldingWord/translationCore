@@ -26,7 +26,7 @@ export function confirmOnlineAction(onConfirm, onCancel) {
 
       // TODO: this is a very bad idea. We should not be storing react components in the state
       dispatch(AlertModalActions.openOptionDialog(
-        <OnlineDialog onChecked={onConfirmCheckCallback}/>,
+        <OnlineDialog translate={translate} onChecked={onConfirmCheckCallback}/>,
         (result) => {
           if (result !== cancelText) {
             dispatch(AlertModalActions.closeAlertDialog());
