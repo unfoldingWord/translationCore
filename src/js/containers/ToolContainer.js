@@ -76,8 +76,6 @@ class ToolContainer extends Component {
    * @return {*}
    */
   makeToolProps (nextProps = undefined) {
-    const legacyToolsReducer = this.legacyToolsReducer();
-
     if (!nextProps) {
       nextProps = this.props;
     }
@@ -145,10 +143,6 @@ class ToolContainer extends Component {
       showIgnorableDialog: (...args) => {
         console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
         return coreApi.showIgnorableAlert(...args);
-      },
-      get toolsReducer () {
-        console.warn(`DEPRECATED: toolsReducer is deprecated.`);
-        return legacyToolsReducer;
       },
       projectFileExistsSync: (...args) => {
         console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use projectDataPathExistsSync instead.`);

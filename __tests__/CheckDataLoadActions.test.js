@@ -108,53 +108,48 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
   });
 
   it('runs CheckDataLoadActions.loadComments', () => {
-    const expectedActions = [
-      {
+    const expectedAction = {
         type: 'ADD_COMMENT',
         modifiedTimestamp: '',
         text: '',
         userName: ''
-      }
-    ];
+      };
     const store = mockStore({
       projectDetailsReducer,
       contextIdReducer
     });
 
-    store.dispatch(CheckDataLoadActions.loadComments());
-    expect(store.getActions()).toEqual(expectedActions);
+    const results = CheckDataLoadActions.loadComments(store.getState());
+    expect(results).toEqual(expectedAction);
   });
 
   it('runs CheckDataLoadActions.loadSelections', () => {
-    const expectedActions = [
-      {"type":"CHANGE_SELECTIONS","modifiedTimestamp":"2017-04-25T18:10:38.511Z","selections":[{"text":"ambayo","occurrence":1,"occurrences":1},{"text":"aliiweka","occurrence":1,"occurrences":1},{"text":"mbele","occurrence":1,"occurrences":1},{"text":"yao","occurrence":1,"occurrences":1}]}    ];
+    const expectedAction = {"type":"CHANGE_SELECTIONS","modifiedTimestamp":"2017-04-25T18:10:38.511Z","selections":[{"text":"ambayo","occurrence":1,"occurrences":1},{"text":"aliiweka","occurrence":1,"occurrences":1},{"text":"mbele","occurrence":1,"occurrences":1},{"text":"yao","occurrence":1,"occurrences":1}]};
     const store = mockStore({
       projectDetailsReducer,
       contextIdReducer
     });
 
-    store.dispatch(CheckDataLoadActions.loadSelections());
-    expect(store.getActions()).toEqual(expectedActions);
+    const results = CheckDataLoadActions.loadSelections(store.getState());
+    expect(results).toEqual(expectedAction);
   });
 
   it('runs CheckDataLoadActions.loadReminders: should not load another tools data', () => {
-    const expectedActions = [
-      {
+    const expectedAction = {
         type: 'SET_REMINDER',
         enabled: false,
         modifiedTimestamp: '',
         userName: '',
         gatewayLanguageCode: null,
         gatewayLanguageQuote: null
-      }
-    ];
+      };
     const store = mockStore({
       groupsIndexReducer,
       toolsReducer,
       projectDetailsReducer,
       contextIdReducer
     });
-    store.dispatch(CheckDataLoadActions.loadReminders());
-    expect(store.getActions()).toEqual(expectedActions);
+    const results = CheckDataLoadActions.loadReminders(store.getState());
+    expect(results).toEqual(expectedAction);
   });
 });

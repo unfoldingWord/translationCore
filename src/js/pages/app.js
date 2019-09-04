@@ -23,14 +23,16 @@ import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import {loadLocalization, APP_LOCALE_SETTING} from '../actions/LocaleActions';
 import {getLocaleLoaded, getSetting} from '../selectors';
 import {loadTools} from "../actions/ToolActions";
-import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from "../helpers/logger";
+// helpers
+import {getOsInfoStr} from "../helpers/FeedbackHelpers";
 //consts
-import {LOG_FILES_PATH} from "../common/constants";
+import {APP_VERSION, LOG_FILES_PATH} from "../common/constants";
 
-const version = `v${packageJson.version} (${process.env.BUILD})`;
+const version = `v${APP_VERSION} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
+console.log("SYSTEM INFO:\n" + getOsInfoStr());
 
 class Main extends Component {
   constructor(props) {
@@ -55,8 +57,8 @@ class Main extends Component {
 
     loadTools(path.join(__dirname, '../../../tC_apps'));
 
-    if (localStorage.getItem('version') !== packageJson.version) {
-      localStorage.setItem('version', packageJson.version);
+    if (localStorage.getItem('version') !== APP_VERSION) {
+      localStorage.setItem('version', APP_VERSION);
     }
 
     migrateResourcesFolder();

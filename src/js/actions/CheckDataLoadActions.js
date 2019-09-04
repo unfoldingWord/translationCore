@@ -53,7 +53,6 @@ export function loadCheckData(loadPath, contextId) {
 
   if (loadPath && contextId && fs.existsSync(loadPath)) {
     let files = fs.readdirSync(loadPath);
-
     files = files.filter(file => { // filter the filenames to only use .json
       return path.extname(file) === '.json';
     });
@@ -87,140 +86,132 @@ export function loadCheckData(loadPath, contextId) {
 }
 /**
  * Loads the latest comment file from the file system for the specify contextID.
+ * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the commentsReducer with data.
  */
-export function loadComments() {
-  return (dispatch, getState) => {
-    let state = getState();
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
-    let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-    if (commentsObject) {
-      dispatch({
-        type: consts.ADD_COMMENT,
-        modifiedTimestamp: commentsObject.modifiedTimestamp,
-        text: commentsObject.text,
-        userName: commentsObject.userName
-      });
-    } else {
-      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch({
-        type: consts.ADD_COMMENT,
-        modifiedTimestamp: "",
-        text: "",
-        userName: ""
-      });
-    }
-  };
+export function loadComments(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
+  let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+  if (commentsObject) {
+    return {
+      type: consts.ADD_COMMENT,
+      modifiedTimestamp: commentsObject.modifiedTimestamp,
+      text: commentsObject.text,
+      userName: commentsObject.userName
+    };
+  } else {
+    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+    return {
+      type: consts.ADD_COMMENT,
+      modifiedTimestamp: "",
+      text: "",
+      userName: ""
+    };
+  }
 }
 /**
  * Loads the latest invalidated file from the file system for the specify contextID.
+ * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the invalidatedReducer with data.
  */
-export function loadInvalidated() {
-  return (dispatch, getState) => {
-    let state = getState();
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
-    let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-    const {
+export function loadInvalidated(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
+  let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+  const {
+    gatewayLanguageCode,
+    gatewayLanguageQuote
+  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
+
+  if (invalidatedObject) {
+    return {
+      type: consts.SET_INVALIDATED,
+      enabled: invalidatedObject.enabled,
+      userName: invalidatedObject.userName,
+      modifiedTimestamp: invalidatedObject.modifiedTimestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-
-    if (invalidatedObject) {
-      dispatch({
-        type: consts.SET_INVALIDATED,
-        enabled: invalidatedObject.enabled,
-        userName: invalidatedObject.userName,
-        modifiedTimestamp: invalidatedObject.modifiedTimestamp,
-        gatewayLanguageCode,
-        gatewayLanguageQuote
-      });
-    } else {
-      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch({
-        type: consts.SET_INVALIDATED,
-        enabled: false,
-        modifiedTimestamp: "",
-        userName: "",
-        gatewayLanguageCode: null,
-        gatewayLanguageQuote: null
-      });
-    }
-  };
+    };
+  } else {
+    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+    return {
+      type: consts.SET_INVALIDATED,
+      enabled: false,
+      modifiedTimestamp: "",
+      userName: "",
+      gatewayLanguageCode: null,
+      gatewayLanguageQuote: null
+    };
+  }
 }
 /**
  * Loads the latest reminders file from the file system for the specify contextID.
+ * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the remindersReducer with data.
  */
-export function loadReminders() {
-  return (dispatch, getState) => {
-    let state = getState();
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
-    let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-    const {
+export function loadReminders(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
+  let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+  const {
+    gatewayLanguageCode,
+    gatewayLanguageQuote
+  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
+
+  if (remindersObject) {
+    return {
+      type: consts.SET_REMINDER,
+      enabled: remindersObject.enabled,
+      userName: remindersObject.userName,
+      modifiedTimestamp: remindersObject.modifiedTimestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
-
-    if (remindersObject) {
-      dispatch({
-        type: consts.SET_REMINDER,
-        enabled: remindersObject.enabled,
-        userName: remindersObject.userName,
-        modifiedTimestamp: remindersObject.modifiedTimestamp,
-        gatewayLanguageCode,
-        gatewayLanguageQuote
-      });
-    } else {
-      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch({
-        type: consts.SET_REMINDER,
-        enabled: false,
-        modifiedTimestamp: "",
-        userName: "",
-        gatewayLanguageCode: null,
-        gatewayLanguageQuote: null
-      });
-    }
-  };
+    };
+  } else {
+    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+    return {
+      type: consts.SET_REMINDER,
+      enabled: false,
+      modifiedTimestamp: "",
+      userName: "",
+      gatewayLanguageCode: null,
+      gatewayLanguageQuote: null
+    };
+  }
 }
 /**
  * Loads the latest selections file from the file system for the specific contextID.
+ * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the selectionsReducer with data.
  */
-export function loadSelections() {
-  return (dispatch, getState) => {
-    const state = getState();
-    const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
-    const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+export function loadSelections(state) {
+  const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
+  const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
 
-    if (selectionsObject) {
-      const {
-        selections,
-        modifiedTimestamp,
-        nothingToSelect,
-        userName,
-        gatewayLanguageCode,
-        gatewayLanguageQuote
-      } = selectionsObject;
+  if (selectionsObject) {
+    const {
+      selections,
+      modifiedTimestamp,
+      nothingToSelect,
+      userName,
+      gatewayLanguageCode,
+      gatewayLanguageQuote
+    } = selectionsObject;
 
-      dispatch({
-        type: consts.CHANGE_SELECTIONS,
-        selections: selections,
-        nothingToSelect: nothingToSelect,
-        userName: userName,
-        modifiedTimestamp: modifiedTimestamp,
-        gatewayLanguageCode: gatewayLanguageCode,
-        gatewayLanguageQuote: gatewayLanguageQuote
-      });
-    } else {
-      // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-      dispatch({
-        type: consts.CHANGE_SELECTIONS,
-        modifiedTimestamp: null,
-        selections: [],
-        userName: null
-      });
-    }
-  };
+    return {
+      type: consts.CHANGE_SELECTIONS,
+      selections: selections,
+      nothingToSelect: nothingToSelect,
+      userName: userName,
+      modifiedTimestamp: modifiedTimestamp,
+      gatewayLanguageCode: gatewayLanguageCode,
+      gatewayLanguageQuote: gatewayLanguageQuote
+    };
+  } else {
+    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
+    return {
+      type: consts.CHANGE_SELECTIONS,
+      modifiedTimestamp: null,
+      selections: [],
+      userName: null
+    };
+  }
 }
