@@ -59,10 +59,10 @@ export const getOsInfoStr = () => {
     userInfo: os.userInfo(),
     homedir: os.homedir(),
     platform: os.platform(),
-    release: os.release()
+    release: os.release(),
   };
   const osString = stringifySafe(osInfo,
-    "[error loading system information]");
+    '[error loading system information]');
   return osString;
 };
 
@@ -120,8 +120,8 @@ export const submitFeedback = ({
   if (state) {
     msg.attachments = [];
     const zip = new AdmZip();
-    let buff = Buffer.from(state.logData || "");
-    zip.addFile("log.txt", buff, "application logs");
+    let buff = Buffer.from(state.logData || '');
+    zip.addFile('log.txt', buff, 'application logs');
     const osString = getOsInfoStr();
     buff = Buffer.from(osString);
     zip.addFile('os_info.json', buff, 'application logs');

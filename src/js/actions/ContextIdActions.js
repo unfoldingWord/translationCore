@@ -1,9 +1,5 @@
-/**
- * @module Actions/ContextId
- */
-
 import fs from 'fs-extra';
-import {batchActions} from 'redux-batched-actions';
+import { batchActions } from 'redux-batched-actions';
 // helpers
 import {
   shiftGroupIndex, shiftGroupDataItem, visibleGroupItems,
@@ -14,16 +10,20 @@ import {
   getSelectedToolName,
   getGroupsIndex,
   getGroupsData,
-  getProjectSaveLocation
-} from "../selectors";
-import Repo from "../helpers/Repo";
-import {delay} from "../common/utils";
+  getProjectSaveLocation,
+} from '../selectors';
+import Repo from '../helpers/Repo';
+import { delay } from '../common/utils';
+import consts from './ActionTypes';
+import {
+  loadComments, loadReminders, loadSelections, loadInvalidated,
+} from './CheckDataLoadActions';
 
 /**
  * TODO: tool data should eventually move into the respective tools.
  */
 function loadCheckData() {
-  return async (dispatch, getState) => {
+  return (dispatch, getState) => {
     const state = getState();
     const actionsBatch = [];
     actionsBatch.push(loadSelections(state));
@@ -39,34 +39,39 @@ function loadCheckData() {
  * @param {object} contextId - the contextId object.
  * @return {object} New state for contextId reducer.
  */
-export const changeCurrentContextId = contextId => {
-  return async (dispatch, getState) => {
-    dispatch({
-      type: consts.CHANGE_CURRENT_CONTEXT_ID,
-      contextId
-    });
-    if (contextId) {
-      const {reference: {bookId, chapter, verse}, tool, groupId} = contextId;
-      const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
-      console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
-      const state = getState();
-      dispatch(loadCheckData());
-      saveContextId(state, contextId);
+export const changeCurrentContextId = contextId => (dispatch, getState) => {
+  dispatch({
+    type: consts.CHANGE_CURRENT_CONTEXT_ID,
+    contextId,
+  });
 
-      // commit project changes
-      const projectDir = getProjectSaveLocation(state);
-      delay(5000).then(async () => {
-        try {
-          const repo = await Repo.open(projectDir, state.loginReducer.userdata);
-          const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
-          if (!saveStarted) {
-            console.log(`changeCurrentContextId() - GIT Save already running, skipping save after ${refStr}`);
-          }
-        } catch(e) {
-          console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
+  if (contextId) {
+    const {
+      reference: {
+        bookId, chapter, verse,
+      }, tool, groupId,
+    } = contextId;
+    const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
+    console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
+    const state = getState();
+    dispatch(loadCheckData());
+    saveContextId(state, contextId);
+
+    // commit project changes
+    const projectDir = getProjectSaveLocation(state);
+
+    delay(5000).then(async () => {
+      try {
+        const repo = await Repo.open(projectDir, state.loginReducer.userdata);
+        const saveStarted = await repo.saveDebounced(`Auto saving at ${refStr}`);
+
+        if (!saveStarted) {
+          console.log(`changeCurrentContextId() - GIT Save already running, skipping save after ${refStr}`);
         }
-      });
-    }
+      } catch (e) {
+        console.error(`changeCurrentContextId() - Failed to auto save ${refStr}`, e);
+      }
+    });
   }
 };
 

@@ -86,7 +86,7 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeToolProps (nextProps = undefined) {
+  makeToolProps(nextProps = undefined) {
     if (!nextProps) {
       nextProps = this.props;
     }

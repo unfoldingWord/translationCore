@@ -38,6 +38,7 @@ export const findGroupDataItem = (contextId, groupData) => {
 
   for (let i = 0, l = groupData.length; i < l; i++) {
     const grpContextId = groupData[i].contextId;
+
     if ((grpContextId.quote === contextId.quote) &&
         isEqual(grpContextId.reference, contextId.reference) &&
         (grpContextId.occurrence === contextId.occurrence)) {

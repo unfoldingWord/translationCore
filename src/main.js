@@ -1,11 +1,11 @@
 const electron = require('electron');
 const path = require('path-extra');
 const ospath = require('ospath');
-const {download} = require('@neutrinog/electron-dl');
+const { download } = require('@neutrinog/electron-dl');
+const p = require('../package.json');
 const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
-const p = require('../package.json');
-const {injectFileLogging} = require('./js/helpers/logger');
+const { injectFileLogging } = require('./js/helpers/logger');
 const DownloadManager = require('./js/DownloadManager');
 
 const ipcMain = electron.ipcMain;
