@@ -52,7 +52,7 @@ export const saveContextId = (state, contextId) => {
 
     if (projectSaveLocation && toolName && bookId) {
       let savePath = getContextIdPathFromIndex(projectSaveLocation, toolName, bookId);
-      fs.outputJsonSync(savePath, contextId, { spaces: 2 });
+      fs.outputJson(savePath, contextId, { spaces: 2 });
     } else {
       // saveCurrentContextId: missing required data
     }

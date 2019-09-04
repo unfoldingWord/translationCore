@@ -47,6 +47,25 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
   }));
 };
 
+export const getOsInfoStr = () => {
+  const osInfo = {
+    arch: os.arch(),
+    cpus: os.cpus(),
+    memory: os.totalmem(),
+    type: os.type(),
+    networkInterfaces: os.networkInterfaces(),
+    loadavg: os.loadavg(),
+    eol: os.EOL,
+    userInfo: os.userInfo(),
+    homedir: os.homedir(),
+    platform: os.platform(),
+    release: os.release()
+  };
+  const osString = stringifySafe(osInfo,
+    "[error loading system information]");
+  return osString;
+};
+
 /**
  * Submits a new support ticket.
  * If the response is 401 the user is not registered and you should supply
@@ -101,24 +120,9 @@ export const submitFeedback = ({
   if (state) {
     msg.attachments = [];
     const zip = new AdmZip();
-    let buff = Buffer.from(state.logData || '');
-    zip.addFile('log.txt', buff, 'application logs');
-
-    const osInfo = {
-      arch: os.arch(),
-      cpus: os.cpus(),
-      memory: os.totalmem(),
-      type: os.type(),
-      networkInterfaces: os.networkInterfaces(),
-      loadavg: os.loadavg(),
-      eol: os.EOL,
-      userInfo: os.userInfo(),
-      homedir: os.homedir(),
-      platform: os.platform(),
-      release: os.release(),
-    };
-    const osString = stringifySafe(osInfo,
-      '[error loading system information]');
+    let buff = Buffer.from(state.logData || "");
+    zip.addFile("log.txt", buff, "application logs");
+    const osString = getOsInfoStr();
     buff = Buffer.from(osString);
     zip.addFile('os_info.json', buff, 'application logs');
     const zippedBuffer = zip.toBuffer();

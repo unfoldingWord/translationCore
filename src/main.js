@@ -1,8 +1,11 @@
 const electron = require('electron');
-const { download } = require('@neutrinog/electron-dl');
-const p = require('../package.json');
+const path = require('path-extra');
+const ospath = require('ospath');
+const {download} = require('@neutrinog/electron-dl');
 const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
+const p = require('../package.json');
+const {injectFileLogging} = require('./js/helpers/logger');
 const DownloadManager = require('./js/DownloadManager');
 
 const ipcMain = electron.ipcMain;
@@ -18,6 +21,10 @@ const dialog = electron.dialog;
 let mainWindow;
 let helperWindow;
 let splashScreen;
+
+// to capture start up console logging
+const version = `v${p.version} (${process.env.BUILD})`;
+injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
 
 const downloadManager = new DownloadManager();
 

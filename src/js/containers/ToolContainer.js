@@ -86,9 +86,7 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeToolProps(nextProps = undefined) {
-    const legacyToolsReducer = this.legacyToolsReducer();
-
+  makeToolProps (nextProps = undefined) {
     if (!nextProps) {
       nextProps = this.props;
     }
@@ -157,10 +155,6 @@ class ToolContainer extends Component {
       showIgnorableDialog: (...args) => {
         console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
         return coreApi.showIgnorableAlert(...args);
-      },
-      get toolsReducer() {
-        console.warn(`DEPRECATED: toolsReducer is deprecated.`);
-        return legacyToolsReducer;
       },
       projectFileExistsSync: (...args) => {
         console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use projectDataPathExistsSync instead.`);
