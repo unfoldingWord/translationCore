@@ -178,36 +178,28 @@ export const getActiveHomeScreenSteps = (state) => {
  * @param {object} state
  * @return {String}
  */
-export const getErrorFeedbackMessage = (state) => {
-  return fromHomeScreenReducer.getErrorFeedbackMessage(state.homeScreenReducer);
-};
+export const getErrorFeedbackMessage = (state) => fromHomeScreenReducer.getErrorFeedbackMessage(state.homeScreenReducer);
 
 /**
  * gets additional error details to provide feedback dialog submission
  * @param {object} state
  * @return {String}
  */
-export const getErrorFeedbackExtraDetails = (state) => {
-  return fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
-};
+export const getErrorFeedbackExtraDetails = (state) => fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
 
 /**
  * gets the category for error feedback dialog)
  * @param {object} state
  * @return {String}
  */
-export const getErrorFeedbackCategory = (state) => {
-  return fromHomeScreenReducer.getErrorFeedbackCategory(state.homeScreenReducer);
-};
+export const getErrorFeedbackCategory = (state) => fromHomeScreenReducer.getErrorFeedbackCategory(state.homeScreenReducer);
 
 /**
  * gets the function to call when feedback dialog closes
  * @param {object} state
  * @return {String}
  */
-export const getFeedbackCloseCallback = (state) => {
-  return fromHomeScreenReducer.getFeedbackCloseCallback(state.homeScreenReducer);
-};
+export const getFeedbackCloseCallback = (state) => fromHomeScreenReducer.getFeedbackCloseCallback(state.homeScreenReducer);
 
 /**
  * Checks if the user is logged in
@@ -401,8 +393,9 @@ export const getContext = state =>
  */
 export const getSelectedTargetVerse = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter, verse}} = context;
+    const { reference: { chapter, verse } } = context;
     return fromResourcesReducer.getTargetVerse(state.resourcesReducer, chapter,
       verse);
   } else {
@@ -417,8 +410,9 @@ export const getSelectedTargetVerse = (state) => {
  */
 export const getSelectedTargetChapter = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter}} = context;
+    const { reference: { chapter } } = context;
     return fromResourcesReducer.getTargetChapter(state.resourcesReducer,
       chapter);
   }
@@ -447,8 +441,9 @@ export const getSourceBook = state =>
  */
 export const getSelectedSourceVerse = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter, verse}} = context;
+    const { reference: { chapter, verse } } = context;
     return fromResourcesReducer.getOriginalVerse(state.resourcesReducer,
       chapter, verse);
   } else {
@@ -463,8 +458,9 @@ export const getSelectedSourceVerse = (state) => {
  */
 export const getSelectedSourceChapter = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter}} = context;
+    const { reference: { chapter } } = context;
     return fromResourcesReducer.getOriginalChapter(state.resourcesReducer,
       chapter);
   }

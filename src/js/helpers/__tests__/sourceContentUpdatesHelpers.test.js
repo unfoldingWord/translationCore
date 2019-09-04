@@ -1,18 +1,18 @@
 import path from 'path';
-import fs from "fs-extra";
+import fs from 'fs-extra';
 // helpers
-import * as sourceContentUpdatesHelpers from "../sourceContentUpdatesHelpers";
+import * as sourceContentUpdatesHelpers from '../sourceContentUpdatesHelpers';
 // constants
-import {USER_RESOURCES_PATH} from '../../common/constants';
+import { USER_RESOURCES_PATH } from '../../common/constants';
 
-describe("migrate resources", () => {
+describe('migrate resources', () => {
   const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
 
   beforeEach(() => {
     fs.__resetMockFS();
   });
 
-  it("getResources", () => {
+  it('getResources', () => {
     // given
     const resourcesPath = USER_RESOURCES_PATH;
     const copyResourceFiles = [
@@ -28,8 +28,3 @@ describe("migrate resources", () => {
     expect(resources).toMatchSnapshot();
   });
 });
-
-//
-// Helpers
-//
-

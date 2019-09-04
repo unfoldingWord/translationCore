@@ -1,24 +1,23 @@
-import path from "path-extra";
-import fs from "fs-extra";
-import {generateTimestamp} from "./TimestampGenerator";
+/* eslint-disable no-return-await */
+import path from 'path-extra';
+import fs from 'fs-extra';
+import isEqual from 'deep-equal';
 // actions
-import {loadCheckData} from '../actions/CheckDataLoadActions';
-// constants
+import { loadCheckData } from '../actions/CheckDataLoadActions';
 import {
   USER_RESOURCES_PATH,
   PROJECT_DOT_APPS_PATH,
   PROJECT_CHECKDATA_DIRECTORY,
   SOURCE_CONTENT_UPDATER_MANIFEST,
-  TRANSLATION_WORDS
+  TRANSLATION_WORDS,
 } from '../common/constants';
-import { getOrigLangforBook } from "./bibleHelpers";
-import isEqual from "deep-equal";
+import { generateTimestamp } from './TimestampGenerator';
+import { getOrigLangforBook } from './bibleHelpers';
 
 /**
  * Provides an interface with which tools can interact with a project.
  */
 export default class ProjectAPI {
-
   /**
    * Creates a new project api
    * @param {string} projectDir - the absolute path to the project directory
@@ -81,7 +80,7 @@ export default class ProjectAPI {
   getCategoriesDir(toolName) {
     // TODO: the book id is redundant to have in the project directory.
     const bookId = this.getBookId();
-    return path.join(this._dataPath, "index", toolName, bookId);
+    return path.join(this._dataPath, 'index', toolName, bookId);
   }
 
   /**
@@ -100,13 +99,17 @@ export default class ProjectAPI {
 
       for (let i = 0, len = files.length; i < len; i++) {
         const dataPath = path.join(dir, files[i]);
-        const groupName = path.basename(dataPath, ".json");
+        const groupName = path.basename(dataPath, '.json');
+
         try {
           let groupData = fs.readJsonSync(dataPath);
+
           // check & fix corrupted selections value for each group data item.
           groupData = groupData.map(groupDataItem => {
             if (groupDataItem.selections === true) {// if selections is true then find selections array.
-              const {bookId, chapter, verse} = groupDataItem.contextId.reference;
+              const {
+                bookId, chapter, verse,
+              } = groupDataItem.contextId.reference;
               const loadPath = path.join(
                 this._projectPath,
                 PROJECT_CHECKDATA_DIRECTORY,
@@ -116,7 +119,7 @@ export default class ProjectAPI {
                 verse.toString()
               );
 
-              const {selections} = loadCheckData(loadPath, groupDataItem.contextId);
+              const { selections } = loadCheckData(loadPath, groupDataItem.contextId);
               groupDataItem.selections = selections || false;
               return groupDataItem;
             }
@@ -165,13 +168,16 @@ export default class ProjectAPI {
    */
   updateCategoryGroupData(srceFile, destFile) {
     let copied = false;
+
     try {
       const newData = fs.readJsonSync(srceFile);
       const currentData = fs.readJsonSync(destFile);
       const currentDataLen = currentData && currentData.length || 0;
+
       for (let i = 0, l = newData.length; i < l; i++) {
         const newObject = newData[i];
         let index = -1;
+
         if ((i >= currentDataLen) || !this.isMatchingCheckInstance(currentData[i].contextId, newObject.contextId)) {
           for (let j = 0; j < currentDataLen; j++) { // since lists are not identical, do search for match
             if (this.isMatchingCheckInstance(currentData[j].contextId, newObject.contextId)) {
@@ -182,16 +188,17 @@ export default class ProjectAPI {
         } else {
           index = i;
         }
+
         if (index >= 0) {
           currentData[index].contextId = newObject.contextId;
         } else {
-          console.log("updateCategoryGroupData() - no match found for ", newObject.contextId);
+          console.log('updateCategoryGroupData() - no match found for ', newObject.contextId);
         }
       }
       fs.outputJsonSync(destFile, currentData);
       copied = true;
-    } catch(e) {
-      console.error("updateCategoryGroupData() - could not preserve data from: " + destFile, e);
+    } catch (e) {
+      console.error('updateCategoryGroupData() - could not preserve data from: ' + destFile, e);
       copied = false;
     }
     return copied;
@@ -210,11 +217,14 @@ export default class ProjectAPI {
     const groupName = path.basename(dataPath);
     const destFile = path.join(destDir, groupName);
     const subCategory = path.parse(dataPath).name;
+
     if (!groupsDataLoaded.includes(subCategory)) {
       let copied = false;
+
       if (fs.existsSync(destFile)) {
         copied = this.updateCategoryGroupData(dataPath, destFile);
       }
+
       if (!copied) {
         fs.copySync(dataPath, destFile);
       }
@@ -231,7 +241,7 @@ export default class ProjectAPI {
    */
   getManifest() {
     if (this._manifest === null) {
-      const data = this.readFileSync("manifest.json");
+      const data = this.readFileSync('manifest.json');
       this._manifest = JSON.parse(data);
     }
     return this._manifest;
@@ -254,6 +264,7 @@ export default class ProjectAPI {
    */
   getBookName() {
     const manifest = this.getManifest();
+
     if (manifest.target_language && manifest.target_language.book && manifest.target_language.book.name) {
       return manifest.target_language.book.name;
     } else {
@@ -297,6 +308,7 @@ export default class ProjectAPI {
    */
   isCategoryLoaded(toolName, category) {
     const categoriesPath = this.getCategoriesPath(toolName);
+
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
@@ -310,7 +322,7 @@ export default class ProjectAPI {
     // rebuild missing/corrupt category index
     fs.outputJsonSync(categoriesPath, {
       current: [],
-      loaded: []
+      loaded: [],
     }, { spaces: 2 });
 
     return false;
@@ -323,15 +335,18 @@ export default class ProjectAPI {
    */
   hasNewGroupsData(toolName) {
     const categoriesPath = this.getCategoriesPath(toolName);
+
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
         const lastTimeDataUpdated = rawData.timestamp;
+
         if (!lastTimeDataUpdated) {
           return true;
         }
+
         const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
-        const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+        const { modified: lastTimeDataDownloaded } = fs.readJsonSync(sourceContentManifestPath);
         return new Date(lastTimeDataDownloaded).getTime() !== new Date(lastTimeDataUpdated).getTime();
       } catch (e) {
         console.warn(
@@ -348,6 +363,7 @@ export default class ProjectAPI {
    */
   resetLoadedCategories(toolName) {
     const categoriesPath = this.getCategoriesPath(toolName);
+
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
@@ -367,9 +383,11 @@ export default class ProjectAPI {
   removeStaleCategoriesFromCurrent(toolName) {
     const groupsPath = this.getCategoriesDir(toolName);
     const categoriesPath = this.getCategoriesPath(toolName);
+
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
+
         rawData.current.forEach((category, index) => {
           if (!rawData.loaded.includes(category)) {
             //There is something that is selected that is not loaded
@@ -379,10 +397,12 @@ export default class ProjectAPI {
         });
         fs.outputJsonSync(categoriesPath, rawData, { spaces: 2 });
         const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+
         if (fs.existsSync(contextIdPath)) {
           try {
             const currentContextId = fs.readJSONSync(contextIdPath);
             const currentContextIdGroup = currentContextId.groupId;
+
             if (!rawData.loaded.includes(currentContextIdGroup)) {
               fs.removeSync(contextIdPath);
             }
@@ -391,7 +411,9 @@ export default class ProjectAPI {
             console.error(e);
           }
         }
+
         const currentGroupsData = fs.readdirSync(groupsPath).filter((name) => name.includes('.json'));
+
         currentGroupsData.forEach((category) => {
           if (!rawData.loaded.includes(path.parse(category).name)) {
             //removing groups data files that are not in loaded
@@ -416,16 +438,18 @@ export default class ProjectAPI {
     const categoriesPath = this.getCategoriesPath(toolName);
     let data = {
       current: [],
-      loaded: loaded ? [subCategory] : []
+      loaded: loaded ? [subCategory] : [],
     };
 
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         let rawData = fs.readJsonSync(categoriesPath);
+
         // TRICKY: assert data structure before overwriting default to not propagate errors.
         if (loaded) {
-          if (!rawData.loaded.includes(subCategory))
+          if (!rawData.loaded.includes(subCategory)) {
             rawData.loaded.push(subCategory);
+          }
         } else {
           //Removing the loaded subCategory from list
           rawData.loaded = rawData.loaded.filter(c => c !== subCategory);
@@ -436,8 +460,9 @@ export default class ProjectAPI {
           `Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
+
     const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
-    const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+    const { modified: lastTimeDataDownloaded } = fs.readJsonSync(sourceContentManifestPath);
     data.timestamp = lastTimeDataDownloaded;
     fs.outputJsonSync(categoriesPath, data, { spaces: 2 });
   }
@@ -459,6 +484,7 @@ export default class ProjectAPI {
    */
   setCurrentCategories(toolName, availableCategories) {
     const categoriesPath = this.getCategoriesPath(toolName);
+
     try {
       if (fs.existsSync(categoriesPath)) {
         const rawData = fs.readJsonSync(categoriesPath);
@@ -477,7 +503,7 @@ export default class ProjectAPI {
         newCurrent = newCurrent.filter((item, index) => newCurrent.indexOf(item) === index);
         const data = { ...rawData, current: newCurrent };
         const sourceContentManifestPath = path.join(USER_RESOURCES_PATH, SOURCE_CONTENT_UPDATER_MANIFEST);
-        const {modified: lastTimeDataDownloaded} = fs.readJsonSync(sourceContentManifestPath);
+        const { modified: lastTimeDataDownloaded } = fs.readJsonSync(sourceContentManifestPath);
         data.timestamp = lastTimeDataDownloaded;
         // save new .categories file in project index path
         fs.outputJsonSync(categoriesPath, data, { spaces: 2 });
@@ -495,7 +521,7 @@ export default class ProjectAPI {
    */
   resetCategoryGroupIds(toolName) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
-      ".categoryIndex");
+      '.categoryIndex');
     fs.removeSync(indexPath);
     fs.ensureDirSync(indexPath);
   }
@@ -508,7 +534,7 @@ export default class ProjectAPI {
    */
   setCategoryGroupIds(toolName, category, groups) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
-      ".categoryIndex", `${category}.json`);
+      '.categoryIndex', `${category}.json`);
     fs.outputJsonSync(indexPath, groups, { spaces: 2 });
   }
 
@@ -520,7 +546,8 @@ export default class ProjectAPI {
    */
   getCategoryGroupIds(toolName, categoryId) {
     const indexPath = path.join(this.getCategoriesDir(toolName),
-      ".categoryIndex", `${categoryId}.json`);
+      '.categoryIndex', `${categoryId}.json`);
+
     if (fs.pathExistsSync(indexPath)) {
       try {
         return fs.readJsonSync(indexPath);
@@ -539,6 +566,7 @@ export default class ProjectAPI {
    */
   getParentCategory(toolName, groupId) {
     const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+
     for (let parentCategoryName in parentCategoryMapping) {
       if (parentCategoryMapping[parentCategoryName].includes(groupId)) {
         return parentCategoryName;
@@ -553,12 +581,14 @@ export default class ProjectAPI {
    */
   getAllCategoryMapping(toolName) {
     const parentCategoriesObject = {};
-    const indexPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex");
+    const indexPath = path.join(this.getCategoriesDir(toolName), '.categoryIndex');
+
     if (fs.pathExistsSync(indexPath)) {
       try {
         const parentCategories = fs.readdirSync(indexPath).map((fileName) => path.parse(fileName).name);
+
         parentCategories.forEach((category) => {
-          const subCategoryPath = path.join(this.getCategoriesDir(toolName), ".categoryIndex", `${category}.json`);
+          const subCategoryPath = path.join(this.getCategoriesDir(toolName), '.categoryIndex', `${category}.json`);
           parentCategoriesObject[category] = fs.readJsonSync(subCategoryPath);
         });
       } catch (e) {
@@ -576,19 +606,23 @@ export default class ProjectAPI {
    */
   getSelectedCategories(toolName, withParent = false) {
     const categoriesPath = this.getCategoriesPath(toolName);
+
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
+
         if (withParent) {
           let objectWithParentCategories = {};
           const subCategories = data.current;
           const parentCategoryMapping = this.getAllCategoryMapping(toolName);
+
           subCategories.forEach((subcategory) => {
             Object.keys(parentCategoryMapping).forEach((categoryName) => {
               if (parentCategoryMapping[categoryName].includes(subcategory)) {
                 // Subcategory name is contained in this parent
-                if (!objectWithParentCategories[categoryName])
+                if (!objectWithParentCategories[categoryName]) {
                   objectWithParentCategories[categoryName] = [];
+                }
                 objectWithParentCategories[categoryName].push(subcategory);
               }
             });
@@ -617,6 +651,7 @@ export default class ProjectAPI {
  */
   getLoadedCategories(toolName) {
     const categoriesPath = this.getCategoriesPath(toolName);
+
     if (fs.pathExistsSync(categoriesPath)) {
       try {
         const data = fs.readJsonSync(categoriesPath);
@@ -642,7 +677,7 @@ export default class ProjectAPI {
     let data = {
       current: categories,
       loaded: [],
-      timestamp: generateTimestamp()
+      timestamp: generateTimestamp(),
     };
 
     if (fs.pathExistsSync(categoriesPath)) {

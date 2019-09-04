@@ -1,13 +1,12 @@
-import ospath from "ospath";
-import path from "path-extra";
-import fs from "fs-extra";
-import semver from "semver";
+import ospath from 'ospath';
+import path from 'path-extra';
+import fs from 'fs-extra';
+import semver from 'semver';
 import { TRANSLATION_HELPS } from '../common/constants';
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
  */
 class ResourceAPI {
-
   /**
    * Creates a new resource api
    * @param {string} resourcesDir - the absolute path to the resources directory
@@ -21,7 +20,7 @@ class ResourceAPI {
    * @returns {ResourceAPI}
    */
   static default() {
-    const dir = path.join(ospath.home(), "translationCore", "resources");
+    const dir = path.join(ospath.home(), 'translationCore', 'resources');
     return new ResourceAPI(dir);
   }
 
@@ -62,7 +61,8 @@ class ResourceAPI {
    */
   static getLatestVersion(dir) {
     const versions = ResourceAPI.listVersions(dir);
-    if(versions.length > 0) {
+
+    if (versions.length > 0) {
       return path.join(dir, versions[0]);
     } else {
       return null;
@@ -76,13 +76,11 @@ class ResourceAPI {
    */
   static listVersions(dir) {
     if (fs.pathExistsSync(dir)) {
-      const versionedDirs = fs.readdirSync(dir).filter(file => {
-        return fs.lstatSync(path.join(dir, file)).isDirectory() &&
-          file.match(/^v\d/i);
-      });
-      return versionedDirs.sort((a, b) => {
-        return -this.compareVersions(a, b); // do inverted sort
-      });
+      const versionedDirs = fs.readdirSync(dir).filter(file => fs.lstatSync(path.join(dir, file)).isDirectory() &&
+          file.match(/^v\d/i));
+      return versionedDirs.sort((a, b) =>
+        -this.compareVersions(a, b) // do inverted sort
+      );
     }
     return [];
   }

@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import {isValidBibleBook} from "./bibleHelpers";
+import { isValidBibleBook } from './bibleHelpers';
 
 /**
  * Gets the status for the Tool Card launch button. The string returned informs the user why it can't be launched
@@ -13,6 +13,7 @@ export function getToolCardLaunchStatus(language, bookId, developerMode, transla
   if (!isToolSupported(bookId, developerMode)) {
     return translate('tools.book_not_supported');
   }
+
   if (!language) {
     return translate('tools.please_select_gl');
   }
@@ -56,16 +57,16 @@ export function parseArticleAbstract(fullText) {
   const MAX_TEXT = 350;
 
   // get title from start of text
-  const parts = fullText.split("#");
+  const parts = fullText.split('#');
   const title = parts[1].trim();
 
   // get introduction or description if no introduction
   const bodyParts = parts.slice(2, parts.length);
-  const wholeBody = bodyParts.join(" ");
-  let description = wholeBody.split("Description");
-  let partial = "";
+  const wholeBody = bodyParts.join(' ');
+  let description = wholeBody.split('Description');
+  let partial = '';
 
-  if(description.length>0) {
+  if (description.length>0) {
     // has description
     if (description[0].length < 10) {
       partial = description[1];
@@ -81,25 +82,27 @@ export function parseArticleAbstract(fullText) {
   const replacements = [
     {
       match: /([#*]|<\/?u>|<\/?sup>)/gm,
-      replace: ""
+      replace: '',
     },
     {
       match: /(\n>)|(\n\d.)/gm,
-      replace: "\n"
-    }
+      replace: '\n',
+    },
   ];
+
   for (let i = 0, l= replacements.length; i < l; i++) {
     const r = replacements[i];
     stripped = stripped.replace(r.match, r.replace);
   }
+
   let intro = stripped.trim();
 
   // trucate with ellipsis
-  if(stripped.length > MAX_TEXT) {
+  if (stripped.length > MAX_TEXT) {
     const truncated = stripped.substr(0, MAX_TEXT);
-    const lastSpace = truncated.lastIndexOf(" ");
-    intro = truncated.substr(0, MAX_TEXT - (MAX_TEXT - lastSpace)) + "...";
+    const lastSpace = truncated.lastIndexOf(' ');
+    intro = truncated.substr(0, MAX_TEXT - (MAX_TEXT - lastSpace)) + '...';
   }
 
-  return {title, intro};
+  return { title, intro };
 }

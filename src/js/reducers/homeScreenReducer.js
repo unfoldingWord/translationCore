@@ -3,9 +3,7 @@ import types from '../actions/ActionTypes';
 const initialState = {
   displayHomeView: true,
   showWelcomeSplash: true,
-  stepper: {
-    stepIndex: 0
-  },
+  stepper: { stepIndex: 0 },
   showFABOptions: false,
   showLicenseModal: false,
   onlineImportModalVisibility: false,
@@ -13,91 +11,91 @@ const initialState = {
   errorFeedbackMessage: '',
   errorFeedbackDetails: '',
   errorFeedbackCategory: '',
-  feedbackCloseCallback: null
+  feedbackCloseCallback: null,
 };
 
 const homeScreenReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.TOGGLE_HOME_VIEW:
-      return {
-        ...state,
-        displayHomeView: action.boolean
-      };
-    case types.TOGGLE_WELCOME_SPLASH:
-      return {
-        ...state,
-        showWelcomeSplash: !state.showWelcomeSplash
-      };
-    case types.GO_TO_STEP:
-      return {
-        ...state,
-        stepper: {
-          ...state.stepper,
-          stepIndex: action.stepIndex
-        }
-      };
-    case types.OPEN_PROJECTS_FAB:
-      return {
-        ...state,
-        showFABOptions: true
-      };
-    case types.CLOSE_PROJECTS_FAB:
-      return {
-        ...state,
-        showFABOptions: false
-      };
-    case types.OPEN_ONLINE_IMPORT_MODAL:
-      return {
-        ...state,
-        onlineImportModalVisibility: true
-      };
-    case types.CLOSE_ONLINE_IMPORT_MODAL:
-      return {
-        ...state,
-        onlineImportModalVisibility: false
-      };
-    case types.OPEN_LICENSE_MODAL:
-      return {
-        ...state,
-        showLicenseModal: true
-      };
-    case types.CLOSE_LICENSE_MODAL:
-      return {
-        ...state,
-        showLicenseModal: false
-      };
-    case types.SHOW_DIMMED_SCREEN:
-      return {
-        ...state,
-        dimmedScreen: action.bool
-      };
-    case types.ERROR_FEEDBACK_MESSAGE:
-      return {
-        ...state,
-        errorFeedbackMessage: action.val
-      };
-    case types.ERROR_FEEDBACK_DETAILS:
-      return {
-        ...state,
-        errorFeedbackDetails: action.val
-      };
-    case types.ERROR_FEEDBACK_CATEGORY:
-      return {
-        ...state,
-        errorFeedbackCategory: action.val
-      };
-    case types.FEEDBACK_CALLBACK_ON_CLOSE:
-      return {
-        ...state,
-        feedbackCloseCallback: action.val
-      };
-    case types.RESET_HOME_SCREEN:
-        return {
-          ...initialState,
-          showWelcomeSplash: false
-        };
-    default:
-      return state;
+  case types.TOGGLE_HOME_VIEW:
+    return {
+      ...state,
+      displayHomeView: action.boolean,
+    };
+  case types.TOGGLE_WELCOME_SPLASH:
+    return {
+      ...state,
+      showWelcomeSplash: !state.showWelcomeSplash,
+    };
+  case types.GO_TO_STEP:
+    return {
+      ...state,
+      stepper: {
+        ...state.stepper,
+        stepIndex: action.stepIndex,
+      },
+    };
+  case types.OPEN_PROJECTS_FAB:
+    return {
+      ...state,
+      showFABOptions: true,
+    };
+  case types.CLOSE_PROJECTS_FAB:
+    return {
+      ...state,
+      showFABOptions: false,
+    };
+  case types.OPEN_ONLINE_IMPORT_MODAL:
+    return {
+      ...state,
+      onlineImportModalVisibility: true,
+    };
+  case types.CLOSE_ONLINE_IMPORT_MODAL:
+    return {
+      ...state,
+      onlineImportModalVisibility: false,
+    };
+  case types.OPEN_LICENSE_MODAL:
+    return {
+      ...state,
+      showLicenseModal: true,
+    };
+  case types.CLOSE_LICENSE_MODAL:
+    return {
+      ...state,
+      showLicenseModal: false,
+    };
+  case types.SHOW_DIMMED_SCREEN:
+    return {
+      ...state,
+      dimmedScreen: action.bool,
+    };
+  case types.ERROR_FEEDBACK_MESSAGE:
+    return {
+      ...state,
+      errorFeedbackMessage: action.val,
+    };
+  case types.ERROR_FEEDBACK_DETAILS:
+    return {
+      ...state,
+      errorFeedbackDetails: action.val,
+    };
+  case types.ERROR_FEEDBACK_CATEGORY:
+    return {
+      ...state,
+      errorFeedbackCategory: action.val,
+    };
+  case types.FEEDBACK_CALLBACK_ON_CLOSE:
+    return {
+      ...state,
+      feedbackCloseCallback: action.val,
+    };
+  case types.RESET_HOME_SCREEN:
+    return {
+      ...initialState,
+      showWelcomeSplash: false,
+    };
+  default:
+    return state;
   }
 };
 
@@ -174,6 +172,4 @@ export const getActiveSteps = (isLoggedIn, isProjectLoaded) => {
  * @param state
  * @return {boolean}
  */
-export const getIsHomeVisible = state => {
-  return state.displayHomeView;
-};
+export const getIsHomeVisible = state => state.displayHomeView;

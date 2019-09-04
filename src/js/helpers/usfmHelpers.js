@@ -10,6 +10,7 @@ import * as bibleHelpers from './bibleHelpers';
  */
 export function loadUSFMFile(usfmFilePath) {
   let usfmFile;
+
   try {
     usfmFile = fs.readFileSync(usfmFilePath).toString();
   } catch (e) {
@@ -24,8 +25,9 @@ export function loadUSFMFile(usfmFilePath) {
  */
 export function getParsedUSFM(usfmData) {
   try {
-    if (usfmData)
-      return usfm.toJSON(usfmData, {convertToInt: ["occurrence", "occurrences"]});
+    if (usfmData) {
+      return usfm.toJSON(usfmData, { convertToInt: ['occurrence', 'occurrences'] });
+    }
   } catch (e) {
     console.error(e);
   }
@@ -39,10 +41,9 @@ export function getParsedUSFM(usfmData) {
  */
 export function getHeaderTag(headers, tag) {
   if (headers) {
-    const retVal = headers.find(header => {
-      return header.tag === tag;
-    });
-    if(retVal) {
+    const retVal = headers.find(header => header.tag === tag);
+
+    if (retVal) {
       return retVal.content;
     }
   }
@@ -80,18 +81,14 @@ export function getUSFMDetails(usfmObject) {
   let details = {
     book: {
       id: undefined,
-      name: undefined
+      name: undefined,
     },
     language: {
       id: undefined,
       name: undefined,
-      direction: 'ltr'
+      direction: 'ltr',
     },
-    target_languge: {
-      book: {
-        name: undefined
-      }
-    }
+    target_languge: { book: { name: undefined } },
   };
 
   // adding target language book name from usfm headers
@@ -101,44 +98,50 @@ export function getUSFMDetails(usfmObject) {
   let headerIDArray = [];
   const tag = 'id';
   const id = getHeaderTag(usfmObject.headers, tag);
+
   if (id) {
     // Conditional to determine how USFM should be parsed.
-    let isSpaceDelimited = id.split(" ").length > 1;
-    let isCommaDelimited = id.split(",").length > 1;
+    let isSpaceDelimited = id.split(' ').length > 1;
+    let isCommaDelimited = id.split(',').length > 1;
+
     if (isSpaceDelimited) {
       // i.e. TIT EN_ULB sw_Kiswahili_ltr Wed Jul 26 2017 22:14:55 GMT-0700 (PDT) tc.
       // Could have attached commas if both comma delimited and space delimited
-      headerIDArray = id.split(" ");
+      headerIDArray = id.split(' ');
       headerIDArray.forEach((element, index) => {
         headerIDArray[index] = element.replace(',', '');
       });
       details.book.id = headerIDArray[0].trim().toLowerCase();
     } else if (isCommaDelimited) {
       // i.e. TIT, sw_Kiswahili_ltr, EN_ULB, Thu Jul 20 2017 16:03:48 GMT-0700 (PDT), tc.
-      headerIDArray = id.split(",");
+      headerIDArray = id.split(',');
       details.book.id = headerIDArray[0].trim().toLowerCase();
-    }
-    else {
+    } else {
       // i.e. EPH
       details.book.id = id.toLowerCase();
     }
 
     let fullBookName = bibleHelpers.convertToFullBookName(details.book.id);
-    if (fullBookName) details.book.name = fullBookName;
-    else {
+
+    if (fullBookName) {
+      details.book.name = fullBookName;
+    } else {
       fullBookName = bibleHelpers.convertToFullBookName(usfmObject.book);
-      if (fullBookName)
+
+      if (fullBookName) {
         details.book.name = fullBookName;
-      else {
+      } else {
         details.book.id = null;
       }
     }
 
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
+
     if (tcField.trim() === 'tc') {
       // Checking for tC field to parse with more information than standard usfm.
       for (let index in headerIDArray) {
         let languageCodeArray = headerIDArray[index].trim().split('_');
+
         if (languageCodeArray.length === 3) {
           details.language.id = languageCodeArray[0].toLowerCase();
           details.language.name = languageCodeArray[1].split('⋅').join(' '); // restore spaces

@@ -12,7 +12,10 @@ export const MIGRATE_MANIFEST_VERSION = 6;
  */
 export default (projectPath, projectLink) => {
   Version.getVersionFromManifest(projectPath, projectLink); // ensure manifest converted for tc
-  if (shouldRun(projectPath)) run(projectPath);
+
+  if (shouldRun(projectPath)) {
+    run(projectPath);
+  }
 };
 
 /**
@@ -32,7 +35,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
-  console.log("migrateToVersion6(" + projectPath + ")");
+  console.log('migrateToVersion6(' + projectPath + ')');
   migrateToVersion6(projectPath);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
@@ -46,22 +49,25 @@ const run = (projectPath) => {
 const migrateToVersion6 = (projectPath) => {
   try {
     const manifestPath = path.join(projectPath, 'manifest.json');
-    if(fs.existsSync(manifestPath)) {
+
+    if (fs.existsSync(manifestPath)) {
       const manifest = fs.readJsonSync(manifestPath);
       const originalResourceId = manifest.resource && manifest.resource.id;
       const originalNickname = manifest.resource && manifest.resource.name;
+
       if (!originalResourceId || !originalNickname) {
         findResourceIdAndNickname(manifest);
+
         if ((manifest.resource.id !== originalResourceId) ||
             (manifest.resource.name !== originalNickname)) { // if new setting found
           fs.outputJsonSync(manifestPath, manifest, { spaces: 2 });
         }
       }
     } else {
-      console.warn("Manifest not found.");
+      console.warn('Manifest not found.');
     }
-  } catch(e){
-    console.error("Migration error: " + e.toString());
+  } catch (e){
+    console.error('Migration error: ' + e.toString());
   }
 };
 
@@ -82,9 +88,11 @@ export function findResourceIdAndNickname(manifest) {
     if (!manifest.resource) {
       manifest.resource = {};
     }
+
     if (resourceId) {
       manifest.resource.id = resourceId;
     }
+
     if (nickname) {
       manifest.resource.name = nickname;
     }

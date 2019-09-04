@@ -20,13 +20,13 @@ import * as OnlineModeActions from '../actions/OnlineModeActions';
 import * as MigrationActions from '../actions/MigrationActions';
 import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
-import {getLocaleLoaded, getSetting} from '../selectors';
-import {loadTools} from "../actions/ToolActions";
+import { getLocaleLoaded, getSetting } from '../selectors';
+import { loadTools } from '../actions/ToolActions';
 import packageJson from '../../../package.json';
 import { withLocale } from '../containers/Locale';
-import { injectFileLogging } from "../helpers/logger";
+import { injectFileLogging } from '../helpers/logger';
 //consts
-import { LOG_FILES_PATH } from "../common/constants";
+import { LOG_FILES_PATH } from '../common/constants';
 
 const version = `v${packageJson.version} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
@@ -35,7 +35,7 @@ class Main extends Component {
   componentWillMount() {
     const {
       appLanguage,
-      loadLocalization
+      loadLocalization,
     } = this.props;
     const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
@@ -50,7 +50,7 @@ class Main extends Component {
       migrateResourcesFolder,
       migrateToolsSettings,
       getAnchorTags,
-      loadTools
+      loadTools,
     } = this.props;
 
     loadTools(path.join(__dirname, '../../../tC_apps'));
@@ -66,8 +66,9 @@ class Main extends Component {
   }
 
   render() {
-    const {isLocaleLoaded} = this.props;
-    if(isLocaleLoaded) {
+    const { isLocaleLoaded } = this.props;
+
+    if (isLocaleLoaded) {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
       return (
         <MuiThemeProvider>
@@ -78,8 +79,10 @@ class Main extends Component {
             <AlertDialogContainer/>
             <KonamiContainer/>
             <PopoverContainer/>
-            <Grid fluid style={{padding: 0, display:'flex', flexDirection:'column', height:'100%'}}>
-              <Row style={{margin: 0}}>
+            <Grid fluid style={{
+              padding: 0, display:'flex', flexDirection:'column', height:'100%',
+            }}>
+              <Row style={{ margin: 0 }}>
                 <LocalizedStatusBarContainer/>
               </Row>
               <BodyContainer/>
@@ -102,22 +105,20 @@ Main.propTypes = {
   getAnchorTags: PropTypes.func.isRequired,
   isLocaleLoaded: PropTypes.bool,
   appLanguage: PropTypes.any,
-  loadTools: PropTypes.func.isRequired
+  loadTools: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
-  return {
-    isLocaleLoaded: getLocaleLoaded(state),
-    appLanguage: getSetting(state, APP_LOCALE_SETTING)
-  };
-};
+const mapStateToProps = state => ({
+  isLocaleLoaded: getLocaleLoaded(state),
+  appLanguage: getSetting(state, APP_LOCALE_SETTING),
+});
 
 const mapDispatchToProps = {
   getAnchorTags: OnlineModeActions.getAnchorTags,
   migrateToolsSettings: SettingsMigrationActions.migrateToolsSettings,
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
   loadLocalization,
-  loadTools
+  loadTools,
 };
 
 export default connect(

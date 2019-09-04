@@ -6,6 +6,7 @@ import * as WordAlignmentHelpers from './WordAlignmentHelpers';
 
 export const loadTotalOfInvalidatedChecksForCurrentProject = (invalidatedFolderPath) => {
   let invalidatedChecksTotal = 0;
+
   try {
     if (fs.existsSync(invalidatedFolderPath)) {
       const chapters = fs.readdirSync(invalidatedFolderPath).filter((filename) => filename !== '.DS_Store');
@@ -13,6 +14,7 @@ export const loadTotalOfInvalidatedChecksForCurrentProject = (invalidatedFolderP
       chapters.forEach((chapter) => {
         const versesPath = path.join(invalidatedFolderPath, chapter);
         const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
+
         verses.forEach((verse) => {
           const versePath = path.join(invalidatedFolderPath, chapter, verse);
           const files = fs.readdirSync(versePath).filter((filename) => filename !== '.DS_Store');
@@ -20,12 +22,16 @@ export const loadTotalOfInvalidatedChecksForCurrentProject = (invalidatedFolderP
 
           Object.keys(groups).forEach(group => {
             const groupOccurrences = Object.keys(groups[group]);
+
             groupOccurrences.forEach(occurrence => {
               const groupFilanames = groups[group][occurrence];
               const sortedFilenames = groupFilanames.sort().reverse(); // sort the files to use latest
               const filePath = path.join(versePath, sortedFilenames[0]);
               const invalidatedCheckFile = fs.readJsonSync(filePath);
-              if (invalidatedCheckFile.invalidated) invalidatedChecksTotal++;
+
+              if (invalidatedCheckFile.invalidated) {
+                invalidatedChecksTotal++;
+              }
             });
           });
         });
@@ -47,8 +53,9 @@ export const getTotalOfEditedVerses = (verseEditFolderPath) => {
     chapters.forEach((chapter) => {
       const versesPath = path.join(verseEditFolderPath, chapter);
       const verses = fs.readdirSync(versesPath).filter((filename) => filename !== '.DS_Store');
+
       verses.forEach(() => {
-      verseEditsTotal++;
+        verseEditsTotal++;
       });
     });
   }
@@ -95,12 +102,16 @@ export const getTotalInvalidatedAlignments = (projectLocation, bibleId) => {
     const editedChapters = getListOfVerseEdited(verseEditsPath);
 
     let projectHasZeroAlignments = true;
+
     // check if project has ever been opened with the word alignment tool or has no alignments
     Object.keys(alignments).forEach((chapterNumber) => {
       Object.keys(alignments[chapterNumber]).forEach((verseNumber) => {
         const currentVerseAlignments = alignments[chapterNumber][verseNumber]['alignments'];
+
         currentVerseAlignments.forEach((alignment) => {
-          if (alignment.bottomWords.length > 0) projectHasZeroAlignments = false;
+          if (alignment.bottomWords.length > 0) {
+            projectHasZeroAlignments = false;
+          }
         });
       });
     });
@@ -111,7 +122,10 @@ export const getTotalInvalidatedAlignments = (projectLocation, bibleId) => {
           if (alignments[chapterNumber] && alignments[chapterNumber][verseNumber]) {
             const targetLanguageVerseCleaned = WordAlignmentHelpers.getTargetLanguageVerse(tagetBible[chapterNumber][verseNumber]);
             const targetLanguageVerse = WordAlignmentHelpers.getCurrentTargetLanguageVerseFromAlignments(alignments[chapterNumber][verseNumber], tagetBible[chapterNumber][verseNumber]);
-            if (!isEqual(targetLanguageVerseCleaned, targetLanguageVerse)) invalidatedAlignmentsTotal++;
+
+            if (!isEqual(targetLanguageVerseCleaned, targetLanguageVerse)) {
+              invalidatedAlignmentsTotal++;
+            }
           }
         });
       });
@@ -146,7 +160,7 @@ export const organizedInvalidatedCheckFiles = (files, versePath) => {
     } else {
       const newGroupId = [];
       newGroupId.push(file);
-      groups[groupId] = {...groups[groupId]};
+      groups[groupId] = { ...groups[groupId] };
       groups[groupId][occurrence] = newGroupId;
     }
   });

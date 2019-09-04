@@ -10,7 +10,7 @@ class Hint extends Component {
     let enable = true;
 
     if( this.props.hasOwnProperty("enabled") ) {
-     enable = this.props.enabled;
+      enable = this.props.enabled;
     }
 
     if(enable===true) {
@@ -32,11 +32,11 @@ class Hint extends Component {
 }
 
 Hint.propTypes = {
-    children: PropTypes.any,
-    size: PropTypes.any,
-    position: PropTypes.any,
-    label: PropTypes.any,
-    enabled: PropTypes.any
+  children: PropTypes.any,
+  size: PropTypes.any,
+  position: PropTypes.any,
+  label: PropTypes.any,
+  enabled: PropTypes.any
 };
 
 export default Hint;

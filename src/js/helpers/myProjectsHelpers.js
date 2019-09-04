@@ -2,11 +2,11 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 // helpers
+import { tc_LAST_OPENED_KEY } from '../common/constants';
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
-import {getProjectSettings} from './ProjectSettingsHelpers';
+import { getProjectSettings } from './ProjectSettingsHelpers';
 // constants
-import {tc_LAST_OPENED_KEY} from "../common/constants";
 const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
 const OLD_DEFAULT_SAVE = path.join(ospath.home(), 'translationCore');
 
@@ -16,26 +16,30 @@ const OLD_DEFAULT_SAVE = path.join(ospath.home(), 'translationCore');
  */
 export function getProjectDirectories(loadProjectsLocation) {
   let directories = [];
-  if(fs.existsSync(loadProjectsLocation)) {
+
+  if (fs.existsSync(loadProjectsLocation)) {
     directories = fs.readdirSync(loadProjectsLocation);
   }
+
   const projectDirectories = {};
+
   directories.forEach(directory => {
     // we need to only get files not directories
     const isDirectory = fs.lstatSync(path.join(loadProjectsLocation, directory)).isDirectory();
     // if it is a directory check to see if it has a manifest
     let isProject, usfmPath = false;
+
     if (isDirectory) {
       const manifestPath = path.join(loadProjectsLocation, directory, 'manifest.json');
       isProject = fs.existsSync(manifestPath);
+
       if (!isProject) {
         usfmPath = ProjectStructureValidationHelpers.isUSFMProject(path.join(loadProjectsLocation, directory));
       }
     }
+
     if (isProject || usfmPath) {
-      projectDirectories[directory] = {
-        usfmPath
-      };
+      projectDirectories[directory] = { usfmPath };
     }
   });
   return projectDirectories;
@@ -43,13 +47,16 @@ export function getProjectDirectories(loadProjectsLocation) {
 
 export function migrateResourcesFolder() {
   let directories = [];
-  if(fs.existsSync(OLD_DEFAULT_SAVE)) {
+
+  if (fs.existsSync(OLD_DEFAULT_SAVE)) {
     directories = fs.readdirSync(OLD_DEFAULT_SAVE);
   }
+
   for (let folder of directories) {
     let isDirectory = fs.lstatSync(path.join(OLD_DEFAULT_SAVE, folder)).isDirectory();
     let hasManifest = fs.existsSync(path.join(OLD_DEFAULT_SAVE, folder, 'manifest.json'));
     let notDuplicate = !(fs.existsSync(path.join(DEFAULT_SAVE, folder)));
+
     if (folder !== 'resources'
       && folder !== 'projects'
       && isDirectory
@@ -66,6 +73,7 @@ export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocat
   const projectFolders = getProjectDirectories(loadProjectsLocation);
   // generate properties needed
   let projects = [];
+
   Object.keys(projectFolders).forEach(folder => {
     const projectName = folder;
     const projectSaveLocation = path.join(loadProjectsLocation, folder);
@@ -94,6 +102,7 @@ export function getProjectsFromFS(selectedProjectSaveLocation, loadProjectsLocat
       }
 
       const isSelected = projectSaveLocation === selectedProjectSaveLocation;
+
       projects.push({
         projectName,
         projectSaveLocation,

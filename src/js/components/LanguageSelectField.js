@@ -13,25 +13,31 @@ import { getLanguageTranslation } from '../helpers/localizationHelpers';
  * @return {*}
  * @constructor
  */
-const LanguageSelectField = ({selectedLanguageCode, languages, onChange, translate}) => (
+const LanguageSelectField = ({
+  selectedLanguageCode,
+  languages,
+  onChange,
+  translate,
+}) => (
   <SelectField
     value={selectedLanguageCode}
     style={{ textAlign: 'left' }}
     onChange={(e, key, payload) => onChange(payload)}
-    underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+    underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
   >
     {languages.map((language, key) => {
       const languageLocalized = getLanguageTranslation(translate, language.name, language.code);
       return <MenuItem key={key}
-                       value={language.code}
-                       primaryText={languageLocalized}/>;
+        value={language.code}
+        primaryText={languageLocalized}/>;
     })}
   </SelectField>
 );
+
 LanguageSelectField.propTypes = {
   translate: PropTypes.func.isRequired,
   selectedLanguageCode: PropTypes.string.isRequired,
   languages: PropTypes.array.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };
 export default LanguageSelectField;

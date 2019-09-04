@@ -15,7 +15,7 @@ const __setResponse = (response) => {
  * @private
  */
 const __setFailure = (msg) => {
-  if(msg !== undefined) {
+  if (msg !== undefined) {
     mockState.failure = msg;
   } else {
     delete mockState.failure;
@@ -28,24 +28,19 @@ const __setFailure = (msg) => {
  * @return {*}
  */
 const makeResponse = (state) => {
-  if(state.failure) {
+  if (state.failure) {
     return Promise.reject(state.failure);
   } else {
-
     return Promise.resolve(state.response);
   }
 };
 
-const download = jest.fn(() => {
-  return makeResponse(mockState);
-});
-const read = jest.fn(() => {
-  return makeResponse(mockState);
-});
+const download = jest.fn(() => makeResponse(mockState));
+const read = jest.fn(() => makeResponse(mockState));
 
 module.exports = {
   __setFailure,
   __setResponse,
   download,
-  read
+  read,
 };

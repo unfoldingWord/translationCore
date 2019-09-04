@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
 
@@ -7,7 +8,7 @@ import path from 'path-extra';
  * @param {String} licenseId
  */
 export function saveProjectLicense(licenseId, projectSaveLocation) {
-  return new Promise(async(resolve, reject) => {
+  return new Promise((resolve, reject) => {
     try {
       const licenseSavePath = path.join(projectSaveLocation, 'LICENSE.md');
       const licenseData = loadProjectLicenseMarkdownFile(licenseId);
@@ -32,11 +33,13 @@ export function loadProjectLicenseMarkdownFile(licenseId) {
 }
 
 export function assignLicenseToOnlineImportedProject(projectPath) {
-  return new Promise(async(resolve, reject) => {
+  return new Promise(async (resolve, reject) => {
     try {
       const manifestPath = path.join(projectPath, 'manifest.json');
+
       if (fs.existsSync(manifestPath)) {
         const manifest = fs.readJsonSync(manifestPath);
+
         if (!manifest.license) {
           manifest.license = 'CC BY-SA 4.0';
           const savePath = path.join(projectPath, 'manifest.json');

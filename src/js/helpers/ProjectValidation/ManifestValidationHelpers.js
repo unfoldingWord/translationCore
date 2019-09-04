@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
 import path from 'path';
+import fs from 'fs-extra';
 
 /**
  * Verifys that the manifest exists.
@@ -8,8 +8,12 @@ import path from 'path';
 export function manifestExists(projectPath) {
   return new Promise((resolve, reject) => {
     let exists = fs.existsSync(path.join(projectPath, 'manifest.json'));
-    if (exists) resolve(true);
-    else reject('Unable to find the manifest for project '+path.basename(projectPath)+'. It will not be loaded.');
+
+    if (exists) {
+      resolve(true);
+    } else {
+      reject('Unable to find the manifest for project '+path.basename(projectPath)+'. It will not be loaded.');
+    }
   });
 }
 
@@ -71,10 +75,10 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     languageName,
     languageDirection,
     contributors,
-    checkers
+    checkers,
   } = state.projectInformationCheckReducer;
 
-  if (bookId && languageId && languageName && languageDirection && !contributors.includes("") && !checkers.includes("")) {
+  if (bookId && languageId && languageName && languageDirection && !contributors.includes('') && !checkers.includes('')) {
     return true;
   } else {
     return false;
