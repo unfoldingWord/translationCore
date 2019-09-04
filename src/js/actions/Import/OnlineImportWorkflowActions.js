@@ -7,7 +7,6 @@ import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
-import * as ProjectLoadingActions from '../MyProjects/ProjectLoadingActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectInformationCheckActions from '../ProjectInformationCheckActions';
 // helpers
@@ -28,8 +27,11 @@ import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
 import Repo from '../../helpers/Repo';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
-import { openProject } from '../MyProjects/ProjectLoadingActions';
-import { showInvalidVersionError } from '../MyProjects/ProjectLoadingActions';
+import {
+  openProject,
+  closeProject,
+  showInvalidVersionError,
+} from '../MyProjects/ProjectLoadingActions';
 import { delay } from '../../common/utils';
 //constants
 import { tc_MIN_VERSION_ERROR, IMPORTS_PATH } from '../../common/constants';
@@ -140,7 +142,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
  */
 export const recoverFailedOnlineImport = (errorMessage) => (dispatch) => {
   // TRICKY: clear last project first to avoid triggering autos-saving.
-  dispatch(ProjectLoadingActions.closeProject());
+  dispatch(closeProject());
 
   if (errorMessage === tc_MIN_VERSION_ERROR) {
     dispatch(showInvalidVersionError());

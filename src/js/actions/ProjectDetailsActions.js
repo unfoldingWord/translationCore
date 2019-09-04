@@ -1,3 +1,5 @@
+/* eslint-disable no-async-promise-executor */
+/* eslint-disable require-await */
 import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';

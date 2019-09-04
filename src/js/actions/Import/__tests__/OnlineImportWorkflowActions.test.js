@@ -89,7 +89,7 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
     };
   });
 
-  it('on import errors should call required actions', async () => {
+  it('on import errors should call required actions', () => {
     const fileName = 'manifest.json';
     const cloneToPath = path.join(IMPORTS_PATH, importProjectName, fileName);
     fs.writeJSONSync(path.join(cloneToPath, 'manifest.json'), manifest_);

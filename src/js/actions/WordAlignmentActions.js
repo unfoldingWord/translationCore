@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-
+/* eslint-disable no-async-promise-executor */
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as exportHelpers from '../helpers/exportHelpers';

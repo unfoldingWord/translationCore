@@ -1,3 +1,5 @@
+/* eslint-disable require-await */
+/* eslint-disable require-await */
 import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';

@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import React from 'react';
 import path from 'path-extra';
 import { ipcRenderer } from 'electron';
@@ -20,7 +21,6 @@ import {
 import * as ProjectDetailsHelpers from '../../helpers/ProjectDetailsHelpers';
 import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import migrateProject from '../../helpers/ProjectMigration';
-import { openProject } from '../MyProjects/ProjectLoadingActions';
 import { delay } from '../../common/utils';
 // constants
 import { IMPORTS_PATH } from '../../common/constants';
@@ -104,7 +104,7 @@ export const localImport = () => async (dispatch, getState) => {
 
       const finalProjectPath = getProjectSaveLocation(getState());
       console.log('localImport() - project import complete: ' + finalProjectPath);
-      await dispatch(openProject(path.basename(finalProjectPath), true));
+      await dispatch(ProjectLoadingActions.openProject(path.basename(finalProjectPath), true));
       dispatch(AlertModalActions.closeAlertDialog());
       return;
     }

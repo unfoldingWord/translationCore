@@ -1,7 +1,3 @@
-/**
- * @module Actions/CSVExport
- */
-
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -141,7 +137,7 @@ export const saveAllCSVData = (projectPath, translate) => new Promise((resolve, 
   const toolNames = csvHelpers.getToolFolderNames(projectPath);
 
   if (!toolNames || !toolNames.length) {
-    throw 'No tools have loaded for this project.';
+    throw new Error('No tools have loaded for this project.');
   }
 
   let iterablePromises = [];

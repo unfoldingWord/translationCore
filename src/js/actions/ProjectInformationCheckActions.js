@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
+// helpers
 import * as ProjectInformationCheckHelpers from '../helpers/ProjectInformationCheckHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
@@ -9,18 +10,15 @@ import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import { delay } from '../common/utils';
 import { getTranslate } from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
-import consts from './ActionTypes';
-// helpers
 // actions
+import consts from './ActionTypes';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
-import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
-import { closeProject } from './MyProjects/ProjectLoadingActions';
-
+import { closeProject, loadProjectDetails } from './MyProjects/ProjectLoadingActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -506,7 +504,7 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     const settings = ProjectSettingsHelpers.getProjectSettings(projectPath);
-    dispatch(ProjectLoadingActions.loadProjectDetails(projectPath, manifest, settings));
+    dispatch(loadProjectDetails(projectPath, manifest, settings));
     dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));

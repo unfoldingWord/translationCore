@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers

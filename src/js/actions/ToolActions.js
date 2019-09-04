@@ -1,3 +1,5 @@
+
+/* eslint-disable no-async-promise-executor */
 import { batchActions } from 'redux-batched-actions';
 import {
   getToolGatewayLanguage,

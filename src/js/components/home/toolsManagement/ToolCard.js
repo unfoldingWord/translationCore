@@ -302,6 +302,8 @@ ToolCard.propTypes = {
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
     warnOnInvalidations: PropTypes.func.isRequired,
+    showPopover: PropTypes.func.isRequired,
+    closePopover: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,

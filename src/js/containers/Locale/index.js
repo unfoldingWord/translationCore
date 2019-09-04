@@ -15,4 +15,4 @@ export const withLocale = (wrappedComponent) => {
   return withLocalize(wrappedComponent, localeReduxKey);
 };
 
-exports.LocaleSelectListContainer = LocaleSelectListContainer;
+export { LocaleSelectListContainer };

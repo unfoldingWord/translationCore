@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+/* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -377,7 +378,7 @@ export function loadTargetLanguageBook() {
  * @param {string} [toolName] - the tool name for which books will be loaded. If null the currently selected tool name is used.
  * @returns {Function}
  */
-export const loadBookTranslations = (bookId, toolName=null) => async (dispatch, getState) => {
+export const loadBookTranslations = (bookId, toolName = null) => (dispatch, getState) => {
   if (toolName === null) {
     toolName = getSelectedToolName(getState());
   }
@@ -395,7 +396,7 @@ export const loadBookTranslations = (bookId, toolName=null) => async (dispatch, 
  * @param {string} toolName - the name of the tool for which the translations will be loaded.
  * @returns {Function}
  */
-export const loadSourceBookTranslations = (bookId, toolName) => async (dispatch, getState) => {
+export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getState) => {
   dispatch(updateOrigLangPaneSettings(bookId));
 
   const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);

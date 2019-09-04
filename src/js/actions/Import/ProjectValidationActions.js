@@ -1,3 +1,5 @@
+/* eslint-disable no-async-promise-executor */
+/* eslint-disable require-await */
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -18,8 +20,11 @@ import {
   doesProjectNameMatchSpec,
   openOnlyProjectDetailsScreen,
   toggleProjectInformationCheckSaveButton,
+  setAlreadyImportedInProjectInformationCheckReducer,
+  setLocalImportInProjectInformationCheckReducer,
+  setUsfmProjectInProjectInformationCheckReducer,
+  upfdateOverwritePermittedInProjectInformationCheckReducer,
 } from '../ProjectInformationCheckActions';
-import * as ProjectInformationCheckActions from '../ProjectInformationCheckActions';
 // constants
 import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
 
@@ -174,17 +179,17 @@ export const setValuesForProjectValidation = (localImport, alreadyImported, usfm
   const { projectInformationCheckReducer } = getState();
 
   if (!alreadyImported !== !projectInformationCheckReducer.alreadyImported) { // update if boolean value is different
-    dispatch(ProjectInformationCheckActions.setAlreadyImportedInProjectInformationCheckReducer(!!alreadyImported));
+    dispatch(setAlreadyImportedInProjectInformationCheckReducer(!!alreadyImported));
   }
 
   if (!localImport !== !projectInformationCheckReducer.localImport) { // update if boolean value is different
-    dispatch(ProjectInformationCheckActions.setLocalImportInProjectInformationCheckReducer(!!localImport));
+    dispatch(setLocalImportInProjectInformationCheckReducer(!!localImport));
   }
 
   if (!usfmProject !== !projectInformationCheckReducer.usfmProject) { // update if boolean value is different
-    dispatch(ProjectInformationCheckActions.setUsfmProjectInProjectInformationCheckReducer(!!usfmProject));
+    dispatch(setUsfmProjectInProjectInformationCheckReducer(!!usfmProject));
   }
-  dispatch(ProjectInformationCheckActions.upfdateOverwritePermittedInProjectInformationCheckReducer());
+  dispatch(upfdateOverwritePermittedInProjectInformationCheckReducer());
   dispatch(toggleProjectInformationCheckSaveButton());
 };
 

@@ -1,3 +1,5 @@
+/* eslint-disable require-await */
+/* eslint-disable no-await-in-loop */
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
 import consts from '../ActionTypes';
@@ -106,7 +108,7 @@ export const updateProjectLastOpened = () => async (dispatch) => {
  * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
-export const openProject = (name, skipValidation=false) => async (dispatch, getState) => {
+export const openProject = (name, skipValidation = false) => async (dispatch, getState) => {
   const projectDir = path.join(PROJECTS_PATH, name);
   const translate = getTranslate(getState());
   console.log('openProject() projectDir=' + projectDir);

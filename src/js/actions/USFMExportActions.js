@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import React from 'react';
 import usfm from 'usfm-js';
 import fs from 'fs-extra';
