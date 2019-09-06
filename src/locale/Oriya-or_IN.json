@@ -66,7 +66,7 @@
   "include_app_logs": "\"ଆପ୍ଲିକେସନ୍ ଲଗ୍‌କୁ ଅନ୍ତର୍ଭୁକ୍ତ କରନ୍ତୁ\"",
   "alignment_prompt": "“କ'ଣ ଆପଣ ନିଜ ପାଠ ସହିତ ସଂରେଖଣ ଡାଟାକୁ ଏକ୍ସ୍ପୋର୍ଟ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି ?”",
   "include_alignment_check": "“ସଂରେଖଣ ଡାଟାକୁ ଅନ୍ତରବଭୁକ୍ତ କରନ୍ତୁ।”",
-  "loading_verse_edits": "Loading Verse Edits",
+  "loading_verse_edits": "\"ଭର୍ସ୍ ଏଡିଟ୍ସ୍ ଧାରଣ ହେଉଛି\"",
   "find_out_more": "Find out more about ${app} at:",
   "based_on_earlier_work": "Based on an earlier work by ${wycliffe_associates} released under the ISC",
   "third_party_attributions": "Third Party Code Additional Copyright Notices and License Terms",
