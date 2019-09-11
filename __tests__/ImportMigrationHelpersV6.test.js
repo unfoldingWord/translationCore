@@ -1,36 +1,38 @@
 import path from 'path';
 import fs from 'fs-extra';
+import migrateToVersion6 from '../src/js/helpers/ProjectMigration/migrateToVersion6';
+import * as MigrateToVersion6 from '../src/js/helpers/ProjectMigration/migrateToVersion6';
+import * as Version from '../src/js/helpers/ProjectMigration/VersionUtils';
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
-import migrateToVersion6 from "../src/js/helpers/ProjectMigration/migrateToVersion6";
-import * as MigrateToVersion6 from "../src/js/helpers/ProjectMigration/migrateToVersion6";
-import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
 jest.mock('fs-extra');
 
 const base_manifest = {
-  "project": {"id": "mat", "name": ""},
-  "type": {"id": "text", "name": "Text"},
-  "generator": {"name": "ts-android", "build": 175},
-  "package_version": 7,
-  "target_language": {
-    "name": "ગુજરાતી",
-    "direction": "ltr",
-    "anglicized_name": "Gujarati",
-    "region": "Asia",
-    "is_gateway_language": false,
-    "id": "gu"
+  'project': { 'id': 'mat', 'name': '' },
+  'type': { 'id': 'text', 'name': 'Text' },
+  'generator': { 'name': 'ts-android', 'build': 175 },
+  'package_version': 7,
+  'target_language': {
+    'name': 'ગુજરાતી',
+    'direction': 'ltr',
+    'anglicized_name': 'Gujarati',
+    'region': 'Asia',
+    'is_gateway_language': false,
+    'id': 'gu',
   },
-  "format": "usfm",
-  "translators": ["qa99"],
-  "parent_draft": {"resource_id": "ult", "checking_level": "3", "version": "1"},
-  "source_translations": [{
-    "language_id": "gu",
-    "resource_id": "ult",
-    "checking_level": "3",
-    "date_modified": 20161008,
-    "version": "1"
-  }]
+  'format': 'usfm',
+  'translators': ['qa99'],
+  'parent_draft': {
+    'resource_id': 'ult', 'checking_level': '3', 'version': '1',
+  },
+  'source_translations': [{
+    'language_id': 'gu',
+    'resource_id': 'ult',
+    'checking_level': '3',
+    'date_modified': 20161008,
+    'version': '1',
+  }],
 };
 const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
@@ -47,7 +49,7 @@ describe('migrateToVersion6', () => {
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({
       [PROJECT_PATH]:[],
-      [path.join(PROJECT_PATH, 'manifest.json')]: manifest
+      [path.join(PROJECT_PATH, 'manifest.json')]: manifest,
     });
   });
   afterEach(() => {
@@ -55,13 +57,13 @@ describe('migrateToVersion6', () => {
     fs.__resetMockFS();
   });
   afterAll(() => {
-    if(save_console) {
+    if (save_console) {
       global.console = save_console; // restore unmocked
     }
   });
 
   it('with no tc_version expect to set', () => {
-    global.console = {error: jest.fn(), log: jest.fn()};
+    global.console = { error: jest.fn(), log: jest.fn() };
     // given
 
     // when
@@ -75,7 +77,7 @@ describe('migrateToVersion6', () => {
   });
 
   it('with lower tc_version expect to update version', () => {
-    global.console = {error: jest.fn(), log: jest.fn()};
+    global.console = { error: jest.fn(), log: jest.fn() };
     // given
     Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion6.MIGRATE_MANIFEST_VERSION - 1);
 
@@ -104,9 +106,10 @@ describe('migrateToVersion6', () => {
   it('should find resourceId and nickname', () => {
     // given
     let manifest = getManifest(PROJECT_PATH);
+
     manifest.resource = {
       id: 'ult',
-      name: 'Unlocked Literal Translation'
+      name: 'Unlocked Literal Translation',
     };
     setManifest(PROJECT_PATH, manifest);
     const expectedResourceId = 'ult';
@@ -120,15 +123,14 @@ describe('migrateToVersion6', () => {
     expect(manifest.resource.id).toEqual(expectedResourceId);
     expect(manifest.resource.name).toEqual(expectedNickName);
   });
-
 });
 
 describe('ManifestHelpers.findResourceIdAndNickname', () => {
   const base_manifest = {
     project: {
       id: 'tit',
-      name: 'Titus'
-    }
+      name: 'Titus',
+    },
   };
 
   test('if not present should not find resource id or nickname', () => {
@@ -162,10 +164,12 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
   test('if present in dublin_core, should find resource id or nickname', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest)); // clone before modifying
+
     manifest.dublin_core = {
       identifier: 'ult',
-      title: 'Unlocked Literal Translation'
+      title: 'Unlocked Literal Translation',
     };
+
     const expectedResourceId = 'ult';
     const expectedNickName = 'Unlocked Literal Translation';
 
@@ -180,14 +184,16 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
   test('if present in dublin_core, should not overwrite pre-existing resource id or nickname', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest)); // clone before modifying
+
     manifest.dublin_core = {
       identifier: 'ult',
-      title: 'Unlocked Literal Translation'
+      title: 'Unlocked Literal Translation',
     };
     manifest.resource = {
       name: 'Unlocked Greek New Testament',
-      id: 'ugnt'
+      id: 'ugnt',
     };
+
     const expectedResourceId = 'ugnt';
     const expectedNickName = 'Unlocked Greek New Testament';
 
@@ -204,8 +210,8 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const manifest = {
       dublin_core: {
         identifier: 'ult',
-        title: 'Unlocked Literal Translation'
-      }
+        title: 'Unlocked Literal Translation',
+      },
     };
     const expectedResourceId = 'ult';
     const expectedNickName = 'Unlocked Literal Translation';
@@ -221,10 +227,12 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
   test('if present in resource, should find resource id or nickname', () => {
     // given
     const manifest = JSON.parse(JSON.stringify(base_manifest)); // clone before modifying
+
     manifest.resource = {
       id: 'ult',
-      name: 'Unlocked Literal Translation'
+      name: 'Unlocked Literal Translation',
     };
+
     const expectedResourceId = 'ult';
     const expectedNickName = 'Unlocked Literal Translation';
 
@@ -242,12 +250,12 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
 //
 
 const getManifest = function (PROJECT_PATH) {
-  const manifest_path = path.join(PROJECT_PATH, "manifest.json");
+  const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.readJsonSync(manifest_path);
 };
 
 const setManifest = function (PROJECT_PATH, manifest) {
-  const manifest_path = path.join(PROJECT_PATH, "manifest.json");
+  const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.outputJsonSync(manifest_path, manifest);
 };
 

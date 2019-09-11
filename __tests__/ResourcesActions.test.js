@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import fs from "fs-extra";
+import fs from 'fs-extra';
 // actions
 import * as ResourcesActions from '../src/js/actions/ResourcesActions';
 // constants
@@ -34,31 +34,25 @@ describe('ResourcesActions', () => {
     const expectedResources = ['ult', 'ust'];
 
     loadMockFsWithProjectAndResources();
-    fs.copySync(path.join(USER_RESOURCES_PATH, "el-x-koine/bibles/ugnt"), path.join(USER_RESOURCES_PATH, "hi/bibles/uhb"));
+    fs.copySync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'hi/bibles/uhb'));
 
-    const ugnt = require("./fixtures/project/en_gal/bibleData.json");
+    const ugnt = require('./fixtures/project/en_gal/bibleData.json');
 
     const store = mockStore({
       actions: {},
-      toolsReducer: {
-        selectedTool: WORD_ALIGNMENT
-      },
+      toolsReducer: { selectedTool: WORD_ALIGNMENT },
       resourcesReducer: {
-        bibles: {
-          originalLanguage: {
-            ugnt
-          }
-        },
+        bibles: { originalLanguage: { ugnt } },
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
       contextIdReducer: {
         contextId: {
           reference: {
             bookId: bookId,
-            chapter:1
-          }
-        }
+            chapter:1,
+          },
+        },
       },
       settingsReducer: {
         toolsSettings: {
@@ -66,21 +60,21 @@ describe('ResourcesActions', () => {
             currentPaneSettings: [
               {
                 bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
+                languageId: TARGET_LANGUAGE,
               }, {
-                bibleId: "ugnt",
-                languageId: ORIGINAL_LANGUAGE
+                bibleId: 'ugnt',
+                languageId: ORIGINAL_LANGUAGE,
               }, {
-                bibleId: "ust",
-                languageId: "en"
+                bibleId: 'ust',
+                languageId: 'en',
               }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
-      }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
+            ],
+          },
+        },
+      },
     });
 
     // when
@@ -90,7 +84,7 @@ describe('ResourcesActions', () => {
 
     // then
     const actions = store.getActions();
-    validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "bibleId", expectedResources);
+    validateExpectedResources(actions, 'ADD_NEW_BIBLE_TO_RESOURCES', 'bibleId', expectedResources);
   });
 
 
@@ -98,66 +92,50 @@ describe('ResourcesActions', () => {
   it('loads a book resource', () => {
     const bookId = 'gal';
     const expectedFirstWord = {
-      "text": "Παῦλος",
-      "tag": "w",
-      "type": "word",
-      "lemma": "Παῦλος",
-      "strong": "G39720",
-      "morph": "Gr,N,,,,,NMS,",
-      "tw": "rc://*/tw/dict/bible/names/paul"
+      'text': 'Παῦλος',
+      'tag': 'w',
+      'type': 'word',
+      'lemma': 'Παῦλος',
+      'strong': 'G39720',
+      'morph': 'Gr,N,,,,,NMS,',
+      'tw': 'rc://*/tw/dict/bible/names/paul',
     };
 
     const expectedResources = ['en', ORIGINAL_LANGUAGE, TARGET_LANGUAGE];
 
-    const projectPath = path.join(PROJECTS_PATH, "en_gal");
+    const projectPath = path.join(PROJECTS_PATH, 'en_gal');
     loadMockFsWithProjectAndResources();
 
     const store = mockStore({
       actions: {},
-      wordAlignmentReducer: {
-        alignmentData: {
-          ugnt: { }
-        }
-      },
-      toolsReducer: {
-        selectedTool: WORD_ALIGNMENT
-      },
+      wordAlignmentReducer: { alignmentData: { ugnt: { } } },
+      toolsReducer: { selectedTool: WORD_ALIGNMENT },
       projectDetailsReducer: {
         manifest: {
-          project: {
-            id: bookId
-          },
-          toolsSelectedGLs: {
-            translationWords: 'en'
-          }
+          project: { id: bookId },
+          toolsSelectedGLs: { translationWords: 'en' },
         },
         projectSaveLocation: path.resolve(projectPath),
       },
       resourcesReducer: {
-        bibles: {
-          targetLanguage: {
-            targetBible: {
-              1: {}
-            }
-          }
-        },
+        bibles: { targetLanguage: { targetBible: { 1: {} } } },
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
       contextIdReducer: {
         contextId: {
           reference: {
             bookId: bookId,
-            chapter:1
-          }
-        }
-      }
+            chapter:1,
+          },
+        },
+      },
     });
     const contextId = {
       reference: {
         bookId: bookId,
-        chapter: 1
-      }
+        chapter: 1,
+      },
     };
 
     // when
@@ -170,21 +148,23 @@ describe('ResourcesActions', () => {
     expect(state).not.toBeNull();
 
     const actions = store.getActions();
-    validateExpectedResources(actions, "ADD_NEW_BIBLE_TO_RESOURCES", "languageId", expectedResources);
+    validateExpectedResources(actions, 'ADD_NEW_BIBLE_TO_RESOURCES', 'languageId', expectedResources);
 
     // make sure more than one chapter was loaded
-    for(const a of actions) {
+    for (const a of actions) {
       expect(Object.keys(a.bibleData).length > 1).toBeTruthy();
     }
 
     // make sure UGNT loaded and has expected format
-    let ugntAction = getAction(actions, "ADD_NEW_BIBLE_TO_RESOURCES", 'languageId', ORIGINAL_LANGUAGE, 'bibleId', 'ugnt');
+    let ugntAction = getAction(actions, 'ADD_NEW_BIBLE_TO_RESOURCES', 'languageId', ORIGINAL_LANGUAGE, 'bibleId', 'ugnt');
     expect(ugntAction).not.toBeNull();
     let firstChapter = ugntAction.bibleData[1];
     let firstVerse = firstChapter[1];
+
     if (firstVerse.verseObjects) {
       firstVerse = firstVerse.verseObjects;
     }
+
     let firstWord = firstVerse.find(object => (object.type === 'word'));
     expect(firstWord).toEqual(expectedFirstWord);
   });
@@ -207,6 +187,7 @@ function getAction(actions, type, key, value, key2, value2) {
 
 function validateExpectedResources(actions, type, key, expectedValues) {
   expect(actions).not.toBeNull();
+
   for (let expectedValue of expectedValues) {
     let found = getAction(actions, type, key, expectedValue);
     expect(found).not.toBeNull();

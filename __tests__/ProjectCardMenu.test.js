@@ -1,8 +1,8 @@
 /* eslint-env jest */
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Menu from '../src/js/components/home/projectsManagement/ProjectCardMenu/Menu';
 import renderer from 'react-test-renderer';
+import Menu from '../src/js/components/home/projectsManagement/ProjectCardMenu/Menu';
 
 // Tests for ProjectCardMenu React Component
 describe('Test ProjectCardMenu component', () => {
@@ -21,5 +21,4 @@ describe('Test ProjectCardMenu component', () => {
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });
-
 });

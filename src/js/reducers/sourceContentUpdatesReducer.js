@@ -1,23 +1,21 @@
 import consts from '../actions/ActionTypes';
 
-const initialState = {
-  resources: [],
-};
+const initialState = { resources: [] };
 
 const SourceContentUpdatesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE:
-      return {
-        ...state,
-        resources: action.resources,
-      };
-    case consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE:
-      return {
-        ...state,
-        resources: [],
-      };
-    default:
-      return state;
+  case consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE:
+    return {
+      ...state,
+      resources: action.resources,
+    };
+  case consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE:
+    return {
+      ...state,
+      resources: [],
+    };
+  default:
+    return state;
   }
 };
 

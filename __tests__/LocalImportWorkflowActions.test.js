@@ -16,24 +16,16 @@ jest.mock('electron', () => ({
   ipcRenderer: {
     sendSync: jest.fn()
       .mockImplementationOnce(() => ['a/working/project'])
-      .mockImplementationOnce(() => null)
-  }
+      .mockImplementationOnce(() => null),
+  },
 })
 );
 
 jest.mock('../src/js/selectors', () => ({
-  getActiveLocaleLanguage: () => {
-    return {code: 'en'};
-  },
-  getTranslate: () => {
-    return jest.fn((code) => {
-      return code;
-    });
-  },
+  getActiveLocaleLanguage: () => ({ code: 'en' }),
+  getTranslate: () => jest.fn((code) => code),
   getSelectedToolApi: jest.fn(),
-  getSupportingToolApis: jest.fn(() => {
-    return [];
-  })
+  getSupportingToolApis: jest.fn(() => []),
 }));
 
 
@@ -47,26 +39,26 @@ describe('LocalImportWorkflowActions', () => {
           stepIndex: 1,
           nextStepName: 'Project Information',
           previousStepName: 'Cancel',
-          nextDisabled: false
-        }
+          nextDisabled: false,
+        },
       },
       loginReducer: {
         loggedInUser: false,
         userdata: {},
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
       projectDetailsReducer: {
         projectSaveLocation: '',
         manifest: {},
         currentProjectToolsProgress: {},
-        projectType: null
+        projectType: null,
       },
       localImportReducer: {
         selectedProjectFilename: importProjectName,
-        sourceProjectPath: IMPORTS_PATH
-      }
+        sourceProjectPath: IMPORTS_PATH,
+      },
     };
   });
 
@@ -78,15 +70,15 @@ describe('LocalImportWorkflowActions', () => {
       {
         type: 'OPEN_ALERT_DIALOG',
         alertMessage: 'projects.importing_local_alert',
-        loading: true
+        loading: true,
       },
       {
         type: 'UPDATE_SOURCE_PROJECT_PATH',
-        sourceProjectPath: 'a/working/project'
+        sourceProjectPath: 'a/working/project',
       },
       {
         type: 'UPDATE_SELECTED_PROJECT_FILENAME',
-        selectedProjectFilename: 'project'
+        selectedProjectFilename: 'project',
       }];
     // given
     const store = mockStore(initialState);
@@ -100,10 +92,10 @@ describe('LocalImportWorkflowActions', () => {
   it('selectLocalProject() with no file selected, should call sendSync and show alert', () => {
     // given
     const expectedActions = [
-      { "bool": true, "type": "SHOW_DIMMED_SCREEN" },
-      { "type": "CLOSE_PROJECTS_FAB" },
-      { "bool": false, "type": "SHOW_DIMMED_SCREEN" },
-      { "type": "CLOSE_ALERT_DIALOG" }];
+      { 'bool': true, 'type': 'SHOW_DIMMED_SCREEN' },
+      { 'type': 'CLOSE_PROJECTS_FAB' },
+      { 'bool': false, 'type': 'SHOW_DIMMED_SCREEN' },
+      { 'type': 'CLOSE_ALERT_DIALOG' }];
     const store = mockStore(initialState);
     const mockLocalImport = jest.fn(() => () => Promise.resolve());
 
@@ -120,8 +112,9 @@ describe('LocalImportWorkflowActions', () => {
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({
       [importProjectPath]: ['manifest.json'],
-      [path.join(importProjectPath, 'manifest.json')]: {}
+      [path.join(importProjectPath, 'manifest.json')]: {},
     });
+
     const store = mockStore(initialState);
     expect(fs.existsSync(importProjectPath)).toBeTruthy(); // path should be initialzed
     await store.dispatch(LocalImportWorkflowActions.localImport());

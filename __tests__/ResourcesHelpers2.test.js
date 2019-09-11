@@ -1,13 +1,11 @@
 /* eslint-env jest */
-jest.mock('fs-extra');
-jest.mock('adm-zip');
 import path from 'path';
-import fs from "fs-extra";
-import thunk from "redux-thunk";
-import configureMockStore from "redux-mock-store";
-import _ from "lodash";
+import fs from 'fs-extra';
+import thunk from 'redux-thunk';
+import configureMockStore from 'redux-mock-store';
+import _ from 'lodash';
 // helpers
-import {getContextIdPathFromIndex} from "../src/js/helpers/contextIdHelpers";
+import { getContextIdPathFromIndex } from '../src/js/helpers/contextIdHelpers';
 import {
   areResourcesNewer,
   copySourceContentUpdaterManifest,
@@ -17,7 +15,7 @@ import {
   getResourcesNeededByTool,
   loadArticleData,
   updateSourceContentUpdaterManifest,
-  updateGroupIndexForGl
+  updateGroupIndexForGl,
 } from '../src/js/helpers/ResourcesHelpers';
 // constants
 import {
@@ -32,8 +30,10 @@ import {
   TRANSLATION_HELPS,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
-  USER_RESOURCES_PATH
+  USER_RESOURCES_PATH,
 } from '../src/js/common/constants';
+jest.mock('fs-extra');
+jest.mock('adm-zip');
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -45,15 +45,15 @@ describe('getResourcesNeededByTool()', () => {
       resourcesReducer: {
         bibles: {},
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
       contextIdReducer: {
         contextId: {
           reference: {
             bookId: bookId,
-            chapter:1
-          }
-        }
+            chapter:1,
+          },
+        },
       },
       settingsReducer: {
         toolsSettings: {
@@ -61,21 +61,21 @@ describe('getResourcesNeededByTool()', () => {
             currentPaneSettings: [
               {
                 bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
+                languageId: TARGET_LANGUAGE,
               }, {
-                bibleId: "ugnt",
-                languageId: ORIGINAL_LANGUAGE
+                bibleId: 'ugnt',
+                languageId: ORIGINAL_LANGUAGE,
               }, {
-                bibleId: "ust",
-                languageId: "en"
+                bibleId: 'ust',
+                languageId: 'en',
               }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
-      }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
+            ],
+          },
+        },
+      },
     };
     loadMockFsWithProjectAndResources();
 
@@ -96,25 +96,19 @@ describe('getAvailableScripturePaneSelections', () => {
 
   it('should work', () => {
     const bookId = 'gal';
-    const store =  mockStore({
+    const store = mockStore({
       resourcesReducer: {
-        bibles: {
-          targetLanguage: {
-            targetBible: {
-              manifest: {}
-            }
-          }
-        },
+        bibles: { targetLanguage: { targetBible: { manifest: {} } } },
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
       contextIdReducer: {
         contextId: {
           reference: {
             bookId: bookId,
-            chapter:1
-          }
-        }
+            chapter:1,
+          },
+        },
       },
       settingsReducer: {
         toolsSettings: {
@@ -122,21 +116,21 @@ describe('getAvailableScripturePaneSelections', () => {
             currentPaneSettings: [
               {
                 bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
+                languageId: TARGET_LANGUAGE,
               }, {
-                bibleId: "ugnt",
-                languageId: ORIGINAL_LANGUAGE
+                bibleId: 'ugnt',
+                languageId: ORIGINAL_LANGUAGE,
               }, {
-                bibleId: "ust",
-                languageId: "en"
+                bibleId: 'ust',
+                languageId: 'en',
               }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
-      }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
+            ],
+          },
+        },
+      },
     });
     const resourceList = [];
 
@@ -151,23 +145,17 @@ describe('getAvailableScripturePaneSelections', () => {
     const bookId = 'jol';
     const store = mockStore({
       resourcesReducer: {
-        bibles: {
-          targetLanguage: {
-            targetBible: {
-              manifest: {}
-            }
-          }
-        },
+        bibles: { targetLanguage: { targetBible: { manifest: {} } } },
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
       contextIdReducer: {
         contextId: {
           reference: {
             bookId: bookId,
-            chapter:1
-          }
-        }
+            chapter:1,
+          },
+        },
       },
       settingsReducer: {
         toolsSettings: {
@@ -175,21 +163,21 @@ describe('getAvailableScripturePaneSelections', () => {
             currentPaneSettings: [
               {
                 bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
+                languageId: TARGET_LANGUAGE,
               }, {
-                bibleId: "uhb",
-                languageId: ORIGINAL_LANGUAGE
+                bibleId: 'uhb',
+                languageId: ORIGINAL_LANGUAGE,
               }, {
-                bibleId: "ust",
-                languageId: "en"
+                bibleId: 'ust',
+                languageId: 'en',
               }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
-      }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
+            ],
+          },
+        },
+      },
     });
 
     const resourceList = [];
@@ -203,19 +191,19 @@ describe('getAvailableScripturePaneSelections', () => {
 
   it('getAvailableScripturePaneSelections() should work without targetBible loaded into resources', () => {
     const bookId = 'gal';
-    const store =  mockStore({
+    const store = mockStore({
       resourcesReducer: {
         bibles: {},
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
       contextIdReducer: {
         contextId: {
           reference: {
             bookId: bookId,
-            chapter:1
-          }
-        }
+            chapter:1,
+          },
+        },
       },
       settingsReducer: {
         toolsSettings: {
@@ -223,21 +211,21 @@ describe('getAvailableScripturePaneSelections', () => {
             currentPaneSettings: [
               {
                 bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
+                languageId: TARGET_LANGUAGE,
               }, {
-                bibleId: "ugnt",
-                languageId: ORIGINAL_LANGUAGE
+                bibleId: 'ugnt',
+                languageId: ORIGINAL_LANGUAGE,
               }, {
-                bibleId: "ust",
-                languageId: "en"
+                bibleId: 'ust',
+                languageId: 'en',
               }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
-      }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
+            ],
+          },
+        },
+      },
     });
     const resourceList = [];
 
@@ -256,8 +244,8 @@ describe('areResourcesNewer()', () => {
 
   test('same date should return false', () => {
     // given
-    const bundledDate = "2019-04-02T19:10:02.492Z";
-    const userDate = "2019-04-02T19:10:02.492Z";
+    const bundledDate = '2019-04-02T19:10:02.492Z';
+    const userDate = '2019-04-02T19:10:02.492Z';
     const expectedNewer = false;
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
@@ -270,8 +258,8 @@ describe('areResourcesNewer()', () => {
 
   test('newer bundled date should return true', () => {
     // given
-    const bundledDate = "2019-04-02T19:10:02.492Z";
-    const userDate = "2018-04-02T19:10:02.492Z";
+    const bundledDate = '2019-04-02T19:10:02.492Z';
+    const userDate = '2018-04-02T19:10:02.492Z';
     const expectedNewer = true;
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
@@ -284,8 +272,8 @@ describe('areResourcesNewer()', () => {
 
   test('newer user date should return false', () => {
     // given
-    const bundledDate = "2019-04-02T19:10:02.492Z";
-    const userDate = "2019-08-02T19:10:02.492Z";
+    const bundledDate = '2019-04-02T19:10:02.492Z';
+    const userDate = '2019-08-02T19:10:02.492Z';
     const expectedNewer = false;
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
@@ -298,7 +286,7 @@ describe('areResourcesNewer()', () => {
 
   test('missing user resource manifest should return true', () => {
     // given
-    const bundledDate = "2019-04-02T19:10:02.492Z";
+    const bundledDate = '2019-04-02T19:10:02.492Z';
     const userDate = null;
     const expectedNewer = true;
     loadSourceContentUpdaterManifests(bundledDate, userDate);
@@ -313,7 +301,7 @@ describe('areResourcesNewer()', () => {
   test('missing bundled resource manifest should return false', () => {
     // given
     const bundledDate = null;
-    const userDate = "2019-04-02T19:10:02.492Z";
+    const userDate = '2019-04-02T19:10:02.492Z';
     const expectedNewer = false;
     loadSourceContentUpdaterManifests(bundledDate, userDate);
 
@@ -326,8 +314,8 @@ describe('areResourcesNewer()', () => {
 
   test('same date, but missing version should return true', () => {
     // given
-    const bundledDate = "2019-04-02T19:10:02.492Z";
-    const userDate = "2019-04-02T19:10:02.492Z";
+    const bundledDate = '2019-04-02T19:10:02.492Z';
+    const userDate = '2019-04-02T19:10:02.492Z';
     const expectedNewer = true;
     const appVersion = null;
     loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion);
@@ -341,10 +329,10 @@ describe('areResourcesNewer()', () => {
 
   test('same date, but different version should return true', () => {
     // given
-    const bundledDate = "2019-04-02T19:10:02.492Z";
-    const userDate = "2019-04-02T19:10:02.492Z";
+    const bundledDate = '2019-04-02T19:10:02.492Z';
+    const userDate = '2019-04-02T19:10:02.492Z';
     const expectedNewer = true;
-    const appVersion = "1.1.0";
+    const appVersion = '1.1.0';
     loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion);
 
     // when
@@ -356,7 +344,6 @@ describe('areResourcesNewer()', () => {
 });
 
 describe('updateSourceContentUpdaterManifest()', () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
   });
@@ -365,7 +352,7 @@ describe('updateSourceContentUpdaterManifest()', () => {
     // given
     const dateStr = '1997-12-17T08:24:00.000Z';
     const manifestPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     expect(fs.existsSync(manifestPath)).not.toBeTruthy();
 
     // when
@@ -380,10 +367,10 @@ describe('updateSourceContentUpdaterManifest()', () => {
   test('should update date if manifest present', () => {
     // given
     const dateStr = '1997-12-17T08:24:00.000Z';
-    const userDate = "2019-04-02T19:10:02.492Z";
-    loadSourceContentUpdaterManifests("", userDate);
+    const userDate = '2019-04-02T19:10:02.492Z';
+    loadSourceContentUpdaterManifests('', userDate);
     const manifestPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     expect(fs.existsSync(manifestPath)).toBeTruthy();
 
     // when
@@ -398,10 +385,10 @@ describe('updateSourceContentUpdaterManifest()', () => {
   test('should update app version if manifest present', () => {
     // given
     const dateStr = '1997-12-17T08:24:00.000Z';
-    const initialAppVersion = "1.0.1";
-    loadSourceContentUpdaterManifests("", dateStr, initialAppVersion);
+    const initialAppVersion = '1.0.1';
+    loadSourceContentUpdaterManifests('', dateStr, initialAppVersion);
     const manifestPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     expect(fs.existsSync(manifestPath)).toBeTruthy();
 
     // when
@@ -415,7 +402,6 @@ describe('updateSourceContentUpdaterManifest()', () => {
 });
 
 describe('copySourceContentUpdaterManifest()', () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
   });
@@ -425,7 +411,7 @@ describe('copySourceContentUpdaterManifest()', () => {
     const dateStr = '1997-12-17T08:24:00.000Z';
     loadSourceContentUpdaterManifests(dateStr, null, null);
     const staticManifestPath = path.join(STATIC_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     expect(fs.existsSync(staticManifestPath)).toBeTruthy();
 
     // when
@@ -433,7 +419,7 @@ describe('copySourceContentUpdaterManifest()', () => {
 
     // then
     const manifestPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     const manifest = fs.readJSONSync(manifestPath);
     expect(manifest[TC_VERSION]).toEqual(APP_VERSION);
     expect(manifest.modified).toEqual(dateStr);
@@ -450,7 +436,7 @@ describe('extractZippedResourceContent', () => {
     fs.__setMockFS({
       [EN_ULB_PATH]: ['v11'],
       [versionPath]: [],
-      [zippedBooks]: []
+      [zippedBooks]: [],
     });
 
     extractZippedResourceContent(EN_ULB_PATH, isBible);
@@ -543,23 +529,26 @@ describe('loadArticleData()', () => {
 describe('updateGroupIndexForGl()', () => {
   const bookId = 'gal';
   const manifest_ = {
-    "generator":{"name":"tc-desktop","build":""},
-    "target_language":{"id":"en","name":"English","direction":"ltr"},
-    "ts_project":{"id":bookId,"name":"Galatians"},
-    "project":{"id":bookId,"name":"Galatians"},
-    "type":{"id":"text","name":"Text"},
-    "time_created":"2018-01-31T19:19:27.914Z",
-    "tcInitialized":true,
-    "tc_version":1,
-    "license":"CC BY-SA 4.0"};
+    'generator':{ 'name':'tc-desktop','build':'' },
+    'target_language':{
+      'id':'en','name':'English','direction':'ltr',
+    },
+    'ts_project':{ 'id':bookId,'name':'Galatians' },
+    'project':{ 'id':bookId,'name':'Galatians' },
+    'type':{ 'id':'text','name':'Text' },
+    'time_created':'2018-01-31T19:19:27.914Z',
+    'tcInitialized':true,
+    'tc_version':1,
+    'license':'CC BY-SA 4.0',
+  };
   const contextId = {
-    groupId: "figs-explicit",
+    groupId: 'figs-explicit',
     occurrence: 1,
     reference: {
-      bookId: bookId,
-      "chapter": 3,
-      "verse": 5
-    }
+      'bookId': bookId,
+      'chapter': 3,
+      'verse': 5,
+    },
   };
   const projectName = 'en_gal';
   const projectPath = path.join(PROJECTS_PATH, projectName);
@@ -584,45 +573,37 @@ describe('updateGroupIndexForGl()', () => {
     const toolName = TRANSLATION_NOTES;
     const contextId_ = _.cloneDeep(contextId);
     contextId_.tool = toolName;
-    const store =  mockStore({
+    const store = mockStore({
       resourcesReducer: {
-        bibles: {
-          targetLanguage: {
-            targetBible: {
-              manifest: {}
-            }
-          }
-        },
+        bibles: { targetLanguage: { targetBible: { manifest: {} } } },
         translationHelps: {},
-        lexicons: {}
+        lexicons: {},
       },
-      contextIdReducer: {
-        contextId: {}
-      },
+      contextIdReducer: { contextId: {} },
       settingsReducer: {
         toolsSettings: {
           ScripturePane: {
             currentPaneSettings: [
               {
                 bibleId: TARGET_BIBLE,
-                languageId: TARGET_LANGUAGE
+                languageId: TARGET_LANGUAGE,
               }, {
-                bibleId: "ugnt",
-                languageId: ORIGINAL_LANGUAGE
+                bibleId: 'ugnt',
+                languageId: ORIGINAL_LANGUAGE,
               }, {
-                bibleId: "ust",
-                languageId: "en"
+                bibleId: 'ust',
+                languageId: 'en',
               }, {
-                bibleId: "ult",
-                languageId: "en"
-              }
-            ]
-          }
-        }
+                bibleId: 'ult',
+                languageId: 'en',
+              },
+            ],
+          },
+        },
       },
       projectDetailsReducer: {
         manifest: manifest_,
-        projectSaveLocation: projectPath
+        projectSaveLocation: projectPath,
       },
     });
     const loadPath = getContextIdPathFromIndex(projectPath, toolName, bookId);
@@ -644,10 +625,11 @@ describe('updateGroupIndexForGl()', () => {
 
 function cleanupResources(resourceList) {
   const newResourceList = [];
+
   for (let resource of resourceList) {
     const resource_ = _.cloneDeep(resource); // make copy
     expect (resource_.manifest).not.toBeUndefined();
-    resource_.manifest = "manifest";
+    resource_.manifest = 'manifest';
     newResourceList.push(resource_);
   }
   return newResourceList;
@@ -672,15 +654,19 @@ function loadMockFsWithProjectAndResources() {
 }
 
 function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = APP_VERSION) {
-  const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, "source-content-updater-manifest.json");
+  const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
   fs.ensureDirSync(STATIC_RESOURCES_PATH);
+
   if (bundledDate) {
-    fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
+    fs.outputJsonSync(bundledResourcesManifestPath, { modified: bundledDate });
   }
-  const resourcesManifestPath = path.join(USER_RESOURCES_PATH, "source-content-updater-manifest.json");
+
+  const resourcesManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
   fs.ensureDirSync(USER_RESOURCES_PATH);
+
   if (userDate) {
-    const manifest = {modified: userDate};
+    const manifest = { modified: userDate };
+
     if (typeof appVersion === 'string') {
       manifest[TC_VERSION] = appVersion; // add app version to resource
     }

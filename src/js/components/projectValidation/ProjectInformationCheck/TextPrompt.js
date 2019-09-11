@@ -14,7 +14,7 @@ const TextPrompt = ({
   getErrorMessage,
   required,
   infoText,
-  className
+  className,
 }) => {
   function getRequiredIcon() {
     if (required) {
@@ -33,10 +33,12 @@ const TextPrompt = ({
             data-type="dark"
             data-class="selection-tooltip"
             data-delay-hide="100" >
-                <Glyphicon
-                  glyph="info-sign"
-                  style={{fontSize: "16px", cursor: 'pointer', marginLeft: '5px'}}
-                />
+            <Glyphicon
+              glyph="info-sign"
+              style={{
+                fontSize: '16px', cursor: 'pointer', marginLeft: '5px',
+              }}
+            />
           </span>
           <ReactTooltip multiline={true}/>
         </span>
@@ -57,11 +59,11 @@ const TextPrompt = ({
         color: '#000',
         fontSize: '16px',
         fontWeight: 'bold',
-        lineHeight: '16px'
+        lineHeight: '16px',
       }}
     >
-      <label htmlFor={id} style={{margin: 0}}>
-        <Glyphicon glyph={'book'} style={{color: '#000000', fontSize: '16px'}}/>
+      <label htmlFor={id} style={{ margin: 0 }}>
+        <Glyphicon glyph={'book'} style={{ color: '#000000', fontSize: '16px' }}/>
         &nbsp;
         {title}
         &nbsp;
@@ -71,11 +73,13 @@ const TextPrompt = ({
       <TextField
         id={id}
         value={text}
-        style={{height: '35px', fontWeight: 'normal'}}
-        inputStyle={{height: '25px'}}
+        style={{ height: '35px', fontWeight: 'normal' }}
+        inputStyle={{ height: '25px' }}
         errorText={getErrorMessage(text)}
-        errorStyle={{color: '#cd0033', height: '6px', bottom: 0, paddingTop: '5px'}}
-        underlineFocusStyle={{borderColor: "var(--accent-color-dark)"}}
+        errorStyle={{
+          color: '#cd0033', height: '6px', bottom: 0, paddingTop: '5px',
+        }}
+        underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
         onChange={(event, value) => {
           updateText(value);
         }}
@@ -85,9 +89,7 @@ const TextPrompt = ({
   );
 };
 
-TextPrompt.defaultProps = {
-  className: 'text-propmpt'
-};
+TextPrompt.defaultProps = { className: 'text-propmpt' };
 
 TextPrompt.propTypes = {
   id: PropTypes.string.isRequired,
@@ -97,7 +99,7 @@ TextPrompt.propTypes = {
   getErrorMessage: PropTypes.func.isRequired,
   required: PropTypes.bool.isRequired,
   infoText: PropTypes.string.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default TextPrompt;

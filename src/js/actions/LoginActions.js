@@ -1,33 +1,35 @@
+import { getTranslate } from '../selectors';
+import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import types from './ActionTypes';
-import {getTranslate} from '../selectors';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as BodyUIActions from './BodyUIActions';
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
 // helpers
-import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 
 export function loginUser(newUserdata, local = false) {
   return (dispatch, getState) => {
     const translate = getTranslate(getState());
+
     if (local) {
       dispatch({
         type: types.LOGIN_USER,
         userdata: newUserdata,
-        localUser: local
+        localUser: local,
       });
     } else {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         GogsApiHelpers.login(newUserdata).then(newUserdata => {
           dispatch({
             type: types.LOGIN_USER,
-            userdata: newUserdata
+            userdata: newUserdata,
           });
           dispatch(BodyUIActions.goToStep(1));
         }).catch(function (err) {
           let errmessage = translate('users.login_error');
-          if (err.syscall === "getaddrinfo") {
+
+          if (err.syscall === 'getaddrinfo') {
             errmessage = translate('no_internet');
           } else if (err.status === 404) {
             errmessage = translate('users.username_error');
@@ -46,9 +48,7 @@ export function logoutUser() {
   return ((dispatch) => {
     localStorage.removeItem('localUser');
     localStorage.removeItem('user');
-    dispatch({
-      type: types.LOGOUT_USER
-    });
+    dispatch({ type: types.LOGOUT_USER });
     dispatch(ProjectLoadingActions.closeProject());
     dispatch(BodyUIActions.toggleHomeView(true));
     dispatch({ type: types.RESET_ONLINE_MODE_WARNING_ALERT });

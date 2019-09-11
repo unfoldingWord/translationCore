@@ -1,13 +1,13 @@
 'use strict';
 import fs from 'fs-extra';
-import path from "path-extra";
+import path from 'path-extra';
 // actions
 import * as ProjectInformationCheckHelpers from '../src/js/helpers/ProjectInformationCheckHelpers';
 // constants
 import { PROJECTS_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 
 describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
-  const currentProjectName = "fr_ult_eph_book";
+  const currentProjectName = 'fr_ult_eph_book';
   const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
   const currentProjectManifestPath = path.join(currentProjectPath, 'manifest.json');
   let manifest = null;
@@ -19,23 +19,21 @@ describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up mock filesystem before each test
-    fs.__setMockFS({
-      [currentProjectPath]: ''
-    });
+    fs.__setMockFS({ [currentProjectPath]: '' });
     manifest = {
       target_language: {
         id: langID,
         name: 'francais',
-        direction: 'ltr'
+        direction: 'ltr',
       },
       project: {
         id: bookId,
-        name: 'Ephesians'
+        name: 'Ephesians',
       },
       resource: {
         id: resourceId,
-        name: 'unfoldingWord Literal Text'
-      }
+        name: 'unfoldingWord Literal Text',
+      },
     };
   });
 
@@ -72,7 +70,7 @@ describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
     // given
     const expectedResults = 'project_validation.conflicting_project';
     fs.outputJsonSync(currentProjectManifestPath, manifest);
-    const duplicateProject = "fr_ult_eph";
+    const duplicateProject = 'fr_ult_eph';
     const duplicateProjectPath = path.join(PROJECTS_PATH, duplicateProject);
     fs.copySync(currentProjectPath, duplicateProjectPath);
 
@@ -98,7 +96,7 @@ describe('ProjectDetailsActions.getDuplicateProjectWarning()', () => {
 });
 
 describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()', () => {
-  const currentProjectName = "fr_ult_eph_book";
+  const currentProjectName = 'fr_ult_eph_book';
   const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
   const default_state = {
     projectInformationCheckReducer: {
@@ -113,9 +111,7 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
       alreadyImported: true,
       overwritePermitted: false,
     },
-    projectDetailsReducer: {
-      projectSaveLocation: currentProjectPath
-    }
+    projectDetailsReducer: { projectSaveLocation: currentProjectPath },
   };
 
   const currentProjectManifestPath = path.join(currentProjectPath, 'manifest.json');
@@ -128,23 +124,21 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up mock filesystem before each test
-    fs.__setMockFS({
-      [currentProjectPath]: ''
-    });
+    fs.__setMockFS({ [currentProjectPath]: '' });
     manifest = {
       target_language: {
         id: langID,
         name: 'francais',
-        direction: 'ltr'
+        direction: 'ltr',
       },
       project: {
         id: bookId,
-        name: 'Ephesians'
+        name: 'Ephesians',
       },
       resource: {
         id: resourceId,
-        name: 'unfoldingWord Literal Text'
-      }
+        name: 'unfoldingWord Literal Text',
+      },
     };
     fs.outputJsonSync(currentProjectManifestPath, manifest);
   });
@@ -182,7 +176,7 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
   test('with project conflict and no overwrite permitted should be invalid', () => {
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
-    const duplicateProjectPath = path.join(PROJECTS_PATH, "fr_eph");
+    const duplicateProjectPath = path.join(PROJECTS_PATH, 'fr_eph');
     fs.copySync(currentProjectPath, duplicateProjectPath);
     state.projectInformationCheckReducer.overwritePermitted = false;
     const expectedValid = false;
@@ -224,11 +218,8 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
     state.projectInformationCheckReducer.bookId = 'jon';
-    state.settingsReducer = {
-      currentSettings: {
-        developerMode: true
-      }
-    };
+    state.settingsReducer = { currentSettings: { developerMode: true } };
+
     const expectedValid = true;
 
     // when
@@ -319,7 +310,7 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
   test('with empty contributor should be invalid', () => {
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
-    delete state.projectInformationCheckReducer.contributors.push("");
+    delete state.projectInformationCheckReducer.contributors.push('');
     const expectedValid = false;
 
     // when
@@ -332,7 +323,7 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
   test('with empty checker should be invalid', () => {
     // given
     const state = JSON.parse(JSON.stringify(default_state)); // clone before modifying
-    delete state.projectInformationCheckReducer.checkers.push("");
+    delete state.projectInformationCheckReducer.checkers.push('');
     const expectedValid = false;
 
     // when
@@ -344,18 +335,17 @@ describe('ProjectInformationCheckHelpers.verifyAllRequiredFieldsAreCompleted()',
 });
 
 describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
-
   test('with valid project details should be valid', () => {
     // given
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus'
+        name: 'Titus',
       },
       resource: {
         id: 'ult',
         nname: 'My Project',
-      }
+      },
     };
     const expectedInvalid = false;
 
@@ -369,13 +359,11 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
   test('with missing project.id should be invalid', () => {
     // given
     const manifest = {
-      project: {
-        name: 'Titus'
-      },
+      project: { name: 'Titus' },
       resource: {
         id: 'ult',
         name: 'My Project',
-      }
+      },
     };
     const expectedInvalid = true;
 
@@ -389,13 +377,11 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
   test('with missing project.name should be invalid', () => {
     // given
     const manifest = {
-      project: {
-        id: 'tit'
-      },
+      project: { id: 'tit' },
       resource: {
         id: 'ult',
         iname: 'My Project',
-      }
+      },
     };
     const expectedInvalid = true;
 
@@ -411,11 +397,9 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus'
+        name: 'Titus',
       },
-      resource: {
-        name: 'My Project',
-      }
+      resource: { name: 'My Project' },
     };
     const expectedInvalid = true;
 
@@ -431,12 +415,12 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus'
+        name: 'Titus',
       },
       resource: {
         id: 'ul',
         name: 'My Project',
-      }
+      },
     };
     const expectedInvalid = true;
 
@@ -452,12 +436,12 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus'
+        name: 'Titus',
       },
       resource: {
         id: 'ul12',
         name: 'My Project',
-      }
+      },
     };
     const expectedInvalid = true;
 
@@ -473,11 +457,9 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
     const manifest = {
       project: {
         id: 'tit',
-        name: 'Titus'
+        name: 'Titus',
       },
-      resource: {
-        id: 'ult'
-      }
+      resource: { id: 'ult' },
     };
     const expectedInvalid = false;
 
@@ -490,8 +472,7 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
 
   test('with missing project in manifest should be invalid', () => {
     // given
-    const manifest = {
-    };
+    const manifest = {};
     const expectedInvalid = true;
 
     // when
@@ -503,15 +484,14 @@ describe('ProjectInformationCheckHelpers.checkProjectDetails()', () => {
 });
 
 describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
-
   test('with valid language settings should be valid', () => {
     // given
     const manifest = {
       target_language: {
         id: 'fr',
         name: 'francais',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -538,8 +518,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
       target_language: {
         id: 'francais',
         name: 'fr',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -555,8 +535,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
       target_language: {
         id: 'zk',
         name: 'Zanaki',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -572,8 +552,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
       target_language: {
         id: '',
         name: 'francais',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -588,8 +568,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
     const manifest = {
       target_language: {
         name: 'francais',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -605,8 +585,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
       target_language: {
         id: 'fr',
         name: '',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -621,8 +601,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
     const manifest = {
       target_language: {
         id: 'fr',
-        direction: 'ltr'
-      }
+        direction: 'ltr',
+      },
     };
 
     // when
@@ -637,8 +617,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
     const manifest = {
       target_language: {
         id: 'fr',
-        name: 'francais'
-      }
+        name: 'francais',
+      },
     };
 
     // when
@@ -654,8 +634,8 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
       target_language: {
         id: 'fr',
         name: 'francais',
-        direction: ''
-      }
+        direction: '',
+      },
     };
 
     // when
@@ -664,7 +644,6 @@ describe('ProjectInformationCheckHelpers.checkLanguageDetails()', () => {
     // then
     expect(invalid).toEqual(true);
   });
-
 });
 
 describe('ProjectInformationCheckHelpers.getResourceIdWarning', () => {

@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 
 import fs from 'fs-extra';
-import usfmjs from "usfm-js";
-import path from "path-extra";
-
+import usfmjs from 'usfm-js';
+import path from 'path-extra';
 // constants
-const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 import { TARGET_LANGUAGE } from '../../common/constants';
+const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**
  * @description saves a target language bible data into the filesystem as json and divided into chapters,
@@ -19,9 +18,13 @@ import { TARGET_LANGUAGE } from '../../common/constants';
 export function saveTargetBible(projectPath, manifest, bookData, headers) {
   let bookAbbreviation = manifest.project.id;
   const targetBiblePath = path.join(projectPath, bookAbbreviation);
+
   // now that bookData is populated or passed in, let's save it to the fs as chapter level json files
   for (let chapter in bookData) {
-    if (!parseInt(chapter)) continue; // only import integer based data, there are other files
+    if (!parseInt(chapter)) {
+      continue;
+    } // only import integer based data, there are other files
+
     let fileName = chapter + '.json';
     const targetBiblePath = path.join(projectPath, bookAbbreviation);
     fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter], { spaces: 2 });
@@ -38,12 +41,13 @@ export function saveTargetBible(projectPath, manifest, bookData, headers) {
  * @param targetBiblePath
  * @param headers
  */
-function saveHeaders (targetBiblePath, headers) {
+function saveHeaders(targetBiblePath, headers) {
   if (headers) {
     if (typeof headers === 'string') {
       const json = usfmjs.toJSON(headers);
       headers = json.headers;
     }
+
     if (headers) {
       fs.outputJsonSync(path.join(targetBiblePath, 'headers.json'), headers, { spaces: 2 });
     }
@@ -60,12 +64,12 @@ function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
   bibleManifest.language_id = projectManifest.target_language.id;
   bibleManifest.language_name = projectManifest.target_language.name;
   bibleManifest.direction = projectManifest.target_language.direction;
-  bibleManifest.subject = "Bible";
+  bibleManifest.subject = 'Bible';
   bibleManifest.resource_id = TARGET_LANGUAGE;
-  bibleManifest.resource_title = "";
-  bibleManifest.description = "Target Language";
+  bibleManifest.resource_title = '';
+  bibleManifest.description = 'Target Language';
   // savings target language bible manifest file in project target language bible path.
-  let fileName = "manifest.json";
+  let fileName = 'manifest.json';
   fs.outputJsonSync(path.join(targetBiblePath, fileName), bibleManifest, { spaces: 2 });
 }
 
@@ -85,14 +89,18 @@ function archiveSourceFiles(projectPath, bookAbbreviation) {
       const isUSFM = !!file.toLowerCase().match('.usfm') || !!file.toLowerCase().match('.sfm');
       // build the condition to move
       const shouldMove = isUSFM || (isDirectory && !isBookAbbreviation && !isDotFile);
+
       if (shouldMove) {
         const directory = file;
         const sourcePath = path.join(projectPath, directory);
+
         // try to move the directories and log the errors
         try {
           let targetPath = path.join(projectPath, IMPORTED_SOURCE_PATH, directory);
-          if (!fs.existsSync(targetPath))
+
+          if (!fs.existsSync(targetPath)) {
             fs.moveSync(sourcePath, targetPath);
+          }
         } catch (err) {
           console.log(err);
         }

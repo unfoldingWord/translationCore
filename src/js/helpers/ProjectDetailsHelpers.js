@@ -1,37 +1,46 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import * as AlertModalActions from "../actions/AlertModalActions";
-import * as OnlineModeConfirmActions from "../actions/OnlineModeConfirmActions";
-import * as ProjectInformationCheckActions from "../actions/ProjectInformationCheckActions";
-import * as HomeScreenActions from "../actions/HomeScreenActions";
+import * as AlertModalActions from '../actions/AlertModalActions';
+import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
+import * as ProjectInformationCheckActions from '../actions/ProjectInformationCheckActions';
+import * as HomeScreenActions from '../actions/HomeScreenActions';
 // helpers
-import {getTranslate} from "../selectors";
-import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
-import * as GogsApiHelpers from "./GogsApiHelpers";
-import * as manifestHelpers from "./manifestHelpers";
-import * as BooksOfTheBible from "../common/BooksOfTheBible";
-import * as BibleHelpers from "./bibleHelpers";
-import ResourceAPI from "./ResourceAPI";
-import {getFoldersInResourceFolder} from "./ResourcesHelpers";
-// constants
+import { getTranslate } from '../selectors';
+import * as BooksOfTheBible from '../common/BooksOfTheBible';
 import {
   PROJECTS_PATH,
   USER_RESOURCES_PATH,
   TRANSLATION_WORDS,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
 } from '../common/constants';
+import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
+import * as GogsApiHelpers from './GogsApiHelpers';
+import * as manifestHelpers from './manifestHelpers';
+import * as BibleHelpers from './bibleHelpers';
+import ResourceAPI from './ResourceAPI';
+import { getFoldersInResourceFolder } from './ResourcesHelpers';
+// constants
 
 /**
  * function to make the change in the array based on the passed params
  * i.e. If the value is present in the array and you pass the value of
  * false it will be deleted from the array
  */
-export function updateArray (array, id, value) {
+export function updateArray(array, id, value) {
   const exists = array.indexOf(id) >= 0;
-  if (exists && value === true) return array;
-  if (exists && value === false) return array.filter((el) => el !== id);
-  if (!exists && value === true) return array.concat(id);
+
+  if (exists && value === true) {
+    return array;
+  }
+
+  if (exists && value === false) {
+    return array.filter((el) => el !== id);
+  }
+
+  if (!exists && value === true) {
+    return array.concat(id);
+  }
   return array;
 }
 
@@ -41,12 +50,13 @@ export function updateArray (array, id, value) {
  */
 export function showRenamedDialog() {
   return ((dispatch, getState) => {
-    const { projectDetailsReducer: { projectSaveLocation }} = getState();
-    return new Promise(async (resolve) => {
+    const { projectDetailsReducer: { projectSaveLocation } } = getState();
+    return new Promise((resolve) => {
       const translate = getTranslate(getState());
       const projectName = path.basename(projectSaveLocation);
+
       dispatch(AlertModalActions.openOptionDialog(
-        translate('projects.renamed_project', {project: projectName}),
+        translate('projects.renamed_project', { project: projectName }),
         () => {
           dispatch(AlertModalActions.closeAlertDialog());
           resolve();
@@ -67,6 +77,7 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
   let repoNeedsRenaming = false;
   let newRepoExists = false;
   let newProjectName = null;
+
   if (projectSaveLocation) {
     newProjectName = generateNewProjectName(manifest);
     const currentProjectName = path.basename(projectSaveLocation);
@@ -74,7 +85,9 @@ export function shouldProjectNameBeUpdated(manifest, projectSaveLocation) {
     const newProjectPath = path.join(path.dirname(projectSaveLocation), newProjectName);
     newRepoExists = fs.existsSync(newProjectPath);
   }
-  return { repoNeedsRenaming, newRepoExists, newProjectName };
+  return {
+    repoNeedsRenaming, newRepoExists, newProjectName,
+  };
 }
 
 /**
@@ -100,23 +113,25 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
     const continueText = translate('buttons.continue_button');
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
     const projectName = path.basename(projectSaveLocation);
+
     dispatch(
       AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', { project: projectName, door43: translate('_.door43') }),
         (result) => {
           dispatch(AlertModalActions.closeAlertDialog());
+
           switch (result) {
-            case retryText:
-              dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
-              break;
+          case retryText:
+            dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
+            break;
 
-            case contactHelpDeskText:
-              dispatch(showFeedbackDialog(createNew ? "_.support_dcs_create_new_failed" : "_.support_dcs_rename_failed", () => {
-                dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
-              }));
-              break;
+          case contactHelpDeskText:
+            dispatch(showFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
+              dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
+            }));
+            break;
 
-            default:
-              break;
+          default:
+            break;
           }
         }, retryText, continueText, contactHelpDeskText));
   });
@@ -131,7 +146,7 @@ export function getFeedbackDetailsForHelpDesk(translateKey) {
   return (async (dispatch, getState) => {
     const state = getState();
     const translate = getTranslate(state);
-    const {userdata} = state.loginReducer;
+    const { userdata } = state.loginReducer;
     const { projectSaveLocation } = state.projectDetailsReducer;
     const projectInfo = await GogsApiHelpers.getProjectInfo(projectSaveLocation, userdata);
     return translate(translateKey, projectInfo);
@@ -164,12 +179,14 @@ export function doDcsRenamePrompting() {
       const renameText = translate('buttons.rename_repo');
       const createNewText = translate('buttons.create_new_repo');
       const projectName = path.basename(projectSaveLocation);
+
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', {project:projectName, door43: translate('_.door43')}),
+        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
           (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
-            const {userdata} = getState().loginReducer;
+            const { userdata } = getState().loginReducer;
+
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
               await dispatch(handleDcsOperation(createNew, projectSaveLocation));
               resolve();
@@ -194,47 +211,46 @@ export function doDcsRenamePrompting() {
  * @return {Promise<Function>}
  */
 export function handleDcsOperation(createNew, projectSaveLocation) {
-  return ((dispatch, getState) => {
-    return new Promise((resolve) => {
-      dispatch(OnlineModeConfirmActions.confirmOnlineAction(
-        async () => { // on confirmed
-          const {userdata} = getState().loginReducer;
-          const projectName = path.basename(projectSaveLocation);
-          doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
-            if (repoExists) {
-              dispatch(handleDcsRenameCollision());
-            } else {
-              if (createNew) {
-                try {
-                  await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
-                } catch (e) {
-                  dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                  console.warn(e);
-                }
-              } else { // if rename
-                try {
-                  await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
-                } catch (e) {
-                  dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                  console.warn(e);
-                }
+  return ((dispatch, getState) => new Promise((resolve) => {
+    dispatch(OnlineModeConfirmActions.confirmOnlineAction(
+      () => { // on confirmed
+        const { userdata } = getState().loginReducer;
+        const projectName = path.basename(projectSaveLocation);
+
+        doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
+          if (repoExists) {
+            dispatch(handleDcsRenameCollision());
+          } else {
+            if (createNew) {
+              try {
+                await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+              } catch (e) {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                console.warn(e);
+              }
+            } else { // if rename
+              try {
+                await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+              } catch (e) {
+                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                console.warn(e);
               }
             }
-            resolve();
-          }).catch((e) => {
-            dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-            console.log("exists failure");
-            console.log(e);
-            resolve();
-          });
-        },
-        () => {
-          console.log("cancelled");
+          }
           resolve();
-        } // on cancel
-      ));
-    });
-  });
+        }).catch((e) => {
+          dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+          console.log('exists failure');
+          console.log(e);
+          resolve();
+        });
+      },
+      () => {
+        console.log('cancelled');
+        resolve();
+      } // on cancel
+    ));
+  }));
 }
 
 /**
@@ -250,23 +266,25 @@ export function handleDcsRenameCollision() {
       const continueText = translate('buttons.do_not_rename');
       const contactHelpDeskText = translate('buttons.contact_helpdesk');
       const projectName = path.basename(projectSaveLocation);
+
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', { project:projectName, door43: translate('_.door43') }),
           (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
+
             switch (result) {
-              case renameText:
-                dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-                break;
+            case renameText:
+              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+              break;
 
-              case contactHelpDeskText:
-                dispatch(showFeedbackDialog("_.support_dcs_rename_conflict", () => {
-                  dispatch(handleDcsRenameCollision()); // reshow alert dialog
-                }));
-                break;
+            case contactHelpDeskText:
+              dispatch(showFeedbackDialog('_.support_dcs_rename_conflict', () => {
+                dispatch(handleDcsRenameCollision()); // reshow alert dialog
+              }));
+              break;
 
-              default:
-                break;
+            default:
+              break;
             }
             resolve();
           },
@@ -287,13 +305,13 @@ export function handleDcsRenameCollision() {
  */
 export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
   return new Promise((resolve, reject) => {
-      GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
-        const repoExists = !!repo;
-        resolve(repoExists);
-      }).catch((e) => {
-        console.log(e);
-        reject(e);
-      });
+    GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
+      const repoExists = !!repo;
+      resolve(repoExists);
+    }).catch((e) => {
+      console.log(e);
+      reject(e);
+    });
   });
 }
 
@@ -303,24 +321,29 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
  * @return {{bookId: string, languageId: *}}
  */
 export function getDetailsFromProjectName(projectName, translate) {
-  let bookId = "";
-  let bookName = "";
-  let languageId = "";
+  let bookId = '';
+  let bookName = '';
+  let languageId = '';
+
   if (projectName) {
-    const parts = projectName.split("_");
+    const parts = projectName.split('_');
     languageId = parts[0];
+
     // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
     for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
       const possibleBookId = parts[i].toLowerCase();
       const allBooks = BooksOfTheBible.getAllBibleBooks(translate);
       bookName = allBooks[possibleBookId];
+
       if (bookName) {
         bookId = possibleBookId; // if valid bookName use this book id
         break;
       }
     }
   }
-  return {bookId, languageId, bookName};
+  return {
+    bookId, languageId, bookName,
+  };
 }
 /**
  * generate new project name to match spec
@@ -332,7 +355,8 @@ export const generateNewProjectName = (manifest) => {
   const lang_id = manifest.target_language && manifest.target_language.id ? manifest.target_language.id : '';
   const resourceId = manifest.resource && manifest.resource.id ? manifest.resource.id : '';
   const projectId = manifest.project && manifest.project.id ? manifest.project.id : '';
-  const resourceType = "book"; //TODO blm:  hard coded for now
+  const resourceType = 'book'; //TODO blm:  hard coded for now
+
   if (resourceId) {
     newFilename = `${lang_id}_${resourceId}_${projectId}_${resourceType}`;
   } else {
@@ -357,10 +381,11 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
   const projectLabel = isProjectLoaded ? projectName : translate('project');
   const hoverProjectName = projectNickname || '';
   let displayedProjectLabel = projectLabel || '';
+
   if (displayedProjectLabel && (displayedProjectLabel.length > project_max_length)) {
     displayedProjectLabel = displayedProjectLabel.substr(0, project_max_length - 1) + '…'; // truncate with ellipsis
   }
-  return {hoverProjectName, displayedProjectLabel};
+  return { hoverProjectName, displayedProjectLabel };
 }
 
 /**
@@ -369,9 +394,7 @@ export function getProjectLabel(isProjectLoaded, projectName, translate, project
  * @return {*}
  */
 export function getJsonFilesInPath(folderPath) {
-  return fs.readdirSync(folderPath).filter(file => {
-    return path.extname(file) === '.json';
-  });
+  return fs.readdirSync(folderPath).filter(file => path.extname(file) === '.json');
 }
 
 /**
@@ -383,6 +406,7 @@ export function getJsonFilesInPath(folderPath) {
  */
 export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSelectedCategories = [], bookAbbreviation) {
   let progress = 0;
+
   if (fs.existsSync(pathToProjectGroupsDataFiles)) {
     //Getting all the groups data that exist in the project
     //Note: Not all of these may be used for the counting because
@@ -390,8 +414,9 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     const projectGroupsData = getJsonFilesInPath(pathToProjectGroupsDataFiles);
     let availableCheckCategories = [];
     let languageId = 'en';
+
     if (toolName === TRANSLATION_WORDS){
-      const {languageId: origLang} = BibleHelpers.getOrigLangforBook(bookAbbreviation);
+      const { languageId: origLang } = BibleHelpers.getOrigLangforBook(bookAbbreviation);
       languageId = origLang;
     }
 
@@ -399,11 +424,14 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS, toolName);
     const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
     const parentCategories = getFoldersInResourceFolder(versionPath);
+
     parentCategories.forEach((category) => {
       const groupsFolderPath = path.join(category, 'groups', bookAbbreviation);
       const groupsDataSourcePath = path.join(versionPath, groupsFolderPath);
+
       if (fs.existsSync(groupsDataSourcePath)) {
         let subCategories = getJsonFilesInPath(groupsDataSourcePath);
+
         subCategories = subCategories.filter(subCategory => {
           const name = path.parse(subCategory).name;
           return userSelectedCategories.includes(name);
@@ -412,7 +440,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
         //user selected these categories and it exist in the resources
         availableCheckCategories = availableCheckCategories.concat({
           category,
-          checksToBeCounted: subCategories
+          checksToBeCounted: subCategories,
         });
       }
     });
@@ -423,13 +451,14 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     //the greek source path because that groupsData only gets copied to the project
     //groupsData after being selected and opened.
     let groupsDataToBeCounted = {};
-    availableCheckCategories.forEach(({checksToBeCounted, category}) => {
+
+    availableCheckCategories.forEach(({ checksToBeCounted, category }) => {
       checksToBeCounted.forEach((groupDataFileName) => {
         if (projectGroupsData.includes(groupDataFileName)) {
           //This means that the user has opened the tool with these checks selected before and
           //They are available to read from the project folder
-            const groupData = fs.readJsonSync(path.join(pathToProjectGroupsDataFiles, groupDataFileName));
-            groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = groupData;
+          const groupData = fs.readJsonSync(path.join(pathToProjectGroupsDataFiles, groupDataFileName));
+          groupsDataToBeCounted[groupDataFileName.replace('.json', '')] = groupData;
         } else {
           //This means that the check needs to be accounted for in the progress but the user
           //has not opened that check category yet so it is not in the local project folder
@@ -440,6 +469,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
         }
       });
     });
+
     if (availableCheckCategories.length) {
       progress = calculateProgress(groupsDataToBeCounted);
     }
@@ -456,9 +486,11 @@ function calculateProgress(groupsData) {
   let percent;
   const groupIds = Object.keys(groupsData);
   let totalChecks = 0, completedChecks = 0;
+
   // Loop through all checks and tally completed and totals
   groupIds.forEach(groupId => {
     const groupData = groupsData[groupId];
+
     groupData.forEach(check => {
       totalChecks += 1;
       // checks are considered completed if selections
@@ -474,14 +506,17 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
   const groupsObject = {};
   let checked = 0;
   let totalChecks = 0;
-  const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
+  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookId);
   const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, languageId, bibleId);
+
   if (expectedVerses && fs.existsSync(pathToWordAlignmentData)) {
-    let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => { // filter out .DS_Store
-      return path.extname(file) === '.json';
-    });
+    let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => // filter out .DS_Store
+      path.extname(file) === '.json'
+    );
+
     groupDataFiles.forEach((chapterFileName) => {
       const chapterPath = path.join(pathToWordAlignmentData, chapterFileName);
+
       try {
         groupsObject[path.parse(chapterFileName).name] = fs.readJsonSync(
           chapterPath);
@@ -489,19 +524,23 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
         console.error(`Failed to read alignment data from ${chapterPath}. This will be fixed by #4884`, e);
       }
     });
+
     for (let chapterNumber in groupsObject) {
       for (let verseNumber in groupsObject[chapterNumber]) {
-        if (!parseInt(verseNumber)) continue;
+        if (!parseInt(verseNumber)) {
+          continue;
+        }
+
         const verseDone = isVerseAligned(groupsObject[chapterNumber][verseNumber]);
+
         if (verseDone) {
           checked++;
         }
       }
     }
-    totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => {
-      return Object.keys(expectedVerses[chapterNumber]).length + chapterTotal;
-    }, 0);
+    totalChecks = Object.keys(expectedVerses).reduce((chapterTotal, chapterNumber) => Object.keys(expectedVerses[chapterNumber]).length + chapterTotal, 0);
   }
+
   if (totalChecks) {
     return checked / totalChecks;
   }
@@ -516,10 +555,10 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
  */
 export function isVerseAligned(verseAlignments) {
   let aligned = verseAlignments && !verseAlignments.wordBank.length;
+
   if (aligned) { // if word bank is empty, need to make sure that the verse wasn't empty (no bottom words)
-    const foundWords = verseAlignments.alignments.findIndex(alignment => {
-      return alignment.bottomWords && alignment.bottomWords.length;
-    });
+    const foundWords = verseAlignments.alignments.findIndex(alignment => alignment.bottomWords && alignment.bottomWords.length);
+
     if (foundWords < 0) { // if verse empty, not aligned
       aligned = false;
     }
@@ -531,28 +570,35 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   let checked = 0;
   let totalChecks = 0;
   const pathToWordAlignmentData = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', bookId);
-  if(!fs.existsSync(pathToWordAlignmentData)) {
+
+  if (!fs.existsSync(pathToWordAlignmentData)) {
     return 0;
   }
+
   const chapterNum = groupIndex.id.split('_')[1];
-  let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => { // filter out .DS_Store
+  let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => // filter out .DS_Store
     //This will break if we change the wordAlignment tool naming
     //convention of chapter a like chapter_1.json...
-    return path.parse(file).name === chapterNum;
-  });
+    path.parse(file).name === chapterNum
+  );
+
   if (groupDataFileName) {
     const groupIndexObject = fs.readJsonSync(path.join(pathToWordAlignmentData, groupDataFileName));
+
     for (let verseNumber in groupIndexObject) {
       if (parseInt(verseNumber)) {
         const verseDone = isVerseAligned(groupIndexObject[verseNumber]);
+
         if (verseDone) {
           checked++;
         }
       }
     }
-    const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
+
+    const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookId);
     const expectedVerses = MissingVersesHelpers.getExpectedBookVerses(bookId, languageId, bibleId);
     totalChecks = Object.keys(expectedVerses[chapterNum]).length;
+
     if (totalChecks) {
       return checked / totalChecks;
     }
@@ -563,8 +609,10 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
 export function updateProjectFolderName(newProjectName, projectSaveLocation, oldSelectedProjectFileName) {
   const sourcePath = path.join(projectSaveLocation, oldSelectedProjectFileName);
   const destinationPath = path.join(projectSaveLocation, newProjectName);
-  if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath))
+
+  if (fs.existsSync(sourcePath) && !fs.existsSync(destinationPath)) {
     fs.moveSync(sourcePath, destinationPath);
+  }
 }
 
 /**
@@ -577,10 +625,12 @@ export function updateProjectFolderName(newProjectName, projectSaveLocation, old
 export function getInitialBibleDataFolderName(projectFilename, projectPath) {
   const initialManifest = manifestHelpers.getProjectManifest(projectPath);
   const expectedProjectId = (initialManifest && initialManifest.project && initialManifest.project.id);
+
   if (expectedProjectId) { // if we have a project id, verify that this is what was actually used for bible data
     const expectedBibleDataPath = path.join(projectPath, expectedProjectId);
+
     if (fs.existsSync(expectedBibleDataPath)) {
-      if(fs.lstatSync(expectedBibleDataPath).isDirectory()) {
+      if (fs.lstatSync(expectedBibleDataPath).isDirectory()) {
         return expectedProjectId;
       }
     }
@@ -598,7 +648,8 @@ export function fixBibleDataFolderName(manifest, initialBibleDataFolderName, pro
   if (manifest && manifest.project && manifest.project.id && (manifest.project.id !== initialBibleDataFolderName)) { // if project.id has changed
     const initialBibleFolderPath = path.join(projectPath, initialBibleDataFolderName);
     const updatedBibleFolderPath = path.join(projectPath, manifest.project.id);
-    if(fs.existsSync(initialBibleFolderPath) && ! fs.existsSync(updatedBibleFolderPath)) {
+
+    if (fs.existsSync(initialBibleFolderPath) && ! fs.existsSync(updatedBibleFolderPath)) {
       fs.moveSync(initialBibleFolderPath, updatedBibleFolderPath);
     }
   }

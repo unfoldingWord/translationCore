@@ -8,9 +8,8 @@ import Alert from '../components/dialogComponents/Alert';
 import { closeAlertDialog } from '../actions/AlertModalActions';
 
 class AlertDialogContainer extends Component {
-
   render(){
-    const {translate} = this.props;
+    const { translate } = this.props;
     return (
       <div>
         <Alert translate={translate} {...this.props}/>
@@ -19,26 +18,20 @@ class AlertDialogContainer extends Component {
   }
 }
 
-AlertDialogContainer.propTypes = {
-  translate: PropTypes.func.isRequired
-};
+AlertDialogContainer.propTypes = { translate: PropTypes.func.isRequired };
 
-const mapStateToProps = (state) => {
-  return {
-    alertModalReducer: state.alertModalReducer,
-    translate: getTranslate(state)
-  };
-};
+const mapStateToProps = (state) => ({
+  alertModalReducer: state.alertModalReducer,
+  translate: getTranslate(state),
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: {
-      closeAlertDialog: () => {
-        dispatch(closeAlertDialog());
-      }
-    }
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  actions: {
+    closeAlertDialog: () => {
+      dispatch(closeAlertDialog());
+    },
+  },
+});
 
 export default connect(
   mapStateToProps,

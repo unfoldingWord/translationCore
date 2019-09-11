@@ -1,25 +1,23 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Alert from '../src/js/components/dialogComponents/Alert';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Alert from '../src/js/components/dialogComponents/Alert';
 
 // Tests for Alert Modal React Component
 describe('Alert Modal Componenet', () => {
   test('Should only mount dialog once, and never unmount if only the state is changing.', () => {
     const state = {
-      actions: {
-        closeAlertDialog: () => { }
-      },
+      actions: { closeAlertDialog: () => { } },
       alertModalReducer: {
         alertText: 'Testing component',
         alertDialogVisibility: true,
         alertDialogLoading: false,
         callback: jest.fn(),
         button1: 'yes',
-        button2: 'no'
+        button2: 'no',
       },
-      translate: key => key
+      translate: key => key,
     };
     Alert.prototype.componentDidMount = jest.fn();
     Alert.prototype.componentWillUnmount = jest.fn();

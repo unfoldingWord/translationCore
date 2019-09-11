@@ -7,21 +7,21 @@ const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 describe('actions.toggleHomeView', () => {
-    test('Create action to open home view', () => {
-        const expectedAction = {
-            type: consts.TOGGLE_HOME_VIEW,
-            boolean: true
-        };
-        expect(actions.toggleHomeView(true)).toEqual(expectedAction);
-    });
+  test('Create action to open home view', () => {
+    const expectedAction = {
+      type: consts.TOGGLE_HOME_VIEW,
+      boolean: true,
+    };
+    expect(actions.toggleHomeView(true)).toEqual(expectedAction);
+  });
 
-    test('Create action to close home view', () => {
-        const expectedAction = {
-            type: consts.TOGGLE_HOME_VIEW,
-            boolean: false
-        };
-        expect(actions.toggleHomeView(false)).toEqual(expectedAction);
-    });
+  test('Create action to close home view', () => {
+    const expectedAction = {
+      type: consts.TOGGLE_HOME_VIEW,
+      boolean: false,
+    };
+    expect(actions.toggleHomeView(false)).toEqual(expectedAction);
+  });
 });
 
 describe('goToNextStep', () => {
@@ -34,22 +34,22 @@ describe('goToNextStep', () => {
           stepIndex: 1,
           nextStepName: 'Project Information',
           previousStepName: 'Cancel',
-          nextDisabled: false
-        }
+          nextDisabled: false,
+        },
       },
       loginReducer: {
         loggedInUser: false,
         userdata: {},
         feedback: '',
         subject: 'Bug Report',
-        placeholder: 'Leave us your feedback!'
+        placeholder: 'Leave us your feedback!',
       },
       projectDetailsReducer: {
         projectSaveLocation: '',
         manifest: {},
         currentProjectToolsProgress: {},
-        projectType: null
-      }
+        projectType: null,
+      },
     };
   });
 
@@ -63,8 +63,8 @@ describe('goToNextStep', () => {
     const expectedActions= [
       {
         type: 'GO_TO_STEP',
-        stepIndex: 2
-      }
+        stepIndex: 2,
+      },
     ];
     initialState.loginReducer.loggedInUser = true;
     const store = mockStore(initialState);
@@ -106,8 +106,8 @@ describe('goToNextStep', () => {
     const expectedActions= [
       {
         type: 'GO_TO_STEP',
-        stepIndex: 3
-      }
+        stepIndex: 3,
+      },
     ];
     initialState.projectDetailsReducer.projectSaveLocation = true;
     initialState.loginReducer.loggedInUser = true;
@@ -133,7 +133,7 @@ describe('actions.dimScreen', () => {
   test('Create action to show the Dimmed Screen', () => {
     const expectedAction = {
       type: consts.SHOW_DIMMED_SCREEN,
-      bool: true
+      bool: true,
     };
     expect(actions.dimScreen(true)).toEqual(expectedAction);
     expect(actions.dimScreen()).toEqual(expectedAction);
@@ -141,7 +141,7 @@ describe('actions.dimScreen', () => {
   test('Create action to not show the Dimmed Screen', () => {
     const expectedAction = {
       type: consts.SHOW_DIMMED_SCREEN,
-      bool: false
+      bool: false,
     };
     expect(actions.dimScreen(false)).toEqual(expectedAction);
   });

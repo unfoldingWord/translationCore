@@ -28,13 +28,11 @@ function DownloadManager() {
    * @param {string} id the download id
    * @return {DownloadItem} the download item or undefined
    */
-  const getItem = (id) => {
-    return downloads[id];
-  };
+  const getItem = (id) => downloads[id];
 
   return {
     add: addItem,
-    get: getItem
+    get: getItem,
   };
 }
 

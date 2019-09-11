@@ -1,11 +1,10 @@
 /* eslint-env jest */
-jest.mock('fs-extra');
-import path from "path-extra";
+import path from 'path-extra';
 import fs from 'fs-extra';
 // helpers
-import ResourceAPI from "../src/js/helpers/ResourceAPI";
-import * as gatewayLanguageHelpers from "../src/js/helpers/gatewayLanguageHelpers";
-import * as ResourcesHelpers from "../src/js/helpers/ResourcesHelpers";
+import ResourceAPI from '../src/js/helpers/ResourceAPI';
+import * as gatewayLanguageHelpers from '../src/js/helpers/gatewayLanguageHelpers';
+import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
 // constants
 import {
   USER_RESOURCES_PATH,
@@ -13,8 +12,9 @@ import {
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
   TRANSLATION_ACADEMY,
-  TRANSLATION_HELPS
+  TRANSLATION_HELPS,
 } from '../src/js/common/constants';
+jest.mock('fs-extra');
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
 describe('Test getGatewayLanguageList() for TW',()=>{
@@ -477,18 +477,18 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
               tag: 'w',
               type: 'word',
               occurrence: 1,
-              occurrences: 1
+              occurrences: 1,
             },
             {
               text: 'elder',
               tag: 'w',
               type: 'word',
               occurrence: 1,
-              occurrences: 1
-            }
-          ]
-        }
-      ]
+              occurrences: 1,
+            },
+          ],
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -505,16 +505,16 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
+          occurrences: 1,
         },
         {
           text: 'be',
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -531,20 +531,20 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
+          occurrences: 1,
         },
         {
           text: 'blame',
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       type: 'text',
-      text: ','
+      text: ',',
     },
     {
       tag: 'zaln',
@@ -561,16 +561,16 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
+          occurrences: 1,
         },
         {
           text: 'husband',
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -587,16 +587,16 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 2
+          occurrences: 2,
         },
         {
           text: 'one',
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -613,13 +613,13 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       type: 'text',
-      text: ','
+      text: ',',
     },
     {
       tag: 'zaln',
@@ -636,9 +636,9 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -655,9 +655,9 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -674,9 +674,9 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -693,9 +693,9 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -722,11 +722,11 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
               tag: 'w',
               type: 'word',
               occurrence: 1,
-              occurrences: 1
-            }
-          ]
-        }
-      ]
+              occurrences: 1,
+            },
+          ],
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -743,23 +743,23 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 2,
-          occurrences: 2
+          occurrences: 2,
         },
         {
           text: 'reckless',
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
+          occurrences: 1,
         },
         {
           text: 'behavior',
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -776,9 +776,9 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       tag: 'zaln',
@@ -795,21 +795,21 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
           tag: 'w',
           type: 'word',
           occurrence: 1,
-          occurrences: 1
-        }
-      ]
+          occurrences: 1,
+        },
+      ],
     },
     {
       type: 'text',
-      text: '. \n'
-    }
+      text: '. \n',
+    },
   ];
 
   test('should return text from ult and NOT the ulb', () => {
     // given
     const toolsSelectedGLs = {
       translationWords: 'en',
-      currentToolName: TRANSLATION_WORDS
+      currentToolName: TRANSLATION_WORDS,
     };
     const contextId = {
       groupId: 'blameless',
@@ -818,27 +818,21 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
       reference: {
         bookId: 'tit',
         chapter: 1,
-        verse: 6
+        verse: 6,
       },
       strong: ['G04100'],
-      tool: TRANSLATION_WORDS
+      tool: TRANSLATION_WORDS,
     };
     const bibles = {
       en: {
-        'ult': {
-          1: {
-            6: {
-              verseObjects: verseObjects
-            }
-          }
-        },
-        'ulb': []
-      }
+        'ult': { 1: { 6: { verseObjects: verseObjects } } },
+        'ulb': [],
+      },
     };
     const currentToolName = TRANSLATION_WORDS;
     const expectedAlignedGLText = 'without blame';
 
-      // when
+    // when
     const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName);
 
     // then
@@ -849,7 +843,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     // given
     const toolsSelectedGLs = {
       translationWords: 'en',
-      currentToolName: TRANSLATION_WORDS
+      currentToolName: TRANSLATION_WORDS,
     };
     const contextId = {
       groupId: 'blameless',
@@ -858,26 +852,16 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
       reference: {
         bookId: 'tit',
         chapter: 1,
-        verse: 6
+        verse: 6,
       },
       strong: ['G04100'],
-      tool: TRANSLATION_WORDS
+      tool: TRANSLATION_WORDS,
     };
-    const bibles = {
-      en: {
-        'ulb': {
-          1: {
-            6: {
-              verseObjects: verseObjects
-            }
-          }
-        }
-      }
-    };
+    const bibles = { en: { 'ulb': { 1: { 6: { verseObjects: verseObjects } } } } };
     const currentToolName = TRANSLATION_WORDS;
     const expectedAlignedGLText = 'without blame';
 
-      // when
+    // when
     const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName);
 
     // then
@@ -888,532 +872,522 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     // given
     const verseObjects = [
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G24430",
-        "lemma": "ἵνα",
-        "morph": "Gr,CS,,,,,,,,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "ἵνα",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G24430',
+        'lemma': 'ἵνα',
+        'morph': 'Gr,CS,,,,,,,,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'ἵνα',
+        'children': [
           {
-            "text": "that",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'that',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G20680",
-        "lemma": "ἐσθίω",
-        "morph": "Gr,V,SPA2,,P,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "ἔσθητε",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G20680',
+        'lemma': 'ἐσθίω',
+        'morph': 'Gr,V,SPA2,,P,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'ἔσθητε',
+        'children': [
           {
-            "text": "you",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 2
+            'text': 'you',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 2,
           },
           {
-            "text": "may",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
+            'text': 'may',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
           },
           {
-            "text": "eat",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'eat',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G25320",
-        "lemma": "καί",
-        "morph": "Gr,CC,,,,,,,,",
-        "occurrence": 1,
-        "occurrences": 2,
-        "content": "καὶ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G25320',
+        'lemma': 'καί',
+        'morph': 'Gr,CC,,,,,,,,',
+        'occurrence': 1,
+        'occurrences': 2,
+        'content': 'καὶ',
+        'children': [
           {
-            "text": "and",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 2
-          }
+            'text': 'and',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 2,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G40950",
-        "lemma": "πίνω",
-        "morph": "Gr,V,SPA2,,P,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "πίνητε",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G40950',
+        'lemma': 'πίνω',
+        'morph': 'Gr,V,SPA2,,P,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'πίνητε',
+        'children': [
           {
-            "text": "drink",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'drink',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G19090",
-        "lemma": "ἐπί",
-        "morph": "Gr,P,,,,,G,,,",
-        "occurrence": 1,
-        "occurrences": 2,
-        "content": "ἐπὶ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G19090',
+        'lemma': 'ἐπί',
+        'morph': 'Gr,P,,,,,G,,,',
+        'occurrence': 1,
+        'occurrences': 2,
+        'content': 'ἐπὶ',
+        'children': [
           {
-            "text": "at",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'at',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G14730",
-        "lemma": "ἐγώ",
-        "morph": "Gr,RP,,,1G,S,",
-        "occurrence": 1,
-        "occurrences": 2,
-        "content": "μου",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G14730',
+        'lemma': 'ἐγώ',
+        'morph': 'Gr,RP,,,1G,S,',
+        'occurrence': 1,
+        'occurrences': 2,
+        'content': 'μου',
+        'children': [
           {
-            "text": "my",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 2
-          }
+            'text': 'my',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 2,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G35880",
-        "lemma": "ὁ",
-        "morph": "Gr,EA,,,,GFS,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "τῆς",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G35880',
+        'lemma': 'ὁ',
+        'morph': 'Gr,EA,,,,GFS,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'τῆς',
+        'children': [
           {
-            "tag": "zaln",
-            "type": "milestone",
-            "strong": "G51320",
-            "lemma": "τράπεζα",
-            "morph": "Gr,N,,,,,GFS,",
-            "occurrence": 1,
-            "occurrences": 1,
-            "content": "τραπέζης",
-            "children": [
+            'tag': 'zaln',
+            'type': 'milestone',
+            'strong': 'G51320',
+            'lemma': 'τράπεζα',
+            'morph': 'Gr,N,,,,,GFS,',
+            'occurrence': 1,
+            'occurrences': 1,
+            'content': 'τραπέζης',
+            'children': [
               {
-                "text": "table",
-                "tag": "w",
-                "type": "word",
-                "occurrence": 1,
-                "occurrences": 1
-              }
+                'text': 'table',
+                'tag': 'w',
+                'type': 'word',
+                'occurrence': 1,
+                'occurrences': 1,
+              },
             ],
-            "endTag": "zaln-e\\*"
-          }
+            'endTag': 'zaln-e\\*',
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G17220",
-        "lemma": "ἐν",
-        "morph": "Gr,P,,,,,D,,,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "ἐν",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G17220',
+        'lemma': 'ἐν',
+        'morph': 'Gr,P,,,,,D,,,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'ἐν',
+        'children': [
           {
-            "text": "in",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'in',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G14730",
-        "lemma": "ἐγώ",
-        "morph": "Gr,RP,,,1G,S,",
-        "occurrence": 2,
-        "occurrences": 2,
-        "content": "μου",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G14730',
+        'lemma': 'ἐγώ',
+        'morph': 'Gr,RP,,,1G,S,',
+        'occurrence': 2,
+        'occurrences': 2,
+        'content': 'μου',
+        'children': [
           {
-            "text": "my",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 2,
-            "occurrences": 2
-          }
+            'text': 'my',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 2,
+            'occurrences': 2,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G35880",
-        "lemma": "ὁ",
-        "morph": "Gr,EA,,,,DFS,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "τῇ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G35880',
+        'lemma': 'ὁ',
+        'morph': 'Gr,EA,,,,DFS,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'τῇ',
+        'children': [
           {
-            "tag": "zaln",
-            "type": "milestone",
-            "strong": "G09320",
-            "lemma": "βασιλεία",
-            "morph": "Gr,N,,,,,DFS,",
-            "occurrence": 1,
-            "occurrences": 1,
-            "content": "βασιλείᾳ",
-            "children": [
+            'tag': 'zaln',
+            'type': 'milestone',
+            'strong': 'G09320',
+            'lemma': 'βασιλεία',
+            'morph': 'Gr,N,,,,,DFS,',
+            'occurrence': 1,
+            'occurrences': 1,
+            'content': 'βασιλείᾳ',
+            'children': [
               {
-                "text": "kingdom",
-                "tag": "w",
-                "type": "word",
-                "occurrence": 1,
-                "occurrences": 1
-              }
+                'text': 'kingdom',
+                'tag': 'w',
+                'type': 'word',
+                'occurrence': 1,
+                'occurrences': 1,
+              },
             ],
-            "endTag": "zaln-e\\*"
-          }
+            'endTag': 'zaln-e\\*',
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "type": "text",
-        "text": ","
+        'type': 'text',
+        'text': ',',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G25320",
-        "lemma": "καί",
-        "morph": "Gr,CC,,,,,,,,",
-        "occurrence": 2,
-        "occurrences": 2,
-        "content": "καὶ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G25320',
+        'lemma': 'καί',
+        'morph': 'Gr,CC,,,,,,,,',
+        'occurrence': 2,
+        'occurrences': 2,
+        'content': 'καὶ',
+        'children': [
           {
-            "text": "and",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 2,
-            "occurrences": 2
-          }
+            'text': 'and',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 2,
+            'occurrences': 2,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G25210",
-        "lemma": "κάθημαι",
-        "morph": "Gr,V,IPM2,,P,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "καθῆσθε",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G25210',
+        'lemma': 'κάθημαι',
+        'morph': 'Gr,V,IPM2,,P,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'καθῆσθε',
+        'children': [
           {
-            "text": "you",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 2,
-            "occurrences": 2
+            'text': 'you',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 2,
+            'occurrences': 2,
           },
           {
-            "text": "will",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
+            'text': 'will',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
           },
           {
-            "text": "sit",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'sit',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G19090",
-        "lemma": "ἐπί",
-        "morph": "Gr,P,,,,,G,,,",
-        "occurrence": 2,
-        "occurrences": 2,
-        "content": "ἐπὶ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G19090',
+        'lemma': 'ἐπί',
+        'morph': 'Gr,P,,,,,G,,,',
+        'occurrence': 2,
+        'occurrences': 2,
+        'content': 'ἐπὶ',
+        'children': [
           {
-            "text": "on",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'on',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G23620",
-        "lemma": "θρόνος",
-        "morph": "Gr,N,,,,,GMP,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "θρόνων",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G23620',
+        'lemma': 'θρόνος',
+        'morph': 'Gr,N,,,,,GMP,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'θρόνων',
+        'children': [
           {
-            "text": "thrones",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'thrones',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G29190",
-        "lemma": "κρίνω",
-        "morph": "Gr,V,PPA,NMP,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "κρίνοντες",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G29190',
+        'lemma': 'κρίνω',
+        'morph': 'Gr,V,PPA,NMP,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'κρίνοντες',
+        'children': [
           {
-            "text": "judging",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'judging',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G35880",
-        "lemma": "ὁ",
-        "morph": "Gr,EA,,,,AFP,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "τὰς",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G35880',
+        'lemma': 'ὁ',
+        'morph': 'Gr,EA,,,,AFP,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'τὰς',
+        'children': [
           {
-            "text": "the",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'the',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G14270",
-        "lemma": "δώδεκα",
-        "morph": "Gr,EN,,,,AFP,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "δώδεκα",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G14270',
+        'lemma': 'δώδεκα',
+        'morph': 'Gr,EN,,,,AFP,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'δώδεκα',
+        'children': [
           {
-            "text": "twelve",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'twelve',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G54430",
-        "lemma": "φυλή",
-        "morph": "Gr,N,,,,,AFP,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "φυλὰς",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G54430',
+        'lemma': 'φυλή',
+        'morph': 'Gr,N,,,,,AFP,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'φυλὰς',
+        'children': [
           {
-            "text": "tribes",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'tribes',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G35880",
-        "lemma": "ὁ",
-        "morph": "Gr,EA,,,,GMS,",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "τοῦ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G35880',
+        'lemma': 'ὁ',
+        'morph': 'Gr,EA,,,,GMS,',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'τοῦ',
+        'children': [
           {
-            "text": "of",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'of',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "tag": "zaln",
-        "type": "milestone",
-        "strong": "G24740",
-        "lemma": "Ἰσραήλ",
-        "morph": "Gr,N,,,,,GMSI",
-        "occurrence": 1,
-        "occurrences": 1,
-        "content": "Ἰσραήλ",
-        "children": [
+        'tag': 'zaln',
+        'type': 'milestone',
+        'strong': 'G24740',
+        'lemma': 'Ἰσραήλ',
+        'morph': 'Gr,N,,,,,GMSI',
+        'occurrence': 1,
+        'occurrences': 1,
+        'content': 'Ἰσραήλ',
+        'children': [
           {
-            "text": "Israel",
-            "tag": "w",
-            "type": "word",
-            "occurrence": 1,
-            "occurrences": 1
-          }
+            'text': 'Israel',
+            'tag': 'w',
+            'type': 'word',
+            'occurrence': 1,
+            'occurrences': 1,
+          },
         ],
-        "endTag": "zaln-e\\*"
+        'endTag': 'zaln-e\\*',
       },
       {
-        "type": "text",
-        "text": "."
+        'type': 'text',
+        'text': '.',
       },
       {
-        "tag": "s5",
-        "nextChar": "\n",
-        "type": "section"
+        'tag': 's5',
+        'nextChar': '\n',
+        'type': 'section',
       },
       {
-        "tag": "p",
-        "type": "paragraph",
-        "text": " \n"
-      }
+        'tag': 'p',
+        'type': 'paragraph',
+        'text': ' \n',
+      },
     ];
     const toolsSelectedGLs = {
       translationWords: 'en',
-      currentToolName: TRANSLATION_WORDS
+      currentToolName: TRANSLATION_WORDS,
     };
     const contextId = {
-      "reference": {
-        "bookId": "luk",
-        "chapter": 22,
-        "verse": 30
+      'reference': {
+        'bookId': 'luk',
+        'chapter': 22,
+        'verse': 30,
       },
-      "tool": TRANSLATION_WORDS,
-      "groupId": "12tribesofisrael",
-      "quote": [
+      'tool': TRANSLATION_WORDS,
+      'groupId': '12tribesofisrael',
+      'quote': [
         {
-          "word": "δώδεκα",
-          "occurrence": 1
+          'word': 'δώδεκα',
+          'occurrence': 1,
         },
         {
-          "word": "φυλὰς",
-          "occurrence": 1
+          'word': 'φυλὰς',
+          'occurrence': 1,
         },
         {
-          "word": "κρίνοντες",
-          "occurrence": 1
+          'word': 'κρίνοντες',
+          'occurrence': 1,
         },
         {
-          "word": "τοῦ",
-          "occurrence": 1
+          'word': 'τοῦ',
+          'occurrence': 1,
         },
         {
-          "word": "Ἰσραήλ",
-          "occurrence": 1
-        }
+          'word': 'Ἰσραήλ',
+          'occurrence': 1,
+        },
       ],
-      "strong": [
-        "G14270",
-        "G54430",
-        "G29190",
-        "G35880",
-        "G24740"
+      'strong': [
+        'G14270',
+        'G54430',
+        'G29190',
+        'G35880',
+        'G24740',
       ],
-      "occurrence": 1
+      'occurrence': 1,
     };
-    const bibles = {
-      en: {
-        'ult': {
-          22: {
-            30: {
-              verseObjects: verseObjects
-            }
-          }
-        }
-      }
-    };
+    const bibles = { en: { 'ult': { 22: { 30: { verseObjects: verseObjects } } } } };
     const currentToolName = TRANSLATION_WORDS;
     const expectedAlignedGLText = 'judging … twelve tribes of Israel';
 
@@ -1423,7 +1397,6 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     // then
     expect(alignedGLText).toEqual(expectedAlignedGLText);
   });
-
 });
 
 describe('checkAreayHelpers.bibleIdSort', () => {
@@ -1453,11 +1426,14 @@ function fakeHelpsBookByCopying(lang, srcBook, destBook) {
   // add dummy resources
   const tWHelpsPath = path.join(USER_RESOURCES_PATH, lang, 'translationHelps/translationWords');
   const latestVersionPath = ResourceAPI.getLatestVersion(tWHelpsPath);
+
   if (latestVersionPath) {
     const subFolders = ResourcesHelpers.getFoldersInResourceFolder(latestVersionPath);
+
     for (let subFolder of subFolders) {
       const srcPath = path.join(latestVersionPath, subFolder, 'groups');
       const srcBookPath = path.join(srcPath, srcBook);
+
       if (fs.lstatSync(srcBookPath).isDirectory()) {
         fs.copySync(srcBookPath, path.join(srcPath, destBook));
       }
@@ -1467,8 +1443,10 @@ function fakeHelpsBookByCopying(lang, srcBook, destBook) {
 
 function removeBookFromGroups(helpsPath, bookId) {
   const subFolders = ResourcesHelpers.getFoldersInResourceFolder(helpsPath);
+
   for (const file of subFolders) {
-    const bookPath = path.join(helpsPath, file, "groups", bookId);
+    const bookPath = path.join(helpsPath, file, 'groups', bookId);
+
     if (fs.existsSync(bookPath)) {
       fs.removeSync(bookPath);
     }

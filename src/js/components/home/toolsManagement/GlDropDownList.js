@@ -3,7 +3,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import PropTypes from 'prop-types';
 // helpers
-import { getLanguageTranslation } from "../../../helpers/localizationHelpers";
+import { getLanguageTranslation } from '../../../helpers/localizationHelpers';
 
 /**
  * With the `maxHeight` property set, the Select Field will be scrollable
@@ -13,7 +13,7 @@ const GlDropDownList = ({
   selectedGL,
   selectionChange,
   translate,
-  gatewayLanguageList
+  gatewayLanguageList,
 }) => {
   const GLs = [];
   let disabled = false;
@@ -21,7 +21,7 @@ const GlDropDownList = ({
   if (gatewayLanguageList && gatewayLanguageList.length) {
     gatewayLanguageList.forEach(item => {
       const languageLocalized = getLanguageTranslation(translate, item['name'], item['lc']);
-      const primaryText = <span style={{height: '18px'}}>{languageLocalized}</span>;
+      const primaryText = <span style={{ height: '18px' }}>{languageLocalized}</span>;
       GLs.push(<MenuItem value={item['lc']} key={item['lc']} primaryText={primaryText}/>);
     });
   } else { // no valid languages
@@ -30,6 +30,7 @@ const GlDropDownList = ({
     selectedGL = invalidCode;
     disabled = true;
   }
+
   const floatingLabelText = selectedGL ? translate('tools.gateway_language') : translate('tools.select_gateway_language');
 
   return (
@@ -40,7 +41,7 @@ const GlDropDownList = ({
       disabled={disabled}
       floatingLabelStyle={{ color: '#000000' }}
       floatingLabelText={floatingLabelText}
-      underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+      underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
       onChange={(event, index, value) => selectionChange(value)}
     >
       {GLs}

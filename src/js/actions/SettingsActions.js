@@ -9,7 +9,7 @@ import types from './ActionTypes';
 export const setSetting = (key, value) => ({
   type: types.SET_SETTING,
   key,
-  value
+  value,
 });
 
 /**
@@ -21,7 +21,7 @@ export const setSetting = (key, value) => ({
  */
 export const toggleSetting = (key) => ({
   type: types.TOGGLE_SETTING,
-  key
+  key,
 });
 
 /**
@@ -37,5 +37,5 @@ export const setToolSettings = (moduleNamespace, settingsPropertyName, toolSetti
   type: types.UPDATE_TOOL_SETTINGS,
   moduleNamespace,
   settingsPropertyName,
-  toolSettingsData
+  toolSettingsData,
 });

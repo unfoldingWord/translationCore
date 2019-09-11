@@ -1,5 +1,6 @@
 import isEqual from 'deep-equal';
-import {loadSettings, loadUserdata} from './loadMethods';
+import { getSelectedToolName } from '../selectors';
+import { loadSettings, loadUserdata } from './loadMethods';
 import {
   saveSettings,
   saveTargetLanguage,
@@ -11,9 +12,8 @@ import {
   saveGroupsData,
   saveLocalUserdata,
   saveProjectManifest,
-  saveProjectSettings
+  saveProjectSettings,
 } from './saveMethods';
-import { getSelectedToolName } from "../selectors";
 
 /**
  * @description loads state needed to set up reducers with preloaded data
@@ -24,8 +24,9 @@ export const loadState = () => {
   try {
     const serializedState = {
       settingsReducer: loadSettings(),
-      loginReducer: loadUserdata()
+      loginReducer: loadUserdata(),
     };
+
     if (serializedState === null) {
       //  returning undefined to allow the reducers to initialize the app state
       return undefined;
@@ -50,23 +51,42 @@ export const saveState = (prevState, newState) => {
   try {
     saveSettings(newState);
     saveLocalUserdata(newState);
+
     // save manifest only if it is defined.
     if (newState.projectDetailsReducer.projectSaveLocation && newState.projectDetailsReducer.manifest && Object.keys(newState.projectDetailsReducer.manifest).length > 0) {
       saveProjectManifest(newState);
     }
+
     if (newState.projectDetailsReducer.projectSaveLocation && newState.projectDetailsReducer.settings && Object.keys(newState.projectDetailsReducer.settings).length > 0) {
       saveProjectSettings(newState);
     }
+
     // only save checkData and targetLanguage reducers if contextId hasn't changed
     if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
-      if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) saveComments(newState);
-      if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) saveSelections(newState);
-      if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) saveVerseEdit(newState);
-      if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) saveReminders(newState);
-      if (!isEqual(prevState.invalidatedReducer, newState.invalidatedReducer)) saveInvalidated(newState);
+      if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) {
+        saveComments(newState);
+      }
+
+      if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) {
+        saveSelections(newState);
+      }
+
+      if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) {
+        saveVerseEdit(newState);
+      }
+
+      if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) {
+        saveReminders(newState);
+      }
+
+      if (!isEqual(prevState.invalidatedReducer, newState.invalidatedReducer)) {
+        saveInvalidated(newState);
+      }
+
       // only save targetLanguage when data has changed and not empty
-      const {targetLanguage} = newState.resourcesReducer.bibles;
+      const { targetLanguage } = newState.resourcesReducer.bibles;
       const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);
+
       if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
         saveTargetLanguage(newState);
       }

@@ -1,13 +1,13 @@
-import os from "os";
-import appPackage from "../../../package";
+import os from 'os';
 import sgMail from '@sendgrid/mail';
 import stringify from 'json-stringify-safe';
-import AdmZip from "adm-zip";
-import {openAlert} from "../actions/AlertActions";
-import {getTranslate} from "../selectors";
-import {getQuoteAsString} from "checking-tool-wrapper";
-import {changeToNextContextId} from "../actions/ContextIdActions";
-import * as HomeScreenActions from "../actions/HomeScreenActions";
+import AdmZip from 'adm-zip';
+import { getQuoteAsString } from 'checking-tool-wrapper';
+import { openAlert } from '../actions/AlertActions';
+import { getTranslate } from '../selectors';
+import appPackage from '../../../package';
+import { changeToNextContextId } from '../actions/ContextIdActions';
+import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 
 /**
@@ -22,28 +22,28 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext)
   const quoteString = getQuoteAsString(contextId.quote);
   const reference = `${contextId.reference.bookId} ${contextId.reference.chapter}:${contextId.reference.verse}`;
   const data = `\n\nTool: "${contextId.tool}"\nGroupId: "${contextId.groupId}"\nReference: "${reference}"\nGateway Language: "${selectedGL}"\nQuote: "${quoteString}"\nOccurrence: "${contextId.occurrence}"\n\n`;
-  const report = data.replace(/\n/g,"<br>"); // use html line formatting
-  const message = translate("tools.invalid_check_found", { report });
-  console.log("promptForInvalidCheckFeedback(): " + message);
+  const report = data.replace(/\n/g,'<br>'); // use html line formatting
+  const message = translate('tools.invalid_check_found', { report });
+  console.log('promptForInvalidCheckFeedback(): ' + message);
   const onSelection = () => {
     if (moveToNext) {
       dispatch(changeToNextContextId());
     }
   };
 
-  dispatch(openAlert("invalidQuote", message, {
-    confirmText: translate("buttons.feedback_button"),
-    cancelText: translate("buttons.ignore_button"),
+  dispatch(openAlert('invalidQuote', message, {
+    confirmText: translate('buttons.feedback_button'),
+    cancelText: translate('buttons.ignore_button'),
     onConfirm: () => {
-      console.log("promptForInvalidCheckFeedback(): User clicked submit feedback");
+      console.log('promptForInvalidCheckFeedback(): User clicked submit feedback');
       dispatch(HomeScreenActions.setErrorFeedbackCategory(FeedbackDialog.CONTENT_AND_RESOURCES_FEEDBACK_KEY));
       dispatch(HomeScreenActions.setErrorFeedbackMessage('There is a problem with the content of this check:' + data)); // put up feedback dialog
       dispatch(HomeScreenActions.setFeedbackCloseCallback(onSelection));
     },
     onCancel: () => {
-      console.log("promptForInvalidCheckFeedback(): User clicked ignore");
+      console.log('promptForInvalidCheckFeedback(): User clicked ignore');
       onSelection();
-    }
+    },
   }));
 };
 
@@ -59,10 +59,10 @@ export const getOsInfoStr = () => {
     userInfo: os.userInfo(),
     homedir: os.homedir(),
     platform: os.platform(),
-    release: os.release()
+    release: os.release(),
   };
   const osString = stringifySafe(osInfo,
-    "[error loading system information]");
+    '[error loading system information]');
   return osString;
 };
 
@@ -78,56 +78,62 @@ export const getOsInfoStr = () => {
  * @param {object} [state] - the application state. If this is set both the state and system information will be submitted.
  * @return {AxiosPromise}
  */
-export const submitFeedback = ({ category, message, name, email, state }) => {
+export const submitFeedback = ({
+  category, message, name, email, state,
+}) => {
   let fromContact = {
     email: process.env.TC_HELP_DESK_EMAIL,
-    name: 'Help Desk'
+    name: 'Help Desk',
   };
-  if(email) {
+
+  if (email) {
     fromContact = {
       email,
-      name: name ? name : email
+      name: name ? name : email,
     };
   }
 
   let fullMessage = `${message}\n\nApp Version:\n${appPackage.version} (${process.env.BUILD})`;
-  if(name) {
+
+  if (name) {
     fullMessage += `\n\nName: ${name}`;
   }
-  if(email) {
+
+  if (email) {
     fullMessage += `\n\nEmail: ${email}`;
   }
 
   sgMail.setApiKey(process.env.TC_HELP_DESK_TOKEN);
   const msg = {
     to: [
-          {
-            email: process.env.TC_HELP_DESK_EMAIL,
-            name: "Help Desk"
-          }
-        ],
+      {
+        email: process.env.TC_HELP_DESK_EMAIL,
+        name: 'Help Desk',
+      },
+    ],
     from: fromContact,
     subject: `tC: ${category}`,
     text: fullMessage,
-    html: fullMessage.replace(/\n/g, "<br>"),
+    html: fullMessage.replace(/\n/g, '<br>'),
   };
 
   if (state) {
     msg.attachments = [];
     const zip = new AdmZip();
-    let buff = Buffer.from(state.logData || "");
-    zip.addFile("log.txt", buff, "application logs");
+    let buff = Buffer.from(state.logData || '');
+    zip.addFile('log.txt', buff, 'application logs');
     const osString = getOsInfoStr();
     buff = Buffer.from(osString);
-    zip.addFile("os_info.json", buff, "application logs");
+    zip.addFile('os_info.json', buff, 'application logs');
     const zippedBuffer = zip.toBuffer();
+
     msg.attachments.push(
       {
         content: zippedBuffer.toString('base64'),
         filename: 'log.zip',
         type: 'application/zip',
         disposition: 'attachment',
-        contentId: 'Logs'
+        contentId: 'Logs',
       });
     // fullMessage += `\n\nSystem Information:\n${osString}\n\nApp State:\n${stateString}`;
   }
@@ -145,7 +151,7 @@ export const stringifySafe = (json, error=null) => {
   try {
     return stringify(json);
   } catch (e) {
-    if(error) {
+    if (error) {
       return error;
     } else {
       return e.message;
@@ -161,7 +167,7 @@ export const stringifySafe = (json, error=null) => {
  */
 export const isNotRegistered = (response) => {
   const { data } = response;
-  const expectedResponse = "user not registered";
+  const expectedResponse = 'user not registered';
   const notRegistered = Boolean(data) && Boolean(data.error) &&
     data.error.toLowerCase().includes(expectedResponse);
   return response.status === 401 && notRegistered;

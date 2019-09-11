@@ -1,10 +1,10 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import * as SettingsActions from './SettingsActions';
 // helpers
 import * as settingsMigrationHelpers from '../helpers/settingsMigrationHelpers';
-import * as Bible from "../common/BooksOfTheBible";
+import * as Bible from '../common/BooksOfTheBible';
+import * as SettingsActions from './SettingsActions';
 // constants
 const PARENT = path.datadir('translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -36,16 +36,16 @@ export function migrateCurrentPaneSettings1() {
     if (ScripturePane && currentPaneSettings && currentPaneSettings.includes('ulb-en')) {
       let newCurrentPaneSettings = currentPaneSettings.map((bibleId) => {
         switch (bibleId) {
-          case 'ulb-en':
-            return 'ult';
-          case 'udb-en':
-          case 'udt':
-            return 'ust';
-          default:
-            return bibleId;
+        case 'ulb-en':
+          return 'ult';
+        case 'udb-en':
+        case 'udt':
+          return 'ust';
+        default:
+          return bibleId;
         }
       });
-      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+      dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', newCurrentPaneSettings));
     }
   });
 }
@@ -68,7 +68,7 @@ export function migrateCurrentPaneSettings2() {
           return bibleId;
         }
       });
-      dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+      dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', newCurrentPaneSettings));
     }
   });
 }
@@ -84,12 +84,13 @@ export function migrateCurrentPaneSettings3() {
     const currentPaneSettings = ScripturePane && ScripturePane.currentPaneSettings ?
       ScripturePane.currentPaneSettings : null;
 
-      if (ScripturePane && currentPaneSettings) {
+    if (ScripturePane && currentPaneSettings) {
       // if any value in the current pane settings is a string then its an old current pane settings.
       const foundCurrentPaneSettings = currentPaneSettings.filter((paneSettings) => typeof paneSettings === 'string' && typeof paneSettings !== 'object');
+
       if (foundCurrentPaneSettings.length > 0) {
         const newCurrentPaneSettings = settingsMigrationHelpers.migrateToLanguageAwareCurrentPaneSettings(currentPaneSettings);
-        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+        dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', newCurrentPaneSettings));
       }
     }
   });
@@ -109,15 +110,24 @@ export function migrateCurrentPaneSettings4() {
     if (ScripturePane && currentPaneSettings) {
       const foundUlbOrUltBibleIdCondition = (paneSettings) => paneSettings.bibleId === 'ulb' || paneSettings.bibleId === 'ult' || paneSettings.bibleId === 'udb';
       const foundUlbOrUltBibleId = currentPaneSettings.find((paneSettings) => foundUlbOrUltBibleIdCondition(paneSettings));
+
       if (foundUlbOrUltBibleId) {
         const newCurrentPaneSettings = currentPaneSettings.map((paneSettings) => {
-          if (paneSettings.bibleId === 'ult' && paneSettings.languageId === 'hi') paneSettings.bibleId = 'ulb';
-          if (paneSettings.bibleId === 'udt' && paneSettings.languageId === 'en') paneSettings.bibleId = 'ust';
-          if (paneSettings.bibleId === 'udb' && paneSettings.languageId === 'hi') paneSettings.bibleId = 'udt';
+          if (paneSettings.bibleId === 'ult' && paneSettings.languageId === 'hi') {
+            paneSettings.bibleId = 'ulb';
+          }
+
+          if (paneSettings.bibleId === 'udt' && paneSettings.languageId === 'en') {
+            paneSettings.bibleId = 'ust';
+          }
+
+          if (paneSettings.bibleId === 'udb' && paneSettings.languageId === 'hi') {
+            paneSettings.bibleId = 'udt';
+          }
 
           return paneSettings;
         });
-        dispatch(SettingsActions.setToolSettings("ScripturePane", "currentPaneSettings", newCurrentPaneSettings));
+        dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', newCurrentPaneSettings));
       }
     }
   });

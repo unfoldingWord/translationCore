@@ -17,7 +17,7 @@ describe('ProjectInformationCheck', () => {
         setAllLanguageInfoInProjectInformationReducer: () => {},
         getResourceIdWarning: () => {},
         getDuplicateProjectWarning: () => {},
-        displayOverwriteButton: () => {}
+        displayOverwriteButton: () => {},
       },
       reducers: {
         projectInformationCheckReducer: {
@@ -28,18 +28,12 @@ describe('ProjectInformationCheck', () => {
           languageName: 'english',
           languageDirection: 'ltr',
           contributors: ['manny', 'some other guy'],
-          checkers: ['manny', 'superman']
+          checkers: ['manny', 'superman'],
         },
-        projectDetailsReducer: {
-          projectSaveLocation: 'dummy'
-        },
-        settingsReducer: {
-          currentSettings: {
-            developerMode: false
-          }
-        }
+        projectDetailsReducer: { projectSaveLocation: 'dummy' },
+        settingsReducer: { currentSettings: { developerMode: false } },
       },
-      translate: key => key
+      translate: key => key,
     };
 
     const renderedValue = renderer.create(
@@ -54,7 +48,7 @@ describe('ProjectInformationCheck', () => {
 describe('ProjectInformationCheck.limitStringLength', () => {
   test('short strings not limited', () => {
     // given
-    const text = "123";
+    const text = '123';
     const maxLength = 3;
     const expectedText = text;
 
@@ -67,7 +61,7 @@ describe('ProjectInformationCheck.limitStringLength', () => {
 
   test('short strings not limited - 6', () => {
     // given
-    const text = "123456";
+    const text = '123456';
     const maxLength = 6;
     const expectedText = text;
 
@@ -80,9 +74,9 @@ describe('ProjectInformationCheck.limitStringLength', () => {
 
   test('long strings limited', () => {
     // given
-    const text = "1234";
+    const text = '1234';
     const maxLength = 3;
-    const expectedText = "123";
+    const expectedText = '123';
 
     // when
     const results = (new ProjectInformationCheck).limitStringLength(text, maxLength);
@@ -93,9 +87,9 @@ describe('ProjectInformationCheck.limitStringLength', () => {
 
   test('long strings limited - 5', () => {
     // given
-    const text = "123456";
+    const text = '123456';
     const maxLength = 5;
-    const expectedText = "12345";
+    const expectedText = '12345';
 
     // when
     const results = (new ProjectInformationCheck).limitStringLength(text, maxLength);
@@ -106,7 +100,7 @@ describe('ProjectInformationCheck.limitStringLength', () => {
 
   test('empty strings not crash', () => {
     // given
-    const text = "";
+    const text = '';
     const maxLength = 5;
     const expectedText = text;
 

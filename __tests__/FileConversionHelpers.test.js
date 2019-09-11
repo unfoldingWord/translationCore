@@ -1,10 +1,10 @@
 /* eslint-env jest */
 //helpers
 
-import * as FileConversionHelpers from "../src/js/helpers/FileConversionHelpers";
+import * as FileConversionHelpers from '../src/js/helpers/FileConversionHelpers';
 
-describe("FileConversionHelpers.getSafeErrorMessage", () => {
-  const defaultMessage = "DEFAULT";
+describe('FileConversionHelpers.getSafeErrorMessage', () => {
+  const defaultMessage = 'DEFAULT';
 
   it('handles undefined error without crash', () => {
     // given
@@ -20,7 +20,7 @@ describe("FileConversionHelpers.getSafeErrorMessage", () => {
 
   it('handles error string without crash', () => {
     // given
-    const error = "message";
+    const error = 'message';
     const expected = error;
 
     // when
@@ -57,12 +57,12 @@ describe("FileConversionHelpers.getSafeErrorMessage", () => {
   it('handles javascript error without crash', () => {
     // given
     const expected = defaultMessage;
+
     try {
       const test = null;
       const nullError = test.part;
       console.log(nullError);
     } catch (error) {
-
       // when
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, defaultMessage);
 
@@ -74,10 +74,10 @@ describe("FileConversionHelpers.getSafeErrorMessage", () => {
     // given
     const error = 'STUFF';
     const expected = error;
+
     try {
       await Promise.reject(error);
     } catch (error_) {
-
       // when
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error_, defaultMessage);
 

@@ -1,18 +1,16 @@
-jest.unmock('fs-extra');
-jest.unmock('adm-zip');
-jest.unmock("../src/js/helpers/GitApi");
 import path from 'path';
 import fs from 'fs-extra';
 import ncp from 'ncp';
 import AdmZip from 'adm-zip';
-import * as manifestHelpers from "../src/js/helpers/manifestHelpers";
+import * as manifestHelpers from '../src/js/helpers/manifestHelpers';
 import * as helpers from '../src/js/helpers/TargetLanguageHelpers';
+jest.unmock('fs-extra');
+jest.unmock('adm-zip');
+jest.unmock('../src/js/helpers/GitApi');
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
-  getActiveLocaleLanguage: () => {
-    return {code: 'en'};
-  }
+  getActiveLocaleLanguage: () => ({ code: 'en' }),
 }));
 
 const cleanOutput = () => {
@@ -32,14 +30,12 @@ describe('generateTargetBibleFromUSFMPath', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
     const projectPath = path.join(__dirname, 'output/tit_from_usfm');
     const manifest = {
-      'project': {
-        'id': 'tit'
-      },
+      'project': { 'id': 'tit' },
       'target_language': {
         'id': 'en',
         'name': 'English',
-        'diretion': 'ltr'
-      }
+        'diretion': 'ltr',
+      },
     };
     helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
@@ -54,14 +50,12 @@ describe('generateTargetBibleFromUSFMPath', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/missing_file.usfm');
     const projectPath = path.join(__dirname, 'output/missing_output');
     const manifest = {
-      'project': {
-        'id': 'tit'
-      },
+      'project': { 'id': 'tit' },
       'target_language': {
         'id': 'en',
         'name': 'English',
-        'diretion': 'ltr'
-      }
+        'diretion': 'ltr',
+      },
     };
     helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
@@ -76,7 +70,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     return new Promise((resolve, reject) => {
       // copy source to output for manipulation
       ncp(srcPath, projectPath, (err) => {
-        if(err) {
+        if (err) {
           reject(err);
         } else {
           resolve();
@@ -85,21 +79,18 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     }).then(() => {
       // perform test
       const manifest = {
-        project: {
-          id: 'gen'
-        },
+        project: { id: 'gen' },
         target_language: {
           id: 'en',
           name: 'English',
-          direction: 'ltr'
-        }
+          direction: 'ltr',
+        },
       };
       helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
-
   });
 
   it('generates a Bible w/ single chunks', () => {
@@ -117,14 +108,12 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     }).then(() => {
       //perform test
       const manifest = {
-        project: {
-          id: 'tit'
+        'project': { id: 'tit' },
+        'target_language': {
+          'direction': 'ltr',
+          'id': 'abu',
+          'name': 'Abure',
         },
-        "target_language": {
-          "direction": "ltr",
-          "id": "abu",
-          "name": "Abure"
-        }
       };
       helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
@@ -134,7 +123,6 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
       expect(fs.readJSONSync(path.join(bookPath, '3.json'))[3]).toBeDefined();
       expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
-
   });
 
   it('generates a Bible from tstudio project with 00 folder', () => {

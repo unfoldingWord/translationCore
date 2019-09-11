@@ -2,13 +2,13 @@
  * @module Actions/CopyrightCheck
  */
 
-import consts from './ActionTypes';
 // modules
 import fs from 'fs-extra';
 import path from 'path-extra';
-import {getTranslate} from '../selectors';
+import { getTranslate } from '../selectors';
 // helpers
 import * as CopyrightCheckHelpers from '../helpers/CopyrightCheckHelpers';
+import consts from './ActionTypes';
 // actions
 import * as projectDetailsActions from './ProjectDetailsActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions.js';
@@ -18,7 +18,7 @@ import * as BodyUIActions from './BodyUIActions';
 const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 
 export function validate() {
-  return((dispatch, getState) => {
+  return ((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
     const licensePath = path.join(projectSaveLocation, 'LICENSE.md');
     const manifestPath = path.join(projectSaveLocation, 'manifest.json');
@@ -32,9 +32,10 @@ export function validate() {
 }
 
 export function finalize() {
-  return((dispatch, getState) => {
+  return ((dispatch, getState) => {
     const translate = getTranslate(getState());
     const { selectedLicenseId } = getState().copyrightCheckReducer;
+
     if (selectedLicenseId !== 'none' && selectedLicenseId !== null) {
       dispatch(generateProjectLicense(selectedLicenseId));
       dispatch({ type: consts.CLEAR_COPYRIGHT_CHECK_REDUCER });
@@ -68,7 +69,7 @@ export function selectProjectLicense(selectedLicenseId) {
   return ((dispatch) => {
     dispatch({
       type: consts.SELECT_PROJECT_LICENSE_ID,
-      selectedLicenseId
+      selectedLicenseId,
     });
     dispatch(ProjectImportStepperActions.toggleNextButton(false));
   });
@@ -87,6 +88,6 @@ export function generateProjectLicense(selectedLicenseId) {
 export function loadProjectLicenseMarkdownFile(licenseId) {
   return {
     type: consts.LOAD_PROJECT_LICENSE_MARKDOWN,
-    projectLicenseMarkdown: CopyrightCheckHelpers.loadProjectLicenseMarkdownFile(licenseId).toString()
+    projectLicenseMarkdown: CopyrightCheckHelpers.loadProjectLicenseMarkdownFile(licenseId).toString(),
   };
 }

@@ -17,8 +17,10 @@ export const getLanguagesSortedByCode = () => {
     languages = [];
     const languageCodes = getLanguageCodes();
     languageCodeList = Object.keys(languageCodes.local).sort();
+
     for (let i = 0, l = languageCodeList.length; i < l; i++) {
       const code = languageCodeList[i];
+
       if ( languageCodes.english[code] ) {
         languages.push(languageCodes.english[code]);
       }
@@ -39,13 +41,16 @@ export const getLanguagesSortedByName = () => {
     languageNames = {};
     languageListByName = [];
     const codes = Object.keys(languageCodes.local).sort();
+
     for (let i = 0, l = codes.length; i < l; i++) {
       const code = codes[i];
+
       if ( languageCodes.english[code] ) {
         const language = languageCodes.english[code];
         languageNames[language.name] = language;
         languageListByName.push(language);
       }
+
       if ( languageCodes.local[code] ) {
         const language = languageCodes.local[code];
         languageNames[language.name] = language;
@@ -83,16 +88,19 @@ export const getLanguageCodes = () => {
     languageIdPrompts = {};
     const localCodes = {};
     const englishCodes = {};
-    languageCodes = { local: localCodes, english: englishCodes};
+    languageCodes = { local: localCodes, english: englishCodes };
+
     for (let i = 0, l = langList.length; i < l; i++) {
       const language = langList[i];
       const code = language.lc;
       const english = language.ang;
       const name = language.ln || english || code;
+
       if (code) {
         const ltr = language.ld !== 'rtl';
-        const entry = { code: code, name: name, ltr: ltr,
-          namePrompt: name + ' [' + code + ']', idPrompt: code + ' (' + name + ')'
+        const entry = {
+          code: code, name: name, ltr: ltr,
+          namePrompt: name + ' [' + code + ']', idPrompt: code + ' (' + name + ')',
         };
         localCodes[code] = entry;
         languageNamePrompts[entry.namePrompt] = entry;
@@ -100,8 +108,9 @@ export const getLanguageCodes = () => {
 
         if (english && (english !== name)) {
           // add english entry
-          const entry = { code: code, name: english, ltr: ltr,
-            namePrompt: english + ' [' +code + ']', idPrompt: code + ' (' + english + ')'
+          const entry = {
+            code: code, name: english, ltr: ltr,
+            namePrompt: english + ' [' +code + ']', idPrompt: code + ' (' + english + ')',
           };
           englishCodes[code] = entry;
           languageNamePrompts[entry.namePrompt] = entry;
@@ -123,11 +132,14 @@ export const getLanguageByCode = (code) => {
   if (code) {
     getLanguagesSortedByCode(); // make sure initialized
     let langData = languageCodes.local[code];
+
     if (!langData) {
       // do case insensitive fast search (since there are over 10,000 codes)
       const codeLc = code.toLowerCase();
+
       for (let i = 0, len = languageCodeList.length; i < len; i++) {
         const codeToMatch = languageCodeList[i].toLowerCase();
+
         if (codeToMatch === codeLc) {
           langData = languageCodes.local[languageCodeList[i]];
           break;
@@ -168,15 +180,18 @@ export const isLanguageCodeValid = (languageID) => {
  * @param {string} code - optional language ID to also match in case of duplicates anglicized names
  * @return {object} found language or null
  */
-export const getLanguageByNameSelection = (name, code = "") => {
+export const getLanguageByNameSelection = (name, code = '') => {
   let language = getLanguageByName(name);
+
   if (language != null) {
     if (!code || (code === language.code)) {
       return language;
     }
   }
+
   if (name) { // fallback to use prompt
     language = languageNamePrompts[name];
+
     if (language != null) {
       if (!code || (code === language.code)) {
         return language;
@@ -186,8 +201,10 @@ export const getLanguageByNameSelection = (name, code = "") => {
     // now try case insensitive search
     const nameLC = name.toLowerCase();
     const languageList = getLanguagesSortedByName();
+
     for (let i = 0, l = languageList.length; i < l; i++) {
       const language = languageList[i];
+
       if ((language.name.toLowerCase() === nameLC) || (language.namePrompt.toLowerCase() === nameLC)) {
         if (!code || (code === language.code)) {
           return language;
@@ -205,11 +222,14 @@ export const getLanguageByNameSelection = (name, code = "") => {
  */
 export const getLanguageByCodeSelection = (languageID) => {
   let language = getLanguageByCode(languageID);
+
   if (language != null) {
     return language;
   }
+
   if (languageID) { // fallback to use prompt
     language = languageIdPrompts[languageID];
+
     if (language != null) {
       return language;
     }

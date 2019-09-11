@@ -654,7 +654,10 @@ ShallowWrapper {
             "getChildContext": Object {
               "calledByRenderer": false,
             },
-            "getDerivedStateFromProps": true,
+            "getDerivedStateFromError": true,
+            "getDerivedStateFromProps": Object {
+              "hasShouldComponentUpdateBug": false,
+            },
             "getSnapshotBeforeUpdate": true,
             "setState": Object {
               "skipsComponentDidUpdateOnNullish": true,
@@ -1084,7 +1087,10 @@ ShallowWrapper {
           },
         },
       },
+      Symbol(enzyme.__providerValues__): undefined,
     },
+    Symbol(enzyme.__providerValues__): Map {},
+    Symbol(enzyme.__childContext__): null,
   },
   Symbol(enzyme.__unrendered__): null,
   Symbol(enzyme.__renderer__): Object {
@@ -1148,7 +1154,10 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromProps": true,
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,
@@ -1578,6 +1587,7 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
   Symbol(enzyme.__rootNodes__): Array [
     Object {
@@ -1880,6 +1890,7 @@ ShallowWrapper {
       "type": "div",
     },
   ],
+  Symbol(enzyme.__providerValues__): null,
 }
 `;
 
@@ -2537,7 +2548,10 @@ ShallowWrapper {
             "getChildContext": Object {
               "calledByRenderer": false,
             },
-            "getDerivedStateFromProps": true,
+            "getDerivedStateFromError": true,
+            "getDerivedStateFromProps": Object {
+              "hasShouldComponentUpdateBug": false,
+            },
             "getSnapshotBeforeUpdate": true,
             "setState": Object {
               "skipsComponentDidUpdateOnNullish": true,
@@ -2967,7 +2981,10 @@ ShallowWrapper {
           },
         },
       },
+      Symbol(enzyme.__providerValues__): undefined,
     },
+    Symbol(enzyme.__providerValues__): Map {},
+    Symbol(enzyme.__childContext__): null,
   },
   Symbol(enzyme.__unrendered__): null,
   Symbol(enzyme.__renderer__): Object {
@@ -3031,7 +3048,10 @@ ShallowWrapper {
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromProps": true,
+          "getDerivedStateFromError": true,
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,
@@ -3461,6 +3481,7 @@ ShallowWrapper {
         },
       },
     },
+    Symbol(enzyme.__providerValues__): undefined,
   },
   Symbol(enzyme.__rootNodes__): Array [
     Object {
@@ -3763,6 +3784,7 @@ ShallowWrapper {
       "type": "div",
     },
   ],
+  Symbol(enzyme.__providerValues__): null,
 }
 `;
 

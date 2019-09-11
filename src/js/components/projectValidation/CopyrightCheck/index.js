@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // components
-import LicenseMarkdown from './LicenseMarkdown';
-import CopyrightCard from './CopyrightCard';
 import { Card } from 'material-ui/Card';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
+import LicenseMarkdown from './LicenseMarkdown';
+import CopyrightCard from './CopyrightCard';
 
 class CopyrightCheck extends Component {
   constructor(props) {
     super(props);
     this.state = {
       showLicenseFile: false,
-      currentID: null
+      currentID: null,
     };
   }
 
@@ -21,34 +21,34 @@ class CopyrightCheck extends Component {
     }
     this.setState({
       showLicenseFile: !this.state.showLicenseFile,
-      currentID:licenseId
+      currentID:licenseId,
     });
   }
 
   render() {
     const { selectedLicenseId, projectLicenseMarkdown } = this.props.reducers.copyrightCheckReducer;
-    const {translate} = this.props;
+    const { translate } = this.props;
     const licenses = [
       {
         title: 'CC0 / Public Domain',
         id: 'CC0 1.0 Public Domain',
-        imageName: 'publicDomain.png'
+        imageName: 'publicDomain.png',
       },
       {
         title: 'Creative Commons Attribution (CC BY)',
         id: 'CC BY 4.0',
-        imageName: 'ccBy.png'
+        imageName: 'ccBy.png',
       },
       {
         title: 'Creative Commons Attribution-ShareAlike (CC BY-SA)',
         id: 'CC BY-SA 4.0',
-        imageName: 'ccBySa.png'
+        imageName: 'ccBySa.png',
       },
       {
         title: translate('project_validation.none_of_above'),
         id: 'none',
-        imageName: 'noCircle.png'
-      }
+        imageName: 'noCircle.png',
+      },
     ];
     const instructions = (
       <div>
@@ -58,12 +58,16 @@ class CopyrightCheck extends Component {
 
     return (
       <ProjectValidationContentWrapper translate={translate}
-                                       instructions={instructions}>
-        <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        instructions={instructions}>
+        <div style={{
+          display: 'flex', flexDirection: 'column', height: '100%',
+        }}>
           {translate('licenses')}
           <Card
             style={{ width: '100%', height: '100%' }}
-            containerStyle={{ overflowY: 'auto', overflowX: 'hidden', height: '100%' }}
+            containerStyle={{
+              overflowY: 'auto', overflowX: 'hidden', height: '100%',
+            }}
           >
             {
               this.state.showLicenseFile ?
@@ -74,21 +78,19 @@ class CopyrightCheck extends Component {
                   toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
                 />
                 : (
-                  licenses.map((license, index) => {
-                    return (
-                      <CopyrightCard
-                        translate={translate}
-                        key={index}
-                        index={index}
-                        id={license.id}
-                        title={license.title}
-                        selectProjectLicense={this.props.selectProjectLicense}
-                        imageName={license.imageName}
-                        selectedLicenseId={selectedLicenseId}
-                        toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
-                      />
-                    );
-                  })
+                  licenses.map((license, index) => (
+                    <CopyrightCard
+                      translate={translate}
+                      key={index}
+                      index={index}
+                      id={license.id}
+                      title={license.title}
+                      selectProjectLicense={this.props.selectProjectLicense}
+                      imageName={license.imageName}
+                      selectedLicenseId={selectedLicenseId}
+                      toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
+                    />
+                  ))
                 )
             }
           </Card>
@@ -102,7 +104,7 @@ CopyrightCheck.propTypes = {
   selectProjectLicense: PropTypes.func.isRequired,
   loadProjectLicenseMarkdownFile: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  reducers: PropTypes.object.isRequired
+  reducers: PropTypes.object.isRequired,
 };
 
 export default CopyrightCheck;

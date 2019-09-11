@@ -7,11 +7,12 @@ describe('verse edit actions', () => {
     const verse = 2;
     const text = 'hello world';
     const result = actions.updateTargetVerse(chapter, verse, text);
+
     expect(result).toEqual({
       type: types.UPDATE_TARGET_VERSE,
       editedText: text,
       chapter,
-      verse
+      verse,
     });
   });
 
@@ -30,8 +31,9 @@ describe('verse edit actions', () => {
     const groupId = 'group';
     const occurrence = 1;
 
-    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, null, null, 
-      {reference: {chapter:activeChapter, verse: activeVerse}}, quote, groupId, occurrence);
+    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, null, null,
+      { reference: { chapter:activeChapter, verse: activeVerse } }, quote, groupId, occurrence);
+
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
       tags,
@@ -47,8 +49,8 @@ describe('verse edit actions', () => {
       reference: {
         bookId: book,
         chapter,
-        verse
-      }
+        verse,
+      },
     });
   });
 
@@ -69,8 +71,9 @@ describe('verse edit actions', () => {
     const groupId = 'group';
     const occurrence = 1;
 
-    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote, 
-      {reference: {chapter:activeChapter, verse: activeVerse}}, quote, groupId, occurrence);
+    const result = actions.recordTargetVerseEdit(book, chapter, verse, before, after, tags, username, modified, glCode, glQuote,
+      { reference: { chapter:activeChapter, verse: activeVerse } }, quote, groupId, occurrence);
+
     expect(result).toEqual({
       type: types.ADD_VERSE_EDIT,
       tags,
@@ -86,8 +89,8 @@ describe('verse edit actions', () => {
       reference: {
         bookId: book,
         chapter,
-        verse
-      }
+        verse,
+      },
     });
   });
 });

@@ -7,9 +7,7 @@ const InvalidatedIcon = props => {
       display: 'inline-block',
       verticalAlign: 'middle',
     },
-    path: {
-      fill: props.color,
-    },
+    path: { fill: props.color },
   };
 
   return (

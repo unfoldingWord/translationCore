@@ -20,13 +20,14 @@ const migrateProject = async (projectSaveLocation, link, userName) => {
   try {
     // this should be first item in migration
     await migrateSaveChangesInOldProjects(projectSaveLocation);
-  } catch(e) {
-    console.error("migrateSaveChangesInOldProjects() - migration error", e);
+  } catch (e) {
+    console.error('migrateSaveChangesInOldProjects() - migration error', e);
   }
+
   try {
     await migrateToAddTargetLanguageBookName(projectSaveLocation);
-  } catch(e) {
-    console.error("migrateToAddTargetLanguageBookName() - migration error", e);
+  } catch (e) {
+    console.error('migrateToAddTargetLanguageBookName() - migration error', e);
   }
   migrateAppsToDotApps(projectSaveLocation);
   migrateToVersion1(projectSaveLocation, link);

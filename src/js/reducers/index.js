@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 // List of reducers
+import { localizeReducer as localize } from 'react-localize-redux';
 import toolsReducer from './toolsReducer';
 import modalReducer from './modalReducer';
 import loginReducer from './loginReducer';
@@ -29,7 +30,6 @@ import missingVersesReducer from './missingVersesReducer';
 import localImportReducer from './localImportReducer';
 import sourceContentUpdatesReducer from './sourceContentUpdatesReducer';
 import softwareUpdateReducer from './softwareUpdateReducer';
-import { localizeReducer as localize } from 'react-localize-redux';
 import localeSettings from './localeSettings';
 import alerts from './alerts';
 
@@ -66,7 +66,7 @@ const rootReducers = combineReducers({
   missingVersesReducer,
   localImportReducer,
   sourceContentUpdatesReducer,
-  softwareUpdateReducer
+  softwareUpdateReducer,
 });
 
 export default rootReducers;

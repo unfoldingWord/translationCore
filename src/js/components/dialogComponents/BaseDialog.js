@@ -13,13 +13,13 @@ import Dialog from 'material-ui/Dialog';
  * @return {*}
  */
 const makeDialogActions = ({
-                             primaryActionEnabled,
-                             secondaryActionEnabled,
-                             primaryLabel,
-                             secondaryLabel,
-                             onPrimaryClick,
-                             onSecondaryClick
-                           }) => {
+  primaryActionEnabled,
+  secondaryActionEnabled,
+  primaryLabel,
+  secondaryLabel,
+  onPrimaryClick,
+  onSecondaryClick,
+}) => {
   const hasPrimaryLabel = Boolean(primaryLabel);
   const hasSecondaryLabel = Boolean(secondaryLabel);
   const hasPrimaryCallback = Boolean(onPrimaryClick);
@@ -74,12 +74,12 @@ const makeDialogActions = ({
  * @property {func} [onSubmit] - callback when the primary button is triggered. Overridden by `actions`
  */
 class BaseDialog extends React.Component {
-  componentDidCatch (error, info) {
+  componentDidCatch(error, info) {
     console.error(error);
     console.warn(info);
   }
 
-  render () {
+  render() {
     const {
       primaryActionEnabled,
       secondaryActionEnabled,
@@ -94,7 +94,7 @@ class BaseDialog extends React.Component {
       open,
       children,
       actions,
-      scrollableContent
+      scrollableContent,
     } = this.props;
 
     let dialogActions = actions
@@ -105,10 +105,11 @@ class BaseDialog extends React.Component {
         primaryLabel,
         secondaryLabel,
         onPrimaryClick: onSubmit,
-        onSecondaryClick: onClose
+        onSecondaryClick: onClose,
       });
 
     let isModal = dialogActions.length !== 0;
+
     if (typeof modal !== 'undefined') {
       isModal = modal;
     }
@@ -125,7 +126,7 @@ class BaseDialog extends React.Component {
             backgroundColor: 'var(--accent-color-dark)',
             padding: '15px',
             marginBottom: '15px',
-            ...titleStyle
+            ...titleStyle,
           }}
           autoScrollBodyContent={scrollableContent}
           onRequestClose={onClose}
@@ -152,13 +153,13 @@ BaseDialog.propTypes = {
   scrollableContent: PropTypes.bool,
   titleStyle: PropTypes.object,
   children: PropTypes.any,
-  bodyStyle: PropTypes.object
+  bodyStyle: PropTypes.object,
 };
 
 BaseDialog.defaultProps = {
   primaryActionEnabled: true,
   secondaryActionEnabled: true,
-  titleStyle: {}
+  titleStyle: {},
 };
 
 export default BaseDialog;

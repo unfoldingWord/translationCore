@@ -4,33 +4,30 @@ import { connect } from 'react-redux';
 // selectors
 import {
   getActiveLocaleLanguage,
-  getIsSoftwareUpdateOpen
+  getIsSoftwareUpdateOpen,
 } from '../../selectors';
-// containers & components
-import HomeContainer from './HomeContainer';
 import ToolContainer from '../ToolContainer';
-import SoftwareUpdatesDialog from "../SoftwareUpdateDialog";
-import CriticalError from './CriticalError';
+import SoftwareUpdatesDialog from '../SoftwareUpdateDialog';
 // helpers
 import { withLocale } from '../Locale';
 // actions
-import { closeSoftwareUpdate } from "../../actions/SoftwareUpdateActions";
+import { closeSoftwareUpdate } from '../../actions/SoftwareUpdateActions';
 import { toggleHomeView, resetReducers } from '../../actions/BodyUIActions';
+import HomeContainer from './HomeContainer';
+import CriticalError from './CriticalError';
 
 const styles = {
   root: {
     display: 'flex',
     height: '100vh',
-    width: '100%'
+    width: '100%',
   },
 };
 
 class BodyContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      error: null,
-    };
+    this.state = { error: null };
     this.handleCloseSoftwareUpdate = this.handleCloseSoftwareUpdate.bind(this);
     this.returnHome = this.returnHome.bind(this);
   }
@@ -53,9 +50,11 @@ class BodyContainer extends Component {
     this.props.toggleHomeView(true);
   }
 
-  render () {
-    const {currentLanguage, translate, isSoftwareUpdateOpen} = this.props;
-    const {displayHomeView} = this.props.reducers.homeScreenReducer;
+  render() {
+    const {
+      currentLanguage, translate, isSoftwareUpdateOpen,
+    } = this.props;
+    const { displayHomeView } = this.props.reducers.homeScreenReducer;
     const { error } = this.state;
 
     const softwareUpdateDialog = (
@@ -65,13 +64,13 @@ class BodyContainer extends Component {
         onClose={this.handleCloseSoftwareUpdate}/>
     );
 
-    if(error !== null) {
+    if (error !== null) {
       return <CriticalError translate={translate} returnHome={this.returnHome} />;
     } else if (displayHomeView) {
       return (
         <div style={styles.root}>
           <HomeContainer translate={translate}
-                         currentLanguage={currentLanguage}/>
+            currentLanguage={currentLanguage}/>
           {softwareUpdateDialog}
         </div>
       );
@@ -79,7 +78,7 @@ class BodyContainer extends Component {
       return (
         <div style={styles.root}>
           <ToolContainer currentLanguage={currentLanguage}
-                         translate={translate}/>
+            translate={translate}/>
           {softwareUpdateDialog}
         </div>
       );
@@ -87,15 +86,11 @@ class BodyContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    reducers: {
-      homeScreenReducer: state.homeScreenReducer
-    },
-    currentLanguage: getActiveLocaleLanguage(state),
-    isSoftwareUpdateOpen: getIsSoftwareUpdateOpen(state)
-  };
-};
+const mapStateToProps = (state) => ({
+  reducers: { homeScreenReducer: state.homeScreenReducer },
+  currentLanguage: getActiveLocaleLanguage(state),
+  isSoftwareUpdateOpen: getIsSoftwareUpdateOpen(state),
+});
 
 const mapDispatchToProps = {
   closeSoftwareUpdate,

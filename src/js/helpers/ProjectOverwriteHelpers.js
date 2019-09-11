@@ -1,14 +1,14 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import {generateTimestamp} from './index';
-import usfm from "usfm-js";
-import {checkSelectionOccurrences} from 'selections';
+import usfm from 'usfm-js';
+import { checkSelectionOccurrences } from 'selections';
 import isEqual from 'deep-equal';
 import * as AlertActions from '../actions/AlertActions';
-import {generateLoadPath} from '../actions/CheckDataLoadActions';
-import {setProjectManifest} from '../actions/ProjectDetailsActions';
-import {getTranslate, getToolsByKey} from '../selectors';
-import {loadProjectGroupData} from './ResourcesHelpers';
+import { generateLoadPath } from '../actions/CheckDataLoadActions';
+import { setProjectManifest } from '../actions/ProjectDetailsActions';
+import { getTranslate, getToolsByKey } from '../selectors';
+import { loadProjectGroupData } from './ResourcesHelpers';
+import { generateTimestamp } from './index';
 
 /**
  * @description Copies existing project checks from the old project path to the new project path
@@ -18,10 +18,12 @@ import {loadProjectGroupData} from './ResourcesHelpers';
  */
 export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, userName, dispatch) => {
   console.log(`mergeOldProjectToNewProject(${newProjectPath})`);
+
   // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
   if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
     let oldAppsPath = path.join(oldProjectPath, '.apps');
     let newAppsPath = path.join(newProjectPath, '.apps');
+
     if (fs.existsSync(oldAppsPath)) {
       if (!fs.existsSync(newAppsPath)) {
         // There is no .apps data in the new path, so we just copy over the old .apps path and we are good to go
@@ -33,6 +35,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
         // from the old project path
         console.log('mergeOldProjectToNewProject() - alignment data in imported file, so we need to merge');
         let alignmentPath = path.join(newAppsPath, 'translationCore', 'alignmentData');
+
         if (fs.existsSync(alignmentPath)) {
           const bookId = getBookId(newProjectPath);
           let tempAlignmentPath = path.join(newProjectPath, '.temp_alignmentData');
@@ -45,6 +48,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
         }
       }
     }
+
     // merge manifest files
     const oldManifestPath = path.join(oldProjectPath, 'manifest.json');
     const newManifestPath = path.join(newProjectPath, 'manifest.json');
@@ -58,7 +62,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
       ...oldManifest,
       ...newManifest,
       checkers: [...oldManifest.checkers, ...newManifest.checkers],
-      translators: [...oldManifest.translators, ...newManifest.translators]
+      translators: [...oldManifest.translators, ...newManifest.translators],
     };
     // save mergedManifest in newManifestPath
     dispatch(setProjectManifest(mergedManifest));
@@ -66,6 +70,7 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
     // Copy the .git history of the old project into the new if it doesn't have it
     const oldGitPath = path.join(oldProjectPath, '.git');
     const newGitPath = path.join(newProjectPath, '.git');
+
     if (! fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
       fs.copySync(oldGitPath, newGitPath);
     }
@@ -77,27 +82,32 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
 export const copyAlignmentData = (fromDir, toDir) => {
   let fromFiles = fs.readdirSync(fromDir).filter(file => path.extname(file) === '.json').sort();
   let toFiles = [];
-  if (fs.existsSync(toDir))
+
+  if (fs.existsSync(toDir)) {
     toFiles = fs.readdirSync(toDir).filter(file => path.extname(file) === '.json').sort();
+  }
   fs.mkdirpSync(toDir);
   fromFiles.forEach(file => {
     let fromFileJson = fs.readJsonSync(path.join(fromDir, file));
     let toFileJson = {};
     const toFileIndex = toFiles.indexOf(file);
+
     if (toFileIndex >= 0) {
       toFileJson = fs.readJsonSync(path.join(toDir, toFiles[toFileIndex]));
     }
     Object.keys(fromFileJson).forEach(function (verseNum) {
-      if(!toFileJson[verseNum] || !toFileJson[verseNum].alignments) {
+      if (!toFileJson[verseNum] || !toFileJson[verseNum].alignments) {
         toFileJson[verseNum] = fromFileJson[verseNum];
-      }  else {
+      } else {
         const alignments = fromFileJson[verseNum].alignments;
         let hasAlignments = false;
+
         alignments.forEach(alignment => {
           if (alignment.bottomWords.length > 0) {
             hasAlignments = true;
           }
         });
+
         if (hasAlignments) {
           toFileJson[verseNum] = fromFileJson[verseNum];
         }
@@ -112,42 +122,45 @@ export const getBookId = (projectPath) => {
   return manifest.project.id;
 };
 
-export const getProjectName = (projectPath) => {
-  return path.basename(projectPath);
-};
+export const getProjectName = (projectPath) => path.basename(projectPath);
 
-export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => {
-  return (dispatch, getState) => {
-    const bookId = getBookId(newProjectPath);
-    const oldBiblePath = path.join(oldProjectPath, bookId);
-    const newBiblePath = path.join(newProjectPath, bookId);
-    if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath))
-      return;
-    const tools = getToolsByKey(getState());
-    const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) === '.json' && parseInt(path.basename(filename)));
-    chapterFiles.forEach(filename => {
-      try {
-        const chapter = parseInt(path.basename(filename));
-        const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
-        const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
-        Object.keys(newChapterVerses).forEach(verse => {
-          let verseBefore = oldChapterVerses[verse];
-          let verseAfter = newChapterVerses[verse];
-          verse = parseInt(verse);
-          if (verseBefore !== verseAfter) {
-            //An external edit happened
-            console.log(`createVerseEditsForAllChangedVerses() - verse edit detected for ${chapter}:${verse}`);
-            createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
-            for (var toolName in tools) {
-              dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
-            }
+export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => (dispatch, getState) => {
+  const bookId = getBookId(newProjectPath);
+  const oldBiblePath = path.join(oldProjectPath, bookId);
+  const newBiblePath = path.join(newProjectPath, bookId);
+
+  if (!fs.pathExistsSync(oldBiblePath) || !fs.pathExistsSync(newBiblePath)) {
+    return;
+  }
+
+  const tools = getToolsByKey(getState());
+  const chapterFiles = fs.readdirSync(oldBiblePath).filter(filename => path.extname(filename) === '.json' && parseInt(path.basename(filename)));
+
+  chapterFiles.forEach(filename => {
+    try {
+      const chapter = parseInt(path.basename(filename));
+      const oldChapterVerses = fs.readJsonSync(path.join(oldBiblePath, filename));
+      const newChapterVerses = fs.readJsonSync(path.join(newBiblePath, filename));
+
+      Object.keys(newChapterVerses).forEach(verse => {
+        let verseBefore = oldChapterVerses[verse];
+        let verseAfter = newChapterVerses[verse];
+        verse = parseInt(verse);
+
+        if (verseBefore !== verseAfter) {
+          //An external edit happened
+          console.log(`createVerseEditsForAllChangedVerses() - verse edit detected for ${chapter}:${verse}`);
+          createExternalVerseEdit(newProjectPath, verseBefore, verseAfter, bookId, chapter, verse, userName);
+
+          for (var toolName in tools) {
+            dispatch(validateSelectionsForTool(newProjectPath, chapter, verse, bookId, verseAfter, userName, toolName));
           }
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    });
-  };
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  });
 };
 
 export function validateSelectionsForTool(projectSaveLocation, chapter, verse, bookId, targetVerse, userName, toolName) {
@@ -156,22 +169,27 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
       reference: {
         bookId,
         chapter: parseInt(chapter),
-        verse: parseInt(verse)
-      }
+        verse: parseInt(verse),
+      },
     };
     const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
     const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId, name);
     let filtered = null;
     let selectionsChanged = false;
+
     for (let groupItemKey of Object.keys(groupsDataForVerse)) {
       const groupItem = groupsDataForVerse[groupItemKey];
+
       for (let checkingOccurrence of groupItem) {
         const selections = checkingOccurrence.selections;
+
         if (selections && selections.length) {
-          if (!filtered) {  // for performance, we filter the verse only once and only if there is a selection
+          if (!filtered) { // for performance, we filter the verse only once and only if there is a selection
             filtered = usfm.removeMarker(targetVerse); // remove USFM markers
           }
+
           const validSelections = checkSelectionOccurrences(filtered, selections);
+
           if (selections.length !== validSelections.length) {
             const selectionsObject = getSelectionsFromChapterAndVerseCombo(
               bookId,
@@ -180,6 +198,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
               projectSaveLocation,
               checkingOccurrence.contextId.quote
             );
+
             if (selectionsObject) {
               console.log(`validateSelectionsForTool() - invalidated selections for ${chapter}:${verse} '${checkingOccurrence.contextId.quote}' in '${toolName}'`);
               //If selections are changed, they need to be cleared
@@ -189,7 +208,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
                 ...selectionsObject,
                 invalidated: true,
                 selections: [],
-                userName
+                userName,
               };
               writeCheckData(invalidatedPayload, invalidatedCheckPath);
 
@@ -197,16 +216,17 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
               const selectionsPayload = {
                 ...selectionsObject,
                 selections: [],
-                userName
+                userName,
               };
               writeCheckData(selectionsPayload, selectionsCheckPath);
             } else {
-              console.warn("validateSelectionsForTool() - could not find selections for ", checkingOccurrence.contextId);
+              console.warn('validateSelectionsForTool() - could not find selections for ', checkingOccurrence.contextId);
             }
           }
         }
       }
     }
+
     if (selectionsChanged) {
       const translate = getTranslate(getState());
       dispatch(AlertActions.openIgnorableAlert('selections_reset', translate('tools.selections_invalidated')));
@@ -236,10 +256,10 @@ export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bo
       reference: {
         bookId,
         chapter,
-        verse
+        verse,
       },
       tool: '[External edit]',
-      groupId: 'N/A'
+      groupId: 'N/A',
     },
   };
   const verseEditsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId, chapter.toString(), verse.toString());
@@ -254,8 +274,10 @@ export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bo
 */
 export function getGroupDataForVerse(groupsData, contextId) {
   const filteredGroupData = {};
+
   for (let groupItemKey of Object.keys(groupsData)) {
     const groupItem = groupsData[groupItemKey];
+
     if (groupItem) {
       for (let check of groupItem) {
         try {
@@ -274,28 +296,33 @@ export function getGroupDataForVerse(groupsData, contextId) {
   return filteredGroupData;
 }
 
-export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, projectSaveLocation, quote = "") {
+export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, projectSaveLocation, quote = '') {
   let selectionsObject = null;
   const contextId = {
     reference: {
       bookId,
       chapter,
-      verse
-    }
+      verse,
+    },
   };
-  const selectionsPath = generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
+  const selectionsPath = generateLoadPath({ projectSaveLocation }, { contextId }, 'selections');
+
   if (fs.existsSync(selectionsPath)) {
     let files = fs.readdirSync(selectionsPath);
-    files = files.filter(file => { // filter the filenames to only use .json
-      return path.extname(file) === '.json';
-    });
+
+    files = files.filter(file => // filter the filenames to only use .json
+      path.extname(file) === '.json'
+    );
+
     let sorted = files.sort().reverse(); // sort the files to use latest
+
     if (quote) {
       sorted = sorted.filter((filename) => {
         const currentSelectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));
         return isEqual(currentSelectionsObject.contextId.quote, quote);
       });
     }
+
     if (sorted.length) { // sanity check
       const filename = sorted[0];
       selectionsObject = fs.readJsonSync(path.join(selectionsPath, filename));

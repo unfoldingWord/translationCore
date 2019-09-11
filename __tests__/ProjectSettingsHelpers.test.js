@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 import path from 'path';
 import fs from 'fs-extra';
-import * as ProjectSettingsHelpers from "../src/js/helpers/ProjectSettingsHelpers";
+import * as ProjectSettingsHelpers from '../src/js/helpers/ProjectSettingsHelpers';
 
 describe('ProjectSettingsHelpers tests', () => {
   const projectWithSettingsPath = path.join(__dirname, 'fixtures/project/en_gal');
@@ -26,9 +26,7 @@ describe('ProjectSettingsHelpers tests', () => {
 
   it('get settings of project without a settings.json', () => {
     const settings = ProjectSettingsHelpers.getProjectSettings(projectWithoutSettingsPath);
-    const expectedSettings = {
-      last_opened: null,
-    };
+    const expectedSettings = { last_opened: null };
     expect(settings).toEqual(expectedSettings);
     expect(fs.existsSync(path.join(projectWithoutSettingsPath, 'settings.json'))).toBeTruthy();
   });

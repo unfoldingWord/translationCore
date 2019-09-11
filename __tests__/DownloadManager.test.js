@@ -7,7 +7,9 @@ const Item = () => {
 
   return {
     once: (key, cb) => callback = cb,
-    done: () => {callback()}
+    done: () => {
+      callback();
+    },
   };
 };
 

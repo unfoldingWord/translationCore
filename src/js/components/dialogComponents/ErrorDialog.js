@@ -14,13 +14,15 @@ import BaseDialog from './BaseDialog';
  */
 class ErrorDialog extends React.Component {
   render() {
-    const {translate, open, onClose, message} = this.props;
+    const {
+      translate, open, onClose, message,
+    } = this.props;
     return (
       <BaseDialog open={open}
-                  primaryLabel={translate('buttons.ok_button')}
-                  onSubmit={onClose}
-                  title={translate('error')}
-                  modal={false}>
+        primaryLabel={translate('buttons.ok_button')}
+        onSubmit={onClose}
+        title={translate('error')}
+        modal={false}>
         <span id="message">
           {message}
         </span>
@@ -33,7 +35,7 @@ ErrorDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   open: PropTypes.bool,
   onClose: PropTypes.func,
-  message: PropTypes.any.isRequired
+  message: PropTypes.any.isRequired,
 };
 
 export default ErrorDialog;

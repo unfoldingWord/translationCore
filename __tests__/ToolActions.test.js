@@ -1,16 +1,18 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import _ from 'lodash';
 import * as actions from '../src/js/actions/ToolActions';
 import { NT_ORIG_LANG_BIBLE, NT_ORIG_LANG } from '../src/js/common/BooksOfTheBible';
-import {TRANSLATION_NOTES, TRANSLATION_WORDS, WORD_ALIGNMENT} from '../src/js/common/constants';
+import {
+  TRANSLATION_NOTES, TRANSLATION_WORDS, WORD_ALIGNMENT,
+} from '../src/js/common/constants';
 import {
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_SELECTIONS_INVALIDATED_ID,
-  ALERT_SELECTIONS_INVALIDATED_MSG
-} from "../src/js/actions/SelectionsActions";
-import _ from "lodash";
+  ALERT_SELECTIONS_INVALIDATED_MSG,
+} from '../src/js/actions/SelectionsActions';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -18,48 +20,40 @@ let mockInvalidCount = 0;
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
-  getTranslate: () => {
-    return jest.fn((code) => {
-      return code;
-    });
-  }
+  getTranslate: () => jest.fn((code) => code),
 }));
 jest.mock('../src/js/helpers/toolHelper', () => ({
   ...require.requireActual('../src/js/helpers/toolHelper'),
-  getInvalidCountForTool: () => (mockInvalidCount)
+  getInvalidCountForTool: () => (mockInvalidCount),
 }));
-jest.mock('../src/js/actions/GroupsDataActions', () => ({
-  verifyGroupDataMatchesWithFs: () => ({type: 'VERIFY_GROUPS_DATA'})
-}));
+jest.mock('../src/js/actions/GroupsDataActions', () => ({ verifyGroupDataMatchesWithFs: () => ({ type: 'VERIFY_GROUPS_DATA' }) }));
 
-jest.mock('../src/js/actions/ContextIdActions', () => ({
-  loadCurrentContextId: () => ({type: 'LOAD_CURRENT_CONTEXT_ID'})
-}));
+jest.mock('../src/js/actions/ContextIdActions', () => ({ loadCurrentContextId: () => ({ type: 'LOAD_CURRENT_CONTEXT_ID' }) }));
 
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   loadProjectGroupData: () => ({
-    "figs-abstractnouns": [{
+    'figs-abstractnouns': [{
       comments: false,
       selections: false,
       reminders: false,
       verseEdits: false,
       contextId: {
-        glQuote: "gl_uote",
-        groupId: "figs-abstractnouns",
+        glQuote: 'gl_uote',
+        groupId: 'figs-abstractnouns',
         occurrence: 1,
-        occurrenceNote: "note",
-        quote: "quote",
+        occurrenceNote: 'note',
+        quote: 'quote',
         reference: {
-          bookId: "tit",
+          bookId: 'tit',
           chapter: 2,
-          verse: 2
-        }
-      }
-    }]
+          verse: 2,
+        },
+      },
+    }],
   }),
   loadProjectGroupIndex: () => ([
-    {id: "figs-abstractnouns", name: "Abstract Nouns"}
-  ])
+    { id: 'figs-abstractnouns', name: 'Abstract Nouns' },
+  ]),
 }));
 
 describe('Tool Actions.openTool', () => {
@@ -69,14 +63,12 @@ describe('Tool Actions.openTool', () => {
       projectSaveLocation: 'Users/me/test_project_reg',
       manifest: {
         tsv_relation: [
-          "en/ult",
-          "el-x-koine/ugnt?v=0.8",
-          "hbo/uhb?v=2.1.7"
+          'en/ult',
+          'el-x-koine/ugnt?v=0.8',
+          'hbo/uhb?v=2.1.7',
         ],
-        toolsSelectedGLs: {
-          [toolName]: 'en'
-        },
-      }
+        toolsSelectedGLs: { [toolName]: 'en' },
+      },
     },
     resourcesReducer: {
       bibles: {
@@ -86,37 +78,50 @@ describe('Tool Actions.openTool', () => {
               language_id: NT_ORIG_LANG,
               resource_id: NT_ORIG_LANG_BIBLE,
               dublin_core: { version: 0.8 },
-            }
-          }
-        }
-      }
-    }
+            },
+          },
+        },
+      },
+    },
   });
+
   it('should open a tool', () => {
     const expectedActions = [
-      {"type": "SHOW_MODAL_CONTAINER", "val": false},
-      {"type": "OPEN_ALERT_DIALOG", alertMessage: "tools.loading_tool_data", loading: true },
+      { 'type': 'SHOW_MODAL_CONTAINER', 'val': false },
       {
-        "type": "BATCHING_REDUCER.BATCH",
-        "meta": { "batch": true },
-        "payload": [
-          {"type": "CLEAR_PREVIOUS_GROUPS_DATA"},
-          {"type": "CLEAR_PREVIOUS_GROUPS_INDEX"},
-          {"type": "CLEAR_CONTEXT_ID"},
-          {"name": TRANSLATION_NOTES, "type": "OPEN_TOOL"},
-        ]
+        'type': 'OPEN_ALERT_DIALOG', 'alertMessage': 'tools.loading_tool_data', 'loading': true,
       },
-      {"allGroupsData": {"figs-abstractnouns": [{"comments": false, "contextId": {"glQuote": "gl_uote", "groupId": "figs-abstractnouns", "occurrence": 1, "occurrenceNote": "note", "quote": "quote", "reference": {"bookId": "tit", "chapter": 2, "verse": 2}}, "reminders": false, "selections": false, "verseEdits": false}]}, "type": "LOAD_GROUPS_DATA_FROM_FS"},
-      {"groupsIndex": [{"id": "figs-abstractnouns", "name": "Abstract Nouns"}], "type": "LOAD_GROUPS_INDEX"},
-      {"type": 'LOAD_CURRENT_CONTEXT_ID'},
-      {"type": 'VERIFY_GROUPS_DATA'},
       {
-        "type": "BATCHING_REDUCER.BATCH",
-        "meta": { "batch": true },
-        "payload": [
-          {"type": 'CLOSE_ALERT_DIALOG' },
-          {"boolean": false, "type": "TOGGLE_HOME_VIEW"}
-        ]
+        'type': 'BATCHING_REDUCER.BATCH',
+        'meta': { 'batch': true },
+        'payload': [
+          { 'type': 'CLEAR_PREVIOUS_GROUPS_DATA' },
+          { 'type': 'CLEAR_PREVIOUS_GROUPS_INDEX' },
+          { 'type': 'CLEAR_CONTEXT_ID' },
+          { 'name': TRANSLATION_NOTES, 'type': 'OPEN_TOOL' },
+        ],
+      },
+      {
+        'allGroupsData': {
+          'figs-abstractnouns': [{
+            'comments': false, 'contextId': {
+              'glQuote': 'gl_uote', 'groupId': 'figs-abstractnouns', 'occurrence': 1, 'occurrenceNote': 'note', 'quote': 'quote', 'reference': {
+                'bookId': 'tit', 'chapter': 2, 'verse': 2,
+              },
+            }, 'reminders': false, 'selections': false, 'verseEdits': false,
+          }],
+        }, 'type': 'LOAD_GROUPS_DATA_FROM_FS',
+      },
+      { 'groupsIndex': [{ 'id': 'figs-abstractnouns', 'name': 'Abstract Nouns' }], 'type': 'LOAD_GROUPS_INDEX' },
+      { 'type': 'LOAD_CURRENT_CONTEXT_ID' },
+      { 'type': 'VERIFY_GROUPS_DATA' },
+      {
+        'type': 'BATCHING_REDUCER.BATCH',
+        'meta': { 'batch': true },
+        'payload': [
+          { 'type': 'CLOSE_ALERT_DIALOG' },
+          { 'boolean': false, 'type': 'TOGGLE_HOME_VIEW' },
+        ],
       },
     ];
     return store.dispatch(actions.openTool(toolName)).then(() => {
@@ -131,16 +136,16 @@ describe('Tool Actions.warnOnInvalidations', () => {
       projectSaveLocation: 'Users/me/test_project_reg',
       manifest: {
         tsv_relation: [
-          "en/ult",
-          "el-x-koine/ugnt?v=0.8",
-          "hbo/uhb?v=2.1.7"
+          'en/ult',
+          'el-x-koine/ugnt?v=0.8',
+          'hbo/uhb?v=2.1.7',
         ],
         toolsSelectedGLs: {
           [TRANSLATION_NOTES]: 'en',
           [TRANSLATION_WORDS]: 'en',
-          [WORD_ALIGNMENT]: 'en'
+          [WORD_ALIGNMENT]: 'en',
         },
-      }
+      },
     },
     resourcesReducer: {
       bibles: {
@@ -149,16 +154,16 @@ describe('Tool Actions.warnOnInvalidations', () => {
             manifest: {
               language_id: NT_ORIG_LANG,
               resource_id: NT_ORIG_LANG_BIBLE,
-              dublin_core: {version: 0.8},
-            }
-          }
-        }
-      }
+              dublin_core: { version: 0.8 },
+            },
+          },
+        },
+      },
     },
     alerts: {
       props: [],
-      ignored: []
-    }
+      ignored: [],
+    },
   };
 
   describe('Tool translationNotes', () => {
@@ -169,9 +174,9 @@ describe('Tool Actions.warnOnInvalidations', () => {
       const store = mockStore(initStore_);
       mockInvalidCount = 1;
       const expectedAction = {
-        "type": "OPEN_ALERT",
-        "id": ALERT_SELECTIONS_INVALIDATED_ID,
-        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+        'type': 'OPEN_ALERT',
+        'id': ALERT_SELECTIONS_INVALIDATED_ID,
+        'message': ALERT_SELECTIONS_INVALIDATED_MSG,
       };
       const expectedActionsCount = 1;
 
@@ -187,13 +192,15 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should not show alert with previous alert', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_SELECTIONS_INVALIDATED_ID,
-          "children": ALERT_SELECTIONS_INVALIDATED_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_SELECTIONS_INVALIDATED_ID,
+          'children': ALERT_SELECTIONS_INVALIDATED_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedActionsCount = 0;
@@ -209,19 +216,21 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should show alert with previous alert of different type', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_ALIGNMENTS_RESET_ID,
-          "children": ALERT_ALIGNMENTS_RESET_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_ALIGNMENTS_RESET_ID,
+          'children': ALERT_ALIGNMENTS_RESET_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedAction = {
-        "type": "OPEN_ALERT",
-        "id": ALERT_SELECTIONS_INVALIDATED_ID,
-        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+        'type': 'OPEN_ALERT',
+        'id': ALERT_SELECTIONS_INVALIDATED_ID,
+        'message': ALERT_SELECTIONS_INVALIDATED_MSG,
       };
       const expectedActionsCount = 1;
 
@@ -237,13 +246,15 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should not show alert with previous combined alert', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_ALIGNMENTS_RESET_ID,
-          "children": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_ALIGNMENTS_RESET_ID,
+          'children': ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedActionsCount = 0;
@@ -279,9 +290,9 @@ describe('Tool Actions.warnOnInvalidations', () => {
       const store = mockStore(initStore_);
       mockInvalidCount = 1;
       const expectedAction = {
-        "type": "OPEN_ALERT",
-        "id": ALERT_SELECTIONS_INVALIDATED_ID,
-        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+        'type': 'OPEN_ALERT',
+        'id': ALERT_SELECTIONS_INVALIDATED_ID,
+        'message': ALERT_SELECTIONS_INVALIDATED_MSG,
       };
       const expectedActionsCount = 1;
 
@@ -297,13 +308,15 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should not show alert with previous alert', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_SELECTIONS_INVALIDATED_ID,
-          "children": ALERT_SELECTIONS_INVALIDATED_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_SELECTIONS_INVALIDATED_ID,
+          'children': ALERT_SELECTIONS_INVALIDATED_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedActionsCount = 0;
@@ -319,19 +332,21 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should show alert with previous alert of different type', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_ALIGNMENTS_RESET_ID,
-          "children": ALERT_ALIGNMENTS_RESET_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_ALIGNMENTS_RESET_ID,
+          'children': ALERT_ALIGNMENTS_RESET_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedAction = {
-        "type": "OPEN_ALERT",
-        "id": ALERT_SELECTIONS_INVALIDATED_ID,
-        "message": ALERT_SELECTIONS_INVALIDATED_MSG
+        'type': 'OPEN_ALERT',
+        'id': ALERT_SELECTIONS_INVALIDATED_ID,
+        'message': ALERT_SELECTIONS_INVALIDATED_MSG,
       };
       const expectedActionsCount = 1;
 
@@ -347,13 +362,15 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should not show alert with previous combined alert', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_ALIGNMENTS_RESET_ID,
-          "children": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_ALIGNMENTS_RESET_ID,
+          'children': ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedActionsCount = 0;
@@ -389,9 +406,9 @@ describe('Tool Actions.warnOnInvalidations', () => {
       const store = mockStore(initStore_);
       mockInvalidCount = 1;
       const expectedAction = {
-        "type": "OPEN_ALERT",
-        "id": ALERT_ALIGNMENTS_RESET_ID,
-        "message": ALERT_ALIGNMENTS_RESET_MSG
+        'type': 'OPEN_ALERT',
+        'id': ALERT_ALIGNMENTS_RESET_ID,
+        'message': ALERT_ALIGNMENTS_RESET_MSG,
       };
       const expectedActionsCount = 1;
 
@@ -407,13 +424,15 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should not show alert with previous alert', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_ALIGNMENTS_RESET_ID,
-          "children": ALERT_ALIGNMENTS_RESET_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_ALIGNMENTS_RESET_ID,
+          'children': ALERT_ALIGNMENTS_RESET_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedActionsCount = 0;
@@ -429,19 +448,21 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should show alert with previous alert of different type', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_SELECTIONS_INVALIDATED_ID,
-          "children": ALERT_SELECTIONS_INVALIDATED_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_SELECTIONS_INVALIDATED_ID,
+          'children': ALERT_SELECTIONS_INVALIDATED_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedAction = {
-        "type": "OPEN_ALERT",
-        "id": ALERT_ALIGNMENTS_RESET_ID,
-        "message": ALERT_ALIGNMENTS_RESET_MSG
+        'type': 'OPEN_ALERT',
+        'id': ALERT_ALIGNMENTS_RESET_ID,
+        'message': ALERT_ALIGNMENTS_RESET_MSG,
       };
       const expectedActionsCount = 1;
 
@@ -457,13 +478,15 @@ describe('Tool Actions.warnOnInvalidations', () => {
     it('should not show alert with previous combined alert', () => {
       // given
       const initStore = _.cloneDeep(initStore_);
+
       initStore.alerts.props = [
         {
-          "type": "OPEN_ALERT",
-          "id": ALERT_ALIGNMENTS_RESET_ID,
-          "children": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
-        }
+          'type': 'OPEN_ALERT',
+          'id': ALERT_ALIGNMENTS_RESET_ID,
+          'children': ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+        },
       ];
+
       const store = mockStore(initStore);
       mockInvalidCount = 1;
       const expectedActionsCount = 0;
@@ -490,7 +513,6 @@ describe('Tool Actions.warnOnInvalidations', () => {
       expect(actions_.length).toEqual(expectedActionsCount);
     });
   });
-
 });
 
 //

@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
 import path from 'path';
+import fs from 'fs-extra';
 import { getQuoteOccurrencesInVerse } from 'selections';
 // constants
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
@@ -13,6 +13,7 @@ const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');
  */
 export const validateContextIdQuote = (state, contextId, bibleId) => {
   let valid = false;
+
   if (contextId && bibleId && contextId.quote) {
     const { chapter, verse } = contextId.reference;
     const { quote, occurrence } = contextId;
@@ -20,7 +21,10 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
     const occurrences = getQuoteOccurrencesInVerse(verseText, quote);
     valid = occurrence <= occurrences;
   }
-  if (!contextId.quote) valid = true;
+
+  if (!contextId.quote) {
+    valid = true;
+  }
   return valid;
 };
 
@@ -31,9 +35,9 @@ export const validateContextIdQuote = (state, contextId, bibleId) => {
  * @param {String} bookId
  * @return {*}
  */
-export const getContextIdPathFromIndex = (projectSaveLocation, toolName, bookId) => {
-  return path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, "currentContextId", "contextId.json");
-};
+export function getContextIdPathFromIndex(projectSaveLocation, toolName, bookId) {
+  return path.join(projectSaveLocation, INDEX_DIRECTORY, toolName, bookId, 'currentContextId', 'contextId.json');
+}
 
 /**
  * Writes the context id to the disk.
@@ -42,9 +46,10 @@ export const getContextIdPathFromIndex = (projectSaveLocation, toolName, bookId)
  */
 export const saveContextId = (state, contextId) => {
   try {
-    let {projectSaveLocation} = state.projectDetailsReducer;
+    let { projectSaveLocation } = state.projectDetailsReducer;
     let toolName = contextId ? contextId.tool : undefined;
     let bookId = contextId ? contextId.reference.bookId : undefined;
+
     if (projectSaveLocation && toolName && bookId) {
       let savePath = getContextIdPathFromIndex(projectSaveLocation, toolName, bookId);
       fs.outputJson(savePath, contextId, { spaces: 2 });

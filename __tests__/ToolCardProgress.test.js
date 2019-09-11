@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
 import React from 'react';
-import ToolCardProgress from '../src/js/components/home/toolsManagement/ToolCardProgress';
 import ShallowRenderer from 'react-test-renderer/shallow'; // ES6
+import ToolCardProgress from '../src/js/components/home/toolsManagement/ToolCardProgress';
 
 // Tests for ToolCardProgress React Component
 describe('Test ToolCardProgress component',()=>{

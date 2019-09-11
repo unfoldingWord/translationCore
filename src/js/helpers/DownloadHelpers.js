@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 const url = require('url');
 const https = require('follow-redirects').https;
 const http = require('follow-redirects').http;
@@ -26,11 +27,10 @@ module.exports.read = (uri) => {
     agent: agent,
     port: serverPort,
     method: 'GET',
-    headers: {'Content-Type': 'application/json'}
+    headers: { 'Content-Type': 'application/json' },
   };
 
   return new Promise((resolve, reject) => {
-
     let req = makeRequest(options, (response) => {
       let data = '';
 
@@ -41,7 +41,7 @@ module.exports.read = (uri) => {
       response.on('end', () => {
         resolve({
           status: response.statusCode,
-          data: data
+          data: data,
         });
       });
     });
@@ -62,7 +62,8 @@ module.exports.read = (uri) => {
  * @returns {Promise.<{}|Error>} the status code or an error
  */
 module.exports.download = (uri, dest, progressCallback) => {
-  progressCallback = progressCallback || function() {};
+  progressCallback = progressCallback || function () {};
+
   let parsedUrl = url.parse(uri, false, true);
   let makeRequest = parsedUrl.protocol === 'https:' ? https.request.bind(https) : http.request.bind(http);
   let serverPort = parsedUrl.port ? parsedUrl.port : parsedUrl.protocol === 'https:' ? 443 : 80;
@@ -74,7 +75,7 @@ module.exports.download = (uri, dest, progressCallback) => {
     path: parsedUrl.path,
     agent: agent,
     port: serverPort,
-    method: 'GET'
+    method: 'GET',
   };
 
   return new Promise((resolve, reject) => {
@@ -89,9 +90,7 @@ module.exports.download = (uri, dest, progressCallback) => {
 
       response.pipe(file);
       file.on('finish', () => {
-        resolve({
-          status: response.statusCode
-        });
+        resolve({ status: response.statusCode });
       });
     });
 
