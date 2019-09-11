@@ -1,16 +1,14 @@
 {
   "application/javascript": {
     "presets": [
-      "@babel/react",
-      "@babel/env"
+      "env",
+      "react"
     ],
     "plugins": [
-      "@babel/plugin-transform-runtime",
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread",
-      "@babel/plugin-transform-async-to-generator",
-      "jest-hoist",
-      ["@babel/plugin-proposal-decorators", { "legacy": true }]
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-runtime",
+      "transform-decorators-legacy"
     ],
     "sourceMaps": "inline"
   }

@@ -1,14 +1,22 @@
 {
   "presets": [
-    "@babel/react",
-    "@babel/env"
+    "env",
+    "es2015",
+    "react"
   ],
   "plugins": [
-    "@babel/plugin-transform-runtime",
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-transform-async-to-generator",
-    "jest-hoist",
-    ["@babel/plugin-proposal-decorators", { "legacy": true }]
+    [
+      "transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      },
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-decorators-legacy",
+      "jest-hoist",
+      {
+        "useBuiltIns": true
+      }
+    ]
   ]
 }
