@@ -12,10 +12,18 @@
     "react"
   ],
   "plugins": [
-    "transform-class-properties",
-    "transform-object-rest-spread",
-    "transform-decorators-legacy",
-    "jest-hoist",
-    "transform-runtime"
+    [
+      "transform-runtime", {
+        "polyfill": false,
+        "regenerator": true
+      },
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "transform-decorators-legacy",
+      "jest-hoist",
+      {
+        "useBuiltIns": true
+      }
+    ]
   ]
 }
