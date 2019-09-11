@@ -47,7 +47,7 @@ module.exports = {
     "indent": ["error", 2],
     "react/no-find-dom-node": "warn",
     "no-undef": "error",
-    "no-unused-vars": "error",
+    "no-unused-vars": "off",
     "no-debugger": "warn",
     "react/prop-types": "error",
     "curly": "error",
