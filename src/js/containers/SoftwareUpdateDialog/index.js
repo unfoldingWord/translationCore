@@ -14,62 +14,51 @@ import DownloadUpdateDialogContainer from './DownloadUpdateDialogContainer';
  * @property {func} onClose - callback when the dialog is closed
  */
 class SoftwareUpdateContainer extends React.Component {
-
   constructor(props) {
     super(props);
     this.handleDownload = this.handleDownload.bind(this);
     this.handleClose = this.handleClose.bind(this);
 
-    this.initialState = {
-      download: null
-    };
-    this.state = {
-      ...this.initialState
-    };
+    this.initialState = { download: null };
+    this.state = { ...this.initialState };
   }
 
   componentWillReceiveProps(nextProps) {
     // reset the state when the dialog opens/closes
-    if(nextProps.open !== this.props.open) {
-      this.setState({
-        ...this.initialState
-      });
+    if (nextProps.open !== this.props.open) {
+      this.setState({ ...this.initialState });
     }
   }
 
   handleClose() {
-    const {onClose} = this.props;
+    const { onClose } = this.props;
     onClose();
   }
 
   componentDidCatch(error, info) {
     console.error(error, info);
-    this.setState({
-      ...this.initialState
-    });
+    this.setState({ ...this.initialState });
   }
 
   handleDownload(update) {
-    this.setState({
-      download: update
-    });
+    this.setState({ download: update });
   }
 
   render() {
-    const {open, translate} = this.props;
-    const {download} = this.state;
+    const { open, translate } = this.props;
+    const { download } = this.state;
 
-    if(download) {
+    if (download) {
       // download dialog
       return <DownloadUpdateDialogContainer update={download}
-                                            open={open}
-                                            onClose={this.handleClose}/>;
+        open={open}
+        onClose={this.handleClose}/>;
     } else {
       // update dialog
       return <SoftwareUpdateDialogContainer open={open}
-                                            onClose={this.handleClose}
-                                            translate={translate}
-                                            onDownload={this.handleDownload}/>;
+        onClose={this.handleClose}
+        translate={translate}
+        onDownload={this.handleDownload}/>;
     }
   }
 }
@@ -77,7 +66,7 @@ class SoftwareUpdateContainer extends React.Component {
 SoftwareUpdateContainer.propTypes = {
   onClose: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired
+  open: PropTypes.bool.isRequired,
 };
 
 export default SoftwareUpdateContainer;

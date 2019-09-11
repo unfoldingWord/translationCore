@@ -1,38 +1,40 @@
 import path from 'path';
 import fs from 'fs-extra';
+import migrateToVersion3 from '../src/js/helpers/ProjectMigration/migrateToVersion3';
+import * as MigrateToVersion3 from '../src/js/helpers/ProjectMigration/migrateToVersion3';
+import * as Version from '../src/js/helpers/ProjectMigration/VersionUtils';
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 /* eslint-env jest */
 /* eslint-disable no-console */
 'use strict';
-import migrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
-import * as MigrateToVersion3 from "../src/js/helpers/ProjectMigration/migrateToVersion3";
-import * as Version from "../src/js/helpers/ProjectMigration/VersionUtils";
-import { TRANSLATION_WORDS } from '../src/js/common/constants';
 jest.mock('fs-extra');
 
 const manifest = {
-  "project": {"id": "mat", "name": ""},
-  "type": {"id": "text", "name": "Text"},
-  "generator": {"name": "ts-android", "build": 175},
-  "package_version": 7,
-  "target_language": {
-    "name": "ગુજરાતી",
-    "direction": "ltr",
-    "anglicized_name": "Gujarati",
-    "region": "Asia",
-    "is_gateway_language": false,
-    "id": "gu"
+  'project': { 'id': 'mat', 'name': '' },
+  'type': { 'id': 'text', 'name': 'Text' },
+  'generator': { 'name': 'ts-android', 'build': 175 },
+  'package_version': 7,
+  'target_language': {
+    'name': 'ગુજરાતી',
+    'direction': 'ltr',
+    'anglicized_name': 'Gujarati',
+    'region': 'Asia',
+    'is_gateway_language': false,
+    'id': 'gu',
   },
-  "format": "usfm",
-  "resource": {"id": "reg"},
-  "translators": ["qa99"],
-  "parent_draft": {"resource_id": "ult", "checking_level": "3", "version": "1"},
-  "source_translations": [{
-    "language_id": "gu",
-    "resource_id": "ult",
-    "checking_level": "3",
-    "date_modified": 20161008,
-    "version": "1"
-  }]
+  'format': 'usfm',
+  'resource': { 'id': 'reg' },
+  'translators': ['qa99'],
+  'parent_draft': {
+    'resource_id': 'ult', 'checking_level': '3', 'version': '1',
+  },
+  'source_translations': [{
+    'language_id': 'gu',
+    'resource_id': 'ult',
+    'checking_level': '3',
+    'date_modified': 20161008,
+    'version': '1',
+  }],
 };
 const PROJECT_PATH = path.join(__dirname, 'fixtures/project/migration/v1_project');
 
@@ -43,7 +45,7 @@ describe('migrateToVersion3', () => {
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({
       [PROJECT_PATH]:[],
-      [path.join(PROJECT_PATH, 'manifest.json')]: manifest
+      [path.join(PROJECT_PATH, 'manifest.json')]: manifest,
     });
   });
   afterEach(() => {
@@ -77,7 +79,6 @@ describe('migrateToVersion3', () => {
   });
 
   it('with lower tc_version expect to update alignment data', () => {
-
     // given
     const match = 'ἐgκρατῆ';
     const replace = 'ἐνκρατῆ';
@@ -89,7 +90,7 @@ describe('migrateToVersion3', () => {
     const projectPath = path.join(PROJECT_PATH, project_id);
     const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore');
     fs.outputFileSync(path.join(projectAlignmentDataPath, 'alignmentData','ignoreMe'), ''); // this file should be ignored
-    fs.ensureDirSync(path.join(projectAlignmentDataPath, 'alignmentData',".DS_Store")); // this folder should be ignored
+    fs.ensureDirSync(path.join(projectAlignmentDataPath, 'alignmentData','.DS_Store')); // this folder should be ignored
     const chapter1_alignment_path = path.join(projectAlignmentDataPath, 'alignmentData', book_id, '1.json');
     const disciplineWords = path.join(projectAlignmentDataPath, 'index', TRANSLATION_WORDS, book_id, 'discipline.json');
     const believeWords = path.join(projectAlignmentDataPath, 'index', TRANSLATION_WORDS, book_id, 'believe.json');

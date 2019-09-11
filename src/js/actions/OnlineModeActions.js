@@ -15,10 +15,12 @@ export function getAnchorTags() {
     document.body.onclick = (e) => {
       e = e || event;
       var isLink = findParent('a', e.target || e.srcElement) && e.target.href && e.target.href.includes('http');
+
       if (isLink) {
         e.preventDefault();
         dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
           let win = new BrowserWindow({ width: 800, height: 600 });
+
           win.on('closed', () => {
             win = null;
           });
@@ -26,7 +28,7 @@ export function getAnchorTags() {
         }));
       }
     };
-  
+
     /**
      * @description - Find a tag parents of an element
      * @param {string} tagname - name of the a tag clicked
@@ -36,6 +38,7 @@ export function getAnchorTags() {
       if ((el.nodeName || el.tagName).toLowerCase() === tagname.toLowerCase()) {
         return el;
       }
+
       while ((el = el.parentNode) !== null) {
         if ((el.nodeName || el.tagName).toLowerCase() === tagname.toLowerCase()) {
           return el;

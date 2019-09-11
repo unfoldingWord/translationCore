@@ -1,13 +1,14 @@
 /* eslint-env jest */
 
+import * as LanguageHelpers from '../src/js/helpers/LanguageHelpers';
 jest.mock('fs-extra');
-import * as LanguageHelpers from "../src/js/helpers/LanguageHelpers";
 
 describe('Test LanguageHelpers',()=>{
   const minimumLangCount = 8020;
 
   test('getLanguageByCode() should work with mixed and lower case', () => {
-    const codes = ['sr-latn', 'sr-Latn', 'SR-LATN', 'ur-deva', 'ur-Deva', "UR-DEVA", 'ZH'];
+    const codes = ['sr-latn', 'sr-Latn', 'SR-LATN', 'ur-deva', 'ur-Deva', 'UR-DEVA', 'ZH'];
+
     for (let code of codes) {
       const languageData = LanguageHelpers.getLanguageByCode(code);
       expect(languageData).toBeTruthy();
@@ -24,10 +25,12 @@ describe('Test LanguageHelpers',()=>{
     for (let i = 1; i < langCount; i++) {
       const langA = languages[i - 1];
       const langB = languages[i];
+
       if (!(langA.code <= langB.code)) {
-        console.log("Language codes out of order '" + langA.code + "' and '" + langB.code + "'");
+        console.log('Language codes out of order \'' + langA.code + '\' and \'' + langB.code + '\'');
       }
       expect(langA.code <= langB.code).toBeTruthy();
+
       if (i === 1) {
         expect(langA.code.length).toBeGreaterThan(0);
         expect(langA.name.length).toBeGreaterThan(0);
@@ -50,10 +53,12 @@ describe('Test LanguageHelpers',()=>{
       const langB = languages[i];
       const aNameLC = langA.name.toLowerCase();
       const bNameLC = langB.name.toLowerCase();
+
       if (!(aNameLC <= bNameLC)) {
-        console.log("Language prompts out of order '" + langA.name + "' and '" + langB.name + "'");
+        console.log('Language prompts out of order \'' + langA.name + '\' and \'' + langB.name + '\'');
       }
       expect(aNameLC <= bNameLC).toBeTruthy();
+
       if (i === 1) {
         expect(langA.code.length).toBeGreaterThan(0);
         expect(langA.name.length).toBeGreaterThan(0);
@@ -77,8 +82,8 @@ describe('Test LanguageHelpers',()=>{
     const sorted = localAry.sort();
     let dupsFound = 0;
 
-    for( let idx = 1; idx < sorted.length; idx++ ) {
-      if( sorted[idx] == sorted[idx-1]) {
+    for ( let idx = 1; idx < sorted.length; idx++ ) {
+      if ( sorted[idx] == sorted[idx-1]) {
         dupsFound++;
       }
     }
@@ -89,8 +94,8 @@ describe('Test LanguageHelpers',()=>{
 
   describe('getLanguageByNameSelection()',()=>{
     test('Nepali ne should succeed', () => {
-      const code = "ne";
-      const name = "Nepali";
+      const code = 'ne';
+      const name = 'Nepali';
       let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name, code);
 
       expect(foundLanguage.name).toEqual(name);
@@ -98,8 +103,8 @@ describe('Test LanguageHelpers',()=>{
     });
 
     test('Nepali npi should succeed', () => {
-      const code = "npi";
-      const name = "Nepali";
+      const code = 'npi';
+      const name = 'Nepali';
       let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name, code);
 
       expect(foundLanguage.name).toEqual(name);
@@ -107,20 +112,19 @@ describe('Test LanguageHelpers',()=>{
     });
 
     test('"Nepali [ne]" should succeed', () => {
-      const expectedCode = "ne";
-      const name = "Nepali [ne]";
+      const expectedCode = 'ne';
+      const name = 'Nepali [ne]';
       let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name);
 
       expect(foundLanguage.code).toEqual(expectedCode);
     });
 
     test('"Nepali [npi]" should succeed', () => {
-      const expectedCode = "npi";
-      const name = "Nepali [npi]";
+      const expectedCode = 'npi';
+      const name = 'Nepali [npi]';
       let foundLanguage = LanguageHelpers.getLanguageByNameSelection(name);
 
       expect(foundLanguage.code).toEqual(expectedCode);
     });
-
   });
 });

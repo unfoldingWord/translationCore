@@ -2,13 +2,11 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 //helpers
+import { tc_LAST_OPENED_KEY } from '../common/constants';
 import * as LoadHelpers from './LoadHelpers';
-import {tc_LAST_OPENED_KEY} from "../common/constants";
 
 // constants
-const template = {
-  [tc_LAST_OPENED_KEY]: null,
-};
+const template = { [tc_LAST_OPENED_KEY]: null };
 
 /**
  * Retrieves a project's settings and returns it.
@@ -16,6 +14,7 @@ const template = {
  */
 export function getProjectSettings(projectPath) {
   let settings = LoadHelpers.loadFile(projectPath, 'settings.json');
+
   if (!settings) {
     settings = setUpSettings(projectPath);
   }
@@ -28,6 +27,7 @@ export function getProjectSettings(projectPath) {
  */
 export function setUpSettings(projectSaveLocation) {
   const settings = template;
+
   try {
     // save settings.json
     const settingsLocation = path.join(projectSaveLocation, 'settings.json');

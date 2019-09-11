@@ -7,8 +7,7 @@ import { withLocale } from '../Locale';
  * A generic alert container that injects some default localization.
  */
 class Alert extends React.Component {
-
-  render () {
+  render() {
     const {
       children,
       translate,
@@ -17,7 +16,7 @@ class Alert extends React.Component {
       onIgnore,
       confirmText,
       cancelText,
-      open
+      open,
     } = this.props;
 
     const title = translate('alert');
@@ -50,11 +49,9 @@ Alert.propTypes = {
   onCancel: PropTypes.func,
   confirmText: PropTypes.string,
   cancelText: PropTypes.string,
-  open: PropTypes.bool
+  open: PropTypes.bool,
 };
 
-Alert.defaultProps = {
-  open: true
-};
+Alert.defaultProps = { open: true };
 
 export default withLocale(Alert);

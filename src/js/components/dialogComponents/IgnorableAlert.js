@@ -1,25 +1,25 @@
 import React from 'react';
-import BaseDialog from './BaseDialog';
 import PropTypes from 'prop-types';
-import {Checkbox} from 'material-ui';
-import {logoData} from "./Alert";
+import { Checkbox } from 'material-ui';
+import BaseDialog from './BaseDialog';
+import { logoData } from './Alert';
 
 /**
  * A generic alert dialog that can be ignored.
  */
 class IgnorableAlert extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.handleOnIgnore = this.handleOnIgnore.bind(this);
   }
 
-  handleOnIgnore (e) {
+  handleOnIgnore(e) {
     if (typeof this.props.onIgnore === 'function') {
       this.props.onIgnore(e.target.checked);
     }
   }
 
-  render () {
+  render() {
     const {
       title,
       children,
@@ -29,7 +29,7 @@ class IgnorableAlert extends React.Component {
       onCancel,
       open,
       ignoreText,
-      onIgnore
+      onIgnore,
     } = this.props;
 
     const padding = 25;
@@ -81,7 +81,7 @@ IgnorableAlert.propTypes = {
   onCancel: PropTypes.func,
   onIgnore: PropTypes.func,
   ignoreText: PropTypes.string,
-  children: PropTypes.any
+  children: PropTypes.any,
 };
 
 export default IgnorableAlert;

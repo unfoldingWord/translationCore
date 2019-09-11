@@ -6,7 +6,7 @@ const styles = {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  height: '70%'
+  height: '70%',
 };
 
 /**
@@ -18,15 +18,21 @@ const styles = {
  * @return {*}
  * @constructor
  */
-const HomeContainerContentWrapper = ({instructions, translate, children}) => (
+const HomeContainerContentWrapper = ({
+  instructions, translate, children,
+}) => (
   <div style={styles}>
     <div style={{ width: '400px', padding: '0 20px' }}>
       <InstructionsCard translate={translate}>
         {instructions}
       </InstructionsCard>
     </div>
-    <div style={{ width: '600px', padding: '0 20px', marginBottom: '25px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+    <div style={{
+      width: '600px', padding: '0 20px', marginBottom: '25px',
+    }}>
+      <div style={{
+        display: 'flex', flexDirection: 'column', height: '100%',
+      }}>
         {children}
       </div>
     </div>
@@ -36,7 +42,7 @@ const HomeContainerContentWrapper = ({instructions, translate, children}) => (
 HomeContainerContentWrapper.propTypes = {
   instructions: PropTypes.element.isRequired,
   children: PropTypes.element.isRequired,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
 };
 
 export default HomeContainerContentWrapper;

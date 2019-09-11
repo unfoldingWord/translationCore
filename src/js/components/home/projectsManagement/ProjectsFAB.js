@@ -9,24 +9,26 @@ import SpotlightComponent from './SpotlightComponent';
 
 class ProjectFAB extends Component {
   makeFABButton(buttonsMetadata) {
-    return buttonsMetadata.map((metadata, i) => {
-      return (
-        <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
-          {
-            metadata.buttonLabel ?
-              <CardLabel
-                action={() => { metadata.action() }}
-                label={metadata.buttonLabel} /> : null
-          }
-          <FloatingActionButton
-            onClick={() => { metadata.action() }}
-            style={{ margin: '5px' }}
-            backgroundColor={metadata.buttonColor}>
-            <Glyphicon style={{ fontSize: '26px', ...metadata.glyphStyle }} glyph={metadata.glyph} />
-          </FloatingActionButton>
-        </div>
-      );
-    });
+    return buttonsMetadata.map((metadata, i) => (
+      <div key={i} style={{ display: 'flex', alignItems: 'center' }}>
+        {
+          metadata.buttonLabel ?
+            <CardLabel
+              action={() => {
+                metadata.action();
+              }}
+              label={metadata.buttonLabel} /> : null
+        }
+        <FloatingActionButton
+          onClick={() => {
+            metadata.action();
+          }}
+          style={{ margin: '5px' }}
+          backgroundColor={metadata.buttonColor}>
+          <Glyphicon style={{ fontSize: '26px', ...metadata.glyphStyle }} glyph={metadata.glyph} />
+        </FloatingActionButton>
+      </div>
+    ));
   }
 
   render() {
@@ -35,17 +37,21 @@ class ProjectFAB extends Component {
 
     const projectButtonsMetadata = [
       {
-        action: () => { this.props.actions.selectLocalProject() },
+        action: () => {
+          this.props.actions.selectLocalProject();
+        },
         buttonLabel: translate('projects.import_local_project'),
         glyph: 'folder-open',
-        buttonColor: 'var(--accent-color-dark)'
+        buttonColor: 'var(--accent-color-dark)',
       },
       {
-        action: () => { this.props.actions.openOnlineImportModal() },
+        action: () => {
+          this.props.actions.openOnlineImportModal();
+        },
         buttonLabel: translate('projects.import_online_project'),
         glyph: 'cloud-download',
-        buttonColor: 'var(--accent-color-dark)'
-      }
+        buttonColor: 'var(--accent-color-dark)',
+      },
     ];
 
     const closeOptionsButtonMetadata = [
@@ -54,8 +60,8 @@ class ProjectFAB extends Component {
         buttonLabel: translate('buttons.close_button'),
         glyph: 'remove',
         glyphStyle: { color: 'var(--accent-color-dark)' },
-        buttonColor: 'var(--reverse-color)'
-      }
+        buttonColor: 'var(--reverse-color)',
+      },
     ];
 
     const openOptionsButtonMetadata = [
@@ -63,8 +69,8 @@ class ProjectFAB extends Component {
         action: () => this.props.actions.openProjectsFAB(),
         glyph: 'menu-hamburger',
         glyphStyle: { color: 'var(--reverse-color)' },
-        buttonColor: 'var(--accent-color-dark)'
-      }
+        buttonColor: 'var(--accent-color-dark)',
+      },
     ];
 
     return (
@@ -92,8 +98,8 @@ ProjectFAB.propTypes = {
     selectLocalProject: PropTypes.func.isRequired,
     openOnlineImportModal: PropTypes.func.isRequired,
     openProjectsFAB: PropTypes.func.isRequired,
-    closeProjectsFAB: PropTypes.func.isRequired
-  })
+    closeProjectsFAB: PropTypes.func.isRequired,
+  }),
 };
 
 export default ProjectFAB;

@@ -6,5 +6,4 @@ describe('test getlistOfBibleBooks()', () => {
     const keys = Object.keys(results);
     expect(keys.length).toEqual(66);
   });
-
 });

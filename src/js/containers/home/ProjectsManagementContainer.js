@@ -19,17 +19,16 @@ import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
 import * as LocalImportWorkflowActions from '../../actions/Import/LocalImportWorkflowActions';
-import {openProject} from '../../actions/MyProjects/ProjectLoadingActions';
+import { openProject } from '../../actions/MyProjects/ProjectLoadingActions';
 import * as wordAlignmentActions from '../../actions/WordAlignmentActions';
 
 class ProjectsManagementContainer extends Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.handleProjectSelected = this.handleProjectSelected.bind(this);
   }
 
-  componentWillMount () {
+  componentWillMount() {
     this.props.actions.getMyProjects();
   }
 
@@ -37,19 +36,17 @@ class ProjectsManagementContainer extends Component {
    * Handles project selection
    * @param {string} projectName - the name of the project
    */
-  handleProjectSelected (projectName) {
-    const {
-      openProject
-    } = this.props;
+  handleProjectSelected(projectName) {
+    const { openProject } = this.props;
     openProject(projectName);
   }
 
-  render () {
+  render() {
     const { translate, projects } = this.props;
     const {
       importOnlineReducer,
       homeScreenReducer,
-      loginReducer
+      loginReducer,
     } = this.props.reducers;
 
     return (
@@ -66,7 +63,7 @@ class ProjectsManagementContainer extends Component {
             position: 'absolute',
             bottom: '50px',
             right: '50px',
-            zIndex: '999'
+            zIndex: '999',
           }}>
             <ProjectsFAB
               translate={translate}
@@ -87,87 +84,82 @@ class ProjectsManagementContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    projects: getProjects(state),
-    reducers: {
-      importOnlineReducer: state.importOnlineReducer,
-      homeScreenReducer: state.homeScreenReducer,
-      loginReducer: state.loginReducer
-    }
-  };
-};
+const mapStateToProps = (state) => ({
+  projects: getProjects(state),
+  reducers: {
+    importOnlineReducer: state.importOnlineReducer,
+    homeScreenReducer: state.homeScreenReducer,
+    loginReducer: state.loginReducer,
+  },
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    openProject: (name) => dispatch(openProject(name)),
+const mapDispatchToProps = (dispatch) => ({
+  openProject: (name) => dispatch(openProject(name)),
+  selectProject: (projectName) => {
+    dispatch(openProject(projectName));
+  },
+  actions: {
+    openProjectsFAB: () => {
+      dispatch(BodyUIActions.openProjectsFAB());
+    },
+    closeProjectsFAB: () => {
+      dispatch(BodyUIActions.closeProjectsFAB());
+    },
+    getMyProjects: () => {
+      dispatch(MyProjectsActions.getMyProjects());
+    },
     selectProject: (projectName) => {
       dispatch(openProject(projectName));
     },
-    // TODO: these are deprecated
-    actions: {
-      openProjectsFAB: () => {
-        dispatch(BodyUIActions.openProjectsFAB());
-      },
-      closeProjectsFAB: () => {
+    selectLocalProject: () => {
+      dispatch(LocalImportWorkflowActions.selectLocalProject());
+    },
+    exportToCSV: (projectPath) => {
+      dispatch(CSVExportActions.exportToCSV(projectPath));
+    },
+    uploadProject: (projectPath, userdata) => {
+      dispatch(ProjectUploadActions.uploadProject(projectPath, userdata));
+    },
+    exportToUSFM: (projectPath) => {
+      dispatch(USFMExportActions.exportToUSFM(projectPath));
+    },
+    closeOnlineImportModal: () => {
+      dispatch(BodyUIActions.closeOnlineImportModal());
+    },
+    openOnlineImportModal: () => {
+      dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
         dispatch(BodyUIActions.closeProjectsFAB());
-      },
-      getMyProjects: () => {
-        dispatch(MyProjectsActions.getMyProjects());
-      },
-      selectProject: (projectName) => {
-        dispatch(openProject(projectName));
-      },
-      selectLocalProject: () => {
-        dispatch(LocalImportWorkflowActions.selectLocalProject());
-      },
-      exportToCSV: (projectPath) => {
-        dispatch(CSVExportActions.exportToCSV(projectPath));
-      },
-      uploadProject: (projectPath, userdata) => {
-        dispatch(ProjectUploadActions.uploadProject(projectPath, userdata));
-      },
-      exportToUSFM: (projectPath) => {
-        dispatch(USFMExportActions.exportToUSFM(projectPath));
-      },
-      closeOnlineImportModal: () => {
-        dispatch(BodyUIActions.closeOnlineImportModal());
-      },
-      openOnlineImportModal: () => {
-        dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-          dispatch(BodyUIActions.closeProjectsFAB());
-          dispatch(BodyUIActions.openOnlineImportModal());
-        }));
-      },
-      handleURLInputChange: importLink => {
-        dispatch(OnlineImportWorkflowActions.getLink(importLink));
-      },
-      loadProjectFromLink: () => {
-        dispatch(OnlineImportWorkflowActions.onlineImport());
-      },
-      searchReposByUser: (user) => {
-        dispatch(ImportOnlineSearchActions.searchReposByUser(user));
-      },
-      searchReposByQuery: (query) => {
-        dispatch(ImportOnlineSearchActions.searchReposByQuery(query));
-      },
-      openOnlyProjectDetailsScreen: (projectSaveLocation) => {
-        dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(
-          projectSaveLocation));
-      },
-      getUsfm3ExportFile: (projectSaveLocation) => {
-        dispatch(wordAlignmentActions.getUsfm3ExportFile(projectSaveLocation));
-      }
-    }
-  };
-};
+        dispatch(BodyUIActions.openOnlineImportModal());
+      }));
+    },
+    handleURLInputChange: importLink => {
+      dispatch(OnlineImportWorkflowActions.getLink(importLink));
+    },
+    loadProjectFromLink: () => {
+      dispatch(OnlineImportWorkflowActions.onlineImport());
+    },
+    searchReposByUser: (user) => {
+      dispatch(ImportOnlineSearchActions.searchReposByUser(user));
+    },
+    searchReposByQuery: (query) => {
+      dispatch(ImportOnlineSearchActions.searchReposByQuery(query));
+    },
+    openOnlyProjectDetailsScreen: (projectSaveLocation) => {
+      dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(
+        projectSaveLocation));
+    },
+    getUsfm3ExportFile: (projectSaveLocation) => {
+      dispatch(wordAlignmentActions.getUsfm3ExportFile(projectSaveLocation));
+    },
+  },
+});
 
 ProjectsManagementContainer.propTypes = {
   projects: PropTypes.array.isRequired,
   reducers: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
   openProject: PropTypes.func.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
 };
 
 export default connect(

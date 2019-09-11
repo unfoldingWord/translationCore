@@ -1,22 +1,22 @@
 import React from 'react';
 import { Glyphicon } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import {
   getNextProjectValidationStepDisabled,
   getProjectValidationStep,
   getShowProjectInformationScreen,
-  getShowOverwriteWarning
+  getShowOverwriteWarning,
 } from '../../selectors';
-import {connect} from 'react-redux';
-import {finalize as finalizeCopyrightCheck} from '../../actions/CopyrightCheckActions';
+import { finalize as finalizeCopyrightCheck } from '../../actions/CopyrightCheckActions';
 import {
   saveAndCloseProjectInformationCheckIfValid,
   finalize as finalizeProjectInformationCheck,
-  cancelAndCloseProjectInformationCheck
+  cancelAndCloseProjectInformationCheck,
 } from '../../actions/ProjectInformationCheckActions';
-import {finalize as finalizeMergeConflictCheck} from '../../actions/MergeConflictActions';
-import {finalize as finalizeMissingVersesCheck} from '../../actions/MissingVersesActions';
-import {confirmContinueOrCancelImportValidation as cancel} from '../../actions/ProjectImportStepperActions';
+import { finalize as finalizeMergeConflictCheck } from '../../actions/MergeConflictActions';
+import { finalize as finalizeMissingVersesCheck } from '../../actions/MissingVersesActions';
+import { confirmContinueOrCancelImportValidation as cancel } from '../../actions/ProjectImportStepperActions';
 
 const ProjectValidationNavigation = (props) => {
   const {
@@ -31,26 +31,27 @@ const ProjectValidationNavigation = (props) => {
     finalizeMissingVersesCheck,
     cancelAndCloseProjectInformationCheck,
     cancel,
-    translate
+    translate,
   } = props;
 
   // Getting the finalize function from the corresponding step index
   let finalize;
+
   switch (stepIndex) {
-    case 0:
-      finalize = finalizeCopyrightCheck;
-      break;
-    case 1:
-      finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheckIfValid : finalizeProjectInformationCheck;
-      break;
-    case 2:
-      finalize = finalizeMergeConflictCheck;
-      break;
-    case 3:
-      finalize = finalizeMissingVersesCheck;
-      break;
-    default:
-      break;
+  case 0:
+    finalize = finalizeCopyrightCheck;
+    break;
+  case 1:
+    finalize = onlyShowProjectInformationScreen ? saveAndCloseProjectInformationCheckIfValid : finalizeProjectInformationCheck;
+    break;
+  case 2:
+    finalize = finalizeMergeConflictCheck;
+    break;
+  case 3:
+    finalize = finalizeMissingVersesCheck;
+    break;
+  default:
+    break;
   }
 
   function getSaveButtonLabel() {
@@ -60,18 +61,18 @@ const ProjectValidationNavigation = (props) => {
       return (translate('save_changes'));
     }
 
-    return(
-    <div>
-      <span>{translate('buttons.continue_button')}</span>
-      <Glyphicon glyph='share-alt' style={{marginLeft: '10px'}}/>
-    </div>
+    return (
+      <div>
+        <span>{translate('buttons.continue_button')}</span>
+        <Glyphicon glyph='share-alt' style={{ marginLeft: '10px' }}/>
+      </div>
     );
   }
 
   return (
     <div>
       <button className='btn-second'
-              onClick={onlyShowProjectInformationScreen ? cancelAndCloseProjectInformationCheck : cancel}>
+        onClick={onlyShowProjectInformationScreen ? cancelAndCloseProjectInformationCheck : cancel}>
         {translate('buttons.cancel_button')}
       </button>
       <button className='btn-prime' onClick={finalize} disabled={isNextDisabled}>
@@ -85,7 +86,7 @@ const mapStateToProps = (state) => ({
   isNextDisabled: getNextProjectValidationStepDisabled(state),
   stepIndex: getProjectValidationStep(state),
   onlyShowProjectInformationScreen: getShowProjectInformationScreen(state),
-  showOverwriteWarning: getShowOverwriteWarning(state)
+  showOverwriteWarning: getShowOverwriteWarning(state),
 });
 
 const mapDispatchToProps = {
@@ -95,7 +96,7 @@ const mapDispatchToProps = {
   finalizeMergeConflictCheck,
   finalizeMissingVersesCheck,
   cancelAndCloseProjectInformationCheck,
-  cancel
+  cancel,
 };
 
 ProjectValidationNavigation.propTypes = {
@@ -110,7 +111,7 @@ ProjectValidationNavigation.propTypes = {
   finalizeMergeConflictCheck: PropTypes.func,
   finalizeMissingVersesCheck: PropTypes.func,
   cancelAndCloseProjectInformationCheck: PropTypes.func,
-  cancel: PropTypes.func
+  cancel: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectValidationNavigation);

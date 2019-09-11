@@ -4,41 +4,40 @@ import Popover from 'material-ui/Popover/Popover';
 import Menu from 'material-ui/Menu';
 
 const makeStyles = (props, state) => {
-  const {variant} = props;
-  const {hover} = state;
+  const { variant } = props;
+  const { hover } = state;
 
   let buttonStyles = {};
   let iconStyles = {};
-  if(variant === 'dark') {
+
+  if (variant === 'dark') {
     buttonStyles = {
       backgroundColor: 'transparent',
       border: 'solid 1px #ffffff',
       borderRadius: '5px',
       color: '#ffffff',
       fontSize: '12px',
-      outline: 'none'
+      outline: 'none',
     };
     iconStyles = {
       width:15,
       height:15,
-      color: '#ffffff'
+      color: '#ffffff',
     };
 
-    if(hover) {
+    if (hover) {
       buttonStyles = {
         ...buttonStyles,
         backgroundColor: '#ffffff',
-        color: '#000000'
+        color: '#000000',
       };
       iconStyles = {
         ...iconStyles,
-        color: '#000000'
+        color: '#000000',
       };
     }
-  } else if(variant === 'primary') {
-    iconStyles = {
-      color: '#ffffff'
-    };
+  } else if (variant === 'primary') {
+    iconStyles = { color: '#ffffff' };
   }
 
   return {
@@ -46,9 +45,9 @@ const makeStyles = (props, state) => {
       verticalAlign: 'middle',
       marginRight: '5px',
       color: 'var(--accent-color-dark)',
-      ...iconStyles
+      ...iconStyles,
     },
-    button: buttonStyles
+    button: buttonStyles,
   };
 };
 
@@ -65,17 +64,17 @@ const makeStyles = (props, state) => {
  * @property {string} [variant=secondary] - The style variant of the button.
  */
 class PopoverMenu extends React.Component {
-
   constructor(props) {
     super(props);
     this._handleClick = this._handleClick.bind(this);
     this._handleRequestClose = this._handleRequestClose.bind(this);
     this._handleButtonOut = this._handleButtonOut.bind(this);
     this._handleButtonOver = this._handleButtonOver.bind(this);
-    const {open} = props;
+    const { open } = props;
+
     this.state = {
       open: Boolean(open),
-      hover: false
+      hover: false,
     };
   }
 
@@ -93,7 +92,7 @@ class PopoverMenu extends React.Component {
     event.preventDefault();
     this.setState({
       open: true,
-      anchorEl: event.currentTarget
+      anchorEl: event.currentTarget,
     });
   }
 
@@ -102,9 +101,7 @@ class PopoverMenu extends React.Component {
    * @private
    */
   _handleRequestClose() {
-    this.setState({
-      open: false
-    });
+    this.setState({ open: false });
   }
 
   /**
@@ -115,9 +112,11 @@ class PopoverMenu extends React.Component {
    */
   _hijackChildClick(child) {
     const closeMenu = this._handleRequestClose;
+
     return (event) => {
       closeMenu();
-      if(child.props.onClick) {
+
+      if (child.props.onClick) {
         child.props.onClick(event);
       }
     };
@@ -128,9 +127,7 @@ class PopoverMenu extends React.Component {
    * @private
    */
   _handleButtonOver() {
-    this.setState({
-      hover: true
-    });
+    this.setState({ hover: true });
   }
 
   /**
@@ -138,49 +135,50 @@ class PopoverMenu extends React.Component {
    * @private
    */
   _handleButtonOut() {
-    this.setState({
-      hover: false
-    });
+    this.setState({ hover: false });
   }
 
-  render () {
-    const {label, icon, variant, children} = this.props;
-    const {anchorEl, open} = this.state;
+  render() {
+    const {
+      label, icon, variant, children,
+    } = this.props;
+    const { anchorEl, open } = this.state;
 
     let childrenWithAutoClose = React.Children.map(children, child =>
-      React.cloneElement(child, {onClick: this._hijackChildClick(child)}));
+      React.cloneElement(child, { onClick: this._hijackChildClick(child) }));
 
     const styles = makeStyles(this.props, this.state);
 
     const iconCloned = icon && React.cloneElement(icon, {
       color: styles.icon.color,
       style: Object.assign(styles.icon, icon.props.style),
-      key: 'iconCloned'
+      key: 'iconCloned',
     });
 
     let buttonClassName = '';
-    if(variant === 'primary') {
+
+    if (variant === 'primary') {
       buttonClassName = 'btn-prime';
-    } else if(variant === 'secondary') {
+    } else if (variant === 'secondary') {
       buttonClassName = 'btn-second';
     }
 
     return (
       <React.Fragment>
         <button onClick={this._handleClick}
-                onMouseOver={this._handleButtonOver}
-                onMouseOut={this._handleButtonOut}
-                style={styles.button}
-                className={buttonClassName}>
+          onMouseOver={this._handleButtonOver}
+          onMouseOut={this._handleButtonOut}
+          style={styles.button}
+          className={buttonClassName}>
           {iconCloned}
           {label}
         </button>
         <Popover className='popover-root'
-                 open={open}
-                 anchorEl={anchorEl}
-                 anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-                 targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                 onRequestClose={this._handleRequestClose}>
+          open={open}
+          anchorEl={anchorEl}
+          anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+          targetOrigin={{ horizontal: 'left', vertical: 'top' }}
+          onRequestClose={this._handleRequestClose}>
           <Menu>
             {childrenWithAutoClose}
           </Menu>
@@ -194,10 +192,8 @@ PopoverMenu.propTypes = {
   open: PropTypes.bool,
   icon: PropTypes.any,
   variant: PropTypes.string,
-  children: PropTypes.any
+  children: PropTypes.any,
 };
-PopoverMenu.defaultProps = {
-  variant: 'secondary'
-};
+PopoverMenu.defaultProps = { variant: 'secondary' };
 
 export default PopoverMenu;

@@ -3,23 +3,23 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import csv from 'csv';
 // helpers
-import ResourceAPI from "./ResourceAPI";
-import * as localizationHelpers from './localizationHelpers';
-import * as ResourcesActions from "../actions/ResourcesActions";
-import * as gatewayLanguageHelpers from "./gatewayLanguageHelpers";
-import {getQuoteAsString} from 'checking-tool-wrapper';
+import { getQuoteAsString } from 'checking-tool-wrapper';
+import * as ResourcesActions from '../actions/ResourcesActions';
 // constants
 import {
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
   USER_RESOURCES_PATH,
-  TRANSLATION_HELPS
-} from "../common/constants";
+  TRANSLATION_HELPS,
+} from '../common/constants';
+import ResourceAPI from './ResourceAPI';
+import * as localizationHelpers from './localizationHelpers';
+import * as gatewayLanguageHelpers from './gatewayLanguageHelpers';
 
 const cachedGroupIndices = {};
 const toolsWithGroupIndices = [TRANSLATION_NOTES, TRANSLATION_WORDS];
 
- /**
+/**
   * Gets the group index for a given langCode and toolName with all its category indices flattened into one index.
   * To prevent these files from being read in for every groupName lookup, read them in once and cache them in
   * cachedGroupIndices.
@@ -27,11 +27,14 @@ const toolsWithGroupIndices = [TRANSLATION_NOTES, TRANSLATION_WORDS];
   * @param {string} toolName - toolName to get the indices
   */
 function getToolGroupIndex(langCode, toolName) {
-   if (! cachedGroupIndices[langCode])
-     cachedGroupIndices[langCode] = {};
+  if (! cachedGroupIndices[langCode]) {
+    cachedGroupIndices[langCode] = {};
+  }
+
   // load the indices for the given language & tool if not already loaded
-  if (!cachedGroupIndices[langCode][toolName] && toolsWithGroupIndices.indexOf(toolName) >= 0)
+  if (!cachedGroupIndices[langCode][toolName] && toolsWithGroupIndices.indexOf(toolName) >= 0) {
     cachedGroupIndices[langCode][toolName] = loadToolGroupIndex(langCode, toolName);
+  }
   return cachedGroupIndices[langCode][toolName];
 }
 
@@ -42,17 +45,22 @@ function getToolGroupIndex(langCode, toolName) {
  */
 function loadToolGroupIndex(langCode, toolName) {
   let index = [];
+
   try {
     const toolPath = path.join(USER_RESOURCES_PATH, langCode, TRANSLATION_HELPS, toolName);
     let versionPath = ResourceAPI.getLatestVersion(toolPath) || toolPath;
+
     if (fs.pathExistsSync(versionPath)) {
       const isDirectory = (item) => fs.lstatSync(path.join(versionPath, item)).isDirectory();
       const categories = fs.readdirSync(versionPath).filter(isDirectory);
+
       categories.forEach(category => {
-        const indexPath = path.join(versionPath, category, "index.json");
+        const indexPath = path.join(versionPath, category, 'index.json');
+
         if (fs.existsSync(indexPath)) {
           try {
             const items = fs.readJsonSync(indexPath);
+
             items.forEach(item => {
               item.category = category; // adds the category as a field since this is being flattened from the directory
               index.push(item);
@@ -113,7 +121,7 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
     occurrenceNote: occurrenceNote,
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
-    verse: contextId.reference.verse
+    verse: contextId.reference.verse,
   };
 };
 
@@ -138,15 +146,17 @@ export const getGLQuoteFromAlignedBible = (contextId, langCode) => {
  * @return {string}
  */
 export const groupName = (contextId, langCode) => {
-  const {tool, groupId} = contextId;
+  const { tool, groupId } = contextId;
   const groupIndex = getToolGroupIndex(langCode, tool);
   const indexObject = {};
   let groupName;
+
   if (groupIndex) {
     groupIndex.forEach(group => {
       indexObject[group.id] = group.name;
     });
     groupName = indexObject[groupId];
+
     if (!groupName) {
       console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
     }
@@ -165,13 +175,15 @@ export const groupName = (contextId, langCode) => {
  * @return {string}
  */
 export const groupCategory = (contextId, langCode) => {
-  const {tool, groupId} = contextId;
+  const { tool, groupId } = contextId;
   const groupIndex = getToolGroupIndex(langCode, tool);
   const indexObject = {};
+
   if (groupIndex) {
     groupIndex.forEach(group => {
       indexObject[group.id] = group.category;
     });
+
     if (!indexObject[groupId]) {
       console.warn('Could not find group name for id: ', groupId, ' in tool: ', tool);
     } else {
@@ -189,6 +201,7 @@ export const groupCategory = (contextId, langCode) => {
  */
 export const groupCategoryTranslated = (contextId, langCode, translate) => {
   const category = groupCategory(contextId, langCode);
+
   if (category) {
     // We return the translation, unless that tool_card_categories.<category> doesn't exist, then just return category
     return localizationHelpers.getTranslation(translate, 'tool_card_categories.' + category, category);
@@ -200,24 +213,22 @@ export const groupCategoryTranslated = (contextId, langCode, translate) => {
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
  */
-export const userTimestampObject = (username, timestamp) => {
-  return {
-    username,
-    date: dateFromTimestamp(timestamp),
-    time: timeFromTimestamp(timestamp)
-  };
-};
+export const userTimestampObject = (username, timestamp) => ({
+  username,
+  date: dateFromTimestamp(timestamp),
+  time: timeFromTimestamp(timestamp),
+});
 
 /**
  * @description - turns a timestamp into date
  * @param {timestamp} timestamp to be converted into date
  */
 export const dateFromTimestamp = (timestamp) => {
-    const datetime = timestamp.replace(/_/g, ":");
-    const dateObj = new Date(datetime);
-    //Converts to format as such DD/MM/YYYY
-    const date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join("/");
-    return date;
+  const datetime = timestamp.replace(/_/g, ':');
+  const dateObj = new Date(datetime);
+  //Converts to format as such DD/MM/YYYY
+  const date = [pad(dateObj.getMonth() + 1), pad(dateObj.getDate()), dateObj.getFullYear()].join('/');
+  return date;
 };
 
 /**
@@ -225,9 +236,9 @@ export const dateFromTimestamp = (timestamp) => {
  * @param {timestamp} timestamp to be converted into time
  */
 export const timeFromTimestamp = (timestamp) => {
-  const datetime = timestamp.replace(/_/g, ":");
+  const datetime = timestamp.replace(/_/g, ':');
   //Converts to format as such HH:MM:SS
-  const time = new Date(datetime).toString().split(" ")[4];
+  const time = new Date(datetime).toString().split(' ')[4];
   return time;
 };
 
@@ -235,9 +246,7 @@ export const timeFromTimestamp = (timestamp) => {
  * @description - Pad numbers to make them sortable and human readable
  * @param {int} number
  */
-const pad = (number) => {
-  return number < 10 ? 0 + `${number}` : number;
-};
+const pad = (number) => number < 10 ? 0 + `${number}` : number;
 
 /**
  * @description - Gets the tool folder names
@@ -246,9 +255,10 @@ const pad = (number) => {
 export function getToolFolderNames(projectPath) {
   const _dataPath = dataPath(projectPath);
   let toolsPath = path.join(_dataPath, 'index');
+
   if (fs.existsSync(toolsPath)) {
     let toolNames = fs.readdirSync(toolsPath)
-    .filter(file => fs.lstatSync(path.join(toolsPath, file)).isDirectory());
+      .filter(file => fs.lstatSync(path.join(toolsPath, file)).isDirectory());
     return toolNames;
     // TODO: check to see if it is a directory and only return those
   } else {
@@ -256,13 +266,9 @@ export function getToolFolderNames(projectPath) {
   }
 }
 
-export const dataPath = (projectPath) => {
-  return path.join(projectPath, '.apps', 'translationCore');
-};
+export const dataPath = (projectPath) => path.join(projectPath, '.apps', 'translationCore');
 
-export const tmpPath = (projectPath) => {
-  return path.join(dataPath(projectPath), 'output');
-};
+export const tmpPath = (projectPath) => path.join(dataPath(projectPath), 'output');
 
 /**
  * @description - cleanup the temporary csv files
@@ -270,6 +276,7 @@ export const tmpPath = (projectPath) => {
  */
 export const cleanupTmpPath = (projectPath) => {
   const _tmpPath = tmpPath(projectPath);
+
   if (fs.existsSync(_tmpPath)) {
     fs.removeSync(path.join(_tmpPath));
   }
@@ -282,6 +289,7 @@ export const cleanupTmpPath = (projectPath) => {
 export const getProjectId = (projectPath) => {
   let projectId;
   const manifestPath = path.join(projectPath, 'manifest.json');
+
   if (fs.existsSync(manifestPath)) {
     const manifest = fs.readJsonSync(manifestPath);
     projectId = (manifest && manifest.project) ? manifest.project.id : undefined;
@@ -302,14 +310,13 @@ export const generateCSVString = (objectArray, callback) => {
     // loop through the objectArray to generate a row from each object in the array
     const rows = objectArray.map(object => {
       // use the headers to get the values of each object to create the row
-      const row = headers.map(header => {
-        return object[header];
-      });
+      const row = headers.map(header => object[header]);
       return row;
     });
     // make the headers the first row and append the rows
     const data = [headers].concat(rows);
-    csv.stringify(data, function(err, data){
+
+    csv.stringify(data, function (err, data){
       callback(err, data);
     });
   } else { // there is no data, give back enough data to create an empty file.
@@ -323,23 +330,21 @@ export const generateCSVString = (objectArray, callback) => {
  * @param {Array} objectArray - array of objects to convert to csv
  * @param {string} filePath - path of the file to write
  */
-export const generateCSVFile = (objectArray, filePath) => {
-  return new Promise(function(resolve, reject) {
-    generateCSVString(objectArray, (err, csvString) => {
-      if (err) {
-        console.error(err);
-        reject(err);
-      } else {
-        try {
-          if (csvString) {
-            fs.outputFileSync(filePath, csvString);
-          }
-          resolve(true);
-        } catch (_err) {
-          console.error(_err);
-          reject(_err);
+export const generateCSVFile = (objectArray, filePath) => new Promise(function (resolve, reject) {
+  generateCSVString(objectArray, (err, csvString) => {
+    if (err) {
+      console.error(err);
+      reject(err);
+    } else {
+      try {
+        if (csvString) {
+          fs.outputFileSync(filePath, csvString);
         }
+        resolve(true);
+      } catch (_err) {
+        console.error(_err);
+        reject(_err);
       }
-    });
+    }
   });
-};
+});

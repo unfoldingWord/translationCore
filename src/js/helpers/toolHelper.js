@@ -1,13 +1,15 @@
-import path from "path-extra";
-import fs from "fs-extra";
-import {getToolCategories, getToolsByKey, getTranslate} from "../selectors";
-import * as alerts from "../reducers/alerts";
-import {WORD_ALIGNMENT} from "../common/constants";
+import path from 'path-extra';
+import fs from 'fs-extra';
+import {
+  getToolCategories, getToolsByKey, getTranslate,
+} from '../selectors';
+import * as alerts from '../reducers/alerts';
+import { WORD_ALIGNMENT } from '../common/constants';
 import {
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
   ALERT_ALIGNMENTS_RESET_ID,
-  ALERT_SELECTIONS_INVALIDATED_ID
-} from "../actions/SelectionsActions";
+  ALERT_SELECTIONS_INVALIDATED_ID,
+} from '../actions/SelectionsActions';
 
 /**
  * Loads all of the tools found in a directory
@@ -15,27 +17,31 @@ import {
  * @returns {Array}
  */
 export const loadToolsInDir = async toolsDir => {
-  const tools = [];
+  let tools = [];
+  const promises = [];
 
   // TRICKY: fs.access does not work on asar directories so we cannot use `fs.access`
-  if(!fs.existsSync(toolsDir)) {
+  if (!fs.existsSync(toolsDir)) {
     console.warn(`No tools found in missing directory ${toolsDir}.`);
     return [];
   }
 
   const files = await fs.readdir(toolsDir);
-  for(const f of files) {
+
+  for (const f of files) {
     const toolPath = path.join(toolsDir, f);
-    const stat = await fs.stat(toolPath);
-    if(stat.isDirectory()) {
+    const stat = fs.statSync(toolPath);
+
+    if (stat.isDirectory()) {
       try {
-        const tool = await loadTool(toolPath);
-        tools.push(tool);
+        promises.push(loadTool(toolPath));
       } catch (e) {
         console.error(`Failed to load tool "${f}"`, e);
       }
     }
   }
+
+  tools = await Promise.all(promises);
 
   return tools;
 };
@@ -48,13 +54,15 @@ export const loadToolsInDir = async toolsDir => {
  */
 export const loadTool = async toolDir => {
   const basename = path.basename(toolDir);
-  const packagePath = path.join(toolDir, "package.json");
-  const badgePath = path.join(toolDir, "badge.png");
+  const packagePath = path.join(toolDir, 'package.json');
+  const badgePath = path.join(toolDir, 'badge.png');
 
   // Validate package files
   const validatePaths = [packagePath, badgePath];
-  for(const p of validatePaths) {
-    const exists = await fs.pathExists(p);
+
+  for (const p of validatePaths) {
+    const exists = fs.existsSync(p);
+
     if (!exists) {
       throw new Error(`Error loading tool "${basename}". Missing ${p}`);
     }
@@ -63,6 +71,7 @@ export const loadTool = async toolDir => {
   // load the actual tool
   const meta = await fs.readJson(packagePath);
   let tool = null;
+
   try {
     tool = require(path.join(toolDir, meta.main)).default;
   } catch (e) {
@@ -87,12 +96,15 @@ export const loadTool = async toolDir => {
 export const isInvalidationAlertDisplaying = (state, toolName) => {
   let selectionsInvalidAlert = alerts.findAlert(state, ALERT_SELECTIONS_INVALIDATED_ID);
   const alignmentsInvalidAlert = alerts.findAlert(state, ALERT_ALIGNMENTS_RESET_ID);
+
   if (alignmentsInvalidAlert) { // could also be combined alert, check message
     const alignAndSelectionsInvalidMessage = getTranslate(state)(ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG);
+
     if (alignmentsInvalidAlert.children === alignAndSelectionsInvalidMessage) {
       selectionsInvalidAlert = alignmentsInvalidAlert;
     }
   }
+
   const alertAlreadyDisplayed = toolName === WORD_ALIGNMENT ? alignmentsInvalidAlert : selectionsInvalidAlert;
   return !!alertAlreadyDisplayed;
 };
@@ -106,6 +118,7 @@ export const isInvalidationAlertDisplaying = (state, toolName) => {
 export const getInvalidCountForTool = (state, toolName) => {
   let numInvalidChecks = 0;
   const toolApi = (getToolsByKey(state))[toolName];
+
   if (toolApi) {
     const selectedCategories = getToolCategories(state, toolName);
     numInvalidChecks = toolApi.api.trigger('getInvalidChecks', selectedCategories);

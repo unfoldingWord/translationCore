@@ -7,13 +7,11 @@ const ReimportProjectIcon = props => {
       display: 'inline-block',
       verticalAlign: 'middle',
     },
-    path: {
-      fill: props.color,
-    },
+    path: { fill: props.color },
   };
 
   return (
-    <svg  style={styles.svg} width={`${props.width}`} height={`${props.height}`} viewBox="0 0 1000 1000">
+    <svg style={styles.svg} width={`${props.width}`} height={`${props.height}`} viewBox="0 0 1000 1000">
       <g>
         <g transform="translate(0.000000,511.000000) scale(0.100000,-0.100000)">
           <path style={styles.path} d="M1211.2,4695.6c-197.3-40.2-371.6-176.2-450.2-350.5c-42.1-91.9-46-130.3-51.7-477l-7.7-379.3h4296.5h4294.6l-13.4,78.5c-23,141.7-88.1,262.4-195.4,360.1c-195.4,178.1,11.5,164.7-2490.2,170.5l-2206.7,3.8l-11.5,82.4c-30.6,199.2-203,413.8-390.8,484.6c-84.3,32.6-182,36.4-1392.6,38.3C1875.9,4709,1255.3,4703.3,1211.2,4695.6z"/>

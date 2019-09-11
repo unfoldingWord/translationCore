@@ -14,47 +14,49 @@ const LanguageNameTextBox = ({
   updateLanguageSettings,
   translate,
   id,
-  className
-}) => {
-  return (
-    <div
-      id={id+'-wrapper'}
-      className={className}
-    >
-      <label htmlFor={id} style={{margin: 0}}>
-        <TranslateIcon style={{ height: "16px", width: "16px", color: "#000000", verticalAlign: "bottom"}} />&nbsp;
-        {translate('projects.language_name')}
+  className,
+}) => (
+  <div
+    id={id+'-wrapper'}
+    className={className}
+  >
+    <label htmlFor={id} style={{ margin: 0 }}>
+      <TranslateIcon style={{
+        height: '16px', width: '16px', color: '#000000', verticalAlign: 'bottom',
+      }} />&nbsp;
+      {translate('projects.language_name')}
         &nbsp;
-        <span className={"required"}/>
-      </label>
-      <AutoComplete
-        id={id}
-        searchText={languageName}
-        style={{ width: '100%', height: '80px' }}
-        listStyle={{ maxHeight: 300, width: '500px', overflow: 'auto' }}
-        errorText={getErrorMessage(translate, languageName, languageId)}
-        errorStyle={{ color: '#cd0033' }}
-        underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
-        onNewRequest={(chosenRequest, index) => {
-            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
-          }
-        }
-        onUpdateInput={searchText => {
-            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageSettings);
-          }
-        }
-        filter={AutoComplete.caseInsensitiveFilter}
-        dataSource={LangHelpers.getLanguagesSortedByName()}
-        dataSourceConfig={dataSourceConfig}
-        maxSearchResults={100}
-      />
-    </div>
-  );
-};
+      <span className={'required'}/>
+    </label>
+    <AutoComplete
+      id={id}
+      searchText={languageName}
+      style={{ width: '100%', height: '80px' }}
+      listStyle={{
+        maxHeight: 300, width: '500px', overflow: 'auto',
+      }}
+      errorText={getErrorMessage(translate, languageName, languageId)}
+      errorStyle={{ color: '#cd0033' }}
+      underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+      onNewRequest={(chosenRequest, index) => {
+        selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+      }
+      }
+      onUpdateInput={searchText => {
+        selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageSettings);
+      }
+      }
+      filter={AutoComplete.caseInsensitiveFilter}
+      dataSource={LangHelpers.getLanguagesSortedByName()}
+      dataSourceConfig={dataSourceConfig}
+      maxSearchResults={100}
+    />
+  </div>
+);
 
 const dataSourceConfig = {
   text: 'namePrompt',
-  value: 'code'
+  value: 'code',
 };
 
 /**
@@ -64,13 +66,16 @@ const dataSourceConfig = {
  * @param {string} languageId
  * @return {String} error message if invalid, else null
  */
-export const getErrorMessage = (translate, languageName = "", languageId = "") => {
-  let message = (!languageName) ? translate('project_validation.field_required') : "";
+export const getErrorMessage = (translate, languageName = '', languageId = '') => {
+  let message = (!languageName) ? translate('project_validation.field_required') : '';
+
   if (!message) {
     let language = LangHelpers.getLanguageByNameSelection(languageName, languageId);
+
     if (!language) { // fall back to partial match
       language = LangHelpers.getLanguageByNameSelection(languageName);
     }
+
     if (!language) {
       message = translate('project_validation.invalid_language_name');
     } else if ((languageId !== language.code) && (LangHelpers.isLanguageCodeValid(languageId))) {
@@ -86,7 +91,7 @@ export const getErrorMessage = (translate, languageName = "", languageId = "") =
  * @param {function} updateLanguageSettings -function to call to save language data
  */
 const updateLanguage = (language, updateLanguageSettings) => {
-  updateLanguageSettings(language.code, language.name, language.ltr ? "ltr" : "rtl");
+  updateLanguageSettings(language.code, language.name, language.ltr ? 'ltr' : 'rtl');
 };
 
 /**
@@ -104,24 +109,26 @@ export const selectLanguage = (chosenRequest, index, updateLanguageName, updateL
       updateLanguage(chosenRequest, updateLanguageSettings);
     } else { // fall back to find in list
       const language = LangHelpers.getLanguagesSortedByName()[index];
+
       if (language) {
         updateLanguage(language, updateLanguageSettings);
       }
     }
   } else { // chosenRequest should be string here
     const language = LangHelpers.getLanguageByNameSelection(chosenRequest); // try case insensitive search
+
     if (language) {
       updateLanguage(language, updateLanguageSettings);
     } else {
-      updateLanguageName(chosenRequest || ""); // temporarily queue str change
-      updateLanguageId(""); // clear associated code
+      updateLanguageName(chosenRequest || ''); // temporarily queue str change
+      updateLanguageId(''); // clear associated code
     }
   }
 };
 
 LanguageNameTextBox.defaultProps = {
   id: 'Language-Name-TextBox-AutoComplete',
-  className: 'language-name-textbox'
+  className: 'language-name-textbox',
 };
 
 LanguageNameTextBox.propTypes = {
@@ -132,7 +139,7 @@ LanguageNameTextBox.propTypes = {
   updateLanguageId: PropTypes.func.isRequired,
   updateLanguageSettings: PropTypes.func.isRequired,
   id: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default LanguageNameTextBox;

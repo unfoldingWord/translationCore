@@ -2,7 +2,7 @@ import usfmParser from 'usfm-js';
 import fs from 'fs-extra';
 import Path from 'path-extra';
 // helpers
-import {VerseObjectUtils} from 'word-aligner';
+import { VerseObjectUtils } from 'word-aligner';
 // constants
 const regex = /<<<<<<<.*([\s\S]*?)=======([\s\S]*?)>>>>>>>/g;
 const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
@@ -19,6 +19,7 @@ const replaceRegex = /(<<<<<<<\s?.*[\s\S]*?>>>>>>>\s?.*)/;
 export function getMergeConflicts(usfmData) {
   let allMergeConflictsFoundArray = [];
   let regexMatchedMergeConflicts;
+
   while ((regexMatchedMergeConflicts = regex.exec(usfmData)) !== null) {
     // This is necessary to avoid infinite loops with zero-width allMergeConflictsFoundArray
     if (regexMatchedMergeConflicts.index === regex.lastIndex) {
@@ -31,11 +32,14 @@ export function getMergeConflicts(usfmData) {
       allMergeConflictsFoundArray.push(match);
     });
   }
+
   /*
   * If there is an odd amount of total versions at least one version
   * is not matched with a corresponding version with different history
   */
-  if (allMergeConflictsFoundArray.length % 2 !== 0) return console.error('Problem parsing merge conflicts');
+  if (allMergeConflictsFoundArray.length % 2 !== 0) {
+    return console.error('Problem parsing merge conflicts');
+  }
   return allMergeConflictsFoundArray;
 }
 
@@ -56,11 +60,14 @@ export function parseMergeConflictVersion(versionText, usfmData) {
     `${verseNumbersArray[0]}-${verseNumbersArray[verseNumbersArray.length - 1]}` :
     `${verseNumbersArray[0]}`;
   let verseData = parsedTextObject[verseNumbersArray[0]];
+
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
+
   let chapter;
   let verseText;
+
   for (var verseNum of verseNumbersArray) {
     verseText = VerseObjectUtils.mergeVerseData(parsedTextObject[verseNum]);
     parsedTextObject[verseNum] = verseText;
@@ -69,7 +76,7 @@ export function parseMergeConflictVersion(versionText, usfmData) {
   return {
     chapter,
     verses,
-    text: parsedTextObject
+    text: parsedTextObject,
   };
 }
 
@@ -82,6 +89,7 @@ export function getChapterFromVerseText(verseText, usfmData) {
   let chapterRegex = new RegExp(`\\c (\\d+)(?=[\\s\\S]*${verseText})`, 'g');
   let m;
   let chapter;
+
   while ((m = chapterRegex.exec(usfmData)) !== null) {
     chapter = m[1];
   }
@@ -98,26 +106,32 @@ export function getChapterFromVerseText(verseText, usfmData) {
  */
 export function merge(mergeConflictArray, inputFile, outputFile) {
   try {
-    if (!outputFile) outputFile = inputFile;
+    if (!outputFile) {
+      outputFile = inputFile;
+    }
 
     if (inputFile) {
       let usfmData = fs.readFileSync(inputFile).toString();
 
       for (let conflict of mergeConflictArray) {
         let chosenText;
+
         for (let version of conflict) {
           if (version.checked) {
             chosenText = version.text;
           }
         }
+
         let chosenVerseObjects = {};
+
         for (let verseNum in chosenText) {
           chosenVerseObjects[verseNum] = { verseObjects: [] };
           chosenVerseObjects[verseNum].verseObjects.push({
             text: chosenText[verseNum],
-            type: 'text'
+            type: 'text',
           });
         }
+
         const chosenTextUSFMString = usfmParser.toUSFM({ verses: chosenVerseObjects });
         usfmData = usfmData.replace(replaceRegex, chosenTextUSFMString);
       }
@@ -135,15 +149,19 @@ export function merge(mergeConflictArray, inputFile, outputFile) {
  */
 export function createUSFMFromTsProject(projectSaveLocation) {
   let usfmData = '';
+
   try {
     const chapters = fs.readdirSync(projectSaveLocation);
+
     for (var chapterFileNumber of chapters) {
       //only want the chapter number folders
       let chapterNumber = Number(chapterFileNumber);
+
       if (chapterNumber) {
         usfmData += '\\c ' + chapterNumber + '\n';
         usfmData += '\\p' + '\n';
         const files = fs.readdirSync(Path.join(projectSaveLocation, chapterFileNumber)); // get the chunk files in the chapter path
+
         files.forEach(file => {
           if (file.match(/\d+.txt/)) { // only import chunk/verse files (digit based)
             const chunkPath = Path.join(projectSaveLocation, chapterFileNumber, file);
@@ -169,13 +187,17 @@ export function createUSFMFromTsProject(projectSaveLocation) {
  */
 export function checkUSFMForMergeConflicts(usfmFilePath) {
   let usfmData;
+
   try {
     usfmData = fs.readFileSync(usfmFilePath).toString();
   } catch (e) {
     return false;
   }
-  if (!usfmData.includes('<<<<<<<') || !usfmData.includes('>>>>>>>'))  //usfm file does not contain merge conflicts
+
+  // usfm file does not have merge conflicts
+  if (!usfmData.includes('<<<<<<<') || !usfmData.includes('>>>>>>>')) {
     return false;
+  }
   return true;
 }
 
@@ -186,14 +208,23 @@ export function checkUSFMForMergeConflicts(usfmFilePath) {
  * @returns {Boolean} True if there is any merge conflicts, false if the project does not contain any
  */
 export function projectHasMergeConflicts(projectPath, bookAbbr) {
-  if (!fs.existsSync(Path.join(projectPath, bookAbbr))) return false;
+  if (!fs.existsSync(Path.join(projectPath, bookAbbr))) {
+    return false;
+  }
+
   let currentFolderChapters = fs.readdirSync(Path.join(projectPath, bookAbbr));
+
   for (var currentChapterFile of currentFolderChapters) {
     let currentChapter = Path.parse(currentChapterFile).name;
-    if (!parseInt(currentChapter)) continue;
+
+    if (!parseInt(currentChapter)) {
+      continue;
+    }
+
     try {
       let currentChapterObject = fs.readJSONSync(Path.join(projectPath, bookAbbr, currentChapterFile));
       let fileContents = JSON.stringify(currentChapterObject);
+
       if (fileContents.includes('<<<<<<<') || fileContents.includes('>>>>>>>')) {
         return true;
       }
@@ -208,8 +239,7 @@ export function loadUSFM(filePath) {
   try {
     var usfmData = fs.readFileSync(filePath).toString();
     return usfmData;
-  }
-  catch (e) {
+  } catch (e) {
     return null;
   }
 }

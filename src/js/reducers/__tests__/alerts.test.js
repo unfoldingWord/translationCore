@@ -5,7 +5,7 @@ describe('alerts reducer', () => {
   it('returns the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
       ignored: [],
-      props: []
+      props: [],
     });
   });
 
@@ -14,15 +14,15 @@ describe('alerts reducer', () => {
       type: types.OPEN_ALERT,
       message: 'hello world',
       id: 'hello-alert',
-      confirmText: 'ok'
+      confirmText: 'ok',
     };
     const stateAfter = {
       ignored: [],
       props: [{
         children: 'hello world',
         id: 'hello-alert',
-        confirmText: 'ok'
-      }]
+        confirmText: 'ok',
+      }],
     };
     expect(reducer(undefined, action)).toEqual(stateAfter);
   });
@@ -30,21 +30,21 @@ describe('alerts reducer', () => {
   it('opens an ignored alert without ignore handler', () => {
     const stateBefore = {
       ignored: ['hello-alert'],
-      props: []
+      props: [],
     };
     const action = {
       type: types.OPEN_ALERT,
       message: 'hello world',
       id: 'hello-alert',
-      confirmText: 'ok'
+      confirmText: 'ok',
     };
     const stateAfter = {
       ignored: ['hello-alert'],
       props: [{
         children: 'hello world',
         id: 'hello-alert',
-        confirmText: 'ok'
-      }]
+        confirmText: 'ok',
+      }],
     };
     expect(reducer(stateBefore, action)).toEqual(stateAfter);
   });
@@ -52,18 +52,18 @@ describe('alerts reducer', () => {
   it('does not open an ignored alert with ignore handler', () => {
     const stateBefore = {
       ignored: ['hello-alert'],
-      props: []
+      props: [],
     };
     const action = {
       type: types.OPEN_ALERT,
       message: 'hello world',
       id: 'hello-alert',
       confirmText: 'ok',
-      onIgnore: () => {}
+      onIgnore: () => {},
     };
     const stateAfter = {
       ignored: ['hello-alert'],
-      props: []
+      props: [],
     };
     expect(reducer(stateBefore, action)).toEqual(stateAfter);
   });
@@ -73,15 +73,15 @@ describe('alerts reducer', () => {
       type: types.OPEN_ALERT,
       message: 'hello world',
       id: 'hello-alert',
-      confirmText: 'ok'
+      confirmText: 'ok',
     };
     const stateAfter = {
       ignored: [],
       props: [{
         children: 'hello world',
         id: 'hello-alert',
-        confirmText: 'ok'
-      }]
+        confirmText: 'ok',
+      }],
     };
     expect(reducer(undefined, action)).toEqual(stateAfter);
     expect(reducer(undefined, action)).toEqual(stateAfter);
@@ -93,18 +93,18 @@ describe('alerts reducer', () => {
       props: [{
         children: 'hello world',
         id: 'hello-alert',
-        confirmText: 'ok'
-      }]
+        confirmText: 'ok',
+      }],
     };
     const action = {
       type: types.CLOSE_ALERT,
       message: 'hello world',
       id: 'hello-alert',
-      confirmText: 'ok'
+      confirmText: 'ok',
     };
     const stateAfter = {
       ignored: [],
-      props: []
+      props: [],
     };
     expect(reducer(stateBefore, action)).toEqual(stateAfter);
   });
@@ -113,11 +113,11 @@ describe('alerts reducer', () => {
     const action = {
       type: types.IGNORE_ALERT,
       id: 'hello-alert',
-      ignore: true
+      ignore: true,
     };
     const stateAfter = {
       ignored: ['hello-alert'],
-      props: []
+      props: [],
     };
     expect(reducer(undefined, action)).toEqual(stateAfter);
   });
@@ -125,16 +125,16 @@ describe('alerts reducer', () => {
   it('stops ignoring an alert', () => {
     const stateBefore = {
       ignored: ['hello-alert'],
-      props: []
+      props: [],
     };
     const action = {
       type: types.IGNORE_ALERT,
       id: 'hello-alert',
-      ignore: false
+      ignore: false,
     };
     const stateAfter = {
       ignored: [],
-      props: []
+      props: [],
     };
     expect(reducer(stateBefore, action)).toEqual(stateAfter);
   });

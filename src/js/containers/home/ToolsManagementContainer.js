@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 // components
-import ToolsCards from "../../components/home/toolsManagement/ToolsCards";
-import HomeContainerContentWrapper from "../../components/home/HomeContainerContentWrapper";
+import ToolsCards from '../../components/home/toolsManagement/ToolsCards';
+import HomeContainerContentWrapper from '../../components/home/HomeContainerContentWrapper';
 import {
   getTools,
   getIsUserLoggedIn,
@@ -11,15 +11,14 @@ import {
   getProjectBookId,
   getToolGatewayLanguage,
   getSourceBookManifest,
-} from "../../selectors";
+} from '../../selectors';
 // actions
-import { openTool } from "../../actions/ToolActions";
-import { openAlertDialog } from "../../actions/AlertModalActions";
-import * as PopoverActions from "../../actions/PopoverActions";
-import * as ProjectDetailsActions from "../../actions/ProjectDetailsActions";
+import { openAlertDialog } from '../../actions/AlertModalActions';
+import * as PopoverActions from '../../actions/PopoverActions';
+import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
-import {warnOnInvalidations} from "../../actions/ToolActions";
+import { warnOnInvalidations, openTool } from '../../actions/ToolActions';
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -28,11 +27,12 @@ class ToolsManagementContainer extends Component {
   }
 
   componentDidMount() {
-    const {tools, reducers} = this.props;
+    const { tools, reducers } = this.props;
     const projectSaveLocation = getProjectSaveLocation(reducers);
     const bookId = getProjectBookId(reducers);
+
     if (projectSaveLocation && bookId) {
-      tools.forEach(({name:toolName}) => {
+      tools.forEach(({ name:toolName }) => {
         const currentGatewayLanguage = getToolGatewayLanguage(reducers, toolName);
         this.props.actions.loadCurrentCheckCategories(toolName, projectSaveLocation, currentGatewayLanguage);
       });
@@ -40,11 +40,14 @@ class ToolsManagementContainer extends Component {
   }
 
   handleSelectTool(toolName) {
-    const {isUserLoggedIn, openTool, translate, openAlertDialog} = this.props;
-    if(isUserLoggedIn) {
+    const {
+      isUserLoggedIn, openTool, translate, openAlertDialog,
+    } = this.props;
+
+    if (isUserLoggedIn) {
       openTool(toolName);
     } else {
-      openAlertDialog(translate("please_log_in"));
+      openAlertDialog(translate('please_log_in'));
     }
   }
 
@@ -56,9 +59,9 @@ class ToolsManagementContainer extends Component {
         projectDetailsReducer: {
           manifest,
           projectSaveLocation,
-          toolsCategories
+          toolsCategories,
         },
-        invalidatedReducer
+        invalidatedReducer,
       },
       translate,
       originalLanguageBookManifest,
@@ -69,15 +72,15 @@ class ToolsManagementContainer extends Component {
     const instructions = (
       <div>
         <p>
-          {translate("tools.select_tool_from_list")}
+          {translate('tools.select_tool_from_list')}
         </p>
         <p>
-          {translate("projects.supports_any_book", { app: translate("_.app_name") })}&nbsp;
+          {translate('projects.supports_any_book', { app: translate('_.app_name') })}&nbsp;
           {translate(
-            "projects.tools_required_resources",
+            'projects.tools_required_resources',
             {
-              actions: translate("actions"),
-              check_for_content_updates: translate("updates.check_for_content_updates"),
+              actions: translate('actions'),
+              check_for_content_updates: translate('updates.check_for_content_updates'),
             }
           )}
         </p>
@@ -88,8 +91,8 @@ class ToolsManagementContainer extends Component {
         translate={translate}
         instructions={instructions}
       >
-        <div style={{ height: "100%" }}>
-          {translate("tools.tools")}
+        <div style={{ height: '100%' }}>
+          {translate('tools.tools')}
           <ToolsCards
             tools={tools}
             onSelectTool={this.handleSelectTool}
@@ -111,51 +114,47 @@ class ToolsManagementContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isUserLoggedIn: getIsUserLoggedIn(state),
-    tools: getTools(state),
-    originalLanguageBookManifest: getSourceBookManifest(state),
-    reducers: {
-      homeScreenReducer: state.homeScreenReducer,
-      projectDetailsReducer: state.projectDetailsReducer,
-      loginReducer: state.loginReducer,
-      invalidatedReducer: state.invalidatedReducer
-    }
-  };
-};
+const mapStateToProps = (state) => ({
+  isUserLoggedIn: getIsUserLoggedIn(state),
+  tools: getTools(state),
+  originalLanguageBookManifest: getSourceBookManifest(state),
+  reducers: {
+    homeScreenReducer: state.homeScreenReducer,
+    projectDetailsReducer: state.projectDetailsReducer,
+    loginReducer: state.loginReducer,
+    invalidatedReducer: state.invalidatedReducer,
+  },
+});
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    openTool: name => dispatch(openTool(name)),
-    openAlertDialog: message => dispatch(openAlertDialog(message)),
-    onMissingResource: (resourceDetails) => dispatch(promptUserAboutMissingResource(resourceDetails)),
-    toggleHomeView: (value) => dispatch(BodyUIActions.toggleHomeView(value)),
-    actions: {
-      loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
-        dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
-      },
-      getProjectProgressForTools: (toolName, results) => {
-        dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, results));
-      },
-      setProjectToolGL: (toolName, selectedGL) => {
-        dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
-      },
-      updateCategorySelection: (toolName, isChecked, subcategories) => {
-        dispatch(ProjectDetailsActions.updateCategorySelection(toolName, isChecked, subcategories));
-      },
-      updateSubcategorySelection: (subcategory, toolName, isChecked) => {
-        dispatch(ProjectDetailsActions.updateSubcategorySelection(subcategory, toolName, isChecked));
-      },
-      showPopover: (title, bodyText, positionCoord) => {
-        dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
-      },
-      warnOnInvalidations: (toolName) => {
-        dispatch(warnOnInvalidations(toolName));
-      }
-    }
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  openTool: name => dispatch(openTool(name)),
+  openAlertDialog: message => dispatch(openAlertDialog(message)),
+  onMissingResource: (resourceDetails) => dispatch(promptUserAboutMissingResource(resourceDetails)),
+  toggleHomeView: (value) => dispatch(BodyUIActions.toggleHomeView(value)),
+  actions: {
+    loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
+      dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
+    },
+    getProjectProgressForTools: (toolName, results) => {
+      dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, results));
+    },
+    setProjectToolGL: (toolName, selectedGL) => {
+      dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
+    },
+    updateCategorySelection: (toolName, isChecked, subcategories) => {
+      dispatch(ProjectDetailsActions.updateCategorySelection(toolName, isChecked, subcategories));
+    },
+    updateSubcategorySelection: (subcategory, toolName, isChecked) => {
+      dispatch(ProjectDetailsActions.updateSubcategorySelection(subcategory, toolName, isChecked));
+    },
+    showPopover: (title, bodyText, positionCoord) => {
+      dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
+    },
+    warnOnInvalidations: (toolName) => {
+      dispatch(warnOnInvalidations(toolName));
+    },
+  },
+});
 
 ToolsManagementContainer.propTypes = {
   isUserLoggedIn: PropTypes.bool.isRequired,
@@ -164,9 +163,8 @@ ToolsManagementContainer.propTypes = {
   tools: PropTypes.array.isRequired,
   reducers: PropTypes.shape({
     projectDetailsReducer: PropTypes.object.isRequired,
-    loginReducer: PropTypes.shape({
-      loggedInUser: PropTypes.bool
-    }).isRequired
+    loginReducer: PropTypes.shape({ loggedInUser: PropTypes.bool }).isRequired,
+    invalidatedReducer: PropTypes.object.isRequired,
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,

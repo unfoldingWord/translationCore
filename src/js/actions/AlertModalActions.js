@@ -14,7 +14,7 @@ export function openAlertDialog(alertMessage, loading) {
   return {
     type: consts.OPEN_ALERT_DIALOG,
     alertMessage,
-    loading
+    loading,
   };
 }
 
@@ -36,7 +36,7 @@ export function openOptionDialog(alertMessage, callback, button1Text, button2Tex
     callback2,
     button1Text,
     button2Text,
-    buttonLinkText
+    buttonLinkText,
   };
 }
 
@@ -45,7 +45,5 @@ export function openOptionDialog(alertMessage, callback, button1Text, button2Tex
  * @return {object} action content.
  */
 export function closeAlertDialog() {
-  return {
-    type: consts.CLOSE_ALERT_DIALOG
-  };
+  return { type: consts.CLOSE_ALERT_DIALOG };
 }

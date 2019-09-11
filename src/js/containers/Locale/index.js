@@ -1,4 +1,4 @@
-import {withLocalize} from 'react-localize-redux';
+import { withLocalize } from 'react-localize-redux';
 import LocaleSelectListContainer from './LocaleSelectListContainer';
 
 /**
@@ -15,4 +15,4 @@ export const withLocale = (wrappedComponent) => {
   return withLocalize(wrappedComponent, localeReduxKey);
 };
 
-exports.LocaleSelectListContainer = LocaleSelectListContainer;
+export { LocaleSelectListContainer };

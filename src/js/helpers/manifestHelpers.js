@@ -2,32 +2,28 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 //helpers
+import { getAllBibleBooks } from '../common/BooksOfTheBible';
 import * as usfmHelpers from './usfmHelpers';
 import * as LoadHelpers from './LoadHelpers';
-//common
-import {getAllBibleBooks} from '../common/BooksOfTheBible';
-
 // constants
 const template = {
   generator: {
     name: 'tc-desktop',
-    build: ''
+    build: '',
   },
   target_language: {
     id: '',
     name: '',
     direction: '',
-    book: {
-      name: undefined
-    }
+    book: { name: undefined },
   },
   project: {
     id: '',
-    name: ''
+    name: '',
   },
   type: {
     id: '',
-    name: ''
+    name: '',
   },
   source_translations: [],
   translators: [],
@@ -35,7 +31,7 @@ const template = {
   time_created: '',
   tools: [],
   repo: '',
-  tcInitialized: true
+  tcInitialized: true,
 };
 
 /**
@@ -47,6 +43,7 @@ export function getProjectManifest(projectPath) {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
+
   if (!manifest || !manifest.tcInitialized) {
     manifest = setUpManifest(projectPath, manifest);
   }
@@ -61,8 +58,10 @@ export function getProjectManifest(projectPath) {
  */
 export function setUpManifest(projectSaveLocation, oldManifest) {
   let manifest;
+
   try {
     let manifestLocation = path.join(projectSaveLocation, 'manifest.json');
+
     if (oldManifest && oldManifest.package_version == '3') {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = fixManifestVerThree(oldManifest);
@@ -84,6 +83,7 @@ export function setUpManifest(projectSaveLocation, oldManifest) {
  */
 export function fixManifestVerThree(oldManifest) {
   let newManifest = {};
+
   try {
     for (let oldElements in oldManifest) {
       newManifest[oldElements] = oldManifest[oldElements];
@@ -92,9 +92,10 @@ export function fixManifestVerThree(oldManifest) {
     newManifest.project = {};
     newManifest.project.id = oldManifest.project_id;
     newManifest.project.name = this.convertToFullBookName(oldManifest.project_id);
+
     for (let el in oldManifest.source_translations) {
       newManifest.source_translations = oldManifest.source_translations[el];
-      let parameters = el.split("-");
+      let parameters = el.split('-');
       newManifest.source_translations.language_id = parameters[1];
       newManifest.source_translations.resource_id = parameters[2];
       break;
@@ -111,8 +112,12 @@ export function fixManifestVerThree(oldManifest) {
  */
 export function checkIfValidBetaProject(manifest) {
   const allBooks = getAllBibleBooks();
-  if (manifest && manifest.project) return (!!allBooks[manifest.project.id]);
-  else return false;
+
+  if (manifest && manifest.project) {
+    return (!!allBooks[manifest.project.id]);
+  } else {
+    return false;
+  }
 }
 
 
@@ -125,27 +130,25 @@ export function generateManifestForUsfmProject(parsedUSFM) {
   return {
     generator: {
       name: 'tc-desktop',
-      build: ''
+      build: '',
     },
     target_language: {
       id: usfmDetails.language.id || '',
       name: usfmDetails.language.name || '',
       direction: usfmDetails.language.direction || '',
-      book: {
-        name: usfmDetails.target_languge.book.name || ''
-      }
+      book: { name: usfmDetails.target_languge.book.name || '' },
     },
     ts_project: {
       id: usfmDetails.book.id || '',
-      name: usfmDetails.book.name || ''
+      name: usfmDetails.book.name || '',
     },
     project: {
       id: usfmDetails.book.id || '',
-      name: usfmDetails.book.name || ''
+      name: usfmDetails.book.name || '',
     },
     type: {
       id: 'text',
-      name: 'Text'
+      name: 'Text',
     },
     source_translations: [
       {
@@ -153,18 +156,18 @@ export function generateManifestForUsfmProject(parsedUSFM) {
         resource_id: 'ult',
         checking_level: '',
         date_modified: new Date(),
-        version: ''
-      }
+        version: '',
+      },
     ],
     resource: {
       id: '',
-      name: ''
+      name: '',
     },
     translators: [],
     checkers: [],
     time_created: new Date(),
     tools: [],
     repo: '',
-    tcInitialized: true
+    tcInitialized: true,
   };
 }

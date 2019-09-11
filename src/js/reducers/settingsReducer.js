@@ -7,58 +7,58 @@ const initialState = {
     csvSaveLocation: null,
     online: true,
     onlineMode: false,
-    usfmExportType: 'usfm2'
+    usfmExportType: 'usfm2',
   },
-  toolsSettings: {}
+  toolsSettings: {},
 };
 
 const settingsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.SET_SETTING:
-      // TODO: move settings into root object
-      return {
-        ...state,
-        currentSettings: {
-          ...state.currentSettings,
-          [action.key]: action.value
-        }
-      };
-    case types.TOGGLE_SETTING:
-      // TODO: move settings into root object
-      return {
-        ...state,
-        currentSettings: {
-          ...state.currentSettings,
-          [action.key]: !state.currentSettings[action.key]
-        }
-      };
-      // TODO: these should all be deprecated in favor of SET_SETTING
-    case types.SET_CSV_SAVE_LOCATION:
-      return { ...state, csvSaveLocation: action.csvSaveLocation };
-    case types.SET_USFM_SAVE_LOCATION:
-      return { ...state, usfmSaveLocation: action.usfmSaveLocation };
-    case types.CHANGE_ONLINE_STATUS: // deprecated there's no action for this
-      return { ...state, online: action.online };
-    case types.UPDATE_TOOL_SETTINGS:
-      return {
-        ...state,
-        toolsSettings: {
-          ...state.toolsSettings,
-          [action.moduleNamespace]: {
-            ...state[action.moduleNamespace],
-            [action.settingsPropertyName]: action.toolSettingsData
-          }
-        }
-      };
-    case types.UPDATE_ONLINE_MODE:
-      return { ...state, onlineMode: action.val };
-    case types.RESET_ONLINE_MODE_WARNING_ALERT:
-      return {
-        ...state,
-        onlineMode: false
-      };
-    default:
-      return state;
+  case types.SET_SETTING:
+    // TODO: move settings into root object
+    return {
+      ...state,
+      currentSettings: {
+        ...state.currentSettings,
+        [action.key]: action.value,
+      },
+    };
+  case types.TOGGLE_SETTING:
+    // TODO: move settings into root object
+    return {
+      ...state,
+      currentSettings: {
+        ...state.currentSettings,
+        [action.key]: !state.currentSettings[action.key],
+      },
+    };
+    // TODO: these should all be deprecated in favor of SET_SETTING
+  case types.SET_CSV_SAVE_LOCATION:
+    return { ...state, csvSaveLocation: action.csvSaveLocation };
+  case types.SET_USFM_SAVE_LOCATION:
+    return { ...state, usfmSaveLocation: action.usfmSaveLocation };
+  case types.CHANGE_ONLINE_STATUS: // deprecated there's no action for this
+    return { ...state, online: action.online };
+  case types.UPDATE_TOOL_SETTINGS:
+    return {
+      ...state,
+      toolsSettings: {
+        ...state.toolsSettings,
+        [action.moduleNamespace]: {
+          ...state[action.moduleNamespace],
+          [action.settingsPropertyName]: action.toolSettingsData,
+        },
+      },
+    };
+  case types.UPDATE_ONLINE_MODE:
+    return { ...state, onlineMode: action.val };
+  case types.RESET_ONLINE_MODE_WARNING_ALERT:
+    return {
+      ...state,
+      onlineMode: false,
+    };
+  default:
+    return state;
   }
 };
 
@@ -72,7 +72,7 @@ export default settingsReducer;
  * @return {*} the setting value or undefined if it does not exist
  */
 export const getSetting = (state, key) => {
-  if(key in state.currentSettings) {
+  if (key in state.currentSettings) {
     return state.currentSettings[key];
   } else {
     return undefined;

@@ -1,46 +1,43 @@
-jest.mock('fs-extra');
-
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import path from 'path-extra';
-import fs from "fs-extra";
+import fs from 'fs-extra';
 import * as selections from 'selections';
-import _ from "lodash";
+import _ from 'lodash';
 // actions
-import {generateTimestamp} from "../src/js/helpers";
+import { generateTimestamp } from '../src/js/helpers';
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
-import * as saveMethods from "../src/js/localStorage/saveMethods";
-// constants
-const FIXTURE_PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+import * as saveMethods from '../src/js/localStorage/saveMethods';
 import { WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
 import {
   ALERT_SELECTIONS_INVALIDATED_ID,
   ALERT_SELECTIONS_INVALIDATED_MSG,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_ALIGNMENTS_RESET_MSG,
-  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG} from "../src/js/actions/SelectionsActions";
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+} from '../src/js/actions/SelectionsActions';
+
+jest.mock('fs-extra');
+// constants
+const FIXTURE_PROJECTS_PATH = path.join(__dirname, 'fixtures', 'checkData');
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
-  getGatewayLanguageCodeAndQuote: () => {
-    return {
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
-    };
-  }
+  getGatewayLanguageCodeAndQuote: () => ({
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'authority',
+  }),
 }));
 
 jest.mock('redux-batched-actions', () => ({
-  batchActions: (actionsBatch) => {
-    return (dispatch) => {
-      if (actionsBatch.length) {
-        for (let action of actionsBatch) {
-          dispatch(action);
-        }
+  batchActions: (actionsBatch) => (dispatch) => {
+    if (actionsBatch.length) {
+      for (let action of actionsBatch) {
+        dispatch(action);
       }
-    };
-  }
+    }
+  },
 }));
 
 
@@ -55,7 +52,7 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
   });
 
   afterEach(() => {
-    if(saveOtherContextSpy) {
+    if (saveOtherContextSpy) {
       saveOtherContextSpy.mockReset();
       saveOtherContextSpy.mockRestore();
     }
@@ -63,12 +60,10 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
 
   it('No selection changes', () => {
     // given
-    const targetVerse =  "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+    const targetVerse = 'Paul, a servant of God and an apostle of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
     const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const store = initStoreData(projectPath, bookId);
-    const results = {
-      selectionsChanged: false
-    };
+    const results = { selectionsChanged: false };
 
     // when
     store.dispatch(SelectionsActions.validateAllSelectionsForVerse(targetVerse, results));
@@ -81,12 +76,10 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
 
   it('apostle selection edited', () => {
     // given
-    const targetVerse =  "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+    const targetVerse = 'Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
     const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const store = initStoreData(projectPath, bookId);
-    const results = {
-      selectionsChanged: false
-    };
+    const results = { selectionsChanged: false };
 
     // when
     store.dispatch(SelectionsActions.validateAllSelectionsForVerse(targetVerse, results));
@@ -99,12 +92,10 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
 
   it('all selections edited', () => {
     // given
-    const targetVerse =  "";
+    const targetVerse = '';
     const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
     const store = initStoreData(projectPath, bookId);
-    const results = {
-      selectionsChanged: false
-    };
+    const results = { selectionsChanged: false };
 
     // when
     store.dispatch(SelectionsActions.validateAllSelectionsForVerse(targetVerse, results));
@@ -119,17 +110,17 @@ describe('SelectionsActions.validateAllSelectionsForVerse', () => {
 describe('SelectionsActions.validateSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
-    gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority",
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'authority',
     selections: [
       {
-        "text": "apostle",
-        "occurrence": 1,
-        "occurrences": 1
-      }
+        'text': 'apostle',
+        'occurrence': 1,
+        'occurrences': 1,
+      },
     ],
     username: 'dummy-test',
-    modifiedTimestamp: generateTimestamp()
+    modifiedTimestamp: generateTimestamp(),
   };
   let saveOtherContextSpy = null;
 
@@ -145,10 +136,9 @@ describe('SelectionsActions.validateSelections', () => {
   });
 
   describe('Active Tool TW', () => {
-
     it('No selection changes', () => {
       // given
-      const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const targetVerse = 'Paul, a servant of God and an apostle of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -168,7 +158,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('No previous selection changes', () => {
       // given
-      const targetVerse = "A verse";
+      const targetVerse = 'A verse';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.contextIdReducer.contextId.reference.verse = 15;
@@ -187,7 +177,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('apostle selection edited', () => {
       // given
-      const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const targetVerse = 'Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -207,7 +197,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('god selection edited in different context', () => {
       // given
-      const targetVerse = "Paul, a servant of Go and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const targetVerse = 'Paul, a servant of Go and an apostle of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -227,7 +217,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('"servant of God" selection with footnote not edited', () => {
       // given
-      const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+      const targetVerse = 'Paul, a servant of God and an apostle of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -247,7 +237,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('"servant of God" selection with footnote and edited', () => {
       // given
-      const targetVerse = "Paul, a servan of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*";
+      const targetVerse = 'Paul, a servan of God and an apostle of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness,  \\f + \\ft lookup servant of God\\f*';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -267,7 +257,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('all selections edited', () => {
       // given
-      const targetVerse = "";
+      const targetVerse = '';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -287,7 +277,7 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('all selections edited current context', () => {
       // given
-      const targetVerse = "";
+      const targetVerse = '';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
@@ -308,13 +298,13 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('all selections edited from different verse context', () => {
       // given
-      const targetVerse = "";
+      const targetVerse = '';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
-      initialState.contextIdReducer.contextId.reference.verse = "4";
-      initialState.contextIdReducer.contextId.groupId = "faith";
+      initialState.contextIdReducer.contextId.reference.verse = '4';
+      initialState.contextIdReducer.contextId.groupId = 'faith';
       const store = mockStore(initialState);
       const results = {};
       const expectedSelectionsChanged = true;
@@ -330,13 +320,13 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('all selections edited from different verse context - no warning', () => {
       // given
-      const targetVerse = "";
+      const targetVerse = '';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath);
       initialState.selectionsReducer = selectionsReducer;
       const contextId = JSON.parse(JSON.stringify(initialState.contextIdReducer.contextId));
-      initialState.contextIdReducer.contextId.reference.verse = "4";
-      initialState.contextIdReducer.contextId.groupId = "faith";
+      initialState.contextIdReducer.contextId.reference.verse = '4';
+      initialState.contextIdReducer.contextId.groupId = 'faith';
       const store = mockStore(initialState);
       const results = {};
       const expectedSelectionsChanged = true;
@@ -352,10 +342,9 @@ describe('SelectionsActions.validateSelections', () => {
   });
 
   describe('Active Tool WA', () => {
-
     it('No selection changes', () => {
       // given
-      const targetVerse = "Paul, a servant of God and an apostle of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const targetVerse = 'Paul, a servant of God and an apostle of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath, WORD_ALIGNMENT);
       initialState.selectionsReducer = selectionsReducer;
@@ -375,21 +364,21 @@ describe('SelectionsActions.validateSelections', () => {
 
     it('apostle selection edited', () => {
       // given
-      const targetVerse = "Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God's chosen people and the knowledge of the truth that agrees with godliness, ";
+      const targetVerse = 'Paul, a servant of God and an apostl2 of Jesus Christ, for the faith of God\'s chosen people and the knowledge of the truth that agrees with godliness, ';
       const projectPath = path.join(FIXTURE_PROJECTS_PATH, 'en_tit');
       const initialState = getInitialStateData(bookId, projectPath, WORD_ALIGNMENT);
       const contextId = _.cloneDeep(initialState.contextIdReducer.contextId);
       contextId.tool = TRANSLATION_WORDS;
       const newSelection = {
         ...selectionsReducer,
-        contextId
+        contextId,
       };
       const selectionsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'selections',
-                                        contextId.reference.bookId,
-                                        contextId.reference.chapter.toString(),
-                                        contextId.reference.verse.toString());
+        contextId.reference.bookId,
+        contextId.reference.chapter.toString(),
+        contextId.reference.verse.toString());
       fs.ensureDirSync(selectionsPath);
-      fs.outputJSONSync(path.join(selectionsPath, newSelection.modifiedTimestamp.replace(/[:"]/g, '_')) + ".json", newSelection);
+      fs.outputJSONSync(path.join(selectionsPath, newSelection.modifiedTimestamp.replace(/[:"]/g, '_')) + '.json', newSelection);
       const store = mockStore(initialState);
       const results = {};
       const expectedSelectionsChanged = true;
@@ -409,17 +398,17 @@ describe('SelectionsActions.validateSelections', () => {
 describe('SelectionsActions.changeSelections', () => {
   const bookId = 'tit';
   const selectionsReducer = {
-    gatewayLanguageCode: "en",
-    gatewayLanguageQuote: "authority",
-    "selections": [
+    'gatewayLanguageCode': 'en',
+    'gatewayLanguageQuote': 'authority',
+    'selections': [
       {
-        "text": "apostle",
-        "occurrence": 1,
-        "occurrences": 1
-      }
+        'text': 'apostle',
+        'occurrence': 1,
+        'occurrences': 1,
+      },
     ],
-    username: 'dummy-test',
-    modifiedTimestamp: generateTimestamp()
+    'username': 'dummy-test',
+    'modifiedTimestamp': generateTimestamp(),
   };
   let saveOtherContextSpy = null;
 
@@ -428,7 +417,7 @@ describe('SelectionsActions.changeSelections', () => {
   });
 
   afterEach(() => {
-    if(saveOtherContextSpy) {
+    if (saveOtherContextSpy) {
       saveOtherContextSpy.mockReset();
       saveOtherContextSpy.mockRestore();
     }
@@ -456,9 +445,9 @@ describe('SelectionsActions.changeSelections', () => {
       reference: {
         bookId: bookId,
         chapter: 1,
-        verse: 1
+        verse: 1,
       },
-      groupId: 'authority'
+      groupId: 'authority',
     };
     const initialState = getInitialStateData(bookId, projectPath);
     initialState.selectionsReducer = selectionsReducer;
@@ -477,7 +466,7 @@ describe('SelectionsActions.showInvalidatedWarnings', () => {
   const bookId = 'tit';
   const alertsReducer = {
     props: [],
-    ignored: []
+    ignored: [],
   };
 
   it('show selection invalid should succeed', () => {
@@ -489,9 +478,9 @@ describe('SelectionsActions.showInvalidatedWarnings', () => {
     const showSelectionInvalidated = true;
     const showAlignmentsInvalidated = false;
     const expectedAction = {
-      "type": "OPEN_ALERT",
-      "id": ALERT_SELECTIONS_INVALIDATED_ID,
-      "message": ALERT_SELECTIONS_INVALIDATED_MSG
+      'type': 'OPEN_ALERT',
+      'id': ALERT_SELECTIONS_INVALIDATED_ID,
+      'message': ALERT_SELECTIONS_INVALIDATED_MSG,
     };
 
     // when
@@ -512,9 +501,9 @@ describe('SelectionsActions.showInvalidatedWarnings', () => {
     const showSelectionInvalidated = true;
     const showAlignmentsInvalidated = false;
     const expectedAction = {
-      "type": "OPEN_ALERT",
-      "id": ALERT_SELECTIONS_INVALIDATED_ID,
-      "message": ALERT_SELECTIONS_INVALIDATED_MSG
+      'type': 'OPEN_ALERT',
+      'id': ALERT_SELECTIONS_INVALIDATED_ID,
+      'message': ALERT_SELECTIONS_INVALIDATED_MSG,
     };
 
     // when
@@ -535,9 +524,9 @@ describe('SelectionsActions.showInvalidatedWarnings', () => {
     const showSelectionInvalidated = false;
     const showAlignmentsInvalidated = true;
     const expectedAction = {
-      "type": "OPEN_ALERT",
-      "id": ALERT_ALIGNMENTS_RESET_ID,
-      "message": ALERT_ALIGNMENTS_RESET_MSG
+      'type': 'OPEN_ALERT',
+      'id': ALERT_ALIGNMENTS_RESET_ID,
+      'message': ALERT_ALIGNMENTS_RESET_MSG,
     };
 
     // when
@@ -558,9 +547,9 @@ describe('SelectionsActions.showInvalidatedWarnings', () => {
     const showSelectionInvalidated = true;
     const showAlignmentsInvalidated = true;
     const expectedAction = {
-      "type": "OPEN_ALERT",
-      "id": ALERT_ALIGNMENTS_RESET_ID,
-      "message": ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG
+      'type': 'OPEN_ALERT',
+      'id': ALERT_ALIGNMENTS_RESET_ID,
+      'message': ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
     };
 
     // when
@@ -585,6 +574,7 @@ function verifyAlert(received, expected) {
 
 function cleanOutDates(actions) {
   const cleanedActions = JSON.parse(JSON.stringify(actions));
+
   for (let action of cleanedActions) {
     if (action.modifiedTimestamp) {
       delete action.modifiedTimestamp;
@@ -598,12 +588,12 @@ function getInitialStateData(bookId, projectPath, tool = TRANSLATION_WORDS) {
     reference: {
       bookId: bookId,
       chapter: 1,
-      verse: 1
+      verse: 1,
     },
     groupId: 'apostle',
-    quote: "ἀποστόλων",
+    quote: 'ἀποστόλων',
     occurrence: 1,
-    tool
+    tool,
   };
   const groupsDataReducer = fs.readJSONSync(path.join(projectPath, 'groupsDataReducer.json'));
   const groupsIndexReducer = fs.readJSONSync(path.join(projectPath, 'groupsIndexReducer.json'));
@@ -612,29 +602,19 @@ function getInitialStateData(bookId, projectPath, tool = TRANSLATION_WORDS) {
     actions: {},
     groupsDataReducer,
     groupsIndexReducer,
-    toolsReducer: {
-      selectedTool: tool
-    },
+    toolsReducer: { selectedTool: tool },
     loginReducer: {
       loggedInUser: false,
-      userdata: {
-        username: 'dummy-test'
-      }
+      userdata: { username: 'dummy-test' },
     },
     projectDetailsReducer: {
       manifest: {
-        project: {
-          id: bookId
-        },
-        toolsSelectedGLs: {
-          translationWords: 'en'
-        }
+        project: { id: bookId },
+        toolsSelectedGLs: { translationWords: 'en' },
       },
       projectSaveLocation: path.resolve(projectPath),
     },
-    contextIdReducer: {
-      contextId
-    }
+    contextIdReducer: { contextId },
   };
   return initialState;
 }

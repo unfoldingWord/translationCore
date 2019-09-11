@@ -10,7 +10,7 @@ const BookDropdownMenu = ({
   updateBookId,
   translate,
   id,
-  className
+  className,
 }) => {
   const bibleBooks = BooksOfTheBible.getAllBibleBooks(translate);
   return (
@@ -18,30 +18,30 @@ const BookDropdownMenu = ({
       id={id+'-wrapper'}
       className={className}
     >
-      <label htmlFor={id} style={{margin: 0}}>
-        <Glyphicon glyph={"book"} style={{ color: "#000000", fontSize: '16px' }} />&nbsp;
+      <label htmlFor={id} style={{ margin: 0 }}>
+        <Glyphicon glyph={'book'} style={{ color: '#000000', fontSize: '16px' }} />&nbsp;
         <span>{translate('projects.book')}</span>&nbsp;
-        <span className={"required"}/>
+        <span className={'required'}/>
       </label>
       <SelectField
         id={id}
         value={bookId}
-        errorText={bookId === "" ? translate('project_validation.field_required') : null}
+        errorText={bookId === '' ? translate('project_validation.field_required') : null}
         errorStyle={{ color: '#cd0033' }}
-        underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+        underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
         onChange={(event, index, value) => {
           updateBookId(value);
         }}
       >
-      <MenuItem key="empty-menu-item" value={""} primaryText={""} />
-      {
-        Object.keys(bibleBooks).map((key, index) => {
-          const BookName = bibleBooks[key];
-          return (
-            <MenuItem key={index.toString() + BookName} value={key} primaryText={BookName} />
-          );
-        })
-      }
+        <MenuItem key="empty-menu-item" value={''} primaryText={''} />
+        {
+          Object.keys(bibleBooks).map((key, index) => {
+            const BookName = bibleBooks[key];
+            return (
+              <MenuItem key={index.toString() + BookName} value={key} primaryText={BookName} />
+            );
+          })
+        }
       </SelectField>
     </div>
   );
@@ -49,7 +49,7 @@ const BookDropdownMenu = ({
 
 BookDropdownMenu.defaultProps = {
   id: 'book-dropdown-menu-selectField',
-  className: 'book-dropdown-menu-select'
+  className: 'book-dropdown-menu-select',
 };
 
 BookDropdownMenu.propTypes = {
@@ -58,7 +58,7 @@ BookDropdownMenu.propTypes = {
   translate: PropTypes.func.isRequired,
   developerMode: PropTypes.bool.isRequired,
   id: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default BookDropdownMenu;

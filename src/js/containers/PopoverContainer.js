@@ -30,23 +30,15 @@ class PopoverContainer extends React.Component {
   }
 }
 
-PopoverContainer.propTypes = {
-  onClosePopover: PropTypes.func.isRequired
-};
+PopoverContainer.propTypes = { onClosePopover: PropTypes.func.isRequired };
 
-const mapStateToProps = (state) => {
-  return {
-    ...state.popoverReducer
-  };
-};
+const mapStateToProps = (state) => ({ ...state.popoverReducer });
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onClosePopover: () => {
-      dispatch(closePopover());
-    }
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  onClosePopover: () => {
+    dispatch(closePopover());
+  },
+});
 
 export default connect(
   mapStateToProps,

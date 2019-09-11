@@ -5,8 +5,8 @@ import path from 'path-extra';
 import * as USFMHelpers from './usfmHelpers';
 import { getBibleIndex } from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
-import {saveTargetBible} from "./Import/importHelpers";
-import {processChapter} from "./Import/tStudioHelpers";
+import { saveTargetBible } from './Import/importHelpers';
+import { processChapter } from './Import/tStudioHelpers';
 
 
 /**
@@ -21,6 +21,7 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
     let parsedUSFM;
     const filename = path.basename(usfmFilePath);
     usfmFilePath = fs.existsSync(usfmFilePath) ? usfmFilePath : path.join(projectPath, filename);
+
     if (fs.existsSync(usfmFilePath)) {
       usfmFile = fs.readFileSync(usfmFilePath).toString();
       parsedUSFM = USFMHelpers.getParsedUSFM(usfmFile);
@@ -28,8 +29,10 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
       console.warn('USFM not found');
       return;
     }
+
     const { chapters } = parsedUSFM;
     let targetBible = {};
+
     Object.keys(chapters).forEach((chapterNumber)=>{
       const chapterObject = chapters[chapterNumber];
       targetBible[chapterNumber] = {};
@@ -54,10 +57,12 @@ export function generateTargetBibleFromTstudioProjectPath(projectPath, manifest)
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
   const bibleIndex = getBibleIndex('en', 'ult');
-  if(!bibleIndex[manifest.project.id]) {
+
+  if (!bibleIndex[manifest.project.id]) {
     console.warn(`Invalid book key ${manifest.project.id}. Expected a book of the Bible.`);
     return;
   }
+
   let header = '';
   const chapters = Object.keys(bibleIndex[manifest.project.id]);
   chapters.unshift( 'front', '0' ); // check for front matter folders
@@ -69,7 +74,7 @@ export function generateTargetBibleFromTstudioProjectPath(projectPath, manifest)
 
 /**
  * Check if the given project path has a target bible already created
- * i.e. en_tit/tit 
+ * i.e. en_tit/tit
  * @param {string} projectPath - Path of the project
  * @param {object} manifest - manifest for the project
  * @return {boolean} - Whether or not the target bible path exists

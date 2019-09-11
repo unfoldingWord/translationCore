@@ -6,117 +6,65 @@ describe('resources reducer', () => {
     expect(reducer(undefined, {})).toEqual({
       bibles: {},
       translationHelps: {},
-      lexicons: {}
+      lexicons: {},
     });
   });
 
   it('should handle ADD_NEW_BIBLE_TO_RESOURCES', () => {
-    const startBefore = {
-      bibles: {}
-    };
+    const startBefore = { bibles: {} };
     const action = {
       type: types.ADD_NEW_BIBLE_TO_RESOURCES,
       languageId: 'en',
       bibleId: 'ulb',
-      bibleData: {
-        hello: 'world'
-      }
+      bibleData: { hello: 'world' },
     };
-    const stateAfter = {
-      bibles: {
-        en: {
-          ulb: {
-            hello: 'world'
-          }
-        }
-      }
-    };
+    const stateAfter = { bibles: { en: { ulb: { hello: 'world' } } } };
     expect(reducer(startBefore, action)).toEqual(stateAfter);
   });
 
   it('should handle UPDATE_TARGET_VERSE', () => {
-    const startBefore = {
-      bibles: {
-        targetLanguage: {
-          targetBible: {
-            '1': {
-              '1': 'hello world'
-            }
-          }
-        }
-      }
-    };
+    const startBefore = { bibles: { targetLanguage: { targetBible: { '1': { '1': 'hello world' } } } } };
     const action = {
       type: types.UPDATE_TARGET_VERSE,
       chapter: 1,
       verse: 1,
-      editedText: 'changed!'
+      editedText: 'changed!',
     };
-    const stateAfter = {
-      bibles: {
-        targetLanguage: {
-          targetBible: {
-            '1': {
-              '1': 'changed!'
-            }
-          }
-        }
-      }
-    };
+    const stateAfter = { bibles: { targetLanguage: { targetBible: { '1': { '1': 'changed!' } } } } };
     expect(reducer(startBefore, action)).toEqual(stateAfter);
   });
 
   it('should handle ADD_TRANSLATIONHELPS_ARTICLE', () => {
-    const startBefore = {
-      translationHelps: {}
-    };
+    const startBefore = { translationHelps: {} };
     const action = {
       type: types.ADD_TRANSLATIONHELPS_ARTICLE,
       resourceType: 'res',
       articleId: 'art',
-      articleData: 'data'
+      articleData: 'data',
     };
-    const stateAfter = {
-      translationHelps: {
-        res: {
-          art: 'data'
-        }
-      }
-    };
+    const stateAfter = { translationHelps: { res: { art: 'data' } } };
     expect(reducer(startBefore, action)).toEqual(stateAfter);
   });
 
   it('should handle ADD_LEXICON_ENTRY', () => {
-    const startBefore = {
-      lexicons: {}
-    };
+    const startBefore = { lexicons: {} };
     const action = {
       type: types.ADD_LEXICON_ENTRY,
       lexiconId: 'lex',
       entryId: 'id',
-      entryData: 'data'
+      entryData: 'data',
     };
-    const stateAfter = {
-      lexicons: {
-        lex: {
-          id: 'data'
-        }
-      }
-    };
+    const stateAfter = { lexicons: { lex: { id: 'data' } } };
     expect(reducer(startBefore, action)).toEqual(stateAfter);
   });
 
   it('should handle CLEAR_RESOURCES_REDUCER', () => {
-    const startBefore = {
-      hello: 'world'
-    };
-    const action = {
-      type: types.CLEAR_RESOURCES_REDUCER
-    };
+    const startBefore = { hello: 'world' };
+    const action = { type: types.CLEAR_RESOURCES_REDUCER };
     const stateAfter = {
       bibles: {},
       translationHelps: {},
-      lexicons: {}
+      lexicons: {},
     };
     expect(reducer(startBefore, action)).toEqual(stateAfter);
   });

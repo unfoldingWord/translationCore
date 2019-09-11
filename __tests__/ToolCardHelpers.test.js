@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import * as ToolCardHelpers from   "../src/js/helpers/ToolCardHelpers";
+import * as ToolCardHelpers from '../src/js/helpers/ToolCardHelpers';
 
 describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch status',()=>{
   const translate = (key) => key;
@@ -156,7 +156,7 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
 
 
     //when
-    const {title, intro} = ToolCardHelpers.parseArticleAbstract(rawText);
+    const { title, intro } = ToolCardHelpers.parseArticleAbstract(rawText);
     const combined = title + intro;
     //then
     expect(combined).toMatchSnapshot();
@@ -174,7 +174,7 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
 
 
     //when
-    const {title, intro} = ToolCardHelpers.parseArticleAbstract(rawText);
+    const { title, intro } = ToolCardHelpers.parseArticleAbstract(rawText);
     const combined = title + intro;
     //then
     expect(combined).toMatchSnapshot();
@@ -190,7 +190,7 @@ describe('Test ToolCardHelpers.getToolCardLaunchStatus() for correct launch stat
 
 
     //when
-    const {title, intro} = ToolCardHelpers.parseArticleAbstract(rawText);
+    const { title, intro } = ToolCardHelpers.parseArticleAbstract(rawText);
     const combined = title + intro;
     //then
     expect(combined).toMatchSnapshot();

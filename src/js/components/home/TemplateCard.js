@@ -1,10 +1,9 @@
 // external
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Card, CardText} from 'material-ui/Card';
+import { Card, CardText } from 'material-ui/Card';
 
 class TemplateCard extends Component {
-
   /**
   * @description generates the button for fallback
   * @param {string} buttonLabel - text in the button
@@ -38,13 +37,15 @@ class TemplateCard extends Component {
   }
 
   render() {
-    const { emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled } = this.props;
+    const {
+      emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled,
+    } = this.props;
     const emptyContent = this.emptyContent(emptyMessage, emptyButtonLabel, emptyButtonOnClick, disabled);
     const content = this.props.content ? this.props.content : emptyContent;
     const cardStyle = { marginTop: '5px' };
     cardStyle.background = (disabled) ? 'var(--background-color-light)' : 'white';
     return (
-      <div style={{flex:1}}>
+      <div style={{ flex:1 }}>
         {this.props.heading}
         <Card style={cardStyle}>
           <CardText>
@@ -62,7 +63,7 @@ TemplateCard.propTypes = {
   emptyMessage: PropTypes.string,
   emptyButtonLabel: PropTypes.string,
   emptyButtonOnClick: PropTypes.func,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 export default TemplateCard;

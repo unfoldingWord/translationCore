@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Checkbox } from 'material-ui';
-import { withLocale } from '../../containers/Locale';
 import { connect } from 'react-redux';
+import { withLocale } from '../../containers/Locale';
 
-const USFMExportDialog = ({ translate, selected, onSelect }) => {
+const USFMExportDialog = ({
+  translate, selected, onSelect,
+}) => {
   function isSelected(selected) {
     return selected === 'usfm3';
   }
@@ -19,17 +21,21 @@ const USFMExportDialog = ({ translate, selected, onSelect }) => {
 
   return (
     <MuiThemeProvider>
-      <div style={{ marginLeft: 20}}>
-        <div style={{ fontSize: 15, marginTop: 20, marginBottom: 20 }}>
-          {translate("alignment_prompt")}
+      <div style={{ marginLeft: 20 }}>
+        <div style={{
+          fontSize: 15, marginTop: 20, marginBottom: 20,
+        }}>
+          {translate('alignment_prompt')}
         </div>
         <div style={{ paddingLeft: 20 }}>
           <div>
             <Checkbox
               iconStyle={{ marginLeft: 10, fill: 'var(--accent-color-dark)' }}
               checked={isSelected(selected)}
-              label={translate("include_alignment_check")}
-              onCheck={() => {toggleSelection(selected)}}
+              label={translate('include_alignment_check')}
+              onCheck={() => {
+                toggleSelection(selected);
+              }}
             />
           </div>
         </div>
@@ -37,14 +43,13 @@ const USFMExportDialog = ({ translate, selected, onSelect }) => {
     </MuiThemeProvider>
   );
 };
+
 USFMExportDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   selected: PropTypes.string,
-  onSelect: PropTypes.func.isRequired
+  onSelect: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  selected: state.settingsReducer.currentSettings.usfmExportType
-});
+const mapStateToProps = (state) => ({ selected: state.settingsReducer.currentSettings.usfmExportType });
 
 export default withLocale(connect(mapStateToProps)(USFMExportDialog));

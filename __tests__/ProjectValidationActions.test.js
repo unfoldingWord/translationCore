@@ -1,17 +1,17 @@
-'use strict';
-jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
-import consts from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import consts from '../src/js/actions/ActionTypes';
 // actions
 import * as ProjectValidationActions from '../src/js/actions/Import/ProjectValidationActions';
+// constants
+import { PROJECTS_PATH, IMPORTS_PATH } from '../src/js/common/constants';
+'use strict';
+jest.mock('fs-extra');
 // Mock store set up
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-// constants
-import {PROJECTS_PATH, IMPORTS_PATH } from '../src/js/common/constants';
 const OLD_PROJECT_NAME_PATH_IN_IMPORTS = path.join(IMPORTS_PATH, 'SELECTED_PROJECT_NAME');
 const OLD_PROJECT_NAME_PATH_IN_PROJECTS = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
 const mockStoreData = {
@@ -20,21 +20,19 @@ const mockStoreData = {
       target_language: {
         id: 'fr',
         name: 'francais',
-        direction: 'ltr'
+        direction: 'ltr',
       },
       project: {
         id: 'eph',
-        name: 'Ephesians'
+        name: 'Ephesians',
       },
       resource: {
         id: 'ult',
-        name: 'unfoldingWord Literal Text'
-      }
-    }
+        name: 'unfoldingWord Literal Text',
+      },
+    },
   },
-  localImportReducer: {
-    selectedProjectFilename: 'SELECTED_PROJECT_NAME'
-  },
+  localImportReducer: { selectedProjectFilename: 'SELECTED_PROJECT_NAME' },
   projectInformationCheckReducer: {},
 };
 
@@ -43,9 +41,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up mock filesystem before each test
-    fs.__setMockFS({
-      [OLD_PROJECT_NAME_PATH_IN_IMPORTS]: ''
-    });
+    fs.__setMockFS({ [OLD_PROJECT_NAME_PATH_IN_IMPORTS]: '' });
   });
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC imports folder', async () => {
@@ -53,7 +49,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
       { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_book' },
-      { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
+      { 'type': consts.OLD_SELECTED_PROJECT_FILENAME, 'oldSelectedProjectFileName': 'SELECTED_PROJECT_NAME' },
     ];
     const store = mockStore(mockStoreData);
 
@@ -67,7 +63,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },
       { type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: 'fr_ult_eph_book' },
-      { "type": consts.OLD_SELECTED_PROJECT_FILENAME, "oldSelectedProjectFileName": "SELECTED_PROJECT_NAME" }
+      { 'type': consts.OLD_SELECTED_PROJECT_FILENAME, 'oldSelectedProjectFileName': 'SELECTED_PROJECT_NAME' },
     ];
     const store = mockStore(mockStoreData);
 
@@ -75,7 +71,7 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  test("updateProjectFolderToNameSpecification renames the project's name in tC imports folder", async () => {
+  test('updateProjectFolderToNameSpecification renames the project\'s name in tC imports folder', async () => {
     const pathLocation = path.join(IMPORTS_PATH, 'fr_eph_ult');
     const expectedLocation = path.join(IMPORTS_PATH, 'fr_ult_eph_book');
     const store = mockStore(mockStoreData);
@@ -85,10 +81,9 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_IMPORTS)).toBeFalsy();
   });
 
-  test("updateProjectFolderToNameSpecification renames the project's name in tC projects folder", async () => {
-    fs.__setMockFS({
-      [OLD_PROJECT_NAME_PATH_IN_PROJECTS]: ''
-    });
+  test('updateProjectFolderToNameSpecification renames the project\'s name in tC projects folder', async () => {
+    fs.__setMockFS({ [OLD_PROJECT_NAME_PATH_IN_PROJECTS]: '' });
+
     const pathLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
     const expectedPathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_book');
     const store = mockStore(mockStoreData);
@@ -98,11 +93,11 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
     expect(fs.existsSync(OLD_PROJECT_NAME_PATH_IN_PROJECTS)).toBeFalsy();
   });
 
-  test("updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found", async () => {
+  test('updateProjectFolderToNameSpecification returns duplicate project alert if a project with the same name is found', async () => {
     const sourceProjectPath = path.join(IMPORTS_PATH, 'fr_ult_eph_book');
-    fs.__setMockFS({
-      [sourceProjectPath]: ''
-    });
+
+    fs.__setMockFS({ [sourceProjectPath]: '' });
+
     const store = mockStore(mockStoreData);
 
     await expect(store.dispatch(ProjectValidationActions.updateProjectFolderToNameSpecification())).rejects.toMatchSnapshot();

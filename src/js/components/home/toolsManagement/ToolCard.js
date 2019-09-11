@@ -1,28 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {Card, CardHeader} from 'material-ui';
-import {Glyphicon} from 'react-bootstrap';
-import { connect } from "react-redux";
-import _ from "lodash";
+import { Card, CardHeader } from 'material-ui';
+import { Glyphicon } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import _ from 'lodash';
 // helpers
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
-import {getTranslation} from '../../../helpers/localizationHelpers';
-import {getGatewayLanguageList, hasValidOL} from "../../../helpers/gatewayLanguageHelpers";
+import { getTranslation } from '../../../helpers/localizationHelpers';
+import { getGatewayLanguageList, hasValidOL } from '../../../helpers/gatewayLanguageHelpers';
 // components
-import ToolCardBoxes from './ToolCardBoxes';
 import Hint from '../../Hint';
-import ToolCardProgress from './ToolCardProgress';
-import GlDropDownList from './GlDropDownList';
-import ToolCardNotificationBadges from './ToolCardNotificationBadges';
-// selectors
 import {
   getProjectBookId,
   getSetting,
   getSelectedToolName,
-} from "../../../selectors";
+} from '../../../selectors';
+import {
+  WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+} from '../../../common/constants';
+import ToolCardBoxes from './ToolCardBoxes';
+import ToolCardProgress from './ToolCardProgress';
+import GlDropDownList from './GlDropDownList';
+import ToolCardNotificationBadges from './ToolCardNotificationBadges';
+// selectors
 // consts
-import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../../../common/constants';
 
 class ToolCard extends Component {
   constructor(props) {
@@ -37,7 +39,7 @@ class ToolCard extends Component {
       selectedCategoriesChanged: false,
       glSelectedChanged: false,
       selectedGL: '',
-      gatewayLanguageList: null
+      gatewayLanguageList: null,
     };
   }
 
@@ -45,11 +47,14 @@ class ToolCard extends Component {
     let {
       tool,
       bookId,
-      glSelected: selectedGL
+      glSelected: selectedGL,
     } = this.props;
     const gatewayLanguageList = getGatewayLanguageList(bookId, tool.name);
+
     // if there is only one gateway Language then select it as the GL for the tool card.
-    if (gatewayLanguageList.length === 1) selectedGL = gatewayLanguageList[0].code;
+    if (gatewayLanguageList.length === 1) {
+      selectedGL = gatewayLanguageList[0].code;
+    }
     this.selectionChange(selectedGL);
     this.setState({ selectedGL, gatewayLanguageList });
   }
@@ -60,25 +65,28 @@ class ToolCard extends Component {
 
   componentDidUpdate(prevProps) {
     const glSelectedChanged = prevProps.glSelected !== this.props.glSelected;
-    if (glSelectedChanged) this.setState({ glSelectedChanged });
-    if(!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
+
+    if (glSelectedChanged) {
+      this.setState({ glSelectedChanged });
+    }
+
+    if (!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
       this.setState({ selectedCategoriesChanged: true });
       this.loadProgress();
     }
   }
 
   loadProgress() {
-    const {tool, actions} = this.props;
-    const {progress} = this.state;
+    const { tool, actions } = this.props;
+    const { progress } = this.state;
 
     setTimeout(() => {
       const results = {};
       actions.getProjectProgressForTools(tool.name, results);
       const toolProgress = results.progress;
-      if(progress !== toolProgress) {
-        this.setState({
-          progress: toolProgress ? toolProgress : 0
-        });
+
+      if (progress !== toolProgress) {
+        this.setState({ progress: toolProgress ? toolProgress : 0 });
       }
     }, 0);
   }
@@ -86,7 +94,7 @@ class ToolCard extends Component {
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
       this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
-      this.setState({selectedGL});
+      this.setState({ selectedGL });
       this.loadProgress();
     }
   }
@@ -94,16 +102,20 @@ class ToolCard extends Component {
   getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories) {
     const toolsWithCategories = [TRANSLATION_WORDS , TRANSLATION_NOTES];
     let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
+
     if (!launchDisableMessage) { // if no errors, make sure we have original language
       const olBookPath = hasValidOL(id);
+
       if (!olBookPath) {
         launchDisableMessage = translate('tools.book_not_supported');
       }
     }
+
     if (!launchDisableMessage && !developerMode) { // if no errors and not developer mode , make sure we have a gateway language
-      const {gatewayLanguageList} = this.state;
+      const { gatewayLanguageList } = this.state;
       launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
     }
+
     if (!launchDisableMessage && (toolsWithCategories.includes(name) && selectedCategories.length === 0)) {
       launchDisableMessage = translate('tools.no_checks_selected');
     }
@@ -115,7 +127,7 @@ class ToolCard extends Component {
    * Handles selecting the tool
    */
   handleSelect() {
-    const {onSelect, tool} = this.props;
+    const { onSelect, tool } = this.props;
     onSelect(tool.name);
   }
 
@@ -125,10 +137,11 @@ class ToolCard extends Component {
       toggleHomeView,
       selectedToolName,
       tool,
-      actions: {warnOnInvalidations}
+      actions: { warnOnInvalidations },
     } = this.props;
     const { selectedCategoriesChanged, glSelectedChanged } = this.state;
     const newSelectedToolName = tool.name;
+
     if (isOLBookVersionMissing) {
       // Show dialog with option to download missing resource
       this.props.onMissingResource();
@@ -157,46 +170,52 @@ class ToolCard extends Component {
       selectedCategories,
       availableCategories,
     } = this.props;
-    const {progress, selectedGL, gatewayLanguageList} = this.state;
+    const {
+      progress, selectedGL, gatewayLanguageList,
+    } = this.state;
     const launchDisableMessage = this.getLaunchDisableMessage(bookId, developerMode, translate, tool.name, selectedCategories);
     let desc_key = null;
     let showCheckBoxes = false;
 
     switch (tool.name) {
-      case WORD_ALIGNMENT:
-        desc_key = 'tools.alignment_description';
-        break;
+    case WORD_ALIGNMENT:
+      desc_key = 'tools.alignment_description';
+      break;
 
-      case TRANSLATION_WORDS:
-        showCheckBoxes = true;
-        desc_key = 'tools.tw_part1_description';
-        break;
+    case TRANSLATION_WORDS:
+      showCheckBoxes = true;
+      desc_key = 'tools.tw_part1_description';
+      break;
 
-      case TRANSLATION_NOTES:
-        showCheckBoxes = true;
-        break;
+    case TRANSLATION_NOTES:
+      showCheckBoxes = true;
+      break;
 
-      default:
-        break;
+    default:
+      break;
     }
+
     let descriptionLocalized = tool.description;
+
     if (desc_key) {
       descriptionLocalized = getTranslation(translate, desc_key, tool.description);
     }
 
     return (
       <MuiThemeProvider>
-        <Card style={{margin: "6px 0px 10px"}}>
+        <Card style={{ margin: '6px 0px 10px' }}>
           <img
             alt={tool.name}
-            style={{float: "left", height: "90px", margin: "10px"}}
+            style={{
+              float: 'left', height: '90px', margin: '10px',
+            }}
             src={tool.badge}
           />
           <CardHeader
             title={tool.title}
-            titleStyle={{fontWeight: "bold"}}
+            titleStyle={{ fontWeight: 'bold' }}
             subtitle={tool.version}
-            style={{display: 'flex', justifyContent: 'space-between'}}>
+            style={{ display: 'flex', justifyContent: 'space-between' }}>
             <ToolCardNotificationBadges tool={tool} translate={translate} selectedCategories={selectedCategories} />
           </CardHeader><br />
           <ToolCardProgress progress={progress} />
@@ -218,22 +237,28 @@ class ToolCard extends Component {
           }
           {this.state.showDescription ?
             (<div>
-              <span style={{fontWeight: "bold", fontSize: "16px", margin: "0px 10px 10px"}}>{translate('tools.description')}</span>
-              <p style={{padding: "10px"}}>
+              <span style={{
+                fontWeight: 'bold', fontSize: '16px', margin: '0px 10px 10px',
+              }}>{translate('tools.description')}</span>
+              <p style={{ padding: '10px' }}>
                 {descriptionLocalized}
               </p>
             </div>) : (<div />)
           }
-          <div style={{display: "flex", justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center'}}>
-            <div style={{display: "flex", justifyContent: "space-between"}}>
+          <div style={{
+            display: 'flex', justifyContent: 'space-between', flexDirection: 'row', alignItems: 'center',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div
-                style={{padding: "10px 10px 0px", fontSize: "18px", cursor: "pointer"}}
-                onClick={() => this.setState({showDescription: !this.state.showDescription})}
+                style={{
+                  padding: '10px 10px 0px', fontSize: '18px', cursor: 'pointer',
+                }}
+                onClick={() => this.setState({ showDescription: !this.state.showDescription })}
               >
                 <span>{this.state.showDescription ? translate('tools.see_less') : translate('tools.see_more')}</span>
                 <Glyphicon
-                  style={{fontSize: "18px", margin: "0px 0px 0px 6px"}}
-                  glyph={this.state.showDescription ? "chevron-up" : "chevron-down"}
+                  style={{ fontSize: '18px', margin: '0px 0px 0px 6px' }}
+                  glyph={this.state.showDescription ? 'chevron-up' : 'chevron-down'}
                 />
               </div>
             </div>
@@ -253,7 +278,7 @@ class ToolCard extends Component {
                 disabled={launchDisableMessage ? true : false}
                 className='btn-prime'
                 onClick={this.onLaunchClick}
-                style={{width: '90px', margin: '10px'}}
+                style={{ width: '90px', margin: '10px' }}
               >
                 {translate('buttons.launch_button')}
               </button>
@@ -277,6 +302,8 @@ ToolCard.propTypes = {
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
     warnOnInvalidations: PropTypes.func.isRequired,
+    showPopover: PropTypes.func.isRequired,
+    closePopover: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
@@ -284,15 +311,13 @@ ToolCard.propTypes = {
   onMissingResource: PropTypes.func.isRequired,
   selectedToolName: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.bool
+    PropTypes.bool,
   ]),
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
 };
 
-ToolCard.contextTypes = {
-  store: PropTypes.any
-};
+ToolCard.contextTypes = { store: PropTypes.any };
 
 const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),

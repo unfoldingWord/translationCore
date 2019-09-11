@@ -1,4 +1,4 @@
-import {flattenKeys} from '../scripts/locale/common';
+import { flattenKeys } from '../scripts/locale/common';
 
 describe('flatten keys', () => {
   it('flattens an empty object', () => {
@@ -8,19 +8,13 @@ describe('flatten keys', () => {
   });
 
   it('flattens one key', () => {
-    const obj = {
-      test: 'value'
-    };
+    const obj = { test: 'value' };
     const result = flattenKeys(obj);
     expect(result).toEqual(['test']);
   });
 
   it('flattens one key', () => {
-    const obj = {
-      hello: {
-        world: 'value'
-      }
-    };
+    const obj = { hello: { world: 'value' } };
     const result = flattenKeys(obj);
     expect(result).toEqual(['hello.world']);
   });
@@ -29,8 +23,8 @@ describe('flatten keys', () => {
     const obj = {
       hello: {
         world: 'value',
-        dude: 'value'
-      }
+        dude: 'value',
+      },
     };
     const result = flattenKeys(obj);
     expect(result).toEqual(['hello.world', 'hello.dude']);
@@ -40,12 +34,12 @@ describe('flatten keys', () => {
     const obj = {
       hello: {
         world: 'value',
-        dude: 'value'
+        dude: 'value',
       },
       greetings: {
         hello: 'value',
-        hi: 'value'
-      }
+        hi: 'value',
+      },
     };
     const result = flattenKeys(obj);
     expect(result).toEqual(['hello.world', 'hello.dude', 'greetings.hello', 'greetings.hi']);

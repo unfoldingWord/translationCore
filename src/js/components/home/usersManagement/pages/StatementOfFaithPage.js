@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Glyphicon} from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 
-const StatementOfFaithPage = ({onBackClick, translate}) => (
+const StatementOfFaithPage = ({ onBackClick, translate }) => (
   <div>
     <button
       className="btn-second"
       onClick={onBackClick}>
-      <Glyphicon glyph="share-alt" style={{transform: "scaleX(-1)"}} />&nbsp;
+      <Glyphicon glyph="share-alt" style={{ transform: 'scaleX(-1)' }} />&nbsp;
       {translate('buttons.back_button')}
     </button>
-    <div style={{color: "black", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+    <div style={{
+      color: 'black', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+    }}>
       <h4><b>Statement of Faith</b></h4>
       <p>
         <i>
@@ -27,7 +29,7 @@ const StatementOfFaithPage = ({onBackClick, translate}) => (
       <p>
         Essential beliefs are what define a follower of Jesus Christ and can never be compromised or ignored.
       </p>
-      <ul style={{marginLeft: "30px", padding: "10px"}}>
+      <ul style={{ marginLeft: '30px', padding: '10px' }}>
         <li>
           We believe the Bible to be the only inspired, inerrant, sufficient, authoritative Word of God.
         </li>
@@ -82,7 +84,7 @@ const StatementOfFaithPage = ({onBackClick, translate}) => (
 
 StatementOfFaithPage.propTypes = {
   translate: PropTypes.func.isRequired,
-  onBackClick: PropTypes.func.isRequired
+  onBackClick: PropTypes.func.isRequired,
 };
 
 export default StatementOfFaithPage;

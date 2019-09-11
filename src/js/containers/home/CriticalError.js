@@ -10,20 +10,16 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
-    margin: '40px'
+    margin: '40px',
   },
   content: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '50px'
+    margin: '50px',
   },
-  logo: {
-    margin: '0px 30px 0px 0px'
-  },
-  text: {
-    margin: '0px'
-  }
+  logo: { margin: '0px 30px 0px 0px' },
+  text: { margin: '0px' },
 };
 
 function CriticalError({ translate, returnHome }) {

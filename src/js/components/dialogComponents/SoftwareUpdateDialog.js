@@ -8,26 +8,27 @@ export const STATUS_UPDATE = 'update_available';
 export const STATUS_OK = 'ok';
 
 const makeMessage = (properties) => {
-  const {status, update, translate} = properties;
-  if(status ===  STATUS_LOADING) {
+  const {
+    status, update, translate,
+  } = properties;
+
+  if (status === STATUS_LOADING) {
     return translate('updates.checking_for_app');
-  } else if(status === STATUS_UPDATE) {
+  } else if (status === STATUS_UPDATE) {
     const message = translate('updates.update_available', {
       app: translate('_.app_name'),
       old_version: update.installed_version,
-      new_version: update.latest_version
+      new_version: update.latest_version,
     });
     const size = Math.round(update.size / 1024 / 1024);
     return <div>
       <p>{message}</p>
-      <p>{translate('updates.file_size', {file_size: `${size} MB`})}</p>
+      <p>{translate('updates.file_size', { file_size: `${size} MB` })}</p>
     </div>;
-  } else if(status === STATUS_ERROR) {
+  } else if (status === STATUS_ERROR) {
     return translate('updates.unable_to_check');
-  } else if(status === STATUS_OK) {
-    return translate('running_latest_version', {
-      app: translate('_.app_name')
-    });
+  } else if (status === STATUS_OK) {
+    return translate('running_latest_version', { app: translate('_.app_name') });
   }
 };
 
@@ -44,9 +45,10 @@ const makeMessage = (properties) => {
  * @property {object} [update] - the available update
  */
 class SoftwareUpdateDialog extends React.Component {
-
   render() {
-    const {open, translate, update, status, onClose, onSubmit} = this.props;
+    const {
+      open, translate, update, status, onClose, onSubmit,
+    } = this.props;
 
     const message = makeMessage(this.props);
     const primaryLabel = update ? translate('updates.download') : translate('buttons.ok_button');
@@ -54,12 +56,12 @@ class SoftwareUpdateDialog extends React.Component {
 
     return (
       <BaseDialog title={translate('alert')}
-                  open={open}
-                  actionsEnabled={status !== STATUS_LOADING}
-                  primaryLabel={primaryLabel}
-                  secondaryLabel={secondaryLabel}
-                  onClose={onClose}
-                  onSubmit={onSubmit}>
+        open={open}
+        actionsEnabled={status !== STATUS_LOADING}
+        primaryLabel={primaryLabel}
+        secondaryLabel={secondaryLabel}
+        onClose={onClose}
+        onSubmit={onSubmit}>
         <div id="message">
           {message}
         </div>
@@ -77,11 +79,9 @@ SoftwareUpdateDialog.propTypes = {
   update: PropTypes.shape({
     size: PropTypes.number.isRequired,
     latest_version: PropTypes.string.isRequired,
-    installed_version: PropTypes.string.isRequired
-  })
+    installed_version: PropTypes.string.isRequired,
+  }),
 };
-SoftwareUpdateDialog.defaultProps = {
-  status: STATUS_LOADING
-};
+SoftwareUpdateDialog.defaultProps = { status: STATUS_LOADING };
 
 export default SoftwareUpdateDialog;

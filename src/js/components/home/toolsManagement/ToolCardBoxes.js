@@ -1,49 +1,47 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Glyphicon} from 'react-bootstrap';
+import { Glyphicon } from 'react-bootstrap';
 // components
-import CategoryCheckbox from './CategoryCheckbox';
-import SubcategoryCheckbox from './SubcategoryCheckbox';
-import Hint from "../../Hint";
+import Hint from '../../Hint';
 // helpers
-import {loadArticleData} from "../../../helpers/ResourcesHelpers";
-import {parseArticleAbstract} from "../../../helpers/ToolCardHelpers";
+import { loadArticleData } from '../../../helpers/ResourcesHelpers';
+import { parseArticleAbstract } from '../../../helpers/ToolCardHelpers';
 import {
   flattenNotesCategories,
   hasAllNeededData,
-  sortSubcategories
+  sortSubcategories,
 } from '../../../helpers/toolCardBoxesHelpers';
 // constants
 import { TRANSLATION_WORDS, TRANSLATION_ACADEMY } from '../../../common/constants';
+import SubcategoryCheckbox from './SubcategoryCheckbox';
+import CategoryCheckbox from './CategoryCheckbox';
 
 const styles = {
   categoriesDiv: {
     display: 'flex',
     flexWrap: 'wrap',
     margin: '0 0 5 0',
-    width: '100%'
+    width: '100%',
   },
   glyphicon: {
     fontSize: '18px',
     margin: '0 12px 0 0',
     width: '20px',
-    textAlign: 'right'
+    textAlign: 'right',
   },
   subcategoriesDiv: {
     display: 'flex',
     flexWrap: 'wrap',
     alignItems: 'left',
     marginBottom: 5,
-    width: '100%'
-  }
+    width: '100%',
+  },
 };
 
 class ToolCardBoxes extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      expanded: {}
-    };
+    this.state = { expanded: {} };
     this.showExpanded = this.showExpanded.bind(this);
   }
 
@@ -55,13 +53,14 @@ class ToolCardBoxes extends React.Component {
    * Load first 600 characters of tA articles for available categories in this project
    */
   loadArticles(){
-    let fullText = "";
+    let fullText = '';
     let articles = {};
     const { availableCategories, selectedGL } = this.props;
 
-    for(const cat in availableCategories) {
+    for (const cat in availableCategories) {
       const category = availableCategories[cat];
-      for(const group in category) {
+
+      for (const group in category) {
         fullText = loadArticleData(
           TRANSLATION_ACADEMY,
           category[group].id,
@@ -79,15 +78,15 @@ class ToolCardBoxes extends React.Component {
     this.setState({
       expanded: {
         ...this.state.expanded,
-        [id]: !this.state.expanded[id]
-      }
+        [id]: !this.state.expanded[id],
+      },
     });
   }
 
   getArticleText(categoryId) {
     const fullText = this.state.articles[categoryId];
-    const {title, intro} = parseArticleAbstract(fullText);
-    return title + ": " + intro;
+    const { title, intro } = parseArticleAbstract(fullText);
+    return title + ': ' + intro;
   }
 
   render() {
@@ -102,7 +101,7 @@ class ToolCardBoxes extends React.Component {
     const lookupNames = flattenNotesCategories();
 
     return (
-      <div style={{margin: '0 2% 0 6%'}}>
+      <div style={{ margin: '0 2% 0 6%' }}>
         {
           Object.keys(availableCategories).map((parentCategory, index) => {
             const subcategories = availableCategories[parentCategory];
@@ -112,8 +111,8 @@ class ToolCardBoxes extends React.Component {
             if (hasAllNeededData(toolName, parentCategory, subcategories, lookupNames)) {
               return (
                 <div key={index} style={styles.categoriesDiv}>
-                  <div style={{display: 'flex', width: '92%'}}>
-                    <div style={{width: '38px'}}>
+                  <div style={{ display: 'flex', width: '92%' }}>
+                    <div style={{ width: '38px' }}>
                       <CategoryCheckbox
                         toolName={toolName}
                         onCategoryChecked={onCategoryChecked}
@@ -127,7 +126,7 @@ class ToolCardBoxes extends React.Component {
                   </div>
                   <React.Fragment>
                     {toolName !== TRANSLATION_WORDS &&
-                      <div style={{alignSelf: 'flex-end'}}>
+                      <div style={{ alignSelf: 'flex-end' }}>
                         <Glyphicon
                           style={styles.glyphicon}
                           glyph={this.state.expanded[parentCategory] ? 'chevron-up' : 'chevron-down'}
@@ -138,8 +137,8 @@ class ToolCardBoxes extends React.Component {
                     {this.state.expanded[parentCategory] && (
                       <div key={index} style={styles.subcategoriesDiv}>
                         {sortSubcategories(subcategories).map((subcategory, index) => (
-                          <div key={index} style={{display: 'flex', width: '48%'}}>
-                            <div style={{marginLeft: '36px', marginRight: '10px'}}>
+                          <div key={index} style={{ display: 'flex', width: '48%' }}>
+                            <div style={{ marginLeft: '36px', marginRight: '10px' }}>
                               <SubcategoryCheckbox
                                 subcategory={subcategory}
                                 toolName={toolName}
@@ -148,7 +147,7 @@ class ToolCardBoxes extends React.Component {
                               />
                             </div>
                             <Hint position={((index % 2) === 1) ? 'top-left' : 'top-right'} label={this.getArticleText(subcategory.id)} size={'large'}>
-                              <div style={{cursor: "pointer"}} >
+                              <div style={{ cursor: 'pointer' }} >
                                 {subcategory.name}
                               </div>
                             </Hint>

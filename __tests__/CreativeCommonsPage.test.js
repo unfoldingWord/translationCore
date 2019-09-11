@@ -1,13 +1,13 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {shallow, configure} from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import CreativeCommonsPage from '../src/js/components/home/usersManagement/pages/CreativeCommonsPage';
 
 beforeAll(() => {
-  configure({adapter: new Adapter()});
+  configure({ adapter: new Adapter() });
 });
 
 test('snapshot', () => {

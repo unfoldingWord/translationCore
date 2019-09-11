@@ -3,25 +3,24 @@ import { RadioButton } from 'material-ui/RadioButton';
 import PropTypes from 'prop-types';
 
 class VersionCard extends Component {
-
   getTextObjectSection(verseData) {
-    return Object.keys(verseData).map((verseNumber) => {
-      return (
-        <div style={{ fontSize: 14 }} key={verseNumber}>
-          <b>{verseNumber}</b>: {verseData[verseNumber]}
-        </div>
-      );
-    });
+    return Object.keys(verseData).map((verseNumber) => (
+      <div style={{ fontSize: 14 }} key={verseNumber}>
+        <b>{verseNumber}</b>: {verseData[verseNumber]}
+      </div>
+    ));
   }
 
   render() {
-    let {checked, index, mergeConflictIndex, textData, translate } = this.props;
+    let {
+      checked, index, mergeConflictIndex, textData, translate,
+    } = this.props;
     return (
       <div style={{ borderBottom: '1px solid black' }}>
         <div style={{ padding: 15 }}>
           <RadioButton
             checked={checked}
-            label={translate('version', {'version': Number(index) + 1})}
+            label={translate('version', { 'version': Number(index) + 1 })}
             onCheck={() => this.props.onCheck(mergeConflictIndex, index, true)}
           />
           {this.getTextObjectSection(textData)}
@@ -37,7 +36,7 @@ VersionCard.propTypes = {
   textData: PropTypes.object.isRequired,
   onCheck: PropTypes.func.isRequired,
   checked: PropTypes.any,
-  translate: PropTypes.func.isRequired
+  translate: PropTypes.func.isRequired,
 };
 
 export default VersionCard;
