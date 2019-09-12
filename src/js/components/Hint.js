@@ -6,14 +6,14 @@ class Hint extends Component {
     let position = this.props.position || 'top';
     let size = this.props.size || 'medium';
     let className = `hint--${position} hint--${size}`;
-    let label = this.props.label || "";
+    let label = this.props.label || '';
     let enable = true;
 
-    if( this.props.hasOwnProperty("enabled") ) {
-     enable = this.props.enabled;
+    if ( this.props.hasOwnProperty('enabled') ) {
+      enable = this.props.enabled;
     }
 
-    if(enable===true) {
+    if (enable===true) {
       return (
         <span
           className={className}
@@ -32,11 +32,11 @@ class Hint extends Component {
 }
 
 Hint.propTypes = {
-    children: PropTypes.any,
-    size: PropTypes.any,
-    position: PropTypes.any,
-    label: PropTypes.any,
-    enabled: PropTypes.any
+  children: PropTypes.any,
+  size: PropTypes.any,
+  position: PropTypes.any,
+  label: PropTypes.any,
+  enabled: PropTypes.any,
 };
 
 export default Hint;

@@ -13,23 +13,21 @@ export const mockResetLoadedCategories = jest.fn();
 export const mockRemoveStaleCategoriesFromCurrent = jest.fn();
 export const mockGetLoadedCategories = jest.fn(() => ('mockCategories'));
 
-const mock = jest.fn().mockImplementation(() => {
-  return {
-    setCategoryGroupIds: mockSetCategoryGroupIds,
-    getCategoriesDir: mockGetCategoriesDir,
-    isCategoryLoaded: mockIsCategoryLoaded,
-    setCategoryLoaded: mockSetCategoryLoaded,
-    setCurrentCategories: mockSetCurrentCategories,
-    importCategoryGroupData: mockImportCategoryGroupData,
-    getBookId: mockGetBookId,
-    getSelectedCategories: mockGetSelectedCategories,
-    setSelectedCategories: mockSetSelectedCategories,
-    resetCategoryGroupIds: mockResetCategoryGroupIds,
-    hasNewGroupsData: mockHasNewGroupsData,
-    resetLoadedCategories: mockResetLoadedCategories,
-    removeStaleCategoriesFromCurrent: mockRemoveStaleCategoriesFromCurrent,
-    getLoadedCategories: mockGetLoadedCategories
-  };
-});
+const mock = jest.fn().mockImplementation(() => ({
+  setCategoryGroupIds: mockSetCategoryGroupIds,
+  getCategoriesDir: mockGetCategoriesDir,
+  isCategoryLoaded: mockIsCategoryLoaded,
+  setCategoryLoaded: mockSetCategoryLoaded,
+  setCurrentCategories: mockSetCurrentCategories,
+  importCategoryGroupData: mockImportCategoryGroupData,
+  getBookId: mockGetBookId,
+  getSelectedCategories: mockGetSelectedCategories,
+  setSelectedCategories: mockSetSelectedCategories,
+  resetCategoryGroupIds: mockResetCategoryGroupIds,
+  hasNewGroupsData: mockHasNewGroupsData,
+  resetLoadedCategories: mockResetLoadedCategories,
+  removeStaleCategoriesFromCurrent: mockRemoveStaleCategoriesFromCurrent,
+  getLoadedCategories: mockGetLoadedCategories,
+}));
 
 export default mock;

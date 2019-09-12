@@ -1,10 +1,10 @@
-jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
 import * as ProjectImportFilesystemHelpers from '../src/js/helpers/Import/ProjectImportFilesystemHelpers';
 // constants
 import { IMPORTS_PATH } from '../src/js/common/constants';
+jest.mock('fs-extra');
 
 describe('ProjectImportFilesystemActions', () => {
   afterAll(() => {

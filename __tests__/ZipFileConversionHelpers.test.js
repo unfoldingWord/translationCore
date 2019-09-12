@@ -1,14 +1,14 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
-'use strict';
-jest.mock('fs-extra');
-jest.mock('adm-zip');
 import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as ZipFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/ZipFileConversionHelpers';
 // constants
 import { IMPORTS_PATH, TEMP_IMPORT_PATH } from '../src/js/common/constants';
+'use strict';
+jest.mock('fs-extra');
+jest.mock('adm-zip');
 
 describe('ZipFileConversionHelpers.convertToProjectFormat', () => {
   const projectName = 'id_tit_text_ulb';
@@ -16,7 +16,7 @@ describe('ZipFileConversionHelpers.convertToProjectFormat', () => {
   beforeEach(() => {
     fs.__setMockFS({
       [IMPORTS_PATH]: [],
-      [TEMP_IMPORT_PATH]: []
+      [TEMP_IMPORT_PATH]: [],
     });
   });
 

@@ -10,19 +10,13 @@ import consts from './ActionTypes';
  * @param {string} groupIndex - The object of group indecies
  * @return {object} action object.
  */
-export const loadGroupsIndex = (groupsIndex) => {
-  return ((dispatch) => {
-    dispatch({
-      type: consts.LOAD_GROUPS_INDEX,
-      groupsIndex
-    });
+export const loadGroupsIndex = (groupsIndex) => ((dispatch) => {
+  dispatch({
+    type: consts.LOAD_GROUPS_INDEX,
+    groupsIndex,
   });
-};
+});
 
-export const updateRefreshCount = () => {
-  return ((dispatch) => {
-    dispatch({
-      type: consts.UPDATE_REFRESH_COUNT_GROUPS_INDEX
-    });
-  });
-};
+export const updateRefreshCount = () => ((dispatch) => {
+  dispatch({ type: consts.UPDATE_REFRESH_COUNT_GROUPS_INDEX });
+});

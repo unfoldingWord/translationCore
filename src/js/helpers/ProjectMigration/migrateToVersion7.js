@@ -1,8 +1,8 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import * as Version from './VersionUtils';
 import * as ProjectOverwriteHelpers from '../ProjectOverwriteHelpers';
 import { generateTimestamp } from '../index';
+import * as Version from './VersionUtils';
 
 export const MIGRATE_MANIFEST_VERSION = 7;
 
@@ -14,7 +14,10 @@ export const MIGRATE_MANIFEST_VERSION = 7;
  */
 export default (projectPath, userName) => {
   Version.getVersionFromManifest(projectPath); // ensure manifest converted for tc
-  if (shouldRun(projectPath)) run(projectPath, userName);
+
+  if (shouldRun(projectPath)) {
+    run(projectPath, userName);
+  }
 };
 
 /**
@@ -35,7 +38,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath, userName) => {
-  console.log("migrateToVersion7(" + projectPath + ")");
+  console.log('migrateToVersion7(' + projectPath + ')');
   migrateToVersion7(projectPath, userName);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
@@ -50,33 +53,41 @@ const run = (projectPath, userName) => {
 const migrateToVersion7 = (projectPath, userName) => {
   try {
     const manifestPath = path.join(projectPath, 'manifest.json');
-    if(fs.existsSync(manifestPath)) {
+
+    if (fs.existsSync(manifestPath)) {
       const manifest = fs.readJsonSync(manifestPath);
       const bookId = manifest.project.id;
       const verseEditsPath = path.join(projectPath, '.apps', 'translationCore', 'checkData', 'verseEdits', bookId);
+
       const isChapterDirectory = name => {
         const fullPath = path.join(verseEditsPath, name);
         return fs.lstatSync(fullPath).isDirectory() && name.match(/^\d/i);
       };
+
       fs.readdirSync(verseEditsPath).filter(isChapterDirectory).forEach(chapter => {
         const chapterPath = path.join(projectPath, bookId, chapter+'.json');
         const chapterData = fs.readJsonSync(chapterPath);
         const verseEditsChapterPath = path.join(verseEditsPath, chapter);
+
         const isVerseDirectory = name => {
           const fullPath = path.join(verseEditsChapterPath, name);
           return fs.lstatSync(fullPath).isDirectory() && name.match(/^\d/i);
         };
+
         fs.readdirSync(verseEditsChapterPath).filter(isVerseDirectory).forEach(verse => {
           const verseEditsVersePath = path.join(verseEditsChapterPath, verse);
           const verseEdits = fs.readdirSync(verseEditsVersePath).filter(name => path.extname(name) === '.json');
+
           if (verseEdits.length) {
             const verseEditFileName = verseEdits.sort().pop();
             const verseEditFilePath = path.join(verseEditsVersePath, verseEditFileName);
             const latestVerseEdit = fs.readJSONSync(verseEditFilePath);
             const lastVerse = latestVerseEdit['verseAfter'];
             const currentVerse = chapterData[verse];
+
             if (lastVerse != currentVerse) {
               let modifiedTimestamp = generateTimestamp(fs.statSync(chapterPath).mtime);
+
               if (modifiedTimestamp < verseEditFileName.split('.').slice(0, -1).join('.')) {
                 modifiedTimestamp = generateTimestamp();
               }
@@ -86,9 +97,9 @@ const migrateToVersion7 = (projectPath, userName) => {
         });
       });
     } else {
-      console.log("Manifest not found.");
+      console.log('Manifest not found.');
     }
-  } catch(e){
-    console.log("Migration error: " + e.toString());
+  } catch (e){
+    console.log('Migration error: ' + e.toString());
   }
 };

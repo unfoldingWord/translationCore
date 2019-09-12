@@ -1,10 +1,12 @@
 // actions
-import { loadBibleBook } from './ResourcesActions';
 // selectors
-import { getSourceBookManifest, getProjectBookId, getProjectManifest } from "../selectors";
+import {
+  getSourceBookManifest, getProjectBookId, getProjectManifest,
+} from '../selectors';
 // helpers
 import { getTsvOLVersion } from '../helpers/originalLanguageResourcesHelpers';
 import { TRANSLATION_NOTES } from '../common/constants';
+import { loadBibleBook } from './ResourcesActions';
 
 /**
  * Loads the latest or an older version of the original

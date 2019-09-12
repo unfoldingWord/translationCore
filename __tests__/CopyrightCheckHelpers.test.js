@@ -1,13 +1,13 @@
 /* eslint-env jest */
 /* eslint-disable no-console */
-'use strict';
-
-jest.mock('fs-extra');
-
 import fs from 'fs-extra';
 import path from 'path-extra';
 // helpers
 import * as CopyrightCheckHelpers from '../src/js/helpers/CopyrightCheckHelpers';
+
+'use strict';
+
+jest.mock('fs-extra');
 
 const ccBYSA = `# License
 ## Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
@@ -42,10 +42,9 @@ describe('CopyrightCheckHelpers.saveProjectLicense', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     let directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
+
     // Set up mocked out filePath and data in mock filesystem before each test
-    fs.__setMockFS({
-      [directory]: ccBYSA
-    });
+    fs.__setMockFS({ [directory]: ccBYSA });
   });
   afterEach(() => {
     // reset mock filesystem data
@@ -63,10 +62,9 @@ describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
     fs.__resetMockFS();
     // Set up some mocked out file info before each test
     let directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
+
     // Set up mocked out filePath and data in mock filesystem before each test
-    fs.__setMockFS({
-      [directory]: ccBYSA
-    });
+    fs.__setMockFS({ [directory]: ccBYSA });
   });
 
   test('loadProjectLicenseMarkdownFile should load LICENSE.md for CC BY-SA 4.0', () => {
@@ -77,9 +75,7 @@ describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
 
 describe('CopyrightCheckHelpers.assignLicenseToOnlineImportedProject', () => {
   beforeEach(() => {
-    fs.__setMockFS({
-      [path.join('path', 'to', 'project', 'manifest.json')]: {}
-    });
+    fs.__setMockFS({ [path.join('path', 'to', 'project', 'manifest.json')]: {} });
   });
 
   test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', () => {

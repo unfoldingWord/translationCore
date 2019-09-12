@@ -1,7 +1,7 @@
-import { tNotesCategories } from "tsv-groupdata-parser";
+import { tNotesCategories } from 'tsv-groupdata-parser';
 import {
   toolCardCategories,
-  TRANSLATION_WORDS
+  TRANSLATION_WORDS,
 } from '../common/constants';
 
 export function hasAllNeededData(toolName, parentCategory, subcategories, lookupNames) {
@@ -12,8 +12,12 @@ export function sortSubcategories(subcategories) {
   return subcategories.sort((a, b) => {
     a = a.name;
     b = b.name;
-    if (a < b) return -1;
-    else if (a > b) return 1;
+
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    }
     return 0;
   });
 }
@@ -22,9 +26,10 @@ export function sortSubcategories(subcategories) {
  * turn group object of category objects into set of objects
  */
 export function flattenNotesCategories() {
- let lookupNames = {};
- Object.keys(toolCardCategories).forEach(item => {
-   lookupNames[item] = 'tool_card_categories.' + item;
- });
- return lookupNames;
+  let lookupNames = {};
+
+  Object.keys(toolCardCategories).forEach(item => {
+    lookupNames[item] = 'tool_card_categories.' + item;
+  });
+  return lookupNames;
 }

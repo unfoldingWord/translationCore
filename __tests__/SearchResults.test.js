@@ -1,9 +1,9 @@
 /* eslint-env jest */
 
 import React from 'react';
-import SearchResults from '../src/js/components/home/projectsManagement/OnlineImportModal/SearchResults';
 import renderer from 'react-test-renderer';
-import {MuiThemeProvider} from "material-ui";
+import { MuiThemeProvider } from 'material-ui';
+import SearchResults from '../src/js/components/home/projectsManagement/OnlineImportModal/SearchResults';
 require('jest');
 jest.mock('material-ui/internal/EnhancedSwitch');
 
@@ -12,26 +12,26 @@ describe('Test SearchResults component',()=>{
   test('Comparing SearchResults Component should render card with order (title,user,lang,book)', () => {
     const mock_handleURLInputChange = jest.fn();
     mock_handleURLInputChange.mockReturnValue(true);
-    const importLink = "link";
-    const title = "bes_tit_text_reg";
-    const user = "dummy_user";
+    const importLink = 'link';
+    const title = 'bes_tit_text_reg';
+    const user = 'dummy_user';
     const repos = [
       {
         name: title,
-        html_url: "https://git.door43.org/dummy_user/bes_tit_text_reg",
-        owner: { login: user }
-      }
+        html_url: 'https://git.door43.org/dummy_user/bes_tit_text_reg',
+        owner: { login: user },
+      },
     ];
     const languageCode = title.split('_')[0];
     const bookDescr = 'book_list.nt.tit\xA0(tit)';
     const expectedCardLabels = [`[${title}]`,user,languageCode,bookDescr]; // expect labels to be in this order
 
-    const renderedValue =  renderer.create(
+    const renderedValue = renderer.create(
       <MuiThemeProvider>
         <SearchResults repos={repos}
-                       translate={key => key}
-                       importLink={importLink}
-                       handleURLInputChange={mock_handleURLInputChange} />
+          translate={key => key}
+          importLink={importLink}
+          handleURLInputChange={mock_handleURLInputChange} />
       </MuiThemeProvider>
     ).toJSON();
 
@@ -51,13 +51,15 @@ describe('Test SearchResults component',()=>{
    */
   function getDisplayedText(rendered) {
     const displayedText = [];
+
     rendered.forEach((item) => {
-      let text = "";
+      let text = '';
+
       if (typeof item === 'string') {
-       if ((item.length) && ((item !== " ") && (item !== "\xA0"))) { // ignore " " whitespace
+        if ((item.length) && ((item !== ' ') && (item !== '\xA0'))) { // ignore " " whitespace
           text = item;
         }
-      } else if(Array.isArray(item)) {
+      } else if (Array.isArray(item)) {
         const array_labels = getDisplayedText(item);
         text = array_labels.join('');
       } else if (item.children) {
@@ -75,7 +77,8 @@ describe('Test SearchResults component',()=>{
    */
   function getDisplayedTextFromChildren(renderedItem) {
     const child_texts = getDisplayedText(renderedItem.children);
-    let text = "";
+    let text = '';
+
     child_texts.forEach((child_label) => {
       if (child_label.length) {
         text += '[' + child_label + ']';
@@ -92,13 +95,15 @@ describe('Test SearchResults component',()=>{
    */
   function searchForChildren(search, findType) {
     let found = [];
+
     if (search.children) {
       search.children.forEach((child) => {
         if (child.type === findType) {
           found.push(child.children);
-        } else if(child.children) {
+        } else if (child.children) {
           const found_below = searchForChildren(child, findType);
-          if(found_below.length) {
+
+          if (found_below.length) {
             found = found.concat(found_below);
           }
         }

@@ -1,23 +1,25 @@
-import consts from '../ActionTypes';
+/* eslint-disable require-await */
+/* eslint-disable no-await-in-loop */
 import path from 'path-extra';
-import {batchActions} from 'redux-batched-actions';
+import { batchActions } from 'redux-batched-actions';
+import consts from '../ActionTypes';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
-import {initializeReducersForProjectOpenValidation, validateProject} from '../Import/ProjectValidationActions';
+import { initializeReducersForProjectOpenValidation, validateProject } from '../Import/ProjectValidationActions';
 import * as BodyUIActions from '../BodyUIActions';
 import * as RecentProjectsActions from '../RecentProjectsActions';
 import {
   openAlertDialog,
   openOptionDialog,
-  closeAlertDialog
+  closeAlertDialog,
 } from '../AlertModalActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
-import {openSoftwareUpdate} from "../SoftwareUpdateActions";
+import { openSoftwareUpdate } from '../SoftwareUpdateActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { changeSelections } from '../SelectionsActions';
-import ResourceAPI from "../../helpers/ResourceAPI";
+import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
   getToolsSelectedGLs,
@@ -31,22 +33,22 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername, getProjects
-} from "../../selectors";
+  getUsername, getProjects,
+} from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
   loadSourceBookTranslations,
-  loadTargetLanguageBook
-} from "../ResourcesActions";
-import ProjectAPI from "../../helpers/ProjectAPI";
-import CoreAPI from "../../helpers/CoreAPI";
+  loadTargetLanguageBook,
+} from '../ResourcesActions';
+import ProjectAPI from '../../helpers/ProjectAPI';
+import CoreAPI from '../../helpers/CoreAPI';
 import {
   copyGroupDataToProject,
-  setDefaultProjectCategories
-} from "../../helpers/ResourcesHelpers";
-import * as BibleHelpers from "../../helpers/bibleHelpers";
-import {delay} from '../../common/utils';
-import * as Bible from "../../common/BooksOfTheBible";
+  setDefaultProjectCategories,
+} from '../../helpers/ResourcesHelpers';
+import * as BibleHelpers from '../../helpers/bibleHelpers';
+import { delay } from '../../common/utils';
+import * as Bible from '../../common/BooksOfTheBible';
 // constants
 import {
   APP_VERSION,
@@ -56,52 +58,49 @@ import {
   tc_EDIT_VERSION_KEY,
   tc_MIN_VERSION_ERROR,
   tc_LAST_OPENED_KEY,
-  TRANSLATION_WORDS
+  TRANSLATION_WORDS,
 } from '../../common/constants';
 
 /**
  * show Invalid Version Error
  * @return {Function}
  */
-export const showInvalidVersionError = () => {
-  return (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    const cancelText = translate("buttons.cancel_button");
-    const upgradeText = translate("buttons.update");
-    dispatch(openOptionDialog(translate("project_validation.newer_project"),
-      (result) => {
-        dispatch(closeAlertDialog());
-        if (result === upgradeText) {
-          dispatch(openSoftwareUpdate());
-        }
-      }, cancelText, upgradeText));
-  };
+export const showInvalidVersionError = () => (dispatch, getState) => {
+  const translate = getTranslate(getState());
+  const cancelText = translate('buttons.cancel_button');
+  const upgradeText = translate('buttons.update');
+
+  dispatch(openOptionDialog(translate('project_validation.newer_project'),
+    (result) => {
+      dispatch(closeAlertDialog());
+
+      if (result === upgradeText) {
+        dispatch(openSoftwareUpdate());
+      }
+    }, cancelText, upgradeText));
 };
 
 /**
  * make sure that the edit versions and minimum compatible versions are up to date in manifest
  * @return {Function}
  */
-export const updateProjectVersion = () => {
-  return async (dispatch, getState) => {
-    const manifest = getProjectManifest(getState());
-    const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
-    const editVersion = manifest[tc_EDIT_VERSION_KEY];
-    if ((editVersion !== APP_VERSION) || (minVersion !== MIN_COMPATIBLE_VERSION)) {
-      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION));
-      dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION));
-    }
-  };
+export const updateProjectVersion = () => async (dispatch, getState) => {
+  const manifest = getProjectManifest(getState());
+  const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
+  const editVersion = manifest[tc_EDIT_VERSION_KEY];
+
+  if ((editVersion !== APP_VERSION) || (minVersion !== MIN_COMPATIBLE_VERSION)) {
+    dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_EDIT_VERSION_KEY, APP_VERSION));
+    dispatch(ProjectDetailsActions.addObjectPropertyToManifest(tc_MIN_COMPATIBLE_VERSION_KEY, MIN_COMPATIBLE_VERSION));
+  }
 };
 
 /**
  * updates the time the project was last opened in the project's settings.json file
  * @return {Function}
  */
-export const updateProjectLastOpened = () => {
-  return async (dispatch) => {
-    dispatch(ProjectDetailsActions.addObjectPropertyToSettings(tc_LAST_OPENED_KEY, new Date()));
-  };
+export const updateProjectLastOpened = () => async (dispatch) => {
+  dispatch(ProjectDetailsActions.addObjectPropertyToSettings(tc_LAST_OPENED_KEY, new Date()));
 };
 
 /**
@@ -109,86 +108,90 @@ export const updateProjectLastOpened = () => {
  * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
  */
-export const openProject = (name, skipValidation=false) => {
-  return async (dispatch, getState) => {
-    const projectDir = path.join(PROJECTS_PATH, name);
-    const translate = getTranslate(getState());
-    console.log("openProject() projectDir=" + projectDir);
+export const openProject = (name, skipValidation = false) => async (dispatch, getState) => {
+  const projectDir = path.join(PROJECTS_PATH, name);
+  const translate = getTranslate(getState());
+  console.log('openProject() projectDir=' + projectDir);
 
-    try {
-      dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
-      dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-      dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS});
-      dispatch(initializeReducersForProjectOpenValidation());
+  try {
+    dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+    dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
+    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS });
+    dispatch(initializeReducersForProjectOpenValidation());
 
-      // TRICKY: prevent dialog from flashing on small projects
-      await delay(300);
-      await isProjectSupported(projectDir, translate);
-      await migrateProject(projectDir, null, getUsername(getState()));
+    // TRICKY: prevent dialog from flashing on small projects
+    await delay(300);
+    await isProjectSupported(projectDir, translate);
+    await migrateProject(projectDir, null, getUsername(getState()));
 
-      // TODO: this is a temporary hack. Eventually we will always validate the project
-      // but we need to refactored the online and local import functions first so there is no duplication.
-      if(!skipValidation) {
-        await dispatch(validateProject(projectDir));
-      }
-
-      // TRICKY: validation may have changed the project path
-      const validProjectDir = getProjectSaveLocation(getState());
-      console.log("openProject() validProjectDir=" + validProjectDir);
-
-      // load target book
-      console.log("openProject() - loading target book");
-      dispatch(loadTargetLanguageBook());
-
-      // connect the tools
-      const manifest = getProjectManifest(getState());
-      const tools = getTools(getState());
-      const bookId = (manifest && manifest.project && manifest.project.id) || '';
-      for (const t of tools) {
-        // load source book translations
-        console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
-        await dispatch(loadSourceBookTranslations(bookId, t.name));
-        const gatewayLanguage = getToolGatewayLanguage(getState(), t.name);
-
-        // copy group data
-        // TRICKY: group data must be tied to the original language for tW and GL for tN
-        console.log("openProject() - copy group data");
-        let copyLang = gatewayLanguage;
-        if (t.name === TRANSLATION_WORDS) { // for tW we use OrigLang
-          const olForBook = BibleHelpers.getOrigLangforBook(bookId);
-          copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
-        }
-        copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch);
-
-        // select default categories
-        setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
-
-        // connect tool api
-        console.log("openProject() - connect tool api");
-        const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
-
-        t.api.triggerWillConnect(toolProps);
-      }
-
-      await dispatch(displayTools());
-      dispatch(updateProjectVersion());
-      dispatch(updateProjectLastOpened());
-      console.log("openProject() - project opened");
-    } catch (e) {
-      // TODO: clean this up
-      if (e.type !== 'div') console.warn("openProject() error", e);
-      let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert
-      // clear last project must be called before any other action.
-      // to avoid triggering autosaving.
-      dispatch(closeProject());
-      if (message === tc_MIN_VERSION_ERROR) {
-        dispatch(showInvalidVersionError());
-      } else {
-        dispatch(openAlertDialog(message));
-      }
-      dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+    // TODO: this is a temporary hack. Eventually we will always validate the project
+    // but we need to refactored the online and local import functions first so there is no duplication.
+    if (!skipValidation) {
+      await dispatch(validateProject(projectDir));
     }
-  };
+
+    // TRICKY: validation may have changed the project path
+    const validProjectDir = getProjectSaveLocation(getState());
+    console.log('openProject() validProjectDir=' + validProjectDir);
+
+    // load target book
+    console.log('openProject() - loading target book');
+    dispatch(loadTargetLanguageBook());
+
+    // connect the tools
+    const manifest = getProjectManifest(getState());
+    const tools = getTools(getState());
+    const bookId = (manifest && manifest.project && manifest.project.id) || '';
+
+    for (const t of tools) {
+      // load source book translations
+      console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
+      await dispatch(loadSourceBookTranslations(bookId, t.name));
+      const gatewayLanguage = getToolGatewayLanguage(getState(), t.name);
+
+      // copy group data
+      // TRICKY: group data must be tied to the original language for tW and GL for tN
+      console.log('openProject() - copy group data');
+      let copyLang = gatewayLanguage;
+
+      if (t.name === TRANSLATION_WORDS) { // for tW we use OrigLang
+        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
+        copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+      }
+      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch);
+
+      // select default categories
+      setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
+
+      // connect tool api
+      console.log('openProject() - connect tool api');
+      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
+
+      t.api.triggerWillConnect(toolProps);
+    }
+
+    await dispatch(displayTools());
+    dispatch(updateProjectVersion());
+    dispatch(updateProjectLastOpened());
+    console.log('openProject() - project opened');
+  } catch (e) {
+    // TODO: clean this up
+    if (e.type !== 'div') {
+      console.warn('openProject() error', e);
+    }
+
+    let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert
+    // clear last project must be called before any other action.
+    // to avoid triggering autosaving.
+    dispatch(closeProject());
+
+    if (message === tc_MIN_VERSION_ERROR) {
+      dispatch(showInvalidVersionError());
+    } else {
+      dispatch(openAlertDialog(message));
+    }
+    dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+  }
 };
 
 /**
@@ -204,7 +207,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
-  const {code} = getActiveLocaleLanguage(state);
+  const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
 
@@ -240,16 +243,16 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     contextId: {
       reference: {
         bookId,
-        chapter: "1", // TRICKY: just some dummy values at first
-        verse: "1"
-      }
+        chapter: '1', // TRICKY: just some dummy values at first
+        verse: '1',
+      },
     },
     username: getUsername(state),
     toolsSelectedGLs: getToolsSelectedGLs(state),
     actions: {
       changeSelections: (selections, userName) => {
         dispatch(changeSelections(selections, userName));
-      }
+      },
     },
     // deprecated props
     readProjectDir: (...args) => {
@@ -264,14 +267,14 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
       console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
       return coreApi.showIgnorableAlert(...args);
     },
-    get toolsReducer () {
+    get toolsReducer() {
       console.warn(`DEPRECATED: toolsReducer is deprecated.`);
       return {};
     },
     projectFileExistsSync: (...args) => {
       console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use pathExistsSync instead.`);
       return projectApi.dataPathExistsSync(...args);
-    }
+    },
   };
 }
 
@@ -287,12 +290,13 @@ export function displayTools() {
       try {
         const { currentSettings } = state.settingsReducer;
         const { manifest } = state.projectDetailsReducer;
+
         if (manifestHelpers.checkIfValidBetaProject(manifest) || currentSettings.developerMode) {
           // Go to toolsCards page
           dispatch(BodyUIActions.goToStep(3));
         } else {
           dispatch(RecentProjectsActions.getProjectsFromFolder());
-          reject(translate('projects.books_available', {app: translate('_.app_name')}));
+          reject(translate('projects.books_available', { app: translate('_.app_name') }));
         }
       } catch (error) {
         console.error(error);
@@ -313,6 +317,7 @@ export function closeProject() {
     const state = getState();
     const toolApi = getSelectedToolApi(state);
     const supportingToolApis = getSupportingToolApis(state);
+
     for (const key of Object.keys(supportingToolApis)) {
       try {
         supportingToolApis[key].triggerWillDisconnect();
@@ -320,6 +325,7 @@ export function closeProject() {
         console.warn(`Failed to disconnect from ${key}`, e);
       }
     }
+
     if (toolApi) {
       try {
         toolApi.triggerWillDisconnect();
@@ -342,7 +348,7 @@ export function closeProject() {
       { type: consts.CLEAR_CONTEXT_ID },
       { type: consts.CLOSE_TOOL },
       { type: consts.CLEAR_RESOURCES_REDUCER },
-      { type: consts.CLEAR_PREVIOUS_FILTERS},
+      { type: consts.CLEAR_PREVIOUS_FILTERS },
     ];
 
     dispatch(batchActions(actions));

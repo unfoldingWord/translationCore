@@ -8,38 +8,38 @@ const initialState = {
   button2: null,
   buttonLink: null,
   callback: null,
-  callback2: null
+  callback2: null,
 };
 
 const alertModalReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.OPEN_ALERT_DIALOG:
-      return {
-        ...state,
-        alertDialogVisibility: true,
-        alertDialogLoading: action.loading,
-        alertText: action.alertMessage,
-        button1: null,
-        button2: null,
-        buttonLink: null,
-        callback: null
-      };
-    case consts.OPEN_OPTION_DIALOG:
-      return {
-        ...state,
-        alertDialogVisibility: true,
-        alertDialogLoading: false,
-        alertText: action.alertMessage,
-        button1: action.button1Text,
-        button2: action.button2Text,
-        buttonLink: action.buttonLinkText,
-        callback: action.callback,
-        callback2: action.callback2
-      };
-    case consts.CLOSE_ALERT_DIALOG:
-      return initialState;
-    default:
-      return state;
+  case consts.OPEN_ALERT_DIALOG:
+    return {
+      ...state,
+      alertDialogVisibility: true,
+      alertDialogLoading: action.loading,
+      alertText: action.alertMessage,
+      button1: null,
+      button2: null,
+      buttonLink: null,
+      callback: null,
+    };
+  case consts.OPEN_OPTION_DIALOG:
+    return {
+      ...state,
+      alertDialogVisibility: true,
+      alertDialogLoading: false,
+      alertText: action.alertMessage,
+      button1: action.button1Text,
+      button2: action.button2Text,
+      buttonLink: action.buttonLinkText,
+      callback: action.callback,
+      callback2: action.callback2,
+    };
+  case consts.CLOSE_ALERT_DIALOG:
+    return initialState;
+  default:
+    return state;
   }
 };
 
@@ -50,6 +50,4 @@ export default alertModalReducer;
  * @param state
  * @return {boolean}
  */
-export const getAlertIsOpen = state => {
-  return state === initialState;
-};
+export const getAlertIsOpen = state => state === initialState;

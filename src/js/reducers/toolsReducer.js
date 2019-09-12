@@ -1,8 +1,8 @@
-import types from "../actions/ActionTypes";
+import types from '../actions/ActionTypes';
 
 const initialState = {
   selectedTool: null,
-  tools: { byName: {}, byObject: [] }
+  tools: { byName: {}, byObject: [] },
 };
 
 /**
@@ -13,22 +13,22 @@ const initialState = {
  */
 const tools = (state = { byName: {}, byObject: [] }, action) => {
   switch (action.type) {
-    case types.ADD_TOOL: {
-      const index = state.byObject.length;
+  case types.ADD_TOOL: {
+    const index = state.byObject.length;
 
-      return {
-        byName: {
-          ...state.byName,
-          [action.name]: index
-        },
-        byObject: [
-          ...state.byObject,
-          action.tool
-        ]
-      };
-    }
-    default:
-      return state;
+    return {
+      byName: {
+        ...state.byName,
+        [action.name]: index,
+      },
+      byObject: [
+        ...state.byObject,
+        action.tool,
+      ],
+    };
+  }
+  default:
+    return state;
   }
 };
 
@@ -40,23 +40,23 @@ const tools = (state = { byName: {}, byObject: [] }, action) => {
  */
 const toolsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.ADD_TOOL:
-      return {
-        ...state,
-        tools: tools(state.tools, action)
-      };
-    case types.OPEN_TOOL:
-      return {
-        ...state,
-        selectedTool: action.name
-      };
-    case types.CLOSE_TOOL:
-      return {
-        ...state,
-        selectedTool: initialState.selectedTool,
-      };
-    default:
-      return state;
+  case types.ADD_TOOL:
+    return {
+      ...state,
+      tools: tools(state.tools, action),
+    };
+  case types.OPEN_TOOL:
+    return {
+      ...state,
+      selectedTool: action.name,
+    };
+  case types.CLOSE_TOOL:
+    return {
+      ...state,
+      selectedTool: initialState.selectedTool,
+    };
+  default:
+    return state;
   }
 };
 
@@ -68,7 +68,7 @@ export default toolsReducer;
  * @returns {object[]}
  */
 export const getTools = state => {
-  if(state) {
+  if (state) {
     return [...state.tools.byObject];
   } else {
     return [];
@@ -82,8 +82,9 @@ export const getTools = state => {
  */
 export const getToolsByKey = state => {
   const obj = {};
-  if(state) {
-     Object.keys(state.tools.byObject).forEach((index) => {
+
+  if (state) {
+    Object.keys(state.tools.byObject).forEach((index) => {
       const toolApi = state.tools.byObject[index];
       obj[toolApi.name] = toolApi;
     });
@@ -100,7 +101,7 @@ export const getToolsByKey = state => {
  * @returns {*}
  */
 export const getNames = state => {
-  if(state) {
+  if (state) {
     return [...state.tools.byName];
   } else {
     return [];
@@ -127,10 +128,11 @@ export const getSelectedToolName = (state) => {
  */
 export const getSelectedToolTitle = state => {
   const tool = getSelectedTool(state);
-  if(tool) {
+
+  if (tool) {
     return tool.title;
   } else {
-    return "";
+    return '';
   }
 };
 
@@ -140,7 +142,7 @@ export const getSelectedToolTitle = state => {
  * @returns {*}
  */
 export const getSelectedTool = state => {
-  if(state && state.selectedTool) {
+  if (state && state.selectedTool) {
     return getTool(state, state.selectedTool);
   } else {
     return null;
@@ -154,7 +156,7 @@ export const getSelectedTool = state => {
  * @returns {*}
  */
 export const getTool = (state, name) => {
-  if(state && state.tools.byName.hasOwnProperty(name)) {
+  if (state && state.tools.byName.hasOwnProperty(name)) {
     const index = state.tools.byName[name];
     return state.tools.byObject[index];
   } else {
@@ -169,7 +171,8 @@ export const getTool = (state, name) => {
  */
 export const getSelectedToolContainer = state => {
   const tool = getSelectedTool(state);
-  if(tool) {
+
+  if (tool) {
     return tool.container;
   } else {
     return null;
@@ -183,7 +186,8 @@ export const getSelectedToolContainer = state => {
  */
 export const getSelectedToolApi = state => {
   const tool = getSelectedTool(state);
-  if(tool) {
+
+  if (tool) {
     return tool.api;
   } else {
     return null;
@@ -200,9 +204,11 @@ export const getSelectedToolApi = state => {
 export const getSupportingToolApis = state => {
   const name = getSelectedToolName(state);
   const apis = {};
-  for(let i = 0, len = state.tools.byObject.length; i < len; i ++) {
+
+  for (let i = 0, len = state.tools.byObject.length; i < len; i ++) {
     const tool = state.tools.byObject[i];
-    if(tool.name !== name) {
+
+    if (tool.name !== name) {
       apis[tool.name] = tool.api;
     }
   }

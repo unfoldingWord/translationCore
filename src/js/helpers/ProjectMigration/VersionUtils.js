@@ -1,4 +1,4 @@
-import * as manifestUtils from "./manifestUtils";
+import * as manifestUtils from './manifestUtils';
 export const VERSION_KEY = 'tc_version';
 
 /**
@@ -7,12 +7,13 @@ export const VERSION_KEY = 'tc_version';
  */
 export const getCurrentManifestVersion = () => {
   let version = -1;
+
   try {
     const package2 = require('../../../../package.json');
     const versionStr = package2.manifestVersion;
     version = parseInt(versionStr, 10) || -1;
-  } catch(e) {
-    console.log("Error trying to read package.json: " + e);
+  } catch (e) {
+    console.log('Error trying to read package.json: ' + e);
   }
   return version;
 };
@@ -25,8 +26,10 @@ export const getCurrentManifestVersion = () => {
 export const getVersionFromManifest = (projectPath) => {
   let version = -1;
   const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+
   if (manifest && manifest[VERSION_KEY]) {
     version = manifest[VERSION_KEY];
+
     if (typeof version === 'string') { // do we need to convert from string
       version = parseInt(version, 10) || -1;
     }
@@ -42,6 +45,7 @@ export const getVersionFromManifest = (projectPath) => {
  */
 export const setVersionInManifest = (projectPath, version) => {
   const manifest = manifestUtils.getProjectManifest(projectPath, undefined);
+
   if (manifest) {
     manifest[VERSION_KEY] = version;
     manifestUtils.saveProjectManifest(projectPath, manifest);
@@ -54,7 +58,5 @@ export const setVersionInManifest = (projectPath, version) => {
  * @description - returns the application version (set in package.json)
  * @return {String} application version
  */
-export const getApplicationVersion = () => {
-  return process.env.npm_package_version;
-};
+export const getApplicationVersion = () => process.env.npm_package_version;
 

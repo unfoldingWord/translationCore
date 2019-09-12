@@ -1,18 +1,20 @@
 /* eslint-env jest */
 import fs from 'fs-extra';
-import path from "path-extra";
-import _ from "lodash";
-import ProjectAPI from "../src/js/helpers/ProjectAPI";
+import path from 'path-extra';
+import _ from 'lodash';
+import ProjectAPI from '../src/js/helpers/ProjectAPI';
 // constants
-import {PROJECTS_PATH, TRANSLATION_NOTES, USER_RESOURCES_PATH} from '../src/js/common/constants';
+import {
+  PROJECTS_PATH, TRANSLATION_NOTES, USER_RESOURCES_PATH,
+} from '../src/js/common/constants';
 
 describe('importCategoryGroupData()', () => {
   const sourceResourcesPath = path.join('__tests__/fixtures/resources');
   const projectName = 'en_gal';
   const projectDir = path.join(PROJECTS_PATH, projectName);
-  const bookId = "gal";
+  const bookId = 'gal';
   const tnIndexPath = path.join(projectDir, '.apps', 'translationCore', 'index', TRANSLATION_NOTES, bookId);
-  const manifest = {"project":{"id": bookId}};
+  const manifest = { 'project':{ 'id': bookId } };
   const galIndexPath = 'en/translationHelps/translationNotes/v15/culture/groups/gal';
 
   beforeAll(() => {
@@ -24,7 +26,7 @@ describe('importCategoryGroupData()', () => {
     fs.__resetMockFS();
     const copyResourceFiles = [galIndexPath];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, USER_RESOURCES_PATH);
-    fs.outputJsonSync(path.join(projectDir, "manifest.json"), manifest);
+    fs.outputJsonSync(path.join(projectDir, 'manifest.json'), manifest);
   });
 
   it('imports new group data', () => {
@@ -35,7 +37,7 @@ describe('importCategoryGroupData()', () => {
     const groupFileName = groupId + '.json';
     const tnHelpsGroupDataPath = path.join(USER_RESOURCES_PATH, galIndexPath, groupFileName);
     const groupsDataLoaded = [];
-    fs.outputJsonSync(path.join(projectDir, "manifest.json"), manifest);
+    fs.outputJsonSync(path.join(projectDir, 'manifest.json'), manifest);
 
     // when
     const results = p.importCategoryGroupData(toolName, tnHelpsGroupDataPath, groupsDataLoaded);
@@ -60,7 +62,7 @@ describe('importCategoryGroupData()', () => {
     const groupIdDataPath = path.join(tnIndexPath, groupId + '.json');
     const groupIdData = fs.readJsonSync(tnHelpsGroupDataPath);
     const groupItemNumber = 4;
-    const {preExistingGroupData, oldNote} = mockExistingGroupData(groupIdData, groupItemNumber, groupIdDataPath);
+    const { preExistingGroupData, oldNote } = mockExistingGroupData(groupIdData, groupItemNumber, groupIdDataPath);
 
     // when
     const results = p.importCategoryGroupData(toolName, tnHelpsGroupDataPath, groupsDataLoaded);
@@ -127,7 +129,7 @@ function mockExistingGroupData(groupIdData, groupItemNumber, groupIdDataPath) {
   const oldNote = preExistingGroupItem.contextId.occurrenceNote;
   preExistingGroupItem.contextId.occurrenceNote = 'old Note';
   preExistingGroupItem.invalidated = true;
-  preExistingGroupItem.selections = ["by hearing with faith"];
+  preExistingGroupItem.selections = ['by hearing with faith'];
   fs.outputJsonSync(groupIdDataPath, preExistingGroupData);
-  return {preExistingGroupData, oldNote};
+  return { preExistingGroupData, oldNote };
 }

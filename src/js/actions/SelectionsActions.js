@@ -1,22 +1,26 @@
-import types from './ActionTypes';
 import isEqual from 'deep-equal';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import usfm from 'usfm-js';
-import {checkSelectionOccurrences} from 'selections';
-import {batchActions} from 'redux-batched-actions';
+import { checkSelectionOccurrences } from 'selections';
+import { batchActions } from 'redux-batched-actions';
 // actions
-import * as AlertActions from './AlertActions';
-import * as InvalidatedActions from './InvalidatedActions';
-import * as CheckDataLoadActions from './CheckDataLoadActions';
 // helpers
-import {getTranslate, getUsername, getSelectedToolName} from '../selectors';
-import {generateTimestamp} from '../helpers/index';
+import {
+  getTranslate, getUsername, getSelectedToolName,
+} from '../selectors';
+import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from '../localStorage/saveMethods';
-import { WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+import {
+  WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+} from '../common/constants';
+import * as CheckDataLoadActions from './CheckDataLoadActions';
+import * as InvalidatedActions from './InvalidatedActions';
+import * as AlertActions from './AlertActions';
+import types from './ActionTypes';
 export const ALERT_ALIGNMENTS_RESET_ID = 'alignments_reset';
-export const ALERT_SELECTIONS_INVALIDATED_ID = "selections_invalidated";
+export const ALERT_SELECTIONS_INVALIDATED_ID = 'selections_invalidated';
 export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_alignments_and_selections';
 export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
 export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
@@ -33,60 +37,61 @@ export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
  *                    a selection array, and a username.
  */
 export const changeSelections = (selections, userName, invalidated = false, contextId = null,
-  batchGroupData = null, nothingToSelect = false) => {
-  return ((dispatch, getState) => {
-    let state = getState();
-    const validTools = [TRANSLATION_WORDS, TRANSLATION_NOTES];
-    if (validTools.includes(getSelectedToolName(state)) || validTools.includes(contextId.tool)) {
-      const currentContextId = state.contextIdReducer.contextId;
-      contextId = contextId || currentContextId; // use current if contextId is not passed
-      const {
-        gatewayLanguageCode,
-        gatewayLanguageQuote
-      } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
-      if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
-        const modifiedTimestamp = generateTimestamp();
-        dispatch({
-          type: types.CHANGE_SELECTIONS,
-          modifiedTimestamp: modifiedTimestamp,
-          gatewayLanguageCode,
-          gatewayLanguageQuote,
-          selections,
-          nothingToSelect,
-          userName
-        });
-        dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
-      } else {
-        saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
-      }
+  batchGroupData = null, nothingToSelect = false) => ((dispatch, getState) => {
+  let state = getState();
+  const validTools = [TRANSLATION_WORDS, TRANSLATION_NOTES];
 
-      const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
-      actionsBatch.push({
-        type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
-        contextId,
+  if (validTools.includes(getSelectedToolName(state)) || validTools.includes(contextId.tool)) {
+    const currentContextId = state.contextIdReducer.contextId;
+    contextId = contextId || currentContextId; // use current if contextId is not passed
+    const {
+      gatewayLanguageCode,
+      gatewayLanguageQuote,
+    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
+
+    if (sameContext(currentContextId, contextId)) { // see if we need to update current selection
+      const modifiedTimestamp = generateTimestamp();
+
+      dispatch({
+        type: types.CHANGE_SELECTIONS,
+        modifiedTimestamp: modifiedTimestamp,
+        gatewayLanguageCode,
+        gatewayLanguageQuote,
         selections,
-        nothingToSelect
+        nothingToSelect,
+        userName,
       });
-      actionsBatch.push({
-        type: types.SET_INVALIDATION_IN_GROUPDATA,
-        contextId,
-        boolean: invalidated
-      });
-      if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
-        dispatch(batchActions(actionsBatch));
-      }
+      dispatch(InvalidatedActions.set(userName, modifiedTimestamp, invalidated));
+    } else {
+      saveMethods.saveSelectionsForOtherContext(getState(), gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId);
     }
-  });
-};
+
+    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
+
+    actionsBatch.push({
+      type: types.TOGGLE_SELECTIONS_IN_GROUPDATA,
+      contextId,
+      selections,
+      nothingToSelect,
+    });
+    actionsBatch.push({
+      type: types.SET_INVALIDATION_IN_GROUPDATA,
+      contextId,
+      boolean: invalidated,
+    });
+
+    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+      dispatch(batchActions(actionsBatch));
+    }
+  }
+});
 
 /**
  * displays warning that selections have been invalidated
  * @param {Function|Null} callback - optional callback after OK button clicked
  * @return {Function}
  */
-export const showSelectionsInvalidatedWarning = (callback = null) => {
-  return showInvalidatedWarnings(true, false, callback);
-};
+export const showSelectionsInvalidatedWarning = (callback = null) => showInvalidatedWarnings(true, false, callback);
 
 /**
  * displays warning that selections, alignments, or both have been invalidated
@@ -96,23 +101,23 @@ export const showSelectionsInvalidatedWarning = (callback = null) => {
  * @return {Function}
  */
 export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignmentsInvalidated,
-  callback = null) => {
-  return (dispatch, getState) => {
-    let message = null;
-    let id = null;
-    if (showSelectionInvalidated && showAlignmentsInvalidated) {
-      message = ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG;
-      id = ALERT_ALIGNMENTS_RESET_ID;
-    } else if (showSelectionInvalidated) {
-      message = ALERT_SELECTIONS_INVALIDATED_MSG;
-      id = ALERT_SELECTIONS_INVALIDATED_ID;
-    } else { // (showAlignmentsInvalidated)
-      message = ALERT_ALIGNMENTS_RESET_MSG;
-      id = ALERT_ALIGNMENTS_RESET_ID;
-    }
-    const translate = getTranslate(getState());
-    dispatch(AlertActions.openIgnorableAlert(id, translate(message), {onConfirm: callback}));
-  };
+  callback = null) => (dispatch, getState) => {
+  let message = null;
+  let id = null;
+
+  if (showSelectionInvalidated && showAlignmentsInvalidated) {
+    message = ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG;
+    id = ALERT_ALIGNMENTS_RESET_ID;
+  } else if (showSelectionInvalidated) {
+    message = ALERT_SELECTIONS_INVALIDATED_MSG;
+    id = ALERT_SELECTIONS_INVALIDATED_ID;
+  } else { // (showAlignmentsInvalidated)
+    message = ALERT_ALIGNMENTS_RESET_MSG;
+    id = ALERT_ALIGNMENTS_RESET_ID;
+  }
+
+  const translate = getTranslate(getState());
+  dispatch(AlertActions.openIgnorableAlert(id, translate(message), { onConfirm: callback }));
 };
 
 /**
@@ -128,9 +133,11 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
   const groupData = groupId &&
     groupsDataReducer && groupsDataReducer.groupsData &&
     groupsDataReducer.groupsData[groupId];
+
   if (groupData && groupData.length) {
     for (let i = 0, l = groupData.length; i < l; i++) {
       const groupObject = groupData[i];
+
       if (isEqual(groupObject.contextId.reference.chapter, chapterNumber) &&
         isEqual(groupObject.contextId.reference.verse, verseNumber)) {
         matchedGroupData.push(groupObject);
@@ -154,33 +161,39 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
 function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch) {
   const currentTool = getSelectedToolName(state);
   const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
+
   if (fs.existsSync(selectionsPath)) {
     let files = fs.readdirSync(selectionsPath);
-    files = files.filter(file => { // filter the filenames to only use .json
-      return path.extname(file) === '.json';
-    }).sort();
+
+    files = files.filter(file => // filter the filenames to only use .json
+      path.extname(file) === '.json'
+    ).sort();
 
     // load all files keeping the latest for each context
     const latestContext = {};
+
     for (let i = 0, l = files.length; i < l; i++) {
       const selectionsData = fs.readJsonSync(path.join(selectionsPath, files[i]));
       const contextId = selectionsData.contextId;
+
       if (contextId) {
         if (currentTool !== contextId.tool) {
-          const contextIdQuote = Array.isArray(contextId.quote) ? contextId.quote.map(({word}) => word).join(' ') : contextId.quote;
-          const key = contextId.groupId + ":" + contextId.occurrence + ":" + contextIdQuote;
+          const contextIdQuote = Array.isArray(contextId.quote) ? contextId.quote.map(({ word }) => word).join(' ') : contextId.quote;
+          const key = contextId.groupId + ':' + contextId.occurrence + ':' + contextIdQuote;
           latestContext[key] = selectionsData;
         }
       }
     }
+
     const username = getUsername(state);
     const modifiedTimestamp = generateTimestamp();
     const keys = Object.keys(latestContext);
+
     for (let j = 0, l = keys.length; j < l; j++) {
       const selectionsData = latestContext[keys[j]];
       const validSelections = checkSelectionOccurrences(targetVerse, selectionsData.selections);
-      if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
 
+      if (!isEqual(selectionsData.selections, validSelections)) { // if true found invalidated check
         // add invalidation entry
         const newInvalidation = {
           contextId: selectionsData.contextId,
@@ -188,7 +201,7 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
           username,
           modifiedTimestamp: modifiedTimestamp,
           gatewayLanguageCode: selectionsData.gatewayLanguageCode,
-          gatewayLanguageQuote: selectionsData.gatewayLanguageQuote
+          gatewayLanguageQuote: selectionsData.gatewayLanguageQuote,
         };
         const newFilename = modifiedTimestamp + '.json';
         const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
@@ -214,47 +227,50 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
  * @return {Object} - dispatches the changeSelections action.
  */
 export const validateSelections = (targetVerse, contextId = null, chapterNumber, verseNumber,
-  showInvalidation = true, results = {}, batchGroupData = null) => {
-  return (dispatch, getState) => {
-    const state = getState();
-    contextId = contextId || state.contextIdReducer.contextId;
-    const {projectSaveLocation, manifest: {project}} = state.projectDetailsReducer;
-    const {chapter, verse} = contextId.reference;
-    chapterNumber = chapterNumber || chapter;
-    verseNumber = verseNumber || verse;
-    const bibleId = project.id;
-    let selectionInvalidated = false;
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
+  showInvalidation = true, results = {}, batchGroupData = null) => (dispatch, getState) => {
+  const state = getState();
+  contextId = contextId || state.contextIdReducer.contextId;
+  const { projectSaveLocation, manifest: { project } } = state.projectDetailsReducer;
+  const { chapter, verse } = contextId.reference;
+  chapterNumber = chapterNumber || chapter;
+  verseNumber = verseNumber || verse;
+  const bibleId = project.id;
+  let selectionInvalidated = false;
+  const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
-    if (getSelectedToolName(state) !== WORD_ALIGNMENT) {
-      const username = getUsername(state);
-      // for this groupId, find every check for this chapter/verse
-      const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
-      for (let i = 0, l = matchedGroupData.length; i < l; i++) {
-        const groupObject = matchedGroupData[i];
-        const selections = getSelectionsForContextID(projectSaveLocation, groupObject.contextId);
-        const validSelections = checkSelectionOccurrences(targetVerse, selections);
-        const selectionsChanged = (selections.length !== validSelections.length);
-        if (selectionsChanged) {
-          dispatch(changeSelections([], username, true, groupObject.contextId, actionsBatch)); // clear selections
-        }
-        selectionInvalidated = selectionInvalidated || selectionsChanged;
+  if (getSelectedToolName(state) !== WORD_ALIGNMENT) {
+    const username = getUsername(state);
+    // for this groupId, find every check for this chapter/verse
+    const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
+
+    for (let i = 0, l = matchedGroupData.length; i < l; i++) {
+      const groupObject = matchedGroupData[i];
+      const selections = getSelectionsForContextID(projectSaveLocation, groupObject.contextId);
+      const validSelections = checkSelectionOccurrences(targetVerse, selections);
+      const selectionsChanged = (selections.length !== validSelections.length);
+
+      if (selectionsChanged) {
+        dispatch(changeSelections([], username, true, groupObject.contextId, actionsBatch)); // clear selections
       }
-      const results_ = {selectionsChanged: selectionInvalidated};
-      dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false, actionsBatch));
-      selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
-      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
-    } else { // wordAlignment tool
-      selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
+      selectionInvalidated = selectionInvalidated || selectionsChanged;
     }
-    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
-      dispatch(batchActions(actionsBatch));
-    }
-    results.selectionsChanged = selectionInvalidated;
-    if (showInvalidation && selectionInvalidated) {
-      dispatch(showSelectionsInvalidatedWarning());
-    }
-  };
+
+    const results_ = { selectionsChanged: selectionInvalidated };
+    dispatch(validateAllSelectionsForVerse(targetVerse, results_, true, contextId, false, actionsBatch));
+    selectionInvalidated = selectionInvalidated || results_.selectionsChanged; // if new selections invalidated
+    selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
+  } else { // wordAlignment tool
+    selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
+  }
+
+  if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+    dispatch(batchActions(actionsBatch));
+  }
+  results.selectionsChanged = selectionInvalidated;
+
+  if (showInvalidation && selectionInvalidated) {
+    dispatch(showSelectionsInvalidatedWarning());
+  }
 };
 
 /**
@@ -268,47 +284,51 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
  * @return {Function}
  */
 export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null,
-  warnOnError = false, batchGroupData = null) => {
-  return (dispatch, getState) => {
-    const state = getState();
-    const username = getUsername(state);
-    const initialSelectionsChanged = results.selectionsChanged;
-    contextId = contextId || state.contextIdReducer.contextId;
-    const groupsDataForVerse = getGroupDataForVerse(state, contextId);
-    let filtered = null;
-    results.selectionsChanged = false;
-    const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
+  warnOnError = false, batchGroupData = null) => (dispatch, getState) => {
+  const state = getState();
+  const username = getUsername(state);
+  const initialSelectionsChanged = results.selectionsChanged;
+  contextId = contextId || state.contextIdReducer.contextId;
+  const groupsDataForVerse = getGroupDataForVerse(state, contextId);
+  let filtered = null;
+  results.selectionsChanged = false;
+  const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
-    const groupsDataKeys = Object.keys(groupsDataForVerse);
-    for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
-      const groupItemKey = groupsDataKeys[i];
-      const groupItem = groupsDataForVerse[groupItemKey];
-      for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
-        const checkingOccurrence = groupItem[j];
-        const selections = checkingOccurrence.selections;
-        if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
-          if (selections && selections.length) {
-            if (!filtered) {  // for performance, we filter the verse only once and only if there is a selection
-              filtered = usfm.removeMarker(targetVerse); // remove USFM markers
-            }
-            const validSelections = checkSelectionOccurrences(filtered, selections);
-            if (selections.length !== validSelections.length) {
-              results.selectionsChanged = true;
-              dispatch(changeSelections([], username, true,
-                checkingOccurrence.contextId, actionsBatch)); // clear selection
-            }
+  const groupsDataKeys = Object.keys(groupsDataForVerse);
+
+  for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
+    const groupItemKey = groupsDataKeys[i];
+    const groupItem = groupsDataForVerse[groupItemKey];
+
+    for (let j = 0, lenGI = groupItem.length; j < lenGI; j++) {
+      const checkingOccurrence = groupItem[j];
+      const selections = checkingOccurrence.selections;
+
+      if (!skipCurrent || !sameContext(contextId, checkingOccurrence.contextId)) {
+        if (selections && selections.length) {
+          if (!filtered) { // for performance, we filter the verse only once and only if there is a selection
+            filtered = usfm.removeMarker(targetVerse); // remove USFM markers
+          }
+
+          const validSelections = checkSelectionOccurrences(filtered, selections);
+
+          if (selections.length !== validSelections.length) {
+            results.selectionsChanged = true;
+            dispatch(changeSelections([], username, true,
+              checkingOccurrence.contextId, actionsBatch)); // clear selection
           }
         }
       }
     }
+  }
 
-    if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
-      dispatch(batchActions(actionsBatch));
-    }
-    if (warnOnError && (initialSelectionsChanged || results.selectionsChanged)) {
-      dispatch(showSelectionsInvalidatedWarning());
-    }
-  };
+  if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+    dispatch(batchActions(actionsBatch));
+  }
+
+  if (warnOnError && (initialSelectionsChanged || results.selectionsChanged)) {
+    dispatch(showSelectionsInvalidatedWarning());
+  }
 };
 
 /**
@@ -318,16 +338,20 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
  * @return {object} group data object.
  */
 export const getGroupDataForVerse = (state, contextId) => {
-  const {groupsData} = state.groupsDataReducer;
+  const { groupsData } = state.groupsDataReducer;
   const filteredGroupData = {};
+
   if (groupsData) {
     const groupsDataKeys = Object.keys(groupsData);
+
     for (let i = 0, l = groupsDataKeys.length; i < l; i++) {
       const groupItemKey = groupsDataKeys[i];
       const groupItem = groupsData[groupItemKey];
+
       if (groupItem) {
         for (let j = 0, l = groupItem.length; j < l; j++) {
           const check = groupItem[j];
+
           try {
             if (isEqual(check.contextId.reference, contextId.reference)) {
               if (!filteredGroupData[groupItemKey]) {
@@ -368,8 +392,9 @@ export const sameContext = (contextId1, contextId2) => {
  */
 export const getSelectionsForContextID = (projectSaveLocation, contextId) => {
   let selections = [];
-  let loadPath = CheckDataLoadActions.generateLoadPath({projectSaveLocation}, {contextId}, 'selections');
+  let loadPath = CheckDataLoadActions.generateLoadPath({ projectSaveLocation }, { contextId }, 'selections');
   let selectionsObject = CheckDataLoadActions.loadCheckData(loadPath, contextId);
+
   if (selectionsObject) {
     selections = selectionsObject.selections;
   }
@@ -386,9 +411,10 @@ export const getSelectionsForContextID = (projectSaveLocation, contextId) => {
 export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
   const selections = getSelectionsForContextID(projectSaveLocation, contextId);
   const selectionsArray = [];
+
   for (let i = 0, len = selections.length; i < len; i++) {
     const selection = selections[i];
     selectionsArray.push(selection.text);
   }
-  return selectionsArray.join(" ");
+  return selectionsArray.join(' ');
 };

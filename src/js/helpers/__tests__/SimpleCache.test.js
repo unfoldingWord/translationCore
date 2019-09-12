@@ -1,24 +1,9 @@
-import SimpleCache, {INSTANCE_STORAGE, SESSION_STORAGE, LOCAL_STORAGE} from '../SimpleCache';
+import SimpleCache, { INSTANCE_STORAGE } from '../SimpleCache';
 
 describe('default storage', () => {
   it('uses instanceStorage by default', () => {
     const cache = new SimpleCache();
     expect(cache.type()).toEqual(INSTANCE_STORAGE);
-  });
-});
-
-describe('fallback storage', () => {
-  it('falls back to instanceStorage when localStorage is missing', () => {
-    global.console = {warn: jest.fn()};
-    const cache = new SimpleCache(LOCAL_STORAGE);
-    expect(cache.type()).toEqual(INSTANCE_STORAGE);
-    expect(console.warn).toHaveBeenCalled();
-  });
-  it('falls back to instanceStorage when sessionStorage is missing', () => {
-    global.console = {warn: jest.fn()};
-    const cache = new SimpleCache(SESSION_STORAGE);
-    expect(cache.type()).toEqual(INSTANCE_STORAGE);
-    expect(console.warn).toHaveBeenCalled();
   });
 });
 
@@ -32,11 +17,15 @@ describe('instanceStorage', () => {
   });
 
   it('sets a string value', () => {
-    expect(() => { cache.set('key', 'value') }).not.toThrow();
+    expect(() => {
+      cache.set('key', 'value');
+    }).not.toThrow();
   });
 
   it('sets an object value', () => {
-    expect(() => { cache.set('key', { prop: 'value' }) }).not.toThrow();
+    expect(() => {
+      cache.set('key', { prop: 'value' });
+    }).not.toThrow();
   });
 
   it('gets a missing value', () => {
@@ -56,7 +45,7 @@ describe('instanceStorage', () => {
   });
 
   it('gets an object value', () => {
-    const value = { prop: 'value'};
+    const value = { prop: 'value' };
     cache.set('key', value);
     expect(cache.get('key')).toEqual(value);
   });

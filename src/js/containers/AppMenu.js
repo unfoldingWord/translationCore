@@ -5,8 +5,8 @@ import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import UpdateIcon from 'material-ui/svg-icons/action/update';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
-import PopoverMenu from '../components/PopoverMenu';
 import MenuItem from 'material-ui/MenuItem';
+import PopoverMenu from '../components/PopoverMenu';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
@@ -25,7 +25,6 @@ const APP_LOCALE = 'app_locale';
  * @property {string} [variant=primary] - the style variant of the menu.
  */
 class AppMenu extends React.Component {
-
   constructor(props) {
     super(props);
     this.closeDialog = this.closeDialog.bind(this);
@@ -37,8 +36,8 @@ class AppMenu extends React.Component {
         [APP_UPDATE]: false,
         [CONTENT_UPDATE]: false,
         [FEEDBACK]: false,
-        [APP_LOCALE]: false
-      }
+        [APP_LOCALE]: false,
+      },
     };
   }
 
@@ -59,8 +58,8 @@ class AppMenu extends React.Component {
       this.setState({
         dialog: {
           ...this.state.dialog,
-          [dialog]: false
-        }
+          [dialog]: false,
+        },
       });
     };
   }
@@ -77,8 +76,8 @@ class AppMenu extends React.Component {
       this.setState({
         dialog: {
           ...this.state.dialog,
-          [dialog]: true
-        }
+          [dialog]: true,
+        },
       });
     };
   }
@@ -95,41 +94,41 @@ class AppMenu extends React.Component {
   }
 
   render() {
-    const {variant, translate} = this.props;
+    const { variant, translate } = this.props;
     return (
       <div>
         <PopoverMenu label={translate('actions')}
-                     variant={variant}
-                     icon={<SettingsIcon/>}>
+          variant={variant}
+          icon={<SettingsIcon/>}>
           <MenuItem onClick={this.openDialog(APP_UPDATE)}
-                    primaryText={translate('updates.check_for_newer_app')}
-                    leftIcon={<SyncIcon/>}/>
+            primaryText={translate('updates.check_for_newer_app')}
+            leftIcon={<SyncIcon/>}/>
           <MenuItem onClick={this.openDialog(CONTENT_UPDATE)}
-                    primaryText={translate('updates.check_for_content_updates')}
-                    leftIcon={<UpdateIcon/>}/>
+            primaryText={translate('updates.check_for_content_updates')}
+            leftIcon={<UpdateIcon/>}/>
           <MenuItem onClick={this.openDialog(FEEDBACK)}
-                    primaryText={translate('user_feedback')}
-                    leftIcon={<FeedbackIcon/>}/>
+            primaryText={translate('user_feedback')}
+            leftIcon={<FeedbackIcon/>}/>
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
-                    primaryText={translate('change_locale')}
-                    leftIcon={<TranslateIcon/>}/>
+            primaryText={translate('change_locale')}
+            leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
 
         <FeedbackDialogContainer open={this.isDialogOpen(FEEDBACK)}
-                                 translate={translate}
-                                 onClose={this.closeDialog(FEEDBACK)}/>
+          translate={translate}
+          onClose={this.closeDialog(FEEDBACK)}/>
 
         <LocaleSettingsDialogContainer open={this.isDialogOpen(APP_LOCALE)}
-                                       translate={translate}
-                                       onClose={this.closeDialog(APP_LOCALE)}/>
+          translate={translate}
+          onClose={this.closeDialog(APP_LOCALE)}/>
 
         <SoftwareUpdatesDialog open={this.isDialogOpen(APP_UPDATE)}
-                               translate={translate}
-                               onClose={this.closeDialog(APP_UPDATE)}/>
+          translate={translate}
+          onClose={this.closeDialog(APP_UPDATE)}/>
 
         <SourceContentUpdatesDialogContainer open={this.isDialogOpen(CONTENT_UPDATE)}
-                                             translate={translate}
-                                             onClose={this.closeDialog(CONTENT_UPDATE)}/>
+          translate={translate}
+          onClose={this.closeDialog(CONTENT_UPDATE)}/>
       </div>
 
     );
@@ -137,11 +136,9 @@ class AppMenu extends React.Component {
 }
 AppMenu.propTypes = {
   translate: PropTypes.func.isRequired,
-  variant: PropTypes.string
+  variant: PropTypes.string,
 };
 
-AppMenu.defaultProps = {
-  variant: 'primary'
-};
+AppMenu.defaultProps = { variant: 'primary' };
 
 export default AppMenu;

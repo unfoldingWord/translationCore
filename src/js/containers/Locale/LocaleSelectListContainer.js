@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { getLocaleLanguages, getActiveLocaleLanguage } from '../../selectors/index';
-import {connect} from 'react-redux';
 import LanguageSelectField from '../../components/LanguageSelectField';
 
 /**
@@ -11,21 +11,16 @@ import LanguageSelectField from '../../components/LanguageSelectField';
  * @property {func} onChange - callback when the selection changes.
  */
 class LocaleSelectListContainer extends React.Component {
-
   constructor(props) {
     super(props);
-    this.state = {
-      selectedLocale: props.currentLanguage
-    };
+    this.state = { selectedLocale: props.currentLanguage };
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     // TRICKY: update the selection if the language is changed elsewhere
-    if(nextProps.currentLanguage !== this.props.currentLanguage) {
-      this.setState({
-        selectedLocale: nextProps.currentLanguage
-      });
+    if (nextProps.currentLanguage !== this.props.currentLanguage) {
+      this.setState({ selectedLocale: nextProps.currentLanguage });
     }
   }
 
@@ -35,21 +30,20 @@ class LocaleSelectListContainer extends React.Component {
   }
 
   handleChange(language) {
-    const {onChange} = this.props;
-    this.setState({
-      selectedLocale: language
-    });
+    const { onChange } = this.props;
+
+    this.setState({ selectedLocale: language });
     onChange(language);
   }
 
   render() {
-    const {languages, translate} = this.props;
-    const {selectedLocale} = this.state;
+    const { languages, translate } = this.props;
+    const { selectedLocale } = this.state;
     return (
       <LanguageSelectField languages={languages}
-                    selectedLanguageCode={selectedLocale}
-                    onChange={this.handleChange}
-                    translate={translate}/>
+        selectedLanguageCode={selectedLocale}
+        onChange={this.handleChange}
+        translate={translate}/>
     );
   }
 }
@@ -58,12 +52,12 @@ LocaleSelectListContainer.propTypes = {
   translate: PropTypes.func.isRequired,
   currentLanguage: PropTypes.string,
   languages: PropTypes.array,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
 };
 
 const mapLanguagePickerStateToProps = (state) => ({
   languages: getLocaleLanguages(state),
-  currentLanguage: getActiveLocaleLanguage(state).code
+  currentLanguage: getActiveLocaleLanguage(state).code,
 });
 
 export default connect(mapLanguagePickerStateToProps)(LocaleSelectListContainer);

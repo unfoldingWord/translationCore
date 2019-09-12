@@ -1,27 +1,27 @@
 /* eslint-env jest */
 
 import React from 'react';
-import SearchOptions from '../src/js/components/home/projectsManagement/OnlineImportModal/SearchOptions';
 import renderer from 'react-test-renderer';
-import {MuiThemeProvider} from "material-ui";
+import { MuiThemeProvider } from 'material-ui';
+import SearchOptions from '../src/js/components/home/projectsManagement/OnlineImportModal/SearchOptions';
 require('jest');
 
 // Tests for ProjectFAB React Component
 describe('Test SearchOptions component',()=>{
   test('Comparing SearchOptions Component should render with snapshot and have "Language Code" on floating label', () => {
-    const userName = "dummy";
+    const userName = 'dummy';
     const mock_searchReposByUser = jest.fn();
     mock_searchReposByUser.mockReturnValue(true);
     const mock_actions = { searchReposByUser: mock_searchReposByUser };
-    const importLink = "link";
+    const importLink = 'link';
     const expectedSearchLabels = ['user','projects.language_code','projects.book'];
 
-    const renderedValue =  renderer.create(
+    const renderedValue = renderer.create(
       <MuiThemeProvider>
         <SearchOptions actions={mock_actions}
-                       translate={key => key}
-                       importLink={importLink}
-                       username={userName} />
+          translate={key => key}
+          importLink={importLink}
+          username={userName} />
       </MuiThemeProvider>
     ).toJSON();
 
@@ -41,13 +41,15 @@ describe('Test SearchOptions component',()=>{
    */
   function getDisplayedText(rendered) {
     const displayedText = [];
+
     rendered.forEach((item) => {
-      let text = "";
+      let text = '';
+
       if (typeof item === 'string') {
-        if ((item.length) && ((item !== " ") && (item !== "\xA0"))) { // ignore " " whitespace
+        if ((item.length) && ((item !== ' ') && (item !== '\xA0'))) { // ignore " " whitespace
           text = item;
         }
-      } else if(Array.isArray(item)) {
+      } else if (Array.isArray(item)) {
         const array_labels = getDisplayedText(item);
         text = array_labels.join('');
       } else if (item.children) {
@@ -65,7 +67,8 @@ describe('Test SearchOptions component',()=>{
    */
   function getDisplayedTextFromChildren(renderedItem) {
     const child_texts = getDisplayedText(renderedItem.children);
-    let text = "";
+    let text = '';
+
     child_texts.forEach((child_label) => {
       if (child_label.length) {
         text += '[' + child_label + ']';
@@ -82,13 +85,15 @@ describe('Test SearchOptions component',()=>{
    */
   function searchForChildren(search, findType) {
     let found = [];
+
     if (search.children) {
       search.children.forEach((child) => {
         if (child.type === findType) {
           found.push(child.children);
-        } else if(child.children) {
+        } else if (child.children) {
           const found_below = searchForChildren(child, findType);
-          if(found_below.length) {
+
+          if (found_below.length) {
             found = found.concat(found_below);
           }
         }

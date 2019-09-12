@@ -2,18 +2,20 @@
  * @module Actions/Comments
  */
 
-import consts from './ActionTypes';
 // helpers
-import {generateTimestamp} from '../helpers/index';
+import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import consts from './ActionTypes';
 
 export function comment(text, username, timestamp) {
   return ((dispatch, getState) => {
     const { contextIdReducer: { contextId } } = getState();
-    const { bookId, chapter, verse } = contextId.reference;
+    const {
+      bookId, chapter, verse,
+    } = contextId.reference;
     const {
       gatewayLanguageCode,
-      gatewayLanguageQuote
+      gatewayLanguageQuote,
     } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
 
     dispatch({
@@ -25,7 +27,7 @@ export function comment(text, username, timestamp) {
       modifiedTimestamp: timestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote,
-      text
+      text,
     });
   });
 }
@@ -36,15 +38,13 @@ export function comment(text, username, timestamp) {
  * @param {String} username - Alias name.
  * @return {Object} New state for comment reducer.
  */
-export const addComment = (text, username) => {
-  return ((dispatch, getState) => {
-    let state = getState();
-    let contextId = state.contextIdReducer.contextId;
-    dispatch(comment(text, username, generateTimestamp()));
-    dispatch({
-      type: consts.TOGGLE_COMMENTS_IN_GROUPDATA,
-      contextId,
-      text
-    });
+export const addComment = (text, username) => ((dispatch, getState) => {
+  let state = getState();
+  let contextId = state.contextIdReducer.contextId;
+  dispatch(comment(text, username, generateTimestamp()));
+  dispatch({
+    type: consts.TOGGLE_COMMENTS_IN_GROUPDATA,
+    contextId,
+    text,
   });
-};
+});

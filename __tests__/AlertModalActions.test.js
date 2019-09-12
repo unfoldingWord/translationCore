@@ -5,31 +5,31 @@ import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 
 describe('AlertModalActions.openAlertDialog', () => {
   test('Should create an action to open the alert dialog with a message and without spinning icon. When the argument Loading = null', () => {
-    const alertMessage = "alert message";
+    const alertMessage = 'alert message';
     const expectedAction = {
       type: consts.OPEN_ALERT_DIALOG,
       alertMessage: alertMessage,
-      loading: null
+      loading: null,
     };
     expect(AlertModalActions.openAlertDialog(alertMessage, null)).toEqual(expectedAction);
   });
 
   test('Should create an action to open the alert dialog with a message and without spinning icon. When the argument Loading = false', () => {
-    const alertMessage = "alert message";
+    const alertMessage = 'alert message';
     const expectedAction = {
       type: consts.OPEN_ALERT_DIALOG,
       alertMessage: alertMessage,
-      loading: false
+      loading: false,
     };
     expect(AlertModalActions.openAlertDialog(alertMessage, false)).toEqual(expectedAction);
   });
 
   test('Should create an action to open the alert dialog with a message with spinning icon. When the argument Loading = true', () => {
-    const alertMessage = "alert message";
+    const alertMessage = 'alert message';
     const expectedAction = {
       type: consts.OPEN_ALERT_DIALOG,
       alertMessage: alertMessage,
-      loading: true
+      loading: true,
     };
     expect(AlertModalActions.openAlertDialog(alertMessage, true)).toEqual(expectedAction);
   });
@@ -37,11 +37,14 @@ describe('AlertModalActions.openAlertDialog', () => {
 
 describe('AlertModalActions.openOptionDialog', () => {
   test('Should create an action to open the alert dialog with two button options', () => {
-    const alertMessage = "alert message";
+    const alertMessage = 'alert message';
+
     const callback = () => {};
+
     const callback2 = () => {};
-    const button1Text = "button1 text";
-    const button2Text = "button2 text";
+
+    const button1Text = 'button1 text';
+    const button2Text = 'button2 text';
     const buttonLinkText = null;
     const expectedAction = {
       type: consts.OPEN_OPTION_DIALOG,
@@ -50,7 +53,7 @@ describe('AlertModalActions.openOptionDialog', () => {
       button1Text,
       button2Text,
       buttonLinkText,
-      callback2
+      callback2,
     };
     expect(typeof alertMessage).toEqual('string');
     expect(typeof callback).toEqual('function');
@@ -63,12 +66,15 @@ describe('AlertModalActions.openOptionDialog', () => {
 
 describe('AlertModalActions.openOptionDialog with link button', () => {
   test('Should create an action to open the alert dialog with two button options', () => {
-    const alertMessage = "alert message";
+    const alertMessage = 'alert message';
+
     const callback = () => {};
+
     const callback2 = () => {};
-    const button1Text = "button1 text";
-    const button2Text = "button2 text";
-    const buttonLinkText = "link button text";
+
+    const button1Text = 'button1 text';
+    const button2Text = 'button2 text';
+    const buttonLinkText = 'link button text';
     const expectedAction = {
       type: consts.OPEN_OPTION_DIALOG,
       alertMessage,
@@ -76,7 +82,7 @@ describe('AlertModalActions.openOptionDialog with link button', () => {
       button1Text,
       button2Text,
       buttonLinkText,
-      callback2
+      callback2,
     };
     expect(typeof alertMessage).toEqual('string');
     expect(typeof callback).toEqual('function');
@@ -90,9 +96,7 @@ describe('AlertModalActions.openOptionDialog with link button', () => {
 
 describe('AlertModalActions.closeAlertDialog', () => {
   test('Should create an action to close the alert dialog', () => {
-    const expectedAction = {
-      type: consts.CLOSE_ALERT_DIALOG
-    };
+    const expectedAction = { type: consts.CLOSE_ALERT_DIALOG };
     expect(AlertModalActions.closeAlertDialog()).toEqual(expectedAction);
   });
 });

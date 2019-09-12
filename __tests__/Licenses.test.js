@@ -1,9 +1,11 @@
 /* eslint-env jest */
 import React from 'react';
-import {mount} from 'enzyme';
+import { mount } from 'enzyme';
 import Licenses from '../src/js/components/home/license/Licenses';
 import attributionData from '../src/js/components/home/license/attributionData.json';
-import {ignorePackages, staticFonts, packageRename} from '../scripts/attributions/attributionHelpers';
+import {
+  ignorePackages, staticFonts, packageRename,
+} from '../scripts/attributions/attributionHelpers';
 
 describe('Licenses component renders correctly', () => {
   let html;
@@ -15,13 +17,13 @@ describe('Licenses component renders correctly', () => {
   });
 
   test('Licenses Component render should contain all the names in attributionData.json', () => {
-    for(let name in attributionData.packages) {
+    for (let name in attributionData.packages) {
       expect(html).toContain(name);
     }
   });
 
   test('Licenses Component render should contain all the fonts in staticFonts', () => {
-    for(let name in staticFonts) {
+    for (let name in staticFonts) {
       expect(html).toContain(name);
     }
   });
@@ -33,9 +35,9 @@ describe('Licenses component renders correctly', () => {
   });
 
   test('Licenses Component render should contain the new names in renamePackages', () => {
-    for(let name in packageRename) {
+    for (let name in packageRename) {
       expect(html).not.toContain(name);
-      expect(html).toContain(packageRename[name].name)
+      expect(html).toContain(packageRename[name].name);
     }
   });
 });

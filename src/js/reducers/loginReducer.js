@@ -2,28 +2,28 @@ import types from '../actions/ActionTypes';
 
 const initialState = {
   loggedInUser: false,
-  userdata: {}
+  userdata: {},
 };
 
 const loginReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.LOGIN_USER:
-      return {
-        ...state,
-        userdata:  {
-          ...action.userdata,
-          localUser: action.localUser
-        },
-        loggedInUser: true
-      };
-    case types.LOGOUT_USER:
-      return {
-        ...state,
-        userdata: {},
-        loggedInUser: false
-      };
-    default:
-      return state;
+  case types.LOGIN_USER:
+    return {
+      ...state,
+      userdata: {
+        ...action.userdata,
+        localUser: action.localUser,
+      },
+      loggedInUser: true,
+    };
+  case types.LOGOUT_USER:
+    return {
+      ...state,
+      userdata: {},
+      loggedInUser: false,
+    };
+  default:
+    return state;
   }
 };
 
@@ -33,9 +33,7 @@ export default loginReducer;
  * Checks if the user is logged in
  * @param {object} state the login slice the state object
  */
-export const getIsLoggedIn = (state) => {
-  return state.loggedInUser;
-};
+export const getIsLoggedIn = (state) => state.loggedInUser;
 
 /**
  * Returns the username of the user
@@ -43,7 +41,7 @@ export const getIsLoggedIn = (state) => {
  * @return {string}
  */
 export const getUsername = (state) => {
-  const {username} = state.userdata;
+  const { username } = state.userdata;
   return username;
 };
 
@@ -53,6 +51,6 @@ export const getUsername = (state) => {
  * @return {string}
  */
 export const getEmail = (state) => {
-  const {email} = state.userdata;
+  const { email } = state.userdata;
   return email;
 };

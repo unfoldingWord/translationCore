@@ -1,12 +1,12 @@
-import React from "react";
-import attributionData from "./attributionData.json";
-import {getAttributions} from "../../../helpers/LicensesHelpers";
+import React from 'react';
+import { getAttributions } from '../../../helpers/LicensesHelpers';
+import attributionData from './attributionData.json';
 
 class ThirdPartyAttributions extends React.Component {
   render() {
     let attributions = getAttributions(attributionData.packages);
     attributions = attributions.concat(getAttributions(attributionData.fonts));
-    return(
+    return (
       <div>
         {attributions}
       </div>

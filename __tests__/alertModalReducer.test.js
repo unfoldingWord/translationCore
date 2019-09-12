@@ -11,7 +11,7 @@ const initialState = {
   button2: null,
   buttonLink: null,
   callback: null,
-  callback2: null
+  callback2: null,
 };
 
 describe('alertModalReducer', () => {
@@ -25,18 +25,18 @@ describe('alertModalReducer', () => {
     expect(
       alertModalReducer(initialState, {
         type: consts.OPEN_ALERT_DIALOG,
-        alertMessage: "alert message",
-        loading: true
+        alertMessage: 'alert message',
+        loading: true,
       })
     ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: true,
-      alertText: "alert message",
+      alertText: 'alert message',
       button1: null,
       button2: null,
       buttonLink: null,
       callback: null,
-      callback2: null
+      callback2: null,
     });
 
     expect(
@@ -44,32 +44,33 @@ describe('alertModalReducer', () => {
         initialState,
         {
           type: consts.OPEN_ALERT_DIALOG,
-          alertMessage: "alert message",
-          loading: true
+          alertMessage: 'alert message',
+          loading: true,
         }
       )
     ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: true,
-      alertText: "alert message",
+      alertText: 'alert message',
       button1: null,
       button2: null,
       buttonLink: null,
       callback: null,
-      callback2: null
+      callback2: null,
     });
   });
 
   test('should handle OPEN_OPTION_DIALOG', () => {
     const callback = () => {};
+
     expect(
       alertModalReducer(
         initialState,
         {
           type: consts.OPEN_OPTION_DIALOG,
-          alertMessage: "alert message",
-          button1Text: "button1 Text",
-          button2Text: "button2 Text",
+          alertMessage: 'alert message',
+          button1Text: 'button1 Text',
+          button2Text: 'button2 Text',
           callback,
           callback2: null,
         }
@@ -77,9 +78,9 @@ describe('alertModalReducer', () => {
     ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: false,
-      alertText: "alert message",
-      button1: "button1 Text",
-      button2: "button2 Text",
+      alertText: 'alert message',
+      button1: 'button1 Text',
+      button2: 'button2 Text',
       buttonLink: undefined,
       callback,
       callback2: null,
@@ -95,11 +96,9 @@ describe('alertModalReducer', () => {
           alertText: null,
           button1: null,
           button2: null,
-          callback: null
+          callback: null,
         },
-        {
-          type: consts.CLOSE_ALERT_DIALOG
-        }
+        { type: consts.CLOSE_ALERT_DIALOG }
       )
     ).toEqual(initialState);
   });

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {mount} from 'enzyme';
+import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ToolCardBoxes from '../src/js/components/home/toolsManagement/ToolCardBoxes';
 import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../src/js/common/constants';
@@ -15,7 +15,7 @@ test('translationWords should have three boxes unchecked', () => {
     availableCategories: {},
     translate: jest.fn(() => {}),
     selectedGL: 'en',
-    showPopover: jest.fn(() => {})
+    showPopover: jest.fn(() => {}),
   };
   const component = renderer.create(
     <ToolCardBoxes {...props}></ToolCardBoxes>,
@@ -35,7 +35,7 @@ test('translationNotes should have 4 boxes checked', () => {
       'figs-rquestion',
       'figs-simile',
       'figs-apostrophe',
-      'figs-euphemism'
+      'figs-euphemism',
     ],
     culture: ['figs-explicit'],
     grammar: [
@@ -46,9 +46,9 @@ test('translationNotes should have 4 boxes checked', () => {
       'figs-you',
       'figs-123person',
       'figs-abstractnouns',
-      'figs-distinguish'
-    ]
-  }
+      'figs-distinguish',
+    ],
+  };
   const selectedCategories = [
     'writing-background',
     'translate-numbers',
@@ -65,8 +65,8 @@ test('translationNotes should have 4 boxes checked', () => {
     'figs-pronouns',
     'figs-you',
     'figs-123person',
-    'figs-abstractnouns'
-  ]
+    'figs-abstractnouns',
+  ];
   const props = {
     toolName: TRANSLATION_NOTES,
     selectedCategories,
@@ -74,9 +74,9 @@ test('translationNotes should have 4 boxes checked', () => {
     checks: ['figs-gendernotations', 'figs-pronouns', 'figs-irony'],
     onChecked: jest.fn(() => {}),
     bookId: 'tit',
-    translate: jest.fn((txt) => {return "translated: " + txt}),
+    translate: jest.fn((txt) => 'translated: ' + txt),
     selectedGL: 'en',
-    showPopover: jest.fn(() => {})
+    showPopover: jest.fn(() => {}),
   };
 
   const component = mount(
@@ -88,8 +88,8 @@ test('translationNotes should have 4 boxes checked', () => {
       grammar: true,
       figures: true,
       discourse: true,
-      numbers: true
-    }
+      numbers: true,
+    },
   });
 
   const subCat = toJson(component);

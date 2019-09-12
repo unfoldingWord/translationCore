@@ -1,8 +1,8 @@
-import {isNotRegistered, stringifySafe} from '../src/js/helpers/FeedbackHelpers';
+import { isNotRegistered, stringifySafe } from '../src/js/helpers/FeedbackHelpers';
 
 describe('stringify json safely', () => {
   it('processes good json', () => {
-    expect(stringifySafe({hello:'world'}, '[error]')).toEqual("{\"hello\":\"world\"}");
+    expect(stringifySafe({ hello:'world' }, '[error]')).toEqual('{"hello":"world"}');
   });
 
   it('processes circular json', () => {
@@ -13,34 +13,31 @@ describe('stringify json safely', () => {
     const circular = {
       children: [
         child1,
-        child2
-      ]
+        child2,
+      ],
     };
-    expect(stringifySafe(circular, '[error]')).toEqual("{\"children\":[{\"child\":{\"child\":\"[Circular ~.children.0]\"}},{\"child\":{\"child\":\"[Circular ~.children.1]\"}}]}");
+    expect(stringifySafe(circular, '[error]')).toEqual('{"children":[{"child":{"child":"[Circular ~.children.0]"}},{"child":{"child":"[Circular ~.children.1]"}}]}');
   });
 });
 
 describe('indicates if the user has registered a feedback account', () => {
-
   test('empty', () => {
     const response = {};
     expect(isNotRegistered(response)).toEqual(false);
   });
 
   test('success', () => {
-      const response = {
-        status: 200,
-        data: {}
-      };
-      expect(isNotRegistered(response)).toEqual(false);
+    const response = {
+      status: 200,
+      data: {},
+    };
+    expect(isNotRegistered(response)).toEqual(false);
   });
 
   test('error', () => {
     const response = {
       status: 401,
-      data: {
-        error: 'something broke'
-      }
+      data: { error: 'something broke' },
     };
     expect(isNotRegistered(response)).toEqual(false);
   });
@@ -48,9 +45,7 @@ describe('indicates if the user has registered a feedback account', () => {
   test('not registered', () => {
     const response = {
       status: 401,
-      data: {
-        error: 'User not registered: Insufficient access privileges'
-      }
+      data: { error: 'User not registered: Insufficient access privileges' },
     };
     expect(isNotRegistered(response)).toEqual(true);
   });
@@ -59,9 +54,7 @@ describe('indicates if the user has registered a feedback account', () => {
     // this would be silly, but just checking corner cases.
     const response = {
       status: 200,
-      data: {
-        error: 'User not registered: Insufficient access privileges'
-      }
+      data: { error: 'User not registered: Insufficient access privileges' },
     };
     expect(isNotRegistered(response)).toEqual(false);
   });

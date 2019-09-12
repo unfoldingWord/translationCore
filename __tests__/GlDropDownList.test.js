@@ -1,7 +1,6 @@
 /* eslint-env jest */
-jest.mock('fs-extra');
-import ospath from "ospath";
-import path from "path-extra";
+import ospath from 'ospath';
+import path from 'path-extra';
 import fs from 'fs-extra';
 
 import React from 'react';
@@ -10,6 +9,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // Components
 import GlDropDownList from '../src/js/components/home/toolsManagement/GlDropDownList';
 import { WORD_ALIGNMENT } from '../src/js/common/constants';
+jest.mock('fs-extra');
 
 const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
@@ -33,7 +33,7 @@ describe('Test Gateway Language Drop Down List',() => {
       currentGLSelection: 1,
       selectionChange: () => {},
       toolName: WORD_ALIGNMENT,
-      translate: key => key
+      translate: key => key,
     };
     const renderedValue = renderer.create(
       <MuiThemeProvider>

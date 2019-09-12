@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // components
 import { AutoComplete } from 'material-ui';
 import TranslateIcon from 'material-ui/svg-icons/action/translate';
-import * as LangHelpers from "../../../helpers/LanguageHelpers";
+import * as LangHelpers from '../../../helpers/LanguageHelpers';
 
 const LanguageIdTextBox = ({
   languageId,
@@ -13,9 +13,8 @@ const LanguageIdTextBox = ({
   updateLanguageSettings,
   translate,
   id,
-  className
+  className,
 }) => {
-
   const caseInsensitiveLeadingFilter = function (searchText, key) {
     return key.toLowerCase().indexOf(searchText.toLowerCase()) === 0;
   };
@@ -25,10 +24,12 @@ const LanguageIdTextBox = ({
       id={id+'-wrapper'}
       className={className}
     >
-      <label htmlFor={id} style={{margin: 0}}>
-        <TranslateIcon style={{ height: "16px", width: "16px", color: "#000000", verticalAlign: "bottom" }} />&nbsp;
+      <label htmlFor={id} style={{ margin: 0 }}>
+        <TranslateIcon style={{
+          height: '16px', width: '16px', color: '#000000', verticalAlign: 'bottom',
+        }} />&nbsp;
         <span>{translate('projects.language_code')}</span>&nbsp;
-        <span className={"required"}/>
+        <span className={'required'}/>
       </label>
       <AutoComplete
         id={id}
@@ -37,14 +38,14 @@ const LanguageIdTextBox = ({
         listStyle={{ maxHeight: 300, overflow: 'auto' }}
         errorText={getErrorMessage(translate, languageId)}
         errorStyle={{ color: '#cd0033' }}
-        underlineFocusStyle={{ borderColor: "var(--accent-color-dark)" }}
+        underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
         onNewRequest={(chosenRequest, index) => {
-            selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
-          }
+          selectLanguage(chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+        }
         }
         onUpdateInput={searchText => {
-            selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageSettings);
-          }
+          selectLanguage(searchText, -1, updateLanguageName, updateLanguageId, updateLanguageSettings);
+        }
         }
         filter={caseInsensitiveLeadingFilter}
         dataSource={LangHelpers.getLanguagesSortedByCode()}
@@ -57,7 +58,7 @@ const LanguageIdTextBox = ({
 
 const dataSourceConfig = {
   text: 'idPrompt',
-  value: 'code'
+  value: 'code',
 };
 
 /**
@@ -66,8 +67,9 @@ const dataSourceConfig = {
  * @param {string} languageID
  * @return {String} error message if invalid, else null
  */
-export const getErrorMessage = (translate, languageID = "") => {
-  let message = (!languageID) ? translate('project_validation.field_required') : "";
+export const getErrorMessage = (translate, languageID = '') => {
+  let message = (!languageID) ? translate('project_validation.field_required') : '';
+
   if (!message) {
     if (!LangHelpers.getLanguageByCodeSelection(languageID)) {
       message = translate('project_validation.invalid_language_code');
@@ -82,7 +84,7 @@ export const getErrorMessage = (translate, languageID = "") => {
  * @param {function} updateLanguageSettings -function to call to save language data
  */
 const updateLanguage = (language, updateLanguageSettings) => {
-  updateLanguageSettings(language.code, language.name, language.ltr ? "ltr" : "rtl");
+  updateLanguageSettings(language.code, language.name, language.ltr ? 'ltr' : 'rtl');
 };
 
 /**
@@ -97,23 +99,25 @@ const updateLanguage = (language, updateLanguageSettings) => {
 export const selectLanguage = (chosenRequest, index, updateLanguageName, updateLanguageId, updateLanguageSettings) => {
   if (index >= 0) { // if language in list, update all fields
     const language = LangHelpers.getLanguagesSortedByCode()[index];
+
     if (language) {
       updateLanguage(language, updateLanguageSettings);
     }
   } else {
     const language = LangHelpers.getLanguageByCodeSelection(chosenRequest); // try case insensitive search
+
     if (language) {
       updateLanguage(language, updateLanguageSettings);
     } else {
-      updateLanguageId(chosenRequest || ""); // temporarily queue str change
-      updateLanguageName(""); // clear associated code
+      updateLanguageId(chosenRequest || ''); // temporarily queue str change
+      updateLanguageName(''); // clear associated code
     }
   }
 };
 
 LanguageIdTextBox.defaultProps = {
   id: 'Language-Id-TextBox',
-  className: 'language-id-textbox'
+  className: 'language-id-textbox',
 };
 
 LanguageIdTextBox.propTypes = {
@@ -123,7 +127,7 @@ LanguageIdTextBox.propTypes = {
   updateLanguageId: PropTypes.func.isRequired,
   updateLanguageSettings: PropTypes.func.isRequired,
   id: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 };
 
 export default LanguageIdTextBox;

@@ -2,9 +2,9 @@
 /* eslint-disable no-console */
 import { applyMiddleware, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import reducers from '../src/js/reducers';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import reducers from '../src/js/reducers';
 // actions
 import * as csvExportActions from '../src/js/actions/CSVExportActions';
 import * as ProjectImportStepperActions
@@ -12,18 +12,14 @@ import * as ProjectImportStepperActions
 import * as AlertModalActions from '../src/js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../src/js/helpers/csvHelpers';
-import {USER_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES} from '../src/js/common/constants';
+import {
+  USER_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES,
+} from '../src/js/common/constants';
 
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
-  getActiveLocaleLanguage: () => {
-    return {code: 'en'};
-  },
-  getTranslate: () => {
-    return jest.fn((code) => {
-      return code;
-    });
-  }
+  getActiveLocaleLanguage: () => ({ code: 'en' }),
+  getTranslate: () => jest.fn((code) => code),
 }));
 
 // data
@@ -41,8 +37,7 @@ const fixtures = path.join(__dirname, 'fixtures');
 const project = path.join(fixtures, 'project');
 const outDir = path.join(testOutputPath, '1');
 
-beforeAll(() =>
-{
+beforeAll(() => {
   fs.__resetMockFS();
   fs.ensureDirSync(outDir);
   fs.__loadDirIntoMockFs(project, project);
@@ -50,9 +45,7 @@ beforeAll(() =>
 });
 
 describe('csv export actions', () => {
-
   describe('csvExportActions.saveToolDataToCSV for translationWords', () => {
-
     test('should resolve true for checksPerformedPath', () => {
       const translate = (key) => key;
       return csvExportActions.saveToolDataToCSV(TRANSLATION_WORDS,
@@ -93,7 +86,6 @@ describe('csv export actions', () => {
   });
 
   describe('csvExportActions.saveToolDataToCSV for translationNotes', () => {
-
     test('should resolve true for checksPerformedPath', () => {
       const translate = (key) => key;
       return csvExportActions.saveToolDataToCSV(TRANSLATION_NOTES,
@@ -330,9 +322,11 @@ describe('csv export actions', () => {
       fs.ensureDirSync(testFolder);
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
+
       try {
         const translate = (key) => key;
         const resolve = await csvExportActions.exportToCSVZip(checksPerformedPath, zipPath, translate);
+
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -347,9 +341,11 @@ describe('csv export actions', () => {
       fs.ensureDirSync(testFolder);
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
+
       try {
         const translate = (key) => key;
         const resolve = await csvExportActions.exportToCSVZip(noChecksPerformedPath, zipPath, translate);
+
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -364,9 +360,11 @@ describe('csv export actions', () => {
       fs.ensureDirSync(testFolder);
       const zipPath = path.join(testFolder, 'export.zip');
       expect.assertions(1);
+
       try {
         const translate = (key) => key;
         const resolve = await csvExportActions.exportToCSVZip(bogusFilesInCheckDataPath, zipPath, translate);
+
         if (fs.existsSync(testFolder)) {
           fs.removeSync(testFolder);
         }
@@ -379,6 +377,7 @@ describe('csv export actions', () => {
 
   describe('csvExportActions.exportToCSV', () => {
     let store;
+
     beforeEach(() => {
       // create a new store instance for each test
       store = createStore(
@@ -397,5 +396,4 @@ describe('csv export actions', () => {
       expect(spy_open_dialog).toBeCalledWith('projects.merge_export_error');
     });
   });
-
 });

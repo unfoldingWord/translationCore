@@ -12,7 +12,10 @@ export const MIGRATE_MANIFEST_VERSION = 2;
  */
 export default (projectPath, projectLink) => {
   Version.getVersionFromManifest(projectPath, projectLink); // ensure manifest converted for tc
-  if (shouldRun(projectPath)) run(projectPath);
+
+  if (shouldRun(projectPath)) {
+    run(projectPath);
+  }
 };
 
 /**
@@ -32,7 +35,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
-  console.log("migrateToVersion2(" + projectPath + ")");
+  console.log('migrateToVersion2(' + projectPath + ')');
   updateAlignments(projectPath);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
@@ -44,13 +47,14 @@ const run = (projectPath) => {
  */
 export const updateAlignments = function (projectPath) {
   const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData');
+
   if (fs.existsSync(projectAlignmentDataPath)) {
-    const alignmentFolders = fs.readdirSync(projectAlignmentDataPath).filter(folder => {
-      return (fs.statSync(path.join(projectAlignmentDataPath, folder)).isDirectory() && (folder !== ".DS_Store"));
-    });
+    const alignmentFolders = fs.readdirSync(projectAlignmentDataPath).filter(folder => (fs.statSync(path.join(projectAlignmentDataPath, folder)).isDirectory() && (folder !== '.DS_Store')));
+
     for (let folder of alignmentFolders) {
       const alignmentPath = path.join(projectAlignmentDataPath, folder);
       const files = fs.readdirSync(alignmentPath).filter((file) => (path.extname(file) === '.json'));
+
       for (let file of files) {
         const file_path = path.join(alignmentPath, file);
         updateAlignmentsForFile(file_path, file);
@@ -66,11 +70,14 @@ export const updateAlignments = function (projectPath) {
  */
 export const updateAlignmentsForFile = function (filePath) {
   let modified = false;
+
   try {
     const chapter_alignments = fs.readJsonSync(filePath);
+
     for (let verseKey in chapter_alignments) {
       const verse = chapter_alignments[verseKey];
       const foundWords = {}; // this is a dictionary keyed by the word, each entry is an array of alignment instances of that word
+
       for (let alignment of verse.alignments) {
         modified |= convertStrongstoStrong(alignment);
         findWordsInWordList(foundWords, alignment.bottomWords); // search bottom words
@@ -78,11 +85,12 @@ export const updateAlignmentsForFile = function (filePath) {
       findWordsInWordList(foundWords, verse.wordBank); // search word bank
       modified |= correctOccurrencesInAlignmentWords(foundWords);
     }
+
     if (modified) {
       fs.outputJsonSync(filePath, chapter_alignments, { spaces: 2 });
     }
   } catch (e) {
-    console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());
+    console.warn('Error opening chapter alignment \'' + filePath + '\': ' + e.toString());
   }
 };
 
@@ -93,6 +101,7 @@ export const updateAlignmentsForFile = function (filePath) {
  */
 const convertStrongstoStrong = function (alignment) {
   let modified = false;
+
   for (let word of alignment.topWords) {
     if (word.strongs) {
       word.strong = word.strongs;
@@ -110,8 +119,11 @@ const convertStrongstoStrong = function (alignment) {
  */
 let findWordsInWordList = function (foundWords, wordList) {
   for (let wordItem of wordList) {
-    const {word, occurrence} = wordItem;
-    if (!foundWords[word]) foundWords[word] = {}; // add entry if new word
+    const { word, occurrence } = wordItem;
+
+    if (!foundWords[word]) {
+      foundWords[word] = {};
+    } // add entry if new word
     foundWords[word][occurrence] = wordItem;
   }
 };
@@ -123,6 +135,7 @@ let findWordsInWordList = function (foundWords, wordList) {
  */
 const correctOccurrencesInAlignmentWords = function (foundWords) {
   let modifiedOccurrence = false;
+
   for (let wordKey in foundWords) {
     const wordInstances = foundWords[wordKey];
 
@@ -135,10 +148,12 @@ const correctOccurrencesInAlignmentWords = function (foundWords) {
     occurrenceList.forEach((foundOccurrence, index) => {
       const word = wordInstances[foundOccurrence]; // get the alignment instance of word
       const expectedOccurrence = index + 1;
+
       if (parseInt(foundOccurrence) !== expectedOccurrence) { // if occurrence value is off
         word.occurrence = expectedOccurrence;
         modifiedOccurrence = true;
       }
+
       if (word.occurrences !== actualCount) { // if occurrences count is off
         word.occurrences = actualCount;
         modifiedOccurrence = true;
@@ -157,19 +172,23 @@ export const mergeVerseData = (verseData) => {
   if (verseData.verseObjects) {
     verseData = verseData.verseObjects;
   }
+
   if (typeof verseData === 'string') {
     return verseData;
   }
+
   const verseArray = verseData.map((verse) => {
     if (typeof verse === 'string') {
       return verse;
     }
+
     if (verse.text) {
       return verse.text;
     }
     return null;
   });
   let verseText = '';
+
   for (let verse of verseArray) {
     if (verse) {
       if (verseText && (verseText[verseText.length - 1] !== '\n')) {

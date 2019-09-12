@@ -5,7 +5,7 @@ import consts from '../src/js/actions/ActionTypes';
 
 const initialState = {
   groupsData: {},
-  loadedFromFileSystem: false
+  loadedFromFileSystem: false,
 };
 
 describe('groupsDataReducer', () => {
@@ -18,27 +18,24 @@ describe('groupsDataReducer', () => {
   test('should handle SET_INVALIDATION_IN_GROUPDATA', () => {
     const invalidated = true;
     const initialState = {
-      groupsData: {
-        authority: [{contextId: {groupId: "authority"}}]
-      },
-      loadedFromFileSystem: false
+      groupsData: { authority: [{ contextId: { groupId: 'authority' } }] },
+      loadedFromFileSystem: false,
     };
 
     const expectedState = {
       groupsData: {
-        authority: [{contextId: {
-            groupId: "authority"
-          },
-          invalidated
-        }]
+        authority: [{
+          contextId: { groupId: 'authority' },
+          invalidated,
+        }],
       },
-      loadedFromFileSystem: false
+      loadedFromFileSystem: false,
     };
 
     const newState = groupsDataReducer(initialState, {
       type: consts.SET_INVALIDATION_IN_GROUPDATA,
       boolean: true,
-      contextId: {"groupId": "authority"}
+      contextId: { 'groupId': 'authority' },
     });
     expect(newState).toEqual(expectedState);
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -47,27 +44,24 @@ describe('groupsDataReducer', () => {
   test('should handle SET_REMINDERS_IN_GROUPDATA', () => {
     const reminders = true;
     const initialState = {
-      groupsData: {
-        authority: [{contextId: {groupId: "authority"}}]
-      },
-      loadedFromFileSystem: false
+      groupsData: { authority: [{ contextId: { groupId: 'authority' } }] },
+      loadedFromFileSystem: false,
     };
 
     const expectedState = {
       groupsData: {
-        authority: [{contextId: {
-            groupId: "authority"
-          },
-          reminders
-        }]
+        authority: [{
+          contextId: { groupId: 'authority' },
+          reminders,
+        }],
       },
-      loadedFromFileSystem: false
+      loadedFromFileSystem: false,
     };
 
     const newState = groupsDataReducer(initialState, {
       type: consts.SET_REMINDERS_IN_GROUPDATA,
       boolean: true,
-      contextId: {"groupId": "authority"}
+      contextId: { 'groupId': 'authority' },
     });
     expect(newState).toEqual(expectedState);
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -80,35 +74,41 @@ describe('groupsDataReducer', () => {
           {
             verseEdits: true,
             contextId: {
-              groupId: "authority",
-              reference: {bookId: "book", chapter: 1, verse: 1}
+              groupId: 'authority',
+              reference: {
+                bookId: 'book', chapter: 1, verse: 1,
+              },
             },
             nothingToSelect: false,
-            selections: null
+            selections: null,
           },
           {
-          verseEdits: true,
-          contextId: {
-            groupId: "authority",
-            reference: {bookId: "book", chapter: 1, verse: 2}
-          },
-          selections: [{
-            text: "world",
-            occurrence: 1,
-            occurrences: 2
-          }]
-        }]
+            verseEdits: true,
+            contextId: {
+              groupId: 'authority',
+              reference: {
+                bookId: 'book', chapter: 1, verse: 2,
+              },
+            },
+            selections: [{
+              text: 'world',
+              occurrence: 1,
+              occurrences: 2,
+            }],
+          }],
       },
-      loadedFromFileSystem: true
+      loadedFromFileSystem: true,
     };
 
     const action = {
       type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
       selections: [],
       contextId: {
-        groupId: "authority",
-        reference: {bookId: "book", chapter: 1, verse: 2}
-      }
+        groupId: 'authority',
+        reference: {
+          bookId: 'book', chapter: 1, verse: 2,
+        },
+      },
     };
 
     const after = {
@@ -117,23 +117,27 @@ describe('groupsDataReducer', () => {
           {
             verseEdits: true,
             contextId: {
-              groupId: "authority",
-              reference: {bookId: "book", chapter: 1, verse: 1}
+              groupId: 'authority',
+              reference: {
+                bookId: 'book', chapter: 1, verse: 1,
+              },
             },
             nothingToSelect: false,
-            selections: null
+            selections: null,
           },
           {
-          verseEdits: true,
-          contextId: {
-            groupId: "authority",
-            reference: {bookId: "book", chapter: 1, verse: 2}
-          },
-          nothingToSelect: false,
-          selections: null
-        }]
+            verseEdits: true,
+            contextId: {
+              groupId: 'authority',
+              reference: {
+                bookId: 'book', chapter: 1, verse: 2,
+              },
+            },
+            nothingToSelect: false,
+            selections: null,
+          }],
       },
-      loadedFromFileSystem: true
+      loadedFromFileSystem: true,
     };
 
     const newState = groupsDataReducer(before, action);
@@ -144,34 +148,31 @@ describe('groupsDataReducer', () => {
   test('should handle TOGGLE_SELECTIONS_IN_GROUPDATA', () => {
     const selections = [
       {
-        "text": "authority ",
-        "occurrence": 1,
-        "occurrences": 1
-      }
+        'text': 'authority ',
+        'occurrence': 1,
+        'occurrences': 1,
+      },
     ];
     const initialState = {
-      groupsData: {
-        authority: [{contextId: {groupId: "authority"}}]
-      },
-      loadedFromFileSystem: false
+      groupsData: { authority: [{ contextId: { groupId: 'authority' } }] },
+      loadedFromFileSystem: false,
     };
 
     const expectedState = {
       groupsData: {
-        authority: [{contextId: {
-            groupId: "authority"
-          },
+        authority: [{
+          contextId: { groupId: 'authority' },
           nothingToSelect: false,
-          selections
-        }]
+          selections,
+        }],
       },
-      loadedFromFileSystem: false
+      loadedFromFileSystem: false,
     };
 
     const newState = groupsDataReducer(initialState, {
       type: consts.TOGGLE_SELECTIONS_IN_GROUPDATA,
       selections,
-      contextId: {"groupId": "authority"}
+      contextId: { 'groupId': 'authority' },
     });
     expect(newState).toEqual(expectedState);
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -180,27 +181,24 @@ describe('groupsDataReducer', () => {
   test('should handle TOGGLE_VERSE_EDITS_IN_GROUPDATA', () => {
     const verseEdits = true;
     const initialState = {
-      groupsData: {
-        authority: [{contextId: {groupId: "authority"}}]
-      },
-      loadedFromFileSystem: false
+      groupsData: { authority: [{ contextId: { groupId: 'authority' } }] },
+      loadedFromFileSystem: false,
     };
 
     const expectedState = {
       groupsData: {
-        authority: [{contextId: {
-            groupId: "authority"
-          },
-          verseEdits
-        }]
+        authority: [{
+          contextId: { groupId: 'authority' },
+          verseEdits,
+        }],
       },
-      loadedFromFileSystem: false
+      loadedFromFileSystem: false,
     };
 
     const newState = groupsDataReducer(initialState, {
       type: consts.TOGGLE_VERSE_EDITS_IN_GROUPDATA,
       boolean: verseEdits,
-      contextId: {"groupId": "authority"}
+      contextId: { 'groupId': 'authority' },
     });
     expect(newState).toEqual(expectedState);
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -213,31 +211,37 @@ describe('groupsDataReducer', () => {
         groupsData: {
           authority: [{
             contextId: {
-              groupId: "authority",
-              reference: { bookId: "mat", chapter: "1", verse: "2"}
-            }
-          }]
+              groupId: 'authority',
+              reference: {
+                bookId: 'mat', chapter: '1', verse: '2',
+              },
+            },
+          }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const expectedState = {
         groupsData: {
           authority: [{
             contextId: {
-              groupId: "authority",
-              reference: { bookId: "mat", chapter: "1", verse: "2"}
+              groupId: 'authority',
+              reference: {
+                bookId: 'mat', chapter: '1', verse: '2',
+              },
             },
-            verseEdits
-          }]
+            verseEdits,
+          }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const newState = groupsDataReducer(initialState, {
         type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
-        groupId: "authority",
-        references: [{ bookId: "mat", chapter: "1", verse: "2"}]
+        groupId: 'authority',
+        references: [{
+          bookId: 'mat', chapter: '1', verse: '2',
+        }],
       });
       expect(newState).toEqual(expectedState);
       expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -250,35 +254,43 @@ describe('groupsDataReducer', () => {
           authority: [
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 2
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 2,
+              },
             }],
           god: [
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "1"},
-                occurrence: 1
-              }
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '1',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
-            }]
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
+            }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const expectedState = {
@@ -286,43 +298,53 @@ describe('groupsDataReducer', () => {
           authority: [
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
               },
-              verseEdits
+              verseEdits,
             },
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 2
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 2,
               },
-              verseEdits
+              verseEdits,
             }],
           god: [
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "1"},
-                occurrence: 1
-              }
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '1',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
-            }]
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
+            }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const newState = groupsDataReducer(initialState, {
         type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
-        groupId: "authority",
-        references: [{ bookId: "mat", chapter: "1", verse: "2"}]
+        groupId: 'authority',
+        references: [{
+          bookId: 'mat', chapter: '1', verse: '2',
+        }],
       });
       expect(newState).toEqual(expectedState);
       expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -335,35 +357,43 @@ describe('groupsDataReducer', () => {
           authority: [
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 2
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 2,
+              },
             }],
           god: [
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "1"},
-                occurrence: 1
-              }
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '1',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
-            }]
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
+            }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const expectedState = {
@@ -371,42 +401,52 @@ describe('groupsDataReducer', () => {
           authority: [
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 2
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 2,
+              },
             }],
           god: [
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "1"},
-                occurrence: 1
-              }
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '1',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
               },
-              verseEdits
-            }]
+              verseEdits,
+            }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const newState = groupsDataReducer(initialState, {
         type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
-        groupId: "god",
-        references: [{ bookId: "mat", chapter: "1", verse: "2"}]
+        groupId: 'god',
+        references: [{
+          bookId: 'mat', chapter: '1', verse: '2',
+        }],
       });
       expect(newState).toEqual(expectedState);
       expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -419,35 +459,43 @@ describe('groupsDataReducer', () => {
           authority: [
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 2
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 2,
+              },
             }],
           god: [
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "1"},
-                occurrence: 1
-              }
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '1',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
-            }]
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
+            }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const expectedState = {
@@ -455,43 +503,55 @@ describe('groupsDataReducer', () => {
           authority: [
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
+              },
             },
             {
               contextId: {
-                groupId: "authority",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 2
-              }
+                groupId: 'authority',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 2,
+              },
             }],
           god: [
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "1"},
-                occurrence: 1
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '1',
+                },
+                occurrence: 1,
               },
-              verseEdits
+              verseEdits,
             },
             {
               contextId: {
-                groupId: "god",
-                reference: { bookId: "mat", chapter: "1", verse: "2"},
-                occurrence: 1
+                groupId: 'god',
+                reference: {
+                  bookId: 'mat', chapter: '1', verse: '2',
+                },
+                occurrence: 1,
               },
-              verseEdits
-            }]
+              verseEdits,
+            }],
         },
-        loadedFromFileSystem: false
+        loadedFromFileSystem: false,
       };
 
       const newState = groupsDataReducer(initialState, {
         type: consts.TOGGLE_MULTIPLE_VERSE_EDITS_IN_GROUPDATA,
-        groupId: "god",
-        references: [{ bookId: "mat", chapter: "1", verse: "2"},{ bookId: "mat", chapter: "1", verse: "1"}]
+        groupId: 'god',
+        references: [{
+          bookId: 'mat', chapter: '1', verse: '2',
+        },{
+          bookId: 'mat', chapter: '1', verse: '1',
+        }],
       });
       expect(newState).toEqual(expectedState);
       expect(newState).not.toEqual(initialState); // make sure we did not modify initial state
@@ -501,27 +561,24 @@ describe('groupsDataReducer', () => {
   test('should handle TOGGLE_COMMENTS_IN_GROUPDATA', () => {
     const comments = ['stuff', 'more stuff'];
     const initialState = {
-      groupsData: {
-        authority: [{contextId: {groupId: "authority"}}]
-      },
-      loadedFromFileSystem: false
+      groupsData: { authority: [{ contextId: { groupId: 'authority' } }] },
+      loadedFromFileSystem: false,
     };
 
     const expectedState = {
       groupsData: {
-        authority: [{contextId: {
-            groupId: "authority"
-          },
-          comments: !!comments
-        }]
+        authority: [{
+          contextId: { groupId: 'authority' },
+          comments: !!comments,
+        }],
       },
-      loadedFromFileSystem: false
+      loadedFromFileSystem: false,
     };
 
     const newState = groupsDataReducer(initialState, {
       type: consts.TOGGLE_COMMENTS_IN_GROUPDATA,
       text: comments,
-      contextId: {"groupId": "authority"}
+      contextId: { 'groupId': 'authority' },
     });
     expect(newState).toEqual(expectedState);
     expect(newState).not.toEqual(initialState); // make sure we did not modify initial state

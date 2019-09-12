@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import React from 'react';
 import path from 'path-extra';
 // helpers
@@ -10,31 +11,30 @@ import * as ZipFileConversionHelpers from './ZipFileConversionHelpers';
  * @param selectedProjectFilename
  * @return {Promise<any>}
  */
-export const convert = (sourceProjectPath, selectedProjectFilename) => {
-  return new Promise (async(resolve, reject) => {
-    try {
-      const projectInfo = {};
-      if(projectHasUsfmFileExtension(sourceProjectPath)) {
-        projectInfo.usfmProject = true;
-        await UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
-      } else if (projectHasTstudioOrTcoreFileExtension(sourceProjectPath)) {
-        projectInfo.usfmProject = false;
-        // project's extension name is either .tstudio or .tcore
-        await ZipFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
-      } else {
-        reject(
-          <div>
+export const convert = (sourceProjectPath, selectedProjectFilename) => new Promise (async (resolve, reject) => {
+  try {
+    const projectInfo = {};
+
+    if (projectHasUsfmFileExtension(sourceProjectPath)) {
+      projectInfo.usfmProject = true;
+      await UsfmFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
+    } else if (projectHasTstudioOrTcoreFileExtension(sourceProjectPath)) {
+      projectInfo.usfmProject = false;
+      // project's extension name is either .tstudio or .tcore
+      await ZipFileConversionHelpers.convertToProjectFormat(sourceProjectPath, selectedProjectFilename);
+    } else {
+      reject(
+        <div>
             The project you selected ({sourceProjectPath}) is an invalid tstudio or tcore project. <br />
             Please verify the project you selected is a valid  tstudio or tcore file.
-          </div>
-        );
-      }
-      resolve(projectInfo);
-    } catch (error) {
-      reject(error);
+        </div>
+      );
     }
-  });
-};
+    resolve(projectInfo);
+  } catch (error) {
+    reject(error);
+  }
+});
 
 export const projectHasUsfmFileExtension = (sourceProjectPath) => {
   const projectExtensionName = path.extname(sourceProjectPath).toLowerCase();
@@ -58,6 +58,7 @@ export const projectHasTstudioOrTcoreFileExtension = (sourceProjectPath) => {
  */
 export const getSafeErrorMessage = (error, defaultErrorMessage) => {
   let errorMessage = error || defaultErrorMessage;
+
   if (error && (error.type !== 'div') && (error.type !== 'span')) {
     if (error.stack) {
       console.warn(error.stack); // log error before replacing with translated message

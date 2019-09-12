@@ -5,9 +5,7 @@ import consts from './ActionTypes';
  * @return {{type: string}}
  */
 export function closeSoftwareUpdate() {
-  return {
-    type: consts.CLOSE_SOFTWARE_UPDATE
-  };
+  return { type: consts.CLOSE_SOFTWARE_UPDATE };
 }
 
 /**
@@ -15,7 +13,5 @@ export function closeSoftwareUpdate() {
  * @return {{type: string}}
  */
 export function openSoftwareUpdate() {
-  return {
-    type: consts.OPEN_SOFTWARE_UPDATE
-  };
+  return { type: consts.OPEN_SOFTWARE_UPDATE };
 }

@@ -1,11 +1,11 @@
 import path from 'path-extra';
 // helpers
-import * as LangHelpers from "./LanguageHelpers";
-import * as ProjectImportFilesystemHelpers from "./Import/ProjectImportFilesystemHelpers";
-import {getIsOverwritePermitted} from "../selectors";
+import { getIsOverwritePermitted } from '../selectors';
+import { PROJECTS_PATH } from '../common/constants';
+import * as LangHelpers from './LanguageHelpers';
+import * as ProjectImportFilesystemHelpers from './Import/ProjectImportFilesystemHelpers';
 import * as bibleHelpers from './bibleHelpers';
 // constants
-import { PROJECTS_PATH } from '../common/constants';
 
 /**
  * Checks if the project manifest includes required project details.
@@ -41,6 +41,7 @@ export function getResourceIdWarning(resourceId) {
   }
 
   const regex = new RegExp('^[A-Za-z]*$'); // matches Latin letters like 'ULT', 'ugnt'
+
   if (!regex.test(resourceId)) { // invalid if not latin letters
     return 'project_validation.resource_id.invalid_characters';
   }
@@ -61,17 +62,18 @@ export function getResourceIdWarning(resourceId) {
  */
 export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSaveLocation) {
   let projectsThatMatchImportType = ProjectImportFilesystemHelpers.getProjectsByType(langID, bookId, resourceId,
-                                      projectSaveLocation);
+    projectSaveLocation);
+
   if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
     const currentProjectName = path.basename(projectSaveLocation);
     const inProjectsFolder = (projectSaveLocation === path.join(PROJECTS_PATH, currentProjectName));
+
     if (inProjectsFolder) { // if the selected project is in Projects folder, remove it from duplicates list
       // ignore current project
-      const otherProjectsThatMatchImportType = projectsThatMatchImportType.filter((projectName) => {
-        return (currentProjectName !== projectName);
-      });
+      const otherProjectsThatMatchImportType = projectsThatMatchImportType.filter((projectName) => (currentProjectName !== projectName));
       projectsThatMatchImportType = otherProjectsThatMatchImportType;
     }
+
     if (projectsThatMatchImportType && projectsThatMatchImportType.length > 0) {
       return 'project_validation.conflicting_project';
     }
@@ -86,7 +88,7 @@ export function getDuplicateProjectWarning(resourceId, langID, bookId, projectSa
  * @return {boolean}
  */
 export function isOverwritePermitted(localImport, usfmProject) {
-  return !!(localImport && usfmProject);  // currently only allowed on local import of USFM project
+  return !!(localImport && usfmProject); // currently only allowed on local import of USFM project
 }
 
 /**
@@ -146,11 +148,11 @@ export function verifyAllRequiredFieldsAreCompleted(state) {
     languageName,
     languageDirection,
     contributors,
-    checkers
+    checkers,
   } = state.projectInformationCheckReducer;
 
   let valid = (validateBookId(state, bookId) && isResourceIdValid(resourceId) && LangHelpers.isLanguageCodeValid(languageId) &&
-    languageName && languageDirection && !contributors.includes("") && !checkers.includes(""));
+    languageName && languageDirection && !contributors.includes('') && !checkers.includes(''));
 
   if (valid && !getIsOverwritePermitted(state) ){ // if overwrite is not permitted, make sure there is not a project with conflicting name
     const { projectSaveLocation } = state.projectDetailsReducer;

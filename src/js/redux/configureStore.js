@@ -1,13 +1,13 @@
-import {createStore, applyMiddleware, compose} from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import { enableBatching } from 'redux-batched-actions';
 import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise';
-import rootReducers from '../reducers/index.js';
 import { createLogger } from 'redux-logger';
+import rootReducers from '../reducers/index.js';
 
 let middlewares = [
   thunkMiddleware,
-  promise
+  promise,
 ];
 
 if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {

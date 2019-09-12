@@ -1,14 +1,10 @@
+/* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
-import path from "path-extra";
+import path from 'path-extra';
 import _ from 'lodash';
-import {getAlignedText} from 'tc-ui-toolkit';
+import { getAlignedText } from 'tc-ui-toolkit';
 
-import {getLanguageByCodeSelection, sortByNamesCaseInsensitive} from "./LanguageHelpers";
-import * as ResourcesHelpers from "./ResourcesHelpers";
-import * as BibleHelpers from "./bibleHelpers";
-import {getSelectedToolName, getToolGatewayLanguage} from "../selectors";
-import ResourceAPI from "./ResourceAPI";
-// constants
+import { getSelectedToolName, getToolGatewayLanguage } from '../selectors';
 import {
   TRANSLATION_ACADEMY,
   TRANSLATION_HELPS,
@@ -20,6 +16,11 @@ import {
   UGL_LEXICON,
   UHL_LEXICON,
 } from '../common/constants';
+import { getLanguageByCodeSelection, sortByNamesCaseInsensitive } from './LanguageHelpers';
+import * as ResourcesHelpers from './ResourcesHelpers';
+import * as BibleHelpers from './bibleHelpers';
+import ResourceAPI from './ResourceAPI';
+// constants
 
 /**
  *
@@ -30,7 +31,7 @@ import {
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
   const toolName = getSelectedToolName(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
-  const {toolsSelectedGLs} = state.projectDetailsReducer.manifest;
+  const { toolsSelectedGLs } = state.projectDetailsReducer.manifest;
   const gatewayLanguageQuote = getAlignedGLText(
     toolsSelectedGLs,
     contextId || state.contextIdReducer.contextId,
@@ -40,7 +41,7 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
 
   return {
     gatewayLanguageCode,
-    gatewayLanguageQuote
+    gatewayLanguageQuote,
   };
 };
 
@@ -55,54 +56,50 @@ export function getGlRequirementsForTool(toolName) {
     gl: {
       alignedBookRequired: false,
       minimumCheckingLevel: 3,
-      helpsChecks: []
+      helpsChecks: [],
     },
     ol: {
       alignedBookRequired: false,
       minimumCheckingLevel: 2,
-      helpsChecks: []
-    }
+      helpsChecks: [],
+    },
   };
 
   switch (toolName) {
-    case WORD_ALIGNMENT:
-      requirements.gl.minimumCheckingLevel = 3;
-      requirements.gl.helpsChecks = [
-        {
-          path: path.join(LEXICONS),
-        }
-      ];
-      break;
+  case WORD_ALIGNMENT:
+    requirements.gl.minimumCheckingLevel = 3;
+    requirements.gl.helpsChecks = [
+      { path: path.join(LEXICONS) },
+    ];
+    break;
 
-    case TRANSLATION_WORDS:
-      requirements.gl.alignedBookRequired = true;
-      requirements.gl.minimumCheckingLevel = 3;
-      requirements.gl.helpsChecks = [
-        {
-          path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS),
-          subpath: 'articles',
-          minimumCheckingLevel: 2
-        }
-      ];
-      requirements.ol.helpsChecks = [
-        {
-          path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS),
-          subpath: path.join('groups', '${bookID}')
-        }
-      ];
-      break;
-    case TRANSLATION_NOTES:
-      requirements.gl.alignedBookRequired = true;
-      requirements.gl.helpsChecks = [
-        {
-          path: path.join(TRANSLATION_HELPS, TRANSLATION_ACADEMY)
-        },
-        {
-          path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES),
-          subpath: path.join('groups', '${bookID}')
-        }
-      ];
-      break;
+  case TRANSLATION_WORDS:
+    requirements.gl.alignedBookRequired = true;
+    requirements.gl.minimumCheckingLevel = 3;
+    requirements.gl.helpsChecks = [
+      {
+        path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS),
+        subpath: 'articles',
+        minimumCheckingLevel: 2,
+      },
+    ];
+    requirements.ol.helpsChecks = [
+      {
+        path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS),
+        subpath: path.join('groups', '${bookID}'),
+      },
+    ];
+    break;
+  case TRANSLATION_NOTES:
+    requirements.gl.alignedBookRequired = true;
+    requirements.gl.helpsChecks = [
+      { path: path.join(TRANSLATION_HELPS, TRANSLATION_ACADEMY) },
+      {
+        path: path.join(TRANSLATION_HELPS, TRANSLATION_NOTES),
+        subpath: path.join('groups', '${bookID}'),
+      },
+    ];
+    break;
   }
   return requirements;
 }
@@ -123,6 +120,7 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
   const supportedLanguageCodes = Object.keys(languageBookData);
   const supportedLanguages = supportedLanguageCodes.map(code => {
     let lang = getLanguageByCodeSelection(code);
+
     if (lang) {
       lang = _.cloneDeep(lang); // make duplicate before modifying
       const bookData = languageBookData[code];
@@ -144,17 +142,21 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
  */
 function seeIfBookHasAlignments(chapters, bookPath) {
   let file = chapters.sort().find(item => (item.indexOf('1.') >= 0));
+
   if (!file) { // if couldn't find chapter one, fall back to first file found
     file = chapters[0];
   }
+
   if (file) {
     try {
       const chapter1 = fs.readJSONSync(path.join(bookPath, file));
+
       for (let verseNum of Object.keys(chapter1)) {
         const verse = chapter1[verseNum];
+
         if (verse && verse.verseObjects) {
           for (let vo of verse.verseObjects) {
-            if (vo.tag === "zaln") { // verse has alignments
+            if (vo.tag === 'zaln') { // verse has alignments
               return true;
             }
           }
@@ -181,14 +183,17 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
   const ultManifestPath = path.join(resourcePath, 'manifest.json');
   const bookPath = path.join(resourcePath, bookId);
   let validResource = fs.pathExistsSync(ultManifestPath) && fs.pathExistsSync(bookPath);
+
   if (validResource) {
     let files = ResourcesHelpers.getFilesInResourcePath(bookPath, '.json');
     validResource = files && files.length; // if book has files in it
+
     if (validResource && minCheckingLevel) { // should we validate checking level
       const manifest = ResourcesHelpers.getBibleManifest(resourcePath, bookId);
       validResource = manifest && manifest.checking && manifest.checking.checking_level;
       validResource = validResource && (manifest.checking.checking_level >= minCheckingLevel);
     }
+
     if (validResource && needsAlignmentData) { // shoud we validate alignment data
       validResource = seeIfBookHasAlignments(files, bookPath, validResource);
     }
@@ -206,8 +211,10 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
  */
 function getValidResourcePath(langPath, subpath) {
   const validPath = ResourceAPI.getLatestVersion(path.join(langPath, subpath));
+
   if (validPath) {
     const subFolders = ResourcesHelpers.getFoldersInResourceFolder(validPath);
+
     if (subFolders && subFolders.length) { // make sure it has subfolders
       return validPath;
     }
@@ -221,7 +228,7 @@ function getValidResourcePath(langPath, subpath) {
  * @return {String}
  */
 export function getOlBookPath(bookId) {
-  const {languageId, bibleId} = BibleHelpers.getOrigLangforBook(bookId);
+  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookId);
   const originalSubPath = `${languageId}/bibles/${bibleId}`;
   const origPath = getValidResourcePath(USER_RESOURCES_PATH, originalSubPath);
   return origPath;
@@ -286,19 +293,25 @@ function isDirectory(folderPath) {
 function hasValidHelps(helpsChecks, languagePath, bookID = '') {
   let isBibleValidSource = true;
   const checkingHelps = helpsChecks && helpsChecks.length;
+
   if (checkingHelps) { // if no resource checking given, we add empty check
     isBibleValidSource = true;
+
     for (let helpsCheck of helpsChecks) {
       let helpValid = false;
       const latestVersionPath = ResourceAPI.getLatestVersion(path.join(languagePath, helpsCheck.path));
+
       if (latestVersionPath) {
         const subFolders = ResourcesHelpers.getFoldersInResourceFolder(latestVersionPath);
+
         if (subFolders && subFolders.length) { // make sure it has subfolders
           helpValid = subFolders.find(subFolder => {
             const subFolderPath = path.join(latestVersionPath, subFolder);
+
             if (isDirectory(subFolderPath)) {
               let checkPath, subpath = helpsCheck.subpath || '';
               checkPath = path.join(subFolderPath, subpath.replace('${bookID}', bookID));
+
               if (isDirectory(checkPath)) {
                 const validFile = fs.readdirSync(checkPath).find(file => {
                   const ext = path.parse(file).ext;
@@ -309,23 +322,27 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '') {
             }
             return false;
           });
-
         }
+
         if (helpsCheck.minimumCheckingLevel) {
           let checkingLevel = -1;
           const manifestPath = path.join(latestVersionPath, 'manifest.json');
+
           if (fs.existsSync(manifestPath)) {
             const manifest = fs.readJsonSync(manifestPath);
             checkingLevel = (manifest && manifest.checking && manifest.checking.checking_level) || -1;
           }
+
           const passedCheckingLevel = (checkingLevel >= helpsCheck.minimumCheckingLevel);
           helpValid = helpValid && passedCheckingLevel;
         }
       } else if (helpsCheck.path.includes('lexicons')) {
         const lexiconId = BibleHelpers.isNewTestament(bookID) ? UGL_LEXICON : UHL_LEXICON;
         const lexiconsFolderPath = path.join(languagePath, helpsCheck.path, lexiconId);
+
         if (fs.existsSync(lexiconsFolderPath)) {
           const lexiconLatestVersionPath = ResourceAPI.getLatestVersion(path.join(languagePath, helpsCheck.path, lexiconId));
+
           if (fs.existsSync(path.join(lexiconLatestVersionPath, 'content'))) {
             helpValid = true;
           }
@@ -363,18 +380,20 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
   const languagePath = path.join(USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
   let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
-  bibles = bibles.filter(bibleId => {
-    return !(biblesLoaded[langCode] && biblesLoaded[langCode][bibleId]);
-  });
+
+  bibles = bibles.filter(bibleId => !(biblesLoaded[langCode] && biblesLoaded[langCode][bibleId]));
 
   const validBibles = bibles.filter(bible => {
     if (!fs.lstatSync(path.join(biblesPath, bible)).isDirectory()) { // verify it's a valid directory
       return false;
     }
+
     let isBibleValidSource = false;
     let biblePath = getValidResourcePath(biblesPath, bible);
+
     if (biblePath) {
       isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId);
+
       if (isBibleValidSource) {
         if (bookId) { // if filtering by book
           const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
@@ -412,20 +431,24 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
 export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequirements = {}, toolName) {
   const allLanguages = ResourcesHelpers.getAllLanguageIdsFromResourceFolder(true) || [];
   const filteredLanguages = {};
+
   for (let language of allLanguages) {
     const validBibles = getValidGatewayBibles(language, bookId, glRequirements);
+
     if (validBibles && validBibles.length) {
       const default_literal = validBibles[0];
+
       filteredLanguages[language] = {
         default_literal,
-        bibles: validBibles
+        bibles: validBibles,
       };
     }
   }
+
   if (!filteredLanguages['en'] && toolName === WORD_ALIGNMENT && !Object.keys(filteredLanguages).length) { // TODO: this is a temporary fix to be removed later
     filteredLanguages['en'] = {
       default_literal: 'ult',
-      bibles: ['ult']
+      bibles: ['ult'],
     };
   }
   return filteredLanguages;
@@ -438,6 +461,7 @@ export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequir
  */
 export function getQuoteAsArray(contextId) {
   let quoteArray = [];
+
   if (Array.isArray(contextId.quote)) {
     for (let i = 0, l = contextId.quote.length; i < l; i++) {
       const wordItem = contextId.quote[i];
@@ -458,12 +482,17 @@ export function getQuoteAsArray(contextId) {
  */
 export function getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName) {
   const selectedGL = toolsSelectedGLs[currentToolName];
-  if (!contextId.quote || !bibles || !bibles[selectedGL] || !Object.keys(bibles[selectedGL]).length)
+
+  if (!contextId.quote || !bibles || !bibles[selectedGL] || !Object.keys(bibles[selectedGL]).length) {
     return contextId.quote;
+  }
+
   const sortedBibleIds = Object.keys(bibles[selectedGL]).sort(bibleIdSort);
+
   for (let i = 0; i < sortedBibleIds.length; ++i) {
     const bible = bibles[selectedGL][sortedBibleIds[i]];
     const alignedText = getAlignedTextFromBible(contextId, bible);
+
     if (alignedText) {
       return alignedText;
     }
@@ -493,8 +522,10 @@ export function getAlignedTextFromBible(contextId, bible) {
  */
 export function bibleIdSort(a, b) {
   const biblePrecedence = ['udb', 'ust', 'ulb', 'ult', 'irv']; // these should come first in this order if more than one aligned Bible, from least to greatest
-  if (biblePrecedence.indexOf(a) == biblePrecedence.indexOf(b))
+
+  if (biblePrecedence.indexOf(a) == biblePrecedence.indexOf(b)) {
     return (a < b ? -1 : a > b ? 1 : 0);
-  else
-    return biblePrecedence.indexOf(b) - biblePrecedence.indexOf(a); // this plays off the fact other Bible IDs will be -1
+  } else {
+    return biblePrecedence.indexOf(b) - biblePrecedence.indexOf(a);
+  } // this plays off the fact other Bible IDs will be -1
 }

@@ -3,7 +3,7 @@ import consts from './ActionTypes';
 export function showModalContainer(val) {
   return {
     type: consts.SHOW_MODAL_CONTAINER,
-    val: val
+    val: val,
   };
 }
 
@@ -12,7 +12,7 @@ export function selectModalTab(tabKey, sectionKey, visiblity) {
     type: consts.SELECT_MODAL_TAB,
     tab: tabKey,
     section: sectionKey,
-    visible: visiblity
+    visible: visiblity,
   };
 }
 
@@ -21,7 +21,7 @@ export function selectSectionTab(tabKey, sectionKey) {
     dispatch({
       type: 'SELECT_MODAL_SECTION',
       tab: tabKey,
-      section: sectionKey
+      section: sectionKey,
     });
   });
 }
