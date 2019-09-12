@@ -80,13 +80,18 @@ function createMainWindow () {
   if (process.env.NODE_ENV === 'development') {
     // Install React Dev Tools
     try {
-      const { default: installExtension, REACT_DEVELOPER_TOOLS } = require(
+      const { default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require(
         'electron-devtools-installer');
 
       installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
-        console.log(`createMainWindow() - Added Extension: ${name}`);
+        console.log(`createMainWindow(REACT_DEVELOPER_TOOLS) - Added Extension: ${name}`);
       }).catch((err) => {
-        console.warn('createMainWindow() - An error occurred: ', err);
+        console.warn('createMainWindow(REACT_DEVELOPER_TOOLS) - An error occurred installing Extension: ${name}', err);
+      });
+      installExtension(REDUX_DEVTOOLS).then((name) => {
+        console.log(`createMainWindow(REDUX_DEVTOOLS) - Added Extension: ${name}`);
+      }).catch((err) => {
+        console.warn('createMainWindow(REDUX_DEVTOOLS) - An error occurred installing Extension: ${name}', err);
       });
     } catch (e) {
       console.error('createMainWindow() - Failed to load electron developer tools', e);
