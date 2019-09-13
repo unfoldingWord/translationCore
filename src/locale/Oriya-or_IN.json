@@ -127,15 +127,15 @@
     "terms_and_conditions": "Terms and Conditions",
     "by_continuing": "By continuing, you affirm that you have read and understand the terms and conditions and agree to: ",
     "not_infringe": "Only add content that does not infringe on someone else's copyright.",
-    "not_conflict": "Only add content that does not conflict with the Statement of Faith.",
-    "statement_of_faith": "Statement of Faith.",
+    "not_conflict": "\"କେବଳ ସେହି ଅଦ୍ୟତନକୁ ଅନ୍ତର୍ଭୁକ୍ତ କରନ୍ତୁ ଯାହା ବିଶ୍ବାସର ସଂଜ୍ଞା ସହିତ ସଂଘର୍ଷ କରେ ନାହିଁ।\"",
+    "statement_of_faith": "\"ବିଶ୍ବାସର ସଂଜ୍ଞା।\"",
     "release_contributions": "Release your contributions to the content under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
+    "cc_by_sa": "\"କ୍ରିଏଟିଭ୍ କମନ୍ ଏଟ୍ରି‌ବ୍ୟୁସନ୍-ଶେୟାର୍‌ଏଲାଇକ୍ ୪.0 ଅନ୍ତର୍ରାଷ୍ଟ୍ରୀୟ ଲାଇସେନ୍ସ୍।\""
   },
   "projects": {
     "zip_files": "\"ଜିପ୍ ଫାଇଲ୍‌ମାନ",
-    "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
-    "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
+    "error_setting_up_project": "\"ଓହୋ! ଆମ୍ଭକୁ ଆପଣଙ୍କ ପ୍ରକଳ୍ପକୁ ଲୋଡିଙ୍ଗ୍ କରିବା ନିମନ୍ତେ ଏକ ସମସ୍ୟାର ହୋଇଅଛି। ଦୟାକରି ସାହାଯ୍ୟ ନିମନ୍ତେ ସାହାଯ୍ୟକାରୀ ଡେସ୍କ୍${email}ଠାରେ ସମ୍ପର୍କ କରନ୍ତୁ।\"",
+    "error_loading": "\"ଓହୋ! ଆମ୍ଭକୁ ଆପଣଙ୍କ ପ୍ରକଳ୍ପକୁ ଲୋଡିଙ୍ଗ୍ କରିବାରେ କିଛି ସମସ୍ୟା ହେଉଅଛି।ଦୟାକରି ସାହାଯ୍ୟ ନିମନ୍ତେ ସାହାଯ୍ୟକାରୀ ଡେସ୍କ୍${email}ଠାରେ ସମ୍ପର୍କ କରନ୍ତୁ।\"",
     "no_project": "\"କୌଣସି ପ୍ରକଳ୍ପକୁ ଚୟନ କରାଯାଇନାହିଁ\"",
     "import_from_d43": "\"${door43}ରୁ ଇମ୍ପୋର୍ଟ୍ କରନ୍ତୁ\"",
     "select_project_from_list": "\"ସୂଚୀରୁ ଏକ ପ୍ରକଳ୍ପକୁ ଚୟନ କରନ୍ତୁ\"",
