@@ -133,7 +133,7 @@
     "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
   },
   "projects": {
-    "zip_files": "Zip Files",
+    "zip_files": "\"ଜିପ୍ ଫାଇଲ୍‌ମାନ",
     "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
     "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
     "no_project": "No project was selected",
@@ -141,9 +141,9 @@
     "select_project_from_list": "Select a project from the list.",
     "to_import_project": "To import a project, click",
     "to_export_project": "To upload or export a project or edit the project details click",
-    "supported_projects": "USFM projects and ${tstudio} projects (saved in version 11 or greater) are supported.",
-    "projects": "Projects",
-    "no_projects_found": "No projects have been found. Follow instructions at left to import a project.",
+    "supported_projects": "\"ୟୁ ଏସ ଏଫ୍ ଏମ୍ ପ୍ରକଳ୍ପଗୁଡିକ ଏବଂ ${tstudio} ପ୍ରକଳ୍ପଗୁଡିକ (ସଂସ୍କରଣ ୧୧ କିମ୍ବା ପରବର୍ତ୍ତୀ ଠାରେ ସଂରକ୍ଷଣ କରନ୍ତୁ)ସମର୍ଥିତ ଅଟେ।\"\n",
+    "projects": "\"ପ୍ରକଳ୍ପଗୁଡିକ\"",
+    "no_projects_found": "\"କୌଣସି ପ୍ରକଳ୍ପ ମିଳି ନାହି। ଏକ ପ୍ରକଳ୍ପକୁ ନିର୍ଯାତନା କରିବା ପାଇଁ ବାମ ପଟରେ ଦିଆଯାଇଥିବା ନିର୍ଦ୍ଦେଶଗୁଡିକୁ ପାଳନ କରନ୍ତୁ।\"",
     "seconds_ago": "\"କିଛି ସେକେଣ୍ଡ୍ ପୂର୍ବରୁ\"",
     "minutes_ago": "\"କିଛି ମିନିଟ୍ ପୂର୍ବରୁ\"",
     "hours_ago": "କିଛି ଘଣ୍ଟା ପୂର୍ବରୁ\"",
