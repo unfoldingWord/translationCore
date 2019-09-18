@@ -87,7 +87,7 @@ describe('GroupsDataActions.verifyGroupDataMatchesWithFs', () => {
     fs.outputJsonSync(path.join(verseEditPath, fileName), verseEdit);
 
     // when
-    await store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(initStore.toolsReducer.selectedTool));
+    await store.dispatch(GroupsDataActions.verifyGroupDataMatchesWithFsNonBlocking(initStore.toolsReducer.selectedTool));
 
     // then
     const actions = store.getActions();

@@ -110,16 +110,22 @@ export async function readLatestChecksNonBlock(dir) {
   // list sorted json files - most recents are in front of list
   const rawFiles = await fs.readdir(dir);
   const files = rawFiles.filter(file => path.extname(file) === '.json').sort().reverse();
-  const fileData = await Promise.all(
-    files.map( async (file) => {
-      const checkPath = path.join(dir, file);
+  const reads = new Array(files.length);
+
+  for (let i = 0, len = files.length; i < len; i ++) {
+    reads[i] = new Promise(resolve => {
+      const checkPath = path.join(dir, files[i]);
 
       try {
-        return await fs.readJson(checkPath);
+        resolve(fs.readJson(checkPath));
       } catch (err) {
         console.error(`Check data could not be loaded from ${checkPath}`, err);
+        resolve(null);
       }
-    }));
+    });
+  }
+
+  const fileData = await Promise.all(reads);
 
   for (let i = 0, len = files.length; i < len; i ++) {
     const data = fileData[i];
