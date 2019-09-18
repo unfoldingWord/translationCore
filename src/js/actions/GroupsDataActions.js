@@ -6,7 +6,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
 import { getSelectedToolName } from '../selectors';
-import { readLatestChecksNonBlock } from '../helpers/groupDataHelpers';
+import { readLatestChecks, readLatestChecksNonBlock } from '../helpers/groupDataHelpers';
 import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
 import consts from './ActionTypes';
 import { showSelectionsInvalidatedWarning, validateAllSelectionsForVerse } from './SelectionsActions';
@@ -55,6 +55,132 @@ export const findGroupDataItem = (contextId, groupData) => {
  */
 export function verifyGroupDataMatchesWithFs() {
   console.log('verifyGroupDataMatchesWithFs()');
+  return (async (dispatch, getState) => {
+    const state = getState();
+    const toolName = getSelectedToolName(state);
+    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
+    let checkDataPath;
+
+    if (PROJECT_SAVE_LOCATION) {
+      checkDataPath = path.join(
+        PROJECT_SAVE_LOCATION,
+        CHECKDATA_DIRECTORY
+      );
+    }
+
+    const checkVerseEdits = {};
+
+    // build the batch
+    let actionsBatch = [];
+
+    if (fs.existsSync(checkDataPath)) {
+      let folders = fs.readdirSync(checkDataPath).filter(folder => folder !== '.DS_Store');
+      const isCheckTool = (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES);
+
+      for ( let i = 0, lenF = folders.length; i < lenF; i++) {
+        const folderName = folders[i];
+        const isCheckVerseEdit = isCheckTool && (folderName === 'verseEdits');
+        let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
+
+        if (!fs.existsSync(dataPath)) {
+          continue;
+        }
+
+        let chapters = fs.readdirSync(dataPath);
+        chapters = filterAndSort(chapters);
+
+        for ( let j = 0, lenC = chapters.length; j < lenC; j++) {
+          const chapterFolder = chapters[j];
+          const chapterDir = path.join(dataPath, chapterFolder);
+
+          if (!fs.existsSync(chapterDir)) {
+            continue;
+          }
+
+          let verses = fs.readdirSync(chapterDir);
+          verses = filterAndSort(verses);
+
+          for ( let k = 0, lenV = verses.length; k < lenV; k++) {
+            const verseFolder = verses[k];
+            let filePath = path.join(dataPath, chapterFolder, verseFolder);
+            let latestObjects = readLatestChecks(filePath);
+
+            for ( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
+              const object = latestObjects[l];
+
+              if (isCheckVerseEdit) {
+                // special handling for check external verse edits, save edit verse
+                const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
+
+                if (chapter) {
+                  const verse = object.contextId.reference.verse;
+
+                  if (verse) {
+                    const verseKey = chapter + ':' + verse; // save by chapter:verse to remove duplicates
+
+                    if (!checkVerseEdits[verseKey]) {
+                      const reference = {
+                        bookId: object.contextId.reference.bookId,
+                        chapter,
+                        verse,
+                      };
+                      checkVerseEdits[verseKey] = { reference };
+                    }
+                  }
+                }
+              } else if ( object.contextId.tool === toolName) {
+                // TRICKY: make sure item is in reducer before trying to set.  In case of tN different GLs
+                //  may have different checks
+                const currentGroupData = state.groupsDataReducer.groupsData[object.contextId.groupId];
+
+                if (currentGroupData ) {
+                  const index = findGroupDataItem(object.contextId, currentGroupData);
+                  const oldGroupObject = (index >= 0) ? currentGroupData[index] : null;
+
+                  if (oldGroupObject) {
+                    // only toggle if values are different (folderName contains type such as 'selections`)
+                    const objectValue = object[folderName] || false;
+                    const oldValue = oldGroupObject[folderName] || false;
+
+                    if (!isEqual(oldValue, objectValue)) {
+                      // TRICKY: we are using the contextId of oldGroupObject here because sometimes
+                      //            there are slight differences with the contextIds of the checkData due to build
+                      //            changes (such as quoteString) and getToggledGroupData() requires exact match
+                      object.contextId = oldGroupObject.contextId;
+                      const action = toggleGroupDataItems(folderName, object);
+
+                      if (action) {
+                        actionsBatch.push(action);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      if (Object.keys(checkVerseEdits).length) {
+        await dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
+      }
+
+      // run the batch of queue actions
+      if (actionsBatch.length) {
+        console.log('verifyGroupDataMatchesWithFs() - processing batch size: ' + actionsBatch.length);
+        dispatch(batchActions(actionsBatch));
+      }
+      console.log('verifyGroupDataMatchesWithFs() - done');
+    }
+  });
+}
+
+/**
+ * @description verifies that the data in the checkdata folder is reflected in the menu.
+ * @return {object} action object.
+ */
+export function verifyGroupDataMatchesWithFsNonBlocking() {
+  console.log('verifyGroupDataMatchesWithFsNonBlocking()');
   return (async (dispatch, getState) => {
     const state = getState();
     const toolName = getSelectedToolName(state);
