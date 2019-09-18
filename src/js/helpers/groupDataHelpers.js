@@ -96,6 +96,44 @@ export function readLatestChecks(dir) {
 }
 
 /**
+ * Reads the latest unique checks from the directory.
+ * @param {string} dir - directory where check data is saved.
+ * @return {array} - array of the most recent check data
+ */
+export async function readLatestChecksNonBlock(dir) {
+  let checks = [];
+
+  if (! await fs.exists(dir)) {
+    return [];
+  }
+
+  // list sorted json files - most recents are in front of list
+  const rawFiles = await fs.readdir(dir);
+  const files = rawFiles.filter(file => path.extname(file) === '.json').sort().reverse();
+  const fileData = await Promise.all(
+    files.map( async (file) => {
+      const checkPath = path.join(dir, file);
+
+      try {
+        return await fs.readJson(checkPath);
+      } catch (err) {
+        console.error(`Check data could not be loaded from ${checkPath}`, err);
+      }
+    }));
+
+  for (let i = 0, len = files.length; i < len; i ++) {
+    const data = fileData[i];
+    if (data) {
+      if (isCheckUnique(data, checks)) {
+        checks.push(data);
+      }
+    }
+  }
+
+  return checks;
+}
+
+/**
  * Evaluates whether a check has already been loaded
  * @param {object} checkData - the json check data
  * @param {array} loadedChecks - an array of loaded unique checks

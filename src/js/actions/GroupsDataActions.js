@@ -6,7 +6,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
 import { getSelectedToolName } from '../selectors';
-import { readLatestChecks } from '../helpers/groupDataHelpers';
+import { readLatestChecksNonBlock } from '../helpers/groupDataHelpers';
 import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
 import consts from './ActionTypes';
 import { showSelectionsInvalidatedWarning, validateAllSelectionsForVerse } from './SelectionsActions';
@@ -73,37 +73,37 @@ export function verifyGroupDataMatchesWithFs() {
     // build the batch
     let actionsBatch = [];
 
-    if (fs.existsSync(checkDataPath)) {
-      let folders = fs.readdirSync(checkDataPath).filter(folder => folder !== '.DS_Store');
+    if (await fs.exists(checkDataPath)) {
+      const rawFolders = await fs.readdir(checkDataPath);
+      let folders = rawFolders.filter(folder => folder !== '.DS_Store');
       const isCheckTool = (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES);
 
-      for ( let i = 0, lenF = folders.length; i < lenF; i++) {
-        const folderName = folders[i];
+      await Promise.all(folders.map( async (folderName) => {
         const isCheckVerseEdit = isCheckTool && (folderName === 'verseEdits');
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
 
-        if (!fs.existsSync(dataPath)) {
-          continue;
+        if (!await fs.exists(dataPath)) {
+          return;
         }
 
-        let chapters = fs.readdirSync(dataPath);
+        let chapters = await fs.readdir(dataPath);
         chapters = filterAndSort(chapters);
 
         for ( let j = 0, lenC = chapters.length; j < lenC; j++) {
           const chapterFolder = chapters[j];
           const chapterDir = path.join(dataPath, chapterFolder);
 
-          if (!fs.existsSync(chapterDir)) {
+          if (!await fs.exists(chapterDir)) {
             continue;
           }
 
-          let verses = fs.readdirSync(chapterDir);
+          let verses = await fs.readdir(chapterDir);
           verses = filterAndSort(verses);
 
           for ( let k = 0, lenV = verses.length; k < lenV; k++) {
             const verseFolder = verses[k];
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
-            let latestObjects = readLatestChecks(filePath);
+            let latestObjects = await readLatestChecksNonBlock(filePath);
 
             for ( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
               const object = latestObjects[l];
@@ -159,7 +159,7 @@ export function verifyGroupDataMatchesWithFs() {
             }
           }
         }
-      }
+      }));
 
       if (Object.keys(checkVerseEdits).length) {
         await dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));

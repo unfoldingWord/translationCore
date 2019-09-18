@@ -89,10 +89,13 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
     dispatch(loadGroupsIndex(groupIndex));
 
     dispatch(loadCurrentContextId());
+    let start = performance.now();
     //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
     await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-    // wait for filesystem calls to finish
-    await delay(150);
+    let end = performance.now();
+    const elapsed = end - start;
+    console.log(`GroupsDataActions.verifyGroupDataMatchesWithFs(${projectDir}) took ${elapsed}ms`);
+
     dispatch(batchActions([
       closeAlertDialog(),
       BodyUIActions.toggleHomeView(false),
