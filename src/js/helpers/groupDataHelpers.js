@@ -123,6 +123,7 @@ export async function readLatestChecksNonBlock(dir) {
 
   for (let i = 0, len = files.length; i < len; i ++) {
     const data = fileData[i];
+
     if (data) {
       if (isCheckUnique(data, checks)) {
         checks.push(data);

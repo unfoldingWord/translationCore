@@ -204,26 +204,27 @@ export function verifyGroupDataMatchesWithFsNonBlocking() {
       let folders = rawFolders.filter(folder => folder !== '.DS_Store');
       const isCheckTool = (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES);
 
-      await Promise.all(folders.map( async (folderName) => {
+      for ( let i = 0, lenF = folders.length; i < lenF; i++) {
+        const folderName = folders[i];
         const isCheckVerseEdit = isCheckTool && (folderName === 'verseEdits');
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
 
-        if (!await fs.exists(dataPath)) {
+        if (!fs.existsSync(dataPath)) {
           return;
         }
 
-        let chapters = await fs.readdir(dataPath);
+        let chapters = fs.readdirSync(dataPath);
         chapters = filterAndSort(chapters);
 
         for ( let j = 0, lenC = chapters.length; j < lenC; j++) {
           const chapterFolder = chapters[j];
           const chapterDir = path.join(dataPath, chapterFolder);
 
-          if (!await fs.exists(chapterDir)) {
+          if (!fs.existsSync(chapterDir)) {
             continue;
           }
 
-          let verses = await fs.readdir(chapterDir);
+          let verses = fs.readdirSync(chapterDir);
           verses = filterAndSort(verses);
 
           for ( let k = 0, lenV = verses.length; k < lenV; k++) {
@@ -285,7 +286,7 @@ export function verifyGroupDataMatchesWithFsNonBlocking() {
             }
           }
         }
-      }));
+      }
 
       if (Object.keys(checkVerseEdits).length) {
         await dispatch(ensureCheckVerseEditsInGroupData(checkVerseEdits));
