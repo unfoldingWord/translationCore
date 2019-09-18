@@ -58,6 +58,7 @@ export const loadTools = (toolsDir) => (dispatch) => {
  */
 export const openTool = (name) => (dispatch, getData) => new Promise(async (resolve, reject) => {
   console.log('openTool(' + name + ')');
+  let startTool = performance.now();
   const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
   dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
@@ -106,6 +107,11 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
     dispatch(openAlertDialog(translate('projects.error_setting_up_project', { email: translate('_.help_desk_email') })));
     reject(e);
   }
+
+  let endTool = performance.now();
+  const elapsed = endTool - startTool;
+  console.log(`openTool(${name}) took ${elapsed}ms`);
+
   resolve();
 });
 
