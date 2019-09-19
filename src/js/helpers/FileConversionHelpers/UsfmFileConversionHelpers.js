@@ -121,7 +121,7 @@ const trimNewLine = function (text) {
  * @param {String} selectedProjectFilename
  * @return {Promise<any>}
  */
-export const generateTargetLanguageBibleFromUsfm = (parsedUsfm, manifest, selectedProjectFilename) => new Promise ((resolve, reject) => {
+export const generateTargetLanguageBibleFromUsfmBlocking = (parsedUsfm, manifest, selectedProjectFilename) => new Promise ((resolve, reject) => {
   try {
     const chaptersObject = parsedUsfm.chapters;
     const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
@@ -220,6 +220,119 @@ export const generateTargetLanguageBibleFromUsfm = (parsedUsfm, manifest, select
     reject(error);
   }
 });
+
+/**
+ * generate the target language bible from parsed USFM and manifest data
+ * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
+ * @param {Object} manifest
+ * @param {String} selectedProjectFilename
+ * @return {Promise<any>}
+ */
+export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, selectedProjectFilename) => {
+  try {
+    const chaptersObject = parsedUsfm.chapters;
+    const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
+    let verseFound = false;
+
+    let fsQueue = [];
+    const alignQueue = [];
+
+    Object.keys(chaptersObject).forEach((chapter) => {
+      let chapterAlignments = {};
+      const bibleChapter = {};
+      const verses = Object.keys(chaptersObject[chapter]);
+
+      // check if chapter has alignment data
+      const alignmentIndex = verses.findIndex(verse => {
+        const verseParts = chaptersObject[chapter][verse];
+        let alignmentData = false;
+
+        for (let part of verseParts.verseObjects) {
+          if (part.type === 'milestone') {
+            alignmentData = true;
+            break;
+          }
+        }
+        return alignmentData;
+      });
+      const alignmentData = (alignmentIndex >= 0);
+      let bibleData;
+
+      if (alignmentData) {
+        bibleData = getOriginalLanguageChapterResources(bibleDataFolderName, chapter, bibleData);
+      }
+
+      verses.forEach((verse) => {
+        const verseParts = chaptersObject[chapter][verse];
+        let verseText;
+
+        if (alignmentData) {
+          verseText = getUsfmForVerseContent(verseParts);
+        } else {
+          verseText = convertVerseDataToUSFM(verseParts);
+        }
+        bibleChapter[verse] = trimNewLine(verseText);
+
+        if (alignmentData && bibleData && bibleData[chapter]) {
+          const bibleVerse = bibleData[chapter][verse];
+          const object = wordaligner.unmerge(verseParts, bibleVerse);
+
+          chapterAlignments[verse] = {
+            alignments: object.alignment,
+            wordBank: object.wordBank,
+          };
+        }
+        verseFound = true;
+      });
+
+      const filename = parseInt(chapter, 10) + '.json';
+      const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
+      fsQueue.push(fs.outputJson(projectBibleDataPath, bibleChapter, { spaces: 2 }));
+
+      if (alignmentData) {
+        const alignmentDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bibleDataFolderName, filename);
+        alignQueue.push(fs.outputJson(alignmentDataPath, chapterAlignments, { spaces: 2 }));
+      }
+    });
+
+    const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'headers.json');
+    fsQueue.push(fs.outputJson(projectBibleDataPath, parsedUsfm.headers, { spaces: 2 }));
+
+    if (alignQueue.length) {
+      fsQueue = fsQueue.concat(alignQueue);
+    }
+    await Promise.all(fsQueue);
+
+    if (!verseFound) {
+      throw (
+        <div>
+          {
+            selectedProjectFilename ?
+              `No chapter & verse found in project (${selectedProjectFilename}).`
+              :
+              `No chapter & verse found in your project.`
+          }
+        </div>
+      );
+    }
+
+    // generating and saving manifest for target language for scripture pane to use as reference
+    const targetLanguageManifest = {
+      language_id: manifest.target_language.id || '',
+      language_name: manifest.target_language.name || '',
+      direction: manifest.target_language.direction || '',
+      subject: 'Bible',
+      resource_id: TARGET_LANGUAGE,
+      resource_title: '',
+      description: 'Target Language',
+    };
+    const projectBibleDataManifestPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'manifest.json');
+    fs.outputJsonSync(projectBibleDataManifestPath, targetLanguageManifest, { spaces: 2 });
+  } catch (error) {
+    console.log('generateTargetLanguageBibleFromUsfm() error:', error);
+    throw (error);
+  }
+};
 
 /**
  * dive down into milestone to extract words and text
