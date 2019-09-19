@@ -156,7 +156,7 @@
     "edit_project_details": "\"ପ୍ରକଳ୍ପ ବିବରଣୀକୁ ସମ୍ପାଦନ କରନ୍ତୁ\"",
     "import_local_project": "\"ସ୍ଥାନୀୟ ପ୍ରକଳ୍ପ ଇମ୍ପୋର୍ଟ କରନ୍ତୁ\"",
     "import_online_project": "\"ଅନ୍‌ଲାଇନ୍ ପ୍ରକଳ୍ପ ଇମ୍ପୋର୍ଟ୍ କରନ୍ତୁ\"",
-    "searching_alert": "\"ଖୋଜୁଅଛି, ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ....\"",
+    "searching_alert": "\"ନିଖୋଜ କରୁଅଛି, ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ....\"",
     "books_available": "\"${app}ର ଏହି ସଂସ୍କରଣରେ, ଟ୍ରାନ୍ସଲେସନ୍ ୱାର୍ଡ୍ସ୍ ସାଧନ ନୂତନ ନିୟମର ପ୍ରକଳ୍ପଗୁଡିକୁ ସମର୍ଥ କରେ ଏବଂ ୱାର୍ଡ ଏଲାଇନ୍‌ମେଣ୍ଟ ସାଧନ ସମ୍ପୂର୍ଣ୍ଣ ବାଇବଲର ପ୍ରକଳ୍ପଗୁଡିକୁ ସମର୍ଥ କରେ।\"",
     "supports_any_book": "\"${app}ବାଇବଲର ଯେକୌଣସି ପୁସ୍ତକର ପ୍ରକଳ୍ପଗୁଡିକୁ ସମର୍ଥ କରେ।\"",
     "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
