@@ -7,10 +7,9 @@ import * as UsfmHelpers from '../src/js/helpers/usfmHelpers';
 import * as UsfmFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 import { getUsfmForVerseContent } from '../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 // constants
-import { USER_RESOURCES_PATH, IMPORTS_PATH } from '../src/js/common/constants';
+import { IMPORTS_PATH } from '../src/js/common/constants';
 jest.unmock('fs-extra');
-const testResourcePath = path.join(__dirname, 'fixtures/resources');
-const usfmFilePath = path.join('/Users/blm/Downloads/testProjects', '41-MAT-aligned.usfm');
+const usfmFilePath = path.join(__dirname, 'fixtures/usfm3', '41-MAT-aligned.usfm');
 
 const validUsfmString = `
 \\id TIT N/A cdh_Chambeali_ltr Mon Sep 11 2017 16:44:56 GMT-0700 (PDT) tc
