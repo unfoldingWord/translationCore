@@ -299,7 +299,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
     fsQueue.push(fs.outputJson(projectBibleDataPath, parsedUsfm.headers, { spaces: 2 }));
 
     if (alignQueue.length) {
-      fsQueue = fsQueue.concat(alignQueue);
+      fsQueue.push.apply(fsQueue, alignQueue); // fast concat
     }
     await Promise.all(fsQueue);
 

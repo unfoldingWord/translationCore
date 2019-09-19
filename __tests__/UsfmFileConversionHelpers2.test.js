@@ -52,6 +52,43 @@ describe('UsfmFileConversionHelpers2', () => {
     });
 
     for (let i = 0; i < count; i++) {
+      test('valid USFM should succeed SYNC ' + i, async () => {
+        // given
+        let mockManifest = {
+          project: {id: 'mat'},
+          target_language: {id: 'en'},
+        };
+        const validUsfmString = fs.readFileSync(usfmFilePath, 'utf8');
+        const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
+        const projectFilename = 'project_folder_name';
+        const projectImportsPath = path.join(IMPORTS_PATH, projectFilename);
+        const newUsfmProjectImportsPath = path.join(projectImportsPath, mockManifest.project.id);
+        const start = performance.now();
+
+        //when
+        await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfmBlocking(parsedUsfm, mockManifest, projectFilename);
+
+        //then
+        const end = performance.now();
+        const elapsed = end - start;
+        syncSum += elapsed;
+        console.log(`Took ${elapsed}ms`);
+        expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
+
+        const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
+        expect(Object.keys(chapter1_data).length - 1).toEqual(25);
+
+        const chapter28_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '28.json'));
+        expect(Object.keys(chapter28_data).length - 1).toEqual(20);
+
+        // verify header info is preserved
+        const header_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, 'headers.json'));
+        validateUsfmTag(header_data, 'id', validUsfmString);
+        validateUsfmTag(header_data, 'h', validUsfmString);
+        validateUsfmTag(header_data, 'mt', validUsfmString);
+        validateUsfmTag(header_data, 's5', validUsfmString);
+      });
+
       test('valid USFM should succeed ASYNC ' + i, async () => {
         // given
         let mockManifest = {
@@ -89,42 +126,6 @@ describe('UsfmFileConversionHelpers2', () => {
         validateUsfmTag(header_data, 's5', validUsfmString);
       });
 
-      test('valid USFM should succeed SYNC ' + i, async () => {
-        // given
-        let mockManifest = {
-          project: {id: 'mat'},
-          target_language: {id: 'en'},
-        };
-        const validUsfmString = fs.readFileSync(usfmFilePath, 'utf8');
-        const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
-        const projectFilename = 'project_folder_name';
-        const projectImportsPath = path.join(IMPORTS_PATH, projectFilename);
-        const newUsfmProjectImportsPath = path.join(projectImportsPath, mockManifest.project.id);
-        const start = performance.now();
-
-        //when
-        await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfmBlocking(parsedUsfm, mockManifest, projectFilename);
-
-        //then
-        const end = performance.now();
-        const elapsed = end - start;
-        syncSum += elapsed;
-        console.log(`Took ${elapsed}ms`);
-        expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
-
-        const chapter1_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '1.json'));
-        expect(Object.keys(chapter1_data).length - 1).toEqual(25);
-
-        const chapter28_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, '28.json'));
-        expect(Object.keys(chapter28_data).length - 1).toEqual(20);
-
-        // verify header info is preserved
-        const header_data = fs.readJSONSync(path.join(newUsfmProjectImportsPath, 'headers.json'));
-        validateUsfmTag(header_data, 'id', validUsfmString);
-        validateUsfmTag(header_data, 'h', validUsfmString);
-        validateUsfmTag(header_data, 'mt', validUsfmString);
-        validateUsfmTag(header_data, 's5', validUsfmString);
-      });
     }
 
     test('summary', () => {
