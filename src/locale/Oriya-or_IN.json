@@ -159,7 +159,7 @@
     "searching_alert": "\"ନିଖୋଜ କରୁଅଛି, ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ....\"",
     "books_available": "\"${app}ର ଏହି ସଂସ୍କରଣରେ, ଟ୍ରାନ୍ସଲେସନ୍ ୱାର୍ଡ୍ସ୍ ସାଧନ ନୂତନ ନିୟମର ପ୍ରକଳ୍ପଗୁଡିକୁ ସମର୍ଥ କରେ ଏବଂ ୱାର୍ଡ ଏଲାଇନ୍‌ମେଣ୍ଟ ସାଧନ ସମ୍ପୂର୍ଣ୍ଣ ବାଇବଲର ପ୍ରକଳ୍ପଗୁଡିକୁ ସମର୍ଥ କରେ।\"",
     "supports_any_book": "\"${app}ବାଇବଲର ଯେକୌଣସି ପୁସ୍ତକର ପ୍ରକଳ୍ପଗୁଡିକୁ ସମର୍ଥ କରେ।\"",
-    "tools_required_resources": "However, the project will only open in translationWords or translationNotes if the necessary resources for the selected Gateway Language are on your system. Click \"${actions} / ${check_for_content_updates}\" to download the latest.",
+    "tools_required_resources": "ତଥାପି, କେବଳ ଟ୍ରାନ୍ସଲେସନ୍ ୱାର୍ଡ୍ସ୍‌ରେ କିମ୍ବା ଟ୍ରାନ୍ସଲେସନ୍ ନୋଟ୍ସ୍‌ରେ ଉନ୍ମୁକ୍ତ ହେବ ଯଦି ଆପଣଙ୍କର କମ୍ପ୍ୟୁଟରରେ ଚୟିତ ଆଞ୍ଚଳିକ ଭାଷା ନିମନ୍ତେ ଆବଶ୍ୟକ ସମ୍ବଳଗୁଡିକ ଥାଏ, ନୂତନକୁ ଡାଉନ୍‌ଲୋଡ୍ କରିବା ପାଇଁ \"${actions}/${check_for_content_updates}\" ରେ କ୍ଲିକ୍ କରନ୍ତୁ।",
     "enter_url": "\"ୟୁ ଆର୍ ଏଲ୍ ଭରଣ କରନ୍ତୁ\"",
     "or": "\"କିମ୍ବା\"",
     "language_code": "\"ଭାଷା କୋଡ୍\"",
