@@ -8,7 +8,6 @@ import path from 'path-extra';
  * @param {String} licenseId
  */
 export async function saveProjectLicense(licenseId, projectSaveLocation) {
-
   const licenseSavePath = path.join(projectSaveLocation, 'LICENSE.md');
   const licenseData = loadProjectLicenseMarkdownFile(licenseId);
 
@@ -43,6 +42,6 @@ export async function assignLicenseToOnlineImportedProject(projectPath) {
     }
   } catch (error) {
     console.error('assignLicenseToOnlineImportedProject()', error);
-    throw (`Failed saving the project license to ${projectPath}`);
+    throw (`Failed saving the project license to ${projectPath}`); // eslint-disable-line no-throw-literal
   }
 }
