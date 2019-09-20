@@ -69,6 +69,13 @@ function outputFileSync(filePath, data) {
   mockFS[filePath] = data;
 }
 
+function outputFile(filePath, data) {
+  return new Promise(function (resolve) {
+    outputFileSync(filePath, data);
+    resolve();
+  });
+}
+
 function __dumpMockFS() {
   const fsList = JSON.stringify(mockFS, null, 2);
   console.log("mock FS:\n" + fsList);
@@ -315,6 +322,7 @@ fs.exists = exists;
 fs.pathExists = exists;
 fs.pathExistsSync = jest.fn(existsSync);
 fs.outputFileSync = outputFileSync;
+fs.outputFile = outputFile;
 fs.removeSync = removeSync;
 fs.remove = remove;
 fs.copySync = jest.fn(copySync);
