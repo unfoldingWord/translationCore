@@ -27,11 +27,11 @@ export async function loadUSFMFileAsync(usfmFilePath) {
   let usfmFile;
 
   try {
-    usfmFile = (await fs.readFile(usfmFilePath)).toString();
+    usfmFile = await fs.readFile(usfmFilePath);
   } catch (e) {
     return null;
   }
-  return usfmFile;
+  return usfmFile.toString();
 }
 
 /**

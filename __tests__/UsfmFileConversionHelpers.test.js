@@ -60,10 +60,15 @@ describe('UsfmFileConversionHelpers', () => {
   });
 
   describe('verifyIsValidUsfmFile()', () => {
-    test('promise rejects with an error if invalid arguments are passed to the function.', () => {
+    test('promise rejects with an error if invalid arguments are passed to the function.', async () => {
       fs.__setMockFS({ [usfmFilePath]: 'Not a valid usfm string' });
-      expect.assertions(1);
-      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
+      let exception = false;
+      try {
+        await UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath);
+      } catch (e) {
+        exception = e;
+      }
+      expect(exception).toEqual(invalidUsfmRejectionMessage);
     });
 
     test('promise resolves with the usfm file.', () => {

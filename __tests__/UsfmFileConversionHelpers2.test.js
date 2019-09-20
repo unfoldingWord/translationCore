@@ -56,8 +56,8 @@ describe('UsfmFileConversionHelpers2', () => {
       test('valid USFM should succeed SYNC ' + i, async () => {
         // given
         let mockManifest = {
-          project: {id: 'mat'},
-          target_language: {id: 'en'},
+          project: { id: 'mat' },
+          target_language: { id: 'en' },
         };
         const validUsfmString = fs.readFileSync(usfmFilePath, 'utf8');
         const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);

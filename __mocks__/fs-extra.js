@@ -54,6 +54,10 @@ function writeFileSync(filePath, data) {
 }
 
 function readFileSync(filePath) {
+  if (!existsSync(filePath)) {
+    throw 'File could not be read: ' + filePath;
+  }
+
   if (typeof filePath !== 'string') throw 'fail';
   const data = mockFS[filePath];
   // TRICKY: readFileSync should always return a string
@@ -62,6 +66,16 @@ function readFileSync(filePath) {
   } else {
     return data;
   }
+}
+
+function readFile(filePath) {
+  return new Promise(function (resolve, reject) {
+    try {
+      resolve(readFileSync(filePath));
+    } catch (e) {
+      reject(e);
+    }
+  });
 }
 
 function outputFileSync(filePath, data) {
@@ -123,7 +137,13 @@ function readJsonSync(filePath) {
 }
 
 function readJson(filePath) {
-  return Promise.resolve(readJsonSync(filePath));
+  return new Promise(function (resolve, reject) {
+    try {
+      resolve(readJsonSync(filePath));
+    } catch (e) {
+      reject(e);
+    }
+  });
 }
 
 function existsSync(path) {
@@ -308,6 +328,7 @@ fs.readdirSync = jest.fn(readdirSync);
 fs.readdir = readdir;
 fs.writeFileSync = writeFileSync;
 fs.readFileSync = jest.fn(readFileSync);
+fs.readFile = readFile;
 fs.writeJSONSync = outputJsonSync;
 fs.outputJsonSync = jest.fn(outputJsonSync);
 fs.outputJSONSync = jest.fn(outputJsonSync);

@@ -37,6 +37,21 @@ export const verifyIsValidUsfmFile = async (sourceProjectPath) => {
   }
 };
 
+export const verifyIsValidUsfmFileSync = (sourceProjectPath) => new Promise ((resolve, reject) => {
+  const usfmData = usfmHelpers.loadUSFMFile(path.join(sourceProjectPath));
+
+  if (usfmData.includes('\\h ') || usfmData.includes('\\id ')) { // moved verse checking to generateTargetLanguageBibleFromUsfm
+    resolve(usfmData);
+  } else {
+    reject(
+      <div>
+        The project you selected ({sourceProjectPath}) is an invalid usfm project. <br/>
+        Please verify the project you selected is a valid usfm file.
+      </div>
+    );
+  }
+});
+
 /**
  * generate manifest from USFM data
  * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
