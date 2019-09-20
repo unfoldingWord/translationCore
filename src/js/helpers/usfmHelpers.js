@@ -20,6 +20,21 @@ export function loadUSFMFile(usfmFilePath) {
 }
 
 /**
+ * @description Sets up the folder in the tC save location for a USFM project
+ * @param {String} usfmFilePath - Path of the usfm file that has been loaded
+ */
+export async function loadUSFMFileAsync(usfmFilePath) {
+  let usfmFile;
+
+  try {
+    usfmFile = (await fs.readFile(usfmFilePath)).toString();
+  } catch (e) {
+    return null;
+  }
+  return usfmFile;
+}
+
+/**
  * @description Parses the usfm file using usfm-parse library.
  * @param {string} usfmData - USFM data to parse
  */

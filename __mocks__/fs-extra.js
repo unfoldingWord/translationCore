@@ -134,9 +134,23 @@ function removeSync(path) {
   });
 }
 
+function remove(path) {
+  return new Promise(function (resolve) {
+    removeSync(path);
+    resolve();
+  });
+}
+
 function renameSync(oldPath, newPath) {
   writeFileSync(newPath, readFileSync(oldPath));
   removeSync(oldPath);
+}
+
+function rename(oldPath, newPath) {
+  return new Promise(function (resolve) {
+    renameSync(oldPath, newPath);
+    resolve();
+  });
 }
 
 function copySync(srcPath, destinationPath) {
@@ -302,8 +316,10 @@ fs.pathExists = exists;
 fs.pathExistsSync = jest.fn(existsSync);
 fs.outputFileSync = outputFileSync;
 fs.removeSync = removeSync;
+fs.remove = remove;
 fs.copySync = jest.fn(copySync);
 fs.renameSync = renameSync;
+fs.rename = rename;
 fs.ensureDirSync = ensureDirSync;
 fs.statSync = statSync;
 fs.fstatSync = statSync;
