@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import usfm from 'usfm-js';
+import { performance } from 'perf_hooks';
 // helpers
 import * as UsfmHelpers from '../src/js/helpers/usfmHelpers';
 import * as UsfmFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
@@ -41,7 +42,7 @@ const validUsfmString = `
 describe('UsfmFileConversionHelpers2', () => {
 
   describe('generateTargetLanguageBibleFromUsfm()', () => {
-    const count = 20;
+    const count = 2;
     let asyncSum = 0;
     let syncSum = 0;
 
