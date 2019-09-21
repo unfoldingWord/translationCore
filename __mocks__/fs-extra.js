@@ -54,9 +54,9 @@ function writeFileSync(filePath, data) {
 }
 
 function readFileSync(filePath) {
-  // if (!existsSync(filePath)) {
-  //   throw 'File could not be read: ' + filePath;
-  // }
+  if (!existsSync(filePath)) {
+    throw 'File could not be read: ' + filePath;
+  }
 
   if (typeof filePath !== 'string') throw 'fail';
   const data = mockFS[filePath];
