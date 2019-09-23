@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
 
-describe.skip('Tests for saveMethods', () => {
+describe('Tests for saveMethods', () => {
   it('should not save the manifest file since projectSaveLocation is empty', () => {
     const state = { projectDetailsReducer: { manifest: { id: 'id' } } };
     saveMethods.saveProjectManifest(state);
