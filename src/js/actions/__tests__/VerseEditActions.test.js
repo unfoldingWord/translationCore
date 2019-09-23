@@ -1,3 +1,4 @@
+'use strict'
 import * as actions from '../VerseEditActions';
 import types from '../ActionTypes';
 
