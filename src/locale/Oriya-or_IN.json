@@ -244,14 +244,14 @@
     "conflict_reference": "\"ଏହା ଅଧ୍ୟାୟ ${chapter}, ପଦ${verse} ନିମନ୍ତେ ଏକ ମିଶ୍ରିତ ଦ୍ବନ୍ଦ ଅଟେ।\"",
     "missing_verses_instructions": "\"ଆପଣଙ୍କ ପ୍ରକଳ୍ପରୁ କେତେକ ପଦଗୁଡିକ ନିଖୋଜ ଅଛି।\"",
     "only_nt_supported": "\"${app} ର ଏହି ସଂସ୍କରଣ କେବଳ ନୂତନ ନିୟମ ପ୍ରକଳ୍ପର ସମର୍ଥନ କରିଥାଏ।\"",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "\"ଏହି ପ୍ରକଳ୍ପରେ ${app}ର ପୁରୁଣା ସଂସ୍କରଣର ତଥ୍ୟ ରହିଅଛି ଯାହା ଏହି ଉନ୍ମୋଚନରେ ସମର୍ଥିତ ହେଉନାହିଁ। ଏହି ପ୍ରକଳ୍ପକୁ ଆରମ୍ଭ କରିବାରେ ସାହାଯ୍ୟ କରିବା ପାଇଁ କିମ୍ବା ପୁନର୍ବାର ଯାଞ୍ଚ ଆରମ୍ଭ କରିବା ପାଇଁ ଦୟାକରି ${help_desk_email} ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ।\" ",
     "resource_id": {
       "info": "\"(୩ କିମ୍ବା ୪ ଅକ୍ଷର ସହିତ ପରିଚୟନ<br />କୋଡ୍, ଯେପରି KJV, NIV, ଇତ୍ୟାଦି।)\"",
       "field_invalid_length": "\"୩-୪ ଅକ୍ଷରମାନ ଦୀର୍ଘ\"",
       "invalid_characters": "\"କେବଳ ସାଧାରଣ ଲାଟିନ୍ ଅକ୍ଷରମାନ ସମର୍ଥିତ\""
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "conflicting_project": "\" ଏହି ପରିଚାୟକର ସହିତ ଏକ ପ୍ରକଳ୍ପ ପୂର୍ବରୁ ହିଁ ଏହି ଭାଷା ଏବଂ ପୁସ୍ତକ ନିମନ୍ତେ ବିଦ୍ୟମାନ।\"",
+    "newer_project": "\"ଏହି ପ୍ରକଳ୍ପଟି ଟ୍ରାନ୍ସଲେସନ୍ କୋର୍‌ର ନୂତନ ସଂସ୍କରଣରେ ପ୍ରସ୍ତୁତ କରାଯାଇଛି। ଦୟାକରି ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।\""
   },
   "book_list": {
     "ot": {
@@ -366,12 +366,12 @@
     "other": "\"ଅନ୍ୟାନ୍ୟ\"",
     "select_reason": "\"ଏହା ପରେ, ପରିବର୍ତ୍ତନ ନିମନ୍ତେ କାରଣ(ଗୁଡିକର) ଚୟନ କରନ୍ତୁ\"",
     "comment": "\"ଟିପ୍ପଣୀ\"",
-    "select": "Select",
-    "please_select": "Please select the translation for: ",
-    "has_been_translated": "has been translated as",
+    "select": "\"ଚୟନ କରନ୍ତୁ\"",
+    "please_select": "\"ଦୟାକରି ଅନୁବାଦ କରିବା ପାଇଁ ଚୟନ କରନ୍ତୁ:\"",
+    "has_been_translated": "\"ରୂପରେ ଅନୁବାଦ କରାଯାଇଛି\"",
     "alignments_reset": "There have been changes to the current verse which interfere with your alignments.\nThe alignments for the current verse have been reset.",
-    "chapter": "Chapter",
-    "no_results": "No results",
+    "chapter": "\"ଅଧ୍ୟାୟ\"",
+    "no_results": "\"କୌଣସି ପରିଣାମ ନାହିଁ\"",
     "invalidated": "Invalidated",
     "bookmarks": "Bookmarks",
     "selected": "Selected",
