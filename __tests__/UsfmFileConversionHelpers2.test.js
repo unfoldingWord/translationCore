@@ -6,7 +6,6 @@ import usfm from 'usfm-js';
 // helpers
 import * as UsfmHelpers from '../src/js/helpers/usfmHelpers';
 import * as UsfmFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
-import { getUsfmForVerseContent } from '../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 // constants
 import { IMPORTS_PATH } from '../src/js/common/constants';
 jest.unmock('fs-extra');
