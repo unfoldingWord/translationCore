@@ -2,7 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import usfm from 'usfm-js';
-import { performance } from 'perf_hooks';
+// import { performance } from 'perf_hooks';
 // helpers
 import * as UsfmHelpers from '../src/js/helpers/usfmHelpers';
 import * as UsfmFileConversionHelpers from '../src/js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
