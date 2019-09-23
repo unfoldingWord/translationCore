@@ -1,4 +1,4 @@
-/* eslint-disable no-async-promise-executor, no-throw-literal */
+/* eslint-disable no-async-promise-executor */
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';

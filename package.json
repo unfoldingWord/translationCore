@@ -18,7 +18,6 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test": "eslint ./src && jest",
-    "test2": "jest UsfmFileConversionHelpers2",
     "ci-test": "eslint ./src && jest --coverage",
     "release-osx": "npm i && gulp clean && npm i && npm run load-apps && gulp build --osx && gulp release --osx",
     "coverage": "jest --coverage",
