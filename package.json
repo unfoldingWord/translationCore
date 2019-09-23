@@ -17,7 +17,7 @@
     "npm-clean-up": "rm -rf node_modules/ && rm -rf tC_apps/*/node_modules && rm package-lock.json && npm i",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "eslint ./src && jest --logHeapUsage --runInBand",
+    "test": "eslint ./src && jest --logHeapUsage --runInBand --detectLeaks",
     "ci-test": "eslint ./src && jest --logHeapUsage --runInBand --detectLeaks --coverage",
     "release-osx": "npm i && gulp clean && npm i && npm run load-apps && gulp build --osx && gulp release --osx",
     "coverage": "jest --coverage",
@@ -113,6 +113,7 @@
     "spec-xunit-file": "0.0.1-3",
     "taffydb": "2.7.3",
     "temp": "0.8.3",
+    "weak": "^1.0.1",
     "yargs": "10.0.3"
   },
   "dependencies": {
