@@ -104,7 +104,6 @@
     "jest-serializer-path": "^0.1.15",
     "jsdoc": "3.5.5",
     "ncp": "2.0.0",
-    "perf_hooks": "0.0.1",
     "prettier": "1.18.2",
     "react-addons-test-utils": "15.6.2",
     "react-test-renderer": "16.8.1",
