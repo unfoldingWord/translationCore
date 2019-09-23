@@ -156,9 +156,11 @@ describe('ProjectMigration/migrate', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up mocked out filePath and data in mock filesystem before each test
-    fs.ensureDirSync(path.join(LEGACY, 'apps'));
-    fs.ensureDirSync(path.join(LEGACY, '.apps'));
-    fs.outputJSONSync(path.join(LEGACY, 'manifest.json'), manifest);
+    fs.__setMockFS({
+      [LEGACY]:['apps'],
+      [path.join(LEGACY, '.apps')]: {},
+      [path.join(LEGACY, 'manifest.json')]: manifest,
+    });
   });
   afterEach(() => {
     // reset mock filesystem data

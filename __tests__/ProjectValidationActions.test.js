@@ -59,7 +59,6 @@ describe('ProjectValidationActions.updateProjectFolderToNameSpecification', () =
 
   test('updateProjectFolderToNameSpecification dispatches correct actions if project is in tC projects folder', async () => {
     const selectedFileLocation = path.join(PROJECTS_PATH, 'SELECTED_PROJECT_NAME');
-    fs.ensureDirSync(selectedFileLocation);
     const pathLocation = path.join(PROJECTS_PATH, 'fr_ult_eph_book');
     const expectedActions = [
       { type: consts.SET_SAVE_PATH_LOCATION, pathLocation },

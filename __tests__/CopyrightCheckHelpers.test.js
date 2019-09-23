@@ -61,7 +61,7 @@ describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up some mocked out file info before each test
-    const directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
+    let directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
 
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({ [directory]: ccBYSA });
@@ -75,11 +75,7 @@ describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
 
 describe('CopyrightCheckHelpers.assignLicenseToOnlineImportedProject', () => {
   beforeEach(() => {
-    // Set up some mocked out file info before each test
-    const directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
-
-    // Set up mocked out filePath and data in mock filesystem before each test
-    fs.__setMockFS({ [path.join('path', 'to', 'project', 'manifest.json')]: {}, [directory]: ccBYSA });
+    fs.__setMockFS({ [path.join('path', 'to', 'project', 'manifest.json')]: {} });
   });
 
   test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', () => {
