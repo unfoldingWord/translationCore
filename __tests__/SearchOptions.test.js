@@ -1,5 +1,5 @@
 /* eslint-env jest */
-
+'use strict';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MuiThemeProvider } from 'material-ui';

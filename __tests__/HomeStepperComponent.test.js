@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 // components
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';

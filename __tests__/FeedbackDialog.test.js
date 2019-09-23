@@ -1,4 +1,5 @@
 /* eslint-env jest */
+'use strict';
 import React from 'react';
 import { shallow } from 'enzyme';
 import FeedbackDialog from '../src/js/components/dialogComponents/FeedbackDialog';
