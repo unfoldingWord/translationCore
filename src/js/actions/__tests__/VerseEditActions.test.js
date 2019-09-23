@@ -1,7 +1,7 @@
 import * as actions from '../VerseEditActions';
 import types from '../ActionTypes';
 
-describe('verse edit actions', () => {
+describe.skip('verse edit actions', () => {
   it('produces a resource update action', () => {
     const chapter = 1;
     const verse = 2;
