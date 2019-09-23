@@ -313,16 +313,16 @@
       "1ti": "\"୧ ତିମଥୀ ${book_id}\"\n\"",
       "2ti": "\"୨ ତିମଥୀ ${book_id}\"",
       "tit": "\"ତୀତସ ${book_id}\"",
-      "phm": "Philemon (${book_id})",
-      "heb": "Hebrews (${book_id})",
-      "jas": "James (${book_id})",
-      "1pe": "1 Peter (${book_id})",
-      "2pe": "2 Peter (${book_id})",
-      "1jn": "1 John (${book_id})",
-      "2jn": "2 John (${book_id})",
-      "3jn": "3 John (${book_id})",
-      "jud": "Jude (${book_id})",
-      "rev": "Revelation (${book_id})"
+      "phm": "\"ଫିଲେମୋନ ${book_id}\"",
+      "heb": "\"ଏବ୍ରୀ ପୁସ୍ତକ ${book_id}\"",
+      "jas": "\"ଯାକୁବ ${book_id}\"",
+      "1pe": "\"୧ ପିତର ${book_id}\"",
+      "2pe": "\"୨ ପିତର ${book_id}\"",
+      "1jn": "\"୧ ଯୋହନ ${book_id}\"",
+      "2jn": "\"୨ ଯୋହନ ${book_id}\"",
+      "3jn": "\"୩ ଯୋହନ ${book_id}\"",
+      "jud": "\"ଯିହୁଦା ${book_id}\"",
+      "rev": "\"ଯୋହନଙ୍କ ପ୍ରକାଶିତ ପୁସ୍ତକ ${book_id}\""
     }
   },
   "tools": {
