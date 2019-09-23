@@ -17,7 +17,7 @@
     "npm-clean-up": "rm -rf node_modules/ && rm -rf tC_apps/*/node_modules && rm package-lock.json && npm i",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "eslint ./src && jest",
+    "test": "eslint ./src && jest --logHeapUsage --runInBand",
     "ci-test": "eslint ./src && jest --coverage",
     "release-osx": "npm i && gulp clean && npm i && npm run load-apps && gulp build --osx && gulp release --osx",
     "coverage": "jest --coverage",
