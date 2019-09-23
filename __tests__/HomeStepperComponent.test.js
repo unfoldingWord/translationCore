@@ -10,7 +10,7 @@ const mockStore = configureMockStore(middlewares);
 
 jest.mock('fs-extra');
 
-describe('HomeStepper', () => {
+describe.skip('HomeStepper', () => {
   const translate = (key, options) => {
     if (options) {
       const firstKey = Object.keys(options)[0];
