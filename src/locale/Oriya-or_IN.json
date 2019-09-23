@@ -329,7 +329,7 @@
     "loading_tool_data": "\"ତଥ୍ୟ ସାଧନ ଲୋଡ୍ ହେଉଅଛି ।\"",
     "resource_missing_for_tool": "\"ବର୍ତ୍ତମାନର ସାଧନ ୟୁଜିଏନଟିର ଏକ ଭିନ୍ନ ସଂସ୍କରଣ ଲୋଡିଥାଏ। ଏହି ସଂସାଧନକୁ ପ୍ରାପ୍ତ କରିବା ନିମନ୍ତେ ଦୟାକରି ଡାଉନ୍‌ଲୋଡ୍ ଉପରେ କ୍ଲିକ୍ କରନ୍ତୁ।\"",
     "no_checks_selected": "\"ଏହି ସାଧନକୁ ଆରମ୍ଭ କରିବା ନିମନ୍ତେ ଆପଣ ଏକ ଶ୍ରେଣୀକୁ ଚୟନ କରିବା ଉଚିତ୍।\"",
-    "book_not_supported": "Book not supported",
+    "book_not_supported": "\"ପୁସ୍ତକ ସମର୍ଥିତ ନୁହେଁ।\"",
     "select_tool_from_list": "Select a tool and a gateway language from the list.",
     "tools": "Tools",
     "no_tools": "No ${app} default tools found.",
