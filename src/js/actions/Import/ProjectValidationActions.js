@@ -33,15 +33,20 @@ import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
  */
-export const validateProject = (projectPath) => async (dispatch, getState) => {
-  dispatch(AlertModalActions.closeAlertDialog());
-  await manifestValidationHelpers.manifestExists(projectPath);
-  await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
-  await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
-  await setUpProjectDetails(projectPath, dispatch);
-  await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-  await dispatch(promptMissingDetails(projectPath));
-};
+export const validateProject = (projectPath) => ((dispatch, getState) => new Promise(async (resolve, reject) => {
+  try {
+    dispatch(AlertModalActions.closeAlertDialog());
+    await manifestValidationHelpers.manifestExists(projectPath);
+    await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
+    await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
+    await setUpProjectDetails(projectPath, dispatch);
+    await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
+    await dispatch(promptMissingDetails(projectPath));
+    resolve();
+  } catch (error) {
+    reject(error);
+  }
+}));
 
 /**
  *

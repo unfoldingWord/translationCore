@@ -14,30 +14,20 @@ import * as ResourcesActions from '../../actions/ResourcesActions';
 // constants
 import { IMPORTS_PATH, TARGET_LANGUAGE } from '../../common/constants';
 
-export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
-  const usfmData = await verifyIsValidUsfmFile(sourceProjectPath);
-  const parsedUsfm = usfmHelpers.getParsedUSFM(usfmData);
-  const manifest = await generateManifestForUsfm(parsedUsfm, sourceProjectPath, selectedProjectFilename);
-  await moveUsfmFileFromSourceToImports(sourceProjectPath, manifest, selectedProjectFilename);
-  await generateTargetLanguageBibleFromUsfm(parsedUsfm, manifest, selectedProjectFilename);
-};
-
-export const verifyIsValidUsfmFile = async (sourceProjectPath) => {
-  const usfmData = await usfmHelpers.loadUSFMFileAsync(path.join(sourceProjectPath));
-
-  if (usfmData.includes('\\h ') || usfmData.includes('\\id ')) { // moved verse checking to generateTargetLanguageBibleFromUsfm
-    return usfmData;
-  } else {
-    throw (
-      <div>
-          The project you selected ({sourceProjectPath}) is an invalid usfm project. <br/>
-          Please verify the project you selected is a valid usfm file.
-      </div>
-    );
+export const convertToProjectFormat = (sourceProjectPath, selectedProjectFilename) => new Promise (async (resolve, reject) => {
+  try {
+    const usfmData = await verifyIsValidUsfmFile(sourceProjectPath);
+    const parsedUsfm = usfmHelpers.getParsedUSFM(usfmData);
+    const manifest = await generateManifestForUsfm(parsedUsfm, sourceProjectPath, selectedProjectFilename);
+    await moveUsfmFileFromSourceToImports(sourceProjectPath, manifest, selectedProjectFilename);
+    await generateTargetLanguageBibleFromUsfm(parsedUsfm, manifest, selectedProjectFilename);
+    resolve();
+  } catch (error) {
+    reject(error);
   }
-};
+});
 
-export const verifyIsValidUsfmFileSync = (sourceProjectPath) => new Promise ((resolve, reject) => {
+export const verifyIsValidUsfmFile = (sourceProjectPath) => new Promise ((resolve, reject) => {
   const usfmData = usfmHelpers.loadUSFMFile(path.join(sourceProjectPath));
 
   if (usfmData.includes('\\h ') || usfmData.includes('\\id ')) { // moved verse checking to generateTargetLanguageBibleFromUsfm
@@ -45,8 +35,8 @@ export const verifyIsValidUsfmFileSync = (sourceProjectPath) => new Promise ((re
   } else {
     reject(
       <div>
-        The project you selected ({sourceProjectPath}) is an invalid usfm project. <br/>
-        Please verify the project you selected is a valid usfm file.
+          The project you selected ({sourceProjectPath}) is an invalid usfm project. <br/>
+          Please verify the project you selected is a valid usfm file.
       </div>
     );
   }
@@ -59,32 +49,33 @@ export const verifyIsValidUsfmFileSync = (sourceProjectPath) => new Promise ((re
  * @param {string} selectedProjectFilename
  * @return {Promise<any>}
  */
-export const generateManifestForUsfm = async (parsedUsfm, sourceProjectPath, selectedProjectFilename) => {
+export const generateManifestForUsfm = (parsedUsfm, sourceProjectPath, selectedProjectFilename) => new Promise ((resolve, reject) => {
   try {
     const manifest = manifestHelpers.generateManifestForUsfmProject(parsedUsfm);
     const manifestPath = path.join(IMPORTS_PATH, selectedProjectFilename, 'manifest.json');
-    await fs.outputJson(manifestPath, manifest, { spaces: 2 });
-    return manifest;
+    fs.outputJsonSync(manifestPath, manifest, { spaces: 2 });
+    resolve(manifest);
   } catch (error) {
     console.log(error);
-    throw (
+    reject(
       <div>
           Something went wrong when generating a manifest for ({sourceProjectPath}).
       </div>
     );
   }
-};
+});
 
-export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifest, selectedProjectFilename) => {
+export const moveUsfmFileFromSourceToImports = (sourceProjectPath, manifest, selectedProjectFilename) => new Promise ((resolve, reject) => {
   try {
-    const usfmData = await fs.readFile(sourceProjectPath);
+    const usfmData = fs.readFileSync(sourceProjectPath);
     const projectId = manifest && manifest.project && manifest.project.id ? manifest.project.id : undefined;
     const usfmFilename = projectId ? projectId + '.usfm' : selectedProjectFilename + '.usfm';
     const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, selectedProjectFilename, usfmFilename);
-    await fs.outputFile(newUsfmProjectImportsPath, usfmData);
+    fs.outputFileSync(newUsfmProjectImportsPath, usfmData);
+    resolve();
   } catch (error) {
-    console.log('moveUsfmFileFromSourceToImports()', error);
-    throw (
+    console.log(error);
+    reject(
       <div>
         {
           sourceProjectPath ?
@@ -95,7 +86,7 @@ export const moveUsfmFileFromSourceToImports = async (sourceProjectPath, manifes
       </div>
     );
   }
-};
+});
 
 /**
  * get the original language chapter resources for project book
@@ -130,7 +121,7 @@ const trimNewLine = function (text) {
  * @param {String} selectedProjectFilename
  * @return {Promise<any>}
  */
-export const generateTargetLanguageBibleFromUsfmBlocking = (parsedUsfm, manifest, selectedProjectFilename) => new Promise ((resolve, reject) => {
+export const generateTargetLanguageBibleFromUsfm = (parsedUsfm, manifest, selectedProjectFilename) => new Promise ((resolve, reject) => {
   try {
     const chaptersObject = parsedUsfm.chapters;
     const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
@@ -237,7 +228,7 @@ export const generateTargetLanguageBibleFromUsfmBlocking = (parsedUsfm, manifest
  * @param {String} selectedProjectFilename
  * @return {Promise<any>}
  */
-export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, selectedProjectFilename) => {
+export const generateTargetLanguageBibleFromUsfmAsync = async (parsedUsfm, manifest, selectedProjectFilename) => {
   try {
     const chaptersObject = parsedUsfm.chapters;
     const bibleDataFolderName = manifest.project.id || selectedProjectFilename;

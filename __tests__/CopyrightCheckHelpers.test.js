@@ -50,8 +50,8 @@ describe('CopyrightCheckHelpers.saveProjectLicense', () => {
     // reset mock filesystem data
     fs.__resetMockFS();
   });
-  test('saveProjectLicense should save a project license in fs as LICENSE.md', async () => {
-    await CopyrightCheckHelpers.saveProjectLicense('CC BY-SA 4.0', path.join('path', 'to', 'project'));
+  test('saveProjectLicense should save a project license in fs as LICENSE.md', () => {
+    CopyrightCheckHelpers.saveProjectLicense('CC BY-SA 4.0', path.join('path', 'to', 'project'));
     expect(fs.existsSync(path.join('path', 'to', 'project', 'LICENSE.md'))).toBeTruthy();
   });
 });
@@ -82,8 +82,8 @@ describe('CopyrightCheckHelpers.assignLicenseToOnlineImportedProject', () => {
     fs.__setMockFS({ [path.join('path', 'to', 'project', 'manifest.json')]: {}, [directory]: ccBYSA });
   });
 
-  test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', async () => {
-    await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(path.join('path', 'to', 'project'));
+  test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', () => {
+    CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(path.join('path', 'to', 'project'));
     expect(fs.readJsonSync(path.join('path', 'to', 'project', 'manifest.json'))).toEqual({ license:'CC BY-SA 4.0' });
   });
 });

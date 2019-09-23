@@ -116,18 +116,20 @@ export function getProjectsByType(tLId, bookId, resourceId) {
  * It now renames the "to be deleted folder" to ...-old
  * then deletes it so that async functions will not be confused.
  */
-export const deleteImportsFolder = async () => {
+export const deleteImportsFolder = () => {
   console.log('deleteImportsFolder()');
-
-  try {
-    if (await fs.exists(IMPORTS_PATH)) {
-      await fs.rename(IMPORTS_PATH, TEMP_DIR);
-      await fs.remove(TEMP_DIR);
+  return new Promise((resolve, reject) => {
+    try {
+      if (fs.existsSync(IMPORTS_PATH)) {
+        fs.renameSync(IMPORTS_PATH, TEMP_DIR);
+        fs.removeSync(TEMP_DIR);
+      }
+      resolve();
+    } catch (err) {
+      console.error(err);
+      reject(err);
     }
-  } catch (err) {
-    console.error('deleteImportsFolder()', err);
-    throw (err);
-  }
+  });
 };
 
 /**

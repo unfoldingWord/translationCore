@@ -142,6 +142,7 @@ export const editChecksToBatch = (editedChecks, actionBatch) => {
  * @return {Function}
  */
 export const ensureCheckVerseEditsInGroupData = (twVerseEdits) => async (dispatch, getState) => {
+  await delay(400);
   const versesEdited = Object.keys(twVerseEdits);
 
   if (versesEdited && versesEdited.length) {

@@ -92,6 +92,7 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
     //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
     await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
     // wait for filesystem calls to finish
+    await delay(150);
     dispatch(batchActions([
       closeAlertDialog(),
       BodyUIActions.toggleHomeView(false),

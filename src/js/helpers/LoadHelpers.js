@@ -25,25 +25,6 @@ export function loadFile(directory, file) {
 }
 
 /**
- * Loads a json file.
- * @param {string} directory - Directorty of the file to load, not the file name.
- * @param {string} file - The file name to load.
- */
-export async function loadFileAsync(directory, file) {
-  if (!directory) {
-    return null;
-  }
-
-  const pathLocation = path.join(directory, file);
-
-  if (await fs.exists(pathLocation)) {
-    return fs.readJson(pathLocation);
-  } else {
-    return null;
-  }
-}
-
-/**
  * @deprecated
  * @description creates an array that has the data of each included tool and 'subtool'
  * @param {object} dataObject - Package json of the tool being loaded,
