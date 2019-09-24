@@ -44,7 +44,7 @@
   "dev_mode_enabled": "ডেভেলপার মোড সক্রিয় I ডেভেলপার মোডের মধ্যে ${app} এর জন্য কোনো প্রযুক্তিগত সহায়তা প্রদান করা হয় না!",
   "no_internet": "সার্ভারের সঙ্গে সংযোগ স্থাপন করতে অক্ষম I দয়া করে আপনার ইন্টরনেট সংযোগ পরীক্ষা করুন I ",
   "alert": "সতর্ক",
-  "using_internet": "You are about to transmit data over the Internet. Are you sure you want to do that?",
+  "using_internet": " ওপরে তথ্য প্রেরণ করতে যাচ্ছেন I আপনি কি নিশ্চিত যে আপনি ওটা করতে চান?",
   "do_not_show_again": "Do not show this warning again.",
   "quit_app": "Quit ${app}",
   "toggle_developer_tools": "Toggle developer tools",
