@@ -134,7 +134,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
-    "checking-tool-wrapper": "github:translationCoreApps/checking-tool-wrapper#jay-fix-travis",
+    "checking-tool-wrapper": "0.5.1",
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "deep-equal": "1.0.1",
@@ -203,8 +203,7 @@
   },
   "peerDependencies": {
     "react": "^0.14.0 || ^16",
-    "redux": "^2.0.0 || ^3.0.0",
-    "graceful-fs": "^4.2.2"
+    "redux": "^2.0.0 || ^3.0.0"
   },
   "false": {}
 }

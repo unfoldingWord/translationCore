@@ -1,7 +1,7 @@
 sudo: true
 language: node_js
 node_js:
-  - 8
+  - 10
 os:
   - linux
 before_install:
@@ -15,11 +15,10 @@ before_script:
 script:
   - ./.concourse/test.sh
 deploy:
-
-# deploy documentation
-- provider: surge
-  project: "./docs/translationCore"
-  domain: docs.tc.unfoldingword.surge.sh
-  skip_cleanup: true
-  on:
-    branch: develop
+  # deploy documentation
+  - provider: surge
+    project: "./docs/translationCore"
+    domain: docs.tc.unfoldingword.surge.sh
+    skip_cleanup: true
+    on:
+      branch: develop
