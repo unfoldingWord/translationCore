@@ -51,7 +51,7 @@
   "actions": "কার্যকলাপ ",
   "running_latest_version": "আপনি ${app} এর সর্বাধুনিক সংস্করণ চালাচ্ছেন ",
   "user_locale": "ব্যবহারকারী ইন্টারফেস ভাষা ",
-  "changing_locale_effects": "Changing the language of the user interface will affect the language found in menus, dialogs, and project setup.",
+  "changing_locale_effects": "ব্যবহারকারী ইন্টারফেস ভাষার পরিবর্তন মেনু. ডায়ালগ সমূহ, এবং প্রকল্পের সেট আপের মধ্যে পাওয়া ভাষাটিকে প্রভাবিত করবে I  ",
   "changing_locale_note": "Note: To change the language of the checks and translation helps within a tool, please select a different Gateway Language when selecting a tool.",
   "user_feedback_comments": "Feedback and Comments.",
   "user_feedback": "User Feedback",
