@@ -11,6 +11,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
     }
   >
     <div
+      className={undefined}
       style={
         Object {
           "WebkitTapHighlightColor": "rgba(0,0,0,0)",
@@ -214,6 +215,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
         </div>
       </div>
       <div
+        className={undefined}
         style={
           Object {
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
@@ -370,6 +372,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
         </div>
       </div>
       <div
+        className={undefined}
         style={
           Object {
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",
@@ -526,6 +529,7 @@ exports[`Test ProjectFAB component Project FAB should match snapshot with option
         </div>
       </div>
       <div
+        className={undefined}
         style={
           Object {
             "WebkitTapHighlightColor": "rgba(0,0,0,0)",

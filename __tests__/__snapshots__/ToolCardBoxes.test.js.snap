@@ -44,7 +44,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
       "figs-irony",
     ]
   }
-  onChecked={[MockFunction]}
+  onChecked={[Function]}
   selectedCategories={
     Array [
       "writing-background",
@@ -66,86 +66,9 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
     ]
   }
   selectedGL="en"
-  showPopover={[MockFunction]}
+  showPopover={[Function]}
   toolName="translationNotes"
-  translate={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          "tool_card_categories.discourse",
-        ],
-        Array [
-          "tool_card_categories.numbers",
-        ],
-        Array [
-          "tool_card_categories.figures",
-        ],
-        Array [
-          "tool_card_categories.culture",
-        ],
-        Array [
-          "tool_card_categories.grammar",
-        ],
-        Array [
-          "tool_card_categories.discourse",
-        ],
-        Array [
-          "tool_card_categories.numbers",
-        ],
-        Array [
-          "tool_card_categories.figures",
-        ],
-        Array [
-          "tool_card_categories.culture",
-        ],
-        Array [
-          "tool_card_categories.grammar",
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.discourse",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.numbers",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.figures",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.culture",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.grammar",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.discourse",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.numbers",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.figures",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.culture",
-        },
-        Object {
-          "type": "return",
-          "value": "translated: tool_card_categories.grammar",
-        },
-      ],
-    }
-  }
+  translate={[Function]}
 >
   <div
     style={

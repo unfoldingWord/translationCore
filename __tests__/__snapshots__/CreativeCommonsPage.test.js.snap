@@ -4,7 +4,7 @@ exports[`snapshot 1`] = `
 <div>
   <button
     className="btn-second"
-    onClick={[MockFunction]}
+    onClick={[Function]}
   >
     <span
       className="glyphicon glyphicon-share-alt"

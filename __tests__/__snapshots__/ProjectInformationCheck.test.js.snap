@@ -210,6 +210,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   }
                 >
                   <div
+                    className={undefined}
                     style={
                       Object {
                         "backgroundColor": "transparent",
@@ -376,10 +377,12 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     <div
                       className="__react_component_tooltip place-top type-dark "
                       data-id="tooltip"
+                      id={undefined}
                     />
                   </span>
                 </label>
                 <div
+                  className={undefined}
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -527,6 +530,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   }
                 >
                   <div
+                    className={undefined}
                     style={
                       Object {
                         "backgroundColor": "transparent",
@@ -669,6 +673,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                    
                 </label>
                 <div
+                  className={undefined}
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -792,6 +797,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   />
                 </label>
                 <div
+                  className={undefined}
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -823,6 +829,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                      
                   </div>
                   <div
+                    className={undefined}
                     id="language-direction-SelectField"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -1074,6 +1081,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                   />
                 </label>
                 <div
+                  className={undefined}
                   style={
                     Object {
                       "backgroundColor": "transparent",
@@ -1105,6 +1113,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                      
                   </div>
                   <div
+                    className={undefined}
                     id="book-dropdown-menu-selectField"
                     onBlur={[Function]}
                     onChange={[Function]}
@@ -1396,6 +1405,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   >
                     <div
+                      className={undefined}
                       style={
                         Object {
                           "backgroundColor": "transparent",
@@ -1503,6 +1513,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   >
                     <div
+                      className={undefined}
                       style={
                         Object {
                           "backgroundColor": "transparent",
@@ -1679,6 +1690,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   >
                     <div
+                      className={undefined}
                       style={
                         Object {
                           "backgroundColor": "transparent",
@@ -1786,6 +1798,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   >
                     <div
+                      className={undefined}
                       style={
                         Object {
                           "backgroundColor": "transparent",

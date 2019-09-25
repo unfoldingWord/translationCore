@@ -185,14 +185,13 @@ describe('GogsApiHelpers.changeGitToPointToNewRepo', () => {
     expect(results).toEqual(expectSuccess);
   });
 
-  it('should pass up the error if git error', async () => {
-    const projectSaveLocation = 'path/to/project/PROJECT_NAME';
-
+  it("should pass up the error if git error", async () => {
+    const projectSaveLocation = "path/to/project/PROJECT_NAME";
     Repo.mockGetRemote.mockImplementation(() => {
-      throw new Error('Git error');
+      throw 'Git error';
     });
     await expect(GogsApiHelpers.changeGitToPointToNewRepo(
-      projectSaveLocation, user)).rejects.toThrow('Git error');
+      projectSaveLocation, user)).rejects.toEqual(new Error("Git error"));
   });
 });
 

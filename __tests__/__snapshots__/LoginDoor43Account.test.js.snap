@@ -86,7 +86,9 @@ exports[`snapshot 1`] = `
       }
     >
       <label
+        className={undefined}
         htmlFor="username-input"
+        onClick={undefined}
         style={
           Object {
             "color": "var(--text-color-dark)",
@@ -198,7 +200,9 @@ exports[`snapshot 1`] = `
       }
     >
       <label
+        className={undefined}
         htmlFor="password-input"
+        onClick={undefined}
         style={
           Object {
             "color": "var(--text-color-dark)",
