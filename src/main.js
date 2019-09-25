@@ -26,6 +26,8 @@ let splashScreen;
 const version = `v${p.version} (${process.env.BUILD})`;
 injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
 
+console.log('process.versions', process.versions);
+
 const downloadManager = new DownloadManager();
 
 /**
