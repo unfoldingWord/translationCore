@@ -1,4 +1,5 @@
 /* eslint-env jest */
+/* eslint-disable no-throw-literal */
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as GogsApiHelpers from '../GogsApiHelpers';
@@ -189,10 +190,10 @@ describe('GogsApiHelpers.changeGitToPointToNewRepo', () => {
     const projectSaveLocation = 'path/to/project/PROJECT_NAME';
 
     Repo.mockGetRemote.mockImplementation(() => {
-      throw new Error('Git error');
+      throw 'Git error';
     });
     await expect(GogsApiHelpers.changeGitToPointToNewRepo(
-      projectSaveLocation, user)).rejects.toThrow('Git error');
+      projectSaveLocation, user)).rejects.toEqual(new Error('Git error'));
   });
 });
 

@@ -1037,10 +1037,7 @@ An do on frankness so cordially immediate recommend contained. Imprudence insens
           "getChildContext": Object {
             "calledByRenderer": false,
           },
-          "getDerivedStateFromError": true,
-          "getDerivedStateFromProps": Object {
-            "hasShouldComponentUpdateBug": false,
-          },
+          "getDerivedStateFromProps": true,
           "getSnapshotBeforeUpdate": true,
           "setState": Object {
             "skipsComponentDidUpdateOnNullish": true,
@@ -1048,10 +1045,6 @@ An do on frankness so cordially immediate recommend contained. Imprudence insens
         },
       },
     },
-    "context": Object {},
-    Symbol(enzyme.__providerValues__): Map {},
   },
-  Symbol(enzyme.__providerValues__): Map {},
-  Symbol(enzyme.__childContext__): null,
 }
 `;

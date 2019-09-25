@@ -104,43 +104,43 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
       ],
       "results": Array [
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.discourse",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.numbers",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.figures",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.culture",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.grammar",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.discourse",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.numbers",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.figures",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.culture",
         },
         Object {
-          "type": "return",
+          "isThrow": false,
           "value": "translated: tool_card_categories.grammar",
         },
       ],
