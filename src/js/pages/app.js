@@ -33,6 +33,7 @@ import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
 const version = `v${APP_VERSION} (${process.env.BUILD})`;
 injectFileLogging(LOG_FILES_PATH, version);
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
+console.log('process.versions: ' + JSON.stringify(process.versions));
 
 class Main extends Component {
   constructor(props) {
