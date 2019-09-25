@@ -10,7 +10,7 @@ ShallowWrapper {
           <button
             className="btn-prime"
             label="buttons.close_button"
-            onClick={[Function]}
+            onClick={[MockFunction]}
           >
             Close
           </button>,
@@ -53,7 +53,7 @@ ShallowWrapper {
           <Glyphicon
             bsClass="glyphicon"
             glyph="remove"
-            onClick={[Function]}
+            onClick={[MockFunction]}
             style={
               Object {
                 "color": "var(--reverse-color)",
@@ -89,7 +89,7 @@ ShallowWrapper {
         <button
           className="btn-prime"
           label="buttons.close_button"
-          onClick={[Function]}
+          onClick={[MockFunction]}
         >
           Close
         </button>,
@@ -115,7 +115,7 @@ ShallowWrapper {
             <Glyphicon
               bsClass="glyphicon"
               glyph="remove"
-              onClick={[Function]}
+              onClick={[MockFunction]}
               style={
                 Object {
                   "color": "var(--reverse-color)",
@@ -160,7 +160,7 @@ ShallowWrapper {
             <Glyphicon
               bsClass="glyphicon"
               glyph="remove"
-              onClick={[Function]}
+              onClick={[MockFunction]}
               style={
                 Object {
                   "color": "var(--reverse-color)",
@@ -191,7 +191,7 @@ ShallowWrapper {
               <Glyphicon
                 bsClass="glyphicon"
                 glyph="remove"
-                onClick={[Function]}
+                onClick={[MockFunction]}
                 style={
                   Object {
                     "color": "var(--reverse-color)",
@@ -223,7 +223,7 @@ ShallowWrapper {
               "props": Object {
                 "bsClass": "glyphicon",
                 "glyph": "remove",
-                "onClick": [Function],
+                "onClick": [MockFunction],
                 "style": Object {
                   "color": "var(--reverse-color)",
                   "cursor": "pointer",
@@ -273,7 +273,7 @@ ShallowWrapper {
           <button
             className="btn-prime"
             label="buttons.close_button"
-            onClick={[Function]}
+            onClick={[MockFunction]}
           >
             Close
           </button>,
@@ -299,7 +299,7 @@ ShallowWrapper {
               <Glyphicon
                 bsClass="glyphicon"
                 glyph="remove"
-                onClick={[Function]}
+                onClick={[MockFunction]}
                 style={
                   Object {
                     "color": "var(--reverse-color)",
@@ -344,7 +344,7 @@ ShallowWrapper {
               <Glyphicon
                 bsClass="glyphicon"
                 glyph="remove"
-                onClick={[Function]}
+                onClick={[MockFunction]}
                 style={
                   Object {
                     "color": "var(--reverse-color)",
@@ -375,7 +375,7 @@ ShallowWrapper {
                 <Glyphicon
                   bsClass="glyphicon"
                   glyph="remove"
-                  onClick={[Function]}
+                  onClick={[MockFunction]}
                   style={
                     Object {
                       "color": "var(--reverse-color)",
@@ -407,7 +407,7 @@ ShallowWrapper {
                 "props": Object {
                   "bsClass": "glyphicon",
                   "glyph": "remove",
-                  "onClick": [Function],
+                  "onClick": [MockFunction],
                   "style": Object {
                     "color": "var(--reverse-color)",
                     "cursor": "pointer",

@@ -30,12 +30,10 @@ const manifest = {
 };
 
 describe('Test ability to translate bookname into target language fom manifest given a project class',()=> {
-  test('Project has no manifest', async () => {     // this is really no project
-    function migrationFailed() {
-      const projectPath = "/dummy/path";
-      migrateToAddTargetLanguageBookName(projectPath);
-    }
-    expect(migrationFailed).rejects.toThrow("Manifest not found.");
+  test('Project has no manifest', () => { // this is really no project
+    const projectPath = '/dummy/path';
+    // Must return or await expect when testing promises rejections see: https://jestjs.io/docs/en/expect#rejects
+    return expect(migrateToAddTargetLanguageBookName(projectPath)).rejects.toThrow('Manifest not found.');
   });
 
   test('Project has translated name in manifest', async () => {

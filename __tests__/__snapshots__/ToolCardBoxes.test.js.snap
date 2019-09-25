@@ -44,7 +44,7 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
       "figs-irony",
     ]
   }
-  onChecked={[Function]}
+  onChecked={[MockFunction]}
   selectedCategories={
     Array [
       "writing-background",
@@ -66,9 +66,86 @@ exports[`translationNotes should have 4 boxes checked 1`] = `
     ]
   }
   selectedGL="en"
-  showPopover={[Function]}
+  showPopover={[MockFunction]}
   toolName="translationNotes"
-  translate={[Function]}
+  translate={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "tool_card_categories.discourse",
+        ],
+        Array [
+          "tool_card_categories.numbers",
+        ],
+        Array [
+          "tool_card_categories.figures",
+        ],
+        Array [
+          "tool_card_categories.culture",
+        ],
+        Array [
+          "tool_card_categories.grammar",
+        ],
+        Array [
+          "tool_card_categories.discourse",
+        ],
+        Array [
+          "tool_card_categories.numbers",
+        ],
+        Array [
+          "tool_card_categories.figures",
+        ],
+        Array [
+          "tool_card_categories.culture",
+        ],
+        Array [
+          "tool_card_categories.grammar",
+        ],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.discourse",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.numbers",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.figures",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.culture",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.grammar",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.discourse",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.numbers",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.figures",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.culture",
+        },
+        Object {
+          "isThrow": false,
+          "value": "translated: tool_card_categories.grammar",
+        },
+      ],
+    }
+  }
 >
   <div
     style={
