@@ -4,7 +4,6 @@ import fs from 'fs-extra';
 import usfm from 'usfm-js';
 import { checkSelectionOccurrences } from 'selections';
 import { batchActions } from 'redux-batched-actions';
-// actions
 // helpers
 import {
   getTranslate, getUsername, getSelectedToolName,
@@ -15,9 +14,11 @@ import * as saveMethods from '../localStorage/saveMethods';
 import {
   WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
 } from '../common/constants';
+// actions
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as AlertActions from './AlertActions';
+import { isSameVerse } from './GroupsDataActions';
 import types from './ActionTypes';
 export const ALERT_ALIGNMENTS_RESET_ID = 'alignments_reset';
 export const ALERT_SELECTIONS_INVALIDATED_ID = 'selections_invalidated';
@@ -353,7 +354,7 @@ export const getGroupDataForVerse = (state, contextId) => {
           const check = groupItem[j];
 
           try {
-            if (isEqual(check.contextId.reference, contextId.reference)) {
+            if (isSameVerse(check.contextId, contextId)) {
               if (!filteredGroupData[groupItemKey]) {
                 filteredGroupData[groupItemKey] = [];
               }
