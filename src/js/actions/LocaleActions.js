@@ -149,6 +149,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
         defaultLanguage: DEFAULT_LOCALE,
         onMissingTranslation,
         renderToStaticMarkup,
+        renderInnerHtml: true,
       },
     });
 
