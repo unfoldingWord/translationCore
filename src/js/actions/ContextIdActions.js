@@ -174,18 +174,24 @@ export function loadCurrentContextId() {
         let loadPath = getContextIdPathFromIndex(projectSaveLocation, toolName, bookId);
 
         if (fs.existsSync(loadPath)) {
-          contextId = fs.readJsonSync(loadPath);
-          const contextIdExistInGroups = groupsIndex.filter(({ id }) => id === contextId.groupId).length > 0;
+          try {
+            contextId = fs.readJsonSync(loadPath);
+            const contextIdExistInGroups = groupsIndex.filter(({ id }) => id === contextId.groupId).length > 0;
 
-          if (contextId && contextIdExistInGroups) {
-            return dispatch(changeCurrentContextId(contextId));
+            if (contextId && contextIdExistInGroups) {
+              return dispatch(changeCurrentContextId(contextId));
+            }
+          } catch (err) {
+            // The object is undefined because the file wasn't found in the directory
+            console.warn('loadCurrentContextId() error reading contextId', err);
           }
         }
+        // if we could not read contextId default to first
         contextId = firstContextId(state);
         dispatch(changeCurrentContextId(contextId));
       } catch (err) {
         // The object is undefined because the file wasn't found in the directory
-        console.warn(err);
+        console.warn('loadCurrentContextId() error loading contextId', err);
       }
     }
   };
