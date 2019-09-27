@@ -91,6 +91,7 @@ describe('Tool Actions.openTool', () => {
       {
         'type': 'OPEN_ALERT_DIALOG', 'alertMessage': 'tools.loading_tool_data', 'loading': true,
       },
+      { 'name': TRANSLATION_NOTES, 'type': 'OPEN_TOOL' },
       {
         'type': 'BATCHING_REDUCER.BATCH',
         'meta': { 'batch': true },
@@ -98,7 +99,6 @@ describe('Tool Actions.openTool', () => {
           { 'type': 'CLEAR_PREVIOUS_GROUPS_DATA' },
           { 'type': 'CLEAR_PREVIOUS_GROUPS_INDEX' },
           { 'type': 'CLEAR_CONTEXT_ID' },
-          { 'name': TRANSLATION_NOTES, 'type': 'OPEN_TOOL' },
         ],
       },
       {

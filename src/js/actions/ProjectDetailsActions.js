@@ -4,6 +4,7 @@ import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
+import { batchActions } from 'redux-batched-actions';
 import {
   getTranslate,
   getUsername,
@@ -24,14 +25,13 @@ import ProjectAPI from '../helpers/ProjectAPI';
 // constants
 import {
   PROJECTS_PATH,
-  PROJECT_INDEX_FOLDER_PATH,
-  WORD_ALIGNMENT,
   TRANSLATION_NOTES,
 } from '../common/constants';
 import * as ResourcesActions from './ResourcesActions';
 import { cancelProjectValidationStepper } from './ProjectImportStepperActions';
 import * as AlertModalActions from './AlertModalActions';
 import consts from './ActionTypes';
+import { prepareToolForLoading } from './ToolActions';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
@@ -131,15 +131,22 @@ export function setProjectToolGL(toolName, selectedGL) {
 
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
 
-    if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
-      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
-    }
-
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
       toolName,
       selectedGL,
     });
+
+    if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
+      dispatch(prepareToolForLoading(toolName)).then(() => {
+        dispatch(batchActions([
+          { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
+          { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
+          { type: consts.CLEAR_CONTEXT_ID },
+        ]));
+      });
+    }
   };
 }
 
@@ -149,33 +156,18 @@ export function setProjectToolGL(toolName, selectedGL) {
  * @param {Object} results - optional object to return progress calculation
  * @return {Function}
  */
-export function getProjectProgressForTools(toolName, results=null) {
+export function getProjectProgressForTools(toolName, results = null) {
   return (dispatch, getState) => {
-    const {
-      projectDetailsReducer: {
-        projectSaveLocation,
-        manifest,
-        toolsCategories,
-      },
-    } = getState();
-    const bookId = manifest.project.id;
     let progress = 0;
 
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
-    const pathToCheckDataFiles = path.join(projectSaveLocation, PROJECT_INDEX_FOLDER_PATH, toolName, bookId);
-
     try {
-      if (toolName === WORD_ALIGNMENT) {
-        const toolApi = getToolsByKey(getState());
-        const currentToolApi = toolApi[toolName].api;
-        //TODO: add progress fetch code to checking-tool-wrapper
-        progress = currentToolApi.trigger('getProgress');
-      } else {
-        progress = ProjectDetailsHelpers.getToolProgress(pathToCheckDataFiles, toolName, toolsCategories[toolName], bookId);
-      }
+      const toolApi = getToolsByKey(getState());
+      const currentToolApi = toolApi[toolName].api;
+      progress = currentToolApi.trigger('getProgress');
     } catch (e) {
       console.error(`getProjectProgressForTools(${toolName} - error getting progress`, e);
       progress = 0;
