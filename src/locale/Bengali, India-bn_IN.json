@@ -250,7 +250,7 @@
       "field_invalid_length": "অবশ্যই 3-4 অক্ষর সমূহের দীর্ঘ হতে হবে ",
       "invalid_characters": "কেবলমাত্র মূল ল্যাটিন অক্ষর সমূহ দ্বারা সমর্থিত  "
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
+    "conflicting_project": "এই ভাষা এবং বইয়ের জন্য এই সনাক্তকারী সহ একটি প্রকল্প আগে থেকেই রয়েছে ",
     "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
   },
   "book_list": {
