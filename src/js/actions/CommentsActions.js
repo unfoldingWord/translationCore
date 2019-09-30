@@ -35,12 +35,13 @@ export function comment(text, username, timestamp) {
 /**
  * Add a comment for the current check.
  * @param {String} text - comment text.
- * @param {String} username - Alias name.
  * @return {Object} New state for comment reducer.
  */
-export const addComment = (text, username) => ((dispatch, getState) => {
-  let state = getState();
-  let contextId = state.contextIdReducer.contextId;
+export const addComment = (text) => ((dispatch, getState) => {
+  const state = getState();
+  const contextId = state.contextIdReducer.contextId;
+  const username = state.loginReducer.userdata.username;
+
   dispatch(comment(text, username, generateTimestamp()));
   dispatch({
     type: consts.TOGGLE_COMMENTS_IN_GROUPDATA,

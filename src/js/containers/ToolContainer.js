@@ -292,24 +292,24 @@ const mapDispatchToProps = (dispatch) => ({
     loadLexiconEntry: (lexiconId, entryId) => {
       dispatch(ResourcesActions.loadLexiconEntry(lexiconId, entryId));
     },
-    addComment: (text, username) => {
-      dispatch(addComment(text, username));
+    addComment: (text) => {
+      dispatch(addComment(text));
     },
-    changeSelections: (selections, username, nothingToSelect) => {
-      dispatch(changeSelections(selections, username, null, null, null, nothingToSelect));
+    changeSelections: (selections, nothingToSelect) => {
+      dispatch(changeSelections(selections, null, null, null, nothingToSelect));
     },
     validateSelections: (targetVerse) => {
       dispatch(validateSelections(targetVerse));
     },
-    toggleReminder: (username) => {
-      dispatch(toggleReminder(username));
+    toggleReminder: () => {
+      dispatch(toggleReminder());
     },
     selectModalTab: (tab, section, vis) => {
       dispatch(selectModalTab(tab, section, vis));
     },
-    editTargetVerse: (chapter, verse, before, after, tags, username) => {
+    editTargetVerse: (chapter, verse, before, after, tags) => {
       dispatch(
-        editTargetVerse(chapter, verse, before, after, tags, username));
+        editTargetVerse(chapter, verse, before, after, tags));
     },
     changeCurrentContextId: (contextId) => {
       dispatch(changeCurrentContextId(contextId));
