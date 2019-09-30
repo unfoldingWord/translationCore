@@ -378,10 +378,9 @@ export const getGroupDataForVerse = (state, contextId) => {
  */
 export const sameContext = (contextId1, contextId2) => {
   if (contextId1 && contextId2) {
-    return (contextId1.reference.chapter === contextId2.reference.chapter) &&
-      (contextId1.reference.verse === contextId2.reference.verse)
-      && (contextId1.groupId === contextId2.groupId)
-      && (contextId1.occurrence === contextId2.occurrence);
+    return isEqual(contextId1.reference, contextId2.reference) &&
+      (contextId1.groupId === contextId2.groupId) &&
+      (contextId1.occurrence === contextId2.occurrence);
   }
   return false;
 };
