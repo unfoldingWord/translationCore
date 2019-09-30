@@ -190,7 +190,7 @@ export function loadCurrentContextId() {
         contextId = firstContextId(state);
         dispatch(changeCurrentContextId(contextId));
       } catch (err) {
-        // The object is undefined because the file wasn't found in the directory
+        // The object is undefined because the file wasn't found in the directory or other error
         console.warn('loadCurrentContextId() error loading contextId', err);
       }
     }
