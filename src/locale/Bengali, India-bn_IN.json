@@ -208,9 +208,9 @@
     "nickname": "প্রকল্পের ডাকনাম ",
     "current_project": "প্রকল্প: ${project}",
     "renamed_project": "আপনার স্থানীয় প্রকল্পের নামকরণ করা হয়েছে<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "আপনার প্রকল্পের পুনর্নামকরণ করা হয়েছে <br/><b>${project}</b><br/>এই প্রকল্পের বর্তমান ${door43} সংগ্রহস্থল নিয়ে আপনি কি করতে পচ্ছন্দ করবেন?",
+    "dcs_rename_project": "আপনার প্রকল্পের নতুন নামকরণ করা হয়েছে <br/><b>${project}</b><br/>এই প্রকল্পের বর্তমান ${door43} সংগ্রহস্থল নিয়ে আপনি কি করতে পচ্ছন্দ করবেন?",
     "dcs_rename_success": "প্রকল্পটির জন্য ${door43} সংগ্রহস্থলটিকে সফলভাবে আপডেট করা হয়েছে I <br/>${project} ",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
+    "dcs_rename_failed": "${door43} সংগ্রহস্থলটির নতুন নামকরণ করা হয় নি I <br/><br/>আপনি কি ${door43} সংগ্রহস্থলটির নতুন নামকরণ করতে চেষ্টা করতে চান অথবা নতুন নামকরণ করা ছাড়াই চালিয়ে যেতে চান? ",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
