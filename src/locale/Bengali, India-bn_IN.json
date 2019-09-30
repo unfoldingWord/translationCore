@@ -129,11 +129,11 @@
     "not_infringe": "কেবলমাত্র সেই বিষয়বস্তুকে যোগ করুন যা অন্য কারোর কপিরাইটের উপরে হস্তক্ষেপ করে না I ",
     "not_conflict": "কেবলমাত্র সেই বিষয়বস্তুকে যোগ করুন যা বিশ্বাসের বিবৃতির সাথে বিরোধ করে না I ",
     "statement_of_faith": "বিশ্বাসের বিবৃতি.",
-    "release_contributions": "Release your contributions to the content under a Creative Commons Attribution-ShareAlike 4.0 International License.",
-    "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
+    "release_contributions": "একটি ক্রিয়েটিভ কমন্স এট্রিবিউসন-শেয়ারএলাইক 4.0 ইন্টারন্যাশনাল লাইসেন্সের অধীনে  বিষয়বস্তুর প্রতি আপনার যোগদান সমূহকে রিলিজ করুন I ",
+    "cc_by_sa": " ক্রিয়েটিভ কমন্স এট্রিবিউসন-শেয়ারএলাইক 4.0 ইন্টারন্যাশনাল লাইসেন্স I "
   },
   "projects": {
-    "zip_files": "Zip Files",
+    "zip_files": "জিপ ফাইল সমূহ ",
     "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
     "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
     "no_project": "No project was selected",
