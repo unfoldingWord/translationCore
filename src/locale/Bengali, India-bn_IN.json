@@ -201,7 +201,7 @@
     "saving_error": "ত্রুটি সংরক্ষণকারী প্রকল্প: \"${error}\"I ",
     "project_exists": "যে প্রকল্পকে আপনি নির্বাচন করেছেন ${project_path} আগে থেকেই রয়েছে I ",
     "reimporting_not_supported": "বিদ্যমান প্রকল্পগুলোকে পুন:আমদানি করা বর্তমানে সমর্থিত নয় I ",
-    "project_does_not_exist": "The folder for the project you selected, (${project_path}), does not exists.",
+    "project_does_not_exist": "আপনার নির্বাচিত প্রকল্পের জন্য ফোল্ডার, ${project_path}, বিদ্যমান নেই I ",
     "project_merge_error": "There was an error merging this project with the existing ${project_name} project.",
     "import_again_as_new_project": "Please import the project again as a new project.",
     "resource_id": "Translation Identifier",
