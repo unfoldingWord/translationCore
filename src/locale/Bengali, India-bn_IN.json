@@ -251,7 +251,7 @@
       "invalid_characters": "কেবলমাত্র মূল ল্যাটিন অক্ষর সমূহ দ্বারা সমর্থিত  "
     },
     "conflicting_project": "এই ভাষা এবং বইয়ের জন্য এই সনাক্তকারী সহ একটি প্রকল্প আগে থেকেই রয়েছে ",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "এই প্রকল্পটিকে মূল অনুবাদের একটি নতুনতর সংস্করণের মধ্যে তৈরী করা হয়েছে I দয়া করে সর্বশেষ সংস্করণটিকে আপডেট করুন এবং পুনরায় চেষ্টা করুন I   "
   },
   "book_list": {
     "ot": {
@@ -307,8 +307,8 @@
       "gal": "Galatians (${book_id})",
       "eph": "Ephesians (${book_id})",
       "php": "Philippians (${book_id})",
-      "col": "Colossians (${book_id})",
-      "1th": "1 Thessalonians (${book_id})",
+      "col": "কলসীয় ${book_id} ",
+      "1th": "1 থিষলনীকিয় ${book_id}",
       "2th": "2 Thessalonians (${book_id})",
       "1ti": "1 Timothy (${book_id})",
       "2ti": "2 Timothy (${book_id})",
