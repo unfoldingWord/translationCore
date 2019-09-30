@@ -244,7 +244,7 @@
     "conflict_reference": "${chapter} অধ্যায়ের জন্য, ${verse} পদের জন্য এত একটি মিশে যাওয়া সংঘাত হচ্ছে I ",
     "missing_verses_instructions": "আপনার প্রকল্প থেকে কিছু পদ সমূহ হারিয়ে গেছে I ",
     "only_nt_supported": "${app} এর এই সংস্করণ কেবলমাত্র নতুন নিয়মের প্রকল্পগুলোকে সমর্থন করে I ",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "এই প্রকল্পের মধ্যে ${app} এর একটি পুরনো সংস্করণের থেকে তথ্য রয়েছে যেটা এই রিলিজের মধ্যে সমর্থিত নয় I এই প্রকল্প খুলতে সাহায্যের জন্য অথবা পরীক্ষণ পুনরায় আরম্ভ করতে, দয়া করে ${help_desk_email} এর সাথে যোগাযোগ করুন I ",
     "resource_id": {
       "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
       "field_invalid_length": "Must be 3-4 letters long",
