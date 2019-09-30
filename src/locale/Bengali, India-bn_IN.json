@@ -94,11 +94,11 @@
     "download_error": "আপডেট ডাউনলোড করতে অক্ষম ",
     "source_label": "সোর্স:",
     "local_timestamp": "স্থানীয়:",
-    "online_timestamp": "Online:"
+    "online_timestamp": "অনলাইন:"
   },
   "users": {
-    "category": "Category:",
-    "to_log_out": "To log out, click \"Log out\".",
+    "category": "বিভাগ",
+    "to_log_out": "লগ আউট করতে \"লগ আউট\" ক্লিক করুন ",
     "please_log_in": "Please log in with your ${door43} account.",
     "no_d43_account": "If you do not have a ${door43} account, you may create one.",
     "may_create_d43_account": "If you do not want to create an account at this time, you may continue as a guest.",
