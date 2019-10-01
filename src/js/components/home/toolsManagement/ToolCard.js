@@ -162,8 +162,6 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        showPopover,
-        closePopover,
         updateCategorySelection,
         updateSubcategorySelection,
       },
@@ -231,8 +229,6 @@ class ToolCard extends Component {
               bookId={bookId}
               translate={translate}
               selectedGL={selectedGL}
-              showPopover={showPopover}
-              closePopover={closePopover}
             />
           }
           {this.state.showDescription ?
@@ -302,8 +298,6 @@ ToolCard.propTypes = {
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
     warnOnInvalidations: PropTypes.func.isRequired,
-    showPopover: PropTypes.func.isRequired,
-    closePopover: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
