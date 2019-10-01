@@ -31,8 +31,8 @@ import { getOsInfoStr } from '../helpers/FeedbackHelpers';
 import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
 
 const version = `v${APP_VERSION} (${process.env.BUILD})`;
-injectFileLogging(LOG_FILES_PATH, version);
-console.log('SYSTEM INFO:\n' + getOsInfoStr());
+// injectFileLogging(LOG_FILES_PATH, version);
+// console.log('SYSTEM INFO:\n' + getOsInfoStr());
 
 class Main extends Component {
   constructor(props) {
