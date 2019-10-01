@@ -67,12 +67,11 @@ export const localImport = () => async (dispatch, getState) => {
       console.log('localImport() - generate bible from path: ' + updatedImportPath);
       TargetLanguageHelpers.generateTargetBibleFromTstudioProjectPath(updatedImportPath, manifest);
       dispatch(ProjectInformationCheckActions.setSkipProjectNameCheckInProjectInformationCheckReducer(true));
-      await delay(200);
       dispatch(AlertModalActions.closeAlertDialog());
       console.log('localImport() - validate project');
       await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
     }
-    await delay(200); // to make sure project details have been saved
+    console.log('localImport() - validation done');
     const renamingResults = {};
     await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
     const { projectDetailsReducer: { projectSaveLocation } } = getState();
@@ -80,7 +79,6 @@ export const localImport = () => async (dispatch, getState) => {
     if (renamingResults.repoRenamed) {
       dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation });
       dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName });
-      await delay(200);
     }
 
     let success = false;
