@@ -1,9 +1,9 @@
 {
-  "welcome_to_tc": "স্বাগতম ${app}!",
-  "get_started": "শুরু!",
+  "welcome_to_tc": "${app}! তে স্বাগতম ",
+  "get_started": "শুরু হয়ে যান!",
   "version": "সংস্করণ ${version}",
   "instructions": "নির্দেশাবলী",
-  "access_internet": "ইন্টারনেট অ্যাক্সেস",
+  "access_internet": "ইন্টারনেটে প্রবেশ করন ",
   "to_get_started": "শুরু করার জন্য, দয়া করে:",
   "log_in": "লগ ইন করুন",
   "save_changes": "পরিবর্তনগুলি সেভ করুন",
@@ -255,10 +255,10 @@
   },
   "book_list": {
     "ot": {
-      "gen": "Genesis (${book_id})",
-      "exo": "Exodus (${book_id})",
-      "lev": "Leviticus (${book_id})",
-      "num": "Numbers (${book_id})",
+      "gen": "আদি পুস্তক (${book_id})",
+      "exo": "যাত্রা পুস্তক (${book_id})",
+      "lev": "লেবীয় (${book_id})",
+      "num": "গণনা পুস্তক (${book_id})",
       "deu": "Deuteronomy (${book_id})",
       "jos": "Joshua (${book_id})",
       "jdg": "Judges (${book_id})",
@@ -508,9 +508,9 @@
     "figs-genericnoun": "জাতিগত বিশেষ্য বাগ্ধারা সমূহ ",
     "figs-inclusive": "অন্তর্ভুক্ত \"আমরা\"",
     "figs-nominaladj": "নামমাত্র বিশেষণ সমূহ ",
-    "figs-possession": "Possession",
-    "figs-rpronouns": "Reflexive Pronouns",
-    "figs-we": "Forms of We",
-    "figs-they": "Forms of They"
+    "figs-possession": "অধিকার ",
+    "figs-rpronouns": "প্রতিবিম্বসূচক সর্বনামগুলো ",
+    "figs-we": "আমাদের ফর্মগুলো ",
+    "figs-they": "তাদের ফর্মগুলো "
   }
 }
