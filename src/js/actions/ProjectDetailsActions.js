@@ -124,7 +124,7 @@ export const setSaveLocation = pathLocation => ({
 export const resetProjectDetail = () => ({ type: consts.RESET_PROJECT_DETAIL });
 
 export function setProjectToolGL(toolName, selectedGL) {
-  return (dispatch) => {
+  return async (dispatch) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
@@ -139,13 +139,12 @@ export function setProjectToolGL(toolName, selectedGL) {
 
     if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
-      dispatch(prepareToolForLoading(toolName)).then(() => {
-        dispatch(batchActions([
-          { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-          { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-          { type: consts.CLEAR_CONTEXT_ID },
-        ]));
-      });
+      await dispatch(prepareToolForLoading(toolName));
+      dispatch(batchActions([
+        { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
+        { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
+        { type: consts.CLEAR_CONTEXT_ID },
+      ]));
     }
   };
 }

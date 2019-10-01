@@ -471,7 +471,6 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
       progress: 0.25,
     }];
     const store = mockStore(initialState);
-    console.log('store', store.getState());
     store.dispatch(actions.updateCategorySelection(TRANSLATION_WORDS, true, ['apostle', 'authority', 'clean']));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
