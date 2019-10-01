@@ -24,23 +24,6 @@ import {
 import types from './ActionTypes';
 
 /**
- * Records an edit to the currently selected verse in the target bible.
- *
- * @deprecated use {@link editTargetVerse} instead.
- *
- * @param {string} before - Previous text version of the verse.
- * @param {string} after - New edited text version of the verse.
- * @param {string[]} tags - Array of tags used for verse Edit check boxes.
- * @param {string|null} [username=null] - The user's alias. If null the current username will be used.
- * @return {Function}
- */
-export const editSelectedTargetVerse = (before, after, tags, username=null) => (dispatch, getState) => {
-  const contextId = getState().contextIdReducer.contextId;
-  let { chapter, verse } = contextId.reference;
-  dispatch(editTargetVerse(chapter, verse, before, after, tags, username));
-};
-
-/**
  * save verse edit in translationWords to file system
  * @param {{
       verseBefore: String,

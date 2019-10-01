@@ -13,17 +13,20 @@ import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import * as saveMethods from '../localStorage/saveMethods';
 import {
-  WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  ALERT_SELECTIONS_INVALIDATED_ID,
+  ALERT_SELECTIONS_INVALIDATED_MSG,
+  ALERT_ALIGNMENTS_RESET_ID,
+  ALERT_ALIGNMENTS_RESET_MSG,
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
 } from '../common/constants';
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as AlertActions from './AlertActions';
 import types from './ActionTypes';
-export const ALERT_ALIGNMENTS_RESET_ID = 'alignments_reset';
-export const ALERT_SELECTIONS_INVALIDATED_ID = 'selections_invalidated';
-export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_alignments_and_selections';
-export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
-export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
+
 
 /**
  * This method adds a selection array to the selections reducer.
@@ -207,7 +210,7 @@ function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapte
         const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bibleId, chapter.toString(), verse.toString());
         fs.ensureDirSync(invalidatedCheckPath);
         fs.outputJSONSync(path.join(invalidatedCheckPath, newFilename.replace(/[:"]/g, '_')), newInvalidation);
-        dispatch(changeSelections([], username, true, newInvalidation.contextId));
+        dispatch(changeSelections([], true, newInvalidation.contextId));
         selectionInvalidated = true;
       }
     }
@@ -239,7 +242,6 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
   const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
   if (getSelectedToolName(state) !== WORD_ALIGNMENT) {
-    const username = getUsername(state);
     // for this groupId, find every check for this chapter/verse
     const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
 
@@ -250,7 +252,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
       const selectionsChanged = (selections.length !== validSelections.length);
 
       if (selectionsChanged) {
-        dispatch(changeSelections([], username, true, groupObject.contextId, actionsBatch)); // clear selections
+        dispatch(changeSelections([], true, groupObject.contextId, actionsBatch)); // clear selections
       }
       selectionInvalidated = selectionInvalidated || selectionsChanged;
     }
@@ -286,7 +288,6 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
 export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent = false, contextId = null,
   warnOnError = false, batchGroupData = null) => (dispatch, getState) => {
   const state = getState();
-  const username = getUsername(state);
   const initialSelectionsChanged = results.selectionsChanged;
   contextId = contextId || state.contextIdReducer.contextId;
   const groupsDataForVerse = getGroupDataForVerse(state, contextId);
@@ -314,8 +315,7 @@ export const validateAllSelectionsForVerse = (targetVerse, results, skipCurrent 
 
           if (selections.length !== validSelections.length) {
             results.selectionsChanged = true;
-            dispatch(changeSelections([], username, true,
-              checkingOccurrence.contextId, actionsBatch)); // clear selection
+            dispatch(changeSelections([], true, checkingOccurrence.contextId, actionsBatch)); // clear selection
           }
         }
       }
