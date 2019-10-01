@@ -4,12 +4,12 @@ import {
   getToolCategories, getToolsByKey, getTranslate,
 } from '../selectors';
 import * as alerts from '../reducers/alerts';
-import { WORD_ALIGNMENT } from '../common/constants';
 import {
-  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+  WORD_ALIGNMENT,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_SELECTIONS_INVALIDATED_ID,
-} from '../actions/SelectionsActions';
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+} from '../common/constants';
 
 /**
  * Loads all of the tools found in a directory

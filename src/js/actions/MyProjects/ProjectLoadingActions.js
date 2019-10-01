@@ -249,11 +249,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     username: getUsername(state),
     toolsSelectedGLs: getToolsSelectedGLs(state),
-    actions: {
-      changeSelections: (selections, userName) => {
-        dispatch(changeSelections(selections, userName));
-      },
-    },
+    actions: { changeSelections: (selections) => dispatch(changeSelections(selections)) },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
