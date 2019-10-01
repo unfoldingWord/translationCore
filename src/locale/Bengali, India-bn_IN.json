@@ -383,7 +383,7 @@
     "invalid_checks": "অবৈধ পরীক্ষাগুলো ",
     "invalid_verse_alignments": "অবৈধ সমন্বয়সাধনগুলোর সঙ্গে পদ সমূহ ",
     "invalidation_checking": "পরীক্ষা করা হচ্ছে এই সম্পাদন সংরক্ষিত নির্বাচনগুলো এবং সমন্বয়সাধনগুলোর সাথে সংঘাত করছে কিনা...",
-    "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
+    "alignments_reset_wa_tool": "আপনার প্রকল্পের মধ্যে পরিবর্তনগুলোকে সনাক্ত করা হয়েছে যেগুলো আপনার সমন্বয়সাধন গুলোর কয়েকটিকে অবৈধ করে দিয়েছে I এই পদগুলো রেফারেন্সের ঠিক পরে পার্শ্ববর্তী মেনুর মধ্যে একটি ভগ্ন শৃঙ্খলের আইকনকে প্রদর্শন করে I  ",
     "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
     "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
