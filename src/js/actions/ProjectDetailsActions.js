@@ -166,7 +166,7 @@ export function getProjectProgressForTools(toolName, results = null) {
     try {
       const toolApi = getToolsByKey(getState());
       const currentToolApi = toolApi[toolName].api;
-      progress = currentToolApi.trigger('getProgress');
+      progress = currentToolApi.trigger('getProgress') || 0;
     } catch (e) {
       console.error(`getProjectProgressForTools(${toolName} - error getting progress`, e);
       progress = 0;
