@@ -87,7 +87,6 @@ export function prepareToolForLoading(name) {
     //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
     await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(name));
     // wait for filesystem calls to finish
-    await delay(150);
   };
 }
 
