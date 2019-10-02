@@ -7,7 +7,7 @@ import path from 'path-extra';
 import isEqual from 'deep-equal';
 import { getSelectedToolName } from '../selectors';
 import { readLatestChecks } from '../helpers/groupDataHelpers';
-import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../common/constants';
+import { TRANSLATION_NOTES, TRANSLATION_WORDS } from '../common/constants';
 import consts from './ActionTypes';
 import { showSelectionsInvalidatedWarning, validateAllSelectionsForVerse } from './SelectionsActions';
 import { ensureCheckVerseEditsInGroupData } from './VerseEditActions';
@@ -28,6 +28,17 @@ export const addGroupData = (groupId, groupsData) => ({
 });
 
 /**
+ * make sure context IDs are for same verse.  Optimized over isEqual()
+ * @param {Object} contextId1
+ * @param {Object} contextId2
+ * @return {boolean} returns true if context IDs are for same verse
+ */
+export function isSameVerse(contextId1, contextId2) {
+  return (contextId1.reference.chapter === contextId2.reference.chapter) &&
+    (contextId1.reference.verse === contextId2.reference.verse);
+}
+
+/**
  * searches groupData for a match for contextId (groupData must be for same groupId)
  * @param {Object} contextId
  * @param {Array} groupData for same groupId as contextId
@@ -35,13 +46,15 @@ export const addGroupData = (groupId, groupsData) => ({
  */
 export const findGroupDataItem = (contextId, groupData) => {
   let index = -1;
+  const isQuoteString = typeof contextId.quote === 'string';
 
-  for (let i = 0, l = groupData.length; i < l; i++) {
+  for (let i = groupData.length - 1; i >= 0; i--) {
     const grpContextId = groupData[i].contextId;
 
-    if ((grpContextId.quote === contextId.quote) &&
-        isEqual(grpContextId.reference, contextId.reference) &&
-        (grpContextId.occurrence === contextId.occurrence)) {
+    if (isSameVerse(grpContextId, contextId) &&
+      (grpContextId.occurrence === contextId.occurrence) &&
+      (isQuoteString ? (grpContextId.quote === contextId.quote) :
+        isEqual(grpContextId.quote, contextId.quote) )) {
       index = i;
       break;
     }
@@ -79,7 +92,8 @@ export function verifyGroupDataMatchesWithFs() {
 
       for ( let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
-        const isCheckVerseEdit = isCheckTool && (folderName === 'verseEdits');
+        const isVerseEdit = folderName === 'verseEdits';
+        const isCheckVerseEdit = isCheckTool && isVerseEdit;
         let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
 
         if (!fs.existsSync(dataPath)) {
@@ -107,20 +121,21 @@ export function verifyGroupDataMatchesWithFs() {
 
             for ( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
               const object = latestObjects[l];
+              const contextId = object.contextId;
 
               if (isCheckVerseEdit) {
                 // special handling for check external verse edits, save edit verse
-                const chapter = (object.contextId && object.contextId.reference && object.contextId.reference.chapter);
+                const chapter = (contextId && contextId.reference && contextId.reference.chapter);
 
                 if (chapter) {
-                  const verse = object.contextId.reference.verse;
+                  const verse = contextId.reference.verse;
 
                   if (verse) {
                     const verseKey = chapter + ':' + verse; // save by chapter:verse to remove duplicates
 
                     if (!checkVerseEdits[verseKey]) {
                       const reference = {
-                        bookId: object.contextId.reference.bookId,
+                        bookId: contextId.reference.bookId,
                         chapter,
                         verse,
                       };
@@ -128,7 +143,7 @@ export function verifyGroupDataMatchesWithFs() {
                     }
                   }
                 }
-              } else if ( object.contextId.tool === toolName) {
+              } else if ( contextId.tool === toolName ) {
                 // TRICKY: make sure item is in reducer before trying to set.  In case of tN different GLs
                 //  may have different checks
                 const currentGroupData = state.groupsDataReducer.groupsData[object.contextId.groupId];
@@ -139,7 +154,7 @@ export function verifyGroupDataMatchesWithFs() {
 
                   if (oldGroupObject) {
                     // only toggle if values are different (folderName contains type such as 'selections`)
-                    const objectValue = object[folderName] || false;
+                    const objectValue = isVerseEdit ? true : object[folderName] || false; // TRICKY: verse edit is special case since it is never unset
                     const oldValue = oldGroupObject[folderName] || false;
 
                     if (!isEqual(oldValue, objectValue)) {
