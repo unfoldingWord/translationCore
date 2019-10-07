@@ -193,20 +193,22 @@ export function loadSelections(state) {
   const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
 
   if (selectionsObject) {
-    const {
+    let {
       selections,
       modifiedTimestamp,
       nothingToSelect,
-      userName,
+      username,
+      userName, // for old project data
       gatewayLanguageCode,
       gatewayLanguageQuote,
     } = selectionsObject;
+    username = username || userName;
 
     return {
       type: consts.CHANGE_SELECTIONS,
       selections: selections,
       nothingToSelect: nothingToSelect,
-      userName: userName,
+      username,
       modifiedTimestamp: modifiedTimestamp,
       gatewayLanguageCode: gatewayLanguageCode,
       gatewayLanguageQuote: gatewayLanguageQuote,
@@ -217,7 +219,7 @@ export function loadSelections(state) {
       type: consts.CHANGE_SELECTIONS,
       modifiedTimestamp: null,
       selections: [],
-      userName: null,
+      username: null,
     };
   }
 }

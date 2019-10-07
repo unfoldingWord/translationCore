@@ -14,12 +14,14 @@ Array [
       },
     ],
     "type": "CHANGE_SELECTIONS",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
     "invalidated": false,
     "type": "SET_INVALIDATED",
+    "userName": "dummy-test",
   },
   Object {
     "contextId": Object {
@@ -105,7 +107,7 @@ Array [
     "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
@@ -199,7 +201,7 @@ Array [
     "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
@@ -562,7 +564,7 @@ Array [
     "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
