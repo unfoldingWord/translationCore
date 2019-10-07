@@ -8,14 +8,15 @@ import _ from 'lodash';
 import { generateTimestamp } from '../src/js/helpers';
 import * as SelectionsActions from '../src/js/actions/SelectionsActions';
 import * as saveMethods from '../src/js/localStorage/saveMethods';
-import { WORD_ALIGNMENT, TRANSLATION_WORDS } from '../src/js/common/constants';
 import {
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
   ALERT_SELECTIONS_INVALIDATED_ID,
   ALERT_SELECTIONS_INVALIDATED_MSG,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
-} from '../src/js/actions/SelectionsActions';
+} from '../src/js/common/constants';
 
 jest.mock('fs-extra');
 // constants
@@ -430,7 +431,7 @@ describe('SelectionsActions.changeSelections', () => {
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
     // when
-    store.dispatch(SelectionsActions.changeSelections(selectionsReducer.selections, store.getState().username));
+    store.dispatch(SelectionsActions.changeSelections(selectionsReducer.selections));
 
     // then
     const actions = store.getActions();
@@ -453,7 +454,7 @@ describe('SelectionsActions.changeSelections', () => {
     initialState.selectionsReducer = selectionsReducer;
     const store = mockStore(initialState);
     // when
-    store.dispatch(SelectionsActions.changeSelections(selectionsReducer.selections, store.getState().username, false, contextId));
+    store.dispatch(SelectionsActions.changeSelections(selectionsReducer.selections, false, contextId));
 
     // then
     const actions = store.getActions();

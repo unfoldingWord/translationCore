@@ -22,12 +22,12 @@ export function toggle(userName, timestamp) {
 
 /**
  * @description Toggles the reminder to true or false
- * @param {String} username - The username of who toggled the reminder.
  * @return {object} action state.
  */
-export const toggleReminder = username => ((dispatch, getState) => {
-  let state = getState();
-  let contextId = state.contextIdReducer.contextId;
+export const toggleReminder = () => ((dispatch, getState) => {
+  const state = getState();
+  const contextId = state.contextIdReducer.contextId;
+  const username = state.loginReducer.userdata.username;
 
   dispatch(toggle(username, generateTimestamp()));
   dispatch({

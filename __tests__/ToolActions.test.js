@@ -4,16 +4,16 @@ import _ from 'lodash';
 import * as actions from '../src/js/actions/ToolActions';
 import { NT_ORIG_LANG_BIBLE, NT_ORIG_LANG } from '../src/js/common/BooksOfTheBible';
 import {
-  TRANSLATION_NOTES, TRANSLATION_WORDS, WORD_ALIGNMENT,
-} from '../src/js/common/constants';
-import {
-  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  WORD_ALIGNMENT,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_SELECTIONS_INVALIDATED_ID,
   ALERT_SELECTIONS_INVALIDATED_MSG,
-} from '../src/js/actions/SelectionsActions';
-
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+} from '../src/js/common/constants';
+// constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 let mockInvalidCount = 0;
