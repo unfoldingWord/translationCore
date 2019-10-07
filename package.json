@@ -17,8 +17,8 @@
     "npm-clean-up": "rm -rf node_modules/ && rm -rf tC_apps/*/node_modules && rm package-lock.json && npm i",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
-    "test": "eslint ./src && jest",
-    "ci-test": "eslint ./src && jest --coverage",
+    "test": "eslint ./src && node --max-old-space-size=3072 ./node_modules/jest/bin/jest --logHeapUsage",
+    "ci-test": "eslint ./src && node --max-old-space-size=3072 ./node_modules/jest/bin/jest --logHeapUsage --coverage",
     "release-osx": "npm i && gulp clean && npm i && npm run load-apps && gulp build --osx && gulp release --osx",
     "coverage": "jest --coverage",
     "load-apps": "git submodule update --init --recursive",
@@ -189,7 +189,7 @@
     "tc-source-content-updater": "0.6.11",
     "tc-strings": "0.1.7",
     "tc-tool": "2.2.0",
-    "tc-ui-toolkit": "github:translationCoreApps/tc-ui-toolkit#feature-mannycolon-6443-6446",
+    "tc-ui-toolkit": "0.15.1",
     "truncate-utf8-bytes": "1.0.2",
     "tsv-groupdata-parser": "0.9.11",
     "usfm-js": "2.0.2",
@@ -204,6 +204,5 @@
   "peerDependencies": {
     "react": "^0.14.0 || ^16",
     "redux": "^2.0.0 || ^3.0.0"
-  },
-  "false": {}
+  }
 }

@@ -4,7 +4,6 @@ import fs from 'fs-extra';
 import usfm from 'usfm-js';
 import { checkSelectionOccurrences } from 'selections';
 import { batchActions } from 'redux-batched-actions';
-// actions
 // helpers
 import {
   getTranslate, getUsername, getSelectedToolName,
@@ -22,9 +21,11 @@ import {
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
 } from '../common/constants';
+// actions
 import * as CheckDataLoadActions from './CheckDataLoadActions';
 import * as InvalidatedActions from './InvalidatedActions';
 import * as AlertActions from './AlertActions';
+import { isSameVerse } from './GroupsDataActions';
 import types from './ActionTypes';
 
 
@@ -141,8 +142,8 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
     for (let i = 0, l = groupData.length; i < l; i++) {
       const groupObject = groupData[i];
 
-      if (isEqual(groupObject.contextId.reference.chapter, chapterNumber) &&
-        isEqual(groupObject.contextId.reference.verse, verseNumber)) {
+      if ((groupObject.contextId.reference.chapter === chapterNumber) &&
+        (groupObject.contextId.reference.verse === verseNumber)) {
         matchedGroupData.push(groupObject);
       }
     }
@@ -353,7 +354,7 @@ export const getGroupDataForVerse = (state, contextId) => {
           const check = groupItem[j];
 
           try {
-            if (isEqual(check.contextId.reference, contextId.reference)) {
+            if (isSameVerse(check.contextId, contextId)) {
               if (!filteredGroupData[groupItemKey]) {
                 filteredGroupData[groupItemKey] = [];
               }
@@ -376,10 +377,10 @@ export const getGroupDataForVerse = (state, contextId) => {
  * @return {boolean}
  */
 export const sameContext = (contextId1, contextId2) => {
-  if (!!contextId1 && !!contextId2) {
-    return isEqual(contextId1.reference, contextId2.reference)
-      && (contextId1.groupId === contextId2.groupId)
-      && (contextId1.occurrence === contextId2.occurrence);
+  if (contextId1 && contextId2) {
+    return isEqual(contextId1.reference, contextId2.reference) &&
+      (contextId1.groupId === contextId2.groupId) &&
+      (contextId1.occurrence === contextId2.occurrence);
   }
   return false;
 };

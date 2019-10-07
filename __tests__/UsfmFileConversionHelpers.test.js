@@ -141,6 +141,9 @@ describe('UsfmFileConversionHelpers', () => {
       validateUsfmTag(header_data, 'h');
       validateUsfmTag(header_data, 'mt');
       validateUsfmTag(header_data, 's5');
+
+      const manifest = fs.readJSONSync((path.join(newUsfmProjectImportsPath, 'manifest.json')));
+      expect(manifest.language_id).toEqual('en');
     });
 
     test('aligned USFM should succeed', async () => {
