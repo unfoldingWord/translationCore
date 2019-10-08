@@ -23,13 +23,15 @@ import {
  * TODO: tool data should eventually move into the respective tools.
  */
 function loadCheckData() {
-  return (dispatch, getState) => {
+  return async (dispatch, getState) => {
     const state = getState();
+    console.log('loadCheckData() - changing context');
     const actionsBatch = [];
-    actionsBatch.push(loadSelections(state));
-    actionsBatch.push(loadComments(state));
-    actionsBatch.push(loadReminders(state));
-    actionsBatch.push(loadInvalidated(state));
+    actionsBatch.push(await loadSelections(state));
+    actionsBatch.push(await loadComments(state));
+    actionsBatch.push(await loadReminders(state));
+    actionsBatch.push(await loadInvalidated(state));
+    console.log('loadCheckData() - changing context done');
     dispatch(batchActions(actionsBatch)); // process the batch
   };
 }
@@ -54,8 +56,11 @@ export const changeCurrentContextId = contextId => (dispatch, getState) => {
     const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
     console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
     const state = getState();
-    dispatch(loadCheckData());
-    saveContextId(state, contextId);
+
+    dispatch(loadCheckData()).then(() => {
+      saveContextId(state, contextId);
+      console.log(`changeCurrentContextId() - FINISHED setting new contextId to: ${refStr}`);
+    });
 
     // commit project changes
     const projectDir = getProjectSaveLocation(state);
@@ -96,7 +101,7 @@ function firstContextId(state) {
       if (!!data && !!data[0]) {
         contextId = data[0].contextId;
       }
-      valid = (contextId ? true : false);
+      valid = !!contextId;
       i++;
     }
     return contextId;
