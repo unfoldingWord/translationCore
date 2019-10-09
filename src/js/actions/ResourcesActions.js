@@ -423,15 +423,15 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
  * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
  */
 export const loadResourceArticle = (resourceType, articleId, languageId, category='') => ((dispatch) => {
-  const articleData = ResourcesHelpers.loadArticleData(resourceType, articleId, languageId, category);
-
-  // populate reducer with markdown data
-  dispatch({
-    type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
-    resourceType,
-    articleId,
-    languageId,
-    articleData,
+  ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category).then((articleData) => {
+    // populate reducer with markdown data
+    dispatch({
+      type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
+      resourceType,
+      articleId,
+      languageId,
+      articleData,
+    });
   });
 });
 

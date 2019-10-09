@@ -1215,6 +1215,24 @@ export const loadArticleData = (resourceType, articleId, languageId, category=''
 };
 
 /**
+ * Get the content of an article from disk
+ * @param {String} resourceType
+ * @param {String} articleId
+ * @param {String} languageId
+ * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @returns {String} - the content of the article
+ */
+export const loadArticleDataAsync = async (resourceType, articleId, languageId, category='') => {
+  let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+
+  if (articleFilePath) {
+    articleData = await fs.readFile(articleFilePath, 'utf8'); // get file from fs
+  }
+  return articleData;
+};
+
+/**
  * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
  * @param {String} resourceType - e.g. translationWords, translationNotes
  * @param {String} articleId
