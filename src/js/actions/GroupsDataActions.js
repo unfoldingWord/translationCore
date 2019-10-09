@@ -54,7 +54,7 @@ export const findGroupDataItem = (contextId, groupData) => {
     if (isSameVerse(grpContextId, contextId) &&
       (grpContextId.occurrence === contextId.occurrence) &&
       (isQuoteString ? (grpContextId.quote === contextId.quote) :
-        isEqual(grpContextId.quote, contextId.quote) )) {
+        isEqual(grpContextId.quote, contextId.quote))) {
       index = i;
       break;
     }
@@ -66,11 +66,11 @@ export const findGroupDataItem = (contextId, groupData) => {
  * @description verifies that the data in the checkdata folder is reflected in the menu.
  * @return {object} action object.
  */
-export function verifyGroupDataMatchesWithFs() {
+export function verifyGroupDataMatchesWithFs(toolName) {
   console.log('verifyGroupDataMatchesWithFs()');
   return (async (dispatch, getState) => {
     const state = getState();
-    const toolName = getSelectedToolName(state);
+    toolName = toolName || getSelectedToolName(state);
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
     let checkDataPath;
 
@@ -90,7 +90,7 @@ export function verifyGroupDataMatchesWithFs() {
       let folders = fs.readdirSync(checkDataPath).filter(folder => folder !== '.DS_Store');
       const isCheckTool = (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES);
 
-      for ( let i = 0, lenF = folders.length; i < lenF; i++) {
+      for (let i = 0, lenF = folders.length; i < lenF; i++) {
         const folderName = folders[i];
         const isVerseEdit = folderName === 'verseEdits';
         const isCheckVerseEdit = isCheckTool && isVerseEdit;
@@ -103,7 +103,7 @@ export function verifyGroupDataMatchesWithFs() {
         let chapters = fs.readdirSync(dataPath);
         chapters = filterAndSort(chapters);
 
-        for ( let j = 0, lenC = chapters.length; j < lenC; j++) {
+        for (let j = 0, lenC = chapters.length; j < lenC; j++) {
           const chapterFolder = chapters[j];
           const chapterDir = path.join(dataPath, chapterFolder);
 
@@ -114,12 +114,12 @@ export function verifyGroupDataMatchesWithFs() {
           let verses = fs.readdirSync(chapterDir);
           verses = filterAndSort(verses);
 
-          for ( let k = 0, lenV = verses.length; k < lenV; k++) {
+          for (let k = 0, lenV = verses.length; k < lenV; k++) {
             const verseFolder = verses[k];
             let filePath = path.join(dataPath, chapterFolder, verseFolder);
             let latestObjects = readLatestChecks(filePath);
 
-            for ( let l = 0, lenO = latestObjects.length; l < lenO; l++) {
+            for (let l = 0, lenO = latestObjects.length; l < lenO; l++) {
               const object = latestObjects[l];
               const contextId = object.contextId;
 
@@ -143,12 +143,12 @@ export function verifyGroupDataMatchesWithFs() {
                     }
                   }
                 }
-              } else if ( contextId.tool === toolName ) {
+              } else if (contextId.tool === toolName) {
                 // TRICKY: make sure item is in reducer before trying to set.  In case of tN different GLs
                 //  may have different checks
                 const currentGroupData = state.groupsDataReducer.groupsData[object.contextId.groupId];
 
-                if (currentGroupData ) {
+                if (currentGroupData) {
                   const index = findGroupDataItem(object.contextId, currentGroupData);
                   const oldGroupObject = (index >= 0) ? currentGroupData[index] : null;
 
