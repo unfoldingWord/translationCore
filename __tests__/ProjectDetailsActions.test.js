@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /* eslint-env jest */
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -27,7 +28,10 @@ jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
 }));
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
-  getToolsByKey: jest.fn(() => ({ 'wordAlignment': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } } })),
+  getToolsByKey: jest.fn(() => ({
+    'wordAlignment': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
+    'translationWords': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0.25 : null } },
+  })),
 }));
 
 const middlewares = [thunk];
@@ -131,11 +135,15 @@ describe('setProjectToolGL() should create an action to get the project GL for t
       resourcesReducer: { bibles: {} },
     };
     const store = mockStore(initialState);
-    const expectedActions = [
-      {
-        selectedGL:'hi', toolName: TRANSLATION_NOTES, type:'SET_GL_FOR_TOOL',
-      },
-    ];
+    const expectedActions = [{
+      'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
+    }, {
+      'meta': { 'batch': true },
+      'payload': [{ 'type': 'CLEAR_PREVIOUS_GROUPS_DATA' },
+        { 'type': 'CLEAR_PREVIOUS_GROUPS_INDEX' },
+        { 'type': 'CLEAR_CONTEXT_ID' }],
+      'type': 'BATCHING_REDUCER.BATCH',
+    }];
     store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
@@ -443,12 +451,14 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
     fs.__resetMockFS();
   });
   test('should set the check category from the user selection', () => {
+    const mockApi = jest.fn(() => ({ api: { trigger: () => jest.fn().mockImplementationOnce(() => 0.25) } }));
     const initialState = {
       projectDetailsReducer: {
         projectSaveLocation: path.join(PROJECTS_PATH, project_name),
         manifest: { project: { id: 'tit' } },
         toolsCategories: { translationWords: ['apostle', 'authority', 'clean'] },
       },
+      toolsReducer: { tools: { byObject: { [TRANSLATION_WORDS]: { name: TRANSLATION_WORDS, api: mockApi } } } },
     };
     const expectedActions = [{
       type: 'SET_CHECK_CATEGORIES',

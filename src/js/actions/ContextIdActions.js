@@ -164,12 +164,12 @@ export const changeToPreviousContextId = () => ((dispatch, getState) => {
  * @description loads the latest contextId file from the file system.
  * @return {object} Dispatches an action that loads the contextId with data.
  */
-export function loadCurrentContextId() {
+export function loadCurrentContextId(toolName) {
   return (dispatch, getState) => {
     let state = getState();
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     let { groupsIndex } = state.groupsIndexReducer;
-    const toolName = getSelectedToolName(state);
+    toolName = toolName || getSelectedToolName(state);
     let bookId = manifest.project.id ? manifest.project.id : undefined;
 
     if (projectSaveLocation && toolName && bookId) {

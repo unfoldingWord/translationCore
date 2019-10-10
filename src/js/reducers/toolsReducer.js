@@ -205,7 +205,7 @@ export const getSupportingToolApis = state => {
   const name = getSelectedToolName(state);
   const apis = {};
 
-  for (let i = 0, len = state.tools.byObject.length; i < len; i ++) {
+  for (let i = 0, len = state.tools.byObject.length; i < len; i++) {
     const tool = state.tools.byObject[i];
 
     if (tool.name !== name) {
