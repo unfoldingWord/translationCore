@@ -4,7 +4,6 @@ import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
-import { batchActions } from 'redux-batched-actions';
 import {
   getTranslate,
   getUsername,
