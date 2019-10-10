@@ -140,11 +140,6 @@ export function setProjectToolGL(toolName, selectedGL) {
     if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
       await dispatch(prepareToolForLoading(toolName));
-      dispatch(batchActions([
-        { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-        { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-        { type: consts.CLEAR_CONTEXT_ID },
-      ]));
     }
   };
 }
