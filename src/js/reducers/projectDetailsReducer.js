@@ -264,4 +264,4 @@ export const getToolCategories = (state, toolName) => {
 };
 
 export const getToolsSelectedGLs = (state) =>
-  state.manifest.toolsSelectedGLs;
+  state.manifest ? state.manifest.toolsSelectedGLs : {};
