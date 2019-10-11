@@ -3,6 +3,7 @@
 import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
+import { batchActions } from 'redux-batched-actions';
 // actions
 import {
   getTranslate,
@@ -10,6 +11,7 @@ import {
   getProjectSaveLocation,
   getToolCategories,
   getToolsByKey,
+  getToolsSelectedGLs,
 } from '../selectors';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
@@ -123,12 +125,14 @@ export const setSaveLocation = pathLocation => ({
 export const resetProjectDetail = () => ({ type: consts.RESET_PROJECT_DETAIL });
 
 export function setProjectToolGL(toolName, selectedGL) {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
+    const toolsGLs = getToolsSelectedGLs(getState());
+    const previousGLForTool = toolsGLs[toolName];
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
@@ -136,9 +140,15 @@ export function setProjectToolGL(toolName, selectedGL) {
       selectedGL,
     });
 
-    if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+    if (toolName === TRANSLATION_NOTES && (selectedGL !== previousGLForTool)) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
       await dispatch(prepareToolForLoading(toolName));
+      dispatch(batchActions([
+        { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
+        { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
+        { type: consts.CLEAR_CONTEXT_ID },
+        { type: consts.OPEN_TOOL, name: null },
+      ]));
     }
   };
 }
