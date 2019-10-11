@@ -78,7 +78,7 @@ function getObjectValue(object, checkType) {
     return !!object[checkType]; // just want true if invalidation set
   case 'selections': {
     const value = object[checkType];
-    return value.length ? value : false; // return selections, or if empty return false
+    return value && value.length ? value : false; // return selections, or if empty return false
   }
   case 'verseEdits':
     return true; // TRICKY: verse edit is special case since it is never unset
