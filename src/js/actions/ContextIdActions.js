@@ -37,15 +37,57 @@ function loadCheckData() {
 }
 
 /**
+ * change context ID in reducers and clear old date while new data being loaded
+ * @param {Object} contextId
+ * @param {Function} dispatch
+ */
+function changeContextIdInReducers(contextId) {
+  return (dispatch) => {
+    const actionsBatch = [
+      {
+        type: consts.CHANGE_CURRENT_CONTEXT_ID,
+        contextId,
+      },
+      {
+        type: consts.CHANGE_SELECTIONS,
+        modifiedTimestamp: null,
+        selections: [],
+        username: null,
+      },
+      {
+        type: consts.SET_REMINDER,
+        enabled: false,
+        modifiedTimestamp: '',
+        userName: '',
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null,
+      },
+      {
+        type: consts.SET_INVALIDATED,
+        enabled: false,
+        modifiedTimestamp: '',
+        userName: '',
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null,
+      },
+      {
+        type: consts.ADD_COMMENT,
+        modifiedTimestamp: '',
+        text: '',
+        userName: '',
+      },
+    ];
+    dispatch(batchActions(actionsBatch)); // process the batch
+  };
+}
+
+/**
  * @description this action changes the contextId to the current check.
  * @param {object} contextId - the contextId object.
  * @return {object} New state for contextId reducer.
  */
 export const changeCurrentContextId = contextId => (dispatch, getState) => {
-  dispatch({
-    type: consts.CHANGE_CURRENT_CONTEXT_ID,
-    contextId,
-  });
+  dispatch(changeContextIdInReducers(contextId));
 
   if (contextId) {
     const {
