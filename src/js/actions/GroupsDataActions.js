@@ -63,6 +63,31 @@ export const findGroupDataItem = (contextId, groupData) => {
 };
 
 /**
+ * get value for check type in format expected by group menu - tricky because there is no consistency in field names for checks
+ * @param {Object} object
+ * @param {String} checkType
+ * @return {*}
+ */
+function getObjectValue(object, checkType) {
+  switch (checkType) {
+  case 'reminders':
+    return !!object['enabled']; // just want true if reminder set
+  case 'comments':
+    return !!object['text']; // just want true if comment set
+  case 'invalidated':
+    return !!object[checkType]; // just want true if invalidation set
+  case 'selections': {
+    const value = object[checkType];
+    return value.length ? value : false; // return selections, or if empty return false
+  }
+  case 'verseEdits':
+    return true; // TRICKY: verse edit is special case since it is never unset
+  default:
+    return object[checkType];
+  }
+}
+
+/**
  * @description verifies that the data in the checkdata folder is reflected in the menu.
  * @return {object} action object.
  */
@@ -154,8 +179,8 @@ export function verifyGroupDataMatchesWithFs(toolName) {
 
                   if (oldGroupObject) {
                     // only toggle if values are different (folderName contains type such as 'selections`)
-                    const objectValue = isVerseEdit ? true : object[folderName] || false; // TRICKY: verse edit is special case since it is never unset
-                    const oldValue = oldGroupObject[folderName] || false;
+                    const objectValue = getObjectValue(object, folderName);
+                    const oldValue = oldGroupObject[folderName];
 
                     if (!isEqual(oldValue, objectValue)) {
                       // TRICKY: we are using the contextId of oldGroupObject here because sometimes
