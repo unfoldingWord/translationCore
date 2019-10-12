@@ -29,6 +29,7 @@ jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
   getToolsByKey: jest.fn(() => ({
+    'translationNotes': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
     'wordAlignment': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
     'translationWords': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0.25 : null } },
   })),
