@@ -25,19 +25,17 @@ import {
 function loadCheckData() {
   return async (dispatch, getState) => {
     const state = getState();
-    console.log('loadCheckData() - changing context');
     const actionsBatch = [];
     actionsBatch.push(await loadSelections(state));
     actionsBatch.push(await loadComments(state));
     actionsBatch.push(await loadReminders(state));
     actionsBatch.push(await loadInvalidated(state));
-    console.log('loadCheckData() - changing context done');
     dispatch(batchActions(actionsBatch)); // process the batch
   };
 }
 
 /**
- * change context ID in reducers and clear old date while new data being loaded
+ * change context ID in reducers and clear old data while new data being loaded
  * @param {Object} contextId
  * @param {Function} dispatch
  */
@@ -101,7 +99,6 @@ export const changeCurrentContextId = contextId => (dispatch, getState) => {
 
     dispatch(loadCheckData()).then(() => {
       saveContextId(state, contextId);
-      console.log(`changeCurrentContextId() - FINISHED setting new contextId to: ${refStr}`);
     });
 
     // commit project changes
