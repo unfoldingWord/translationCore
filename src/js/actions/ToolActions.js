@@ -44,7 +44,7 @@ export const loadTools = (toolsDir) => (dispatch) => {
   // TRICKY: push this off the render thread just for a moment to simulate threading.
   setTimeout(() => {
     loadToolsInDir(toolsDir).then((tools) => {
-      for (let i = 0, len = tools.length; i < len; i ++) {
+      for (let i = 0, len = tools.length; i < len; i++) {
         dispatch(registerTool(tools[i]));
       }
     });
@@ -52,23 +52,18 @@ export const loadTools = (toolsDir) => (dispatch) => {
 };
 
 /**
- * Opens a tool
- * @param {string} name - the name of the tool to open
- * @returns {Function}
+ * This function prepares the data needed to load a tool, also
+ *  useful for checking the progress of a tool
+ * @param {String} name - Name of the tool
  */
-export const openTool = (name) => (dispatch, getData) => new Promise(async (resolve, reject) => {
-  console.log('openTool(' + name + ')');
-  const translate = getTranslate(getData());
-  dispatch(ModalActions.showModalContainer(false));
-  dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
-  await delay(300);
+export function prepareToolForLoading(name) {
+  return async (dispatch, getData) => {
+    const translate = getTranslate(getData());
 
-  try {
     dispatch(batchActions([
       { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
       { type: types.CLEAR_PREVIOUS_GROUPS_INDEX },
       { type: types.CLEAR_CONTEXT_ID },
-      { type: types.OPEN_TOOL, name },
     ]));
 
     // Load older version of OL resource if needed by tN tool
@@ -88,10 +83,28 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
     const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
     dispatch(loadGroupsIndex(groupIndex));
 
-    dispatch(loadCurrentContextId());
+    dispatch(loadCurrentContextId(name));
     //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
-    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
+    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(name));
     // wait for filesystem calls to finish
+  };
+}
+
+/**
+ * Opens a tool
+ * @param {string} name - the name of the tool to open
+ * @returns {Function}
+ */
+export const openTool = (name) => (dispatch, getData) => new Promise(async (resolve, reject) => {
+  console.log('openTool(' + name + ')');
+  const translate = getTranslate(getData());
+  dispatch(ModalActions.showModalContainer(false));
+  dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
+  await delay(300);
+
+  try {
+    dispatch({ type: types.OPEN_TOOL, name });
+    await dispatch(prepareToolForLoading(name));
     dispatch(batchActions([
       closeAlertDialog(),
       BodyUIActions.toggleHomeView(false),
