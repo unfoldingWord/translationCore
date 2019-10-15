@@ -180,6 +180,7 @@ export function getProjectProgressForTools(toolName, results = null) {
     }
 
     if (results) {
+      // TODO: This is an antipattern. Should update the state and use the pro coming from the state instead of assing the result to an argument.
       results.progress = progress;
     }
 
