@@ -73,7 +73,7 @@ function getObjectValue(object, checkType) {
   case 'reminders':
     return !!object['enabled']; // just want true if reminder set
   case 'comments':
-    return !!object['text']; // just want true if comment set
+    return object['text'] || false;
   case 'invalidated':
     return !!object[checkType]; // just want true if invalidation set
   case 'selections': {
