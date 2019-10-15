@@ -23,7 +23,8 @@ import { findGroupDataItem } from './GroupsDataActions';
 /**
  * TODO: tool data should eventually move into the respective tools.
  */
-function loadCheckData() {
+
+function loadCheckDataAsync() {
   return async (dispatch, getState) => {
     const state = getState();
     const actionsBatch = [];
@@ -117,7 +118,7 @@ export const changeCurrentContextId = contextId => (dispatch, getState) => {
     if (groupDataLoaded) {
       saveContextId(state, contextId);
     } else { // if not found, we do async load from file
-      dispatch(loadCheckData()).then(() => {
+      dispatch(loadCheckDataAsync()).then(() => {
         saveContextId(state, contextId);
       });
     }
