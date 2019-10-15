@@ -90,69 +90,14 @@ export function loadCheckData(loadPath, contextId) {
   */
   return checkDataObject;
 }
-
-/**
- * @description loads checkdata based on given contextId.
- * @param {String} loadPath - load path.
- * @param {object} contextId - groupData unique context Id.
- * @return {object} returns the object loaded from the file system.
- */
-export async function loadCheckDataAsync(loadPath, contextId) {
-  let checkDataObject;
-
-  if (loadPath && contextId && await fs.exists(loadPath)) {
-    let files = await fs.readdir(loadPath);
-    files = files.filter(file => (path.extname(file) === '.json'));
-    let sorted = files.sort().reverse(); // sort the files to put latest first
-    const isQuoteArray = Array.isArray(contextId.quote);
-    console.log(`loadCheckDataAsync(${loadPath}) - found ${sorted.length} files`);
-
-    for (let i = 0, len = sorted.length; i < len; i++) {
-      const file = sorted[i];
-
-      // check each file for contextId
-      try {
-        let readPath = path.join(loadPath, file);
-        // eslint-disable-next-line no-await-in-loop
-        let _checkDataObject = await fs.readJson(readPath);
-        console.log(`loadCheckDataAsync() - loaded ${readPath}`, _checkDataObject);
-
-        if (_checkDataObject && _checkDataObject.contextId &&
-          _checkDataObject.contextId.groupId === contextId.groupId &&
-          (isQuoteArray ? isEqual(_checkDataObject.contextId.quote, contextId.quote) : (_checkDataObject.contextId.quote === contextId.quote)) &&
-          _checkDataObject.contextId.occurrence === contextId.occurrence) {
-          console.log(`loadCheckDataAsync(${loadPath}) - found match`);
-          checkDataObject = _checkDataObject; // return the first match since it is the latest modified one
-          break;
-        }
-      } catch (err) {
-        console.warn('File exists but could not be loaded \n', err);
-      }
-    }
-  }
-  console.log(`loadCheckDataAsync(${loadPath}) - returning`, checkDataObject);
-  /**
-   * @description Will return undefined if checkDataObject was not populated
-   * so that the load method returns and then dispatches an empty action object
-   * to initialized the reducer.
-   */
-  return checkDataObject;
-}
-
 /**
  * Loads the latest comment file from the file system for the specify contextID.
  * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the commentsReducer with data.
  */
-export async function loadComments(state) {
-  let commentsObject = null;
-
-  try {
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
-    commentsObject = await loadCheckDataAsync(loadPath, state.contextIdReducer.contextId);
-  } catch (e) {
-    console.log(`loadComments(${state.contextIdReducer.contextId}) - failed`);
-  }
+export function loadComments(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
+  let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
 
   if (commentsObject) {
     return {
@@ -176,22 +121,15 @@ export async function loadComments(state) {
  * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the invalidatedReducer with data.
  */
-export async function loadInvalidated(state) {
-  let invalidatedObject = null;
-
-  try {
-    let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
-    invalidatedObject = await loadCheckDataAsync(loadPath, state.contextIdReducer.contextId);
-  } catch (e) {
-    console.log(`loadInvalidated(${state.contextIdReducer.contextId}) - failed`);
-  }
+export function loadInvalidated(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
+  let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+  const {
+    gatewayLanguageCode,
+    gatewayLanguageQuote,
+  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
 
   if (invalidatedObject) {
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
-
     return {
       type: consts.SET_INVALIDATED,
       enabled: invalidatedObject.enabled,
@@ -217,21 +155,15 @@ export async function loadInvalidated(state) {
  * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the remindersReducer with data.
  */
-export async function loadReminders(state) {
-  let remindersObject = null;
-
-  try {
-    const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
-    remindersObject = await loadCheckDataAsync(loadPath, state.contextIdReducer.contextId);
-  } catch (e) {
-    console.log(`loadReminders(${state.contextIdReducer.contextId}) - failed`);
-  }
+export function loadReminders(state) {
+  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
+  let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
+  const {
+    gatewayLanguageCode,
+    gatewayLanguageQuote,
+  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
 
   if (remindersObject) {
-    const {
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-    } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
     return {
       type: consts.SET_REMINDER,
       enabled: remindersObject.enabled,
@@ -257,15 +189,9 @@ export async function loadReminders(state) {
  * @param {Object} state - store state object.
  * @return {Object} Dispatches an action that loads the selectionsReducer with data.
  */
-export async function loadSelections(state) {
-  let selectionsObject = null;
-
-  try {
-    const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
-    selectionsObject = await loadCheckDataAsync(loadPath, state.contextIdReducer.contextId);
-  } catch (e) {
-    console.log(`loadSelections(${state.contextIdReducer.contextId}) - failed`);
-  }
+export function loadSelections(state) {
+  const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
+  const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
 
   if (selectionsObject) {
     let {

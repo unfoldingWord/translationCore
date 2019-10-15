@@ -90,10 +90,10 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
       .toEqual(path.join(`${projectSaveLocation}/.apps/translationCore/checkData/${checkDataName}/tit/3/8`));
   });
 
-  it('runs CheckDataLoadActions.loadCheckData', async () => {
+  it('runs CheckDataLoadActions.loadCheckData', () => {
     const checkDataName = 'verseEdits';
     let loadPath = CheckDataLoadActions.generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName);
-    let checkData = await CheckDataLoadActions.loadCheckData(loadPath, contextIdReducer.contextId);
+    let checkData = CheckDataLoadActions.loadCheckData(loadPath, contextIdReducer.contextId);
 
     expect(checkData).toEqual(expect.objectContaining({
       contextId: expect.objectContaining({
@@ -104,49 +104,49 @@ describe('CheckDataLoadActions.generateLoadPath', () => {
     }));
   });
 
-  it('runs CheckDataLoadActions.loadComments', async () => {
+  it('runs CheckDataLoadActions.loadComments', () => {
     const expectedAction = {
-      type: 'ADD_COMMENT',
-      modifiedTimestamp: '',
-      text: '',
-      userName: '',
-    };
+        type: 'ADD_COMMENT',
+        modifiedTimestamp: '',
+        text: '',
+        userName: ''
+      };
     const store = mockStore({
       projectDetailsReducer,
       contextIdReducer,
     });
 
-    const results = await CheckDataLoadActions.loadComments(store.getState());
+    const results = CheckDataLoadActions.loadComments(store.getState());
     expect(results).toEqual(expectedAction);
   });
 
-  it('runs CheckDataLoadActions.loadSelections', async () => {
-    const expectedAction = { 'type':'CHANGE_SELECTIONS','modifiedTimestamp':'2017-04-25T18:10:38.511Z','selections':[{ 'text':'ambayo','occurrence':1,'occurrences':1},{'text':'aliiweka','occurrence':1,'occurrences':1 }, { 'text':'mbele','occurrence':1,'occurrences':1 }, { 'text':'yao','occurrence':1,'occurrences':1 }] };
+  it('runs CheckDataLoadActions.loadSelections', () => {
+    const expectedAction = {"type":"CHANGE_SELECTIONS","modifiedTimestamp":"2017-04-25T18:10:38.511Z","selections":[{"text":"ambayo","occurrence":1,"occurrences":1},{"text":"aliiweka","occurrence":1,"occurrences":1},{"text":"mbele","occurrence":1,"occurrences":1},{"text":"yao","occurrence":1,"occurrences":1}]};
     const store = mockStore({
       projectDetailsReducer,
       contextIdReducer,
     });
 
-    const results = await CheckDataLoadActions.loadSelections(store.getState());
+    const results = CheckDataLoadActions.loadSelections(store.getState());
     expect(results).toEqual(expectedAction);
   });
 
-  it('runs CheckDataLoadActions.loadReminders: should not load another tools data', async () => {
+  it('runs CheckDataLoadActions.loadReminders: should not load another tools data', () => {
     const expectedAction = {
-      type: 'SET_REMINDER',
-      enabled: false,
-      modifiedTimestamp: '',
-      userName: '',
-      gatewayLanguageCode: null,
-      gatewayLanguageQuote: null,
-    };
+        type: 'SET_REMINDER',
+        enabled: false,
+        modifiedTimestamp: '',
+        userName: '',
+        gatewayLanguageCode: null,
+        gatewayLanguageQuote: null
+      };
     const store = mockStore({
       groupsIndexReducer,
       toolsReducer,
       projectDetailsReducer,
       contextIdReducer,
     });
-    const results = await CheckDataLoadActions.loadReminders(store.getState());
+    const results = CheckDataLoadActions.loadReminders(store.getState());
     expect(results).toEqual(expectedAction);
   });
 });

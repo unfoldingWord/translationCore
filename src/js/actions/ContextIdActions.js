@@ -24,14 +24,14 @@ import { findGroupDataItem } from './GroupsDataActions';
  * TODO: tool data should eventually move into the respective tools.
  */
 
-function loadCheckDataAsync() {
-  return async (dispatch, getState) => {
+function loadCheckData() {
+  return (dispatch, getState) => {
     const state = getState();
     const actionsBatch = [];
-    actionsBatch.push(await loadSelections(state));
-    actionsBatch.push(await loadComments(state));
-    actionsBatch.push(await loadReminders(state));
-    actionsBatch.push(await loadInvalidated(state));
+    actionsBatch.push(loadSelections(state));
+    actionsBatch.push(loadComments(state));
+    actionsBatch.push(loadReminders(state));
+    actionsBatch.push(loadInvalidated(state));
     dispatch(batchActions(actionsBatch)); // process the batch
   };
 }
@@ -115,17 +115,14 @@ export const changeCurrentContextId = contextId => (dispatch, getState) => {
     const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
     console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
 
-    if (groupDataLoaded) {
-      saveContextId(state, contextId);
-    } else { // if not found, we do async load from file
-      dispatch(loadCheckDataAsync()).then(() => {
-        saveContextId(state, contextId);
-      });
+    if (!groupDataLoaded) { // if group data not found, do load from file
+      dispatch(loadCheckData());
     }
+    saveContextId(state, contextId);
 
     const projectDir = getProjectSaveLocation(state);
 
-    // commit project changes
+    // commit project changes after delay
     delay(5000).then(async () => {
       try {
         const repo = await Repo.open(projectDir, state.loginReducer.userdata);
