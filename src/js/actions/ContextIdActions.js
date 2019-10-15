@@ -18,6 +18,7 @@ import consts from './ActionTypes';
 import {
   loadComments, loadReminders, loadSelections, loadInvalidated,
 } from './CheckDataLoadActions';
+import { findGroupDataItem } from './GroupsDataActions';
 
 /**
  * TODO: tool data should eventually move into the respective tools.
@@ -38,45 +39,61 @@ function loadCheckData() {
  * change context ID in reducers and clear old data while new data being loaded
  * @param {Object} contextId
  * @param {Function} dispatch
+ * @param {Object} state
+ * @return {Boolean} true if check data found in reducers
  */
-function changeContextIdInReducers(contextId) {
-  return (dispatch) => {
-    const actionsBatch = [
-      {
-        type: consts.CHANGE_CURRENT_CONTEXT_ID,
-        contextId,
-      },
-      {
-        type: consts.CHANGE_SELECTIONS,
-        modifiedTimestamp: null,
-        selections: [],
-        username: null,
-      },
-      {
-        type: consts.SET_REMINDER,
-        enabled: false,
-        modifiedTimestamp: '',
-        userName: '',
-        gatewayLanguageCode: null,
-        gatewayLanguageQuote: null,
-      },
-      {
-        type: consts.SET_INVALIDATED,
-        enabled: false,
-        modifiedTimestamp: '',
-        userName: '',
-        gatewayLanguageCode: null,
-        gatewayLanguageQuote: null,
-      },
-      {
-        type: consts.ADD_COMMENT,
-        modifiedTimestamp: '',
-        text: '',
-        userName: '',
-      },
-    ];
-    dispatch(batchActions(actionsBatch)); // process the batch
-  };
+function changeContextIdInReducers(contextId, dispatch, state) {
+  let oldGroupObject = {};
+
+  if (contextId && contextId.groupId) {
+    const currentGroupData = state.groupsDataReducer && state.groupsDataReducer.groupsData && state.groupsDataReducer.groupsData[contextId.groupId];
+
+    if (currentGroupData) {
+      const index = findGroupDataItem(contextId, currentGroupData);
+      oldGroupObject = (index >= 0) ? currentGroupData[index] : null;
+    }
+  }
+
+  const selections = oldGroupObject['selections'] || [];
+  const reminders = oldGroupObject['reminders'] || false;
+  const invalidated = oldGroupObject['invalidated'] || false;
+  const comments = oldGroupObject['comments'] || '';
+  const actionsBatch = [
+    {
+      type: consts.CHANGE_CURRENT_CONTEXT_ID,
+      contextId,
+    },
+    {
+      type: consts.CHANGE_SELECTIONS,
+      modifiedTimestamp: null,
+      selections: selections,
+      username: null,
+    },
+    {
+      type: consts.SET_REMINDER,
+      enabled: reminders,
+      modifiedTimestamp: '',
+      userName: '',
+      gatewayLanguageCode: null,
+      gatewayLanguageQuote: null,
+    },
+    {
+      type: consts.SET_INVALIDATED,
+      enabled: invalidated,
+      modifiedTimestamp: '',
+      userName: '',
+      gatewayLanguageCode: null,
+      gatewayLanguageQuote: null,
+    },
+    {
+      type: consts.ADD_COMMENT,
+      modifiedTimestamp: '',
+      text: comments,
+      userName: '',
+    },
+  ];
+  dispatch(batchActions(actionsBatch)); // process the batch
+  return !!oldGroupObject;
 }
 
 /**
@@ -85,7 +102,8 @@ function changeContextIdInReducers(contextId) {
  * @return {object} New state for contextId reducer.
  */
 export const changeCurrentContextId = contextId => (dispatch, getState) => {
-  dispatch(changeContextIdInReducers(contextId));
+  const state = getState();
+  const groupDataLoaded = changeContextIdInReducers(contextId, dispatch, state);
 
   if (contextId) {
     const {
@@ -95,15 +113,18 @@ export const changeCurrentContextId = contextId => (dispatch, getState) => {
     } = contextId;
     const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
     console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
-    const state = getState();
 
-    dispatch(loadCheckData()).then(() => {
+    if (groupDataLoaded) {
       saveContextId(state, contextId);
-    });
+    } else { // if not found, we do async load from file
+      dispatch(loadCheckData()).then(() => {
+        saveContextId(state, contextId);
+      });
+    }
 
-    // commit project changes
     const projectDir = getProjectSaveLocation(state);
 
+    // commit project changes
     delay(5000).then(async () => {
       try {
         const repo = await Repo.open(projectDir, state.loginReducer.userdata);
