@@ -63,27 +63,41 @@ export const findGroupDataItem = (contextId, groupData) => {
 };
 
 /**
- * get value for check type in format expected by group menu - tricky because there is no consistency in field names for checks
+ * get value for check type and compare with old value - tricky because there is no consistency in field names and representation of value for checks
  * @param {Object} object
  * @param {String} checkType
- * @return {*}
+ * @param {*} oldValue
+ * @return {Boolean} true if value has changed
  */
-function getObjectValue(object, checkType) {
+export function isValueChanged(object, checkType, oldValue) {
+  let value;
+
   switch (checkType) {
   case 'reminders':
-    return !!object['enabled']; // just want true if reminder set
+    value = !!object['enabled']; // just want true if enabled
+    return value !== !!oldValue; // compare boolean equivalents
   case 'comments':
-    return object['text'] || false;
+    value = object['text'];
+    return value ? (value !== oldValue) : (!value !== !oldValue); // if text set, do exact match.  Otherwise compare boolean equivalents
   case 'invalidated':
-    return !!object[checkType]; // just want true if invalidation set
+    value = !!object[checkType]; // just want true if set
+    return value !== !!oldValue; // compare boolean equivalents
   case 'selections': {
-    const value = object[checkType];
-    return value && value.length ? value : false; // return selections, or if empty return false
+    value = object[checkType];
+    const hasSelection = value && value.length;
+
+    if (hasSelection) {
+      return !isEqual(value, oldValue);
+    } else {
+      const hasOldSelection = oldValue && oldValue.length;
+      return (!hasSelection !== !hasOldSelection); // compare boolean equivalents of has selections
+    }
   }
   case 'verseEdits':
-    return true; // TRICKY: verse edit is special case since it is never unset
+    return true !== !!oldValue; // TRICKY: verse edit is special case since its value is always true
   default:
-    return object[checkType];
+    console.log(`isValueChanged() - unsupported check type: ${checkType}`);
+    return false;
   }
 }
 
@@ -179,10 +193,10 @@ export function verifyGroupDataMatchesWithFs(toolName) {
 
                   if (oldGroupObject) {
                     // only toggle if values are different (folderName contains type such as 'selections`)
-                    const objectValue = getObjectValue(object, folderName);
                     const oldValue = oldGroupObject[folderName];
+                    const isChanged = isValueChanged(object, folderName, oldValue);
 
-                    if (!isEqual(oldValue, objectValue)) {
+                    if (isChanged) {
                       // TRICKY: we are using the contextId of oldGroupObject here because sometimes
                       //            there are slight differences with the contextIds of the checkData due to build
                       //            changes (such as quoteString) and getToggledGroupData() requires exact match

@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 import fs from 'fs-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -218,9 +219,260 @@ describe('GroupsDataActions.validateBookSelections', () => {
   });
 });
 
+describe('GroupsDataActions.isValueChanged', () => {
+  describe('reminders', () => {
+    it('new value true and old value true is unchanged', () => {
+      const newValue = true;
+      const oldValue = true;
+      const changed = false;
+      validateRemindersChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value false is unchanged', () => {
+      const newValue = false;
+      const oldValue = false;
+      const changed = false;
+      validateRemindersChanged(newValue, oldValue, changed);
+    });
+    it('new value true and old value false is changed', () => {
+      const newValue = true;
+      const oldValue = false;
+      const changed = true;
+      validateRemindersChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value undefined is unchanged', () => {
+      const newValue = false;
+      const oldValue = undefined;
+      const changed = false;
+      validateRemindersChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value null is unchanged', () => {
+      const newValue = false;
+      const oldValue = null;
+      const changed = false;
+      validateRemindersChanged(newValue, oldValue, changed);
+    });
+  });
+  describe('invalidated', () => {
+    it('new value true and old value true is unchanged', () => {
+      const newValue = true;
+      const oldValue = true;
+      const changed = false;
+      validateInvalidationChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value false is unchanged', () => {
+      const newValue = false;
+      const oldValue = false;
+      const changed = false;
+      validateInvalidationChanged(newValue, oldValue, changed);
+    });
+    it('new value true and old value false is changed', () => {
+      const newValue = true;
+      const oldValue = false;
+      const changed = true;
+      validateInvalidationChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value undefined is unchanged', () => {
+      const newValue = false;
+      const oldValue = undefined;
+      const changed = false;
+      validateInvalidationChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value null is unchanged', () => {
+      const newValue = false;
+      const oldValue = null;
+      const changed = false;
+      validateInvalidationChanged(newValue, oldValue, changed);
+    });
+  });
+  describe('comments', () => {
+    it('new value string same as old value is unchanged', () => {
+      const newValue = 'stuff';
+      const oldValue = 'stuff';
+      const changed = false;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value string different than old value string is changed', () => {
+      const newValue = 'stuff';
+      const oldValue = 'stuff2';
+      const changed = true;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value string and old value true is changed', () => {
+      const newValue = 'stuff';
+      const oldValue = true;
+      const changed = true;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value string and old value false is changed', () => {
+      const newValue = 'stuff';
+      const oldValue = false;
+      const changed = true;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value empty string and old value false is unchanged', () => {
+      const newValue = '';
+      const oldValue = false;
+      const changed = false;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value empty string and old value string is changed', () => {
+      const newValue = '';
+      const oldValue = 'stuffff';
+      const changed = true;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value empty string and old value empty string is unchanged', () => {
+      const newValue = '';
+      const oldValue = '';
+      const changed = false;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value null and old value false is unchanged', () => {
+      const newValue = null;
+      const oldValue = false;
+      const changed = false;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value null is unchanged', () => {
+      const newValue = false;
+      const oldValue = null;
+      const changed = false;
+      validateCommentsChanged(newValue, oldValue, changed);
+    });
+  });
+  describe('selections', () => {
+    it('new value selection same as old value is unchanged', () => {
+      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldValue = [ { occurrence: 1, occurrences: 2, text: 'Jacob' } ];
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value selection different than old value selection is changed', () => {
+      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldValue = [ { text: 'Jacob', occurrence: 2, occurrences: 2 } ];
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value selection and old value true is changed', () => {
+      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldValue = true;
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value selection and old value false is changed', () => {
+      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldValue = false;
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value empty selection and old value false is unchanged', () => {
+      const newValue = [];
+      const oldValue = false;
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value empty selection is unchanged', () => {
+      const newValue = false;
+      const oldValue = [];
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value empty selection and old value selection is changed', () => {
+      const newValue = [];
+      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value null and old value selection is changed', () => {
+      const newValue = null;
+      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value empty selection and old value empty selection is unchanged', () => {
+      const newValue = [];
+      const oldValue = [];
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value null and old value false is unchanged', () => {
+      const newValue = null;
+      const oldValue = false;
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value undefined and old value false is unchanged', () => {
+      const newValue = undefined;
+      const oldValue = false;
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value false and old value null is unchanged', () => {
+      const newValue = false;
+      const oldValue = null;
+      const changed = false;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+  });
+  describe('verseEdits', () => {
+    it('old value true is unchanged', () => {
+      const oldValue = true;
+      const changed = false;
+      validateVerseEdits(oldValue, changed);
+    });
+    it('old value false is changed', () => {
+      const oldValue = false;
+      const changed = true;
+      validateVerseEdits(oldValue, changed);
+    });
+    it('old value null is changed', () => {
+      const oldValue = null;
+      const changed = true;
+      validateVerseEdits(oldValue, changed);
+    });
+  });
+});
+
 //
 // helpers
 //
+
+function validateVerseEdits(oldValue, expectChange) {
+  const checkType = 'verseEdits';
+  const object = {};
+  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  expect(result === expectChange).toBeTruthy();
+}
+
+function validateCommentsChanged(newValue, oldValue, expectChange) {
+  const checkType = 'comments';
+  const attr = 'text';
+  const object = { [attr]: newValue };
+  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  expect(result === expectChange).toBeTruthy();
+}
+
+function validateInvalidationChanged(newValue, oldValue, expectChange) {
+  const checkType = 'invalidated';
+  const object = { [checkType]: newValue };
+  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  expect(result === expectChange).toBeTruthy();
+}
+
+function validateSelectionsChanged(newValue, oldValue, expectChange) {
+  const checkType = 'selections';
+  const object = { [checkType]: newValue };
+  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  expect(result === expectChange).toBeTruthy();
+}
+
+function validateRemindersChanged(newValue, oldValue, expectChange) {
+  const checkType = 'reminders';
+  const attr = 'enabled';
+  const object = { [attr]: newValue };
+  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  expect(result === expectChange).toBeTruthy();
+}
 
 function cleanOutDates(actions) {
   const cleanedActions = JSON.parse(JSON.stringify(actions));
