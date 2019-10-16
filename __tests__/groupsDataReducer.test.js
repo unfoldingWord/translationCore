@@ -569,7 +569,7 @@ describe('groupsDataReducer', () => {
       groupsData: {
         authority: [{
           contextId: { groupId: 'authority' },
-          comments: !!comments,
+          comments: comments,
         }],
       },
       loadedFromFileSystem: false,
