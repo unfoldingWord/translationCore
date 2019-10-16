@@ -219,7 +219,7 @@ describe('GroupsDataActions.validateBookSelections', () => {
   });
 });
 
-describe('GroupsDataActions.isValueChanged', () => {
+describe('GroupsDataActions.isAttributeChanged', () => {
   describe('reminders', () => {
     it('new value true and old value true is unchanged', () => {
       const newValue = true;
@@ -353,6 +353,18 @@ describe('GroupsDataActions.isValueChanged', () => {
       const changed = true;
       validateSelectionsChanged(newValue, oldValue, changed);
     });
+    it('new value selection different count than old value selection is changed', () => {
+      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 }, { text: 'son', occurrence: 1, occurrences: 4 } ];
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
+    it('new value selection different order than old value selection is unchanged', () => {
+      const newValue = [ { text: 'son', occurrence: 1, occurrences: 4 }, { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 }, { text: 'son', occurrence: 1, occurrences: 4 } ];
+      const changed = true;
+      validateSelectionsChanged(newValue, oldValue, changed);
+    });
     it('new value selection and old value true is changed', () => {
       const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
       const oldValue = true;
@@ -431,6 +443,21 @@ describe('GroupsDataActions.isValueChanged', () => {
       validateVerseEdits(oldValue, changed);
     });
   });
+  describe('unsupported', () => {
+    it('unsupported checks are always false', () => {
+      const newValue = true;
+      const oldValue = null;
+      const expectChange = false;
+      const checkType = 'unsupported';
+      const object = { [checkType]: newValue };
+
+      // when
+      const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+
+      // then
+      expect(result === expectChange).toBeTruthy();
+    });
+  });
 });
 
 //
@@ -440,7 +467,7 @@ describe('GroupsDataActions.isValueChanged', () => {
 function validateVerseEdits(oldValue, expectChange) {
   const checkType = 'verseEdits';
   const object = {};
-  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
   expect(result === expectChange).toBeTruthy();
 }
 
@@ -448,21 +475,21 @@ function validateCommentsChanged(newValue, oldValue, expectChange) {
   const checkType = 'comments';
   const attr = 'text';
   const object = { [attr]: newValue };
-  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
   expect(result === expectChange).toBeTruthy();
 }
 
 function validateInvalidationChanged(newValue, oldValue, expectChange) {
   const checkType = 'invalidated';
   const object = { [checkType]: newValue };
-  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
   expect(result === expectChange).toBeTruthy();
 }
 
 function validateSelectionsChanged(newValue, oldValue, expectChange) {
   const checkType = 'selections';
   const object = { [checkType]: newValue };
-  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
   expect(result === expectChange).toBeTruthy();
 }
 
@@ -470,7 +497,7 @@ function validateRemindersChanged(newValue, oldValue, expectChange) {
   const checkType = 'reminders';
   const attr = 'enabled';
   const object = { [attr]: newValue };
-  const result = GroupsDataActions.isValueChanged(object, checkType, oldValue);
+  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
   expect(result === expectChange).toBeTruthy();
 }
 

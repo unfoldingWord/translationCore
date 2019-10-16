@@ -63,16 +63,16 @@ export const findGroupDataItem = (contextId, groupData) => {
 };
 
 /**
- * get value for check type and compare with old value - tricky because there is no consistency in field names and representation of value for checks
+ * get value for check attribute and compare with old value - tricky because there is no consistency in field names and representation of value for checks
  * @param {Object} object
- * @param {String} checkType
+ * @param {String} checkAttr
  * @param {*} oldValue
  * @return {Boolean} true if value has changed
  */
-export function isValueChanged(object, checkType, oldValue) {
+export function isAttributeChanged(object, checkAttr, oldValue) {
   let value;
 
-  switch (checkType) {
+  switch (checkAttr) {
   case 'reminders':
     value = !!object['enabled']; // just want true if enabled
     return value !== !!oldValue; // compare boolean equivalents
@@ -80,10 +80,10 @@ export function isValueChanged(object, checkType, oldValue) {
     value = object['text'];
     return value ? (value !== oldValue) : (!value !== !oldValue); // if text set, do exact match.  Otherwise compare boolean equivalents
   case 'invalidated':
-    value = !!object[checkType]; // just want true if set
+    value = !!object[checkAttr]; // just want true if set
     return value !== !!oldValue; // compare boolean equivalents
   case 'selections': {
-    value = object[checkType];
+    value = object[checkAttr];
     const hasSelection = value && value.length;
 
     if (hasSelection) {
@@ -95,8 +95,8 @@ export function isValueChanged(object, checkType, oldValue) {
   }
   case 'verseEdits':
     return true !== !!oldValue; // TRICKY: verse edit is special case since its value is always true
-  default:
-    console.log(`isValueChanged() - unsupported check type: ${checkType}`);
+  default: // put warning in log that this check attribute is not supported
+    console.log(`isValueChanged() - unsupported check attribute: ${checkAttr}`);
     return false;
   }
 }
@@ -192,9 +192,9 @@ export function verifyGroupDataMatchesWithFs(toolName) {
                   const oldGroupObject = (index >= 0) ? currentGroupData[index] : null;
 
                   if (oldGroupObject) {
-                    // only toggle if values are different (folderName contains type such as 'selections`)
+                    // only toggle if attribute values are different (folderName contains check attribute such as 'selections`)
                     const oldValue = oldGroupObject[folderName];
-                    const isChanged = isValueChanged(object, folderName, oldValue);
+                    const isChanged = isAttributeChanged(object, folderName, oldValue);
 
                     if (isChanged) {
                       // TRICKY: we are using the contextId of oldGroupObject here because sometimes
