@@ -57,6 +57,7 @@ function changeContextIdInReducers(contextId, dispatch, state) {
 
   // if check data not found in group data reducer, set to defaults
   const selections = oldGroupObject['selections'] || [];
+  const nothingToSelect = oldGroupObject['nothingToSelect'] || false;
   const reminders = oldGroupObject['reminders'] || false;
   const invalidated = oldGroupObject['invalidated'] || false;
   const comments = oldGroupObject['comments'] || '';
@@ -68,7 +69,8 @@ function changeContextIdInReducers(contextId, dispatch, state) {
     {
       type: consts.CHANGE_SELECTIONS,
       modifiedTimestamp: null,
-      selections: selections,
+      selections,
+      nothingToSelect,
       username: null,
     },
     {

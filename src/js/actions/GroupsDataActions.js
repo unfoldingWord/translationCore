@@ -66,10 +66,11 @@ export const findGroupDataItem = (contextId, groupData) => {
  * get value for check attribute and compare with old value - tricky because there is no consistency in field names and representation of value for checks
  * @param {Object} object
  * @param {String} checkAttr
- * @param {*} oldValue
+ * @param {Object} oldGroupObject
  * @return {Boolean} true if value has changed
  */
-export function isAttributeChanged(object, checkAttr, oldValue) {
+export function isAttributeChanged(object, checkAttr, oldGroupObject) {
+  const oldValue = oldGroupObject[checkAttr];
   let value;
 
   switch (checkAttr) {
@@ -83,15 +84,24 @@ export function isAttributeChanged(object, checkAttr, oldValue) {
     value = !!object[checkAttr]; // just want true if set
     return value !== !!oldValue; // compare boolean equivalents
   case 'selections': {
-    value = object[checkAttr];
-    const hasSelection = value && value.length;
+    // first check for changes in nothingToSelect
+    const oldSelectNothing = oldGroupObject['nothingToSelect'];
+    const newSelectNothing = object['nothingToSelect'];
+    let changed = (!oldSelectNothing !== !newSelectNothing); // compare boolean equivalents
 
-    if (hasSelection) {
-      return !isEqual(value, oldValue);
-    } else {
-      const hasOldSelection = oldValue && oldValue.length;
-      return (!hasSelection !== !hasOldSelection); // compare boolean equivalents of has selections
+    if (!changed) { // if no change in nothingToSelect, then compare selections
+      value = object[checkAttr];
+      const hasSelection = value && value.length;
+
+      if (hasSelection) {
+        changed = !isEqual(value, oldValue);
+      } else {
+        const hasOldSelection = oldValue && oldValue.length;
+        changed = (!hasSelection !== !hasOldSelection); // compare boolean equivalents of has selections
+      }
     }
+
+    return changed;
   }
   case 'verseEdits':
     return true !== !!oldValue; // TRICKY: verse edit is special case since its value is always true
@@ -193,8 +203,7 @@ export function verifyGroupDataMatchesWithFs(toolName) {
 
                   if (oldGroupObject) {
                     // only toggle if attribute values are different (folderName contains check attribute such as 'selections`)
-                    const oldValue = oldGroupObject[folderName];
-                    const isChanged = isAttributeChanged(object, folderName, oldValue);
+                    const isChanged = isAttributeChanged(object, folderName, oldGroupObject);
 
                     if (isChanged) {
                       // TRICKY: we are using the contextId of oldGroupObject here because sometimes

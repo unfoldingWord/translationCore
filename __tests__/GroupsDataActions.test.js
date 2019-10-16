@@ -342,88 +342,126 @@ describe('GroupsDataActions.isAttributeChanged', () => {
   });
   describe('selections', () => {
     it('new value selection same as old value is unchanged', () => {
-      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
-      const oldValue = [ { occurrence: 1, occurrences: 2, text: 'Jacob' } ];
+      const newSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldSelectValue = [ { occurrence: 1, occurrences: 2, text: 'Jacob' } ];
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value selection different than old value selection is changed', () => {
-      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
-      const oldValue = [ { text: 'Jacob', occurrence: 2, occurrences: 2 } ];
+      const newSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldSelectValue = [ { text: 'Jacob', occurrence: 2, occurrences: 2 } ];
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value selection different count than old value selection is changed', () => {
-      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
-      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 }, { text: 'son', occurrence: 1, occurrences: 4 } ];
+      const newSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 }, { text: 'son', occurrence: 1, occurrences: 4 } ];
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value selection different order than old value selection is unchanged', () => {
-      const newValue = [ { text: 'son', occurrence: 1, occurrences: 4 }, { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
-      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 }, { text: 'son', occurrence: 1, occurrences: 4 } ];
+      const newSelectValue = [ { text: 'son', occurrence: 1, occurrences: 4 }, { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 }, { text: 'son', occurrence: 1, occurrences: 4 } ];
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value selection and old value true is changed', () => {
-      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
-      const oldValue = true;
+      const newSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldSelectValue = true;
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value selection and old value false is changed', () => {
-      const newValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
-      const oldValue = false;
+      const newSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const oldSelectValue = false;
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value empty selection and old value false is unchanged', () => {
-      const newValue = [];
-      const oldValue = false;
+      const newSelectValue = [];
+      const oldSelectValue = false;
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value false and old value empty selection is unchanged', () => {
-      const newValue = false;
-      const oldValue = [];
+      const newSelectValue = false;
+      const oldSelectValue = [];
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value empty selection and old value selection is changed', () => {
-      const newValue = [];
-      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const newSelectValue = [];
+      const oldSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value null and old value selection is changed', () => {
-      const newValue = null;
-      const oldValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
+      const newSelectValue = null;
+      const oldSelectValue = [ { text: 'Jacob', occurrence: 1, occurrences: 2 } ];
       const changed = true;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value empty selection and old value empty selection is unchanged', () => {
-      const newValue = [];
-      const oldValue = [];
+      const newSelectValue = [];
+      const oldSelectValue = [];
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value null and old value false is unchanged', () => {
-      const newValue = null;
-      const oldValue = false;
+      const newSelectValue = null;
+      const oldSelectValue = false;
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value undefined and old value false is unchanged', () => {
-      const newValue = undefined;
-      const oldValue = false;
+      const newSelectValue = undefined;
+      const oldSelectValue = false;
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
     });
     it('new value false and old value null is unchanged', () => {
-      const newValue = false;
-      const oldValue = null;
+      const newSelectValue = false;
+      const oldSelectValue = null;
       const changed = false;
-      validateSelectionsChanged(newValue, oldValue, changed);
+      validateSelectionsChanged(newSelectValue, oldSelectValue, changed);
+    });
+  });
+  describe('nothingToSelect', () => {
+    it('new nothingToSelect value true and old value true is unchanged', () => {
+      const newNoSelectValue = true;
+      const oldNoSelectValue = true;
+      const changed = false;
+      validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, changed);
+    });
+    it('new nothingToSelect value false and old value false is unchanged', () => {
+      const newNoSelectValue = false;
+      const oldNoSelectValue = false;
+      const changed = false;
+      validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, changed);
+    });
+    it('new nothingToSelect value true and old value false is changed', () => {
+      const newNoSelectValue = true;
+      const oldNoSelectValue = false;
+      const changed = true;
+      validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, changed);
+    });
+    it('new nothingToSelect value false and old value true is changed', () => {
+      const newNoSelectValue = false;
+      const oldNoSelectValue = true;
+      const changed = true;
+      validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, changed);
+    });
+    it('new value false and old value null is unchanged', () => {
+      const newNoSelectValue = false;
+      const oldNoSelectValue = null;
+      const changed = false;
+      validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, changed);
+    });
+    it('new value null and old value false is unchanged', () => {
+      const newNoSelectValue = null;
+      const oldNoSelectValue = false;
+      const changed = false;
+      validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, changed);
     });
   });
   describe('verseEdits', () => {
@@ -448,11 +486,12 @@ describe('GroupsDataActions.isAttributeChanged', () => {
       const newValue = true;
       const oldValue = null;
       const expectChange = false;
-      const checkType = 'unsupported';
-      const object = { [checkType]: newValue };
+      const checkAttr = 'unsupported';
+      const object = { [checkAttr]: newValue };
+      const oldGroupObject = { [checkAttr]: oldValue };
 
       // when
-      const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+      const result = GroupsDataActions.isAttributeChanged(object, checkAttr, oldGroupObject);
 
       // then
       expect(result === expectChange).toBeTruthy();
@@ -465,39 +504,48 @@ describe('GroupsDataActions.isAttributeChanged', () => {
 //
 
 function validateVerseEdits(oldValue, expectChange) {
-  const checkType = 'verseEdits';
+  const checkAttr = 'verseEdits';
   const object = {};
-  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+  const oldGroupObject = { [checkAttr]: oldValue };
+  const result = GroupsDataActions.isAttributeChanged(object, checkAttr, oldGroupObject);
   expect(result === expectChange).toBeTruthy();
 }
 
 function validateCommentsChanged(newValue, oldValue, expectChange) {
-  const checkType = 'comments';
+  const checkAttr = 'comments';
   const attr = 'text';
   const object = { [attr]: newValue };
-  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+  const oldGroupObject = { [checkAttr]: oldValue };
+  const result = GroupsDataActions.isAttributeChanged(object, checkAttr, oldGroupObject);
   expect(result === expectChange).toBeTruthy();
 }
 
 function validateInvalidationChanged(newValue, oldValue, expectChange) {
-  const checkType = 'invalidated';
-  const object = { [checkType]: newValue };
-  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+  const checkAttr = 'invalidated';
+  const object = { [checkAttr]: newValue };
+  const oldGroupObject = { [checkAttr]: oldValue };
+  const result = GroupsDataActions.isAttributeChanged(object, checkAttr, oldGroupObject);
   expect(result === expectChange).toBeTruthy();
 }
 
-function validateSelectionsChanged(newValue, oldValue, expectChange) {
-  const checkType = 'selections';
-  const object = { [checkType]: newValue };
-  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+function validateSelectionsChanged(newSelectValue, oldSelectValue, expectChange, newNoSelectValue = undefined, oldNoSelectValue= false) {
+  const checkAttr = 'selections';
+  const object = { [checkAttr]: newSelectValue, ['nothingToSelect']: newNoSelectValue };
+  const oldGroupObject = { [checkAttr]: oldSelectValue, ['nothingToSelect']: oldNoSelectValue };
+  const result = GroupsDataActions.isAttributeChanged(object, checkAttr, oldGroupObject);
   expect(result === expectChange).toBeTruthy();
+}
+
+function validateNothingToSelectChanged(newNoSelectValue, oldNoSelectValue, expectChange) {
+  validateSelectionsChanged(null, false, expectChange, newNoSelectValue, oldNoSelectValue);
 }
 
 function validateRemindersChanged(newValue, oldValue, expectChange) {
-  const checkType = 'reminders';
+  const checkAttr = 'reminders';
   const attr = 'enabled';
   const object = { [attr]: newValue };
-  const result = GroupsDataActions.isAttributeChanged(object, checkType, oldValue);
+  const oldGroupObject = { [checkAttr]: oldValue };
+  const result = GroupsDataActions.isAttributeChanged(object, checkAttr, oldGroupObject);
   expect(result === expectChange).toBeTruthy();
 }
 
