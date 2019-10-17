@@ -21,6 +21,9 @@ import * as BibleHelpers from './bibleHelpers';
 import ResourceAPI from './ResourceAPI';
 import { getFoldersInResourceFolder } from './ResourcesHelpers';
 // constants
+const CONTINUE = "CONTINUE";
+const RETRY = "RETRY";
+const SHOW_RENAME_FAILURE_AGAIN = "SHOW_RENAME_FAILURE_AGAIN";
 
 /**
  * function to make the change in the array based on the passed params
@@ -104,36 +107,49 @@ export function doesProjectAlreadyExist(newProjectName) {
  * show user that DCS rename failed, give options
  * @param {String} projectSaveLocation
  * @param {Boolean} createNew - flag that we were doing a create new repo on DCS vs. a rename of the reo
- * @return {Function}
+ * @return {Function} - Promise resolves to CONTINUE or RETRY
  */
 export function showDcsRenameFailure(projectSaveLocation, createNew) {
-  return ((dispatch, getState) => {
+  return ( async (dispatch, getState) => {
     const translate = getTranslate(getState());
     const retryText = translate('buttons.retry');
     const continueText = translate('buttons.continue_button');
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
     const projectName = path.basename(projectSaveLocation);
 
-    dispatch(
-      AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', { project: projectName, door43: translate('_.door43') }),
-        (result) => {
-          dispatch(AlertModalActions.closeAlertDialog());
+    let reShowErrorDialog;
+    let results;
+    do {
+      reShowErrorDialog = false;
+      results = await new Promise((resolve, reject) => {
+        dispatch(
+          AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {
+              project: projectName,
+              door43: translate('_.door43')
+            }),
+            (result) => {
+              dispatch(AlertModalActions.closeAlertDialog());
 
-          switch (result) {
-          case retryText:
-            dispatch(handleDcsOperation(createNew, projectSaveLocation)); // retry operation
-            break;
+              switch (result) {
+                case retryText:
+                  resolve(RETRY);
+                  break;
 
-          case contactHelpDeskText:
-            dispatch(showFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
-              dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // reshow alert dialog
-            }));
-            break;
+                case contactHelpDeskText:
+                  dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
+                    reShowErrorDialog = true;
+                    resolve();
+                  }));
+                  break;
 
-          default:
-            break;
-          }
-        }, retryText, continueText, contactHelpDeskText));
+                default:
+                  resolve(CONTINUE);
+                  break;
+              }
+            }, retryText, continueText, contactHelpDeskText));
+      });
+    } while (reShowErrorDialog);
+    return results;
   });
 }
 
@@ -159,7 +175,7 @@ export function getFeedbackDetailsForHelpDesk(translateKey) {
  * @param {function} doneCB - callback when feedback dialog closes
  * @return {Function}
  */
-export function showFeedbackDialog(translateKey, doneCB = null) {
+export function showErrorFeedbackDialog(translateKey, doneCB = null) {
   return (async (dispatch) => {
     const message = await dispatch(getFeedbackDetailsForHelpDesk(translateKey));
     dispatch(HomeScreenActions.setErrorFeedbackMessage(message)); // put up feedback dialog
@@ -216,32 +232,39 @@ export function handleDcsOperation(createNew, projectSaveLocation) {
       () => { // on confirmed
         const { userdata } = getState().loginReducer;
         const projectName = path.basename(projectSaveLocation);
+        let action = null;
 
         doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
           if (repoExists) {
             dispatch(handleDcsRenameCollision());
           } else {
-            if (createNew) {
-              try {
-                await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
-              } catch (e) {
-                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                console.warn(e);
+            let retry;
+            do {
+              retry = false;
+              let results = null;
+              if (createNew) {
+                try {
+                  await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+                } catch (e) {
+                  results = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  console.warn(e);
+                }
+              } else { // if rename
+                try {
+                  await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+                } catch (e) {
+                  results = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  console.warn(e);
+                }
               }
-            } else { // if rename
-              try {
-                await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
-              } catch (e) {
-                dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                console.warn(e);
-              }
-            }
+              retry = (results === RETRY);
+            } while (retry);
           }
           resolve();
         }).catch((e) => {
-          dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-          console.log('exists failure');
-          console.log(e);
+          console.error('handleDcsOperation() - exists failure');
+          console.error(e);
+          await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
           resolve();
         });
       },
@@ -278,7 +301,7 @@ export function handleDcsRenameCollision() {
               break;
 
             case contactHelpDeskText:
-              dispatch(showFeedbackDialog('_.support_dcs_rename_conflict', () => {
+              dispatch(showErrorFeedbackDialog('_.support_dcs_rename_conflict', () => {
                 dispatch(handleDcsRenameCollision()); // reshow alert dialog
               }));
               break;
