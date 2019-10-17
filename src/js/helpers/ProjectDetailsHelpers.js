@@ -21,9 +21,8 @@ import * as BibleHelpers from './bibleHelpers';
 import ResourceAPI from './ResourceAPI';
 import { getFoldersInResourceFolder } from './ResourcesHelpers';
 // constants
-const CONTINUE = "CONTINUE";
-const RETRY = "RETRY";
-const SHOW_RENAME_FAILURE_AGAIN = "SHOW_RENAME_FAILURE_AGAIN";
+const CONTINUE = 'CONTINUE';
+const RETRY = 'RETRY';
 
 /**
  * function to make the change in the array based on the passed params
@@ -119,34 +118,36 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
 
     let reShowErrorDialog;
     let results;
+
     do {
       reShowErrorDialog = false;
-      results = await new Promise((resolve, reject) => {
+      // eslint-disable-next-line no-await-in-loop
+      results = await new Promise((resolve) => {
         dispatch(
           AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {
-              project: projectName,
-              door43: translate('_.door43')
-            }),
-            (result) => {
-              dispatch(AlertModalActions.closeAlertDialog());
+            project: projectName,
+            door43: translate('_.door43'),
+          }),
+          (result) => {
+            dispatch(AlertModalActions.closeAlertDialog());
 
-              switch (result) {
-                case retryText:
-                  resolve(RETRY);
-                  break;
+            switch (result) {
+            case retryText:
+              resolve(RETRY);
+              break;
 
-                case contactHelpDeskText:
-                  dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
-                    reShowErrorDialog = true;
-                    resolve();
-                  }));
-                  break;
+            case contactHelpDeskText:
+              dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
+                reShowErrorDialog = true;
+                resolve();
+              }));
+              break;
 
-                default:
-                  resolve(CONTINUE);
-                  break;
-              }
-            }, retryText, continueText, contactHelpDeskText));
+            default:
+              resolve(CONTINUE);
+              break;
+            }
+          }, retryText, continueText, contactHelpDeskText));
       });
     } while (reShowErrorDialog);
     return results;
@@ -229,44 +230,52 @@ export function doDcsRenamePrompting() {
 export function handleDcsOperation(createNew, projectSaveLocation) {
   return ((dispatch, getState) => new Promise((resolve) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(
-      () => { // on confirmed
+      async () => { // on confirmed
         const { userdata } = getState().loginReducer;
         const projectName = path.basename(projectSaveLocation);
-        let action = null;
+        let retry;
 
-        doesDcsProjectNameAlreadyExist(projectName, userdata).then(async (repoExists) => {
-          if (repoExists) {
-            dispatch(handleDcsRenameCollision());
-          } else {
-            let retry;
-            do {
-              retry = false;
-              let results = null;
+        do {
+          retry = false;
+          let renameResults = CONTINUE;
+
+          try {
+            // eslint-disable-next-line no-await-in-loop
+            const repoExists = await doesDcsProjectNameAlreadyExist(projectName, userdata);
+
+            if (repoExists) {
+              dispatch(handleDcsRenameCollision());
+            } else {
               if (createNew) {
                 try {
+                  // eslint-disable-next-line no-await-in-loop
                   await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+                  resolve();
                 } catch (e) {
-                  results = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  // eslint-disable-next-line no-await-in-loop
+                  renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
                   console.warn(e);
                 }
               } else { // if rename
                 try {
+                  // eslint-disable-next-line no-await-in-loop
                   await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+                  resolve();
                 } catch (e) {
-                  results = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+                  // eslint-disable-next-line no-await-in-loop
+                  renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
                   console.warn(e);
                 }
               }
-              retry = (results === RETRY);
-            } while (retry);
+            }
+          } catch (e) {
+            console.error('handleDcsOperation() - exists failure');
+            console.error(e);
+            // eslint-disable-next-line no-await-in-loop
+            renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
           }
-          resolve();
-        }).catch((e) => {
-          console.error('handleDcsOperation() - exists failure');
-          console.error(e);
-          await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-          resolve();
-        });
+          retry = (renameResults === RETRY);
+        } while (retry);
       },
       () => {
         console.log('cancelled');
