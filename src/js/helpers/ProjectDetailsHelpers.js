@@ -191,7 +191,7 @@ export function showErrorFeedbackDialog(translateKey, doneCB = null) {
 export function doDcsRenamePrompting() {
   return ((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_repo');
       const createNewText = translate('buttons.create_new_repo');
@@ -208,8 +208,9 @@ export function doDcsRenamePrompting() {
               await dispatch(handleDcsOperation(createNew, projectSaveLocation));
               resolve();
             }).catch((e) => {
-              console.log(e);
-              resolve();
+              console.error('doDcsRenamePrompting() - error');
+              console.error(e);
+              reject(e);
             });
           },
           renameText,
