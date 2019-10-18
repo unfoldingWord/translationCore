@@ -193,7 +193,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   });
 }
 
-export const showStatus = async (message) => (async (dispatch) => {
+export const showStatus = (message) => (async (dispatch) => {
   dispatch(AlertModalActions.openAlertDialog(message, true));
   await delay(500);
 });
