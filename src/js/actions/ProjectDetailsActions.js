@@ -358,6 +358,7 @@ export function doRenamePrompting() {
     } else { // do not rename on dcs
       await dispatch(ProjectDetailsHelpers.showRenamedDialog());
     }
+    await delay(300);
   });
 }
 

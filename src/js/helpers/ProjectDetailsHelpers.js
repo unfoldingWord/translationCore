@@ -216,7 +216,6 @@ export function doDcsRenamePrompting() {
 
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
               await dispatch(handleDcsOperation(createNew));
-              dispatch(AlertModalActions.closeAlertDialog()); // clear dialogs before continuing
               await delay(300);
               resolve();
             }).catch((e) => {

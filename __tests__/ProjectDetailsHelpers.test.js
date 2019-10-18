@@ -452,11 +452,13 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
     const createNew = false;
     mock_alertCallbackButton = 3;
     const mock_showErrorFeedbackDialog = jest.fn((translateKey, doneCB) => {
-      mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
+      return (async () => { // eslint-disable-line require-await
+        mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
 
-      if (doneCB) {
-        doneCB();
-      }
+        if (doneCB) {
+          doneCB();
+        }
+      });
     });
 
     await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew, mock_showErrorFeedbackDialog));
