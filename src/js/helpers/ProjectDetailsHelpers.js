@@ -106,9 +106,10 @@ export function doesProjectAlreadyExist(newProjectName) {
  * show user that DCS rename failed, give options
  * @param {String} projectSaveLocation
  * @param {Boolean} createNew - flag that we were doing a create new repo on DCS vs. a rename of the reo
+ * @param {Function} showErrorFeedbackDialog_ - for testing
  * @return {Function} - Promise resolves to CONTINUE or RETRY
  */
-export function showDcsRenameFailure(projectSaveLocation, createNew) {
+export function showDcsRenameFailure(projectSaveLocation, createNew, showErrorFeedbackDialog_ = showErrorFeedbackDialog) {
   return ( async (dispatch, getState) => {
     const translate = getTranslate(getState());
     const retryText = translate('buttons.retry');
@@ -139,7 +140,7 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
 
             case contactHelpDeskText:
               console.log(`showDcsRenameFailure() - showErrorFeedbackDialog`);
-              dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
+              dispatch(showErrorFeedbackDialog_(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
                 reShowErrorDialog = true;
                 console.log(`showDcsRenameFailure() - showErrorFeedbackDialog done`);
                 resolve();

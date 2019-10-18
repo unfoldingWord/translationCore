@@ -108,8 +108,19 @@ Array [
 ]
 `;
 
-exports[`ProjectDetailsHelpers.showDcsRenameFailure on click help desk, should call contactHelpDesk 1`] = `
+exports[`ProjectDetailsHelpers.showDcsRenameFailure on click help desk, should call contactHelpDesk and then show prompt again 1`] = `
 Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
   Object {
     "alertText": "projects.dcs_rename_failed",
     "button1": "buttons.retry",

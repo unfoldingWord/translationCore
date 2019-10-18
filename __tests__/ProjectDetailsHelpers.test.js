@@ -68,6 +68,7 @@ jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
 
 jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
 
+  // eslint-disable-next-line no-unused-vars
   openOnlyProjectDetailsScreen: (projectSaveLocation) => (dispatch) => {
     dispatch({ type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen' });
   },
@@ -428,7 +429,8 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
     mock_alertCallbackButton = 1;
     const expectedClickButton = 'buttons.retry';
 
-    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    const results = await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    expect(results).toEqual('RETRY');
     expect(store.getActions()).toMatchSnapshot();
     expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
   });
@@ -439,20 +441,27 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
     mock_alertCallbackButton = 2;
     const expectedClickButton = 'buttons.continue_button';
 
-    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    const results = await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    expect(results).toEqual('CONTINUE');
     expect(store.getActions()).toMatchSnapshot();
     expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
   });
 
-  test('on click help desk, should call contactHelpDesk', async () => {
+  test('on click help desk, should call contactHelpDesk and then show prompt again', async () => {
     const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 3;
-    const expectedClickButton = 'buttons.contact_helpdesk';
+    const mock_showErrorFeedbackDialog = jest.fn((translateKey, doneCB) => {
+      mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
 
-    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+      if (doneCB) {
+        doneCB();
+      }
+    });
+
+    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew, mock_showErrorFeedbackDialog));
     expect(store.getActions()).toMatchSnapshot();
-    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+    expect(mock_showErrorFeedbackDialog).toHaveBeenCalledTimes(1);
   });
 });
 
