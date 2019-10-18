@@ -1,12 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { delay } from '../common/utils';
 // actions
 import * as AlertModalActions from '../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../actions/ProjectInformationCheckActions';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 // helpers
-import { getTranslate } from '../selectors';
+import { getTranslate, getShowProjectInformationScreen } from '../selectors';
 import * as BooksOfTheBible from '../common/BooksOfTheBible';
 import {
   PROJECTS_PATH,
@@ -125,7 +126,7 @@ export function showDcsRenameFailure(projectSaveLocation, createNew, showErrorFe
       reShowErrorDialog = false;
       results = await new Promise((resolve) => { // eslint-disable-line no-await-in-loop
         dispatch(
-          AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {
+          AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_failed' : 'projects.dcs_rename_failed', {
             project: projectName,
             door43: translate('_.door43'),
           }),
@@ -246,14 +247,13 @@ export function handleDcsOperation(createNew, projectSaveLocation) {
         do {
           retry = false;
           let renameResults = CONTINUE;
-          console.log('handleDcsOperation() - handle DCS rename');
+          console.log(`handleDcsOperation() - handle DCS rename, createNew: ${createNew}`);
 
           try {
             const repoExists = await doesDcsProjectNameAlreadyExist(projectName, userdata); // eslint-disable-line no-await-in-loop
 
             if (repoExists) {
-              await dispatch(handleDcsRenameCollision()); // eslint-disable-line no-await-in-loop
-              resolve();
+              renameResults = await dispatch(handleDcsRenameCollision(createNew)); // eslint-disable-line no-await-in-loop
             } else {
               try {
                 if (createNew) {
@@ -287,22 +287,42 @@ export function handleDcsOperation(createNew, projectSaveLocation) {
 }
 
 /**
- * handles the prompting for overwrite/merge of project
- * @return {Promise} - Returns a promise
+ * trigger when project details screen is finished
+ * @param getState
  */
-export function handleDcsRenameCollision() {
-  return ((dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
-    return new Promise((resolve) => {
-      const translate = getTranslate(getState());
-      const renameText = translate('buttons.rename_local');
-      const continueText = translate('buttons.do_not_rename');
-      const contactHelpDeskText = translate('buttons.contact_helpdesk');
-      const projectName = path.basename(projectSaveLocation);
+async function onProjectDetailsFinished(getState) {
+  let detailsVisible = true;
 
-      console.log('handleDcsRenameCollision()');
-      dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', { project:projectName, door43: translate('_.door43') }),
+  do {
+    await delay(1000); // eslint-disable-line no-await-in-loop
+    detailsVisible = getShowProjectInformationScreen(getState());
+  } while (detailsVisible);
+}
+
+/**
+ * handles the prompting for overwrite/merge of project
+ * @param {boolean} createNew - if true then create new DCS project with current name
+ * @return {Function} - Promise resolves to CONTINUE or RETRY
+ */
+export function handleDcsRenameCollision(createNew) {
+  return (async (dispatch, getState) => {
+    const { projectSaveLocation } = getState().projectDetailsReducer;
+    const translate = getTranslate(getState());
+    const renameText = translate('buttons.rename_local');
+    const continueText = translate('buttons.do_not_rename');
+    const contactHelpDeskText = translate('buttons.contact_helpdesk');
+    const projectName = path.basename(projectSaveLocation);
+    let reShowErrorDialog;
+    let results;
+
+    do {
+      console.log(`handleDcsRenameCollision() - createNew: ${createNew}`);
+      reShowErrorDialog = false;
+      results = await new Promise((resolve) => { // eslint-disable-line no-await-in-loop
+        dispatch(
+          AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
+            { project:projectName, door43: translate('_.door43') }
+          ),
           (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
             console.log(`handleDcsRenameCollision() result: ${result}`);
@@ -310,19 +330,21 @@ export function handleDcsRenameCollision() {
             switch (result) {
             case renameText:
               dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-              resolve();
+              onProjectDetailsFinished(getState).then(() => {
+                resolve(RETRY);
+              });
               break;
 
             case contactHelpDeskText:
-              dispatch(showErrorFeedbackDialog('_.support_dcs_rename_conflict', () => {
+              dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_conflict' : '_.support_dcs_rename_conflict', () => {
                 console.log(`handleDcsRenameCollision() help desk done`);
-                dispatch(handleDcsRenameCollision()); // reshow alert dialog
+                reShowErrorDialog = true;
                 resolve();
               }));
               break;
 
             default:
-              resolve();
+              resolve(CONTINUE);
               break;
             }
             console.log(`handleDcsRenameCollision() done`);
@@ -330,9 +352,13 @@ export function handleDcsRenameCollision() {
           renameText,
           continueText,
           contactHelpDeskText
-        )
-      );
-    });
+          )
+        );
+      });
+      console.log(`handleDcsRenameCollision() - reShowErrorDialog: ${reShowErrorDialog}`);
+    } while (reShowErrorDialog);
+    console.log(`handleDcsRenameCollision() - done`);
+    return results;
   });
 }
 

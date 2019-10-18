@@ -177,7 +177,7 @@ export default function GitApi(directory) {
  * splits the repo url to get repo name
  */
 export const parseRepoUrl = (ulr) => {
-  const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+  const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+)(.git)?$/) || [''];
   const repoInfo = {
     name: repoName[5],
     user: repoName[4],
