@@ -130,8 +130,9 @@ export function showDcsRenameFailure(projectSaveLocation, createNew, showErrorFe
             project: projectName,
             door43: translate('_.door43'),
           }),
-          (result) => {
+          async (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
+            await delay(500); // let screen update and close dialog
 
             switch (result) {
             case retryText:
@@ -207,13 +208,16 @@ export function doDcsRenamePrompting() {
 
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
-          (result) => {
+          async (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
+            await delay(500); // let screen update and close dialog
             const { userdata } = getState().loginReducer;
 
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
               await dispatch(handleDcsOperation(createNew));
+              dispatch(AlertModalActions.closeAlertDialog()); // clear dialogs before continuing
+              await delay(300);
               resolve();
             }).catch((e) => {
               console.error('doDcsRenamePrompting() - error');
@@ -323,8 +327,9 @@ export function handleDcsRenameCollision(createNew) {
           AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
             { project:projectName, door43: translate('_.door43') }
           ),
-          (result) => {
+          async (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
+            await delay(500); // let screen update and close dialog
             console.log(`handleDcsRenameCollision() result: ${result}`);
 
             switch (result) {
