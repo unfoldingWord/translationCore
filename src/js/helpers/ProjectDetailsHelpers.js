@@ -120,9 +120,9 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
     let results;
 
     do {
+      console.log(`showDcsRenameFailure() - showing alert`);
       reShowErrorDialog = false;
-      // eslint-disable-next-line no-await-in-loop
-      results = await new Promise((resolve) => {
+      results = await new Promise((resolve) => { // eslint-disable-line no-await-in-loop
         dispatch(
           AlertModalActions.openOptionDialog(translate('projects.dcs_rename_failed', {
             project: projectName,
@@ -133,23 +133,29 @@ export function showDcsRenameFailure(projectSaveLocation, createNew) {
 
             switch (result) {
             case retryText:
+              console.log(`showDcsRenameFailure() - RETRY`);
               resolve(RETRY);
               break;
 
             case contactHelpDeskText:
+              console.log(`showDcsRenameFailure() - showErrorFeedbackDialog`);
               dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_failed' : '_.support_dcs_rename_failed', () => {
                 reShowErrorDialog = true;
+                console.log(`showDcsRenameFailure() - showErrorFeedbackDialog done`);
                 resolve();
               }));
               break;
 
             default:
+              console.log(`showDcsRenameFailure() - CONTINUE`);
               resolve(CONTINUE);
               break;
             }
           }, retryText, continueText, contactHelpDeskText));
       });
+      console.log(`showDcsRenameFailure() - reShowErrorDialog: ${reShowErrorDialog}`);
     } while (reShowErrorDialog);
+    console.log(`showDcsRenameFailure() - done`);
     return results;
   });
 }
@@ -239,42 +245,33 @@ export function handleDcsOperation(createNew, projectSaveLocation) {
         do {
           retry = false;
           let renameResults = CONTINUE;
+          console.log('handleDcsOperation() - handle DCS rename');
 
           try {
-            // eslint-disable-next-line no-await-in-loop
-            const repoExists = await doesDcsProjectNameAlreadyExist(projectName, userdata);
+            const repoExists = await doesDcsProjectNameAlreadyExist(projectName, userdata); // eslint-disable-line no-await-in-loop
 
             if (repoExists) {
-              dispatch(handleDcsRenameCollision());
+              await dispatch(handleDcsRenameCollision()); // eslint-disable-line no-await-in-loop
             } else {
-              if (createNew) {
-                try {
-                  // eslint-disable-next-line no-await-in-loop
-                  await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
+              try {
+                if (createNew) {
+                  await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata); // eslint-disable-line no-await-in-loop
                   resolve();
-                } catch (e) {
-                  // eslint-disable-next-line no-await-in-loop
-                  renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                  console.warn(e);
-                }
-              } else { // if rename
-                try {
-                  // eslint-disable-next-line no-await-in-loop
-                  await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+                } else { // if rename
+                  await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata); // eslint-disable-line no-await-in-loop
                   resolve();
-                } catch (e) {
-                  // eslint-disable-next-line no-await-in-loop
-                  renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
-                  console.warn(e);
                 }
+              } catch (e) {
+                renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // eslint-disable-line no-await-in-loop
+                console.warn(e);
               }
             }
           } catch (e) {
             console.error('handleDcsOperation() - exists failure');
             console.error(e);
-            // eslint-disable-next-line no-await-in-loop
-            renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
+            renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew)); // eslint-disable-line no-await-in-loop
           }
+          console.log(`handleDcsOperation() - handle DCS rename results ${renameResults}`);
           retry = (renameResults === RETRY);
         } while (retry);
       },
@@ -300,10 +297,12 @@ export function handleDcsRenameCollision() {
       const contactHelpDeskText = translate('buttons.contact_helpdesk');
       const projectName = path.basename(projectSaveLocation);
 
+      console.log('handleDcsRenameCollision()');
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', { project:projectName, door43: translate('_.door43') }),
-          (result) => {
+          async (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
+            console.log(`handleDcsRenameCollision() result: ${result}`);
 
             switch (result) {
             case renameText:
@@ -311,14 +310,15 @@ export function handleDcsRenameCollision() {
               break;
 
             case contactHelpDeskText:
-              dispatch(showErrorFeedbackDialog('_.support_dcs_rename_conflict', () => {
-                dispatch(handleDcsRenameCollision()); // reshow alert dialog
+              await dispatch(showErrorFeedbackDialog('_.support_dcs_rename_conflict', async () => {
+                await dispatch(handleDcsRenameCollision()); // reshow alert dialog
               }));
               break;
 
             default:
               break;
             }
+            console.log(`handleDcsRenameCollision() done`);
             resolve();
           },
           renameText,
