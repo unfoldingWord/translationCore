@@ -422,35 +422,35 @@ describe('ProjectDetailsHelpers.showDcsRenameFailure', () => {
     mock_doOnlineConfirmCallback = false;
   });
 
-  test('on click retry, should call retry', () => {
+  test('on click retry, should call retry', async () => {
     const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 1;
     const expectedClickButton = 'buttons.retry';
 
-    store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
     expect(store.getActions()).toMatchSnapshot();
     expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
   });
 
-  test('on click retry, should call continue', () => {
+  test('on click retry, should call continue', async () => {
     const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 2;
     const expectedClickButton = 'buttons.continue_button';
 
-    store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
     expect(store.getActions()).toMatchSnapshot();
     expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
   });
 
-  test('on click help desk, should call contactHelpDesk', () => {
+  test('on click help desk, should call contactHelpDesk', async () => {
     const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 3;
     const expectedClickButton = 'buttons.contact_helpdesk';
 
-    store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
+    await store.dispatch(ProjectDetailsHelpers.showDcsRenameFailure(projectPath, createNew));
     expect(store.getActions()).toMatchSnapshot();
     expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
   });

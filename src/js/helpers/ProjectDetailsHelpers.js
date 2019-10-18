@@ -252,6 +252,7 @@ export function handleDcsOperation(createNew, projectSaveLocation) {
 
             if (repoExists) {
               await dispatch(handleDcsRenameCollision()); // eslint-disable-line no-await-in-loop
+              resolve();
             } else {
               try {
                 if (createNew) {
@@ -300,26 +301,29 @@ export function handleDcsRenameCollision() {
       console.log('handleDcsRenameCollision()');
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_conflict', { project:projectName, door43: translate('_.door43') }),
-          async (result) => {
+          (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
             console.log(`handleDcsRenameCollision() result: ${result}`);
 
             switch (result) {
             case renameText:
               dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+              resolve();
               break;
 
             case contactHelpDeskText:
-              await dispatch(showErrorFeedbackDialog('_.support_dcs_rename_conflict', async () => {
-                await dispatch(handleDcsRenameCollision()); // reshow alert dialog
+              dispatch(showErrorFeedbackDialog('_.support_dcs_rename_conflict', () => {
+                console.log(`handleDcsRenameCollision() help desk done`);
+                dispatch(handleDcsRenameCollision()); // reshow alert dialog
+                resolve();
               }));
               break;
 
             default:
+              resolve();
               break;
             }
             console.log(`handleDcsRenameCollision() done`);
-            resolve();
           },
           renameText,
           continueText,

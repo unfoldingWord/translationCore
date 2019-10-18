@@ -153,8 +153,5 @@ Array [
   Object {
     "type": "CLOSE_ALERT_DIALOG",
   },
-  Object {
-    "type": "CONFIRM_ONLINE_MODE",
-  },
 ]
 `;
