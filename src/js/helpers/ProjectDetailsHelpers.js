@@ -6,6 +6,7 @@ import * as AlertModalActions from '../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
 import * as ProjectInformationCheckActions from '../actions/ProjectInformationCheckActions';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
+import { showStatus } from '../actions/ProjectUploadActions';
 // helpers
 import { getTranslate, getShowProjectInformationScreen } from '../selectors';
 import * as BooksOfTheBible from '../common/BooksOfTheBible';
@@ -130,9 +131,8 @@ export function showDcsRenameFailure(projectSaveLocation, createNew, showErrorFe
             project: projectName,
             door43: translate('_.door43'),
           }),
-          async (result) => {
+          (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
-            await delay(500); // let screen update and close dialog
 
             switch (result) {
             case retryText:
@@ -208,10 +208,9 @@ export function doDcsRenamePrompting() {
 
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
-          async (result) => {
+          (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
-            await delay(500); // let screen update and close dialog
             const { userdata } = getState().loginReducer;
 
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
@@ -260,7 +259,13 @@ export function handleDcsOperation(createNew) {
             } else {
               try {
                 if (createNew) {
+                  const translate = getTranslate(getState());
+                  const message = translate('projects.uploading_alert',
+                    { project_name: projectName, door43: translate('_.door43') });
+                  dispatch(showStatus(message));
                   await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata); // eslint-disable-line no-await-in-loop
+                  dispatch(AlertModalActions.closeAlertDialog());
+                  await delay(300); // eslint-disable-line no-await-in-loop
                   resolve();
                 } else { // if rename
                   await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata); // eslint-disable-line no-await-in-loop
@@ -326,9 +331,8 @@ export function handleDcsRenameCollision(createNew) {
           AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
             { project:projectName, door43: translate('_.door43') }
           ),
-          async (result) => {
+          (result) => {
             dispatch(AlertModalActions.closeAlertDialog());
-            await delay(500); // let screen update and close dialog
             console.log(`handleDcsRenameCollision() result: ${result}`);
 
             switch (result) {
