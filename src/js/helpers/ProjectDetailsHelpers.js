@@ -213,7 +213,7 @@ export function doDcsRenamePrompting() {
             const { userdata } = getState().loginReducer;
 
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
-              await dispatch(handleDcsOperation(createNew, projectSaveLocation));
+              await dispatch(handleDcsOperation(createNew));
               resolve();
             }).catch((e) => {
               console.error('doDcsRenamePrompting() - error');
@@ -233,18 +233,18 @@ export function doDcsRenamePrompting() {
  * TODO: this is an action and should be moved to the correct location.
  * perform selected action create new or rename project on DCS to match new name
  * @param {boolean} createNew - if true then create new DCS project with current name
- * @param {string} projectSaveLocation
  * @return {Promise<Function>}
  */
-export function handleDcsOperation(createNew, projectSaveLocation) {
+export function handleDcsOperation(createNew) {
   return ((dispatch, getState) => new Promise((resolve) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(
       async () => { // on confirmed
         const { userdata } = getState().loginReducer;
-        const projectName = path.basename(projectSaveLocation);
         let retry;
 
         do {
+          const { projectSaveLocation } = getState().projectDetailsReducer; // refetch since project may have been renamed
+          const projectName = path.basename(projectSaveLocation);
           retry = false;
           let renameResults = CONTINUE;
           console.log(`handleDcsOperation() - handle DCS rename, createNew: ${createNew}`);
@@ -306,17 +306,17 @@ async function onProjectDetailsFinished(getState) {
  */
 export function handleDcsRenameCollision(createNew) {
   return (async (dispatch, getState) => {
-    const { projectSaveLocation } = getState().projectDetailsReducer;
     const translate = getTranslate(getState());
     const renameText = translate('buttons.rename_local');
     const continueText = translate('buttons.do_not_rename');
     const contactHelpDeskText = translate('buttons.contact_helpdesk');
-    const projectName = path.basename(projectSaveLocation);
     let reShowErrorDialog;
     let results;
 
     do {
       console.log(`handleDcsRenameCollision() - createNew: ${createNew}`);
+      const { projectSaveLocation } = getState().projectDetailsReducer; // refetch since project may have been renamed
+      const projectName = path.basename(projectSaveLocation);
       reShowErrorDialog = false;
       results = await new Promise((resolve) => { // eslint-disable-line no-await-in-loop
         dispatch(

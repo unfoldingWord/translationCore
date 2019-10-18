@@ -610,6 +610,7 @@ describe('ProjectDetailsHelpers.handleDcsRenameCollision', () => {
         alreadyImported: true,
         overwritePermitted: false,
       },
+      projectValidationReducer: { onlyShowProjectInformationScreen: false },
     });
     mock_alertCallbackButton = 1;
     const expectedClickButton = 'buttons.rename_local';
