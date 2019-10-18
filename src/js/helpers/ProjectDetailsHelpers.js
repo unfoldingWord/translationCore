@@ -276,6 +276,7 @@ export function handleDcsOperation(createNew, projectSaveLocation) {
           console.log(`handleDcsOperation() - handle DCS rename results ${renameResults}`);
           retry = (renameResults === RETRY);
         } while (retry);
+        resolve();
       },
       () => {
         console.log('cancelled');
