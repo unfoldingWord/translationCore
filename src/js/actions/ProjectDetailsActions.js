@@ -565,7 +565,7 @@ export function showDcsRenameFailure(projectSaveLocation, createNew, showErrorFe
       console.log(`showDcsRenameFailure() - showing alert`);
       reShowErrorDialog = false;
       // eslint-disable-next-line no-await-in-loop
-      const results = await dispatch(showDcsRenameFailurePromise(projectSaveLocation, createNew, showErrorFeedbackDialog_));
+      results = await dispatch(showDcsRenameFailurePromise(projectSaveLocation, createNew, showErrorFeedbackDialog_));
       reShowErrorDialog = (results === RESHOW_ERROR); //TRICKY: if user selected to send feedback, it clobbers the error dialog shown.  Then when that is resolved we need to reshow error dialog
       console.log(`showDcsRenameFailure() - reShowErrorDialog: ${reShowErrorDialog}`);
     } while (reShowErrorDialog);
@@ -579,7 +579,7 @@ export function showDcsRenameFailure(projectSaveLocation, createNew, showErrorFe
  * @param {String} projectSaveLocation
  * @param {Boolean} createNew - flag that we were doing a create new repo on DCS vs. a rename of the reo
  * @param {Function} showErrorFeedbackDialog_ - for testing
- * @return {Function} - Promise resolves to CONTINUE, RETRY, or RESHOW_ERROR
+ * @return {Promise<String>} - Promise resolves to CONTINUE, RETRY, or RESHOW_ERROR
  */
 function showDcsRenameFailurePromise(projectSaveLocation, createNew, showErrorFeedbackDialog_) {
   return ( (dispatch, getState) => {
@@ -649,7 +649,7 @@ export function handleDcsOperation(createNew) {
         let retry;
 
         do {
-          const renameResults = await handleDcsOperationCore(createNew); // eslint-disable-line no-await-in-loop
+          const renameResults = await dispatch(handleDcsOperationCore(createNew)); // eslint-disable-line no-await-in-loop
           retry = (renameResults === RETRY);
         } while (retry);
         resolve();
@@ -674,10 +674,10 @@ function handleDcsOperationCore( createNew) {
     const { projectSaveLocation } = getState().projectDetailsReducer; // refetch since project may have been renamed
     const projectName = path.basename(projectSaveLocation);
     let renameResults = CONTINUE;
-    console.log(`handleDcsOperation() - handle DCS rename, createNew: ${createNew}`);
+    console.log(`handleDcsOperationCore() - handle DCS rename, createNew: ${createNew}`);
 
     try {
-      const repoExists = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(projectName, userdata);
+      const repoExists = await doesDcsProjectNameAlreadyExist(projectName, userdata);
 
       if (repoExists) {
         renameResults = await dispatch(handleDcsRenameCollision(createNew));
@@ -701,11 +701,11 @@ function handleDcsOperationCore( createNew) {
         }
       }
     } catch (e) {
-      console.error('handleDcsOperation() - exists failure');
+      console.error('handleDcsOperationCore() - exists failure');
       console.error(e);
       renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
     }
-    console.log(`handleDcsOperation() - handle DCS rename results ${renameResults}`);
+    console.log(`handleDcsOperationCore() - handle DCS rename results ${renameResults}`);
     return renameResults;
   });
 }
@@ -724,67 +724,76 @@ async function onProjectDetailsFinished(getState) {
 }
 
 /**
- * handles the prompting for overwrite/merge of project
+ * handles the prompting for overwrite/merge of project.  Loops until problem has been handled.
  * @param {boolean} createNew - if true then create new DCS project with current name
  * @return {Function} - Promise resolves to CONTINUE or RETRY
  */
 export function handleDcsRenameCollision(createNew) {
-  return (async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    const renameText = translate('buttons.rename_local');
-    const continueText = translate('buttons.do_not_rename');
-    const contactHelpDeskText = translate('buttons.contact_helpdesk');
+  return (async (dispatch) => {
     let reShowErrorDialog;
     let results;
 
     do {
-      console.log(`handleDcsRenameCollision() - createNew: ${createNew}`);
-      const { projectSaveLocation } = getState().projectDetailsReducer; // refetch since project may have been renamed
-      const projectName = path.basename(projectSaveLocation);
-      reShowErrorDialog = false;
-      results = await new Promise((resolve) => { // eslint-disable-line no-await-in-loop
-        dispatch(
-          AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
-            { project:projectName, door43: translate('_.door43') }
-          ),
-          (result) => {
-            dispatch(AlertModalActions.closeAlertDialog());
-            console.log(`handleDcsRenameCollision() result: ${result}`);
-
-            switch (result) {
-            case renameText:
-              dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-              onProjectDetailsFinished(getState).then(() => {
-                resolve(RETRY);
-              });
-              break;
-
-            case contactHelpDeskText:
-              dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_conflict' : '_.support_dcs_rename_conflict', () => {
-                console.log(`handleDcsRenameCollision() help desk done`);
-                reShowErrorDialog = true;
-                resolve();
-              }));
-              break;
-
-            default:
-              resolve(CONTINUE);
-              break;
-            }
-            console.log(`handleDcsRenameCollision() done`);
-          },
-          renameText,
-          continueText,
-          contactHelpDeskText
-          )
-        );
-      });
+      results = await dispatch(handleDcsRenameCollisionPromise(createNew)); // eslint-disable-line no-await-in-loop
+      reShowErrorDialog = (results === RESHOW_ERROR);
       console.log(`handleDcsRenameCollision() - reShowErrorDialog: ${reShowErrorDialog}`);
     } while (reShowErrorDialog);
     console.log(`handleDcsRenameCollision() - done`);
     return results;
   });
 }
+
+/**
+ * core of handleDcsRenameCollision - wraps functions with callbacks in a Promise
+ * @param {boolean} createNew - if true then create new DCS project with current name
+ * @return {Promise<String>} Promise resolves to CONTINUE, RETRY, or RESHOW_ERROR
+ */
+function handleDcsRenameCollisionPromise(createNew) {
+  return ((dispatch, getState) => new Promise((resolve) => {
+    const translate = getTranslate(getState());
+    const renameText = translate('buttons.rename_local');
+    const continueText = translate('buttons.do_not_rename');
+    const contactHelpDeskText = translate('buttons.contact_helpdesk');
+    console.log(`handleDcsRenameCollision() - createNew: ${createNew}`);
+    const { projectSaveLocation } = getState().projectDetailsReducer; // refetch since project may have been renamed
+    const projectName = path.basename(projectSaveLocation);
+
+    dispatch(
+      AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
+        { project: projectName, door43: translate('_.door43') }
+      ),
+      (result) => {
+        dispatch(AlertModalActions.closeAlertDialog());
+        console.log(`handleDcsRenameCollision() result: ${result}`);
+
+        switch (result) {
+        case renameText:
+          dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
+          onProjectDetailsFinished(getState).then(() => {
+            resolve(RETRY);
+          });
+          break;
+
+        case contactHelpDeskText:
+          dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_conflict' : '_.support_dcs_rename_conflict', () => {
+            resolve(RESHOW_ERROR);
+          }));
+          break;
+
+        default:
+          resolve(CONTINUE);
+          break;
+        }
+        console.log(`handleDcsRenameCollision() done`);
+      },
+      renameText,
+      continueText,
+      contactHelpDeskText
+      )
+    );
+  }));
+}
+
 
 /**
  * test to see if project name already exists on repo

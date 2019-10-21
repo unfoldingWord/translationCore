@@ -7,6 +7,7 @@ import configureMockStore from 'redux-mock-store';
 // actions
 import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
+import * as ToolActions from '../src/js/actions/ToolActions';
 // helpers
 import { mockGetSelectedCategories } from '../src/js/helpers/ProjectAPI';
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
@@ -18,6 +19,7 @@ import {
   TRANSLATION_WORDS,
   TRANSLATION_HELPS, TRANSLATION_NOTES,
 } from '../src/js/common/constants';
+import { NT_ORIG_LANG, NT_ORIG_LANG_BIBLE } from '../src/js/common/BooksOfTheBible';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 jest.mock('fs-extra');
@@ -27,6 +29,11 @@ jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
   getAvailableCategories: jest.fn(() => ({ 'names': ['John'] })),
   updateGroupIndexForGl: jest.fn(() => jest.fn(() => 'mock')),
+}));
+jest.mock('../src/js/actions/ToolActions', () => ({
+  ...require.requireActual('../src/js/actions/ToolActions'),
+  prepareToolForLoading: jest.fn(() => () => {
+  }),
 }));
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -75,6 +82,14 @@ jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
     } else {
       onCancel();
     }
+  }),
+}));
+
+jest.mock('../src/js/actions/ResourcesActions', () => ({
+  ...require.requireActual('../src/js/actions/ResourcesActions'),
+  loadBiblesByLanguageId: jest.fn(() => () => {
+  }),
+  loadBookResource: jest.fn(() => () => {
   }),
 }));
 
@@ -185,7 +200,7 @@ describe('getProjectProgressForTools() should create an action to get the projec
 describe('setProjectToolGL() should create an action to get the project GL for tools', () => {
   const initialState = {
     projectDetailsReducer: {},
-    resourcesReducer: { bibles: {} },
+    resourcesReducer: { bibles: { } },
   };
 
   beforeEach(() => {
@@ -213,23 +228,35 @@ describe('setProjectToolGL() should create an action to get the project GL for t
 
   it('should set GL for translationNotes', () => {
     const initialState = {
-      projectDetailsReducer: {},
-      resourcesReducer: { bibles: {} },
+      projectDetailsReducer: {
+        manifest: {
+          toolsSelectedGLs: { translationNotes: 'en' },
+        },
+      },
+      resourcesReducer: {
+        bibles: {
+          originalLanguage: {
+            ugnt: {
+              manifest: {
+                language_id: NT_ORIG_LANG,
+                resource_id: NT_ORIG_LANG_BIBLE,
+                dublin_core: { version: 0.8 },
+              },
+            },
+          },
+        },
+      },
+      manifest: { hello: 'world' },
     };
     const store = mockStore(initialState);
     const expectedActions = [{
       'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
-    }, {
-      'meta': { 'batch': true },
-      'payload': [{ 'type': 'CLEAR_PREVIOUS_GROUPS_DATA' },
-        { 'type': 'CLEAR_PREVIOUS_GROUPS_INDEX' },
-        { 'type': 'CLEAR_CONTEXT_ID' }],
-      'type': 'BATCHING_REDUCER.BATCH',
     }];
     store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
     expect(ResourcesHelpers.updateGroupIndexForGl).toHaveBeenCalled();
+    expect(ToolActions.prepareToolForLoading).toHaveBeenCalled();
   });
 });
 
@@ -273,18 +300,28 @@ it('addObjectPropertyToSettings() creates an action to add an object property to
   expect(actions.addObjectPropertyToSettings('key', value)).toEqual(expectedAction);
 });
 
-it('setProjectBookIdAndBookName() creates an action to set the project book id and name', () => {
-  const store = mockStore({ projectInformationCheckReducer: { bookId: 'gen' } });
+it('setProjectBookIdAndBookName() creates an action to set the project book id and name', async () => {
+  const store = mockStore({
+    projectInformationCheckReducer: { bookId: 'gen' },
+    projectDetailsReducer: {
+      manifest: {
+        project: {
+          id: 'gen' },
+      },
+    },
+    loginReducer: {
+      userdata: {}
+    }
+  });
   const expectedActions = [{
     type: types.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
     bookId: 'gen',
     bookName: 'Genesis',
   }];
 
-  store.dispatch(actions.setProjectBookIdAndBookName()).then(() => {
-    const receivedActions = store.getActions();
-    expect(receivedActions).toEqual(expectedActions);
-  });
+  await store.dispatch(actions.setProjectBookIdAndBookName());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
 });
 
 it('setProjectResourceId() creates an action to set the resourceId', () => {
