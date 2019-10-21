@@ -10,14 +10,20 @@ const ToolCardProgress = ({ progress }) => {
     progress = 0;
   }
 
-  const progressPercentage = (progress * 100).toFixed() + '%';
+  const progressPercent = progress * 100;
+  let progressPercentageStr = Math.floor(progressPercent) + '%'; // truncation instead of rounding
+
+  if ((progressPercent > 0) && (progressPercent < 1)) {
+    progressPercentageStr = '<1%'; // so we don't show zero when there is some progress
+  }
+
   const strokeColor = 'var(--accent-color-dark)';
   let textColor = '#000';
   let percentagePosition = '50%';
 
   if (progress >= .25) {
     textColor = '#fff';
-    percentagePosition = ((progress / 2) * 100) + '%';
+    percentagePosition = (progressPercent / 2) + '%';
   }
 
   const containerStyle = {
@@ -28,10 +34,10 @@ const ToolCardProgress = ({ progress }) => {
       <div>
         <div style={{
           position:'relative', float:'left', left:percentagePosition, zIndex: 1, color: textColor,
-        }}>{progressPercentage}</div>
+        }}>{progressPercentageStr}</div>
         <LinearProgress
           mode="determinate"
-          value={progress * 100}
+          value={progressPercent}
           color={strokeColor}
           style={containerStyle} />
       </div>

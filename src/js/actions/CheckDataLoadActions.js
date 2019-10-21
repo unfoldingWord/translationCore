@@ -9,7 +9,8 @@ const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
  * Generates the output directory.
- * @param {Object} state - store state object.
+ * @param {object} projectDetailsReducer
+ * @param {object} contextIdReducer
  * @param {String} checkDataName - checkDate folder name where data will be saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
  * @return {String} save path

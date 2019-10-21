@@ -32,7 +32,7 @@ export const getToggledGroupData = (state, action, key) => {
     switch (key) {
     case 'comments':
       if (action.text.length > 0) {
-        groupObject[key] = true;
+        groupObject[key] = action.text;
       } else {
         groupObject[key] = false;
       }
