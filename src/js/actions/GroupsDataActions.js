@@ -63,27 +63,51 @@ export const findGroupDataItem = (contextId, groupData) => {
 };
 
 /**
- * get value for check type in format expected by group menu - tricky because there is no consistency in field names for checks
+ * get value for check attribute and compare with old value - tricky because there is no consistency in field names and representation of value for checks
  * @param {Object} object
- * @param {String} checkType
- * @return {*}
+ * @param {String} checkAttr
+ * @param {Object} oldGroupObject
+ * @return {Boolean} true if value has changed
  */
-function getObjectValue(object, checkType) {
-  switch (checkType) {
+export function isAttributeChanged(object, checkAttr, oldGroupObject) {
+  const oldValue = oldGroupObject[checkAttr];
+  let value;
+
+  switch (checkAttr) {
   case 'reminders':
-    return !!object['enabled']; // just want true if reminder set
+    value = !!object['enabled']; // just want true if enabled
+    return value !== !!oldValue; // compare boolean equivalents
   case 'comments':
-    return object['text'] || false;
+    value = object['text'];
+    return value ? (value !== oldValue) : (!value !== !oldValue); // if text set, do exact match.  Otherwise compare boolean equivalents
   case 'invalidated':
-    return !!object[checkType]; // just want true if invalidation set
+    value = !!object[checkAttr]; // just want true if set
+    return value !== !!oldValue; // compare boolean equivalents
   case 'selections': {
-    const value = object[checkType];
-    return value && value.length ? value : false; // return selections, or if empty return false
+    // first check for changes in nothingToSelect
+    const oldSelectNothing = oldGroupObject['nothingToSelect'];
+    const newSelectNothing = object['nothingToSelect'];
+    let changed = (!oldSelectNothing !== !newSelectNothing); // compare boolean equivalents
+
+    if (!changed) { // if no change in nothingToSelect, then compare selections
+      value = object[checkAttr];
+      const hasSelection = value && value.length;
+
+      if (hasSelection) {
+        changed = !isEqual(value, oldValue);
+      } else {
+        const hasOldSelection = oldValue && oldValue.length;
+        changed = (!hasSelection !== !hasOldSelection); // compare boolean equivalents of has selections
+      }
+    }
+
+    return changed;
   }
   case 'verseEdits':
-    return true; // TRICKY: verse edit is special case since it is never unset
-  default:
-    return object[checkType];
+    return true !== !!oldValue; // TRICKY: verse edit is special case since its value is always true
+  default: // put warning in log that this check attribute is not supported
+    console.log(`isValueChanged() - unsupported check attribute: ${checkAttr}`);
+    return false;
   }
 }
 
@@ -178,11 +202,10 @@ export function verifyGroupDataMatchesWithFs(toolName) {
                   const oldGroupObject = (index >= 0) ? currentGroupData[index] : null;
 
                   if (oldGroupObject) {
-                    // only toggle if values are different (folderName contains type such as 'selections`)
-                    const objectValue = getObjectValue(object, folderName);
-                    const oldValue = oldGroupObject[folderName];
+                    // only toggle if attribute values are different (folderName contains check attribute such as 'selections`)
+                    const isChanged = isAttributeChanged(object, folderName, oldGroupObject);
 
-                    if (!isEqual(oldValue, objectValue)) {
+                    if (isChanged) {
                       // TRICKY: we are using the contextId of oldGroupObject here because sometimes
                       //            there are slight differences with the contextIds of the checkData due to build
                       //            changes (such as quoteString) and getToggledGroupData() requires exact match

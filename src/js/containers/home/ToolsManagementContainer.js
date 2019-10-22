@@ -14,7 +14,6 @@ import {
 } from '../../selectors';
 // actions
 import { openAlertDialog } from '../../actions/AlertModalActions';
-import * as PopoverActions from '../../actions/PopoverActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
@@ -146,9 +145,6 @@ const mapDispatchToProps = (dispatch) => ({
     },
     updateSubcategorySelection: (subcategory, toolName, isChecked) => {
       dispatch(ProjectDetailsActions.updateSubcategorySelection(subcategory, toolName, isChecked));
-    },
-    showPopover: (title, bodyText, positionCoord) => {
-      dispatch(PopoverActions.showPopover(title, bodyText, positionCoord));
     },
     warnOnInvalidations: (toolName) => {
       dispatch(warnOnInvalidations(toolName));

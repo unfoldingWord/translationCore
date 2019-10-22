@@ -37,7 +37,7 @@ function loadCheckData() {
 }
 
 /**
- * change context ID in reducers and clear old data while new data being loaded
+ * change context ID and load check data in reducers from group data reducer
  * @param {Object} contextId
  * @param {Function} dispatch
  * @param {Object} state
@@ -55,7 +55,9 @@ function changeContextIdInReducers(contextId, dispatch, state) {
     }
   }
 
+  // if check data not found in group data reducer, set to defaults
   const selections = oldGroupObject['selections'] || [];
+  const nothingToSelect = oldGroupObject['nothingToSelect'] || false;
   const reminders = oldGroupObject['reminders'] || false;
   const invalidated = oldGroupObject['invalidated'] || false;
   const comments = oldGroupObject['comments'] || '';
@@ -67,7 +69,8 @@ function changeContextIdInReducers(contextId, dispatch, state) {
     {
       type: consts.CHANGE_SELECTIONS,
       modifiedTimestamp: null,
-      selections: selections,
+      selections,
+      nothingToSelect,
       username: null,
     },
     {
@@ -115,11 +118,10 @@ export const changeCurrentContextId = contextId => (dispatch, getState) => {
     const refStr = `${tool} ${groupId} ${bookId} ${chapter}:${verse}`;
     console.log(`changeCurrentContextId() - setting new contextId to: ${refStr}`);
 
-    if (!groupDataLoaded) { // if group data not found, do load from file
+    if (!groupDataLoaded) { // if group data not found, load from file
       dispatch(loadCheckData());
     }
     saveContextId(state, contextId);
-
     const projectDir = getProjectSaveLocation(state);
 
     // commit project changes after delay
