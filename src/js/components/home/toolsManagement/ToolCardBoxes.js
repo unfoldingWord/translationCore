@@ -178,8 +178,6 @@ ToolCardBoxes.propTypes = {
   translate: PropTypes.func.isRequired,
   targetOrigin: PropTypes.string,
   selectedGL: PropTypes.string.isRequired,
-  showPopover: PropTypes.func.isRequired,
-  closePopover: PropTypes.func,
 };
 
 export default ToolCardBoxes;
