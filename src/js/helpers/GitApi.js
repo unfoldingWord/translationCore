@@ -177,7 +177,12 @@ export default function GitApi(directory) {
  * splits the repo url to get repo name
  */
 export const parseRepoUrl = (ulr) => {
-  const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+)(.git)?$/) || ['']; // match even if `.git` extension missing
+  let repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+
+  if (repoName.length <= 5) { // if we didn't find enough data, try matching without .git extension
+    repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/([^/]+)/) || [''];
+  }
+
   const repoInfo = {
     name: repoName[5],
     user: repoName[4],

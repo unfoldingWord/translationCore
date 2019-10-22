@@ -677,11 +677,11 @@ function handleDcsOperationCore( createNew) {
     console.log(`handleDcsOperationCore() - handle DCS rename, createNew: ${createNew}`);
 
     try {
-      const repoExists = await doesDcsProjectNameAlreadyExist(projectName, userdata);
+      const repoExists = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(projectName, userdata);
 
       if (repoExists) {
         renameResults = await dispatch(handleDcsRenameCollision(createNew));
-      } else {
+      } else { // remote repo does not already exist
         try {
           if (createNew) {
             const translate = getTranslate(getState());
@@ -775,9 +775,10 @@ function handleDcsRenameCollisionPromise(createNew) {
           break;
 
         case contactHelpDeskText:
-          dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_conflict' : '_.support_dcs_rename_conflict', () => {
-            resolve(RESHOW_ERROR);
-          }));
+          dispatch(showErrorFeedbackDialog(createNew ? '_.support_dcs_create_new_conflict' : '_.support_dcs_rename_conflict',
+            () => {
+              resolve(RESHOW_ERROR);
+            }));
           break;
 
         default:
@@ -792,23 +793,4 @@ function handleDcsRenameCollisionPromise(createNew) {
       )
     );
   }));
-}
-
-
-/**
- * test to see if project name already exists on repo
- * @param {String} newFilename
- * @param {Object} userdata
- * @return {Promise<any>} - resolve returns boolean that file exists
- */
-export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
-  return new Promise((resolve, reject) => {
-    GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
-      const repoExists = !!repo;
-      resolve(repoExists);
-    }).catch((e) => {
-      console.log(e);
-      reject(e);
-    });
-  });
 }

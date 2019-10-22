@@ -18,7 +18,6 @@ import * as BibleHelpers from './bibleHelpers';
 import ResourceAPI from './ResourceAPI';
 import { getFoldersInResourceFolder } from './ResourcesHelpers';
 
-
 /**
  * function to make the change in the array based on the passed params
  * i.e. If the value is present in the array and you pass the value of
@@ -110,6 +109,24 @@ export function getFeedbackDetailsForHelpDesk(translateKey) {
     const { projectSaveLocation } = state.projectDetailsReducer;
     const projectInfo = await GogsApiHelpers.getProjectInfo(projectSaveLocation, userdata);
     return translate(translateKey, projectInfo);
+  });
+}
+
+/**
+ * test to see if project name already exists on repo
+ * @param {String} newFilename
+ * @param {Object} userdata
+ * @return {Promise<any>} - resolve returns boolean that file exists
+ */
+export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
+  return new Promise((resolve, reject) => {
+    GogsApiHelpers.findRepo(userdata, newFilename).then(repo => {
+      const repoExists = !!repo;
+      resolve(repoExists);
+    }).catch((e) => {
+      console.log(e);
+      reject(e);
+    });
   });
 }
 
