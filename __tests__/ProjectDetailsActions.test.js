@@ -883,34 +883,6 @@ describe('handleDcsRenameCollision', () => {
   });
 });
 
-describe('doesDcsProjectNameAlreadyExist', () => {
-  beforeEach(() => {
-    mock_repoExists = false;
-    mock_repoError = false;
-  });
-
-  test('repo exists should succeed', async () => {
-    mock_repoExists = true;
-
-    let results = await actions.doesDcsProjectNameAlreadyExist(null, null);
-    expect(results).toEqual(mock_repoExists);
-  });
-
-  test('repo does not exist should succeed', async () => {
-    mock_repoExists = false;
-
-    let results = await actions.doesDcsProjectNameAlreadyExist(null, null);
-    expect(results).toEqual(mock_repoExists);
-  });
-
-  test('repo error should handle gracefully', async () => {
-    mock_repoError = true;
-
-    await actions.doesDcsProjectNameAlreadyExist(null, null).catch((e) => {
-      expect(e).toBeTruthy();
-    });
-  });
-});
 
 //
 // helpers

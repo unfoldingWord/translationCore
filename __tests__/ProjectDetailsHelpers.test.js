@@ -19,6 +19,23 @@ const alignmentToolProject = path.join(__dirname, 'fixtures/project/wordAlignmen
 const emptyAlignmentToolProject = path.join(__dirname, 'fixtures/project/wordAlignment/empty_project');
 const translationWordsProject = path.join(__dirname, 'fixtures/project/translationWords/normal_project');
 
+let mock_repoExists = false;
+let mock_repoError = false;
+
+jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
+  changeGitToPointToNewRepo: () => new Promise((resolve) => {
+    resolve();
+  }),
+  findRepo: () => new Promise((resolve, reject) => {
+    if (mock_repoError) {
+      reject('error');
+    } else {
+      resolve(mock_repoExists);
+    }
+  }),
+}));
+
 describe('ProjectDetailsHelpers.getWordAlignmentProgress', () => {
   const totalVerses = 46; // for book
 
@@ -479,6 +496,35 @@ describe('ProjectDetailsHelpers.fixBibleDataFolderName', () => {
     const manifest = null;
     ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, projectPath);
     expect(fs.existsSync(expectedPath)).toBeTruthy();
+  });
+});
+
+describe('doesDcsProjectNameAlreadyExist', () => {
+  beforeEach(() => {
+    mock_repoExists = false;
+    mock_repoError = false;
+  });
+
+  test('repo exists should succeed', async () => {
+    mock_repoExists = true;
+
+    let results = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(null, null);
+    expect(results).toEqual(mock_repoExists);
+  });
+
+  test('repo does not exist should succeed', async () => {
+    mock_repoExists = false;
+
+    let results = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(null, null);
+    expect(results).toEqual(mock_repoExists);
+  });
+
+  test('repo error should handle gracefully', async () => {
+    mock_repoError = true;
+
+    await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(null, null).catch((e) => {
+      expect(e).toBeTruthy();
+    });
   });
 });
 
