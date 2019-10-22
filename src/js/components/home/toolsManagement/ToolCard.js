@@ -82,7 +82,7 @@ class ToolCard extends Component {
 
     setTimeout(() => {
       const results = {};
-      // TODO: This is an antipattern. Should update the state and use the pro coming from the state instead of assing the result to an argument.
+      // TODO: This is an antipattern. Should update the state and use the prop coming from the state instead of assigning the result to an argument.
       actions.getProjectProgressForTools(tool.name, results);
       const toolProgress = results.progress;
 
