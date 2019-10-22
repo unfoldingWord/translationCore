@@ -1,7 +1,5 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-// actions
-import * as AlertModalActions from '../actions/AlertModalActions';
 // helpers
 import { getTranslate } from '../selectors';
 import * as BooksOfTheBible from '../common/BooksOfTheBible';
@@ -38,29 +36,6 @@ export function updateArray(array, id, value) {
     return array.concat(id);
   }
   return array;
-}
-
-/**
- * display prompt that project as been renamed
- * @return {Promise} - Returns a promise
- */
-export function showRenamedDialog() {
-  return ((dispatch, getState) => {
-    const { projectDetailsReducer: { projectSaveLocation } } = getState();
-    return new Promise((resolve) => {
-      const translate = getTranslate(getState());
-      const projectName = path.basename(projectSaveLocation);
-
-      dispatch(AlertModalActions.openOptionDialog(
-        translate('projects.renamed_project', { project: projectName }),
-        () => {
-          dispatch(AlertModalActions.closeAlertDialog());
-          resolve();
-        },
-        translate('buttons.ok_button')
-      ));
-    });
-  });
 }
 
 /**

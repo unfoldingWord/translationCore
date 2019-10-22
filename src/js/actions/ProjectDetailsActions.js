@@ -353,6 +353,29 @@ export function renameProject(projectSaveLocation, newProjectName) {
 }
 
 /**
+ * display prompt that project as been renamed
+ * @return {Promise} - Returns a promise
+ */
+export function showRenamedDialog() {
+  return ((dispatch, getState) => {
+    const { projectDetailsReducer: { projectSaveLocation } } = getState();
+    return new Promise((resolve) => {
+      const translate = getTranslate(getState());
+      const projectName = path.basename(projectSaveLocation);
+
+      dispatch(AlertModalActions.openOptionDialog(
+        translate('projects.renamed_project', { project: projectName }),
+        () => {
+          dispatch(AlertModalActions.closeAlertDialog());
+          resolve();
+        },
+        translate('buttons.ok_button')
+      ));
+    });
+  });
+}
+
+/**
  * handle rename prompting
  * @return {function(*, *): Promise<any>}
  */
@@ -362,9 +385,9 @@ export function doRenamePrompting() {
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
 
     if (pointsToCurrentUsersRepo) {
-      await dispatch(ProjectDetailsHelpers.doDcsRenamePrompting());
-    } else { // do not rename on dcs
-      await dispatch(ProjectDetailsHelpers.showRenamedDialog());
+      await dispatch(doDcsRenamePrompting());
+    } else { // just show user their new repo name
+      await dispatch(showRenamedDialog());
     }
     await delay(300); // allow UI to update
   });
