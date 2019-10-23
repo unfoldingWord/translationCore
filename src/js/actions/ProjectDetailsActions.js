@@ -188,6 +188,7 @@ export function getProjectProgressForTools(toolName, results = null) {
     }
 
     if (results) {
+      // TODO: This is an antipattern. Should update the state and use the prop coming from the state instead of assigning the result to an argument.
       results.progress = progress;
     }
 
