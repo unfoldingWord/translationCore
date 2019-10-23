@@ -6,6 +6,7 @@ import GitApi, {
   getRemoteRepoHead,
   getSavedRemote,
   saveRemote,
+  parseRepoUrl,
 } from '../src/js/helpers/GitApi.js';
 jest.mock('child_process');
 jest.mock('simple-git');
@@ -66,7 +67,6 @@ describe('simple bubble up methods', () => {
     expect(cb).toBeCalled();
   });
 });
-
 
 describe('commit', () => {
   let mocks, cb, git;
@@ -347,5 +347,55 @@ describe('GitApi.saveRemote', () => {
       expect.any(Function)
     );
     expect(results).not.toBeTruthy();
+  });
+});
+
+describe('GitApi.parseRepoUrl', () => {
+  it('it should parse https://git.door43.org/user_dummy/repo_dummy.git\n', () => {
+    // given
+    const url = 'https://git.door43.org/user_dummy/repo_dummy.git\n';
+    const expectRepoInfo = {
+      name: 'repo_dummy',
+      user: 'user_dummy',
+      url: url.trim(),
+    };
+
+    // when
+    const results = parseRepoUrl(url);
+
+    // then
+    expect(results).toEqual(expectRepoInfo);
+  });
+
+  it('it should parse https://git.door43.org/user_dummy/repo_dummy\n', () => {
+    // given
+    const url = 'https://git.door43.org/user_dummy/repo_dummy\n';
+    const expectRepoInfo = {
+      name: 'repo_dummy',
+      user: 'user_dummy',
+      url: url.trim(),
+    };
+
+    // when
+    const results = parseRepoUrl(url);
+
+    // then
+    expect(results).toEqual(expectRepoInfo);
+  });
+
+  it('it should parse https://git.door43.org/user_dummy/repo_dummy/more\n', () => {
+    // given
+    const url = 'https://git.door43.org/user_dummy/repo_dummy/more\n';
+    const expectRepoInfo = {
+      name: 'repo_dummy',
+      user: 'user_dummy',
+      url: 'https://git.door43.org/user_dummy/repo_dummy',
+    };
+
+    // when
+    const results = parseRepoUrl(url);
+
+    // then
+    expect(results).toEqual(expectRepoInfo);
   });
 });

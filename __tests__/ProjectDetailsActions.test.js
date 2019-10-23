@@ -7,6 +7,7 @@ import configureMockStore from 'redux-mock-store';
 // actions
 import types from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/ProjectDetailsActions';
+import * as ToolActions from '../src/js/actions/ToolActions';
 // helpers
 import { mockGetSelectedCategories } from '../src/js/helpers/ProjectAPI';
 import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
@@ -18,6 +19,9 @@ import {
   TRANSLATION_WORDS,
   TRANSLATION_HELPS, TRANSLATION_NOTES,
 } from '../src/js/common/constants';
+import { NT_ORIG_LANG, NT_ORIG_LANG_BIBLE } from '../src/js/common/BooksOfTheBible';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 jest.mock('fs-extra');
 jest.mock('../src/js/helpers/ProjectAPI');
 jest.mock('../');
@@ -25,6 +29,11 @@ jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
   getAvailableCategories: jest.fn(() => ({ 'names': ['John'] })),
   updateGroupIndexForGl: jest.fn(() => jest.fn(() => 'mock')),
+}));
+jest.mock('../src/js/actions/ToolActions', () => ({
+  ...require.requireActual('../src/js/actions/ToolActions'),
+  prepareToolForLoading: jest.fn(() => () => {
+  }),
 }));
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
@@ -35,8 +44,95 @@ jest.mock('../src/js/selectors', () => ({
   })),
 }));
 
-const middlewares = [thunk];
-const mockStore = configureMockStore(middlewares);
+let mock_repoExists = false;
+let mock_repoError = false;
+let mock_renameRepoCallCount = 0;
+let mock_createNewRepoCallCount = 0;
+
+jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
+  changeGitToPointToNewRepo: () => new Promise((resolve) => {
+    resolve();
+  }),
+  findRepo: () => new Promise((resolve, reject) => {
+    if (mock_repoError) {
+      reject('error');
+    } else {
+      resolve(mock_repoExists);
+    }
+  }),
+  renameRepo: () => new Promise((resolve) => {
+    mock_renameRepoCallCount++;
+    resolve();
+  }),
+  createNewRepo: () => new Promise((resolve) => {
+    mock_createNewRepoCallCount++;
+    resolve();
+  }),
+}));
+
+let mock_doOnlineConfirmCallback = false;
+
+jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
+  confirmOnlineAction: jest.fn((onConfirm, onCancel) => (dispatch) => {
+    dispatch({ type: 'CONFIRM_ONLINE_MODE' });
+
+    if (mock_doOnlineConfirmCallback) {
+      onConfirm();
+    } else {
+      onCancel();
+    }
+  }),
+}));
+
+jest.mock('../src/js/actions/ResourcesActions', () => ({
+  ...require.requireActual('../src/js/actions/ResourcesActions'),
+  loadBiblesByLanguageId: jest.fn(() => () => {
+  }),
+  loadBookResource: jest.fn(() => () => {
+  }),
+}));
+
+jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
+
+  // eslint-disable-next-line no-unused-vars
+  openOnlyProjectDetailsScreen: (projectSaveLocation) => (dispatch) => {
+    dispatch({ type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen' });
+  },
+}));
+
+let mock_alertCallbackButton = 0;
+let mock_alertCallbackButtonText = null;
+
+jest.mock('../src/js/actions/AlertModalActions', () => ({
+  ...require.requireActual('../src/js/actions/AlertModalActions'),
+  openOptionDialog: jest.fn((message, callback, button1, button2, buttonLinkText) =>
+    (dispatch) => {
+      //choose to export
+      dispatch({
+        type: 'OPEN_OPTION_DIALOG',
+        alertText: message,
+        button1: button1,
+        button2: button2,
+        buttonLink: buttonLinkText,
+        callback: callback,
+      });
+      mock_alertCallbackButtonText = null;
+
+      switch (mock_alertCallbackButton) {
+      case 1:
+        mock_alertCallbackButtonText = button1;
+        break;
+      case 2:
+        mock_alertCallbackButtonText = button2;
+        break;
+      case 3:
+        mock_alertCallbackButtonText = buttonLinkText;
+        break;
+      }
+      callback(mock_alertCallbackButtonText);
+    }),
+}));
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
@@ -104,7 +200,7 @@ describe('getProjectProgressForTools() should create an action to get the projec
 describe('setProjectToolGL() should create an action to get the project GL for tools', () => {
   const initialState = {
     projectDetailsReducer: {},
-    resourcesReducer: { bibles: {} },
+    resourcesReducer: { bibles: { } },
   };
 
   beforeEach(() => {
@@ -132,23 +228,33 @@ describe('setProjectToolGL() should create an action to get the project GL for t
 
   it('should set GL for translationNotes', () => {
     const initialState = {
-      projectDetailsReducer: {},
-      resourcesReducer: { bibles: {} },
+      projectDetailsReducer: {
+        manifest: {toolsSelectedGLs: { translationNotes: 'en' } },
+      },
+      resourcesReducer: {
+        bibles: {
+          originalLanguage: {
+            ugnt: {
+              manifest: {
+                language_id: NT_ORIG_LANG,
+                resource_id: NT_ORIG_LANG_BIBLE,
+                dublin_core: { version: 0.8 },
+              },
+            },
+          },
+        },
+      },
+      manifest: { hello: 'world' },
     };
     const store = mockStore(initialState);
     const expectedActions = [{
       'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
-    }, {
-      'meta': { 'batch': true },
-      'payload': [{ 'type': 'CLEAR_PREVIOUS_GROUPS_DATA' },
-        { 'type': 'CLEAR_PREVIOUS_GROUPS_INDEX' },
-        { 'type': 'CLEAR_CONTEXT_ID' }],
-      'type': 'BATCHING_REDUCER.BATCH',
     }];
     store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
     expect(ResourcesHelpers.updateGroupIndexForGl).toHaveBeenCalled();
+    expect(ToolActions.prepareToolForLoading).toHaveBeenCalled();
   });
 });
 
@@ -192,18 +298,28 @@ it('addObjectPropertyToSettings() creates an action to add an object property to
   expect(actions.addObjectPropertyToSettings('key', value)).toEqual(expectedAction);
 });
 
-it('setProjectBookIdAndBookName() creates an action to set the project book id and name', () => {
-  const store = mockStore({ projectInformationCheckReducer: { bookId: 'gen' } });
+it('setProjectBookIdAndBookName() creates an action to set the project book id and name', async () => {
+  const store = mockStore({
+    projectInformationCheckReducer: { bookId: 'gen' },
+    projectDetailsReducer: {
+      manifest: {
+        project: {
+          id: 'gen' },
+      },
+    },
+    loginReducer: {
+      userdata: {}
+    }
+  });
   const expectedActions = [{
     type: types.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
     bookId: 'gen',
     bookName: 'Genesis',
   }];
 
-  store.dispatch(actions.setProjectBookIdAndBookName()).then(() => {
-    const receivedActions = store.getActions();
-    expect(receivedActions).toEqual(expectedActions);
-  });
+  await store.dispatch(actions.setProjectBookIdAndBookName());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
 });
 
 it('setProjectResourceId() creates an action to set the resourceId', () => {
@@ -536,6 +652,235 @@ describe('ProjectDetailsActions.updateCategorySelection', () => {
     });
   });
 });
+
+describe('showDcsRenameFailure', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click retry, should call retry', async () => {
+    const store = mockStore({ settingsReducer: {} });
+    const createNew = false;
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = 'buttons.retry';
+
+    const results = await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew));
+    expect(results).toEqual('RETRY');
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click retry, should call continue', async () => {
+    const store = mockStore({ settingsReducer: {} });
+    const createNew = false;
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = 'buttons.continue_button';
+
+    const results = await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew));
+    expect(results).toEqual('CONTINUE');
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click help desk, should call contactHelpDesk and then show prompt again', async () => {
+    const store = mockStore({ settingsReducer: {} });
+    const createNew = false;
+    mock_alertCallbackButton = 3;
+    const mock_showErrorFeedbackDialog = jest.fn((translateKey, doneCB) => {
+      return (async () => { // eslint-disable-line require-await
+        mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
+
+        if (doneCB) {
+          doneCB();
+        }
+      });
+    });
+
+    await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew, mock_showErrorFeedbackDialog));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_showErrorFeedbackDialog).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('doDcsRenamePrompting', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should call rename', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+    });
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = 'buttons.rename_repo';
+
+    await store.dispatch(actions.doDcsRenamePrompting());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click create, should call create new', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+    });
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = 'buttons.create_new_repo';
+
+    await store.dispatch(actions.doDcsRenamePrompting());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
+describe('handleDcsOperation', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_repoExists = false;
+    mock_doOnlineConfirmCallback = true;
+    mock_renameRepoCallCount = 0;
+    mock_createNewRepoCallCount = 0;
+  });
+
+  test('should handle repo exists', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      settingsReducer: { onlineMode: true },
+    });
+    const createNew = false;
+    mock_repoExists = true;
+
+    await store.dispatch(actions.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(0);
+    expect(mock_createNewRepoCallCount).toEqual(0);
+  });
+
+  test('on repo does not exist, should call create new', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      settingsReducer: { onlineMode: true },
+    });
+    const createNew = true;
+
+    await store.dispatch(actions.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(0);
+    expect(mock_createNewRepoCallCount).toEqual(1);
+  });
+
+  test('on repo does not exist, should call rename', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      settingsReducer: { onlineMode: true },
+    });
+    const createNew = false;
+
+    await store.dispatch(actions.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(1);
+    expect(mock_createNewRepoCallCount).toEqual(0);
+  });
+});
+
+describe('handleDcsRenameCollision', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should render and open project details', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      projectInformationCheckReducer: {
+        alreadyImported: true,
+        overwritePermitted: false,
+      },
+      projectValidationReducer: { onlyShowProjectInformationScreen: false },
+    });
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = 'buttons.rename_local';
+
+    await store.dispatch(actions.handleDcsRenameCollision());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click continue, should do nothing', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+    });
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = 'buttons.do_not_rename';
+
+    await store.dispatch(actions.handleDcsRenameCollision());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
 
 //
 // helpers

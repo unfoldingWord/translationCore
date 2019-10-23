@@ -32,3 +32,178 @@ Array [
   },
 ]
 `;
+
+exports[`doDcsRenamePrompting on click create, should call create new 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_project",
+    "button1": "buttons.rename_repo",
+    "button2": "buttons.create_new_repo",
+    "buttonLink": undefined,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`doDcsRenamePrompting on click rename, should call rename 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_project",
+    "button1": "buttons.rename_repo",
+    "button2": "buttons.create_new_repo",
+    "buttonLink": undefined,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`handleDcsOperation on repo does not exist, should call create new 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+  Object {
+    "alertMessage": "projects.uploading_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsOperation on repo does not exist, should call rename 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`handleDcsOperation should handle repo exists 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.do_not_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsRenameCollision on click continue, should do nothing 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.do_not_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsRenameCollision on click rename, should render and open project details 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.do_not_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "ProjectInformationCheckActions.openOnlyProjectDetailsScreen",
+  },
+]
+`;
+
+exports[`showDcsRenameFailure on click help desk, should call contactHelpDesk and then show prompt again 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`showDcsRenameFailure on click retry, should call continue 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`showDcsRenameFailure on click retry, should call retry 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
