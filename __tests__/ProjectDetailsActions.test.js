@@ -229,9 +229,7 @@ describe('setProjectToolGL() should create an action to get the project GL for t
   it('should set GL for translationNotes', () => {
     const initialState = {
       projectDetailsReducer: {
-        manifest: {
-          toolsSelectedGLs: { translationNotes: 'en' },
-        },
+        manifest: {toolsSelectedGLs: { translationNotes: 'en' } },
       },
       resourcesReducer: {
         bibles: {
