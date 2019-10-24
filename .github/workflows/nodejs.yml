@@ -28,7 +28,5 @@ jobs:
         npm ci
         npm run load-apps
         npm test
-        ./node_modules/.bin/gulp build --linux || exit 1;
-        ./node_modules/.bin/gulp release-linux-deb --out=../build/develop/linux.deb || exit 1;
       env:
         CI: true
