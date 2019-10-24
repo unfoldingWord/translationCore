@@ -1,0 +1,6 @@
+name: 'Run translationCore-builder'
+description: 'Run the translationCore-builder'
+author: 'Joel'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
