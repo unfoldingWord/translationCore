@@ -1,0 +1,34 @@
+name: Node CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-linux:
+
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Download language names
+      run: |
+        curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+    - name: npm install, test, and build
+      run: |
+        npm ci
+        npm run load-apps
+        npm test
+        ./node_modules/.bin/gulp build --linux || exit 1;
+        ./node_modules/.bin/gulp release-linux-deb --out=../build/develop/linux.deb || exit 1;
+      env:
+        CI: true
