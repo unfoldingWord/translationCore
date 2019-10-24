@@ -18,13 +18,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./.github/actions/build
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install and test
-      run: |
-        npm ci
-        npm test
-      env:
-        CI: true
+        run: |
+          npm test
+#     - name: npm install and test
+#       run: |
+#         npm ci
+#         npm test
+#       env:
+#         CI: true
