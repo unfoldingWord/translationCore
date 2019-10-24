@@ -19,8 +19,7 @@ jobs:
     - uses: actions/checkout@v1
     - uses: ./.github/actions/build
       with:
-        run: |
-          npm test
+        run: 'npm test'
 #     - name: npm install and test
 #       run: |
 #         npm ci
