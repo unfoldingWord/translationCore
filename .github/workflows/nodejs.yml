@@ -3,16 +3,18 @@ name: Node CI
 on:
   pull_request:
     branches:
+      - master
       - develop
+      - release-*
 
 jobs:
-  build-linux:
+  build:
 
     runs-on: ubuntu-latest
     
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [8.x, 10.x, 12.x]
 
     steps:
     - uses: actions/checkout@v1
@@ -20,10 +22,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Download language names
-      run: |
-        curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
-    - name: npm install, test, and build
+    - name: npm install and test
       run: |
         npm ci
         npm test
