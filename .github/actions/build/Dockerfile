@@ -27,3 +27,7 @@ ENV LANG en_US.UTF-8
 EXPOSE 3000
 
 CMD ["/bin/bash"]
+
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
