@@ -26,7 +26,6 @@ jobs:
     - name: npm install, test, and build
       run: |
         npm ci
-        npm run load-apps
         npm test
       env:
         CI: true
