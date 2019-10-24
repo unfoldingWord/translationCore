@@ -1,4 +1,7 @@
 #!/bin/sh -l
 
-echo "Executing script: $@"
-source $@
+for command in "$@"
+do
+    echo "$command"
+    eval "$command"
+done
