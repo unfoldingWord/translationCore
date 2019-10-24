@@ -1,11 +1,12 @@
-name: 'Run translationCore-builder'
-description: 'Run the translationCore-builder'
-author: 'Joel'
+name: 'translationCore Build Environment'
+description: 'Run the translationCore Build Environment'
+author: 'unfoldingWord'
 inputs:
   run:
     description: 'Commands to run'
-    default: []
+    default: 'npm test'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args: ${{ inputs.run }}
+  args:
+    - ${{ inputs.run }}
