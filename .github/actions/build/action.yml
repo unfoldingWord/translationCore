@@ -1,6 +1,11 @@
 name: 'Run translationCore-builder'
 description: 'Run the translationCore-builder'
 author: 'Joel'
+inputs:
+  run:
+    description: 'Commands to run'
+    default: []
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args: ${{ inputs.run }}
