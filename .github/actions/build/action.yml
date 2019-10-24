@@ -4,9 +4,6 @@ author: 'unfoldingWord'
 inputs:
   run:
     description: 'Commands to run'
-    default: 'npm test'
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.run }}
