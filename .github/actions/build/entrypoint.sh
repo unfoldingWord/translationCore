@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-$1
+echo "args: $1"
