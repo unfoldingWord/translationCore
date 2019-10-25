@@ -335,14 +335,15 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
             const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
             objectArray.push(newObject);
           });
-        } else if (data.nothingToSelect) {
+        } else {
           // add no selection needed items to csv
-          const nothingToSelect = !!data.nothingToSelect;
+          let nothingToSelect = !!data.nothingToSelect;
+          nothingToSelect = nothingToSelect ? nothingToSelect.toString() : '';
           const _data = {
             'text': '',
             'occurrence': '',
             'occurrences': '',
-            'No selection needed': nothingToSelect.toString(),
+            'No selection needed': nothingToSelect,
           };
           const contextId = data.contextId;
           const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
