@@ -321,9 +321,9 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
   loadProjectDataByType(projectPath, 'selections')
     .then((array) => {
       const objectArray = [];
-      const latestChecks = getLatestForChecks(array);
+      const latestSelections = getLatestForChecks(array);
 
-      latestChecks.forEach(data => {
+      latestSelections.forEach(data => {
         if (data.selections.length > 0) {
           // add selections to csv
           data.selections.forEach(selection => {
@@ -370,11 +370,20 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
 export const saveRemindersToCSV = (projectPath, translate) => new Promise((resolve, reject) => {
   loadProjectDataByType(projectPath, 'reminders')
     .then((array) => {
-      const objectArray = array.map(data => {
-        const _data = { enabled: data.enabled };
-        const contextId = data.contextId;
-        return csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+      const latestChecks = getLatestForChecks(array);
+      const objectArray = [];
+
+      latestChecks.forEach(data => {
+        const enabled = data.enabled;
+
+        if (enabled) {
+          const _data = { enabled };
+          const contextId = data.contextId;
+          const reminder = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+          objectArray.push(reminder);
+        }
       });
+
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Reminders.csv');
 
