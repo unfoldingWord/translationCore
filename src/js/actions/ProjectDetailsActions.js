@@ -556,7 +556,7 @@ export function doDcsRenamePrompting() {
             await delay(300);
             const { userdata } = getState().loginReducer;
 
-            console.log(`doDcsRenamePrompting() - renaming dialog acknowledged`);
+            console.log(`doDcsRenamePrompting() - renamed dialog acknowledged`);
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
               await dispatch(handleDcsOperation(createNew));
               resolve();
