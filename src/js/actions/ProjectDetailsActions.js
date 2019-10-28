@@ -550,9 +550,10 @@ export function doDcsRenamePrompting() {
 
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
-          (result) => {
+          async (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
+            await delay(300);
             const { userdata } = getState().loginReducer;
 
             console.log(`doDcsRenamePrompting() - renaming dialog acknowledged`);
