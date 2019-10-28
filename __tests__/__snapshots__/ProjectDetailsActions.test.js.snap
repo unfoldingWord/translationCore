@@ -92,6 +92,14 @@ Array [
   Object {
     "type": "CONFIRM_ONLINE_MODE",
   },
+  Object {
+    "alertMessage": "projects.renaming_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
 ]
 `;
 
