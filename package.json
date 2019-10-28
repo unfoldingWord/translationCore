@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "minCompatibleVersion": "2.0.0",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
@@ -134,7 +134,7 @@
     "babel-preset-env": "1.7.0",
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
-    "checking-tool-wrapper": "0.7.3",
+    "checking-tool-wrapper": "1.0.0",
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "deep-equal": "1.0.1",
@@ -188,7 +188,7 @@
     "sudo-prompt": "6.2.1",
     "tc-source-content-updater": "0.6.11",
     "tc-strings": "0.1.7",
-    "tc-tool": "2.2.0",
+    "tc-tool": "3.0.2",
     "tc-ui-toolkit": "0.15.2",
     "truncate-utf8-bytes": "1.0.2",
     "tsv-groupdata-parser": "0.9.11",
@@ -204,6 +204,5 @@
   "peerDependencies": {
     "react": "^0.14.0 || ^16",
     "redux": "^2.0.0 || ^3.0.0"
-  },
-  "false": {}
+  }
 }

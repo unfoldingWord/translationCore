@@ -82,6 +82,7 @@ class ToolCard extends Component {
 
     setTimeout(() => {
       const results = {};
+      // TODO: This is an antipattern. Should update the state and use the prop coming from the state instead of assigning the result to an argument.
       actions.getProjectProgressForTools(tool.name, results);
       const toolProgress = results.progress;
 
@@ -162,8 +163,6 @@ class ToolCard extends Component {
       translate,
       developerMode,
       actions: {
-        showPopover,
-        closePopover,
         updateCategorySelection,
         updateSubcategorySelection,
       },
@@ -231,8 +230,6 @@ class ToolCard extends Component {
               bookId={bookId}
               translate={translate}
               selectedGL={selectedGL}
-              showPopover={showPopover}
-              closePopover={closePopover}
             />
           }
           {this.state.showDescription ?
@@ -302,8 +299,6 @@ ToolCard.propTypes = {
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
     warnOnInvalidations: PropTypes.func.isRequired,
-    showPopover: PropTypes.func.isRequired,
-    closePopover: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,

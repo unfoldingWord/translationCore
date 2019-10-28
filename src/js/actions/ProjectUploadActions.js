@@ -3,16 +3,16 @@
 import React from 'react';
 import path from 'path-extra';
 import open from 'open';
-import Repo from '../helpers/Repo.js';
-import { getTranslate } from '../selectors';
 // actions
+import { getTranslate } from '../selectors';
+import * as AlertModalActions from '../actions/AlertModalActions';
+import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
+import * as WordAlignmentActions from '../actions/WordAlignmentActions';
+// helpers
+import Repo from '../helpers/Repo.js';
+import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import { delay } from '../common/utils';
-import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
-import * as AlertModalActions from './AlertModalActions';
-import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
-import * as WordAlignmentActions from './WordAlignmentActions';
-// helpers
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -193,7 +193,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   });
 }
 
-export const showStatus = async (message) => (async (dispatch) => {
+export const showStatus = (message) => (async (dispatch) => {
   dispatch(AlertModalActions.openAlertDialog(message, true));
   await delay(500);
 });
