@@ -555,6 +555,7 @@ export function doDcsRenamePrompting() {
             dispatch(AlertModalActions.closeAlertDialog());
             const { userdata } = getState().loginReducer;
 
+            console.log(`doDcsRenamePrompting() - renaming dialog acknowledged`);
             GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
               await dispatch(handleDcsOperation(createNew));
               resolve();
@@ -707,16 +708,23 @@ function handleDcsOperationCore( createNew) {
         renameResults = await dispatch(handleDcsRenameCollision(createNew));
       } else { // remote repo does not already exist
         try {
+          const translate = getTranslate(getState());
+
           if (createNew) {
-            const translate = getTranslate(getState());
             const message = translate('projects.uploading_alert', { project_name: projectName, door43: translate('_.door43') });
             dispatch(showStatus(message));
+            console.log(`handleDcsOperationCore() - creating new repo`);
             await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
             dispatch(AlertModalActions.closeAlertDialog());
             await delay(300);
             return;
           } else { // if rename
+            const message = translate('projects.renaming_alert', { project_name: projectName, door43: translate('_.door43') });
+            dispatch(showStatus(message));
+            console.log(`handleDcsOperationCore() - renaming repo`);
             await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
+            dispatch(AlertModalActions.closeAlertDialog());
+            await delay(300);
             return;
           }
         } catch (e) {
