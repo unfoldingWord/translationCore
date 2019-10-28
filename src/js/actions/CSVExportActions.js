@@ -3,6 +3,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
+import { getQuoteAsString } from 'checking-tool-wrapper';
 import { getTranslate } from '../selectors';
 // actions
 import * as MergeConflictActions from '../actions/MergeConflictActions';
@@ -320,8 +321,9 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
   loadProjectDataByType(projectPath, 'selections')
     .then((array) => {
       const objectArray = [];
+      const latestChecks = getLatestForChecks(array);
 
-      array.forEach(data => {
+      latestChecks.forEach(data => {
         if (data.selections.length > 0) {
           // add selections to csv
           data.selections.forEach(selection => {
@@ -335,15 +337,14 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
             const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
             objectArray.push(newObject);
           });
-        } else {
+        } else if (data.nothingToSelect) {
           // add no selection needed items to csv
-          let nothingToSelect = !!data.nothingToSelect;
-          nothingToSelect = nothingToSelect ? nothingToSelect.toString() : '';
+          const nothingToSelect = !!data.nothingToSelect;
           const _data = {
             'text': '',
             'occurrence': '',
             'occurrences': '',
-            'No selection needed': nothingToSelect,
+            'No selection needed': nothingToSelect.toString(),
           };
           const contextId = data.contextId;
           const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
@@ -416,7 +417,7 @@ export const loadProjectDataByType = (projectPath, type) => new Promise((resolve
 
         const versePath = path.join(chapterPath, verse);
         const dataFiles = fs.readdirSync(versePath)
-          .filter(file => path.extname(file) == '.json');
+          .filter(file => path.extname(file) === '.json').sort(); // get files in order oldest to latest
 
         dataFiles.forEach(dataFile => {
           const dataPath = path.join(versePath, dataFile);
@@ -436,3 +437,36 @@ export const loadProjectDataByType = (projectPath, type) => new Promise((resolve
   }
   resolve(checkDataArray);
 });
+
+/**
+ * generate unique string for check item
+ * @param {Object} check
+ * @return {string}
+ */
+function getContextHash(check) {
+  const id = check.contextId;
+  const quoteString = getQuoteAsString(id.quote);
+  const hash = `${id.reference.chapter}:${id.reference.verse}-${id.groupId}-${quoteString}-${id.occurrence}`;
+  return hash;
+}
+
+/**
+ * go through the all the checks and keep only the most recent change for each check
+ * @param {Array} checks
+ */
+function getLatestForChecks(checks) {
+  const latestChecks = {};
+
+  for (let check of checks) {
+    latestChecks[getContextHash(check)] = check;
+  }
+
+  const keys = Object.keys(latestChecks);
+  const keysLength = keys.length;
+  const checksArray = new Array(keysLength);
+
+  for (let i = 0; i < keysLength; i++) {
+    checksArray[i] = latestChecks[keys[i]];
+  }
+  return checksArray;
+}

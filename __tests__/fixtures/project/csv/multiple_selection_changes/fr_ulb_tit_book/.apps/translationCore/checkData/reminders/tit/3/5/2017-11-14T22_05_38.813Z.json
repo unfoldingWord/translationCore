@@ -1,0 +1,16 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 5
+    },
+    "tool": "translationWords",
+    "groupId": "clean",
+    "quote": "λουτροῦ",
+    "occurrence": 1
+  },
+  "enabled": true,
+  "userName": "tc01",
+  "modifiedTimestamp": "2017-11-14T22:05:38.813Z"
+}

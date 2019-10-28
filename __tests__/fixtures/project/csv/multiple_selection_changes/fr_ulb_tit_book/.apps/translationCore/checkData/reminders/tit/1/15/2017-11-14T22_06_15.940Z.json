@@ -1,0 +1,16 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 15
+    },
+    "tool": "translationWords",
+    "groupId": "conscience",
+    "quote": "συνείδησις",
+    "occurrence": 1
+  },
+  "enabled": true,
+  "userName": "tc01",
+  "modifiedTimestamp": "2017-11-14T22:06:15.940Z"
+}

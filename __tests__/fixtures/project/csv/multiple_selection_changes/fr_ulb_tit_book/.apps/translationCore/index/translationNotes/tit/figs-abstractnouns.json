@@ -1,0 +1,60 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "nothingToSelect": false,
+    "contextId": {
+      "occurrenceNote": "Here the word “sound” means to be firm and unwavering. The abstract nouns “faith,” “love,” and “perseverance” can be stated as verbs. Alternate translation: “and they must firmly believe the true teachings about God, truly love others, and continually serve God even when things are difficult” (See: [Abstract Nouns](rc://en/ta/man/translate/figs-abstractnouns))",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "ὑγιαίνοντας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγάπῃ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὑπομονῇ",
+          "occurrence": 1
+        }
+      ],
+      "quoteString": "ὑγιαίνοντας τῇ πίστει, τῇ ἀγάπῃ, τῇ ὑπομονῇ",
+      "glQuote": "sound in faith, in love, and in perseverance",
+      "occurrence": 1
+    }
+  }
+]

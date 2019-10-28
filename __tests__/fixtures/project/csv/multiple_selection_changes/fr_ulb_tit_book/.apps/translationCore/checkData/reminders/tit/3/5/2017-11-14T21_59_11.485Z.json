@@ -1,0 +1,16 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 5
+    },
+    "tool": "translationWords",
+    "groupId": "bornagain",
+    "quote": "παλινγενεσίας",
+    "occurrence": 1
+  },
+  "enabled": true,
+  "userName": "tc01",
+  "modifiedTimestamp": "2017-11-14T21:59:11.485Z"
+}

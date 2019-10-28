@@ -1,0 +1,200 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "nothingToSelect": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the grace of God as if it were a person who goes to other people. (See: [Personification](rc://en/ta/man/translate/figs-personification))",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἐπεφάνη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "quoteString": "ἐπεφάνη…ἡ χάρις τοῦ Θεοῦ",
+      "glQuote": "the grace of God has appeared",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "nothingToSelect": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the grace of God ([Titus 2:11](rc://en/ult/book/tit/02/11)) as if it were a person who goes to other people and trains them to live holy lives. (See: [Personification](rc://en/ta/man/translate/figs-personification))",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "παιδεύουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "quoteString": "παιδεύουσα ἡμᾶς",
+      "glQuote": "trains us",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "nothingToSelect": false,
+    "contextId": {
+      "occurrenceNote": "Passion and pleasure are spoken of as if they were masters over people and had made those people into slaves by lying to them. This can be translated in active form. Alternate translation: “Various passions and pleasures had lied to us and so led us astray” or “We had allowed ourselves to believe the lie that various passions and pleasures could make us happy, and then we were unable to control our feelings or stop doing things we thought would give us pleasure” (See: [Personification](rc://en/ta/man/translate/figs-personification) and [Active or Passive](rc://en/ta/man/translate/figs-activepassive))",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "πλανώμενοι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "δουλεύοντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιθυμίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡδοναῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ποικίλαις",
+          "occurrence": 1
+        }
+      ],
+      "quoteString": "πλανώμενοι, δουλεύοντες ἐπιθυμίαις καὶ ἡδοναῖς ποικίλαις",
+      "glQuote": "We were led astray and enslaved by various passions and pleasures",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "nothingToSelect": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of God’s kindness and love as if they were people that came into our sight. (See: [Personification](rc://en/ta/man/translate/figs-personification))",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χρηστότης",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "φιλανθρωπία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπεφάνη",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Σωτῆρος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "quoteString": "ὅτε…ἡ χρηστότης καὶ ἡ φιλανθρωπία ἐπεφάνη τοῦ Σωτῆρος ἡμῶν, Θεοῦ",
+      "glQuote": "when the kindness of God our Savior and his love for mankind appeared",
+      "occurrence": 1
+    }
+  }
+]

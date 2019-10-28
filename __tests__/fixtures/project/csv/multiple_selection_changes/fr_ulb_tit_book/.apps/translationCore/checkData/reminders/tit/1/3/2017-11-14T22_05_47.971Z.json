@@ -1,0 +1,16 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 3
+    },
+    "tool": "translationWords",
+    "groupId": "command",
+    "quote": "ἐπιταγὴν",
+    "occurrence": 1
+  },
+  "enabled": true,
+  "userName": "tc01",
+  "modifiedTimestamp": "2017-11-14T22:05:47.971Z"
+}

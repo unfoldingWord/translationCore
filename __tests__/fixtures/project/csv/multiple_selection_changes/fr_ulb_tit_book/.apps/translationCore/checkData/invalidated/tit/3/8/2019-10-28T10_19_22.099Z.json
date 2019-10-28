@@ -1,0 +1,24 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 3,
+      "verse": 8
+    },
+    "tool": "translationWords",
+    "groupId": "believe",
+    "quote": "πεπιστευκότες",
+    "strong": [
+      "G41000"
+    ],
+    "occurrence": 1
+  },
+  "invalidated": null,
+  "userName": "photonomad1",
+  "modifiedTimestamp": "2019-10-28T10:19:22.099Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "those who have believed",
+  "invalidatedChecksTotal": null,
+  "verseEditsTotal": null,
+  "invalidatedAlignmentsTotal": null
+}

@@ -1,0 +1,16 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 10
+    },
+    "tool": "translationWords",
+    "groupId": "circumcise",
+    "quote": "περιτομῆς",
+    "occurrence": 1
+  },
+  "enabled": true,
+  "userName": "tc01",
+  "modifiedTimestamp": "2017-11-14T22:05:29.780Z"
+}
