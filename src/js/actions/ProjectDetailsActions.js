@@ -45,6 +45,7 @@ import { prepareToolForLoading } from './ToolActions';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
+const RESHOW_DCS_CHOICE = 'RESHOW_DCS_CHOICE';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
@@ -390,7 +391,13 @@ export function doRenamePrompting() {
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
 
     if (pointsToCurrentUsersRepo) {
-      await dispatch(doDcsRenamePrompting());
+      let retry = false;
+
+      do {
+        const results = await dispatch(doDcsRenamePrompting()); // eslint-disable-line no-await-in-loop
+        console.log(`doRenamePrompting() = doDcsRenamePrompting() returned ${results}`);
+        retry = (results === RESHOW_DCS_CHOICE);
+      } while (retry);
     } else { // just show user their new repo name
       await dispatch(showRenamedDialog());
     }
@@ -541,7 +548,7 @@ export function addObjectPropertyToSettings(propertyName, value) {
 
 /**
  * handles the renaming on DCS
- * @return {Promise} - Returns a promise
+ * @return {Promise} - Returns a promise that resolves to results
  */
 export function doDcsRenamePrompting() {
   return ((dispatch, getState) => {
@@ -561,21 +568,8 @@ export function doDcsRenamePrompting() {
             await delay(300);
 
             try {
-              let oldUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocation, GogsApiHelpers.TC_OLD_ORIGIN_KEY).catch(() => { });
-              console.log(`doDcsRenamePrompting() - TC_OLD_ORIGIN_KEY: ${oldUrl}`);
-              let originUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocation, 'origin').catch(() => { });
-              console.log(`doDcsRenamePrompting() - origin: ${originUrl}`);
-              console.log(`doDcsRenamePrompting() - renamed dialog acknowledged: ${createNewText}`);
-
               const results = await dispatch(handleDcsOperation(createNew));
               console.log(`doDcsRenamePrompting() - handleDcsOperation returned: ${results}`);
-
-              const { projectSaveLocation: projectSaveLocationNew } = getState().projectDetailsReducer;
-              console.log(`doDcsRenamePrompting() - project path is now: ${projectSaveLocationNew}`);
-              oldUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocationNew, GogsApiHelpers.TC_OLD_ORIGIN_KEY).catch(() => { });
-              console.log(`doDcsRenamePrompting() - TC_OLD_ORIGIN_KEY now: ${oldUrl}`);
-              originUrl = await GogsApiHelpers.getSavedRemote(projectSaveLocationNew, 'origin').catch(() => { });
-              console.log(`doDcsRenamePrompting() - origin now: ${originUrl}`);
               resolve(results);
             } catch (e) {
               console.error('doDcsRenamePrompting() - error');
@@ -865,7 +859,7 @@ function handleDcsRenameCollisionPromise(createNew) {
         case renameText:
           dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
           onProjectDetailsFinished(getState).then(() => {
-            resolve(RETRY);
+            resolve(RESHOW_DCS_CHOICE);
           });
           break;
 
