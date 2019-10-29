@@ -113,15 +113,15 @@ export const renameRepo = async (newName, projectPath, user) => {
 
     if (remote.owner === user.username) {
       // delete current repo
-      await api.deleteRepo({ name: remote.name }, user).catch(() => {
-      });
+      console.log(`renameRepo() - deleting repo: ${remote.name}`);
+      await api.deleteRepo({ name: remote.name }, user).catch(() => { });
 
       // delete legacy remote repo
       const legacyRemote = await repo.getRemote(TC_OLD_ORIGIN_KEY);
 
       if (legacyRemote && legacyRemote.name !== remote.name) {
-        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => {
-        });
+        console.log(`renameRepo() - deleting repo: ${legacyRemote.name}`);
+        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => { });
       }
     }
 
