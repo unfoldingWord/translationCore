@@ -35,6 +35,13 @@ jest.mock('../src/js/actions/ToolActions', () => ({
   prepareToolForLoading: jest.fn(() => () => {
   }),
 }));
+jest.mock('../src/js/actions/ProjectUploadActions', () => ({
+  ...require.requireActual('../src/js/actions/ProjectUploadActions'),
+  prepareProjectRepo: jest.fn(() => async () => {
+  }),
+  pushProjectRepo: jest.fn(() => async () => {
+  }),
+}));
 jest.mock('../src/js/selectors', () => ({
   ...require.requireActual('../src/js/selectors'),
   getToolsByKey: jest.fn(() => ({
