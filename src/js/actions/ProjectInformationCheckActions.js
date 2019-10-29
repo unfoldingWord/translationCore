@@ -502,7 +502,7 @@ export function clearProjectInformationReducer() {
  * @param {Boolean} closeProjectOnFinish - if false then do not automatically close project
  */
 export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid = false,
-                                             closeProjectOnFinish = true ) {
+  closeProjectOnFinish = true ) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     const settings = ProjectSettingsHelpers.getProjectSettings(projectPath);
