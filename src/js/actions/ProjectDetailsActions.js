@@ -402,6 +402,7 @@ export function doRenamePrompting() {
       await dispatch(showRenamedDialog());
     }
     await delay(300); // allow UI to update
+    console.log(`doRenamePrompting() - finished`);
   });
 }
 
@@ -760,6 +761,7 @@ function handleDcsOperationCore( createNew) {
 
     try {
       const repoExists = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(projectName, userdata);
+      console.log(`handleDcsOperationCore() - ${projectName}, repoExists: ${repoExists}`);
 
       if (repoExists) {
         renameResults = await dispatch(handleDcsRenameCollision(createNew));
@@ -857,8 +859,9 @@ function handleDcsRenameCollisionPromise(createNew) {
 
         switch (result) {
         case renameText:
-          dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-          onProjectDetailsFinished(getState).then(() => {
+          dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation, false, false));
+          onProjectDetailsFinished(getState).then(async () => {
+            await dispatch(updateProjectNameIfNecessary({}));
             resolve(RESHOW_DCS_CHOICE);
           });
           break;

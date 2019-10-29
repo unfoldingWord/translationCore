@@ -8,7 +8,7 @@ import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import { delay } from '../common/utils';
-import { getTranslate } from '../selectors';
+import { getTranslate, getResetAfterShowOnlyProjectInformationScreen } from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
 // actions
 import consts from './ActionTypes';
@@ -498,9 +498,11 @@ export function clearProjectInformationReducer() {
  * @param {String} projectPath
  * @param {Boolean} initiallyEnableSaveIfValid - if true then initial save button will be set enabled when
  *                        project details screen is shown.  But default the save button starts of disabled
- *                        and will only be enabled after an input change to make details valide.
+ *                        and will only be enabled after an input change to make details valid.
+ * @param {Boolean} closeProjectOnFinish - if false then do not automatically close project
  */
-export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid) {
+export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfValid = false,
+                                             closeProjectOnFinish = true ) {
   return ((dispatch) => {
     const manifest = manifestHelpers.getProjectManifest(projectPath);
     const settings = ProjectSettingsHelpers.getProjectSettings(projectPath);
@@ -508,6 +510,7 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
     dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
+    dispatch({ type: consts.RESET_AFTER_SHOW_ONLY_PROJECT_INFORMATION_SCREEN, value: closeProjectOnFinish }); // turn off automatic operations
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
     dispatch(ProjectImportStepperActions.updateStepperIndex());
 
@@ -532,10 +535,13 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
-      // TRICKY: close the project so that changes can be re-loaded by the tools.
-      dispatch(closeProject());
-      dispatch(MyProjectsActions.getMyProjects());
+
+      if (getResetAfterShowOnlyProjectInformationScreen(getState())) {
+        await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
+        // TRICKY: close the project so that changes can be re-loaded by the tools.
+        dispatch(closeProject());
+        dispatch(MyProjectsActions.getMyProjects());
+      }
     }
     dispatch(AlertModalActions.closeAlertDialog());
   });
