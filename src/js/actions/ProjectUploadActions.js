@@ -21,7 +21,7 @@ import { delay } from '../common/utils';
  * @param {String} projectPath
  * @return {Promise<Repo>}
  */
-async function prepareProjectRepo(user, projectName, projectPath) {
+export async function prepareProjectRepo(user, projectName, projectPath) {
   let repo;
 
   try {
@@ -49,7 +49,7 @@ async function prepareProjectRepo(user, projectName, projectPath) {
  * @param {Repo} repo
  * @return {Promise<*>}
  */
-async function pushProjectRepo(repo) {
+export async function pushProjectRepo(repo) {
   console.log('uploadProject: pushing git changes to remote');
   let response = {};
 
