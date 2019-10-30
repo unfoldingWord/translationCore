@@ -845,8 +845,29 @@ describe('handleDcsRenameCollision', () => {
   });
 
   test('on click rename, should render and open project details', async () => {
+    const langID = 'fr';
+    const bookId = 'eph';
+    const resourceID = 'ult';
+    const projectPath = path.join('path/to/project', `${langID}_${resourceID}_${bookId}_book`);
     const store = mockStore({
-      projectDetailsReducer: { projectSaveLocation: projectPath },
+      projectDetailsReducer: {
+        projectSaveLocation: projectPath,
+        manifest: {
+          target_language: {
+            id: langID,
+            name: 'francais',
+            direction: 'ltr',
+          },
+          project: {
+            id: bookId,
+            name: 'Ephesians',
+          },
+          resource: {
+            id: resourceID,
+            name: 'unfoldingWord Literal Text',
+          },
+        },
+      },
       loginReducer: {
         loggedInUser: false,
         userdata: { username: 'dummy-test' },
