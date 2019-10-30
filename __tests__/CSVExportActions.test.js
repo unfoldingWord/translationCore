@@ -29,6 +29,8 @@ const checksPerformedPath = path.join(__dirname,
   'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
 const bogusFilesInCheckDataPath = path.join(__dirname,
   'fixtures/project/csv/bogus_files/abu_tit_text_reg');
+const multipleSelectionChangesPath = path.join(__dirname,
+  'fixtures/project/csv/multiple_selection_changes/fr_ulb_tit_book');
 const projectOpenedAutographa = path.join(__dirname,
   'fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
 const testOutputPath = path.join(__dirname, 'output');
@@ -188,6 +190,30 @@ describe('csv export actions', () => {
           csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
         });
     });
+
+    test('should succeed for multiple comment changes in checks for 2:12', () => {
+      const translate = key => key;
+      return csvExportActions.saveCommentsToCSV(multipleSelectionChangesPath, translate)
+        .then((value) => {
+          expect(value).toEqual(true);
+          const dataPath = csvHelpers.dataPath(multipleSelectionChangesPath);
+          const filePath = path.join(dataPath, 'output', 'Comments.csv');
+          const expectedLines = 3;
+
+          // verify that selection
+          let csvData = fs.readFileSync(filePath, 'utf8' );
+          const lines = csvData.trim().split('\n');
+          expect(lines.length-1).toEqual(expectedLines); // remove header line
+          expect(csvData).toContain('Need to change translation to french,tit,1,1,translationWords,tool_card_categories.kt,godly');
+          expect(csvData).toContain('Nevermind this is just a test,tit,1,1,translationWords,tool_card_categories.kt,godly');
+          expect(csvData).toContain(',tit,1,1,translationWords,tool_card_categories.kt,godly');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
+        })
+        .catch(err => {
+          expect(err).toEqual('');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
+        });
+    });
   });
 
   describe('csvExportActions.saveSelectionsToCSV', () => {
@@ -226,6 +252,30 @@ describe('csv export actions', () => {
           csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
         });
     });
+
+    test('should succeed for multiple selection changes in checks for 2:12', () => {
+      const translate = key => key;
+      return csvExportActions.saveSelectionsToCSV(multipleSelectionChangesPath, translate)
+        .then((value) => {
+          expect(value).toEqual(true);
+          const dataPath = csvHelpers.dataPath(multipleSelectionChangesPath);
+          const filePath = path.join(dataPath, 'output', 'Selections.csv');
+          const expectedLines = 3;
+
+          // verify that selection
+          let csvData = fs.readFileSync(filePath, 'utf8' );
+          const lines = csvData.trim().split('\n');
+          expect(lines.length-1).toEqual(expectedLines); // remove header line
+          expect(csvData).toContain('raisonnable,1,1,,translationWords,tool_card_categories.kt,godly');
+          expect(csvData).toContain('passions mondaines,1,1,,translationWords,tool_card_categories.kt,world');
+          expect(csvData).toContain('Elle nous forme,1,2,,translationNotes,tool_card_categories.figures,figs-personification,Personification');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
+        })
+        .catch(err => {
+          expect(err).toEqual('');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
+        });
+    });
   });
 
   describe('csvExportActions.saveRemindersToCSV', () => {
@@ -258,6 +308,28 @@ describe('csv export actions', () => {
         .catch(err => {
           expect(err).toEqual('');
           csvHelpers.cleanupTmpPath(bogusFilesInCheckDataPath);
+        });
+    });
+
+    test('should succeed for multiple reminder changes in checks for 2:12', () => {
+      const translate = key => key;
+      return csvExportActions.saveRemindersToCSV(multipleSelectionChangesPath, translate)
+        .then((value) => {
+          expect(value).toEqual(true);
+          const dataPath = csvHelpers.dataPath(multipleSelectionChangesPath);
+          const filePath = path.join(dataPath, 'output', 'Reminders.csv');
+          const expectedLines = 1;
+
+          // verify that selection
+          let csvData = fs.readFileSync(filePath, 'utf8' );
+          const lines = csvData.trim().split('\n');
+          expect(lines.length-1).toEqual(expectedLines); // remove header line
+          expect(csvData).toContain('1,translationWords,tool_card_categories.kt,godly');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
+        })
+        .catch(err => {
+          expect(err).toEqual('');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
         });
     });
   });
@@ -312,6 +384,19 @@ describe('csv export actions', () => {
         .catch(err => {
           expect(err).toEqual('');
           csvHelpers.cleanupTmpPath(projectOpenedAutographa);
+        });
+    });
+
+    test('should resolve true for multipleSelectionChangesPath', () => {
+      const translate = (key) => key;
+      return csvExportActions.saveAllCSVData(multipleSelectionChangesPath, translate)
+        .then((resolve) => {
+          expect(resolve).toEqual(true);
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
+        })
+        .catch(err => {
+          expect(err).toEqual('');
+          csvHelpers.cleanupTmpPath(multipleSelectionChangesPath);
         });
     });
   });

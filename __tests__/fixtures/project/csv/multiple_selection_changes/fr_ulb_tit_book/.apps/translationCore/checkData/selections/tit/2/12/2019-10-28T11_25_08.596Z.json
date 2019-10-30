@@ -1,0 +1,37 @@
+{
+  "contextId": {
+    "occurrenceNote": "Paul speaks of the grace of God ([Titus 2:11](rc://en/ult/book/tit/02/11)) as if it were a person who goes to other people and trains them to live holy lives. (See: [Personification](rc://en/ta/man/translate/figs-personification))",
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 12
+    },
+    "tool": "translationNotes",
+    "groupId": "figs-personification",
+    "quote": [
+      {
+        "word": "παιδεύουσα",
+        "occurrence": 1
+      },
+      {
+        "word": "ἡμᾶς",
+        "occurrence": 1
+      }
+    ],
+    "quoteString": "παιδεύουσα ἡμᾶς",
+    "glQuote": "trains us",
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "Elle nous forme",
+      "occurrence": 1,
+      "occurrences": 2
+    }
+  ],
+  "nothingToSelect": false,
+  "username": "photonomad1",
+  "modifiedTimestamp": "2019-10-28T11:25:08.596Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "It trains us"
+}

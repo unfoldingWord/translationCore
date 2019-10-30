@@ -1,0 +1,22 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 12
+    },
+    "tool": "translationWords",
+    "groupId": "godly",
+    "quote": "ἀσέβειαν",
+    "strong": [
+      "G07630"
+    ],
+    "occurrence": 1
+  },
+  "selections": [],
+  "nothingToSelect": false,
+  "username": "photonomad1",
+  "modifiedTimestamp": "2019-10-28T11:03:23.148Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "godlessness"
+}
