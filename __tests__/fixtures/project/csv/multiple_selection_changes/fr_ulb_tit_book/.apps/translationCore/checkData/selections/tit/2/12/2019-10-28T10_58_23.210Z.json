@@ -1,0 +1,28 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 12
+    },
+    "tool": "translationWords",
+    "groupId": "godly",
+    "quote": "εὐσεβῶς",
+    "strong": [
+      "G21530"
+    ],
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "raisonnable",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "nothingToSelect": false,
+  "username": "photonomad1",
+  "modifiedTimestamp": "2019-10-28T10:58:23.210Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "godly way"
+}
