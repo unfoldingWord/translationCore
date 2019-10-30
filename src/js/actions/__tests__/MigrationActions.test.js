@@ -235,6 +235,10 @@ describe('migrate tCore resources', () => {
   });
 
   describe('Test grc resource migration', () => {
+    afterEach(() => {
+      mockOtherTnsOlversions = [];
+    });
+
     it('test with xx in grc/bible - should migrate to el-x-koine', () => {
       // given
       const oldHelpsExpected = false;
@@ -278,6 +282,25 @@ describe('migrate tCore resources', () => {
       const oldBibleExpected = true;
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1'));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(oldHelpsExpected, oldBibleExpected, 'el-x-koine/bibles/' + bibleId);
+      expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
+    });
+
+    it('test with newer version of ugnt in grc/bible - newer version should not be deleted', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.2'];
+      const oldHelpsExpected = false;
+      const oldBibleExpected = true;
+      const bibleId = 'ugnt';
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
       // when

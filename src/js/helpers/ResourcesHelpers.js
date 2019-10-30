@@ -1087,20 +1087,25 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourceId);
+    const requiredVersions = getOtherTnsOLVersions(resourceId).sort();
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
     // see if we need to keep old versions of original language
     if (requiredVersions && requiredVersions.length) {
       deleteOldResources = false;
+      const highestRequired = requiredVersions[requiredVersions.length - 1];
       const versions = ResourceAPI.listVersions(resourcePath);
       console.log('preserveNeededOrigLangVersions: versions', versions);
 
       for (let version of versions) {
         if (!requiredVersions.includes(version)) {
-          const oldPath = path.join(resourcePath, version);
-          console.log('preserveNeededOrigLangVersions: removing', oldPath);
-          fs.removeSync(oldPath);
+          const newerResource = ResourceAPI.compareVersions(version, highestRequired) > 0;
+
+          if (!newerResource) { // don't delete if newer version
+            const oldPath = path.join(resourcePath, version);
+            console.log('preserveNeededOrigLangVersions: removing old version', oldPath);
+            fs.removeSync(oldPath);
+          }
         }
       }
     }
@@ -1179,6 +1184,13 @@ export function getMissingResources() {
             }
             console.log('getMissingResources() - unzipping static resources');
             copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+          } else { // if folder empty, then copy over current resource
+            const versions = ResourceAPI.listVersions(userResourcePath);
+
+            if (!versions.length) { // if nothing
+              console.log('getMissingResources() - unzipping missing static resources');
+              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+            }
           }
         }
       }
