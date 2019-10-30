@@ -296,7 +296,7 @@ describe('migrate tCore resources', () => {
 
     it('test with newer version of ugnt in grc/bible - newer version should not be deleted', () => {
       // given
-      mockOtherTnsOlversions = ['v0.2'];
+      mockOtherTnsOlversions = ['v0.1', 'v0.2'];
       const oldHelpsExpected = false;
       const oldBibleExpected = true;
       const bibleId = 'ugnt';

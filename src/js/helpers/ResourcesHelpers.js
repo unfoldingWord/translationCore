@@ -1087,13 +1087,15 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourceId).sort();
+    const requiredVersions = getOtherTnsOLVersions(resourceId).sort((a, b) =>
+      -ResourceAPI.compareVersions(a, b) // do inverted sort
+    );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
     // see if we need to keep old versions of original language
     if (requiredVersions && requiredVersions.length) {
       deleteOldResources = false;
-      const highestRequired = requiredVersions[requiredVersions.length - 1];
+      const highestRequired = requiredVersions[0];
       const versions = ResourceAPI.listVersions(resourcePath);
       console.log('preserveNeededOrigLangVersions: versions', versions);
 
