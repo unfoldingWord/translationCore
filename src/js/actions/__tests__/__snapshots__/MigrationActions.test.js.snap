@@ -3,6 +3,7 @@
 exports[`migrate tCore resources Test grc resource migration test with newer version of ugnt in grc/bible - newer version should not be deleted 1`] = `
 Array [
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.3",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
   "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
   "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
   "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
@@ -21,6 +22,7 @@ Array [
 exports[`migrate tCore resources Test grc resource migration test with older version of ugnt in grc/bible - should be removed 1`] = `
 Array [
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.1",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
   "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
   "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
   "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
