@@ -589,6 +589,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
     const contentZipPath = path.join(versionPath, filename);
 
     if (fs.existsSync(contentZipPath)) {
+      console.log(`extractZippedResourceContent: unzipping ${contentZipPath}`);
       const zip = new AdmZip(contentZipPath);
       zip.extractAllTo(versionPath, /*overwrite*/true);
 
@@ -596,7 +597,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
         fs.removeSync(contentZipPath);
       }
     } else {
-      console.warn(`${contentZipPath}, Path Does not exist`);
+      console.warn(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
   }
 };
