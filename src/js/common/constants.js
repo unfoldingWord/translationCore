@@ -34,8 +34,6 @@ export const WORD_ALIGNMENT = 'wordAlignment';
 export const LEXICONS = 'lexicons';
 export const UGL_LEXICON = 'ugl';
 export const UHL_LEXICON = 'uhl';
-export const DCS_BASE_URL = 'https://git.door43.org';
-
 // categories
 export const toolCardCategories = {
   'kt': 'Key Terms',
@@ -49,9 +47,11 @@ export const toolCardCategories = {
   'grammar': 'Grammar',
   'other': 'Other',
 };
-
+// alerts strings
 export const ALERT_ALIGNMENTS_RESET_ID = 'alignments_reset';
 export const ALERT_SELECTIONS_INVALIDATED_ID = 'selections_invalidated';
 export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_alignments_and_selections';
 export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
 export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
+// url strings
+export const DCS_BASE_URL = 'https://git.door43.org';
