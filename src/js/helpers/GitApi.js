@@ -1,5 +1,6 @@
 import { exec } from 'child_process';
 import simpleGit from 'simple-git';
+import { DCS_BASE_URL } from '../common/constants';
 import * as GogsApiHelpers from './GogsApiHelpers';
 
 /**
@@ -229,7 +230,7 @@ export const pushNewRepo = (projectPath, user, repoName, branch = 'master') => n
 export const renameRepoLocally = (user, newName, projectPath) => new Promise((resolve) => {
   const git = GitApi(projectPath);
 
-  git.remote(['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`], (res) => {
+  git.remote(['set-url', 'origin', `${DCS_BASE_URL}/${user.username}/${newName}.git`], (res) => {
     resolve(res);
   });
 });

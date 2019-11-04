@@ -34,6 +34,7 @@ export const WORD_ALIGNMENT = 'wordAlignment';
 export const LEXICONS = 'lexicons';
 export const UGL_LEXICON = 'ugl';
 export const UHL_LEXICON = 'uhl';
+export const DCS_BASE_URL = 'https://git.door43.org';
 
 // categories
 export const toolCardCategories = {
