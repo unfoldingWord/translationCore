@@ -1,6 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { DCS_BASE_URL } from '../common/constants';
 import GitApi, {
   getRemoteRepoHead,
   pushNewRepo,
@@ -10,8 +11,8 @@ import GitApi, {
   getSavedRemote,
 } from './GitApi';
 
-const projectRegExp = new RegExp(
-  /^https?:\/\/git.door43.org\/([^/]+)\/([^/.]+)(\.git)?$/);
+const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
+const projectRegExp = new RegExp(`^https?://${dcsHostname}/([^/]+)/([^/.]+)(\\.git)?$`);
 let doingSave = false;
 
 /**
@@ -77,15 +78,14 @@ export default class Repo {
    * @returns {string|null} - The sanitized url or else null if invalid
    */
   static sanitizeRemoteUrl(url) {
-    if (!url || !url.trim) {
+    if (!url || !url.trim()) {
       return null;
     }
 
     url = url.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
-    const liveDoor43Url = new RegExp(
-      /^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
-    const gitDoor43Url = new RegExp(
-      /^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
+    const liveDoor43Url = new RegExp(/^https?:\/\/(live\.|www\.)?door43.org\/u\/([^/]+)\/([^/]+)/);
+    const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
+    const gitDoor43Url = new RegExp(`^https?://(${dcsHostname})/([^/]+)/([^/]+)`);
     let match = liveDoor43Url.exec(url);
 
     if (!match) {
@@ -102,10 +102,10 @@ export default class Repo {
 
     if (match) {
       // Return a proper git.door43.org URL from the match
-      let userName = match[3];
-      let repoName = match[4];
+      let userName = match[2];
+      let repoName = match[3];
       repoName = (repoName && repoName.replace('.git', '')) || '';
-      return 'https://git.door43.org/' + userName + '/' + repoName + '.git';
+      return DCS_BASE_URL + '/' + userName + '/' + repoName + '.git';
     }
     return null;
   }
@@ -138,7 +138,7 @@ export default class Repo {
         owner: matches[1],
         name: matches[2],
         full_name: `${matches[1]}/${matches[2]}`,
-        host: 'https://git.door43.org/',
+        host: DCS_BASE_URL + '/',
         url,
       };
     }

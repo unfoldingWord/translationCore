@@ -7,7 +7,7 @@ const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalle
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
 const { injectFileLogging } = require('./js/helpers/logger');
 const DownloadManager = require('./js/DownloadManager');
-
+const { DCS_BASE_URL } = require('./js/common/constants');
 const ipcMain = electron.ipcMain;
 // Module to control application life.
 const app = electron.app;
@@ -211,7 +211,7 @@ ipcMain.on('load-local', function (event, arg) {
   event.returnValue = input || false;
 });
 
-ipcMain.on('open-helper', (event, url = 'http://git.door43.org/') => {
+ipcMain.on('open-helper', (event, url = DCS_BASE_URL + '/') => {
   if (helperWindow) {
     helperWindow.show();
     helperWindow.loadURL(url);

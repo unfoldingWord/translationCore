@@ -5,12 +5,12 @@ import path from 'path-extra';
 // actions
 import { recoverFailedOnlineImport } from '../OnlineImportWorkflowActions';
 // helpers
-import { IMPORTS_PATH } from '../../../common/constants';
+import { IMPORTS_PATH, DCS_BASE_URL } from '../../../common/constants';
 jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const importProjectName = 'es-419_tit_text_ulb';
-const STANDARD_PROJECT = 'https://git.door43.org/royalsix/' + importProjectName + '.git';
+const STANDARD_PROJECT = DCS_BASE_URL + '/royalsix/' + importProjectName + '.git';
 const projectSaveLocation = IMPORTS_PATH;
 
 // let mock_cloneManifest = null;
