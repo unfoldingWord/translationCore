@@ -3,6 +3,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import * as GogsApiHelpers from '../GogsApiHelpers';
+import { DCS_BASE_URL } from '../../common/constants';
 
 const project_path = path.join(__dirname,
   '../../../__tests__/fixtures/project/en_tit');
@@ -21,7 +22,7 @@ describe('GogsApiHelpers.login', () => {
       login: 'auser',
       full_name: 'John Smith',
       email: 'auser@noreply.door43.org',
-      avatar_url: 'https://git.door43.org/img/avatar_default.png',
+      avatar_url: DCS_BASE_URL + '/img/avatar_default.png',
       username: 'auser',
       token: '7a16e1e1c93dd1f3574dcc709487689c64a3a084',
     });
