@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
+import { DCS_BASE_URL } from '../../../../common/constants';
 
 const CreativeCommonsPage = ({ onBackClick, translate }) => (
   <div>
@@ -47,7 +48,7 @@ const CreativeCommonsPage = ({ onBackClick, translate }) => (
       <p>
         <b>Attribution</b> — You must attribute the work as follows: "Original
         work available&nbsp;
-        at https://git.door43.org/." Attribution statements in derivative works
+        at {DCS_BASE_URL}." Attribution statements in derivative works
         should not in any way&nbsp;
         suggest that we endorse you or your use of this work
       </p>
