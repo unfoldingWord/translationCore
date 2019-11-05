@@ -5,7 +5,7 @@ import path from 'path-extra';
 import { DCS_BASE_URL } from '../common/constants';
 import Repo from './Repo';
 // constants
-const api = new Gogs('https://git.door43.org/api/v1'),
+const api = new Gogs(DCS_BASE_URL + '/api/v1'),
   tokenStub = { name: 'translation-core' };
 const SECRET = 'tc-core';
 export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
