@@ -13,6 +13,7 @@ import Repo from '../helpers/Repo.js';
 import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import { delay } from '../common/utils';
+// import * as ProjectLoadingActions from "./MyProjects/ProjectLoadingActions";
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -98,6 +99,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
       resolve();
     } else if (!user.localUser) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+        // dispatch(ProjectLoadingActions.closeProject()); // close any open projects first
         dispatch(AlertModalActions.closeAlertDialog());
         await delay(500); // for screen to update
         const projectName = projectPath.split(path.sep).pop();

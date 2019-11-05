@@ -20,7 +20,7 @@ export function login(userObj) {
     api.listTokens(userObj).then(function (tokens) {
       return tokens.find((el) => el.name === tokenStub.name);
     }).then(function (token) {
-      return token ? token : api.createToken(tokenStub, userObj);
+      return (token && token.sha1) ? token : api.createToken(tokenStub, userObj); // recreate token if token missing or sha1 is missing
     }).then(function (token) {
       user.token = token.sha1;
       let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
