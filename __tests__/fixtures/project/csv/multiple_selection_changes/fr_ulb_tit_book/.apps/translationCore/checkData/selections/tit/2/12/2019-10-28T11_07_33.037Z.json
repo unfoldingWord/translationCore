@@ -1,0 +1,28 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 2,
+      "verse": 12
+    },
+    "tool": "translationWords",
+    "groupId": "world",
+    "quote": "κοσμικὰς",
+    "strong": [
+      "G28860"
+    ],
+    "occurrence": 1
+  },
+  "selections": [
+    {
+      "text": "passions mondaines",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "nothingToSelect": false,
+  "username": "photonomad1",
+  "modifiedTimestamp": "2019-10-28T11:07:33.037Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "worldly"
+}
