@@ -13,7 +13,7 @@ import Repo from '../helpers/Repo.js';
 import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import { delay } from '../common/utils';
-// import * as ProjectLoadingActions from "./MyProjects/ProjectLoadingActions";
+import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -92,6 +92,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   return (dispatch, getState) => new Promise(async (resolve) => {
     const translate = getTranslate(getState());
     console.log('uploadProject: attempting to upload: ' + projectPath);
+    dispatch(ProjectLoadingActions.closeProject()); // close any open projects first
 
     // if no Internet connection is found then alert the user and stop upload process
     if (!onLine) {
@@ -99,7 +100,6 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
       resolve();
     } else if (!user.localUser) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
-        // dispatch(ProjectLoadingActions.closeProject()); // close any open projects first
         dispatch(AlertModalActions.closeAlertDialog());
         await delay(500); // for screen to update
         const projectName = projectPath.split(path.sep).pop();
