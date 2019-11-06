@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import { getTranslate } from '../selectors';
+import { DCS_BASE_URL } from '../common/constants';
 import consts from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
@@ -41,7 +42,7 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
     dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
 
     try {
-      const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
+      const response = await fetch(`${DCS_BASE_URL}/api/v1/users/${user}/repos`);
       let repos = await response.json();
       repos = firstFilter || secondFilter ? filterReposBy(repos, firstFilter, secondFilter) : repos;
       dispatch({
@@ -70,7 +71,7 @@ export function searchByQuery(query, onLine = navigator.onLine) {
       dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
 
       try {
-        const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
+        const response = await fetch(`${DCS_BASE_URL}/api/v1/repos/search?q=${query}&uid=0&limit=100`);
         const json = await response.json();
 
         dispatch({
