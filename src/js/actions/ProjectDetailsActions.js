@@ -823,7 +823,7 @@ export function doLocalProjectRenamePrompting(projectSaveLocation, projectName, 
     dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation, false, async () => {
       await dispatch(updateProjectNameIfNecessary({}));
       const translate = getTranslate(getState());
-      const message = translate('projects.renaming_alert', {project_name: projectName, door43: translate('_.door43')});
+      const message = translate('projects.renaming_alert', { project_name: projectName, door43: translate('_.door43') });
       dispatch(showStatus(message)); // reshow dialog
       await delay(300); // delay to allow UI to update
       callback(RESHOW_DCS_CHOICE);
