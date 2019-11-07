@@ -533,8 +533,9 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       await dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
-      dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
       const callback = getShowProjectInformationScreenCallback(getState());
+      dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
+      dispatch({ type: consts.SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK, value: null });
 
       if (callback) {
         await callback();

@@ -818,6 +818,13 @@ export function handleDcsRenameCollision(createNew, doLocalProjectRenamePromptin
   });
 }
 
+/**
+ * display project details screen, then when it is done clean up and do callback
+ * @param {String} projectSaveLocation
+ * @param {String} projectName
+ * @param {Function} callback
+ * @return {Promise)
+ */
 export function doLocalProjectRenamePrompting(projectSaveLocation, projectName, callback) {
   return ((dispatch, getState) => new Promise((resolve) => {
     dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation, false, async () => {
@@ -826,7 +833,10 @@ export function doLocalProjectRenamePrompting(projectSaveLocation, projectName, 
       const message = translate('projects.renaming_alert', { project_name: projectName, door43: translate('_.door43') });
       dispatch(showStatus(message)); // reshow dialog
       await delay(300); // delay to allow UI to update
-      callback(RESHOW_DCS_CHOICE);
+
+      if (callback) {
+        callback(RESHOW_DCS_CHOICE);
+      }
       resolve();
     }));
   }));
