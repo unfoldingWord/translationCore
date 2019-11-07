@@ -318,12 +318,12 @@ export const getShowProjectInformationScreen = (state) =>
     state.projectValidationReducer);
 
 /**
- * Checks if only the project information screen has callback.
+ * Checks if we are to reset reducers after the Show Only Project Information Screen is done
  * @param {Object} state
  * @return {boolean}
  */
-export const getShowProjectInformationScreenCallback = (state) =>
-  fromProjectValidationReducer.getShowProjectInformationScreenCallback(
+export const getResetAfterShowOnlyProjectInformationScreen = (state) =>
+  fromProjectValidationReducer.getResetAfterShowOnlyProjectInformationScreen(
     state.projectValidationReducer);
 
 /**

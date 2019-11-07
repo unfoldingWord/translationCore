@@ -609,8 +609,8 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
-    "type": "SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK",
-    "value": null,
+    "type": "RESET_AFTER_SHOW_ONLY_PROJECT_INFORMATION_SCREEN",
+    "value": true,
   },
   Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",
@@ -1047,8 +1047,8 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
-    "type": "SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK",
-    "value": null,
+    "type": "RESET_AFTER_SHOW_ONLY_PROJECT_INFORMATION_SCREEN",
+    "value": true,
   },
   Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",

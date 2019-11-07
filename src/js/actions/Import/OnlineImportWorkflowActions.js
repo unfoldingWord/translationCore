@@ -2,15 +2,13 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 // actions
 import consts from '../../actions/ActionTypes';
+import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpers/Import/ProjectImportFilesystemHelpers';
 import * as AlertModalActions from '../../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../../actions/OnlineModeConfirmActions';
 import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import * as MyProjectsActions from '../MyProjects/MyProjectsActions';
 import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import * as ProjectInformationCheckActions from '../ProjectInformationCheckActions';
-import * as ProjectImportFilesystemActions from '../../actions/Import/ProjectImportFilesystemActions';
-import { showStatus } from '../../actions/ProjectUploadActions';
-import * as ProjectValidationActions from '../../actions/Import/ProjectValidationActions';
 // helpers
 import * as TargetLanguageHelpers from '../../helpers/TargetLanguageHelpers';
 import {
@@ -35,9 +33,10 @@ import {
   showInvalidVersionError,
 } from '../MyProjects/ProjectLoadingActions';
 import { delay } from '../../common/utils';
-import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpers/Import/ProjectImportFilesystemHelpers';
 //constants
 import { tc_MIN_VERSION_ERROR, IMPORTS_PATH } from '../../common/constants';
+import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
+import * as ProjectValidationActions from './ProjectValidationActions';
 
 /**
  * Action that dispatches other actions to wrap up online importing
@@ -117,9 +116,6 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
 
       if (renamingResults.repoRenamed) {
         await dispatch(ProjectDetailsActions.doRenamePrompting());
-        const message = translate('projects.preparing_project_alert');
-        dispatch(showStatus(message)); // reshow  busy dialog after rename prompting
-        await delay(300);
       }
       dispatch(MyProjectsActions.getMyProjects());
 
