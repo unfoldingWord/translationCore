@@ -71,6 +71,19 @@ Array [
 ]
 `;
 
+exports[`doLocalProjectRenamePrompting on click rename, should render and open project details 1`] = `
+Array [
+  Object {
+    "type": "ProjectInformationCheckActions.openOnlyProjectDetailsScreen",
+  },
+  Object {
+    "alertMessage": "projects.renaming_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+]
+`;
+
 exports[`handleDcsOperation on repo does not exist, should call create new 1`] = `
 Array [
   Object {
@@ -174,9 +187,6 @@ Array [
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",
-  },
-  Object {
-    "type": "ProjectInformationCheckActions.openOnlyProjectDetailsScreen",
   },
 ]
 `;
