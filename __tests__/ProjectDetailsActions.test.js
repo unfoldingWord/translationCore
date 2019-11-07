@@ -103,8 +103,12 @@ jest.mock('../src/js/actions/ResourcesActions', () => ({
 jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
 
   // eslint-disable-next-line no-unused-vars
-  openOnlyProjectDetailsScreen: (projectSaveLocation) => (dispatch) => {
+  openOnlyProjectDetailsScreen: (projectSaveLocation, initiallyEnableSaveIfValid, callback) => async (dispatch) => {
     dispatch({ type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen' });
+    if (callback) {
+      await callback();
+    }
+    return true;
   },
 }));
 
@@ -884,7 +888,11 @@ describe('handleDcsRenameCollision', () => {
     mock_alertCallbackButton = 1;
     const expectedClickButton = 'buttons.rename_local';
 
-    await store.dispatch(actions.handleDcsRenameCollision());
+    const mock_doLocalProjectRenamePrompting = (projectSaveLocation, projectName, resolve) => () => {
+      resolve('RESHOW_DCS_CHOICE');
+    };
+
+    await store.dispatch(actions.handleDcsRenameCollision(false, mock_doLocalProjectRenamePrompting));
     expect(store.getActions()).toMatchSnapshot();
     expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
   });
@@ -909,6 +917,63 @@ describe('handleDcsRenameCollision', () => {
   });
 });
 
+describe('doLocalProjectRenamePrompting', () => {
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should render and open project details', async () => {
+    const langID = 'fr';
+    const bookId = 'eph';
+    const resourceID = 'ult';
+    const projectPath = path.join('path/to/project', `${langID}_${resourceID}_${bookId}_book`);
+    const store = mockStore({
+      projectDetailsReducer: {
+        projectSaveLocation: projectPath,
+        manifest: {
+          target_language: {
+            id: langID,
+            name: 'francais',
+            direction: 'ltr',
+          },
+          project: {
+            id: bookId,
+            name: 'Ephesians',
+          },
+          resource: {
+            id: resourceID,
+            name: 'unfoldingWord Literal Text',
+          },
+        },
+      },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {username: 'dummy-test'},
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      projectInformationCheckReducer: {
+        alreadyImported: true,
+        overwritePermitted: false,
+      },
+      projectValidationReducer: { onlyShowProjectInformationScreen: false },
+    });
+    mock_alertCallbackButton = 1;
+    let mock_resolveResponse = 1;
+
+    const mock_resolve = jest.fn((response) => {
+      mock_resolveResponse = response;
+    });
+
+    await store.dispatch(actions.doLocalProjectRenamePrompting(projectPath, path.basename(projectPath), mock_resolve));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_resolve).toHaveBeenCalledTimes(1);
+    expect(mock_resolveResponse).toEqual('RESHOW_DCS_CHOICE');
+  });
+});
 
 //
 // helpers
