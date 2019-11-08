@@ -225,7 +225,7 @@ describe('ResourcesHelpers.preserveNeededOrigLangVersions()', () =>{
     const deleteOldResourceExpected = false;
     const bibleId = 'ugnt';
     const neededUgntVersion = 'v0.1';
-    const unneededUgntVersion = 'v0.2';
+    const unneededUgntVersion = 'v0.0.1';
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, neededUgntVersion));
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en'), path.join(USER_RESOURCES_PATH, 'en'));
