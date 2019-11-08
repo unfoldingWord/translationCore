@@ -105,6 +105,7 @@ jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
   // eslint-disable-next-line no-unused-vars
   openOnlyProjectDetailsScreen: (projectSaveLocation, initiallyEnableSaveIfValid, callback) => async (dispatch) => {
     dispatch({ type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen' });
+
     if (callback) {
       await callback();
     }

@@ -538,8 +538,8 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       dispatch({ type: consts.SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK, value: null });
 
       if (callback) {
-        await callback();
-      } else { // default after project edit behavior
+        await callback(); // callback will handle cleanup
+      } else { // do default cleanup after project edit behavior
         await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
         // TRICKY: close the project so that changes can be re-loaded by the tools.
         dispatch(closeProject());

@@ -318,7 +318,7 @@ export const getShowProjectInformationScreen = (state) =>
     state.projectValidationReducer);
 
 /**
- * Checks if only the project information screen has callback.
+ * Checks if show only the project information screen has callback.
  * @param {Object} state
  * @return {boolean}
  */
