@@ -575,20 +575,30 @@ export const areResourcesNewer = () => {
   return newer;
 };
 
+/**
+ * unzip versioned resources in resourceDestinationPath
+ * @param {String} resourceDestinationPath
+ * @param {Boolean} isBible - true if resource is bible
+ */
 export const extractZippedResourceContent = (resourceDestinationPath, isBible) => {
-  const versionPath = ResourceAPI.getLatestVersion(resourceDestinationPath);
-  const filename = isBible ? 'books.zip' : 'contents.zip';
-  const contentZipPath = path.join(versionPath, filename);
+  const versions = ResourceAPI.listVersions(resourceDestinationPath);
 
-  if (fs.existsSync(contentZipPath)) {
-    const zip = new AdmZip(contentZipPath);
-    zip.extractAllTo(versionPath, /*overwrite*/true);
+  for (const version of versions) {
+    const versionPath = path.join(resourceDestinationPath, version);
+    const filename = isBible ? 'books.zip' : 'contents.zip';
+    const contentZipPath = path.join(versionPath, filename);
 
     if (fs.existsSync(contentZipPath)) {
-      fs.removeSync(contentZipPath);
+      console.log(`extractZippedResourceContent: unzipping ${contentZipPath}`);
+      const zip = new AdmZip(contentZipPath);
+      zip.extractAllTo(versionPath, /*overwrite*/true);
+
+      if (fs.existsSync(contentZipPath)) {
+        fs.removeSync(contentZipPath);
+      }
+    } else {
+      console.warn(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
-  } else {
-    console.warn(`${contentZipPath}, Path Does not exist`);
   }
 };
 
@@ -1087,20 +1097,27 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourceId);
+    const requiredVersions = getOtherTnsOLVersions(resourceId).sort((a, b) =>
+      -ResourceAPI.compareVersions(a, b) // do inverted sort
+    );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
     // see if we need to keep old versions of original language
     if (requiredVersions && requiredVersions.length) {
       deleteOldResources = false;
+      const highestRequired = requiredVersions[0];
       const versions = ResourceAPI.listVersions(resourcePath);
       console.log('preserveNeededOrigLangVersions: versions', versions);
 
       for (let version of versions) {
         if (!requiredVersions.includes(version)) {
-          const oldPath = path.join(resourcePath, version);
-          console.log('preserveNeededOrigLangVersions: removing', oldPath);
-          fs.removeSync(oldPath);
+          const newerResource = ResourceAPI.compareVersions(version, highestRequired) > 0;
+
+          if (!newerResource) { // don't delete if newer version
+            const oldPath = path.join(resourcePath, version);
+            console.log('preserveNeededOrigLangVersions: removing old version', oldPath);
+            fs.removeSync(oldPath);
+          }
         }
       }
     }
@@ -1179,6 +1196,22 @@ export function getMissingResources() {
             }
             console.log('getMissingResources() - unzipping static resources');
             copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+          } else { // if folder empty, then copy over current resource
+            const versions = ResourceAPI.listVersions(userResourcePath);
+            const emptyResourceFolder = !versions.length;
+            let installResource = emptyResourceFolder;
+
+            if (!emptyResourceFolder) { // make sure bundled version is installed
+              const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+              const bundledVersion = path.basename(staticResourceVersionPath);
+              const destinationPath = path.join(userResourcePath, bundledVersion);
+              installResource = !fs.existsSync(destinationPath);
+            }
+
+            if (installResource) {
+              console.log('getMissingResources() - unzipping missing static resources');
+              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+            }
           }
         }
       }
