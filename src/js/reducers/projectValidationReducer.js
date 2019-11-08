@@ -7,6 +7,7 @@ const initialState = {
     nextDisabled: true,
   },
   onlyShowProjectInformationScreen: false,
+  resetAfterShowOnlyProjectInformationScreen: true,
   showOverwriteButton: false,
 };
 
@@ -58,6 +59,11 @@ const projectValidationReducer = (state = initialState, action) => {
       ...state,
       onlyShowProjectInformationScreen: action.value,
     };
+  case types.RESET_AFTER_SHOW_ONLY_PROJECT_INFORMATION_SCREEN:
+    return {
+      ...state,
+      resetAfterShowOnlyProjectInformationScreen: action.value,
+    };
   case types.SHOW_OVERWRITE_BUTTON:
     return {
       ...state,
@@ -95,6 +101,14 @@ export const getIsNextStepDisabled = (state) =>
  */
 export const getShowProjectInformationScreen = (state) =>
   state.onlyShowProjectInformationScreen;
+
+/**
+ * Checks if only the project information screen should be shown.
+ * @param {object} state
+ * @return {boolean}
+ */
+export const getResetAfterShowOnlyProjectInformationScreen = (state) =>
+  state.resetAfterShowOnlyProjectInformationScreen;
 
 /**
  * checks to see if we should show overwrite on save button

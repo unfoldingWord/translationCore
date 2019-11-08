@@ -20,7 +20,7 @@ export function login(userObj) {
     api.listTokens(userObj).then(function (tokens) {
       return tokens.find((el) => el.name === tokenStub.name);
     }).then(function (token) {
-      return token ? token : api.createToken(tokenStub, userObj);
+      return (token && token.sha1) ? token : api.createToken(tokenStub, userObj); // recreate token if token missing or sha1 is missing
     }).then(function (token) {
       user.token = token.sha1;
       let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
@@ -118,15 +118,15 @@ export const renameRepo = async (newName, projectPath, user) => {
 
     if (remote.owner === user.username) {
       // delete current repo
-      await api.deleteRepo({ name: remote.name }, user).catch(() => {
-      });
+      console.log(`renameRepo() - deleting repo: ${remote.name}`);
+      await api.deleteRepo({ name: remote.name }, user).catch(() => { });
 
       // delete legacy remote repo
       const legacyRemote = await repo.getRemote(TC_OLD_ORIGIN_KEY);
 
       if (legacyRemote && legacyRemote.name !== remote.name) {
-        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => {
-        });
+        console.log(`renameRepo() - deleting repo: ${legacyRemote.name}`);
+        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => { });
       }
     }
 

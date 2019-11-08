@@ -16,7 +16,11 @@ import {
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
-import { showStatus } from '../actions/ProjectUploadActions';
+import {
+  prepareProjectRepo,
+  pushProjectRepo,
+  showStatus,
+} from '../actions/ProjectUploadActions';
 import * as ProjectInformationCheckActions from '../actions/ProjectInformationCheckActions';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
@@ -41,6 +45,7 @@ import { prepareToolForLoading } from './ToolActions';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
+const RESHOW_DCS_CHOICE = 'RESHOW_DCS_CHOICE';
 
 /**
  * @description Gets the check categories from the filesystem for the project and
@@ -386,7 +391,13 @@ export function doRenamePrompting() {
     const pointsToCurrentUsersRepo = await GogsApiHelpers.hasGitHistoryForCurrentUser(projectSaveLocation, login);
 
     if (pointsToCurrentUsersRepo) {
-      await dispatch(doDcsRenamePrompting());
+      let retry = false;
+
+      do {
+        const results = await dispatch(doDcsRenamePrompting()); // eslint-disable-line no-await-in-loop
+        console.log(`doRenamePrompting() = doDcsRenamePrompting() returned ${results}`);
+        retry = (results === RESHOW_DCS_CHOICE);
+      } while (retry);
     } else { // just show user their new repo name
       await dispatch(showRenamedDialog());
     }
@@ -537,11 +548,12 @@ export function addObjectPropertyToSettings(propertyName, value) {
 
 /**
  * handles the renaming on DCS
- * @return {Promise} - Returns a promise
+ * @return {Promise} - Returns a promise that resolves to results
  */
 export function doDcsRenamePrompting() {
   return ((dispatch, getState) => {
     const { projectSaveLocation } = getState().projectDetailsReducer;
+    console.log(`doDcsRenamePrompting() - start path: ${projectSaveLocation}`);
     return new Promise((resolve, reject) => {
       const translate = getTranslate(getState());
       const renameText = translate('buttons.rename_repo');
@@ -550,19 +562,20 @@ export function doDcsRenamePrompting() {
 
       dispatch(
         AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
-          (result) => {
+          async (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
-            const { userdata } = getState().loginReducer;
+            await delay(300); // delay for dialog to close
 
-            GogsApiHelpers.changeGitToPointToNewRepo(projectSaveLocation, userdata).then(async () => {
-              await dispatch(handleDcsOperation(createNew));
-              resolve();
-            }).catch((e) => {
+            try {
+              const results = await dispatch(handleDcsOperation(createNew));
+              console.log(`doDcsRenamePrompting() - handleDcsOperation returned: ${results}`);
+              resolve(results);
+            } catch (e) {
               console.error('doDcsRenamePrompting() - error');
               console.error(e);
               reject(e);
-            });
+            }
           },
           renameText,
           createNewText
@@ -661,22 +674,67 @@ export function showErrorFeedbackDialog(translateKey, doneCB = null) {
 }
 
 /**
+ * saves repo changes and pushes them up to DCS
+ * @return {Promise}
+ */
+function saveChangesToDCS() {
+  return async (dispatch, getState) => {
+    try {
+      const translate = getTranslate(getState());
+      const { projectSaveLocation } = getState().projectDetailsReducer;
+      const { userdata } = getState().loginReducer;
+      const projectName = path.basename(projectSaveLocation);
+      const message = translate('projects.uploading_alert',
+        { project_name: projectName, door43: translate('_.door43') });
+      dispatch(showStatus(message));
+
+      const repo = await prepareProjectRepo(userdata, projectName, projectSaveLocation); // eslint-disable-line no-await-in-loop
+      const response = await pushProjectRepo(repo); // eslint-disable-line no-await-in-loop
+      console.error('saveChangesToDCS() - uploaded changes to DCS');
+      dispatch(AlertModalActions.closeAlertDialog());
+
+      if (response.errors && response.errors.length) {
+        console.error('saveChangesToDCS(): push failed', response);
+
+        await new Promise(resolve => {
+          dispatch(AlertModalActions.openOptionDialog(
+            translate('projects.uploading_error', { error: response.errors }),
+            () => {
+              resolve();
+            }));
+        });
+      }
+    } catch (e) {
+      console.error('saveChangesToDCS() - error uploading changes to DCS');
+      console.error(e);
+      dispatch(AlertModalActions.closeAlertDialog());
+    }
+  };
+}
+
+/**
  * perform selected action create new or rename project on DCS to match new name.  This wraps handleDcsOperationCore
  *  with online confirm
  * @param {boolean} createNew - if true then create new DCS project with current name
- * @return {Promise<String>} Promise that resolves once DCS operations have resolved
+ * @return {Promise<String>} Promise that resolves to CONTINUE if DCS operation succeeds
  */
 export function handleDcsOperation(createNew) {
   return ((dispatch) => new Promise((resolve) => {
     dispatch(OnlineModeConfirmActions.confirmOnlineAction(
       async () => { // on confirmed
         let retry;
+        let renameResults;
 
         do {
-          const renameResults = await dispatch(handleDcsOperationCore(createNew)); // eslint-disable-line no-await-in-loop
+          renameResults = await dispatch(handleDcsOperationCore(createNew)); // eslint-disable-line no-await-in-loop
+
+          if (renameResults === CONTINUE) {
+            console.log('handleDcsOperation() - saving changes to DCS');
+            await dispatch(saveChangesToDCS()); // eslint-disable-line no-await-in-loop
+          }
           retry = (renameResults === RETRY);
         } while (retry);
-        resolve();
+        resolve(renameResults);
       },
       () => {
         console.log('cancelled');
@@ -697,28 +755,34 @@ function handleDcsOperationCore( createNew) {
 
     const { projectSaveLocation } = getState().projectDetailsReducer; // refetch since project may have been renamed
     const projectName = path.basename(projectSaveLocation);
-    let renameResults = CONTINUE;
+    let renameResults = '';
     console.log(`handleDcsOperationCore() - handle DCS rename, createNew: ${createNew}`);
 
     try {
       const repoExists = await ProjectDetailsHelpers.doesDcsProjectNameAlreadyExist(projectName, userdata);
+      console.log(`handleDcsOperationCore() - ${projectName}, repoExists: ${repoExists}`);
 
       if (repoExists) {
         renameResults = await dispatch(handleDcsRenameCollision(createNew));
       } else { // remote repo does not already exist
         try {
+          const translate = getTranslate(getState());
+
           if (createNew) {
-            const translate = getTranslate(getState());
             const message = translate('projects.uploading_alert', { project_name: projectName, door43: translate('_.door43') });
             dispatch(showStatus(message));
+            console.log(`handleDcsOperationCore() - creating new repo`);
             await GogsApiHelpers.createNewRepo(projectName, projectSaveLocation, userdata);
-            dispatch(AlertModalActions.closeAlertDialog());
-            await delay(300);
-            return;
           } else { // if rename
+            const message = translate('projects.renaming_alert', { project_name: projectName, door43: translate('_.door43') });
+            dispatch(showStatus(message));
+            console.log(`handleDcsOperationCore() - renaming repo`);
             await GogsApiHelpers.renameRepo(projectName, projectSaveLocation, userdata);
-            return;
           }
+          console.log(`handleDcsOperationCore() - repo operation success`);
+          dispatch(AlertModalActions.closeAlertDialog());
+          await delay(300); // delay to allow dialog to close
+          return (CONTINUE);
         } catch (e) {
           renameResults = await dispatch(showDcsRenameFailure(projectSaveLocation, createNew));
           console.warn(e);
@@ -792,9 +856,11 @@ function handleDcsRenameCollisionPromise(createNew) {
 
         switch (result) {
         case renameText:
-          dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
-          onProjectDetailsFinished(getState).then(() => {
-            resolve(RETRY);
+          dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation, false, false));
+          onProjectDetailsFinished(getState).then(async () => {
+            await dispatch(updateProjectNameIfNecessary({}));
+            await delay(300); // delay to allow dialog to close
+            resolve(RESHOW_DCS_CHOICE);
           });
           break;
 

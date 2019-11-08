@@ -15,14 +15,20 @@ jest.mock('../../helpers/GogsApiHelpers', () => ({
 
 describe('ProjectUploadActions', () => {
   test('ProjectUploadActions.uploadProject should alert the user if no internet connection is found.', async () => {
-    const expectedActions = [
-      {
-        alertMessage: 'no_internet',
-        loading: undefined,
-        type: 'OPEN_ALERT_DIALOG',
+    const expectedAction = {
+      alertMessage: 'no_internet',
+      loading: undefined,
+      type: 'OPEN_ALERT_DIALOG',
+    };
+    const store = mockStore({
+      toolsReducer: {
+        selectedTool: null,
+        tools: {
+          byName: {},
+          byObject: [],
+        },
       },
-    ];
-    const store = mockStore({});
+    });
     const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
     const user = {
       localUser:'',
@@ -31,19 +37,27 @@ describe('ProjectUploadActions', () => {
     };
 
     await store.dispatch(ProjectUploadActions.uploadProject(projectPath, user, false));
-    expect(store.getActions()).toEqual(expectedActions);
+    const actions = store.getActions();
+    expect(actions[0].meta.batch).toBeTruthy();
+    expect(actions[1]).toEqual(expectedAction);
   });
 
   test('ProjectUploadActions.uploadProject should alert the user if logged in as local user.', async () => {
     const message = 'projects.must_be_logged_in_alert';
-    const expectedActions = [
-      {
-        alertMessage: message,
-        loading: undefined,
-        type: 'OPEN_ALERT_DIALOG',
+    const expectedAction = {
+      alertMessage: message,
+      loading: undefined,
+      type: 'OPEN_ALERT_DIALOG',
+    };
+    const store = mockStore({
+      toolsReducer: {
+        selectedTool: null,
+        tools: {
+          byName: {},
+          byObject: [],
+        },
       },
-    ];
-    const store = mockStore({});
+    });
     const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
     const user = {
       localUser: true,
@@ -52,6 +66,8 @@ describe('ProjectUploadActions', () => {
     };
 
     await store.dispatch(ProjectUploadActions.uploadProject(projectPath, user));
-    expect(store.getActions()).toEqual(expectedActions);
+    const actions = store.getActions();
+    expect(actions[0].meta.batch).toBeTruthy();
+    expect(actions[1]).toEqual(expectedAction);
   });
 });

@@ -318,6 +318,15 @@ export const getShowProjectInformationScreen = (state) =>
     state.projectValidationReducer);
 
 /**
+ * Checks if we are to reset reducers after the Show Only Project Information Screen is done
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getResetAfterShowOnlyProjectInformationScreen = (state) =>
+  fromProjectValidationReducer.getResetAfterShowOnlyProjectInformationScreen(
+    state.projectValidationReducer);
+
+/**
  * checks to see if we should show overwrite on save button
  * @param {Object} state
  * @return {boolean}
