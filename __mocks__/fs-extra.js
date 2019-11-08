@@ -181,14 +181,18 @@ function rename(oldPath, newPath) {
 }
 
 function copySync(srcPath, destinationPath) {
-  mockFS[destinationPath] = mockFS[srcPath];
-  addFileToParentDirectory(destinationPath);
   const isDir = statSync(srcPath).isDirectory();
+
   if (isDir) {
+    ensureDirSync(destinationPath);
     const files = readdirSync(srcPath);
+
     for (let f of files) {
       copySync(path.join(srcPath,f), path.join(destinationPath,f));
     }
+  } else { // not directory
+    addFileToParentDirectory(destinationPath);
+    mockFS[destinationPath] = _.cloneDeep(mockFS[srcPath]);
   }
 }
 
