@@ -12,7 +12,6 @@ import {
   getToolCategories,
   getToolsByKey,
   getToolsSelectedGLs,
-  getShowProjectInformationScreen,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -22,6 +21,10 @@ import {
   showStatus,
 } from '../actions/ProjectUploadActions';
 import * as ProjectInformationCheckActions from '../actions/ProjectInformationCheckActions';
+import * as ResourcesActions from '../actions/ResourcesActions';
+import { cancelProjectValidationStepper } from '../actions/ProjectImportStepperActions';
+import * as AlertModalActions from '../actions/AlertModalActions';
+import { prepareToolForLoading } from '../actions/ToolActions';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
@@ -37,11 +40,7 @@ import {
   PROJECTS_PATH,
   TRANSLATION_NOTES,
 } from '../common/constants';
-import * as ResourcesActions from './ResourcesActions';
-import { cancelProjectValidationStepper } from './ProjectImportStepperActions';
-import * as AlertModalActions from './AlertModalActions';
 import consts from './ActionTypes';
-import { prepareToolForLoading } from './ToolActions';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
@@ -799,30 +798,18 @@ function handleDcsOperationCore( createNew) {
 }
 
 /**
- * trigger when project details screen is finished
- * @param getState
- */
-async function onProjectDetailsFinished(getState) {
-  let detailsVisible = true;
-
-  do {
-    await delay(1000); // eslint-disable-line no-await-in-loop
-    detailsVisible = getShowProjectInformationScreen(getState());
-  } while (detailsVisible);
-}
-
-/**
  * handles the prompting for overwrite/merge of project.  Loops until problem has been handled.
  * @param {boolean} createNew - if true then create new DCS project with current name
+ * @param {Function} doLocalProjectRenamePrompting_ - for testing can optionally override prompt function
  * @return {Function} - Promise resolves to CONTINUE or RETRY
  */
-export function handleDcsRenameCollision(createNew) {
+export function handleDcsRenameCollision(createNew, doLocalProjectRenamePrompting_ = doLocalProjectRenamePrompting) {
   return (async (dispatch) => {
     let reShowErrorDialog;
     let results;
 
     do {
-      results = await dispatch(handleDcsRenameCollisionPromise(createNew)); // eslint-disable-line no-await-in-loop
+      results = await dispatch(handleDcsRenameCollisionPromise(createNew, doLocalProjectRenamePrompting_)); // eslint-disable-line no-await-in-loop
       reShowErrorDialog = (results === RESHOW_ERROR);
       console.log(`handleDcsRenameCollision() - reShowErrorDialog: ${reShowErrorDialog}`);
     } while (reShowErrorDialog);
@@ -832,11 +819,36 @@ export function handleDcsRenameCollision(createNew) {
 }
 
 /**
+ * display project details screen, then when it is done clean up and do callback
+ * @param {String} projectSaveLocation
+ * @param {String} projectName
+ * @param {Function} callback
+ * @return {Promise)
+ */
+export function doLocalProjectRenamePrompting(projectSaveLocation, projectName, callback) {
+  return ((dispatch, getState) => new Promise((resolve) => {
+    dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation, false, async () => {
+      await dispatch(updateProjectNameIfNecessary({}));
+      const translate = getTranslate(getState());
+      const message = translate('projects.renaming_alert', { project_name: projectName, door43: translate('_.door43') });
+      dispatch(showStatus(message)); // reshow dialog
+      await delay(300); // delay to allow UI to update
+
+      if (callback) {
+        callback(RESHOW_DCS_CHOICE);
+      }
+      resolve();
+    }));
+  }));
+}
+
+/**
  * core of handleDcsRenameCollision - wraps functions with callbacks in a Promise
  * @param {boolean} createNew - if true then create new DCS project with current name
+ * @param {Function} doLocalProjectRenamePrompting - function to call for rename prompting
  * @return {Promise<String>} Promise resolves to CONTINUE, RETRY, or RESHOW_ERROR
  */
-function handleDcsRenameCollisionPromise(createNew) {
+function handleDcsRenameCollisionPromise(createNew, doLocalProjectRenamePrompting) {
   return ((dispatch, getState) => new Promise((resolve) => {
     const translate = getTranslate(getState());
     const renameText = translate('buttons.rename_local');
@@ -856,12 +868,7 @@ function handleDcsRenameCollisionPromise(createNew) {
 
         switch (result) {
         case renameText:
-          dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation, false, false));
-          onProjectDetailsFinished(getState).then(async () => {
-            await dispatch(updateProjectNameIfNecessary({}));
-            await delay(300); // delay to allow dialog to close
-            resolve(RESHOW_DCS_CHOICE);
-          });
+          dispatch(doLocalProjectRenamePrompting(projectSaveLocation, projectName, resolve));
           break;
 
         case contactHelpDeskText:
