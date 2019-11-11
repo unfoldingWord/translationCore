@@ -493,6 +493,15 @@ export const getListOfOutdatedSourceContent = (state) =>
   fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);
 
 /**
+ * Returns the count of source content updates this session.  This can be used to see if dependencies on source content
+ *  need to be updated by checking if count has changed.
+ * @param {object} state
+ * @returns {Number} count of source content updates this session
+ */
+export const getSourceContentUpdateCount = (state) =>
+  fromSourceContentUpdatesReducer.getSourceContentUpdateCount(state.sourceContentUpdatesReducer);
+
+/**
  * Returns the selected tool categories for the selected project
  * @param state
  * @param toolName

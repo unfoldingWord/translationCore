@@ -40,23 +40,20 @@ class ToolCard extends Component {
       glSelectedChanged: false,
       selectedGL: '',
       gatewayLanguageList: null,
+      sourceContentUpdateCount: -1,
     };
   }
 
   componentWillMount() {
-    let {
-      tool,
-      bookId,
-      glSelected: selectedGL,
-    } = this.props;
-    const gatewayLanguageList = getGatewayLanguageList(bookId, tool.name);
+    let { glSelected: selectedGL } = this.props;
+    const gatewayLanguageList = this.updateGlList();
 
     // if there is only one gateway Language then select it as the GL for the tool card.
     if (gatewayLanguageList.length === 1) {
       selectedGL = gatewayLanguageList[0].code;
     }
     this.selectionChange(selectedGL);
-    this.setState({ selectedGL, gatewayLanguageList });
+    this.setState({ selectedGL });
   }
 
   componentDidMount() {
@@ -74,6 +71,21 @@ class ToolCard extends Component {
       this.setState({ selectedCategoriesChanged: true });
       this.loadProgress();
     }
+
+    if (this.props.sourceContentUpdateCount !== this.state.sourceContentUpdateCount) {
+      this.updateGlList();
+    }
+  }
+
+  updateGlList() {
+    let {
+      tool,
+      bookId,
+      sourceContentUpdateCount,
+    } = this.props;
+    const gatewayLanguageList = getGatewayLanguageList(bookId, tool.name);
+    this.setState({ gatewayLanguageList, sourceContentUpdateCount }); // this GL list correlates with this update count
+    return gatewayLanguageList;
   }
 
   loadProgress() {
@@ -310,6 +322,7 @@ ToolCard.propTypes = {
   ]),
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
+  sourceContentUpdateCount: PropTypes.number.isRequired,
 };
 
 ToolCard.contextTypes = { store: PropTypes.any };
