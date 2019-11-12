@@ -175,6 +175,7 @@
     "exported_alert": "${project_name} విజయవంతంగా ${file_path} కు ఎగుమతి అయ్యింది.",
     "must_be_logged_in_alert": "ప్రాజెక్టులు ఎగుమతి చెయ్యడానికి ఒక ${door43} ఖాతాను మీరు కలిగియుండాలి. దయచేసి వెలుపలికి రండి, తరువాత ఒక ${door43} వినియోగదారుని ఖాతాతో తిరిగి రండి..",
     "uploading_alert": "${project_name} ${door43}కు ఎగుమతి అవుతుంది, దయచేసి ఎదురుచూడండి....",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "${username}, మీ ప్రాజెక్ట్ విజయవంతంగా ఎగుమతి అయ్యింది",
     "upload_modified_error": "${project_name} ఎగుమతి కావడానికి అవకాశం లేదు ఎందుకంటే మీ ${door43} ఖాతాలో ఉన్న ప్రాజెక్టు అనువాదంలో మార్పులు ఉన్నాయి.",
     "merge_export_error": "ఈ ప్రాజెక్టుకు విలీన విభేదాలు ఉన్నాయి, ఎగుమతి కాబడదు, విలీన సంఘర్షణలు పరిష్కరించే పాజెక్టును ఎంపిక చెయ్యండి, మరల ప్రయత్నించండి.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
     "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
     "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "గుర్తుకు భాష పేరు సరిపోదు",
