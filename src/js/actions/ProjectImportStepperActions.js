@@ -18,8 +18,9 @@ const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
-let importStepperDone = () => { };
 let haveValidationSteps = false;
+
+let importStepperDone = () => { };
 
 /**
  * Wrapper function for handling the initial checking of steps.
