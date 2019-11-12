@@ -175,6 +175,7 @@
     "exported_alert": "${project_name} успешно экспортирован в ${file_path}.",
     "must_be_logged_in_alert": "Вы должны войти в систему с помощью учетной записи ${door43} для загрузки проектов. Пожалуйста, выйдите из системы и затем войдите в учетную запись ${door43}.",
     "uploading_alert": "Загрузка проекта ${project_name} в ${door43}. Пожалуйста, подождите...",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "${username}, ваш проект был успешно загружен.",
     "upload_modified_error": "Проект ${project_name} не может быть загружен, потому что произошли изменения при переводе этого проекта на ваш аккаунт ${door43}.",
     "merge_export_error": "Этот проект имеет конфликты слияния и не может быть экспортирован. Выберите проект, чтобы решить конфликты слияния, а затем повторите попытку.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
     "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
     "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
