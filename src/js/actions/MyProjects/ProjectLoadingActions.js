@@ -127,7 +127,16 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     // TODO: this is a temporary hack. Eventually we will always validate the project
     // but we need to refactored the online and local import functions first so there is no duplication.
     if (!skipValidation) {
-      await dispatch(validateProject(projectDir));
+      let prompted = false;
+
+      await dispatch(validateProject(projectDir, (prompted_) => {
+        prompted = prompted_;
+      }));
+
+      if (prompted) {
+        dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+        await delay(300); // for UI to update
+      }
     }
 
     // TRICKY: validation may have changed the project path
