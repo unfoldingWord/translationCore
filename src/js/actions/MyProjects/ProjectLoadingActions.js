@@ -133,7 +133,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
         prompted = prompted_;
       }));
 
-      if (prompted) {
+      if (prompted) { // reshow the alert dialog
         dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
         await delay(300); // for UI to update
       }
@@ -201,6 +201,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     }
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   }
+  dispatch(closeAlertDialog());
 };
 
 /**

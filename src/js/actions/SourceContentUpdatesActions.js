@@ -25,7 +25,7 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
  */
 export const resetSourceContentUpdatesReducer = () => ({ type: consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE });
 
-export const updateSourceContentUpdatesReducer = () => ({ type: consts.SOURCE_CONTENT_UPDATED });
+export const updateSourceContentUpdatesReducer = () => ({ type: consts.INCREMENT_SOURCE_CONTENT_UPDATE_COUNT });
 
 const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage) => ((dispatch, getState) => {
   const translate = getTranslate(getState());
