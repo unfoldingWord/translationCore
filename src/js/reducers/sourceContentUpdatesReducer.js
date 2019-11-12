@@ -17,7 +17,7 @@ const SourceContentUpdatesReducer = (state = initialState, action) => {
       ...state,
       resources: [],
     };
-  case consts.SOURCE_CONTENT_UPDATED:
+  case consts.INCREMENT_SOURCE_CONTENT_UPDATE_COUNT:
     return {
       ...state,
       updateCount: state.updateCount + 1,

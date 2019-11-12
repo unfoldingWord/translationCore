@@ -18,6 +18,8 @@ const COPYRIGHT_NAMESPACE = 'copyrightCheck';
 const MISSING_VERSES_NAMESPACE = 'missingVersesCheck';
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
+let haveValidationSteps = false;
+
 let importStepperDone = () => { };
 
 /**
@@ -35,9 +37,9 @@ export function validateProject(done) {
     dispatch(MissingVersesActions.validate());
 
     const { projectInformationCheckReducer: { alreadyImported, skipProjectNameCheck } } = getState();
+    haveValidationSteps = ProjectImportStepperActions.stepperActionCount(getState()) > 0;
 
     if (!skipProjectNameCheck) {
-      const haveValidationSteps = ProjectImportStepperActions.stepperActionCount(getState()) > 0;
       const addProjectPage = (haveValidationSteps && !results.projectNameMatchesSpec); // if we are doing validation stepper and project name does not match
 
       if (!alreadyImported || addProjectPage) { // if we are importing or project name doesn't match spec. insert project info check
@@ -58,7 +60,7 @@ export function initiateProjectValidationStepper() {
 
     if (projectValidationStepsArray.length === 0) {
       //If there are no invalid checks
-      importStepperDone();
+      importStepperDone(haveValidationSteps);
     } else {
       //Show the checks that didn't pass
       dispatch(updateStepperIndex());
@@ -83,7 +85,7 @@ export function updateStepperIndex() {
       //If there are no more steps (Done)
       dispatch(toggleProjectValidationStepper(false));
       // generate target language bible
-      importStepperDone();
+      importStepperDone(haveValidationSteps);
     } else {
       dispatch({
         type: consts.GO_TO_PROJECT_VALIDATION_STEP,
