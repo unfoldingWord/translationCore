@@ -25,6 +25,8 @@ const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources'
  */
 export const resetSourceContentUpdatesReducer = () => ({ type: consts.RESET_LIST_OF_SOURCE_CONTENT_TO_UPDATE });
 
+export const updateSourceContentUpdatesReducer = () => ({ type: consts.SOURCE_CONTENT_UPDATED });
+
 const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage) => ((dispatch, getState) => {
   const translate = getTranslate(getState());
 
@@ -103,6 +105,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
     await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
       .then(async () => {
         updateSourceContentUpdaterManifest();
+        dispatch(updateSourceContentUpdatesReducer());
 
         // if tool is opened then load new bible resources
         if (toolName) {
@@ -148,6 +151,7 @@ export const downloadMissingResource = (resourceDetails) => (async (dispatch, ge
     await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
       .then(async () => {
         updateSourceContentUpdaterManifest();
+        dispatch(updateSourceContentUpdatesReducer());
         const successMessage = translate('updates.source_content_updates_successful_download');
         dispatch(openAlertDialog(successMessage));
       })

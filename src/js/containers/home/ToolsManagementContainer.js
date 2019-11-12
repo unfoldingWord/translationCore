@@ -11,6 +11,7 @@ import {
   getProjectBookId,
   getToolGatewayLanguage,
   getSourceBookManifest,
+  getSourceContentUpdateCount,
 } from '../../selectors';
 // actions
 import { openAlertDialog } from '../../actions/AlertModalActions';
@@ -66,6 +67,7 @@ class ToolsManagementContainer extends Component {
       originalLanguageBookManifest,
       onMissingResource,
       toggleHomeView,
+      sourceContentUpdateCount,
     } = this.props;
 
     const instructions = (
@@ -106,6 +108,7 @@ class ToolsManagementContainer extends Component {
             originalLanguageBookManifest={originalLanguageBookManifest}
             invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
+            sourceContentUpdateCount={sourceContentUpdateCount}
           />
         </div>
       </HomeContainerContentWrapper>
@@ -117,6 +120,7 @@ const mapStateToProps = (state) => ({
   isUserLoggedIn: getIsUserLoggedIn(state),
   tools: getTools(state),
   originalLanguageBookManifest: getSourceBookManifest(state),
+  sourceContentUpdateCount: getSourceContentUpdateCount(state),
   reducers: {
     homeScreenReducer: state.homeScreenReducer,
     projectDetailsReducer: state.projectDetailsReducer,
@@ -167,6 +171,7 @@ ToolsManagementContainer.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
+  sourceContentUpdateCount: PropTypes.number.isRequired,
 };
 
 export default connect(

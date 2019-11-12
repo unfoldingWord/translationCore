@@ -26,6 +26,7 @@ const ToolsCards = ({
   originalLanguageBookManifest,
   onMissingResource,
   toggleHomeView,
+  sourceContentUpdateCount,
 }) => {
   if (!tools || tools.length === 0) {
     return (
@@ -111,6 +112,7 @@ const ToolsCards = ({
                 onMissingResource={() => onMissingResource(missingOLResource)}
                 invalidatedReducer={invalidatedReducer}
                 glSelected={glSelected || ''}
+                sourceContentUpdateCount={sourceContentUpdateCount}
               />
             );
           })
@@ -134,6 +136,7 @@ ToolsCards.propTypes = {
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
+  sourceContentUpdateCount: PropTypes.number.isRequired,
 };
 
 export default ToolsCards;
