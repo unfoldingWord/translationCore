@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import open from 'open';
+import { DCS_BASE_URL } from '../../../common/constants';
 
 class Login extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class Login extends Component {
 
   openDoor43AccountWindow() {
     this.props.actions.confirmOnlineAction(() => {
-      open('https://git.door43.org/user/sign_up');
+      open(DCS_BASE_URL + '/user/sign_up');
     });
   }
 
@@ -45,7 +46,7 @@ class Login extends Component {
       <div>
         <p style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('users.coming_soon')}</p>
         <p>{translate('users.not_create_d43_account', { door43: translate('_.door43'), app: translate('_.app_name') })}<br />
-          <a onClick={this.openDoor43AccountWindow}>https://git.door43.org/user/sign_up</a>
+          <a onClick={this.openDoor43AccountWindow}>{DCS_BASE_URL}/user/sign_up</a>
         </p>
       </div>
     );

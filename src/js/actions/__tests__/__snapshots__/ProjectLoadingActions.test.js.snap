@@ -273,6 +273,9 @@ Array [
     "type": "ADD_PROJECT_SETTINGS_PROPERTY",
     "value": "2019-08-22T17:06:12.493Z",
   },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
 ]
 `;
 
@@ -609,6 +612,10 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
+    "type": "SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK",
+    "value": null,
+  },
+  Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",
     "value": true,
   },
@@ -706,6 +713,9 @@ Array [
     "propertyName": "last_opened",
     "type": "ADD_PROJECT_SETTINGS_PROPERTY",
     "value": "2019-08-22T17:06:12.493Z",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
 ]
 `;
@@ -1043,6 +1053,10 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
+    "type": "SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK",
+    "value": null,
+  },
+  Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",
     "value": true,
   },
@@ -1235,6 +1249,9 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
 ]
 `;
@@ -1606,6 +1623,9 @@ Array [
       },
     ],
     "type": "GET_MY_PROJECTS",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
   },
 ]
 `;

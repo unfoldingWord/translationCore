@@ -2,9 +2,10 @@ import Gogs from 'gogs-client';
 import CryptoJS from 'crypto-js';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { DCS_BASE_URL } from '../common/constants';
 import Repo from './Repo';
 // constants
-const api = new Gogs('https://git.door43.org/api/v1'),
+const api = new Gogs(DCS_BASE_URL + '/api/v1'),
   tokenStub = { name: 'translation-core' };
 const SECRET = 'tc-core';
 export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
@@ -19,7 +20,7 @@ export function login(userObj) {
     api.listTokens(userObj).then(function (tokens) {
       return tokens.find((el) => el.name === tokenStub.name);
     }).then(function (token) {
-      return token ? token : api.createToken(tokenStub, userObj);
+      return (token && token.sha1) ? token : api.createToken(tokenStub, userObj); // recreate token if token missing or sha1 is missing
     }).then(function (token) {
       user.token = token.sha1;
       let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
@@ -77,7 +78,7 @@ export const createRepo = async (user, reponame) => {
  * @param {String} projectName
  * @return {string}
  */
-export const getRepoOwnerUrl = (user, projectName) => `https://git.door43.org/${user.username}/${projectName}.git`;
+export const getRepoOwnerUrl = (user, projectName) => `${DCS_BASE_URL}/${user.username}/${projectName}.git`;
 
 /**
  * get ulr for Door43 repo with token
@@ -85,7 +86,11 @@ export const getRepoOwnerUrl = (user, projectName) => `https://git.door43.org/${
  * @param {string} repoName
  * @return {string}
  */
-export const getUserTokenDoor43Url = (user, repoName) => 'https://' + user.token + '@git.door43.org/' + repoName + '.git';
+export const getUserTokenDoor43Url = (user, repoName) => {
+  const url = new URL(DCS_BASE_URL);
+  const dcsHostname = url.hostname;
+  return url.protocol + '//' + user.token + '@' + dcsHostname + '/' + repoName + '.git';
+};
 
 /**
  * get url for Door43 repo to show user
@@ -93,7 +98,7 @@ export const getUserTokenDoor43Url = (user, repoName) => 'https://' + user.token
  * @param {String} projectName
  * @return {string}
  */
-export const getUserDoor43Url = (user, projectName) => `https://git.door43.org/${user.username}/${projectName}`;
+export const getUserDoor43Url = (user, projectName) => `${DCS_BASE_URL}/${user.username}/${projectName}`;
 
 /**
  * renames DCS repo for a project
@@ -113,15 +118,15 @@ export const renameRepo = async (newName, projectPath, user) => {
 
     if (remote.owner === user.username) {
       // delete current repo
-      await api.deleteRepo({ name: remote.name }, user).catch(() => {
-      });
+      console.log(`renameRepo() - deleting repo: ${remote.name}`);
+      await api.deleteRepo({ name: remote.name }, user).catch(() => { });
 
       // delete legacy remote repo
       const legacyRemote = await repo.getRemote(TC_OLD_ORIGIN_KEY);
 
       if (legacyRemote && legacyRemote.name !== remote.name) {
-        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => {
-        });
+        console.log(`renameRepo() - deleting repo: ${legacyRemote.name}`);
+        await api.deleteRepo({ name: legacyRemote.name }, user).catch(() => { });
       }
     }
 

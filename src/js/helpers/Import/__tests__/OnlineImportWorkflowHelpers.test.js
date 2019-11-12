@@ -6,6 +6,7 @@ import {
   generateImportPath,
   verifyThisIsTCoreOrTStudioProject,
 } from '../OnlineImportWorkflowHelpers';
+import { DCS_BASE_URL } from '../../../common/constants';
 
 jest.mock('fs-extra');
 
@@ -17,14 +18,14 @@ describe('OnlineImportWorkflowHelpers.generateImportPath', function () {
   });
 
   test('should succeed on valid URL', async () => {
-    const url = 'https://git.door43.org/klappy/bhadrawahi_tit.git';
+    const url = DCS_BASE_URL + '/klappy/bhadrawahi_tit.git';
     const re = new RegExp((`.*translationCore\\${path.sep}imports\\${path.sep}bhadrawahi_tit`));
     let importPath = await generateImportPath(url);
     expect(importPath).toEqual(expect.stringMatching(re));
   });
 
   test('should throw error if already exists', async () => {
-    const url = 'https://git.door43.org/klappy/sample_project.git';
+    const url = DCS_BASE_URL + '/klappy/sample_project.git';
 
     await expect(generateImportPath(url)).
       rejects.
@@ -38,7 +39,7 @@ describe('OnlineImportWorkflowHelpers.generateImportPath', function () {
   });
 
   test('should handle missing .git', async () => {
-    const url = 'https://git.door43.org/klappy/bhadrawahi_tit';
+    const url = DCS_BASE_URL + '/klappy/bhadrawahi_tit';
     const re = new RegExp((`.*translationCore\\${path.sep}imports\\${path.sep}bhadrawahi_tit`));
     let importPath = await generateImportPath(url);
     expect(importPath).toEqual(expect.stringMatching(re));

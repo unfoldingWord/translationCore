@@ -104,6 +104,25 @@ export const updateProjectLastOpened = () => async (dispatch) => {
 };
 
 /**
+ * handles project validation and does prompting of user if project is invalid
+ * @param {string} projectDir
+ * @param {Function} translate
+ * @return {Promise}
+ */
+const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => {
+  let prompted = false;
+
+  await dispatch(validateProject(projectDir, (prompted_) => {
+    prompted = prompted_; // save if user was prompted
+  }));
+
+  if (prompted) { // reshow the alert dialog
+    dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+    await delay(300); // for UI to update
+  }
+};
+
+/**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
@@ -127,7 +146,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     // TODO: this is a temporary hack. Eventually we will always validate the project
     // but we need to refactored the online and local import functions first so there is no duplication.
     if (!skipValidation) {
-      await dispatch(validateProject(projectDir));
+      await dispatch(doValidationAndPrompting(projectDir, translate));
     }
 
     // TRICKY: validation may have changed the project path
@@ -192,6 +211,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     }
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   }
+  dispatch(closeAlertDialog());
 };
 
 /**

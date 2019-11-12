@@ -32,15 +32,16 @@ import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
  * Action that call helpers to handle business
  * logic for validations
  * @param {String} projectPath - Full path to the project root folder
+ * @param {null|Function} promptCallback - optional callback for feedback if user was prompted
  */
-export const validateProject = (projectPath) => async (dispatch, getState) => {
+export const validateProject = (projectPath, promptCallback = null) => async (dispatch, getState) => {
   dispatch(AlertModalActions.closeAlertDialog());
   await manifestValidationHelpers.manifestExists(projectPath);
   await projectStructureValidatoinHelpers.verifyProjectType(projectPath);
   await projectStructureValidatoinHelpers.detectInvalidProjectStructure(projectPath);
   await setUpProjectDetails(projectPath, dispatch);
   await projectStructureValidatoinHelpers.verifyValidBetaProject(getState());
-  await dispatch(promptMissingDetails(projectPath));
+  await dispatch(promptMissingDetails(projectPath, promptCallback));
 };
 
 /**
@@ -61,14 +62,19 @@ export const setUpProjectDetails = (projectPath, dispatch) => new Promise((resol
  * @description - Wrapper from asynchronously handling user input from the
  * project import stepper
  * @param {String} projectPath
+ * @param {null|Function} promptCallback - optional callback for feedback if user was prompted
  */
-export const promptMissingDetails = (projectPath) => ((dispatch, getState) => new Promise(async (resolve, reject) => {
+export const promptMissingDetails = (projectPath, promptCallback) => ((dispatch, getState) => new Promise(async (resolve, reject) => {
   try {
     let needToCheckProjectNameWhenStepperDone = false;
 
-    dispatch(ProjectImportStepperActions.validateProject(async () => {
+    dispatch(ProjectImportStepperActions.validateProject(async (haveValidationSteps) => {
       if (needToCheckProjectNameWhenStepperDone) {
         await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
+      }
+
+      if (promptCallback) {
+        promptCallback(haveValidationSteps);
       }
       resolve();
     }));

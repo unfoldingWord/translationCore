@@ -1,5 +1,6 @@
 import { exec } from 'child_process';
 import simpleGit from 'simple-git';
+import { DCS_BASE_URL } from '../common/constants';
 import * as GogsApiHelpers from './GogsApiHelpers';
 
 /**
@@ -177,7 +178,12 @@ export default function GitApi(directory) {
  * splits the repo url to get repo name
  */
 export const parseRepoUrl = (ulr) => {
-  const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+  let repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+
+  if (repoName.length <= 5) { // if we didn't find enough data, try matching without .git extension
+    repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/([^/]+)/) || [''];
+  }
+
   const repoInfo = {
     name: repoName[5],
     user: repoName[4],
@@ -229,7 +235,7 @@ export const pushNewRepo = (projectPath, user, repoName, branch = 'master') => n
 export const renameRepoLocally = (user, newName, projectPath) => new Promise((resolve) => {
   const git = GitApi(projectPath);
 
-  git.remote(['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`], (res) => {
+  git.remote(['set-url', 'origin', `${DCS_BASE_URL}/${user.username}/${newName}.git`], (res) => {
     resolve(res);
   });
 });

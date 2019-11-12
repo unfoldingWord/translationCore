@@ -318,6 +318,15 @@ export const getShowProjectInformationScreen = (state) =>
     state.projectValidationReducer);
 
 /**
+ * Checks if show only the project information screen has callback.
+ * @param {Object} state
+ * @return {boolean}
+ */
+export const getShowProjectInformationScreenCallback = (state) =>
+  fromProjectValidationReducer.getShowProjectInformationScreenCallback(
+    state.projectValidationReducer);
+
+/**
  * checks to see if we should show overwrite on save button
  * @param {Object} state
  * @return {boolean}
@@ -482,6 +491,15 @@ export const getIsHomeVisible = state =>
  */
 export const getListOfOutdatedSourceContent = (state) =>
   fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);
+
+/**
+ * Returns the count of source content updates this session.  This can be used to see if dependencies on source content
+ *  need to be updated by checking if count has changed.
+ * @param {object} state
+ * @returns {Number} count of source content updates this session
+ */
+export const getSourceContentUpdateCount = (state) =>
+  fromSourceContentUpdatesReducer.getSourceContentUpdateCount(state.sourceContentUpdatesReducer);
 
 /**
  * Returns the selected tool categories for the selected project
