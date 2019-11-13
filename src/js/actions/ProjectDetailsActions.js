@@ -718,7 +718,6 @@ function handleDcsOperationCore( createNew) {
       } else { // remote repo does not already exist
         try {
           const translate = getTranslate(getState());
-          console.log('handleDcsOperationCore() - saving project changes to git');
 
           if (createNew) {
             const message = translate('projects.uploading_alert', { project_name: projectName, door43: translate('_.door43') });
