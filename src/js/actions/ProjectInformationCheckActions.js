@@ -8,7 +8,7 @@ import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import { delay } from '../common/utils';
-import { getTranslate, getShowProjectInformationScreenCallback } from '../selectors';
+import { getTranslate } from '../selectors';
 import BooksOfBible from '../../../tcResources/books';
 // actions
 import consts from './ActionTypes';
