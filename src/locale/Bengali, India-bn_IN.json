@@ -175,7 +175,7 @@
     "exported_alert": "${project_name} কে সফলভাবে ${file_path} তে রপ্তানি করা হয়েছে I ",
     "must_be_logged_in_alert": "প্রকল্পগুলোকে আপলোড করতে একটি ${door43} একাউন্টের সাহায্যে আপনাকে অবশ্যই লগ ইন করা হবে  I ",
     "uploading_alert": "${project_name} কে ${door43} তে আপলোড করছে I দয়া করে অপেক্ষা করুন... ",
-    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
+    "renaming_alert": "${door43} এর উপরে  ${project_name} নবনামাঙ্কিত করছে I অপেক্ষা করুন......",
     "upload_successful_alert": "${username}, আপনার প্রকল্পটিকে সফলভাবে আপলোড করা হয়েছিল I ",
     "upload_modified_error": "${project_name} কে আপলোড করতে পারা যাবে না কারণ আপনার ${door43} একাউন্টে ওই প্রকল্পটির অনুবাদে পরিবর্তন করা  হয়েছে I  ",
     "merge_export_error": "এই প্রকল্পটির মধ্যে মিশে যাওয়া সংঘাত সমূহ আছে এবং রপ্তানি করা যাবে না I মিশে যাওয়া সংঘাত সমূহের সমাধান করতে প্রকল্পটিকে নির্বাচন করুন, তারপরে পুনরায় চেষ্টা করুন I ",
