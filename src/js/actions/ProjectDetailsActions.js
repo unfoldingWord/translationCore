@@ -15,11 +15,7 @@ import {
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
-import {
-  prepareProjectRepo,
-  pushProjectRepo,
-  showStatus,
-} from '../actions/ProjectUploadActions';
+import { showStatus } from '../actions/ProjectUploadActions';
 import * as ProjectInformationCheckActions from '../actions/ProjectInformationCheckActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
 import { cancelProjectValidationStepper } from '../actions/ProjectImportStepperActions';
@@ -673,45 +669,6 @@ export function showErrorFeedbackDialog(translateKey, doneCB = null) {
 }
 
 /**
- * saves repo changes and pushes them up to DCS
- * @return {Promise}
- */
-function saveChangesToDCS() {
-  return async (dispatch, getState) => {
-    try {
-      const translate = getTranslate(getState());
-      const { projectSaveLocation } = getState().projectDetailsReducer;
-      const { userdata } = getState().loginReducer;
-      const projectName = path.basename(projectSaveLocation);
-      const message = translate('projects.uploading_alert',
-        { project_name: projectName, door43: translate('_.door43') });
-      dispatch(showStatus(message));
-
-      const repo = await prepareProjectRepo(userdata, projectName, projectSaveLocation); // eslint-disable-line no-await-in-loop
-      const response = await pushProjectRepo(repo); // eslint-disable-line no-await-in-loop
-      console.error('saveChangesToDCS() - uploaded changes to DCS');
-      dispatch(AlertModalActions.closeAlertDialog());
-
-      if (response.errors && response.errors.length) {
-        console.error('saveChangesToDCS(): push failed', response);
-
-        await new Promise(resolve => {
-          dispatch(AlertModalActions.openOptionDialog(
-            translate('projects.uploading_error', { error: response.errors }),
-            () => {
-              resolve();
-            }));
-        });
-      }
-    } catch (e) {
-      console.error('saveChangesToDCS() - error uploading changes to DCS');
-      console.error(e);
-      dispatch(AlertModalActions.closeAlertDialog());
-    }
-  };
-}
-
-/**
  * perform selected action create new or rename project on DCS to match new name.  This wraps handleDcsOperationCore
  *  with online confirm
  * @param {boolean} createNew - if true then create new DCS project with current name
@@ -726,11 +683,6 @@ export function handleDcsOperation(createNew) {
 
         do {
           renameResults = await dispatch(handleDcsOperationCore(createNew)); // eslint-disable-line no-await-in-loop
-
-          if (renameResults === CONTINUE) {
-            console.log('handleDcsOperation() - saving changes to DCS');
-            await dispatch(saveChangesToDCS()); // eslint-disable-line no-await-in-loop
-          }
           retry = (renameResults === RETRY);
         } while (retry);
         resolve(renameResults);
@@ -741,6 +693,19 @@ export function handleDcsOperation(createNew) {
       } // on cancel
     ));
   }));
+}
+
+/**
+ * make sure any changes to project such as project name changes are saved in git
+ * @param getState
+ * @param projectSaveLocation
+ * @return {Promise<*>}
+ */
+async function saveProjectChangesToGit(getState, projectSaveLocation) {
+  const { userdata } = getState().loginReducer;
+  const repo = await Repo.open(projectSaveLocation, userdata);
+  await repo.save('Commit before upload');
+  return userdata;
 }
 
 /***
@@ -766,6 +731,8 @@ function handleDcsOperationCore( createNew) {
       } else { // remote repo does not already exist
         try {
           const translate = getTranslate(getState());
+          console.log('handleDcsOperationCore() - saving project changes to git');
+          const userdata = await saveProjectChangesToGit(getState, projectSaveLocation);
 
           if (createNew) {
             const message = translate('projects.uploading_alert', { project_name: projectName, door43: translate('_.door43') });
