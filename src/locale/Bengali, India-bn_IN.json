@@ -4,7 +4,7 @@
   "version": "সংস্করণ ${version}",
   "instructions": "নির্দেশাবলী",
   "access_internet": "ইন্টারনেটে প্রবেশ করন ",
-  "to_get_started": "আরম্ভ করুন, দয়া করে: ",
+  "to_get_started": "দয়া করে আরম্ভ করুন: ",
   "log_in": "লগ ইন করুন",
   "save_changes": "পরিবর্তনগুলি সংরক্ষণ করুন",
   "saving_changes": "পরিবর্তনগুলি সংরক্ষণ করা ",
@@ -214,7 +214,7 @@
     "dcs_rename_failed": "${door43} সংগ্রহস্থলটির নতুন নামকরণ করা হয় নি I <br/><br/>আপনি কি ${door43} সংগ্রহস্থলটির নতুন নামকরণ করতে চেষ্টা করতে চান অথবা নতুন নামকরণ করা ছাড়াই চালিয়ে যেতে চান? ",
     "dcs_create_new_failed": "${door43} সংগ্রহস্থলটিকে সৃষ্টি করতে পারা যা নি I <br/><br/>আপনি কি ${door43} সংগ্রহস্থলটিকে সৃষ্টি করতে পুনরায় চেষ্টা করতে চান অথবা নবনামাঙ্কন ছাড়াই চালিয়ে যেতে চান?",
     "dcs_rename_conflict": "নতুন নামকরণ করা ব্যর্থ হয়েছে কারণ এই নামের সাথে একটি সংগ্রহস্থল আগে থেকেই রয়েছে I<br/><br/> আপনার প্রকল্পটিকে ${door43} তে আপলোড করতে সক্ষম হতে, হয় আপনার স্থানীয় প্রকল্পের নতুন নামকরণ করার দরকার হবে অথবা আপনার ${door43} প্রকল্পের নতুন নামকরণ করতে হবে I   ",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "নতুন সংগ্রহস্থল সৃষ্টি করা ব্যর্থ হয়েছে কারণ এই নামের একটি সংগ্রহস্থল ইতিমধ্যেই বিদ্যমান রয়েছে I <br/><br/>আপনার প্রকল্পকে ${door43} তে আপলোড করতে সক্ষম হওয়ার জন্য, হয় আপনার স্থানীয় প্রকল্পটির নবনামাঙ্কন করার প্রয়োজন হবে নয়তো ${door43} প্রকল্পটির নতুন নামকরণ করতে হবে I "
   },
   "project_validation": {
     "language_mismatch": "কোডের জন্য ভাষার নাম বৈধ নয় ",
