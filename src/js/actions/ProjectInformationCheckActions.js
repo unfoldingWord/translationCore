@@ -22,6 +22,8 @@ import { closeProject, loadProjectDetails } from './MyProjects/ProjectLoadingAct
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
+let callbackForShowProjectInformationScreen = null;
+
 /**
  * check if current project name matches spec
  * @param projectSaveLocation
@@ -509,7 +511,7 @@ export function openOnlyProjectDetailsScreen(projectPath, initiallyEnableSaveIfV
     dispatch(ProjectValidationActions.initializeReducersForProjectOpenValidation());
     dispatch(setProjectDetailsInProjectInformationReducer(manifest));
     dispatch(ProjectImportStepperActions.addProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
-    dispatch({ type: consts.SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK, value: callback });
+    callbackForShowProjectInformationScreen = callback;
     dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: true });
     dispatch(ProjectImportStepperActions.updateStepperIndex());
 
@@ -533,11 +535,11 @@ export function saveAndCloseProjectInformationCheckIfValid() {
       await dispatch(saveCheckingDetailsToProjectInformationReducer());
       dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
       dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
-      const callback = getShowProjectInformationScreenCallback(getState());
       dispatch({ type: consts.ONLY_SHOW_PROJECT_INFORMATION_SCREEN, value: false });
-      dispatch({ type: consts.SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK, value: null });
 
-      if (callback) {
+      if (callbackForShowProjectInformationScreen) {
+        const callback = callbackForShowProjectInformationScreen;
+        callbackForShowProjectInformationScreen = null; // protect from double clicks
         await callback(); // callback will handle cleanup
       } else { // do default cleanup after project edit behavior
         await dispatch(ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting());
