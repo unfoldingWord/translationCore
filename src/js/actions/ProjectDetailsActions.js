@@ -695,19 +695,6 @@ export function handleDcsOperation(createNew) {
   }));
 }
 
-/**
- * make sure any changes to project such as project name changes are saved in git
- * @param getState
- * @param projectSaveLocation
- * @return {Promise<*>}
- */
-async function saveProjectChangesToGit(getState, projectSaveLocation) {
-  const { userdata } = getState().loginReducer;
-  const repo = await Repo.open(projectSaveLocation, userdata);
-  await repo.save('Commit before upload');
-  return userdata;
-}
-
 /***
  * Core of handleDcsOperationCore without the confirm online prompt
  * @param {boolean} createNew - if true then create new DCS project with current name
@@ -732,7 +719,6 @@ function handleDcsOperationCore( createNew) {
         try {
           const translate = getTranslate(getState());
           console.log('handleDcsOperationCore() - saving project changes to git');
-          const userdata = await saveProjectChangesToGit(getState, projectSaveLocation);
 
           if (createNew) {
             const message = translate('projects.uploading_alert', { project_name: projectName, door43: translate('_.door43') });
