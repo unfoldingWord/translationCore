@@ -175,6 +175,7 @@
     "exported_alert": "${project_name} ഇതിലേക്ക് വിജയകരമായി എക്‌സ്‌പോർട്ടുചെയ്‌തു\n ${file_path}.",
     "must_be_logged_in_alert": "പ്രോജക്റ്റുകൾ അപ്‌ലോഡുചെയ്യുന്നതിന് നിങ്ങൾ ഒരു അക്കൗണ്ട് \n ${door43} ഉപയോഗിച്ച് ലോഗിൻ ചെയ്തിരിക്കണം. ലോഗൌട്ട് ചെയ്‌ത് ഒരു ഉപയോക്തൃ അക്കൌണ്ട് ${door43} ഉപയോഗിച്ച് തിരികെ പ്രവേശിക്കുക.",
     "uploading_alert": "${project_name} to ${door43}. ലേക്ക്അപ്‌ലോഡുചെയ്യുന്നു. കാത്തിരിക്കൂ...",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "${username}, നിങ്ങളുടെ പ്രോജക്റ്റ് വിജയകരമായി അപ്‌ലോഡുചെയ്‌തു.",
     "upload_modified_error": "${project_name} നിങ്ങളുടെ അക്കൗണ്ടിൽ ആ പ്രോജക്റ്റിന്‍റെ വിവർത്തനത്തിൽ മാറ്റങ്ങൾ വരുത്തിയതിനാൽ അപ്‌ലോഡ് ചെയ്യാൻ ${door43} കഴിയില്ല.",
     "merge_export_error": "ഈ പ്രോജക്റ്റിന് ലയന വൈരുദ്ധ്യങ്ങളുണ്ട്, കയറ്റുമതി ചെയ്യാൻ കഴിയില്ല. ലയന പൊരുത്തക്കേടുകൾ പരിഹരിക്കുന്നതിന് പ്രോജക്റ്റ് തിരഞ്ഞെടുക്കുക, തുടർന്ന് വീണ്ടും ശ്രമിക്കുക.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "നിങ്ങളുടെ പ്രോജക്റ്റിന്റെ പേരുമാറ്റി<br/><b>${project}</b><br/>ഈ പ്രോജക്റ്റിന്റെ നിലവിലുള്ള ${door43} ശേഖരത്തിൽ നിങ്ങൾ എന്തുചെയ്യാൻ ആഗ്രഹിക്കുന്നു?",
     "dcs_rename_success": "പ്രോജക്റ്റിനായുള്ള ${door43} ശേഖരം വിജയകരമായി അപ്‌ഡേറ്റുചെയ്‌തു\n<br/>${project}",
     "dcs_rename_failed": "${door43} ശേഖരത്തിന്‍റെ പേരുമാറ്റിയില്ല.<br/><br/> ${door43} ശേഖരത്തിന്‍ പേരുമാറ്റുന്നത് വീണ്ടും ശ്രമിക്കണോ അതോ പേരുമാറ്റാതെ തുടരണമോ?",
-    "dcs_rename_conflict": "ഈ പേരിനൊപ്പം ഒരു ശേഖരം ഇതിനകം തന്നെ ഉള്ളതിനാൽ പേരുമാറ്റുന്നത് പരാജയപ്പെട്ടു. <br/> <br/> നിങ്ങളുടെ പ്രോജക്റ്റ് ${door43} ലേക്ക് അപ്‌ലോഡുചെയ്യാൻ, നിങ്ങളുടെ പ്രാദേശിക പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ അല്ലെങ്കിൽ ${door43} പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ ചെയ്യേണ്ടതുണ്ട്."
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "ഈ പേരിനൊപ്പം ഒരു ശേഖരം ഇതിനകം തന്നെ ഉള്ളതിനാൽ പേരുമാറ്റുന്നത് പരാജയപ്പെട്ടു. <br/> <br/> നിങ്ങളുടെ പ്രോജക്റ്റ് ${door43} ലേക്ക് അപ്‌ലോഡുചെയ്യാൻ, നിങ്ങളുടെ പ്രാദേശിക പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ അല്ലെങ്കിൽ ${door43} പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ ചെയ്യേണ്ടതുണ്ട്.",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "ഭാഷയുടെ പേര് കോഡിന് സാധുതയുള്ളതല്ല\n",
