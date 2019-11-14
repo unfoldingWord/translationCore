@@ -175,6 +175,7 @@
     "exported_alert": "${project_name} સફળતાપૂર્વક ${file_path} માં નિકાસ પામેલ છે.",
     "must_be_logged_in_alert": "પ્રોજેક્ટને અપલોડ કરવા માટે તમારે ${door43} ના એકાઉન્ટ સાથે લૉગ ઇન કરવું પડશે. કૃપા કરીને લૉગ આઉટ થાઓ અને ${door43} ના વપરાશકર્તાના એકાઉન્ટ સાથે પાછા ફરો.",
     "uploading_alert": "${project_name} ને ${door43} પર અપલોડ કરી રહ્યું છે. કૃપા કરીને રાહ જુઓ...",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "${username}, તમારો પ્રોજેક્ટ સફળતાપૂર્વક અપલોડ થઈ ગયો છે.",
     "upload_modified_error": "${project_name} અપલોડ થઈ શકશે નહીં કેમ કે તમારા ${door43} ના એકાઉન્ટ પર તે પ્રોજેક્ટના અનુવાદમાં ફેરફાર થયાં છે.",
     "merge_export_error": "આ પ્રોજેક્ટને મર્જ કરવામાં મુશ્કેલી થઈ રહી છે અને તેથી નિકાસ કરી શકાતા નથી. મર્જ કરવામાં થયેલી મુશ્કેલીને ઉકેલવા માટે પ્રોજેક્ટને પસંદ કરો, પછી ફરીથી પ્રયત્ન કરો.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "તમારા પ્રોજેક્ટનું બીજું નામ <br/><b>${project}</b><br/>આ પ્રોજેક્ટના હાલના ${door43} સંગ્રહ સાથે તમે શું કરવા માંગો છો?",
     "dcs_rename_success": "પ્રોજેક્ટ માટે ${door43} સંગ્રહ સફળતાપૂર્વક અપડેટ થઈ ગયું છે.<br/>${project}",
     "dcs_rename_failed": "${door43} સંગ્રહને બીજું નામ આપવામાં આવ્યું ન હતું.<br/><br/>શું તમે ${door43} સંગ્રહને બીજું નામ આપવા માગો છો કે બીજા નામ વિના જારી રાખવા માગો છો?",
-    "dcs_rename_conflict": "બીજું નામ નિષ્ફળ નિવડ્યું છે કેમ કે આ નામ સાથેનો સંગ્રહ પહેલેથી જ ઉપલબ્ધ છે.<br/><br/>${door43} પર તમારા પ્રોજેક્ટને અપલોડ કરવા, તમારે તમારા સ્થાનિક પ્રોજેક્ટને બીજું નામ આપવું પડશે અથવા તમારા ${door43} પ્રોજેક્ટને બીજું નામ આપવું પડશે."
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "બીજું નામ નિષ્ફળ નિવડ્યું છે કેમ કે આ નામ સાથેનો સંગ્રહ પહેલેથી જ ઉપલબ્ધ છે.<br/><br/>${door43} પર તમારા પ્રોજેક્ટને અપલોડ કરવા, તમારે તમારા સ્થાનિક પ્રોજેક્ટને બીજું નામ આપવું પડશે અથવા તમારા ${door43} પ્રોજેક્ટને બીજું નામ આપવું પડશે.",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "કોડ માટે ભાષાનું નામ માન્ય નથી",
