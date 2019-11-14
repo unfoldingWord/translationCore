@@ -175,6 +175,7 @@
     "exported_alert": "\"${project_name}ସଫଳତାପୂର୍ବକ${file_path}ରେ ଏକ୍ସ୍ପୋର୍ଟ୍ କରାଯାଇଛି।\"",
     "must_be_logged_in_alert": "\"ପ୍ରକଳ୍ପଗୁଡିକୁ ଅପ୍‌ଲୋଡ୍ କରିବା ପାଇଁ ଆପଣଙ୍କୁ ${door43} ଖାତା ସହିତ ଲଗ୍ ଇନ୍ କରିବାକୁ ପଡିବ।${door43}ଉପଭୋକ୍ତାଙ୍କ ଖାତାରୁ ଲଗ୍ ଆଉଟ୍ ହୁଅନ୍ତୁ ଏବଂ ପୁନର୍ବାର ସେହି ଖାତାକୁ ଫେରନ୍ତୁ।\" ",
     "uploading_alert": "\"${project_name}କୁ ${door43}ରେ ଅପ୍‌ଲୋଡ୍ କରାଯାଉଛି। ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ...\"",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "\"${username}, ଆପଣଙ୍କ ପ୍ରକଳ୍ପ ସଫଳତାପୂର୍ବକ ଅପ୍‌ଲୋଡ୍ ହୋଇଅଛି।\"",
     "upload_modified_error": "\"${project_name} ଅପ୍‌ଲୋଡ୍ ହୋଇପାରିବ ନାହିଁ କାରଣ ଆପଣଙ୍କ ${door43}ଖାତାରେ ସେହି ପ୍ରକଳ୍ପର ଅନୁବାଦରେ ପରିବର୍ତ୍ତନ ହୋଇଅଛି।\"",
     "merge_export_error": "\"ଏହି ପ୍ରକଳ୍ପରେ ଦ୍ବନ୍ଦଗୁଡିକ ମିଶ୍ରିତ ଅଛି ଏବଂ ଏହାକୁ ଆଦୌ ଏକ୍ସ୍ପୋର୍ଟ୍ କରାଯାଇପାରିବ ନାହିଁ। ମିଶ୍ରିତ ଦ୍ବନ୍ଦଗୁଡିକୁ ସମାଧାନ କରିବା ନିମନ୍ତେ ପ୍ରକଳ୍ପକୁ ଚୟନ କରନ୍ତୁ, ତା'ପରେ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।\"",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "\"ଆପଣଙ୍କ ପ୍ରକଳ୍ପର ନାମକୁ<br/><b>${project}</b><br/> ନାମିତ କରାଯାଇଛି, ${door43}ରେ ରହିଥିବା ପ୍ରକଳ୍ପ ସହିତ ଆପଣ କରିବାକୁ ଇଚ୍ଛା କରୁଛନ୍ତି ?\"",
     "dcs_rename_success": "\"${door43}ରିପୋଜିଟୋରୀ ପ୍ରକଲାପ ପାଇଁ ସଫଳତା ପୂର୍ବକ <br/>${project}ରେ ଅଦ୍ୟତନ ହୋଇଅଛି\"",
     "dcs_rename_failed": "\"${door43}ରିପୋଜିଟୋରୀକୁ ପୁନଃ ନାମାଙ୍କରଣ କରାଯାଇନଥିଲା। <br/><br/> କ'ଣ ଆପଣ ${door43}ରିପୋଜିଟୋରୀକୁ ପୁନଃ ନାମାଙ୍କରଣ କରିବାକୁ ଚାହୁଁଛନ୍ତି ନା ପୁନଃ ନାମାଙ୍କରଣ ବିନା ଜାରି ରଖିବାକୁ ଚାହୁଁଛନ୍ତି ?\"",
-    "dcs_rename_conflict": "\"ପୁନଃ ନାମାଙ୍କରଣ ବିଫଳ ହେଲା କାରଣ ଏହି ନାମର ସହିତ ଏକ ରିପୋଜିଟୋରୀ ପୂର୍ବରୁ ଅଛି।<br/><br/> ଆପଣଙ୍କ ପ୍ରକଳ୍ପ ${door43}ରେ ଅପ୍ଲୋଡ୍ କରିପାରିବ, ଆପଣଙ୍କୁ ନିଜ ସ୍ଥାନୀୟ ପ୍ରକଳ୍ପକୁ ପୁନଃ ନାମାଙ୍କରଣ କରିବା ଆବଶ୍ୟକ କିମ୍ବା ଆପଣଙ୍କ${door43} ପ୍ରକଳ୍ପକୁ ନାମାଙ୍କରଣ କରନ୍ତୁ।\""
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "\"ପୁନଃ ନାମାଙ୍କରଣ ବିଫଳ ହେଲା କାରଣ ଏହି ନାମର ସହିତ ଏକ ରିପୋଜିଟୋରୀ ପୂର୍ବରୁ ଅଛି।<br/><br/> ଆପଣଙ୍କ ପ୍ରକଳ୍ପ ${door43}ରେ ଅପ୍ଲୋଡ୍ କରିପାରିବ, ଆପଣଙ୍କୁ ନିଜ ସ୍ଥାନୀୟ ପ୍ରକଳ୍ପକୁ ପୁନଃ ନାମାଙ୍କରଣ କରିବା ଆବଶ୍ୟକ କିମ୍ବା ଆପଣଙ୍କ${door43} ପ୍ରକଳ୍ପକୁ ନାମାଙ୍କରଣ କରନ୍ତୁ।\"",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "\"\"କୋଡ୍ ନିମନ୍ତେ ଭାଷାର ନାମ ଅମାନ୍ୟ ଅଟେ\"",
