@@ -175,6 +175,7 @@
     "exported_alert": "${project_name} tu ${file_path} te niryat kura tu safal hoise.",
     "must_be_logged_in_alert": "Kaam upload kuribole karne aapni ji hoilebi ekta ${door43} account logote log in kuribo lagibo. Morom pora log out kuria pichete ${door43} upoyogkorta laga account logote wapash login kuribi.",
     "uploading_alert": "${project_name} ${door43} te upload kuri ashe. Morom pora rukhibi...",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "${username}, aapni laga kaam niryat kura tu sampurna safal hoise.",
     "upload_modified_error": "${project_name} niryat kuribole napare, kilemane aapni laga ${door43} account te thakia aapni laga kaam te bolawat hoi jaise.",
     "merge_export_error": "Itu kaam te sangharsha khan ashe aru niryat kuribole napare. Sangharsha khan badlawa kuribole karne kaam tu chunibi, aru wapash kusish koribi.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "Aapni laga project tu nautun naam <br/> <b>${project}</b><br/> rakha hoise. Itu project te ${door43} laga thakia bhandar tu aapni ki kuribole itcha kure?",
     "dcs_rename_success": "${door43} bhandar tu project karne sampurna unnati hoise. <br/>${project}",
     "dcs_rename_failed": "${door43} bhandar ke nautun naam diya huwa nai.<br/><br> aapni arubi ${door43} bhandar laga nautun naam dibole itcha kore nohoile nautun naam nadikena ene chari dibo?",
-    "dcs_rename_conflict": "Nautun naam diya tu asafal hoise. Kilemane itu naam logote aage pora bhandar ashe. <br/><br/> tu aapni laga project ${door43} te upload kuribole paribo, aapni laga sthaniya project nohoile ${door43} laga naamtu bodli kuribo lagibo."
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "Nautun naam diya tu asafal hoise. Kilemane itu naam logote aage pora bhandar ashe. <br/><br/> tu aapni laga project ${door43} te upload kuribole paribo, aapni laga sthaniya project nohoile ${door43} laga naamtu bodli kuribo lagibo.",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "Code karne bhasha laga naam namile",

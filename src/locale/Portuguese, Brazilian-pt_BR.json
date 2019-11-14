@@ -175,6 +175,7 @@
     "exported_alert": "${project_name} foi exportado com sucesso para ${file_path}.",
     "must_be_logged_in_alert": "Para fazer o upload de projetos, é preciso estar logado com uma conta ${door43}. Por favor, saia e entre usando uma conta com usuário ${door43}.",
     "uploading_alert": "Enviando o ${project_name} para ${door43}. Por favor aguarde...",
+    "renaming_alert": "Renomeando ${project_name} em ${door43}. Por favor, aguarde...",
     "upload_successful_alert": "Seu projeto foi carregado com sucesso, ${username}.",
     "upload_modified_error": "${project_name} não pode ser enviado porque a tradução desse projeto foi alterada na sua conta ${door43}.",
     "merge_export_error": "Este projeto não pode ser exportado por conter conflitos de integração. Selecione o projeto para resolver os conflitos de integração e então tente novamente.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "Seu projeto foi renomeado<br/><b>${project}</b><br/>O que você gostaria de fazer com o repositório ${door43} já existente deste projeto?",
     "dcs_rename_success": "O repositório ${door43} do projeto foi atualizado com sucesso.<br/>${project}",
     "dcs_rename_failed": "O repositório ${door43} não foi renomeado.<br/><br/>Você deseja tentar renomear novamente o repositório ${door43} ou continuar sem renomear?",
-    "dcs_rename_conflict": "Renomeação falhou porque um repositório com este noem já existe.<br/><br/>Para poder atualizar seu projeto para o ${door43}, você precisa ou de renomear seu projeto local ou renomear o seu projeto ${door43}."
+    "dcs_create_new_failed": "O repositório ${door43} não pôde ser criado.<br/><br/>Você deseja tentar novamente criar o repositório ${door43} ou continuar sem a renomeação?",
+    "dcs_rename_conflict": "Renomeação falhou porque um repositório com este noem já existe.<br/><br/>Para poder atualizar seu projeto para o ${door43}, você precisa ou de renomear seu projeto local ou renomear o seu projeto ${door43}.",
+    "dcs_create_new_conflict": "Criação de novo repositório falhou porque um repositório com este nome já existe.<br/><br/>Para ser permitido o upload do seu projeto para a ${door43}, você precisa ou renomear seu projeto local ou renomear seu Projeto ${door43}."
   },
   "project_validation": {
     "language_mismatch": "O Nome de Idioma não é válido para esse Código",
