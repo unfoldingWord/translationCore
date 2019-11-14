@@ -175,6 +175,7 @@
     "exported_alert": "\n${project_name} ਸਫਲਤਾਪੂਰਵਕ ਨਿਰਯਾਤ ${file_path} ਕੀਤਾ ਗਿਆ ਹੈ.",
     "must_be_logged_in_alert": "ਪ੍ਰੋਜੈਕਟਾਂ ਨੂੰ ਅਪਲੋਡ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਇੱਕ ${door43} ਖਾਤੇ ਦੇ ਨਾਲ ਲਾੱਗ ਇਨ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਲੌਗ ਆਉਟ ਕਰੋ ਅਤੇ ਫਿਰ ${door43} ਉਪਭੋਗਤਾ ਖਾਤੇ ਨਾਲ ਵਾਪਸ ਦਾਖਲ ਹੋਵੋ.",
     "uploading_alert": "ਅਪਲੋਡ ${project_name} ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ. ${door43} ਕ੍ਰਿਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ...",
+    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
     "upload_successful_alert": "${username} ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਸਫਲਤਾਪੂਰਵਕ ਅਪਲੋਡ ਕੀਤਾ ਗਿਆ ਹੈ",
     "upload_modified_error": "${project_name} ਅਪਲੋਡ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ ਕਿਉਂਕਿ ਤੁਹਾਡੇ ${door43} ਖਾਤੇ 'ਤੇ ਉਸ ਪ੍ਰੋਜੈਕਟ ਦੇ ਅਨੁਵਾਦ ਵਿੱਚ ਬਦਲਾਅ ਕੀਤੇ ਗਏ ਹਨ.",
     "merge_export_error": "ਇਸ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਵਿਵਾਦਾਂ ਦੇ ਮੇਲ ਹੋ ਗਏ ਹਨ ਅਤੇ ਐਕਸਪੋਰਟ ਨਹੀਂ ਕੀਤੇ ਜਾ ਸਕਦੇ. ਅਭੇਦ ਵਿਵਾਦਾਂ ਨੂੰ ਹੱਲ ਕਰਨ ਲਈ ਪ੍ਰੋਜੈਕਟ ਦੀ ਚੋਣ ਕਰੋ, ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ.",
@@ -211,7 +212,9 @@
     "dcs_rename_project": "ਤੁਹਾਡੇ ਪ੍ਰਾਜੈਕਟ ਦਾ ਨਾਂ ਬਦਲਿਆ ਗਿਆ ਹੈ<br/><b>${project}</b><br/>ਤੁਸੀਂ ਇਸ ਪ੍ਰਾਜੈਕਟ ਦੀ ਮੌਜੂਦਾ {{ਡੋਰ 43} ਰਿਪੋਜ਼ਟਰੀ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੋਗੇ?[",
     "dcs_rename_success": "${door43} ਰਿਪੋਜ਼ਟਰੀ ਪ੍ਰਾਜੈਕਟ ਲਈ ਸਫਲਤਾਪੂਰਕ ਅੱਪਡੇਟ ਕੀਤਾ ਗਿਆ ਹੈ.<br/>${project}",
     "dcs_rename_failed": "$  ${door43} <br ਰਿਪੋਜ਼ਟਰੀ ਦਾ ਨਾਂ ਬਦਲਿਆ ਨਹੀਂ ਗਿਆ. <br/> <br/> ਕੀ ਤੁਸੀਂ $  ${door43} ਰਿਪੋਜ਼ਟਰੀ ਦਾ ਨਾਂ ਬਦਲਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨੀ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਬਿਨਾਂ ਨਾਮ ਬਦਲੇ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
-    "dcs_rename_conflict": "ਨਾਮ ਬਦਲਣਾ ਅਸਫਲ ਕਿਉਂਕਿ ਇਸ ਨਾਮ ਨਾਲ ਇੱਕ ਰਿਪੋਜ਼ਟਰੀ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ. <br/> <br/> ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ $ {ਡੋਰ 43 upload 'ਤੇ ਅਪਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਬਣਨ ਲਈ, ਤੁਹਾਨੂੰ ਜਾਂ ਤਾਂ ਆਪਣੇ ਸਥਾਨਕ ਪ੍ਰੋਜੈਕਟ ਦਾ ਨਾਮ ਬਦਲਣ ਦੀ ਜਾਂ ਆਪਣੇ $ {ਡੋਰ 43} ਪ੍ਰੋਜੈਕਟ ਦਾ ਨਾਮ ਬਦਲਣ ਦੀ ਜ਼ਰੂਰਤ ਹੈ."
+    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_rename_conflict": "ਨਾਮ ਬਦਲਣਾ ਅਸਫਲ ਕਿਉਂਕਿ ਇਸ ਨਾਮ ਨਾਲ ਇੱਕ ਰਿਪੋਜ਼ਟਰੀ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ. <br/> <br/> ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ $ {ਡੋਰ 43 upload 'ਤੇ ਅਪਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਬਣਨ ਲਈ, ਤੁਹਾਨੂੰ ਜਾਂ ਤਾਂ ਆਪਣੇ ਸਥਾਨਕ ਪ੍ਰੋਜੈਕਟ ਦਾ ਨਾਮ ਬਦਲਣ ਦੀ ਜਾਂ ਆਪਣੇ $ {ਡੋਰ 43} ਪ੍ਰੋਜੈਕਟ ਦਾ ਨਾਮ ਬਦਲਣ ਦੀ ਜ਼ਰੂਰਤ ਹੈ.",
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
     "language_mismatch": "ਭਾਸ਼ਾ ਦਾ ਨਾਮ ਕੋਡ ਲਈ ਯੋਗ ਨਹੀਂ ਹੈ",
