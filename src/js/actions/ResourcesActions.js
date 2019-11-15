@@ -421,7 +421,7 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
  * @param {String} articleId - the id of the article to load into the reducer
  * @param {String} languageId = the id of the resource language
  * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
- * @param {Boolean} async - if true then do an async file read
+ * @param {Boolean} async - if true then do an async file read which does not block UI updates
  */
 export const loadResourceArticle = (resourceType, articleId, languageId, category='', async = false) => ((dispatch) => {
   if (async) {
