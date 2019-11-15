@@ -421,9 +421,23 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
  * @param {String} articleId - the id of the article to load into the reducer
  * @param {String} languageId = the id of the resource language
  * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
+ * @param {Boolean} async - if true then do an async file read
  */
-export const loadResourceArticle = (resourceType, articleId, languageId, category='') => ((dispatch) => {
-  ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category).then((articleData) => {
+export const loadResourceArticle = (resourceType, articleId, languageId, category='', async = false) => ((dispatch) => {
+  if (async) {
+    ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category).then((articleData) => {
+      // populate reducer with markdown data
+      dispatch({
+        type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
+        resourceType,
+        articleId,
+        languageId,
+        articleData,
+      });
+    });
+  } else {
+    const articleData = ResourcesHelpers.loadArticleData(resourceType, articleId, languageId, category);
+
     // populate reducer with markdown data
     dispatch({
       type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
@@ -432,7 +446,7 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
       languageId,
       articleData,
     });
-  });
+  }
 });
 
 /**
