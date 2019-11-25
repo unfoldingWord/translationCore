@@ -612,10 +612,6 @@ Array [
     "type": "ADD_PROJECT_VALIDATION_STEP",
   },
   Object {
-    "type": "SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK",
-    "value": null,
-  },
-  Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",
     "value": true,
   },
@@ -1051,10 +1047,6 @@ Array [
     "index": 1,
     "namespace": "projectInformationCheck",
     "type": "ADD_PROJECT_VALIDATION_STEP",
-  },
-  Object {
-    "type": "SHOW_ONLY_PROJECT_INFORMATION_SCREEN_CALLBACK",
-    "value": null,
   },
   Object {
     "type": "ONLY_SHOW_PROJECT_INFORMATION_SCREEN",

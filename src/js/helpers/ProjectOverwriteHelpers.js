@@ -19,64 +19,74 @@ import { generateTimestamp } from './index';
 export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, userName, dispatch) => {
   console.log(`mergeOldProjectToNewProject(${newProjectPath})`);
 
-  // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
-  if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
-    let oldAppsPath = path.join(oldProjectPath, '.apps');
-    let newAppsPath = path.join(newProjectPath, '.apps');
+  try {
+    // if project path doesn't exist, it must have been deleted after tC was started. We throw an error and tell them to import the project again
+    if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
+      let oldAppsPath = path.join(oldProjectPath, '.apps');
+      let newAppsPath = path.join(newProjectPath, '.apps');
 
-    if (fs.existsSync(oldAppsPath)) {
-      if (!fs.existsSync(newAppsPath)) {
-        // There is no .apps data in the new path, so we just copy over the old .apps path and we are good to go
-        console.log('mergeOldProjectToNewProject() - no alignment data in imported file');
-        fs.copySync(oldAppsPath, newAppsPath);
-      } else {
-        // There is alignment data in the new project path, so we need to move it out, preserve any
-        // check data, and then copy any new alignment data from the new project path to the alignment data
-        // from the old project path
-        console.log('mergeOldProjectToNewProject() - alignment data in imported file, so we need to merge');
-        let alignmentPath = path.join(newAppsPath, 'translationCore', 'alignmentData');
+      if (fs.existsSync(oldAppsPath)) {
+        if (!fs.existsSync(newAppsPath)) {
+          // There is no .apps data in the new path, so we just copy over the old .apps path and we are good to go
+          console.log('mergeOldProjectToNewProject() - no alignment data in imported file');
+          fs.copySync(oldAppsPath, newAppsPath);
+        } else {
+          // There is alignment data in the new project path, so we need to move it out, preserve any
+          // check data, and then copy any new alignment data from the new project path to the alignment data
+          // from the old project path
+          console.log('mergeOldProjectToNewProject() - alignment data in imported file, so we need to merge');
+          let alignmentPath = path.join(newAppsPath, 'translationCore', 'alignmentData');
 
-        if (fs.existsSync(alignmentPath)) {
-          const bookId = getBookId(newProjectPath);
-          let tempAlignmentPath = path.join(newProjectPath, '.temp_alignmentData');
-          fs.moveSync(alignmentPath, tempAlignmentPath); // moving new alignment data to a temp dir
-          fs.removeSync(newAppsPath); // .apps dir can be removed since we only need new alignment data
-          fs.copySync(oldAppsPath, newAppsPath); // copying the old project's .apps dir to preserve it
-          // Now we overwrite any alignment data of the old project path from the new project path
-          copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId));
-          fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
+          if (fs.existsSync(alignmentPath)) {
+            const bookId = getBookId(newProjectPath);
+            let tempAlignmentPath = path.join(newProjectPath, '.temp_alignmentData');
+            fs.moveSync(alignmentPath, tempAlignmentPath); // moving new alignment data to a temp dir
+            fs.removeSync(newAppsPath); // .apps dir can be removed since we only need new alignment data
+            fs.copySync(oldAppsPath, newAppsPath); // copying the old project's .apps dir to preserve it
+            // Now we overwrite any alignment data of the old project path from the new project path
+            copyAlignmentData(path.join(tempAlignmentPath, bookId), path.join(alignmentPath, bookId));
+            fs.removeSync(tempAlignmentPath); // Done with the temp alignment dir
+          }
         }
       }
+
+      // merge manifest files
+      const oldManifestPath = path.join(oldProjectPath, 'manifest.json');
+      const newManifestPath = path.join(newProjectPath, 'manifest.json');
+      const oldManifest = fs.readJsonSync(oldManifestPath);
+      const newManifest = fs.readJsonSync(newManifestPath);
+      // filter duplicate checkers items
+      newManifest.checkers = newManifest.checkers.filter(checker => !oldManifest.checkers.includes(checker));
+      // filter duplicate translators items
+      newManifest.translators = newManifest.translators.filter(translator => !oldManifest.translators.includes(translator));
+      const mergedManifest = {
+        ...oldManifest,
+        ...newManifest,
+        checkers: [...oldManifest.checkers, ...newManifest.checkers],
+        translators: [...oldManifest.translators, ...newManifest.translators],
+      };
+      // save mergedManifest in newManifestPath
+      dispatch(setProjectManifest(mergedManifest));
+
+      // Copy the .git history of the old project into the new project
+      const oldGitPath = path.join(oldProjectPath, '.git');
+      const newGitPath = path.join(newProjectPath, '.git');
+
+      if (fs.existsSync(newGitPath)) { // the import process creates a basic .git that we need to remove
+        const newGitTempPath = path.join(newProjectPath, '.git.old');
+        fs.moveSync(newGitPath, newGitTempPath); // do move before delete to protect from race conditions
+        fs.removeSync(newGitTempPath);
+      }
+
+      if (fs.existsSync(oldGitPath)) {
+        fs.copySync(oldGitPath, newGitPath);
+      }
+      dispatch(createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName));
     }
-
-    // merge manifest files
-    const oldManifestPath = path.join(oldProjectPath, 'manifest.json');
-    const newManifestPath = path.join(newProjectPath, 'manifest.json');
-    const oldManifest = fs.readJsonSync(oldManifestPath);
-    const newManifest = fs.readJsonSync(newManifestPath);
-    // filter duplicate checkers items
-    newManifest.checkers = newManifest.checkers.filter(checker => !oldManifest.checkers.includes(checker));
-    // filter duplicate translators items
-    newManifest.translators = newManifest.translators.filter(translator => !oldManifest.translators.includes(translator));
-    const mergedManifest = {
-      ...oldManifest,
-      ...newManifest,
-      checkers: [...oldManifest.checkers, ...newManifest.checkers],
-      translators: [...oldManifest.translators, ...newManifest.translators],
-    };
-    // save mergedManifest in newManifestPath
-    dispatch(setProjectManifest(mergedManifest));
-
-    // Copy the .git history of the old project into the new if it doesn't have it
-    const oldGitPath = path.join(oldProjectPath, '.git');
-    const newGitPath = path.join(newProjectPath, '.git');
-
-    if (! fs.existsSync(newGitPath) && fs.existsSync(oldGitPath)) {
-      fs.copySync(oldGitPath, newGitPath);
-    }
-    dispatch(createVerseEditsForAllChangedVerses(oldProjectPath, newProjectPath, userName));
+    console.log('mergeOldProjectToNewProject() - finished');
+  } catch (e) {
+    console.log('mergeOldProjectToNewProject() error:', e);
   }
-  console.log('mergeOldProjectToNewProject() - finished');
 };
 
 export const copyAlignmentData = (fromDir, toDir) => {
