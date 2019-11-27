@@ -318,15 +318,6 @@ export const getShowProjectInformationScreen = (state) =>
     state.projectValidationReducer);
 
 /**
- * Checks if show only the project information screen has callback.
- * @param {Object} state
- * @return {boolean}
- */
-export const getShowProjectInformationScreenCallback = (state) =>
-  fromProjectValidationReducer.getShowProjectInformationScreenCallback(
-    state.projectValidationReducer);
-
-/**
  * checks to see if we should show overwrite on save button
  * @param {Object} state
  * @return {boolean}
