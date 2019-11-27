@@ -42,6 +42,7 @@ import {
   getTargetBook,
   getUsername,
   getProjects,
+  getToolGatewayLanguage,
 } from '../selectors';
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
 import ProjectAPI from '../helpers/ProjectAPI';
@@ -234,10 +235,13 @@ ToolContainer.contextTypes = { store: PropTypes.any };
 
 const mapStateToProps = state => {
   const projectPath = getProjectSaveLocation(state);
+  const selectedToolName = getSelectedToolName(state);
+
   return {
+    gatewayLanguage: getToolGatewayLanguage(state, selectedToolName),
     projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
-    selectedToolName: getSelectedToolName(state),
+    selectedToolName,
     Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getSelectedToolApi(state),
