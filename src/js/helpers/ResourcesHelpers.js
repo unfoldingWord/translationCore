@@ -78,7 +78,7 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
       }
 
       if (!matchFound) {
-        console.warn('updateCheckingResourceData() - resource not found for migration: ' + JSON.stringify(data.contextId));
+        console.warn('updateCheckingResourceData() - resource not found for migration: ' + JSON.stringify(data));
       }
     }
   }
