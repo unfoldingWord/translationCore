@@ -44,7 +44,7 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
     try {
       const response = await fetch(`${DCS_BASE_URL}/api/v1/users/${user}/repos`);
       let repos = await response.json();
-      repos = firstFilter || secondFilter ? filterReposBy(repos, firstFilter, secondFilter) : repos;
+      repos = filterReposBy(repos, firstFilter, secondFilter);
       dispatch({
         type: consts.SET_REPOS_DATA,
         repos,
@@ -96,11 +96,15 @@ function filterReposBy(repos, firstFilter, secondFilter) {
   if (!Array.isArray(repos)) { // TRICKY: if no repos then return empty array
     return [];
   }
-  return repos.filter((repo) => {
-    if (!secondFilter) {
-      return repo.name.includes(firstFilter);
-    } else {
-      return repo.name.includes(firstFilter) && repo.name.includes(secondFilter);
-    }
-  });
+
+  if (firstFilter || secondFilter) {
+    repos = repos.filter((repo) => {
+      if (!secondFilter) {
+        return repo.name.includes(firstFilter);
+      } else {
+        return repo.name.includes(firstFilter) && repo.name.includes(secondFilter);
+      }
+    });
+  }
+  return repos;
 }
