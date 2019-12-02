@@ -93,6 +93,9 @@ export function searchByQuery(query, onLine = navigator.onLine) {
 }
 
 function filterReposBy(repos, firstFilter, secondFilter) {
+  if (!Array.isArray(repos)) { // TRICKY: if no repos then return empty array
+    return [];
+  }
   return repos.filter((repo) => {
     if (!secondFilter) {
       return repo.name.includes(firstFilter);
