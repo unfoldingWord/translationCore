@@ -49,7 +49,7 @@
   "quit_app": "Quit ${app}",
   "toggle_developer_tools": "Toggle developer tools",
   "actions": "Actions",
-  "running_latest_version": "আপুনি MIUI-ৰ শেহতীয়া সংস্কৰণ চলাই আছে",
+  "running_latest_version": "আপুনি ${app}-ৰ শেহতীয়া সংস্কৰণ চলাই আছে.",
   "user_locale": "ব্যবসাৰিক ইন্টারফেস ভাষা I",
   "changing_locale_effects": "Changing the language of the user interface will affect the language found in menus, dialogs, and project setup.",
   "changing_locale_note": "Note: To change the language of the checks and translation helps within a tool, please select a different Gateway Language when selecting a tool.",
