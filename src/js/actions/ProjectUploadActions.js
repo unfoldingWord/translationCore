@@ -14,6 +14,8 @@ import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrate
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import { delay } from '../common/utils';
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
+import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
@@ -100,6 +102,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
       resolve();
     } else if (!user.localUser) {
       dispatch(OnlineModeConfirmActions.confirmOnlineAction(async () => {
+        dispatch(ProjectDetailsActions.resetProjectDetail()); // clear current project selection
         dispatch(AlertModalActions.closeAlertDialog());
         await delay(500); // for screen to update
         const projectName = projectPath.split(path.sep).pop();
@@ -184,6 +187,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           }
           resolve();
         }
+        dispatch(MyProjectsActions.getMyProjects()); // update list and deselect this project
       }));
     } else {
       console.warn('uploadProject: User not logged in');
