@@ -18,7 +18,7 @@ export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
 export function login(userObj) {
   return api.getUser(userObj).then(user =>
     api.listTokens(userObj).then(function (tokens) {
-      return tokens.find((el) => el.name === tokenStub.name);
+      return tokens.find((dcsToken) => ((dcsToken.name === tokenStub.name) && dcsToken.sha1)); // to match, make sure token is for tCore and sha1 is not empty
     }).then(function (token) {
       return (token && token.sha1) ? token : api.createToken(tokenStub, userObj); // recreate token if token missing or sha1 is missing
     }).then(function (token) {
@@ -31,8 +31,9 @@ export function login(userObj) {
       //
       }
       return user;
-    }));
-};
+    })
+  );
+}
 
 /**
  * @description - Create a repo for a user.
