@@ -6,6 +6,7 @@ import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from '../TemplateCard';
 import Hint from '../../Hint';
 
+let hasShownInvalidLoginPrompt = false;
 
 export default class UserCard extends Component {
   /**
@@ -42,10 +43,15 @@ export default class UserCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const { reducers } = this.props;
+    const { reducers, translate } = this.props;
+    const { openAlertDialog } = this.props.actions;
     const { loggedInUser, userdata } = reducers.loginReducer;
 
     if (loggedInUser) {
+      if (!userdata.token && !hasShownInvalidLoginPrompt) {
+        openAlertDialog(translate('users.session_invalid'), false);
+        hasShownInvalidLoginPrompt = true;
+      }
       content = (
         <div style={{
           display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0',

@@ -162,7 +162,10 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           // handle server and networking errors
           console.error('uploadProject ERROR', err);
 
-          if (err.status === 401 || err.code === 'ENOTFOUND' ||
+          if (err.status === 401) {
+            return dispatch(
+              AlertModalActions.openAlertDialog(translate('users.session_invalid'), false));
+          } else if (err.code === 'ENOTFOUND' ||
               err.toString().includes('connect ETIMEDOUT') ||
               err.toString().includes('INTERNET_DISCONNECTED') ||
               err.toString().includes('unable to access') ||
