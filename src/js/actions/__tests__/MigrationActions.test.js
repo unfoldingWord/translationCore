@@ -39,6 +39,7 @@ describe('migrate tCore resources', () => {
 
       // when
       migrateResourcesFolder();
+
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
@@ -231,6 +232,54 @@ describe('migrate tCore resources', () => {
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
       verifyResources(oldHelpsExpected, oldBibleExpected);
+    });
+
+    it('test with empty uhb folder - should upgrade', () => {
+      // given
+      const uhbFolder = path.join(USER_RESOURCES_PATH, 'hbo/bibles/uhb');
+      fs.ensureDirSync(uhbFolder);
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'v0'));
+      expect(uhbVersionExists).toBeTruthy();
+    });
+
+    it('test with empty hbo bibles folder - should upgrade', () => {
+      // given
+      const uhbFolder = path.join(USER_RESOURCES_PATH, 'hbo/bibles');
+      fs.ensureDirSync(uhbFolder);
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'uhb/v0'));
+      expect(uhbVersionExists).toBeTruthy();
+    });
+
+    it('test with empty hbo language folder - should upgrade', () => {
+      // given
+      const uhbFolder = path.join(USER_RESOURCES_PATH, 'hbo');
+      fs.ensureDirSync(uhbFolder);
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'bibles/uhb/v0'));
+      expect(uhbVersionExists).toBeTruthy();
     });
   });
 
