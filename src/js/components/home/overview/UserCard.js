@@ -48,7 +48,7 @@ export default class UserCard extends Component {
     const { loggedInUser, userdata } = reducers.loginReducer;
 
     if (loggedInUser) {
-      if (!userdata.token && !hasShownInvalidLoginPrompt) {
+      if (!userdata.token && !userdata.localUser && !hasShownInvalidLoginPrompt) {
         openAlertDialog(translate('users.session_invalid'), false);
         hasShownInvalidLoginPrompt = true;
       }
