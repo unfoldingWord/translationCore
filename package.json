@@ -2,7 +2,7 @@
   "name": "translationCore",
   "productName": "translationCore",
   "version": "2.1.0",
-  "minCompatibleVersion": "2.1.0",
+  "minCompatibleVersion": "2.0.0",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
   "main": "src/es6-init.js",
