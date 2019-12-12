@@ -94,6 +94,60 @@ Array [
 ]
 `;
 
+exports[`migrate tCore resources Test without grc resource migration test with empty hbo bibles folder - should upgrade 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb/v0",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy/v9",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes/v15",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords/v10",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords/v8.1",
+]
+`;
+
+exports[`migrate tCore resources Test without grc resource migration test with empty hbo language folder - should upgrade 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb/v0",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy/v9",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes/v15",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords/v10",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords/v8.1",
+]
+`;
+
+exports[`migrate tCore resources Test without grc resource migration test with empty uhb folder - should upgrade 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb/v0",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy/v9",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes/v15",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords/v10",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords/v8.1",
+]
+`;
+
 exports[`migrate tCore resources Test without grc resource migration test with no user resources 1`] = `
 Array [
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
