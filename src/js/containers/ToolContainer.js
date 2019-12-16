@@ -289,9 +289,9 @@ const mapDispatchToProps = (dispatch) => ({
     showPopover: (title, bodyText, positionCoord) => {
       dispatch(showPopover(title, bodyText, positionCoord));
     },
-    loadResourceArticle: (resourceType, articleId, languageId) => {
+    loadResourceArticle: (resourceType, articleId, languageId, category='', async = false) => {
       dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId,
-        languageId));
+        languageId, category, async));
     },
     loadLexiconEntry: (lexiconId, entryId) => {
       dispatch(ResourcesActions.loadLexiconEntry(lexiconId, entryId));

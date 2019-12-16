@@ -97,14 +97,6 @@ Array [
   Object {
     "type": "CLOSE_ALERT_DIALOG",
   },
-  Object {
-    "alertMessage": "projects.uploading_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
-  },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
 ]
 `;
 
@@ -115,14 +107,6 @@ Array [
   },
   Object {
     "alertMessage": "projects.renaming_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
-  },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
-  Object {
-    "alertMessage": "projects.uploading_alert",
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -144,14 +128,6 @@ Array [
     "buttonLink": "buttons.contact_helpdesk",
     "callback": [Function],
     "type": "OPEN_OPTION_DIALOG",
-  },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
-  Object {
-    "alertMessage": "projects.uploading_alert",
-    "loading": true,
-    "type": "OPEN_ALERT_DIALOG",
   },
   Object {
     "type": "CLOSE_ALERT_DIALOG",

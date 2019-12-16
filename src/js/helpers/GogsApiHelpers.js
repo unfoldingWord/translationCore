@@ -18,7 +18,7 @@ export const TC_OLD_ORIGIN_KEY = 'tc_oldOrigin';
 export function login(userObj) {
   return api.getUser(userObj).then(user =>
     api.listTokens(userObj).then(function (tokens) {
-      return tokens.find((el) => el.name === tokenStub.name);
+      return tokens.find((dcsToken) => ((dcsToken.name === tokenStub.name) && dcsToken.sha1)); // to match, make sure token is for tCore and sha1 is not empty
     }).then(function (token) {
       return (token && token.sha1) ? token : api.createToken(tokenStub, userObj); // recreate token if token missing or sha1 is missing
     }).then(function (token) {
@@ -31,8 +31,9 @@ export function login(userObj) {
       //
       }
       return user;
-    }));
-};
+    })
+  );
+}
 
 /**
  * @description - Create a repo for a user.
@@ -101,7 +102,7 @@ export const getUserTokenDoor43Url = (user, repoName) => {
 export const getUserDoor43Url = (user, projectName) => `${DCS_BASE_URL}/${user.username}/${projectName}`;
 
 /**
- * renames DCS repo for a project
+ * renames DCS repo for a project - due to API limitations we had to implement by deleting existing repo and creating new repo
  * @param {string} newName - the new name of the repo
  * @param {string} projectPath - the path of the project to be renamed
  * @param {{username, token, password}} user - The user who is owner of the repo
@@ -109,6 +110,7 @@ export const getUserDoor43Url = (user, projectName) => `${DCS_BASE_URL}/${user.u
  */
 export const renameRepo = async (newName, projectPath, user) => {
   try {
+    console.log(`renameRepo() - ${newName}`);
     const repo = await Repo.open(projectPath, user);
     const remote = await repo.getRemote();
     const newRemoteURL = getRepoOwnerUrl(user, newName);
@@ -135,9 +137,13 @@ export const renameRepo = async (newName, projectPath, user) => {
 
     // create new repo
     await createRepo(user, newName);
+    console.log(`renameRepo() - saving project changes`);
+    await repo.save('Commit before upload');
     await repo.addRemote(newRemoteURL);
+    console.log(`renameRepo() - pushing data to repo`);
     await repo.push();
   } catch (e) {
+    console.error('renameRepo() - error:');
     console.error(e);
     throw e;
   }
@@ -152,14 +158,19 @@ export const renameRepo = async (newName, projectPath, user) => {
  */
 export const createNewRepo = async (newName, projectPath, user) => {
   try {
+    console.log(`createNewRepo() - ${newName}`);
     const newRemoteURL = getUserDoor43Url(user, newName);
     const repo = await Repo.open(projectPath, user);
     await repo.removeRemote(TC_OLD_ORIGIN_KEY);// clear old connection since we are renaming
 
     await createRepo(user, newName);
+    console.log(`createNewRepo() - saving project changes`);
+    await repo.save('Commit before upload');
     await repo.addRemote(newRemoteURL);
+    console.log(`createNewRepo() - pushing data to repo`);
     await repo.push();
   } catch (e) {
+    console.error('createNewRepo() - error:');
     console.error(e);
     throw e;
   }

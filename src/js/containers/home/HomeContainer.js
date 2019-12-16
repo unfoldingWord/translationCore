@@ -19,6 +19,7 @@ import * as ProjectInformationCheckActions from '../../actions/ProjectInformatio
 import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { openTool, warnOnInvalidations } from '../../actions/ToolActions';
+import * as AlertModalActions from '../../actions/AlertModalActions';
 // constants
 import { APP_VERSION } from '../../common/constants';
 // containers
@@ -196,6 +197,9 @@ const mapDispatchToProps = (dispatch) => ({
     },
     warnOnInvalidations: (toolName) => {
       dispatch(warnOnInvalidations(toolName));
+    },
+    openAlertDialog: (message, loading) => {
+      dispatch(AlertModalActions.openAlertDialog(message, loading));
     },
   },
 });

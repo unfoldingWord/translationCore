@@ -7,6 +7,7 @@ export const mockGetRemote = jest.fn(() => ({
 export const mockRemoveRemote = jest.fn();
 export const mockAddRemote = jest.fn();
 export const mockPush = jest.fn();
+export const mockSave = jest.fn();
 export const mockParseRemoteUrl = jest.fn();
 export const mockOpen = jest.fn((dir, user) => new mock(dir, user));
 export const mockDoesRemoteRepoExist = jest.fn(async (dir) => !dir);
@@ -17,6 +18,7 @@ const mock = jest.fn().mockImplementation(() => ({
   removeRemote: mockRemoveRemote,
   addRemote: mockAddRemote,
   push: mockPush,
+  save: mockSave,
 }));
 
 // static methods
