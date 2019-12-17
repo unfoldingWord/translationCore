@@ -55,9 +55,10 @@ const executeResourcesUpdate = async (languages, resourcesPath) => {
 
   if (errors) {
     console.log('Errors on downloading updated resources:\n' + errors);
-  } else {
-    console.log('Updating Succeeded!!!');
+    return 1; // error
   }
+  console.log('Updating Succeeded!!!');
+  return 0; // no error
 };
 
 // run as main
@@ -75,5 +76,5 @@ if (require.main === module) {
     return 1;
   }
 
-  executeResourcesUpdate(languages, resourcesPath);
+  return executeResourcesUpdate(languages, resourcesPath);
 }
