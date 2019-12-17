@@ -4,24 +4,31 @@
  */
 require("babel-polyfill"); // required for async/await
 const fs = require('fs-extra');
-const sourceContentUpdater = require('tc-source-content-updater').default;
-const updateResourcesHelpers = require('./updateResourcesHelpers');
+const SourceContentUpdater = require('tc-source-content-updater').default;
+const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 const updateResources = async (languages, resourcesPath) => {
-  const SourceContentUpdater = new sourceContentUpdater();
-  const localResourceList = updateResourcesHelpers.getLocalResourceList(resourcesPath);
-  await SourceContentUpdater.getLatestResources(localResourceList)
+  const sourceContentUpdater = new SourceContentUpdater();
+  const localResourceList = UpdateResourcesHelpers.getLocalResourceList(resourcesPath);
+
+  await sourceContentUpdater.getLatestResources(localResourceList)
     .then(async () => {
-      await SourceContentUpdater.downloadResources(languages, resourcesPath)
-      .then(resources => {
-        resources.forEach(resource => {
-          console.log("Updated resource '" + resource.resourceId + "' for language '" + resource.languageId + "' to v" + resource.version);
+      await sourceContentUpdater.downloadResources(languages, resourcesPath)
+        .then(resources => {
+          resources.forEach(resource => {
+            console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + "' to v" + resource.version);
+          });
+        })
+        .catch(err => {
+          console.error(err);
         });
-      })
-      .catch(err => {
-        console.error(err);
-      });
+
+      const errors = sourceContentUpdater.getLatestDownloadErrorsStr();
+
+      if (errors) {
+        console.log('Errors on download:\n' + errors);
+      }
     });
 };
 
@@ -31,17 +38,19 @@ const executeResourcesUpdate = async (languages, resourcesPath) => {
   languages.forEach(async (languageId) => await zipResourcesContent(resourcesPath, languageId));
 
   // update source content updater manifest, but don't clobber tCore version
-  updateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
+  UpdateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
 };
 
 // run as main
-if(require.main === module) {
+if (require.main === module) {
   if (process.argv.length < 4) {
     console.error('Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]');
     return 1;
   }
+
   const resourcesPath = process.argv[2];
   const languages = process.argv.slice(3);
+
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
     return 1;
@@ -49,4 +58,3 @@ if(require.main === module) {
 
   executeResourcesUpdate(languages, resourcesPath);
 }
-
