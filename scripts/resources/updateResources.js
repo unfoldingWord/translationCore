@@ -73,8 +73,11 @@ if (require.main === module) {
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
-    return 1;
+    process.exitCode = 1; // set exit error code
+    return;
   }
 
-  return executeResourcesUpdate(languages, resourcesPath);
+  executeResourcesUpdate(languages, resourcesPath).then(code => {
+    process.exitCode = code; // set exit code, 0 = no error
+  });
 }
