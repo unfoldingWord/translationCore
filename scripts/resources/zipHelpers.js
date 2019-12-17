@@ -46,7 +46,9 @@ const zipResourcesContent = async (resourcesRootPath, languageId) => {
         fs.removeSync(resourcessPath);
         console.log('\x1b[35m%s\x1b[0m', `Finished zipping the contents for: ${languageId} ${resourceId}`);
       } catch (error) {
-        console.error(error);
+        const message = `zipResourcesContent(${resourcesPath}) Failed: `;
+        console.error(message, error);
+        throw message + error.toString();
       }
     });
   });

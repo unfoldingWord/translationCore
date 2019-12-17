@@ -2,7 +2,7 @@
  * This script updates the resources in a given directory for the given languages
  * Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]
  */
-require("babel-polyfill"); // required for async/await
+require('babel-polyfill'); // required for async/await
 const fs = require('fs-extra');
 const SourceContentUpdater = require('tc-source-content-updater').default;
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
@@ -10,35 +10,54 @@ const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 const updateResources = async (languages, resourcesPath) => {
   const sourceContentUpdater = new SourceContentUpdater();
-  const localResourceList = UpdateResourcesHelpers.getLocalResourceList(resourcesPath);
 
-  await sourceContentUpdater.getLatestResources(localResourceList)
-    .then(async () => {
-      await sourceContentUpdater.downloadResources(languages, resourcesPath)
-        .then(resources => {
-          resources.forEach(resource => {
-            console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + "' to v" + resource.version);
+  try {
+    const localResourceList = UpdateResourcesHelpers.getLocalResourceList(resourcesPath);
+
+    await sourceContentUpdater.getLatestResources(localResourceList)
+      .then(async () => {
+        await sourceContentUpdater.downloadResources(languages, resourcesPath)
+          .then(resources => {
+            resources.forEach(resource => {
+              console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
+            });
+          })
+          .catch(err => {
+            console.error(err);
           });
-        })
-        .catch(err => {
-          console.error(err);
-        });
-
-      const errors = sourceContentUpdater.getLatestDownloadErrorsStr();
-
-      if (errors) {
-        console.log('Errors on download:\n' + errors);
-      }
-    });
+      });
+    return sourceContentUpdater.getLatestDownloadErrorsStr();
+  } catch (e) {
+    const message = `Error getting latest resources: `;
+    console.error(message, e);
+    return `${message}: ${e.toString()}`;
+  }
 };
 
 const executeResourcesUpdate = async (languages, resourcesPath) => {
-  await updateResources(languages, resourcesPath);
+  let errors = await updateResources(languages, resourcesPath);
 
-  languages.forEach(async (languageId) => await zipResourcesContent(resourcesPath, languageId));
+  if (errors) {
+    console.log('Errors on downloading updated resources!!');
+  }
+  console.log('Zipping up updated resources');
+
+  languages.forEach(async (languageId) => {
+    try {
+      await zipResourcesContent(resourcesPath, languageId);
+    } catch (e) {
+      errors += e.toString() + '\n';
+    }
+  });
 
   // update source content updater manifest, but don't clobber tCore version
   UpdateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
+
+  if (errors) {
+    console.log('Errors on downloading updated resources:\n' + errors);
+  } else {
+    console.log('Updating Succeeded!!!');
+  }
 };
 
 // run as main
