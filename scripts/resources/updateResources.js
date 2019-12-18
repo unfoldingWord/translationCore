@@ -3,6 +3,7 @@
  * Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]
  */
 require('babel-polyfill'); // required for async/await
+const path = require('path-extra');
 const fs = require('fs-extra');
 const SourceContentUpdater = require('tc-source-content-updater').default;
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
@@ -35,6 +36,14 @@ const updateResources = async (languages, resourcesPath) => {
 };
 
 const executeResourcesUpdate = async (languages, resourcesPath) => {
+  const importsPath = path.join(resourcesPath, 'imports'); // Remove old imports folder
+
+  if (fs.existsSync(importsPath)) { // do safe folder delete of imports
+    const tempPath = importsPath + '.temp';
+    fs.moveSync(importsPath, tempPath);
+    fs.removeSync(tempPath);
+  }
+
   let errors = await updateResources(languages, resourcesPath);
 
   if (errors) {
