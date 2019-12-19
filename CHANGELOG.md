@@ -1,6 +1,6 @@
 # Changelog
 
-## [v2.1.0](https://github.com/unfoldingWord/translationCore/tree/v2.1.0) (2019-12-13)
+## [v2.1.0](https://github.com/unfoldingWord/translationCore/tree/v2.1.0) (2019-12-19)
 
 [Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.0.0...v2.1.0)
 
@@ -9,6 +9,7 @@
 - Need an indicator of processing after the user clicks Rename Repo during Door43 import [\#6510](https://github.com/unfoldingWord/translationCore/issues/6510)
 - Need indicator of processing during imports after the project details screen [\#5937](https://github.com/unfoldingWord/translationCore/issues/5937)
 - Unexpected behavior during unselect [\#1590](https://github.com/unfoldingWord/translationCore/issues/1590)
+- Cannot successfully update Hindi content \(Field report\) [\#6605](https://github.com/unfoldingWord/translationCore/issues/6605)
 - .git project showing up on Projects page [\#6522](https://github.com/unfoldingWord/translationCore/issues/6522)
 - tN does not update the % complete on the tools cards until after the tool is loaded [\#6439](https://github.com/unfoldingWord/translationCore/issues/6439)
 - Inconsistencies in exported csv files [\#6221](https://github.com/unfoldingWord/translationCore/issues/6221)
@@ -43,12 +44,10 @@
 - Incomplete suggestions for wordmap when Translation Identifier are in different cases [\#6575](https://github.com/unfoldingWord/translationCore/issues/6575)
 - Move groupsDataReducer & action creators to tools [\#6553](https://github.com/unfoldingWord/translationCore/issues/6553)
 - Received Warning: A critical error has occurred! message during import from Door43 [\#6523](https://github.com/unfoldingWord/translationCore/issues/6523)
-- Cypress UI Tests for GRT's Styleguide. [\#6520](https://github.com/unfoldingWord/translationCore/issues/6520)
 - tC Performance Changes After Research [\#6473](https://github.com/unfoldingWord/translationCore/issues/6473)
 - wA "remembers" menu verse icons from previous project [\#6433](https://github.com/unfoldingWord/translationCore/issues/6433)
 - tHelps pane is empty in tN and tW [\#6421](https://github.com/unfoldingWord/translationCore/issues/6421)
 - SPIKE: \#6237 Display duplicate words in order [\#6418](https://github.com/unfoldingWord/translationCore/issues/6418)
-- Disable Discontiguous Merge  [\#6413](https://github.com/unfoldingWord/translationCore/issues/6413)
 - Wrong Selection text and Green check displayed in tN for a verse that has two checks. [\#6389](https://github.com/unfoldingWord/translationCore/issues/6389)
 - Alignment memory not shown for an existing project [\#6380](https://github.com/unfoldingWord/translationCore/issues/6380)
 - Spec out rebuilding tC on Electronite [\#6373](https://github.com/unfoldingWord/translationCore/issues/6373)
@@ -76,6 +75,7 @@
 - tW Group Scroll Not Working After First Open [\#5671](https://github.com/unfoldingWord/translationCore/issues/5671)
 - Verse Edit Box Height Flex [\#5670](https://github.com/unfoldingWord/translationCore/issues/5670)
 - Renaming project does not work. [\#5532](https://github.com/unfoldingWord/translationCore/issues/5532)
+- Display discontiguous selections correctly [\#5527](https://github.com/unfoldingWord/translationCore/issues/5527)
 - App crash/hang [\#5442](https://github.com/unfoldingWord/translationCore/issues/5442)
 - Verse overlaps chapter section header in verse check pane [\#5400](https://github.com/unfoldingWord/translationCore/issues/5400)
 - Source content updater offers resource just updated [\#5376](https://github.com/unfoldingWord/translationCore/issues/5376)
