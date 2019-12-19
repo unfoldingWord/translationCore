@@ -4,14 +4,11 @@
 
 [Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.0.0...v2.1.0)
 
-**Implemented enhancements:**
+**Fixed bugs:**
 
 - Need an indicator of processing after the user clicks Rename Repo during Door43 import [\#6510](https://github.com/unfoldingWord/translationCore/issues/6510)
 - Need indicator of processing during imports after the project details screen [\#5937](https://github.com/unfoldingWord/translationCore/issues/5937)
 - Unexpected behavior during unselect [\#1590](https://github.com/unfoldingWord/translationCore/issues/1590)
-
-**Fixed bugs:**
-
 - .git project showing up on Projects page [\#6522](https://github.com/unfoldingWord/translationCore/issues/6522)
 - tN does not update the % complete on the tools cards until after the tool is loaded [\#6439](https://github.com/unfoldingWord/translationCore/issues/6439)
 - Inconsistencies in exported csv files [\#6221](https://github.com/unfoldingWord/translationCore/issues/6221)
