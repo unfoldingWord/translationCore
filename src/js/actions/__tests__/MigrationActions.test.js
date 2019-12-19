@@ -380,6 +380,24 @@ describe('migrate tCore resources', () => {
       verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
     });
   });
+
+  it('test with two version of ugnt in el-x-koine/bible and a recent dependency - all versions copied', () => {
+    // given
+    mockOtherTnsOlversions = ['v0.3'];
+    const expectedHelpsVers = false;
+    const expectedBibleVers = ['v0.2', 'v0.3'];
+    const bibleId = 'ugnt';
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
+    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+    // when
+    migrateResourcesFolder();
+
+    // then
+    const folders = getResourceFolders();
+    expect(folders).toMatchSnapshot();
+    verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
+  });
 });
 
 //
