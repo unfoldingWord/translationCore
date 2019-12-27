@@ -10,14 +10,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v1
-    - uses: ./.github/actions/build
+    - uses: docker://hub.docker.com/r/neutrinog/concourse-tasks
       with:
         run: |
           npm ci
