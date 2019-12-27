@@ -35,7 +35,7 @@ jobs:
 
   build-linux:
     name: Build Linux
-    needs: test
+#    needs: test
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
@@ -54,6 +54,9 @@ jobs:
         run: |
           echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+
+      - name: Set artifact name
+        echo "::set-env name=ARTIFACT_NAME::$($APP_NAME-linux-x64-$APP_VERSION-$HASH.deb)"
 
       - name: Bundle environment variables
         run: |
@@ -80,14 +83,13 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --linux
-          ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
-          echo "::set-output name=file::$(./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb)"
-          echo "::set-output name=name::$($APP_NAME-linux-x64-$APP_VERSION-$HASH.deb)"
+          ./node_modules/.bin/gulp release-linux-deb --out=./release/$ARTIFACT_NAME
+          echo "::set-output name=file::$(./release/$ARTIFACT_NAME)"
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         with:
-          name: ${{ steps.build.outputs.name }}
+          name: ${{ $ARTIFACT_NAME }}
           path: ${{ steps.build.outputs.file }}
 
   build-windows:
@@ -165,6 +167,9 @@ jobs:
           echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
+      - name: Set artifact name
+        run: echo "::set-env name=ARTIFACT_NAME::$($APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg)"
+
       - name: Bundle environment variables
         run: |
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
@@ -185,12 +190,11 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --macos
-          ./node_modules/.bin/gulp release-macos --out=./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
-          echo "::set-output name=file::$(./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg)"
-          echo "::set-output name=name::$($APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg)"
+          ./node_modules/.bin/gulp release-macos --out=./release/$ARTIFACT_NAME
+          echo "::set-output name=file::$(./release/$ARTIFACT_NAME)"
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         with:
-          name: ${{ steps.build.outputs.name }}
+          name: ${{ $ARTIFACT_NAME }}
           path: ${{ steps.build.outputs.file }}
