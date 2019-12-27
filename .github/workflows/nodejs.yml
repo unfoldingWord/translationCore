@@ -75,18 +75,20 @@ jobs:
       #
       #    - name: bundle macos
       #        run: npm run bundle:macos --if-present
-
       - name: build linux
+        id: build
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --linux
           ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
+          echo "::set-output name=file::$(./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb)"
+          echo "::set-output name=name::$($APP_NAME-linux-x64-$APP_VERSION-$HASH.deb)"
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         with:
-          name: $APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
-          path: ./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
+          name: ${{ steps.build.outputs.name }}
+          path: ${{ steps.build.outputs.file }}
 
   build-windows:
     name: Build Windows
@@ -179,14 +181,16 @@ jobs:
         run: npm run update-resources
 
       - name: build macOS
-#   TODO: make this run on a mac image so we can get proper dmgs.
+        id: build
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --macos
           ./node_modules/.bin/gulp release-macos --out=./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
+          echo "::set-output name=file::$(./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg)"
+          echo "::set-output name=name::$($APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg)"
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         with:
-          name: $APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
-          path: ./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
+          name: ${{ steps.build.outputs.name }}
+          path: ${{ steps.build.outputs.file }}
