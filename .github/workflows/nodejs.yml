@@ -12,13 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
-      TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
-      TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
-      APP_NAME: translationCore
-
-#    strategy:
-#      matrix:
-#        node-version: [12.x]
+      CI: true
 
     steps:
     - name: Checkout codebase
@@ -26,51 +20,57 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Read version and commit sha
-      run: |
-        echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
-        echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
-
-    - name: Bundle environment variables
-      run: |
-        echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
-        echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
-        echo "BUILD=$HASH" >> .env
-
-#    - name: Node ${{ matrix.node-version }}
-#      uses: actions/setup-node@v1
-#      with:
-#        node-version: ${{ matrix.node-version }}
-    - name: Show node version
-      run: node --version
-
-    - name: Show npm version
-      run: npm --version
-
     - name: npm install
       run: npm ci
 
     - name: npm test
       run: npm test
-      env:
-        CI: true
 
-    - name: Download latest language names
-      run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+  build-linux:
+    name: Build Linux
+    needs: test
+    runs-on: ubuntu-latest
+    container: neutrinog/concourse-tasks:latest
+    env:
+      TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
+      TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
+      APP_NAME: translationCore
+      CI: true
 
-    - name: Update resources
-      run: npm run update-resources
+    steps:
+      - name: Checkout codebase
+        uses: actions/checkout@v1
+        with:
+          submodules: recursive
 
-#    - name: bundle windows
-#      run: npm run bundle:windows --if-present
-#
-#    - name: bundle macos
-#        run: npm run bundle:macos --if-present
+      - name: Read version and commit sha
+        run: |
+          echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
+          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
-    - name: build linux
-      run: |
-        echo "Building $APP_VERSION-$HASH"
-        ./node_modules/.bin/gulp build --linux
-        ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
-      env:
-        CI: true
+      - name: Bundle environment variables
+        run: |
+          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
+          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
+          echo "BUILD=$HASH" >> .env
+
+      - name: npm install
+        run: npm ci
+
+      - name: Download latest language names
+        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+
+      - name: Update resources
+        run: npm run update-resources
+
+      #    - name: bundle windows
+      #      run: npm run bundle:windows --if-present
+      #
+      #    - name: bundle macos
+      #        run: npm run bundle:macos --if-present
+
+      - name: build linux
+        run: |
+          echo "Building $APP_VERSION-$HASH"
+          ./node_modules/.bin/gulp build --linux
+          ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
