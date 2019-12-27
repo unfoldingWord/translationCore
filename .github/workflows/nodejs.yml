@@ -139,8 +139,7 @@ jobs:
   build-macos:
     name: Build macOS
     needs: test
-    runs-on: ubuntu-latest
-    container: neutrinog/concourse-tasks:latest
+    runs-on: macos-latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
@@ -177,5 +176,5 @@ jobs:
 #   TODO: make this run on a mac image so we can get proper dmgs.
         run: |
           echo "Building $APP_VERSION-$HASH"
-          ./node_modules/.bin/gulp build --win
+          ./node_modules/.bin/gulp build --macos
           ./node_modules/.bin/gulp release-macos --out=./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
