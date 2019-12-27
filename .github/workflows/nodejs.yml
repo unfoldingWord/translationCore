@@ -34,6 +34,16 @@ jobs:
     - name: Show npm version
       run: npm --version
 
+    - name: Show current dir
+      run: |
+        pwd
+        ls -la
+
+    - name: show workspace dir
+      run: |
+        echo ${{ github.workspace }}
+        ls -la ${{ github.workspace }}
+
     - name: npm install
       run: npm ci
 
