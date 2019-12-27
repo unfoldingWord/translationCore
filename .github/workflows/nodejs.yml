@@ -88,7 +88,7 @@ jobs:
           UPLOAD_FILE: ${{ steps.build.outputs.file }}
         with:
           name: $UPLOAD_NAME
-          path: $UPLOAD_FILE
+          path: ../artifacts/
 
   build-windows:
     name: Build Windows
