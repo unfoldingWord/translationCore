@@ -10,29 +10,31 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    container: neutrinog/concourse-tasks:latest
 
-    strategy:
-      matrix:
-        node-version: [12.x]
+#    strategy:
+#      matrix:
+#        node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Node ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: Checking Codebase
+      uses: actions/checkout@v1
+
+#    - name: Node ${{ matrix.node-version }}
+#      uses: actions/setup-node@v1
+#      with:
+#        node-version: ${{ matrix.node-version }}
+    - name: Show node version
+      run: node --version
+
+    - name: Show npm version
+      run: npm --version
+
     - name: npm install
-      uses: actions/npm@master
-      with:
-        args: ci
+      run: npm ci
+
     - name: npm test
-      uses: actions/npm@master
-      with:
-        args: run test
-    - name: npm lint
-      uses: actions/npm@master
-      with:
-        args: run lint
+      run: npm test
 #    - uses: ./.github/actions/build
 #      with:
 #        run: |
