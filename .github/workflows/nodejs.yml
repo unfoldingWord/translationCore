@@ -73,16 +73,12 @@ jobs:
       - name: Update resources
         run: npm run update-resources
 
-      #    - name: bundle windows
-      #      run: npm run bundle:windows --if-present
-      #
-      #    - name: bundle macos
-      #        run: npm run bundle:macos --if-present
       - name: build linux
         id: build
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --linux
+          mkdir release
           ./node_modules/.bin/gulp release-linux-deb --out=./release/$ARTIFACT_NAME
           echo "::set-output name=file::$(./release/$ARTIFACT_NAME)"
 
@@ -93,7 +89,7 @@ jobs:
           UPLOAD_FILE: ${{ steps.build.outputs.file }}
         with:
           name: $UPLOAD_NAME
-          path: $UPLOAD_FILE
+          path: ${{ env.UPLOAD_FILE }}
 
   build-windows:
     name: Build Windows
@@ -193,6 +189,7 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --macos
+          mkdir release
           ./node_modules/.bin/gulp release-macos --out=./release/$ARTIFACT_NAME
           echo "::set-output name=file::$(./release/$ARTIFACT_NAME)"
 
