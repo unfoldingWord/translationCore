@@ -83,11 +83,11 @@ jobs:
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
-        env:
-          UPLOAD_NAME: ${{ env.ARTIFACT_NAME }}
+#        env:
+#          UPLOAD_NAME: ${{ env.ARTIFACT_NAME }}
 #          UPLOAD_FILE: ${{ steps.build.outputs.file }}
         with:
-          name: $UPLOAD_NAME
+          name: ${{ env.ARTIFACT_NAME }}
           path: ../artifacts/
 
   build-windows:
@@ -193,9 +193,9 @@ jobs:
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
-        env:
-          UPLOAD_NAME: ${{ env.ARTIFACT_NAME }}
+#        env:
+#          UPLOAD_NAME: ${{ env.ARTIFACT_NAME }}
 #          UPLOAD_FILE: ${{ steps.build.outputs.file }}
         with:
-          name: $UPLOAD_NAME
+          name: ${{ env.ARTIFACT_NAME }}
           path: ../artifacts/
