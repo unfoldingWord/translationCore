@@ -21,7 +21,7 @@ jobs:
 #        node-version: [12.x]
 
     steps:
-    - name: Checking out codebase
+    - name: Checkout codebase
       uses: actions/checkout@v1
       with:
         submodules: recursive
@@ -66,8 +66,8 @@ jobs:
 
     - name: build linux
       run: |
-        gulp build --linux
-        gulp release-linux-deb --out=./release/linux-version-build.deb
+        ./node_modules/.bin/gulp build --linux
+        ./node_modules/.bin/gulp release-linux-deb --out=./release/linux-version-build.deb
 #    - uses: ./.github/actions/build
 #      with:
 #        run: |
