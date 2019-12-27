@@ -58,6 +58,9 @@ jobs:
       - name: Set artifact name
         run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb")"
 
+      - name: artifact
+        run: echo $ARTIFACT_NAME
+
       - name: Bundle environment variables
         run: |
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
