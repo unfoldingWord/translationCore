@@ -89,7 +89,7 @@ jobs:
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         with:
-          name: ${{ env.ARTIFACT_NAME }}
+          name: build.deb #${{ env.ARTIFACT_NAME }}
           path: ${{ steps.build.outputs.file }}
 
   build-windows:
@@ -196,5 +196,5 @@ jobs:
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         with:
-          name: ${{ env.ARTIFACT_NAME }}
+          name: build.dmg #${{ env.ARTIFACT_NAME }}
           path: ${{ steps.build.outputs.file }}
