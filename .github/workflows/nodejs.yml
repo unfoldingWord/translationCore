@@ -25,7 +25,13 @@ jobs:
       run: npm ci
 
     - name: npm test
-      run: npm test
+      run: npm run ci-test
+
+    - name: upload coverage
+      run: ./node_modules/.bin/codecov
+
+    - name: npm lint
+      run: npm run lint
 
   build-linux:
     name: Build Linux
@@ -172,4 +178,4 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --win
-          ./node_modules/.bin/gulp release-win64 --out=./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
+          ./node_modules/.bin/gulp release-macos --out=./release/$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg
