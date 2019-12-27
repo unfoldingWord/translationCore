@@ -79,13 +79,13 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --linux
           ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/$ARTIFACT_NAME
-          echo "::set-output name=file::$(echo "../artifacts/$ARTIFACT_NAME")"
+#          echo "::set-output name=file::$(echo "../artifacts/$ARTIFACT_NAME")"
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         env:
           UPLOAD_NAME: ${{ env.ARTIFACT_NAME }}
-          UPLOAD_FILE: ${{ steps.build.outputs.file }}
+#          UPLOAD_FILE: ${{ steps.build.outputs.file }}
         with:
           name: $UPLOAD_NAME
           path: ../artifacts/
@@ -188,14 +188,14 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --macos
-          ./node_modules/.bin/gulp release-macos --out=./release/$ARTIFACT_NAME
-          echo "::set-output name=file::$(echo "./release/$ARTIFACT_NAME")"
+          ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
+#          echo "::set-output name=file::$(echo "../artifacts/$ARTIFACT_NAME")"
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
         env:
           UPLOAD_NAME: ${{ env.ARTIFACT_NAME }}
-          UPLOAD_FILE: ${{ steps.build.outputs.file }}
+#          UPLOAD_FILE: ${{ steps.build.outputs.file }}
         with:
           name: $UPLOAD_NAME
-          path: $UPLOAD_FILE
+          path: ../artifacts/
