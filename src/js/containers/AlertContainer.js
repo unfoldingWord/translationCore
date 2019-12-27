@@ -10,35 +10,32 @@ import Alert from './dialogs/Alert';
  * Helper component to manage dom portals.
  */
 class AlertPortal extends React.PureComponent {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.el = document.createElement('div');
   }
 
-  componentDidMount () {
+  componentDidMount() {
     document.body.appendChild(this.el);
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     document.body.removeChild(this.el);
   }
 
-  render () {
+  render() {
     return ReactDOM.createPortal(this.props.children, this.el);
   }
 }
 
-AlertPortal.propTypes = {
-  children: PropTypes.any.isRequired
-};
+AlertPortal.propTypes = { children: PropTypes.any.isRequired };
 
 /**
  * Manages the display of alerts within the application.
  * This is a new alert system that may eventually replace the existing alert system.
  */
 class Alerts extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.handleOnIgnore = this.handleOnIgnore.bind(this);
     this.handleOnCancel = this.handleOnCancel.bind(this);
@@ -51,10 +48,12 @@ class Alerts extends React.Component {
    * @param {object} alert - the alert properties
    * @return {Function}
    */
-  handleOnConfirm (alert) {
+  handleOnConfirm(alert) {
     const { closeAlert } = this.props;
+
     return () => {
       closeAlert(alert.id);
+
       // propagate callback
       if (typeof alert.onConfirm === 'function') {
         alert.onConfirm();
@@ -68,8 +67,9 @@ class Alerts extends React.Component {
    * @param {object} alert - the alert properties
    * @return {Function}
    */
-  handleOnCancel (alert) {
+  handleOnCancel(alert) {
     const { closeAlert } = this.props;
+
     if (typeof alert.onCancel === 'function') {
       return () => {
         closeAlert(alert.id);
@@ -85,8 +85,9 @@ class Alerts extends React.Component {
    * @param {object} alert - the alert properties
    * @return {Function}
    */
-  handleOnIgnore (alert) {
+  handleOnIgnore(alert) {
     const { ignoreAlert } = this.props;
+
     if (typeof alert.onIgnore === 'function') {
       return ignored => {
         ignoreAlert(alert.id, ignored);
@@ -96,14 +97,14 @@ class Alerts extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const alerts = this.props.alerts.map((item, i) => (
       <AlertPortal key={i}>
         <Alert {...item}
-               onIgnore={this.handleOnIgnore(item)}
-               onCancel={this.handleOnCancel(item)}
-               onConfirm={this.handleOnConfirm(item)}
-               open={true}/>
+          onIgnore={this.handleOnIgnore(item)}
+          onCancel={this.handleOnCancel(item)}
+          onConfirm={this.handleOnConfirm(item)}
+          open={true}/>
       </AlertPortal>
     ));
 
@@ -118,20 +119,15 @@ class Alerts extends React.Component {
 Alerts.propTypes = {
   alerts: PropTypes.array,
   closeAlert: PropTypes.func.isRequired,
-  ignoreAlert: PropTypes.func.isRequired
+  ignoreAlert: PropTypes.func.isRequired,
 };
-Alerts.defaultProps = {
-  alerts: []
-};
+Alerts.defaultProps = { alerts: [] };
 
-const mapStateToProps = (state) => {
-  return {
-    alerts: getAlerts(state)
-  };
-};
+const mapStateToProps = (state) => ({ alerts: getAlerts(state) });
+
 const mapDispatchToProps = {
   closeAlert,
-  ignoreAlert
+  ignoreAlert,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Alerts);

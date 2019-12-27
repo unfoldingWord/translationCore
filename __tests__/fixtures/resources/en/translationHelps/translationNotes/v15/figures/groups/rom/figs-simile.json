@@ -1,0 +1,170 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "To raise from the dead is an idiom for causing a person to live again. This compares a believer's new spiritual life to Jesus coming back to life physically. The believer's new spiritual life enables that person to obey God. You can translate this in an active form. Alternate translation: \"just as the Father brought Jesus back to life after he died, we might have new spiritual life and obey God\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὥσπερ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠγέρθη",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "δόξης",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "καινότητι",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "περιπατήσωμεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "just as Christ was raised from the dead by the glory of the Father, so also we might walk in newness of life ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul compares to livestock those whom people kill because they are loyal to God. You can translate this in an active form. Alternate translation: \"Our lives have no more value to them than the sheep they kill\" (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐλογίσθημεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόβατα",
+          "occurrence": 1
+        },
+        {
+          "word": "σφαγῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We were considered as sheep for the slaughter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul compares the number of the people of Israel to the number of grains of sand in the sea. Alternate translation: \"too many to count\" (See: [[rc://en/ta/man/translate/figs-simile ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄμμος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "θαλάσσης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as the sand of the sea ",
+      "occurrence": 1
+    }
+  }
+]

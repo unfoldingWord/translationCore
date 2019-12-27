@@ -1,28 +1,29 @@
 import types from '../../actions/ActionTypes';
-import reducer, {getSaveStructure} from '../verseEditReducer';
+import reducer, { getSaveStructure } from '../verseEditReducer';
+import { WORD_ALIGNMENT } from '../../common/constants';
 
-describe('verse edit reducer',  () => {
+describe('verse edit reducer', () => {
   const timestamp = (new Date()).toJSON();
 
   it('should return the initial state', () => {
     expect(reducer(undefined, {})).toEqual({
-      activeBook: null, 
-      activeChapter: null, 
-      activeVerse: null, 
-      gatewayLanguageCode: null, 
-      gatewayLanguageQuote: null, 
-      modifiedTimestamp: null, 
-      occurrence: null, quote: null, 
+      activeBook: null,
+      activeChapter: null,
+      activeVerse: null,
+      gatewayLanguageCode: null,
+      gatewayLanguageQuote: null,
+      modifiedTimestamp: null,
+      occurrence: null, quote: null,
       reference: {
-        bookId: null, 
-        chapter: null, 
-        groupId: null, 
-        verse: null
-      }, 
-      tags: null, 
-      userName: null, 
-      verseAfter: null, 
-      verseBefore: null
+        bookId: null,
+        chapter: null,
+        groupId: null,
+        verse: null,
+      },
+      tags: null,
+      userName: null,
+      verseAfter: null,
+      verseBefore: null,
     });
   });
 
@@ -41,8 +42,8 @@ describe('verse edit reducer',  () => {
         reference: {
           bookId: 'book',
           chapter: 1,
-          verse: 2
-        }
+          verse: 2,
+        },
       })
     ).toEqual({
       verseBefore: 'before text',
@@ -55,8 +56,8 @@ describe('verse edit reducer',  () => {
       reference: {
         bookId: 'book',
         chapter: 1,
-        verse: 2
-      }
+        verse: 2,
+      },
     });
   });
 
@@ -72,8 +73,8 @@ describe('verse edit reducer',  () => {
       reference: {
         bookId: 'original book',
         chapter: 4,
-        verse: 5
-      }
+        verse: 5,
+      },
     };
 
     expect(
@@ -89,8 +90,8 @@ describe('verse edit reducer',  () => {
         reference: {
           bookId: 'book',
           chapter: 1,
-          verse: 2
-        }
+          verse: 2,
+        },
       })
     ).toEqual({
       verseBefore: 'before text',
@@ -103,8 +104,8 @@ describe('verse edit reducer',  () => {
       reference: {
         bookId: 'book',
         chapter: 1,
-        verse: 2
-      }
+        verse: 2,
+      },
     });
   });
 });
@@ -124,12 +125,13 @@ describe('verse edit selectors', () => {
         bookId: 'book',
         chapter: 1,
         verse: 2,
-        groupId:'group'
+        groupId:'group',
       },
       quote:'quote',
-      occurrence: 1
+      occurrence: 1,
     };
-    const saveState = getSaveStructure(state, 'wordAlignment');
+    const saveState = getSaveStructure(state, WORD_ALIGNMENT);
+
     expect(saveState).toEqual({
       verseBefore: 'before text',
       verseAfter: 'after text',
@@ -139,19 +141,19 @@ describe('verse edit selectors', () => {
       gatewayLanguageCode: 'code',
       gatewayLanguageQuote: 'quote',
       occurrence: 1,
-      quote: "quote",
+      quote: 'quote',
       contextId: {
         reference: {
           bookId: 'book',
           chapter: 1,
           verse: 2,
-          groupId: "group"
+          groupId: 'group',
         },
         occurrence: 1,
-        quote: "quote",
-        tool: 'wordAlignment',
-        groupId: "group"
-      }
+        quote: 'quote',
+        tool: WORD_ALIGNMENT,
+        groupId: 'group',
+      },
     });
   });
 });

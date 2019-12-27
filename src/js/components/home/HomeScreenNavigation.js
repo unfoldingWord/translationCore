@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   getHomeScreenStep,
-  getNextHomeScreenStepDisabled
+  getNextHomeScreenStepDisabled,
 } from '../../selectors';
 import { goToNextStep, goToPrevStep } from '../../actions/BodyUIActions';
 
@@ -15,7 +15,9 @@ import { goToNextStep, goToPrevStep } from '../../actions/BodyUIActions';
  * @return {*}
  * @constructor
  */
-const NavButton = ({text, onClick, disabled}) => {
+const NavButton = ({
+  text, onClick, disabled,
+}) => {
   if (text) {
     return (
       <button className='btn-second' disabled={disabled} onClick={onClick}>
@@ -23,34 +25,34 @@ const NavButton = ({text, onClick, disabled}) => {
       </button>
     );
   } else {
-    return <span style={{width: '200px'}}/>;
+    return <span style={{ width: '200px' }}/>;
   }
 };
+
 NavButton.propTypes = {
   text: PropTypes.string,
   onClick: PropTypes.func,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 };
 
 /**
  * The home navigation
  */
 class HomeScreenNavigation extends Component {
-
-  render () {
+  render() {
     const {
       translate,
       stepIndex,
       isNextDisabled,
       goToNextStep,
-      goToPrevStep
+      goToPrevStep,
     } = this.props;
 
     const labels = [
       translate('buttons.home_button'),
       translate('buttons.go_to_user_button'),
       translate('buttons.go_to_project_button'),
-      translate('buttons.go_to_tools_button')
+      translate('buttons.go_to_tools_button'),
     ];
 
     const backDisabled = stepIndex === 0;
@@ -59,14 +61,14 @@ class HomeScreenNavigation extends Component {
       <div style={{
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
       }}>
         <NavButton text={labels[stepIndex - 1]}
-                   onClick={goToPrevStep}
-                   disabled={backDisabled}/>
+          onClick={goToPrevStep}
+          disabled={backDisabled}/>
         <NavButton text={labels[stepIndex + 1]}
-                   onClick={goToNextStep}
-                   disabled={isNextDisabled}/>
+          onClick={goToNextStep}
+          disabled={isNextDisabled}/>
       </div>
     );
   }
@@ -74,12 +76,12 @@ class HomeScreenNavigation extends Component {
 
 const mapStateToProps = (state) => ({
   stepIndex: getHomeScreenStep(state),
-  isNextDisabled: getNextHomeScreenStepDisabled(state)
+  isNextDisabled: getNextHomeScreenStepDisabled(state),
 });
 
 const mapDispatchToProps = {
   goToNextStep,
-  goToPrevStep
+  goToPrevStep,
 };
 
 HomeScreenNavigation.propTypes = {
@@ -87,7 +89,7 @@ HomeScreenNavigation.propTypes = {
   stepIndex: PropTypes.number,
   isNextDisabled: PropTypes.bool,
   goToNextStep: PropTypes.func,
-  goToPrevStep: PropTypes.func
+  goToPrevStep: PropTypes.func,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(

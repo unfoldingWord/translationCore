@@ -1,0 +1,53 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase gives us information about \"the household of God\" rather than making a distinction between a household of God which is the church and one that is not the church. This can be stated as a new sentence. Alternate translation: \"house hold of God. Those who belong to the family of God are the community of believers in the living God\" (See: [[rc://en/ta/man/translate/figs-distinguish]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-distinguish",
+      "quote": [
+        {
+          "word": "οἴκῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἥτις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκκλησία",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ζῶντος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "household of God, which is the church of the living God",
+      "occurrence": 1
+    }
+  }
+]

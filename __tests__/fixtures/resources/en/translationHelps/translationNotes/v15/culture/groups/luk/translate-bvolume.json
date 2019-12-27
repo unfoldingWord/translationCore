@@ -1,0 +1,74 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was about 3,000 liters of olive oil. (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "quote": [
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "βάτους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλαίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A hundred baths of olive oil",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. Alternate translation: \"twenty thousand liters of wheat\" or \"a thousand baskets of wheat\" (See: [[rc://en/ta/man/translate/translate-bvolume]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 16,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bvolume",
+      "quote": [
+        {
+          "word": "ἑκατὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 2
+        },
+        {
+          "word": "κόρους",
+          "occurrence": 1
+        },
+        {
+          "word": "σίτου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A hundred cors of wheat",
+      "occurrence": 1
+    }
+  }
+]

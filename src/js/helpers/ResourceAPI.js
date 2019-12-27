@@ -1,13 +1,12 @@
-import ospath from "ospath";
-import path from "path-extra";
-import fs from "fs-extra";
-import semver from "semver";
-
+import ospath from 'ospath';
+import path from 'path-extra';
+import fs from 'fs-extra';
+import semver from 'semver';
+import { TRANSLATION_HELPS } from '../common/constants';
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
  */
 class ResourceAPI {
-
   /**
    * Creates a new resource api
    * @param {string} resourcesDir - the absolute path to the resources directory
@@ -21,7 +20,7 @@ class ResourceAPI {
    * @returns {ResourceAPI}
    */
   static default() {
-    const dir = path.join(ospath.home(), "translationCore", "resources");
+    const dir = path.join(ospath.home(), 'translationCore', 'resources');
     return new ResourceAPI(dir);
   }
 
@@ -39,7 +38,7 @@ class ResourceAPI {
    * @returns {string[]}
    */
   getTranslationHelps(gatewayLanguage) {
-    const dir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps");
+    const dir = path.join(this._resourcesDir, gatewayLanguage, TRANSLATION_HELPS);
     return fs.readdirSync(dir);
   }
 
@@ -50,7 +49,7 @@ class ResourceAPI {
    * @returns {string|null} the file path or null if no directory was found
    */
   getLatestTranslationHelp(gatewayLanguage, helpName) {
-    const helpDir = path.join(this._resourcesDir, gatewayLanguage, "translationHelps", helpName);
+    const helpDir = path.join(this._resourcesDir, gatewayLanguage, TRANSLATION_HELPS, helpName);
     return ResourceAPI.getLatestVersion(helpDir);
   }
 
@@ -62,7 +61,8 @@ class ResourceAPI {
    */
   static getLatestVersion(dir) {
     const versions = ResourceAPI.listVersions(dir);
-    if(versions.length > 0) {
+
+    if (versions.length > 0) {
       return path.join(dir, versions[0]);
     } else {
       return null;
@@ -76,24 +76,32 @@ class ResourceAPI {
    */
   static listVersions(dir) {
     if (fs.pathExistsSync(dir)) {
-      const versionedDirs = fs.readdirSync(dir).filter(file => {
-        return fs.lstatSync(path.join(dir, file)).isDirectory() &&
-          file.match(/^v\d/i);
-      });
-      return versionedDirs.sort((a, b) => {
-        const cleanA = semver.coerce(a);
-        const cleanB = semver.coerce(b);
-
-        if(semver.gt(cleanA, cleanB)) {
-          return -1;
-        } else if(semver.lt(cleanA, cleanB)) {
-          return 1;
-        } else {
-          return 0;
-        }
-      });
+      const versionedDirs = fs.readdirSync(dir).filter(file => fs.lstatSync(path.join(dir, file)).isDirectory() &&
+          file.match(/^v\d/i));
+      return versionedDirs.sort((a, b) =>
+        -this.compareVersions(a, b) // do inverted sort
+      );
     }
     return [];
+  }
+
+  /**
+   * compares version numbers, if a > b returns 1; if a < b return -1; else are equal and return 0
+   * @param a
+   * @param b
+   * @return {number}
+   */
+  static compareVersions(a, b) {
+    const cleanA = semver.coerce(a);
+    const cleanB = semver.coerce(b);
+
+    if (semver.gt(cleanA, cleanB)) {
+      return 1;
+    } else if (semver.lt(cleanA, cleanB)) {
+      return -1;
+    } else {
+      return 0;
+    }
   }
 }
 

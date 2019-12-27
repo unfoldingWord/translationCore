@@ -15,38 +15,38 @@ const initialState = {
     bookId: null,
     chapter: null,
     verse: null,
-    groupId: null
+    groupId: null,
   },
   quote: null,
-  occurrence: null
+  occurrence: null,
 };
 
 const verseEditReducer = (state = initialState, action) => {
   switch (action.type) {
-    case types.ADD_VERSE_EDIT:
-      return {
-        ...state,
-        verseBefore: action.before,
-        verseAfter: action.after,
-        tags: action.tags,
-        userName: action.username,
-        activeBook: action.activeBook,
-        activeChapter: action.activeChapter,
-        activeVerse: action.activeVerse,
-        modifiedTimestamp: action.modifiedTimestamp,
-        gatewayLanguageCode: action.gatewayLanguageCode,
-        gatewayLanguageQuote: action.gatewayLanguageQuote,
-        reference: {
-          bookId: action.reference.bookId,
-          chapter: action.reference.chapter,
-          verse: action.reference.verse,
-          groupId: action.reference.groupId
-        },
-        quote: action.quote,
-        occurrence: action.occurrence
-      };
-    default:
-      return state;
+  case types.ADD_VERSE_EDIT:
+    return {
+      ...state,
+      verseBefore: action.before,
+      verseAfter: action.after,
+      tags: action.tags,
+      userName: action.username,
+      activeBook: action.activeBook,
+      activeChapter: action.activeChapter,
+      activeVerse: action.activeVerse,
+      modifiedTimestamp: action.modifiedTimestamp,
+      gatewayLanguageCode: action.gatewayLanguageCode,
+      gatewayLanguageQuote: action.gatewayLanguageQuote,
+      reference: {
+        bookId: action.reference.bookId,
+        chapter: action.reference.chapter,
+        verse: action.reference.verse,
+        groupId: action.reference.groupId,
+      },
+      quote: action.quote,
+      occurrence: action.occurrence,
+    };
+  default:
+    return state;
   }
 };
 
@@ -66,8 +66,8 @@ export const getSaveStructure = (state, toolName) => {
       tool: toolName,
       groupId: state.reference.groupId,
       occurrence: state.occurrence,
-      quote: state.quote
-    }
+      quote: state.quote,
+    },
   };
   delete obj.reference;
   return obj;

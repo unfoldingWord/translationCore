@@ -1,0 +1,198 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Rejoice\" and \"be very glad\" mean almost the same thing. Jesus wanted his hearers not merely to rejoice but to do even more than rejoice if possible. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 5,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "χαίρετε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαλλιᾶσθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Rejoice and be very glad",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"meek\" and \"lowly in heart\" mean basically the same thing. Jesus combines them to emphasize that he will be much kinder than the religious leaders. Alternate translation: \"I am gentle and humble\" or \"I am very gentle\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 11,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "πραΰς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰμι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ταπεινὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am meek and lowly in heart",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus expresses the same idea both positively and negatively to emphasize that this faith must be genuine. Alternate translation: \"if you truly believe\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχητε",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "διακριθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if you have faith and do not doubt",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"great\" and \"first\" mean the same thing. They emphasize that this is the most important commandment. (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλη",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρώτη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντολή",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the great and first commandment",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Serpents are snakes, and vipers are poisonous snakes. They are dangerous and often symbols of evil. Alternate translation: \"You are as evil as dangerous and poisonous snakes\" (See: [[rc://en/ta/man/translate/figs-doublet]] and [[rc://en/ta/man/translate/figs-metaphor]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 23,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ὄφεις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "γεννήματα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐχιδνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "You serpents, you offspring of vipers",
+      "occurrence": 1
+    }
+  }
+]

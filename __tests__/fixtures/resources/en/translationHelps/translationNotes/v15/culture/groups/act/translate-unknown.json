@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "the Roman governor's representatives who made legal decisions in court (See: [[rc://en/ta/man/translate/translate-unknown ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 19,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-unknown",
+      "quote": "ἀνθύπατοί",
+      "glQuote": "proconsuls",
+      "occurrence": 1
+    }
+  }
+]

@@ -3,7 +3,7 @@
  * @param {string} type - the type of storage (localStorage|sessionStorage)
  * @return {boolean}
  */
-function storageAvailable (type) {
+function storageAvailable(type) {
   try {
     var storage = window[type],
       x = '__storage_test__';
@@ -12,7 +12,7 @@ function storageAvailable (type) {
     return true;
   } catch (e) {
     return e instanceof DOMException && (
-        // everything except Firefox
+    // everything except Firefox
       e.code === 22 ||
       // Firefox
       e.code === 1014 ||
@@ -39,24 +39,23 @@ function stringifyKey(key) {
  * A light cache object
  */
 class InstanceStorage {
-
   constructor() {
     this.cache = {};
   }
 
-  setItem (key, value) {
+  setItem(key, value) {
     this.cache[stringifyKey(key)] = value;
   }
 
-  removeItem (key) {
+  removeItem(key) {
     delete this.cache[stringifyKey(key)];
   }
 
-  getItem (key) {
+  getItem(key) {
     return this.cache[stringifyKey(key)];
   }
 
-  clear () {
+  clear() {
     this.cache = {};
   }
 
@@ -101,12 +100,11 @@ export const INSTANCE_STORAGE = 'instanceStorage';
  * stringify things.
  */
 export default class SimpleCache {
-
   /**
    * Initializes a new simple cache.
    * @param {string} [storageType="instanceStorage"] - The type of storage to use behind the cache. Can be one of (LOCAL_STORAGE|SESSION_STORAGE|INSTANCE_STORAGE)
    */
-  constructor (storageType = INSTANCE_STORAGE) {
+  constructor(storageType = INSTANCE_STORAGE) {
     this.storageType = storageType;
 
     const fallback = () => {
@@ -116,19 +114,19 @@ export default class SimpleCache {
     };
 
     // bind to storage
-    if(storageType === INSTANCE_STORAGE) {
+    if (storageType === INSTANCE_STORAGE) {
       // use instance storage
       this.cache = new InstanceStorage();
-    } else if(storageType === SESSION_STORAGE) {
+    } else if (storageType === SESSION_STORAGE) {
       // use session storage
-      if(storageAvailable('sessionStorage')) {
+      if (storageAvailable('sessionStorage')) {
         this.cache = sessionStorage;
       } else {
         fallback();
       }
     } else {
       // use local storage
-      if(storageAvailable('localStorage')) {
+      if (storageAvailable('localStorage')) {
         this.cache = localStorage;
       } else {
         fallback();
@@ -149,9 +147,9 @@ export default class SimpleCache {
    * @param {string} key
    * @param {string} value
    */
-  set (key, value) {
+  set(key, value) {
     // TRICKY: the InstanceStore supports any value, but Web Storage require strings.
-    if(this.storageType !== INSTANCE_STORAGE && typeof value !== 'string') {
+    if (this.storageType !== INSTANCE_STORAGE && typeof value !== 'string') {
       throw new Error(`Failed to set cache key "${key}". Web Storage values must be strings. Type "${typeof value}" is not allowed.`);
     }
 
@@ -173,7 +171,7 @@ export default class SimpleCache {
    * Removes the item
    * @param key
    */
-  remove (key) {
+  remove(key) {
     this.cache.removeItem(key);
   }
 
@@ -181,14 +179,14 @@ export default class SimpleCache {
    * Retrieves the item
    * @param key
    */
-  get (key) {
+  get(key) {
     return this.cache.getItem(key);
   }
 
   /**
    * Clears all data
    */
-  clear () {
+  clear() {
     this.cache.clear();
   }
 

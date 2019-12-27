@@ -1,5 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
+import { TRANSLATION_WORDS } from '../../common/constants';
 import * as Version from './VersionUtils';
 
 export const MIGRATE_MANIFEST_VERSION = 4;
@@ -12,7 +13,10 @@ export const MIGRATE_MANIFEST_VERSION = 4;
  */
 export default (projectPath, projectLink) => {
   Version.getVersionFromManifest(projectPath, projectLink); // ensure manifest converted for tc
-  if (shouldRun(projectPath)) run(projectPath);
+
+  if (shouldRun(projectPath)) {
+    run(projectPath);
+  }
 };
 
 /**
@@ -32,7 +36,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
-  console.log("migrateToVersion4(" + projectPath + ")");
+  console.log('migrateToVersion4(' + projectPath + ')');
   updateAlignments(projectPath);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
@@ -44,34 +48,36 @@ const run = (projectPath) => {
  */
 export const updateAlignments = function (projectPath) {
   const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData');
+
   if (fs.existsSync(projectAlignmentDataPath)) {
-    const alignmentFolders = fs.readdirSync(projectAlignmentDataPath).filter(folder => {
-      return (fs.statSync(path.join(projectAlignmentDataPath, folder)).isDirectory() && (folder !== ".DS_Store"));
-    });
+    const alignmentFolders = fs.readdirSync(projectAlignmentDataPath).filter(folder => (fs.statSync(path.join(projectAlignmentDataPath, folder)).isDirectory() && (folder !== '.DS_Store')));
+
     for (let folder of alignmentFolders) {
       const alignmentPath = path.join(projectAlignmentDataPath, folder);
       const files = fs.readdirSync(alignmentPath).filter((file) => (path.extname(file) === '.json'));
+
       for (let file of files) {
         const file_path = path.join(alignmentPath, file);
         fixProjectAlignmentTopWords(file_path, file);
       }
     }
   }
-  const projectTWordsDataPath = path.join(projectPath, '.apps', 'translationCore', 'index', 'translationWords');
+
+  const projectTWordsDataPath = path.join(projectPath, '.apps', 'translationCore', 'index', TRANSLATION_WORDS);
+
   if (fs.existsSync(projectTWordsDataPath)) {
-    const tWordsFolders = fs.readdirSync(projectTWordsDataPath).filter(folder => {
-      return (fs.statSync(path.join(projectTWordsDataPath, folder)).isDirectory() && (folder !== ".DS_Store"));
-    });
+    const tWordsFolders = fs.readdirSync(projectTWordsDataPath).filter(folder => (fs.statSync(path.join(projectTWordsDataPath, folder)).isDirectory() && (folder !== '.DS_Store')));
+
     for (let folder of tWordsFolders) {
       const alignmentPath = path.join(projectTWordsDataPath, folder);
       const files = fs.readdirSync(alignmentPath).filter((file) => (path.extname(file) === '.json'));
+
       for (let file of files) {
         const file_path = path.join(alignmentPath, file);
         fix_tWords(file_path, file);
       }
     }
   }
-
 };
 
 /**
@@ -79,22 +85,25 @@ export const updateAlignments = function (projectPath) {
  * @param filePath
  */
 export const fix_tWords = function (filePath) {
-  const match = "ἐνκρατῆ";
-  const replace = "ἐγκρατῆ";
+  const match = 'ἐνκρατῆ';
+  const replace = 'ἐγκρατῆ';
   let modified = false;
+
   try {
     const items = fs.readJsonSync(filePath);
+
     for (let item of items) {
       if (item.contextId && item.contextId.quote === match) {
         item.contextId.quote = replace;
         modified = true;
       }
     }
+
     if (modified) {
-      fs.outputJsonSync(filePath, items);
+      fs.outputJsonSync(filePath, items, { spaces: 2 });
     }
   } catch (e) {
-    console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());
+    console.warn('Error opening chapter alignment \'' + filePath + '\': ' + e.toString());
   }
 };
 
@@ -103,21 +112,25 @@ export const fix_tWords = function (filePath) {
  * @param filePath
  */
 export const fixProjectAlignmentTopWords = function (filePath) {
-  const match = "ἐνκρατῆ";
-  const replace = "ἐγκρατῆ";
+  const match = 'ἐνκρατῆ';
+  const replace = 'ἐγκρατῆ';
   // To clean up lemma:
-  const match2 = "ἐνκρατής";
-  const replace2 = "ἐγκρατής";
+  const match2 = 'ἐνκρατής';
+  const replace2 = 'ἐγκρατής';
   let modified = false;
+
   try {
     const chapter_alignments = fs.readJsonSync(filePath);
+
     for (let verseKey in chapter_alignments) {
       const verse = chapter_alignments[verseKey];
+
       for (let alignment of verse.alignments) {
         for (let word of alignment.topWords) {
           if (word.word === match) {
             word.word = replace;
             modified = true;
+
             if (word.lemma === match2) {
               word.lemma =replace2;
             }
@@ -125,11 +138,12 @@ export const fixProjectAlignmentTopWords = function (filePath) {
         }
       }
     }
+
     if (modified) {
-      fs.outputJsonSync(filePath, chapter_alignments);
+      fs.outputJsonSync(filePath, chapter_alignments, { spaces: 2 });
     }
   } catch (e) {
-    console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());
+    console.warn('Error opening chapter alignment \'' + filePath + '\': ' + e.toString());
   }
 };
 

@@ -1,0 +1,94 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This was before the men actually went out. Alternate translation: \"He had said to them\" or \"Before they went out he told them\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": [
+        {
+          "word": "ἔλεγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτούς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He said to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He would have put the oil and wine on the wounds first, and then bound the wounds. Alternate translation: \"he put wine and oil on the wounds and wrapped them with cloth\" (See: [[rc://en/ta/man/translate/figs-events]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 10,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-events",
+      "quote": [
+        {
+          "word": "κατέδησεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "τραύματα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐπιχέων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαιον",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οἶνον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bound up his wounds, pouring on oil and wine",
+      "occurrence": 1
+    }
+  }
+]

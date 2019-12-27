@@ -1,0 +1,351 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These are names of men. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Φαρὲς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ζάρα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἑσρώμ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Ἀράμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Perez ... Zerah ... Hezron ... Ram",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a male name. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἐμμανουήλ",
+      "glQuote": "Immanuel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of Herod's son. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἀρχέλαος",
+      "glQuote": "Archelaus",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"he\" refers to Jesus. The prophets before the time of Jesus would have referred to him as the Messiah or the Christ. Alternate translation: \"people would say that the Christ is a Nazarene\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 2,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Ναζωραῖος",
+          "occurrence": 1
+        },
+        {
+          "word": "κληθήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he would be called a Nazarene",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This name means \"the Ten Towns.\" This is the name of a region to the southeast of the Sea of Galilee. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 4,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δεκαπόλεως",
+      "glQuote": "the Decapolis",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The Gadarenes were named after the town of Gadara. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χώραν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Γαδαρηνῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the country of the Gadarenes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to the Queen of Sheba. Sheba is a land south of Israel. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "βασίλισσα",
+          "occurrence": 1
+        },
+        {
+          "word": "νότου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Queen of the South",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Philip was Herod's brother. Herod had taken Philip's wife to be his own wife. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "γυναῖκα",
+          "occurrence": 1
+        },
+        {
+          "word": "Φιλίππου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Philip's wife",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a small town on the northwest shore of the Sea of Galilee. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 14,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Γεννησαρέτ",
+      "glQuote": "Gennesaret",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This region is sometimes called \"Magdala.\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 15,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Μαγαδάν",
+      "glQuote": "Magadan",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Simon son of Jonah\" (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 16,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": [
+        {
+          "word": "Σίμων",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαριωνᾶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Simon Bar Jonah",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a village near Jerusalem. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 21,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Βηθφαγὴ",
+      "glQuote": "Bethphage",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These were officials and followers of the Jewish king Herod. He was friends with Roman authorities. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 22,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἡρῳδιανῶν",
+      "glQuote": "Herodians",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the name of a city in Israel. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 27,
+        "verse": 57
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἁριμαθαίας",
+      "glQuote": "Arimathea",
+      "occurrence": 1
+    }
+  }
+]

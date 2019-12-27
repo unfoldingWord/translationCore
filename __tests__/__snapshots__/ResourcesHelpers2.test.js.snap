@@ -1,6 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResourcesHelpers.getAvailableScripturePaneSelections getAvailableScripturePaneSelections() should work 1`] = `
+exports[`getAvailableScripturePaneSelections getAvailableScripturePaneSelections() should work without targetBible loaded into resources 1`] = `
+Array [
+  Object {
+    "bibleId": "ult",
+    "bookId": "gal",
+    "languageId": "en",
+    "manifest": "manifest",
+  },
+  Object {
+    "bibleId": "ust",
+    "bookId": "gal",
+    "languageId": "en",
+    "manifest": "manifest",
+  },
+  Object {
+    "bibleId": "ugnt",
+    "bookId": "gal",
+    "languageId": "originalLanguage",
+    "manifest": "manifest",
+  },
+]
+`;
+
+exports[`getAvailableScripturePaneSelections should work 1`] = `
 Array [
   Object {
     "bibleId": "targetBible",
@@ -29,7 +52,7 @@ Array [
 ]
 `;
 
-exports[`ResourcesHelpers.getAvailableScripturePaneSelections getAvailableScripturePaneSelections() should work OT 1`] = `
+exports[`getAvailableScripturePaneSelections should work OT 1`] = `
 Array [
   Object {
     "bibleId": "targetBible",
@@ -46,42 +69,33 @@ Array [
 ]
 `;
 
-exports[`ResourcesHelpers.getAvailableScripturePaneSelections getAvailableScripturePaneSelections() should work without targetBible loaded into resources 1`] = `
+exports[`getResourcesNeededByTool() should work 1`] = `
 Array [
   Object {
     "bibleId": "ult",
-    "bookId": "gal",
     "languageId": "en",
-    "manifest": "manifest",
-  },
-  Object {
-    "bibleId": "ust",
-    "bookId": "gal",
-    "languageId": "en",
-    "manifest": "manifest",
   },
   Object {
     "bibleId": "ugnt",
-    "bookId": "gal",
-    "languageId": "originalLanguage",
-    "manifest": "manifest",
+    "languageId": "el-x-koine",
+  },
+  Object {
+    "bibleId": "ust",
+    "languageId": "en",
   },
 ]
 `;
 
-exports[`ResourcesHelpers.getResourcesNeededByTool getResourcesNeededByTool() should work 1`] = `
-Array [
-  Object {
-    "bibleId": "ult",
-    "languageId": "en",
+exports[`updateGroupIndexForGl() should succeed 1`] = `
+Object {
+  "groupId": "figs-explicit",
+  "occurrence": 1,
+  "occurrenceNote": "Your language may require that what the people heard and whom they trusted be stated explicitly. Alternate translation: \\"because you heard the message and had faith in Jesus\\" or \\"because you listened to the message and trusted in Jesus\\" (See: [[rc://en/ta/man/translate/figs-explicit]])",
+  "reference": Object {
+    "bookId": "gal",
+    "chapter": 3,
+    "verse": 5,
   },
-  Object {
-    "bibleId": "ugnt",
-    "languageId": "grc",
-  },
-  Object {
-    "bibleId": "ust",
-    "languageId": "en",
-  },
-]
+  "tool": "translationNotes",
+}
 `;

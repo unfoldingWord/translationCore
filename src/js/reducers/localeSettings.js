@@ -1,20 +1,19 @@
-import types from '../actions/ActionTypes';
+/* eslint-disable array-callback-return */
 import * as fromLocale from 'react-localize-redux';
 import _ from 'lodash';
+import types from '../actions/ActionTypes';
 
-const defaultState = {
-  loaded: false
-};
+const defaultState = { loaded: false };
 
 const localeSettings = (state = defaultState, action) => {
-  switch(action.type) {
-    case types.LOCALE_LOADED:
-      return {
-        ...state,
-        loaded: true
-      };
-    default:
-      return state;
+  switch (action.type) {
+  case types.LOCALE_LOADED:
+    return {
+      ...state,
+      loaded: true,
+    };
+  default:
+    return state;
   }
 };
 
@@ -27,11 +26,12 @@ export default localeSettings;
  * @return {Language[]} a list of languages
  */
 export const getLanguages = (state) => {
-  let languages = fromLocale.getLanguages(state.locale);
+  let languages = fromLocale.getLanguages(state.localize);
+
   // TRICKY: we filter out short codes used for equivalence matching
   // because theses will appear to be duplicates (they technically are)
   languages = languages.map((language) => {
-    if(language.code.indexOf('_') > -1) {
+    if (language.code.indexOf('_') > -1) {
       return language;
     }
   });
@@ -46,7 +46,7 @@ export const getLanguages = (state) => {
  * @return {Language}
  */
 export const getActiveLanguage = (state) =>
-  fromLocale.getActiveLanguage(state.locale);
+  fromLocale.getActiveLanguage(state.localize);
 
 /**
  * Checks if the locale is loaded
@@ -64,4 +64,4 @@ export const getLocaleLoaded = (state) =>
  * @return {Translate}
  */
 export const getTranslate = (state) =>
-  fromLocale.getTranslate(state.locale);
+  fromLocale.getTranslate(state.localize);

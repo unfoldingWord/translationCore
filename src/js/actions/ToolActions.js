@@ -1,13 +1,28 @@
-import types from "./ActionTypes";
-import { loadToolsInDir } from "../helpers/toolHelper";
-import { getToolGatewayLanguage, getTranslate, getProjectSaveLocation } from "../selectors";
-import * as ModalActions from "./ModalActions";
-import * as AlertModalActions from "./AlertModalActions";
-import * as GroupsDataActions from "./GroupsDataActions";
-import { loadCurrentContextId } from "./ContextIdActions";
-import * as BodyUIActions from "./BodyUIActions";
-import { loadProjectGroupData, loadProjectGroupIndex } from "../helpers/ResourcesHelpers";
-import { loadGroupsIndex } from "./GroupsIndexActions";
+
+/* eslint-disable no-async-promise-executor */
+import { batchActions } from 'redux-batched-actions';
+import {
+  getToolGatewayLanguage,
+  getTranslate,
+  getProjectSaveLocation,
+} from '../selectors';
+import { loadProjectGroupData, loadProjectGroupIndex } from '../helpers/ResourcesHelpers';
+import {
+  loadToolsInDir, isInvalidationAlertDisplaying, getInvalidCountForTool,
+} from '../helpers/toolHelper';
+import { delay } from '../common/utils';
+import { WORD_ALIGNMENT } from '../common/constants';
+import types from './ActionTypes';
+// actions
+import * as ModalActions from './ModalActions';
+import { openAlertDialog, closeAlertDialog } from './AlertModalActions';
+import * as GroupsDataActions from './GroupsDataActions';
+import { loadCurrentContextId } from './ContextIdActions';
+import * as BodyUIActions from './BodyUIActions';
+import { loadGroupsIndex } from './GroupsIndexActions';
+import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
+// helpers
+import { showInvalidatedWarnings } from './SelectionsActions';
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -16,7 +31,7 @@ import { loadGroupsIndex } from "./GroupsIndexActions";
 const registerTool = tool => ({
   type: types.ADD_TOOL,
   name: tool.name,
-  tool
+  tool,
 });
 
 /**
@@ -29,7 +44,7 @@ export const loadTools = (toolsDir) => (dispatch) => {
   // TRICKY: push this off the render thread just for a moment to simulate threading.
   setTimeout(() => {
     loadToolsInDir(toolsDir).then((tools) => {
-      for(let i = 0, len = tools.length; i < len; i ++) {
+      for (let i = 0, len = tools.length; i < len; i++) {
         dispatch(registerTool(tools[i]));
       }
     });
@@ -37,52 +52,94 @@ export const loadTools = (toolsDir) => (dispatch) => {
 };
 
 /**
+ * This function prepares the data needed to load a tool, also
+ *  useful for checking the progress of a tool
+ * @param {String} name - Name of the tool
+ */
+export function prepareToolForLoading(name) {
+  return async (dispatch, getData) => {
+    const translate = getTranslate(getData());
+
+    dispatch(batchActions([
+      { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
+      { type: types.CLEAR_PREVIOUS_GROUPS_INDEX },
+      { type: types.CLEAR_CONTEXT_ID },
+    ]));
+
+    // Load older version of OL resource if needed by tN tool
+    dispatch(loadOlderOriginalLanguageResource(name));
+
+    // load group data
+    const projectDir = getProjectSaveLocation(getData());
+    const groupData = loadProjectGroupData(name, projectDir);
+
+    dispatch({
+      type: types.LOAD_GROUPS_DATA_FROM_FS,
+      allGroupsData: groupData,
+    });
+
+    // load group index
+    const language = getToolGatewayLanguage(getData(), name);
+    const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
+    dispatch(loadGroupsIndex(groupIndex));
+
+    dispatch(loadCurrentContextId(name));
+    //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
+    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(name));
+    // wait for filesystem calls to finish
+  };
+}
+
+/**
  * Opens a tool
  * @param {string} name - the name of the tool to open
  * @returns {Function}
  */
-export const openTool = (name) => (dispatch, getData) => {
+export const openTool = (name) => (dispatch, getData) => new Promise(async (resolve, reject) => {
+  console.log('openTool(' + name + ')');
   const translate = getTranslate(getData());
-  console.log("openTool(" + name + ")");
-
   dispatch(ModalActions.showModalContainer(false));
-  dispatch({ type: types.START_LOADING });
-  setTimeout(() => {
-    try {
+  dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
+  await delay(300);
 
-      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_DATA });
-      dispatch({ type: types.CLEAR_PREVIOUS_GROUPS_INDEX });
-      dispatch({ type: types.CLEAR_CONTEXT_ID });
+  try {
+    dispatch({ type: types.OPEN_TOOL, name });
+    await dispatch(prepareToolForLoading(name));
+    dispatch(batchActions([
+      closeAlertDialog(),
+      BodyUIActions.toggleHomeView(false),
+    ]));
+    dispatch(warnOnInvalidations(name));
+  } catch (e) {
+    console.warn('openTool()', e);
+    dispatch(openAlertDialog(translate('projects.error_setting_up_project', { email: translate('_.help_desk_email') })));
+    reject(e);
+  }
+  resolve();
+});
 
-      dispatch({
-        type: types.OPEN_TOOL,
-        name
-      });
+/**
+ * check for invalidations in tool and show appropriate warning for tool if there is not already a warning
+ * @param {String} toolName
+ * @return {Function}
+ */
+export const warnOnInvalidations = (toolName) => (dispatch, getState) => {
+  try {
+    const state = getState();
+    const alertAlreadyDisplayed = isInvalidationAlertDisplaying(state, toolName);
 
-      // load group data
-      const projectDir = getProjectSaveLocation(getData());
-      const groupData = loadProjectGroupData(name, projectDir);
-      dispatch({
-        type: types.LOAD_GROUPS_DATA_FROM_FS,
-        allGroupsData: groupData
-      });
+    if (!alertAlreadyDisplayed) {
+      const numInvalidChecks = getInvalidCountForTool(state, toolName);
 
-      // load group index
-      const language = getToolGatewayLanguage(getData(), name);
-      const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
-      dispatch(loadGroupsIndex(groupIndex));
-
-      dispatch(loadCurrentContextId());
-
-      // verify stuff. We need this to pick up external edits and when checks data is updated.
-      // TRICKY: this must be after loadCurrentContextId() for group data changes to be saved to file
-      dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs());
-
-      dispatch({type: types.TOGGLE_LOADER_MODAL, show: false});
-      dispatch(BodyUIActions.toggleHomeView(false));
-    } catch (e) {
-      console.warn("openTool()", e);
-      AlertModalActions.openAlertDialog(translate('projects.error_setting_up_project', {email: translate('_.help_desk_email')}));
+      if (numInvalidChecks) {
+        console.log(`warnOnInvalidations(${toolName}) - numInvalidChecks: ${numInvalidChecks} - showing alert`);
+        const showAlignmentsInvalidated = toolName === WORD_ALIGNMENT;
+        dispatch(showInvalidatedWarnings(!showAlignmentsInvalidated, showAlignmentsInvalidated));
+      }
+    } else {
+      console.log(`warnOnInvalidations(${toolName}) - already showing alert`);
     }
-  }, 100);
+  } catch (e) {
+    console.warn('warnOnInvalidations() - error getting invalid checks', e);
+  }
 };

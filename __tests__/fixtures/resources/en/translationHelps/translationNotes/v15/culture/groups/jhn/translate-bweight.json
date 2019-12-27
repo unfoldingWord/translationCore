@@ -1,0 +1,62 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. A \"litra\" is about one third of a kilogram. Or you may refer to a container that could hold that amount. Alternate translation: \"a third of a kilogram of perfume\" or \"a bottle of perfume\" (See: [[rc://en/ta/man/translate/translate-bweight ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "λίτραν",
+          "occurrence": 1
+        },
+        {
+          "word": "μύρου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a litra of perfume ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You may convert this to a modern measure. A \"litra\" is about one third of a kilogram. Alternate translation: \"about 33 kilograms in weight\" or \"weighing about thirty-three kilograms\" (See: [[rc://en/ta/man/translate/translate-bweight ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bweight",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "λίτρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑκατόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about one hundred litras in weight ",
+      "occurrence": 1
+    }
+  }
+]

@@ -9,13 +9,14 @@ import { Glyphicon } from 'react-bootstrap';
  * @return {*} a colored icon
  * @constructor
  */
-const ColoredIcon = ({icon, color}) => (
+const ColoredIcon = ({ icon, color }) => (
   <Glyphicon glyph={icon}
-             style={{color: color, fontSize: '25px'}}/>
+    style={{ color: color, fontSize: '25px' }}/>
 );
+
 ColoredIcon.propTypes = {
   icon: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired
+  color: PropTypes.string.isRequired,
 };
 
 export default ColoredIcon;

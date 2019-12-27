@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can possibly refer to 1) the priests or 2) all the people or 3) the critics of Jesus. If possible, use a pronoun that could refer to any of these groups. (See: [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "mat",
+        "chapter": 8,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-pronouns",
+      "quote": "αὐτοῖς",
+      "glQuote": "to them",
+      "occurrence": 1
+    }
+  }
+]

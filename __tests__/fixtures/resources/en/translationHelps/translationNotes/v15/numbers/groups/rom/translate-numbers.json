@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"7,000 men\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 11,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "ἑπτακισχιλίους",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνδρας",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "seven thousand men ",
+      "occurrence": 1
+    }
+  }
+]

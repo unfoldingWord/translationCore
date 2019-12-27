@@ -1,16 +1,18 @@
+/* eslint-disable no-async-promise-executor */
 import ospath from 'ospath';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { ipcRenderer } from 'electron';
-//consts
-const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
-const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
-//helpers
+// helpers
+import { delay } from '../common/utils';
 import * as manifestHelpers from './manifestHelpers';
 import * as bibleHelpers from './bibleHelpers';
-import * as LoadHelpers from "./LoadHelpers";
-import * as FileConversionHelpers from "./FileConversionHelpers";
+import * as LoadHelpers from './LoadHelpers';
+import * as FileConversionHelpers from './FileConversionHelpers';
+// constants
+const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
+const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
 
 /**
  * Prompts the user to enter a location/name to save the usfm project.
@@ -21,26 +23,32 @@ import * as FileConversionHelpers from "./FileConversionHelpers";
  * @param {string} ext - The extension to export the file with
  */
 export function getFilePath(projectName, lastSaveLocation, ext) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      /**Path to save the usfm file @type {string}*/
-      let defaultPath;
-      if (lastSaveLocation) {
-        /**trys default save location first then trys different OS's */
-        defaultPath = path.join(lastSaveLocation, projectName + `.${ext}`);
-      }
-      else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
-        defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + `.${ext}`);
-      } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
-        defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
-      }
-      else {
-        defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
-      }
-      const filePath = ipcRenderer.sendSync('save-as', { options: { defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As' } });
-      if (filePath) resolve(filePath);
-      else reject();
-    }, 200);
+  return new Promise(async (resolve, reject) => {
+    await delay(200);
+    // Path where to save the usfm file
+    let defaultPath;
+
+    if (lastSaveLocation) {
+      defaultPath = path.join(lastSaveLocation, projectName + `.${ext}`);
+    } else if (fs.existsSync(OSX_DOCUMENTS_PATH)) {
+      defaultPath = path.join(OSX_DOCUMENTS_PATH, projectName + `.${ext}`);
+    } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
+      defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
+    } else {
+      defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
+    }
+
+    const filePath = ipcRenderer.sendSync('save-as', {
+      options: {
+        defaultPath: defaultPath, filters: [{ extensions: [ext] }], title: 'Save Export As',
+      },
+    });
+
+    if (filePath) {
+      resolve(filePath);
+    } else {
+      reject();
+    }
   });
 }
 
@@ -52,6 +60,7 @@ export function getFilePath(projectName, lastSaveLocation, ext) {
  */
 let addHeader = function (headers, add, overWrite) {
   const index = headers.findIndex(item => (item.tag === add.tag));
+
   if (index >= 0) {
     if (overWrite) {
       headers[index] = add;
@@ -77,15 +86,15 @@ export function getHeaderTags(projectSaveLocation) {
   let targetResource = manifest.resource;
   let resourceName = sourceTranslation && sourceTranslation.language_id &&
       targetResource.id ?
-      `${sourceTranslation.language_id.toUpperCase()}_${targetResource.id.toUpperCase()}` :
-      'N/A';
+    `${sourceTranslation.language_id.toUpperCase()}_${targetResource.id.toUpperCase()}` :
+    'N/A';
 
   /**This will look like: EN_ULB sw_Kiswahili_ltr to be included in the usfm id.
    * This will make it easier to read for tC later on */
   let targetLanguageCode = manifest.target_language ?
     `${manifest.target_language.id}_${manifest.target_language.name
-        .split(' ')
-        .join('⋅')}_${manifest.target_language.direction}` :
+      .split(' ')
+      .join('⋅')}_${manifest.target_language.direction}` :
     'N/A';
 
   /**Date object when project was last changed in FS */
@@ -94,9 +103,10 @@ export function getHeaderTags(projectSaveLocation) {
   let headers = LoadHelpers.loadFile(path.join(projectSaveLocation, bookName),
     'headers.json');
   headers = headers || [];
-  const idHeaderTag = headers.find(({tag}) => tag === 'id');
+  const idHeaderTag = headers.find(({ tag }) => tag === 'id');
   let preservedIDTag = idHeaderTag && idHeaderTag.content ? idHeaderTag.content : '';
   let tcField = preservedIDTag.substr(preservedIDTag.length - 2, preservedIDTag.length - 1);
+
   if (tcField === 'tc') {
     //If the usfm id header has already been created with the tc
     //flag then the original preserved contnet has already bee included
@@ -107,13 +117,13 @@ export function getHeaderTags(projectSaveLocation) {
 
   /**Note the indication here of tc on the end of the id. This will act as a flag to ensure the correct parsing*/
   const id = {
-    "content": `${bookNameUppercase} ${resourceName} ${targetLanguageCode}${preservedIDTag} ${lastEdited} tc`,
-    "tag": "id"
+    'content': `${bookNameUppercase} ${resourceName} ${targetLanguageCode}${preservedIDTag} ${lastEdited} tc`,
+    'tag': 'id',
   };
   addHeader(headers, id, true);
   const h = {
-    "content": bibleHelpers.convertToFullBookName(bookName),
-    "tag": "h"
+    'content': bibleHelpers.convertToFullBookName(bookName),
+    'tag': 'h',
   };
   addHeader(headers, h, false);
   return headers;
@@ -163,7 +173,7 @@ export function saveProjectHeaderData(projectSaveLocation, bookName, headers) {
  * @return {*}
  */
 export function findUsfmTagInHeader(headers, matchTag) {
-  const matchedHeader = headers.find(({tag}) => tag === matchTag);
+  const matchedHeader = headers.find(({ tag }) => tag === matchTag);
   return matchedHeader;
 }
 
@@ -174,15 +184,19 @@ export function findUsfmTagInHeader(headers, matchTag) {
  */
 export function makeSureUsfm3InHeader(projectSaveLocation, manifest) {
   let folderForHeader = projectSaveLocation;
+
   try {
     const bookAbbrv = manifest && manifest.project && manifest.project.id;
     folderForHeader = path.join(projectSaveLocation, bookAbbrv);
     const headers = getProjectHeaderData(projectSaveLocation, bookAbbrv);
+
     if (!headers) {
-      console.log("Empty Project Header at '" + folderForHeader);
+      console.log('Empty Project Header at \'' + folderForHeader);
     }
+
     let updateHeader = true;
     const matchedHeader = findUsfmTagInHeader(headers, 'usfm');
+
     if (matchedHeader) {
       if (matchedHeader.content !== '3.0') {
         matchedHeader.content = '3.0';
@@ -190,7 +204,8 @@ export function makeSureUsfm3InHeader(projectSaveLocation, manifest) {
         updateHeader = false;
       }
     } else {
-      const usfmTag = {tag: 'usfm', content: '3.0'};
+      const usfmTag = { tag: 'usfm', content: '3.0' };
+
       if (headers.length < 2) {
         headers.push(usfmTag);
       } else {
@@ -203,6 +218,6 @@ export function makeSureUsfm3InHeader(projectSaveLocation, manifest) {
     }
   } catch (e) {
     const errorMessage = FileConversionHelpers.getSafeErrorMessage(e, 'Error updating Project Header');
-    console.error("Error updating Project Header at '" + folderForHeader + "' " + errorMessage);
+    console.error('Error updating Project Header at \'' + folderForHeader + '\' ' + errorMessage);
   }
 }

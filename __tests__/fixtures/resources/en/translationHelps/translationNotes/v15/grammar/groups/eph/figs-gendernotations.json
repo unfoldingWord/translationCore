@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"adoption\" refers to becoming part of God's family. Here the word \"sons\" refers to males and females. Alternate translation: \"to be adopted as his children\" (See: [[rc://en/ta/man/translate/figs-gendernotations]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-gendernotations",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "υἱοθεσίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for adoption as sons",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
+import { DCS_BASE_URL } from '../../../../common/constants';
 
-const CreativeCommonsPage = ({onBackClick, translate}) => (
+const CreativeCommonsPage = ({ onBackClick, translate }) => (
   <div>
     <button
       className="btn-second"
       onClick={onBackClick}>
-      <Glyphicon glyph="share-alt" style={{transform: 'scaleX(-1)'}}/>&nbsp;
+      <Glyphicon glyph="share-alt" style={{ transform: 'scaleX(-1)' }}/>&nbsp;
       {translate('buttons.back_button')}
     </button>
     <div style={{
@@ -15,17 +16,17 @@ const CreativeCommonsPage = ({onBackClick, translate}) => (
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-      alignItems: 'center'
+      alignItems: 'center',
     }}>
       <h4><b>Creative Commons Attribution-ShareAlike 4.0 License</b></h4>
-      <p style={{padding: '15px'}}>
+      <p style={{ padding: '15px' }}>
         This is a human-readable summary of (and not a substitute for) the&nbsp;
         <a style={{
           color: 'black',
           cursor: 'pointer',
-          textDecoration: 'underline'
+          textDecoration: 'underline',
         }}
-           href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+        href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
           license
         </a>
       </p>
@@ -47,7 +48,7 @@ const CreativeCommonsPage = ({onBackClick, translate}) => (
       <p>
         <b>Attribution</b> — You must attribute the work as follows: "Original
         work available&nbsp;
-        at https://git.door43.org/." Attribution statements in derivative works
+        at {DCS_BASE_URL}." Attribution statements in derivative works
         should not in any way&nbsp;
         suggest that we endorse you or your use of this work
       </p>
@@ -82,7 +83,7 @@ const CreativeCommonsPage = ({onBackClick, translate}) => (
 
 CreativeCommonsPage.propTypes = {
   translate: PropTypes.func.isRequired,
-  onBackClick: PropTypes.func.isRequired
+  onBackClick: PropTypes.func.isRequired,
 };
 
 export default CreativeCommonsPage;

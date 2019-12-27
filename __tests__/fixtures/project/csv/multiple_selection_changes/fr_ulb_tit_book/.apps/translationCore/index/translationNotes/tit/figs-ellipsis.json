@@ -1,0 +1,36 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "nothingToSelect": false,
+    "contextId": {
+      "occurrenceNote": "This was a common greeting Paul used. You can state clearly the understood information. Alternate translation: “May you experience kindness and peace within” (See: [Ellipsis](rc://en/ta/man/translate/figs-ellipsis))",
+      "reference": {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-ellipsis",
+      "quote": [
+        {
+          "word": "χάρις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰρήνη",
+          "occurrence": 1
+        }
+      ],
+      "quoteString": "χάρις καὶ εἰρήνη",
+      "glQuote": "Grace and peace",
+      "occurrence": 1
+    }
+  }
+]

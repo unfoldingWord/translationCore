@@ -1,0 +1,129 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is using a hypothetical case to argue that there is a resurrection of the dead. He knows that Christ has been raised and so infers that there is a resurrection. To say that there is no resurrection is to say that Christ has not been raised, but this is false because Paul has seen the resurrected Christ ([1 Corinthians 15:8](../15/08.md)). (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀνάστασις",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγήγερται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "if there is no resurrection of the dead, then not even Christ has been raised",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses a hypothetical situation to argue that the dead are raised. To say that the dead are not raised is to say that people should not be baptized for the dead. But some people, probably some members of the church in Corinth, are baptized for the dead, so he infers those people are baptized for the dead because they believe that the dead are raised. (See: [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hypo",
+      "quote": [
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅλως",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκροὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγείρονται",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τί",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "βαπτίζονται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὲρ",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "If the dead are not raised at all, why are they baptized for them?",
+      "occurrence": 1
+    }
+  }
+]

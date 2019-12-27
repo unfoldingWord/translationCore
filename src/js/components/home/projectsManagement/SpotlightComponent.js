@@ -16,7 +16,7 @@ export default class SpotlightComponent extends Component {
           borderWidth={10}
           animSpeed={1000}
           borderColor="#ddd"
-         >
+        >
           {this.props.children}
         </Spotlight>
       </div>
@@ -24,6 +24,4 @@ export default class SpotlightComponent extends Component {
   }
 }
 
-SpotlightComponent.propTypes = {
-  children: PropTypes.element
-};
+SpotlightComponent.propTypes = { children: PropTypes.element };

@@ -1,0 +1,1953 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about the people who questioned John. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεσταλμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Φαρισαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now some from the Pharisees ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information about Philip. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Φίλιππος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βηθσαϊδά",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλεως",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνδρέου",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πέτρου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now Philip was from Bethsaida, the city of Andrew and Peter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "διάκονοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾔδεισαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἠντληκότες",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὕδωρ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "but the servants who had drawn the water knew ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer uses the word \"now\" to show that the words that follow are background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐκείνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now that day ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The writer uses the word \"now\" to show that the words that follow are background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "καὶ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John briefly stops telling about the events in the story in order to give background information about when the events happened. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγγὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πάσχα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑορτὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now the Passover, the Jewish festival, was near ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John briefly stops telling about the events in the story in order to explain why Jesus asked Philip where to buy bread. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλεγεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πειράζων",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾔδει",
+          "occurrence": 1
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμελλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But Jesus said this to test Philip, for he himself knew what he was going to do ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John briefly stops telling about the events in the story in order to give background information about the place where this event happens. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "χόρτος",
+          "occurrence": 1
+        },
+        {
+          "word": "πολὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now there was a lot of grass in the place ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Use your language's way of showing that this is background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "σκοτία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγεγόνει",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐληλύθει",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It was dark by this time, and Jesus had not yet come to them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Use your language's way of showing that this is background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἄλλα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῖα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "Τιβεριάδος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγγὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔφαγον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρτον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐχαριστήσαντος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "However, there were ... the Lord had given thanks ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, John provides more background information. The next day, after Jesus fed the people, some boats with people from Tiberius came to see Jesus. However, Jesus and his disciples had left the night before. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "πλοῖα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "Τιβεριάδος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "boats that came from Tiberias ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John gives background information about when this event happened. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 59
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "συναγωγῇ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "διδάσκων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Καφαρναούμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus said these things in the synagogue ... in Capernaum ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John gives background information about what Jesus knew would happen. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 64
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ᾔδει",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀρχῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τίνες",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσὶν",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πιστεύοντες",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "παραδώσων",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For Jesus knew from the beginning who were the ones ... who it was who would betray him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence is a break from the main story line as John tells us some background information about the brothers of Jesus. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπίστευον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For even his brothers did not believe in him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John provides additional information about circumcision. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μωϋσέως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστὶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 2
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πατέρων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "not that it is from Moses, but from the ancestors ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John provides this information to remind us of who Nicodemus is. Your language may have a special way to mark background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλθὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "πρότερον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὢν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "one of the Pharisees, who came to him earlier ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A brief break occurs here in the story line so John can explain to his readers what \"Siloam\" means. Alternate translation: \"which means 'Sent'\" (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑρμηνεύεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεσταλμένος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "which is translated \"Sent\" ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "As John introduces Mary, the sister of Martha, he also shares information concerning what would later happen in the story. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Μαρία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλείψασα",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "μύρῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκμάξασα",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "θριξὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It was Mary who anointed the Lord ... her hair ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἠγάπα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Μάρθαν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀδελφὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Λάζαρον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now Jesus loved Martha and her sister and Lazarus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John provides a brief break in the story to give background information regarding the location of Jesus. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐληλύθει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κώμην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now Jesus had not yet come into the village ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John pauses the story briefly to describe the tomb where the people had buried Lazarus. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "σπήλαιον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπέκειτο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now it was a cave, and a stone lay against it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information that explains why the Jewish worshipers were wondering if Jesus would come to the festival or not. If your language has a way to mark background information, use it here. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 57
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχιερεῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now the chief priests ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John explains why Judas asked the question about the poor. If your language has a way of indicating background information, you can use it here. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐχ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πτωχῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔμελεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 2
+        },
+        {
+          "word": "κλέπτης",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "γλωσσόκομον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "βαλλόμενα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐβάσταζεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now he said this ... would steal from what was put in it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line. Here John tells about a new group of people that has come to Bethany from Jerusalem. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "οὖν",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John gives background information that Jesus secures a donkey. He implies that Jesus will ride the donkey into Jerusalem. Alternate translation: \"he found a young donkey and sat on it, riding into the city\" (See: [[rc://en/ta/man/translate/writing-background]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "εὑρὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀνάριον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκάθισεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτό",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus found a young donkey and sat on it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main narrative. Here John explains that many of the people came to meet Jesus because they heard others say that he had raised Lazarus from the dead. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "οὖν",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John interprets Jesus' words to mean that people will crucify him. Alternate translation: \"He said this to let the people know how he would die\" (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "τοῦτο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔλεγεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "σημαίνων",
+          "occurrence": 1
+        },
+        {
+          "word": "ποίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "θανάτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤμελλεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποθνῄσκειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He said this to indicate what kind of death he would die ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This indicates that Judas was from the village of Kerioth. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "Ἰσκαριώτη",
+      "glQuote": "Iscariot",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John seems to draw attention here to the fact that Judas will do his evil or \"dark\" deed in the darkness of the night. Alternate translation: \"he went out immediately into the dark night\" (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἐκεῖνος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξῆλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "εὐθύς",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "νύξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he went out immediately. It was night ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used here to mark a break in the main story line so John can add the information about the people who were warming themselves around the fire. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word is used to mark a break in the story line so John can provide information about Peter. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John provides background information about Barabbas. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Βαραββᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "λῃστής",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now Barabbas was a robber ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This word marks a break in the story line so that John can provide information about the upcoming Passover and the time of day. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This sentence gives background information to the story. John is telling readers that he was there and that we can trust what he has written. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 35
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑωρακὼς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The one who saw this ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here John marks a break in the story line in order to provide background information about the location of the tomb where they would bury Jesus. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσταυρώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "κῆπος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "κήπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μνημεῖον",
+          "occurrence": 1
+        },
+        {
+          "word": "καινόν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδέπω",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 2
+        },
+        {
+          "word": "τεθειμένος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now in the place where he was crucified there was a garden ... had yet been buried ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information. Peter had taken off some of his clothes to make it easier to work, but now that he was about to greet the Lord, he wanted to wear more clothing. Alternate translation: \"for he had taken off some of his clothes\" (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "γυμνός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for he was undressed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is background information. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "μακρὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "πηχῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "διακοσίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for they were not far from the land, about two hundred cubits off ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John uses this word to show he is giving background information before he continues the story. (See: [[rc://en/ta/man/translate/writing-background ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-background",
+      "quote": "δὲ",
+      "glQuote": "Now",
+      "occurrence": 1
+    }
+  }
+]

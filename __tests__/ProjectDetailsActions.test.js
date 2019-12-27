@@ -1,27 +1,156 @@
+/* eslint-disable import/named */
 /* eslint-env jest */
-jest.mock('fs-extra');
-jest.mock('../src/js/helpers/ProjectAPI');
-jest.mock('../')
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
-import types from '../src/js/actions/ActionTypes';
-import * as actions from '../src/js/actions/ProjectDetailsActions';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import {mockGetSelectedCategories} from "../src/js/helpers/ProjectAPI";
-
+// actions
+import types from '../src/js/actions/ActionTypes';
+import * as actions from '../src/js/actions/ProjectDetailsActions';
+import * as ToolActions from '../src/js/actions/ToolActions';
+// helpers
+import { mockGetSelectedCategories } from '../src/js/helpers/ProjectAPI';
+import * as ResourcesHelpers from '../src/js/helpers/ResourcesHelpers';
+// constants
+import {
+  PROJECTS_PATH,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
+  TRANSLATION_WORDS,
+  TRANSLATION_HELPS, TRANSLATION_NOTES,
+} from '../src/js/common/constants';
+import { NT_ORIG_LANG, NT_ORIG_LANG_BIBLE } from '../src/js/common/BooksOfTheBible';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+jest.mock('fs-extra');
+jest.mock('../src/js/helpers/ProjectAPI');
+jest.mock('../');
+jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/ResourcesHelpers'),
+  getAvailableCategories: jest.fn(() => ({ 'names': ['John'] })),
+  updateGroupIndexForGl: jest.fn(() => jest.fn(() => 'mock')),
+}));
+jest.mock('../src/js/actions/ToolActions', () => ({
+  ...require.requireActual('../src/js/actions/ToolActions'),
+  prepareToolForLoading: jest.fn(() => () => {
+  }),
+}));
+jest.mock('../src/js/actions/ProjectUploadActions', () => ({
+  ...require.requireActual('../src/js/actions/ProjectUploadActions'),
+  prepareProjectRepo: jest.fn(() => async () => {
+  }),
+  pushProjectRepo: jest.fn(() => async () => {
+  }),
+}));
+jest.mock('../src/js/selectors', () => ({
+  ...require.requireActual('../src/js/selectors'),
+  getToolsByKey: jest.fn(() => ({
+    'translationNotes': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
+    'wordAlignment': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
+    'translationWords': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0.25 : null } },
+  })),
+}));
 
-const PROJECTS_PATH = path.join('user', 'translationCore', 'projects');
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+let mock_repoExists = false;
+let mock_repoError = false;
+let mock_renameRepoCallCount = 0;
+let mock_createNewRepoCallCount = 0;
+
+jest.mock('../src/js/helpers/GogsApiHelpers', () => ({
+  ...require.requireActual('../src/js/helpers/GogsApiHelpers'),
+  changeGitToPointToNewRepo: () => new Promise((resolve) => {
+    resolve();
+  }),
+  findRepo: () => new Promise((resolve, reject) => {
+    if (mock_repoError) {
+      reject('error');
+    } else {
+      resolve(mock_repoExists);
+    }
+  }),
+  renameRepo: () => new Promise((resolve) => {
+    mock_renameRepoCallCount++;
+    resolve();
+  }),
+  createNewRepo: () => new Promise((resolve) => {
+    mock_createNewRepoCallCount++;
+    resolve();
+  }),
+}));
+
+let mock_doOnlineConfirmCallback = false;
+
+jest.mock('../src/js/actions/OnlineModeConfirmActions', () => ({
+  confirmOnlineAction: jest.fn((onConfirm, onCancel) => (dispatch) => {
+    dispatch({ type: 'CONFIRM_ONLINE_MODE' });
+
+    if (mock_doOnlineConfirmCallback) {
+      onConfirm();
+    } else {
+      onCancel();
+    }
+  }),
+}));
+
+jest.mock('../src/js/actions/ResourcesActions', () => ({
+  ...require.requireActual('../src/js/actions/ResourcesActions'),
+  loadBiblesByLanguageId: jest.fn(() => () => {
+  }),
+  loadBookResource: jest.fn(() => () => {
+  }),
+}));
+
+jest.mock('../src/js/actions/ProjectInformationCheckActions', () => ({
+
+  // eslint-disable-next-line no-unused-vars
+  openOnlyProjectDetailsScreen: (projectSaveLocation, initiallyEnableSaveIfValid, callback) => async (dispatch) => {
+    dispatch({ type: 'ProjectInformationCheckActions.openOnlyProjectDetailsScreen' });
+
+    if (callback) {
+      await callback();
+    }
+    return true;
+  },
+}));
+
+let mock_alertCallbackButton = 0;
+let mock_alertCallbackButtonText = null;
+
+jest.mock('../src/js/actions/AlertModalActions', () => ({
+  ...require.requireActual('../src/js/actions/AlertModalActions'),
+  openOptionDialog: jest.fn((message, callback, button1, button2, buttonLinkText) =>
+    (dispatch) => {
+      //choose to export
+      dispatch({
+        type: 'OPEN_OPTION_DIALOG',
+        alertText: message,
+        button1: button1,
+        button2: button2,
+        buttonLink: buttonLinkText,
+        callback: callback,
+      });
+      mock_alertCallbackButtonText = null;
+
+      switch (mock_alertCallbackButton) {
+      case 1:
+        mock_alertCallbackButtonText = button1;
+        break;
+      case 2:
+        mock_alertCallbackButtonText = button2;
+        break;
+      case 3:
+        mock_alertCallbackButtonText = buttonLinkText;
+        break;
+      }
+      callback(mock_alertCallbackButtonText);
+    }),
+}));
 
 it('setSaveLocation() creates an action to update contributors', () => {
   const store = mockStore({});
   const expectedActions = [{
     type: types.SET_SAVE_PATH_LOCATION,
-    pathLocation: 'some/path'
+    pathLocation: 'some/path',
   }];
   store.dispatch(actions.setSaveLocation('some/path'));
   const receivedActions = store.getActions();
@@ -29,9 +158,8 @@ it('setSaveLocation() creates an action to update contributors', () => {
 });
 
 it('resetProjectDetail() creates an action to reset the project details', () => {
-  const expectedAction = {
-    type: types.RESET_PROJECT_DETAIL
-  };
+  const expectedAction = { type: types.RESET_PROJECT_DETAIL };
+
   expect(actions.resetProjectDetail())
     .toEqual(expectedAction);
 });
@@ -42,20 +170,14 @@ describe('getProjectProgressForTools() should create an action to get the projec
   const initialState = {
     projectDetailsReducer: {
       projectSaveLocation: '../',
-      manifest: {
-        project: {
-          id: ''
-        }
-      },
-      toolsCategories:{}
+      manifest: { project: { id: '' } },
+      toolsCategories: {},
     },
-    settingsReducer: {
-      currentSettings: { }
-    }
+    settingsReducer: { currentSettings: {} },
+    resourcesReducer: { bibles: {} },
   };
-  fs.__setMockFS({
-    [path.join(path.homedir(), 'translationCore/resources/grc/bibles/ugnt/v11/index.json')]: {}
-  });
+
+  fs.__setMockFS({ [path.join(path.homedir(), 'translationCore/resources/el-x-koine/bibles/ugnt/v11/index.json')]: {} });
 
   it('should fail if no toolName is given', () => {
     const store = mockStore(initialState);
@@ -65,9 +187,11 @@ describe('getProjectProgressForTools() should create an action to get the projec
   it('should give progress for word alignment', () => {
     const store = mockStore(initialState);
     const expectedActions = [
-      {"progress": 0, "toolName": "wordAlignment", "type": "SET_PROJECT_PROGRESS_FOR_TOOL"}
+      {
+        'progress': 0, 'toolName': WORD_ALIGNMENT, 'type': 'SET_PROJECT_PROGRESS_FOR_TOOL',
+      },
     ];
-    store.dispatch(actions.getProjectProgressForTools('wordAlignment'));
+    store.dispatch(actions.getProjectProgressForTools(WORD_ALIGNMENT));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
   });
@@ -75,7 +199,9 @@ describe('getProjectProgressForTools() should create an action to get the projec
   it('should give progress for a tool', () => {
     const store = mockStore(initialState);
     const expectedActions = [
-      {"progress": 0, "toolName": "myTool", "type": "SET_PROJECT_PROGRESS_FOR_TOOL"}
+      {
+        'progress': 0, 'toolName': 'myTool', 'type': 'SET_PROJECT_PROGRESS_FOR_TOOL',
+      },
     ];
     store.dispatch(actions.getProjectProgressForTools('myTool'));
     const receivedActions = store.getActions();
@@ -86,32 +212,70 @@ describe('getProjectProgressForTools() should create an action to get the projec
 describe('setProjectToolGL() should create an action to get the project GL for tools', () => {
   const initialState = {
     projectDetailsReducer: {},
-    resourcesReducer: {
-      bibles: {}
-    }
+    resourcesReducer: { bibles: { } },
   };
+
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
 
   it('should fail if no toolName is given', () => {
     const store = mockStore(initialState);
-    return expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+    expect(store.dispatch(actions.setProjectToolGL())).rejects.toEqual('Expected "toolName" to be a string but received undefined instead');
+    expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
   });
 
   it('should set GL for word alignment', () => {
     const store = mockStore(initialState);
     const expectedActions = [
-      {selectedGL:"hi", toolName:"wordAlignment", type:"SET_GL_FOR_TOOL"}
+      {
+        selectedGL: 'hi', toolName: WORD_ALIGNMENT, type: 'SET_GL_FOR_TOOL',
+      },
     ];
-    store.dispatch(actions.setProjectToolGL('wordAlignment', 'hi'));
+    store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
+    expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
+  });
+
+  it('should set GL for translationNotes', () => {
+    const initialState = {
+      projectDetailsReducer: {
+        manifest: {toolsSelectedGLs: { translationNotes: 'en' } },
+      },
+      resourcesReducer: {
+        bibles: {
+          originalLanguage: {
+            ugnt: {
+              manifest: {
+                language_id: NT_ORIG_LANG,
+                resource_id: NT_ORIG_LANG_BIBLE,
+                dublin_core: { version: 0.8 },
+              },
+            },
+          },
+        },
+      },
+      manifest: { hello: 'world' },
+    };
+    const store = mockStore(initialState);
+    const expectedActions = [{
+      'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
+    }];
+    store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
+    const receivedActions = store.getActions();
+    expect(receivedActions).toEqual(expectedActions);
+    expect(ResourcesHelpers.updateGroupIndexForGl).toHaveBeenCalled();
+    expect(ToolActions.prepareToolForLoading).toHaveBeenCalled();
   });
 });
 
 it('setProjectManifest() creates an action to set the project manifest', () => {
   const expectedAction = {
     type: types.STORE_MANIFEST,
-    manifest: { hello: 'world' }
+    manifest: { hello: 'world' },
   };
+
   expect(actions.setProjectManifest({ hello: 'world' }))
     .toEqual(expectedAction);
 });
@@ -120,38 +284,61 @@ it('addObjectPropertyToManifest() creates an action to add an object property to
   const expectedAction = {
     type: types.ADD_MANIFEST_PROPERTY,
     propertyName: 'key',
-    value: { hello: 'world' }
+    value: { hello: 'world' },
   };
+
   expect(actions.addObjectPropertyToManifest('key', { hello: 'world' }))
     .toEqual(expectedAction);
 });
 
-it('setProjectBookIdAndBookName() creates an action to set the project book id and name', () => {
+it('setProjectSettings() creates an action to set a project setting', () => {
+  const settings = { last_opened: new Date() };
+  const expectedAction = {
+    type: types.STORE_PROJECT_SETTINGS,
+    settings: settings,
+  };
+  expect(actions.setProjectSettings(settings)).toEqual(expectedAction);
+});
+
+it('addObjectPropertyToSettings() creates an action to add an object property to the settings', () => {
+  const value = { last_opened: new Date() };
+  const expectedAction = {
+    type: types.ADD_PROJECT_SETTINGS_PROPERTY,
+    propertyName: 'key',
+    value: value,
+  };
+  expect(actions.addObjectPropertyToSettings('key', value)).toEqual(expectedAction);
+});
+
+it('setProjectBookIdAndBookName() creates an action to set the project book id and name', async () => {
   const store = mockStore({
-    projectInformationCheckReducer: {
-      bookId: 'gen'
+    projectInformationCheckReducer: { bookId: 'gen' },
+    projectDetailsReducer: {
+      manifest: {
+        project: {
+          id: 'gen' },
+      },
+    },
+    loginReducer: {
+      userdata: {}
     }
   });
   const expectedActions = [{
     type: types.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
     bookId: 'gen',
-    bookName: 'Genesis'
+    bookName: 'Genesis',
   }];
-  store.dispatch(actions.setProjectBookIdAndBookName()).then(()=>{
-    const receivedActions = store.getActions();
-    expect(receivedActions).toEqual(expectedActions);
-  });
+
+  await store.dispatch(actions.setProjectBookIdAndBookName());
+  const receivedActions = store.getActions();
+  expect(receivedActions).toEqual(expectedActions);
 });
 
 it('setProjectResourceId() creates an action to set the resourceId', () => {
-  const store = mockStore({
-    projectInformationCheckReducer: {
-      resourceId: 'ult',
-    }
-  });
+  const store = mockStore({ projectInformationCheckReducer: { resourceId: 'ult' } });
   const expectedActions = [{
     type: types.SAVE_RESOURCE_ID_IN_MANIFEST,
-    resourceId: 'ult'
+    resourceId: 'ult',
   }];
   store.dispatch(actions.setProjectResourceId());
   const receivedActions = store.getActions();
@@ -159,33 +346,30 @@ it('setProjectResourceId() creates an action to set the resourceId', () => {
 });
 
 it('setProjectNickname() creates an action to set the nickname', () => {
-  const store = mockStore({
-    projectInformationCheckReducer: {
-      nickname: 'Unlocked literal translation',
-    }
-  });
+  const store = mockStore({ projectInformationCheckReducer: { nickname: 'Unlocked literal translation' } });
   const expectedActions = [{
     type: types.SAVE_NICKNAME_IN_MANIFEST,
-    nickname: 'Unlocked literal translation'
+    nickname: 'Unlocked literal translation',
   }];
   store.dispatch(actions.setProjectNickname());
   const receivedActions = store.getActions();
   expect(receivedActions).toEqual(expectedActions);
 });
 
-it('setLanguageDetails() creates an action to set the language details',  () => {
+it('setLanguageDetails() creates an action to set the language details', () => {
   const store = mockStore({
     projectInformationCheckReducer: {
       languageDirection: 'rtl',
       languageId: 'en',
-      languageName: 'English'
-    }
+      languageName: 'English',
+    },
+    resourcesReducer: { bibles: {} },
   });
   const expectedActions = [{
     type: types.SAVE_LANGUAGE_DETAILS_IN_MANIFEST,
     languageDirection: 'rtl',
     languageId: 'en',
-    languageName: 'English'
+    languageName: 'English',
   }];
   store.dispatch(actions.setLanguageDetails());
   const receivedActions = store.getActions();
@@ -193,14 +377,10 @@ it('setLanguageDetails() creates an action to set the language details',  () => 
 });
 
 it('updateContributors() creates an action to update contributors', () => {
-  const store = mockStore({
-    projectInformationCheckReducer: {
-      contributors: ['jon', 'steve']
-    }
-  });
+  const store = mockStore({ projectInformationCheckReducer: { contributors: ['jon', 'steve'] } });
   const expectedActions = [{
     type: types.SAVE_TRANSLATORS_LIST_IN_MANIFEST,
-    translators: ['jon', 'steve']
+    translators: ['jon', 'steve'],
   }];
   store.dispatch(actions.updateContributors());
   const receivedActions = store.getActions();
@@ -208,14 +388,10 @@ it('updateContributors() creates an action to update contributors', () => {
 });
 
 it('updateCheckers() creates an action to update checkers', () => {
-  const store = mockStore({
-    projectInformationCheckReducer: {
-      checkers: ['jon', 'steve']
-    }
-  });
+  const store = mockStore({ projectInformationCheckReducer: { checkers: ['jon', 'steve'] } });
   const expectedActions = [{
     type: types.SAVE_CHECKERS_LIST_IN_MANIFEST,
-    checkers: ['jon', 'steve']
+    checkers: ['jon', 'steve'],
   }];
   store.dispatch(actions.updateCheckers());
   const receivedActions = store.getActions();
@@ -223,7 +399,7 @@ it('updateCheckers() creates an action to update checkers', () => {
 });
 
 describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', () => {
-  const currentProjectName = "fr_ult_eph_book";
+  const currentProjectName = 'fr_ult_eph_book';
   const currentProjectPath = path.join(PROJECTS_PATH, currentProjectName);
   const mockStoreData = {
     projectDetailsReducer: {
@@ -231,31 +407,28 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
         target_language: {
           id: 'fr',
           name: 'francais',
-          direction: 'ltr'
+          direction: 'ltr',
         },
         project: {
           id: 'eph',
-          name: 'Ephesians'
+          name: 'Ephesians',
         },
         resource: {
           id: 'ult',
-          name: 'unfoldingWord Literal Text'
-        }
+          name: 'unfoldingWord Literal Text',
+        },
       },
-      projectSaveLocation: currentProjectPath
+      projectSaveLocation: currentProjectPath,
     },
-    localImportReducer: {
-      selectedProjectFilename: 'SELECTED_PROJECT_NAME'
-    }
+    localImportReducer: { selectedProjectFilename: 'SELECTED_PROJECT_NAME' },
+    resourcesReducer: { bibles: {} },
   };
 
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
     // Set up mock filesystem before each test
-    fs.__setMockFS({
-      [currentProjectPath]: ''
-    });
+    fs.__setMockFS({ [currentProjectPath]: '' });
   });
 
   afterEach(() => {
@@ -291,7 +464,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
 
   test('renames project if lang_id changed', async () => {
     // given
-    const newProjectName = "am_ult_eph_book";
+    const newProjectName = 'am_ult_eph_book';
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.target_language.id = 'am';
@@ -310,7 +483,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
 
   test('renames project if project id changed', async () => {
     // given
-    const newProjectName = "fr_ult_tit_book";
+    const newProjectName = 'fr_ult_tit_book';
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.project.id = 'tit';
@@ -329,7 +502,7 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
 
   test('renames project if resource.id (resourceId) changed', async () => {
     // given
-    const newProjectName = "fr_lib_eph_book";
+    const newProjectName = 'fr_lib_eph_book';
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
     storeData.projectDetailsReducer.manifest.resource.id = 'lib';
@@ -348,8 +521,8 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
 
   test('renames project if new project name is different than spec', async () => {
     // given
-    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
-    const newProjectName = "fr_ult_eph_book";
+    const currentProjectPath = path.join(PROJECTS_PATH, 'fr_ULT_eph_book');
+    const newProjectName = 'fr_ult_eph_book';
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
     const storeData = JSON.parse(JSON.stringify(mockStoreData));
@@ -369,8 +542,8 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
 
   test('does not rename project if new project name is different than spec and we have duplicate', async () => {
     // given
-    const currentProjectPath = path.join(PROJECTS_PATH, "fr_ULT_eph_book");
-    const newProjectName = "fr_ult_eph_book";
+    const currentProjectPath = path.join(PROJECTS_PATH, 'fr_ULT_eph_book');
+    const newProjectName = 'fr_ult_eph_book';
     const expectedProjectPath = path.join(PROJECTS_PATH, newProjectName);
     fs.moveSync(expectedProjectPath, currentProjectPath); // move to invalid file
     fs.copySync(currentProjectPath, expectedProjectPath); // make duplicate
@@ -388,17 +561,18 @@ describe('ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting()', (
   });
 });
 
-describe('ProjectDetailsActions.updateCheckSelection', () => {
+describe('ProjectDetailsActions.updateCategorySelection', () => {
   const project_name = 'normal_project';
-  beforeAll(()=>{
+
+  beforeAll(() => {
     // Make resource
     fs.__resetMockFS();
-    const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
+    const projectSourcePath = path.join('__tests__', 'fixtures', 'project', TRANSLATION_WORDS);
     const copyFiles = [project_name];
     fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    const resourcesPath = RESOURCE_PATH;
-    const copyResourceFiles = ['grc'];
+    const resourcesPath = USER_RESOURCES_PATH;
+    const copyResourceFiles = ['el-x-koine'];
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
   });
 
@@ -406,46 +580,44 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
     fs.__resetMockFS();
   });
   test('should set the check category from the user selection', () => {
+    const mockApi = jest.fn(() => ({ api: { trigger: () => jest.fn().mockImplementationOnce(() => 0.25) } }));
     const initialState = {
       projectDetailsReducer: {
         projectSaveLocation: path.join(PROJECTS_PATH, project_name),
-        manifest: {
-          project: {
-            id: 'tit'
-          }
-        },
-        toolsCategories: {translationWords: ['kt']}
-      }
+        manifest: { project: { id: 'tit' } },
+        toolsCategories: { translationWords: ['apostle', 'authority', 'clean'] },
+      },
+      toolsReducer: { tools: { byObject: { [TRANSLATION_WORDS]: { name: TRANSLATION_WORDS, api: mockApi } } } },
     };
     const expectedActions = [{
       type: 'SET_CHECK_CATEGORIES',
-      toolName: 'translationWords',
-      selectedCategories: ['kt']
+      toolName: TRANSLATION_WORDS,
+      selectedSubcategories: ['apostle', 'authority', 'clean'],
     },
     {
       type: 'SET_PROJECT_PROGRESS_FOR_TOOL',
-      toolName: 'translationWords',
-      progress: 0.25
+      toolName: TRANSLATION_WORDS,
+      progress: 0.25,
     }];
     const store = mockStore(initialState);
-    store.dispatch(actions.updateCheckSelection('kt', true, 'translationWords'));
+    store.dispatch(actions.updateCategorySelection(TRANSLATION_WORDS, true, ['apostle', 'authority', 'clean']));
     expect(store.getActions()).toMatchObject(expectedActions);
   });
 
   describe('ProjectDetailsActions.loadCurrentCheckCategories', () => {
     const project_name = 'normal_project';
-    const toolName = 'translationWords';
-    const bookName = 'tit';
+    const toolName = TRANSLATION_WORDS;
     const projectSaveLocation = path.join(PROJECTS_PATH, project_name);
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
-    beforeAll(()=>{
+
+    beforeAll(() => {
       // Make resource
       fs.__resetMockFS();
-      const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'translationWords');
+      const projectSourcePath = path.join('__tests__', 'fixtures', 'project', TRANSLATION_WORDS);
       const copyFiles = [project_name];
       fs.__loadFilesIntoMockFs(copyFiles, projectSourcePath, PROJECTS_PATH);
-      const resourcesPath = RESOURCE_PATH;
-      const copyResourceFiles = ['grc', 'en'];
+      const resourcesPath = USER_RESOURCES_PATH;
+      const copyResourceFiles = ['el-x-koine', 'en'];
       fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
     });
 
@@ -453,47 +625,354 @@ describe('ProjectDetailsActions.updateCheckSelection', () => {
       fs.__resetMockFS();
     });
     test('should load all the check categories from the project', () => {
-      const expectedActions = [{"selectedCategories": ["names"], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{
+        'selectedSubcategories': ['John'], 'toolName': TRANSLATION_WORDS, 'type': 'SET_CHECK_CATEGORIES',
+      }];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
           manifest: {
-            project: {
-              id: 'tit'
-            }
+            project: { id: 'tit' },
+            toolsSelectedGLs: { translationWords: 'en' },
           },
-          currentProjectToolsSelectedGL: {
-            translationWords: 'en'
-          }
-        }
+        },
       };
-      mockGetSelectedCategories.mockReturnValue(["names"]);
+      mockGetSelectedCategories.mockReturnValueOnce(['John']);
       const store = mockStore(initialState);
-      store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);
     });
     test('should not load check categories that are not present in the resources', () => {
-      const namesResourcePath = path.join(RESOURCE_PATH, 'en', 'translationHelps', 'translationWords');
+      const namesResourcePath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS);
       fs.removeSync(namesResourcePath);
-      const expectedActions =  [{"selectedCategories": [], "toolName": "translationWords", "type": "SET_CHECK_CATEGORIES"}];
+      const expectedActions = [{
+        'selectedSubcategories': [], 'toolName': TRANSLATION_WORDS, 'type': 'SET_CHECK_CATEGORIES',
+      }];
       const initialState = {
         projectDetailsReducer: {
           projectSaveLocation: path.join(PROJECTS_PATH, project_name),
           manifest: {
-            project: {
-              id: 'tit'
-            }
+            project: { id: 'tit' },
+            toolsSelectedGLs: { translationWords: 'en' },
           },
-          currentProjectToolsSelectedGL: {
-            translationWords: 'en'
-          }
-        }
+        },
       };
-      mockGetSelectedCategories.mockReturnValue(["names"]);
+      mockGetSelectedCategories.mockReturnValueOnce(['names']);
       const store = mockStore(initialState);
-      store.dispatch(actions.loadCurrentCheckCategories(toolName, bookName, projectSaveLocation));
+      store.dispatch(actions.loadCurrentCheckCategories(toolName, projectSaveLocation, 'en'));
       expect(store.getActions()).toMatchObject(expectedActions);
     });
+  });
+});
+
+describe('showDcsRenameFailure', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click retry, should call retry', async () => {
+    const store = mockStore({ settingsReducer: {} });
+    const createNew = false;
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = 'buttons.retry';
+
+    const results = await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew));
+    expect(results).toEqual('RETRY');
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click retry, should call continue', async () => {
+    const store = mockStore({ settingsReducer: {} });
+    const createNew = false;
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = 'buttons.continue_button';
+
+    const results = await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew));
+    expect(results).toEqual('CONTINUE');
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click help desk, should call contactHelpDesk and then show prompt again', async () => {
+    const store = mockStore({ settingsReducer: {} });
+    const createNew = false;
+    mock_alertCallbackButton = 3;
+    const mock_showErrorFeedbackDialog = jest.fn((translateKey, doneCB) => {
+      return (async () => { // eslint-disable-line require-await
+        mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
+
+        if (doneCB) {
+          doneCB();
+        }
+      });
+    });
+
+    await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew, mock_showErrorFeedbackDialog));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_showErrorFeedbackDialog).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('doDcsRenamePrompting', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should call rename', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+    });
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = 'buttons.rename_repo';
+
+    await store.dispatch(actions.doDcsRenamePrompting());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click create, should call create new', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+    });
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = 'buttons.create_new_repo';
+
+    await store.dispatch(actions.doDcsRenamePrompting());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
+describe('handleDcsOperation', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_repoExists = false;
+    mock_doOnlineConfirmCallback = true;
+    mock_renameRepoCallCount = 0;
+    mock_createNewRepoCallCount = 0;
+  });
+
+  test('should handle repo exists', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      settingsReducer: { onlineMode: true },
+    });
+    const createNew = false;
+    mock_repoExists = true;
+
+    await store.dispatch(actions.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(0);
+    expect(mock_createNewRepoCallCount).toEqual(0);
+  });
+
+  test('on repo does not exist, should call create new', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      settingsReducer: { onlineMode: true },
+    });
+    const createNew = true;
+
+    await store.dispatch(actions.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(0);
+    expect(mock_createNewRepoCallCount).toEqual(1);
+  });
+
+  test('on repo does not exist, should call rename', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      settingsReducer: { onlineMode: true },
+    });
+    const createNew = false;
+
+    await store.dispatch(actions.handleDcsOperation(createNew, projectPath));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_renameRepoCallCount).toEqual(1);
+    expect(mock_createNewRepoCallCount).toEqual(0);
+  });
+});
+
+describe('handleDcsRenameCollision', () => {
+  const projectPath = path.join('path', 'to', 'project', 'PROJECT_NAME');
+
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should render and open project details', async () => {
+    const langID = 'fr';
+    const bookId = 'eph';
+    const resourceID = 'ult';
+    const projectPath = path.join('path/to/project', `${langID}_${resourceID}_${bookId}_book`);
+    const store = mockStore({
+      projectDetailsReducer: {
+        projectSaveLocation: projectPath,
+        manifest: {
+          target_language: {
+            id: langID,
+            name: 'francais',
+            direction: 'ltr',
+          },
+          project: {
+            id: bookId,
+            name: 'Ephesians',
+          },
+          resource: {
+            id: resourceID,
+            name: 'unfoldingWord Literal Text',
+          },
+        },
+      },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      projectInformationCheckReducer: {
+        alreadyImported: true,
+        overwritePermitted: false,
+      },
+      projectValidationReducer: { onlyShowProjectInformationScreen: false },
+    });
+    mock_alertCallbackButton = 1;
+    const expectedClickButton = 'buttons.rename_local';
+
+    const mock_doLocalProjectRenamePrompting = (projectSaveLocation, projectName, resolve) => () => {
+      resolve('RESHOW_DCS_CHOICE');
+    };
+
+    await store.dispatch(actions.handleDcsRenameCollision(false, mock_doLocalProjectRenamePrompting));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+
+  test('on click continue, should do nothing', async () => {
+    const store = mockStore({
+      projectDetailsReducer: { projectSaveLocation: projectPath },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: { username: 'dummy-test' },
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+    });
+    mock_alertCallbackButton = 2;
+    const expectedClickButton = 'buttons.do_not_rename';
+
+    await store.dispatch(actions.handleDcsRenameCollision());
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_alertCallbackButtonText).toEqual(expectedClickButton);
+  });
+});
+
+describe('doLocalProjectRenamePrompting', () => {
+  beforeEach(() => {
+    mock_alertCallbackButton = 0;
+    mock_alertCallbackButtonText = '';
+    mock_doOnlineConfirmCallback = false;
+  });
+
+  test('on click rename, should render and open project details', async () => {
+    const langID = 'fr';
+    const bookId = 'eph';
+    const resourceID = 'ult';
+    const projectPath = path.join('path/to/project', `${langID}_${resourceID}_${bookId}_book`);
+    const store = mockStore({
+      projectDetailsReducer: {
+        projectSaveLocation: projectPath,
+        manifest: {
+          target_language: {
+            id: langID,
+            name: 'francais',
+            direction: 'ltr',
+          },
+          project: {
+            id: bookId,
+            name: 'Ephesians',
+          },
+          resource: {
+            id: resourceID,
+            name: 'unfoldingWord Literal Text',
+          },
+        },
+      },
+      loginReducer: {
+        loggedInUser: false,
+        userdata: {username: 'dummy-test'},
+        feedback: '',
+        subject: 'Bug Report',
+        placeholder: 'Leave us your feedback!',
+      },
+      projectInformationCheckReducer: {
+        alreadyImported: true,
+        overwritePermitted: false,
+      },
+      projectValidationReducer: { onlyShowProjectInformationScreen: false },
+    });
+    mock_alertCallbackButton = 1;
+    let mock_resolveResponse = 1;
+
+    const mock_resolve = jest.fn((response) => {
+      mock_resolveResponse = response;
+    });
+
+    await store.dispatch(actions.doLocalProjectRenamePrompting(projectPath, path.basename(projectPath), mock_resolve));
+    expect(store.getActions()).toMatchSnapshot();
+    expect(mock_resolve).toHaveBeenCalledTimes(1);
+    expect(mock_resolveResponse).toEqual('RESHOW_DCS_CHOICE');
   });
 });
 

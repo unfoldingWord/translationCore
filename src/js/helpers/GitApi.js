@@ -1,4 +1,7 @@
-import * as GogsApiHelpers from "./GogsApiHelpers";
+import { exec } from 'child_process';
+import simpleGit from 'simple-git';
+import { DCS_BASE_URL } from '../common/constants';
+import * as GogsApiHelpers from './GogsApiHelpers';
 
 /**
  * @description An internal, core facing, API designed to be used as a bind to
@@ -7,9 +10,6 @@ import * as GogsApiHelpers from "./GogsApiHelpers";
  * @return {Object} An internal api
  * @TODO: Refactor using https://github.com/nodegit/nodegit
  **/
-const {exec} = require('child_process');
-import simpleGit from 'simple-git';
-
 export default function GitApi(directory) {
   var git = simpleGit(directory);
 
@@ -18,7 +18,7 @@ export default function GitApi(directory) {
      * @description Initializes a git repository.
      * @param {function} callback - A callback to be run on complete.
      */
-    init: function(callback) {
+    init: function (callback) {
       git.init(false, callback);
     },
     /**
@@ -27,7 +27,7 @@ export default function GitApi(directory) {
      * @param {string} branch - The branch to be pulled from, typically master.
      * @param {function} callback - A callback to be run on complete.
      */
-    pull: function(remote, branch, callback) {
+    pull: function (remote, branch, callback) {
       git.pull(remote, branch, callback);
     },
     /**
@@ -36,7 +36,7 @@ export default function GitApi(directory) {
      * @param {string} branch - The branch to be pulled from, typically master.
      * @param {function} callback - A callback to be run on complete.
      */
-    push: function(remote, branch, callback) {
+    push: function (remote, branch, callback) {
       git.push(remote, branch, callback);
     },
     /**
@@ -45,8 +45,9 @@ export default function GitApi(directory) {
      * @param {string} message - The commit message to be used.
      * @param {function} callback - A callback to be run on complete.
      */
-    commit: function(user, message, callback) {
+    commit: function (user, message, callback) {
       var name, username, email;
+
       if (user) {
         name = user.full_name;
         username = user.username;
@@ -60,7 +61,7 @@ export default function GitApi(directory) {
      * @description Status of the current working directory
      * @param {function} callback - A callback to be run on complete.
      */
-    status: function(callback) {
+    status: function (callback) {
       git.status(callback);
     },
     /**
@@ -69,19 +70,21 @@ export default function GitApi(directory) {
      * @param {string} path - The location to be saved in.
      * @param {function} callback - A callback to be run on complete.
      */
-    mirror: function(url, path, callback) {
+    mirror: function (url, path, callback) {
       if (!url || !path) {
         callback('Missing URL or save path');
         return;
       }
-      git.clone(url, path, ['--recursive'], function(err) {
+      git.clone(url, path, ['--recursive'], function (err) {
         if (err) {
           console.error(`Failed to clone ${url} to ${path}`, err);
+
           if (callback) {
             callback(err);
             return;
           }
         }
+
         if (callback) {
           callback(err);
         }
@@ -92,7 +95,7 @@ export default function GitApi(directory) {
      * @param {string} path - file or folder to be saved.
      * @param {function} callback - A callback to be run on complete.
      */
-    add: function(path, callback) {
+    add: function (path, callback) {
       git.add(path, callback);
     },
     /**
@@ -102,19 +105,20 @@ export default function GitApi(directory) {
      * @param {boolean} first - Whether or not this is a fresh repo.
      * @param {function} callback - A callback to be run on complete.
      */
-    update: function(remoteRepo, branch, first, callback) {
+    update: function (remoteRepo, branch, first, callback) {
       var _this = this;
+
       if (first) {
-        this.push(remoteRepo, branch, function(err) {
+        this.push(remoteRepo, branch, function (err) {
           callback(err);
         });
       } else {
-        this.pull(remoteRepo, branch, function(err) {
+        this.pull(remoteRepo, branch, function (err) {
           if (err) {
             callback(err);
             return;
           }
-          _this.push(remoteRepo, branch, function(err) {
+          _this.push(remoteRepo, branch, function (err) {
             callback(err);
           });
         });
@@ -127,39 +131,46 @@ export default function GitApi(directory) {
      * @param {string} path - The local path of the repo
      * @param {function} callback - A callback to be run on complete.
      */
-    save: function(user, message, path, callback) {
+    save: function (user, message, path, callback) {
       var _this = this;
       _this.init();
-      _this.add(path, function(err) {
-        if (err) callback(err);
-        _this.commit(user, message, function(err) {
-          if (err) callback(err);
-          if (callback) callback(null);
+      _this.add(path, function (err) {
+        if (err) {
+          callback(err);
+        }
+        _this.commit(user, message, function (err) {
+          if (err) {
+            callback(err);
+          }
+
+          if (callback) {
+            callback(null);
+          }
         });
       });
     },
-    revparse: function(options, callback) {
+    revparse: function (options, callback) {
       return git.revparse(options, callback);
     },
-    checkout: function(branch, callback) {
+    checkout: function (branch, callback) {
       if (!branch) {
-        callback("No branch");
+        callback('No branch');
         return;
       }
       git.checkout(branch, callback);
     },
-    remote: function(optionsArray, callback) {
+    remote: function (optionsArray, callback) {
       return git.remote(optionsArray, callback);
     },
-    run: function(optionsArray, callback) {
+    run: function (optionsArray, callback) {
       return git._run(optionsArray, callback);
     },
-    addRemote: function(name, repo, callback) {
+    addRemote: function (name, repo, callback) {
       git.addRemote(name, repo, callback);
     },
-    getRemotes: function(verbose, callback) {
+    getRemotes: function (verbose, callback) {
       git.getRemotes(verbose, callback);
-    }
+    },
   };
 }
 
@@ -167,11 +178,16 @@ export default function GitApi(directory) {
  * splits the repo url to get repo name
  */
 export const parseRepoUrl = (ulr) => {
-  const repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+  let repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/(.+).git$/) || [''];
+
+  if (repoName.length <= 5) { // if we didn't find enough data, try matching without .git extension
+    repoName = ulr.trim().match(/^(\w*)(:\/\/|@)([^/:]+)[/:]([^/:]+)\/([^/]+)/) || [''];
+  }
+
   const repoInfo = {
     name: repoName[5],
     user: repoName[4],
-    url: repoName[0]
+    url: repoName[0],
   };
   return repoInfo;
 };
@@ -183,16 +199,16 @@ export const parseRepoUrl = (ulr) => {
  * @returns {Promise<{name: String, url: String}>} - resolves the repo url and the name
  * i.e. {name: 'en_tit', url:'https://github.com/user/en_tit'}
  */
-export const getRepoNameInfo = (projectPath, remote = "origin") => {
-  return new Promise((resolve, reject) => {
-    exec(`git remote get-url ${remote}`, {cwd: projectPath}, (err, stdout = '') => {
-      if (!err) {
-        const repoInfo = parseRepoUrl(stdout);
-        resolve(repoInfo);
-      } else reject(err);
-    });
+export const getRepoNameInfo = (projectPath, remote = 'origin') => new Promise((resolve, reject) => {
+  exec(`git remote get-url ${remote}`, { cwd: projectPath }, (err, stdout = '') => {
+    if (!err) {
+      const repoInfo = parseRepoUrl(stdout);
+      resolve(repoInfo);
+    } else {
+      reject(err);
+    }
   });
-};
+});
 
 /**
  * @description Runs a git push command to remote origin for the repo
@@ -201,15 +217,14 @@ export const getRepoNameInfo = (projectPath, remote = "origin") => {
  * @param {string} repoName
  * @param {string} branch
  */
-export const pushNewRepo = (projectPath, user, repoName, branch = "master") => {
-  return new Promise((resolve) => {
-    const git = GitApi(projectPath);
-    const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, user.username + '/' + repoName);
-    git.push(newRemote, branch, (res) => {
-      resolve(res);
-    });
+export const pushNewRepo = (projectPath, user, repoName, branch = 'master') => new Promise((resolve) => {
+  const git = GitApi(projectPath);
+  const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, user.username + '/' + repoName);
+
+  git.push(newRemote, branch, (res) => {
+    resolve(res);
   });
-};
+});
 
 /**
  * @description Renames the url of the remote origin which will be used for pushing
@@ -217,14 +232,13 @@ export const pushNewRepo = (projectPath, user, repoName, branch = "master") => {
  * @param {string} newName name of the new repo
  * @param {string} projectPath The location of the repository root folder
  */
-export const renameRepoLocally = (user, newName, projectPath) => {
-  return new Promise((resolve) => {
-    const git = GitApi(projectPath);
-    git.remote(['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`], (res) => {
-      resolve(res);
-    });
+export const renameRepoLocally = (user, newName, projectPath) => new Promise((resolve) => {
+  const git = GitApi(projectPath);
+
+  git.remote(['set-url', 'origin', `${DCS_BASE_URL}/${user.username}/${newName}.git`], (res) => {
+    resolve(res);
   });
-};
+});
 
 /**
  * @description Gets the remote repository 40 character hash reference
@@ -232,15 +246,15 @@ export const renameRepoLocally = (user, newName, projectPath) => {
  * @returns {string} the hash reference
  * @throws {Error} the fetch failed
  */
-export const getRemoteRepoHead = (repoUrl) => {
-  return new Promise((resolve, reject) => {
-    exec(`git ls-remote ${repoUrl} HEAD`, (err, stdout) => {
-      if (!err) {
-        resolve(stdout);
-      } else reject(err);
-    });
+export const getRemoteRepoHead = (repoUrl) => new Promise((resolve, reject) => {
+  exec(`git ls-remote ${repoUrl} HEAD`, (err, stdout) => {
+    if (!err) {
+      resolve(stdout);
+    } else {
+      reject(err);
+    }
   });
-};
+});
 
 /**
  * iterate through git remotes and find match for name
@@ -248,19 +262,18 @@ export const getRemoteRepoHead = (repoUrl) => {
  * @param {string} remoteName
  * @return {Promise<any>}
  */
-export const getSavedRemote = (projectPath, remoteName) => {
-  return new Promise((resolve, reject) => {
-    const git = GitApi(projectPath);
-    git.getRemotes(true, (err, remotes) => {
-      if (!err) {
-        let remote = remotes.find((remote) => (remote.name === remoteName));
-        resolve(remote);
-      } else {
-        reject();
-      }
-    });
+export const getSavedRemote = (projectPath, remoteName) => new Promise((resolve, reject) => {
+  const git = GitApi(projectPath);
+
+  git.getRemotes(true, (err, remotes) => {
+    if (!err) {
+      let remote = remotes.find((remote) => (remote.name === remoteName));
+      resolve(remote);
+    } else {
+      reject();
+    }
   });
-};
+});
 
 /**
  * save git remote url
@@ -269,17 +282,16 @@ export const getSavedRemote = (projectPath, remoteName) => {
  * @param {string} url
  * @return {Promise<any>}
  */
-export const saveRemote = (projectPath, remoteName, url) => {
-  return new Promise((resolve, reject) => {
-    const git = GitApi(projectPath);
-    git.addRemote(remoteName, url, (err) => {
-      if(err) {
-        reject(err);
-      }
-      resolve();
-    });
+export const saveRemote = (projectPath, remoteName, url) => new Promise((resolve, reject) => {
+  const git = GitApi(projectPath);
+
+  git.addRemote(remoteName, url, (err) => {
+    if (err) {
+      reject(err);
+    }
+    resolve();
   });
-};
+});
 
 /**
  * clear remote from git
@@ -287,18 +299,17 @@ export const saveRemote = (projectPath, remoteName, url) => {
  * @param {string} name
  * @return {Promise<any>}
  */
-export const clearRemote = (projectPath, name) => {
-  return new Promise((resolve, reject) => {
-    const git = GitApi(projectPath);
-    try {
-      git.remote(['rm', name], (res) => { // delete the remote
-        resolve(res);
-      });
-    } catch(e) {
-      console.log(e);
-      reject(e);
-    }
-  });
-};
+export const clearRemote = (projectPath, name) => new Promise((resolve, reject) => {
+  const git = GitApi(projectPath);
+
+  try {
+    git.remote(['rm', name], (res) => { // delete the remote
+      resolve(res);
+    });
+  } catch (e) {
+    console.log(e);
+    reject(e);
+  }
+});
 
 

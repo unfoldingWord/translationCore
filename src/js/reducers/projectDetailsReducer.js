@@ -1,136 +1,157 @@
-import consts from '../actions/ActionTypes';
 import path from 'path-extra';
+import consts from '../actions/ActionTypes';
 
 const initialState = {
   projectSaveLocation: '',
   manifest: {
     project: {},
-    resource: {}
+    resource: {},
+    toolsSelectedGLs: {},
   },
+  settings: {},
   currentProjectToolsProgress: {},
-  currentProjectToolsSelectedGL: {},
   projectType: null,
-  toolsCategories: {
-    translationWords: ['kt', 'other', 'names']
-  }
+  toolsCategories: {},
 };
 
 const projectDetailsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.SET_CHECK_CATEGORIES:
+  case consts.SET_CHECK_CATEGORIES:
     return {
       ...state,
       toolsCategories: {
         ...state.toolsCategories,
-        [action.toolName]: action.selectedCategories
-      }
+        [action.toolName]: action.selectedSubcategories,
+      },
     };
-    case consts.SET_SAVE_PATH_LOCATION:
-      return {
-        ...state,
-        projectSaveLocation: action.pathLocation
-      };
-    case consts.STORE_MANIFEST:
-      return {
-        ...state,
-        manifest: action.manifest
-      };
-    case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
-      return {
-        ...state,
-        currentProjectToolsProgress: {
-          ...state.currentProjectToolsProgress,
-          [action.toolName]: action.progress
-        }
-      };
-    case consts.SET_GL_FOR_TOOL:
-      return {
-        ...state,
-        currentProjectToolsSelectedGL: {
-          ...state.currentProjectToolsSelectedGL,
-          [action.toolName]: action.selectedGL
-        }
-      };
-    case consts.ADD_MANIFEST_PROPERTY:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          [action.propertyName]: action.value
-        }
-      };
-    case consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          project: {
-            ...state.manifest.project,
-            id: action.bookId,
-            name: action.bookName
-          }
-        }
-      };
-    case consts.SAVE_RESOURCE_ID_IN_MANIFEST:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          resource: {
-            ...state.manifest.resource,
-            id: action.resourceId
-          }
-        }
-      };
-    case consts.SAVE_NICKNAME_IN_MANIFEST:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          resource: {
-            ...state.manifest.resource,
-            name: action.nickname
-          }
-        }
-      };
-    case consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          target_language: {
-            ...state.manifest.target_language,
-            id: action.languageId,
-            name: action.languageName,
-            direction: action.languageDirection
-          }
-        }
-      };
-    case consts.SAVE_CHECKERS_LIST_IN_MANIFEST:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          checkers: action.checkers
-        }
-      };
-    case consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST:
-      return {
-        ...state,
-        manifest: {
-          ...state.manifest,
-          translators: action.translators
-        }
-      };
-    case consts.SET_PROJECT_TYPE:
-      return {
-        ...state,
-        projectType: action.projectType
-      };
-    case consts.RESET_PROJECT_DETAIL:
-      return initialState;
-    default:
-      return state;
+  case consts.SET_SAVE_PATH_LOCATION:
+    return {
+      ...state,
+      projectSaveLocation: action.pathLocation,
+    };
+  case consts.STORE_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        ...action.manifest,
+      },
+    };
+  case consts.STORE_PROJECT_SETTINGS:
+    return {
+      ...state,
+      settings: {
+        ...state.settings,
+        ...action.settings,
+      },
+    };
+  case consts.SET_PROJECT_PROGRESS_FOR_TOOL:
+    return {
+      ...state,
+      currentProjectToolsProgress: {
+        ...state.currentProjectToolsProgress,
+        [action.toolName]: action.progress,
+      },
+    };
+  case consts.SET_GL_FOR_TOOL:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        toolsSelectedGLs: {
+          ...state.manifest.toolsSelectedGLs,
+          [action.toolName]: action.selectedGL,
+        },
+      },
+    };
+  case consts.ADD_MANIFEST_PROPERTY:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        [action.propertyName]: action.value,
+      },
+    };
+  case consts.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        project: {
+          ...state.manifest.project,
+          id: action.bookId,
+          name: action.bookName,
+        },
+      },
+    };
+  case consts.SAVE_RESOURCE_ID_IN_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        resource: {
+          ...state.manifest.resource,
+          id: action.resourceId,
+        },
+      },
+    };
+  case consts.SAVE_NICKNAME_IN_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        resource: {
+          ...state.manifest.resource,
+          name: action.nickname,
+        },
+      },
+    };
+  case consts.SAVE_LANGUAGE_DETAILS_IN_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        target_language: {
+          ...state.manifest.target_language,
+          id: action.languageId,
+          name: action.languageName,
+          direction: action.languageDirection,
+        },
+      },
+    };
+  case consts.SAVE_CHECKERS_LIST_IN_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        checkers: action.checkers,
+      },
+    };
+  case consts.SAVE_TRANSLATORS_LIST_IN_MANIFEST:
+    return {
+      ...state,
+      manifest: {
+        ...state.manifest,
+        translators: action.translators,
+      },
+    };
+  case consts.SET_PROJECT_TYPE:
+    return {
+      ...state,
+      projectType: action.projectType,
+    };
+  case consts.RESET_PROJECT_DETAIL:
+    return initialState;
+  case consts.ADD_PROJECT_SETTINGS_PROPERTY:
+    return {
+      ...state,
+      settings: {
+        ...state.settings,
+        [action.propertyName]: action.value,
+      },
+    };
+  default:
+    return state;
   }
 };
 
@@ -143,13 +164,14 @@ export default projectDetailsReducer;
  * @returns {string} - the gateway language code. Default value is "en".
  */
 export const getToolGatewayLanguage = (state, toolName) => {
-  if(state) {
-    const languages = state.currentProjectToolsSelectedGL;
-    if(languages.hasOwnProperty(toolName) && languages[toolName]) {
+  if (state) {
+    const languages = state.manifest.toolsSelectedGLs;
+
+    if (languages.hasOwnProperty(toolName) && languages[toolName]) {
       return languages[toolName];
     }
   }
-  return "en";
+  return 'en';
 };
 
 /**
@@ -159,7 +181,7 @@ export const getToolGatewayLanguage = (state, toolName) => {
  * @returns {*}
  */
 export const getToolProgress = (state, toolName) => {
-  if(state.currentProjectToolsProgress[toolName]) {
+  if (state.currentProjectToolsProgress[toolName]) {
     return state.currentProjectToolsProgress[toolName];
   } else {
     return 0;
@@ -190,6 +212,7 @@ export const getName = state => {
  */
 export const getNickname = state => {
   const manifest = getManifest(state);
+
   if (manifest && manifest.resource && manifest.resource.name) {
     return manifest.resource.name;
   } else {
@@ -204,7 +227,8 @@ export const getNickname = state => {
  */
 export const getBookId = state => {
   const manifest = getManifest(state);
-  if(manifest && manifest.project) {
+
+  if (manifest && manifest.project) {
     return manifest.project.id;
   } else {
     return null;
@@ -219,18 +243,25 @@ export const getManifest = (state) =>
   state.manifest;
 
 /**
+ * Returns the project settings
+ * @param {object} state the project details slice of the state
+ */
+export const getSettings = (state) =>
+  state.settings;
+
+/**
  * Returns the categories selected for the tool
  * @param state
  * @param toolName
  * @returns {*}
  */
 export const getToolCategories = (state, toolName) => {
-  if(toolName in state.toolsCategories) {
+  if (toolName in state.toolsCategories) {
     return [...state.toolsCategories[toolName]];
   } else {
     return [];
   }
 };
 
-export const getCurrentProjectToolsSelectedGL = (state) =>
-  state.currentProjectToolsSelectedGL;
+export const getToolsSelectedGLs = (state) =>
+  state.manifest ? state.manifest.toolsSelectedGLs : {};

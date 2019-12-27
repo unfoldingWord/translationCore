@@ -1,0 +1,34 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The abstract noun \"assurance\" can be translated as a verb. Alternate translation: \"God made you sure that it was true\" (See: [[rc://en/ta/man/translate/figs-abstractnouns]])",
+      "reference": {
+        "bookId": "1th",
+        "chapter": 1,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-abstractnouns",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "πληροφορίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in much assurance",
+      "occurrence": 1
+    }
+  }
+]

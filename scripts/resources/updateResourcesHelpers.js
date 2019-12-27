@@ -118,7 +118,7 @@ const updateSourceContentUpdaterManifest = resourcesPath => {
   }
   fs.ensureDirSync(resourcesPath);
   manifest.modified = (new Date()).toJSON();
-  fs.outputJsonSync(sourceContentManifestPath, manifest);
+  fs.outputJsonSync(sourceContentManifestPath, manifest, { spaces: 2 });
 };
 
 module.exports = {

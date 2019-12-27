@@ -1,0 +1,810 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"lusts of their hearts\" is a synecdoche that represents the evil things they wanted to do. Alternate translation: \"the morally impure things they desired greatly\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 1,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ταῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπιθυμίαις",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδιῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθαρσίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the lusts of their hearts for uncleanness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, Paul uses the word \"soul\" as a synecdoche that refers to the whole person. Alternate translation: \"upon every person\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "on every human soul ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a synecdoche for the whole body. Alternate translation: \"body\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "σαρκὶ",
+      "glQuote": "flesh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"letter\" is a synecdoche that refers to written Scripture. Alternate translation: \"through the work of the Holy Spirit, not because you know the Scriptures\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "Πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in the Spirit, not in the letter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"feet\" is a synecdoche that represents the people themselves. The word \"blood\" is a metaphor that refers to killing people. Alternate translation: \"They are in a hurry to harm and murder people\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ὀξεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδες",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκχέαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Their feet are swift to pour out blood ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"fear\" is a metonym that represents respect for God and willingness to honor him. Alternate translation: \"Everyone refuses to give God the respect he deserves\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "φόβος",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέναντι",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "There is no fear of God before their eyes ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"mouth\" is a synecdoche that means the words people speak. You can translate this in an active form. Alternate translation: \"so that no people will be able to say anything valid to defend themselves\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "στόμα",
+          "occurrence": 1
+        },
+        {
+          "word": "φραγῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order that every mouth may be shut ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"world\" is a synecdoche that represents all the people who live in the world. Alternate translation: \"that God can declare everyone in the world guilty\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ὑπόδικος",
+          "occurrence": 1
+        },
+        {
+          "word": "γένηται",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the whole world held accountable to God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase refers to the physical part of a person, which will die. Alternate translation: \"you\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "θνητῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in your mortal body ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The picture is of the sinner offering the \"parts of his body\" to his master or king. One's \"body parts\" are a synecdoche for the whole person. Alternate translation: \"Do not offer yourselves to sin so that you do what is not right\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "παριστάνετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπλα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδικίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do not present the parts of your body to sin, to be tools used for unrighteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"parts of your body\" is a synecdoche that refers to the whole person. Alternate translation: \"let God use you for what is pleasing to him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "μέλη",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "ὅπλα",
+          "occurrence": 2
+        },
+        {
+          "word": "δικαιοσύνης",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": " the parts of your body to God as tools to be used for righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here, \"body parts\" refers to the whole person. Alternate translation: \"offered yourselves as slaves to everything that is evil and not pleasing to God\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "παρεστήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μέλη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "δοῦλα",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκαθαρσίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀνομίᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "presented the parts of your body as slaves to uncleanness and to evil ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"body parts\" refers to the whole person. Alternate translation: \"offer yourselves as slaves to what is right before God so that he might set you apart and give you the power to serve him\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "παραστήσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "μέλη",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 3
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "δοῦλα",
+          "occurrence": 2
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 3
+        },
+        {
+          "word": "δικαιοσύνῃ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 2
+        },
+        {
+          "word": "ἁγιασμόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "present the parts of your body as slaves to righteousness for sanctification ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"mouth\" is a synecdoche that represents a person's capacity to speak. (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "στόματι",
+      "glQuote": "with the mouth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Paul uses the word \"bodies\" to refer to the whole person. Paul is comparing a believer in Christ who completely obeys God to the animals that the Jews killed and then offered to God. Alternate translation: \"to offer yourselves completely to God while you are alive as if you were a dead sacrifice on a temple altar\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-metaphor ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "παραστῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σώματα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "θυσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῶσαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to present your bodies a living sacrifice ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"soul\" is a synecdoche for the whole person. \"Every Christian should obey\" or \"Everyone should obey\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 13,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὑποτασσέσθω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Let every soul be obedient to ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses the words \"knee\" and \"tongue\" to refer to the whole person. Also, the Lord uses the word \"God\" to refer to himself. Alternate translation: \"every person will bow and give praise to me\" (See: [[rc://en/ta/man/translate/figs-synecdoche]] and [[rc://en/ta/man/translate/figs-123person ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 14,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "κάμψει",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": "γόνυ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "γλῶσσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξομολογήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to me every knee will bend, and every tongue will confess to God ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the words \"Macedonia\" and \"Achaia\" are synecdoches for the people who live in those areas. Alternate translation: \"the believers in the provinces of Macedonia and Achaia were happy\" (See: [[rc://en/ta/man/translate/figs-synecdoche ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 15,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "εὐδόκησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Μακεδονία",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀχαΐα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it was the good pleasure of Macedonia and Achaia ",
+      "occurrence": 1
+    }
+  }
+]

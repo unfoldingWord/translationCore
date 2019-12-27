@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul emphasizes how hard his circumstances were. Difficult labor implies work that requires great effort. Hardship implies they endured pain and suffering. Alternate translation: \"in very difficult circumstances\" (See: [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "2th",
+        "chapter": 3,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublet",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "κόπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μόχθῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in difficult labor and hardship",
+      "occurrence": 1
+    }
+  }
+]

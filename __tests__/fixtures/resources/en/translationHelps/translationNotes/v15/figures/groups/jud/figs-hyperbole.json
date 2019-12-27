@@ -1,0 +1,54 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jude exaggerates to warn his readers that they can become like those sinners. Alternate translation: \"Treat them as though you could become guilty of sin just by touching their clothes\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "jud",
+        "chapter": 1,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "μισοῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "σαρκὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσπιλωμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "χιτῶνα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Hate even the garment stained by the flesh",
+      "occurrence": 1
+    }
+  }
+]

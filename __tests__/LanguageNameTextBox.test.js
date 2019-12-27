@@ -1,15 +1,15 @@
 /* eslint-env jest */
 
 import React from 'react';
+import { AutoComplete } from 'material-ui';
+import { shallow, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import * as LangName from '../src/js/components/projectValidation/ProjectInformationCheck/LanguageNameTextBox';
 import LanguageNameTextBox from '../src/js/components/projectValidation/ProjectInformationCheck/LanguageNameTextBox';
-import * as LangHelpers from "../src/js/helpers/LanguageHelpers";
-import { AutoComplete } from 'material-ui';
-import {shallow, configure} from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import * as LangHelpers from '../src/js/helpers/LanguageHelpers';
 
 beforeAll(() => {
-  configure({adapter: new Adapter()});
+  configure({ adapter: new Adapter() });
 });
 
 describe('Test LanguageNameTextBox.selectLanguage()',()=> {
@@ -23,9 +23,9 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
 
   test('with valid name selection should update all language field', () => {
     // given
-    const expectedLanguageID = "ha";
+    const expectedLanguageID = 'ha';
     const expectedLanguage = LangHelpers.getLanguageByCode(expectedLanguageID);
-    const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
+    const expectedLanguageDir = expectedLanguage.ltr ? 'ltr' : 'rtl';
     const index = -1;
 
     // when
@@ -39,13 +39,13 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
 
   test('with valid index should update all language field', () => {
     // given
-    const expectedLanguageName = "Arabic";
+    const expectedLanguageName = 'Arabic';
     const expectedLanguage = LangHelpers.getLanguageByName(expectedLanguageName);
-    const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
+    const expectedLanguageDir = expectedLanguage.ltr ? 'ltr' : 'rtl';
     const index = getIndexForName(expectedLanguageName);
 
     // when
-    LangName.selectLanguage({code: expectedLanguage.code}, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    LangName.selectLanguage({ code: expectedLanguage.code }, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
@@ -56,9 +56,9 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
   test('with invalid name should update language name and clear ID', () => {
     // given
     const index = -1;
-    const newlLanguageName = "zzz";
+    const newlLanguageName = 'zzz';
     const expectedLanguageName = newlLanguageName;
-    const expectedLanguageID = "";
+    const expectedLanguageID = '';
 
     // when
     LangName.selectLanguage(newlLanguageName, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
@@ -73,8 +73,8 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     // given
     const LanguageName = null;
     const index = -1;
-    const expectedLanguageID = "";
-    const expectedLanguageName = "";
+    const expectedLanguageID = '';
+    const expectedLanguageName = '';
 
     // when
     LangName.selectLanguage(LanguageName, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
@@ -92,7 +92,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
   test('should give message for empty language Name', () => {
     // given
     const languageID = null;
-    const languageName = "";
+    const languageName = '';
 
     // when
     const results = LangName.getErrorMessage(translate, languageName, languageID);
@@ -103,8 +103,8 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
 
   test('should give message for invalid language Name', () => {
     // given
-    const languageID = "";
-    const languageName = "zzz";
+    const languageID = '';
+    const languageName = 'zzz';
 
     // when
     const results = LangName.getErrorMessage(translate, languageName, languageID);
@@ -115,8 +115,8 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
 
   test('should not give message for valid languageName', () => {
     // given
-    const languageID = "";
-    const languageName = "English";
+    const languageID = '';
+    const languageName = 'English';
 
     // when
     const results = LangName.getErrorMessage(translate, languageName, languageID);
@@ -127,8 +127,8 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
 
   test('should give message for mismatch languageName and ID', () => {
     // given
-    const languageID = "es";
-    const languageName = "English";
+    const languageID = 'es';
+    const languageName = 'English';
 
     // when
     const results = LangName.getErrorMessage(translate, languageName, languageID);
@@ -149,9 +149,9 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('with valid language should not show error', () => {
     // given
-    const languageName = "English";
-    const languageId = "en";
-    const expectedErrorText = "";
+    const languageName = 'English';
+    const languageId = 'en';
+    const expectedErrorText = '';
     const expectedSearchText = languageName;
 
     // when
@@ -163,8 +163,8 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('with invalid language should show error', () => {
     // given
-    const languageName = "Englishish";
-    const languageId = "en";
+    const languageName = 'Englishish';
+    const languageId = 'en';
     const expectedErrorText = 'project_validation.invalid_language_name';
     const expectedSearchText = languageName;
 
@@ -177,8 +177,8 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('with empty language should show error', () => {
     // given
-    const languageName = "";
-    const languageId = "en";
+    const languageName = '';
+    const languageId = 'en';
     const expectedErrorText = 'project_validation.field_required';
     const expectedSearchText = languageName;
 
@@ -191,8 +191,8 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('with language name & code mismatch should show error', () => {
     // given
-    const languageName = "español";
-    const languageId = "en";
+    const languageName = 'español';
+    const languageId = 'en';
     const expectedErrorText = 'project_validation.language_mismatch';
     const expectedSearchText = languageName;
 
@@ -205,14 +205,14 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('on text change anglicized name should update all language fields', () => {
     // given
-    const initialLanguageName = "English";
-    const languageId = "en";
+    const initialLanguageName = 'English';
+    const languageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageName = "Spanish";
+    const newlLanguageName = 'Spanish';
     const expectedLanguageName = newlLanguageName;
-    const expectedLanguageID = "es";
-    const expectedLanguageDir = "ltr";
+    const expectedLanguageID = 'es';
+    const expectedLanguageDir = 'ltr';
 
     // when
     props.onUpdateInput(newlLanguageName);
@@ -225,13 +225,13 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('on text change invalid name should update language name and clear ID', () => {
     // given
-    const initialLanguageName = "English";
-    const languageId = "en";
+    const initialLanguageName = 'English';
+    const languageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageName = "Spanis";
+    const newlLanguageName = 'Spanis';
     const expectedLanguageName = newlLanguageName;
-    const expectedLanguageID = "";
+    const expectedLanguageID = '';
 
     // when
     props.onUpdateInput(newlLanguageName);
@@ -244,14 +244,14 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('on new text Selection should call all language updates', () => {
     // given
-    const initialLanguageName = "English";
-    const languageId = "en";
+    const initialLanguageName = 'English';
+    const languageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageName = "español";
-    const expectedLanguageID = "es";
+    const newlLanguageName = 'español';
+    const expectedLanguageID = 'es';
     const expectedLanguageName = newlLanguageName;
-    const expectedLanguageDir = "ltr";
+    const expectedLanguageDir = 'ltr';
 
     // when
     props.onNewRequest(newlLanguageName, -1);
@@ -266,11 +266,11 @@ describe('Test LanguageNameTextBox component',()=>{
     // given
     const index = 100;
     const expectedLanguage = LangHelpers.getLanguagesSortedByName()[index];
-    const initialLanguageName = "English";
-    const languageId = "en";
+    const initialLanguageName = 'English';
+    const languageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const expectedLanguageDir = expectedLanguage.ltr ? "ltr" : "rtl";
+    const expectedLanguageDir = expectedLanguage.ltr ? 'ltr' : 'rtl';
 
     // when
     props.onNewRequest(null, index);
@@ -283,12 +283,12 @@ describe('Test LanguageNameTextBox component',()=>{
 
   test('on new Selection with unmatched name should update language name and clear ID', () => {
     // given
-    const initialLanguageName = "English";
-    const languageId = "en";
+    const initialLanguageName = 'English';
+    const languageId = 'en';
     const enzymeWrapper = shallowRenderComponent(initialLanguageName, languageId);
     const props = enzymeWrapper.find(AutoComplete).getElement().props;
-    const newlLanguageName = "Spanis";
-    const expectedLanguageID = "";
+    const newlLanguageName = 'Spanis';
+    const expectedLanguageID = '';
     const expectedLanguageName = newlLanguageName;
 
     // when
@@ -332,6 +332,7 @@ describe('Test LanguageNameTextBox component',()=>{
 function verifyCalledOnceWith(func, expectedParameter) {
   expect(func).toHaveBeenCalled();
   expect(func.mock.calls.length).toEqual(1);
+
   if (!Array.isArray(expectedParameter)) {
     expectedParameter = [expectedParameter];
   }
@@ -341,6 +342,7 @@ function verifyCalledOnceWith(func, expectedParameter) {
 function getIndexForName(expectedLanguageName) {
   let index = -1;
   const languagesSortedByName = LangHelpers.getLanguagesSortedByName();
+
   for (let i = 0; i < languagesSortedByName.length; i++) {
     if ((languagesSortedByName[i].name === expectedLanguageName) || (languagesSortedByName[i].namePrompt === expectedLanguageName)) {
       index = i;

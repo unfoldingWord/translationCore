@@ -2,24 +2,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
-import { shallow, mount, configure } from 'enzyme';
+import {
+  shallow, mount, configure,
+} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import MergeConflicts from '../src/js/components/projectValidation/MergeConflictsCheck/';
-import MergeConflictsCard from '../src/js/components/projectValidation/MergeConflictsCheck/MergeConflictsCard';
-import VersionCard from '../src/js/components/projectValidation/MergeConflictsCheck/VersionCard';
 import RightArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-right';
 import DownArrow from 'material-ui/svg-icons/hardware/keyboard-arrow-down';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import VersionCard from '../src/js/components/projectValidation/MergeConflictsCheck/VersionCard';
+import MergeConflictsCard from '../src/js/components/projectValidation/MergeConflictsCheck/MergeConflictsCard';
+import MergeConflicts from '../src/js/components/projectValidation/MergeConflictsCheck/';
 
 describe('MergeConflictsComponents.index', () => {
   const wrapperOptions = {
     context: { muiTheme: getMuiTheme() },
-    childContextTypes: { muiTheme: PropTypes.object }
+    childContextTypes: { muiTheme: PropTypes.object },
   };
+
   beforeAll(() => {
     configure({ adapter: new Adapter() });
   });
+
   const initialState = {
     updateVersionSelection: jest.fn(),
     translate: key => key,
@@ -27,26 +31,26 @@ describe('MergeConflictsComponents.index', () => {
       mergeConflictReducer: {
         conflicts: [
           [{
-            chapter: "1",
+            chapter: '1',
             text: {
-              5: "This verse has been changed by another user",
-              6: "Some other verse"
+              5: 'This verse has been changed by another user',
+              6: 'Some other verse',
             },
-            verses: "5-6",
-            checked: false
+            verses: '5-6',
+            checked: false,
           },
           {
-            chapter: "1",
+            chapter: '1',
             text: {
-              5: "Some verse",
-              6: "Some other verse"
+              5: 'Some verse',
+              6: 'Some other verse',
             },
-            verses: "5-6",
-            checked: true
-          }]
-        ]
-      }
-    }
+            verses: '5-6',
+            checked: true,
+          }],
+        ],
+      },
+    },
   };
 
   it('should render the default component and match the snapshot', () => {
@@ -64,14 +68,19 @@ describe('MergeConflictsComponents.index', () => {
         <MergeConflicts {...initialState} />
       </MuiThemeProvider>
       , wrapperOptions);
+
     expect(wrapper.find(MergeConflictsCard).props()).toEqual({
       translate: expect.any(Function),
       chapter: '1',
       verses: '5-6',
       mergeConflictIndex: '0',
       versions:
-        [{ index: '0', textData: initialState.reducers.mergeConflictReducer.conflicts[0][0].text, checked: false },
-        { index: '1', textData: initialState.reducers.mergeConflictReducer.conflicts[0][1].text, checked: true }],
+        [{
+          index: '0', textData: initialState.reducers.mergeConflictReducer.conflicts[0][0].text, checked: false,
+        },
+        {
+          index: '1', textData: initialState.reducers.mergeConflictReducer.conflicts[0][1].text, checked: true,
+        }],
       open: false,
       onCheck: expect.any(Function),
       openCard: expect.any(Function),
@@ -83,11 +92,7 @@ describe('MergeConflictsComponents.index', () => {
       <MergeConflicts {...initialState} />
       , wrapperOptions);
     expect(wrapper.find(MergeConflictsCard).prop('open')).toBe(false);
-    wrapper.setState({
-      conflictCards: [{
-        open: true
-      }]
-    });
+    wrapper.setState({ conflictCards: [{ open: true }] });
     expect(wrapper.find(MergeConflictsCard).prop('open')).toBe(true);
   });
 });
@@ -97,11 +102,13 @@ describe('MergeConflictsComponents.index', () => {
 describe('MergeConflictsComponents.MergeConflictsCard', () => {
   const wrapperOptions = {
     context: { muiTheme: getMuiTheme() },
-    childContextTypes: { muiTheme: PropTypes.object }
+    childContextTypes: { muiTheme: PropTypes.object },
   };
+
   beforeAll(() => {
     configure({ adapter: new Adapter() });
   });
+
   const initialState = {
     translate: key => key,
     chapter: '1',
@@ -111,23 +118,24 @@ describe('MergeConflictsComponents.MergeConflictsCard', () => {
       [{
         index: '0',
         textData: {
-          5: "This verse has been changed by another user",
-          6: "Some other verse"
+          5: 'This verse has been changed by another user',
+          6: 'Some other verse',
         },
-        checked: false
+        checked: false,
       },
       {
         index: '1',
         textData: {
-          5: "Some verse",
-          6: "Some other verse"
+          5: 'Some verse',
+          6: 'Some other verse',
         },
-        checked: true
+        checked: true,
       }],
     open: true,
     onCheck: () => {},
     openCard: () => {},
   };
+
   it('should show merge conflicts versions if open', () => {
     const wrapper = shallow(
       <MergeConflictsCard {...initialState} />

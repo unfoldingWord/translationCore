@@ -44,12 +44,20 @@ function readdirSync(directoryPath) {
   return [];
 }
 
+function readdir(directoryPath) {
+  return Promise.resolve(readdirSync(directoryPath));
+}
+
 function writeFileSync(filePath, data) {
   addFileToParentDirectory(filePath);
   mockFS[filePath] = data;
 }
 
 function readFileSync(filePath) {
+  if (!existsSync(filePath)) {
+    throw 'File could not be read: ' + filePath;
+  }
+
   if (typeof filePath !== 'string') throw 'fail';
   const data = mockFS[filePath];
   // TRICKY: readFileSync should always return a string
@@ -60,9 +68,26 @@ function readFileSync(filePath) {
   }
 }
 
+function readFile(filePath) {
+  return new Promise(function (resolve, reject) {
+    try {
+      resolve(readFileSync(filePath));
+    } catch (e) {
+      reject(e);
+    }
+  });
+}
+
 function outputFileSync(filePath, data) {
   addFileToParentDirectory(filePath);
   mockFS[filePath] = data;
+}
+
+function outputFile(filePath, data) {
+  return new Promise(function (resolve) {
+    outputFileSync(filePath, data);
+    resolve();
+  });
 }
 
 function __dumpMockFS() {
@@ -93,18 +118,37 @@ function outputJsonSync(filePath, data) {
   mockFS[filePath] = _.cloneDeep(data);
 }
 
+function outputJson(filePath, data) {
+  return new Promise(function (resolve) {
+    outputJsonSync(filePath, data);
+    resolve();
+  });
+}
+
 function readJsonSync(filePath) {
-  if(!existsSync(filePath)) {
-    throw "File could not be read: " + filePath;
+  if (!existsSync(filePath)) {
+    throw 'File could not be read: ' + filePath;
   }
+
   const data = mockFS[filePath];
   // clone data so changes to object do not affect object in file system
   const clonedData = JSON.parse(typeof data === 'string' ? data : JSON.stringify(data));
   return clonedData;
 }
 
+function readJson(filePath) {
+  return new Promise(function (resolve, reject) {
+    try {
+      resolve(readJsonSync(filePath));
+    } catch (e) {
+      reject(e);
+    }
+  });
+}
+
 function existsSync(path) {
-  return mockFS[path] !== '' ? !!mockFS[path] : true;
+  const exists = mockFS[path] !== '' ? !!mockFS[path] : true;
+  return exists;
 }
 
 function exists(path) {
@@ -117,20 +161,38 @@ function removeSync(path) {
   });
 }
 
+function remove(path) {
+  return new Promise(function (resolve) {
+    removeSync(path);
+    resolve();
+  });
+}
+
 function renameSync(oldPath, newPath) {
   writeFileSync(newPath, readFileSync(oldPath));
   removeSync(oldPath);
 }
 
+function rename(oldPath, newPath) {
+  return new Promise(function (resolve) {
+    renameSync(oldPath, newPath);
+    resolve();
+  });
+}
+
 function copySync(srcPath, destinationPath) {
-  mockFS[destinationPath] = mockFS[srcPath];
-  addFileToParentDirectory(destinationPath);
   const isDir = statSync(srcPath).isDirectory();
+
   if (isDir) {
+    ensureDirSync(destinationPath);
     const files = readdirSync(srcPath);
+
     for (let f of files) {
       copySync(path.join(srcPath,f), path.join(destinationPath,f));
     }
+  } else { // not directory
+    addFileToParentDirectory(destinationPath);
+    mockFS[destinationPath] = _.cloneDeep(mockFS[srcPath]);
   }
 }
 
@@ -192,7 +254,7 @@ function __correctSeparatorsFromLinux(filePath) {
 /**
  * @description - copies list of files from local file system into mock File system
  * @param {array} copyFiles - array of paths (in linux format) relative to source path
- * @param {string} sourceFolder - source folder fo files to copy (in linux format)
+ * @param {string} sourceFolder - source folder of files to copy (in linux format)
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
 function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
@@ -226,7 +288,7 @@ function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
 
 /**
  * @description - recursively copies folder from local file system into mock File system
- * @param {string} sourceFolder - source folder fo files to copy (in linux format)
+ * @param {string} sourceFolder - source folder of files to copy (in linux format)
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
 function __loadDirIntoMockFs(sourceFolder, mockDestinationFolder) {
@@ -267,21 +329,30 @@ fs.__loadFilesIntoMockFs = __loadFilesIntoMockFs;
 fs.__correctSeparatorsFromLinux = __correctSeparatorsFromLinux;
 fs.__loadDirIntoMockFs = __loadDirIntoMockFs;
 fs.readdirSync = jest.fn(readdirSync);
+fs.readdir = readdir;
 fs.writeFileSync = writeFileSync;
 fs.readFileSync = jest.fn(readFileSync);
+fs.readFile = readFile;
 fs.writeJSONSync = outputJsonSync;
 fs.outputJsonSync = jest.fn(outputJsonSync);
 fs.outputJSONSync = jest.fn(outputJsonSync);
+fs.outputJson = outputJson;
+fs.outputJSON = outputJson;
 fs.readJsonSync = jest.fn(readJsonSync);
 fs.readJSONSync = readJsonSync;
+fs.readJson = readJson;
+fs.readJSON = readJson;
 fs.existsSync = jest.fn(existsSync);
 fs.exists = exists;
 fs.pathExists = exists;
 fs.pathExistsSync = jest.fn(existsSync);
 fs.outputFileSync = outputFileSync;
+fs.outputFile = outputFile;
 fs.removeSync = removeSync;
+fs.remove = remove;
 fs.copySync = jest.fn(copySync);
 fs.renameSync = renameSync;
+fs.rename = rename;
 fs.ensureDirSync = ensureDirSync;
 fs.statSync = statSync;
 fs.fstatSync = statSync;

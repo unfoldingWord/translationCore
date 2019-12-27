@@ -1,0 +1,163 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"46 years ... 3 days\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τεσσεράκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἓξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τρισὶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέραις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "forty-six years ... three days ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"38 years\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τριάκοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀκτὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "thirty-eight years ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this as a numeral. Alternate translation: \"300 denarii\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "τριακοσίων",
+          "occurrence": 1
+        },
+        {
+          "word": "δηναρίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "three hundred denarii ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"100\" (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 39
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": "ἑκατόν",
+      "glQuote": "one hundred ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"full of large fish, one hundred and fifty-three.\" There were 153 large fish. (See: [[rc://en/ta/man/translate/translate-numbers ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "μεστὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰχθύων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰχθύων",
+          "occurrence": 2
+        },
+        {
+          "word": "μεγάλων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "full of large fish",
+      "occurrence": 1
+    }
+  }
+]

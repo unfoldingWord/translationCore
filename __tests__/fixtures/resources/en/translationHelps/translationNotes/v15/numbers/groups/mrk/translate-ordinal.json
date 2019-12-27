@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is the time between 3 a.m. and sunrise. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 48
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "τετάρτην",
+          "occurrence": 1
+        },
+        {
+          "word": "φυλακὴν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fourth watch",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Second\" here is an ordinal number. (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 72
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "δευτέρου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a second time",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Third\" here is a ordinal number. This refers to nine o'clock in the morning. Alternate translation: \"nine o'clock in the morning\" (See: [[rc://en/ta/man/translate/translate-ordinal]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 15,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-ordinal",
+      "quote": [
+        {
+          "word": "ὥρα",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίτη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the third hour",
+      "occurrence": 1
+    }
+  }
+]

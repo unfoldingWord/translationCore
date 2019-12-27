@@ -2,28 +2,28 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 //helpers
-import {generateTimestamp} from '../TimestampGenerator';
+import { generateTimestamp } from '../TimestampGenerator';
 import * as bibleHelpers from '../bibleHelpers';
 import * as usfmHelpers from '../usfmHelpers';
-import * as LoadHelpers from "../LoadHelpers";
+import * as LoadHelpers from '../LoadHelpers';
 
 let template = {
   generator: {
     name: 'tc-desktop',
-    build: ''
+    build: '',
   },
   target_language: {
     id: '',
     name: '',
-    direction: ''
+    direction: '',
   },
   project: {
     id: '',
-    name: ''
+    name: '',
   },
   type: {
     id: '',
-    name: ''
+    name: '',
   },
   source_translations: [],
   translators: [],
@@ -31,7 +31,7 @@ let template = {
   time_created: '',
   tools: [],
   repo: '',
-  tcInitialized: true
+  tcInitialized: true,
 };
 
 /**
@@ -43,9 +43,11 @@ export function generateManifest(repo, tsManifest) {
   //Creating new object reference to fix edge case bug
   let projectManifest = JSON.parse(JSON.stringify(template));
   projectManifest.time_created = generateTimestamp();
+
   if (repo) {
     projectManifest.repo = repo;
   }
+
   for (let oldElements in tsManifest) {
     projectManifest[oldElements] = tsManifest[oldElements];
   }
@@ -54,10 +56,12 @@ export function generateManifest(repo, tsManifest) {
     if (tsManifest) {
       projectManifest.target_language = tsManifest.target_language;
       projectManifest.type = tsManifest.type;
+
       if (tsManifest.source_translations) {
         projectManifest.source_translations = tsManifest.source_translations;
       }
       projectManifest.project = tsManifest.project || tsManifest.project;
+
       if (projectManifest.project) {
         if (!projectManifest.project.name || projectManifest.project.name.length < 1) {
           projectManifest.project.name = bibleHelpers.convertToFullBookName(projectManifest.project.id);
@@ -82,8 +86,10 @@ export function generateManifest(repo, tsManifest) {
  */
 export function setUpManifest(projectSaveLocation, link, oldManifest) {
   let manifest;
+
   try {
     let manifestLocation = getManifestPath(projectSaveLocation);
+
     if (oldManifest && ((oldManifest.package_version === '3') || (oldManifest.package_version === 3))) {
       //some older versions of ts-manifest have to be tweaked to work
       manifest = fixManifestVerThree(oldManifest);
@@ -91,7 +97,7 @@ export function setUpManifest(projectSaveLocation, link, oldManifest) {
     }
 
     manifest = generateManifest(link, oldManifest || {});
-    fs.outputJsonSync(manifestLocation, manifest);
+    fs.outputJsonSync(manifestLocation, manifest, { spaces: 2 });
   } catch (err) {
     console.log(err);
     console.error(err);
@@ -105,6 +111,7 @@ export function setUpManifest(projectSaveLocation, link, oldManifest) {
  */
 export function fixManifestVerThree(oldManifest) {
   let newManifest = {};
+
   try {
     for (let oldElements in oldManifest) {
       newManifest[oldElements] = oldManifest[oldElements];
@@ -113,9 +120,10 @@ export function fixManifestVerThree(oldManifest) {
     newManifest.project = {};
     newManifest.project.id = oldManifest.project_id;
     newManifest.project.name = bibleHelpers.convertToFullBookName(oldManifest.project_id);
+
     for (let el in oldManifest.source_translations) {
       newManifest.source_translations = oldManifest.source_translations[el];
-      let parameters = el.split("-");
+      let parameters = el.split('-');
       newManifest.source_translations.language_id = parameters[1];
       newManifest.source_translations.resource_id = parameters[2];
       break;
@@ -134,25 +142,25 @@ export function fixManifestVerThree(oldManifest) {
 export function setUpDefaultUSFMManifest(parsedUSFM) {
   let usfmDetails = usfmHelpers.getUSFMDetails(parsedUSFM);
   return {
-    "source_translations": [
+    'source_translations': [
       {
-        "language_id": "en",
-        "resource_id": "ult",
-        "checking_level": "",
-        "date_modified": new Date(),
-        "version": ""
-      }
+        'language_id': 'en',
+        'resource_id': 'ult',
+        'checking_level': '',
+        'date_modified': new Date(),
+        'version': '',
+      },
     ],
-    tcInitialized: true,
-    target_language: {
+    'tcInitialized': true,
+    'target_language': {
       id: usfmDetails.language.id,
       name: usfmDetails.language.name,
-      direction: usfmDetails.language.direction
+      direction: usfmDetails.language.direction,
     },
-    project: {
+    'project': {
       id: usfmDetails.book.id,
-      name: usfmDetails.book.name
-    }
+      name: usfmDetails.book.name,
+    },
   };
 }
 
@@ -166,6 +174,7 @@ export const getProjectManifest = (projectPath, projectLink) => {
   let manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   let tCManifest = LoadHelpers.loadFile(projectPath, 'tc-manifest.json');
   manifest = manifest || tCManifest;
+
   if (!manifest || !manifest.tcInitialized) {
     manifest = setUpManifest(projectPath, projectLink, manifest);
   }
@@ -178,7 +187,7 @@ export const getProjectManifest = (projectPath, projectLink) => {
  * @return {null}
  */
 export const getManifestPath = (projectPath) => {
-  const projectManifestPath = path.join(projectPath, "manifest.json");
+  const projectManifestPath = path.join(projectPath, 'manifest.json');
   return fs.existsSync(projectManifestPath) ? projectManifestPath : null;
 };
 
@@ -191,8 +200,9 @@ export const getManifestPath = (projectPath) => {
 export const saveProjectManifest = (projectPath, manifest) => {
   if (manifest) {
     const validManifestPath = getManifestPath(projectPath);
+
     if (validManifestPath) {
-      fs.outputJsonSync(validManifestPath, manifest);
+      fs.outputJsonSync(validManifestPath, manifest, { spaces: 2 });
     }
   }
 };

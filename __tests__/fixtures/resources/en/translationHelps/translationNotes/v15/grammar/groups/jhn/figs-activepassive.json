@@ -1,0 +1,3129 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated with an active verb. Alternate translation: \"God made all things through him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "δι",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "All things were made through him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated with an active verb. If your language does not permit double negatives, these words should communicate that the opposite of \"all things were made through him\" is false. Alternate translation: \"God did not make anything without him\" or \"with him there was every thing made that has been made\" or \"God made with him every thing that God has made\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-doublenegatives ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγονεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "without him there was not one thing made that has been made ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in an active form. Alternate translation: \"Someone invited Jesus and his disciples to the wedding\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐκλήθη",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "γάμον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus and his disciples were invited to the wedding ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in an active form. Alternate translation: \"someone had written\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γεγραμμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστίν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it was written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in an active form. Alternate translation: \"so that the light will not show the things he does\" or \"so that the light does not make clear his deeds\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλεγχθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that his deeds will not be exposed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in an active form. Alternate translation: \"people may clearly see his deeds\" or \"everyone may clearly see the things he does\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "φανερωθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "plainly seen that his deeds ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"John was baptizing them\" or \"he was baptizing them\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "ἐβαπτίζοντο",
+      "glQuote": "were being baptized ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in an active form for clarity. Alternate translation: \"Then John's disciples and a Jew began to argue\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ζήτησις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθητῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰωάννου",
+          "occurrence": 1
+        },
+        {
+          "word": "μετὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then there arose a dispute between some of John's disciples and a Jew ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in an active form. Alternate translation: \"God sent me to arrive before him\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀπεσταλμένος",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰμὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔμπροσθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκείνου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I have been sent before him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"So then I rejoice greatly\" or \"So I rejoice much\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 3,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "αὕτη",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεπλήρωται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "This, then, is my joy made complete ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in an active form. Alternate translation: \"when the angel moves the water\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅταν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταραχθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὕδωρ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when the water is stirred up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so God can save you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "σωθῆτε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that you might be saved ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a passive statement that can be translated in an active form. Alternate translation: \"The prophets wrote\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 45
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγραμμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήταις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "It is written in the prophets ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a passive phrase. You may translate it in an active form with a personal subject. Alternate translation: \"Moses wrote\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "γέγραπται",
+      "glQuote": "it is written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a passive statement. You can translate it in an active form. Alternate translation: \"no one has ever heard of anyone who healed a man who was blind from birth\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠκούσθη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠνέῳξέν",
+          "occurrence": 1
+        },
+        {
+          "word": "τις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it has never been heard that anyone opened ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"whom they called Didymus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λεγόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δίδυμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who was called Didymus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"he learned that people had put Lazarus in a tomb four days before\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εὗρεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τέσσαρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμέρας",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "μνημείῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he found that Lazarus had already been in the tomb for four days ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A burial custom of this time was to wrap the dead body with long strips of linen cloth. This can be stated in active form. Alternate translation: \"Someone had wrapped strips of cloth around his hands and feet. They had also tied a cloth around his face\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "δεδεμένος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "κειρίαις",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄψις",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σουδαρίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιεδέδετο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his feet and hands were bound with cloths, and his face was bound about with a cloth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be translated in an active form. Alternate translation: \"The scent of her perfume filled the house\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οἰκία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπληρώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀσμῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "μύρου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "The house was filled with the fragrance of the perfume ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"as the prophets wrote in the Scripture\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καθώς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγραμμένον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as it was written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"when God glorified Jesus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὅτε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδοξάσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "when Jesus was glorified ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"ruler\" refers to Satan. You can translate this in an active form. Alternate translation: \"Now is the time when I will destroy the power of Satan who rules this world\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "νῦν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρχων",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "κόσμου",
+          "occurrence": 2
+        },
+        {
+          "word": "τούτου",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκβληθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔξω",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now will the ruler of this world be thrown out ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here Jesus refers to his crucifixion. You can translate this in an active form. Alternate translation: \"When people raise me high on a cross\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "κἀγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑψωθῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "γῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "When I am lifted up from the earth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"in order to fulfill the message of Isaiah the prophet\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 38
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἠσαΐου",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "προφήτου",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that the word of Isaiah the prophet would be fulfilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so people would not stop them from going to the synagogue\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 12,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀποσυνάγωγοι",
+          "occurrence": 1
+        },
+        {
+          "word": "γένωνται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that they would not be banned from the synagogue ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bless\" means to cause good, beneficial things to happen to a person. You can translate this in an active form. Alternate translation: \"God will bless you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "μακάριοί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "you are blessed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"this is in order to fulfill the scripture\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "this so that the scripture will be fulfilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Now people are about to see how the Son of Man will receive honor and how God will receive honor through what the Son of Man is doing\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "νῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδοξάσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδοξάσθη",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now the Son of Man is glorified, and God is glorified in him ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so I can show everyone how great my Father is\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "δοξασθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "Υἱῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that the Father will be glorified in the Son ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"my Father will love anyone who loves me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 14,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἀγαπῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "με",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀγαπηθήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατρός",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "he who loves me will be loved by my Father ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"the fire burns them\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "καίεται",
+      "glQuote": "they are burned up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"he will do it for you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "γενήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "it will be done for you ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"It causes people to honor my Father\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐδοξάσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατήρ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My Father is glorified in this ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so that you will be completely joyful\" or \"so that your joy may have nothing missing\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 3
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that your joy will be complete ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. \"Word\" here is a metonym for the entire message of God. Alternate translation: \"to fulfill the prophecy in their law\" and \"to fulfill the prophecy in their law\" (See: [[rc://en/ta/man/translate/figs-activepassive]] and [[rc://en/ta/man/translate/figs-metonymy ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 15,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγραμμένος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to fulfill the word that is written in their law ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"but your sadness will become joy\" or \"but afterwards instead of being sad you will be very happy\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀλλ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "λύπη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "γενήσεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but your sorrow will be turned into joy ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will give you great joy\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾖ",
+          "occurrence": 1
+        },
+        {
+          "word": "πεπληρωμένη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "your joy will be fulfilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"others will scatter you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 16,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "σκορπισθῆτε",
+      "glQuote": "you will be scattered ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"to fulfill the prophecy about him in the scriptures\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that the scriptures would be fulfilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so that you might give them great joy\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχωσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "χαρὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐμὴν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "πεπληρωμένην",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that they will have my joy fulfilled in themselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so that they may also set apart themselves truly to you\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡγιασμένοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀληθείᾳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that they themselves may also be set apart in truth ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"so that you can unite them just as you have united us\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 17,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἓν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "καθὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that they will be one, just as we are one ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Now the high priest knew that disciple so he was able to enter with Jesus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 2
+        },
+        {
+          "word": "μαθητὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖνος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "γνωστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀρχιερεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "συνεισῆλθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 3
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Now that disciple was known to the high priest, and he entered with Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"So the other disciple, whom the high priest knew\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "μαθητὴς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "ἄλλος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "γνωστὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρχιερέως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "So the other disciple, who was known to the high priest ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"in order to fulfill what Jesus had said earlier\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγος",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that the word of Jesus would be fulfilled ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"and would prevent the Jewish leaders from arresting me\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 18,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἄν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "παραδοθῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίοις",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "so that I would not be given over to the Jews ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a special stone platform where only the important people were allowed to go. You can translate this in an active form. Alternate translation: \"in a place the people called The Pavement, but\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 13
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "λεγόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": "Λιθόστρωτον",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in a place called \"The Pavement,\" but ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"to the place that the people called 'The Place of a Skull,'\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "λεγόμενον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "Κρανίου",
+          "occurrence": 1
+        },
+        {
+          "word": "Τόπον",
+          "occurrence": 1
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "to the place called \"The Place of a Skull,\" ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"So that person wrote the words: Jesus of Nazareth, King of the Jews\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "γεγραμμένον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ναζωραῖος",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 3
+        },
+        {
+          "word": "Βασιλεὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαίων",
+          "occurrence": 1
+        },
+        {
+          "word": ".",
+          "occurrence": 2
+        },
+        {
+          "word": "\"",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "There it was written: JESUS OF NAZARETH, THE KING OF THE JEWS ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"the place where the soldiers crucified Jesus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπος",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσταυρώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the place where Jesus was crucified ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"The one who prepared the sign wrote the words in 3 languages: Hebrew, Latin, and Greek\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 2
+        },
+        {
+          "word": "γεγραμμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἑβραϊστί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "Ῥωμαϊστί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "Ἑλληνιστί",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The sign was written in Hebrew, in Latin, and in Greek ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"he knew that he had done everything that God had sent him to do\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "εἰδὼς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        },
+        {
+          "word": "πάντα",
+          "occurrence": 1
+        },
+        {
+          "word": "τετέλεσται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "knowing that everything was now completed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Someone had placed there a full container of sour wine\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 29
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "σκεῦος",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔκειτο",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄξους",
+          "occurrence": 1
+        },
+        {
+          "word": "μεστόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "A container full of sour wine was placed there ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"to break the legs of the executed men and take their bodies down from the crosses\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 2
+        },
+        {
+          "word": "κατεαγῶσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "σκέλη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρθῶσιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to break their legs and to remove them ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"whom they had crucified near Jesus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "συνσταυρωθέντος",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who had been crucified with Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"to fulfill the words that someone wrote in the scripture\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "Γραφὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "πληρωθῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in order to fulfill scripture ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a quotation from Psalm 34. You can translate this in an active form. Alternate translation: \"No one will break any of his bones\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 36
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὀστοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "συντριβήσεται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Not one of his bones will be broken ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"Now in the place where they crucified Jesus there was a garden\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσταυρώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "κῆπος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Now in the place where he was crucified there was a garden ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"in which people had buried no one\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 19,
+        "verse": 41
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 3
+        },
+        {
+          "word": "ᾧ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδέπω",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐδεὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 2
+        },
+        {
+          "word": "τεθειμένος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "in which no person had yet been buried ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"she saw that someone had rolled away the stone\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "βλέπει",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λίθον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἠρμένον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "she saw the stone rolled away ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"his head\" refers to \"Jesus' head.\" You can translate this in an active form. Alternate translation: \"cloth that someone had used to cover Jesus' face\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "σουδάριον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "κεφαλῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "cloth that had been on his head ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This can be stated in active form. Alternate translation: \"but someone had folded it and put it aside, separate from the linen cloths\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀλλὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "χωρὶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐντετυλιγμένον",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕνα",
+          "occurrence": 1
+        },
+        {
+          "word": "τόπον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but was folded up in a place by itself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"the disciples had locked the doors where they were\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "θυρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κεκλεισμένων",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅπου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἦσαν",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "μαθηταὶ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the doors of where the disciples were, were closed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will forgive them\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἀφέωνται",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they are forgiven ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"God will not forgive them\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": "κεκράτηνται",
+      "glQuote": "they are kept back ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"when they had locked the doors\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 26
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "θυρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κεκλεισμένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "while the doors were closed ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"signs that the author did not write about in this book\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 30
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἃ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "γεγραμμένα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "βιβλίῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "τούτῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "signs that have not been written in this book ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"but the author wrote about these signs\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 20,
+        "verse": 31
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "γέγραπται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "but these have been written ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"with Thomas whom we called Didymus\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ὁμοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Θωμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "λεγόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "Δίδυμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with Thomas called Didymus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this as an active form. Alternate translation: \"the net did not break\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσχίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "δίκτυον",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "the net was not torn ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"If someone wrote down all of them\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "ἐὰν",
+          "occurrence": 1
+        },
+        {
+          "word": "γράφηται",
+          "occurrence": 1
+        },
+        {
+          "word": "καθ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "If each one were written down ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "You can translate this in an active form. Alternate translation: \"the books that people could write about what he did\" (See: [[rc://en/ta/man/translate/figs-activepassive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 25
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-activepassive",
+      "quote": [
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γραφόμενα",
+          "occurrence": 1
+        },
+        {
+          "word": "βιβλία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the books that would be written ",
+      "occurrence": 1
+    }
+  }
+]

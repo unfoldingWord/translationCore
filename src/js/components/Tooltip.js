@@ -6,7 +6,7 @@ const TooltipComponent = ({
   id,
   children,
   placement,
-  tooltipMessage
+  tooltipMessage,
 }) => (
   <OverlayTrigger
     overlay={<Tooltip id={id} className="my-tooltip-class">{tooltipMessage}</Tooltip>}
@@ -22,12 +22,10 @@ TooltipComponent.propTypes = {
   id: PropTypes.string.isRequired,
   children: PropTypes.any.isRequired,
   tooltipMessage: PropTypes.string.isRequired,
-  placement: PropTypes.string
+  placement: PropTypes.string,
 };
 
-TooltipComponent.defaultProps = {
-  placement: "top"
-};
+TooltipComponent.defaultProps = { placement: 'top' };
 
 
 export default TooltipComponent;

@@ -1,13 +1,13 @@
-import consts from './ActionTypes';
 // helpers
-import {generateTimestamp} from '../helpers/index';
+import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
+import consts from './ActionTypes';
 
 export function toggle(userName, timestamp) {
   return ((dispatch, getState) => {
     const {
       gatewayLanguageCode,
-      gatewayLanguageQuote
+      gatewayLanguageQuote,
     } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
 
     dispatch({
@@ -15,25 +15,23 @@ export function toggle(userName, timestamp) {
       modifiedTimestamp: timestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote,
-      userName
+      userName,
     });
   });
 }
 
 /**
  * @description Toggles the reminder to true or false
- * @param {String} username - The username of who toggled the reminder.
  * @return {object} action state.
  */
-export const toggleReminder = username => {
-  return ((dispatch, getState) => {
-    let state = getState();
-    let contextId = state.contextIdReducer.contextId;
+export const toggleReminder = () => ((dispatch, getState) => {
+  const state = getState();
+  const contextId = state.contextIdReducer.contextId;
+  const username = state.loginReducer.userdata.username;
 
-    dispatch(toggle(username, generateTimestamp()));
-    dispatch({
-      type: consts.TOGGLE_REMINDERS_IN_GROUPDATA,
-      contextId
-    });
+  dispatch(toggle(username, generateTimestamp()));
+  dispatch({
+    type: consts.TOGGLE_REMINDERS_IN_GROUPDATA,
+    contextId,
   });
-};
+});

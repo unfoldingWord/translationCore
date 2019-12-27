@@ -1,0 +1,82 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul includes his hearers, so the word \"we\" is inclusive. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 14,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμᾶς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσελθεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "We must enter ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"our\" refers to the people of the city and includes the magistrates who ruled it. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 16,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": [
+        {
+          "word": "οὗτοι",
+          "occurrence": 1
+        },
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄνθρωποι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκταράσσουσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "πόλιν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "These men are stirring up our city ",
+      "occurrence": 1
+    }
+  }
+]

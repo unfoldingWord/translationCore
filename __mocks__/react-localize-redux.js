@@ -6,7 +6,7 @@ export const getTranslate = () => {
   return translate;
 };
 
-export const localize = jest.fn((component, localeReduxKey) => {
+export const withLocalize = jest.fn((component, localeReduxKey) => {
   return component;
 });
 

@@ -1,0 +1,372 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"yourself\" here represents the skin of the leper. Alternate translation: \"show your skin\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "σεαυτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖξον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "show yourself",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"bread\" represents food. Alternate translation: \"Jesus and his disciples could not eat at all\" or \"they could not eat anything\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "δύνασθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "μηδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄρτον",
+          "occurrence": 1
+        },
+        {
+          "word": "φαγεῖν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "they could not even eat bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Word\" here is a synecdoche for \"the message of God.\" The word \"them\" refers to the crowds. Alternate translation: \"he taught the message of God to them\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 33
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐλάλει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "λόγον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he spoke the word to them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bread\" is a synecdoche for food in general. Alternate translation: \"no food\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄρτον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a synecdoche, representing food in general. Alternate translation: \"food\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "ἄρτον",
+      "glQuote": "bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This refers to food in general. Alternate translation: \"food\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 7,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": "ἄρτον",
+      "glQuote": "bread",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The tenants are referring to the vineyard as \"the inheritance.\" Alternate translation: \"this vineyard\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονομία",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the inheritance",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The words \"widows\" and \"houses\" are synecdoches for helpless people and all of a person's important possessions, respectively. Alternate translation: \"everything from helpless people\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 12,
+        "verse": 40
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "οἰκίας",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "χηρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "widows' houses",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"flesh\" refers to people, and \"saved\" refers to physical salvation. Alternate translation: \"no one would be saved\" or \"everyone would die\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 13,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἂν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐσώθη",
+          "occurrence": 1
+        },
+        {
+          "word": "πᾶσα",
+          "occurrence": 1
+        },
+        {
+          "word": "σάρξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "no flesh would be saved",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"cup\" is a metonym for wine. Alternate translation: \"He took the cup of wine\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 23
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "λαβὼν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποτήριον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He took a cup",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus speaks of himself as his \"soul.\" Alternate translation: \"I am\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 34
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχή",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "My soul is",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"hands\" refers to men. Alternate translation: \"made by men ... without man's help\" or \"built by men ... without man's help\" (See: [[rc://en/ta/man/translate/figs-synecdoche]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 58
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-synecdoche",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "χειροποίητον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "made with hands",
+      "occurrence": 1
+    }
+  }
+]

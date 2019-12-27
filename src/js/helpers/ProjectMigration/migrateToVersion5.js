@@ -12,7 +12,10 @@ export const MIGRATE_MANIFEST_VERSION = 5;
  */
 export default (projectPath, projectLink) => {
   Version.getVersionFromManifest(projectPath, projectLink); // ensure manifest converted for tc
-  if (shouldRun(projectPath)) run(projectPath);
+
+  if (shouldRun(projectPath)) {
+    run(projectPath);
+  }
 };
 
 /**
@@ -32,7 +35,7 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
-  console.log("migrateToVersion5(" + projectPath + ")");
+  console.log('migrateToVersion5(' + projectPath + ')');
   updateAlignments(projectPath);
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };
@@ -44,13 +47,14 @@ const run = (projectPath) => {
  */
 export const updateAlignments = function (projectPath) {
   const projectAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData');
+
   if (fs.existsSync(projectAlignmentDataPath)) {
-    const alignmentFolders = fs.readdirSync(projectAlignmentDataPath).filter(folder => {
-      return (fs.statSync(path.join(projectAlignmentDataPath, folder)).isDirectory() && (folder !== ".DS_Store"));
-    });
+    const alignmentFolders = fs.readdirSync(projectAlignmentDataPath).filter(folder => (fs.statSync(path.join(projectAlignmentDataPath, folder)).isDirectory() && (folder !== '.DS_Store')));
+
     for (let folder of alignmentFolders) {
       const alignmentPath = path.join(projectAlignmentDataPath, folder);
       const files = fs.readdirSync(alignmentPath).filter((file) => (path.extname(file) === '.json'));
+
       for (let file of files) {
         const file_path = path.join(alignmentPath, file);
         fixProjectOccurrencesTopWords(file_path, file);
@@ -65,10 +69,13 @@ export const updateAlignments = function (projectPath) {
  */
 export const fixProjectOccurrencesTopWords = function (filePath) {
   let broken = false;
+
   try {
     const chapter_alignments = fs.readJsonSync(filePath);
+
     for (let verseKey in chapter_alignments) {
       const verse = chapter_alignments[verseKey];
+
       for (let alignment of verse.alignments) {
         for (let word of alignment.topWords) {
           if (!word.occurrence || !word.occurrences) {
@@ -76,6 +83,7 @@ export const fixProjectOccurrencesTopWords = function (filePath) {
             break;
           }
         }
+
         if (broken) {
           break;
         }
@@ -85,11 +93,12 @@ export const fixProjectOccurrencesTopWords = function (filePath) {
         fixOccurrencesInVerse(verse);
       }
     }
+
     if (broken) {
-      fs.outputJsonSync(filePath, chapter_alignments);
+      fs.outputJsonSync(filePath, chapter_alignments, { spaces: 2 });
     }
   } catch (e) {
-    console.warn("Error opening chapter alignment '" + filePath + "': " + e.toString());
+    console.warn('Error opening chapter alignment \'' + filePath + '\': ' + e.toString());
   }
 };
 
@@ -100,6 +109,7 @@ export const fixProjectOccurrencesTopWords = function (filePath) {
 function fixOccurrencesInVerse(verse) {
   // flatten into word list first
   const wordList = [];
+
   for (let alignment of verse.alignments) {
     for (let word of alignment.topWords) {
       wordList.push(word);
@@ -108,8 +118,9 @@ function fixOccurrencesInVerse(verse) {
 
   for (let i = 0; i < wordList.length; i++) {
     const word = wordList[i];
+
     if (!word.occurrence || !word.occurrences) {
-      const {occurrence, occurrences} = getOccurrences(wordList, i, getWordText(wordList[i]));
+      const { occurrence, occurrences } = getOccurrences(wordList, i, getWordText(wordList[i]));
       word.occurrence = occurrence;
       word.occurrences = occurrences;
     }
@@ -126,10 +137,13 @@ function fixOccurrencesInVerse(verse) {
 export const getOccurrences = (alignments, currentWordIndex, subString) => {
   let occurrences = 0;
   let occurrence = 0;
+
   for (let i = 0; i < alignments.length; i++) {
     const match = getWordText(alignments[i]) === subString;
+
     if (match) {
       occurrences++;
+
       if (i <= currentWordIndex) {
         occurrence++;
       }

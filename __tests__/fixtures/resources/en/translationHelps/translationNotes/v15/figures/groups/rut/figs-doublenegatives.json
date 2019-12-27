@@ -1,0 +1,94 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"who has continued to be loyal.\" Possible meanings are 1) Boaz remembered his obligations to Naomi as a family member or 2) Naomi is referring to Yahweh, who was acting through Boaz or 3) Yahweh has continued to be faithful to the living and the dead. (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "אֲשֶׁר֙",
+          "occurrence": 1
+        },
+        {
+          "word": "לֹא",
+          "occurrence": 1
+        },
+        {
+          "word": "־",
+          "occurrence": 1
+        },
+        {
+          "word": "עָזַ֣ב",
+          "occurrence": 1
+        },
+        {
+          "word": "חַסְדּ֔",
+          "occurrence": 1
+        },
+        {
+          "word": "וֹ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who has not forsaken his loving kindness",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This phrase can be expressed positively. Alternate translation: \"who has provided you today with a near kinsman\" (See: [[rc://en/ta/man/translate/figs-doublenegatives]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 4,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-doublenegatives",
+      "quote": [
+        {
+          "word": "לֹ֣א",
+          "occurrence": 1
+        },
+        {
+          "word": "הִשְׁבִּ֥ית",
+          "occurrence": 1
+        },
+        {
+          "word": "לָ֛",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 1
+        },
+        {
+          "word": "גֹּאֵ֖ל",
+          "occurrence": 1
+        },
+        {
+          "word": "הַ",
+          "occurrence": 2
+        },
+        {
+          "word": "יּ֑וֹם",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who has not left you today without a kinsman=redeemer",
+      "occurrence": 1
+    }
+  }
+]

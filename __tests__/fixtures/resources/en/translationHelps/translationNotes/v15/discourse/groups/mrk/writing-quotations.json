@@ -1,0 +1,65 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "In some languages speakers do not interrupt a quote to say who is speaking. Rather they say who is speaking at the beginning or end of the complete quote. Alternate translation: \"Jesus said to them, 'It was because ... this law.\" (See: [[rc://en/ta/man/translate/writing-quotations]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "writing-quotations",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "δὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἶπεν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἔγραψεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμῖν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐντολὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "But Jesus said to them ... this commandment ... your hardness of heart",
+      "occurrence": 1
+    }
+  }
+]

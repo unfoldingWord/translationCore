@@ -1,20 +1,18 @@
 /* eslint-env jest */
 import React from 'react';
-import {shallow, configure} from 'enzyme';
+import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import CheckSoftwareUpdatesDialog, {
   STATUS_LOADING, STATUS_OK,
-  STATUS_UPDATE, STATUS_ERROR
+  STATUS_UPDATE, STATUS_ERROR,
 } from '../src/js/components/dialogComponents/SoftwareUpdateDialog';
-import {getUpdateAsset} from '../src/js/containers/SoftwareUpdateDialog/SoftwareUpdateDialogContainer';
+import { getUpdateAsset } from '../src/js/containers/SoftwareUpdateDialog/SoftwareUpdateDialogContainer';
 
 describe('Get update asset', () => {
   it('cannot find an update', () => {
     const response = {
       tag_name: '0.0.1',
-      assets: [{
-        name: 'translationCore-linux-x64-2.0.0.zip'
-      }]
+      assets: [{ name: 'translationCore-linux-x64-2.0.0.zip' }],
     };
     const expectedUpdate = null;
     const update = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
@@ -24,9 +22,7 @@ describe('Get update asset', () => {
   it('cannot find an asset for the system', () => {
     const response = {
       tag_name: '2.0.0',
-      assets: [{
-        name: 'translationCore-linux-x64-2.0.0.zip'
-      }]
+      assets: [{ name: 'translationCore-linux-x64-2.0.0.zip' }],
     };
     const expectedUpdate = null;
     const update = getUpdateAsset(response, '1.0.0', 'x64', 'darwin');
@@ -39,14 +35,14 @@ describe('Get update asset', () => {
       tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        name: 'translationCore-linux-x64-2.0.0.zip'
-      }]
+        name: 'translationCore-linux-x64-2.0.0.zip',
+      }],
     };
     const expectedUpdate = {
       extra_info: 'bar',
       installed_version: '1.0.0',
       name: 'translationCore-linux-x64-2.0.0.zip',
-      latest_version: '2.0.0'
+      latest_version: '2.0.0',
     };
     const update = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
     expect(update).toEqual(expectedUpdate);
@@ -58,14 +54,14 @@ describe('Get update asset', () => {
       tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        name: 'translationCore-win-x32-2.0.0.exe'
-      }]
+        name: 'translationCore-win-x32-2.0.0.exe',
+      }],
     };
     const expectedUpdate = {
       extra_info: 'bar',
       installed_version: '1.0.0',
       name: 'translationCore-win-x32-2.0.0.exe',
-      latest_version: '2.0.0'
+      latest_version: '2.0.0',
     };
     const update = getUpdateAsset(response, '1.0.0', 'x32', 'win32');
     expect(update).toEqual(expectedUpdate);
@@ -77,14 +73,14 @@ describe('Get update asset', () => {
       tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        name: 'translationCore-win-x32-2.0.0.exe'
-      }]
+        name: 'translationCore-win-x32-2.0.0.exe',
+      }],
     };
     const expectedUpdate = {
       extra_info: 'bar',
       installed_version: '1.0.0',
       name: 'translationCore-win-x32-2.0.0.exe',
-      latest_version: '2.0.0'
+      latest_version: '2.0.0',
     };
     const update = getUpdateAsset(response, '1.0.0', 'ia32', 'win32');
     expect(update).toEqual(expectedUpdate);
@@ -93,7 +89,7 @@ describe('Get update asset', () => {
 
 describe('CheckSoftwareUpdateDialog state', () => {
   beforeAll(() => {
-    configure({adapter: new Adapter()});
+    configure({ adapter: new Adapter() });
   });
 
   // TRICKY: we are unable to test button state with the 0.x material-ui library
@@ -103,10 +99,10 @@ describe('CheckSoftwareUpdateDialog state', () => {
     const mockSubmit = jest.fn();
     const dialog = shallow(
       <CheckSoftwareUpdatesDialog open={true}
-                                  translate={k=>k}
-                                  onSubmit={mockSubmit}
-                                  onClose={mockClose}
-                                  status={STATUS_LOADING}/>
+        translate={k=>k}
+        onSubmit={mockSubmit}
+        onClose={mockClose}
+        status={STATUS_LOADING}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('updates.checking_for_app'));
@@ -118,10 +114,10 @@ describe('CheckSoftwareUpdateDialog state', () => {
     const mockSubmit = jest.fn();
     const dialog = shallow(
       <CheckSoftwareUpdatesDialog open={true}
-                                  translate={k=>k}
-                                  onSubmit={mockSubmit}
-                                  onClose={mockClose}
-                                  status={STATUS_OK}/>
+        translate={k=>k}
+        onSubmit={mockSubmit}
+        onClose={mockClose}
+        status={STATUS_OK}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('running_latest_version'));
@@ -133,10 +129,10 @@ describe('CheckSoftwareUpdateDialog state', () => {
     const mockSubmit = jest.fn();
     const dialog = shallow(
       <CheckSoftwareUpdatesDialog open={true}
-                                  translate={k=>k}
-                                  onSubmit={mockSubmit}
-                                  onClose={mockClose}
-                                  status={STATUS_ERROR}/>
+        translate={k=>k}
+        onSubmit={mockSubmit}
+        onClose={mockClose}
+        status={STATUS_ERROR}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('updates.unable_to_check'));
@@ -149,15 +145,15 @@ describe('CheckSoftwareUpdateDialog state', () => {
     const update = {
       installed_version: '1.0.0',
       latest_version: '2.0.0',
-      size: 100000
+      size: 100000,
     };
     const dialog = shallow(
       <CheckSoftwareUpdatesDialog open={true}
-                                  translate={k=>k}
-                                  update={update}
-                                  onSubmit={mockSubmit}
-                                  onClose={mockClose}
-                                  status={STATUS_UPDATE}/>
+        translate={k=>k}
+        update={update}
+        onSubmit={mockSubmit}
+        onClose={mockClose}
+        status={STATUS_UPDATE}/>
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('update_available'));

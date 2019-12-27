@@ -2,25 +2,27 @@ import consts from '../actions/ActionTypes';
 
 const initialState = {
   selections: [],
-  userName: null,
+  nothingToSelect: false,
+  username: null,
   modifiedTimestamp: null,
   gatewayLanguageCode: null,
-  gatewayLanguageQuote: null
+  gatewayLanguageQuote: null,
 };
 
 const selectionsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case consts.CHANGE_SELECTIONS:
-      return {
-        ...state,
-        selections: action.selections,
-        userName: action.userName,
-        modifiedTimestamp: action.modifiedTimestamp,
-        gatewayLanguageCode: action.gatewayLanguageCode,
-        gatewayLanguageQuote: action.gatewayLanguageQuote
-      };
-    default:
-      return state;
+  case consts.CHANGE_SELECTIONS:
+    return {
+      ...state,
+      selections: action.selections,
+      nothingToSelect: !!action.nothingToSelect,// if undefined make it false
+      username: action.username,
+      modifiedTimestamp: action.modifiedTimestamp,
+      gatewayLanguageCode: action.gatewayLanguageCode,
+      gatewayLanguageQuote: action.gatewayLanguageQuote,
+    };
+  default:
+    return state;
   }
 };
 

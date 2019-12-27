@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This \"We\" includes both Jesus and the disciples he is talking to. (See: [[rc://en/ta/man/translate/figs-inclusive ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 9,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-inclusive",
+      "quote": "ἡμᾶς",
+      "glQuote": "We",
+      "occurrence": 1
+    }
+  }
+]

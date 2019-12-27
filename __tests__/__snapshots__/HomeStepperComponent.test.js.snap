@@ -275,7 +275,6 @@ exports[`HomeStepper HomeStepper component with nickname should match snapshot w
             <div
               className="__react_component_tooltip place-top type-dark "
               data-id="tooltip"
-              id={undefined}
             />
           </span>
         </div>

@@ -1,14 +1,15 @@
-import fs from "../__mocks__/fs-extra";
-import path from "path";
-import {TC_VERSION, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH} from "../src/js/helpers/ResourcesHelpers";
-import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
+import path from 'path';
+import fs from 'fs-extra';
 import updateResourcesHelpers from '../scripts/resources/updateResourcesHelpers';
-import ospath from "ospath";
-
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+import {
+  APP_VERSION,
+  TC_VERSION,
+  USER_RESOURCES_PATH,
+  STATIC_RESOURCES_PATH,
+} from '../src/js/common/constants';
+jest.mock('fs-extra');
 
 describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
-
   beforeEach(() => {
     fs.__resetMockFS();
   });
@@ -17,7 +18,7 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
     // given
     const date = new Date();
     const manifestPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     expect(fs.existsSync(manifestPath)).not.toBeTruthy();
 
     // when
@@ -31,10 +32,10 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
   test('should update date and not change version if manifest present', () => {
     // given
     const date = new Date();
-    const userDate = "2019-04-02T19:10:02.492Z";
-    loadSourceContentUpdaterManifests("", userDate, APP_VERSION);
+    const userDate = '2019-04-02T19:10:02.492Z';
+    loadSourceContentUpdaterManifests('', userDate, APP_VERSION);
     const manifestPath = path.join(USER_RESOURCES_PATH,
-      "source-content-updater-manifest.json");
+      'source-content-updater-manifest.json');
     expect(fs.existsSync(manifestPath)).toBeTruthy();
 
     // when
@@ -52,15 +53,19 @@ describe('ResourcesHelpers.updateSourceContentUpdaterManifest()', () => {
 //
 
 function loadSourceContentUpdaterManifests(bundledDate, userDate, appVersion = APP_VERSION) {
-  const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, "source-content-updater-manifest.json");
+  const bundledResourcesManifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
   fs.ensureDirSync(STATIC_RESOURCES_PATH);
+
   if (bundledDate) {
-    fs.outputJsonSync(bundledResourcesManifestPath, {modified: bundledDate});
+    fs.outputJsonSync(bundledResourcesManifestPath, { modified: bundledDate });
   }
-  const resourcesManifestPath = path.join(RESOURCE_PATH, "source-content-updater-manifest.json");
-  fs.ensureDirSync(RESOURCE_PATH);
+
+  const resourcesManifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
+  fs.ensureDirSync(USER_RESOURCES_PATH);
+
   if (userDate) {
-    const manifest = {modified: userDate};
+    const manifest = { modified: userDate };
+
     if (typeof appVersion === 'string') {
       manifest[TC_VERSION] = appVersion; // add app version to resource
     }

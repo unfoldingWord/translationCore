@@ -1,0 +1,45 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here the word \"your\" refers to Jesus and is singular. When you translate this, use the pronoun \"your\" because this is a quote from a prophet, and he did not use Jesus' name. (See: [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-you",
+      "quote": [
+        {
+          "word": "προσώπου",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδόν",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "your face ... your way",
+      "occurrence": 1
+    }
+  }
+]

@@ -5,6 +5,7 @@ Array [
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -13,12 +14,14 @@ Array [
       },
     ],
     "type": "CHANGE_SELECTIONS",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
     "invalidated": false,
     "type": "SET_INVALIDATED",
+    "userName": "dummy-test",
   },
   Object {
     "contextId": Object {
@@ -32,6 +35,7 @@ Array [
       },
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -70,6 +74,7 @@ Array [
         "verse": 1,
       },
     },
+    "nothingToSelect": false,
     "selections": Array [
       Object {
         "occurrence": 1,
@@ -99,9 +104,10 @@ Array [
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
@@ -125,6 +131,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -161,6 +168,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -190,9 +198,10 @@ Array [
   Object {
     "gatewayLanguageCode": "en",
     "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "CHANGE_SELECTIONS",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "gatewayLanguageCode": "en",
@@ -216,6 +225,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -257,6 +267,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -279,11 +290,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "selections_invalidated",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -307,6 +321,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -329,11 +344,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "selections_invalidated",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -355,6 +373,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -377,11 +396,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "selections_invalidated",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -403,6 +425,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -444,6 +467,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -466,11 +490,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "selections_invalidated",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -494,6 +521,7 @@ Array [
       ],
       "tool": "translationWords",
     },
+    "nothingToSelect": false,
     "selections": Array [],
     "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
   },
@@ -516,11 +544,14 @@ Array [
     "type": "SET_INVALIDATION_IN_GROUPDATA",
   },
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "cancelText": null,
+    "confirmText": null,
+    "id": "selections_invalidated",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;
@@ -528,11 +559,60 @@ Array [
 exports[`SelectionsActions.validateSelections Active Tool WA apostle selection edited 1`] = `
 Array [
   Object {
-    "alertMessage": "tools.selections_invalidated",
-    "buttonLinkText": null,
-    "callback": null,
-    "callback2": null,
-    "type": "OPEN_OPTION_DIALOG",
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "authority",
+    "nothingToSelect": false,
+    "selections": Array [],
+    "type": "CHANGE_SELECTIONS",
+    "username": "dummy-test",
+  },
+  Object {
+    "gatewayLanguageCode": "en",
+    "gatewayLanguageQuote": "authority",
+    "invalidated": true,
+    "type": "SET_INVALIDATED",
+    "userName": "dummy-test",
+  },
+  Object {
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀποστόλων",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "tool": "translationWords",
+    },
+    "nothingToSelect": false,
+    "selections": Array [],
+    "type": "TOGGLE_SELECTIONS_IN_GROUPDATA",
+  },
+  Object {
+    "boolean": true,
+    "contextId": Object {
+      "groupId": "apostle",
+      "occurrence": 1,
+      "quote": "ἀποστόλων",
+      "reference": Object {
+        "bookId": "tit",
+        "chapter": 1,
+        "verse": 1,
+      },
+      "tool": "translationWords",
+    },
+    "type": "SET_INVALIDATION_IN_GROUPDATA",
+  },
+  Object {
+    "cancelText": null,
+    "confirmText": null,
+    "id": "selections_invalidated",
+    "ignoreText": null,
+    "message": "tools.selections_invalidated",
+    "onCancel": null,
+    "onConfirm": null,
+    "type": "OPEN_ALERT",
   },
 ]
 `;

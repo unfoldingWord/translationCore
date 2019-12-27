@@ -16,13 +16,13 @@ import ColoredIcon from './ColoredIcon';
 function getRegularLabel(onClick, iconName, color, label) {
   return (
     <StepLabel onClick={onClick}
-               icon={<ColoredIcon icon={iconName} color={color}/>}>
+      icon={<ColoredIcon icon={iconName} color={color}/>}>
       <span style={{
         color: color,
         maxWidth: 150,
         whiteSpace: 'nowrap',
         textOverflow: 'ellipsis',
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}>{label}</span>
     </StepLabel>
   );
@@ -40,14 +40,14 @@ function getRegularLabel(onClick, iconName, color, label) {
 function getLabelWithHover(onClick, iconName, color, label, popover) {
   return (
     <StepLabel onClick={onClick}
-                 icon={<ColoredIcon icon={iconName} color={color}/>}>
+      icon={<ColoredIcon icon={iconName} color={color}/>}>
       <span
         style={{
           color: color,
           maxWidth: 150,
           whiteSpace: 'nowrap',
           textOverflow: 'ellipsis',
-          overflow: 'hidden'
+          overflow: 'hidden',
         }}
         data-tip={popover}
         data-place="bottom"
@@ -72,20 +72,23 @@ function getLabelWithHover(onClick, iconName, color, label, popover) {
  * @return {*}
  * @constructor
  */
-const HomeStep = ({enabled, iconName, color, label, popover, onClick}) => (
+const HomeStep = ({
+  enabled, iconName, color, label, popover, onClick,
+}) => (
   <Step disabled={!enabled}
-        style={{cursor: 'pointer'}}>
-                  {popover ? getLabelWithHover(onClick,iconName,color,label,popover) :
-                    getRegularLabel(onClick,iconName,color,label)}
+    style={{ cursor: 'pointer' }}>
+    {popover ? getLabelWithHover(onClick,iconName,color,label,popover) :
+      getRegularLabel(onClick,iconName,color,label)}
   </Step>
 );
+
 HomeStep.propTypes = {
   enabled: PropTypes.bool.isRequired,
   iconName: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  popover: PropTypes.string.isRequired
+  popover: PropTypes.string.isRequired,
 };
 
 export default HomeStep;

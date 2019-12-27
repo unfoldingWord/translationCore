@@ -1,21 +1,22 @@
 import configureMockStore from 'redux-mock-store';
 import path from 'path-extra';
-import ospath from 'ospath';
 import thunk from 'redux-thunk';
+import fs from 'fs-extra';
+// actions
 import * as actions from '../src/js/actions/WordAlignmentActions';
 import * as WordAlignmentHelpers from '../src/js/helpers/WordAlignmentHelpers';
-import fs from 'fs-extra';
+// constants
+import {
+  PROJECTS_PATH, USER_RESOURCES_PATH, STATIC_RESOURCES_PATH,
+} from '../src/js/common/constants';
+jest.mock('../src/js/helpers/Repo');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
-const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-const STATIC_RESOURCE_PATH = path.join(__dirname, '../tcResources');
-const USER_RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-
-jest.mock('../src/js/helpers/Repo');
 
 describe('WordAlignmentActions.getUsfm3ExportFile', () => {
   let store;
   const projectName = 'invalidatedAlignments';
+
   beforeEach(() => {
     store = mockStore({});
     // reset mock filesystem data
@@ -26,10 +27,10 @@ describe('WordAlignmentActions.getUsfm3ExportFile', () => {
     const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
     const copyResourceFiles = [
       'en/bibles/ult',
-      'grc/bibles/ugnt'
+      'el-x-koine/bibles/ugnt',
     ];
-    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, STATIC_RESOURCE_PATH);
-    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, USER_RESOURCE_PATH);
+    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, STATIC_RESOURCES_PATH);
+    fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, USER_RESOURCES_PATH);
   });
   afterAll(() => {
     fs.__resetMockFS();

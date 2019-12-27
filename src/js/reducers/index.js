@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 // List of reducers
+import { localizeReducer as localize } from 'react-localize-redux';
 import toolsReducer from './toolsReducer';
 import modalReducer from './modalReducer';
 import loginReducer from './loginReducer';
@@ -7,7 +8,6 @@ import recentProjectsReducer from './recentProjectsReducer';
 import importOnlineReducer from './importOnlineReducer';
 import groupMenuReducer from './groupMenuReducer';
 import settingsReducer from './settingsReducer';
-import loaderReducer from './loaderReducer';
 import popoverReducer from './popoverReducer';
 import resourcesReducer from './resourcesReducer';
 import projectDetailsReducer from './projectDetailsReducer';
@@ -30,13 +30,12 @@ import missingVersesReducer from './missingVersesReducer';
 import localImportReducer from './localImportReducer';
 import sourceContentUpdatesReducer from './sourceContentUpdatesReducer';
 import softwareUpdateReducer from './softwareUpdateReducer';
-import { localeReducer as locale } from 'react-localize-redux';
 import localeSettings from './localeSettings';
 import alerts from './alerts';
 
 // combining reducers
 const rootReducers = combineReducers({
-  locale,
+  localize,
   alerts,
   localeSettings,
   toolsReducer,
@@ -46,7 +45,6 @@ const rootReducers = combineReducers({
   recentProjectsReducer,
   importOnlineReducer,
   groupMenuReducer,
-  loaderReducer,
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer,
@@ -68,7 +66,7 @@ const rootReducers = combineReducers({
   missingVersesReducer,
   localImportReducer,
   sourceContentUpdatesReducer,
-  softwareUpdateReducer
+  softwareUpdateReducer,
 });
 
 export default rootReducers;

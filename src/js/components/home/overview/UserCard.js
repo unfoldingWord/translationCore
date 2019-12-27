@@ -6,17 +6,17 @@ import { Glyphicon } from 'react-bootstrap';
 import TemplateCard from '../TemplateCard';
 import Hint from '../../Hint';
 
+let hasShownInvalidLoginPrompt = false;
 
 export default class UserCard extends Component {
-
   /**
   * @description generates the heading for the component
   * @param {function} callback - action for link
   * @return {component} - component returned
   */
   heading(callback) {
-    const {translate} = this.props;
-    const link = this.content() ? <a onClick={callback} style={{cursor: 'pointer'}}>{translate('buttons.log_out_button')}</a> : <a/>;
+    const { translate } = this.props;
+    const link = this.content() ? <a onClick={callback} style={{ cursor: 'pointer' }}>{translate('buttons.log_out_button')}</a> : <a/>;
     return (
       <span>{translate('current_user')} {link}</span>
     );
@@ -43,15 +43,24 @@ export default class UserCard extends Component {
   */
   content() {
     let content; // content can be empty to fallback to empty button/message
-    const {reducers} = this.props;
+    const { reducers, translate } = this.props;
+    const { openAlertDialog } = this.props.actions;
     const { loggedInUser, userdata } = reducers.loginReducer;
 
     if (loggedInUser) {
+      if (!userdata.token && !userdata.localUser && !hasShownInvalidLoginPrompt) {
+        openAlertDialog(translate('users.session_invalid'), false);
+        hasShownInvalidLoginPrompt = true;
+      }
       content = (
-        <div style={{ display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0' }}>
-          <div style={{display: 'flex'}}>
-            <div style={{ width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px -10px -16px', overflow: 'hidden'}}>
-              <Glyphicon glyph="user" style={{fontSize: "100px"}} />
+        <div style={{
+          display: 'flex', justifyContent: 'space-between', margin: '-10px 0 -24px 0',
+        }}>
+          <div style={{ display: 'flex' }}>
+            <div style={{
+              width: '100px', height: '110px', color: 'lightgray', margin: '-6px 20px -10px -16px', overflow: 'hidden',
+            }}>
+              <Glyphicon glyph="user" style={{ fontSize: '100px' }} />
             </div>
             <div>
               <Hint position={'bottom'} label={userdata.username}>
@@ -61,7 +70,7 @@ export default class UserCard extends Component {
                   maxWidth: 400,
                   textOverflow: 'ellipsis',
                   display: 'block',
-                  whiteSpace: 'nowrap'
+                  whiteSpace: 'nowrap',
                 }}> {userdata.username} </strong>
               </Hint>
             </div>
@@ -73,10 +82,13 @@ export default class UserCard extends Component {
   }
 
   render() {
-    const {translate} = this.props;
+    const { translate } = this.props;
     const emptyMessage = translate('please_log_in');
     const emptyButtonLabel = translate('buttons.log_in_button');
-    const emptyButtonOnClick = () => { this.props.actions.goToNextStep() };
+
+    const emptyButtonOnClick = () => {
+      this.props.actions.goToNextStep();
+    };
     return (
       <TemplateCard
         heading={this.heading(emptyButtonOnClick)}
@@ -93,5 +105,5 @@ export default class UserCard extends Component {
 UserCard.propTypes = {
   reducers: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired,
-  translate: PropTypes.func
+  translate: PropTypes.func,
 };

@@ -1,10 +1,18 @@
-import fs from "fs-extra";
-import path from "path-extra";
-import GitApi from './GitApi';
-import * as gitApi from './GitApi';
+/* eslint-disable no-async-promise-executor */
+import fs from 'fs-extra';
+import path from 'path-extra';
+import { DCS_BASE_URL } from '../common/constants';
+import GitApi, {
+  getRemoteRepoHead,
+  pushNewRepo,
+  getRepoNameInfo,
+  saveRemote,
+  clearRemote,
+  getSavedRemote,
+} from './GitApi';
 
-const projectRegExp = new RegExp(
-  /^https?:\/\/git.door43.org\/([^/]+)\/([^/.]+)(\.git)?$/);
+const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
+const projectRegExp = new RegExp(`^https?://${dcsHostname}/([^/]+)/([^/.]+)(\\.git)?$`);
 let doingSave = false;
 
 /**
@@ -14,8 +22,8 @@ let doingSave = false;
  * @returns {boolean} true if any of the expressions match the string
  */
 export function isMatched(string, expressions) {
-  for(const expr of expressions) {
-    if(expr === string || new RegExp(expr).exec(string)) {
+  for (const expr of expressions) {
+    if (expr === string || new RegExp(expr).exec(string)) {
       return true;
     }
   }
@@ -26,7 +34,6 @@ export function isMatched(string, expressions) {
  * Provides a layer of abstraction over git repo management.
  */
 export default class Repo {
-
   /**
    * Initializes a new repo handler. If you don't know what you are doing use {@link open} instead.
    * @param {string} dir - the file path to the local repository
@@ -48,6 +55,7 @@ export default class Repo {
    */
   static async open(dir, user = {}) {
     const ok = await Repo.isRepo(dir);
+
     if (!ok) {
       await Repo.init(dir);
     }
@@ -59,9 +67,9 @@ export default class Repo {
    * @param {string} dir - the directory to inspect
    * @return {boolean} true if the repo has been initialized.
    */
-  static async isRepo(dir) {
-    const gitPath = path.join(dir, ".git");
-    return await fs.pathExists(gitPath);
+  static isRepo(dir) {
+    const gitPath = path.join(dir, '.git');
+    return fs.pathExists(gitPath);
   }
 
   /**
@@ -70,29 +78,34 @@ export default class Repo {
    * @returns {string|null} - The sanitized url or else null if invalid
    */
   static sanitizeRemoteUrl(url) {
-    if (!url || !url.trim) return null;
+    if (!url || !url.trim()) {
+      return null;
+    }
 
-    url = url.trim().replace(/\/?$/, ""); // remove white space and right trailing /'s
-    const liveDoor43Url = new RegExp(
-      /^https?:\/\/((live\.|www\.)?door43.org\/u)\/([^/]+)\/([^/]+)/);
-    const gitDoor43Url = new RegExp(
-      /^https?:\/\/((git.)door43.org)\/([^/]+)\/([^/]+)/);
+    url = url.trim().replace(/\/?$/, ''); // remove white space and right trailing /'s
+    const liveDoor43Url = new RegExp(/^https?:\/\/(live\.|www\.)?door43.org\/u\/([^/]+)\/([^/]+)/);
+    const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
+    const gitDoor43Url = new RegExp(`^https?://(${dcsHostname})/([^/]+)/([^/]+)`);
     let match = liveDoor43Url.exec(url);
+
     if (!match) {
       match = gitDoor43Url.exec(url);
+
       if (match) {
         const extra = url.substr(match.index + match[0].length);
-        if (extra && (extra !== "/")) { // make sure not trying to point into contents of repo
+
+        if (extra && (extra !== '/')) { // make sure not trying to point into contents of repo
           match = null;
         }
       }
     }
+
     if (match) {
       // Return a proper git.door43.org URL from the match
-      let userName = match[3];
-      let repoName = match[4];
-      repoName = (repoName && repoName.replace(".git", "")) || "";
-      return "https://git.door43.org/" + userName + "/" + repoName + ".git";
+      let userName = match[2];
+      let repoName = match[3];
+      repoName = (repoName && repoName.replace('.git', '')) || '';
+      return DCS_BASE_URL + '/' + userName + '/' + repoName + '.git';
     }
     return null;
   }
@@ -112,9 +125,12 @@ export default class Repo {
    * }
    */
   static parseRemoteUrl(url) {
-    if (!url) return null;
+    if (!url) {
+      return null;
+    }
 
     let matches = projectRegExp.exec(url);
+
     if (!matches) {
       return null;
     } else {
@@ -122,8 +138,8 @@ export default class Repo {
         owner: matches[1],
         name: matches[2],
         full_name: `${matches[1]}/${matches[2]}`,
-        host: "https://git.door43.org/",
-        url
+        host: DCS_BASE_URL + '/',
+        url,
       };
     }
   }
@@ -135,8 +151,9 @@ export default class Repo {
    */
   static async doesRemoteRepoExist(url) {
     let exists = true;
+
     try {
-      let data = await gitApi.getRemoteRepoHead(url);
+      let data = await getRemoteRepoHead(url);
       exists = !! data;
     } catch (e) {
       exists = false;
@@ -154,7 +171,7 @@ export default class Repo {
     return new Promise((resolve, reject) => {
       repo.init(err => {
         if (err) {
-          console.warn("Repo.init() - ERROR", err);
+          console.warn('Repo.init() - ERROR', err);
           reject(err);
         } else {
           resolve();
@@ -175,7 +192,7 @@ export default class Repo {
       repo.mirror(url, dest, err => {
         if (err) {
           fs.removeSync(dest);
-          console.warn("Repo.clone() - ERROR", err);
+          console.warn('Repo.clone() - ERROR', err);
           reject(convertGitErrorMessage(err, url));
         } else {
           resolve();
@@ -190,18 +207,19 @@ export default class Repo {
    * @param {string} [branch="master"] - the branch to push
    * @return {Promise<void>}
    */
-  push(remote = "origin", branch = "master") {
+  push(remote = 'origin', branch = 'master') {
     return new Promise(async (resolve, reject) => {
       try {
-        const repoName = await gitApi.getRepoNameInfo(this.dir, remote);
-        const response = await gitApi.pushNewRepo(this.dir, this.user, repoName.name, branch);
+        const repoName = await getRepoNameInfo(this.dir, remote);
+        const response = await pushNewRepo(this.dir, this.user, repoName.name, branch);
+
         if (response) { // TRICKY: we get a response if there was an error
           reject(convertGitErrorMessage(response, this.url));
         } else { // if null then no error
           resolve(response);
         }
       } catch (e) {
-        console.warn("Repo.push() - ERROR", e);
+        console.warn('Repo.push() - ERROR', e);
         reject(e);
       }
     });
@@ -214,18 +232,19 @@ export default class Repo {
    * @param {string} [name="origin"] - the local remote alias
    * @return {Promise<void>}
    */
-  addRemote(url, name = "origin") {
+  addRemote(url, name = 'origin') {
     return new Promise(async (resolve, reject) => {
       try {
         this.url = url;
         const oldUrl = await this.getRemote(name);
+
         if (oldUrl) {
           await this.removeRemote(name).catch(() => {}); // clear after deletion
         }
-        await gitApi.saveRemote(this.dir, name, url);
+        await saveRemote(this.dir, name, url);
         resolve();
       } catch (e) {
-        console.warn("Repo.addRemote() - git ERROR", e);
+        console.warn('Repo.addRemote() - git ERROR', e);
         reject(e);
       }
     });
@@ -243,19 +262,22 @@ export default class Repo {
     return new Promise((resolve, reject) => {
       repo.status((err, data) => {
         if (err) {
-          console.warn("Repo.isDirty() - git status ERROR", err);
+          console.warn('Repo.isDirty() - git status ERROR', err);
           reject(err);
         } else {
           let dirty = false;
+
           if (!data) {
-            const message = "Repo.isDirty() - git status empty ERROR";
+            const message = 'Repo.isDirty() - git status empty ERROR';
             console.warn(message);
             reject(message);
           } else {
-            const checks = ["modified", "not_added", "deleted" ];
+            const checks = ['modified', 'not_added', 'deleted' ];
+
             for (let i = 0, l = checks.length; i < l; i++) {
               const check = checks[i];
               dirty = Repo.hasChangedFilesForCheck(data, check, ignored);
+
               if (dirty) {
                 break;
               }
@@ -271,23 +293,26 @@ export default class Repo {
    * check status data to see if there are entries under check.  Skip ignored folders
    * @param {Object} data - status data to check
    * @param {String} check - key of check
-   * @param {[String]} ignored - files to ignore
+   * @param {array} ignored - files to ignore
    * @return {boolean}
    */
   static hasChangedFilesForCheck(data, check, ignored) {
     let changed = false;
     let length = data[check] && data[check].length;
+
     if (length) {
       if (ignored.length) {
         for (let j = 0, jLen = ignored.length; j < jLen; j++) {
           const ignore = ignored[j];
           const pos = data[check].indexOf(ignore);
+
           if (pos >= 0) {
             data[check].splice(pos, 1); // remove match
           }
         }
         length = data[check].length; // update length
       }
+
       if (length) {
         changed = true;
       }
@@ -300,8 +325,8 @@ export default class Repo {
    * @param {string} [name="origin"] - the locale remote alias
    * @return {Promise<void>}
    */
-  removeRemote(name = "origin") {
-    return gitApi.clearRemote(this.dir, name);
+  removeRemote(name = 'origin') {
+    return clearRemote(this.dir, name);
   }
 
   /**
@@ -317,8 +342,9 @@ export default class Repo {
    *   }
    * >} the url of the remote
    */
-  async getRemote(name = "origin") {
-    let remote = await gitApi.getSavedRemote(this.dir, name);
+  async getRemote(name = 'origin') {
+    let remote = await getSavedRemote(this.dir, name);
+
     if (remote) { // if found get url from remote object
       return Repo.parseRemoteUrl(remote.refs.push || remote.refs.fetch);
     }
@@ -336,7 +362,7 @@ export default class Repo {
     return new Promise((resolve, reject) => {
       repo.add(filepath, err => {
         if (err) {
-          console.warn("Repo.add() - ERROR", err);
+          console.warn('Repo.add() - ERROR', err);
           reject(err);
         } else {
           resolve();
@@ -352,10 +378,12 @@ export default class Repo {
    */
   async save(message) {
     doingSave = true;
+
     try {
       const repo = GitApi(this.dir);
+
       await new Promise((resolve, reject) => {
-        repo.save(this.user, message, ".", err => {
+        repo.save(this.user, message, '.', err => {
           if (err) {
             reject(err);
           } else {
@@ -363,10 +391,10 @@ export default class Repo {
           }
         });
       });
-    } catch(e) {
-      console.warn("Repo.save() - ERROR", e);
+    } catch (e) {
+      console.warn('Repo.save() - ERROR', e);
       doingSave = false; // need to do here since throw will skip finally block
-      throw(e);
+      throw (e);
     } finally {
       doingSave = false;
     }
@@ -379,6 +407,7 @@ export default class Repo {
    */
   async saveDebounced(message) {
     let startSave = !doingSave; // if already saving then we don't start
+
     if (startSave) {
       await this.save(message);
     }
@@ -393,19 +422,20 @@ export default class Repo {
  * @returns {string} - The human-readable error message
  */
 export function convertGitErrorMessage(err, link) {
-  console.warn("convertGitErrorMessage()", {err, link});
-  let errMessage = "An unknown problem occurred during import";
-  if (err.includes("fatal: unable to access")) {
-    errMessage = "Unable to connect to the server. Please check your Internet connection.";
-  } else if (err.includes("fatal: The remote end hung up")) {
-    errMessage = "Unable to connect to the server. Please check your Internet connection.";
-  } else if (err.includes("Failed to load")) {
-    errMessage = "Unable to connect to the server. Please check your Internet connection.";
-  } else if (err.includes("fatal: repository") && err.includes("not found")) {
-    errMessage = "Project not found: '" + link + "'";
-  } else if (err.includes("error: failed to push some refs")) {
-    errMessage = "not a simple fast-forward";
+  console.warn('convertGitErrorMessage()', { err, link });
+  let errMessage = 'An unknown problem occurred during import';
+
+  if (err.includes('fatal: unable to access')) {
+    errMessage = 'Unable to connect to the server. Please check your Internet connection.';
+  } else if (err.includes('fatal: The remote end hung up')) {
+    errMessage = 'Unable to connect to the server. Please check your Internet connection.';
+  } else if (err.includes('Failed to load')) {
+    errMessage = 'Unable to connect to the server. Please check your Internet connection.';
+  } else if (err.includes('fatal: repository') && err.includes('not found')) {
+    errMessage = 'Project not found: \'' + link + '\'';
+  } else if (err.includes('error: failed to push some refs')) {
+    errMessage = 'not a simple fast-forward';
   }
-  console.warn("convertGitErrorMessage() returning message:", errMessage);
+  console.warn('convertGitErrorMessage() returning message:', errMessage);
   return errMessage;
 }

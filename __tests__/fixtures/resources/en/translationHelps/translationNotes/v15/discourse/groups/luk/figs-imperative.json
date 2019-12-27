@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a command, but Jesus is not commanding the man to do anything. Jesus is healing the man by commanding him to be healed. Alternate translation: \"You will now receive your sight\" (See: [[rc://en/ta/man/translate/figs-imperative]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 42
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-imperative",
+      "quote": "ἀνάβλεψον",
+      "glQuote": "Receive your sight",
+      "occurrence": 1
+    }
+  }
+]

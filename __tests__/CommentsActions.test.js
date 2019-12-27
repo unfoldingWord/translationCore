@@ -1,53 +1,46 @@
-import consts from '../src/js/actions/ActionTypes';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import consts from '../src/js/actions/ActionTypes';
 import * as actions from '../src/js/actions/CommentsActions';
+import { TRANSLATION_WORDS } from '../src/js/common/constants';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
 jest.mock('../src/js/helpers/gatewayLanguageHelpers', () => ({
-  getGatewayLanguageCodeAndQuote: () => {
-    return {
-      gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
-    };
-  }
+  getGatewayLanguageCodeAndQuote: () => ({
+    gatewayLanguageCode: 'en',
+    gatewayLanguageQuote: 'authority',
+  }),
 }));
 
 describe('CommentsActions.addComment', () => {
   test('Add Comment', () => {
     const expectedActions = [{
       type: consts.ADD_COMMENT,
-      modifiedTimestamp: "2017-10-27T18:13:41.455Z",
+      modifiedTimestamp: '2017-10-27T18:13:41.455Z',
       text: 'comment',
       userName: 'mannycolon',
       activeBook: 'tit',
       activeChapter: 1,
       activeVerse: 3,
       gatewayLanguageCode: 'en',
-      gatewayLanguageQuote: 'authority'
+      gatewayLanguageQuote: 'authority',
     }];
     const store = mockStore({
-      projectDetailsReducer: {
-        currentProjectToolsSelectedGL: {
-          translationWords: 'en'
-        }
-      },
-      toolsReducer: {
-        selectedTool: 'translationWords'
-      },
+      projectDetailsReducer: { manifest: { toolsSelectedGLs: { translationWords: 'en' } } },
+      toolsReducer: { selectedTool: TRANSLATION_WORDS },
       groupsIndexReducer: {
         groupsIndex: [
           {
             id: 'apostle',
-            name: 'apostle, apostles, apostleship'
+            name: 'apostle, apostles, apostleship',
           },
           {
             id: 'authority',
-            name: 'authority, authorities'
-          }
-        ]
+            name: 'authority, authorities',
+          },
+        ],
       },
       contextIdReducer: {
         contextId: {
@@ -55,12 +48,12 @@ describe('CommentsActions.addComment', () => {
           reference: {
             bookId: 'tit',
             chapter: 1,
-            verse: 3
-          }
-        }
-      }
+            verse: 3,
+          },
+        },
+      },
     });
-    store.dispatch(actions.comment('comment', 'mannycolon', "2017-10-27T18:13:41.455Z"));
+    store.dispatch(actions.comment('comment', 'mannycolon', '2017-10-27T18:13:41.455Z'));
 
     expect(store.getActions()).toEqual(expectedActions);
   });

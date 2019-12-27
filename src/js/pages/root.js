@@ -1,13 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { LocalizeProvider } from 'react-localize-redux';
 import setupSubscriptions from 'redux-subscriptions';
 import configureStore from '../redux/configureStore';
-import Application from './app';
 import { loadState, saveState } from '../localStorage';
+import Application from './app';
 
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();
 const store = configureStore(persistedState);
+
 /** @description:
  * The app store will be saved on state changes
  * subscribe listens for change in store
@@ -26,7 +28,9 @@ store.subscribe(setupSubscriptions(store)(
 
 module.exports.App = (
   <Provider store={store}>
-    <Application />
+    <LocalizeProvider store={store}>
+      <Application />
+    </LocalizeProvider>
   </Provider>
 );
 module.exports.dispatch = store.dispatch;

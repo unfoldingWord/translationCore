@@ -73,8 +73,21 @@ body {
     src: url(../fonts/NotoSans-BoldItalic.ttf);
 }
 
+/*
+special font for Hebrew
+ */
+@font-face {
+  font-family: Ezra;
+  src: url(../fonts/SILEOTSR.ttf);
+  font-weight: normal;
+  unicode-range: U+0590-05FF;
+}
+
+/*
+use Ezra for Hebrew characters and then Noto Sans for other characters
+ */
 * {
-  font-family: Noto Sans;
+  font-family: Ezra, Noto Sans;
 }
 
 /*
@@ -361,6 +374,10 @@ main modal. They basically override bootstrap styling for these components
   overflow: visible;
   box-shadow: none;
   left: -31415px;
+}
+
+.popover-root > div:nth-child(1) { /* removes unhelpfull scrollbar from popover-roots child auto set by material-ui */
+  overflow-y: hidden !important;
 }
 
 .menu-text-root {

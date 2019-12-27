@@ -82,6 +82,14 @@ export const getTools = state =>
   fromToolsReducer.getTools(state.toolsReducer);
 
 /**
+ * Returns an object of tools that can be used in the app
+ * @param state
+ * @returns {object[]}
+ */
+export const getToolsByKey = state =>
+  fromToolsReducer.getToolsByKey(state.toolsReducer);
+
+/**
  * Returns an array of tool names
  * @param state
  * @returns {*}
@@ -170,27 +178,28 @@ export const getActiveHomeScreenSteps = (state) => {
  * @param {object} state
  * @return {String}
  */
-export const getErrorFeedbackMessage = (state) => {
-  return fromHomeScreenReducer.getErrorFeedbackMessage(state.homeScreenReducer);
-};
+export const getErrorFeedbackMessage = (state) => fromHomeScreenReducer.getErrorFeedbackMessage(state.homeScreenReducer);
 
 /**
- * gets the error message to attach to feedback dialog (also used as flag to show feedback dialog)
+ * gets additional error details to provide feedback dialog submission
  * @param {object} state
  * @return {String}
  */
-export const getErrorFeedbackExtraDetails = (state) => {
-  return fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
-};
+export const getErrorFeedbackExtraDetails = (state) => fromHomeScreenReducer.getErrorFeedbackExtraDetails(state.homeScreenReducer);
+
+/**
+ * gets the category for error feedback dialog)
+ * @param {object} state
+ * @return {String}
+ */
+export const getErrorFeedbackCategory = (state) => fromHomeScreenReducer.getErrorFeedbackCategory(state.homeScreenReducer);
 
 /**
  * gets the function to call when feedback dialog closes
  * @param {object} state
  * @return {String}
  */
-export const getFeedbackCloseCallback = (state) => {
-  return fromHomeScreenReducer.getFeedbackCloseCallback(state.homeScreenReducer);
-};
+export const getFeedbackCloseCallback = (state) => fromHomeScreenReducer.getFeedbackCloseCallback(state.homeScreenReducer);
 
 /**
  * Checks if the user is logged in
@@ -264,6 +273,14 @@ export const getProjectName = (state) =>
  */
 export const getProjectManifest = (state) =>
   fromProjectDetailsReducer.getManifest(state.projectDetailsReducer);
+
+/**
+ * Returns the settings of the project
+ * @param {object} state
+ * @return {object}
+ */
+export const getProjectSettings = (state) =>
+  fromProjectDetailsReducer.getSettings(state.projectDetailsReducer);
 
 /**
  * Retrieves selections.
@@ -376,8 +393,9 @@ export const getContext = state =>
  */
 export const getSelectedTargetVerse = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter, verse}} = context;
+    const { reference: { chapter, verse } } = context;
     return fromResourcesReducer.getTargetVerse(state.resourcesReducer, chapter,
       verse);
   } else {
@@ -392,15 +410,16 @@ export const getSelectedTargetVerse = (state) => {
  */
 export const getSelectedTargetChapter = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter}} = context;
+    const { reference: { chapter } } = context;
     return fromResourcesReducer.getTargetChapter(state.resourcesReducer,
       chapter);
   }
 };
 
 /**
- * Returns the target language book
+ * Returns the target language bible
  * @param state
  * @return {*}
  */
@@ -408,7 +427,7 @@ export const getTargetBook = state =>
   fromResourcesReducer.getTargetBook(state.resourcesReducer);
 
 /**
- * Returns the source language book
+ * Returns the source language bible
  * @param state
  * @return {*}
  */
@@ -422,8 +441,9 @@ export const getSourceBook = state =>
  */
 export const getSelectedSourceVerse = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter, verse}} = context;
+    const { reference: { chapter, verse } } = context;
     return fromResourcesReducer.getOriginalVerse(state.resourcesReducer,
       chapter, verse);
   } else {
@@ -438,8 +458,9 @@ export const getSelectedSourceVerse = (state) => {
  */
 export const getSelectedSourceChapter = (state) => {
   const context = getContext(state);
+
   if (context) {
-    const {reference: {chapter}} = context;
+    const { reference: { chapter } } = context;
     return fromResourcesReducer.getOriginalChapter(state.resourcesReducer,
       chapter);
   }
@@ -463,6 +484,15 @@ export const getListOfOutdatedSourceContent = (state) =>
   fromSourceContentUpdatesReducer.getListOfOutdatedSourceContent(state.sourceContentUpdatesReducer);
 
 /**
+ * Returns the count of source content updates this session.  This can be used to see if dependencies on source content
+ *  need to be updated by checking if count has changed.
+ * @param {object} state
+ * @returns {Number} count of source content updates this session
+ */
+export const getSourceContentUpdateCount = (state) =>
+  fromSourceContentUpdatesReducer.getSourceContentUpdateCount(state.sourceContentUpdatesReducer);
+
+/**
  * Returns the selected tool categories for the selected project
  * @param state
  * @param toolName
@@ -481,8 +511,8 @@ export const getToolCategories = (state, toolName) =>
 export const getProjectToolProgress = (state, toolName) =>
   fromProjectDetailsReducer.getToolProgress(state.projectDetailsReducer, toolName);
 
-export const getCurrentProjectToolsSelectedGL = (state) =>
-  fromProjectDetailsReducer.getCurrentProjectToolsSelectedGL(state.projectDetailsReducer);
+export const getToolsSelectedGLs = (state) =>
+  fromProjectDetailsReducer.getToolsSelectedGLs(state.projectDetailsReducer);
 
 export const getGroupsIndex = (state) =>
   fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
@@ -492,3 +522,11 @@ export const getGroupsData = (state) =>
 
 export const getBibles = (state) =>
   fromResourcesReducer.getBibles(state.resourcesReducer);
+
+/**
+ * Returns the manifest for the source language book.
+ * @param state
+ * @returns {object}
+ */
+export const getSourceBookManifest = state =>
+  fromResourcesReducer.getSourceBookManifest(state.resourcesReducer);

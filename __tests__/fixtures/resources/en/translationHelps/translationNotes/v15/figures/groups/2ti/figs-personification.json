@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks of the sacred writings as if they were a person who could make someone else wise. Alternate translation: \"that when you read the word of God, you can become wise so as to receive salvation from Christ Jesus by faith\" (See: [[rc://en/ta/man/translate/figs-personification]])",
+      "reference": {
+        "bookId": "2ti",
+        "chapter": 3,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ἱερὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "γράμματα",
+          "occurrence": 1
+        },
+        {
+          "word": "οἶδας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "δυνάμενά",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        },
+        {
+          "word": "σοφίσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "σωτηρίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "Χριστῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the sacred writings. These are able to make you wise for salvation through faith in Christ Jesus",
+      "occurrence": 1
+    }
+  }
+]

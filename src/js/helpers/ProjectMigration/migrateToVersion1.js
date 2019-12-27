@@ -10,7 +10,10 @@ export const MIGRATE_MANIFEST_VERSION = 1;
  */
 export default (projectPath, projectLink) => {
   Version.getVersionFromManifest(projectPath, projectLink); // ensure manifest converted for tc
-  if (shouldRun(projectPath)) run(projectPath);
+
+  if (shouldRun(projectPath)) {
+    run(projectPath);
+  }
 };
 
 /**
@@ -29,6 +32,6 @@ const shouldRun = (projectPath) => {
  * @return {null}
  */
 const run = (projectPath) => {
-  console.log("migrateToVersion1(" + projectPath + ")");
+  console.log('migrateToVersion1(' + projectPath + ')');
   Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION);
 };

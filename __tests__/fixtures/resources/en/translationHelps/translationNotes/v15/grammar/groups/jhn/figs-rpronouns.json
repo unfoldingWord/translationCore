@@ -1,0 +1,290 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reflexive pronoun \"himself\" adds emphasis that it was not Jesus who was baptizing, but his disciples. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐβάπτιζεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Jesus himself was not baptizing ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reflexive pronoun \"himself\" is added to emphasize that Jesus had \"declared\" or said this.. You can translate this in your language in a way that will give emphasis to a person. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 4,
+        "verse": 44
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμαρτύρησεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For Jesus himself declared ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reflexive pronoun \"himself\" emphasizes that it is the Father, not someone less important, who has testified. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 5,
+        "verse": 37
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "πέμψας",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": "Πατὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκεῖνος",
+          "occurrence": 1
+        },
+        {
+          "word": "μεμαρτύρηκεν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The Father who sent me has himself testified ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reflexive pronoun \"himself\" makes it clear that the word \"he\" refers to Jesus. Jesus knew what he would do. (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ᾔδει",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for he himself knew ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"himself\" is a reflexive pronoun that emphasizes the word \"he.\" (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ζητεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "he himself wants",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The reflexive pronoun \"myself\" is used here to emphasize that Jesus lays down his own life. No one takes it from him. Alternate translation: \"I myself lay it down\" (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 10,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "τίθημι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀπ",
+          "occurrence": 2
+        },
+        {
+          "word": "’",
+          "occurrence": 3
+        },
+        {
+          "word": "ἐμαυτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I lay it down of myself ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The word \"him\" refers to the Son of Man. The word \"himself\" is a reflexive pronoun that refers to God. Alternate translation: \"God himself will immediately give honor to the Son of Man\" (See: [[rc://en/ta/man/translate/figs-rpronouns ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 13,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rpronouns",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "δοξάσει",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῷ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐθὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "δοξάσει",
+          "occurrence": 2
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "God will glorify him in himself, and he will glorify him immediately ",
+      "occurrence": 1
+    }
+  }
+]

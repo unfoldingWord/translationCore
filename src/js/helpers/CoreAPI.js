@@ -1,9 +1,9 @@
 import {
   closeAlertDialog,
   openAlertDialog,
-  openOptionDialog
-} from "../actions/AlertModalActions";
-import { openIgnorableAlert } from "../actions/AlertActions";
+  openOptionDialog,
+} from '../actions/AlertModalActions';
+import { openIgnorableAlert } from '../actions/AlertActions';
 
 /**
  * Provides an interface with which tools can interact with tC.
@@ -29,6 +29,7 @@ export default class CoreAPI {
     return new Promise((resolve, reject) => {
       this.dispatch(openOptionDialog(message, (action) => {
         this.dispatch(closeAlertDialog());
+
         if (action === confirmText) {
           resolve();
         } else {
@@ -57,7 +58,7 @@ export default class CoreAPI {
         },
         onCancel: () => {
           reject();
-        }
+        },
       }));
     });
   }

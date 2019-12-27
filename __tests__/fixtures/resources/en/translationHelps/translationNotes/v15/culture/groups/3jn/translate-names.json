@@ -1,0 +1,59 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a fellow believer to whom John is writing this letter. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Γαΐῳ",
+      "glQuote": "Gaius",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "He was a member of the congregation. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Διοτρέφης",
+      "glQuote": "Diotrephes",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is probably a man whom John wants Gaius and the congregation to welcome when he comes to visit. (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "3jn",
+        "chapter": 1,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Δημητρίῳ",
+      "glQuote": "Demetrius",
+      "occurrence": 1
+    }
+  }
+]

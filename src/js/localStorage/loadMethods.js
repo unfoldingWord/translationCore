@@ -1,12 +1,6 @@
-/* eslint-disable no-console */
-/**
- * @description this file holds all methods that handle preloading data into the
- *  store add your methods as needed and then import them into localstorage.js to
- *  be used with the loadState method.
- */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import CryptoJS from "crypto-js";
+import CryptoJS from 'crypto-js';
 //  consts declaration
 const PARENT = path.datadir('translationCore', 'projects');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
@@ -15,14 +9,18 @@ export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
   // return undefined, never null
   let settings = undefined;
+
   try {
     if (fs.existsSync(SETTINGS_DIRECTORY)) {
       settings = fs.readJsonSync(SETTINGS_DIRECTORY);
-      if (!settings.toolsSettings) settings.toolsSettings = {};
-        settings.onlineMode = false;
+
+      if (!settings.toolsSettings) {
+        settings.toolsSettings = {};
+      }
+      settings.onlineMode = false;
       //this is a temporary fix until there is a better workflow for persisting online/offline mode.
     } else {
-      console.log("No settings file found therefore it will be created when the settings reducer is fully loaded");
+      console.info('No settings file found therefore it will be created when the settings reducer is fully loaded');
     }
   } catch (err) {
     console.warn(err);
@@ -33,12 +31,13 @@ export const loadSettings = () => {
 export function loadUserdata() {
   let loginReducer = {
     loggedInUser: false,
-    userdata: {}
+    userdata: {},
   };
 
   let localUserdata = JSON.parse(localStorage.getItem('localUser'));
+
   if (localStorage.getItem('user')) {
-    let phrase = "tc-core";
+    let phrase = 'tc-core';
     let decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
     let userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
     loginReducer.userdata = userdata;
@@ -58,12 +57,10 @@ export function loadUserdata() {
  */
 export function getGroupName(indexObject, groupId) {
   try {
-    let groupNameIndex = Object.keys(indexObject).find((index) => {
-      return indexObject[index].id == groupId;
-    });
+    let groupNameIndex = Object.keys(indexObject).find((index) => indexObject[index].id == groupId);
     return indexObject[groupNameIndex].name;
   } catch (e) {
     console.warn('Could not find group name for id: ', groupId);
-    return "";
+    return '';
   }
 }

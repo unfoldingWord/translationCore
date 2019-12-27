@@ -1,0 +1,24 @@
+{
+  "contextId": {
+    "reference": {
+      "bookId": "tit",
+      "chapter": 1,
+      "verse": 1
+    },
+    "tool": "translationWords",
+    "groupId": "godly",
+    "quote": "εὐσέβειαν",
+    "strong": [
+      "G21500"
+    ],
+    "occurrence": 1
+  },
+  "text": "Need to change translation to french",
+  "userName": "photonomad1",
+  "activeBook": "tit",
+  "activeChapter": 1,
+  "activeVerse": 1,
+  "modifiedTimestamp": "2019-10-28T13:07:35.618Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "godliness"
+}

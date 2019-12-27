@@ -1,0 +1,463 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean the same thing. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 1,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἑτοιμάσατε",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁδὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Κυρίου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εὐθείας",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίβους",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Make ready the way of the Lord ... make his paths straight",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases are similar in meaning, except that the second is more extreme. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "Σάββασιν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀγαθοποιῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "κακοποιῆσαι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ψυχὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "σῶσαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀποκτεῖναι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to do good on the Sabbath day or to do harm ... to save a life or to kill",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"there is nothing that is hidden ... there is nothing that is secret\" Both of the phrases have the same meaning. Jesus is emphasizing that everything that is secret will be made known. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 4,
+        "verse": 22
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "οὐ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυπτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπόκρυφον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "nothing is hidden ... nothing has happened in secret",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two sentences are similar in meaning, emphasizing to his disciples that they did not need to be afraid. They can be combined into one if necessary. Alternate translation: \"Do not fear me!\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 6,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "θαρσεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "φοβεῖσθε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Take courage! ... Do not fear!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These questions have the same meaning and are used together to emphasize that they do not understand. This can be written as one question or as a statement. Alternate translation: \"Do you not yet understand?\" or \"You should perceive and understand by now the things I say and do.\" (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 8,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "οὔπω",
+          "occurrence": 1
+        },
+        {
+          "word": "νοεῖτε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "συνίετε",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Do you not yet perceive, nor understand?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two clauses have similar meanings, repeated for emphasis. In some languages it is more natural to emphasize this in another way. Alternate translation: \"Be sure to allow the little children to come to me\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 10,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἄφετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "παιδία",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔρχεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "πρός",
+          "occurrence": 1
+        },
+        {
+          "word": "με",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "κωλύετε",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτά",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Permit the little children to come to me, and do not forbid them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings: 1) Both of these questions have the same meaning and are asked together to strongly question Jesus' authority and so can be combined. Alternate translation: \"Who gave you authority to do these things?\" 2) They are two separate questions, the first asking about the nature of the authority and the second about who gave it to him. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 11,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ποίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "ποιεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τίς",
+          "occurrence": 1
+        },
+        {
+          "word": "σοι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδωκεν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξουσίαν",
+          "occurrence": 1
+        },
+        {
+          "word": "ταύτην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "ἵνα",
+          "occurrence": 1
+        },
+        {
+          "word": "ταῦτα",
+          "occurrence": 2
+        },
+        {
+          "word": "ποιῇς",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "By what authority do you do these things, and who gave you the authority to do them?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases have the same meaning to emphasize that they seized Jesus. Alternate translation: \"grabbed Jesus and seized him\" or \"seized him\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "mrk",
+        "chapter": 14,
+        "verse": 46
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ἐπέβαλαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰς",
+          "occurrence": 1
+        },
+        {
+          "word": "χεῖρας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκράτησαν",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "laid hands on him and seized him",
+      "occurrence": 1
+    }
+  }
+]

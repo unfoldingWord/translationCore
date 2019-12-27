@@ -1,11 +1,11 @@
-const download = require('./DownloadHelpers').download;
+const exec = require('child_process').exec;
 const fs = require('fs-extra');
 const mkdirp = require('mkdirp');
 const path = require('path-extra');
-const exec = require('child_process').exec;
 const open = require('opn');
 const rimraf = require('rimraf');
 const ospath = require('ospath');
+const download = require('./DownloadHelpers').download;
 
 const GIT_VERSION = '2.9.2';
 
@@ -23,11 +23,10 @@ const downloadWinGit = (version, arch) => {
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   console.log('Downloading Git to ' + dest);
   mkdirp.sync(dir);
-  if(!fs.existsSync(dest)) {
+
+  if (!fs.existsSync(dest)) {
     console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
-    return download(url, dest).then(() => {
-      return Promise.resolve(dest);
-    }).catch((e) => {
+    return download(url, dest).then(() => Promise.resolve(dest)).catch((e) => {
       // clean files
       rimraf.sync(dest);
       return Promise.reject(e);
@@ -43,13 +42,11 @@ module.exports.downloadWinGit = downloadWinGit;
  * Checks if git is installed
  * @return {Promise.<bool>} returns true if git is available
  */
-const isGitInstalled = () => {
-  return new Promise((resolve) => {
-    exec('git', (err, data) => {
-      resolve(!!data);
-    });
+const isGitInstalled = () => new Promise((resolve) => {
+  exec('git', (err, data) => {
+    resolve(!!data);
   });
-};
+});
 module.exports.isGitInstalled = isGitInstalled;
 
 /**
@@ -57,7 +54,7 @@ module.exports.isGitInstalled = isGitInstalled;
  * @return {string}
  */
 const getArchBits = () => {
-  if (process.env.PROCESSOR_ARCHITECTURE === "AMD64") {
+  if (process.env.PROCESSOR_ARCHITECTURE === 'AMD64') {
     return '64';
   } else {
     return '32';
@@ -89,27 +86,25 @@ const getArchBits = () => {
  * @param dialog the electron dialog object
  * @return {Promise} resolves with affirmative, rejects with cancel
  */
-const showElectronGitDialog = (dialog) => {
-  return new Promise((resolve, reject) => {
-    dialog.showMessageBox({
-      'title': 'Install Git',
-      'message': 'You must install Git before using translationCore.\n' +
+const showElectronGitDialog = (dialog) => new Promise((resolve, reject) => {
+  dialog.showMessageBox({
+    'title': 'Install Git',
+    'message': 'You must install Git before using translationCore.\n' +
       'Please install Git and try again.',
-      'buttons': [
-        'Download Git',
-        'Close translationCore'
-      ],
-      'defaultId': 0, // select download button
-      'cancelId': 1
-    }, response => {
-      if(response === 0) {
-        resolve();
-      } else {
-        reject();
-      }
-    });
+    'buttons': [
+      'Download Git',
+      'Close translationCore',
+    ],
+    'defaultId': 0, // select download button
+    'cancelId': 1,
+  }, response => {
+    if (response === 0) {
+      resolve();
+    } else {
+      reject();
+    }
   });
-};
+});
 
 /**
  * Displays the git setup screens if necessary.
@@ -118,7 +113,7 @@ const showElectronGitDialog = (dialog) => {
  * @return {Promise}
  */
 const showElectronGitSetup = (dialog) => {
-  if(process.platform === 'win32') {
+  if (process.platform === 'win32') {
     // install windows git
     return showElectronGitDialog(dialog).then(() => {
       console.log('Redirecting to Git download page');

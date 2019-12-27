@@ -1,47 +1,48 @@
-jest.mock('fs-extra');
 import fs from 'fs-extra';
 import path from 'path-extra';
-import _ from "lodash";
+import _ from 'lodash';
 import migrateSaveChangesInOldProjects from '../src/js/helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import Repo from '../src/js/helpers/Repo';
-import {APP_VERSION} from "../src/js/containers/home/HomeContainer";
-import {tc_EDIT_VERSION_KEY} from "../src/js/helpers/ProjectValidation/ProjectStructureValidationHelpers";
-import {getPreviousVersion} from "./ProjectStructureValidationHelpers.test";
+import {
+  APP_VERSION,
+  tc_EDIT_VERSION_KEY,
+} from '../src/js/common/constants';
+import { getPreviousVersion } from './ProjectStructureValidationHelpers.test';
+// constants
+jest.mock('fs-extra');
 
 // mock Repo
 const mockSave = jest.fn();
-jest.mock("../src/js/helpers/Repo", () => {
+
+jest.mock('../src/js/helpers/Repo', () =>
   // mocks Class initialization
-  return jest.fn().mockImplementation(() => {
-    return {save: mockSave};
-  });
-});
-const mockOpen = jest.fn((dir, user) => {
-  return new Repo(dir, user);
-});
+  jest.fn().mockImplementation(() => ({ save: mockSave }))
+);
+
+const mockOpen = jest.fn((dir, user) => new Repo(dir, user));
 Repo.open = mockOpen; // add static to class
 
 const projectPath = path.join('mock', 'path', 'to', 'project');
 const directoryToManifest = path.join(projectPath, 'manifest.json');
 const manifest_ = {
-  "generator": {
-    "name": "ts-desktop",
-    "build": "132"
+  'generator': {
+    'name': 'ts-desktop',
+    'build': '132',
   },
-  "target_language": {
-    "id": "es-419",
-    "name": "Español Latin America",
-    "direction": "ltr"
+  'target_language': {
+    'id': 'es-419',
+    'name': 'Español Latin America',
+    'direction': 'ltr',
   },
-  "project": {
-    "id": "eph",
-    "name": "Ephesians"
-  }
+  'project': {
+    'id': 'eph',
+    'name': 'Ephesians',
+  },
 };
 
 describe('Test ability to translate bookname into target language fom manifest given a project class',()=> {
-  let manifest = "";
-  const user = "DUMMY";
+  let manifest = '';
+  const user = 'DUMMY';
 
   beforeEach(() => {
     fs.__resetMockFS();
@@ -49,13 +50,13 @@ describe('Test ability to translate bookname into target language fom manifest g
   });
 
   afterEach(() => {
-      mockOpen.mockClear();
-      mockSave.mockClear();
+    mockOpen.mockClear();
+    mockSave.mockClear();
   });
 
-  test('Project has no manifest should migrate', async () => {     // this is really no project
+  test('Project has no manifest should migrate', async () => { // this is really no project
     // given
-    const projectPath = "/dummy/path";
+    const projectPath = '/dummy/path';
     const expectMigrate = true;
 
     // when

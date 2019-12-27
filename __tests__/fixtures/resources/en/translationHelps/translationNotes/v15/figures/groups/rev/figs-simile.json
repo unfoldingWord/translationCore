@@ -1,0 +1,1423 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The voice was so loud it sounded like a trumpet. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλην",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "σάλπιγγος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "loud voice like a trumpet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Wool and snow are examples of things that are very white. The repetition of \"as white as\" emphasizes that they were very white. (See: [[rc://en/ta/man/translate/figs-simile]] and [[rc://en/ta/man/translate/figs-doublet]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "κεφαλὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρίχες",
+          "occurrence": 1
+        },
+        {
+          "word": "λευκαὶ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔριον",
+          "occurrence": 1
+        },
+        {
+          "word": "λευκόν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "χιών",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His head and hair were as white as wool—as white as snow",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "His eyes are described as being full of light like a flame of fire. Alternate translation: \"his eyes were glowing like a flame of fire\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 3
+        },
+        {
+          "word": "φλὸξ",
+          "occurrence": 1
+        },
+        {
+          "word": "πυρός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "his eyes were like a flame of fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Bronze is polished to make it shine and reflect light. Alternate translation: \"His feet were very shiny like polished bronze\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδες",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅμοιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "χαλκολιβάνῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His feet were like polished bronze",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John lay down facing the ground. He was probably very frightened and was showing Jesus great respect. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 1,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἔπεσα",
+          "occurrence": 1
+        },
+        {
+          "word": "πρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδας",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fell at his feet like a dead man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "His eyes are describes as being full of light like a flame of fire. See how you translated this in [Revelation 1:14](../01/14.md). Alternate translation: \"whose eyes glow like a flame of fire\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἔχων",
+          "occurrence": 1
+        },
+        {
+          "word": "τοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀφθαλμοὺς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "φλόγα",
+          "occurrence": 1
+        },
+        {
+          "word": "πυρός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who has eyes like a flame of fire",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Bronze is polished to make it shine and reflect light. See how you translated this in [Revelation 1:15](../01/15.md). Alternate translation: \"whose feet are very shiny like polished bronze\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "πόδες",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅμοιοι",
+          "occurrence": 1
+        },
+        {
+          "word": "χαλκολιβάνῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "feet like polished bronze",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Breaking them to pieces is an image that represents either 1) destroying evildoers or 2) defeating enemies. Alternate translation: \"He will defeat his enemies completely as if breaking clay jars into pieces\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 2,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "σκεύη",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "κεραμικὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "συντρίβεται",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like clay jars he will break them into pieces",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus will come at a time when people do not expect him, just as a thief comes when not expected. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἥξω",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κλέπτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I will come as a thief",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "How the voice was like a trumpet can be stated clearly. Alternate translation: \"speaking to me loudly like the sound of a trumpet\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "σάλπιγγος",
+          "occurrence": 1
+        },
+        {
+          "word": "λαλούσης",
+          "occurrence": 1
+        },
+        {
+          "word": "μετ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐμοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "speaking to me like a trumpet",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "How it was like crystal can be stated clearly. Alternate translation: \"clear as crystal\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοία",
+          "occurrence": 1
+        },
+        {
+          "word": "κρυστάλλῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like crystal",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "How the head of each living creature appeared to John is expressed as a comparison with something more familiar. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 4,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῷον",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "πρῶτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅμοιον",
+          "occurrence": 1
+        },
+        {
+          "word": "λέοντι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 3
+        },
+        {
+          "word": "δεύτερον",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῷον",
+          "occurrence": 2
+        },
+        {
+          "word": "ὅμοιον",
+          "occurrence": 2
+        },
+        {
+          "word": "μόσχῳ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 4
+        },
+        {
+          "word": "τρίτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῷον",
+          "occurrence": 3
+        },
+        {
+          "word": "ἔχων",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 5
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 4
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 6
+        },
+        {
+          "word": "τέταρτον",
+          "occurrence": 1
+        },
+        {
+          "word": "ζῷον",
+          "occurrence": 4
+        },
+        {
+          "word": "ὅμοιον",
+          "occurrence": 3
+        },
+        {
+          "word": "ἀετῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "πετομένῳ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The first living creature was like a lion, the second living creature was like a calf, the third living creature had a face like a man, and the fourth living creature was like a flying eagle",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Sometimes sackcloth was made of black hair. People would wear sackcloth when they were mourning. The image of sackcloth is meant to lead people to think of death and mourning. Alternate translation: \"as black as mourning clothes\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "μέλας",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "σάκκος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "as black as sackcloth",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The image of blood is meant to lead people to think of death. How it was like blood can be stated clearly. Alternate translation: \"red like blood\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The sky was normally thought of as being strong like a sheet of metal, but now it was weak like a sheet of paper and easily torn and rolled up. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 6,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπεχωρίσθη",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "βιβλίον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑλισσόμενον",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The sky vanished like a scroll that was being rolled up",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are it 1) \"became red like blood\" or it 2) really became blood. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐγένετο",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "αἷμα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "became blood",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"a huge star that was blazing like a torch fell from the sky.\" The fire of the huge star looked similar to the fire of a torch. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἔπεσεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀστὴρ",
+          "occurrence": 1
+        },
+        {
+          "word": "μέγας",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "καιόμενος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "λαμπάς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "a huge star fell from the sky, blazing like a torch",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A huge furnace gives off a great amount of thick, dark smoke. Alternate translation: \"like the great amount of smoke that comes from a huge furnace\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "καπνὸς",
+          "occurrence": 2
+        },
+        {
+          "word": "καμίνου",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like smoke from a huge furnace",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A scorpion is a small insect with a poisonous stinger at the end of its long tail. The sting can cause severe pain or even death. See how you translated a similar phrase in [Revelation 9:6](../09/06.md). Alternate translation: \"with stingers like scorpion stingers\" or \"with stingers that could cause terrible pain as scorpion stingers can\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 9,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὁμοίας",
+          "occurrence": 1
+        },
+        {
+          "word": "σκορπίοις",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "κέντρα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "with stingers like scorpions",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John compares the brightness of his face with the brightness of the sun. Alternate translation: \"His face was bright like the sun\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 10,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "πρόσωπον",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἥλιος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His face was like the sun",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The water flowed from his mouth like a river flows. Alternate translation: \"in large volume\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 12,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ποταμόν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like a river",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Harsh speech is spoken of as if it were the roar of a dragon. Alternate translation: \"it spoke harshly like a dragon speaks\" (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 13,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἐλάλει",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "δράκων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "it spoke like a dragon",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This expression describes a human figure, someone who looks human. See how you translated this in [Revelation 1:13](../01/13.md). (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 14,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὅμοιον",
+          "occurrence": 1
+        },
+        {
+          "word": "Υἱὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀνθρώπου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "one like a son of man",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Jesus will come at a time when people do not expect him, just as a thief comes when not expected. See how you translated a similar phrase in [Revelation 3:3](../03/03.md). (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 16,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ἔρχομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "κλέπτης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am coming as a thief",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "She claims to be a ruler, having her own authority. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 18,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "κάθημαι",
+          "occurrence": 1
+        },
+        {
+          "word": "‘",
+          "occurrence": 1
+        },
+        {
+          "word": "βασίλισσα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I am seated as a queen",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of what he is hearing as if it were like the sound made by a very large crowd of people, a large body of rushing water, and very loud thunder. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 6
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤκουσα",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὄχλου",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 2
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 2
+        },
+        {
+          "word": "ὑδάτων",
+          "occurrence": 1
+        },
+        {
+          "word": "πολλῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 3
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 3
+        },
+        {
+          "word": "φωνὴν",
+          "occurrence": 3
+        },
+        {
+          "word": "βροντῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἰσχυρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Then I heard what sounded like the voice of a great number of people, like the roar of many waters, and like loud crashes of thunder",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "John speaks of the rider's eyes as if they shone like a flame of fire. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 19,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "οἱ",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ὀφθαλμοὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "φλὸξ",
+          "occurrence": 1
+        },
+        {
+          "word": "πυρός",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "His eyes are like a fiery flame",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This emphasizes the extremely large number of soldiers in Satan's army. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 20,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὧν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀριθμὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἄμμος",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 2
+        },
+        {
+          "word": "θαλάσσης",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "The number of them will be like the sand of the sea",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This compares the new Jerusalem to a bride who has made herself beautiful for her bridegroom. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "νύμφην",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "κεκοσμημένην",
+          "occurrence": 1
+        },
+        {
+          "word": "τῷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνδρὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῆς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "like a bride adorned for her husband",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The gold was so clear that it is spoken of as if it were glass. (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "χρυσίον",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅμοιον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑάλῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρῷ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "pure gold, like clear glass",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The gold was so clear that it is spoken of as if it was glass. See how you translated a similar phrase in [Revelation 21:18](../21/18.md). (See: [[rc://en/ta/man/translate/figs-simile]])",
+      "reference": {
+        "bookId": "rev",
+        "chapter": 21,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-simile",
+      "quote": [
+        {
+          "word": "χρυσίον",
+          "occurrence": 1
+        },
+        {
+          "word": "καθαρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "ὕαλος",
+          "occurrence": 1
+        },
+        {
+          "word": "διαυγής",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "pure gold, like transparent glass",
+      "occurrence": 1
+    }
+  }
+]

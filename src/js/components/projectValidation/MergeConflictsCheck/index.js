@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 //components
 import { Card } from 'material-ui/Card';
-import MergeConflictsCard from './MergeConflictsCard';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
+import MergeConflictsCard from './MergeConflictsCard';
 
 class MergeConflictsCheck extends Component {
   constructor(props) {
@@ -11,31 +11,41 @@ class MergeConflictsCheck extends Component {
     this.mergeConflictCards = this.mergeConflictCards.bind(this);
     this.openCard = this.openCard.bind(this);
     this.onCheck = this.onCheck.bind(this);
-    this.state = {
-      conflictCards: {}
-    };
+    this.state = { conflictCards: {} };
   }
 
   mergeConflictCards(mergeConflictCheckObject) {
-    const {translate} = this.props;
+    const { translate } = this.props;
     let allConflictsArray = mergeConflictCheckObject.conflicts;
     let conflictCards = [];
+
     for (let currentConflictIndex in allConflictsArray) {
-      if(!allConflictsArray.hasOwnProperty(currentConflictIndex)) continue;
+      if (!allConflictsArray.hasOwnProperty(currentConflictIndex)) {
+        continue;
+      }
+
       let versions = [];
       let currentConflictObject = allConflictsArray[currentConflictIndex];
       let { chapter } = currentConflictObject[0];
       let { verses } = currentConflictObject[0];
+
       for (let versionIndex in currentConflictObject) {
-        if(!currentConflictObject.hasOwnProperty(versionIndex)) continue;
-        if (isNaN(versionIndex)) continue;
+        if (!currentConflictObject.hasOwnProperty(versionIndex)) {
+          continue;
+        }
+
+        if (isNaN(versionIndex)) {
+          continue;
+        }
         versions.push({
           index: versionIndex,
           textData: currentConflictObject[versionIndex].text,
-          checked: currentConflictObject[versionIndex].checked
+          checked: currentConflictObject[versionIndex].checked,
         });
       }
+
       let card = this.state.conflictCards[currentConflictIndex];
+
       conflictCards.push(
         <MergeConflictsCard
           translate={translate}
@@ -55,7 +65,10 @@ class MergeConflictsCheck extends Component {
 
   openCard(index, open) {
     let conflictCards = JSON.parse(JSON.stringify(this.state.conflictCards));
-    if (!conflictCards[index]) conflictCards[index] = {};
+
+    if (!conflictCards[index]) {
+      conflictCards[index] = {};
+    }
     conflictCards[index].open = open;
     this.setState({ conflictCards });
   }
@@ -66,7 +79,7 @@ class MergeConflictsCheck extends Component {
 
   render() {
     let mergeConflictObject = this.props.reducers.mergeConflictReducer;
-    const {translate} = this.props;
+    const { translate } = this.props;
     const instructions = (
       <div>
         {translate('project_validation.merge_conflicts_found')}
@@ -75,11 +88,11 @@ class MergeConflictsCheck extends Component {
 
     return (
       <ProjectValidationContentWrapper translate={translate}
-                                       instructions={instructions}>
+        instructions={instructions}>
         <div style={{ width: '100%', height: '100%' }}>
           {translate('project_validation.merge_conflicts')}
           <Card style={{ width: '100%', height: '100%' }}
-                containerStyle={{ overflowY: 'auto', height: '100%' }}>
+            containerStyle={{ overflowY: 'auto', height: '100%' }}>
             {this.mergeConflictCards(mergeConflictObject)}
           </Card>
         </div>
@@ -91,9 +104,7 @@ class MergeConflictsCheck extends Component {
 MergeConflictsCheck.propTypes = {
   updateVersionSelection: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
-  reducers: PropTypes.shape({
-    mergeConflictReducer: PropTypes.object.isRequired
-  })
+  reducers: PropTypes.shape({ mergeConflictReducer: PropTypes.object.isRequired }),
 };
 
 export default MergeConflictsCheck;

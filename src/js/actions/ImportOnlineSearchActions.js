@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
+import { getTranslate } from '../selectors';
+import { DCS_BASE_URL } from '../common/constants';
 import consts from './ActionTypes';
-import 'babel-polyfill'; // polyfill for regenerator runtime which allows async/await usage
 // actions
 import * as AlertModalActions from './AlertModalActions';
-import {getTranslate} from '../selectors';
 
 export function searchReposByQuery(query) {
   return (dispatch) => {
@@ -35,51 +35,54 @@ export function searchReposByQuery(query) {
   };
 }
 
-export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => {
+export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => async (dispatch, getState) => {
+  const translate = getTranslate(getState());
+
+  if (onLine) {
+    dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
+
+    try {
+      const response = await fetch(`${DCS_BASE_URL}/api/v1/users/${user}/repos`);
+      let repos = await response.json();
+      repos = filterReposBy(repos, firstFilter, secondFilter);
+      dispatch({
+        type: consts.SET_REPOS_DATA,
+        repos,
+      });
+    } catch (e) {
+      // Failed to find repo for user specified therefore clear repos list in the reducer.
+      dispatch({
+        type: consts.SET_REPOS_DATA,
+        repos: [],
+        e,
+      });
+    }
+    dispatch(AlertModalActions.closeAlertDialog());
+  } else {
+    dispatch(AlertModalActions.openAlertDialog(translate('no_internet')));
+  }
+};
+
+export function searchByQuery(query, onLine = navigator.onLine) {
   return async (dispatch, getState) => {
     const translate = getTranslate(getState());
+
     if (onLine) {
       dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
+
       try {
-        const response = await fetch(`https://git.door43.org/api/v1/users/${user}/repos`);
-        let repos = await response.json();
-        repos = firstFilter || secondFilter ? filterReposBy(repos, firstFilter, secondFilter) : repos;
+        const response = await fetch(`${DCS_BASE_URL}/api/v1/repos/search?q=${query}&uid=0&limit=100`);
+        const json = await response.json();
+
         dispatch({
           type: consts.SET_REPOS_DATA,
-          repos
+          repos: json.data,
         });
       } catch (e) {
         // Failed to find repo for user specified therefore clear repos list in the reducer.
         dispatch({
           type: consts.SET_REPOS_DATA,
           repos: [],
-          e
-        });
-      }
-      dispatch(AlertModalActions.closeAlertDialog());
-    } else {
-      dispatch(AlertModalActions.openAlertDialog(translate('no_internet')));
-    }
-  };
-};
-
-export function searchByQuery(query, onLine = navigator.onLine) {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-    if (onLine) {
-      dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
-      try {
-        const response = await fetch(`https://git.door43.org/api/v1/repos/search?q=${query}&uid=0&limit=100`);
-        const json = await response.json();
-        dispatch({
-          type: consts.SET_REPOS_DATA,
-          repos: json.data
-        });
-      } catch (e) {
-        // Failed to find repo for user specified therefore clear repos list in the reducer.
-        dispatch({
-          type: consts.SET_REPOS_DATA,
-          repos: []
         });
       }
       dispatch(AlertModalActions.closeAlertDialog());
@@ -90,11 +93,18 @@ export function searchByQuery(query, onLine = navigator.onLine) {
 }
 
 function filterReposBy(repos, firstFilter, secondFilter) {
-  return repos.filter((repo) => {
-    if (!secondFilter) {
-      return repo.name.includes(firstFilter);
-    } else {
-      return repo.name.includes(firstFilter) && repo.name.includes(secondFilter);
-    }
-  });
+  if (!Array.isArray(repos)) { // TRICKY: if no repos then return empty array
+    return [];
+  }
+
+  if (firstFilter || secondFilter) {
+    repos = repos.filter((repo) => {
+      if (!secondFilter) {
+        return repo.name.includes(firstFilter);
+      } else {
+        return repo.name.includes(firstFilter) && repo.name.includes(secondFilter);
+      }
+    });
+  }
+  return repos;
 }

@@ -1,16 +1,18 @@
 /* eslint-disable no-console */
 import Path from 'path-extra';
 import fs from 'fs-extra';
+import * as Bible from '../common/BooksOfTheBible';
 import BooksOfBible from '../../../tcResources/books';
-import BooksOfTheBible from '../common/BooksOfTheBible';
-import ResourceAPI from "./ResourceAPI";
+import ResourceAPI from './ResourceAPI';
 
 /**
  *
  * @param {string} bookAbbr - The book abbreviation to convert
  */
 export function convertToFullBookName(bookAbbr) {
-  if (!bookAbbr) return;
+  if (!bookAbbr) {
+    return;
+  }
   return BooksOfBible[bookAbbr.toString().toLowerCase()];
 }
 
@@ -20,7 +22,7 @@ export function convertToFullBookName(bookAbbr) {
  * @return {boolean}
  */
 export function isOldTestament(bookId) {
-  return bookId in BooksOfTheBible.oldTestament;
+  return bookId in Bible.BIBLE_BOOKS.oldTestament;
 }
 
 /**
@@ -29,7 +31,7 @@ export function isOldTestament(bookId) {
  * @return {boolean}
  */
 export function isNewTestament(bookId) {
-  return bookId in BooksOfTheBible.newTestament;
+  return bookId in Bible.BIBLE_BOOKS.newTestament;
 }
 
 /**
@@ -42,15 +44,35 @@ export function isValidBibleBook(bookId) {
 }
 
 /**
- * determine
+ * returns true if this bookId and languageId match the original language bible
+ * @param {String} languageId
+ * @param {String} bookId
+ * @return {boolean}
+ */
+export function isOriginalLanguageBible(languageId, bookId) {
+  return ((languageId.toLowerCase() === Bible.NT_ORIG_LANG && bookId.toLowerCase() === Bible.NT_ORIG_LANG_BIBLE) ||
+    (languageId.toLowerCase() === Bible.OT_ORIG_LANG && bookId.toLowerCase() === Bible.OT_ORIG_LANG_BIBLE));
+}
+
+/**
+ * returns true if this bookId and languageId match the original language bible
+ * @param {String} languageId
+ * @return {boolean}
+ */
+export function isOriginalLanguage(languageId) {
+  return (languageId.toLowerCase() === Bible.NT_ORIG_LANG || languageId.toLowerCase() === Bible.OT_ORIG_LANG);
+}
+
+/**
+ * determine Original Language and Original Language bible for book
  * @param bookId
  * @return {{resourceLanguage: string, bibleID: string}}
  */
-export function getOLforBook(bookId) {
+export function getOrigLangforBook(bookId) {
   const isOT = isOldTestament(bookId);
-  const languageId = (isOT) ? 'hbo' : 'grc';
-  const bibleId = (isOT) ? 'uhb' : 'ugnt';
-  return {languageId, bibleId};
+  const languageId = (isOT) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG;
+  const bibleId = (isOT) ? Bible.OT_ORIG_LANG_BIBLE : Bible.NT_ORIG_LANG_BIBLE;
+  return { languageId, bibleId };
 }
 
 /**
@@ -70,18 +92,27 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
     const actualVersesObject = {};
     const currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));
     let chapterLength = 0;
+
     for (let currentChapterFile of currentFolderChapters) {
       let currentChapter = Path.parse(currentChapterFile).name;
-      if (!parseInt(currentChapter)) continue;
+
+      if (!parseInt(currentChapter)) {
+        continue;
+      }
       chapterLength++;
       let verseLength = 0;
+
       try {
         let currentChapterObject = fs.readJSONSync(
           Path.join(projectDir, bookId, currentChapterFile)
         );
+
         for (let verseIndex in currentChapterObject) {
           let verse = currentChapterObject[verseIndex];
-          if (verse && verseIndex > 0) verseLength++;
+
+          if (verse && verseIndex > 0) {
+            verseLength++;
+          }
         }
       } catch (e) {
         console.warn(e);

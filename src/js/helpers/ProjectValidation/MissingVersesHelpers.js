@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
-import ResourceAPI from "../ResourceAPI";
+import ResourceAPI from '../ResourceAPI';
 // constants
 const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
 
@@ -13,29 +13,35 @@ const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources')
  * @return {{}} An object of missing verses
  */
 export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
-    let allMissingVerses = {};
-    if (fs.existsSync(path.join(projectDir, bookAbbr))) {
-        for (let chapterIndex = 1; chapterIndex <= expectedVerses.chapters; chapterIndex++) {
-            let currentMissingVerses = [];
-            let chapterJSONObject;
-            try {
-                chapterJSONObject = fs.readJSONSync(path.join(projectDir, bookAbbr, chapterIndex + '.json'));
-            } catch(e) {
-                //if chapter object not found, loop should still go through and check for verses
-                //in order to detect all missing verses
-                chapterJSONObject = {};
-            }
-            for (let verseIndex = 1; verseIndex <= expectedVerses[chapterIndex]; verseIndex++) {
-                let verse = chapterJSONObject[verseIndex];
-                if (!verse) {
-                    currentMissingVerses.push(verseIndex);
-                }
-            }
-            if (currentMissingVerses.length > 0) allMissingVerses[chapterIndex] = currentMissingVerses;
-        }
+  let allMissingVerses = {};
 
+  if (fs.existsSync(path.join(projectDir, bookAbbr))) {
+    for (let chapterIndex = 1; chapterIndex <= expectedVerses.chapters; chapterIndex++) {
+      let currentMissingVerses = [];
+      let chapterJSONObject;
+
+      try {
+        chapterJSONObject = fs.readJSONSync(path.join(projectDir, bookAbbr, chapterIndex + '.json'));
+      } catch (e) {
+        //if chapter object not found, loop should still go through and check for verses
+        //in order to detect all missing verses
+        chapterJSONObject = {};
+      }
+
+      for (let verseIndex = 1; verseIndex <= expectedVerses[chapterIndex]; verseIndex++) {
+        let verse = chapterJSONObject[verseIndex];
+
+        if (!verse) {
+          currentMissingVerses.push(verseIndex);
+        }
+      }
+
+      if (currentMissingVerses.length > 0) {
+        allMissingVerses[chapterIndex] = currentMissingVerses;
+      }
     }
-    return allMissingVerses;
+  }
+  return allMissingVerses;
 };
 
 /**
@@ -59,16 +65,20 @@ export function findMissingVerses(usfmFilePath, bookAbbr) {
  */
 export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ult', version = null) {
   let indexLocation;
+
   if (version) {
     indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
   } else {
     let versionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
+
     if (versionPath === null) { // if failed, return nothing
       return {};
     }
     indexLocation = path.join(versionPath, 'index.json');
   }
+
   let expectedVersesBooks = null;
+
   if (fs.existsSync(indexLocation)) {
     expectedVersesBooks = fs.readJSONSync(indexLocation);
   }

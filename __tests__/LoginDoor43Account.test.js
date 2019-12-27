@@ -1,29 +1,31 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {shallow, mount, configure} from 'enzyme';
+import {
+  shallow, mount, configure,
+} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import LoginDoor43Account from '../src/js/components/home/usersManagement/LoginDoor43Account';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import PropTypes from 'prop-types';
+import LoginDoor43Account from '../src/js/components/home/usersManagement/LoginDoor43Account';
 
 const wrapperOptions = {
   context: { muiTheme: getMuiTheme() },
-  childContextTypes: { muiTheme: PropTypes.object }
+  childContextTypes: { muiTheme: PropTypes.object },
 };
 
 beforeAll(() => {
-  configure({adapter: new Adapter()});
+  configure({ adapter: new Adapter() });
 });
 
 test('snapshot', () => {
   const wrapper = renderer.create(
     <MuiThemeProvider>
       <LoginDoor43Account translate={key => key}
-                          showPopover={jest.fn()}
-                          loginUser={jest.fn()}
-                          setView={jest.fn()}/>
+        showPopover={jest.fn()}
+        loginUser={jest.fn()}
+        setView={jest.fn()}/>
     </MuiThemeProvider>
   );
   expect(wrapper).toMatchSnapshot();
@@ -36,15 +38,15 @@ describe('callbacks', () => {
   let wrapper;
 
   beforeEach(() => {
-    configure({adapter: new Adapter()});
+    configure({ adapter: new Adapter() });
     popoverCallback = jest.fn();
     loginCallback = jest.fn();
     setViewCallback = jest.fn();
     wrapper = mount(
       <LoginDoor43Account translate={key => key}
-                          showPopover={popoverCallback}
-                          loginUser={loginCallback}
-                          setView={setViewCallback}/>
+        showPopover={popoverCallback}
+        loginUser={loginCallback}
+        setView={setViewCallback}/>
       , wrapperOptions);
   });
 
@@ -56,8 +58,8 @@ describe('callbacks', () => {
   test('login with input', () => {
     const instance = wrapper.instance();
     const state = {
-      username: "user",
-      password: "password"
+      username: 'user',
+      password: 'password',
     };
     instance.setState(state);
     wrapper.find('button#login-btn').simulate('click');

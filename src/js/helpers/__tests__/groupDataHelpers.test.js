@@ -1,13 +1,13 @@
-import {isCheckUnique} from "../groupDataHelpers";
+import { isCheckUnique } from '../groupDataHelpers';
 
 describe('Evaluate check uniqueness', () => {
   it('evaluates the first check', () => {
-    const check =  {
+    const check = {
       contextId: {
-        groupId: "id",
+        groupId: 'id',
         occurrence: 1,
-        quote: "quote"
-      }
+        quote: 'quote',
+      },
     };
     const checks = [];
     expect(isCheckUnique(check, checks)).toBe(true);
@@ -16,97 +16,99 @@ describe('Evaluate check uniqueness', () => {
   it('evaluates a revision of an already added check', () => {
     const check = {
       contextId: {
-        groupId: "id",
+        groupId: 'id',
         occurrence: 1,
-        quote: "quote"
-      }
+        quote: 'quote',
+      },
     };
     const checks = [
-      {contextId: {
-        groupId: "id",
-        occurrence: 1,
-        quote: "quote"
-      }}
+      {
+        contextId: {
+          groupId: 'id',
+          occurrence: 1,
+          quote: 'quote',
+        },
+      },
     ];
     expect(isCheckUnique(check, checks)).toBe(false);
   });
 
   it('evaluates a different check', () => {
-    const check =  {
+    const check = {
       contextId: {
-        groupId: "id",
+        groupId: 'id',
         occurrence: 1,
-        quote: "quote"
-      }
+        quote: 'quote',
+      },
     };
     const checks = [
       {
         contextId: {
-          groupId: "hello",
+          groupId: 'hello',
           occurrence: 1,
-          quote: "world"
-        }
-      }
+          quote: 'world',
+        },
+      },
     ];
     expect(isCheckUnique(check, checks)).toBe(true);
   });
 
   it('evaluates a check with just a different quote id', () => {
-    const check =  {
+    const check = {
       contextId: {
-        groupId: "id",
+        groupId: 'id',
         occurrence: 1,
-        quote: "quote"
-      }
+        quote: 'quote',
+      },
     };
     const checks = [
       {
         contextId: {
-          groupId: "id",
+          groupId: 'id',
           occurrence: 1,
-          quote: "different"
-        }
-      }
+          quote: 'different',
+        },
+      },
     ];
     expect(isCheckUnique(check, checks)).toBe(true);
   });
 
   it('evaluates a check with just a different group id', () => {
-    const check =  {
+    const check = {
       contextId: {
-        groupId: "id",
+        groupId: 'id',
         occurrence: 1,
-        quote: "quote"
-      }
+        quote: 'quote',
+      },
     };
     const checks = [
       {
         contextId: {
-          groupId: "different",
+          groupId: 'different',
           occurrence: 1,
-          quote: "quote"
-        }
-      }
+          quote: 'quote',
+        },
+      },
     ];
     expect(isCheckUnique(check, checks)).toBe(true);
   });
 
   it('\'evaluates a check with just a different occurrence id', () => {
-    const check =  {
+    const check = {
       contextId: {
-        groupId: "id",
+        groupId: 'id',
         occurrence: 1,
-        quote: "quote"
-      }
+        quote: 'quote',
+      },
     };
     const checks = [
       {
         contextId: {
-          groupId: "id",
+          groupId: 'id',
           occurrence: 2,
-          quote: "quote"
-        }
-      }
+          quote: 'quote',
+        },
+      },
     ];
     expect(isCheckUnique(check, checks)).toBe(true);
   });

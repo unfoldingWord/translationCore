@@ -1,31 +1,25 @@
-
+/* eslint-disable require-await */
 export const mockClone = jest.fn();
-export const mockGetRemote = jest.fn(() => {
-  return {
-    owner: 'remote_owner',
-    url: 'remote_url'
-  };
-});
+export const mockGetRemote = jest.fn(() => ({
+  owner: 'remote_owner',
+  url: 'remote_url',
+}));
 export const mockRemoveRemote = jest.fn();
 export const mockAddRemote = jest.fn();
 export const mockPush = jest.fn();
+export const mockSave = jest.fn();
 export const mockParseRemoteUrl = jest.fn();
-export const mockOpen = jest.fn((dir, user) => {
-  return new mock(dir, user);
-});
-export const mockDoesRemoteRepoExist = jest.fn(async (dir) => {
-  return !dir;
-});
+export const mockOpen = jest.fn((dir, user) => new mock(dir, user));
+export const mockDoesRemoteRepoExist = jest.fn(async (dir) => !dir);
 
 // instance
-const mock = jest.fn().mockImplementation(() => {
-  return {
-    getRemote: mockGetRemote,
-    removeRemote: mockRemoveRemote,
-    addRemote: mockAddRemote,
-    push: mockPush
-  };
-});
+const mock = jest.fn().mockImplementation(() => ({
+  getRemote: mockGetRemote,
+  removeRemote: mockRemoveRemote,
+  addRemote: mockAddRemote,
+  push: mockPush,
+  save: mockSave,
+}));
 
 // static methods
 mock.open = mockOpen;

@@ -7,35 +7,30 @@ import { Glyphicon } from 'react-bootstrap';
  * Renders the project menu
  */
 class Menu extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.handleTouchTap = this.handleTouchTap.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
 
-    this.state = {
-      open: false
-    };
+    this.state = { open: false };
   }
 
-  handleTouchTap (event) {
+  handleTouchTap(event) {
     // This prevents ghost click.
     if (event.preventDefault) {
       event.preventDefault();
     }
     this.setState({
       open: true,
-      anchorEl: event.currentTarget
+      anchorEl: event.currentTarget,
     });
   }
 
-  handleRequestClose () {
-    this.setState({
-      open: false
-    });
+  handleRequestClose() {
+    this.setState({ open: false });
   }
 
-  render () {
+  render() {
     const {
       projectSaveLocation,
       translate,
@@ -43,17 +38,17 @@ class Menu extends React.Component {
       onExportUSFM,
       onUpload,
       onEdit,
-      user
+      user,
     } = this.props;
     const menuItemStyle = {
       padding: '4px',
       display: 'flex',
-      margin: '4px 4px 0 0'
+      margin: '4px 4px 0 0',
     };
     const glyphStyle = { fontSize: 'large', margin: '0 14px 0 4px' };
     return (
       <div style={{ cursor: 'pointer' }}>
-        <div onTouchTap={this.handleTouchTap}>
+        <div onClick={this.handleTouchTap}>
           <Glyphicon glyph="option-vertical" style={{ fontSize: 'large' }}/>
         </div>
         <Popover
@@ -124,7 +119,7 @@ Menu.propTypes = {
   onEdit: PropTypes.func.isRequired,
   onUpload: PropTypes.func.isRequired,
   onExportCSV: PropTypes.func.isRequired,
-  onExportUSFM: PropTypes.func.isRequired
+  onExportUSFM: PropTypes.func.isRequired,
 };
 
 export default Menu;

@@ -1,0 +1,114 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Peter speaks of Christ remaining dead as if death were a person who held him captive. Alternate translation: \"for him to remain dead\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 2,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "κρατεῖσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑπ",
+          "occurrence": 1
+        },
+        {
+          "word": "’",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "for him to be held by it ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"He is the One heaven must welcome.\" Peter speaks of heaven as if it were a person who welcomes Jesus into his home. (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 3,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "ὃν",
+          "occurrence": 1
+        },
+        {
+          "word": "δεῖ",
+          "occurrence": 1
+        },
+        {
+          "word": "οὐρανὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "δέξασθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "He is the One heaven must receive ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This speaks about the \"word of his grace\" as if it were God himself that would give the inheritance to believers. Alternate translation: \"God will give you the inheritance\" (See: [[rc://en/ta/man/translate/figs-personification ]])",
+      "reference": {
+        "bookId": "act",
+        "chapter": 20,
+        "verse": 32
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-personification",
+      "quote": [
+        {
+          "word": "δοῦναι",
+          "occurrence": 1
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "κληρονομίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to give you the inheritance ",
+      "occurrence": 1
+    }
+  }
+]

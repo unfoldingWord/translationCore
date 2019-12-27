@@ -4,6 +4,7 @@ import * as bodyUIHelpers from '../src/js/helpers/bodyUIHelpers';
 describe('bodyUIHelpers', () => {
   let index;
   let inputs = [0, 1, 2, 3];
+
   beforeEach(() => {
     index = inputs.shift();
   });
@@ -39,5 +40,4 @@ describe('bodyUIHelpers', () => {
     expect(projectColor).toBe('var(--accent-color-dark)');
     expect(toolColor).toBe('black');
   });
-
 });

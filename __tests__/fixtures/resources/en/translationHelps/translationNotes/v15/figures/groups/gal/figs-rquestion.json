@@ -1,0 +1,534 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These rhetorical questions expect the answer \"no.\" Alternate translation: \"I do not seek the approval of men, but instead I seek the approval of God. I am not seeking to please men.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 1,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἄρτι",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώπους",
+          "occurrence": 1
+        },
+        {
+          "word": "πείθω",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεόν",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 2
+        },
+        {
+          "word": "ζητῶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνθρώποις",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀρέσκειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For am I now seeking the approval of men or God? Am I seeking to please men?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question is a rebuke and can be translated as a statement. The word \"you\" is singular and refers to Peter. Alternate translation: \"you are wrong to force the Gentiles to live like Jews.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-you]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔθνη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀναγκάζεις",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰουδαΐζειν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how can you force the Gentiles to live like Jews?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Of course, that is not true!\" This expression gives the strongest possible negative answer to the preceding rhetorical question \"Does Christ become a servant of sin?\" You may have a similar expression in your language that you could use here. (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 2,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "γένοιτο",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Absolutely not!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Translate this rhetorical question as a question if you can, because the reader will be expecting a question here. Also, be sure that the reader knows that the answer to the question is \"by believing what you heard,\" not \"by doing what the law says.\" Alternate translation: \"You received the Spirit, not by doing what the law says, but by believing what you heard.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐλάβετε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκοῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Did you receive the Spirit by the works of the law or by believing what you heard?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This rhetorical question shows that Paul is surprised and even angry that the Galatians are foolish. Alternate translation: \"You are very foolish!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 3
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οὕτως",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνόητοί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Are you so foolish?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses this question to remind the Galatians that when they were suffering, they believed that they would receive some benefit. Alternate translation: \"Surely you did not think that you were suffering so many things for nothing ... !\" or \"Surely you knew that there was some good purpose for suffering so many things ... !\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τοσαῦτα",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐπάθετε",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰκῇ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Have you suffered so many things for nothing ... ?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) Paul uses this rhetorical question to warn them not to let their experiences be for nothing. Alternate translation: \"Do not let it be for nothing!\" or \"Do not stop believing in Jesus Christ and let your suffering be for nothing.\" or 2) Paul uses this question to assure them that their suffering was not for nothing. Alternate translation: \"It was certainly not for nothing!\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "εἴ",
+          "occurrence": 1
+        },
+        {
+          "word": "γε",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰκῇ",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "if indeed it was for nothing?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul asks another rhetorical question to remind the Galatians how people receive the Spirit. Alternate translation: \"He ... does not do it by the works of the law; he does it by hearing with faith.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐξ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔργων",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμου",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀκοῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Does he ... do so by the works of the law, or by hearing with faith?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses a rhetorical question to introduce the next topic he wants to discuss. It can also be translated as a statement. Alternate translation: \"I will tell you what the purpose of the law is.\" or \"Let me tell you why God gave the law.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 3,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "οὖν",
+          "occurrence": 1
+        },
+        {
+          "word": "ὁ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμος",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "What, then, was the purpose of the law?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul uses this question to rebuke the people for behaving in a way that would make them like slaves. Alternate translation: \"It seems that you want to be slaves again.\" or \"You behave as though you wanted to be like slaves again.\"(See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "οἷς",
+          "occurrence": 1
+        },
+        {
+          "word": "πάλιν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἄνωθεν",
+          "occurrence": 1
+        },
+        {
+          "word": "δουλεύειν",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Do you want to be enslaved all over again?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is introducing what he will say next. Alternate translation: \"you need to learn what the law really says.\" or \"let me tell you what the law really says.\" (See: [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 4,
+        "verse": 21
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμον",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀκούετε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "do you not listen to the law?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul is describing a situation that does not exist to emphasize that people are persecuting him because he is not preaching that people need to become Jews. This can be stated in active form. Alternate translation: \"Brothers, you can see that I am not still proclaiming circumcision because the Jews are persecuting me.\" (See: [[rc://en/ta/man/translate/figs-rquestion]] and [[rc://en/ta/man/translate/figs-hypo]])",
+      "reference": {
+        "bookId": "gal",
+        "chapter": 5,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-rquestion",
+      "quote": [
+        {
+          "word": "ἐγὼ",
+          "occurrence": 1
+        },
+        {
+          "word": "δέ",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδελφοί",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "περιτομὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτι",
+          "occurrence": 1
+        },
+        {
+          "word": "κηρύσσω",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔτι",
+          "occurrence": 2
+        },
+        {
+          "word": "διώκομαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Brothers, if I still proclaim circumcision, why am I still being persecuted?",
+      "occurrence": 1
+    }
+  }
+]

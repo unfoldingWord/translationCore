@@ -1,5 +1,5 @@
-import consts from './ActionTypes';
 import { getFeedbackCloseCallback } from '../selectors/index';
+import consts from './ActionTypes';
 
 /**
  * open feedback dialog with this message
@@ -9,7 +9,7 @@ import { getFeedbackCloseCallback } from '../selectors/index';
 export function setErrorFeedbackMessage(message) {
   return {
     type: consts.ERROR_FEEDBACK_MESSAGE,
-    val: message
+    val: message,
   };
 }
 
@@ -21,7 +21,19 @@ export function setErrorFeedbackMessage(message) {
 export function setErrorFeedbackDetails(details) {
   return {
     type: consts.ERROR_FEEDBACK_DETAILS,
-    val: details
+    val: details,
+  };
+}
+
+/**
+ * the category for error feedback dialog submission
+ * @param {string} details
+ * @return {{type: string, val: *}}
+ */
+export function setErrorFeedbackCategory(details) {
+  return {
+    type: consts.ERROR_FEEDBACK_CATEGORY,
+    val: details,
   };
 }
 
@@ -33,7 +45,7 @@ export function setErrorFeedbackDetails(details) {
 export function setFeedbackCloseCallback(callback) {
   return {
     type: consts.FEEDBACK_CALLBACK_ON_CLOSE,
-    val: callback
+    val: callback,
   };
 }
 
@@ -41,6 +53,8 @@ export function feedbackDialogClosing() {
   return ((dispatch, getState) => {
     let callback = getFeedbackCloseCallback(getState());
     dispatch(setErrorFeedbackMessage('')); // clear message that caused the popup
+    dispatch(setErrorFeedbackCategory(null)); // clear category
+    dispatch(setErrorFeedbackDetails('')); // clear error details
     dispatch(setFeedbackCloseCallback(null)); // remove callback function
     new Promise(() => {
       if (callback) {

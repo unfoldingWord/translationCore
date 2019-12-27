@@ -1,0 +1,21 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "the man who preached the gospel to the people in Colossae (See: [[rc://en/ta/man/translate/translate-names]])",
+      "reference": {
+        "bookId": "col",
+        "chapter": 1,
+        "verse": 7
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-names",
+      "quote": "Ἐπαφρᾶ",
+      "glQuote": "Epaphras",
+      "occurrence": 1
+    }
+  }
+]

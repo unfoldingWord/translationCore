@@ -1,0 +1,30 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"trembling\" is an exaggeration used to emphasize how important it is that slaves obey their masters. Alternate translation: \"and fear\" or \"as though you were shaking with fear\" (See: [[rc://en/ta/man/translate/figs-hyperbole]])",
+      "reference": {
+        "bookId": "eph",
+        "chapter": 6,
+        "verse": 5
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-hyperbole",
+      "quote": [
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "τρόμου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "and trembling",
+      "occurrence": 1
+    }
+  }
+]

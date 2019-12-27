@@ -1,0 +1,38 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "As Paul will explain in 5:11-16, widows who were younger than 60 years old might get married again. Therefore the Christian community was to care only for widows who were older than 60. (See: [[rc://en/ta/man/translate/translate-numbers]])",
+      "reference": {
+        "bookId": "1ti",
+        "chapter": 5,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-numbers",
+      "quote": [
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔλαττον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐτῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑξήκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who is not younger than sixty",
+      "occurrence": 1
+    }
+  }
+]

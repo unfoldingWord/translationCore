@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// actions
+import { VerseObjectUtils } from 'word-aligner';
 import { showPopover } from '../actions/PopoverActions';
 import { addComment } from '../actions/CommentsActions';
 import { editTargetVerse } from '../actions/VerseEditActions';
 import { toggleReminder } from '../actions/RemindersActions';
-import { changeSelections, getSelectionsFromContextId, validateSelections } from '../actions/SelectionsActions';
-import { changeCurrentContextId, changeToNextContextId, changeToPreviousContextId, loadCurrentContextId } from '../actions/ContextIdActions';
+import {
+  changeSelections, getSelectionsFromContextId, validateSelections,
+} from '../actions/SelectionsActions';
+import {
+  changeCurrentContextId, changeToNextContextId, changeToPreviousContextId, loadCurrentContextId,
+} from '../actions/ContextIdActions';
 import { addGroupData } from '../actions/GroupsDataActions';
 import { loadGroupsIndex, updateRefreshCount } from '../actions/GroupsIndexActions';
 import { setToolSettings } from '../actions/SettingsActions';
-import { closeAlertDialog, openAlertDialog, openOptionDialog } from '../actions/AlertModalActions';
+import {
+  closeAlertDialog, openAlertDialog, openOptionDialog,
+} from '../actions/AlertModalActions';
 import { closeAlert, openIgnorableAlert } from '../actions/AlertActions';
 import { selectModalTab } from '../actions/ModalActions';
 import * as ResourcesActions from '../actions/ResourcesActions';
-import { changeGroup, expandSubMenu, setFilter } from '../actions/GroupMenuActions.js';
+import {
+  changeGroup, expandSubMenu, setFilter,
+} from '../actions/GroupMenuActions.js';
 //helpers
 import { getAvailableScripturePaneSelections, getGLQuote } from '../helpers/ResourcesHelpers';
-import { VerseObjectUtils } from 'word-aligner';
 import * as LexiconHelpers from '../helpers/LexiconHelpers';
 import {
   getContext,
@@ -33,22 +40,26 @@ import {
   getSourceBook,
   getSupportingToolApis,
   getTargetBook,
-  getUsername
-} from "../selectors";
+  getUsername,
+  getProjects,
+} from '../selectors';
 import { getValidGatewayBiblesForTool } from '../helpers/gatewayLanguageHelpers';
-import ProjectAPI from "../helpers/ProjectAPI";
-import CoreAPI from "../helpers/CoreAPI";
+import ProjectAPI from '../helpers/ProjectAPI';
+import CoreAPI from '../helpers/CoreAPI';
+import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
 
 class ToolContainer extends Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.makeToolProps = this.makeToolProps.bind(this);
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
-  componentWillReceiveProps (nextProps) {
-    const { contextId: nextContext, toolApi, supportingToolApis, selectedToolName } = nextProps;
+  componentWillReceiveProps(nextProps) {
+    const {
+      contextId: nextContext, toolApi, supportingToolApis, selectedToolName,
+    } = nextProps;
+
     // if contextId does not match current tool, then remove contextId
     if (nextContext && nextContext.tool !== selectedToolName) {
       nextProps.actions.changeCurrentContextId(undefined);
@@ -56,13 +67,15 @@ class ToolContainer extends Component {
 
     // update api props
     const toolProps = this.makeToolProps(nextProps);
+
     for (const key of Object.keys(supportingToolApis)) {
       supportingToolApis[key].triggerWillReceiveProps(toolProps);
     }
+
     if (toolApi) {
       const activeToolProps = {
         ...toolProps,
-        tools: supportingToolApis
+        tools: supportingToolApis,
       };
       toolApi.triggerWillReceiveProps(activeToolProps);
     }
@@ -73,12 +86,11 @@ class ToolContainer extends Component {
    * @param {*} [nextProps] - the component props. If empty the current props will be used.
    * @return {*}
    */
-  makeToolProps (nextProps = undefined) {
-    const legacyToolsReducer = this.legacyToolsReducer();
-
+  makeToolProps(nextProps = undefined) {
     if (!nextProps) {
       nextProps = this.props;
     }
+
     const {
       currentLanguage: { code },
       contextId,
@@ -90,8 +102,10 @@ class ToolContainer extends Component {
       sourceChapter,
       selectedToolName,
       projectApi,
-      coreApi
+      coreApi,
+      projects,
     } = nextProps;
+
     return {
       // project api
       project: projectApi,
@@ -115,7 +129,7 @@ class ToolContainer extends Component {
       showIgnorableAlert: coreApi.showIgnorableAlert,
       closeAlert: coreApi.closeAlert,
       appLanguage: code,
-
+      projects,
 
       // menu location
       contextId,
@@ -142,14 +156,10 @@ class ToolContainer extends Component {
         console.warn('DEPRECATED: showIgnorableDialog is deprecated. Use showIgnorableAlert instead');
         return coreApi.showIgnorableAlert(...args);
       },
-      get toolsReducer () {
-        console.warn(`DEPRECATED: toolsReducer is deprecated.`);
-        return legacyToolsReducer;
-      },
       projectFileExistsSync: (...args) => {
         console.warn(`DEPRECATED: projectFileExistsSync is deprecated. Use projectDataPathExistsSync instead.`);
         return projectApi.dataPathExistsSync(...args);
-      }
+      },
     };
   }
 
@@ -158,17 +168,17 @@ class ToolContainer extends Component {
    * This is a temporary hack
    */
   legacyToolsReducer() {
-    const {selectedToolName, supportingToolApis} = this.props;
+    const { selectedToolName, supportingToolApis } = this.props;
     return {
       currentToolName: selectedToolName,
-      apis: supportingToolApis
+      apis: supportingToolApis,
     };
   }
 
-  render () {
+  render() {
     const {
       supportingToolApis,
-      Tool
+      Tool,
     } = this.props;
 
     const props = { ...this.props };
@@ -179,12 +189,14 @@ class ToolContainer extends Component {
 
     const activeToolProps = {
       ...this.makeToolProps(),
-      tools: supportingToolApis
+      tools: supportingToolApis,
     };
 
     return (
       <div
-        style={{ display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)' }}>
+        style={{
+          display: 'flex', flex: 'auto', height: 'calc(100vh - 30px)',
+        }}>
         <div style={{ flex: 'auto', display: 'flex' }}>
           <Tool
             {...props} // TODO: this is deprecated
@@ -198,6 +210,7 @@ class ToolContainer extends Component {
 }
 
 ToolContainer.propTypes = {
+  projects: PropTypes.array.isRequired,
   toolApi: PropTypes.any,
   supportingToolApis: PropTypes.object.isRequired,
   Tool: PropTypes.any,
@@ -214,16 +227,15 @@ ToolContainer.propTypes = {
   closeAlert: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
 
-  selectedToolName: PropTypes.string.isRequired
+  selectedToolName: PropTypes.string.isRequired,
 };
 
-ToolContainer.contextTypes = {
-  store: PropTypes.any
-};
+ToolContainer.contextTypes = { store: PropTypes.any };
 
 const mapStateToProps = state => {
   const projectPath = getProjectSaveLocation(state);
   return {
+    projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
     selectedToolName: getSelectedToolName(state),
     Tool: getSelectedToolContainer(state),
@@ -240,7 +252,6 @@ const mapStateToProps = state => {
     username: getUsername(state),
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
-    loaderReducer: state.loaderReducer,
     resourcesReducer: state.resourcesReducer,
     commentsReducer: state.commentsReducer,
     remindersReducer: state.remindersReducer,
@@ -251,112 +262,113 @@ const mapStateToProps = state => {
     verseEditReducer: state.verseEditReducer,
     groupsIndexReducer: state.groupsIndexReducer,
     groupsDataReducer: state.groupsDataReducer,
-    groupMenuReducer: state.groupMenuReducer
+    groupMenuReducer: state.groupMenuReducer,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    coreApi: new CoreAPI(dispatch),
-    openIgnorableAlert: (id, message, ignorable) => {
-      dispatch(openIgnorableAlert(id, message, ignorable));
+const mapDispatchToProps = (dispatch) => ({
+  coreApi: new CoreAPI(dispatch),
+  openIgnorableAlert: (id, message, ignorable) => {
+    dispatch(openIgnorableAlert(id, message, ignorable));
+  },
+  closeAlert: id => {
+    console.warn('DEPRECATED: closeAlert is deprecated. Use tc.closeAlert instead');
+    dispatch(closeAlert(id));
+  },
+  actions: {
+    goToNext: () => {
+      dispatch(changeToNextContextId());
     },
-    closeAlert: id => {
-      console.warn('DEPRECATED: closeAlert is deprecated. Use tc.closeAlert instead');
-      dispatch(closeAlert(id));
+    goToPrevious: () => {
+      dispatch(changeToPreviousContextId());
     },
-    actions: {
-      goToNext: () => {
-        dispatch(changeToNextContextId());
-      },
-      goToPrevious: () => {
-        dispatch(changeToPreviousContextId());
-      },
-      showPopover: (title, bodyText, positionCoord) => {
-        dispatch(showPopover(title, bodyText, positionCoord));
-      },
-      loadResourceArticle: (resourceType, articleId, languageId) => {
-        dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId,
-          languageId));
-      },
-      loadLexiconEntry: (lexiconId, entryId) => {
-        dispatch(ResourcesActions.loadLexiconEntry(lexiconId, entryId));
-      },
-      addComment: (text, userName) => {
-        dispatch(addComment(text, userName));
-      },
-      changeSelections: (selections, userName) => {
-        dispatch(changeSelections(selections, userName));
-      },
-      validateSelections: (targetVerse) => {
-        dispatch(validateSelections(targetVerse));
-      },
-      toggleReminder: (userName) => {
-        dispatch(toggleReminder(userName));
-      },
-      selectModalTab: (tab, section, vis) => {
-        dispatch(selectModalTab(tab, section, vis));
-      },
-      editTargetVerse: (chapter, verse, before, after, tags, username) => {
-        dispatch(
-          editTargetVerse(chapter, verse, before, after, tags, username));
-      },
-      changeCurrentContextId: (contextId) => {
-        dispatch(changeCurrentContextId(contextId));
-      },
-      loadCurrentContextId: () => {
-        dispatch(loadCurrentContextId());
-      },
-      addGroupData: (groupId, groupData) => {
-        dispatch(addGroupData(groupId, groupData));
-      },
-      setGroupsIndex: (groupsIndex) => {
-        dispatch(loadGroupsIndex(groupsIndex));
-      },
-      updateRefreshCount: () => {
-        dispatch(updateRefreshCount());
-      },
-      setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
-        dispatch(
-          setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData));
-      },
-      openAlertDialog: (message) => {
-        console.warn('DEPRECATED: openAlertDialog is deprecated. Use tc.showAlert instead');
-        dispatch(openAlertDialog(message));
-      },
-      openOptionDialog: (alertMessage, callback, button1Text, button2Text) => {
-        console.warn('DEPRECATED: openOptionsDialog is deprecated. Use  tc.showDialog instead.');
-        dispatch(
-          openOptionDialog(alertMessage, callback, button1Text, button2Text));
-      },
-      closeAlertDialog: () => {
-        console.warn('DEPRECATED: closeAlertDialog is deprecated. use tc.closeAlert instead');
-        dispatch(closeAlertDialog());
-      },
-      groupMenuChangeGroup: contextId => {
-        dispatch(changeGroup(contextId));
-      },
-      groupMenuExpandSubMenu: isSubMenuExpanded => {
-        dispatch(expandSubMenu(isSubMenuExpanded));
-      },
-      setFilter: (name, value) => {
-        dispatch(setFilter(name, value));
-      },
-      getAvailableScripturePaneSelections: resourceList => {
-        dispatch(getAvailableScripturePaneSelections(resourceList));
-      },
-      makeSureBiblesLoadedForTool: () => {
-        dispatch(ResourcesActions.makeSureBiblesLoadedForTool());
-      },
-      // TODO: these are not actions and should be inserted directly into the tool
-      getWordListForVerse: VerseObjectUtils.getWordListForVerse,
-      getGLQuote: getGLQuote,
-      getLexiconData: LexiconHelpers.getLexiconData,
-      getSelectionsFromContextId: getSelectionsFromContextId,
-      getValidGatewayBiblesForTool: getValidGatewayBiblesForTool
-    }
-  };
-};
+    showPopover: (title, bodyText, positionCoord) => {
+      dispatch(showPopover(title, bodyText, positionCoord));
+    },
+    loadResourceArticle: (resourceType, articleId, languageId, category='', async = false) => {
+      dispatch(ResourcesActions.loadResourceArticle(resourceType, articleId,
+        languageId, category, async));
+    },
+    loadLexiconEntry: (lexiconId, entryId) => {
+      dispatch(ResourcesActions.loadLexiconEntry(lexiconId, entryId));
+    },
+    addComment: (text) => {
+      dispatch(addComment(text));
+    },
+    changeSelections: (selections, nothingToSelect) => {
+      dispatch(changeSelections(selections, null, null, null, nothingToSelect));
+    },
+    validateSelections: (targetVerse) => {
+      dispatch(validateSelections(targetVerse));
+    },
+    toggleReminder: () => {
+      dispatch(toggleReminder());
+    },
+    selectModalTab: (tab, section, vis) => {
+      dispatch(selectModalTab(tab, section, vis));
+    },
+    editTargetVerse: (chapter, verse, before, after, tags) => {
+      dispatch(
+        editTargetVerse(chapter, verse, before, after, tags));
+    },
+    changeCurrentContextId: (contextId) => {
+      dispatch(changeCurrentContextId(contextId));
+    },
+    loadCurrentContextId: () => {
+      dispatch(loadCurrentContextId());
+    },
+    addGroupData: (groupId, groupData) => {
+      dispatch(addGroupData(groupId, groupData));
+    },
+    setGroupsIndex: (groupsIndex) => {
+      dispatch(loadGroupsIndex(groupsIndex));
+    },
+    updateRefreshCount: () => {
+      dispatch(updateRefreshCount());
+    },
+    setToolSettings: (NAMESPACE, settingsPropertyName, toolSettingsData) => {
+      dispatch(
+        setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData));
+    },
+    openAlertDialog: (message) => {
+      console.warn('DEPRECATED: openAlertDialog is deprecated. Use tc.showAlert instead');
+      dispatch(openAlertDialog(message));
+    },
+    openOptionDialog: (alertMessage, callback, button1Text, button2Text) => {
+      console.warn('DEPRECATED: openOptionsDialog is deprecated. Use  tc.showDialog instead.');
+      dispatch(
+        openOptionDialog(alertMessage, callback, button1Text, button2Text));
+    },
+    closeAlertDialog: () => {
+      console.warn('DEPRECATED: closeAlertDialog is deprecated. use tc.closeAlert instead');
+      dispatch(closeAlertDialog());
+    },
+    groupMenuChangeGroup: contextId => {
+      dispatch(changeGroup(contextId));
+    },
+    groupMenuExpandSubMenu: isSubMenuExpanded => {
+      dispatch(expandSubMenu(isSubMenuExpanded));
+    },
+    setFilter: (name, value) => {
+      dispatch(setFilter(name, value));
+    },
+    getAvailableScripturePaneSelections: resourceList => {
+      dispatch(getAvailableScripturePaneSelections(resourceList));
+    },
+    makeSureBiblesLoadedForTool: () => {
+      dispatch(ResourcesActions.makeSureBiblesLoadedForTool());
+    },
+    onInvalidCheck: (contextId, selectedGL, moveToNext) => {
+      dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, moveToNext));
+    },
+    // TODO: these are not actions and should be inserted directly into the tool
+    getWordListForVerse: VerseObjectUtils.getWordListForVerse,
+    getGLQuote: getGLQuote,
+    getLexiconData: LexiconHelpers.getLexiconData,
+    getSelectionsFromContextId: getSelectionsFromContextId,
+    getValidGatewayBiblesForTool: getValidGatewayBiblesForTool,
+  },
+});
 
 export default connect(
   mapStateToProps,

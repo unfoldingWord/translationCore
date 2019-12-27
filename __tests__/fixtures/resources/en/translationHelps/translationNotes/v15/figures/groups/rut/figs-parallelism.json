@@ -1,0 +1,158 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is a poetic expression that is very similar to the previous sentence. Alternate translation: \"May Yahweh give back to you even more than you have given\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "וּ",
+          "occurrence": 1
+        },
+        {
+          "word": "תְהִ֨י",
+          "occurrence": 1
+        },
+        {
+          "word": "מַשְׂכֻּרְתֵּ֜",
+          "occurrence": 1
+        },
+        {
+          "word": "ךְ",
+          "occurrence": 2
+        },
+        {
+          "word": "שְׁלֵמָ֗ה",
+          "occurrence": 1
+        },
+        {
+          "word": "מֵ",
+          "occurrence": 1
+        },
+        {
+          "word": "עִ֤ם",
+          "occurrence": 1
+        },
+        {
+          "word": "יְהוָה֙",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "may full payment be given to you by Yahweh",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Naomi said almost the same thing in two different ways to show that she was very interested in knowing what had happened to Ruth that day. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "אֵיפֹ֨ה",
+          "occurrence": 1
+        },
+        {
+          "word": "לִקַּ֤טְתְּ",
+          "occurrence": 1
+        },
+        {
+          "word": "הַ",
+          "occurrence": 1
+        },
+        {
+          "word": "יּוֹם֙",
+          "occurrence": 1
+        },
+        {
+          "word": "וְ",
+          "occurrence": 1
+        },
+        {
+          "word": "אָ֣נָה",
+          "occurrence": 1
+        },
+        {
+          "word": "עָשִׂ֔ית",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Where have you gleaned today, and where did you work?",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The second phrase repeats and expands the first. This is a Hebrew style of emphasis. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "rut",
+        "chapter": 2,
+        "verse": 20
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "קָר֥וֹב",
+          "occurrence": 1
+        },
+        {
+          "word": "לָ֨",
+          "occurrence": 1
+        },
+        {
+          "word": "נוּ֙",
+          "occurrence": 1
+        },
+        {
+          "word": "הָ",
+          "occurrence": 1
+        },
+        {
+          "word": "אִ֔ישׁ",
+          "occurrence": 1
+        },
+        {
+          "word": "מִֽ",
+          "occurrence": 1
+        },
+        {
+          "word": "גֹּאֲלֵ֖",
+          "occurrence": 1
+        },
+        {
+          "word": "נוּ",
+          "occurrence": 1
+        },
+        {
+          "word": "הֽוּא",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "That man is our relative, one of our kinsman-redeemers",
+      "occurrence": 1
+    }
+  }
+]

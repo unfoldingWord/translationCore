@@ -1,0 +1,106 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "A \"stadium\" is 185 meters. Alternate translation: \"about five or six kilometers\" (See: [[rc://en/ta/man/translate/translate-bdistance ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 6,
+        "verse": 19
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "quote": [
+        {
+          "word": "ὡς",
+          "occurrence": 1
+        },
+        {
+          "word": "σταδίους",
+          "occurrence": 1
+        },
+        {
+          "word": "εἴκοσι",
+          "occurrence": 1
+        },
+        {
+          "word": "πέντε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "τριάκοντα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "about twenty-five or thirty stadia ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"about three kilometers away.\" A \"stadium\" is 185 meters. (See: [[rc://en/ta/man/translate/translate-bdistance ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 11,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "quote": [
+        {
+          "word": "ἀπὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "σταδίων",
+          "occurrence": 1
+        },
+        {
+          "word": "δεκαπέντε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "fifteen stadia away ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"90 meters.\" A cubit was a little less than half a meter. (See: [[rc://en/ta/man/translate/translate-bdistance ]])",
+      "reference": {
+        "bookId": "jhn",
+        "chapter": 21,
+        "verse": 8
+      },
+      "tool": "translationNotes",
+      "groupId": "translate-bdistance",
+      "quote": [
+        {
+          "word": "πηχῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "διακοσίων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "two hundred cubits ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Paul speaks as if death were a person, and he uses this question to mock the power of death, which Christ has defeated. Alternate translation: \"Death has no victory. Death has no sting.\" (See: [[rc://en/ta/man/translate/figs-apostrophe]] and [[rc://en/ta/man/translate/figs-rquestion]])",
+      "reference": {
+        "bookId": "1co",
+        "chapter": 15,
+        "verse": 55
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-apostrophe",
+      "quote": [
+        {
+          "word": "ποῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "σου",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "θάνατε",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "νῖκος",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 1
+        },
+        {
+          "word": "ποῦ",
+          "occurrence": 2
+        },
+        {
+          "word": "σου",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "θάνατε",
+          "occurrence": 2
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "κέντρον",
+          "occurrence": 1
+        },
+        {
+          "word": "?",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "Death, where is your victory? Death, where is your sting?",
+      "occurrence": 1
+    }
+  }
+]

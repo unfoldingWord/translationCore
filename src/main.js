@@ -1,10 +1,13 @@
 const electron = require('electron');
+const path = require('path-extra');
+const ospath = require('ospath');
+const { download } = require('@neutrinog/electron-dl');
+const p = require('../package.json');
 const isGitInstalled = require('./js/helpers/InstallationHelpers').isGitInstalled;
 const showElectronGitSetup = require('./js/helpers/InstallationHelpers').showElectronGitSetup;
-const p = require('../package.json');
-const {download} = require('@neutrinog/electron-dl');
+const { injectFileLogging } = require('./js/helpers/logger');
 const DownloadManager = require('./js/DownloadManager');
-
+const { DCS_BASE_URL } = require('./js/common/constants');
 const ipcMain = electron.ipcMain;
 // Module to control application life.
 const app = electron.app;
@@ -19,29 +22,33 @@ let mainWindow;
 let helperWindow;
 let splashScreen;
 
+// to capture start up console logging
+const version = `v${p.version} (${process.env.BUILD})`;
+injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
+
 const downloadManager = new DownloadManager();
 
 /**
  * Creates the main browser window
  */
-function createMainWindow () {
+function createMainWindow() {
   mainWindow = new BrowserWindow({
     icon: './images/TC_Icon.png',
     title: 'translationCore',
     autoHideMenuBar: true,
     minWidth: 1200,
-    minHeight: 650,
+    minHeight: 689,
     center: true,
     useContentSize: true,
     show: false,
   });
 
-  if('developer_mode' in p && p.developer_mode) {
+  if ('developer_mode' in p && p.developer_mode) {
     mainWindow.webContents.openDevTools();
   }
 
   isGitInstalled().then(installed => {
-    if(installed) {
+    if (installed) {
       console.log('createMainWindow() - Git is installed.');
       mainWindow.loadURL(`file://${__dirname}/index.html`);
     } else {
@@ -96,14 +103,14 @@ function createMainSplash() {
     icon: './images/TC_Icon.png',
     frame: false,
     center: true,
-    show: false
+    show: false,
   });
 
   // splashScreen.webContents.openDevTools();
 
   splashScreen.loadURL(`file://${__dirname}/html/splash.html`);
 
-  splashScreen.on('closed', function() {
+  splashScreen.on('closed', function () {
     splashScreen = null;
   });
 }
@@ -118,7 +125,7 @@ function createHelperWindow(url) {
     center: true,
     autoHideMenuBar: true,
     show: true,
-    frame: true
+    frame: true,
   });
 
   helperWindow.loadURL(url);
@@ -152,7 +159,7 @@ app.on('window-all-closed', function () {
   // On OS X it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   // if (process.platform !== 'darwin') {
-    app.quit();
+  app.quit();
   // }
 });
 
@@ -169,14 +176,15 @@ ipcMain.on('save-as', function (event, arg) {
   event.returnValue = input || false;
 });
 
-ipcMain.on('download-cancel', function(event, args) {
+ipcMain.on('download-cancel', function (event, args) {
   const item = downloadManager.get(args.id);
-  if(item) {
+
+  if (item) {
     item.cancel();
   }
 });
 
-ipcMain.on('download', function(event, args) {
+ipcMain.on('download', function (event, args) {
   const options = {
     saveAs: true,
     filename: args.name,
@@ -187,14 +195,15 @@ ipcMain.on('download', function(event, args) {
     onStarted: (item) => {
       const id = downloadManager.add(item);
       event.sender.send('download-started', id);
-    }
+    },
   };
+
   download(BrowserWindow.getFocusedWindow(), args.url, options)
     .then((dl) => {
       event.sender.send('download-success', dl.getSavePath());
     }).catch(error => {
       event.sender.send('download-error', error);
-  });
+    });
 });
 
 ipcMain.on('load-local', function (event, arg) {
@@ -202,11 +211,11 @@ ipcMain.on('load-local', function (event, arg) {
   event.returnValue = input || false;
 });
 
-ipcMain.on('open-helper', (event, url = "http://git.door43.org/") => {
-    if (helperWindow) {
-        helperWindow.show();
-        helperWindow.loadURL(url);
-    } else {
-        createHelperWindow(url);
-    }
+ipcMain.on('open-helper', (event, url = DCS_BASE_URL + '/') => {
+  if (helperWindow) {
+    helperWindow.show();
+    helperWindow.loadURL(url);
+  } else {
+    createHelperWindow(url);
+  }
 });

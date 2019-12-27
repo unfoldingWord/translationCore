@@ -1,0 +1,213 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exclamation, not a question. Jesus emphasizes the fact that people are much more valuable to God then birds. (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "πόσῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμεῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "διαφέρετε",
+          "occurrence": 1
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "πετεινῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How much more valuable you are than the birds!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exclamation, not a question. Jesus emphasizes that he will certainly take care of people even better than he does the grass. This could be stated clearly. Alternate translation: \"he will certainly clothe you even better\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 28
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "πόσῳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μᾶλλον",
+          "occurrence": 1
+        },
+        {
+          "word": "ὑμᾶς",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how much more will he clothe you",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This exclamation emphasizes how much he wants this to happen. Alternate translation: \"I wish very much that it was already lit\" or \"how I wish that it had already begun\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 49
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "τί",
+          "occurrence": 1
+        },
+        {
+          "word": "θέλω",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤδη",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀνήφθη",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how I wish that it were already kindled",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This exclamation emphasizes how distressed he was. Alternate translation: \"I am terribly distressed and will be so until I complete this baptism of suffering\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 12,
+        "verse": 50
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "συνέχομαι",
+          "occurrence": 1
+        },
+        {
+          "word": "ἕως",
+          "occurrence": 1
+        },
+        {
+          "word": "ὅτου",
+          "occurrence": 1
+        },
+        {
+          "word": "τελεσθῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "!",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how I am distressed until it is completed!",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an exclamation, and not a question. Alternate translation: \"It is so very hard ... kingdom of God!\" (See: [[rc://en/ta/man/translate/figs-exclamations]])",
+      "reference": {
+        "bookId": "luk",
+        "chapter": 18,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclamations",
+      "quote": [
+        {
+          "word": "πῶς",
+          "occurrence": 1
+        },
+        {
+          "word": "δυσκόλως",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "τὴν",
+          "occurrence": 1
+        },
+        {
+          "word": "Βασιλείαν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "Θεοῦ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "How difficult it is ... the kingdom of God!",
+      "occurrence": 1
+    }
+  }
+]

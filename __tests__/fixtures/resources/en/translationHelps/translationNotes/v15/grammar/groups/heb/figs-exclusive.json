@@ -1,0 +1,53 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Even though the author uses the plural pronoun \"we,\" he is most likely referring only to himself. Because the writer does not include his readers here, the word \"we\" is exclusive. Alternate translation: \"I am saying\" or \"I am writing\" (See: [[rc://en/ta/man/translate/figs-exclusive]] and [[rc://en/ta/man/translate/figs-pronouns]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 8,
+        "verse": 1
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": "λεγομένοις",
+      "glQuote": "we are saying",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"us\" refers to the author and his companions, but not to the readers. (See: [[rc://en/ta/man/translate/figs-exclusive]])",
+      "reference": {
+        "bookId": "heb",
+        "chapter": 13,
+        "verse": 18
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-exclusive",
+      "quote": [
+        {
+          "word": "προσεύχεσθε",
+          "occurrence": 1
+        },
+        {
+          "word": "περὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Pray for us",
+      "occurrence": 1
+    }
+  }
+]

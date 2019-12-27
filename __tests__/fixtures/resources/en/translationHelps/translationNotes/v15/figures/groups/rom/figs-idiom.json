@@ -1,0 +1,670 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"law to themselves\" is an idiom that means that these people naturally obey God's laws. Alternate translation: \"have God's laws already inside them\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 14
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἔθνη",
+          "occurrence": 1
+        },
+        {
+          "word": "τὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔχοντα",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "ἑαυτοῖς",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "νόμος",
+          "occurrence": 1
+        },
+        {
+          "word": ";",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Gentiles, who do not have the law ... are a law to themselves ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"bears witness\" refers to the knowledge they gain from the law that God has written in their hearts. Alternate translation: \"tells them if they are disobeying or obeying God's law\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 2,
+        "verse": 15
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "συνμαρτυρούσης",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτῶν",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "μεταξὺ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλων",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "τῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "λογισμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "κατηγορούντων",
+          "occurrence": 1
+        },
+        {
+          "word": "ἢ",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἀπολογουμένων",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "bears witness to them, and their own thoughts either accuse or defend them",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means the people do not even want to think about God. They want to avoid him. Alternate translation: \"They have all turned away from God\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 3,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "πάντες",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐξέκλιναν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "They have all turned away ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"follow in the steps of faith\" is an idiom that means to follow someone's example of follow. Alternate translation: \"who follow our father Abraham's example of faith\" or \"who have faith as our father Abraham did\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τοῖς",
+          "occurrence": 2
+        },
+        {
+          "word": "στοιχοῦσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῖς",
+          "occurrence": 3
+        },
+        {
+          "word": "ἴχνεσιν",
+          "occurrence": 1
+        },
+        {
+          "word": "τῆς",
+          "occurrence": 1
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "πίστεως",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 1
+        },
+        {
+          "word": "πατρὸς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἀβραάμ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "who follow in the steps of faith of our father Abraham ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Raised ... from the dead\" here is an idiom for \"caused to live again.\" Alternate translation: \"him who caused Jesus our Lord to live again\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 4,
+        "verse": 24
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγείραντα",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "Κύριον",
+          "occurrence": 1
+        },
+        {
+          "word": "ἡμῶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 4
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "him who raised Jesus our Lord from the dead ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrase \"once for all\" means to finish something completely. You can make this full meaning explicit in your translation. Alternate translation: \"For when he died he broke the power of sin completely\" (See: [[rc://en/ta/man/translate/figs-idiom]] and [[rc://en/ta/man/translate/figs-explicit ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 6,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ὃ",
+          "occurrence": 1
+        },
+        {
+          "word": "γὰρ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέθανεν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀπέθανεν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐφάπαξ",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "For in regard to the death that he died to sin, he died once for all ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Raised\" here is an idiom for \"caused to live again.\" This can be translated in active form. Alternate translation: \"to him who was caused to live again\" or \"to him whom God raised from the dead\" or \"to him whom God caused to live again\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 7,
+        "verse": 4
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τῷ",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐγερθέντι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "to him who was raised from the dead ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) a person is spiritually dead to the power of sin or 2) the physical body will still die because of sin. (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "μὲν",
+          "occurrence": 1
+        },
+        {
+          "word": "σῶμα",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἁμαρτίαν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the body is dead with respect to sin ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Possible meanings are 1) a person is spiritually alive because God has given him power to do what is right or 2) God will bring the person back to life after he dies because God is righteous and gives believers eternal life. (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 10
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 2
+        },
+        {
+          "word": "…"
+        },
+        {
+          "word": "Πνεῦμα",
+          "occurrence": 1
+        },
+        {
+          "word": "ζωὴ",
+          "occurrence": 1
+        },
+        {
+          "word": "διὰ",
+          "occurrence": 2
+        },
+        {
+          "word": "δικαιοσύνην",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "the spirit is alive with respect to righteousness ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here to raise is an idiom for causing someone who has died to become alive again. Alternate translation: \"caused Jesus to live again\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 8,
+        "verse": 11
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἐγείραντος",
+          "occurrence": 1
+        },
+        {
+          "word": "τὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "Ἰησοῦν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "raised Jesus ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "Here \"unceasing pain in my heart\" is an idiom that Paul uses to share his emotional distress. Alternate translation: \"I tell you that I grieve very greatly and deeply\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 2
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "λύπη",
+          "occurrence": 1
+        },
+        {
+          "word": "μοί",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐστιν",
+          "occurrence": 1
+        },
+        {
+          "word": "μεγάλη",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀδιάλειπτος",
+          "occurrence": 1
+        },
+        {
+          "word": "ὀδύνη",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "καρδίᾳ",
+          "occurrence": 1
+        },
+        {
+          "word": "μου",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "that for me there is great sorrow and unceasing pain in my heart ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Raised\" here is an idiom for \"to cause something to be what it is.\" Alternate translation: \"I made you the powerful man that you are\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 9,
+        "verse": 17
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "ἐξήγειρά",
+          "occurrence": 1
+        },
+        {
+          "word": "σε",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I raised you up ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "\"Raised\" here is an idiom for \"caused to live again.\" Alternate translation: \"caused him to live again\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 10,
+        "verse": 9
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "αὐτὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἤγειρεν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "νεκρῶν",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "raised him from the dead ",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "This is an idiom that means to live in unity. Alternate translation: \"Agree with one another\" or \"Live in unity with each other\" (See: [[rc://en/ta/man/translate/figs-idiom ]])",
+      "reference": {
+        "bookId": "rom",
+        "chapter": 12,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-idiom",
+      "quote": [
+        {
+          "word": "τὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "αὐτὸ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 1
+        },
+        {
+          "word": "ἀλλήλους",
+          "occurrence": 1
+        },
+        {
+          "word": "φρονοῦντες",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "Be of the same mind toward one another ",
+      "occurrence": 1
+    }
+  }
+]

@@ -1,0 +1,182 @@
+[
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"standing firm in one spirit\" and \"with one mind striving together\" share similar meanings and emphasize the importance of unity. (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 1,
+        "verse": 27
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "ὅτι",
+          "occurrence": 1
+        },
+        {
+          "word": "στήκετε",
+          "occurrence": 1
+        },
+        {
+          "word": "ἐν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἑνὶ",
+          "occurrence": 1
+        },
+        {
+          "word": "πνεύματι",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 5
+        },
+        {
+          "word": "μιᾷ",
+          "occurrence": 1
+        },
+        {
+          "word": "ψυχῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "συναθλοῦντες",
+          "occurrence": 1
+        },
+        {
+          "word": "τῇ",
+          "occurrence": 1
+        },
+        {
+          "word": "πίστει",
+          "occurrence": 1
+        },
+        {
+          "word": "τοῦ",
+          "occurrence": 3
+        },
+        {
+          "word": "εὐαγγελίου",
+          "occurrence": 2
+        }
+      ],
+      "glQuote": "that you are standing firm in one spirit, with one mind striving together for the faith of the gospel",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "The phrases \"run in vain\" and \"labor in vain\" here mean the same thing. Paul uses them together to emphasize how hard he has worked to help people believe in Christ. Alternate translation: \"I did not work so hard for nothing\" (See: [[rc://en/ta/man/translate/figs-parallelism]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 2,
+        "verse": 16
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "οὐκ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 3
+        },
+        {
+          "word": "κενὸν",
+          "occurrence": 1
+        },
+        {
+          "word": "ἔδραμον",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 2
+        },
+        {
+          "word": "οὐδὲ",
+          "occurrence": 1
+        },
+        {
+          "word": "εἰς",
+          "occurrence": 4
+        },
+        {
+          "word": "κενὸν",
+          "occurrence": 2
+        },
+        {
+          "word": "ἐκοπίασα",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "I did not run in vain or labor in vain",
+      "occurrence": 1
+    }
+  },
+  {
+    "comments": false,
+    "reminders": false,
+    "selections": false,
+    "verseEdits": false,
+    "contextId": {
+      "occurrenceNote": "These two phrases mean basically the same thing. Paul uses them to emphasize that he has learned how to be content in any situation. (See: [[rc://en/ta/man/translate/figs-parallelism]] and [[rc://en/ta/man/translate/figs-merism]])",
+      "reference": {
+        "bookId": "php",
+        "chapter": 4,
+        "verse": 12
+      },
+      "tool": "translationNotes",
+      "groupId": "figs-parallelism",
+      "quote": [
+        {
+          "word": "χορτάζεσθαι",
+          "occurrence": 1
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 5
+        },
+        {
+          "word": "πεινᾶν",
+          "occurrence": 1
+        },
+        {
+          "word": ",",
+          "occurrence": 3
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 6
+        },
+        {
+          "word": "περισσεύειν",
+          "occurrence": 2
+        },
+        {
+          "word": "καὶ",
+          "occurrence": 7
+        },
+        {
+          "word": "ὑστερεῖσθαι",
+          "occurrence": 1
+        }
+      ],
+      "glQuote": "how to be well-fed or to be hungry, and how to have an abundance or to be in need",
+      "occurrence": 1
+    }
+  }
+]
