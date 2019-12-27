@@ -23,7 +23,7 @@ describe('MissingVersesActions.onlineImport()', () => {
   const bookName = 'gal';
   const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
   const importBookPath = path.join(importProjectPath, bookName);
-  const bibleIndexLocation = path.join(USER_RESOURCES_PATH, 'en', 'bibles', 'ult', 'v11', 'index.json');
+  const bibleIndexLocation = path.join(USER_RESOURCES_PATH, 'el-x-koine', 'bibles', 'ugnt', 'v11', 'index.json');
   const index_json = require('./fixtures/resources/en/bibles/ult/v11/index.json');
 
   beforeEach(() => {
