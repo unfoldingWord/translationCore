@@ -61,9 +61,9 @@ jobs:
 #        run: npm run bundle:macos --if-present
 
     - name: build linux
-        run: |
-          gulp build --linux
-          gulp release-linux-deb --out=./release/linux-version-build.deb
+      run: |
+        gulp build --linux
+        gulp release-linux-deb --out=./release/linux-version-build.deb
 #    - uses: ./.github/actions/build
 #      with:
 #        run: |
