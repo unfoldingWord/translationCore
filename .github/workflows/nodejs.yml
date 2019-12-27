@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
-      HASH: ${ echo GITHUB_SHA | cut -c1-7 }
+      HASH: $( echo GITHUB_SHA | cut -c1-7 )
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: translationCore
@@ -22,6 +22,9 @@ jobs:
 #        node-version: [12.x]
 
     steps:
+    - name: Test
+      run: echo $HASH
+
     - name: Checkout codebase
       uses: actions/checkout@v1
       with:
