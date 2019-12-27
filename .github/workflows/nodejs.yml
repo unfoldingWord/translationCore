@@ -70,6 +70,7 @@ jobs:
 
     - name: build linux
       run: |
+        echo "Building $APP_VERSION-$HASH"
         ./node_modules/.bin/gulp build --linux
         ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
 #    - uses: ./.github/actions/build
