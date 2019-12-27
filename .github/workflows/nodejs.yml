@@ -17,13 +17,29 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: ./.github/actions/build
+    - name: Node ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        run: |
-          npm ci
-          npm test
-      env:
-        CI: true
+        node-version: ${{ matrix.node-version }}
+    - name: npm install
+      uses: actions/npm@master
+      with:
+        args: ci
+    - name: npm test
+      uses: actions/npm@master
+      with:
+        args: run test
+    - name: npm lint
+      uses: actions/npm@master
+      with:
+        args: run lint
+#    - uses: ./.github/actions/build
+#      with:
+#        run: |
+#          npm ci
+#          npm test
+#      env:
+#        CI: true
 #     - name: npm install and test
 #       run: |
 #         npm ci
