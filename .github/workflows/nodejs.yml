@@ -12,7 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
-      HASH: $( echo $GITHUB_SHA | cut -c1-7 )
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: translationCore
@@ -22,25 +21,21 @@ jobs:
 #        node-version: [12.x]
 
     steps:
-    - name: Test
-      run: echo $HASH
-
-    - name: Read version
-      run: |
-        echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
-        echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
-
-    - name: Test
-      run: echo $HASH
-
     - name: Checkout codebase
       uses: actions/checkout@v1
       with:
         submodules: recursive
 
-#    - name: Checkout submodules (apps)
-#      uses: srt32/git-actions@v0.0.3
-#        args: "git submodule update --init --recursive"
+    - name: Read version and commit sha
+      run: |
+        echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
+        echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+
+    - name: Bundle environment variables
+      run: |
+        echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
+        echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
+        echo "BUILD=$HASH" >> .env
 
 #    - name: Node ${{ matrix.node-version }}
 #      uses: actions/setup-node@v1
@@ -57,12 +52,8 @@ jobs:
 
     - name: npm test
       run: npm test
-
-    - name: Set environment vars
-      run: |
-        echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
-        echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
-        echo "BUILD=$HASH" >> .env
+      env:
+        CI: true
 
     - name: Download latest language names
       run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
@@ -81,16 +72,5 @@ jobs:
         echo "Building $APP_VERSION-$HASH"
         ./node_modules/.bin/gulp build --linux
         ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
-#    - uses: ./.github/actions/build
-#      with:
-#        run: |
-#          npm ci
-#          npm test
-#      env:
-#        CI: true
-#     - name: npm install and test
-#       run: |
-#         npm ci
-#         npm test
-#       env:
-#         CI: true
+      env:
+        CI: true
