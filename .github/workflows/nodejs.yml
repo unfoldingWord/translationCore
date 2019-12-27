@@ -24,6 +24,13 @@ jobs:
     - name: Checking out codebase
       uses: actions/checkout@v2
 
+    - name: Checkout submodules (apps)
+      shell: bash
+      run: |
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git submodule sync --recursive
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
 #    - name: Node ${{ matrix.node-version }}
 #      uses: actions/setup-node@v1
 #      with:
@@ -34,21 +41,8 @@ jobs:
     - name: Show npm version
       run: npm --version
 
-    - name: Show current dir
-      run: |
-        pwd
-        ls -la
-
-    - name: show workspace dir
-      run: |
-        echo ${{ github.workspace }}
-        ls -la ${{ github.workspace }}
-
     - name: npm install
       run: npm ci
-
-    - name: load apps
-      run: npm run load-apps
 
     - name: npm test
       run: npm test
