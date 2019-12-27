@@ -2,21 +2,51 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import ResourceAPI from '../ResourceAPI';
+import * as BibleHelpers from '../bibleHelpers';
 // constants
 const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
+
+/**
+ * returns chapter count - if index already has a chapter count we use that, otherwise we
+ *  return highest chapter number
+ * @param {Object} bookIndex
+ * @return {*}
+ */
+export function getChapters(bookIndex) {
+  let chapterCount = 0;
+
+  if (bookIndex) {
+    if (bookIndex.chapters) {
+      chapterCount = bookIndex.chapters;
+    } else { // chapter count not saved, get highest chapter number
+      const chapters = Object.keys(bookIndex).sort();
+
+      for (let i = chapters.length-1; i >= 0; i--) { // reverse search
+        const chapter = chapters[i];
+        const chapterNum = parseInt(chapter, 10);
+
+        if (chapterNum > chapterCount) { // will skip any values that are not numbers
+          chapterCount = chapterNum;
+          break;
+        }
+      }
+    }
+  }
+  return chapterCount;
+}
 
 /**
  * Determines if a project is missing verses
  * @param {string} projectDir: the project directory
  * @param {string} bookAbbr: the abbreviation of the book name
- * @param {{}} expectedVerses: the authoritative list of verses that should be in the project
+ * @param {{}} expectedVerses: the authoritative list of chapter/verses that should be in the project
  * @return {{}} An object of missing verses
  */
 export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
   let allMissingVerses = {};
 
   if (fs.existsSync(path.join(projectDir, bookAbbr))) {
-    for (let chapterIndex = 1; chapterIndex <= expectedVerses.chapters; chapterIndex++) {
+    for (let chapterIndex = 1; chapterIndex <= getChapters(expectedVerses); chapterIndex++) {
       let currentMissingVerses = [];
       let chapterJSONObject;
 
@@ -51,7 +81,8 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
  * @returns {{}} Object of missing verses
  */
 export function findMissingVerses(usfmFilePath, bookAbbr) {
-  let expectedBookVerses = getExpectedBookVerses(bookAbbr);
+  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookAbbr);
+  let expectedBookVerses = getExpectedBookVerses(bookAbbr, languageId, bibleId);
   return getMissingVerses(usfmFilePath, bookAbbr, expectedBookVerses);
 }
 
@@ -59,7 +90,7 @@ export function findMissingVerses(usfmFilePath, bookAbbr) {
  * Retrieves the authoritative list of verses in a book
  * @param {string} bookAbbr
  * @param {string} languageId
- * @param {string} bookName
+ * @param {string} bookName - actually id of bible
  * @param {string} optional version, if null then get latest
  * @return {Object} verses in book
  */
