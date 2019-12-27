@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
-      HASH: ${{ github.sha }} #${{ $(echo GITHUB_SHA | cut -c1-7) }}
+      HASH: ${{ echo GITHUB_SHA | cut -c1-7 }}
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
+      APP_NAME: translationCore
 
 #    strategy:
 #      matrix:
@@ -25,6 +26,9 @@ jobs:
       uses: actions/checkout@v1
       with:
         submodules: recursive
+
+    - name: Read version
+      run: echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
 #    - name: Checkout submodules (apps)
 #      uses: srt32/git-actions@v0.0.3
@@ -67,7 +71,7 @@ jobs:
     - name: build linux
       run: |
         ./node_modules/.bin/gulp build --linux
-        ./node_modules/.bin/gulp release-linux-deb --out=./release/linux-version-build.deb
+        ./node_modules/.bin/gulp release-linux-deb --out=./release/$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb
 #    - uses: ./.github/actions/build
 #      with:
 #        run: |
