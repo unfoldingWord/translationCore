@@ -159,8 +159,8 @@ export default class ProjectAPI {
     return (isEqual(contextId1.reference, contextId2.reference) &&
       (contextId1.occurrence === contextId2.occurrence) &&
       (
-        (contextId1.quoteString && (contextId1.quoteString === contextId2.quoteString)) ||
-          isEqual(contextId1.quote, contextId2.quote)
+        (contextId1.quoteString && contextId2.quoteString ? (contextId1.quoteString === contextId2.quoteString) : // compare quoteString if present
+          isEqual(contextId1.quote, contextId2.quote)) // else compare quote array
       )
     );
   }

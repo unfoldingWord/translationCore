@@ -1,12 +1,8 @@
 /* eslint-disable quotes,object-curly-newline */
 /* eslint-env jest */
 import fs from 'fs-extra';
-import path from 'path-extra';
 import _ from "lodash";
 import ProjectAPI from '../ProjectAPI';
-// constants
-import { APP_VERSION } from '../../common/constants';
-
 
 describe('ProjectAPI', () => {
   describe('updateCategoryGroupData()', () => {
@@ -95,6 +91,7 @@ describe('ProjectAPI', () => {
       const expected = _.cloneDeep(checkTestData);
       fs.outputJsonSync(srceFile, srce);
       fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
 
       // when
       p.updateCategoryGroupData(srceFile, destFile);
@@ -102,6 +99,26 @@ describe('ProjectAPI', () => {
       // then
       const output = fs.readJsonSync(destFile);
       expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('data same is unchanged even if different order', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      swapItems(dest, 0, 2);
+      const expected = _.cloneDeep(checkTestData);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
     });
 
     it('new shorter, output same as source', () => {
@@ -112,6 +129,7 @@ describe('ProjectAPI', () => {
       const expected = _.cloneDeep(srce);
       fs.outputJsonSync(srceFile, srce);
       fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
 
       // when
       p.updateCategoryGroupData(srceFile, destFile);
@@ -119,6 +137,7 @@ describe('ProjectAPI', () => {
       // then
       const output = fs.readJsonSync(destFile);
       expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
     });
 
     it('new longer, output same as source', () => {
@@ -129,6 +148,7 @@ describe('ProjectAPI', () => {
       const expected = _.cloneDeep(srce);
       fs.outputJsonSync(srceFile, srce);
       fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
 
       // when
       p.updateCategoryGroupData(srceFile, destFile);
@@ -136,6 +156,260 @@ describe('ProjectAPI', () => {
       // then
       const output = fs.readJsonSync(destFile);
       expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will keep old selections, etc', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true); // data to be preserved
+      const expected = _.cloneDeep(srce);
+      setData(expected[1], true);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will keep old selections, etc. even in different order', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true); // data to be preserved
+      swapItems(dest, 0, 1);
+      const expected = _.cloneDeep(srce);
+      setData(expected[1], true);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will keep old selections, etc. even if counts different', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true); // data to be preserved
+      dest.splice(0,1);
+      const expected = _.cloneDeep(srce);
+      setData(expected[1], true);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will not keep old selections if verse different', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      dest[1].contextId.reference.verse = 52;
+      const expected = _.cloneDeep(srce);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will not keep old selections if chapter different', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      dest[1].contextId.reference.chapter = 52;
+      const expected = _.cloneDeep(srce);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will not keep old selections if occurrence different', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      dest[1].contextId.occurrence = 52;
+      const expected = _.cloneDeep(srce);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will not keep old selections if quoteString different', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      dest[1].contextId.quoteString = dest[1].contextId.quoteString + "!";
+      const expected = _.cloneDeep(srce);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will keep old selections if no quoteString and quotes same', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      delete srce[1].contextId.quoteString;
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      delete dest[1].contextId.quoteString;
+      const expected = _.cloneDeep(srce);
+      setData(expected[1], true);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will keep old selections if no quoteString in new and quotes same', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      delete srce[1].contextId.quoteString;
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      const expected = _.cloneDeep(srce);
+      setData(expected[1], true);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will keep old selections if no quoteString in old and quotes same', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      delete dest[1].contextId.quoteString;
+      const expected = _.cloneDeep(srce);
+      setData(expected[1], true);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
+    });
+
+    it('will not keep old selections if no quoteString and quotes different', () => {
+      // given
+      const srce = _.cloneDeep(checkTestData);
+      delete srce[1].contextId.quoteString;
+      const dest = _.cloneDeep(checkTestData);
+      setData(dest[1], true);
+      delete dest[1].contextId.quoteString;
+      dest[1].contextId.quote[2].word = dest[1].contextId.quote[2].word + '!';
+      const expected = _.cloneDeep(srce);
+      fs.outputJsonSync(srceFile, srce);
+      fs.outputJsonSync(destFile, dest);
+      const newSize = srce.length;
+
+      // when
+      p.updateCategoryGroupData(srceFile, destFile);
+
+      // then
+      const output = fs.readJsonSync(destFile);
+      expect(output).toEqual(expected);
+      expect(output.length).toEqual(newSize);
     });
   });
 });
+
+//
+// helpers
+//
+
+function setData(item, set) {
+  if (set) {
+    item.comments = true;
+    item.reminders = true;
+    item.selections = true;
+    item.verseEdits = true;
+  } else {
+    item.comments = false;
+    item.reminders = false;
+    item.selections = false;
+    item.verseEdits = false;
+  }
+}
+
+function swapItems(dest, first, second) {
+  const dest0 = dest[first];
+  const dest2 = dest[second];
+  dest[second] = dest0;
+  dest[first] = dest2;
+}
