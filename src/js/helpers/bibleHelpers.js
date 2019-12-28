@@ -84,8 +84,8 @@ export function getOrigLangforBook(bookId) {
  */
 export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
-    let languageId = 'en';
-    const resourcePath = Path.join(resourceDir, languageId, 'bibles', 'ult');
+    const { languageId, bibleId } = getOrigLangforBook(bookId);
+    const resourcePath = Path.join(resourceDir, languageId, 'bibles', bibleId);
     const versionPath = ResourceAPI.getLatestVersion(resourcePath) || resourcePath;
     const indexLocation = Path.join(versionPath, 'index.json');
     const expectedVerses = fs.readJSONSync(indexLocation);

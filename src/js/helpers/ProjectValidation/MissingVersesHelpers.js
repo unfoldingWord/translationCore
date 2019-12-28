@@ -75,14 +75,24 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
 };
 
 /**
+ * get index of expected chapter/verses for book
+ * @param {Object} bookAbbr
+ * @return {{}|null}
+ */
+export function getExpectedBookIndex(bookAbbr) {
+  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookAbbr);
+  let expectedBookVerses = getExpectedBookVerses(bookAbbr, languageId, bibleId);
+  return expectedBookVerses;
+}
+
+/**
  * This method reads in all the chunks of a project, and determines if there are any missing verses
  * @param {String} usfmFilePath - The current save location of the project
  * @param {String} bookAbbr - Full name of the book
  * @returns {{}} Object of missing verses
  */
 export function findMissingVerses(usfmFilePath, bookAbbr) {
-  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookAbbr);
-  let expectedBookVerses = getExpectedBookVerses(bookAbbr, languageId, bibleId);
+  const expectedBookVerses = getExpectedBookIndex(bookAbbr);
   return getMissingVerses(usfmFilePath, bookAbbr, expectedBookVerses);
 }
 

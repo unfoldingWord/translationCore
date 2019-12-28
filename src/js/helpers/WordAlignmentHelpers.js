@@ -11,6 +11,7 @@ import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConv
 import * as LoadHelpers from './LoadHelpers';
 import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
+import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 
 /**
  * Helper method to retrieve the greek chapter object according to specified book/chapter
@@ -130,7 +131,7 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
 
 /**
  * Method to retrieve project alignment data and perform conversion in usfm 3
- * TODO: this will eventually become deprecated in favor of a separate conversion tool either imported dirrectly or accessed through the tool api.
+ * TODO: this will eventually become deprecated in favor of a separate conversion tool either imported directly or accessed through the tool api.
  * @param {string} wordAlignmentDataPath
  * @param {string} projectTargetLanguagePath
  * @param {array} chapters aligned
@@ -146,22 +147,10 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 
   return new Promise((resolve, reject) => {
     let usfmToJSONObject = { headers: {}, chapters: {} };
-    let expectedChapters = 0;
 
     // get the bibleIndex to get the list of expected chapters
-    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ult');
-
-    if (bibleIndex && bibleIndex[projectID]) {
-      expectedChapters = bibleIndex[projectID].chapters;
-    } else { // fallback just get highest chapter
-      for (let chapter of chapters) {
-        const chapterNum = (typeof chapter === 'string') ? parseInt(chapter) : chapter;
-
-        if (chapterNum > expectedChapters) {
-          expectedChapters = chapterNum;
-        }
-      }
-    }
+    const expectedBookVerses = MissingVersesHelpers.getExpectedBookIndex(projectID);
+    const expectedChapters = MissingVersesHelpers.getChapters(expectedBookVerses);
 
     for (let chapterNumber = 1; chapterNumber <= expectedChapters; chapterNumber++) {
       const chapterFile = chapterNumber + '.json';
