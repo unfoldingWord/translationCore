@@ -157,7 +157,12 @@ export default class ProjectAPI {
    */
   isMatchingCheckInstance(contextId1, contextId2) {
     return (isEqual(contextId1.reference, contextId2.reference) &&
-      (contextId1.occurrence === contextId2.occurrence));
+      (contextId1.occurrence === contextId2.occurrence) &&
+      (
+        (contextId1.quoteString && (contextId1.quoteString === contextId2.quoteString)) ||
+          isEqual(contextId1.quote, contextId2.quote)
+      )
+    );
   }
 
   /**
