@@ -247,7 +247,7 @@
     "conflict_reference": "Конфликт слияния глава ${chapter}, стих ${verse}.",
     "missing_verses_instructions": "Некоторые стихи отсутствуют в вашем проекте.",
     "only_nt_supported": "Эта версия ${app} поддерживает только проекты Нового Завета.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "old_project_unsupported": "Этот проект содержит данные из старой версии ${app}, которая не поддерживается здесь. Чтобы узнать как открыть этот проект или возобновить его проверку, пожалуйста, напишите нам на ${help_desk_email}.",
     "resource_id": {
       "info": "(аббревиатура из 3 или 4 латинских букв<br />, например,  KJV, NIV и т. д.)",
       "field_invalid_length": "Должно быть 3-4 буквы",
