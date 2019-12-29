@@ -482,7 +482,7 @@
     "writing-endofstory": "End of Story",
     "writing-intro": "Types of Writing",
     "writing-newevent": "Introduction of a New Event",
-    "figs-events": "Order of Events",
+    "figs-events": "Порядок событий",
     "figs-exclamations": "Exclamations",
     "figs-parables": "Parables",
     "writing-participants": "Introduction of New and Old Participants",
@@ -507,13 +507,13 @@
     "figs-123person": "First, Second, or Third Person",
     "figs-abstractnouns": "Abstract Nouns",
     "figs-distinguish": "Distinguishing versus Informing or Reminding",
-    "figs-exclusive": "Exclusive and Inclusive \"We\"",
+    "figs-exclusive": "Отдельное и включающее в себя местоимение \"мы\"",
     "figs-genericnoun": "Generic Noun Phrases",
-    "figs-inclusive": "Inclusive \"We\"",
+    "figs-inclusive": "Включающее в себя местоимение \"мы\"",
     "figs-nominaladj": "Nominal Adjectives",
-    "figs-possession": "Possession",
-    "figs-rpronouns": "Reflexive Pronouns",
-    "figs-we": "Forms of We",
-    "figs-they": "Forms of They"
+    "figs-possession": "Притяжательный",
+    "figs-rpronouns": "Возвратное местоимение",
+    "figs-we": "Формы местоимения мы",
+    "figs-they": "Формы местоимения они"
   }
 }
