@@ -210,7 +210,7 @@
     "current_project": "Проект: ${project}",
     "renamed_project": "Ваш локальный проект был назван<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
-    "dcs_rename_success": "The ${door43} repository for the project was successfully updated.<br/>${project}",
+    "dcs_rename_success": "Хранилище ${door43} для проекта было успешно обновлено.<br/>${project}",
     "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
