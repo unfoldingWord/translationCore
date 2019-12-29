@@ -254,7 +254,7 @@
       "invalid_characters": "Поддерживаются только основные латинские буквы"
     },
     "conflicting_project": "Проект с таким идентификатором уже существует для этого языка и книги",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "Этот проект был создан в более новой версии translationCore. Пожалуйста, обновите translationCore до последней версии и попробуйте снова."
   },
   "book_list": {
     "ot": {
@@ -330,7 +330,7 @@
   },
   "tools": {
     "loading_tool_data": "Загрузка данных инструмента.",
-    "resource_missing_for_tool": "The current tool requires a different version of the UGNT. Please click Download to retrieve this resource.",
+    "resource_missing_for_tool": "Текущий инструмент требует другую версию UGNT. Пожалуйста, нажмите кнопку Загрузить, чтобы получить этот ресурс.",
     "no_checks_selected": "Вы должны выбрать категорию, чтобы запустить этот инструмент",
     "book_not_supported": "Книга не поддерживается",
     "select_tool_from_list": "Выберите инструмент и базовый язык из списка.",
@@ -385,8 +385,8 @@
     "no_gl_available": "Недоступно",
     "invalid_checks": "Проверка аннулирована",
     "invalid_verse_alignments": "Стихи с недействительными сопоставлениями.",
-    "invalidation_checking": "Checking if this edit conflicts with saved selections and alignments...",
-    "alignments_reset_wa_tool": "Changes have been detected in your project which have invalidated some of your alignments.\nThese verses display an icon of a broken chain next to the reference in the side menu.",
+    "invalidation_checking": "Проверьте, если это редактирование конфликтует с сохраненнм выделением и выравниванием...",
+    "alignments_reset_wa_tool": "В вашем проекте были обнаружены изменения, которые аннулировали некоторые из ваших сопоставлений.\nЭти стихи отображают иконку сломанной цепочки рядом с ссылкой в боковом меню.",
     "invalid_verse_alignments_and_selections": "Changes have been detected in your project which have invalidated some selections and some alignments. These verses display an icon of a broken chain next to the reference in the side menu.",
     "invalid_check_found": "There is a problem with the content for this check: ${report} Do you want to report this problem so it can be fixed?"
   },
