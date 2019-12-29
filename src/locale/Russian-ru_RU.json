@@ -209,12 +209,12 @@
     "nickname": "Название проекта",
     "current_project": "Проект: ${project}",
     "renamed_project": "Ваш локальный проект был назван<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
-    "dcs_rename_project": "Your project has been renamed<br/><b>${project}</b><br/>What would you like to do with this project's existing ${door43} repository?",
+    "dcs_rename_project": "Ваш проект был переименован<br/><b>${project}</b><br/>Что вы хотите сделать с существующим хранилищем ${door43}?",
     "dcs_rename_success": "Хранилище ${door43} для проекта было успешно обновлено.<br/>${project}",
     "dcs_rename_failed": "Хранилище ${door43} не было переименовано.<br/><br/>Вы хотите повторить попытку переименования хранилища ${door43} или продолжить без переименования?",
     "dcs_create_new_failed": "Хранилище ${door43} не может быть создано.<br/><br/>Вы хотите повторить попытку создания хранилища ${door43} или продолжить без переименования?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_rename_conflict": "Не удалось переименовать, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
+    "dcs_create_new_conflict": "Не удалось создать новое хранилище, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}."
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
