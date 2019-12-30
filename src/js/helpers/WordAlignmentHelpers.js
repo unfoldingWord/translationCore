@@ -6,12 +6,10 @@ import wordaligner, { VerseObjectUtils } from 'word-aligner';
 import { STATIC_RESOURCES_PATH } from '../common/constants';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
-import * as ResourcesHelpers from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as LoadHelpers from './LoadHelpers';
 import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
-import * as MissingVersesHelpers from './ProjectValidation/MissingVersesHelpers';
 
 /**
  * Helper method to retrieve the greek chapter object according to specified book/chapter
@@ -135,15 +133,8 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
  * @return {*}
  */
 export function getExpectedBookChapters(chapterJsons) {
-  const targetChapters = chapterJsons.map((file) => {
-    const chapterNum = parseInt(file, 10);
-
-    if (chapterNum > 0) {
-      return chapterNum;
-    }
-    return 0;
-  }).sort();
-  const targetChapterCount = targetChapters.length > 0 ? targetChapters[targetChapters.length - 1] : 0;
+  const targetChapters = chapterJsons.map((file) => (path.parse(file).name));
+  const targetChapterCount = BibleHelpers.getHighestValueFromStrArray(targetChapters);
   return targetChapterCount;
 }
 

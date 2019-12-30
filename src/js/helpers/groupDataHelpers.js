@@ -1,25 +1,24 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
-import { STATIC_RESOURCES_PATH } from '../common/constants';
+import { USER_RESOURCES_PATH } from '../common/constants';
 import { getTranslation } from './localizationHelpers';
-import ResourceAPI from './ResourceAPI';
+import * as BibleHelpers from './bibleHelpers';
 
 /**
- * TODO: should this use the user's resources in the home dir instead of the static resources?
  * @description - Auto generate the chapter group data since more projects will use it
+ * @param {String} projectDir
  * @param {String} bookId - id of the current book
  * @param {String} toolName - id of the current tool
  */
-export const generateChapterGroupData = (bookId, toolName) => {
+export const generateChapterGroupData = (projectDir, bookId, toolName) => {
   let groupsData = [];
-  let ultPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ult');
-  let versionPath = ResourceAPI.getLatestVersion(ultPath) || ultPath;
-  const ultIndexPath = path.join(versionPath, 'index.json');
 
-  if (fs.existsSync(ultIndexPath)) { // make sure it doens't crash if the path doesn't exist
-    const ultIndex = fs.readJsonSync(ultIndexPath); // the index of book/chapter/verses
-    const bookData = ultIndex[bookId]; // get the data in the index for the current book
+  const index = BibleHelpers.getProjectVerseCounts(projectDir, bookId, USER_RESOURCES_PATH);
+
+  if (index.chapters) {
+
+    // TODO: need to finish
 
     groupsData = Array(bookData.chapters).fill().map((_, i) => { // create array from number of chapters
       const chapter = i + 1; // index is 0 based, so add one for chapter number

@@ -76,54 +76,158 @@ export function getOrigLangforBook(bookId) {
 }
 
 /**
- * This checks if a project is missing verses.
- * @param projectDir
- * @param bookId
+ * get highest int value from string array
+ * @param {Array} array
+ * @return {number} highest value or -1 if no numeric values found
+ */
+export function getHighestValueFromStrArray(array) {
+  const arrayValues = array.map((item) => { // convert to int
+    const value = parseInt(item, 10);
+    return isNaN(value) ? -1 : value;
+  }).sort((a, b) => (a-b));
+  const highestValue = arrayValues.length > 0 ? arrayValues[arrayValues.length - 1] : -1;
+  return highestValue;
+}
+
+/**
+ * get verse count index object (chapters of verse counts)
+ * @param {Object} initialIndex
+ * @return {boolean}
+ */
+export function getVerseCountIndex(initialIndex) {
+  const chapters = getHighestValueFromStrArray(Object.keys(initialIndex));
+  const index = {};
+
+  for (let chapter = 1; chapter <= chapters; chapter++) {
+    let currentExpectedVersesInChapter = initialIndex[chapter];
+
+    if (currentExpectedVersesInChapter) {
+      const isObject = typeof currentExpectedVersesInChapter !== 'number';
+
+      if (isObject) {
+        currentExpectedVersesInChapter = getHighestValueFromStrArray(Object.keys(currentExpectedVersesInChapter));
+      }
+    } else {
+      currentExpectedVersesInChapter = 0;
+    }
+    index[chapter] = currentExpectedVersesInChapter;
+  }
+  index.chapters = chapters;
+  return index;
+}
+
+/**
+ * get verse counts for each chapter in target project
+ * @param {String} projectDir
+ * @param {String} bookId
+ * @return {{}}
+ */
+export function getTargetVerseCountIndex(projectDir, bookId) {
+  const actualIndex = {};
+  const currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));
+  let chapterLength = 0;
+  let missingVerses = false;
+
+  for (let currentChapterFile of currentFolderChapters) {
+    let currentChapter = Path.parse(currentChapterFile).name;
+
+    if (!parseInt(currentChapter)) {
+      continue;
+    }
+    chapterLength++;
+    let verseLength = 0;
+    let currentChapterObject;
+
+    try {
+      currentChapterObject = fs.readJSONSync(
+        Path.join(projectDir, bookId, currentChapterFile)
+      );
+
+      for (let verseIndex in currentChapterObject) {
+        let verse = currentChapterObject[verseIndex];
+
+        if (verse && verseIndex > 0) {
+          verseLength++;
+        }
+      }
+    } catch (e) {
+      console.warn(e);
+    }
+
+    const highestVerse = currentChapterObject ? getHighestValueFromStrArray(Object.keys(currentChapterObject)) : 0;
+    missingVerses = missingVerses || (verseLength !== highestVerse);
+    actualIndex[currentChapter] = highestVerse;
+  }
+
+  const highestChapter = getHighestValueFromStrArray(Object.keys(actualIndex));
+  missingVerses = missingVerses || (chapterLength !== highestChapter);
+  actualIndex.chapters = highestChapter;
+  return { actualIndex, missingVerses };
+}
+
+/**
+ * get verse counts for each chapter in original language
+ * @param {String} bookId
  * @param resourceDir
+ * @return {{}}
+ */
+export function getOriginalLanguageVerseCountIndex(bookId, resourceDir) {
+  const { languageId, bibleId } = getOrigLangforBook(bookId);
+  const resourcePath = Path.join(resourceDir, languageId, 'bibles', bibleId);
+  const versionPath = ResourceAPI.getLatestVersion(resourcePath) || resourcePath;
+  const indexLocation = Path.join(versionPath, 'index.json');
+  const expectedVerses = fs.readJSONSync(indexLocation);
+  const expectedIndex = getVerseCountIndex(expectedVerses[bookId]);
+  return expectedIndex;
+}
+
+/**
+ * get superset of verse counts between target language project and original language
+ * @param {String} projectDir
+ * @param {String} bookId
+ * @param {String} resourceDir
+ * @return {Object}
+ */
+export const getProjectVerseCounts = (projectDir, bookId, resourceDir) => {
+  const { actualIndex: targetIndex } = getTargetVerseCountIndex(projectDir, bookId);
+  const originalIndex = getOriginalLanguageVerseCountIndex(bookId, resourceDir);
+  const chapterCounts = Math.max(targetIndex.chapters, originalIndex.chapters);
+
+  // merge verse counts
+  for (let chapter = 1; chapter <= chapterCounts; chapter++) {
+    const targetHasChapter = targetIndex.includes(chapter);
+    const originalHasChapter = originalIndex.includes(chapter);
+
+    if (targetHasChapter) {
+      if (originalHasChapter) {
+        targetIndex[chapter] = Math.max(targetIndex[chapter], originalIndex[chapter]); // use the greater count
+      }
+    } else if (originalHasChapter) {
+      targetIndex[chapter] = originalIndex[chapter]; // copy over original since missing in target
+    }
+  }
+  return targetIndex;
+};
+
+/**
+ * This checks if a project is missing verses.
+ * @param {String} projectDir
+ * @param {String} bookId
+ * @param {String} resourceDir
  * @return {boolean}
  */
 export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
   try {
-    const { languageId, bibleId } = getOrigLangforBook(bookId);
-    const resourcePath = Path.join(resourceDir, languageId, 'bibles', bibleId);
-    const versionPath = ResourceAPI.getLatestVersion(resourcePath) || resourcePath;
-    const indexLocation = Path.join(versionPath, 'index.json');
-    const expectedVerses = fs.readJSONSync(indexLocation);
-    const actualVersesObject = {};
-    const currentFolderChapters = fs.readdirSync(Path.join(projectDir, bookId));
-    let chapterLength = 0;
+    const { actualIndex, missingVerses } = getTargetVerseCountIndex(projectDir, bookId);
 
-    for (let currentChapterFile of currentFolderChapters) {
-      let currentChapter = Path.parse(currentChapterFile).name;
-
-      if (!parseInt(currentChapter)) {
-        continue;
-      }
-      chapterLength++;
-      let verseLength = 0;
-
-      try {
-        let currentChapterObject = fs.readJSONSync(
-          Path.join(projectDir, bookId, currentChapterFile)
-        );
-
-        for (let verseIndex in currentChapterObject) {
-          let verse = currentChapterObject[verseIndex];
-
-          if (verse && verseIndex > 0) {
-            verseLength++;
-          }
-        }
-      } catch (e) {
-        console.warn(e);
-      }
-      actualVersesObject[currentChapter] = verseLength;
+    if (missingVerses) {
+      return true;
     }
-    actualVersesObject.chapters = chapterLength;
-    let currentExpectedVerese = expectedVerses[bookId];
+
+    const expectedIndex = getOriginalLanguageVerseCountIndex(bookId, resourceDir);
     return (
-      JSON.stringify(currentExpectedVerese) !==
-      JSON.stringify(actualVersesObject)
+      JSON.stringify(expectedIndex) !==
+      JSON.stringify(actualIndex)
     );
   } catch (e) {
     console.warn(
