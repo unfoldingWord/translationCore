@@ -75,7 +75,7 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
 };
 
 /**
- * get index of expected chapter/verses for book
+ * get index of expected chapter/verses for book from original language
  * @param {Object} bookAbbr
  * @return {{}|null}
  */

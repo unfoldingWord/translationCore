@@ -130,7 +130,25 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
 }
 
 /**
- * Method to retrieve project alignment data and perform conversion in usfm 3
+ * get the maximum chapter count
+ * @param {Array} chapterJsons - list of chapter json file names
+ * @return {*}
+ */
+export function getExpectedBookChapters(chapterJsons) {
+  const targetChapters = chapterJsons.map((file) => {
+    const chapterNum = parseInt(file, 10);
+
+    if (chapterNum > 0) {
+      return chapterNum;
+    }
+    return 0;
+  }).sort();
+  const targetChapterCount = targetChapters.length > 0 ? targetChapters[targetChapters.length - 1] : 0;
+  return targetChapterCount;
+}
+
+/**
+ * Method to retrieve project alignment data and perform conversion to usfm 3 with alignment data added
  * TODO: this will eventually become deprecated in favor of a separate conversion tool either imported directly or accessed through the tool api.
  * @param {string} wordAlignmentDataPath
  * @param {string} projectTargetLanguagePath
@@ -147,10 +165,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 
   return new Promise((resolve, reject) => {
     let usfmToJSONObject = { headers: {}, chapters: {} };
-
-    // get the bibleIndex to get the list of expected chapters
-    const expectedBookVerses = MissingVersesHelpers.getExpectedBookIndex(projectID);
-    const expectedChapters = MissingVersesHelpers.getChapters(expectedBookVerses);
+    const expectedChapters = getExpectedBookChapters(chapters);
 
     for (let chapterNumber = 1; chapterNumber <= expectedChapters; chapterNumber++) {
       const chapterFile = chapterNumber + '.json';
