@@ -368,10 +368,16 @@ const releaseWindows = (arch, src, dest) => {
 
   // locate Inno Setup
   let isccPath;
+
   if (isLinux) {
     isccPath = './scripts/innosetup/iscc';
   } else if (isWindows) {
-    isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 5/ISCC.exe"`;
+    isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 6/ISCC.exe"`;
+
+    // try falling back to version 5
+    if (!fs.existsSync(isccPath.replace(/"/g, ''))) {
+      isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 5/ISCC.exe"`;
+    }
   } else {
     return Promise.reject(
       'Windows builds can only be released on linux and windows');
