@@ -18,6 +18,8 @@ jobs:
     steps:
     - name: Checkout codebase
       uses: actions/checkout@v2
+
+    - name: Checkout submodules
       shell: bash
       run: |
         auth_header="$(git config --local --get http.https://github.com/.extraheader)"
