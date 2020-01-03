@@ -229,7 +229,7 @@ jobs:
           echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
 
       - name: Notify Zulip of pull request
-        if: github.event_name == "pull_request"
+#        if: github.event_name == "pull_request"
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: concourse-bot
