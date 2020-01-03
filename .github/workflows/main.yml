@@ -31,7 +31,7 @@ jobs:
       run: npm run ci-test
 
     - name: upload coverage
-      run: ./node_modules/.bin/codecov
+      run: ./node_modules/.bin/codecov -t ${{ secrets.CODECOV_TOKEN }}
 
     - name: npm lint
       run: npm run lint
