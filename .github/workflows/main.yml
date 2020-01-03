@@ -1,6 +1,7 @@
 name: Node CI
 
 on:
+#  TODO: run on other events as well
   pull_request:
     branches:
       - master
@@ -221,8 +222,9 @@ jobs:
 
   notify:
     name: Notify
-#        if: github.event_name == "pull_request"
-#    needs: [build-macos, build-windows, build-linux]
+#    TODO: this has pr specific code so only run on prs.
+#    if: github.event_name == "pull_request"
+    needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ${{ github.repository }}
