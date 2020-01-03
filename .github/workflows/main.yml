@@ -121,8 +121,8 @@ jobs:
 
       - name: Show artifact name
         run: |
-          echo $ARTIFACT_NAME
-          echo "Testing ../artifacts/$ARTIFACT_NAME"
+          echo ${{ env.ARTIFACT_NAME }}
+          echo "Testing ../artifacts/${{ env.ARTIFACT_NAME }}"
 
       - name: Bundle environment variables
         run: |
