@@ -232,8 +232,7 @@ jobs:
           CHANNEL: SOFTWARE/github
           SUBJECT: tC builds
         run: |
-          $http_code
-          curl -o /dev/null -s -w "%{http_code}" -X POST https://${{ env.ORG }}.zulipchat.com/api/v1/messages \
+          curl -o /dev/null -s -X POST https://${{ env.ORG }}.zulipchat.com/api/v1/messages \
             -u ${{ env.USER }}@zulipchat.com:${{ env.TOKEN }} \
             -d "type=stream" \
             -d "to=${{ env.CHANNEL }}" \
