@@ -108,10 +108,9 @@ jobs:
           submodules: recursive
 
       - name: Read version and commit sha
-        uses: allenevans/set-env@v1.0.0
-        with:
-          HASH: $(node -p -e "'$GITHUB_SHA'.substring(0, 7)")
-          APP_VERSION: $(node -p -e "require('./package.json').version")
+        run:
+          echo "::set-env name=HASH::$(node -p -e "'$GITHUB_SHA'.substring(0, 7)")"
+          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
       - name: Bundle environment variables
         run: |
