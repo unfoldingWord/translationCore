@@ -245,5 +245,5 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=[$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR) has new builds based on [$HASH](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$GITHUB_HASH).
-                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$GITHUB_HASH) tab."
+            -d "content=[$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$HASH](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$GITHUB_SHA).
+                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$GITHUB_SHA) tab."
