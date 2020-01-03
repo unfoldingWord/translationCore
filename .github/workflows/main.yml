@@ -222,7 +222,7 @@ jobs:
   notify:
     name: Notify
 #    needs: [build-macos, build-windows, build-linux]
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Notify Zulip
         env:
