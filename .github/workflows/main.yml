@@ -11,7 +11,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: neutrinog/concourse-tasks:latest
+    container: neutrinog/translationcore:v1
     env:
       CI: true
 
@@ -37,7 +37,7 @@ jobs:
     name: Build Linux
 #    needs: test
     runs-on: ubuntu-latest
-    container: neutrinog/concourse-tasks:latest
+    container: neutrinog/translationcore:v1
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
@@ -128,10 +128,10 @@ jobs:
           ./node_modules/.bin/gulp build --win
 #     x64
       - name: Set x64 artifact name
-        uses: allenevans/set-env@v1.0.0
-        with:
-          ARTIFACT_NAME: $APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe
-#        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe")"
+#        uses: allenevans/set-env@v1.0.0
+#        with:
+#          ARTIFACT_NAME: $APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe")"
 
       - name: bundle x64 windows
         run: |
