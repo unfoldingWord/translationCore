@@ -154,7 +154,7 @@ jobs:
           path: ../artifacts/
 #     x32
       - name: Set x32 artifact name
-        rrun: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
+        run: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
 
       - name: bundle x32 windows
         run: |
