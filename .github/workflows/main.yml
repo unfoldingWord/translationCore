@@ -224,17 +224,26 @@ jobs:
 #    needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
     steps:
-      - name: Notify Zulip
+      - name: Get short hash
+        run: |
+          echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
+
+      - name: Notify Zulip of pull request
+        if: github.event_name == pull_request
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: concourse-bot
           ORG: unfoldingword
           CHANNEL: SOFTWARE/github
           SUBJECT: tC builds
+          REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
             -u $USER@zulipchat.com:$TOKEN \
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=This is a 'hello world' from Github Actions."
+            -d "content=[$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR) has new builds based on [$HASH](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$GITHUB_HASH).
+                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$GITHUB_HASH) tab."
