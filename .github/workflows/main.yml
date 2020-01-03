@@ -99,6 +99,7 @@ jobs:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
+      HASH: ${{ github.sha }}
       CI: true
 
     steps:
@@ -109,7 +110,7 @@ jobs:
 
       - name: Read version and commit sha
         run:
-          echo "::set-env name=HASH::$(node -p -e "'$GITHUB_SHA'.substring(0, 7)")"
+#          echo "::set-env name=HASH::$(node -p -e "'$GITHUB_SHA'.substring(0, 7)")"
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
       - name: Bundle environment variables
