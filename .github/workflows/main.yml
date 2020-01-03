@@ -99,7 +99,6 @@ jobs:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
-#      HASH: ${{ github.sha }}
       CI: true
 
     steps:
@@ -112,17 +111,6 @@ jobs:
         run:
           echo "::set-env name=HASH::$(node -p -e "'${{ github.sha }}'.substring(0, 7)")"
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
-
-      - name: Set x64 artifact name
-        #        uses: allenevans/set-env@v1.0.0
-        #        with:
-        #          ARTIFACT_NAME: $APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
-
-      - name: Show artifact name
-        run: |
-          echo ${{ env.ARTIFACT_NAME }}
-          echo "Testing ../artifacts/${{ env.ARTIFACT_NAME }}"
 
       - name: Bundle environment variables
         run: |
@@ -145,11 +133,13 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --win
 #     x64
+      - name: Set x64 artifact name
+        run: echo "::set-env name=ARTIFACT_X64::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
 
       - name: bundle x64 windows
         run: |
-          echo "Generating executable ../artifacts/${{ env.ARTIFACT_NAME }}"
-          ./node_modules/.bin/gulp release-win64 --out=../artifacts/${{ env.ARTIFACT_NAME }}
+          echo "Generating executable ../artifacts/${{ env.ARTIFACT_X64 }}"
+          ./node_modules/.bin/gulp release-win64 --out=../artifacts/${{ env.ARTIFACT_X64 }}
 
       - name: list directories
         run: |
@@ -160,23 +150,21 @@ jobs:
       - uses: actions/upload-artifact@v1
         name: Upload x64 artifacts
         with:
-          name: ${{ env.ARTIFACT_NAME }}
+          name: ${{ env.ARTIFACT_X64 }}
           path: ../artifacts/
 #     x32
       - name: Set x32 artifact name
-        uses: allenevans/set-env@v1.0.0
-        with:
-          overwrite: true
-          ARTIFACT_NAME: $APP_NAME-win-x32-$APP_VERSION-$HASH.setup.exe
-#        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-win-x32-$APP_VERSION-$HASH.setup.exe")"
+        rrun: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
 
       - name: bundle x32 windows
-        run: ./node_modules/.bin/gulp release-win32 --out=../artifacts/$ARTIFACT_NAME
+        run: |
+          echo "Generating executable ../artifacts/${{ env.ARTIFACT_X32 }}"
+          ./node_modules/.bin/gulp release-win32 --out=../artifacts/${{ env.ARTIFACT_X32 }}
 
       - uses: actions/upload-artifact@v1
         name: Upload x32 artifacts
         with:
-          name: ${{ env.ARTIFACT_NAME }}
+          name: ${{ env.ARTIFACT_X32 }}
           path: ../artifacts/
 
   build-macos:
