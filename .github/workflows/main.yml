@@ -99,7 +99,7 @@ jobs:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
-      HASH: ${{ github.sha }}
+#      HASH: ${{ github.sha }}
       CI: true
 
     steps:
@@ -110,14 +110,14 @@ jobs:
 
       - name: Read version and commit sha
         run:
-#          echo "::set-env name=HASH::$(node -p -e "'$GITHUB_SHA'.substring(0, 7)")"
+          echo "::set-env name=HASH::$(node -p -e "'${{ github.sha }}'.substring(0, 7)")"
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
       - name: Set x64 artifact name
         #        uses: allenevans/set-env@v1.0.0
         #        with:
         #          ARTIFACT_NAME: $APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "windows.setup.exe")"
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
 
       - name: Show artifact name
         run: |
@@ -129,6 +129,7 @@ jobs:
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
           echo "BUILD=$HASH" >> .env
+          cat .env
 
       - name: npm install
         run: npm ci
@@ -147,8 +148,8 @@ jobs:
 
       - name: bundle x64 windows
         run: |
-          echo "Generating executable ../artifacts/$ARTIFACT_NAME"
-          ./node_modules/.bin/gulp release-win64 --out=../artifacts/$ARTIFACT_NAME
+          echo "Generating executable ../artifacts/${{ env.ARTIFACT_NAME }}"
+          ./node_modules/.bin/gulp release-win64 --out=../artifacts/${{ env.ARTIFACT_NAME }}
 
       - name: list directories
         run: |
