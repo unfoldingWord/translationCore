@@ -120,7 +120,9 @@ jobs:
         run: echo "::set-env name=ARTIFACT_NAME::$(echo "windows.setup.exe")"
 
       - name: Show artifact name
-        run: echo $ARTIFACT_NAME
+        run: |
+          echo $ARTIFACT_NAME
+          echo "Testing ../artifacts/$ARTIFACT_NAME"
 
       - name: Bundle environment variables
         run: |
