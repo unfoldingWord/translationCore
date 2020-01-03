@@ -113,6 +113,16 @@ jobs:
 #          echo "::set-env name=HASH::$(node -p -e "'$GITHUB_SHA'.substring(0, 7)")"
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
+      - name: Set x64 artifact name
+        #        uses: allenevans/set-env@v1.0.0
+        #        with:
+        #          ARTIFACT_NAME: $APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "windows.setup.exe")"
+
+      - name: Show artifact name
+        run:
+          - echo $ARTIFACT_NAME
+
       - name: Bundle environment variables
         run: |
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
@@ -133,11 +143,6 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --win
 #     x64
-      - name: Set x64 artifact name
-#        uses: allenevans/set-env@v1.0.0
-#        with:
-#          ARTIFACT_NAME: $APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-win-x64-$APP_VERSION-$HASH.setup.exe")"
 
       - name: bundle x64 windows
         run: |
