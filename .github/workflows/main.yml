@@ -131,11 +131,11 @@ jobs:
       - name: npm install
         run: npm ci
 
-      - name: Download latest language names
-        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+#      - name: Download latest language names
+#        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
-      - name: Update resources
-        run: npm run update-resources
+#      - name: Update resources
+#        run: npm run update-resources
 
       - name: build windows
         run: |
