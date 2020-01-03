@@ -11,7 +11,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: neutrinog/translationcore:v1
+    container: neutrinog/concourse-tasks:latest
     env:
       CI: true
 
@@ -22,10 +22,9 @@ jobs:
         npm --version
 
     - name: Checkout codebase
-      uses: actions/checkout@v2
-
-    - name: Checkout submodules
-      run: git submodule update --init --recursive --depth=1
+      uses: actions/checkout@v1
+      with:
+        submodules: recursive
 
     - name: npm install
       run: npm ci
@@ -43,7 +42,7 @@ jobs:
     name: Build Linux
 #    needs: test
     runs-on: ubuntu-latest
-    container: neutrinog/translationcore:v1
+    container: neutrinog/concourse-tasks:latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
