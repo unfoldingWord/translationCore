@@ -1,14 +1,16 @@
-FROM node:8.16.1
+# Build comands
+# docker build -t <user>/<image> .
+# docker tag <user>/<image> <dockerhub-user>/<image>:<version>
+# docker push <user>/<image>:<version>
+
+FROM node:10.18.0
 
 ARG DEBIAN_FRONTEND=noninteractive
 
 # install dependencies
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
-    apt-get install -yq locales zip unzip genisoimage wine wine32 wine64 libwine libwine:i386 innoextract software-properties-common
-
-# install npm
-RUN npm install -g npm@6.4.1
+    apt-get install -yq locales git zip unzip genisoimage wine wine32 wine64 libwine libwine:i386 innoextract software-properties-common
 
 # install inno setup
 RUN mkdir /tmp/inno && \
@@ -27,7 +29,3 @@ ENV LANG en_US.UTF-8
 EXPOSE 3000
 
 CMD ["/bin/bash"]
-
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
