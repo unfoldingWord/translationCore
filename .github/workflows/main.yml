@@ -232,9 +232,9 @@ jobs:
           CHANNEL: SOFTWARE/github
           SUBJECT: tC builds
         run: |
-          curl -o /dev/null -s -X POST https://${{ env.ORG }}.zulipchat.com/api/v1/messages \
-            -u ${{ env.USER }}@zulipchat.com:${{ env.TOKEN }} \
+          curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
+            -u $USER@zulipchat.com:$TOKEN \
             -d "type=stream" \
-            -d "to=${{ env.CHANNEL }}" \
-            -d "subject=${{ env.SUBJECT}}" \
+            -d "to=$CHANNEL" \
+            -d "subject=$SUBJECT" \
             -d "content=This is a 'hello world' from Github Actions."
