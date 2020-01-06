@@ -244,13 +244,13 @@ jobs:
       - name: Notify Zulip of pull request
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
-          USER: concourse-bot
+          USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
           CHANNEL: SOFTWARE/github
           SUBJECT: tC builds
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
-            -u $USER@zulipchat.com:$TOKEN \
+            -u $USER:$TOKEN \
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
