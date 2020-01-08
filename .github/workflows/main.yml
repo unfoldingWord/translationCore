@@ -264,7 +264,7 @@ jobs:
                         You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
 
       - name: Get branch name
-        if: github.event_name == 'push;
+        if: github.event_name == 'push'
         run: echo "::set-env name=BRANCH::$(node -p -e "'$REF'.substr(11)")" # trips off "refs/heads/"
 
       - name: Notify Zulip of push
