@@ -238,11 +238,6 @@ jobs:
         run: |
           echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
 
-      - name: Dump Event context
-        env:
-          EVENT_CONTEXT: ${{ toJson(github.event) }}
-        run: echo "$EVENT_CONTEXT"
-
       - name: Notify Zulip of pull request
         if: github.event_name == 'pull_request'
         env:
@@ -277,5 +272,5 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=[REF](https://github.com/$REPOSITORY/tree/$REF) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commits/$SHA).
+            -d "content=[$REF](https://github.com/$REPOSITORY/tree/$REF) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
                         You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
