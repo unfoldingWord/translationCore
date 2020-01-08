@@ -239,10 +239,10 @@ jobs:
         run: |
           echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
 
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+#      - name: Dump GitHub context
+#        env:
+#          GITHUB_CONTEXT: ${{ toJson(github) }}
+#        run: echo "$GITHUB_CONTEXT"
 
       - name: Notify Zulip of pull request
         if: github.event_name == 'pull_request'
@@ -260,7 +260,7 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=[$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$SHA).
+            -d "content=Pull request [$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$SHA).
                         You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
 
       - name: Get branch name
@@ -281,5 +281,5 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=[$BRANCH](https://github.com/$REPOSITORY/tree/$REF) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
+            -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$REF) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
                         You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
