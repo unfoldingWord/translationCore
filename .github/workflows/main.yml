@@ -265,7 +265,7 @@ jobs:
 
       - name: Get branch name
         if: github.event_name == 'push'
-        run: echo "::set-env name=BRANCH::$(node -p -e "'$REF'.substr(11)")" # trips off "refs/heads/"
+        run: echo "::set-env name=BRANCH::$(node -p -e "'$REF'.substr(11)")" # strips off "refs/heads/"
 
       - name: Notify Zulip of push
         if: github.event_name == 'push'
@@ -281,5 +281,5 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$REF) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
-                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
+            -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$BRANCH) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
+                        You can view logs and download artifacts from the [Actions](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
