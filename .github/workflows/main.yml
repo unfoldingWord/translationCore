@@ -238,6 +238,11 @@ jobs:
         run: |
           echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
       - name: Notify Zulip of pull request
         if: github.event_name == 'pull_request'
         env:
@@ -265,7 +270,7 @@ jobs:
           ORG: unfoldingword
           CHANNEL: SOFTWARE/github
           SUBJECT: tC builds
-          REF: ${{ github.ref }}
+          REF: ${{ github.ref }} # TODO: cut down to just the branch name.
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
             -u $USER:$TOKEN \
