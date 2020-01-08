@@ -135,7 +135,7 @@ jobs:
           ./node_modules/.bin/gulp build --win
 #     x64
       - name: Set x64 artifact name
-        run: echo "::set-env name=ARTIFACT_X64::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
+        run: echo "::set-env name=ARTIFACT_X64::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
 
       - name: bundle x64 windows
         run: |
@@ -155,7 +155,7 @@ jobs:
           path: ../artifacts/
 #     x32
       - name: Set x32 artifact name
-        run: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.setup.exe")"
+        run: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
 
       - name: bundle x32 windows
         run: |
@@ -175,7 +175,7 @@ jobs:
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
-      APP_NAME: translationCore
+      APP_NAME: tC
       CI: true
 
     steps:
@@ -190,7 +190,7 @@ jobs:
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
       - name: Set artifact name
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")"
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-mac-x64-$APP_VERSION-$HASH.dmg")"
 
       - name: Bundle environment variables
         run: |
