@@ -240,7 +240,7 @@ jobs:
 
       - name: Dump Event context
         env:
-          EVENT_CONTEXT: ${{ toJson(event) }}
+          EVENT_CONTEXT: ${{ toJson(github.event) }}
         run: echo "$EVENT_CONTEXT"
 
       - name: Notify Zulip of pull request
