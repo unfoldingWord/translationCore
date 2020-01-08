@@ -228,7 +228,7 @@ jobs:
 
   notify:
     name: Notify
-    needs: [build-macos, build-windows, build-linux]
+#    needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ${{ github.repository }}
@@ -238,13 +238,13 @@ jobs:
         run: |
           echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
 
-#      - name: Dump GitHub context
-#        env:
-#          GITHUB_CONTEXT: ${{ toJson(github) }}
-#        run: echo "$GITHUB_CONTEXT"
+      - name: Dump Event context
+        env:
+          EVENT_CONTEXT: ${{ toJson(event) }}
+        run: echo "$EVENT_CONTEXT"
 
       - name: Notify Zulip of pull request
-        if: github.event_name == pull_request
+        if: github.event_name == 'pull_request'
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
@@ -263,7 +263,7 @@ jobs:
                         You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
 
       - name: Notify Zulip of push
-        if: github.event_name == push
+        if: github.event_name == 'push'
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
