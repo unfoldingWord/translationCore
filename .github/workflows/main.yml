@@ -2,6 +2,12 @@ name: Node CI
 
 on:
 #  TODO: run on other events as well
+  push:
+    branches:
+      - master
+      - develop
+      - release-*
+      - sandbox-*
   pull_request:
     branches:
       - master
@@ -222,37 +228,54 @@ jobs:
 
   notify:
     name: Notify
-#    TODO: this has pr specific code so only run on prs.
-#    if: github.event_name == "pull_request"
     needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ${{ github.repository }}
       SHA: ${{ github.event.after }}
-      PR_NUMBER: ${{ github.event.number }}
-      PR_TITLE: ${{ github.event.pull_request.title }}
     steps:
       - name: Get short hash
         run: |
           echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
 
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+#      - name: Dump GitHub context
+#        env:
+#          GITHUB_CONTEXT: ${{ toJson(github) }}
+#        run: echo "$GITHUB_CONTEXT"
 
       - name: Notify Zulip of pull request
+        if: github.event_name == "pull_request"
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
           CHANNEL: SOFTWARE/github
           SUBJECT: tC builds
+          PR_NUMBER: ${{ github.event.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          run: |
+            curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
+              -u $USER:$TOKEN \
+              -d "type=stream" \
+              -d "to=$CHANNEL" \
+              -d "subject=$SUBJECT" \
+              -d "content=[$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$SHA).
+                          You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
+
+      - name: Notify Zulip of push
+        if: github.event_name == "push"
+        env:
+          TOKEN: ${{ secrets.ZULIP_TOKEN }}
+          USER: github-bot@unfoldingword.zulipchat.com
+          ORG: unfoldingword
+          CHANNEL: SOFTWARE/github
+          SUBJECT: tC builds
+          REF: ${{ github.ref }}
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
             -u $USER:$TOKEN \
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=[$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$SHA).
-                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
+            -d "content=[REF](https://github.com/$REPOSITORY/tree/$REF) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commits/$SHA).
+                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
