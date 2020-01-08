@@ -2,8 +2,7 @@
 
 # translationCore
 
-![](https://github.com/unfoldingWord/translationCore/workflows/Node%20CI/badge.svg?branch=master)
-[![Travis branch](https://img.shields.io/travis/unfoldingWord/translationCore/develop.svg)](https://travis-ci.org/unfoldingWord/translationCore/)
+![](https://github.com/unfoldingWord/translationCore/workflows/Node%20CI/badge.svg?branch=develop)
 [![Releases](https://img.shields.io/github/downloads/unfoldingword/translationCore/total.svg)](https://github.com/unfoldingWord/translationCore/releases)
 [![Current Verison](https://img.shields.io/github/tag/unfoldingword/translationCore.svg)](https://github.com/unfoldingWord/translationCore/tags)
 [![codecov](https://codecov.io/gh/unfoldingWord/translationCore/branch/develop/graph/badge.svg)](https://codecov.io/gh/unfoldingWord/translationCore)
