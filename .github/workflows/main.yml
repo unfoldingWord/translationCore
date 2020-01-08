@@ -244,7 +244,7 @@ jobs:
 #        run: echo "$GITHUB_CONTEXT"
 
       - name: Notify Zulip of pull request
-        if: github.event_name == "pull_request"
+        if: github.event_name == pull_request
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
@@ -263,7 +263,7 @@ jobs:
                         You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
 
       - name: Notify Zulip of push
-        if: github.event_name == "push"
+        if: github.event_name == push
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
