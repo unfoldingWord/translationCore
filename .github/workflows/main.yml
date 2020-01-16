@@ -133,7 +133,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '8.x'
+          node-version: '8.16.1'
 
       - name: Node version
         run: |
@@ -228,7 +228,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '8.x'
+          node-version: '8.16.1'
 
       - name: Node version
         run: |
