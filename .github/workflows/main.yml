@@ -190,7 +190,9 @@ jobs:
   build-macos:
     name: Build macOS
 #    needs: test
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    container: neutrinog/concourse-tasks:latest
+#    runs-on: macos-latest # TODO: there's a bug that's causing builds to fail in the macOS environment.
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
