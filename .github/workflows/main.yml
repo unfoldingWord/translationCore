@@ -113,6 +113,10 @@ jobs:
       CI: true
 
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '8.x'
+
       - name: Node version
         run: |
           node --version
@@ -194,6 +198,10 @@ jobs:
       CI: true
 
     steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '8.x'
+
       - name: Node version
         run: |
           node --version
