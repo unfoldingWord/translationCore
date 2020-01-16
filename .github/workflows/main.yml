@@ -100,9 +100,11 @@ jobs:
         run: npm ci
 
       - name: Download latest language names
+        if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
+        if: env.UPDATE_RESOURCES
         run: npm run update-resources
 
       - name: build linux
@@ -167,9 +169,11 @@ jobs:
         run: npm ci
 
       - name: Download latest language names
+        if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
+        if: env.UPDATE_RESOURCES
         run: npm run update-resources
 
       - name: build windows
@@ -262,9 +266,11 @@ jobs:
         run: npm ci
 
       - name: Download latest language names
+        if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
+        if: env.UPDATE_RESOURCES
         run: npm run update-resources
 
       - name: build macOS
