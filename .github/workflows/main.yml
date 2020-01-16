@@ -217,7 +217,9 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --macos
-          ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
+
+      - name: bundle macOS
+        run: ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
