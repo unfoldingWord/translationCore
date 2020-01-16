@@ -46,7 +46,7 @@ jobs:
 
   build-linux:
     name: Build Linux
-    needs: test
+#    needs: test
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
@@ -104,7 +104,7 @@ jobs:
 
   build-windows:
     name: Build Windows
-    needs: test
+#    needs: test
     runs-on: windows-latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
@@ -185,7 +185,7 @@ jobs:
 
   build-macos:
     name: Build macOS
-    needs: test
+#    needs: test
     runs-on: macos-latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
