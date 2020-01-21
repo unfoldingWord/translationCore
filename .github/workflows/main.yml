@@ -27,6 +27,14 @@ jobs:
         node --version
         npm --version
 
+#    - uses: actions/checkout@v2
+#    - name: Checkout submodules
+#      shell: bash
+#      run: |
+#        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+#        git submodule sync --recursive
+#        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
     - name: Checkout codebase
       uses: actions/checkout@v1
       with:
@@ -46,7 +54,7 @@ jobs:
 
   build-linux:
     name: Build Linux
-    needs: test
+#    needs: test
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
     env:
@@ -56,6 +64,19 @@ jobs:
       CI: true
 
     steps:
+      - name: Node version
+        run: |
+          node --version
+          npm --version
+
+#      - uses: actions/checkout@v2
+#      - name: Checkout submodules
+#        shell: bash
+#        run: |
+#          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+#          git submodule sync --recursive
+#          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
       - name: Checkout codebase
         uses: actions/checkout@v1
         with:
@@ -79,9 +100,11 @@ jobs:
         run: npm ci
 
       - name: Download latest language names
+        if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
+        if: env.UPDATE_RESOURCES
         run: npm run update-resources
 
       - name: build linux
@@ -99,7 +122,7 @@ jobs:
 
   build-windows:
     name: Build Windows
-    needs: test
+#    needs: test
     runs-on: windows-latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
@@ -108,10 +131,27 @@ jobs:
       CI: true
 
     steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          submodules: recursive
+          node-version: '8.16.1'
+
+      - name: Node version
+        run: |
+          node --version
+          npm --version
+
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+#      - name: Checkout codebase
+#        uses: actions/checkout@v1
+#        with:
+#          submodules: recursive
 
       - name: Read version and commit sha
         run:
@@ -129,9 +169,11 @@ jobs:
         run: npm ci
 
       - name: Download latest language names
+        if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
+        if: env.UPDATE_RESOURCES
         run: npm run update-resources
 
       - name: build windows
@@ -175,7 +217,7 @@ jobs:
 
   build-macos:
     name: Build macOS
-    needs: test
+#    needs: test
     runs-on: macos-latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
@@ -184,10 +226,27 @@ jobs:
       CI: true
 
     steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
         with:
-          submodules: recursive
+          node-version: '8.16.1'
+
+      - name: Node version
+        run: |
+          node --version
+          npm --version
+
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+#      - name: Checkout codebase
+#        uses: actions/checkout@v1
+#        with:
+#          submodules: recursive
 
       - name: Read version and commit sha
         run: |
@@ -207,9 +266,11 @@ jobs:
         run: npm ci
 
       - name: Download latest language names
+        if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
+        if: env.UPDATE_RESOURCES
         run: npm run update-resources
 
       - name: build macOS
@@ -217,7 +278,9 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           ./node_modules/.bin/gulp build --macos
-          ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
+
+      - name: bundle macOS
+        run: ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
 
       - uses: actions/upload-artifact@v1
         name: Upload artifacts
