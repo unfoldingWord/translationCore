@@ -344,4 +344,4 @@ jobs:
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
             -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$BRANCH) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
-                        You can view logs and download artifacts from the [Actions](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
+                        [Download the builds from here](https://github.com/$REPOSITORY/actions/runs/$GITHUB_ACTION)."
