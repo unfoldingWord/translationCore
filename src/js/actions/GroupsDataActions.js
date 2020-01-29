@@ -5,7 +5,7 @@ import { batchActions } from 'redux-batched-actions';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
-import { getSelectedToolName } from '../selectors';
+import { getCurrentToolName } from '../selectors';
 import { readLatestChecks } from '../helpers/groupDataHelpers';
 import { TRANSLATION_NOTES, TRANSLATION_WORDS } from '../common/constants';
 import consts from './ActionTypes';
@@ -119,7 +119,7 @@ export function verifyGroupDataMatchesWithFs(toolName) {
   console.log('verifyGroupDataMatchesWithFs()');
   return (async (dispatch, getState) => {
     const state = getState();
-    toolName = toolName || getSelectedToolName(state);
+    toolName = toolName || getCurrentToolName(state);
     const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
     let checkDataPath;
 

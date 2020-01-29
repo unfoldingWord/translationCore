@@ -131,98 +131,98 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
  * @description This function saves the comments data.
  * @param {object} state - store state object.
  */
-export const saveComments = state => {
-  try {
-    let commentsPayload = {
-      ...state.contextIdReducer,
-      ...state.commentsReducer,
-    };
-    let modifiedTimestamp = state.commentsReducer.modifiedTimestamp;
-    saveData(state, 'comments', commentsPayload, modifiedTimestamp);
-  } catch (err) {
-    console.warn(err);
-  }
-};
+// export const saveComments = state => {
+//   try {
+//     let commentsPayload = {
+//       ...state.contextIdReducer,
+//       ...state.commentsReducer,
+//     };
+//     let modifiedTimestamp = state.commentsReducer.modifiedTimestamp;
+//     saveData(state, 'comments', commentsPayload, modifiedTimestamp);
+//   } catch (err) {
+//     console.warn(err);
+//   }
+// };
 
 /**
  * @description This function saves the selections data.
  * @param {Object} state - The state object courtesy of the store
  */
-export const saveSelections = state => {
-  try {
-    let selectionsPayload = {
-      ...state.contextIdReducer,
-      ...state.selectionsReducer,
-    };
-    let modifiedTimestamp = state.selectionsReducer.modifiedTimestamp;
-    saveData(state, 'selections', selectionsPayload, modifiedTimestamp);
-  } catch (err) {
-    console.warn(err);
-  }
-};
+// export const saveSelections = state => {
+//   try {
+//     let selectionsPayload = {
+//       ...state.contextIdReducer,
+//       ...state.selectionsReducer,
+//     };
+//     let modifiedTimestamp = state.selectionsReducer.modifiedTimestamp;
+//     saveData(state, 'selections', selectionsPayload, modifiedTimestamp);
+//   } catch (err) {
+//     console.warn(err);
+//   }
+// };
 /**
  * @description This function saves the verse Edit data.
  * @param {object} state - store state object.
  */
-export const saveVerseEdit = state => {
-  try {
-    const projectSaveDir = getProjectSaveLocation(state);
-    const verseEditPayload = getEditedVerse(state, state.contextIdReducer.contextId.tool);
-    const {
-      bookId, chapter, verse,
-    } = verseEditPayload.contextId.reference;
-    const fileName = verseEditPayload.modifiedTimestamp.replace(/[:"]/g, '_');
-    const savePath = path.join(
-      projectSaveDir,
-      CHECKDATA_DIRECTORY,
-      'verseEdits',
-      bookId,
-      chapter.toString(),
-      verse.toString(),
-      `${fileName}.json`
-    );
+// export const saveVerseEdit = state => {
+//   try {
+//     const projectSaveDir = getProjectSaveLocation(state);
+//     const verseEditPayload = getEditedVerse(state, state.contextIdReducer.contextId.tool);
+//     const {
+//       bookId, chapter, verse,
+//     } = verseEditPayload.contextId.reference;
+//     const fileName = verseEditPayload.modifiedTimestamp.replace(/[:"]/g, '_');
+//     const savePath = path.join(
+//       projectSaveDir,
+//       CHECKDATA_DIRECTORY,
+//       'verseEdits',
+//       bookId,
+//       chapter.toString(),
+//       verse.toString(),
+//       `${fileName}.json`
+//     );
 
-    if (!fs.existsSync(savePath)) {
-      fs.outputJsonSync(savePath, verseEditPayload, { spaces: 2 });
-    }
-  } catch (err) {
-    console.warn(err);
-  }
-};
+//     if (!fs.existsSync(savePath)) {
+//       fs.outputJsonSync(savePath, verseEditPayload, { spaces: 2 });
+//     }
+//   } catch (err) {
+//     console.warn(err);
+//   }
+// };
 
 /**
  * @description This function saves the reminders data.
  * @param {object} state - store state object.
  */
-export const saveReminders = state => {
-  try {
-    let remindersPayload = {
-      ...state.contextIdReducer,
-      ...state.remindersReducer,
-    };
-    let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
-    saveData(state, 'reminders', remindersPayload, modifiedTimestamp);
-  } catch (err) {
-    console.warn(err);
-  }
-};
+// export const saveReminders = state => {
+//   try {
+//     let remindersPayload = {
+//       ...state.contextIdReducer,
+//       ...state.remindersReducer,
+//     };
+//     let modifiedTimestamp = state.remindersReducer.modifiedTimestamp;
+//     saveData(state, 'reminders', remindersPayload, modifiedTimestamp);
+//   } catch (err) {
+//     console.warn(err);
+//   }
+// };
 
 /**
   * @description This function saves the invalidated data.
   * @param {object} state - store state object.
   */
-export const saveInvalidated = state => {
-  try {
-    let invalidatedPayload = {
-      ...state.contextIdReducer,
-      ...state.invalidatedReducer,
-    };
-    let modifiedTimestamp = state.invalidatedReducer.modifiedTimestamp;
-    saveData(state, 'invalidated', invalidatedPayload, modifiedTimestamp);
-  } catch (err) {
-    console.warn(err);
-  }
-};
+// export const saveInvalidated = state => {
+//   try {
+//     let invalidatedPayload = {
+//       ...state.contextIdReducer,
+//       ...state.invalidatedReducer,
+//     };
+//     let modifiedTimestamp = state.invalidatedReducer.modifiedTimestamp;
+//     saveData(state, 'invalidated', invalidatedPayload, modifiedTimestamp);
+//   } catch (err) {
+//     console.warn(err);
+//   }
+// };
 
 /**
  * @description saves the groups data by groupId name.
@@ -301,22 +301,22 @@ export function saveProjectSettings(state) {
 * @param {String} userName
 * @param {Object} contextId
 */
-export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId) => {
-  const selectionData = {
-    modifiedTimestamp: generateTimestamp(),
-    gatewayLanguageCode,
-    gatewayLanguageQuote,
-    selections,
-    userName,
-  };
-  const newState = {
-    projectDetailsReducer: state.projectDetailsReducer,
-    contextIdReducer: { contextId },
-    selectionsReducer: selectionData,
-  };
-  saveSelections(newState);
-  saveInvalidatedForOtherContext(state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId); // now update invalidated
-};
+// export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, selections, invalidated, userName, contextId) => {
+//   const selectionData = {
+//     modifiedTimestamp: generateTimestamp(),
+//     gatewayLanguageCode,
+//     gatewayLanguageQuote,
+//     selections,
+//     userName,
+//   };
+//   const newState = {
+//     projectDetailsReducer: state.projectDetailsReducer,
+//     contextIdReducer: { contextId },
+//     selectionsReducer: selectionData,
+//   };
+//   saveSelections(newState);
+//   saveInvalidatedForOtherContext(state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId); // now update invalidated
+// };
 
 /**
 * saves selection data for a context that is not current
@@ -326,21 +326,21 @@ export const saveSelectionsForOtherContext = (state, gatewayLanguageCode, gatewa
 * @param {String} userName
 * @param {Object} contextId
 */
-export const saveInvalidatedForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
-  delete invalidated.invalidatedChecksTotal;
-  delete invalidated.verseEditsTotal;
-  delete invalidated.invalidatedAlignmentsTotal;
-  const selectionData = {
-    modifiedTimestamp: generateTimestamp(),
-    gatewayLanguageCode,
-    gatewayLanguageQuote,
-    invalidated,
-    userName,
-  };
-  const newState = {
-    projectDetailsReducer: state.projectDetailsReducer,
-    contextIdReducer: { contextId },
-    invalidatedReducer: selectionData,
-  };
-  saveInvalidated(newState);
-};
+// export const saveInvalidatedForOtherContext = (state, gatewayLanguageCode, gatewayLanguageQuote, invalidated, userName, contextId) => {
+//   delete invalidated.invalidatedChecksTotal;
+//   delete invalidated.verseEditsTotal;
+//   delete invalidated.invalidatedAlignmentsTotal;
+//   const selectionData = {
+//     modifiedTimestamp: generateTimestamp(),
+//     gatewayLanguageCode,
+//     gatewayLanguageQuote,
+//     invalidated,
+//     userName,
+//   };
+//   const newState = {
+//     projectDetailsReducer: state.projectDetailsReducer,
+//     contextIdReducer: { contextId },
+//     invalidatedReducer: selectionData,
+//   };
+//   saveInvalidated(newState);
+// };

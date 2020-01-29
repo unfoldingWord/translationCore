@@ -133,7 +133,7 @@ export function loadInvalidated(state) {
     return {
       type: consts.SET_INVALIDATED,
       enabled: invalidatedObject.enabled,
-      userName: invalidatedObject.userName,
+      username: invalidatedObject.userName || invalidatedObject.username,
       modifiedTimestamp: invalidatedObject.modifiedTimestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote,
@@ -144,7 +144,7 @@ export function loadInvalidated(state) {
       type: consts.SET_INVALIDATED,
       enabled: false,
       modifiedTimestamp: '',
-      userName: '',
+      username: '',
       gatewayLanguageCode: null,
       gatewayLanguageQuote: null,
     };

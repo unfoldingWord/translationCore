@@ -340,8 +340,8 @@ export const getIsOverwritePermitted = (state) =>
  * @param {Object} state
  * @return {String | undefined}
  */
-export const getSelectedToolName = state =>
-  fromToolsReducer.getSelectedToolName(state.toolsReducer);
+export const getCurrentToolName = state =>
+  fromToolsReducer.getCurrentToolName(state.toolsReducer);
 
 /**
  * Returns the tool selected by the user

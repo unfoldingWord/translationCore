@@ -110,7 +110,6 @@ Main.propTypes = {
   isLocaleLoaded: PropTypes.bool,
   appLanguage: PropTypes.any,
   loadTools: PropTypes.func.isRequired,
-  reducers: PropTypes.object.isRequired,
   initialize: PropTypes.func.isRequired,
 };
 
