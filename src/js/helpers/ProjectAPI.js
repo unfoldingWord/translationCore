@@ -156,8 +156,13 @@ export default class ProjectAPI {
    * @return {boolean}
    */
   isMatchingCheckInstance(contextId1, contextId2) {
-    return (isEqual(contextId1.reference, contextId2.reference) ||
-      (contextId1.occurrence === contextId2.occurrence));
+    return (isEqual(contextId1.reference, contextId2.reference) &&
+      (contextId1.occurrence === contextId2.occurrence) &&
+      (
+        (contextId1.quoteString && contextId2.quoteString ? (contextId1.quoteString === contextId2.quoteString) : // compare quoteString if present
+          isEqual(contextId1.quote, contextId2.quote)) // else compare quote array
+      )
+    );
   }
 
   /**
@@ -171,13 +176,14 @@ export default class ProjectAPI {
 
     try {
       const newData = fs.readJsonSync(srceFile);
-      const currentData = fs.readJsonSync(destFile);
-      const currentDataLen = currentData && currentData.length || 0;
+      const currentData = fs.readJsonSync(destFile) || [];
+      const currentDataLen = currentData.length;
 
       for (let i = 0, l = newData.length; i < l; i++) {
         const newObject = newData[i];
         let index = -1;
 
+        // find matching entry in old data
         if ((i >= currentDataLen) || !this.isMatchingCheckInstance(currentData[i].contextId, newObject.contextId)) {
           for (let j = 0; j < currentDataLen; j++) { // since lists are not identical, do search for match
             if (this.isMatchingCheckInstance(currentData[j].contextId, newObject.contextId)) {
@@ -189,13 +195,13 @@ export default class ProjectAPI {
           index = i;
         }
 
-        if (index >= 0) {
-          currentData[index].contextId = newObject.contextId;
-        } else {
-          console.log('updateCategoryGroupData() - no match found for ', newObject.contextId);
+        if (index >= 0) { // found match, preserve old selections, etc.
+          const oldData = currentData[index];
+          oldData.contextId = newObject.contextId; // use latest contextId
+          newData[i] = oldData;
         }
       }
-      fs.outputJsonSync(destFile, currentData);
+      fs.outputJsonSync(destFile, newData); // save new check data
       copied = true;
     } catch (e) {
       console.error('updateCategoryGroupData() - could not preserve data from: ' + destFile, e);
