@@ -1,5 +1,8 @@
 name: Node CI
 
+env:
+  UPDATE_RESOURCES: true
+
 on:
   push:
     branches:
