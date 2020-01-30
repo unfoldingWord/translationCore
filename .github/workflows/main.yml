@@ -330,7 +330,7 @@ jobs:
         run: echo "::set-env name=BRANCH::$(node -p -e "'$REF'.substr(11)")" # strips off "refs/heads/"
 
       - name: Notify Zulip of push
-        if: github.event_name == 'push'
+#        if: github.event_name == 'push'
         env:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
