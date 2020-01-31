@@ -297,7 +297,7 @@ jobs:
 
   notify:
     name: Notify
-    needs: [build-macos, build-windows, build-linux]
+#    needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ${{ github.repository }}
