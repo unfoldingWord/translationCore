@@ -301,7 +301,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REPOSITORY: ${{ github.repository }}
-      SHA: ${{ github.sha }}
+      SHA: ${{ github.event.after }}
       REF: ${{ github.ref }}
     steps:
       - name: Get short hash
