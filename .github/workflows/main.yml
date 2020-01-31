@@ -28,10 +28,10 @@ jobs:
       CI: true
 
     steps:
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$GITHUB_CONTEXT"
+#     - name: Dump GitHub context
+#       env:
+#         GITHUB_CONTEXT: ${{ toJson(github) }}
+#       run: echo "$GITHUB_CONTEXT"
     - name: Node version
       run: |
         node --version
@@ -300,7 +300,7 @@ jobs:
 
   notify:
     name: Notify
-#    needs: [build-macos, build-windows, build-linux]
+    needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
     steps:
       - name: Get short hash
