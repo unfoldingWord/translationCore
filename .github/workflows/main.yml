@@ -2,6 +2,9 @@ name: Node CI
 
 env:
   UPDATE_RESOURCES: true
+  REPOSITORY: ${{ github.repository }}
+  SHA: ${{ github.event.after }}
+  REF: ${{ github.ref }}
 
 on:
   push:
@@ -299,10 +302,6 @@ jobs:
     name: Notify
 #    needs: [build-macos, build-windows, build-linux]
     runs-on: ubuntu-latest
-    env:
-      REPOSITORY: ${{ github.repository }}
-      SHA: ${{ github.event.after }}
-      REF: ${{ github.ref }}
     steps:
       - name: Get short hash
         run: |
