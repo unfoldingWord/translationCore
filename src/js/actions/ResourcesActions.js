@@ -457,9 +457,9 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
 });
 
 /**
- * @description - Get the lexicon entry and add it to the reducer
- * @param {String} lexiconId - the id of the lexicon to populate
- * @param {Number} entryId - the number of the entry
+ * Get the lexicon entry and add it to the reducer
+ * @param {string} lexiconId - the id of the lexicon to populate
+ * @param {number} entryId - the number of the entry
  */
 export const loadLexiconEntry = (lexiconId, entryId) => ((dispatch) => {
   try {

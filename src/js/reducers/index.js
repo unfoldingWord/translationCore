@@ -13,7 +13,7 @@ import resourcesReducer from './resourcesReducer';
 import projectDetailsReducer from './projectDetailsReducer';
 import alertModalReducer from './alertModalReducer';
 // import commentsReducer from './commentsReducer';// TODO
-// import selectionsReducer from './selectionsReducer';// TODO
+import selectionsReducer from './selectionsReducer';// TODO
 // import remindersReducer from './remindersReducer';// TODO
 // import invalidatedReducer from './invalidatedReducer';// TODO
 import contextIdReducer from './contextIdReducer';// TODO
@@ -50,7 +50,7 @@ const rootReducers = combineReducers({
   projectDetailsReducer,
   alertModalReducer,
   // commentsReducer,// TODO
-  // selectionsReducer,// TODO
+  selectionsReducer,// TODO
   // remindersReducer,// TODO
   // invalidatedReducer,
   contextIdReducer,// TODO

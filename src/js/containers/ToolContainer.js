@@ -5,8 +5,9 @@ import { showPopover } from '../actions/PopoverActions';
 import { validateSelections } from '../actions/SelectionsActions';
 import { setToolSettings } from '../actions/SettingsActions';
 import { openIgnorableAlert } from '../actions/AlertActions';
-import { updateTargetVerse } from '../actions/VerseEditActions';
+import { updateTargetVerse, editTargetVerse } from '../actions/VerseEditActions';
 import {
+  loadLexiconEntry,
   loadResourceArticle,
   makeSureBiblesLoadedForTool,
 } from '../actions/ResourcesActions';
@@ -15,10 +16,6 @@ import {
   getSelectedToolApi,
   getSelectedToolContainer,
   getProjectSaveLocation,
-  getSelectedSourceChapter,
-  getSelectedSourceVerse,
-  getSelectedTargetChapter,
-  getSelectedTargetVerse,
   getSourceBook,
   getSupportingToolApis,
   getTargetBook,
@@ -31,6 +28,8 @@ import {
 import ProjectAPI from '../helpers/ProjectAPI';
 import CoreAPI from '../helpers/CoreAPI';
 import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
+import { getLexiconData } from '../helpers/LexiconHelpers';
+import { getAvailableScripturePaneSelections } from '../helpers/ResourcesHelpers';
 
 const styles = {
   container: {
@@ -84,10 +83,6 @@ class ToolContainer extends Component {
       projectApi,
       sourceBook,
       targetBook,
-      sourceVerse,
-      targetChapter,
-      sourceChapter,
-      targetVerseText,
       currentToolName,
       gatewayLanguage,
       currentLanguage: { code },
@@ -124,10 +119,6 @@ class ToolContainer extends Component {
 
       // project data
       bookId,
-      targetVerseText,
-      sourceVerse,
-      targetChapter,
-      sourceChapter,
       targetBook,
       sourceBook,
       currentToolName,
@@ -184,12 +175,9 @@ class ToolContainer extends Component {
 
 ToolContainer.propTypes = {
   Tool: PropTypes.any,
-  contextId: PropTypes.object, // TODO: Remove contextIdReducer
   toolApi: PropTypes.any,
-  sourceVerse: PropTypes.object,
-  targetChapter: PropTypes.object,
-  sourceChapter: PropTypes.object,
-  targetVerseText: PropTypes.string,
+  targetBook: PropTypes.object,
+  sourceBook: PropTypes.object,
   projects: PropTypes.array.isRequired,
   translate: PropTypes.func.isRequired,
   currentLanguage: PropTypes.object.isRequired,
@@ -197,6 +185,7 @@ ToolContainer.propTypes = {
   currentToolName: PropTypes.string.isRequired,
   supportingToolApis: PropTypes.object.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
+  contextId: PropTypes.object, // TODO: Remove contextIdReducer
 };
 
 ToolContainer.contextTypes = { store: PropTypes.any };
@@ -205,11 +194,13 @@ const mapStateToProps = state => {
   const projectPath = getProjectSaveLocation(state);
   const currentToolName = getCurrentToolName(state);
   const bookId = getProjectBookId(state);
+  const gatewayLanguageCode = getToolGatewayLanguage(state, currentToolName);
 
   return {
     bookId,
     currentToolName,
-    gatewayLanguage: getToolGatewayLanguage(state, currentToolName),
+    gatewayLanguageCode,
+    gatewayLanguage: gatewayLanguageCode,//TODO:
     projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
     Tool: getSelectedToolContainer(state),
@@ -217,17 +208,14 @@ const mapStateToProps = state => {
     toolApi: getSelectedToolApi(state),
     targetBook: getTargetBook(state),
     sourceBook: getSourceBook(state),
-    sourceVerse: getSelectedSourceVerse(state),
-    targetVerseText: getSelectedTargetVerse(state),
-    sourceChapter: getSelectedSourceChapter(state),
-    targetChapter: getSelectedTargetChapter(state),
-    contextId: getContext(state), // TODO: Remove contextIdReducer
     projectSaveLocation: projectPath,
     username: getUsername(state),
     loginReducer: state.loginReducer,
     settingsReducer: state.settingsReducer,
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
+    contextId: getContext(state), // TODO: Remove contextIdReducer
+    selectionsReducer: state.selectionsReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
     contextIdReducer: state.contextIdReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
     groupsIndexReducer: state.groupsIndexReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
     groupsDataReducer: state.groupsDataReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
@@ -259,6 +247,18 @@ const mapDispatchToProps = (dispatch) => ({
   },
   validateSelections: (targetVerse) => {
     dispatch(validateSelections(targetVerse));
+  },
+  loadLexiconEntry(lexiconId, entryId) {
+    dispatch(loadLexiconEntry(lexiconId, entryId));
+  },
+  getLexiconData(lexiconId, entryId) {
+    getLexiconData(lexiconId, entryId);
+  },
+  getAvailableScripturePaneSelections(resourceList) {
+    getAvailableScripturePaneSelections(resourceList);
+  },
+  editTargetVerse(chapter, verse, before, after, tags) {// TODO: Remove editTargetVerse after implementing it as an action in wA tool.
+    editTargetVerse(chapter, verse, before, after, tags);
   },
 });
 
