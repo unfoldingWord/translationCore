@@ -8,7 +8,7 @@ Array [
     "invalidated": false,
     "modifiedTimestamp": "2017-10-27T18:13:41.455Z",
     "type": "SET_INVALIDATED",
-    "userName": "mannycolon",
+    "username": "mannycolon",
   },
 ]
 `;
@@ -21,7 +21,7 @@ Array [
     "invalidated": true,
     "modifiedTimestamp": "2017-10-27T18:13:41.455Z",
     "type": "SET_INVALIDATED",
-    "userName": "mannycolon",
+    "username": "mannycolon",
   },
 ]
 `;
@@ -33,7 +33,7 @@ Array [
     "gatewayLanguageQuote": "authority",
     "invalidated": false,
     "type": "SET_INVALIDATED",
-    "userName": "mannycolon",
+    "username": "mannycolon",
   },
   Object {
     "boolean": false,
@@ -52,7 +52,7 @@ Array [
     "gatewayLanguageQuote": "authority",
     "invalidated": true,
     "type": "SET_INVALIDATED",
-    "userName": "mannycolon",
+    "username": "mannycolon",
   },
   Object {
     "boolean": true,

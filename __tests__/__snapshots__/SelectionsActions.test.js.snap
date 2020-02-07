@@ -21,7 +21,7 @@ Array [
     "gatewayLanguageQuote": "authority",
     "invalidated": false,
     "type": "SET_INVALIDATED",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "contextId": Object {
@@ -208,7 +208,7 @@ Array [
     "gatewayLanguageQuote": "authority",
     "invalidated": true,
     "type": "SET_INVALIDATED",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "contextId": Object {
@@ -571,7 +571,7 @@ Array [
     "gatewayLanguageQuote": "authority",
     "invalidated": true,
     "type": "SET_INVALIDATED",
-    "userName": "dummy-test",
+    "username": "dummy-test",
   },
   Object {
     "contextId": Object {
