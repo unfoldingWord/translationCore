@@ -859,6 +859,8 @@ export default class ProjectAPI {
       } catch (error) {
         console.error(error);
       }
+    } else {
+      console.error(`The project doesn't have currentContextId`);
     }
   }
 }
