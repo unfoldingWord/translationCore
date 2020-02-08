@@ -80,6 +80,7 @@ export default class ProjectAPI {
   getCategoriesDir(toolName) {
     // TODO: the book id is redundant to have in the project directory.
     const bookId = this.getBookId();
+    console.log(`this._dataPath, 'index', toolName, bookId`, this._dataPath, 'index', toolName, bookId);
     return path.join(this._dataPath, 'index', toolName, bookId);
   }
 
@@ -849,18 +850,29 @@ export default class ProjectAPI {
    * @param {string} toolName - tool name.
    */
   readCurrentContextIdSync(toolName) {
-    const groupsPath = this.getCategoriesDir(toolName);
-    const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+    try {
+      if (!toolName) {
+        return null;
+      }
 
-    if (fs.existsSync(contextIdPath)) {
-      try {
+      const groupsPath = this.getCategoriesDir(toolName);
+      const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+
+      if (fs.existsSync(contextIdPath)) {
         const currentContextId = fs.readJSONSync(contextIdPath);
         return currentContextId;
-      } catch (error) {
-        console.error(error);
+      } else {
+        console.warn(`The project doesn't have a currentContextId, thus getting the first item on the groupsData list`);
+        const groupsData = this.getGroupsData(toolName);
+        const groupsDataKeys = Object.keys(groupsData);
+        const firstKey = groupsDataKeys[0];
+        const groupData = groupsData[firstKey][0];
+        const { contextId } = groupData || { contextId: null };
+        return contextId;
       }
-    } else {
-      console.error(`The project doesn't have currentContextId`);
+    } catch (error) {
+      console.error(error);
+      return null;
     }
   }
 }
