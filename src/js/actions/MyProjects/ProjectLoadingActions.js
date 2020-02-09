@@ -33,7 +33,9 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername, getProjects,
+  getUsername,
+  getProjects,
+  getCurrentToolName,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -230,6 +232,8 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
   const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
+  const toolName = getCurrentToolName(state) || null;
+  const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
   return {
     //resource api
@@ -259,6 +263,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     // project data
     sourceBook,
     targetBook,
+
+    bookId,
+    toolName,
+    gatewayLanguageCode,
 
     contextId: {
       reference: {

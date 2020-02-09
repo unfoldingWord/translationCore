@@ -85,6 +85,7 @@ class ToolContainer extends Component {
       targetBook,
       currentToolName,
       gatewayLanguage,
+      gatewayLanguageCode,
       currentLanguage: { code },
     } = nextProps;
 
@@ -114,6 +115,7 @@ class ToolContainer extends Component {
       projects,
       username,
       gatewayLanguage,
+      gatewayLanguageCode,
 
       contextId,// TODO: Remove contextIdReducer
 
@@ -122,6 +124,7 @@ class ToolContainer extends Component {
       targetBook,
       sourceBook,
       currentToolName,
+      toolName: currentToolName,
 
       // deprecated props
       showIgnorableDialog: (...args) => {

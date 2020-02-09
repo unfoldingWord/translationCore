@@ -80,7 +80,6 @@ export default class ProjectAPI {
   getCategoriesDir(toolName) {
     // TODO: the book id is redundant to have in the project directory.
     const bookId = this.getBookId();
-    console.log(`this._dataPath, 'index', toolName, bookId`, this._dataPath, 'index', toolName, bookId);
     return path.join(this._dataPath, 'index', toolName, bookId);
   }
 
@@ -710,7 +709,7 @@ export default class ProjectAPI {
    */
   async writeDataFile(filePath, data) {
     const writePath = path.join(this._dataPath, filePath);
-    return await fs.outputFile(writePath, data); // TODO: shouldn't have 'await' here since this is supposed to be async write?
+    return fs.outputFile(writePath, data); // TODO: shouldn't have 'await' here since this is supposed to be async write?
   }
 
   /**
