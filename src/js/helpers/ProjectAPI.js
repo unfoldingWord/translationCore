@@ -709,7 +709,7 @@ export default class ProjectAPI {
    */
   async writeDataFile(filePath, data) {
     const writePath = path.join(this._dataPath, filePath);
-    return fs.outputFile(writePath, data); // TODO: shouldn't have 'await' here since this is supposed to be async write?
+    return await fs.outputFile(writePath, data); // TODO: shouldn't have 'await' here since this is supposed to be async write?
   }
 
   /**
