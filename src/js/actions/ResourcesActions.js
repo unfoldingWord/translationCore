@@ -154,10 +154,6 @@ const migrateChapterToVerseObjects = chapterData => {
  */
 export const loadBookResource = (bibleId, bookId, languageId, version = null) => {
   try {
-    console.log('loadBookResource()');
-    console.log('====================================');
-    console.log('bibleId, bookId, languageId, version', bibleId, bookId, languageId, version);
-    console.log('====================================');
     const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId); // ex. user/NAME/translationCore/resources/en/bibles/ult
 
     if (fs.existsSync(bibleFolderPath)) {
