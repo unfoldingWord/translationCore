@@ -209,6 +209,7 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
  * @return {Function}
  */
 export const loadBibleBook = (bibleId, bookId, languageId, version = null) => (dispatch) => {
+  console.log('loadBibleBook() bibleId, bookId, languageId, version', bibleId, bookId, languageId, version);
   const bibleData = loadBookResource(bibleId, bookId, languageId, version);
 
   if (bibleData) {
@@ -299,7 +300,7 @@ export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) =
   const state = getState();
   const toolName = getCurrentToolName(state);
   const { bibles } = state.resourcesReducer;
-  const bookId = contextId && contextId.reference.bookId;
+  const bookId = contextId && contextId.reference.bookId || getProjectBookId(state);
 
   dispatch(updateOrigLangPaneSettings(bookId));
   const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName);
