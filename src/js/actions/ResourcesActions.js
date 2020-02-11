@@ -209,7 +209,6 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
  * @return {Function}
  */
 export const loadBibleBook = (bibleId, bookId, languageId, version = null) => (dispatch) => {
-  console.log('loadBibleBook() bibleId, bookId, languageId, version', bibleId, bookId, languageId, version);
   const bibleData = loadBookResource(bibleId, bookId, languageId, version);
 
   if (bibleData) {
