@@ -84,7 +84,7 @@ export const loadTool = async (toolDir) => {
     // TODO: enable following to load tools - currently when tools are loaded it crashes tCore as soon as they are loaded to reducer
     switch (toolName) { // tricky, with webpack the paths to require must be defined at compile time, not generated at runtime
       case 'wordAlignment':
-        // module = require('../../tC_apps/wordAlignment/index');
+        module = require('../../tC_apps/wordAlignment/index');
         break;
 
       case 'translationWords':
