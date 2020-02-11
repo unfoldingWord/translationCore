@@ -75,8 +75,7 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
 
 export function displayAlignmentErrorsPrompt() {
   return ((dispatch) => new Promise((resolve) => {
-    const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment,\
-open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
+    const alignmentErrorsPrompt = 'Some alignments have been invalidated! To fix the invalidated alignment, open the project in the Word Alignment Tool. If you proceed with the export, the alignment for these verses will be reset.';
 
     dispatch(AlertModalActions.openOptionDialog(
       alignmentErrorsPrompt,

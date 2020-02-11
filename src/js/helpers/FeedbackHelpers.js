@@ -5,10 +5,11 @@ import AdmZip from 'adm-zip';
 import { getQuoteAsString } from 'checking-tool-wrapper';
 import { openAlert } from '../actions/AlertActions';
 import { getTranslate } from '../selectors';
-import appPackage from '../../../package';
+// import appPackage from '../../package';
 import { changeToNextContextId } from '../actions/ContextIdActions';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
+import {APP_VERSION} from "../common/constants";
 
 /**
  *
@@ -93,7 +94,7 @@ export const submitFeedback = ({
     };
   }
 
-  let fullMessage = `${message}\n\nApp Version:\n${appPackage.version} (${process.env.BUILD})`;
+  let fullMessage = `${message}\n\nApp Version:\n${APP_VERSION} (${process.env.BUILD})`;
 
   if (name) {
     fullMessage += `\n\nName: ${name}`;

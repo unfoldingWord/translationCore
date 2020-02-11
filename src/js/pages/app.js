@@ -38,7 +38,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     // load app locale
-    const localeDir = path.join(__dirname, '../../locale');
+    const localeDir = path.join('./src/locale');
     this.props.loadLocalization(localeDir, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
   }
 
@@ -55,7 +55,7 @@ class Main extends Component {
       loadTools,
     } = this.props;
 
-    loadTools(path.join(__dirname, '../../../tC_apps'));
+    loadTools(path.join('./src/tC_apps'));
 
     if (localStorage.getItem('version') !== APP_VERSION) {
       localStorage.setItem('version', APP_VERSION);

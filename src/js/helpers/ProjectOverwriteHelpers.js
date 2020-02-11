@@ -183,7 +183,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
       },
     };
     const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
-    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId, name);
+    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId);
     let filtered = null;
     let selectionsChanged = false;
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { LocalizeProvider } from 'react-localize-redux';
 import setupSubscriptions from 'redux-subscriptions';
@@ -26,11 +26,16 @@ store.subscribe(setupSubscriptions(store)(
   }
 ));
 
-module.exports.App = (
-  <Provider store={store}>
-    <LocalizeProvider store={store}>
-      <Application />
-    </LocalizeProvider>
-  </Provider>
-);
-module.exports.dispatch = store.dispatch;
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <LocalizeProvider store={store}>
+          <Application/>
+        </LocalizeProvider>
+      </Provider>
+    );
+  }
+}
+
+export default App;

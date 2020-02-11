@@ -12,7 +12,7 @@ export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', '
 export const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
 export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');
 export const PROJECT_CHECKDATA_DIRECTORY = path.join(PROJECT_DOT_APPS_PATH, 'checkData');
-export const STATIC_RESOURCES_PATH = path.join(__dirname, '../../../tcResources');
+export const STATIC_RESOURCES_PATH = path.join('./tcResources');
 export const LOG_FILES_PATH = path.join(ospath.home(), 'translationCore', 'logs');
 // string names
 export const TC_VERSION = 'tc_version';

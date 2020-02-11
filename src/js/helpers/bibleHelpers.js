@@ -2,7 +2,6 @@
 import Path from 'path-extra';
 import fs from 'fs-extra';
 import * as Bible from '../common/BooksOfTheBible';
-import BooksOfBible from '../../../tcResources/books';
 import ResourceAPI from './ResourceAPI';
 
 /**
@@ -13,7 +12,7 @@ export function convertToFullBookName(bookAbbr) {
   if (!bookAbbr) {
     return;
   }
-  return BooksOfBible[bookAbbr.toString().toLowerCase()];
+  return Bible.ALL_BIBLE_BOOKS[bookAbbr.toString().toLowerCase()];
 }
 
 /**

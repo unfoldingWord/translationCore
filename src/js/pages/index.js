@@ -1,7 +1,7 @@
 const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '../../../.env') });
 (function () {
-  require('babel-polyfill'); // needed for es6 usage.
+  // require('babel-polyfill'); // needed for es6 usage.
   const ReactDOM = require('react-dom');
   const remote = require('electron').remote;
   const { Menu } = remote;

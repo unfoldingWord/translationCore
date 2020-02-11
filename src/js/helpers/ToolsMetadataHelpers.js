@@ -2,7 +2,7 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import * as LoadHelpers from '../helpers/LoadHelpers';
 // constant declarations
-const PACKAGE_SUBMODULE_LOCATION = path.join(__dirname, '../../../tC_apps');
+const PACKAGE_SUBMODULE_LOCATION = path.join('./tC_apps');
 
 /**
  * @deprecated
