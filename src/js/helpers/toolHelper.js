@@ -81,28 +81,24 @@ export const loadTool = async (toolDir) => {
     // // console.log('toolPath=' + toolRequirePath);
     // const module = require(toolRequirePath);
     let module = null;
-    switch (toolName) { // tricky, with webpack the paths to require must be defined at compile time, not generated at runtime
-      case 'wordAlignment':
-        module = require('../../tC_apps/wordAlignment/index');
-        break;
+    // TODO: enable following to load tools
+    // switch (toolName) { // tricky, with webpack the paths to require must be defined at compile time, not generated at runtime
+    //   case 'wordAlignment':
+    //     module = require('../../tC_apps/wordAlignment/index');
+    //     break;
+    //
+    //   case 'translationWords':
+    //     module = require('../../tC_apps/translationWords/index');
+    //     break;
+    //
+    //   case 'translationNotes':
+    //     module = require('../../tC_apps/translationNotes/index');
+    //     break;
+    //
+    //   default:
+    //     throw new Error(`loading unsupported for tool "${toolName}"`);
+    // }
 
-      case 'translationWords':
-        module = require('../../tC_apps/translationWords/index');
-        break;
-
-      case 'translationNotes':
-        module = require('../../tC_apps/translationNotes/index');
-        break;
-
-      default:
-        throw new Error(`loading unsupported for tool "${toolName}"`);
-    }
-    // TODO: failed paths:
-    // ./src/tC_apps/wordAlignment/index.js
-    // /src/tC_apps/wordAlignment/index.js
-    // /tC_apps/wordAlignment/index.js
-    // ../../tC_apps/wordAlignment/index.js
-    // ../../../tC_apps/wordAlignment/index.js
     tool = module.default;
   } catch (e) {
     const message = `Error loading tool "${toolName}"`;
