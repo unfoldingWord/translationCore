@@ -1,11 +1,12 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from "ospath";
 import isEqual from 'deep-equal';
 import { getEditedVerse, getProjectSaveLocation } from '../selectors';
 import { generateTimestamp } from '../helpers';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 
-const PARENT = path.datadir('translationCore');
+const PARENT = path.join(ospath.data(), 'translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 const INDEX_DIRECTORY = path.join('.apps', 'translationCore', 'index');

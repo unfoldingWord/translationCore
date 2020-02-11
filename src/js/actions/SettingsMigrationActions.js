@@ -1,12 +1,13 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
+import ospath from "ospath";
 // actions
 // helpers
 import * as settingsMigrationHelpers from '../helpers/settingsMigrationHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import * as SettingsActions from './SettingsActions';
 // constants
-const PARENT = path.datadir('translationCore');
+const PARENT = path.join(ospath.data(), 'translationCore', 'projects');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 
 /**
