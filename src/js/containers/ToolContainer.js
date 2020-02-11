@@ -12,7 +12,7 @@ import {
   makeSureBiblesLoadedForTool,
 } from '../actions/ResourcesActions';
 import {
-  getContext,// TODO: Remove contextIdReducer
+  // getContext,// TODO: Remove contextIdReducer
   getSelectedToolApi,
   getSelectedToolContainer,
   getProjectSaveLocation,
@@ -75,7 +75,6 @@ class ToolContainer extends Component {
     }
 
     const {
-      contextId, // TODO: Remove contextIdReducer
       bookId,
       coreApi,
       username,
@@ -116,8 +115,6 @@ class ToolContainer extends Component {
       username,
       gatewayLanguage,
       gatewayLanguageCode,
-
-      contextId,// TODO: Remove contextIdReducer
 
       // project data
       bookId,
@@ -188,7 +185,6 @@ ToolContainer.propTypes = {
   currentToolName: PropTypes.string.isRequired,
   supportingToolApis: PropTypes.object.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
-  contextId: PropTypes.object, // TODO: Remove contextIdReducer
 };
 
 ToolContainer.contextTypes = { store: PropTypes.any };
@@ -203,7 +199,6 @@ const mapStateToProps = state => {
     bookId,
     currentToolName,
     gatewayLanguageCode,
-    gatewayLanguage: gatewayLanguageCode,//TODO:
     projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
     Tool: getSelectedToolContainer(state),
@@ -217,9 +212,9 @@ const mapStateToProps = state => {
     settingsReducer: state.settingsReducer,
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    contextId: getContext(state), // TODO: Remove contextIdReducer
+    // contextId: getContext(state), // TODO: Remove contextIdReducer
     selectionsReducer: state.selectionsReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
-    contextIdReducer: state.contextIdReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
+    // contextIdReducer: state.contextIdReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
     groupsIndexReducer: state.groupsIndexReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
     groupsDataReducer: state.groupsDataReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
   };
