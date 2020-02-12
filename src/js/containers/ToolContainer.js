@@ -247,8 +247,8 @@ const mapDispatchToProps = (dispatch) => ({
   loadLexiconEntry(lexiconId, entryId) {
     dispatch(loadLexiconEntry(lexiconId, entryId));
   },
-  editTargetVerse(chapter, verse, before, after, tags) {// TODO: Remove editTargetVerse after implementing it as an action in wA tool.
-    dispatch(editTargetVerse(chapter, verse, before, after, tags));
+  editTargetVerse(chapter, verse, before, after, tags, contextId) {// TODO: Remove editTargetVerse after implementing it as an action in wA tool.
+    dispatch(editTargetVerse(chapter, verse, before, after, tags, contextId));
   },
 });
 

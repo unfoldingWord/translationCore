@@ -285,11 +285,11 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
  * @param {string} after - the verse text after the edit
  * @param {string[]} tags - an array of tags indicating the reason for the edit
  */
-export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags) => async (dispatch, getState) => {
+export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, contextId) => async (dispatch, getState) => {
   const state = getState();
   const username = state.loginReducer.userdata.username;
-  const { contextId: currentCheckContextId } = state.contextIdReducer;
-  const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+  const currentCheckContextId = contextId;
+  const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
   let {
     bookId, chapter: currentCheckChapter, verse: currentCheckVerse,
   } = currentCheckContextId.reference;
