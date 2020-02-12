@@ -81,7 +81,6 @@ class ToolContainer extends Component {
       sourceBook,
       targetBook,
       currentToolName,
-      gatewayLanguage,
       gatewayLanguageCode,
       currentLanguage: { code },
     } = nextProps;
@@ -111,7 +110,6 @@ class ToolContainer extends Component {
       appLanguage: code,
       projects,
       username,
-      gatewayLanguage,
       gatewayLanguageCode,
 
       // project data
@@ -241,15 +239,15 @@ const mapDispatchToProps = (dispatch) => ({
   onInvalidCheck(contextId, selectedGL, moveToNext) {
     dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, moveToNext));
   },
-  validateSelections: (targetVerse) => {
-    dispatch(validateSelections(targetVerse));
-  },
   loadLexiconEntry(lexiconId, entryId) {
     dispatch(loadLexiconEntry(lexiconId, entryId));
   },
-  editTargetVerse(chapter, verse, before, after, tags, contextId) {// TODO: Remove editTargetVerse after implementing it as an action in wA tool.
-    dispatch(editTargetVerse(chapter, verse, before, after, tags, contextId));
+  validateSelections: (targetVerse, contextId) => {// TODO:
+    dispatch(validateSelections(targetVerse, contextId));
   },
+  // editTargetVerse(chapter, verse, before, after, tags, contextId) {// TODO: Remove editTargetVerse after implementing it as an action in wA tool.
+  //   dispatch(editTargetVerse(chapter, verse, before, after, tags, contextId));
+  // },
 });
 
 export default connect(
