@@ -18,7 +18,6 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import { openSoftwareUpdate } from '../SoftwareUpdateActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { changeSelections } from '../SelectionsActions';
 import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
@@ -277,7 +276,6 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     username: getUsername(state),
     toolsSelectedGLs: getToolsSelectedGLs(state),
-    actions: { changeSelections: (selections) => dispatch(changeSelections(selections)) },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
