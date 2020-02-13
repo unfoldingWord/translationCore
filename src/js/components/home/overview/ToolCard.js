@@ -7,7 +7,7 @@ import TemplateCard from '../TemplateCard';
 import ToolCardProgress from '../toolsManagement/ToolCardProgress';
 import {
   getSelectedTool,
-  getSelectedToolName,
+  getCurrentToolName,
   getProjectToolProgress,
 } from '../../../selectors';
 
@@ -19,10 +19,10 @@ class ToolCard extends Component {
 
   componentWillMount() {
     const { store } = this.context;
-    const selectedToolName = getSelectedToolName(store.getState());
+    const currentToolName = getCurrentToolName(store.getState());
 
-    if (selectedToolName) {
-      this.props.actions.getProjectProgressForTools(selectedToolName);
+    if (currentToolName) {
+      this.props.actions.getProjectProgressForTools(currentToolName);
     }
   }
 

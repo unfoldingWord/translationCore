@@ -4,7 +4,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import {
-  getTranslate, getContext, getSelectedToolName, getProjectSaveLocation, getProjectBookId,
+  getTranslate, getContext, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';
 // helpers
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
@@ -95,7 +95,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 export const downloadSourceContentUpdates = (languageIdListToDownload) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const contextId = getContext(getState());
-  const toolName = getSelectedToolName(getState());
+  const toolName = getCurrentToolName(getState());
 
   dispatch(resetSourceContentUpdatesReducer());
 

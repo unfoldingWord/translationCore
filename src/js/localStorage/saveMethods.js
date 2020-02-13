@@ -52,6 +52,7 @@ function saveData(state, checkDataName, payload, modifiedTimestamp) {
   }
 }
 
+
 /**
  * @description this function saves the current target language chapter into the file system.
  * @param {object} state - store state object.

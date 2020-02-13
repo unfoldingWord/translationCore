@@ -9,7 +9,7 @@ import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
 import { delay } from '../common/utils';
 import {
   getSelectedToolApi,
-  getSelectedToolName,
+  getCurrentToolName,
   getSupportingToolApis,
   getTranslate,
   getUsername,
@@ -184,7 +184,7 @@ export const doBackgroundVerseEditsUpdates = (verseEdit, contextIdWithVerseEdit,
 
   const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
   const state = getState();
-  const toolName = getSelectedToolName(state);
+  const toolName = getCurrentToolName(state);
 
   if (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES) {
     const editedChecks = {};
@@ -232,7 +232,7 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
   const verseWithVerseEdit = contextIdWithVerseEdit.reference.verse;
   dispatch(updateTargetVerse(chapterWithVerseEdit, verseWithVerseEdit, verseEdit.verseAfter));
 
-  if (getSelectedToolName(getState()) === WORD_ALIGNMENT) {
+  if (getCurrentToolName(getState()) === WORD_ALIGNMENT) {
     // since tw group data is not loaded into reducer, need to save verse edit record directly to file system
     dispatch(writeTranslationWordsVerseEditToFile(verseEdit));
     // in group data reducer set verse edit flag for the verse edited
@@ -285,11 +285,11 @@ export const updateVerseEditStatesAndCheckAlignments = (verseEdit, contextIdWith
  * @param {string} after - the verse text after the edit
  * @param {string[]} tags - an array of tags indicating the reason for the edit
  */
-export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags) => async (dispatch, getState) => {
+export const editTargetVerse = (chapterWithVerseEdit, verseWithVerseEdit, before, after, tags, contextId) => async (dispatch, getState) => {
   const state = getState();
   const username = state.loginReducer.userdata.username;
-  const { contextId: currentCheckContextId } = state.contextIdReducer;
-  const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState());
+  const currentCheckContextId = contextId;
+  const { gatewayLanguageCode, gatewayLanguageQuote } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(getState(), contextId);
   let {
     bookId, chapter: currentCheckChapter, verse: currentCheckVerse,
   } = currentCheckContextId.reference;
@@ -381,14 +381,13 @@ export const recordTargetVerseEdit = (bookId, chapter, verse, before, after, tag
 /**
  * Updates the verse text in the target language bible resource.
  * This will not write any changes to the disk.
- * @param {int} chapter
- * @param {int} verse
+ * @param {number} chapter
+ * @param {number} verse
  * @param {string} text
- * @return {*}
  */
-export const updateTargetVerse = (chapter, verse, text) => ({
+export const updateTargetVerse = (chapter, verse, editedText) => ({
   type: types.UPDATE_TARGET_VERSE,
-  editedText: text,
+  editedText,
   chapter,
   verse,
 });

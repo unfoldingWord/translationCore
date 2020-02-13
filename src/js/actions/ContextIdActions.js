@@ -7,7 +7,7 @@ import {
 // actions
 import { getContextIdPathFromIndex, saveContextId } from '../helpers/contextIdHelpers';
 import {
-  getSelectedToolName,
+  getCurrentToolName,
   getGroupsIndex,
   getGroupsData,
   getProjectSaveLocation,
@@ -77,7 +77,7 @@ function changeContextIdInReducers(contextId, dispatch, state) {
       type: consts.SET_REMINDER,
       enabled: reminders,
       modifiedTimestamp: '',
-      userName: '',
+      username: '',
       gatewayLanguageCode: null,
       gatewayLanguageQuote: null,
     },
@@ -85,7 +85,7 @@ function changeContextIdInReducers(contextId, dispatch, state) {
       type: consts.SET_INVALIDATED,
       enabled: invalidated,
       modifiedTimestamp: '',
-      userName: '',
+      username: '',
       gatewayLanguageCode: null,
       gatewayLanguageQuote: null,
     },
@@ -93,7 +93,7 @@ function changeContextIdInReducers(contextId, dispatch, state) {
       type: consts.ADD_COMMENT,
       modifiedTimestamp: '',
       text: comments,
-      userName: '',
+      username: '',
     },
   ];
   dispatch(batchActions(actionsBatch)); // process the batch
@@ -229,7 +229,7 @@ export function loadCurrentContextId(toolName) {
     let state = getState();
     let { projectSaveLocation, manifest } = state.projectDetailsReducer;
     let { groupsIndex } = state.groupsIndexReducer;
-    toolName = toolName || getSelectedToolName(state);
+    toolName = toolName || getCurrentToolName(state);
     let bookId = manifest.project.id ? manifest.project.id : undefined;
 
     if (projectSaveLocation && toolName && bookId) {

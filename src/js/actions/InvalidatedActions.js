@@ -7,12 +7,12 @@ import consts from './ActionTypes';
 
 /**
  * @description sets invalidatedReducer to true or false
- * @param {String} userName - The username of who invalidated.
+ * @param {String} username - The username of who invalidated.
  * @param {String} timestamp
  * @param {Boolean} invalidated - new state for invalidated flag
  * @return {object} action state.
  */
-export function set(userName, timestamp, invalidated) {
+export function set(username, timestamp, invalidated) {
   return ((dispatch, getState) => {
     const {
       gatewayLanguageCode,
@@ -24,7 +24,7 @@ export function set(userName, timestamp, invalidated) {
       modifiedTimestamp: timestamp,
       gatewayLanguageCode,
       gatewayLanguageQuote,
-      userName,
+      username,
       invalidated,
     });
   });

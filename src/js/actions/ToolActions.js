@@ -1,12 +1,7 @@
 
 /* eslint-disable no-async-promise-executor */
 import { batchActions } from 'redux-batched-actions';
-import {
-  getToolGatewayLanguage,
-  getTranslate,
-  getProjectSaveLocation,
-} from '../selectors';
-import { loadProjectGroupData, loadProjectGroupIndex } from '../helpers/ResourcesHelpers';
+import { getTranslate } from '../selectors';
 import {
   loadToolsInDir, isInvalidationAlertDisplaying, getInvalidCountForTool,
 } from '../helpers/toolHelper';
@@ -17,9 +12,7 @@ import types from './ActionTypes';
 import * as ModalActions from './ModalActions';
 import { openAlertDialog, closeAlertDialog } from './AlertModalActions';
 import * as GroupsDataActions from './GroupsDataActions';
-import { loadCurrentContextId } from './ContextIdActions';
 import * as BodyUIActions from './BodyUIActions';
-import { loadGroupsIndex } from './GroupsIndexActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
 // helpers
 import { showInvalidatedWarnings } from './SelectionsActions';
@@ -57,33 +50,9 @@ export const loadTools = (toolsDir) => (dispatch) => {
  * @param {String} name - Name of the tool
  */
 export function prepareToolForLoading(name) {
-  return async (dispatch, getData) => {
-    const translate = getTranslate(getData());
-
-    dispatch(batchActions([
-      { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
-      { type: types.CLEAR_PREVIOUS_GROUPS_INDEX },
-      { type: types.CLEAR_CONTEXT_ID },
-    ]));
-
+  return async (dispatch) => {
     // Load older version of OL resource if needed by tN tool
     dispatch(loadOlderOriginalLanguageResource(name));
-
-    // load group data
-    const projectDir = getProjectSaveLocation(getData());
-    const groupData = loadProjectGroupData(name, projectDir);
-
-    dispatch({
-      type: types.LOAD_GROUPS_DATA_FROM_FS,
-      allGroupsData: groupData,
-    });
-
-    // load group index
-    const language = getToolGatewayLanguage(getData(), name);
-    const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
-    dispatch(loadGroupsIndex(groupIndex));
-
-    dispatch(loadCurrentContextId(name));
     //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
     await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(name));
     // wait for filesystem calls to finish

@@ -18,7 +18,6 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import { openSoftwareUpdate } from '../SoftwareUpdateActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { changeSelections } from '../SelectionsActions';
 import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
@@ -33,7 +32,9 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername, getProjects,
+  getUsername,
+  getProjects,
+  getCurrentToolName,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -230,6 +231,8 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
   const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
+  const toolName = getCurrentToolName(state) || null;
+  const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
   return {
     //resource api
@@ -260,6 +263,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     sourceBook,
     targetBook,
 
+    bookId,
+    toolName,
+    gatewayLanguageCode,
+
     contextId: {
       reference: {
         bookId,
@@ -269,7 +276,6 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     username: getUsername(state),
     toolsSelectedGLs: getToolsSelectedGLs(state),
-    actions: { changeSelections: (selections) => dispatch(changeSelections(selections)) },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
