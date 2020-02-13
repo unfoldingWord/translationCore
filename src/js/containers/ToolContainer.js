@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { showPopover } from '../actions/PopoverActions';
-import { validateSelections } from '../actions/SelectionsActions';
 import { setToolSettings } from '../actions/SettingsActions';
 import { openIgnorableAlert } from '../actions/AlertActions';
 import { updateTargetVerse, editTargetVerse } from '../actions/VerseEditActions';
@@ -12,7 +11,6 @@ import {
   makeSureBiblesLoadedForTool,
 } from '../actions/ResourcesActions';
 import {
-  // getContext,// TODO: Remove contextIdReducer
   getSelectedToolApi,
   getSelectedToolContainer,
   getProjectSaveLocation,
@@ -208,11 +206,8 @@ const mapStateToProps = state => {
     settingsReducer: state.settingsReducer,
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    // contextId: getContext(state), // TODO: Remove contextIdReducer
-    selectionsReducer: state.selectionsReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
-    // contextIdReducer: state.contextIdReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
-    groupsIndexReducer: state.groupsIndexReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
-    groupsDataReducer: state.groupsDataReducer,// TODO: Remove once #6651, #6652 & #6654 are implemented in wA tool.
+    // TODO: Remove once verseEditReducer & selectionsReducer are implemented in wA tool.
+    selectionsReducer: state.selectionsReducer,
   };
 };
 
@@ -242,12 +237,9 @@ const mapDispatchToProps = (dispatch) => ({
   loadLexiconEntry(lexiconId, entryId) {
     dispatch(loadLexiconEntry(lexiconId, entryId));
   },
-  validateSelections: (targetVerse, contextId) => {// TODO:
-    dispatch(validateSelections(targetVerse, contextId));
+  editTargetVerse(chapter, verse, before, after, tags, contextId) {// TODO: Remove once verseEditReducer & selectionsReducer are implemented in wA tool.
+    dispatch(editTargetVerse(chapter, verse, before, after, tags, contextId));
   },
-  // editTargetVerse(chapter, verse, before, after, tags, contextId) {// TODO: Remove editTargetVerse after implementing it as an action in wA tool.
-  //   dispatch(editTargetVerse(chapter, verse, before, after, tags, contextId));
-  // },
 });
 
 export default connect(
