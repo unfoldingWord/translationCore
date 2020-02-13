@@ -6,7 +6,7 @@ import { checkSelectionOccurrences } from 'selections';
 import { batchActions } from 'redux-batched-actions';
 // helpers
 import {
-  getTranslate, getUsername, getSelectedToolName,
+  getTranslate, getUsername, getCurrentToolName,
 } from '../selectors';
 import { generateTimestamp } from '../helpers/index';
 import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
@@ -45,7 +45,7 @@ export const changeSelections = (selections, invalidated = false, contextId = nu
   const username = state.loginReducer.userdata.username;
   const validTools = [TRANSLATION_WORDS, TRANSLATION_NOTES];
 
-  if (validTools.includes(getSelectedToolName(state)) || validTools.includes(contextId.tool)) {
+  if (validTools.includes(getCurrentToolName(state)) || validTools.includes(contextId.tool)) {
     const currentContextId = state.contextIdReducer.contextId;
     contextId = contextId || currentContextId; // use current if contextId is not passed
     const {
@@ -163,7 +163,7 @@ export const getGroupDataForGroupIdChapterVerse = (groupsDataReducer, groupId, c
  * @return {Boolean} - updated value for selectionInvalidated
  */
 function validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch) {
-  const currentTool = getSelectedToolName(state);
+  const currentTool = getCurrentToolName(state);
   const selectionsPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'selections', bibleId, chapter.toString(), verse.toString());
 
   if (fs.existsSync(selectionsPath)) {
@@ -242,7 +242,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
   let selectionInvalidated = false;
   const actionsBatch = Array.isArray(batchGroupData) ? batchGroupData : []; // if batch array passed in then use it, otherwise create new array
 
-  if (getSelectedToolName(state) !== WORD_ALIGNMENT) {
+  if (getCurrentToolName(state) !== WORD_ALIGNMENT) {
     // for this groupId, find every check for this chapter/verse
     const matchedGroupData = getGroupDataForGroupIdChapterVerse(state.groupsDataReducer, contextId.groupId, chapterNumber, verseNumber);
 
@@ -266,7 +266,7 @@ export const validateSelections = (targetVerse, contextId = null, chapterNumber,
     selectionInvalidated = validateSelectionsForUnloadedTools(projectSaveLocation, bibleId, chapter, verse, state, targetVerse, selectionInvalidated, dispatch);
   }
 
-  if (!Array.isArray(batchGroupData)) { // if we are not returning batch, then process actions now
+  if (!Array.isArray(batchGroupData) && actionsBatch.length > 1) { // if we are not returning batch, then process actions now
     dispatch(batchActions(actionsBatch));
   }
   results.selectionsChanged = selectionInvalidated;
@@ -408,7 +408,7 @@ export const getSelectionsForContextID = (projectSaveLocation, contextId) => {
  * @param {String} projectSaveLocation
  * @return {string}
  */
-//  TODO: this is not an action and should be moved elsewhere
+// TODO: this is not an action and should be moved elsewhere
 export const getSelectionsFromContextId = (contextId, projectSaveLocation) => {
   const selections = getSelectionsForContextID(projectSaveLocation, contextId);
   const selectionsArray = [];

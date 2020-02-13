@@ -6,20 +6,20 @@ import modalReducer from './modalReducer';
 import loginReducer from './loginReducer';
 import recentProjectsReducer from './recentProjectsReducer';
 import importOnlineReducer from './importOnlineReducer';
-import groupMenuReducer from './groupMenuReducer';
+import groupMenuReducer from './groupMenuReducer';// TODO
 import settingsReducer from './settingsReducer';
 import popoverReducer from './popoverReducer';
 import resourcesReducer from './resourcesReducer';
 import projectDetailsReducer from './projectDetailsReducer';
 import alertModalReducer from './alertModalReducer';
-import commentsReducer from './commentsReducer';
-import selectionsReducer from './selectionsReducer';
-import remindersReducer from './remindersReducer';
-import invalidatedReducer from './invalidatedReducer';
-import contextIdReducer from './contextIdReducer';
-import groupsDataReducer from './groupsDataReducer';
-import groupsIndexReducer from './groupsIndexReducer';
-import verseEditReducer from './verseEditReducer';
+// import commentsReducer from './commentsReducer';// TODO
+import selectionsReducer from './selectionsReducer';// TODO
+// import remindersReducer from './remindersReducer';// TODO
+// import invalidatedReducer from './invalidatedReducer';// TODO
+import contextIdReducer from './contextIdReducer';// TODO
+import groupsDataReducer from './groupsDataReducer';// TODO
+import groupsIndexReducer from './groupsIndexReducer';// TODO
+// import verseEditReducer from './verseEditReducer';// TODO
 import homeScreenReducer from './homeScreenReducer';
 import myProjectsReducer from './myProjectsReducer';
 import projectValidationReducer from './projectValidationReducer';
@@ -44,19 +44,19 @@ const rootReducers = combineReducers({
   settingsReducer,
   recentProjectsReducer,
   importOnlineReducer,
-  groupMenuReducer,
+  groupMenuReducer,// TODO
   popoverReducer,
   resourcesReducer,
   projectDetailsReducer,
   alertModalReducer,
-  commentsReducer,
-  selectionsReducer,
-  remindersReducer,
-  invalidatedReducer,
-  contextIdReducer,
-  groupsDataReducer,
-  groupsIndexReducer,
-  verseEditReducer,
+  // commentsReducer,// TODO
+  selectionsReducer,// TODO
+  // remindersReducer,// TODO
+  // invalidatedReducer,
+  contextIdReducer,// TODO
+  groupsDataReducer,// TODO
+  groupsIndexReducer,// TODO
+  // verseEditReducer,// TODO
   homeScreenReducer,
   myProjectsReducer,
   projectValidationReducer,

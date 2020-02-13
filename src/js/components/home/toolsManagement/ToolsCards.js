@@ -21,7 +21,7 @@ const ToolsCards = ({
   loggedInUser,
   projectSaveLocation,
   manifest,
-  invalidatedReducer,
+  // invalidatedReducer,
   toolsCategories,
   originalLanguageBookManifest,
   onMissingResource,
@@ -110,7 +110,6 @@ const ToolsCards = ({
                 }}
                 isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
-                invalidatedReducer={invalidatedReducer}
                 glSelected={glSelected || ''}
                 sourceContentUpdateCount={sourceContentUpdateCount}
               />
@@ -131,7 +130,6 @@ ToolsCards.propTypes = {
   loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   manifest: PropTypes.object.isRequired,
-  invalidatedReducer: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,

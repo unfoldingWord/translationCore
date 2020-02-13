@@ -14,7 +14,7 @@ import Hint from '../../Hint';
 import {
   getProjectBookId,
   getSetting,
-  getSelectedToolName,
+  getCurrentToolName,
 } from '../../../selectors';
 import {
   WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
@@ -148,20 +148,20 @@ class ToolCard extends Component {
     const {
       isOLBookVersionMissing,
       toggleHomeView,
-      selectedToolName,
+      currentToolName,
       tool,
       actions: { warnOnInvalidations },
     } = this.props;
     const { selectedCategoriesChanged, glSelectedChanged } = this.state;
-    const newSelectedToolName = tool.name;
+    const newCurrentToolName = tool.name;
 
     if (isOLBookVersionMissing) {
       // Show dialog with option to download missing resource
       this.props.onMissingResource();
-    } else if (selectedToolName && !glSelectedChanged && !selectedCategoriesChanged && (selectedToolName === newSelectedToolName)) {
+    } else if (currentToolName && !glSelectedChanged && !selectedCategoriesChanged && (currentToolName === newCurrentToolName)) {
       // Show tool (Without loading tool data)
       toggleHomeView(false);
-      warnOnInvalidations(newSelectedToolName);
+      warnOnInvalidations(newCurrentToolName);
     } else {
       // Load tool data then show tool
       this.handleSelect();
@@ -316,10 +316,10 @@ ToolCard.propTypes = {
   availableCategories: PropTypes.object.isRequired,
   isOLBookVersionMissing: PropTypes.bool.isRequired,
   onMissingResource: PropTypes.func.isRequired,
-  selectedToolName: PropTypes.oneOfType([
+  currentToolName: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.bool,
-  ]),
+  ]).isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
@@ -330,7 +330,7 @@ ToolCard.contextTypes = { store: PropTypes.any };
 const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),
   developerMode: getSetting(state, 'developerMode'),
-  selectedToolName: getSelectedToolName(state),
+  currentToolName: getCurrentToolName(state),
 });
 
 export default connect(mapStateToProps)(ToolCard);

@@ -147,14 +147,14 @@ describe('selectors', () => {
     it('returns the selected tool name', () => {
       const state = { selectedTool: 'one' };
       const expectedResult = 'one';
-      const result = fromToolsReducer.getSelectedToolName(state);
+      const result = fromToolsReducer.getCurrentToolName(state);
       expect(result).toEqual(expectedResult);
     });
 
     it('does return the selected tool name', () => {
       const state = { selectedTool: null };
       const expectedResult = false;
-      const result = fromToolsReducer.getSelectedToolName(state);
+      const result = fromToolsReducer.getCurrentToolName(state);
       expect(result).toEqual(expectedResult);
     });
   });

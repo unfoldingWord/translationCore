@@ -843,4 +843,35 @@ export default class ProjectAPI {
     const fullPath = path.join(this._dataPath, filePath);
     fs.removeSync(fullPath);
   }
+
+  /**
+   * Reads the current context Id from the current project's filesystem.
+   * @param {string} toolName - tool name.
+   */
+  readCurrentContextIdSync(toolName) {
+    try {
+      if (!toolName) {
+        return null;
+      }
+
+      const groupsPath = this.getCategoriesDir(toolName);
+      const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+
+      if (fs.existsSync(contextIdPath)) {
+        const currentContextId = fs.readJSONSync(contextIdPath);
+        return currentContextId;
+      } else {
+        console.warn(`The project doesn't have a currentContextId, thus getting the first item on the groupsData list`);
+        const groupsData = this.getGroupsData(toolName);
+        const groupsDataKeys = Object.keys(groupsData);
+        const firstKey = groupsDataKeys[0];
+        const groupData = groupsData[firstKey][0];
+        const { contextId } = groupData || { contextId: null };
+        return contextId;
+      }
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  }
 }
