@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { enableBatching } from 'redux-batched-actions';
 import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise';
-import { createLogger } from 'redux-logger';
+// import { createLogger } from 'redux-logger';
 import rootReducers from '../reducers/index.js';
 
 let middlewares = [
@@ -11,7 +11,12 @@ let middlewares = [
 ];
 
 if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {
-  // middlewares.push(createLogger());
+  //TODO: crashes
+  // middlewares.push(createLogger(
+  //   {
+  //     diff: false
+  //   }
+  // ));
 }
 
 export default function configureStore(persistedState) {
