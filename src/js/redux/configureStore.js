@@ -11,7 +11,7 @@ let middlewares = [
 ];
 
 if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {
-  middlewares.push(createLogger());
+  // middlewares.push(createLogger());
 }
 
 export default function configureStore(persistedState) {
