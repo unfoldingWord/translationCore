@@ -27,9 +27,6 @@ export const loadToolsInDir = async toolsDir => {
   const files = await fs.readdir(toolsDir);
 
   for (const f of files) {
-    if (f !== 'wordAlignment') {
-      continue; // TODO: for now skip loading tN since it crashes on register
-    }
     const toolPath = path.join(toolsDir, f);
     const stat = fs.statSync(toolPath);
 
