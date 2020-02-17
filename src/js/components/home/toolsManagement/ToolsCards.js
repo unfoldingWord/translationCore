@@ -21,7 +21,6 @@ const ToolsCards = ({
   loggedInUser,
   projectSaveLocation,
   manifest,
-  // invalidatedReducer,
   toolsCategories,
   originalLanguageBookManifest,
   onMissingResource,

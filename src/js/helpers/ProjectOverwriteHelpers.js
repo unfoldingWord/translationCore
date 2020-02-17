@@ -183,6 +183,9 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
       },
     };
     const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
+    console.log('====================================');
+    console.log('groupsData', groupsData);
+    console.log('====================================');
     const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId, name);
     let filtered = null;
     let selectionsChanged = false;
@@ -315,7 +318,7 @@ export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, pr
       verse,
     },
   };
-  const selectionsPath = generateLoadPath({ projectSaveLocation }, { contextId }, 'selections');
+  const selectionsPath = generateLoadPath(projectSaveLocation, contextId, 'selections');
 
   if (fs.existsSync(selectionsPath)) {
     let files = fs.readdirSync(selectionsPath);
