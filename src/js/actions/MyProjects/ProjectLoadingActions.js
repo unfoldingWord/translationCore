@@ -136,11 +136,10 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
   try {
     dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS });
     dispatch(initializeReducersForProjectOpenValidation());
 
     // TRICKY: prevent dialog from flashing on small projects
-    await delay(300);
+    await delay(200);
     await isProjectSupported(projectDir, translate);
     await migrateProject(projectDir, null, getUsername(getState()));
 
@@ -365,12 +364,8 @@ export function closeProject() {
       { type: consts.RESET_PROJECT_DETAIL },
       BodyUIActions.toggleHomeView(true),
       ProjectDetailsActions.resetProjectDetail(),
-      { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-      { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-      { type: consts.CLEAR_CONTEXT_ID },
       { type: consts.CLOSE_TOOL },
       { type: consts.CLEAR_RESOURCES_REDUCER },
-      { type: consts.CLEAR_PREVIOUS_FILTERS },
     ];
 
     dispatch(batchActions(actions));

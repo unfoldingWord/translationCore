@@ -26,10 +26,8 @@ jest.mock('../src/js/helpers/toolHelper', () => ({
   ...require.requireActual('../src/js/helpers/toolHelper'),
   getInvalidCountForTool: () => (mockInvalidCount),
 }));
-jest.mock('../src/js/actions/GroupsDataActions', () => ({ verifyGroupDataMatchesWithFs: () => ({ type: 'VERIFY_GROUPS_DATA' }) }));
 
-jest.mock('../src/js/actions/ContextIdActions', () => ({ loadCurrentContextId: () => ({ type: 'LOAD_CURRENT_CONTEXT_ID' }) }));
-
+// verifyGroupDataMatchesWithFs: () => ({ type: 'VERIFY_GROUPS_DATA' })
 jest.mock('../src/js/helpers/ResourcesHelpers', () => ({
   loadProjectGroupData: () => ({
     'figs-abstractnouns': [{
@@ -92,7 +90,6 @@ describe('Tool Actions.openTool', () => {
         'type': 'OPEN_ALERT_DIALOG', 'alertMessage': 'tools.loading_tool_data', 'loading': true,
       },
       { 'name': TRANSLATION_NOTES, 'type': 'OPEN_TOOL' },
-      { 'type': 'VERIFY_GROUPS_DATA' },
       {
         'type': 'BATCHING_REDUCER.BATCH',
         'meta': { 'batch': true },

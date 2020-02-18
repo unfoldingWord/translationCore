@@ -4,7 +4,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import {
-  getTranslate, getContext, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
+  getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';
 // helpers
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
@@ -94,7 +94,6 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
  */
 export const downloadSourceContentUpdates = (languageIdListToDownload) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
-  const contextId = getContext(getState());
   const toolName = getCurrentToolName(getState());
 
   dispatch(resetSourceContentUpdatesReducer());
@@ -113,7 +112,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
           const bookId = getProjectBookId(getState());
           const olForBook = getOrigLangforBook(bookId);
           let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
-          await dispatch(loadBookTranslations(contextId.reference.bookId));
+          await dispatch(loadBookTranslations(bookId));
           // Tool is opened so we need to update existing group data
           copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch);
         }

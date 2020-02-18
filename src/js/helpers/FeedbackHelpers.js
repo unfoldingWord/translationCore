@@ -6,7 +6,6 @@ import { getQuoteAsString } from 'checking-tool-wrapper';
 import { openAlert } from '../actions/AlertActions';
 import { getTranslate } from '../selectors';
 import appPackage from '../../../package';
-import { changeToNextContextId } from '../actions/ContextIdActions';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 
@@ -15,9 +14,10 @@ import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
  * @param {Object} contextId
  * @param {String} selectedGL
  * @param {Boolean} moveToNext - if true, then we move to next contextId when the user has made a selection
+ * @param {function} changeToNextContextId
  * @return {Function}
  */
-export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext) => (dispatch, getState) => {
+export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext, changeToNextContextId) => (dispatch, getState) => {
   const translate = getTranslate(getState());
   const quoteString = getQuoteAsString(contextId.quote);
   const reference = `${contextId.reference.bookId} ${contextId.reference.chapter}:${contextId.reference.verse}`;

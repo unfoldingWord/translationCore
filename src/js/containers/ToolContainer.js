@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import { showPopover } from '../actions/PopoverActions';
 import { setToolSettings } from '../actions/SettingsActions';
 import { openIgnorableAlert } from '../actions/AlertActions';
-import { updateTargetVerse, editTargetVerse } from '../actions/VerseEditActions';
 import {
   loadLexiconEntry,
+  updateTargetVerse,
   loadResourceArticle,
   makeSureBiblesLoadedForTool,
 } from '../actions/ResourcesActions';
@@ -206,8 +206,6 @@ const mapStateToProps = state => {
     settingsReducer: state.settingsReducer,
     resourcesReducer: state.resourcesReducer,
     projectDetailsReducer: state.projectDetailsReducer,
-    // TODO: Remove once verseEditReducer & selectionsReducer are implemented in wA tool.
-    selectionsReducer: state.selectionsReducer,
   };
 };
 
@@ -231,14 +229,11 @@ const mapDispatchToProps = (dispatch) => ({
   showPopover(title, bodyText, positionCoord) {
     dispatch(showPopover(title, bodyText, positionCoord));
   },
-  onInvalidCheck(contextId, selectedGL, moveToNext) {
-    dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, moveToNext));
+  onInvalidCheck(contextId, selectedGL, moveToNext, changeToNextContextId) {
+    dispatch(promptForInvalidCheckFeedback(contextId, selectedGL, moveToNext, changeToNextContextId));
   },
   loadLexiconEntry(lexiconId, entryId) {
     dispatch(loadLexiconEntry(lexiconId, entryId));
-  },
-  editTargetVerse(chapter, verse, before, after, tags, contextId) {// TODO: Remove once verseEditReducer & selectionsReducer are implemented in wA tool.
-    dispatch(editTargetVerse(chapter, verse, before, after, tags, contextId));
   },
 });
 

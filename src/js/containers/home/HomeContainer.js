@@ -145,7 +145,6 @@ const mapStateToProps = (state) => ({
     loginReducer: state.loginReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     toolsReducer: state.toolsReducer,
-    groupsDataReducer: state.groupsDataReducer,
     localeSettings: state.localeSettings,
   },
 });
