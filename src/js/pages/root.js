@@ -6,6 +6,10 @@ import configureStore from '../redux/configureStore';
 import { loadState, saveState } from '../localStorage';
 import Application from './app';
 
+import './../../css/bootstrap.min.css';
+import './../../css/bootstrap-theme.min.css';
+import './../../css/styles.css';
+
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();
 const store = configureStore(persistedState);
