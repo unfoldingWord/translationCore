@@ -1,7 +1,7 @@
 // actions
 // selectors
 import {
-  getSourceBookManifest, getProjectBookId, getProjectManifest,
+  getProjectBookId, getProjectManifest, getSourceBookManifest,
 } from '../selectors';
 // helpers
 import { getTsvOLVersion } from '../helpers/originalLanguageResourcesHelpers';
