@@ -205,17 +205,18 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
           bookCache.set(cacheKey, bibleData);
         }
 
+        console.log(`loadBookResource() - Loaded ${bibleId}, ${bookId}, ${languageId}, ${versionNumber}`);
         return bibleData;
       } else {
-        console.warn(`Bible path not found: ${bookPath}`);
+        console.warn(`loadBookResource() - Bible path not found: ${bookPath}`);
       }
     } else {
-      console.log('Directory not found, ' + bibleFolderPath);
+      console.log('loadBookResource() - Directory not found, ' + bibleFolderPath);
     }
-    return null;
   } catch (error) {
-    console.error(`Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
+    console.error(`loadBookResource() - Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
   }
+  return null;
 };
 
 /**

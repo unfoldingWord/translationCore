@@ -29,6 +29,7 @@ export const loadOlderOriginalLanguageResource = (toolName) => (dispatch, getDat
   // if version of current original language resource if not the one needed by the tn groupdata
   if (tsvOLVersion && (tsvOLVersion !== version) && toolName === TRANSLATION_NOTES) {
     // load original language resource that matches version number for tn groupdata
+    console.log(`translationNotes requires original lang ${tsvOLVersion}`);
     dispatch(loadBibleBook(resourceId, bookId, languageId, 'v' + tsvOLVersion));
   } else {
     // load latest version of original language resource
