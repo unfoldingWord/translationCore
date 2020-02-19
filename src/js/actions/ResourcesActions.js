@@ -152,7 +152,7 @@ const migrateChapterToVerseObjects = chapterData => {
  * @returns {string|null} the latest version found
  */
 export const getLatestVersion = (versions) => {
-  if (versions.length > 0) {
+  if (versions && (versions.length > 0)) {
     const sortedVersions = versions.sort((a, b) =>
       -ResourceAPI.compareVersions(a, b) // do inverted sort
     );
