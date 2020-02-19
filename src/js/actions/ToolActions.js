@@ -62,13 +62,13 @@ export const loadTools = (toolsDir) => (dispatch) => {
 export function saveResourcesUsed(toolName, gl) {
   return (dispatch, getState) => {
     const sourceBook = getSourceBook(getState());
-    const sourceVersion = sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version || 'unknown';
+    const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
     dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
 
     if (toolName !== WORD_ALIGNMENT) {
       const resources = ResourceAPI.default();
       const helpDir = resources.getLatestTranslationHelp(gl, toolName);
-      const glVersion = path.basename(helpDir);
+      const glVersion = (helpDir && path.basename(helpDir)) || 'unknown';
       dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_' + gl + '_check_version_' + toolName, glVersion));
     }
   };

@@ -113,6 +113,16 @@ describe('Tool Actions.openTool', () => {
         }, 'type': 'LOAD_GROUPS_DATA_FROM_FS',
       },
       { 'groupsIndex': [{ 'id': 'figs-abstractnouns', 'name': 'Abstract Nouns' }], 'type': 'LOAD_GROUPS_INDEX' },
+      {
+        'propertyName': 'tc_orig_lang_check_version_translationNotes',
+        'type': 'ADD_MANIFEST_PROPERTY',
+        'value': 0.8,
+      },
+      {
+        'propertyName': 'tc_en_check_version_translationNotes',
+        'type': 'ADD_MANIFEST_PROPERTY',
+        'value': 'unknown',
+      },
       { 'type': 'LOAD_CURRENT_CONTEXT_ID' },
       { 'type': 'VERIFY_GROUPS_DATA' },
       {
