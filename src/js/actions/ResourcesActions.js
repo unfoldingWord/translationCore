@@ -480,3 +480,17 @@ export const loadLexiconEntry = (lexiconId, entryId) => ((dispatch) => {
     console.error(error);
   }
 });
+
+/**
+ * Updates the verse text in the target language bible resource.
+ * This will not write any changes to the disk.
+ * @param {number} chapter
+ * @param {number} verse
+ * @param {string} text
+ */
+export const updateTargetVerse = (chapter, verse, editedText) => ({
+  type: consts.UPDATE_TARGET_VERSE,
+  editedText,
+  chapter,
+  verse,
+});

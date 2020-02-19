@@ -119,8 +119,8 @@ export default class ProjectAPI {
                 verse.toString()
               );
 
-              const { selections } = loadCheckData(loadPath, groupDataItem.contextId);
-              groupDataItem.selections = selections || false;
+              const checkData = loadCheckData(loadPath, groupDataItem.contextId);
+              groupDataItem.selections = (checkData && checkData.selections) || false;
               return groupDataItem;
             }
             return groupDataItem;
