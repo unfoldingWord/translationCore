@@ -32,6 +32,7 @@ class ToolCard extends Component {
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.onLaunchClick = this.onLaunchClick.bind(this);
+    this.doClickAction = this.doClickAction.bind(this);
     this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
       showDescription: false,
@@ -145,6 +146,38 @@ class ToolCard extends Component {
   }
 
   onLaunchClick() {
+    const {
+      tool,
+      actions: {
+        openOptionDialog,
+        closeAlertDialog,
+      },
+    } = this.props;
+
+    const newSelectedToolName = tool.name;
+
+    if (newSelectedToolName === TRANSLATION_NOTES) {
+      const continueButtonText = 'continue';
+      const cancelButtonText = 'cancel';
+
+      const usesOlderVersion = true;
+
+      if (usesOlderVersion) {
+        openOptionDialog('this is tN - beware, do you want to continue', (result) => {
+          closeAlertDialog();
+
+          if (result === continueButtonText) {
+            this.doClickAction();
+          }
+        }, continueButtonText, cancelButtonText);
+        return;
+      }
+    }
+
+    this.doClickAction();
+  }
+
+  doClickAction() {
     const {
       isOLBookVersionMissing,
       toggleHomeView,
@@ -281,10 +314,10 @@ class ToolCard extends Component {
               position={'left'}
               size='medium'
               label={launchDisableMessage}
-              enabled={launchDisableMessage ? true : false}
+              enabled={!!launchDisableMessage}
             >
               <button
-                disabled={launchDisableMessage ? true : false}
+                disabled={!!launchDisableMessage}
                 className='btn-prime'
                 onClick={this.onLaunchClick}
                 style={{ width: '90px', margin: '10px' }}
@@ -311,6 +344,8 @@ ToolCard.propTypes = {
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
     warnOnInvalidations: PropTypes.func.isRequired,
+    openOptionDialog: PropTypes.func.isRequired,
+    closeAlertDialog: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,

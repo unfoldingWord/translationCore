@@ -201,6 +201,8 @@ const mapDispatchToProps = (dispatch) => ({
     openAlertDialog: (message, loading) => {
       dispatch(AlertModalActions.openAlertDialog(message, loading));
     },
+    openOptionDialog: (...args) => dispatch(AlertModalActions.openOptionDialog(...args)),
+    closeAlertDialog: () => dispatch(AlertModalActions.closeAlertDialog()),
   },
 });
 
