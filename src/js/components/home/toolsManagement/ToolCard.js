@@ -9,6 +9,7 @@ import _ from 'lodash';
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
 import { getGatewayLanguageList, hasValidOL } from '../../../helpers/gatewayLanguageHelpers';
+import { isToolUsingCurrentOriginalLanguage } from '../../../helpers/originalLanguageResourcesHelpers';
 // components
 import Hint from '../../Hint';
 import {
@@ -148,6 +149,8 @@ class ToolCard extends Component {
   onLaunchClick() {
     const {
       tool,
+      translate,
+      isToolUsingCurrentOriginalLanguage,
       actions: {
         openOptionDialog,
         closeAlertDialog,
@@ -157,19 +160,19 @@ class ToolCard extends Component {
     const newSelectedToolName = tool.name;
 
     if (newSelectedToolName === TRANSLATION_NOTES) {
-      const continueButtonText = 'continue';
-      const cancelButtonText = 'cancel';
+      const isCurrentOL = isToolUsingCurrentOriginalLanguage(newSelectedToolName);
 
-      const usesOlderVersion = true;
+      if (!isCurrentOL) {
+        const continueButtonText = translate('buttons.continue_button');
+        const cancelButtonText = translate('buttons.cancel_button');
 
-      if (usesOlderVersion) {
-        openOptionDialog('this is tN - beware, do you want to continue', (result) => {
+        openOptionDialog(translate('tools.tN_version_warning'), (result) => {
           closeAlertDialog();
 
           if (result === continueButtonText) {
             this.doClickAction();
           }
-        }, continueButtonText, cancelButtonText);
+        }, cancelButtonText, continueButtonText);
         return;
       }
     }
@@ -358,6 +361,7 @@ ToolCard.propTypes = {
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
+  isToolUsingCurrentOriginalLanguage: PropTypes.func.isRequired,
 };
 
 ToolCard.contextTypes = { store: PropTypes.any };
@@ -366,6 +370,7 @@ const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),
   developerMode: getSetting(state, 'developerMode'),
   selectedToolName: getSelectedToolName(state),
+  isToolUsingCurrentOriginalLanguage: (toolName) => (isToolUsingCurrentOriginalLanguage(state, toolName)),
 });
 
 export default connect(mapStateToProps)(ToolCard);
