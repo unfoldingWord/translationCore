@@ -156,7 +156,6 @@ class ToolCard extends Component {
         closeAlertDialog,
       },
     } = this.props;
-
     const newSelectedToolName = tool.name;
 
     if (newSelectedToolName === TRANSLATION_NOTES) {
