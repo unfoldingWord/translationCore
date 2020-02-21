@@ -65,11 +65,9 @@ export const loadTools = (toolsDir) => (dispatch) => {
  * @param {String} name - Name of the tool
  */
 export function prepareToolForLoading(name) {
-  return async (dispatch) => {
+  return (dispatch) => {
     // Load older version of OL resource if needed by tN tool
     dispatch(loadOlderOriginalLanguageResource(name));
-    // wait for filesystem calls to finish
-    await dispatch(verifyGroupDataMatchesWithFs(name));
   };
 }
 
@@ -125,103 +123,6 @@ export const warnOnInvalidations = (toolName) => (dispatch, getState) => {
     console.warn('warnOnInvalidations() - error getting invalid checks', e);
   }
 };
-
-/**
- * Verifies that the data in the checkdata folder is reflected in the menu.
- * @return {object} action object.
- */
-export function verifyGroupDataMatchesWithFs(toolName) {
-  console.log('verifyGroupDataMatchesWithFs()');
-  return ((dispatch, getState) => {
-    const state = getState();
-    toolName = toolName || getCurrentToolName(state);
-    const PROJECT_SAVE_LOCATION = state.projectDetailsReducer.projectSaveLocation;
-    let checkDataPath;
-
-    if (PROJECT_SAVE_LOCATION) {
-      checkDataPath = path.join(
-        PROJECT_SAVE_LOCATION,
-        PROJECT_CHECKDATA_DIRECTORY
-      );
-    }
-
-    const checkVerseEdits = {};
-
-    // build the batch
-    let actionsBatch = [];
-
-    if (fs.existsSync(checkDataPath)) {
-      let folders = fs.readdirSync(checkDataPath).filter(folder => folder !== '.DS_Store');
-      const isCheckTool = (toolName === TRANSLATION_WORDS || toolName === TRANSLATION_NOTES);
-
-      for (let i = 0, lenF = folders.length; i < lenF; i++) {
-        const folderName = folders[i];
-        const isVerseEdit = folderName === 'verseEdits';
-        const isCheckVerseEdit = isCheckTool && isVerseEdit;
-        let dataPath = generatePathToDataItems(state, PROJECT_SAVE_LOCATION, folderName);
-
-        if (!fs.existsSync(dataPath)) {
-          continue;
-        }
-
-        let chapters = fs.readdirSync(dataPath);
-        chapters = filterAndSort(chapters);
-
-        for (let j = 0, lenC = chapters.length; j < lenC; j++) {
-          const chapterFolder = chapters[j];
-          const chapterDir = path.join(dataPath, chapterFolder);
-
-          if (!fs.existsSync(chapterDir)) {
-            continue;
-          }
-
-          let verses = fs.readdirSync(chapterDir);
-          verses = filterAndSort(verses);
-
-          for (let k = 0, lenV = verses.length; k < lenV; k++) {
-            const verseFolder = verses[k];
-            let filePath = path.join(dataPath, chapterFolder, verseFolder);
-            let latestObjects = readLatestChecks(filePath);
-
-            for (let l = 0, lenO = latestObjects.length; l < lenO; l++) {
-              const object = latestObjects[l];
-              const contextId = object.contextId;
-
-              if (isCheckVerseEdit) {
-                // special handling for check external verse edits, save edit verse
-                const chapter = (contextId && contextId.reference && contextId.reference.chapter);
-
-                if (chapter) {
-                  const verse = contextId.reference.verse;
-
-                  if (verse) {
-                    const verseKey = chapter + ':' + verse; // save by chapter:verse to remove duplicates
-
-                    if (!checkVerseEdits[verseKey]) {
-                      const reference = {
-                        bookId: contextId.reference.bookId,
-                        chapter,
-                        verse,
-                      };
-                      checkVerseEdits[verseKey] = { reference };
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      // run the batch of queue actions
-      if (actionsBatch.length) {
-        console.log('verifyGroupDataMatchesWithFs() - processing batch size: ' + actionsBatch.length);
-        dispatch(batchActions(actionsBatch));
-      }
-      console.log('verifyGroupDataMatchesWithFs() - done');
-    }
-  });
-}
 
 /**
  * displays warning that selections, alignments, or both have been invalidated
