@@ -14,7 +14,9 @@ import {
   getSourceContentUpdateCount,
 } from '../../selectors';
 // actions
-import { closeAlertDialog, openAlertDialog, openOptionDialog } from '../../actions/AlertModalActions';
+import {
+  closeAlertDialog, openAlertDialog, openOptionDialog,
+} from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';

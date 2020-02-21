@@ -1,4 +1,6 @@
-import { getProjectManifest, getProjectSaveLocation, getSourceBookManifest } from '../selectors';
+import {
+  getProjectManifest, getProjectSaveLocation, getSourceBookManifest,
+} from '../selectors';
 import { TRANSLATION_NOTES } from '../common/constants';
 
 /**
