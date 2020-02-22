@@ -28,6 +28,68 @@ describe('ResourcesActions', () => {
     fs.__resetMockFS();
   });
 
+  describe('getLatestVersion()', () => {
+    it('should get highest version with unordered  list', () => {
+      // given
+      const versionNumbers = ['v8.0.10','v8.0.9','v8.0.8'];
+      const expectedLatestVersion = 'v8.0.10';
+
+      // when
+      const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
+
+      // then
+      expect(versionNumber).toEqual(expectedLatestVersion);
+    });
+
+    it('should get highest version with ordered  list', () => {
+      // given
+      const versionNumbers = ['v8.0.8','v8.0.9','v8.0.10'];
+      const expectedLatestVersion = 'v8.0.10';
+
+      // when
+      const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
+
+      // then
+      expect(versionNumber).toEqual(expectedLatestVersion);
+    });
+
+    it('should work with single item list', () => {
+      // given
+      const versionNumbers = ['v8'];
+      const expectedLatestVersion = 'v8';
+
+      // when
+      const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
+
+      // then
+      expect(versionNumber).toEqual(expectedLatestVersion);
+    });
+
+    it('should work with empty list', () => {
+      // given
+      const versionNumbers = [];
+      const expectedLatestVersion = null;
+
+      // when
+      const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
+
+      // then
+      expect(versionNumber).toEqual(expectedLatestVersion);
+    });
+
+    it('should work with null list', () => {
+      // given
+      const versionNumbers = null;
+      const expectedLatestVersion = null;
+
+      // when
+      const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
+
+      // then
+      expect(versionNumber).toEqual(expectedLatestVersion);
+    });
+  });
+
   it('makeSureBiblesLoadedForTool() should work', () => {
     // given
     const bookId = 'gal';
@@ -86,8 +148,6 @@ describe('ResourcesActions', () => {
     const actions = store.getActions();
     validateExpectedResources(actions, 'ADD_NEW_BIBLE_TO_RESOURCES', 'bibleId', expectedResources);
   });
-
-
 
   it('loads a book resource', () => {
     const bookId = 'gal';
