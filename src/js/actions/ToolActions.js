@@ -1,8 +1,6 @@
 /* eslint-disable no-async-promise-executor */
-import fs from 'fs-extra';
-import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
-import { getTranslate, getCurrentToolName } from '../selectors';
+import { getTranslate } from '../selectors';
 import {
   loadToolsInDir,
   getInvalidCountForTool,
@@ -10,20 +8,12 @@ import {
 } from '../helpers/toolHelper';
 import {
   WORD_ALIGNMENT,
-  TRANSLATION_WORDS,
-  TRANSLATION_NOTES,
-  PROJECT_CHECKDATA_DIRECTORY,
   ALERT_SELECTIONS_INVALIDATED_ID,
   ALERT_SELECTIONS_INVALIDATED_MSG,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
 } from '../common/constants';
-import {
-  filterAndSort,
-  generatePathToDataItems,
-} from '../helpers/checkDataHelpers';
-import { readLatestChecks } from '../helpers/groupDataHelpers';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
