@@ -14,7 +14,9 @@ import {
   getSourceContentUpdateCount,
 } from '../../selectors';
 // actions
-import { openAlertDialog } from '../../actions/AlertModalActions';
+import {
+  closeAlertDialog, openAlertDialog, openOptionDialog,
+} from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
@@ -135,6 +137,8 @@ const mapDispatchToProps = (dispatch) => ({
   onMissingResource: (resourceDetails) => dispatch(promptUserAboutMissingResource(resourceDetails)),
   toggleHomeView: (value) => dispatch(BodyUIActions.toggleHomeView(value)),
   actions: {
+    openOptionDialog: (...args) => dispatch(openOptionDialog(...args)),
+    closeAlertDialog: () => dispatch(closeAlertDialog()),
     loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
       dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
     },

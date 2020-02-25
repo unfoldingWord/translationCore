@@ -1,15 +1,17 @@
-
 /* eslint-disable no-async-promise-executor */
+import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
 import {
   getToolGatewayLanguage,
   getTranslate,
   getProjectSaveLocation,
+  getSourceBook,
 } from '../selectors';
 import { loadProjectGroupData, loadProjectGroupIndex } from '../helpers/ResourcesHelpers';
 import {
   loadToolsInDir, isInvalidationAlertDisplaying, getInvalidCountForTool,
 } from '../helpers/toolHelper';
+import ResourceAPI from '../helpers/ResourceAPI';
 import { delay } from '../common/utils';
 import { WORD_ALIGNMENT } from '../common/constants';
 import types from './ActionTypes';
@@ -23,6 +25,7 @@ import { loadGroupsIndex } from './GroupsIndexActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
 // helpers
 import { showInvalidatedWarnings } from './SelectionsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -52,13 +55,33 @@ export const loadTools = (toolsDir) => (dispatch) => {
 };
 
 /**
+ * save to project manifest the original lang and gl used for tool checking or alignment
+ * @param toolName
+ * @param gl
+ */
+export function saveResourcesUsed(toolName, gl) {
+  return (dispatch, getState) => {
+    const sourceBook = getSourceBook(getState());
+    const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
+    dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
+
+    if (toolName !== WORD_ALIGNMENT) {
+      const resources = ResourceAPI.default();
+      const helpDir = resources.getLatestTranslationHelp(gl, toolName);
+      const glVersion = (helpDir && path.basename(helpDir)) || 'unknown';
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_' + gl + '_check_version_' + toolName, glVersion));
+    }
+  };
+}
+
+/**
  * This function prepares the data needed to load a tool, also
  *  useful for checking the progress of a tool
- * @param {String} name - Name of the tool
+ * @param {String} toolName - Name of the tool
  */
-export function prepareToolForLoading(name) {
-  return async (dispatch, getData) => {
-    const translate = getTranslate(getData());
+export function prepareToolForLoading(toolName) {
+  return async (dispatch, getState) => {
+    const translate = getTranslate(getState());
 
     dispatch(batchActions([
       { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
@@ -67,11 +90,11 @@ export function prepareToolForLoading(name) {
     ]));
 
     // Load older version of OL resource if needed by tN tool
-    dispatch(loadOlderOriginalLanguageResource(name));
+    dispatch(loadOlderOriginalLanguageResource(toolName));
 
     // load group data
-    const projectDir = getProjectSaveLocation(getData());
-    const groupData = loadProjectGroupData(name, projectDir);
+    const projectDir = getProjectSaveLocation(getState());
+    const groupData = loadProjectGroupData(toolName, projectDir);
 
     dispatch({
       type: types.LOAD_GROUPS_DATA_FROM_FS,
@@ -79,13 +102,14 @@ export function prepareToolForLoading(name) {
     });
 
     // load group index
-    const language = getToolGatewayLanguage(getData(), name);
-    const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
+    const language = getToolGatewayLanguage(getState(), toolName);
+    const groupIndex = loadProjectGroupIndex(language, toolName, projectDir, translate);
     dispatch(loadGroupsIndex(groupIndex));
+    dispatch(saveResourcesUsed(toolName, language));
 
-    dispatch(loadCurrentContextId(name));
+    dispatch(loadCurrentContextId(toolName));
     //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
-    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(name));
+    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(toolName));
     // wait for filesystem calls to finish
   };
 }

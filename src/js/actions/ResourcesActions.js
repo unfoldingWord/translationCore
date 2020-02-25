@@ -13,6 +13,7 @@ import {
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as SettingsHelpers from '../helpers/SettingsHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
+import ResourceAPI from '../helpers/ResourceAPI';
 import * as Bible from '../common/BooksOfTheBible';
 import {
   ORIGINAL_LANGUAGE,
@@ -145,6 +146,23 @@ const migrateChapterToVerseObjects = chapterData => {
 };
 
 /**
+ * Returns the versioned folder within the directory with the highest value.
+ * e.g. `v10` is greater than `v9`
+ * @param {Array} versions - list of versions found
+ * @returns {string|null} the latest version found
+ */
+export const getLatestVersion = (versions) => {
+  if (versions && (versions.length > 0)) {
+    const sortedVersions = versions.sort((a, b) =>
+      -ResourceAPI.compareVersions(a, b) // do inverted sort
+    );
+    return sortedVersions[0]; // most recent version will be first
+  } else {
+    return null;
+  }
+};
+
+/**
  * Loads an entire bible resource.
  * @param bibleId
  * @param bookId
@@ -158,7 +176,7 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
 
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-      const versionNumber = version || versionNumbers[versionNumbers.length - 1];
+      const versionNumber = version || getLatestVersion(versionNumbers);
       const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
       const cacheKey = 'book:' + bookPath;
@@ -187,17 +205,18 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
           bookCache.set(cacheKey, bibleData);
         }
 
+        console.log(`loadBookResource() - Loaded ${bibleId}, ${bookId}, ${languageId}, ${versionNumber}`);
         return bibleData;
       } else {
-        console.warn(`Bible path not found: ${bookPath}`);
+        console.warn(`loadBookResource() - Bible path not found: ${bookPath}`);
       }
     } else {
-      console.log('Directory not found, ' + bibleFolderPath);
+      console.log('loadBookResource() - Directory not found, ' + bibleFolderPath);
     }
-    return null;
   } catch (error) {
-    console.error(`Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
+    console.error(`loadBookResource() - Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
   }
+  return null;
 };
 
 /**
