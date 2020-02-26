@@ -11,9 +11,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -42,22 +39,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -290,9 +275,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -321,22 +303,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -727,9 +697,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -758,22 +725,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1144,22 +1099,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1189,22 +1132,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1259,9 +1190,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -1290,22 +1218,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1518,22 +1434,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1563,22 +1467,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",

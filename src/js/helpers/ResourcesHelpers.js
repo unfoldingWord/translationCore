@@ -8,7 +8,6 @@ import { getOtherTnsOLVersions } from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
-  getContext,
   getToolGatewayLanguage,
   getBibles,
   getProjectSaveLocation,
@@ -756,9 +755,9 @@ export function getAvailableScripturePaneSelections(resourceList) {
   return ((dispatch, getState) => {
     try {
       resourceList.splice(0, resourceList.length); // remove any pre-existing elements
-      const contextId = getContext(getState());
-      const { resourcesReducer: { bibles } } = getState();
-      const bookId = contextId && contextId.reference.bookId;
+      const state = getState();
+      const { resourcesReducer: { bibles } } = state;
+      const bookId = getProjectBookId(state);
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
 
       // add target Bible if in resource reducer
@@ -1097,7 +1096,7 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourceId).sort((a, b) =>
+    const requiredVersions = getOtherTnsOLVersions(resourcePath, resourceId).sort((a, b) =>
       -ResourceAPI.compareVersions(a, b) // do inverted sort
     );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);

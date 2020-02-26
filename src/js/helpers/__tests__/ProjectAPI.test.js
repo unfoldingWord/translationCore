@@ -40,6 +40,53 @@ describe('ProjectAPI', () => {
       });
     });
 
+    it('handles missing check data', () => {
+      const p = new ProjectAPI('/root');
+
+      fs.readFileSync.mockReturnValueOnce(`{"project":{"id":"book"}}`);
+      fs.pathExistsSync.mockReturnValueOnce(true);
+      fs.lstatSync.mockReturnValueOnce({ isDirectory: () => true });
+      fs.readdirSync.mockReturnValueOnce(['file1.json', 'something.else']);
+      fs.readJsonSync.mockReturnValueOnce([{
+        hello: 'world1',
+        selections: true,
+        contextId: {
+          reference: {
+            bookId: 'tit',
+            chapter: 1,
+            verse: 15,
+          },
+          tool: 'translationWords',
+          groupId: 'purify',
+          quote: 'καθαροῖς',
+          strong: [ 'G25130' ],
+          occurrence: 1,
+        },
+      }]);
+      fs.existsSync.mockReturnValueOnce(false);
+
+      expect(p.getGroupsData('tool')).toEqual({
+        file1: [
+          {
+            hello: 'world1',
+            selections: false,
+            contextId: {
+              reference: {
+                bookId: 'tit',
+                chapter: 1,
+                verse: 15,
+              },
+              tool: 'translationWords',
+              groupId: 'purify',
+              quote: 'καθαροῖς',
+              strong: [ 'G25130' ],
+              occurrence: 1,
+            },
+          },
+        ],
+      });
+    });
+
     it('returns empty group data', () => {
       const p = new ProjectAPI('/root');
 

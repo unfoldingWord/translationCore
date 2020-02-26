@@ -113,6 +113,7 @@ const getLocalResourceList = resourcesPath => {
 const updateSourceContentUpdaterManifest = resourcesPath => {
   const sourceContentManifestPath = path.join(resourcesPath, 'source-content-updater-manifest.json');
   let manifest = {};
+
   if (fs.existsSync(sourceContentManifestPath)) {
     manifest = fs.readJSONSync(sourceContentManifestPath);
   }

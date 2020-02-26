@@ -2,7 +2,7 @@
 
 # translationCore
 
-[![Travis branch](https://img.shields.io/travis/unfoldingWord/translationCore/develop.svg)](https://travis-ci.org/unfoldingWord/translationCore/)
+![](https://github.com/unfoldingWord/translationCore/workflows/Node%20CI/badge.svg?branch=develop)
 [![Releases](https://img.shields.io/github/downloads/unfoldingword/translationCore/total.svg)](https://github.com/unfoldingWord/translationCore/releases)
 [![Current Verison](https://img.shields.io/github/tag/unfoldingword/translationCore.svg)](https://github.com/unfoldingWord/translationCore/tags)
 [![codecov](https://codecov.io/gh/unfoldingWord/translationCore/branch/develop/graph/badge.svg)](https://codecov.io/gh/unfoldingWord/translationCore)
@@ -19,7 +19,7 @@ For more information see page for usage: [Usage](https://github.com/unfoldingWor
 
 Contributions
 ---
-We warmly welcome contributions to both the translationCore repository and building of new checking modules that fit the needs of the Global Church and Church Networks actively translating the Bible.  
+We warmly welcome contributions to both the translationCore repository and building of new checking modules that fit the needs of the Global Church and Church Networks actively translating the Bible.
 
 For more information see page for contributors: [Contributing](https://github.com/unfoldingWord/translationCore/wiki/Contributing)
 

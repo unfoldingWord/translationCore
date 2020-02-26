@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`migrate tCore resources Test grc resource migration test with newer version of ugnt in grc/bible - newer version should not be deleted 1`] = `
+exports[`migrate tCore resources Test grc resource migration test with newer version of ugnt in el-x-koine/bible - newer version should not be deleted 1`] = `
 Array [
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.3",
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
@@ -19,7 +19,7 @@ Array [
 ]
 `;
 
-exports[`migrate tCore resources Test grc resource migration test with older version of ugnt in grc/bible - should be removed 1`] = `
+exports[`migrate tCore resources Test grc resource migration test with older version of ugnt in grc/bible - should not be removed 1`] = `
 Array [
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.1",
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
@@ -42,6 +42,25 @@ exports[`migrate tCore resources Test grc resource migration test with older ver
 Array [
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/xx/v0.2",
   "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy/v9",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes/v15",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords/v10",
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords/v8.1",
+]
+`;
+
+exports[`migrate tCore resources Test grc resource migration test with two version of ugnt in el-x-koine/bible - all versions copied 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.3",
   "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
   "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
   "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
@@ -305,6 +324,25 @@ Array [
   "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
   "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
   "<HOME_DIR>/translationCore/resources/en/bibles/t4t/v12.1",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/en/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy/v9",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationNotes/v15",
+  "<HOME_DIR>/translationCore/resources/en/translationHelps/translationWords/v10",
+  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/ugl/v0",
+  "<HOME_DIR>/translationCore/resources/hi/lexicons/uhl/v0.1",
+  "<HOME_DIR>/translationCore/resources/hi/translationHelps/translationWords/v8.1",
+]
+`;
+
+exports[`migrate tCore resources test with two version of ugnt in el-x-koine/bible and a recent dependency - all versions copied 1`] = `
+Array [
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.2",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt/v0.3",
+  "<HOME_DIR>/translationCore/resources/el-x-koine/translationHelps/translationWords/v8",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ult/v12.1",
+  "<HOME_DIR>/translationCore/resources/en/bibles/ust/v10",
   "<HOME_DIR>/translationCore/resources/en/lexicons/ugl/v0",
   "<HOME_DIR>/translationCore/resources/en/lexicons/uhl/v0.1",
   "<HOME_DIR>/translationCore/resources/en/translationHelps/translationAcademy/v9",

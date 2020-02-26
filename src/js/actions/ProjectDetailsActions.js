@@ -152,9 +152,6 @@ export function setProjectToolGL(toolName, selectedGL) {
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
       await dispatch(prepareToolForLoading(toolName));
       dispatch(batchActions([
-        { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-        { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-        { type: consts.CLEAR_CONTEXT_ID },
         { type: consts.OPEN_TOOL, name: null },
       ]));
     }
