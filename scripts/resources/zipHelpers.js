@@ -19,14 +19,17 @@ const zipResourcesContent = async (resourcesRootPath, languageId) => {
     resources.forEach(resourceId => {
       const zip = new AdmZip();
       console.log('\x1b[36m%s\x1b[0m', `Started zipping the contents for: ${languageId} ${resourceId}`);
+
       try {
         const resourceIdPath = path.join(resourcesPath, resourceId);
         const resourcesContentPath = updateResourcesHelpers.getLatestVersionInPath(resourceIdPath);
         const contentType = resourceType === 'bibles' ? 'books' : 'contents';
+
         if (fs.existsSync(path.join(resourcesContentPath, contentType + '.zip'))) {
           console.log(`Resource was not updated, skipping: ${languageId} ${resourceId}`);
           return;
         }
+
         const excludedItems = ['index.json', 'manifest.json', 'books', 'books.zip', 'contents.zip', '.DS_Store'];
         const resources = fs.readdirSync(resourcesContentPath)
           .filter(item => !excludedItems.includes(item));
@@ -52,6 +55,4 @@ const zipResourcesContent = async (resourcesRootPath, languageId) => {
   });
 };
 
-module.exports = {
-  zipResourcesContent,
-};
+module.exports = { zipResourcesContent };
