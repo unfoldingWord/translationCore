@@ -167,7 +167,7 @@
     "book": "Kitab",
     "no_search_results": "Tidak ada proyek yang cocok dengan kriteria pencarian Anda yang ditemukan.",
     "importing_local_alert": "Mengimpor proyek lokal...",
-    "importing_project_alert": "Importing ${project_url}. Please wait...",
+    "importing_project_alert": "Mengimpor ${project_url}. Mohon tunggu...",
     "cancel_import_alert": "Canceling now will abort the import process and the project will need to be re-imported before it can be used.",
     "project_already_identified": "This project has been identified as a ${originalBook} project. Are you sure you want to change it to a ${suggestedBook} project?",
     "loading_project_alert": "Loading project data.",
