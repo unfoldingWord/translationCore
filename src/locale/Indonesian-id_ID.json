@@ -214,7 +214,7 @@
     "dcs_rename_failed": "Tempat penyimpanan ${door43} tidak diperbarui namanya.<br/> <br/>Apakah Anda ingin mencoba mengubah Tempta penyimpanan ${door43} atau melanjutkan tanpa mengubah nama?",
     "dcs_create_new_failed": "Tempat penyimpanan ${door43} tidak dapat dibuat.<br/><br/>Apakah Anda ingin mencoba membuat tempat penyimpanan ${door43} atau melanjutkan tanpa mengubah nama?",
     "dcs_rename_conflict": "Mengubah nama gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda harus mengganti nama proyek lokal atau mengganti nama Proyek ${door43} Anda.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Membuat tempat penyimpanan baru gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda perlu mengganti nama proyek lokal atau mengganti nama proyek ${door43} Anda ."
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
