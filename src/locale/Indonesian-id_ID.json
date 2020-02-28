@@ -134,8 +134,8 @@
   },
   "projects": {
     "zip_files": "File Zip",
-    "error_setting_up_project": "Ups! Kami mengalami masalah saat menyiapkan proyek Anda untuk dimuat. Silakan hubungi Meja Bantuan (${email}) untuk bantuan.",
-    "error_loading": "Ups! Kami mengalami masalah saat memuat proyek Anda. Silakan hubungi Meja Bantuan (${email}) untuk bantuan.",
+    "error_setting_up_project": "Ups! Kami mengalami masalah saat menyiapkan proyek Anda untuk dimuat. Silakan hubungi Help Desk (${email}) untuk bantuan.",
+    "error_loading": "Ups! Kami mengalami masalah saat memuat proyek Anda. Silakan hubungi Help Desk (${email}) untuk bantuan.",
     "no_project": "Tidak ada proyek yang dipilih",
     "import_from_d43": "Impor dari ${door43}",
     "select_project_from_list": "Pilih sebuah proye dari daftar.",
@@ -196,7 +196,7 @@
     "export_failed_error": "Ekspor gagal dengan kesalahan ${error}.",
     "loading_ellipsis": "Memuat...",
     "fatal_errors": "Peringatan! Proyek ini memiliki kesalahan fatal dan tidak dapat dimuat.",
-    "loading_error": "Kami mengalami masalah saat memuat proyek Anda. Silakan hubungi Meja Bantuan (${email}) untuk bantuan.",
+    "loading_error": "Kami mengalami masalah saat memuat proyek Anda. Silakan hubungi Help Desk (${email}) untuk bantuan.",
     "uploading_error": "Kesalahan mengunggah: \"${error}\".",
     "uploading_unknown_error": "Kesalahan mengunggah. Kesalahan tidak diketahui.",
     "saving_error": "Kesalahan saat menyimpan projek: \"${error}\".",
@@ -244,22 +244,22 @@
     "merge_conflicts_found": "Beberapa konflik gabungan ditemukan di dalam proyek Anda. Harap ditinjau dan selesaikan konflik ini sebelum melanjutkan.",
     "merge_conflicts": "Menggabungkan Konflik",
     "merge_conflict": "Gabungkan Konflik ${conflict_number}",
-    "conflict_reference": "This is a merge conflict for chapter ${chapter}, verse ${verse}.",
-    "missing_verses_instructions": "Some verses are missing from your project.",
-    "only_nt_supported": "This version of ${app} only supports New Testament projects.",
-    "old_project_unsupported": "This project contains data from an old version of ${app} which is not supported in this release. For help opening this project or to restart checking, please contact ${help_desk_email}.",
+    "conflict_reference": "Ini adalah konflik gabungan untuk bab ${bab}, ayat ${ayat}.",
+    "missing_verses_instructions": "Beberapa ayat hilang dari proyek Anda.",
+    "only_nt_supported": "Versi dari ${app} ini hanya mendukung proyek Perjanjian Baru.",
+    "old_project_unsupported": "Proyek ini berisi data dari versi lama ${app} yang tidak didukung dalam rilis ini. Untuk bantuan membuka proyek ini atau untuk memulai kembali pemeriksaan, silakan hubungi ${help_desk_email}.",
     "resource_id": {
-      "info": "(3 or 4 letter identification<br />code, e.g. KJV, NIV, etc.)",
-      "field_invalid_length": "Must be 3-4 letters long",
-      "invalid_characters": "Only basic Latin Letters supported"
+      "info": "(3 atau 4 kode huruf identifikasi<br />, e.g. KJV, NIV, dll.)",
+      "field_invalid_length": "Harus 3-4 huruf",
+      "invalid_characters": "Hanya Huruf Latin dasar yang didukung"
     },
-    "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "conflicting_project": "Sebuah proyek dengan pengidentifikasi ini sudah ada untuk bahasa dan kitab ini",
+    "newer_project": "Proyek ini dibuat dalam versi yang lebih baru dari translationCore. Harap perbarui ke versi terbaru dan coba lagi."
   },
   "book_list": {
     "ot": {
-      "gen": "Genesis (${book_id})",
-      "exo": "Exodus (${book_id})",
+      "gen": "Kejadian (${book_id})",
+      "exo": "Keluaran (${book_id})",
       "lev": "Leviticus (${book_id})",
       "num": "Numbers (${book_id})",
       "deu": "Deuteronomy (${book_id})",
