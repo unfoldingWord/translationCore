@@ -211,9 +211,9 @@
     "renamed_project": "Proyek lokal Anda telah dinamai<br/>&nbsp;&nbsp;&nbsp;&nbsp;<b>${project}</b>",
     "dcs_rename_project": "Proyek Anda telah diubah namanya<br/> <b>${project}</b> <br/>Apa yang ingin Anda lakukan dengan tempat penyimpanan ${door43} proyek yang ada?",
     "dcs_rename_success": "Tempat penyimpanan ${door43} untuk proyek telah berhasil diperbarui.<br/>${project}",
-    "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
-    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
-    "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "dcs_rename_failed": "Tempat penyimpanan ${door43} tidak diperbarui namanya.<br/> <br/>Apakah Anda ingin mencoba mengubah Tempta penyimpanan ${door43} atau melanjutkan tanpa mengubah nama?",
+    "dcs_create_new_failed": "Tempat penyimpanan ${door43} tidak dapat dibuat.<br/><br/>Apakah Anda ingin mencoba membuat tempat penyimpanan ${door43} atau melanjutkan tanpa mengubah nama?",
+    "dcs_rename_conflict": "Mengubah nama gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda harus mengganti nama proyek lokal atau mengganti nama Proyek ${door43} Anda.",
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
   },
   "project_validation": {
