@@ -10,7 +10,6 @@
 - The exporting project alert should not be dimmed/disabled. [\#6672](https://github.com/unfoldingWord/translationCore/issues/6672)
 - tN is reporting content problems on checks that contain ellipsis [\#6695](https://github.com/unfoldingWord/translationCore/issues/6695)
 
-# Changelog
 
 ## [v2.1.0](https://github.com/unfoldingWord/translationCore/tree/v2.1.0) (2019-12-19)
 
