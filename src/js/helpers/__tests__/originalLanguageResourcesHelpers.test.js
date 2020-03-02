@@ -5,12 +5,12 @@ import * as OL_Helpers from '../originalLanguageResourcesHelpers';
 import { TRANSLATION_NOTES, TRANSLATION_WORDS, USER_RESOURCES_PATH, WORD_ALIGNMENT } from '../../common/constants';
 
 describe('isToolUsingCurrentOriginalLanguage()', () => {
-  it('in tN, expect same same versions to be current OL', () => {
-    beforeEach(() => {
-      // reset mock filesystem data
-      fs.__resetMockFS();
-    });
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
 
+  it('in tN, expect same same versions to be current OL', () => {
     // given
     const currentOlVersion = "0.10";
     const toolOlVersion = "0.10";
