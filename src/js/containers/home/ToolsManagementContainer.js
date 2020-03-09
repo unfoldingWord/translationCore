@@ -63,7 +63,6 @@ class ToolsManagementContainer extends Component {
           projectSaveLocation,
           toolsCategories,
         },
-        invalidatedReducer,
       },
       translate,
       originalLanguageBookManifest,
@@ -108,7 +107,6 @@ class ToolsManagementContainer extends Component {
             actions={{ ...this.props.actions }}
             onMissingResource={onMissingResource}
             originalLanguageBookManifest={originalLanguageBookManifest}
-            invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             sourceContentUpdateCount={sourceContentUpdateCount}
           />
@@ -127,7 +125,6 @@ const mapStateToProps = (state) => ({
     homeScreenReducer: state.homeScreenReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     loginReducer: state.loginReducer,
-    invalidatedReducer: state.invalidatedReducer,
   },
 });
 
@@ -168,7 +165,6 @@ ToolsManagementContainer.propTypes = {
   reducers: PropTypes.shape({
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({ loggedInUser: PropTypes.bool }).isRequired,
-    invalidatedReducer: PropTypes.object.isRequired,
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,

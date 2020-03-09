@@ -6,7 +6,7 @@ import ospath from 'ospath';
 import _ from 'lodash';
 import SimpleCache from '../helpers/SimpleCache';
 import {
-  getBibles, getContext, getProjectBookId, getSelectedToolName,
+  getBibles, getProjectBookId, getCurrentToolName,
 } from '../selectors';
 // actions
 // helpers
@@ -163,7 +163,7 @@ export const getLatestVersion = (versions) => {
 };
 
 /**
- * Loads an entire bible resource.
+ * Loads a bible book resource.
  * @param bibleId
  * @param bookId
  * @param languageId
@@ -279,8 +279,9 @@ function removeBibleFromList(resources, bibleId, languageId) {
  * @return {Array} array of resource in scripture panel
  */
 export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
+  const state = getState();
   const { bibleId: origLangBibleId } = BibleHelpers.getOrigLangforBook(bookId);
-  const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(getState());
+  const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(state);
   let changed = false;
 
   if (Array.isArray(newCurrentPaneSettings)) {
@@ -309,14 +310,16 @@ export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
 };
 
 /**
- * make sure required bible books for current tool are loaded into resources
+ * Make sure required bible books for current tool are loaded into resources.
+ * @param {object} contextId - context id.
  */
-export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
-  const toolName = getSelectedToolName(getState());
+export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) => {
+  console.log('makeSureBiblesLoadedForTool(): contextId', contextId);
   const state = getState();
+  const toolName = getCurrentToolName(state);
   const { bibles } = state.resourcesReducer;
-  const contextId = getContext(state);
-  const bookId = contextId && contextId.reference.bookId;
+  const bookId = contextId && contextId.reference.bookId || getProjectBookId(state);
+
   dispatch(updateOrigLangPaneSettings(bookId));
   const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName);
 
@@ -399,7 +402,7 @@ export function loadTargetLanguageBook() {
  */
 export const loadBookTranslations = (bookId, toolName = null) => (dispatch, getState) => {
   if (toolName === null) {
-    toolName = getSelectedToolName(getState());
+    toolName = getCurrentToolName(getState());
   }
 
   // translations of the source book
@@ -442,7 +445,7 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
  * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
  * @param {Boolean} async - if true then do an async file read which does not block UI updates
  */
-export const loadResourceArticle = (resourceType, articleId, languageId, category='', async = false) => ((dispatch) => {
+export const loadResourceArticle = (resourceType, articleId, languageId, category = '', async = false) => ((dispatch) => {
   if (async) {
     ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category).then((articleData) => {
       // populate reducer with markdown data
@@ -469,9 +472,9 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
 });
 
 /**
- * @description - Get the lexicon entry and add it to the reducer
- * @param {String} lexiconId - the id of the lexicon to populate
- * @param {Number} entryId - the number of the entry
+ * Get the lexicon entry and add it to the reducer
+ * @param {string} lexiconId - the id of the lexicon to populate
+ * @param {number} entryId - the number of the entry
  */
 export const loadLexiconEntry = (lexiconId, entryId) => ((dispatch) => {
   try {
@@ -495,4 +498,18 @@ export const loadLexiconEntry = (lexiconId, entryId) => ((dispatch) => {
   } catch (error) {
     console.error(error);
   }
+});
+
+/**
+ * Updates the verse text in the target language bible resource.
+ * This will not write any changes to the disk.
+ * @param {number} chapter
+ * @param {number} verse
+ * @param {string} text
+ */
+export const updateTargetVerse = (chapter, verse, editedText) => ({
+  type: consts.UPDATE_TARGET_VERSE,
+  editedText,
+  chapter,
+  verse,
 });

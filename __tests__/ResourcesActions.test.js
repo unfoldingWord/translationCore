@@ -108,14 +108,6 @@ describe('ResourcesActions', () => {
         translationHelps: {},
         lexicons: {},
       },
-      contextIdReducer: {
-        contextId: {
-          reference: {
-            bookId: bookId,
-            chapter:1,
-          },
-        },
-      },
       settingsReducer: {
         toolsSettings: {
           ScripturePane: {
@@ -138,14 +130,21 @@ describe('ResourcesActions', () => {
         },
       },
     });
+    const contextId = {
+      reference: {
+        bookId: bookId,
+        chapter:1,
+      },
+    };
 
     // when
     store.dispatch(
-      ResourcesActions.makeSureBiblesLoadedForTool()
+      ResourcesActions.makeSureBiblesLoadedForTool(contextId)
     );
 
     // then
     const actions = store.getActions();
+
     validateExpectedResources(actions, 'ADD_NEW_BIBLE_TO_RESOURCES', 'bibleId', expectedResources);
   });
 
