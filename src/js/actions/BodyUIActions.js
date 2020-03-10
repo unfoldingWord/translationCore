@@ -57,8 +57,8 @@ export const openLicenseModal = () => ({ type: types.OPEN_LICENSE_MODAL });
 export const closeLicenseModal = () => ({ type: types.CLOSE_LICENSE_MODAL });
 
 /**
- * @description show or not show dimmed screen.
- * @param {bool} enable dims the screen if enabled otherwise removes the dim
+ * Dims the screen.
+ * @param {bool} enable dims the screen if enabled otherwise removes the dim.
  */
 export const dimScreen = (enable = true) => ({
   type: types.SHOW_DIMMED_SCREEN,

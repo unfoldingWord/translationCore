@@ -1,11 +1,13 @@
 /* eslint-disable no-async-promise-executor */
+import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
-import { getTranslate } from '../selectors';
+import { getTranslate, getSourceBook } from '../selectors';
 import {
   loadToolsInDir,
   getInvalidCountForTool,
   isInvalidationAlertDisplaying,
 } from '../helpers/toolHelper';
+import ResourceAPI from '../helpers/ResourceAPI';
 import {
   WORD_ALIGNMENT,
   ALERT_SELECTIONS_INVALIDATED_ID,
@@ -21,6 +23,7 @@ import { openAlertDialog, closeAlertDialog } from './AlertModalActions';
 import * as AlertActions from './AlertActions';
 import * as BodyUIActions from './BodyUIActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -50,9 +53,29 @@ export const loadTools = (toolsDir) => (dispatch) => {
 };
 
 /**
+ * save to project manifest the original lang and gl used for tool checking or alignment
+ * @param toolName
+ * @param gl
+ */
+export function saveResourcesUsed(toolName, gl) {
+  return (dispatch, getState) => {
+    const sourceBook = getSourceBook(getState());
+    const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
+    dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
+
+    if (toolName !== WORD_ALIGNMENT) {
+      const resources = ResourceAPI.default();
+      const helpDir = resources.getLatestTranslationHelp(gl, toolName);
+      const glVersion = (helpDir && path.basename(helpDir)) || 'unknown';
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_' + gl + '_check_version_' + toolName, glVersion));
+    }
+  };
+}
+
+/**
  * This function prepares the data needed to load a tool, also
  *  useful for checking the progress of a tool
- * @param {String} name - Name of the tool
+ * @param {String} toolName - Name of the tool
  */
 export function prepareToolForLoading(name) {
   return (dispatch) => {
