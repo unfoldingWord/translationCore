@@ -9,22 +9,28 @@ import {
 } from '../selectors';
 import { loadProjectGroupData, loadProjectGroupIndex } from '../helpers/ResourcesHelpers';
 import {
-  loadToolsInDir, isInvalidationAlertDisplaying, getInvalidCountForTool,
+  loadToolsInDir,
+  getInvalidCountForTool,
+  isInvalidationAlertDisplaying,
 } from '../helpers/toolHelper';
 import ResourceAPI from '../helpers/ResourceAPI';
 import { delay } from '../common/utils';
-import { WORD_ALIGNMENT } from '../common/constants';
+import {
+  WORD_ALIGNMENT,
+  ALERT_SELECTIONS_INVALIDATED_ID,
+  ALERT_SELECTIONS_INVALIDATED_MSG,
+  ALERT_ALIGNMENTS_RESET_ID,
+  ALERT_ALIGNMENTS_RESET_MSG,
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+} from '../common/constants';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
 import { openAlertDialog, closeAlertDialog } from './AlertModalActions';
-import * as GroupsDataActions from './GroupsDataActions';
-import { loadCurrentContextId } from './ContextIdActions';
+import * as AlertActions from './AlertActions';
 import * as BodyUIActions from './BodyUIActions';
 import { loadGroupsIndex } from './GroupsIndexActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
-// helpers
-import { showInvalidatedWarnings } from './SelectionsActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 
 /**
@@ -79,38 +85,10 @@ export function saveResourcesUsed(toolName, gl) {
  *  useful for checking the progress of a tool
  * @param {String} toolName - Name of the tool
  */
-export function prepareToolForLoading(toolName) {
-  return async (dispatch, getState) => {
-    const translate = getTranslate(getState());
-
-    dispatch(batchActions([
-      { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
-      { type: types.CLEAR_PREVIOUS_GROUPS_INDEX },
-      { type: types.CLEAR_CONTEXT_ID },
-    ]));
-
+export function prepareToolForLoading(name) {
+  return (dispatch) => {
     // Load older version of OL resource if needed by tN tool
-    dispatch(loadOlderOriginalLanguageResource(toolName));
-
-    // load group data
-    const projectDir = getProjectSaveLocation(getState());
-    const groupData = loadProjectGroupData(toolName, projectDir);
-
-    dispatch({
-      type: types.LOAD_GROUPS_DATA_FROM_FS,
-      allGroupsData: groupData,
-    });
-
-    // load group index
-    const language = getToolGatewayLanguage(getState(), toolName);
-    const groupIndex = loadProjectGroupIndex(language, toolName, projectDir, translate);
-    dispatch(loadGroupsIndex(groupIndex));
-    dispatch(saveResourcesUsed(toolName, language));
-
-    dispatch(loadCurrentContextId(toolName));
-    //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
-    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(toolName));
-    // wait for filesystem calls to finish
+    dispatch(loadOlderOriginalLanguageResource(name));
   };
 }
 
@@ -124,7 +102,6 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
   const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
   dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
-  await delay(300);
 
   try {
     dispatch({ type: types.OPEN_TOOL, name });

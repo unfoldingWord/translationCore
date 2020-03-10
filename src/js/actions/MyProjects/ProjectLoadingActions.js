@@ -18,7 +18,6 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import { openSoftwareUpdate } from '../SoftwareUpdateActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { changeSelections } from '../SelectionsActions';
 import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
@@ -33,7 +32,9 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername, getProjects,
+  getUsername,
+  getProjects,
+  getCurrentToolName,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -135,11 +136,10 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
   try {
     dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS });
     dispatch(initializeReducersForProjectOpenValidation());
 
     // TRICKY: prevent dialog from flashing on small projects
-    await delay(300);
+    await delay(200);
     await isProjectSupported(projectDir, translate);
     await migrateProject(projectDir, null, getUsername(getState()));
 
@@ -230,6 +230,8 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
   const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
+  const toolName = getCurrentToolName(state) || null;
+  const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
   return {
     //resource api
@@ -260,6 +262,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     sourceBook,
     targetBook,
 
+    bookId,
+    toolName,
+    gatewayLanguageCode,
+
     contextId: {
       reference: {
         bookId,
@@ -269,7 +275,6 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     username: getUsername(state),
     toolsSelectedGLs: getToolsSelectedGLs(state),
-    actions: { changeSelections: (selections) => dispatch(changeSelections(selections)) },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
@@ -359,12 +364,8 @@ export function closeProject() {
       { type: consts.RESET_PROJECT_DETAIL },
       BodyUIActions.toggleHomeView(true),
       ProjectDetailsActions.resetProjectDetail(),
-      { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-      { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-      { type: consts.CLEAR_CONTEXT_ID },
       { type: consts.CLOSE_TOOL },
       { type: consts.CLEAR_RESOURCES_REDUCER },
-      { type: consts.CLEAR_PREVIOUS_FILTERS },
     ];
 
     dispatch(batchActions(actions));

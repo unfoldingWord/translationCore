@@ -22,34 +22,40 @@ const zipResourcesContent = async (resourcesRootPath, languageId) => {
 
       try {
         const resourceIdPath = path.join(resourcesPath, resourceId);
-        const resourcesContentPath = updateResourcesHelpers.getLatestVersionInPath(resourceIdPath);
-        const contentType = resourceType === 'bibles' ? 'books' : 'contents';
+        const versions = fs.readdirSync(resourceIdPath).filter(item => item !== '.DS_Store');
 
-        if (fs.existsSync(path.join(resourcesContentPath, contentType + '.zip'))) {
-          console.log(`Resource was not updated, skipping: ${languageId} ${resourceId}`);
-          return;
-        }
+        versions.forEach(version => {
+          const resourcesContentPath = path.join(resourceIdPath, version);
+          const contentType = resourceType === 'bibles' ? 'books' : 'contents';
 
-        const excludedItems = ['index.json', 'manifest.json', 'books', 'books.zip', 'contents.zip', '.DS_Store'];
-        const resources = fs.readdirSync(resourcesContentPath)
-          .filter(item => !excludedItems.includes(item));
-        fs.ensureDirSync(path.join(resourcesContentPath, contentType));
-        const resourcessPath = path.join(resourcesContentPath, contentType);
+          if (fs.existsSync(path.join(resourcesContentPath, contentType + '.zip'))) {
+            console.log(`Resource was not updated, skipping: ${languageId} ${resourceId}`);
+            return;
+          }
 
-        resources.forEach(resource => {
-          const resourcePath = path.join(resourcesContentPath, resource);
-          const destinationPath = path.join(resourcessPath, resource);
-          fs.moveSync(resourcePath, destinationPath);
+          const excludedItems = ['index.json', 'manifest.json', 'books', 'books.zip', 'contents.zip', '.DS_Store'];
+          const resources = fs.readdirSync(resourcesContentPath)
+            .filter(item => !excludedItems.includes(item));
+          fs.ensureDirSync(path.join(resourcesContentPath, contentType));
+          const resourcessPath = path.join(resourcesContentPath, contentType);
+
+          resources.forEach(resource => {
+            const resourcePath = path.join(resourcesContentPath, resource);
+            const destinationPath = path.join(resourcessPath, resource);
+            fs.moveSync(resourcePath, destinationPath);
+          });
+
+          zip.addLocalFolder(resourcessPath);
+          const zipFilename = contentType + '.zip';
+          const zipDestination = path.join(resourcesContentPath, zipFilename);
+          zip.writeZip(zipDestination);
+          fs.removeSync(resourcessPath);
+          console.log('\x1b[35m%s\x1b[0m', `Finished zipping the contents for: ${languageId} ${resourceId}`);
         });
-
-        zip.addLocalFolder(resourcessPath);
-        const zipFilename = contentType + '.zip';
-        const zipDestination = path.join(resourcesContentPath, zipFilename);
-        zip.writeZip(zipDestination);
-        fs.removeSync(resourcessPath);
-        console.log('\x1b[35m%s\x1b[0m', `Finished zipping the contents for: ${languageId} ${resourceId}`);
       } catch (error) {
-        console.error(error);
+        const message = `zipResourcesContent(${resourcesPath}) Failed: `;
+        console.error(message, error);
+        throw message + error.toString();
       }
     });
   });
