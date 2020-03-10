@@ -148,6 +148,7 @@ class ToolCard extends Component {
     const {
       tool,
       translate,
+      isToolUsingCurrentOriginalLanguage,
       actions: {
         openOptionDialog,
         closeAlertDialog,
