@@ -862,6 +862,7 @@ export default class ProjectAPI {
         return currentContextId;
       } else {
         console.warn(`The project doesn't have a currentContextId, thus getting the first item on the groupsData list`);
+        console.warn(`contextIdPath, ${contextIdPath} doesn't exist`);
         const groupsData = this.getGroupsData(toolName);
         const groupsDataKeys = Object.keys(groupsData);
         const firstKey = groupsDataKeys[0];
