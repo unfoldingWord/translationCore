@@ -349,11 +349,12 @@ describe('USFMExportActions.exportToUSFM', () => {
     const expectedActions = [{ 'type': 'VALIDATE' },
       { 'type': 'OPEN_OPTION_DIALOG' },
       { 'type': 'CLOSE_ALERT_DIALOG' },
-      { 'bool': true, 'type': 'SHOW_DIMMED_SCREEN' },
       {
         'alertMessage': 'projects.exporting_file_alert', 'loading': true, 'type': 'OPEN_ALERT_DIALOG',
       },
       { 'type': 'CLOSE_ALERT_DIALOG' },
+      { 'bool': true, 'type': 'SHOW_DIMMED_SCREEN' },
+      { 'bool': false, 'type': 'SHOW_DIMMED_SCREEN' },
       { 'type': 'SET_USFM_SAVE_LOCATION', 'usfmSaveLocation': '/' },
       {
         'alertMessage': 'projects.exported_alert', 'loading': false, 'type': 'OPEN_ALERT_DIALOG',

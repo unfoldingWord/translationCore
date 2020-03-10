@@ -9,6 +9,7 @@ import _ from 'lodash';
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
 import { getGatewayLanguageList, hasValidOL } from '../../../helpers/gatewayLanguageHelpers';
+import { isToolUsingCurrentOriginalLanguage } from '../../../helpers/originalLanguageResourcesHelpers';
 // components
 import Hint from '../../Hint';
 import {
@@ -23,8 +24,6 @@ import ToolCardBoxes from './ToolCardBoxes';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
-// selectors
-// consts
 
 class ToolCard extends Component {
   constructor(props) {
@@ -32,6 +31,7 @@ class ToolCard extends Component {
     this.selectionChange = this.selectionChange.bind(this);
     this.handleSelect = this.handleSelect.bind(this);
     this.onLaunchClick = this.onLaunchClick.bind(this);
+    this.doClickAction = this.doClickAction.bind(this);
     this.loadProgress = _.debounce(this.loadProgress.bind(this), 200);
     this.state = {
       showDescription: false,
@@ -145,6 +145,39 @@ class ToolCard extends Component {
   }
 
   onLaunchClick() {
+    const {
+      tool,
+      translate,
+      isToolUsingCurrentOriginalLanguage,
+      actions: {
+        openOptionDialog,
+        closeAlertDialog,
+      },
+    } = this.props;
+    const newSelectedToolName = tool.name;
+
+    if (newSelectedToolName === TRANSLATION_NOTES) {
+      const isCurrentOL = isToolUsingCurrentOriginalLanguage(newSelectedToolName);
+
+      if (!isCurrentOL) {
+        const continueButtonText = translate('buttons.continue_button');
+        const cancelButtonText = translate('buttons.cancel_button');
+
+        openOptionDialog(translate('tools.tN_version_warning'), (result) => {
+          closeAlertDialog();
+
+          if (result === continueButtonText) {
+            this.doClickAction();
+          }
+        }, cancelButtonText, continueButtonText);
+        return;
+      }
+    }
+
+    this.doClickAction();
+  }
+
+  doClickAction() {
     const {
       isOLBookVersionMissing,
       toggleHomeView,
@@ -281,10 +314,10 @@ class ToolCard extends Component {
               position={'left'}
               size='medium'
               label={launchDisableMessage}
-              enabled={launchDisableMessage ? true : false}
+              enabled={!!launchDisableMessage}
             >
               <button
-                disabled={launchDisableMessage ? true : false}
+                disabled={!!launchDisableMessage}
                 className='btn-prime'
                 onClick={this.onLaunchClick}
                 style={{ width: '90px', margin: '10px' }}
@@ -311,6 +344,8 @@ ToolCard.propTypes = {
     updateSubcategorySelection: PropTypes.func.isRequired,
     updateCategorySelection: PropTypes.func.isRequired,
     warnOnInvalidations: PropTypes.func.isRequired,
+    openOptionDialog: PropTypes.func.isRequired,
+    closeAlertDialog: PropTypes.func.isRequired,
   }),
   selectedCategories: PropTypes.array.isRequired,
   availableCategories: PropTypes.object.isRequired,
@@ -323,6 +358,7 @@ ToolCard.propTypes = {
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
+  isToolUsingCurrentOriginalLanguage: PropTypes.func.isRequired,
 };
 
 ToolCard.contextTypes = { store: PropTypes.any };
@@ -331,6 +367,7 @@ const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),
   developerMode: getSetting(state, 'developerMode'),
   currentToolName: getCurrentToolName(state),
+  isToolUsingCurrentOriginalLanguage: (toolName) => (isToolUsingCurrentOriginalLanguage(state, toolName)),
 });
 
 export default connect(mapStateToProps)(ToolCard);
