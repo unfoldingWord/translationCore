@@ -279,9 +279,8 @@ function removeBibleFromList(resources, bibleId, languageId) {
  * @return {Array} array of resource in scripture panel
  */
 export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
-  const state = getState();
   const { bibleId: origLangBibleId } = BibleHelpers.getOrigLangforBook(bookId);
-  const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(state);
+  const newCurrentPaneSettings = SettingsHelpers.getCurrentPaneSetting(getState());
   let changed = false;
 
   if (Array.isArray(newCurrentPaneSettings)) {

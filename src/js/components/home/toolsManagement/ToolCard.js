@@ -148,6 +148,7 @@ class ToolCard extends Component {
     const {
       tool,
       translate,
+      isToolUsingCurrentOriginalLanguage,
       actions: {
         openOptionDialog,
         closeAlertDialog,
@@ -357,6 +358,7 @@ ToolCard.propTypes = {
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
+  isToolUsingCurrentOriginalLanguage: PropTypes.func.isRequired,
 };
 
 ToolCard.contextTypes = { store: PropTypes.any };
@@ -365,6 +367,7 @@ const mapStateToProps = (state) => ({
   bookId: getProjectBookId(state),
   developerMode: getSetting(state, 'developerMode'),
   currentToolName: getCurrentToolName(state),
+  isToolUsingCurrentOriginalLanguage: (toolName) => (isToolUsingCurrentOriginalLanguage(state, toolName)),
 });
 
 export default connect(mapStateToProps)(ToolCard);

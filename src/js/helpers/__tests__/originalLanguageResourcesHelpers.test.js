@@ -1,8 +1,15 @@
 /* eslint-disable import/named,quotes,comma-dangle,object-curly-newline */
+import fs from 'fs-extra';
+import path from 'path-extra';
 import * as OL_Helpers from '../originalLanguageResourcesHelpers';
-import { TRANSLATION_NOTES, TRANSLATION_WORDS, WORD_ALIGNMENT } from '../../common/constants';
+import { TRANSLATION_NOTES, TRANSLATION_WORDS, USER_RESOURCES_PATH, WORD_ALIGNMENT } from '../../common/constants';
 
 describe('isToolUsingCurrentOriginalLanguage()', () => {
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+  });
+
   it('in tN, expect same same versions to be current OL', () => {
     // given
     const currentOlVersion = "0.10";
@@ -124,18 +131,20 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 // Helpers
 //
 
-function initState(currentOlVersion, toolOlVersion) {
+function initState(LatestOlVersion, toolOlVersion) {
   const tnDependency = "el-x-koine/ugnt?v=" + toolOlVersion;
+  const origLangId = "el-x-koine";
+  const origLangBible = "ugnt";
   const state = {
     resourcesReducer: {
       bibles: {
         originalLanguage: {
           ugnt: {
             manifest: {
-              language_id: "el-x-koine",
-              resource_id: "ugnt",
+              language_id: origLangId,
+              resource_id: origLangBible,
               dublin_core: {
-                version: currentOlVersion // e.g. "0.9"
+                version: LatestOlVersion // e.g. "0.9"
               }
             }
           }
@@ -206,5 +215,10 @@ function initState(currentOlVersion, toolOlVersion) {
       "projectType": null,
     }
   };
+  // init resources
+  const bibleFolderPath = path.join(USER_RESOURCES_PATH, origLangId, 'bibles', origLangBible);
+  const latestVersionFolder = path.join(bibleFolderPath, LatestOlVersion);
+  fs.ensureDirSync(latestVersionFolder);
+
   return state;
 }
