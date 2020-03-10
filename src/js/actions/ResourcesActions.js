@@ -163,7 +163,7 @@ export const getLatestVersion = (versions) => {
 };
 
 /**
- * Loads an entire bible resource.
+ * Loads a bible book resource.
  * @param bibleId
  * @param bookId
  * @param languageId
