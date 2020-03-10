@@ -1,20 +1,13 @@
 /* eslint-disable no-async-promise-executor */
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
-import {
-  getToolGatewayLanguage,
-  getTranslate,
-  getProjectSaveLocation,
-  getSourceBook,
-} from '../selectors';
-import { loadProjectGroupData, loadProjectGroupIndex } from '../helpers/ResourcesHelpers';
+import { getTranslate, getSourceBook } from '../selectors';
 import {
   loadToolsInDir,
   getInvalidCountForTool,
   isInvalidationAlertDisplaying,
 } from '../helpers/toolHelper';
 import ResourceAPI from '../helpers/ResourceAPI';
-import { delay } from '../common/utils';
 import {
   WORD_ALIGNMENT,
   ALERT_SELECTIONS_INVALIDATED_ID,
@@ -29,7 +22,6 @@ import * as ModalActions from './ModalActions';
 import { openAlertDialog, closeAlertDialog } from './AlertModalActions';
 import * as AlertActions from './AlertActions';
 import * as BodyUIActions from './BodyUIActions';
-import { loadGroupsIndex } from './GroupsIndexActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 
@@ -143,4 +135,31 @@ export const warnOnInvalidations = (toolName) => (dispatch, getState) => {
   } catch (e) {
     console.warn('warnOnInvalidations() - error getting invalid checks', e);
   }
+};
+
+/**
+ * displays warning that selections, alignments, or both have been invalidated
+ * @param {boolean} showSelectionInvalidated
+ * @param {boolean} showAlignmentsInvalidated
+ * @param {Function|Null} callback - optional callback after OK button clicked
+ * @return {Function}
+ */
+export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignmentsInvalidated,
+  callback = null) => (dispatch, getState) => {
+  let message = null;
+  let id = null;
+
+  if (showSelectionInvalidated && showAlignmentsInvalidated) {
+    message = ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG;
+    id = ALERT_ALIGNMENTS_RESET_ID;
+  } else if (showSelectionInvalidated) {
+    message = ALERT_SELECTIONS_INVALIDATED_MSG;
+    id = ALERT_SELECTIONS_INVALIDATED_ID;
+  } else { // (showAlignmentsInvalidated)
+    message = ALERT_ALIGNMENTS_RESET_MSG;
+    id = ALERT_ALIGNMENTS_RESET_ID;
+  }
+
+  const translate = getTranslate(getState());
+  dispatch(AlertActions.openIgnorableAlert(id, translate(message), { onConfirm: callback }));
 };
