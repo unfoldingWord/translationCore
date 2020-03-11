@@ -329,6 +329,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Abrir um projeto em translationNotes pode invalidar algum trabalho previamente concluído dentro dele. Você tem certeza de que deseja continuar?<br/><br/>A Língua Portal que você escolheu para usar com o translationNotes usa uma versão anterior do texto na língua original (Hebraico ou Grego). Inicializando-o agora pode redefinir algumas das verificações previamente concluídas no translationWords e/ou invalidar alguns alinhamentos. As verificações e alinhamentos que são redefinidas serão marcados como incompletos após a inicialização desta ferramenta.",
     "loading_tool_data": "Carregando dados da ferramenta.",
     "resource_missing_for_tool": "A ferramenta atual requer um versão diferente da UGNT. Por favor, clique em Download para recuperar este recurso.",
     "no_checks_selected": "É preciso selecionar uma categoria para abrir esta ferramenta",
