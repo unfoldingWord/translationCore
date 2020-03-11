@@ -329,7 +329,7 @@
     }
   },
   "tools": {
-    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
+    "tN_version_warning": "Membuka proyek dalam terjemahan Notes dapat membatalkan beberapa pekerjaan yang sebelumnya diselesaikan. Apakah anda yakin ingin melanjutkan?<br/><br/>Bahasa Gateway yang telah Anda pilih untuk digunakan untuk translationNotes menggunakan versi sebelumnya dari teks bahasa asli (Ibrani atau Yunani). Menjalankannya sekarang dapat mereset beberapa cek yang sebelumnya diselesaikan dalam translationWords dan / atau membatalkan beberapa penyelarasan. Pemeriksaan dan keselarasan yang diatur ulang akan ditandai sebagai tidak lengkap setelah menjalankan alat ini.",
     "loading_tool_data": "Memuat data.",
     "resource_missing_for_tool": "Alat saat ini membutuhkan versi UGNT yang berbeda. Silakan klik Unduh untuk mengambil sumber ini.",
     "no_checks_selected": "Anda harus memilih kategori untuk menjalankan alat ini",
@@ -419,9 +419,9 @@
     "save_and_previous_button": "Simpan & Sebelumnya",
     "save_button": "Simpan",
     "search_button": "Cari",
-    "select_button": "Select",
-    "to_project_button": "Continue to Project",
-    "tool_button": "Tool",
+    "select_button": "Pilih",
+    "to_project_button": "Lanjutkan ke Proyek",
+    "tool_button": "Alat",
     "submit_button": "Submit",
     "overwrite": "Overwrite",
     "create_new_repo": "Create New Repository",
