@@ -329,7 +329,7 @@
     }
   },
   "tools": {
-    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
+    "tN_version_warning": "La apertura de un proyecto en translationNotes podría invalidar algunos de los trabajos que se han completado en él. Está seguro de que desea continuar?<br/><br/>El Idioma Puente que haya elegido utilizar para translationNotes utiliza una versión anterior del texto de idioma original (Hebreo o Griego). Lanzarlo ahora puede restablecer algunas de las verificaciones previamente completadas en translationWords y/o invalidar algunas de las alineaciones. Las verificaciones y las alineaciones que se restablecen serán marcadas como incompletas después de el lanzamiento de esta herramienta.",
     "loading_tool_data": "Cargando datos de la herramienta.",
     "resource_missing_for_tool": "La herramienta actual requiere una versión diferente de UGNT. Por favor, haga clic en Descargar para recuperar este recurso.",
     "no_checks_selected": "Debes seleccionar una categoría para el lanzamiento de esta herramienta",
