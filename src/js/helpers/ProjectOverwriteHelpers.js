@@ -315,7 +315,7 @@ export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, pr
       verse,
     },
   };
-  const selectionsPath = generateLoadPath({ projectSaveLocation }, { contextId }, 'selections');
+  const selectionsPath = generateLoadPath(projectSaveLocation, contextId, 'selections');
 
   if (fs.existsSync(selectionsPath)) {
     let files = fs.readdirSync(selectionsPath);

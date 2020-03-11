@@ -8,7 +8,6 @@ import { getOtherTnsOLVersions } from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
-  getContext,
   getToolGatewayLanguage,
   getBibles,
   getProjectSaveLocation,
@@ -754,9 +753,9 @@ export function getAvailableScripturePaneSelections(resourceList) {
   return ((dispatch, getState) => {
     try {
       resourceList.splice(0, resourceList.length); // remove any pre-existing elements
-      const contextId = getContext(getState());
-      const { resourcesReducer: { bibles } } = getState();
-      const bookId = contextId && contextId.reference.bookId;
+      const state = getState();
+      const { resourcesReducer: { bibles } } = state;
+      const bookId = getProjectBookId(state);
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
 
       // add target Bible if in resource reducer

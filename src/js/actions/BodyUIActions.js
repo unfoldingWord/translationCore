@@ -57,8 +57,8 @@ export const openLicenseModal = () => ({ type: types.OPEN_LICENSE_MODAL });
 export const closeLicenseModal = () => ({ type: types.CLOSE_LICENSE_MODAL });
 
 /**
- * @description show or not show dimmed screen.
- * @param {bool} enable dims the screen if enabled otherwise removes the dim
+ * Dims the screen.
+ * @param {bool} enable dims the screen if enabled otherwise removes the dim.
  */
 export const dimScreen = (enable = true) => ({
   type: types.SHOW_DIMMED_SCREEN,
@@ -68,12 +68,8 @@ export const dimScreen = (enable = true) => ({
 export const resetReducers = () => ((dispatch) => {
   const actions = [
     { type: types.RESET_PROJECT_DETAIL },
-    { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
-    { type: types.CLEAR_PREVIOUS_GROUPS_INDEX },
-    { type: types.CLEAR_CONTEXT_ID },
     { type: types.CLOSE_TOOL },
     { type: types.CLEAR_RESOURCES_REDUCER },
-    { type: types.CLEAR_PREVIOUS_FILTERS },
     { type: types.RESET_LOCAL_IMPORT_REDUCER },
     { type: types.RESET_HOME_SCREEN },
     { type: types.GO_TO_STEP, stepIndex: 2 },

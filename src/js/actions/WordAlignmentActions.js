@@ -30,7 +30,8 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id);
   } catch (e) {
     if (e && e.error && e.error.type === 'InvalidatedAlignments') {
-      //error in converting alignment need to prompt user to fix
+      console.info('Error converting alignment, prompting user to fix it.');
+      // Error in converting alignment need to prompt user to fix
       const { chapter, verse } = e;
       let res;
 

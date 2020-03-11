@@ -40,11 +40,10 @@ export function exportToUSFM(projectPath) {
       const exportType = await dispatch(getExportType(projectPath));
       //Running migrations before exporting to attempt to fix any invalid alignments/usfm
       await migrateProject(projectPath, null, getUsername(getState()));
-      dispatch(BodyUIActions.dimScreen(true));
       let usfmExportFile;
       console.log('exportToUSFM() - loading USFM');
       dispatch(displayLoadingUSFMAlert(manifest));
-      await delay(300);
+      await delay(0);
 
       if (exportType === 'usfm2') {
         console.log('exportToUSFM() - getting USFM2');
@@ -59,7 +58,9 @@ export function exportToUSFM(projectPath) {
       const usfmSaveLocation = getState().settingsReducer.usfmSaveLocation;
       // File path from electron file chooser
       console.log('exportToUSFM() - getting output file path');
+      dispatch(BodyUIActions.dimScreen(true));
       const filePath = await exportHelpers.getFilePath(projectName, usfmSaveLocation, 'usfm');
+      dispatch(BodyUIActions.dimScreen(false));
       // Getting new project name to save in case the user changed the save file name
       projectName = path.parse(filePath).base.replace('.usfm', '');
       // Saving the location for future exports

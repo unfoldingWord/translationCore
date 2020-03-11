@@ -329,6 +329,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "పరికరం సమాచారం దిగుమతి అవుతుంది",
     "resource_missing_for_tool": "ప్రస్తుతం పరికరంకు భిన్నమైన యు.జి.ఎన్.టి అవువాదం అవసరం. ఈ వనరును తిరిగి పొందడానికి దౌన్ లోడ్ ను తట్టండి",
     "no_checks_selected": "ఈ పరికరం ఆరంభించదడానికి ఒక విభాగాన్ని ఎంపిక చెయ్యాలి",
