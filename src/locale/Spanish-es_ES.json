@@ -247,7 +247,7 @@
     "conflict_reference": "Este es un conflicto de unión para el capítulo ${chapter}, versículo ${verse}.",
     "missing_verses_instructions": "Faltan algunos versículos en tu proyecto.",
     "only_nt_supported": "Esta versión de ${app} solo admite proyectos del Nuevo Testamento.",
-    "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda para abrir este proyecto o para reiniciar la verificación, por favor contáctese con ${help_desk_email}.",
+    "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda al abrir este proyecto o para reiniciar la verificación, por favor contacte ${help_desk_email}.",
     "resource_id": {
       "info": "(Código de identificación de 3 o 4 letras por ejemplo, NVI, RVR, etc.)",
       "field_invalid_length": "Debe tener 3-4 letras de largo",
@@ -442,7 +442,7 @@
     "translate-manuscripts": "Manuscritos originales",
     "guidelines-sonofgodprinciples": "Traduciendo Hijo y Padre",
     "translate-textvariants": "Variantes textuales",
-    "translate-transliterate": "Copiar o pedir prestadas palabras",
+    "translate-transliterate": "Copiar o tomar palabras prestadas",
     "numbers": "Números",
     "translate-numbers": "Números",
     "translate-fraction": "Fracciones",
