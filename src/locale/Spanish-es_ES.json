@@ -7,7 +7,7 @@
   "to_get_started": "Para empezar, por favor:",
   "log_in": "Iniciar sesión",
   "save_changes": "Guardar Cambios",
-  "saving_changes": "Saving Changes",
+  "saving_changes": "Guardando cambios",
   "success": "Éxito",
   "supported_file_types": "Tipos de Archivos Compatibles",
   "select_project": "Seleccione un Proyecto",
@@ -171,11 +171,11 @@
     "cancel_import_alert": "Cancelar ahora abortará el proceso de importación y será necesario volver a importar el proyecto antes de poder utilizarlo.",
     "project_already_identified": "Este proyecto ha sido identificado como un proyecto ${originalBook}. ¿Estás seguro de que quieres cambiarlo a un proyecto ${suggestedBook}?",
     "loading_project_alert": "Cargando los datos de su proyecto.",
-    "preparing_project_alert": "Preparing your project data.",
+    "preparing_project_alert": "Preparando datos del proyecto.",
     "exported_alert": "${project_name} ha sido exportado con éxito a ${file_path}.",
     "must_be_logged_in_alert": "Debes iniciar sesión con una cuenta ${door43} para cargar proyectos. Por favor, cierre la sesión y vuelva a iniciar con una cuenta de usuario de ${door43}",
     "uploading_alert": "Cargando el ${project_name} para ${door43}. Por favor espere...",
-    "renaming_alert": "Renaming ${project_name} on ${door43}. Please wait...",
+    "renaming_alert": "Renombrando ${project_name} en ${door43}. Por favor espere...",
     "upload_successful_alert": "${username}, su proyecto ha sido cargado exitosamente.",
     "upload_modified_error": "${project_name} no se puede cargar porque ha habido cambios de la traducción de ese proyecto en su cuenta ${door43}.",
     "merge_export_error": "Este proyecto tiene conflictos para unirse y no se puede exportar. Seleccione el proyecto para resolver los conflictos y vuelva a intentarlo.",
@@ -212,9 +212,9 @@
     "dcs_rename_project": "Su proyecto ha sido renombrado<br/><b>${project}</b><br/>¿Qué le gustaría hacer con el repositorio ${door43} del proyecto existente?",
     "dcs_rename_success": "El repositorio de ${door43} para el proyecto fue actualizado con exito.<br/>${project}",
     "dcs_rename_failed": "El repositorio ${door43} no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio ${door43} o continuar sin renombrar?",
-    "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
+    "dcs_create_new_failed": "El repositorio ${door43} no pudo ser creado.<br/><br/>¿Desea intentar nuevamente crear el repositorio ${door43} o continuar sin renombrar?",
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a ${door43}, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto ${door43}.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} ."
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",
@@ -247,7 +247,7 @@
     "conflict_reference": "Este es un conflicto de unión para el capítulo ${chapter}, versículo ${verse}.",
     "missing_verses_instructions": "Faltan algunos versículos en tu proyecto.",
     "only_nt_supported": "Esta versión de ${app} solo admite proyectos del Nuevo Testamento.",
-    "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda para abrir este proyecto o para reiniciar la verificación, por favor contáctese con ${help_desk_email}.",
+    "old_project_unsupported": "Este proyecto contiene datos de una versión antigua de ${app} la cual no se admite en esta versión. Para obtener ayuda al abrir este proyecto o para reiniciar la verificación, por favor contacte ${help_desk_email}.",
     "resource_id": {
       "info": "(Código de identificación de 3 o 4 letras por ejemplo, NVI, RVR, etc.)",
       "field_invalid_length": "Debe tener 3-4 letras de largo",
@@ -329,7 +329,7 @@
     }
   },
   "tools": {
-    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
+    "tN_version_warning": "La apertura de un proyecto en translationNotes podría invalidar algunos de los trabajos que se han completado en él. Está seguro de que desea continuar?<br/><br/>El Idioma Puente que haya elegido utilizar para translationNotes utiliza una versión anterior del texto de idioma original (Hebreo o Griego). Lanzarlo ahora puede restablecer algunas de las verificaciones previamente completadas en translationWords y/o invalidar algunas de las alineaciones. Las verificaciones y las alineaciones que se restablecen serán marcadas como incompletas después de el lanzamiento de esta herramienta.",
     "loading_tool_data": "Cargando datos de la herramienta.",
     "resource_missing_for_tool": "La herramienta actual requiere una versión diferente de UGNT. Por favor, haga clic en Descargar para recuperar este recurso.",
     "no_checks_selected": "Debes seleccionar una categoría para el lanzamiento de esta herramienta",
@@ -442,7 +442,7 @@
     "translate-manuscripts": "Manuscritos originales",
     "guidelines-sonofgodprinciples": "Traduciendo Hijo y Padre",
     "translate-textvariants": "Variantes textuales",
-    "translate-transliterate": "Copiar o pedir prestadas palabras",
+    "translate-transliterate": "Copiar o tomar palabras prestadas",
     "numbers": "Números",
     "translate-numbers": "Números",
     "translate-fraction": "Fracciones",
