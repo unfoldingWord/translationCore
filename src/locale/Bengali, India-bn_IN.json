@@ -329,6 +329,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "টুল তথ্যকে আপলোড করা ",
     "resource_missing_for_tool": "বর্তমান টুলের UGNT এর একটি ভিন্ন সংস্করণের প্রয়োজন আছে I দয়া করে এই রিসোর্সটিকে পুনরুদ্ধার করতে ডাউনলোডকে ক্লিক করুন I ",
     "no_checks_selected": "আপনার অবশ্যই এই টুলটিকে আরম্ভ করতে একটি বিভাগকে নির্বাচন করতে হবে ",

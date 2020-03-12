@@ -14,6 +14,8 @@ export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');
 export const PROJECT_CHECKDATA_DIRECTORY = path.join(PROJECT_DOT_APPS_PATH, 'checkData');
 export const STATIC_RESOURCES_PATH = path.join('./tcResources');
 export const LOG_FILES_PATH = path.join(ospath.home(), 'translationCore', 'logs');
+export const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
+export const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
 // string names
 export const TC_VERSION = 'tc_version';
 export const SOURCE_CONTENT_UPDATER_MANIFEST = 'source-content-updater-manifest.json';

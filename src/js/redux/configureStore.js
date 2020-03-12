@@ -12,14 +12,14 @@ let middlewares = [
 ];
 
 if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {
-  //TODO: this is a hack to keep redux logger from crashing
-  middlewares.push(createLogger(
-    {
-      diff: false,
-      stateTransformer: (state) => (stringifySafe(state,
-        '[error loading system information]'))
-    }
-  ));
+  //TODO: this is a hack to keep redux logger from crashing, but still saw crash when opened project
+  // middlewares.push(createLogger(
+  //   {
+  //     diff: false,
+  //     stateTransformer: (state) => (stringifySafe(state,
+  //       '[error loading system information]'))
+  //   }
+  // ));
 }
 
 export default function configureStore(persistedState) {

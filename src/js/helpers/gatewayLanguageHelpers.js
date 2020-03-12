@@ -4,7 +4,7 @@ import path from 'path-extra';
 import _ from 'lodash';
 import { getAlignedText } from 'tc-ui-toolkit';
 
-import { getSelectedToolName, getToolGatewayLanguage } from '../selectors';
+import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
   TRANSLATION_ACADEMY,
   TRANSLATION_HELPS,
@@ -29,7 +29,7 @@ import ResourceAPI from './ResourceAPI';
  * @return {{gatewayLanguageCode: *, gatewayLanguageQuote: *}}
  */
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
-  const toolName = getSelectedToolName(state);
+  const toolName = getCurrentToolName(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
   const { toolsSelectedGLs } = state.projectDetailsReducer.manifest;
   const gatewayLanguageQuote = getAlignedGLText(

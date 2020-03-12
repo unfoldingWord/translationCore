@@ -61,6 +61,4 @@ const zipResourcesContent = async (resourcesRootPath, languageId) => {
   });
 };
 
-module.exports = {
-  zipResourcesContent,
-};
+module.exports = { zipResourcesContent };

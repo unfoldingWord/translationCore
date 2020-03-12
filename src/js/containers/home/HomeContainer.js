@@ -144,7 +144,6 @@ const mapStateToProps = (state) => ({
     loginReducer: state.loginReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     toolsReducer: state.toolsReducer,
-    groupsDataReducer: state.groupsDataReducer,
     localeSettings: state.localeSettings,
   },
 });
@@ -200,6 +199,8 @@ const mapDispatchToProps = (dispatch) => ({
     openAlertDialog: (message, loading) => {
       dispatch(AlertModalActions.openAlertDialog(message, loading));
     },
+    openOptionDialog: (...args) => dispatch(AlertModalActions.openOptionDialog(...args)),
+    closeAlertDialog: () => dispatch(AlertModalActions.closeAlertDialog()),
   },
 });
 

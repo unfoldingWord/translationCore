@@ -1,5 +1,16 @@
 # Changelog
 
+## [v2.1.1](https://github.com/unfoldingWord/translationCore/tree/v2.1.1) (2020-03-02)
+
+[Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.1.0...v2.1.1)
+
+**Fixed bugs:**
+
+- Reported by Larry: Alignments in wA invalidated after tN invalidation fixes [\#6684](https://github.com/unfoldingWord/translationCore/issues/6684)
+- The exporting project alert should not be dimmed/disabled. [\#6672](https://github.com/unfoldingWord/translationCore/issues/6672)
+- tN is reporting content problems on checks that contain ellipsis [\#6695](https://github.com/unfoldingWord/translationCore/issues/6695)
+
+
 ## [v2.1.0](https://github.com/unfoldingWord/translationCore/tree/v2.1.0) (2019-12-19)
 
 [Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.0.0...v2.1.0)

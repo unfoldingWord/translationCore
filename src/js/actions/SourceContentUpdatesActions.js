@@ -4,7 +4,7 @@ import path from 'path-extra';
 import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
 import {
-  getTranslate, getContext, getSelectedToolName, getProjectSaveLocation, getProjectBookId,
+  getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';
 // helpers
 import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
@@ -12,6 +12,7 @@ import { copyGroupDataToProject, updateSourceContentUpdaterManifest } from '../h
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import { loadBookTranslations } from './ResourcesActions';
+import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
   openAlertDialog, closeAlertDialog, openOptionDialog,
 } from './AlertModalActions';
@@ -94,8 +95,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
  */
 export const downloadSourceContentUpdates = (languageIdListToDownload) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
-  const contextId = getContext(getState());
-  const toolName = getSelectedToolName(getState());
+  const toolName = getCurrentToolName(getState());
 
   dispatch(resetSourceContentUpdatesReducer());
 
@@ -113,7 +113,11 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
           const bookId = getProjectBookId(getState());
           const olForBook = getOrigLangforBook(bookId);
           let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
-          await dispatch(loadBookTranslations(contextId.reference.bookId));
+          await dispatch(loadBookTranslations(bookId));
+
+          // update resources used by tool
+          dispatch(updateResourcesForOpenTool(toolName));
+
           // Tool is opened so we need to update existing group data
           copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch);
         }
