@@ -57,10 +57,9 @@ export const loadToolsInDir = async toolsDir => {
 export const loadTool = async (toolDir) => {
   const toolName = path.basename(toolDir);
   const packagePath = path.join(toolDir, 'package.json');
-  const badgePath = path.join(toolDir, 'badge.png');
 
   // Validate package files
-  const validatePaths = [packagePath, badgePath];
+  const validatePaths = [packagePath];
 
   for (const p of validatePaths) {
     const exists = fs.existsSync(p);
@@ -73,6 +72,7 @@ export const loadTool = async (toolDir) => {
   // load the actual tool
   const meta = await fs.readJson(packagePath);
   let tool = null;
+  let badge = null;
 
   try {
     console.log('meta=' + JSON.stringify(meta));
@@ -84,14 +84,17 @@ export const loadTool = async (toolDir) => {
     switch (toolName) { // tricky, with webpack the paths to require must be defined at compile time, not generated at runtime
       case 'wordAlignment':
         module = require('../../tC_apps/wordAlignment/index');
+        badge = require('../../tC_apps/wordAlignment/badge.png');
         break;
 
       case 'translationWords':
         module = require('../../tC_apps/translationWords/index');
+        badge = require('../../tC_apps/translationWords/badge.png');
         break;
 
       case 'translationNotes':
         module = require('../../tC_apps/translationNotes/index');
+        badge = require('../../tC_apps/translationNotes/badge.png');
         break;
 
       default:
@@ -106,7 +109,7 @@ export const loadTool = async (toolDir) => {
   }
 
   // patch in some extra props
-  tool.badge = badgePath;
+  tool.badge = badge;
   tool.version = meta.version;
   tool.title = meta.title;
   tool.description = meta.description;
