@@ -1,6 +1,5 @@
-const fs = require('fs');
-const path = require('path');
-const {app, Menu} = require('electron');
+const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
+const path = require('path-extra');
 const {
   createWindow,
   defineWindow,
@@ -8,8 +7,26 @@ const {
   closeAllWindows
 } = require('./electronWindows');
 
+// TODO: electronite: restore later
+// const { isGitInstalled, showElectronGitSetup} = require('./src/helpers/InstallationHelpers');
+// const { injectFileLogging } = require('./js/helpers/logger');
+// const DownloadManager = require('./js/DownloadManager');
+// const { DCS_BASE_URL } = require('./js/common/constants');
+const DCS_BASE_URL = 'https://git.door43.org';
+
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+
+let mainWindow;
+let helperWindow;
+let splashScreen;
+
+console.log ('Starting Public Main');
+
+// const downloadManager = new DownloadManager();
 
 /**
  * Creates a window for the main application.
@@ -17,19 +34,74 @@ const MAIN_WINDOW_ID = 'main';
  */
 function createMainWindow() {
   const windowOptions = {
-    width: 980,
-    minWidth: 425,
-    height: 580,
-    minHeight: 425,
+    icon: './TC_Icon.png',
+    title: 'translationCore',
+    autoHideMenuBar: true,
+    minWidth: 1200,
+    minHeight: 689,
     show: false,
     center: true,
-    autoHideMenuBar: true,
+    // useContentSize: true, // TODO: investigate if needed
     webPreferences: {
       nodeIntegration: true
     },
-    title: app.getName()
   };
-  return createWindow(MAIN_WINDOW_ID, windowOptions);
+  mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
+
+  // TODO: electronite: restore later
+  // if ('developer_mode' in p && p.developer_mode) {
+  //   mainWindow.webContents.openDevTools();
+  // }
+
+  // TODO: electronite: restore later
+  // isGitInstalled().then(installed => {
+  //   if (installed) {
+  //     console.log('createMainWindow() - Git is installed.');
+  //     mainWindow.loadURL(`file://${__dirname}/index.html`);
+  //   } else {
+  //     console.warn('createMainWindow() - Git is not installed. Prompting user.');
+  //     splashScreen.hide();
+  //     return showElectronGitSetup(dialog).then(() => {
+  //       app.quit();
+  //     }).catch(() => {
+  //       app.quit();
+  //     });
+  //   }
+  // });
+
+  // Doesn't display until ready
+  mainWindow.once('ready-to-show', () => {
+    mainWindow.show();
+    mainWindow.maximize();
+    splashScreen.close();
+  });
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
+
+  // TODO: electronite: restore later
+  // if (process.env.NODE_ENV === 'development') {
+  //   // Install React Dev Tools
+  //   try {
+  //     const { default: installExtension, REACT_DEVELOPER_TOOLS } = require(
+  //       'electron-devtools-installer');
+  //
+  //     installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
+  //       console.log(`createMainWindow() - Added Extension: ${name}`);
+  //     }).catch((err) => {
+  //       console.warn('createMainWindow() - An error occurred: ', err);
+  //     });
+  //   } catch (e) {
+  //     console.error('createMainWindow() - Failed to load electron developer tools', e);
+  //   }
+  // }
+
+  return mainWindow;
 }
 
 /**
@@ -51,21 +123,53 @@ function createSplashWindow() {
     center: true,
     title: app.name
   };
-  const window = defineWindow('splash', windowOptions);
+  splashScreen = defineWindow('splash', windowOptions);
 
   if (IS_DEVELOPMENT) {
-    window.loadURL('http://localhost:3000/splash.html');
+    splashScreen.loadURL('http://localhost:3000/splash.html');
   } else {
-    window.loadURL(`file://${path.join(__dirname, '/splash.html')}`);
+    splashScreen.loadURL(`file://${path.join(__dirname, '/splash.html')}`);
   }
 
-  return window;
+  splashScreen.on('closed', function () {
+    splashScreen = null;
+  });
+
+  return splashScreen;
+}
+
+function createHelperWindow(url) {
+  helperWindow = new BrowserWindow({
+    width: 950,
+    height: 660,
+    minWidth: 950,
+    minHeight: 580,
+    useContentSize: true,
+    center: true,
+    autoHideMenuBar: true,
+    show: true,
+    frame: true,
+  });
+
+  helperWindow.loadURL(url);
+
+  helperWindow.on('closed', () => {
+    helperWindow = null;
+  });
+
+  helperWindow.on('maximize', () => {
+    helperWindow.webContents.send('maximize');
+  });
+
+  helperWindow.on('unmaximize', () => {
+    helperWindow.webContents.send('unmaximize');
+  });
 }
 
 // attach process logger
 
 process.on('uncaughtException', (err) => {
-  console.error(err);
+  console.error(`uncaugtException`, err);
   closeAllWindows();
 });
 
@@ -122,10 +226,10 @@ app.on('second-instance', () => {
 
 // quit application when all windows are closed
 app.on('window-all-closed', () => {
-  // on macOS it is common for applications to stay open until the user explicitly quits
-  if (process.platform !== 'darwin') {
+  // // on macOS it is common for applications to stay open until the user explicitly quits
+  // if (process.platform !== 'darwin') {
     app.quit();
-  }
+  // }
 });
 
 app.on('activate', () => {
@@ -138,28 +242,62 @@ app.on('activate', () => {
 
 // create main BrowserWindow with a splash screen when electron is ready
 app.on('ready', () => {
-  const splashWindow = createSplashWindow();
+  createSplashWindow();
   const mainWindow = createMainWindow();
   mainWindow.once('ready-to-show', () => {
     setTimeout(() => {
-      splashWindow.close();
       mainWindow.show();
     }, 300);
   });
 });
 
-// receive log events from the render thread
-app.on('log-event', args => {
-  try {
-    const logPath = path.normalize(`console.log`);
-    const payload = `\n${new Date().toTimeString()} ${args.level}: ${args.args}`;
-    let writer = fs.appendFileSync;
-    if (!fs.existsSync(logPath) || fs.statSync(logPath).size / 1000000.0 > 1) {
-      // overwrite entire file if missing or lager than 1mb
-      writer = fs.writeFileSync;
-    }
-    writer(logPath, payload, {encoding: 'utf-8'});
-  } catch (e) {
-    console.error('Failed to handle log', e, args);
+ipcMain.on('save-as', function (event, arg) {
+  const input = dialog.showSaveDialogSync(mainWindow, arg.options);
+  event.returnValue = input || false;
+});
+
+// TODO: electronite: restore later
+// ipcMain.on('download-cancel', function (event, args) {
+//   const item = downloadManager.get(args.id);
+//
+//   if (item) {
+//     item.cancel();
+//   }
+// });
+
+// ipcMain.on('download', function (event, args) {
+//   const options = {
+//     saveAs: true,
+//     filename: args.name,
+//     openFolderWhenDone: true,
+//     showBadge: true,
+//     unregisterWhenDone: true,
+//     onProgress: (progress) => event.sender.send('download-progress', progress),
+//     onStarted: (item) => {
+//       const id = downloadManager.add(item);
+//       event.sender.send('download-started', id);
+//     },
+//   };
+//
+//   download(BrowserWindow.getFocusedWindow(), args.url, options)
+//     .then((dl) => {
+//       event.sender.send('download-success', dl.getSavePath());
+//     }).catch(error => {
+//     event.sender.send('download-error', error);
+//   });
+// });
+
+ipcMain.on('load-local', function (event, arg) {
+  const input = dialog.showOpenDialogSync(mainWindow, arg.options);
+  event.returnValue = input || false;
+});
+
+ipcMain.on('open-helper', (event, url = DCS_BASE_URL + '/') => {
+  if (helperWindow) {
+    helperWindow.show();
+    helperWindow.loadURL(url);
+  } else {
+    createHelperWindow(url);
   }
 });
+
