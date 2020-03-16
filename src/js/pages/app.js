@@ -33,6 +33,8 @@ import { getBuild } from '../common/utils';
 
 const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
+process.env.BUILD = getBuild();
+console.log('tCore - process.env: ',JSON.stringify(process.env));
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
 
 class Main extends Component {
