@@ -166,12 +166,11 @@ function createHelperWindow(url) {
   });
 }
 
-// attach process logger
-
-process.on('uncaughtException', (err) => {
-  console.error(`uncaugtException`, err);
-  closeAllWindows();
-});
+// TODO: electronite disabling this since it makes it a pain to debug things if the app just shuts down
+// process.on('uncaughtException', (err) => {
+//   console.error(`uncaugtException`, err);
+//   closeAllWindows();
+// });
 
 // build menu
 
