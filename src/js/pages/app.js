@@ -29,8 +29,9 @@ import { injectFileLogging } from '../helpers/logger';
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
 //consts
 import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
+import { getBuild } from '../common/utils';
 
-const version = `v${APP_VERSION} (${process.env.BUILD})`;
+const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
 

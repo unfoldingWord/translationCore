@@ -108,7 +108,7 @@ function stringifyArgs(args) {
 }
 
 module.exports = {
-  getLogFilePathForCurrentDate,
   getCurrentLog,
+  getLogFilePathForCurrentDate,
   injectFileLogging
 };
