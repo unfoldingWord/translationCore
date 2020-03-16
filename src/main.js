@@ -1,3 +1,4 @@
+require("@babel/register");
 const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
 const path = require('path-extra');
 const {
@@ -11,8 +12,8 @@ const {
 // const { isGitInstalled, showElectronGitSetup} = require('./src/helpers/InstallationHelpers');
 // const { injectFileLogging } = require('./js/helpers/logger');
 // const DownloadManager = require('./js/DownloadManager');
-// const { DCS_BASE_URL } = require('./js/common/constants');
-const DCS_BASE_URL = 'https://git.door43.org';
+const { DCS_BASE_URL } = require('./js/common/constants');
+// const DCS_BASE_URL = 'https://git.door43.org';
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
