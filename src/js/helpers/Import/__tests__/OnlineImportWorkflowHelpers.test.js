@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import path from 'path-extra';
 import fs from 'fs-extra';
-import ospath from 'ospath';
+import ospath from '../../../common/ospath-extra';
 import {
   generateImportPath,
   verifyThisIsTCoreOrTStudioProject,

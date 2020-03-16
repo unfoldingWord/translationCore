@@ -1,7 +1,7 @@
 /* eslint-disable require-await */
 /* eslint-disable require-await */
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import sourceContentUpdater from 'tc-source-content-updater';
 import {
   getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,

@@ -1,5 +1,5 @@
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from './ospath-extra';
 import packagefile from '../../../package.json';
 
 export const APP_VERSION = packagefile.version;

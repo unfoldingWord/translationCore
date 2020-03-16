@@ -1,5 +1,5 @@
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../../common/ospath-extra';
 import fs from 'fs-extra';
 import Repo from '../Repo';
 
