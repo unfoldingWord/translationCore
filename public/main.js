@@ -1,19 +1,16 @@
-require("@babel/register");
 const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
 const path = require('path-extra');
 const {
   createWindow,
   defineWindow,
-  getWindow,
-  closeAllWindows
+  getWindow
 } = require('./electronWindows');
 
 // TODO: electronite: restore later
-// const { isGitInstalled, showElectronGitSetup} = require('./src/helpers/InstallationHelpers');
-// const { injectFileLogging } = require('./js/helpers/logger');
-// const DownloadManager = require('./js/DownloadManager');
-const { DCS_BASE_URL } = require('./js/common/constants');
-// const DCS_BASE_URL = 'https://git.door43.org';
+const { download } = require('@neutrinog/electron-dl');
+const { isGitInstalled, showElectronGitSetup} = require('../src/js/helpers/InstallationHelpers');
+const DownloadManager = require('../src/js/DownloadManager');
+const DCS_BASE_URL = 'https://git.door43.org'; //TODO: also defined in constants.js, need to move definition to common place
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
@@ -25,9 +22,7 @@ let mainWindow;
 let helperWindow;
 let splashScreen;
 
-console.log ('Starting Public Main');
-
-// const downloadManager = new DownloadManager();
+const downloadManager = new DownloadManager();
 
 /**
  * Creates a window for the main application.
@@ -54,26 +49,27 @@ function createMainWindow() {
   //   mainWindow.webContents.openDevTools();
   // }
 
-  // TODO: electronite: restore later
-  // isGitInstalled().then(installed => {
-  //   if (installed) {
-  //     console.log('createMainWindow() - Git is installed.');
-  //     mainWindow.loadURL(`file://${__dirname}/index.html`);
-  //   } else {
-  //     console.warn('createMainWindow() - Git is not installed. Prompting user.');
-  //     splashScreen.hide();
-  //     return showElectronGitSetup(dialog).then(() => {
-  //       app.quit();
-  //     }).catch(() => {
-  //       app.quit();
-  //     });
-  //   }
-  // });
+  isGitInstalled().then(installed => {
+    if (installed) {
+      console.log('createMainWindow() - Git is installed.');
+    } else {
+      console.warn('createMainWindow() - Git is not installed. Prompting user.');
+      splashScreen.hide();
+      return showElectronGitSetup(dialog).then(() => {
+        app.quit();
+      }).catch(() => {
+        app.quit();
+      });
+    }
+  });
 
   // Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show();
-    mainWindow.maximize();
+    console.log('ready-to-show');
+    setTimeout(() => {
+      mainWindow.show();
+      mainWindow.maximize();
+    }, 300);
     splashScreen.close();
   });
 
@@ -243,12 +239,7 @@ app.on('activate', () => {
 // create main BrowserWindow with a splash screen when electron is ready
 app.on('ready', () => {
   createSplashWindow();
-  const mainWindow = createMainWindow();
-  mainWindow.once('ready-to-show', () => {
-    setTimeout(() => {
-      mainWindow.show();
-    }, 300);
-  });
+  createMainWindow();
 });
 
 ipcMain.on('save-as', function (event, arg) {
@@ -256,36 +247,35 @@ ipcMain.on('save-as', function (event, arg) {
   event.returnValue = input || false;
 });
 
-// TODO: electronite: restore later
-// ipcMain.on('download-cancel', function (event, args) {
-//   const item = downloadManager.get(args.id);
-//
-//   if (item) {
-//     item.cancel();
-//   }
-// });
+ipcMain.on('download-cancel', function (event, args) {
+  const item = downloadManager.get(args.id);
 
-// ipcMain.on('download', function (event, args) {
-//   const options = {
-//     saveAs: true,
-//     filename: args.name,
-//     openFolderWhenDone: true,
-//     showBadge: true,
-//     unregisterWhenDone: true,
-//     onProgress: (progress) => event.sender.send('download-progress', progress),
-//     onStarted: (item) => {
-//       const id = downloadManager.add(item);
-//       event.sender.send('download-started', id);
-//     },
-//   };
-//
-//   download(BrowserWindow.getFocusedWindow(), args.url, options)
-//     .then((dl) => {
-//       event.sender.send('download-success', dl.getSavePath());
-//     }).catch(error => {
-//     event.sender.send('download-error', error);
-//   });
-// });
+  if (item) {
+    item.cancel();
+  }
+});
+
+ipcMain.on('download', function (event, args) {
+  const options = {
+    saveAs: true,
+    filename: args.name,
+    openFolderWhenDone: true,
+    showBadge: true,
+    unregisterWhenDone: true,
+    onProgress: (progress) => event.sender.send('download-progress', progress),
+    onStarted: (item) => {
+      const id = downloadManager.add(item);
+      event.sender.send('download-started', id);
+    },
+  };
+
+  download(BrowserWindow.getFocusedWindow(), args.url, options)
+    .then((dl) => {
+      event.sender.send('download-success', dl.getSavePath());
+    }).catch(error => {
+    event.sender.send('download-error', error);
+  });
+});
 
 ipcMain.on('load-local', function (event, arg) {
   const input = dialog.showOpenDialogSync(mainWindow, arg.options);
