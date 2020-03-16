@@ -1,12 +1,12 @@
-import fs from 'fs-extra';
-import path from 'path-extra';
+const fs = require('fs-extra');
+const path = require('path-extra');
 
 /**
  * get the log file for current date
  * @param logDir
  * @return {*}
  */
-export function getLogFilePathForCurrentDate(logDir = '') {
+function getLogFilePathForCurrentDate(logDir = '') {
   const logPath = path.join(logDir, new Date().toDateString() + '.log');
   return logPath;
 }
@@ -16,7 +16,7 @@ export function getLogFilePathForCurrentDate(logDir = '') {
  * @param logDir
  * @return {string}
  */
-export function getCurrentLog(logDir = '') {
+function getCurrentLog(logDir = '') {
   let logData = '';
   const logPath = getLogFilePathForCurrentDate(logDir);
 
@@ -38,7 +38,7 @@ export function getCurrentLog(logDir = '') {
  * @param {string} [logDir=''] - directory where logs will be stored
  * @param {string} appVersion - the version of the application (commit)
  */
-export function injectFileLogging(logDir = '', appVersion='') {
+function injectFileLogging(logDir = '', appVersion='') {
   fs.ensureDirSync(logDir);
   const logPath = getLogFilePathForCurrentDate(logDir);
   const levels = [
@@ -106,3 +106,9 @@ function stringifyArgs(args) {
   }
   return stringArgs;
 }
+
+module.exports = {
+  getLogFilePathForCurrentDate,
+  getCurrentLog,
+  injectFileLogging
+};

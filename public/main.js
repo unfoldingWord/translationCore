@@ -1,16 +1,17 @@
 const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
 const path = require('path-extra');
+const ospath = require('ospath');
+const { download } = require('@neutrinog/electron-dl');
+const p = require('../package.json');
 const {
   createWindow,
   defineWindow,
   getWindow
 } = require('./electronWindows');
-
-// TODO: electronite: restore later
-const { download } = require('@neutrinog/electron-dl');
 const { isGitInstalled, showElectronGitSetup} = require('../src/js/helpers/InstallationHelpers');
+const { injectFileLogging } = require('../src/js/helpers/logger');
 const DownloadManager = require('../src/js/DownloadManager');
-const DCS_BASE_URL = 'https://git.door43.org'; //TODO: also defined in constants.js, need to move definition to common place
+const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
@@ -21,6 +22,10 @@ const MAIN_WINDOW_ID = 'main';
 let mainWindow;
 let helperWindow;
 let splashScreen;
+
+// to capture start up console logging
+const version = `v${p.version} (${process.env.BUILD})`;
+injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
 
 const downloadManager = new DownloadManager();
 
@@ -65,7 +70,7 @@ function createMainWindow() {
 
   // Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
-    console.log('ready-to-show');
+    console.log(' mainWindow ready-to-show');
     setTimeout(() => {
       mainWindow.show();
       mainWindow.maximize();
