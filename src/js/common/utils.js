@@ -1,4 +1,5 @@
 import { ipcRenderer } from 'electron';
+const { remote } = window.require('electron');
 
 let dotenv = null; // for caching values
 
@@ -27,4 +28,12 @@ export function getDotEnv() {
  */
 export function getBuild() {
   return getDotEnv().BUILD;
+}
+
+/**
+ * get remote env
+ * @return {*}
+ */
+export function getRemoteEnv() {
+  return remote.process.env;
 }
