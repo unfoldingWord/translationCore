@@ -6,10 +6,8 @@ var path = require('path');
 var os = require('os');
 
 var isRunningClientSide = !process.env.HOME && !!window; // if environment not defined and we have a window
-console.log('ospath-extra: isClientSide: ' + isRunningClientSide);
+console.log('ospath-extra: running Client Side: ' + isRunningClientSide);
 var processEnv = isRunningClientSide ? window.require('electron').remote.process.env : process.env;
-console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
-console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
 
 function data () {
   switch (this.__platform || process.platform) {

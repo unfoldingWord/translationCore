@@ -29,13 +29,10 @@ import { injectFileLogging } from '../helpers/logger';
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
 //consts
 import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
-import { getBuild, getRemoteEnv } from '../common/utils';
+import { getBuild } from '../common/utils';
 
 const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
-process.env.BUILD = getBuild();
-console.log('tCore - process.env: ',JSON.stringify(process.env));
-console.log('tCore - remote.process.env: ',JSON.stringify(getRemoteEnv()));
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
 
 class Main extends Component {
