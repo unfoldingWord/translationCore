@@ -27,7 +27,6 @@ let splashScreen;
 // to capture start up console logging
 const version = `v${p.version} (${process.env.BUILD})`;
 injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
-console.log('main.js - process.env: ',JSON.stringify(process.env));
 
 const downloadManager = new DownloadManager();
 

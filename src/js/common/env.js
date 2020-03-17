@@ -3,12 +3,11 @@
 // security related).  To get the environment variable on client side can now use remote.process.env.
 
 var isRunningClientSide = !process.env.HOME && !!window; // if environment not defined and we have a window
-console.log('utils: running Client Side: ' + isRunningClientSide);
 var processEnv = isRunningClientSide ? window.require('electron').remote.process.env : process.env;
 
 
 /**
- * get .env contents
+ * get Build number
  * @return {*}
  */
 function getBuild() {
@@ -16,14 +15,14 @@ function getBuild() {
 }
 
 /**
- * get remote env
+ * return appropriate process.env data
  * @return {*}
  */
 function getEnv() {
   return processEnv;
 }
 
-const env = {
+var env = {
   getBuild,
   getEnv
 };
