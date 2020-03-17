@@ -5,10 +5,9 @@
 var isRunningClientSide = !process.env.HOME && !!window; // if environment not defined and we have a window
 var processEnv = isRunningClientSide ? window.require('electron').remote.process.env : process.env;
 
-
 /**
  * get Build number
- * @return {*}
+ * @return {string}
  */
 function getBuild() {
   return processEnv.BUILD;
