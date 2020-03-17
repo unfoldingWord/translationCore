@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
+import ospath from '../../common/ospath-extra';
 import ResourceAPI from '../ResourceAPI';
 // constants
 const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
