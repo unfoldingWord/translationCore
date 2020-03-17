@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import LicenseModal from '../src/js/components/home/license/LicenseModal';
 import { APP_VERSION } from '../src/js/common/constants';
-import {getBuild} from "../src/js/common/utils";
+import { getBuild } from "../src/js/common/env";
 
 describe('LicenseModal component renders correctly', () => {
   test('LicenseModal Component render should match snapshot', () => {

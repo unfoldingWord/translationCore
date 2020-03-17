@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import packagefile from '../../../../package.json';
 import Logo from '../../../images/TC_Icon.png';
-import { getBuild } from "../../common/utils";
+import { getBuild } from "../../common/env";
 
 const WelcomeSplash = ({
   toggleWelcomeSplash,

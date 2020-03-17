@@ -107,8 +107,10 @@ function stringifyArgs(args) {
   return stringArgs;
 }
 
-module.exports = {
+const logger = {
   getCurrentLog,
   getLogFilePathForCurrentDate,
   injectFileLogging
 };
+
+module.exports = logger;

@@ -1,5 +1,5 @@
 const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
-const config = require('dotenv').config();
+require('dotenv').config();
 const path = require('path-extra');
 const ospath = require('ospath');
 const { download } = require('@neutrinog/electron-dl');
@@ -296,8 +296,4 @@ ipcMain.on('open-helper', (event, url = DCS_BASE_URL + '/') => {
   } else {
     createHelperWindow(url);
   }
-});
-
-ipcMain.on('get-env', (event) => {
-  event.returnValue = (config && config.parsed) || {};
 });

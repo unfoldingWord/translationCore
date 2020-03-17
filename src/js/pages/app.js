@@ -29,7 +29,7 @@ import { injectFileLogging } from '../helpers/logger';
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
 //consts
 import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
-import { getBuild } from '../common/utils';
+import { getBuild } from '../common/env';
 
 const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);

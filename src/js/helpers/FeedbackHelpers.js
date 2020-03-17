@@ -8,7 +8,7 @@ import { getTranslate } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import {APP_VERSION} from "../common/constants";
-import { getBuild, getDotEnv } from "../common/utils";
+import { getBuild, getEnv } from "../common/env";
 
 /**
  *
@@ -82,8 +82,9 @@ export const getOsInfoStr = () => {
 export const submitFeedback = ({
   category, message, name, email, state,
 }) => {
+  const processEnv = getEnv();
   let fromContact = {
-    email: getDotEnv().TC_HELP_DESK_EMAIL,
+    email: processEnv.TC_HELP_DESK_EMAIL,
     name: 'Help Desk',
   };
 
@@ -104,11 +105,11 @@ export const submitFeedback = ({
     fullMessage += `\n\nEmail: ${email}`;
   }
 
-  sgMail.setApiKey(getDotEnv().TC_HELP_DESK_TOKEN);
+  sgMail.setApiKey(processEnv.TC_HELP_DESK_TOKEN);
   const msg = {
     to: [
       {
-        email: getDotEnv().TC_HELP_DESK_EMAIL,
+        email: processEnv.TC_HELP_DESK_EMAIL,
         name: 'Help Desk',
       },
     ],

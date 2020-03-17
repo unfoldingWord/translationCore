@@ -25,7 +25,7 @@ import { APP_VERSION } from '../../common/constants';
 import ToolsManagementContainer from './ToolsManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
 import UsersManagementContainer from './UsersManagementContainer';
-import { getBuild } from "../../common/utils";
+import { getBuild } from "../../common/env";
 
 class HomeContainer extends Component {
   constructor(props) {
