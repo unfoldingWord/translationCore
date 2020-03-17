@@ -1,4 +1,4 @@
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import semver from 'semver';

@@ -1,5 +1,5 @@
 /* eslint-disable no-async-promise-executor */
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { ipcRenderer } from 'electron';

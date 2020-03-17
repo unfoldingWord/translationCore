@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import CryptoJS from 'crypto-js';
 //  consts declaration
 const PARENT = path.join(ospath.data(), 'translationCore', 'projects');

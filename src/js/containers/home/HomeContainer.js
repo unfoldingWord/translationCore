@@ -25,6 +25,7 @@ import { APP_VERSION } from '../../common/constants';
 import ToolsManagementContainer from './ToolsManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
 import UsersManagementContainer from './UsersManagementContainer';
+import { getBuild } from "../../common/env";
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -121,7 +122,7 @@ class HomeContainer extends Component {
                   display: 'flex', flexDirection: 'column', justifyContent: 'center',
                 }}>
                   <HomeScreenNavigation translate={translate} {...this.props} />
-                  <AppVersion actions={this.props.actions} version={`${APP_VERSION} (${process.env.BUILD})`} />
+                  <AppVersion actions={this.props.actions} version={`${APP_VERSION} (${getBuild()})`} />
                 </div>
               </div>
             </div>
@@ -129,7 +130,7 @@ class HomeContainer extends Component {
         }
         <LicenseModal
           translate={translate}
-          version={`${APP_VERSION} (${process.env.BUILD})`}
+          version={`${APP_VERSION} (${getBuild()})`}
           actions={this.props.actions}
           showLicenseModal={showLicenseModal}
         />

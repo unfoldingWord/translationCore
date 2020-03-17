@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from "ospath";
+import ospath from '../common/ospath-extra';
 import isEqual from 'deep-equal';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 

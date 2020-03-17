@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import fs from 'fs-extra';
 // constants
 const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
