@@ -63,5 +63,10 @@ export const getLocaleLoaded = (state) =>
  * @param {object} state the root state object
  * @return {Translate}
  */
-export const getTranslate = (state) =>
-  fromLocale.getTranslate(state.localize);
+export const getTranslate = (state) => {
+  // console.log('====================================');
+  // console.log('state()', state.localize);
+  // console.log('fromLocale()', fromLocale);
+  // console.log('====================================');
+  return fromLocale.getTranslate(state.localize);
+}
