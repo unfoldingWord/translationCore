@@ -1,19 +1,22 @@
 // this is a patched ospath to work on client side in windows.  The problem was that ospath
 // made use of process.env values which are no longer defined on the client side (looks to be
-// security related).  To get the environment variable can now use remote.process.env.
+// security related).  To get the environment variable on client side can now use remote.process.env.
 // TODO: electronite - investigate better solution
 var path = require('path');
 var os = require('os');
-const { remote } = window.require('electron');
 
-console.log('process.platform: ' + JSON.stringify(process.platform));
+var isRunningClientSide = !process.env.HOME && !!window; // if environment not defined and we have a window
+console.log('ospath-extra: isClientSide: ' + isRunningClientSide);
+var processEnv = isRunningClientSide ? window.require('electron').remote.process.env : process.env;
+console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
+console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
 
 function data () {
   switch (this.__platform || process.platform) {
-    case 'win32': return path.resolve(remote.process.env.APPDATA); // replaced process.env.APPDATA
+    case 'win32': return path.resolve(processEnv.APPDATA);
     case 'darwin': return path.resolve(path.join(home.call(this), 'Library/Application Support/'));
-    default: return process.env.XDG_CONFIG_HOME
-      ? path.resolve(process.env.XDG_CONFIG_HOME)
+    default: return processEnv.XDG_CONFIG_HOME
+      ? path.resolve(processEnv.XDG_CONFIG_HOME)
       : path.resolve(path.join(home.call(this), '.config/'));
   }
 }
@@ -27,14 +30,14 @@ function home () {
   if ('homedir' in os) return os.homedir();
 
   switch (this.__platform || process.platform) {
-    case 'win32': return path.resolve(remote.process.env.USERPROFILE); // replaced process.env.USERPROFILE
-    default: return path.resolve(process.env.HOME)
+    case 'win32': return path.resolve(processEnv.USERPROFILE);
+    default: return path.resolve(processEnv.HOME)
   }
 }
 
 function tmp () {
   switch (this.__platform || process.platform) {
-    case 'win32': return path.resolve(remote.process.env.TEMP); // replaced remote.process.env.TEMP
+    case 'win32': return path.resolve(processEnv.TEMP);
     default: return path.resolve('/tmp');
   }
 }
