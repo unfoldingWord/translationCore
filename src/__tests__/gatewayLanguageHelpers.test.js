@@ -327,7 +327,6 @@ describe('Test getGatewayLanguageList() for WA',()=>{
       fakeResourceByCopying(USER_RESOURCES_PATH, 'en/bibles/ult/v12.1', 'hi/bibles/ulb/v12.1');
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('tit', toolName);
-      console.log('languages', languages);
       expect(languages[0].name).toEqual('English');
       expect(languages.length).toEqual(2);
     });

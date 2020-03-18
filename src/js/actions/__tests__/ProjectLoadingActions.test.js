@@ -123,9 +123,6 @@ describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   });
 
   it('should just open project if project name is valid', async () => {
-    console.log('====================================');
-    console.log('initialState', initialState);
-    console.log('====================================');
     // given
     const selectedProjectFilename = 'en_ult_tit_book';
     const resourceId = 'ult';
