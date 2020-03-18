@@ -17,7 +17,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "craco test --testPathIgnorePatterns=src/tC_apps/",
     "test-one": "craco test",
-    "ci-test": "node --max-old-space-size=3072 ./node_modules/@craco/craco/bin/craco test --watchAll --testPathIgnorePatterns=src/tC_apps/ --coverage --logHeapUsage",
+    "ci-test": "node --max-old-space-size=16000 ./node_modules/@craco/craco/bin/craco test --watchAll --testPathIgnorePatterns=src/tC_apps/ --coverage --logHeapUsage",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
     "find:missing-locale": "node scripts/locale/find_missing.js src/locale/English-en_US.json src/js",
     "locale-key-comparison": "node ./scripts/locale_key_comparison.js",
