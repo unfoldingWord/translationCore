@@ -1,14 +1,8 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
+import { shallow } from 'enzyme';
 import TermsAndConditionsPage from '../js/components/home/usersManagement/pages/TermsAndConditionsPage';
-
-beforeAll(() => {
-  configure({ adapter: new Adapter() });
-});
 
 test('snapshot', () => {
   const wrapper = renderer.create(
@@ -21,7 +15,6 @@ test('snapshot', () => {
 });
 
 describe('callbacks', () => {
-  configure({ adapter: new Adapter() });
   const backCallback = jest.fn();
   const faithCallback = jest.fn();
   const creativeCallback = jest.fn();

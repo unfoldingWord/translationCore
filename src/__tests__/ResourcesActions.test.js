@@ -26,6 +26,7 @@ describe('ResourcesActions', () => {
   afterEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
+    fs.__setMockFS({}); // initialize to empty
   });
 
   describe('getLatestVersion()', () => {
