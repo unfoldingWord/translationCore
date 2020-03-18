@@ -1,5 +1,5 @@
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from './ospath-extra';
 import packagefile from '../../../package.json';
 
 export const APP_VERSION = packagefile.version;
@@ -56,4 +56,4 @@ export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_al
 export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
 export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
 // url strings
-export const DCS_BASE_URL = 'https://git.door43.org';
+export const DCS_BASE_URL = 'https://git.door43.org'; //TODO: also defined in public/main.js, need to move definition to common place

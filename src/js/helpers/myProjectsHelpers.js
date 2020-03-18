@@ -1,6 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
+
 // helpers
 import { tc_LAST_OPENED_KEY } from '../common/constants';
 import * as usfmHelpers from './usfmHelpers';

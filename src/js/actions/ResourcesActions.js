@@ -2,7 +2,7 @@
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import _ from 'lodash';
 import SimpleCache from '../helpers/SimpleCache';
 import {

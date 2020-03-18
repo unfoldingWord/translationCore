@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import ospath from '../common/ospath-extra';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
 import { getQuoteAsString } from 'checking-tool-wrapper';
