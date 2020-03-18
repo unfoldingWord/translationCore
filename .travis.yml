@@ -12,6 +12,7 @@ install:
   - npm run load-apps
 before_script:
   - if [[ "$TRAVIS_BRANCH" == "develop" ]]; then npm run doc; fi
+  - NODE_OPTIONS="–max_old_space_size=4096"
 script:
   - ./.concourse/test.sh
 deploy:
