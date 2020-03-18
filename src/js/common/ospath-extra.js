@@ -7,9 +7,6 @@ var os = require('os');
 
 var processEnv = require('./env').getEnv();
 
-console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
-console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
-
 function data () {
   switch (this.__platform || process.platform) {
     case 'win32': return path.resolve(processEnv.APPDATA);
