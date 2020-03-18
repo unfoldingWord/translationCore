@@ -16,7 +16,7 @@
     "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000/ && cross-env NODE_ENV=development npm run electron-start\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "craco test --testPathIgnorePatterns=src/tC_apps/",
-    "test-one-file": "craco test",
+    "test-one": "craco test",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
     "find:missing-locale": "node scripts/locale/find_missing.js src/locale/English-en_US.json src/js",
     "locale-key-comparison": "node ./scripts/locale_key_comparison.js",
