@@ -4,7 +4,6 @@ import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise';
 import { createLogger } from 'redux-logger';
 import rootReducers from '../reducers/index.js';
-import {stringifySafe} from "../helpers/FeedbackHelpers";
 
 let middlewares = [
   thunkMiddleware,
@@ -16,7 +15,11 @@ const maxStateLevel = 4; // maximum depth for state logging, can set up to 5 (wa
 const showFullDepth = true; // set this to true to display deep objects as JSON strings rather than ellipsis (warning this will run more slowly and consume more memory)
 const stateTransformer = (state, level = maxStateLevel) => {
   if (level <= 0) {
-    return showFullDepth ? stringifySafe(state) : "…"; // at this point replace with string to protect console.log() from objects too deep
+    try {
+      return showFullDepth ? JSON.stringify(state) : "…"; // at this point replace with string to protect console.log() from objects too deep
+    } catch (e) {
+      return `Crash converting to JSON: ${e.toString()}`;
+    }
   }
 
   let newState = {};
