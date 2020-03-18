@@ -39,7 +39,7 @@ describe('CopyrightCheckHelpers.saveProjectLicense', () => {
   beforeEach(() => {
     // reset mock filesystem data
     fs.__resetMockFS();
-    let directory = path.join('assets', 'projectLicenses', 'CC BY-SA 4.0.md');
+    let directory = path.join('src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
     // Set up mocked out filePath and data in mock filesystem before each test
     fs.__setMockFS({ [directory]: ccBYSA });
   });

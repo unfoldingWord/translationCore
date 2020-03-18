@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import ospath from '../src/js/common/ospath-extra';
+import ospath from '../js/common/ospath-extra';
 import path from 'path-extra';
 import fs from 'fs-extra';
 

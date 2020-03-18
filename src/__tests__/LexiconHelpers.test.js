@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import ospath from '../src/js/common/ospath-extra';
+import ospath from '../js/common/ospath-extra';
 // helpers
 import * as LexiconHelpers from '../js/helpers/LexiconHelpers';
 
