@@ -15,7 +15,7 @@
     "react-build": "craco build",
     "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000/ && cross-env NODE_ENV=development npm run electron-start\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "craco test --max-old-space-size=3072 --maxWorkers=4 --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage",
+    "test": "craco test --max-old-space-size=3072 --maxWorkers=4 --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage --coverage",
     "test-one": "craco test",
     "ci-test": "craco test --max-old-space-size=3072 --maxWorkers=4 --watchAll --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage --coverage",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
