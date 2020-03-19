@@ -26,6 +26,7 @@ function desktop () {
 }
 
 function home () {
+  if (process.env.JEST_WORKER_ID !== undefined) return '/Users/jest/mock/path';
   // io.js >= 2.3
   if ('homedir' in os) return os.homedir();
 
