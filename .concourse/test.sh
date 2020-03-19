@@ -2,5 +2,5 @@
 
 set -xe
 
-npm test
+npm run ci-test
 ./node_modules/.bin/codecov
