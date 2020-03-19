@@ -7,7 +7,10 @@ var os = require('os');
 
 var processEnv = require('./env').getEnv();
 
-function data() {
+console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
+console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
+
+function data () {
   switch (this.__platform || process.platform) {
     case 'win32': return path.resolve(processEnv.APPDATA);
     case 'darwin': return path.resolve(path.join(home.call(this), 'Library/Application Support/'));
@@ -17,23 +20,21 @@ function data() {
   }
 }
 
-function desktop() {
+function desktop () {
   return path.join(home.call(this), 'Desktop');
 }
 
-function home() {
+function home () {
   // io.js >= 2.3
-  if ('homedir' in os) {
-    return os.homedir();
-  }
+  if ('homedir' in os) return os.homedir();
 
   switch (this.__platform || process.platform) {
     case 'win32': return path.resolve(processEnv.USERPROFILE);
-    default: return path.resolve(processEnv.HOME);
+    default: return path.resolve(processEnv.HOME)
   }
 }
 
-function tmp() {
+function tmp () {
   switch (this.__platform || process.platform) {
     case 'win32': return path.resolve(processEnv.TEMP);
     default: return path.resolve('/tmp');
@@ -45,7 +46,7 @@ var ospath = {
   data: data,
   desktop: desktop,
   home: home,
-  tmp: tmp,
+  tmp: tmp
 };
 
 module.exports = ospath;
