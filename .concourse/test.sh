@@ -2,4 +2,4 @@
 
 set -xe
 
-npm run ci-test
+npm run test
