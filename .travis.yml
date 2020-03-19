@@ -13,7 +13,7 @@ install:
 before_script:
   - if [[ "$TRAVIS_BRANCH" == "develop" ]]; then npm run doc; fi
 script:
-  - travis_wait ./.concourse/test.sh
+  - travis_wait 60 ./.concourse/test.sh
 deploy:
 
 # deploy documentation
