@@ -1,9 +1,29 @@
 // methods for accessing environment variables
 // this is needed because many process.env values are no longer defined on the client side (looks to be
 // security related).  To get the environment variable on client side can now use remote.process.env.
+const { app, remote } = require('electron');
 
-var isRunningClientSide = !process.env.HOME && !!window; // if environment not defined and we have a window
-var processEnv = isRunningClientSide ? window.require('electron').remote.process.env : process.env;
+const isRunningClientSide = remote && !!window; // if we are a render process and we have a window
+const processEnv = isRunningClientSide ? remote.process.env : process.env;
+
+// use app if we are main, otherwise we are render side so we use remote app
+const appObject = !remote ? app : remote.app;
+
+/**
+ * get path to Home folder
+ * @return {string}
+ */
+function home() {
+  return appObject.getPath('home');
+}
+
+/**
+ * get path to Home folder
+ * @return {string}
+ */
+function data() {
+  return appObject.getPath('appData');
+}
 
 /**
  * get Build number
@@ -22,8 +42,10 @@ function getEnv() {
 }
 
 var env = {
-  getBuild,
+  data,
   getEnv,
+  getBuild,
+  home,
 };
 
 module.exports = env;

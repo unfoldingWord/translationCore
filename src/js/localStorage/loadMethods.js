@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
+import env from '../common/env';
 import CryptoJS from 'crypto-js';
 //  consts declaration
-const PARENT = path.join(ospath.data(), 'translationCore', 'projects');
+const PARENT = path.join(env.data(), 'translationCore', 'projects');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 
 export const loadSettings = () => {

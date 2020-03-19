@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
+import env from '../common/env';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
@@ -44,7 +44,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
-    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
   }
 

@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import path from 'path-extra';
 import fs from 'fs-extra';
-import ospath from '../../../common/ospath-extra';
+import env from '../../../common/env';
 import {
   generateImportPath,
   verifyThisIsTCoreOrTStudioProject,
@@ -12,7 +12,7 @@ jest.mock('fs-extra');
 
 describe('OnlineImportWorkflowHelpers.generateImportPath', function () {
   beforeEach(() => {
-    const destDir = path.join(ospath.home(), 'translationCore', 'imports',
+    const destDir = path.join(env.home(), 'translationCore', 'imports',
       'sample_project');
     fs.ensureDirSync(destDir);
   });
