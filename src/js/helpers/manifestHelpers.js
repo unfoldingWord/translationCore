@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-console */
 import path from 'path-extra';
 import fs from 'fs-extra';

@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import fs from 'fs-extra';
 import path from 'path-extra';
 import thunk from 'redux-thunk';

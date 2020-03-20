@@ -1,3 +1,5 @@
+/* eslint-disable no-template-curly-in-string */
+/* eslint-disable default-case */
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';

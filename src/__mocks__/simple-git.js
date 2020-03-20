@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const git = jest.fn();
 
 git.status = jest.fn(cb => {

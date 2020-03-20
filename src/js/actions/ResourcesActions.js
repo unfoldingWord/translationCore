@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 /* eslint-disable no-console */
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';

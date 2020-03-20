@@ -196,7 +196,7 @@ class LoginDoor43Account extends Component {
           alignItems: 'center',
           width: '100%',
         }}>
-          <img style={{ height: 64, width: 64 }} src={D43Logo}/>
+          <img alt="D43 Logo" style={{ height: 64, width: 64 }} src={D43Logo}/>
           <div>
             <span style={{ fontSize: 20, fontWeight: 'bold' }}>
               {

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // external
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';

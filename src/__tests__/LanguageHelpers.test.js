@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-env jest */
 import * as LanguageHelpers from '../js/helpers/LanguageHelpers';
 jest.mock('fs-extra');
@@ -82,7 +83,7 @@ describe('Test LanguageHelpers',()=>{
     let dupsFound = 0;
 
     for ( let idx = 1; idx < sorted.length; idx++ ) {
-      if ( sorted[idx] == sorted[idx-1]) {
+      if (sorted[idx] == sorted[idx-1]) {
         dupsFound++;
       }
     }

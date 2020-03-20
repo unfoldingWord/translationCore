@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-async-promise-executor */
 /* eslint-disable require-await */
 import React from 'react';

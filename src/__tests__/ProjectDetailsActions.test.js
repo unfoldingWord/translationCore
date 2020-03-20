@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 /* eslint-disable import/named */
 /* eslint-env jest */
 import fs from 'fs-extra';

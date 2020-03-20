@@ -1,4 +1,5 @@
-'use strict';
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-throw-literal */
 import path from 'path-extra';
 import _ from "lodash";
 const fsActual = require.requireActual('fs-extra'); // for copying test files into mock

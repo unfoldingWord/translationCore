@@ -79,8 +79,7 @@ describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
     });
   });
 
-  it('should not get corresponding chpater JSON objects for the target language text and source/target alignments\
-  if they do not exist', () => {
+  it('should not get corresponding chpater JSON objects for the target language text and source/target alignments if they do not exist', () => {
     const chapterFile = '0.json';
     let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
       wordAlignmentDataPath, projectTargetLanguagePath, chapterFile

@@ -30,6 +30,7 @@ function CriticalError({ translate, returnHome }) {
     <div style={styles.root}>
       <div style={styles.content}>
         <img
+          alt="tc Icon"
           src={TcIcon}
           style={styles.logo}
           width="130px"

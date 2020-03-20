@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-async-promise-executor */
 /* eslint-disable require-await */
 import React from 'react';
@@ -145,7 +146,8 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                 <div>
                   <span>
                     {translate('projects.upload_successful_alert', { username: user.username })}&nbsp;
-                    <a style={{ cursor: 'pointer' }} onClick={() => {
+                    <a
+                      style={{ cursor: 'pointer' }} onClick={() => {
                       dispatch(
                         OnlineModeConfirmActions.confirmOnlineAction(() => {
                           open(userDcsUrl);

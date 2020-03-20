@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import path from 'path-extra';
 import fs from 'fs-extra';
 import React from 'react';

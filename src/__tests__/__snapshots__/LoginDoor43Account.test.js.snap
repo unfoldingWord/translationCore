@@ -23,6 +23,7 @@ exports[`snapshot 1`] = `
     }
   >
     <img
+      alt="D43 Logo"
       src="D43_LOGO.png"
       style={
         Object {

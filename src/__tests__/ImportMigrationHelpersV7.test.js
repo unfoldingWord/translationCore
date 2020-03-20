@@ -73,12 +73,12 @@ describe('migrateToVersion7', () => {
 // helpers
 //
 
-const getManifest = function (PROJECT_PATH) {
+export const getManifest = function (PROJECT_PATH) {
   const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.readJsonSync(manifest_path);
 };
 
-const setManifest = function (PROJECT_PATH, manifest) {
+export const setManifest = function (PROJECT_PATH, manifest) {
   const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.outputJsonSync(manifest_path, manifest);
 };

@@ -20,7 +20,7 @@ const CopyrightCard = ({
       display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '22px',
     }}>
       <div style={{ display: 'flex' }}>
-        <img src={image} height="70px" />
+        <img alt="Copyright" src={image} height="70px" />
         <div style={{ marginLeft: '20px' }}>
           <h4 style={{ fontWeight: 'bold' }}>
             {title}

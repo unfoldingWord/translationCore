@@ -62,7 +62,7 @@ function API(apiUrl) {
         repos[10] = {
           full_name: username + '/areponame',
           name: 'areponame',
-          description: 'tc-desktop: ' + 'areponame',
+          description: `tc-desktop: areponame`,
           private: false,
           empty: false
         };

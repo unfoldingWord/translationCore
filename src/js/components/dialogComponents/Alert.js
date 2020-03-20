@@ -109,7 +109,9 @@ class Alert extends Component {
               <tbody>
                 <tr>
                   <td>
-                    <img className={alertDialogLoading ? 'App-logo' : ''}
+                    <img
+                      alt="App-logo"
+                      className={alertDialogLoading ? 'App-logo' : ''}
                       src={`data:image/png;base64,${logoData}`}
                       height="100px"
                       width="90px"

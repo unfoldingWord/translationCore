@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import path from 'path-extra';
-//helpers
 import * as usfmHelpers from '../js/helpers/usfmHelpers';
 jest.unmock('fs-extra');
 
@@ -50,7 +49,7 @@ describe('usfmDetails', () => {
     expect(details.language.direction).toEqual('ltr');
   });
 
-  test('should handle translationCore usfm export - \id with commas', () => {
+  test('should handle translationCore usfm export - id with commas', () => {
     // parse valid usfm file
     const usfmFile = tc_commas;
     const details = usfmDetails(usfmFile);
@@ -61,7 +60,7 @@ describe('usfmDetails', () => {
     expect(details.language.direction).toEqual('ltr');
   });
 
-  test('should handle translationCore usfm export - \id with spaces', () => {
+  test('should handle translationCore usfm export - id with spaces', () => {
     // parse valid usfm file
     const usfmFile = tc_spaces;
     const details = usfmDetails(usfmFile);
@@ -72,7 +71,7 @@ describe('usfmDetails', () => {
     expect(details.language.direction).toEqual('ltr');
   });
 
-  test('should handle missing \id tag', () => {
+  test('should handle missing id tag', () => {
     // parse valid usfm file
     const usfmFile = missingIdTag;
     const details = usfmDetails(usfmFile);
@@ -83,7 +82,7 @@ describe('usfmDetails', () => {
     expect(details.language.direction).toEqual('ltr');
   });
 
-  test('should handle \id bookId', () => {
+  test('should handle id bookId', () => {
     // parse valid usfm file
     const usfmFile = justBookId;
     const details = usfmDetails(usfmFile);
@@ -94,7 +93,7 @@ describe('usfmDetails', () => {
     expect(details.language.direction).toEqual('ltr');
   });
 
-  test('should handle bad \id tag', () => {
+  test('should handle bad id tag', () => {
     // parse valid usfm file
     const usfmFile = badIdTag;
     const details = usfmDetails(usfmFile);

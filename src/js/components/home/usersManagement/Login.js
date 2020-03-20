@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
@@ -59,7 +60,7 @@ class Login extends Component {
       <div style={{
         display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%',
       }}>
-        <img style={{ height: 64, width: 64 }} src={D43Logo} />
+        <img alt="D43 Logo" style={{ height: 64, width: 64 }} src={D43Logo} />
         <div>
           <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('buttons.d43_login_button', { door43: translate('_.door43') })}</span>
           <Glyphicon
