@@ -2,17 +2,6 @@ import DownloadManager from '../js/DownloadManager';
 
 const manager = new DownloadManager();
 
-// const Item = () => {
-//   let callback = null;
-
-//   return {
-//     once: (key, cb) => callback = cb,
-//     done: () => {
-//       callback();
-//     },
-//   };
-// };
-
 class Item {
   constructor() {
     this.callback = null;

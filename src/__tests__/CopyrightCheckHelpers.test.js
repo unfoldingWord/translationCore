@@ -53,35 +53,35 @@ describe('CopyrightCheckHelpers.saveProjectLicense', () => {
   });
 });
 
-// describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
-//   beforeEach(() => {
-//     // reset mock filesystem data
-//     fs.__resetMockFS();
-//     // Set up some mocked out file info before each test
-//     const directory = path.join('src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
+describe('CopyrightCheckHelpers.loadProjectLicenseMarkdownFile', () => {
+  beforeEach(() => {
+    // reset mock filesystem data
+    fs.__resetMockFS();
+    // Set up some mocked out file info before each test
+    const directory = path.join('src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
 
-//     // Set up mocked out filePath and data in mock filesystem before each test
-//     fs.__setMockFS({ [directory]: ccBYSA });
-//   });
+    // Set up mocked out filePath and data in mock filesystem before each test
+    fs.__setMockFS({ [directory]: ccBYSA });
+  });
 
-//   test('loadProjectLicenseMarkdownFile should load LICENSE.md for CC BY-SA 4.0', () => {
-//     const result = CopyrightCheckHelpers.loadProjectLicenseMarkdownFile('CC BY-SA 4.0');
-//     expect(result).toEqual(ccBYSA);
-//   });
-// });
+  test('loadProjectLicenseMarkdownFile should load LICENSE.md for CC BY-SA 4.0', () => {
+    const result = CopyrightCheckHelpers.loadProjectLicenseMarkdownFile('CC BY-SA 4.0');
+    expect(result).toEqual(ccBYSA);
+  });
+});
 
-// describe('CopyrightCheckHelpers.assignLicenseToOnlineImportedProject', () => {
-//   beforeEach(() => {
-//     // Set up some mocked out file info before each test
-//     const directory = path.join(__dirname, '..', 'src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
+describe('CopyrightCheckHelpers.assignLicenseToOnlineImportedProject', () => {
+  beforeEach(() => {
+    // Set up some mocked out file info before each test
+    const directory = path.join('src', 'assets', 'projectLicenses', 'CC BY-SA 4.0.md');
 
-//     // Set up mocked out filePath and data in mock filesystem before each test
-//     fs.__setMockFS({ [path.join('path', 'to', 'project', 'manifest.json')]: {}, [directory]: ccBYSA });
-//   });
+    // Set up mocked out filePath and data in mock filesystem before each test
+    fs.__setMockFS({ [path.join('path', 'to', 'project', 'manifest.json')]: {}, [directory]: ccBYSA });
+  });
 
-//   test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', async () => {
-//     await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(path.join('path', 'to', 'project'));
-//     expect(fs.readJsonSync(path.join('path', 'to', 'project', 'manifest.json'))).toEqual({ license:'CC BY-SA 4.0' });
-//   });
-// });
+  test('assignLicenseToOnlineImportedProject should add the license CC BY-SA 4.0 to a project manifest and save the LICENSE.MD', async () => {
+    await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(path.join('path', 'to', 'project'));
+    expect(fs.readJsonSync(path.join('path', 'to', 'project', 'manifest.json'))).toEqual({ license:'CC BY-SA 4.0' });
+  });
+});
 
