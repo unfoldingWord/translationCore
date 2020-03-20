@@ -8,7 +8,7 @@ before_install:
   - npm i -g npm@6.4.1 jest codecov
   - npm --version
 install:
-  - npm i
+  - npm ci
   - npm run load-apps
 before_script:
   - if [[ "$TRAVIS_BRANCH" == "develop" ]]; then npm run doc; fi
