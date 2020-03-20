@@ -1,7 +1,7 @@
 /* eslint-disable require-await */
 /* eslint-disable require-await */
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
+import env from '../common/env';
 import sourceContentUpdater from 'tc-source-content-updater';
 import {
   getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
@@ -19,7 +19,7 @@ import {
 import consts from './ActionTypes';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 
 /**
  * Resets the state of the source content updates reducer.

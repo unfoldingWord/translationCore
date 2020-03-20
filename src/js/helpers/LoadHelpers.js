@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
+import env from '../common/env';
 import fs from 'fs-extra';
 // constants
-const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
+const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
 
 /**
  * Loads a json file.
