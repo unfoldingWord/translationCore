@@ -6,7 +6,7 @@ import * as sourceContentUpdatesHelpers from '../sourceContentUpdatesHelpers';
 import { USER_RESOURCES_PATH } from '../../common/constants';
 
 describe('migrate resources', () => {
-  const sourceResourcesPath = path.join('__tests__', 'fixtures', 'resources');
+  const sourceResourcesPath = path.join('src', '__tests__', 'fixtures', 'resources');
 
   beforeEach(() => {
     fs.__resetMockFS();

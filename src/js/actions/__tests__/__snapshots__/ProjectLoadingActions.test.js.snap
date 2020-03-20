@@ -1160,7 +1160,7 @@ Array [
         "isSelected": true,
         "lastOpened": null,
         "projectName": "en_tit",
-        "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_tit",
+        "projectSaveLocation": "/Users/jest/mock/path/translationCore/projects/en_tit",
         "target_language": Object {
           "book": Object {
             "name": "Titus",
@@ -1495,7 +1495,7 @@ Array [
         "isSelected": true,
         "lastOpened": null,
         "projectName": "en_ult_tit_book",
-        "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_ult_tit_book",
+        "projectSaveLocation": "/Users/jest/mock/path/translationCore/projects/en_ult_tit_book",
         "target_language": Object {
           "book": Object {
             "name": "Titus",

@@ -24,7 +24,7 @@ describe('migrate tCore resources', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     // simulate static resources path
-    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, '..'));
+    fs.__loadFilesIntoMockFs(['resources'], path.join('src', '__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, '..'));
     fs.moveSync(path.join(STATIC_RESOURCES_PATH, '../resources'), STATIC_RESOURCES_PATH);
     fs.removeSync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult/v11')); // remove old version
     fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, STATIC_RESOURCES_PATH);

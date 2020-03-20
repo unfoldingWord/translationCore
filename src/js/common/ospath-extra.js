@@ -7,8 +7,9 @@ var os = require('os');
 
 var processEnv = require('./env').getEnv();
 
-console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
-console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
+// This console logs crowd the unit tests logs
+// console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
+// console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
 
 function data () {
   switch (this.__platform || process.platform) {
@@ -25,6 +26,7 @@ function desktop () {
 }
 
 function home () {
+  if (process.env.JEST_WORKER_ID || process.env.TRAVIS) return '/Users/jest/mock/path';
   // io.js >= 2.3
   if ('homedir' in os) return os.homedir();
 
