@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MyProjects component renders correctly MyProjects component render should match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`MyProjects shows instruction if no projects MyProjects component render should match snapshot 1`] = `ShallowWrapper {}`;
