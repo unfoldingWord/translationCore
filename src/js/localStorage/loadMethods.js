@@ -1,7 +1,8 @@
+/* eslint-disable eqeqeq */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from '../common/env';
 import CryptoJS from 'crypto-js';
+import env from '../common/env';
 //  consts declaration
 const PARENT = path.join(env.data(), 'translationCore', 'projects');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');

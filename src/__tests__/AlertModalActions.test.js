@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import consts from '../js/actions/ActionTypes'
+import consts from '../js/actions/ActionTypes';
 import * as AlertModalActions from '../js/actions/AlertModalActions';
 
 describe('AlertModalActions.openAlertDialog', () => {

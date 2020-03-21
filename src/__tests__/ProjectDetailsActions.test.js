@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 /* eslint-disable import/named */
 /* eslint-env jest */
 import fs from 'fs-extra';
@@ -240,9 +241,7 @@ describe('setProjectToolGL() should create an action to get the project GL for t
 
   it('should set GL for translationNotes', () => {
     const initialState = {
-      projectDetailsReducer: {
-        manifest: {toolsSelectedGLs: { translationNotes: 'en' } },
-      },
+      projectDetailsReducer: { manifest: { toolsSelectedGLs: { translationNotes: 'en' } } },
       resourcesReducer: {
         bibles: {
           originalLanguage: {
@@ -313,15 +312,8 @@ it('addObjectPropertyToSettings() creates an action to add an object property to
 it('setProjectBookIdAndBookName() creates an action to set the project book id and name', async () => {
   const store = mockStore({
     projectInformationCheckReducer: { bookId: 'gen' },
-    projectDetailsReducer: {
-      manifest: {
-        project: {
-          id: 'gen' },
-      },
-    },
-    loginReducer: {
-      userdata: {}
-    }
+    projectDetailsReducer: { manifest: { project: { id: 'gen' } } },
+    loginReducer: { userdata: {} },
   });
   const expectedActions = [{
     type: types.SAVE_BOOK_ID_AND_BOOK_NAME_IN_MANIFEST,
@@ -702,15 +694,13 @@ describe('showDcsRenameFailure', () => {
     const store = mockStore({ settingsReducer: {} });
     const createNew = false;
     mock_alertCallbackButton = 3;
-    const mock_showErrorFeedbackDialog = jest.fn((translateKey, doneCB) => {
-      return (async () => { // eslint-disable-line require-await
-        mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
+    const mock_showErrorFeedbackDialog = jest.fn((translateKey, doneCB) => (async () => { // eslint-disable-line require-await
+      mock_alertCallbackButton = 0; // prevent reshow contact helpdesk
 
-        if (doneCB) {
-          doneCB();
-        }
-      });
-    });
+      if (doneCB) {
+        doneCB();
+      }
+    }));
 
     await store.dispatch(actions.showDcsRenameFailure(projectPath, createNew, mock_showErrorFeedbackDialog));
     expect(store.getActions()).toMatchSnapshot();
@@ -951,7 +941,7 @@ describe('doLocalProjectRenamePrompting', () => {
       },
       loginReducer: {
         loggedInUser: false,
-        userdata: {username: 'dummy-test'},
+        userdata: { username: 'dummy-test' },
         feedback: '',
         subject: 'Bug Report',
         placeholder: 'Leave us your feedback!',

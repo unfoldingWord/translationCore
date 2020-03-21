@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
 import fs from 'fs-extra';
-import migrateToVersion7 from '../js/helpers/ProjectMigration/migrateToVersion7';
-import * as MigrateToVersion7 from '../js/helpers/ProjectMigration/migrateToVersion7';
+import migrateToVersion7, { MIGRATE_MANIFEST_VERSION } from '../js/helpers/ProjectMigration/migrateToVersion7';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 jest.mock('fs-extra');
 
@@ -31,13 +30,13 @@ describe('migrateToVersion7', () => {
 
     // then
     const version = Version.getVersionFromManifest(PROJECT_PATH);
-    expect(MigrateToVersion7.MIGRATE_MANIFEST_VERSION).toBe(expectedVersion); // this shouldn't change
-    expect(version).toBe(MigrateToVersion7.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(expectedVersion); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with same tc_version expect to leave alone', () => {
     // given
-    const manifestVersion = MigrateToVersion7.MIGRATE_MANIFEST_VERSION;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION;
     Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
 
     // when
@@ -73,12 +72,12 @@ describe('migrateToVersion7', () => {
 // helpers
 //
 
-const getManifest = function (PROJECT_PATH) {
+export const getManifest = function (PROJECT_PATH) {
   const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.readJsonSync(manifest_path);
 };
 
-const setManifest = function (PROJECT_PATH, manifest) {
+export const setManifest = function (PROJECT_PATH, manifest) {
   const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
   return fs.outputJsonSync(manifest_path, manifest);
 };

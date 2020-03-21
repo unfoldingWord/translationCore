@@ -289,7 +289,7 @@ describe('ProjectAPI', () => {
       expect(fs.outputJsonSync).toBeCalledWith(
         path.join(path.sep, 'root', '.apps', 'translationCore', 'index', 'tool', 'book', '.categories'),
         { 'current': ['category'], 'loaded': [] },
-        { 'spaces': 2 }
+        { 'spaces': 2 },
       );
       expect(console.warn).not.toBeCalled();
     });
@@ -307,7 +307,7 @@ describe('ProjectAPI', () => {
         {
           'current': ['category'], 'loaded': [], 'timestamp': expect.any(String),
         },
-        { 'spaces': 2 }
+        { 'spaces': 2 },
       );
       expect(console.warn).not.toBeCalled();
     });
@@ -328,7 +328,7 @@ describe('ProjectAPI', () => {
         {
           'current': ['category'], 'loaded': [], 'timestamp': expect.any(String),
         },
-        { 'spaces': 2 }
+        { 'spaces': 2 },
       );
       expect(console.warn).toBeCalled();
     });

@@ -27,7 +27,7 @@ const store = configureStore(persistedState);
 store.subscribe(setupSubscriptions(store)(
   ({ prevState, newState }) => {
     saveState(prevState, newState);
-  }
+  },
 ));
 
 class App extends Component {

@@ -1,6 +1,6 @@
 import path from 'path-extra';
-import env from '../common/env';
 import packagefile from '../../../package.json';
+import env from '../common/env';
 
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;

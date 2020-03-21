@@ -2,9 +2,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { enableBatching } from 'redux-batched-actions';
 import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise';
-import { createLogger } from 'redux-logger';
 import rootReducers from '../reducers/index.js';
-import {stringifySafe} from "../helpers/FeedbackHelpers";
+// import { createLogger } from 'redux-logger';
+// import { stringifySafe } from '../helpers/FeedbackHelpers';
 
 let middlewares = [
   thunkMiddleware,
@@ -26,6 +26,6 @@ export default function configureStore(persistedState) {
   return createStore(
     enableBatching(rootReducers),
     persistedState,
-    applyMiddleware(...middlewares)
+    applyMiddleware(...middlewares),
   );
 }

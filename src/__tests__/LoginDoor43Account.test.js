@@ -1,9 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {
-  mount, configure,
-} from 'enzyme';
+import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -26,7 +24,7 @@ test('snapshot', () => {
         showPopover={jest.fn()}
         loginUser={jest.fn()}
         setView={jest.fn()}/>
-    </MuiThemeProvider>
+    </MuiThemeProvider>,
   );
   expect(wrapper).toMatchSnapshot();
 });

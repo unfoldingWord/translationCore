@@ -16,7 +16,7 @@ const mockSave = jest.fn();
 
 jest.mock('../js/helpers/Repo', () =>
   // mocks Class initialization
-  jest.fn().mockImplementation(() => ({ save: mockSave }))
+  jest.fn().mockImplementation(() => ({ save: mockSave })),
 );
 
 const mockOpen = jest.fn((dir, user) => new Repo(dir, user));

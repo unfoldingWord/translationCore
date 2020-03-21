@@ -72,18 +72,17 @@ describe('WordAlignmentHelpers.getAlignmentDataFromPath', () => {
   it('should get corresponding chpater JSON objects for the target language text and source/target alignments', () => {
     chapterFiles.forEach((chapterFile, index) => {
       let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
-        wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
+        wordAlignmentDataPath, projectTargetLanguagePath, chapterFile,
       );
       expect(chapterAlignmentJSON).toEqual(expectedChapterAlignmentJSONs[index]);
       expect(targetLanguageChapterJSON).toEqual(expectedTargetLanguageChapterJSONs[index]);
     });
   });
 
-  it('should not get corresponding chpater JSON objects for the target language text and source/target alignments\
-  if they do not exist', () => {
+  it('should not get corresponding chpater JSON objects for the target language text and source/target alignments if they do not exist', () => {
     const chapterFile = '0.json';
     let { chapterAlignmentJSON, targetLanguageChapterJSON } = WordAlignmentHelpers.getAlignmentDataFromPath(
-      wordAlignmentDataPath, projectTargetLanguagePath, chapterFile
+      wordAlignmentDataPath, projectTargetLanguagePath, chapterFile,
     );
     expect(chapterAlignmentJSON).toEqual({});
     expect(targetLanguageChapterJSON).toEqual({});
@@ -114,7 +113,7 @@ describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
     const usfmToJSONObject = { chapters: {} };
 
     WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
-      usfmToJSONObject, chapterNumber, verseNumber, verseObjects
+      usfmToJSONObject, chapterNumber, verseNumber, verseObjects,
     );
     expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
   });
@@ -122,7 +121,7 @@ describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
     const usfmToJSONObject = { chapters: { 1: {} } };
 
     WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
-      usfmToJSONObject, chapterNumber, verseNumber, verseObjects
+      usfmToJSONObject, chapterNumber, verseNumber, verseObjects,
     );
     expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
   });
@@ -130,7 +129,7 @@ describe('WordAlignmentHelpers.setVerseObjectsInAlignmentJSON', () => {
     const usfmToJSONObject = { chapters: { 1: { 2: {} } } };
 
     WordAlignmentHelpers.setVerseObjectsInAlignmentJSON(
-      usfmToJSONObject, chapterNumber, verseNumber, verseObjects
+      usfmToJSONObject, chapterNumber, verseNumber, verseObjects,
     );
     expect(usfmToJSONObject.chapters[chapterNumber][verseNumber].verseObjects).toEqual(verseObjects);
   });

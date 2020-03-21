@@ -39,7 +39,7 @@ describe('ProjectInformationCheck', () => {
     const renderedValue = renderer.create(
       <MuiThemeProvider>
         <ProjectInformationCheck {...props} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });

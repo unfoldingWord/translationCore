@@ -154,8 +154,8 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
                       {userDcsUrl}
                     </a>
                   </span>
-                </div>
-              )
+                </div>,
+              ),
             );
           }
         } catch (err) {

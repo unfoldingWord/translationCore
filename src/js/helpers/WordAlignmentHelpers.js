@@ -230,7 +230,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 
         try {
           verseObjects = wordaligner.merge(
-            verseAlignments.alignments, verseAlignments.wordBank, verseString, true
+            verseAlignments.alignments, verseAlignments.wordBank, verseString, true,
           );
         } catch (e) {
           if (e && e.type && e.type === 'InvalidatedAlignments') {

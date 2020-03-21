@@ -140,7 +140,7 @@ describe('ResourcesActions', () => {
 
     // when
     store.dispatch(
-      ResourcesActions.makeSureBiblesLoadedForTool(contextId)
+      ResourcesActions.makeSureBiblesLoadedForTool(contextId),
     );
 
     // then
@@ -200,7 +200,7 @@ describe('ResourcesActions', () => {
 
     // when
     store.dispatch(
-      ResourcesActions.loadBookTranslations(contextId.reference.bookId)
+      ResourcesActions.loadBookTranslations(contextId.reference.bookId),
     );
 
     // then

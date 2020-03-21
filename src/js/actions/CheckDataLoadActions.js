@@ -22,7 +22,7 @@ export function generateLoadPath(projectSaveLocation, contextId, checkDataName) 
       checkDataName,
       bookAbbreviation,
       chapter,
-      verse
+      verse,
     );
     return loadPath;
   }
@@ -41,7 +41,7 @@ export function loadCheckData(loadPath, contextId) {
     let files = fs.readdirSync(loadPath);
 
     files = files.filter(file => // filter the filenames to only use .json
-      path.extname(file) === '.json'
+      path.extname(file) === '.json',
     );
 
     let sorted = files.sort().reverse(); // sort the files to put latest first

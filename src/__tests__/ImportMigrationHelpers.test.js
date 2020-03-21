@@ -3,8 +3,7 @@
 import path from 'path';
 import fs from 'fs-extra';
 import migrateAppsToDotApps from '../js/helpers/ProjectMigration/migrateAppsToDotApps';
-import migrateToVersion1 from '../js/helpers/ProjectMigration/migrateToVersion1';
-import * as MigrateToVersion1 from '../js/helpers/ProjectMigration/migrateToVersion1';
+import migrateToVersion1, { MIGRATE_MANIFEST_VERSION } from '../js/helpers/ProjectMigration/migrateToVersion1';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 import migrateProject from '../js/helpers/ProjectMigration';
 import * as manifestUtils from '../js/helpers/ProjectMigration/manifestUtils';
@@ -128,20 +127,20 @@ describe('migrateToVersion1', () => {
     migrateToVersion1(LEGACY);
     const version = Version.getVersionFromManifest(LEGACY);
 
-    expect(MigrateToVersion1.MIGRATE_MANIFEST_VERSION).toBe(1); // this shouldn't change
-    expect(version).toBe(MigrateToVersion1.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(1); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with lower tc_version expect to update', () => {
-    Version.setVersionInManifest(LEGACY, MigrateToVersion1.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(LEGACY, MIGRATE_MANIFEST_VERSION - 1);
     migrateToVersion1(LEGACY);
     const version = Version.getVersionFromManifest(LEGACY);
 
-    expect(version).toBe(MigrateToVersion1.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with higher tc_version expect to leave alone', () => {
-    const manifestVersion = MigrateToVersion1.MIGRATE_MANIFEST_VERSION + 1;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION + 1;
     Version.setVersionInManifest(LEGACY, manifestVersion);
     migrateToVersion1(LEGACY);
     const version = Version.getVersionFromManifest(LEGACY);

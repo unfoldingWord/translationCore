@@ -1,6 +1,6 @@
 import path from 'path-extra';
-import env from '../../common/env';
 import fs from 'fs-extra';
+import env from '../../common/env';
 import Repo from '../Repo';
 
 /**

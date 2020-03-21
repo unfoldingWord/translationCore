@@ -103,7 +103,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
 
       try {
         let currentChapterObject = fs.readJSONSync(
-          Path.join(projectDir, bookId, currentChapterFile)
+          Path.join(projectDir, bookId, currentChapterFile),
         );
 
         for (let verseIndex in currentChapterObject) {
@@ -126,7 +126,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
     );
   } catch (e) {
     console.warn(
-      'ult index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder'
+      'ult index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder',
     );
     return false;
   }

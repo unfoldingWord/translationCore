@@ -1,6 +1,8 @@
-'use strict';
+/* eslint-disable no-throw-literal */
+/* eslint-disable no-unused-expressions */
+
 import path from 'path-extra';
-import _ from "lodash";
+import _ from 'lodash';
 const fsActual = require.requireActual('fs-extra'); // for copying test files into mock
 const fs = jest.genMockFromModule('fs-extra');
 let mockFS = Object.create(null);
@@ -22,6 +24,7 @@ function __resetMockFS() {
  */
 function __setMockDirectories(newMockFiles) {
   mockFS = Object.create(null);
+
   for (const file in newMockFiles) {
     const dir = path.dirname(file);
 
@@ -58,10 +61,14 @@ function readFileSync(filePath) {
     throw 'File could not be read: ' + filePath;
   }
 
-  if (typeof filePath !== 'string') throw 'fail';
+  if (typeof filePath !== 'string') {
+    throw 'fail';
+  }
+
   const data = mockFS[filePath];
+
   // TRICKY: readFileSync should always return a string
-  if(typeof data === 'object' && data !== null) {
+  if (typeof data === 'object' && data !== null) {
     return JSON.stringify(data);
   } else {
     return data;
@@ -92,7 +99,7 @@ function outputFile(filePath, data) {
 
 function __dumpMockFS() {
   const fsList = JSON.stringify(mockFS, null, 2);
-  console.log("mock FS:\n" + fsList);
+  console.log('mock FS:\n' + fsList);
 }
 
 /**
@@ -102,11 +109,13 @@ function __dumpMockFS() {
 function addFileToParentDirectory(filePath) {
   const dir = path.dirname(filePath);
   const filename = path.basename(filePath);
+
   if (filename) {
     if (!mockFS[dir]) {
       mockFS[dir] = [];
       addFileToParentDirectory(dir);
     }
+
     if (mockFS[dir].indexOf(filename) < 0) {
       mockFS[dir].push(filename);
     }
@@ -197,7 +206,9 @@ function copySync(srcPath, destinationPath) {
 }
 
 function ensureDirSync(path) {
-  if (!mockFS[path]) mockFS[path] = [];
+  if (!mockFS[path]) {
+    mockFS[path] = [];
+  }
   addFileToParentDirectory(path);
 }
 
@@ -205,7 +216,7 @@ function Stats(path, exists, isDir) {
   this.path = path;
   this.exists = exists;
   this.isDir = isDir;
-  this.atime = "Not-a-real-date";
+  this.atime = 'Not-a-real-date';
   this.isDirectory = () => {
     const isDir = this.exists && this.isDir;
     return isDir;
@@ -224,6 +235,7 @@ function Stats(path, exists, isDir) {
 function isValidDirectory(path) {
   const dir = mockFS[path];
   let isDir = Array.isArray(dir);
+
   if (isDir) { // make sure it's an array of paths (strings) and not objects (such as json object stored)
     const failedItem = dir.findIndex((item) => (typeof item !== 'string'));
     isDir = (failedItem < 0); // valid if failed item not found
@@ -258,24 +270,29 @@ function __correctSeparatorsFromLinux(filePath) {
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
 function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
-  const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
+  const mockDestinationFolder_ = __correctSeparatorsFromLinux(mockDestinationFolder);
   const sourceFolder_ = __correctSeparatorsFromLinux(sourceFolder );
+
   for (let copyFile of copyFiles) {
     const filePath2 = path.join(sourceFolder_, __correctSeparatorsFromLinux(copyFile));
     let fileData = null;
     const isDir = fsActual.statSync(filePath2).isDirectory();
+
     if (!isDir) {
       fileData = fsActual.readFileSync(filePath2).toString();
     }
+
     let dirPath = mockDestinationFolder_;
     fs.ensureDirSync(dirPath);
     const parts = copyFile.split('/');
     const endCount = parts.length - 1;
+
     for (let i = 0; i < endCount; i++) {
       const part = parts[i];
       dirPath = path.join(dirPath, part);
       fs.ensureDirSync(dirPath);
     }
+
     if (!isDir) {
       const filePath = path.join(mockDestinationFolder_, parts.join(path.sep));
       // console.log("Copying File: " + filePath);
@@ -292,15 +309,17 @@ function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
  * @param {string} mockDestinationFolder - destination folder for copied files {string} in mock File system
  */
 function __loadDirIntoMockFs(sourceFolder, mockDestinationFolder) {
-  const mockDestinationFolder_ =  __correctSeparatorsFromLinux(mockDestinationFolder);
+  const mockDestinationFolder_ = __correctSeparatorsFromLinux(mockDestinationFolder);
   fs.ensureDirSync(mockDestinationFolder_);
   const sourceFolder_ = __correctSeparatorsFromLinux(sourceFolder);
   // console.log("Copying Directory: " + sourceFolder_);
   const files = fsActual.readdirSync(sourceFolder_);
+
   for (let file of files) {
     const sourceFilePath = path.join(sourceFolder, file);
     const mockFilePath = path.join(mockDestinationFolder_, file);
     const isDir = fsActual.statSync(sourceFilePath).isDirectory();
+
     if (!isDir) {
       const fileData = fsActual.readFileSync(sourceFilePath).toString();
       // console.log("Copying Subfile: " + mockFilePath);
@@ -317,9 +336,7 @@ function moveSync(source, destination) {
   removeSync(source);
 }
 
-fs.__files = () => {
-  return mockFS;
-};
+fs.__files = () => mockFS;
 fs.__dumpMockFS = __dumpMockFS;
 fs.__setMockDirectories = __setMockDirectories;
 fs.__setMockFS = __setMockFS;

@@ -1,5 +1,4 @@
 /* eslint-env jest */
-
 import os from 'os';
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -9,8 +8,7 @@ import thunk from 'redux-thunk';
 import path from 'path-extra';
 import Adapter from 'enzyme-adapter-react-16';
 import { configure } from 'enzyme';
-import StatusBarContainer from '../js/containers/StatusBarContainer';
-import * as statusBarContainer from '../js/containers/StatusBarContainer';
+import StatusBarContainer, { getBaseName } from '../js/containers/StatusBarContainer';
 import reducers from '../js/reducers';
 import * as ProjectDetailsActions from '../js/actions/ProjectDetailsActions';
 import * as BodyUIActions from '../js/actions/BodyUIActions';
@@ -34,7 +32,7 @@ describe('Test StatusBarContainer component',()=>{
     // create a new store instance for each test
     store = createStore(
       reducers,
-      applyMiddleware(thunk)
+      applyMiddleware(thunk),
     );
   });
 
@@ -76,7 +74,7 @@ describe('Test StatusBarContainer component',()=>{
     const renderedValue = renderer.create(
       <Provider store={store}>
         <StatusBarContainer translate={translate}/>
-      </Provider>
+      </Provider>,
     ).toJSON();
 
     // then
@@ -90,7 +88,7 @@ describe('Test StatusBarContainer component',()=>{
     const posixPath = path.posix;
 
     // when
-    const projectName = statusBarContainer.getBaseName(projectPath, posixPath);
+    const projectName = getBaseName(projectPath, posixPath);
 
     // then
     expect(projectName).toEqual(expectedProjectName);
@@ -103,7 +101,7 @@ describe('Test StatusBarContainer component',()=>{
     const winPath = path.win32;
 
     // when
-    const projectName = statusBarContainer.getBaseName(projectPath, winPath);
+    const projectName = getBaseName(projectPath, winPath);
 
     // then
     expect(projectName).toEqual(expectedProjectName);

@@ -18,7 +18,7 @@ jest.mock('electron', () => ({
       .mockImplementationOnce(() => ['a/working/project'])
       .mockImplementationOnce(() => null),
   },
-})
+}),
 );
 
 jest.mock('../js/selectors', () => ({

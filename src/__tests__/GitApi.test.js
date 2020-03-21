@@ -260,7 +260,7 @@ describe('GitApi.getRepoNameInfo', () => {
       expect(cp.exec).toHaveBeenLastCalledWith(
         'git remote get-url origin',
         { 'cwd': './' },
-        expect.any(Function)
+        expect.any(Function),
       );
     });
   });
@@ -294,7 +294,7 @@ describe('GitApi.renameRepoLocally', () => {
     return renameRepoLocally(user, newName, projectPath).then(() => {
       expect(mocks.remote).toHaveBeenCalledWith(
         ['set-url', 'origin', `https://git.door43.org/${user.username}/${newName}.git`],
-        expect.any(Function)
+        expect.any(Function),
       );
     });
   });
@@ -309,7 +309,7 @@ describe('GitApi.getRemoteRepoHead', () => {
     return getRemoteRepoHead(repo_url).then((res) => {
       expect(cp.exec).toHaveBeenLastCalledWith(
         `git ls-remote ${repo_url} HEAD`,
-        expect.any(Function)
+        expect.any(Function),
       );
       expect(res).toBe();
     });
@@ -326,7 +326,7 @@ describe('GitApi.getSavedRemote', () => {
 
     expect(mocks.getRemotes).toHaveBeenLastCalledWith(
       true,
-      expect.any(Function)
+      expect.any(Function),
     );
     expect(results).not.toBeTruthy();
   });
@@ -344,7 +344,7 @@ describe('GitApi.saveRemote', () => {
     expect(mocks.addRemote).toHaveBeenLastCalledWith(
       remoteName,
       url,
-      expect.any(Function)
+      expect.any(Function),
     );
     expect(results).not.toBeTruthy();
   });

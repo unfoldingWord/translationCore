@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import path from 'path';
 import fs from 'fs-extra';
-import migrateToVersion6 from '../js/helpers/ProjectMigration/migrateToVersion6';
-import * as MigrateToVersion6 from '../js/helpers/ProjectMigration/migrateToVersion6';
+import migrateToVersion6,{ MIGRATE_MANIFEST_VERSION, findResourceIdAndNickname } from '../js/helpers/ProjectMigration/migrateToVersion6';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 jest.mock('fs-extra');
 
@@ -70,28 +69,28 @@ describe('migrateToVersion6', () => {
 
     // then
     const version = Version.getVersionFromManifest(PROJECT_PATH);
-    expect(MigrateToVersion6.MIGRATE_MANIFEST_VERSION).toBe(6); // this shouldn't change
-    expect(version).toBe(MigrateToVersion6.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(6); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
     expect(console.error).toHaveBeenCalled();
   });
 
   it('with lower tc_version expect to update version', () => {
     global.console = { error: jest.fn(), log: jest.fn() };
     // given
-    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion6.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(PROJECT_PATH, MIGRATE_MANIFEST_VERSION - 1);
 
     // when
     migrateToVersion6(PROJECT_PATH);
 
     // then
     const version = Version.getVersionFromManifest(PROJECT_PATH);
-    expect(version).toBe(MigrateToVersion6.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
     expect(console.error).toHaveBeenCalled();
   });
 
   it('with same tc_version expect to leave alone', () => {
     // given
-    const manifestVersion = MigrateToVersion6.MIGRATE_MANIFEST_VERSION;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION;
     Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
 
     // when
@@ -139,7 +138,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const expectedNickName = undefined;
 
     // when
-    MigrateToVersion6.findResourceIdAndNickname(manifest);
+    findResourceIdAndNickname(manifest);
 
     // then
     expect(manifest.resource && manifest.resource.id).toEqual(expectedResourceId);
@@ -153,7 +152,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const expectedNickName = undefined;
 
     // when
-    MigrateToVersion6.findResourceIdAndNickname(manifest);
+    findResourceIdAndNickname(manifest);
 
     // then
     expect(manifest.resource && manifest.resource.id).toEqual(expectedResourceId);
@@ -173,7 +172,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const expectedNickName = 'Unlocked Literal Translation';
 
     // when
-    MigrateToVersion6.findResourceIdAndNickname(manifest);
+    findResourceIdAndNickname(manifest);
 
     // then
     expect(manifest.resource.id).toEqual(expectedResourceId);
@@ -197,7 +196,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const expectedNickName = 'Unlocked Greek New Testament';
 
     // when
-    MigrateToVersion6.findResourceIdAndNickname(manifest);
+    findResourceIdAndNickname(manifest);
 
     // then
     expect(manifest.resource.id).toEqual(expectedResourceId);
@@ -216,7 +215,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const expectedNickName = 'Unlocked Literal Translation';
 
     // when
-    MigrateToVersion6.findResourceIdAndNickname(manifest);
+    findResourceIdAndNickname(manifest);
 
     // then
     expect(manifest.resource.id).toEqual(expectedResourceId);
@@ -236,7 +235,7 @@ describe('ManifestHelpers.findResourceIdAndNickname', () => {
     const expectedNickName = 'Unlocked Literal Translation';
 
     // when
-    MigrateToVersion6.findResourceIdAndNickname(manifest);
+    findResourceIdAndNickname(manifest);
 
     // then
     expect(manifest.resource.id).toEqual(expectedResourceId);

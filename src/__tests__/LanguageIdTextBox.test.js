@@ -3,8 +3,7 @@ import React from 'react';
 import { shallow, configure } from 'enzyme';
 import { AutoComplete } from 'material-ui';
 import Adapter from 'enzyme-adapter-react-16';
-import * as LanguageID from '../js/components/projectValidation/ProjectInformationCheck/LanguageIdTextBox';
-import LanguageIdTextBox from '../js/components/projectValidation/ProjectInformationCheck/LanguageIdTextBox';
+import LanguageIdTextBox, { selectLanguage, getErrorMessage } from '../js/components/projectValidation/ProjectInformationCheck/LanguageIdTextBox';
 import * as LangHelpers from '../js/helpers/LanguageHelpers';
 
 beforeAll(() => {
@@ -28,7 +27,7 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LanguageID.selectLanguage(expectedLanguage.code, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage(expectedLanguage.code, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
@@ -44,7 +43,7 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const expectedLanguageDir = expectedLanguage.ltr ? 'ltr' : 'rtl';
 
     // when
-    LanguageID.selectLanguage({ code: expectedLanguage.code }, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage({ code: expectedLanguage.code }, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
@@ -59,7 +58,7 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LanguageID.selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage(expectedLanguageID, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -74,7 +73,7 @@ describe('Test LanguageIdTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LanguageID.selectLanguage(null, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage(null, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -91,7 +90,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const languageID = null;
 
     // when
-    const results = LanguageID.getErrorMessage(translate, languageID);
+    const results = getErrorMessage(translate, languageID);
 
     // then
     expect(results).toEqual('project_validation.field_required');
@@ -102,7 +101,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const languageID = 'zzz';
 
     // when
-    const results = LanguageID.getErrorMessage(translate, languageID);
+    const results = getErrorMessage(translate, languageID);
 
     // then
     expect(results).toEqual('project_validation.invalid_language_code');
@@ -113,7 +112,7 @@ describe('Test LanguageIdTextBox.getErrorMessage()',()=>{
     const languageID = 'hsl';
 
     // when
-    const results = LanguageID.getErrorMessage(translate, languageID);
+    const results = getErrorMessage(translate, languageID);
 
     // then
     expect(!results).toBeTruthy();
@@ -275,7 +274,7 @@ describe('Test LanguageIdTextBox component',()=>{
         updateLanguageName={updateLanguageName}
         updateLanguageId={updateLanguageId}
         updateLanguageSettings={updateLanguageSettings}
-      />
+      />,
     );
   }
 

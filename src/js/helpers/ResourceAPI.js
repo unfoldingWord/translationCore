@@ -79,7 +79,7 @@ class ResourceAPI {
       const versionedDirs = fs.readdirSync(dir).filter(file => fs.lstatSync(path.join(dir, file)).isDirectory() &&
           file.match(/^v\d/i));
       return versionedDirs.sort((a, b) =>
-        -this.compareVersions(a, b) // do inverted sort
+        -this.compareVersions(a, b), // do inverted sort
       );
     }
     return [];

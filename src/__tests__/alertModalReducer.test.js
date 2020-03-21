@@ -17,7 +17,7 @@ const initialState = {
 describe('alertModalReducer', () => {
   test('should return the initial state', () => {
     expect(
-      alertModalReducer(undefined, {})
+      alertModalReducer(undefined, {}),
     ).toEqual(initialState);
   });
 
@@ -27,7 +27,7 @@ describe('alertModalReducer', () => {
         type: consts.OPEN_ALERT_DIALOG,
         alertMessage: 'alert message',
         loading: true,
-      })
+      }),
     ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: true,
@@ -46,8 +46,8 @@ describe('alertModalReducer', () => {
           type: consts.OPEN_ALERT_DIALOG,
           alertMessage: 'alert message',
           loading: true,
-        }
-      )
+        },
+      ),
     ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: true,
@@ -73,8 +73,8 @@ describe('alertModalReducer', () => {
           button2Text: 'button2 Text',
           callback,
           callback2: null,
-        }
-      )
+        },
+      ),
     ).toEqual({
       alertDialogVisibility: true,
       alertDialogLoading: false,
@@ -98,8 +98,8 @@ describe('alertModalReducer', () => {
           button2: null,
           callback: null,
         },
-        { type: consts.CLOSE_ALERT_DIALOG }
-      )
+        { type: consts.CLOSE_ALERT_DIALOG },
+      ),
     ).toEqual(initialState);
   });
 });

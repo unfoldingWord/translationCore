@@ -32,7 +32,7 @@ describe('Test SearchResults component',()=>{
           translate={key => key}
           importLink={importLink}
           handleURLInputChange={mock_handleURLInputChange} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
 
     const tds = searchForChildren(renderedValue, 'td');

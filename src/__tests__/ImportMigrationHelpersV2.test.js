@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import migrateToVersion2 from '../js/helpers/ProjectMigration/migrateToVersion2';
-import * as MigrateToVersion2 from '../js/helpers/ProjectMigration/migrateToVersion2';
+import migrateToVersion2, { MIGRATE_MANIFEST_VERSION, updateAlignmentsForFile } from '../js/helpers/ProjectMigration/migrateToVersion2';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 jest.mock('fs-extra');
 
@@ -55,20 +54,20 @@ describe('migrateToVersion2', () => {
     migrateToVersion2(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(MigrateToVersion2.MIGRATE_MANIFEST_VERSION).toBe(2); // this shouldn't change
-    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(2); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with lower tc_version expect to update version', () => {
-    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion2.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(PROJECT_PATH, MIGRATE_MANIFEST_VERSION - 1);
     migrateToVersion2(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with higher tc_version expect to leave alone', () => {
-    const manifestVersion = MigrateToVersion2.MIGRATE_MANIFEST_VERSION + 1;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION + 1;
     Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
     migrateToVersion2(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
@@ -96,14 +95,14 @@ describe('migrateToVersion2', () => {
     expect(word.strong).not.toBeDefined();
     expect(typeof word.strongs).toEqual('string');
 
-    Version.setVersionInManifest(projectPath, MigrateToVersion2.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION - 1);
 
     // when
     migrateToVersion2(projectPath);
 
     // then
     const version = Version.getVersionFromManifest(projectPath);
-    expect(version).toBe(MigrateToVersion2.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
     const chapterData = getChapterData(chapter1_alignment_path);
 
     // strongs should be updated
@@ -135,7 +134,7 @@ describe('migrateToVersion2', () => {
     fs.outputJsonSync(projectPath, titusData);
 
     // when
-    MigrateToVersion2.updateAlignmentsForFile(projectPath);
+    updateAlignmentsForFile(projectPath);
 
     // then
     const chapterData = getChapterData(projectPath);
@@ -193,7 +192,7 @@ const getWordFromWordBankOrAlignments = function (chapterData, verse, word, occu
       }
     }
     return false;
-  }
+  },
   );
 
   if (!wordMatch) {

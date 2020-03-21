@@ -467,7 +467,7 @@ describe('csv export actions', () => {
       // create a new store instance for each test
       store = createStore(
         reducers,
-        applyMiddleware(thunk)
+        applyMiddleware(thunk),
       );
     });
     test('should fail to export a project that has merge conflicts', () => {

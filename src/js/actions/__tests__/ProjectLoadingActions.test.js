@@ -13,7 +13,7 @@ import {
   tc_LAST_OPENED_KEY,
   PROJECTS_PATH,
 } from '../../common/constants';
-import ActionTypes from '../ActionTypes'
+import ActionTypes from '../ActionTypes';
 jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
