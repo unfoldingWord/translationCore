@@ -11,15 +11,15 @@ if (!app && !remote) { // fallback for testing
     app: {
       getPath: (path) => {
         switch (path) {
-          case 'home':
-            return '/Users/jest/mock/path';
-          case 'appData':
-            return '/Users/jest/mock/path/appData';
-          default:
-            return 'unknown';
+        case 'home':
+          return '/Users/jest/mock/path';
+        case 'appData':
+          return '/Users/jest/mock/path/appData';
+        default:
+          return 'unknown';
         }
-      }
-    }
+      },
+    },
   };
 }
 
