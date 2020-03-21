@@ -1,8 +1,8 @@
 /* eslint-disable no-async-promise-executor */
-import ospath from '../common/ospath-extra';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { ipcRenderer } from 'electron';
+import ospath from '../common/ospath-extra';
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 import { delay } from '../common/utils';
 import { OSX_DOCUMENTS_PATH, WIN_DOCUMENTS_PATH } from '../common/constants';

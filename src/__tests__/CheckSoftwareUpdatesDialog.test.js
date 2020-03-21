@@ -102,7 +102,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
         translate={k=>k}
         onSubmit={mockSubmit}
         onClose={mockClose}
-        status={STATUS_LOADING}/>
+        status={STATUS_LOADING}/>,
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('updates.checking_for_app'));
@@ -117,7 +117,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
         translate={k=>k}
         onSubmit={mockSubmit}
         onClose={mockClose}
-        status={STATUS_OK}/>
+        status={STATUS_OK}/>,
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('running_latest_version'));
@@ -132,7 +132,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
         translate={k=>k}
         onSubmit={mockSubmit}
         onClose={mockClose}
-        status={STATUS_ERROR}/>
+        status={STATUS_ERROR}/>,
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('updates.unable_to_check'));
@@ -153,7 +153,7 @@ describe('CheckSoftwareUpdateDialog state', () => {
         update={update}
         onSubmit={mockSubmit}
         onClose={mockClose}
-        status={STATUS_UPDATE}/>
+        status={STATUS_UPDATE}/>,
     );
     const message = dialog.find('#message');
     expect(message.text()).toEqual(expect.stringContaining('update_available'));

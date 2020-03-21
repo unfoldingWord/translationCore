@@ -11,35 +11,40 @@ var processEnv = require('./env').getEnv();
 // console.log('ospath-extra: processEnv: ' + JSON.stringify(processEnv));
 // console.log('ospath-extra: process.platform: ' + JSON.stringify(process.platform));
 
-function data () {
+function data() {
   switch (this.__platform || process.platform) {
-    case 'win32': return path.resolve(processEnv.APPDATA);
-    case 'darwin': return path.resolve(path.join(home.call(this), 'Library/Application Support/'));
-    default: return processEnv.XDG_CONFIG_HOME
-      ? path.resolve(processEnv.XDG_CONFIG_HOME)
-      : path.resolve(path.join(home.call(this), '.config/'));
+  case 'win32': return path.resolve(processEnv.APPDATA);
+  case 'darwin': return path.resolve(path.join(home.call(this), 'Library/Application Support/'));
+  default: return processEnv.XDG_CONFIG_HOME
+    ? path.resolve(processEnv.XDG_CONFIG_HOME)
+    : path.resolve(path.join(home.call(this), '.config/'));
   }
 }
 
-function desktop () {
+function desktop() {
   return path.join(home.call(this), 'Desktop');
 }
 
-function home () {
-  if (process.env.JEST_WORKER_ID || process.env.TRAVIS) return '/Users/jest/mock/path';
+function home() {
+  if (process.env.JEST_WORKER_ID || process.env.TRAVIS) {
+    return '/Users/jest/mock/path';
+  }
+
   // io.js >= 2.3
-  if ('homedir' in os) return os.homedir();
+  if ('homedir' in os) {
+    return os.homedir();
+  }
 
   switch (this.__platform || process.platform) {
-    case 'win32': return path.resolve(processEnv.USERPROFILE);
-    default: return path.resolve(processEnv.HOME)
+  case 'win32': return path.resolve(processEnv.USERPROFILE);
+  default: return path.resolve(processEnv.HOME);
   }
 }
 
-function tmp () {
+function tmp() {
   switch (this.__platform || process.platform) {
-    case 'win32': return path.resolve(processEnv.TEMP);
-    default: return path.resolve('/tmp');
+  case 'win32': return path.resolve(processEnv.TEMP);
+  default: return path.resolve('/tmp');
   }
 }
 
@@ -48,7 +53,7 @@ var ospath = {
   data: data,
   desktop: desktop,
   home: home,
-  tmp: tmp
+  tmp: tmp,
 };
 
 module.exports = ospath;

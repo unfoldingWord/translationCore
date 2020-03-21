@@ -12,7 +12,7 @@ beforeAll(() => {
 
 test('snapshot', () => {
   const wrapper = renderer.create(
-    <StatementOfFaithPage translate={key => key} onBackClick={jest.fn()}/>
+    <StatementOfFaithPage translate={key => key} onBackClick={jest.fn()}/>,
   );
   expect(wrapper).toMatchSnapshot();
 });
@@ -20,7 +20,7 @@ test('snapshot', () => {
 test('back', () => {
   const backCallback = jest.fn();
   const wrapper = shallow(
-    <StatementOfFaithPage translate={key => key} onBackClick={backCallback}/>
+    <StatementOfFaithPage translate={key => key} onBackClick={backCallback}/>,
   );
   wrapper.find('button').simulate('click');
   expect(backCallback).toBeCalled();

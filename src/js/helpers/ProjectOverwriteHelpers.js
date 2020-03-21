@@ -206,7 +206,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
               chapter,
               verse,
               projectSaveLocation,
-              checkingOccurrence.contextId.quote
+              checkingOccurrence.contextId.quote,
             );
 
             if (selectionsObject) {
@@ -321,7 +321,7 @@ export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, pr
     let files = fs.readdirSync(selectionsPath);
 
     files = files.filter(file => // filter the filenames to only use .json
-      path.extname(file) === '.json'
+      path.extname(file) === '.json',
     );
 
     let sorted = files.sort().reverse(); // sort the files to use latest

@@ -17,7 +17,7 @@ describe('Test ProjectCardMenu component', () => {
           onExportCSV={() => jest.fn()}
           onUpload={() => jest.fn()}
           user={{}}/>
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });

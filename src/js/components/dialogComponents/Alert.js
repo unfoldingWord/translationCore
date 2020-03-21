@@ -49,7 +49,7 @@ class Alert extends Component {
             callback_(button2);
           } : closeAlertDialog}
         > {this.props.alertModalReducer.button2}
-        </button>
+        </button>,
       );
     }
 
@@ -63,7 +63,7 @@ class Alert extends Component {
             callback(buttonLink);
           } : closeAlertDialog}
         > {this.props.alertModalReducer.buttonLink}
-        </button>
+        </button>,
       );
     }
 

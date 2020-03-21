@@ -162,7 +162,7 @@ describe('USFMExportActions', () => {
 describe('USFMExportActions.USFMExportActions', () => {
   const projectSaveLocation = 'usfm/project/path';
 
-  it('should check project for merge conflicts and reject', async () => {
+  it('should check project for merge conflicts and reject', () => {
     const initialState = {
       localImportReducer: { selectedProjectFilename: 'path' },
       projectDetailsReducer: { projectSaveLocation },
@@ -311,7 +311,7 @@ describe('USFMExportActions.setUpUSFMJSONObject', () => {
           expect.objectContaining({ content: expect.any(String) }),
           expect.objectContaining({ content: expect.any(String) }),
         ]),
-      })
+      }),
     );
     expect(res).toHaveProperty('chapters.1.1.verseObjects.0.text', expectedString);
   });

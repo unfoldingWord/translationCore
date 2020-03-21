@@ -58,7 +58,7 @@ describe('reducers', () => {
         type: types.SET_SETTING,
         key: 'mySetting',
         value: 'myValue',
-      })
+      }),
     ).toEqual({ currentSettings: { mySetting: 'myValue' } });
   });
 
@@ -67,19 +67,19 @@ describe('reducers', () => {
       reducer({ currentSettings: { setting: 'string' } }, {
         type: types.TOGGLE_SETTING,
         key: 'setting',
-      })
+      }),
     ).toEqual({ currentSettings: { setting: false } });
     expect(
       reducer({ currentSettings: { setting: true } }, {
         type: types.TOGGLE_SETTING,
         key: 'setting',
-      })
+      }),
     ).toEqual({ currentSettings: { setting: false } });
     expect(
       reducer({ currentSettings: { setting: false } }, {
         type: types.TOGGLE_SETTING,
         key: 'setting',
-      })
+      }),
     ).toEqual({ currentSettings: { setting: true } });
   });
 });

@@ -9,7 +9,7 @@ import { confirmOnlineAction } from '../../actions/OnlineModeConfirmActions';
 import SoftwareUpdateDialog, {
   STATUS_ERROR, STATUS_OK, STATUS_LOADING, STATUS_UPDATE,
 } from '../../components/dialogComponents/SoftwareUpdateDialog';
-import {APP_VERSION} from "../../common/constants";
+import { APP_VERSION } from '../../common/constants';
 
 /**
  * Returns the correct update asset for this operating system.

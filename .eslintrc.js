@@ -82,7 +82,12 @@ module.exports = {
     "radix": "off",
     "guard-for-in": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-mixed-operators": "off",
+    "jsx-a11y/alt-text": "off",
+    "eqeqeq": "off"
   },
   "settings": {
     "react": {

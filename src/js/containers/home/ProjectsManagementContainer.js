@@ -164,5 +164,5 @@ ProjectsManagementContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ProjectsManagementContainer);

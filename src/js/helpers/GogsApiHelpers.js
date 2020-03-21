@@ -31,7 +31,7 @@ export function login(userObj) {
       //
       }
       return user;
-    })
+    }),
   );
 }
 

@@ -22,10 +22,10 @@ import * as AlertModalActions from '../../actions/AlertModalActions';
 // constants
 import { APP_VERSION } from '../../common/constants';
 // containers
+import { getBuild } from '../../common/env';
 import ToolsManagementContainer from './ToolsManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
 import UsersManagementContainer from './UsersManagementContainer';
-import { getBuild } from "../../common/env";
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -214,5 +214,5 @@ HomeContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomeContainer);

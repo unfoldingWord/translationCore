@@ -23,7 +23,7 @@ function getEnv() {
 
 var env = {
   getBuild,
-  getEnv
+  getEnv,
 };
 
 module.exports = env;

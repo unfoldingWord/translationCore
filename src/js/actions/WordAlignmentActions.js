@@ -85,7 +85,7 @@ export function displayAlignmentErrorsPrompt() {
         resolve(res);
       },
       'Export',
-      'Cancel'
+      'Cancel',
     ));
   }));
 }

@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import path from 'path';
 import fs from 'fs-extra';
-import migrateToVersion3 from '../js/helpers/ProjectMigration/migrateToVersion3';
-import * as MigrateToVersion3 from '../js/helpers/ProjectMigration/migrateToVersion3';
+import migrateToVersion3, { MIGRATE_MANIFEST_VERSION } from '../js/helpers/ProjectMigration/migrateToVersion3';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 import { TRANSLATION_WORDS } from '../js/common/constants';
 jest.mock('fs-extra');
@@ -56,20 +55,20 @@ describe('migrateToVersion3', () => {
     migrateToVersion3(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(MigrateToVersion3.MIGRATE_MANIFEST_VERSION).toBe(3); // this shouldn't change
-    expect(version).toBe(MigrateToVersion3.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(3); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with lower tc_version expect to update version', () => {
-    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion3.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(PROJECT_PATH, MIGRATE_MANIFEST_VERSION - 1);
     migrateToVersion3(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(version).toBe(MigrateToVersion3.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with higher tc_version expect to leave alone', () => {
-    const manifestVersion = MigrateToVersion3.MIGRATE_MANIFEST_VERSION + 1;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION + 1;
     Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
     migrateToVersion3(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
@@ -101,14 +100,14 @@ describe('migrateToVersion3', () => {
     expect(isStringInData(disciplineWords, replace)).not.toBeTruthy();
     expect(isStringInData(believeWords, match)).not.toBeTruthy();
 
-    Version.setVersionInManifest(projectPath, MigrateToVersion3.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(projectPath, MIGRATE_MANIFEST_VERSION - 1);
 
     // when
     migrateToVersion3(projectPath);
 
     // then
     const version = Version.getVersionFromManifest(projectPath);
-    expect(version).toBe(MigrateToVersion3.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
 
     expect(isStringInData(chapter1_alignment_path, match)).not.toBeTruthy();
     expect(isStringInData(chapter1_alignment_path, replace)).toBeTruthy();

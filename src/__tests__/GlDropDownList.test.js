@@ -1,11 +1,11 @@
 /* eslint-env jest */
-import ospath from '../js/common/ospath-extra';
 import path from 'path-extra';
 import fs from 'fs-extra';
 
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ospath from '../js/common/ospath-extra';
 // Components
 import GlDropDownList from '../js/components/home/toolsManagement/GlDropDownList';
 import { WORD_ALIGNMENT } from '../js/common/constants';
@@ -38,7 +38,7 @@ describe('Test Gateway Language Drop Down List',() => {
     const renderedValue = renderer.create(
       <MuiThemeProvider>
         <GlDropDownList {...props} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });

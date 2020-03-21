@@ -4,8 +4,14 @@ import path from 'path-extra';
 import usfm from 'usfm-js';
 // helpers
 import * as UsfmHelpers from '../js/helpers/usfmHelpers';
-import * as UsfmFileConversionHelpers from '../js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
-import { getUsfmForVerseContent } from '../js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
+import {
+  getUsfmForVerseContent,
+  verifyIsValidUsfmFile,
+  generateManifestForUsfm,
+  cleanAlignmentMarkersFromString,
+  moveUsfmFileFromSourceToImports,
+  generateTargetLanguageBibleFromUsfm,
+} from '../js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 // constants
 import { USER_RESOURCES_PATH, IMPORTS_PATH } from '../js/common/constants';
 jest.mock('fs-extra');
@@ -63,13 +69,13 @@ describe('UsfmFileConversionHelpers', () => {
     test('promise rejects with an error if invalid arguments are passed to the function.', () => {
       fs.__setMockFS({ [usfmFilePath]: 'Not a valid usfm string' });
       expect.assertions(1);
-      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
+      return expect(verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
     });
 
     test('promise resolves with the usfm file.', () => {
       fs.__setMockFS({ [usfmFilePath]: validUsfmString });
       expect.assertions(1);
-      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
+      return expect(verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
     });
   });
 
@@ -77,7 +83,7 @@ describe('UsfmFileConversionHelpers', () => {
     test('promise rejects with an error if invalid arguments are passed to the function.', () => {
       expect.assertions(1);
       return expect(
-        UsfmFileConversionHelpers.generateManifestForUsfm(null, usfmFilePath, 'project_folder_name')
+        generateManifestForUsfm(null, usfmFilePath, 'project_folder_name'),
       ).rejects.toEqual(generateUsfmRejectionMessage);
     });
 
@@ -85,7 +91,7 @@ describe('UsfmFileConversionHelpers', () => {
       const manifestPath = path.join(IMPORTS_PATH, 'project_folder_name', 'manifest.json');
 
       expect.assertions(2);
-      const results = await UsfmFileConversionHelpers.generateManifestForUsfm(validUsfmString, usfmFilePath, 'project_folder_name');
+      const results = await generateManifestForUsfm(validUsfmString, usfmFilePath, 'project_folder_name');
       // normalize JSONs since dates in manifest are converted to strings.
       const normalized = JSON.parse(JSON.stringify(results));
       expect(normalized).toEqual(fs.readJsonSync(manifestPath));
@@ -97,7 +103,7 @@ describe('UsfmFileConversionHelpers', () => {
     test('rejects with an error if invalid arguments are passed to the function', () => {
       expect.assertions(1);
       return expect(
-        UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(null, {}, 'project_folder_name')
+        moveUsfmFileFromSourceToImports(null, {}, 'project_folder_name'),
       ).rejects.toEqual(moveUsfmRejectionMessage);
     });
 
@@ -107,7 +113,7 @@ describe('UsfmFileConversionHelpers', () => {
       let mockManifest = { project: { id: 'eph' } };
       const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'eph.usfm');
       expect.assertions(1);
-      await UsfmFileConversionHelpers.moveUsfmFileFromSourceToImports(path.join('path', 'to', 'project', 'eph.usfm'), mockManifest, 'project_folder_name');
+      await moveUsfmFileFromSourceToImports(path.join('path', 'to', 'project', 'eph.usfm'), mockManifest, 'project_folder_name');
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
     });
   });
@@ -124,7 +130,7 @@ describe('UsfmFileConversionHelpers', () => {
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when
-      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
       //then
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -159,7 +165,7 @@ describe('UsfmFileConversionHelpers', () => {
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when
-      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
       //then
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -187,7 +193,7 @@ describe('UsfmFileConversionHelpers', () => {
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when
-      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
       //then
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -218,7 +224,7 @@ describe('UsfmFileConversionHelpers', () => {
       const expectedVerses = 6;
 
       //when
-      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
       //then
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -259,7 +265,7 @@ describe('UsfmFileConversionHelpers', () => {
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when
-      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
       //then
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -297,7 +303,7 @@ describe('UsfmFileConversionHelpers', () => {
       const parsedUsfm = UsfmHelpers.getParsedUSFM(validUsfmString);
 
       //when
-      await UsfmFileConversionHelpers.generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
+      await generateTargetLanguageBibleFromUsfm(parsedUsfm, mockManifest, 'project_folder_name');
 
       //then
       expect(fs.existsSync(newUsfmProjectImportsPath)).toBeTruthy();
@@ -359,13 +365,13 @@ describe('UsfmFileConversionHelpers', () => {
     test('promise rejects with an error if invalid arguments are passed to the function.', () => {
       fs.__setMockFS({ [usfmFilePath]: 'Not a valid usfm string' });
       expect.assertions(1);
-      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
+      return expect(verifyIsValidUsfmFile(usfmFilePath)).rejects.toEqual(invalidUsfmRejectionMessage);
     });
 
     test('promise resolves with the usfm file.', () => {
       fs.__setMockFS({ [usfmFilePath]: validUsfmString });
       expect.assertions(1);
-      return expect(UsfmFileConversionHelpers.verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
+      return expect(verifyIsValidUsfmFile(usfmFilePath)).resolves.toEqual(validUsfmString);
     });
   });
 
@@ -452,7 +458,7 @@ describe('cleanAlignmentMarkersFromString', () => {
     const expected = verse;
 
     // when
-    const cleaned = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(verse);
+    const cleaned = cleanAlignmentMarkersFromString(verse);
 
     // then
     expect(cleaned).toEqual(expected);
@@ -465,7 +471,7 @@ describe('cleanAlignmentMarkersFromString', () => {
     verse = wrapWithUSFM(verse, ' ', '\\w ', '\\w*');
 
     // when
-    const cleaned = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(verse);
+    const cleaned = cleanAlignmentMarkersFromString(verse);
 
     // then
     expect(cleaned).toEqual(expected);
@@ -478,7 +484,7 @@ describe('cleanAlignmentMarkersFromString', () => {
     verse = wrapWithUSFM(verse, ' ', '\\zaln-s |\n', '\n\\zaln-e\\*');
 
     // when
-    const cleaned = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(verse);
+    const cleaned = cleanAlignmentMarkersFromString(verse);
 
     // then
     expect(cleaned).toEqual(expected);

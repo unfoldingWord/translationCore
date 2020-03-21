@@ -1,5 +1,4 @@
 /* eslint-env jest */
-
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { MuiThemeProvider } from 'material-ui';
@@ -22,7 +21,7 @@ describe('Test SearchOptions component',()=>{
           translate={key => key}
           importLink={importLink}
           username={userName} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
 
     const labels = searchForChildren(renderedValue, 'label');

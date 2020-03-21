@@ -25,7 +25,7 @@ describe('ProjectImportFilesystemHelpers.move',()=> {
     fs.__resetMockFS();
   });
 
-  test('ProjectImportFilesystemHelpers.move verifies that it does not reimport a project', async () => {
+  test('ProjectImportFilesystemHelpers.move verifies that it does not reimport a project', () => {
     fs.__setMockFS({
       [toPath]: '',
       [fromPath]: '',

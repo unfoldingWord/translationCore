@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import path from 'path';
 import fs from 'fs-extra';
-import migrateToVersion4 from '../js/helpers/ProjectMigration/migrateToVersion4';
-import * as MigrateToVersion4 from '../js/helpers/ProjectMigration/migrateToVersion4';
+import migrateToVersion4, { MIGRATE_MANIFEST_VERSION } from '../js/helpers/ProjectMigration/migrateToVersion4';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 import migrateToVersion3 from '../js/helpers/ProjectMigration/migrateToVersion3';
 import { TRANSLATION_WORDS } from '../js/common/constants';
@@ -57,20 +56,20 @@ describe('migrateToVersion4', () => {
     migrateToVersion4(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(MigrateToVersion4.MIGRATE_MANIFEST_VERSION).toBe(4); // this shouldn't change
-    expect(version).toBe(MigrateToVersion4.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(4); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with lower tc_version expect to update version', () => {
-    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion4.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(PROJECT_PATH, MIGRATE_MANIFEST_VERSION - 1);
     migrateToVersion4(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(version).toBe(MigrateToVersion4.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with higher tc_version expect to leave alone', () => {
-    const manifestVersion = MigrateToVersion4.MIGRATE_MANIFEST_VERSION + 1;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION + 1;
     Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
     migrateToVersion4(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
@@ -112,7 +111,7 @@ describe('migrateToVersion4', () => {
 
     // then
     const version = Version.getVersionFromManifest(projectPath);
-    expect(version).toBe(MigrateToVersion4.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
 
     expect(isStringInData(chapter1_alignment_path, match)).not.toBeTruthy();
     expect(isStringInData(chapter1_alignment_path, replace3)).not.toBeTruthy();
