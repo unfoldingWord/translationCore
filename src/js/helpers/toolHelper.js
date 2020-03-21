@@ -1,6 +1,8 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
-import { getToolCategories, getToolsByKey, getTranslate } from '../selectors';
+import {
+  getToolCategories, getToolsByKey, getTranslate,
+} from '../selectors';
 import * as alerts from '../reducers/alerts';
 import {
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
@@ -81,24 +83,25 @@ export const loadTool = async (toolDir) => {
     // // console.log('toolPath=' + toolRequirePath);
     // const module = require(toolRequirePath);
     let module = null;
+
     switch (toolName) { // tricky, with webpack the paths to require must be defined at compile time, not generated at runtime
-      case 'wordAlignment':
-        module = require('../../tC_apps/wordAlignment/index');
-        badge = require('../../tC_apps/wordAlignment/badge.png');
-        break;
+    case 'wordAlignment':
+      module = require('../../tC_apps/wordAlignment/index');
+      badge = require('../../tC_apps/wordAlignment/badge.png');
+      break;
 
-      case 'translationWords':
-        module = require('../../tC_apps/translationWords/index');
-        badge = require('../../tC_apps/translationWords/badge.png');
-        break;
+    case 'translationWords':
+      module = require('../../tC_apps/translationWords/index');
+      badge = require('../../tC_apps/translationWords/badge.png');
+      break;
 
-      case 'translationNotes':
-        module = require('../../tC_apps/translationNotes/index');
-        badge = require('../../tC_apps/translationNotes/badge.png');
-        break;
+    case 'translationNotes':
+      module = require('../../tC_apps/translationNotes/index');
+      badge = require('../../tC_apps/translationNotes/badge.png');
+      break;
 
-      default:
-        throw new Error(`loading unsupported for tool "${toolName}"`);
+    default:
+      throw new Error(`loading unsupported for tool "${toolName}"`);
     }
 
     tool = module.default;

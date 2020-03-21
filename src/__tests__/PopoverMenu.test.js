@@ -25,7 +25,7 @@ describe('snapshots', () => {
     const wrapper = renderer.create(
       <MuiThemeProvider>
         <PopoverMenu label="menu"/>
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -35,7 +35,7 @@ describe('snapshots', () => {
     const wrapper = renderer.create(
       <MuiThemeProvider>
         <PopoverMenu label="menu" icon={<SettingsIcon/>}/>
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -44,7 +44,7 @@ describe('snapshots', () => {
     const wrapper = renderer.create(
       <MuiThemeProvider>
         <PopoverMenu label="menu" icon={<SettingsIcon/>} variant="dark"/>
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
     expect(wrapper).toMatchSnapshot();
   });
@@ -54,7 +54,7 @@ describe('events', () => {
     const wrapper = shallow(
       <MuiThemeProvider>
         <PopoverMenu label="menu"/>
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
     expect(wrapper.prop('label')).toEqual('menu');
     expect(wrapper.prop('variant')).toEqual('secondary');

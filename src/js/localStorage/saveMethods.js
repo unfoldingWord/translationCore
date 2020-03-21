@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
 import isEqual from 'deep-equal';
+import ospath from '../common/ospath-extra';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 
 const PARENT = path.join(ospath.data(), 'translationCore');
@@ -117,7 +117,7 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
         bookAbbreviation,
         chapter,
         verse,
-        fileName.replace(/[:"]/g, '_')
+        fileName.replace(/[:"]/g, '_'),
       );
       return savePath;
     }

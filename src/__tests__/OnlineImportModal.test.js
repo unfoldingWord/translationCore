@@ -74,7 +74,7 @@ describe('OnlineImportModal component renders correctly', () => {
         importOnlineReducer={importOnlineReducer}
         homeScreenReducer={homeScreenReducer}
         loginReducer={loginReducer}
-        actions={actions} />
+        actions={actions} />,
     ).dive();
     expect(modal).toMatchSnapshot();
   });

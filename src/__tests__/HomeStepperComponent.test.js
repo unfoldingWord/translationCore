@@ -97,7 +97,7 @@ describe('HomeStepper', () => {
     const renderedValue = renderer.create(
       <MuiThemeProvider>
         <HomeStepper store={store} {...props} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
 
     // then
@@ -115,7 +115,7 @@ describe('HomeStepper', () => {
     const renderedValue = renderer.create(
       <MuiThemeProvider>
         <HomeStepper store={store} {...props} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).toJSON();
 
     // then

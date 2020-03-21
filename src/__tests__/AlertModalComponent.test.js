@@ -27,7 +27,7 @@ describe('Alert Modal Componenet', () => {
     const tree = renderer.create(
       <MuiThemeProvider>
         <Alert {...state} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
 
     state.alertModalReducer.alertText = 'New Text';

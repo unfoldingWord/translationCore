@@ -36,7 +36,7 @@ describe('Test ProjectCard component',()=>{
           onSelect={props.onSelect}
           translate={props.translate}
           projectDetails={props.projectDetails} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     ).dive();
     expect(renderedValue).toMatchSnapshot();
   });

@@ -21,7 +21,7 @@ describe('OnlineDialog Component', () => {
     const store = mockStore(state);
 
     const tree = renderer.create(
-      <OnlineDialog store={store} {...props} />
+      <OnlineDialog store={store} {...props} />,
     );
     expect(tree).toMatchSnapshot();
   });

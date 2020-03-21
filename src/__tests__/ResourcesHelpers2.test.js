@@ -553,7 +553,6 @@ describe('updateGroupIndexForGl()', () => {
   const projectName = 'en_gal';
   const projectPath = path.join(PROJECTS_PATH, projectName);
   const tnIndexPath = path.join(projectPath, '.apps', 'translationCore', 'index', TRANSLATION_NOTES, bookId);
-  const tnHelpsPath = path.join(USER_RESOURCES_PATH, 'en/translationHelps/translationNotes/v15');
 
   beforeEach(() => {
     // reset mock filesystem data

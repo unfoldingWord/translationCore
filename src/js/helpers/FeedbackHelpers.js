@@ -7,8 +7,8 @@ import { openAlert } from '../actions/AlertActions';
 import { getTranslate } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
-import {APP_VERSION} from "../common/constants";
-import { getBuild, getEnv } from "../common/env";
+import { APP_VERSION } from '../common/constants';
+import { getBuild, getEnv } from '../common/env';
 
 /**
  *

@@ -4,8 +4,7 @@ import React from 'react';
 import { AutoComplete } from 'material-ui';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import * as LangName from '../js/components/projectValidation/ProjectInformationCheck/LanguageNameTextBox';
-import LanguageNameTextBox from '../js/components/projectValidation/ProjectInformationCheck/LanguageNameTextBox';
+import LanguageNameTextBox, { selectLanguage, getErrorMessage } from '../js/components/projectValidation/ProjectInformationCheck/LanguageNameTextBox';
 import * as LangHelpers from '../js/helpers/LanguageHelpers';
 
 beforeAll(() => {
@@ -29,7 +28,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     const index = -1;
 
     // when
-    LangName.selectLanguage(expectedLanguage.name, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage(expectedLanguage.name, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
@@ -45,7 +44,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     const index = getIndexForName(expectedLanguageName);
 
     // when
-    LangName.selectLanguage({ code: expectedLanguage.code }, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage({ code: expectedLanguage.code }, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     expect(updateLanguageId).not.toHaveBeenCalled();
@@ -61,7 +60,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     const expectedLanguageID = '';
 
     // when
-    LangName.selectLanguage(newlLanguageName, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage(newlLanguageName, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -77,7 +76,7 @@ describe('Test LanguageNameTextBox.selectLanguage()',()=> {
     const expectedLanguageName = '';
 
     // when
-    LangName.selectLanguage(LanguageName, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
+    selectLanguage(LanguageName, index, updateLanguageName, updateLanguageId, updateLanguageSettings);
 
     // then
     verifyCalledOnceWith(updateLanguageId, expectedLanguageID);
@@ -95,7 +94,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = '';
 
     // when
-    const results = LangName.getErrorMessage(translate, languageName, languageID);
+    const results = getErrorMessage(translate, languageName, languageID);
 
     // then
     expect(results).toEqual('project_validation.field_required');
@@ -107,7 +106,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = 'zzz';
 
     // when
-    const results = LangName.getErrorMessage(translate, languageName, languageID);
+    const results = getErrorMessage(translate, languageName, languageID);
 
     // then
     expect(results).toEqual('project_validation.invalid_language_name');
@@ -119,7 +118,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = 'English';
 
     // when
-    const results = LangName.getErrorMessage(translate, languageName, languageID);
+    const results = getErrorMessage(translate, languageName, languageID);
 
     // then
     expect(!results).toBeTruthy();
@@ -131,7 +130,7 @@ describe('Test LanguageNameTextBox.getErrorMessage()',()=> {
     const languageName = 'English';
 
     // when
-    const results = LangName.getErrorMessage(translate, languageName, languageID);
+    const results = getErrorMessage(translate, languageName, languageID);
 
     // then
     expect(results).toEqual('project_validation.language_mismatch');
@@ -313,7 +312,7 @@ describe('Test LanguageNameTextBox component',()=>{
         updateLanguageName={updateLanguageName}
         updateLanguageId={updateLanguageId}
         updateLanguageSettings={updateLanguageSettings}
-      />
+      />,
     );
   }
 

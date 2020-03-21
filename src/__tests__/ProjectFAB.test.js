@@ -10,7 +10,7 @@ describe('Test ProjectFAB component', () => {
     const renderedValue = renderer.create(
       <ProjectFAB
         translate={key => key}
-        homeScreenReducer={{ showFABOptions: true }} />
+        homeScreenReducer={{ showFABOptions: true }} />,
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });
@@ -19,7 +19,7 @@ describe('Test ProjectFAB component', () => {
     const renderedValue = renderer.create(
       <ProjectFAB
         translate={key => key}
-        homeScreenReducer={{ showFABOptions: false }} />
+        homeScreenReducer={{ showFABOptions: false }} />,
     ).toJSON();
     expect(renderedValue).toMatchSnapshot();
   });

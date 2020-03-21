@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import path from 'path';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
@@ -148,7 +149,7 @@ describe('reducers', () => {
 
   it('should handle LOCALE_LOADED', () => {
     expect(
-      reducer({}, { type: types.LOCALE_LOADED })
+      reducer({}, { type: types.LOCALE_LOADED }),
     ).toEqual({ loaded: true });
   });
 });

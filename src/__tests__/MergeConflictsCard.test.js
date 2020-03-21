@@ -57,7 +57,7 @@ describe('MergeConflictsComponents.index', () => {
     const wrapper = renderer.create(
       <MuiThemeProvider>
         <MergeConflicts {...initialState} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
     expect(wrapper).toMatchSnapshot();
   });

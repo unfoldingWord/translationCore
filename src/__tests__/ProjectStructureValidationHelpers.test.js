@@ -372,7 +372,7 @@ export function getNextVersion(version) {
   return versionToString(version_);
 }
 
-function getNextMajorVersion(version) {
+export function getNextMajorVersion(version) {
   let version_ = getSemVersion(version);
   version_.inc('major');
   return versionToString(version_);

@@ -1,6 +1,6 @@
 import path from 'path-extra';
-import ospath from './ospath-extra';
 import packagefile from '../../../package.json';
+import ospath from './ospath-extra';
 
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;

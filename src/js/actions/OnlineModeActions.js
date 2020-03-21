@@ -19,7 +19,7 @@ export function getAnchorTags() {
         if (isLink) {
           e.preventDefault();
           dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-            let win = new BrowserWindow({width: 800, height: 600});
+            let win = new BrowserWindow({ width: 800, height: 600 });
 
             win.on('closed', () => {
               win = null;

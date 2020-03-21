@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 // components
 import { Card } from 'material-ui/Card';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
-import LicenseMarkdown from './LicenseMarkdown';
-import CopyrightCard from './CopyrightCard';
 import publicDomain from '../../../../images/publicDomain.png';
 import ccBy from '../../../../images/ccBy.png';
 import ccBySa from '../../../../images/ccBySa.png';
 import noCircle from '../../../../images/noCircle.png';
+import CopyrightCard from './CopyrightCard';
+import LicenseMarkdown from './LicenseMarkdown';
 
 class CopyrightCheck extends Component {
   constructor(props) {

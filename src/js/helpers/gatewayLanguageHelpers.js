@@ -1,9 +1,10 @@
+/* eslint-disable no-template-curly-in-string */
+/* eslint-disable default-case */
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import { getAlignedText } from 'tc-ui-toolkit';
-
 import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
   TRANSLATION_ACADEMY,
@@ -20,7 +21,6 @@ import { getLanguageByCodeSelection, sortByNamesCaseInsensitive } from './Langua
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import ResourceAPI from './ResourceAPI';
-// constants
 
 /**
  *
@@ -36,7 +36,7 @@ export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
     toolsSelectedGLs,
     contextId || state.contextIdReducer.contextId,
     state.resourcesReducer.bibles,
-    toolName
+    toolName,
   );
 
   return {

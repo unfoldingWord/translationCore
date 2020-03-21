@@ -1,3 +1,4 @@
+/* eslint-disable no-return-assign */
 import DownloadManager from '../js/DownloadManager';
 
 const manager = new DownloadManager();
@@ -8,7 +9,7 @@ class Item {
   }
 
   once(key, cb) {
-    return this.callback = cb
+    return this.callback = cb;
   }
 
   done() {

@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 /**
  * This file contains strings that are used within the application
  * but are not eligible for translation.

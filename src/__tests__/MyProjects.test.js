@@ -41,7 +41,7 @@ describe('MyProjects component renders correctly', () => {
           myProjects={myProjects}
           user={userdata}
           onSelect={() => jest.fn()} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
 
     expect(renderedValue).toMatchSnapshot();
@@ -59,7 +59,7 @@ describe('MyProjects shows instruction if no projects', () => {
           myProjects={myProjects}
           user={userdata}
           onSelect={() => jest.fn()} />
-      </MuiThemeProvider>
+      </MuiThemeProvider>,
     );
 
     expect(blank).toMatchSnapshot();

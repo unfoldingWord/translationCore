@@ -64,7 +64,7 @@ class ToolCardBoxes extends React.Component {
         fullText = loadArticleData(
           TRANSLATION_ACADEMY,
           category[group].id,
-          selectedGL
+          selectedGL,
         );
 
         articles[category[group].id] = fullText.substr(0,600) ;

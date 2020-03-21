@@ -9,7 +9,7 @@ test('snapshot', () => {
     <TermsAndConditionsPage translate={key => key}
       onFaithClick={jest.fn()}
       onCreativeClick={jest.fn()}
-      onBackClick={jest.fn()}/>
+      onBackClick={jest.fn()}/>,
   );
   expect(wrapper).toMatchSnapshot();
 });
@@ -22,7 +22,7 @@ describe('callbacks', () => {
     <TermsAndConditionsPage translate={key => key}
       onFaithClick={faithCallback}
       onCreativeClick={creativeCallback}
-      onBackClick={backCallback}/>
+      onBackClick={backCallback}/>,
   );
 
   beforeEach(() => {

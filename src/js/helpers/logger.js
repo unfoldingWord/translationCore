@@ -110,7 +110,7 @@ function stringifyArgs(args) {
 const logger = {
   getCurrentLog,
   getLogFilePathForCurrentDate,
-  injectFileLogging
+  injectFileLogging,
 };
 
 module.exports = logger;

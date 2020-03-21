@@ -2,8 +2,7 @@
 /* eslint-disable no-console */
 import path from 'path';
 import fs from 'fs-extra';
-import migrateToVersion5 from '../js/helpers/ProjectMigration/migrateToVersion5';
-import * as MigrateToVersion5 from '../js/helpers/ProjectMigration/migrateToVersion5';
+import migrateToVersion5, { MIGRATE_MANIFEST_VERSION } from '../js/helpers/ProjectMigration/migrateToVersion5';
 import * as Version from '../js/helpers/ProjectMigration/VersionUtils';
 jest.mock('fs-extra');
 
@@ -55,20 +54,20 @@ describe('migrateToVersion5', () => {
     migrateToVersion5(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(MigrateToVersion5.MIGRATE_MANIFEST_VERSION).toBe(5); // this shouldn't change
-    expect(version).toBe(MigrateToVersion5.MIGRATE_MANIFEST_VERSION);
+    expect(MIGRATE_MANIFEST_VERSION).toBe(5); // this shouldn't change
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with lower tc_version expect to update version', () => {
-    Version.setVersionInManifest(PROJECT_PATH, MigrateToVersion5.MIGRATE_MANIFEST_VERSION - 1);
+    Version.setVersionInManifest(PROJECT_PATH, MIGRATE_MANIFEST_VERSION - 1);
     migrateToVersion5(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
 
-    expect(version).toBe(MigrateToVersion5.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
   });
 
   it('with higher tc_version expect to leave alone', () => {
-    const manifestVersion = MigrateToVersion5.MIGRATE_MANIFEST_VERSION + 1;
+    const manifestVersion = MIGRATE_MANIFEST_VERSION + 1;
     Version.setVersionInManifest(PROJECT_PATH, manifestVersion);
     migrateToVersion5(PROJECT_PATH);
     const version = Version.getVersionFromManifest(PROJECT_PATH);
@@ -102,7 +101,7 @@ describe('migrateToVersion5', () => {
 
     // then
     const version = Version.getVersionFromManifest(projectPath);
-    expect(version).toBe(MigrateToVersion5.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
     const fixedAlignedData = fs.readJsonSync(chapter1_alignment_path);
 
     expect(fixedAlignedData).toEqual(expectedAlignedData);
@@ -134,7 +133,7 @@ describe('migrateToVersion5', () => {
 
     // then
     const version = Version.getVersionFromManifest(projectPath);
-    expect(version).toBe(MigrateToVersion5.MIGRATE_MANIFEST_VERSION);
+    expect(version).toBe(MIGRATE_MANIFEST_VERSION);
     const fixedAlignedData = fs.readJsonSync(chapter1_alignment_path);
 
     expect(fixedAlignedData).toEqual(expectedAlignedData);

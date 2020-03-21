@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
 import { getQuoteAsString } from 'checking-tool-wrapper';
+import ospath from '../common/ospath-extra';
 import { getTranslate } from '../selectors';
 // actions
 import * as MergeConflictActions from '../actions/MergeConflictActions';

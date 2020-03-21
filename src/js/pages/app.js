@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
+import ospath from '../common/ospath-extra';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
@@ -129,5 +129,5 @@ const mapDispatchToProps = {
 
 export default withLocalize(connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Main));
