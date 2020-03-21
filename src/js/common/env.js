@@ -1,10 +1,27 @@
 // methods for accessing environment variables
 // this is needed because many process.env values are no longer defined on the client side (looks to be
 // security related).  To get the environment variable on client side can now use remote.process.env.
-const { app, remote } = require('electron');
+let { app, remote } = require('electron');
 
 const isRunningClientSide = remote && !!window; // if we are a render process and we have a window
 const processEnv = isRunningClientSide ? remote.process.env : process.env;
+
+if (!app && !remote) { // fallback for testing
+  remote = {
+    app: {
+      getPath: (path) => {
+        switch (path) {
+          case 'home':
+            return '/Users/jest/mock/path';
+          case 'appData':
+            return '/Users/jest/mock/path/appData';
+          default:
+            return 'unknown';
+        }
+      }
+    }
+  };
+}
 
 // use app if we are main, otherwise we are render side so we use remote app
 const appObject = !remote ? app : remote.app;
