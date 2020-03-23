@@ -8,18 +8,20 @@
   "main": "main.js",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "build": "npm run react-build && copyfiles package.json build/ && npm run electron-build",
+    "build": "npm run remove-build-folders && npm run react-build && npm run build-main && copyfiles package.json build/ && npm run electron-build",
     "electron-start": "electron .",
     "electron-build": "electron-packager ./build --out=dist",
     "react-start": "craco start",
-    "react-build": "craco build",
+    "react-build": "craco build --max-old-space-size=4096",
+    "build-main": "webpack --config electron/webpack.config.js",
+    "remove-build-folders": "rm -rf dist && rm -rf build",
     "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000/ && cross-env NODE_ENV=development npm run electron-start\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test-one": "craco test",
     "test": "eslint ./src && craco test --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage",
-    "ci-test": "eslint ./src && craco test --max-old-space-size=3072 --maxWorkers=4 --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage --coverage",
+    "ci-test": "eslint ./src && craco test --max-old-space-size=4096 --maxWorkers=4 --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage --coverage",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
     "find:missing-locale": "node scripts/locale/find_missing.js src/locale/English-en_US.json src/js",
     "locale-key-comparison": "node ./scripts/locale_key_comparison.js",
@@ -51,7 +53,7 @@
   "bugs": {
     "url": "https://github.com/unfoldingWord-dev/translationCore/issues"
   },
-  "homepage": "https://github.com/unfoldingWord-dev/translationCore#readme",
+  "homepage": "./",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -104,6 +106,7 @@
     "temp": "0.8.3",
     "typescript": "3.7.5",
     "wait-on": "4.0.0",
+    "webpack-cli": "^3.3.11",
     "yargs": "10.0.3"
   },
   "dependencies": {

@@ -1,19 +1,20 @@
-const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
+const {
+  app, dialog, ipcMain, BrowserWindow, Menu,
+} = require('electron');
 require('dotenv').config();
 const path = require('path-extra');
 const ospath = require('ospath');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
+const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
+const { injectFileLogging } = require('../src/js/helpers/logger');
+const DownloadManager = require('../src/js/DownloadManager');
 const {
   createWindow,
   defineWindow,
-  getWindow
+  getWindow,
 } = require('./electronWindows');
-const { isGitInstalled, showElectronGitSetup} = require('../src/js/helpers/InstallationHelpers');
-const { injectFileLogging } = require('../src/js/helpers/logger');
-const DownloadManager = require('../src/js/DownloadManager');
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
-
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
 
@@ -44,9 +45,7 @@ function createMainWindow() {
     show: false,
     center: true,
     // useContentSize: true, // TODO: investigate if needed
-    webPreferences: {
-      nodeIntegration: true
-    },
+    webPreferences: { nodeIntegration: true },
   };
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
@@ -118,13 +117,11 @@ function createSplashWindow() {
     height: 200,
     resizable: false,
     autoHideMenuBar: true,
-    webPreferences: {
-      nodeIntegration: false
-    },
+    webPreferences: { nodeIntegration: false },
     frame: false,
     show: true,
     center: true,
-    title: app.name
+    title: app.name,
   };
   splashScreen = defineWindow('splash', windowOptions);
 
@@ -185,29 +182,29 @@ const menuTemplate = [
       {
         label: 'Minimize',
         accelerator: 'CmdOrCtrl+M',
-        role: 'minimize'
+        role: 'minimize',
       },
       {
         label: 'Reload',
         accelerator: 'CmdOrCtrl+R',
-        click: function(item, focusedWindow) {
+        click: function (item, focusedWindow) {
           if (focusedWindow) {
             focusedWindow.reload();
           }
-        }
+        },
       },
       {
         label: 'Toggle Developer Tools',
         accelerator:
           process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click: function(item, focusedWindow) {
+        click: function (item, focusedWindow) {
           if (focusedWindow) {
             focusedWindow.webContents.toggleDevTools();
           }
-        }
-      }
-    ]
-  }
+        },
+      },
+    ],
+  },
 ];
 const menu = Menu.buildFromTemplate(menuTemplate);
 Menu.setApplicationMenu(menu);
@@ -218,6 +215,7 @@ app.requestSingleInstanceLock();
 
 app.on('second-instance', () => {
   const window = getWindow(MAIN_WINDOW_ID);
+
   if (window) {
     if (window.isMinimized()) {
       window.restore();
@@ -230,13 +228,14 @@ app.on('second-instance', () => {
 app.on('window-all-closed', () => {
   // // on macOS it is common for applications to stay open until the user explicitly quits
   // if (process.platform !== 'darwin') {
-    app.quit();
+  app.quit();
   // }
 });
 
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
   const window = getWindow(MAIN_WINDOW_ID);
+
   if (window === null) {
     createMainWindow();
   }
@@ -279,8 +278,8 @@ ipcMain.on('download', function (event, args) {
     .then((dl) => {
       event.sender.send('download-success', dl.getSavePath());
     }).catch(error => {
-    event.sender.send('download-error', error);
-  });
+      event.sender.send('download-error', error);
+    });
 });
 
 ipcMain.on('load-local', function (event, arg) {
