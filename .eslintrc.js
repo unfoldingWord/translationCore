@@ -5,8 +5,8 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    // "prettier",
-    // "prettier/react"
+    "prettier",
+    "prettier/react"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -25,7 +25,7 @@ module.exports = {
   "plugins": [
     "react",
     "jest",
-    // "prettier",
+    "prettier",
     "import",
     "react-hooks"
   ],
