@@ -12,7 +12,7 @@ module.exports = {
   mode: 'production',
   node: {
     // TRICKY: don't let webpack hard-code these
-    // __dirname: false,
+    __dirname: false,
     __filename: false,
   },
 };
