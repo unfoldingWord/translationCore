@@ -2,7 +2,7 @@
 /* eslint-disable require-await */
 import path from 'path-extra';
 import sourceContentUpdater from 'tc-source-content-updater';
-import env from '../common/env';
+import env from 'tc-electron-env';
 import {
   getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';

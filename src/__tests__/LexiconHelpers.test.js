@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import env from '../js/common/env';
+import env from 'tc-electron-env';
 // helpers
 import * as LexiconHelpers from '../js/helpers/LexiconHelpers';
 

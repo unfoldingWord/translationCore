@@ -1,7 +1,7 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import semver from 'semver';
-import env from '../common/env';
+import env from 'tc-electron-env';
 import { TRANSLATION_HELPS } from '../common/constants';
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.

@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from '../../common/env';
+import env from 'tc-electron-env';
 import ResourceAPI from '../ResourceAPI';
 // constants
 const USER_RESOURCES_DIR = path.join(env.home(), 'translationCore/resources');

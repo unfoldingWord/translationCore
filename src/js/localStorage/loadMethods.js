@@ -2,7 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import CryptoJS from 'crypto-js';
-import env from '../common/env';
+import env from 'tc-electron-env';
 //  consts declaration
 const PARENT = path.join(env.data(), 'translationCore', 'projects');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');

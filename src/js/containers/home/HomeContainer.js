@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { getBuild } from 'tc-electron-env';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import WelcomeSplash from '../../components/home/WelcomeSplash';
@@ -22,7 +23,6 @@ import * as AlertModalActions from '../../actions/AlertModalActions';
 // constants
 import { APP_VERSION } from '../../common/constants';
 // containers
-import { getBuild } from '../../common/env';
 import ToolsManagementContainer from './ToolsManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
 import UsersManagementContainer from './UsersManagementContainer';

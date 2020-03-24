@@ -2,13 +2,13 @@ import os from 'os';
 import sgMail from '@sendgrid/mail';
 import stringify from 'json-stringify-safe';
 import AdmZip from 'adm-zip';
+import { getBuild, getEnv } from 'tc-electron-env';
 import { getQuoteAsString } from 'checking-tool-wrapper';
 import { openAlert } from '../actions/AlertActions';
 import { getTranslate } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
 import { APP_VERSION } from '../common/constants';
-import { getBuild, getEnv } from '../common/env';
 
 /**
  *

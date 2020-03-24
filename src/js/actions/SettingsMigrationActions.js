@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from '../common/env';
+import env from 'tc-electron-env';
 // actions
 // helpers
 import * as settingsMigrationHelpers from '../helpers/settingsMigrationHelpers';

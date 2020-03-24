@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from '../common/env';
+import env from 'tc-electron-env';
 
 // helpers
 import { tc_LAST_OPENED_KEY } from '../common/constants';

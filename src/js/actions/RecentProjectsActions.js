@@ -1,6 +1,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from '../common/env';
+import env from 'tc-electron-env';
 import consts from './ActionTypes';
 // constants
 const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');

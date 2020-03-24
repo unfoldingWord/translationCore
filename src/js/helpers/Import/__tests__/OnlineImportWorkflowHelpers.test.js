@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import path from 'path-extra';
 import fs from 'fs-extra';
-import env from '../../../common/env';
+import env from 'tc-electron-env';
 import {
   generateImportPath,
   verifyThisIsTCoreOrTStudioProject,

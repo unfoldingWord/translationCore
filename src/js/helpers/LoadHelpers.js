@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
 import fs from 'fs-extra';
-import env from '../common/env';
+import env from 'tc-electron-env';
 // constants
 const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
 

@@ -6,7 +6,7 @@ import path from 'path-extra';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
-import env, { getBuild } from '../common/env';
+import env, { getBuild } from 'tc-electron-env';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';

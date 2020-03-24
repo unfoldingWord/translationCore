@@ -3,7 +3,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
-import env from '../common/env';
+import env from 'tc-electron-env';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles, getProjectBookId, getCurrentToolName,

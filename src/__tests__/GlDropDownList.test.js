@@ -5,7 +5,7 @@ import fs from 'fs-extra';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import env from '../js/common/env';
+import env from 'tc-electron-env';
 // Components
 import GlDropDownList from '../js/components/home/toolsManagement/GlDropDownList';
 import { WORD_ALIGNMENT } from '../js/common/constants';
