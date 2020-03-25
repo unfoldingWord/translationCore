@@ -29,7 +29,7 @@ describe('myProjectsHelpers.getProjectsFromFS', () => {
         resolve();
       }
     });
-  }), 10000);
+  }));
   test('should get all working projects in a test home directory', () => {
     let projects = myProjectsHelpers.getProjectsFromFS('', out);
     expect(projects).toHaveLength(2);
@@ -50,7 +50,7 @@ describe('myProjectsHelpers.getProjectsFromFS 2', () => {
         resolve();
       }
     });
-  }), 10000);
+  }));
   test('should get all projects in a test home directory with a manifest.json or usfm', () => {
     jest.setTimeout(30000);
     let projects = myProjectsHelpers.getProjectsFromFS('', out);
