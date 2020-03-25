@@ -8,7 +8,7 @@
   <!-- Optional theme -->
 <!--  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">-->
   <!-- Custom CSS -->
-<!--  <link rel="stylesheet" type="text/css" href="../css/styles.css">-->
+  <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
 <div style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center">
@@ -19,11 +19,9 @@
 </div>
 <script>
   (function () {
-    console.log('splash...');
+    console.log('showing splash screen...');
     var versiondiv = document.getElementById('version');
-    console.log('versiondiv=' + JSON.stringify(versiondiv));
     var version = process.env.tcVersion;
-    console.log('process.env.BUILD=' + process.env.BUILD);
     versiondiv.innerHTML = "Version " + version + ' (' + process.env.BUILD + ')';
   })();
 </script>
