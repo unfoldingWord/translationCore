@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Splash</title>
-    <style>
-        #app {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            position: fixed;
-            width: 100%;
-        }
-
-        .title {
-            margin-top: 0;
-            font-family: Arial, serif;
-        }
-    </style>
+  <meta charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+<!--  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" >-->
+  <!-- Optional theme -->
+<!--  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap-theme.min.css">-->
+  <!-- Custom CSS -->
+<!--  <link rel="stylesheet" type="text/css" href="../css/styles.css">-->
 </head>
 <body>
-<div id="app">
-    <h1 class="title">Loading...</h1>
+<div style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center">
+  <img class="App-logo" height="300px" style="height: 300px" src="./TC_Icon.png" />
+  <h3 style="font-weight: bold; margin-top: 40px">Welcome to translationCore!</h3>
+  <div id="version" style="margin: 10px 0 30px; font-size: 18px"></div>
+  <h4>Loading...</h4>
 </div>
+<script>
+  (function () {
+    var versiondiv = document.getElementById('version');
+    var pack = require('../package.json');
+    var path  = require('path');
+    // var envPath = path.join(__dirname, '../../.env');
+    // require('dotenv').config({path: envPath});
+    versiondiv.innerHTML = "Version " + pack.version + ' (' + process.env.BUILD + ')';
+  })();
+</script>
 </body>
 </html>

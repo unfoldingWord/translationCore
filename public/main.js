@@ -73,10 +73,10 @@ function createMainWindow() {
   mainWindow.once('ready-to-show', () => {
     console.log(' mainWindow ready-to-show');
     setTimeout(() => {
+      splashScreen.close();
       mainWindow.show();
       mainWindow.maximize();
-    }, 300);
-    splashScreen.close();
+    }, 300000);
   });
 
   // Emitted when the window is closed.
