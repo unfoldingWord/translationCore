@@ -1,6 +1,39 @@
 
-@import 'colorscheme.css';
-@import 'BodyContainer.css';
+:root {
+
+  --accent-color: #2196F3;
+  --accent-color-light: #44C6FF;
+  --accent-color-dark: #19579E;
+
+  --reverse-color: #FFFFFF;
+
+  --completed-color: #58C17A;
+  --warning-color: #F44336;
+  --danger-color: #a21309;
+  --highlight-color: #FDD910;
+
+  --text-color: #333333;
+  --text-color-light: #747474;
+  --text-color-dark: #000000;
+
+  --background-color: #747474;
+  --background-color-light: #EEEEEE;
+  --background-color-dark: #333333;
+
+  --border-color: #CCCCCC;
+
+}
+
+#scrollableSection {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  bottom: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: calc(100vw - 250px);
+}
+
 /*
 ** Fills the screen, so that the ScrollableSection in
 ** RootStyles.js works. Every ancestor of the ScrollableSection
@@ -48,46 +81,6 @@ body {
 .text-primary-highlighted {
   background-color: var(--highlight-color);
   font-weight: bold;
-}
-
-@font-face {
-    font-family: Noto Sans;
-    src: url(../fonts/NotoSans-Regular.ttf);
-    font-weight: normal;
-}
-@font-face {
-    font-family: Noto Sans;
-    font-style: italic;
-    src: url(../fonts/NotoSans-Italic.ttf);
-}
-@font-face {
-    font-family: Noto Sans;
-    font-weight: bold;
-    src: url(../fonts/NotoSans-Bold.ttf);
-}
-
-@font-face {
-    font-family: Noto Sans;
-    font-style: italic;
-    font-weight: bold;
-    src: url(../fonts/NotoSans-BoldItalic.ttf);
-}
-
-/*
-special font for Hebrew
- */
-@font-face {
-  font-family: Ezra;
-  src: url(../fonts/SILEOTSR.ttf);
-  font-weight: normal;
-  unicode-range: U+0590-05FF;
-}
-
-/*
-use Ezra for Hebrew characters and then Noto Sans for other characters
- */
-* {
-  font-family: Ezra, Noto Sans;
 }
 
 /*

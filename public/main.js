@@ -123,7 +123,7 @@ function createSplashWindow() {
       nodeIntegration: true
     },
     frame: false,
-    show: false,
+    show: true,
     center: true
   };
   splashScreen = defineWindow('splash', windowOptions);
@@ -244,9 +244,10 @@ app.on('activate', () => {
 
 // create main BrowserWindow with a splash screen when electron is ready
 app.on('ready', () => {
+  console.log('ready - creating splash screen');
   createSplashWindow();
   setTimeout(function () {
-    splashScreen.show();
+    console.log('ready - creating main window');
     createMainWindow();
   }, 500);
 });
