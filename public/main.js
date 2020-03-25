@@ -16,6 +16,7 @@ const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in c
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
+process.env.tcVersion = p.version;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -76,7 +77,7 @@ function createMainWindow() {
       splashScreen.close();
       mainWindow.show();
       mainWindow.maximize();
-    }, 300000);
+    }, 3000000);
   });
 
   // Emitted when the window is closed.
@@ -114,17 +115,16 @@ function createMainWindow() {
  */
 function createSplashWindow() {
   const windowOptions = {
-    width: 400,
-    height: 200,
+    width: 600,
+    height: 600,
     resizable: false,
     autoHideMenuBar: true,
     webPreferences: {
-      nodeIntegration: false
+      nodeIntegration: true
     },
     frame: false,
-    show: true,
-    center: true,
-    title: app.name
+    show: false,
+    center: true
   };
   splashScreen = defineWindow('splash', windowOptions);
 
@@ -245,10 +245,10 @@ app.on('activate', () => {
 // create main BrowserWindow with a splash screen when electron is ready
 app.on('ready', () => {
   createSplashWindow();
-  createMainWindow();
-  setTimeout(() => {
+  setTimeout(function () {
     splashScreen.show();
-  }, 300);
+    createMainWindow();
+  }, 500);
 });
 
 ipcMain.on('save-as', function (event, arg) {

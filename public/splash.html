@@ -19,8 +19,11 @@
 </div>
 <script>
   (function () {
+    console.log('splash...');
     var versiondiv = document.getElementById('version');
-    var version = 'electronite';
+    console.log('versiondiv=' + JSON.stringify(versiondiv));
+    var version = process.env.tcVersion;
+    console.log('process.env.BUILD=' + process.env.BUILD);
     versiondiv.innerHTML = "Version " + version + ' (' + process.env.BUILD + ')';
   })();
 </script>
