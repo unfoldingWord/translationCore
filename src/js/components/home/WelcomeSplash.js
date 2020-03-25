@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getBuild } from 'tc-electron-env';
 import packagefile from '../../../../package.json';
 import Logo from '../../../images/TC_Icon.png';
-import { getBuild } from "../../common/env";
 
 const WelcomeSplash = ({
   toggleWelcomeSplash,

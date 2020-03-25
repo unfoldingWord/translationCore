@@ -1,10 +1,10 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
 import isEqual from 'deep-equal';
+import env from 'tc-electron-env';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
 
-const PARENT = path.join(ospath.data(), 'translationCore');
+const PARENT = path.join(env.data(), 'translationCore');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -117,7 +117,7 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
         bookAbbreviation,
         chapter,
         verse,
-        fileName.replace(/[:"]/g, '_')
+        fileName.replace(/[:"]/g, '_'),
       );
       return savePath;
     }

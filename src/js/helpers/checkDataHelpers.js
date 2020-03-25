@@ -17,7 +17,7 @@ export function generatePathToDataItems(state, PROJECT_SAVE_LOCATION, checkDataN
       PROJECT_SAVE_LOCATION,
       PROJECT_CHECKDATA_DIRECTORY,
       checkDataName,
-      bookAbbreviation
+      bookAbbreviation,
     );
     return loadPath;
   }

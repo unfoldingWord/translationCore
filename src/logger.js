@@ -1,4 +1,4 @@
-import {remote} from 'electron';
+import { remote } from 'electron';
 
 /**
  * The console.log levels that will be intercepted.
@@ -13,7 +13,7 @@ const TARGETED_LEVELS = [
   'groupCollapsed',
   'group',
   'groupEnd',
-  'trace'
+  'trace',
 ];
 
 /**
@@ -57,7 +57,7 @@ export const registerLogHandler = (handler) => {
 export const createElectronHandler = eventName => (level, ...args) => {
   remote.app.emit(eventName, {
     level,
-    args
+    args,
   });
 };
 
@@ -69,7 +69,7 @@ function bindWindow() {
   if (windowHandler === null) {
     windowHandler = (msg, url, lineNo, columnNo, error) => {
       hijackLog('error')([
-        msg, url, lineNo, columnNo, error
+        msg, url, lineNo, columnNo, error,
       ]);
       return false;
     };
@@ -84,6 +84,7 @@ function bindWindow() {
  */
 const hijackLog = level => (...args) => {
   globalConsole[level](...args);
+
   for (const handler of handlers) {
     handler(...processLog(level, args));
   }
@@ -113,13 +114,14 @@ function processLog(
   level, args, stringableLevels = ['info', 'warn', 'error']) {
   // stringify args if applicable
   let formattedArgs = args;
+
   if (stringableLevels.indexOf(level) > -1) {
     formattedArgs = stringifyArgs(args);
   }
 
   return [
     level.toUpperCase(),
-    ...formattedArgs
+    ...formattedArgs,
   ];
 }
 
@@ -129,6 +131,7 @@ function processLog(
  */
 function stringifyArgs(args) {
   const stringArgs = [];
+
   for (const arg of args) {
     if (typeof arg !== 'string') {
       try {

@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
-import ospath from '../common/ospath-extra';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
+import env, { getBuild } from 'tc-electron-env';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
@@ -29,7 +29,6 @@ import { injectFileLogging } from '../helpers/logger';
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
 //consts
 import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
-import { getBuild } from '../common/env';
 
 const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
@@ -44,7 +43,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
-    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
   }
 
@@ -129,5 +128,5 @@ const mapDispatchToProps = {
 
 export default withLocalize(connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Main));

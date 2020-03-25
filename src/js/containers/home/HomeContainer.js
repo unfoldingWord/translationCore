@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { getBuild } from 'tc-electron-env';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import WelcomeSplash from '../../components/home/WelcomeSplash';
@@ -25,7 +26,6 @@ import { APP_VERSION } from '../../common/constants';
 import ToolsManagementContainer from './ToolsManagementContainer';
 import ProjectsManagementContainer from './ProjectsManagementContainer';
 import UsersManagementContainer from './UsersManagementContainer';
-import { getBuild } from "../../common/env";
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -214,5 +214,5 @@ HomeContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomeContainer);

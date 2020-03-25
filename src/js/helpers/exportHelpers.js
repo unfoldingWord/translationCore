@@ -1,8 +1,8 @@
 /* eslint-disable no-async-promise-executor */
-import ospath from '../common/ospath-extra';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { ipcRenderer } from 'electron';
+import env from 'tc-electron-env';
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 import { delay } from '../common/utils';
 import { OSX_DOCUMENTS_PATH, WIN_DOCUMENTS_PATH } from '../common/constants';
@@ -33,7 +33,7 @@ export function getFilePath(projectName, lastSaveLocation, ext) {
     } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
       defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + `.${ext}`);
     } else {
-      defaultPath = path.join(ospath.home(), projectName + `.${ext}`);
+      defaultPath = path.join(env.home(), projectName + `.${ext}`);
     }
 
     const filePath = ipcRenderer.sendSync('save-as', {

@@ -301,7 +301,7 @@ export function getWordAlignmentProgress(pathToWordAlignmentData, bookId) {
 
   if (expectedVerses && fs.existsSync(pathToWordAlignmentData)) {
     let groupDataFiles = fs.readdirSync(pathToWordAlignmentData).filter(file => // filter out .DS_Store
-      path.extname(file) === '.json'
+      path.extname(file) === '.json',
     );
 
     groupDataFiles.forEach((chapterFileName) => {
@@ -369,7 +369,7 @@ export function getWordAlignmentProgressForGroupIndex(projectSaveLocation, bookI
   let groupDataFileName = fs.readdirSync(pathToWordAlignmentData).find(file => // filter out .DS_Store
     //This will break if we change the wordAlignment tool naming
     //convention of chapter a like chapter_1.json...
-    path.parse(file).name === chapterNum
+    path.parse(file).name === chapterNum,
   );
 
   if (groupDataFileName) {

@@ -537,7 +537,7 @@ export const areResourcesNewer = () => {
   if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
     console.log(
       `%c areResourcesNewer() - no source content manifest: ${userSourceContentUpdaterManifestPath}`,
-      'color: #00539C'
+      'color: #00539C',
     );
     return true;
   }
@@ -560,7 +560,7 @@ export const areResourcesNewer = () => {
   if (tCoreVersion !== APP_VERSION) { // TRICKY: for safety we refresh on any difference of version dates in case resources not compatible with newer or older version of tCore
     console.log(
       `%c areResourcesNewer() - tCore version changed from ${tCoreVersion} to ${APP_VERSION}, updating all`,
-      'color: #00539C'
+      'color: #00539C',
     );
     return true;
   }
@@ -569,7 +569,7 @@ export const areResourcesNewer = () => {
 
   console.log(
     `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', newer - updating all' : ''),
-    'color: #00539C'
+    'color: #00539C',
   );
   return newer;
 };
@@ -735,7 +735,7 @@ export function addResource(resources, languageId, bibleId) {
   }
 
   const pos = resources.findIndex(resource =>
-    ((resource.languageId === languageId) && (resource.bibleId === bibleId))
+    ((resource.languageId === languageId) && (resource.bibleId === bibleId)),
   );
 
   if (pos < 0) { // if we don't have resource
@@ -868,7 +868,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
     toolName,
     gatewayLangId,
     bookId,
-    biblesLoaded
+    biblesLoaded,
   );
 
   if (Array.isArray(validBibles)) {
@@ -978,7 +978,7 @@ function copyMissingSubfolders(source, destination, languageId) {
       fs.copySync(sourcePath, destinationPath);
       console.log(
         `%c Copied ${languageId} lexicon from static lexicons to user resources path.`,
-        'color: #0D355A'
+        'color: #0D355A',
       );
     }
   });
@@ -1011,7 +1011,7 @@ export function removeOldThelps() {
       if (fs.existsSync(helpsFolder)) {
         console.log(
           `%c    removeOldThelps() - removing: ${helpsFolder}`,
-          'color: #00aced'
+          'color: #00aced',
         );
 
         const removedFolders = getFilteredSubFolders(helpsFolder);
@@ -1095,7 +1095,7 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
     const requiredVersions = getOtherTnsOLVersions(resourcePath, resourceId).sort((a, b) =>
-      -ResourceAPI.compareVersions(a, b) // do inverted sort
+      -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
@@ -1225,7 +1225,7 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
   fs.copySync(staticResourcePath, userResourcePath);
   console.log(
     `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-    'color: #00aced'
+    'color: #00aced',
   );
   // extract zipped contents
   extractZippedResourceContent(userResourcePath, resourceType === 'bibles');

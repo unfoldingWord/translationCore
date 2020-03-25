@@ -16,9 +16,9 @@ const projectSaveLocation = IMPORTS_PATH;
 // let mock_cloneManifest = null;
 
 //mocking functions that are relevant to OnlineImportWorkflowActions but not required
-// jest.mock('../src/js/helpers/Import/OnlineImportWorkflowHelpers', () => (
+// jest.mock('../js/helpers/Import/OnlineImportWorkflowHelpers', () => (
 //   {
-//     ...require.requireActual('../src/js/helpers/Import/OnlineImportWorkflowHelpers'),
+//     ...require.requireActual('../js/helpers/Import/OnlineImportWorkflowHelpers'),
 //     clone: async () => {
 //       return mock_saveJson(mock_cloneManifest);
 //     }

@@ -57,7 +57,7 @@ const getDefaultTools = () => {
   let folders = fs.readdirSync(moduleBasePath);
 
   folders = folders.filter(folder => // filter the folder to not include .DS_Store.
-    folder !== '.DS_Store'
+    folder !== '.DS_Store',
   );
 
   if (folders) {

@@ -1,5 +1,5 @@
-import * as manifestUtils from './manifestUtils';
 import { APP_VERSION } from '../../common/constants';
+import * as manifestUtils from './manifestUtils';
 export const VERSION_KEY = 'tc_version';
 
 /**

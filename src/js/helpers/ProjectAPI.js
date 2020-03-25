@@ -116,7 +116,7 @@ export default class ProjectAPI {
                 'selections',
                 bookId,
                 chapter.toString(),
-                verse.toString()
+                verse.toString(),
               );
 
               const checkData = loadCheckData(loadPath, groupDataItem.contextId);
