@@ -246,6 +246,9 @@ app.on('activate', () => {
 app.on('ready', () => {
   createSplashWindow();
   createMainWindow();
+  setTimeout(() => {
+    splashScreen.show();
+  }, 300);
 });
 
 ipcMain.on('save-as', function (event, arg) {
