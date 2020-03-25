@@ -1,21 +1,21 @@
 import path from 'path-extra';
+import env from 'tc-electron-env';
 import packagefile from '../../../package.json';
-import ospath from './ospath-extra';
 
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 // Paths
-export const PROJECTS_PATH = path.join(ospath.home(), 'translationCore', 'projects');
-export const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
-export const IMPORTS_PATH = path.join(ospath.home(), 'translationCore', 'imports');
+export const PROJECTS_PATH = path.join(env.home(), 'translationCore', 'projects');
+export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
+export const IMPORTS_PATH = path.join(env.home(), 'translationCore', 'imports');
 export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
-export const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
+export const TEMP_IMPORT_PATH = path.join(env.home(), 'translationCore', 'imports', 'temp');
 export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');
 export const PROJECT_CHECKDATA_DIRECTORY = path.join(PROJECT_DOT_APPS_PATH, 'checkData');
 export const STATIC_RESOURCES_PATH = path.join('./tcResources');
-export const LOG_FILES_PATH = path.join(ospath.home(), 'translationCore', 'logs');
-export const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
-export const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
+export const LOG_FILES_PATH = path.join(env.home(), 'translationCore', 'logs');
+export const OSX_DOCUMENTS_PATH = path.join(env.home(), 'Documents');
+export const WIN_DOCUMENTS_PATH = path.join(env.home(), 'My Documents');
 // string names
 export const TC_VERSION = 'tc_version';
 export const SOURCE_CONTENT_UPDATER_MANIFEST = 'source-content-updater-manifest.json';

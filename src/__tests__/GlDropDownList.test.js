@@ -5,13 +5,13 @@ import fs from 'fs-extra';
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ospath from '../js/common/ospath-extra';
+import env from 'tc-electron-env';
 // Components
 import GlDropDownList from '../js/components/home/toolsManagement/GlDropDownList';
 import { WORD_ALIGNMENT } from '../js/common/constants';
 jest.mock('fs-extra');
 
-const RESOURCE_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+const RESOURCE_PATH = path.join(env.home(), 'translationCore', 'resources');
 const testResourcePath = path.join(__dirname, 'fixtures/resources');
 
 describe('Test Gateway Language Drop Down List',() => {

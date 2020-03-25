@@ -3,7 +3,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
-import ospath from '../common/ospath-extra';
+import env from 'tc-electron-env';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles, getProjectBookId, getCurrentToolName,
@@ -24,7 +24,7 @@ import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
 
 // constants
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
 
 /**
