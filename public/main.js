@@ -36,6 +36,7 @@ const downloadManager = new DownloadManager();
  * @returns {Window}
  */
 function createMainWindow() {
+  console.log('createMainWindow() - creating');
   const windowOptions = {
     icon: './TC_Icon.png',
     title: 'translationCore',
@@ -72,12 +73,12 @@ function createMainWindow() {
 
   // Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
-    console.log(' mainWindow ready-to-show');
+    console.log('createMainWindow() - mainWindow ready-to-show');
     setTimeout(() => {
       splashScreen.close();
       mainWindow.show();
       mainWindow.maximize();
-    }, 3000000);
+    }, 300);
   });
 
   // Emitted when the window is closed.
@@ -236,8 +237,7 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
-  const window = getWindow(MAIN_WINDOW_ID);
-  if (window === null) {
+  if (mainWindow === null) {
     createMainWindow();
   }
 });
@@ -247,7 +247,7 @@ app.on('ready', () => {
   console.log('ready - creating splash screen');
   createSplashWindow();
   setTimeout(function () {
-    console.log('ready - creating main window');
+    splashScreen.show();
     createMainWindow();
   }, 500);
 });
