@@ -18,9 +18,17 @@ function safeLogging(state) {
 }
 
 // TRICKY: this is to limit nesting in logging to prevent crashing console.log()
-const maxStateLevel = 4; // maximum depth for state logging, can set up to 5 (warning this will run more slowly and consume more memory)
+const maxStateLevel = 5; // maximum depth for state logging
 const showFullDepth = true; // set this to true to display deep objects as JSON strings rather than ellipsis (warning this will run more slowly and consume more memory)
-const limitAll = true;
+const limitStringify = { level: 4, stringify: true };
+const limitNoStringify = { level: 4, stringify: false };
+const noLimit = { level: 4, noLimit: true };
+const defaultLimit = noLimit; // limit to use for reducers not specified
+const limitReducers = {
+  projectDetailsReducer: limitStringify,
+  resourcesReducer: { level: 3, stringify: true },
+  toolsReducer: { level: 4, stringify: false },
+};
 
 const stateTransformerSub = (state, level = maxStateLevel, stringify = showFullDepth) => {
   if (level <= 0) {
@@ -37,7 +45,7 @@ const stateTransformerSub = (state, level = maxStateLevel, stringify = showFullD
   if (keys.length) {
     for (let i = 0, l = keys.length; i < l; i++) {
       const key = keys[i];
-      newState[key] = stateTransformer(state[key], level - 1, stringify);
+      newState[key] = stateTransformerSub(state[key], level - 1, stringify);
     }
   } else {
     newState = state;
@@ -47,30 +55,37 @@ const stateTransformerSub = (state, level = maxStateLevel, stringify = showFullD
 };
 
 const stateTransformer = (state, level = maxStateLevel, stringify = showFullDepth) => {
-  const limitReducers = {
-    toolsReducer: { level: 3, stringify: false },
-  };
-
   let newState = {};
   let keys = (typeof state === 'object' && state !== null && Object.keys(state)) || [];
 
   if (keys.length) {
     for (let i = 0, l = keys.length; i < l; i++) {
       const key = keys[i];
+      const haveLimit = (limitReducers && limitReducers.hasOwnProperty(key));
+      const reduxLimit = haveLimit ? limitReducers[key] : defaultLimit;
+      let limit_ = true;
 
-      if (limitReducers && limitReducers.hasOwnProperty(key)) {
-        const reduxLimit = limitReducers[key];
+      if (reduxLimit.noLimit) {
+        limit_ = false;
+      } else {
         const reduxLevel = reduxLimit.level;
         // console.log(`limiting ${key} to ${reduxLevel}`);
 
         if (reduxLevel) {
+          // console.log(`stateTransformer() - key - ${key}, reduxLevel = ${reduxLevel}`);
           newState[key] = stateTransformerSub(state[key], reduxLevel, reduxLimit.stringify);
         } else {
+          // console.log(`stateTransformer() - key - ${key}, elipsis`);
           newState[key] = '…';
         }
-      } else if (limitAll) {
+        continue;
+      }
+
+      if (limit_) {
+        // console.log(`stateTransformer() - key - ${key}, level = ${level}`);
         newState[key] = stateTransformerSub(state[key], level - 1, stringify);
       } else {
+        // console.log(`stateTransformer() - key - ${key}, unlimited`);
         newState[key] = state[key];
       }
     }
