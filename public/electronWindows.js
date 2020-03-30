@@ -100,7 +100,7 @@ function createWindow(windowId, options = {}) {
     try {
       const {
         default: installExtension,
-        REACT_DEVELOPER_TOOLS
+        REACT_DEVELOPER_TOOLS,
       } = require('electron-devtools-installer');
 
       installExtension(REACT_DEVELOPER_TOOLS).catch(e => {
@@ -128,5 +128,5 @@ module.exports = {
   getWindowId,
   defineWindow,
   createWindow,
-  closeAllWindows
+  closeAllWindows,
 };
