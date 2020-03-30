@@ -2,10 +2,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import { enableBatching } from 'redux-batched-actions';
 import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
 import promise from 'redux-promise';
 import rootReducers from '../reducers/index.js';
 import { stringifySafe } from '../helpers/FeedbackHelpers';
-import { createLogger } from './index';
 
 let middlewares = [
   thunkMiddleware,
