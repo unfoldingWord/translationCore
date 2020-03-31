@@ -1,41 +1,54 @@
-/* eslint-disable no-unused-vars,object-curly-newline */
 import { createStore, applyMiddleware } from 'redux';
 import { enableBatching } from 'redux-batched-actions';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import promise from 'redux-promise';
 import rootReducers from '../reducers/index.js';
-import { stringifySafe } from '../helpers/FeedbackHelpers';
 
 let middlewares = [
   thunkMiddleware,
   promise,
 ];
 
-function safeLogging(state) {
-  return stringifySafe(state,
-    '[error loading system information]');
-}
+// TRICKY: Configuration of redux-logger to eliminate crashes react devTools console and minimize memory consumption.
+//  Tweak to find a balance - if object depth goes over 5, the react devTools console will crash (and the app with it).
+//  - by stringifying the deeper parts of the object we prevent crashing, but increase memory usage and slow down redux-logger.
+//  - by replacing with ellipsis the deeper parts of the object we prevent crashing, but reduce memory usage and do not slow
+//      down redux-logger. But lose debugging detail.
+const limitStringify = { depth: 4, stringify: true }; // configuration to limit nesting to this depth, anything deeper is stringified
+const limitNoStringify = { depth: 4, stringify: false }; // configuration to limit nesting to this depth, anything deeper is replaced with ellipsis
+const noLimit = { noLimit: true }; // configuration to not limit nesting for reducer
+const defaultLimit = noLimit; // default setting for reducers not specified
 
-// TRICKY: this is to limit nesting in logging to prevent crashing console.log()
-const maxStateLevel = 5; // maximum depth for state logging
-const showFullDepth = true; // set this to true to display deep objects as JSON strings rather than ellipsis (warning this will run more slowly and consume more memory)
-const limitStringify = { level: 4, stringify: true };
-const limitNoStringify = { level: 4, stringify: false };
-const noLimit = { level: 4, noLimit: true };
-const defaultLimit = noLimit; // limit to use for reducers not specified
+// Add limits for specific reducers - the reducers here are both large and deeply nested
+// and will crash the react devTools console if not limited.
 const limitReducers = {
   projectDetailsReducer: limitStringify,
-  resourcesReducer: { level: 3, stringify: true },
-  toolsReducer: { level: 4, stringify: false },
+  resourcesReducer: { depth: 3, stringify: true },
+  toolsReducer: limitNoStringify,
 };
 
-const stateTransformerSub = (state, level = maxStateLevel, stringify = showFullDepth) => {
-  if (level <= 0) {
+// default parameter values for stateTransformer methods
+const maxStateDepth = 5; // default maximum depth for state logging
+const showFullDepth = true; // set this to true to display deep objects as JSON strings rather than ellipsis (warning this will run more slowly and consume more memory)
+
+// settings for action transformer
+const actionDepth = 3;
+const actionStringify = false;
+
+/**
+ * recursive method to limit depth of state nesting.  Returns new state.
+ * @param {object} state - state object to limit depth on
+ * @param {number} depth - remaining depth to limit object nesting
+ * @param {boolean} stringify - if true, then stringify when we hit maximum depth, otherwise replace with ellipsis
+ * @return {string|{}} - new limited state
+ */
+const stateTransformerRecursive = (state, depth = maxStateDepth, stringify = showFullDepth) => {
+  if (depth <= 0) { // we have reached maximum depth - no more recursion
     try {
-      return stringify ? JSON.stringify(state) : '…'; // at this point replace with string to protect console.log() from objects too deep
+      return stringify ? JSON.stringify(state) : '…'; // either stringify at this depth, otherwise replace with ellipsis
     } catch (e) {
-      return `Crash converting to JSON: ${e.toString()}`;
+      return `stateTransformerRecursive() - Crash converting to JSON: ${e.toString()}`;
     }
   }
 
@@ -43,50 +56,44 @@ const stateTransformerSub = (state, level = maxStateLevel, stringify = showFullD
   let keys = (typeof state === 'object' && state !== null && Object.keys(state)) || [];
 
   if (keys.length) {
-    for (let i = 0, l = keys.length; i < l; i++) {
+    for (let i = 0, l = keys.length; i < l; i++) { // modify each element of of state
       const key = keys[i];
-      newState[key] = stateTransformerSub(state[key], level - 1, stringify);
+      newState[key] = stateTransformerRecursive(state[key], depth - 1, stringify);
     }
   } else {
-    newState = state;
+    newState = state; // not an object, so don't modify
   }
 
   return newState;
 };
 
-const stateTransformer = (state, level = maxStateLevel, stringify = showFullDepth) => {
+/**
+ * base method to limit depth of state nesting.  Supports special handling for each reducer
+ * @param {object} state - state object to limit depth on
+ * @param {number} depth - remaining depth to limit object nesting
+ * @param {boolean} stringify - if true, then stringify when we hit maximum depth, otherwise replace with ellipsis
+ * @return {string|{}} - new limited state
+ */
+const stateTransformer = (state, depth = maxStateDepth, stringify = showFullDepth) => {
   let newState = {};
   let keys = (typeof state === 'object' && state !== null && Object.keys(state)) || [];
 
-  if (keys.length) {
+  if (keys.length) { // if reducers found
     for (let i = 0, l = keys.length; i < l; i++) {
       const key = keys[i];
-      const haveLimit = (limitReducers && limitReducers.hasOwnProperty(key));
-      const reduxLimit = haveLimit ? limitReducers[key] : defaultLimit;
-      let limit_ = true;
+      const isLimited = (limitReducers && limitReducers.hasOwnProperty(key)); // if there is a specific configuration for this reducer
+      const reduxLimit = isLimited ? limitReducers[key] : defaultLimit; // if no specific configuration us default
 
       if (reduxLimit.noLimit) {
-        limit_ = false;
+        newState[key] = state[key]; // copy unlimited object
       } else {
-        const reduxLevel = reduxLimit.level;
-        // console.log(`limiting ${key} to ${reduxLevel}`);
+        const reduxDepth = reduxLimit.depth;
 
-        if (reduxLevel) {
-          // console.log(`stateTransformer() - key - ${key}, reduxLevel = ${reduxLevel}`);
-          newState[key] = stateTransformerSub(state[key], reduxLevel, reduxLimit.stringify);
+        if (reduxDepth) {
+          newState[key] = stateTransformerRecursive(state[key], reduxDepth, reduxLimit.stringify);
         } else {
-          // console.log(`stateTransformer() - key - ${key}, elipsis`);
-          newState[key] = '…';
+          newState[key] = '…'; // if no depth setting, then stop here
         }
-        continue;
-      }
-
-      if (limit_) {
-        // console.log(`stateTransformer() - key - ${key}, level = ${level}`);
-        newState[key] = stateTransformerSub(state[key], level - 1, stringify);
-      } else {
-        // console.log(`stateTransformer() - key - ${key}, unlimited`);
-        newState[key] = state[key];
       }
     }
   } else {
@@ -95,17 +102,16 @@ const stateTransformer = (state, level = maxStateLevel, stringify = showFullDept
 
   return newState;
 };
-
 
 if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {
   //TODO: this is a hack to keep redux logger from crashing, but still saw crash when opened project
+
   middlewares.push(createLogger(
     {
       diff: false,
       logErrors: false, // disable catch and rethrow of errors in redux-logger
       stateTransformer,
-      actionTransformer: (state) => (stateTransformerSub(state,3)),
-      // stateTransformer: (state) => (safeLogging(state)),
+      actionTransformer: (state) => (stateTransformerRecursive(state, actionDepth, actionStringify)),
     },
   ));
 }
