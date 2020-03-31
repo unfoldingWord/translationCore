@@ -2,6 +2,8 @@ import path from 'path-extra';
 import packagefile from '../../../package.json';
 import ospath from './ospath-extra';
 
+const isProduction = process.env.NODE_ENV === 'production';
+const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 // Paths
@@ -12,10 +14,12 @@ export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', '
 export const TEMP_IMPORT_PATH = path.join(ospath.home(), 'translationCore', 'imports', 'temp');
 export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');
 export const PROJECT_CHECKDATA_DIRECTORY = path.join(PROJECT_DOT_APPS_PATH, 'checkData');
-export const STATIC_RESOURCES_PATH = path.join('./tcResources');
+export const STATIC_RESOURCES_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'tcResources') : path.join('./tcResources');
 export const LOG_FILES_PATH = path.join(ospath.home(), 'translationCore', 'logs');
 export const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
 export const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
+export const LOCALE_DIR = isProduction ? path.join(STATIC_FOLDER_PATH, 'locale') : path.join('./src/locale');
+export const TOOLS_DIR = isProduction ? path.join(STATIC_FOLDER_PATH, 'tC_apps') : path.join('./src/tC_apps');
 // string names
 export const TC_VERSION = 'tc_version';
 export const SOURCE_CONTENT_UPDATER_MANIFEST = 'source-content-updater-manifest.json';

@@ -194,6 +194,10 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     dispatch(updateProjectLastOpened());
     console.log('openProject() - project opened');
   } catch (e) {
+    console.log('====================================');
+    console.log('openProject() - error ---');
+    console.log('====================================');
+
     // TODO: clean this up
     if (e.type !== 'div') {
       console.warn('openProject() error', e);
@@ -211,6 +215,9 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     }
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   }
+  console.log('====================================');
+  console.log('dispatch(closeAlertDialog())');
+  console.log('====================================');
   dispatch(closeAlertDialog());
 };
 
