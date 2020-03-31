@@ -14,6 +14,7 @@ const {
   defineWindow,
   getWindow,
 } = require('./electronWindows');
+const MenuTemplate = require('./MenuTemplate').template;
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
@@ -175,39 +176,39 @@ function createHelperWindow(url) {
 
 // build menu
 
-const menuTemplate = [
-  {
-    label: 'Window',
-    role: 'window',
-    submenu: [
-      {
-        label: 'Minimize',
-        accelerator: 'CmdOrCtrl+M',
-        role: 'minimize',
-      },
-      {
-        label: 'Reload',
-        accelerator: 'CmdOrCtrl+R',
-        click: function (item, focusedWindow) {
-          if (focusedWindow) {
-            focusedWindow.reload();
-          }
-        },
-      },
-      {
-        label: 'Toggle Developer Tools',
-        accelerator:
-          process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click: function (item, focusedWindow) {
-          if (focusedWindow) {
-            focusedWindow.webContents.toggleDevTools();
-          }
-        },
-      },
-    ],
-  },
-];
-const menu = Menu.buildFromTemplate(menuTemplate);
+// const menuTemplate = [
+//   {
+//     label: 'Window',
+//     role: 'window',
+//     submenu: [
+//       {
+//         label: 'Minimize',
+//         accelerator: 'CmdOrCtrl+M',
+//         role: 'minimize',
+//       },
+//       {
+//         label: 'Reload',
+//         accelerator: 'CmdOrCtrl+R',
+//         click: function (item, focusedWindow) {
+//           if (focusedWindow) {
+//             focusedWindow.reload();
+//           }
+//         },
+//       },
+//       {
+//         label: 'Toggle Developer Tools',
+//         accelerator:
+//           process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
+//         click: function (item, focusedWindow) {
+//           if (focusedWindow) {
+//             focusedWindow.webContents.toggleDevTools();
+//           }
+//         },
+//       },
+//     ],
+//   },
+// ];
+const menu = Menu.buildFromTemplate(MenuTemplate);
 Menu.setApplicationMenu(menu);
 
 // prevent multiple instances of the main window
