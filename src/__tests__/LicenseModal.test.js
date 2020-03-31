@@ -1,9 +1,9 @@
 /* eslint-env jest */
 import React from 'react';
 import { shallow } from 'enzyme';
+import { getBuild } from 'tc-electron-env';
 import LicenseModal from '../js/components/home/license/LicenseModal';
 import { APP_VERSION } from '../js/common/constants';
-import { getBuild } from '../js/common/env';
 
 describe('LicenseModal component renders correctly', () => {
   test('LicenseModal Component render should match snapshot', () => {

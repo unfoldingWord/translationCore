@@ -3,7 +3,7 @@ import path from 'path-extra';
 import zipFolder from 'zip-folder';
 import { ipcRenderer } from 'electron';
 import { getQuoteAsString } from 'checking-tool-wrapper';
-import ospath from '../common/ospath-extra';
+import env from 'tc-electron-env';
 import { getTranslate } from '../selectors';
 // actions
 import * as MergeConflictActions from '../actions/MergeConflictActions';
@@ -77,8 +77,8 @@ export const exportToCSV = (projectPath) => ((dispatch, getState) => {
  */
 export const getDefaultPath = (csvSaveLocation, projectName) => {
   let defaultPath;
-  const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
-  const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
+  const OSX_DOCUMENTS_PATH = path.join(env.home(), 'Documents');
+  const WIN_DOCUMENTS_PATH = path.join(env.home(), 'My Documents');
 
   if (csvSaveLocation) {
     defaultPath = path.join(csvSaveLocation, projectName + '.zip');
@@ -87,7 +87,7 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
   } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
     defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + '.zip');
   } else {
-    defaultPath = path.join(ospath.home(), projectName + '.zip');
+    defaultPath = path.join(env.home(), projectName + '.zip');
   }
   return defaultPath;
 };

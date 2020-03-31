@@ -1,7 +1,7 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import semver from 'semver';
-import ospath from '../common/ospath-extra';
+import env from 'tc-electron-env';
 import { TRANSLATION_HELPS } from '../common/constants';
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
@@ -20,7 +20,7 @@ class ResourceAPI {
    * @returns {ResourceAPI}
    */
   static default() {
-    const dir = path.join(ospath.home(), 'translationCore', 'resources');
+    const dir = path.join(env.home(), 'translationCore', 'resources');
     return new ResourceAPI(dir);
   }
 

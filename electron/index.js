@@ -17,6 +17,7 @@ const {
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
+process.env.tcVersion = p.version;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -36,6 +37,7 @@ const downloadManager = new DownloadManager();
  * @returns {Window}
  */
 function createMainWindow() {
+  console.log('createMainWindow() - creating');
   const windowOptions = {
     icon: './TC_Icon.png',
     title: 'translationCore',
@@ -70,12 +72,12 @@ function createMainWindow() {
 
   // Doesn't display until ready
   mainWindow.once('ready-to-show', () => {
-    console.log(' mainWindow ready-to-show');
+    console.log('createMainWindow() - mainWindow ready-to-show');
     setTimeout(() => {
+      splashScreen.close();
       mainWindow.show();
       mainWindow.maximize();
     }, 300);
-    splashScreen.close();
   });
 
   // Emitted when the window is closed.
@@ -113,15 +115,14 @@ function createMainWindow() {
  */
 function createSplashWindow() {
   const windowOptions = {
-    width: 400,
-    height: 200,
+    width: 600,
+    height: 600,
     resizable: false,
     autoHideMenuBar: true,
-    webPreferences: { nodeIntegration: false },
+    webPreferences: { nodeIntegration: true },
     frame: false,
     show: true,
     center: true,
-    title: app.name,
   };
   splashScreen = defineWindow('splash', windowOptions);
 
@@ -234,17 +235,19 @@ app.on('window-all-closed', () => {
 
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
-  const window = getWindow(MAIN_WINDOW_ID);
-
-  if (window === null) {
+  if (mainWindow === null) {
     createMainWindow();
   }
 });
 
 // create main BrowserWindow with a splash screen when electron is ready
 app.on('ready', () => {
+  console.log('ready - creating splash screen');
   createSplashWindow();
-  createMainWindow();
+  setTimeout(function () {
+    splashScreen.show();
+    createMainWindow();
+  }, 500);
 });
 
 ipcMain.on('save-as', function (event, arg) {

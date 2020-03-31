@@ -6,7 +6,7 @@ import path from 'path-extra';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
-import ospath from '../common/ospath-extra';
+import env, { getBuild } from 'tc-electron-env';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
@@ -34,8 +34,6 @@ import {
   LOCALE_DIR,
   TOOLS_DIR,
 } from '../common/constants';
-import { getBuild } from '../common/env';
-
 const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
@@ -48,7 +46,7 @@ class Main extends Component {
   }
 
   componentWillMount() {
-    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
   }
 
