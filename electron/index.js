@@ -175,39 +175,6 @@ function createHelperWindow(url) {
 // });
 
 // build menu
-
-// const menuTemplate = [
-//   {
-//     label: 'Window',
-//     role: 'window',
-//     submenu: [
-//       {
-//         label: 'Minimize',
-//         accelerator: 'CmdOrCtrl+M',
-//         role: 'minimize',
-//       },
-//       {
-//         label: 'Reload',
-//         accelerator: 'CmdOrCtrl+R',
-//         click: function (item, focusedWindow) {
-//           if (focusedWindow) {
-//             focusedWindow.reload();
-//           }
-//         },
-//       },
-//       {
-//         label: 'Toggle Developer Tools',
-//         accelerator:
-//           process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-//         click: function (item, focusedWindow) {
-//           if (focusedWindow) {
-//             focusedWindow.webContents.toggleDevTools();
-//           }
-//         },
-//       },
-//     ],
-//   },
-// ];
 const menu = Menu.buildFromTemplate(MenuTemplate);
 Menu.setApplicationMenu(menu);
 
