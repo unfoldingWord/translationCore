@@ -15,14 +15,12 @@ console.log('Electron', process.versions.electron);
 console.log('Chrome', process.versions.chrome);
 console.log('Node', process.versions.node);
 
-let currentPath = path.join(__dirname);
-let currentPath2 = path.join(__dirname, 'static');
-console.log('currentPath', fs.readdirSync(currentPath));
-console.log('currentPath2', fs.readdirSync(currentPath2));
-
-// currentPath = path.join('./src');
-// files = fs.readdirSync(currentPath);
-// console.log(currentPath + ': ' + JSON.stringify(files));
+let currentPath = path.join('.');
+let files = fs.readdirSync(currentPath);
+console.log(currentPath + ': ' + JSON.stringify(files));
+currentPath = path.join('./src');
+files = fs.readdirSync(currentPath);
+console.log(currentPath + ': ' + JSON.stringify(files));
 
 
 ReactDOM.render(<App/>, document.getElementById('root'));
