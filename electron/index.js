@@ -3,11 +3,9 @@ const {
 } = require('electron');
 require('dotenv').config();
 const path = require('path-extra');
-const ospath = require('ospath');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
 const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
-const { injectFileLogging } = require('../src/js/helpers/logger');
 const DownloadManager = require('../src/js/DownloadManager');
 const {
   createWindow,
@@ -26,10 +24,6 @@ process.env.tcVersion = p.version;
 let mainWindow;
 let helperWindow;
 let splashScreen;
-
-// to capture start up console logging
-const version = `v${p.version} (${process.env.BUILD})`;
-injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
 
 const downloadManager = new DownloadManager();
 
@@ -53,9 +47,9 @@ function createMainWindow() {
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
   // TODO: electronite: restore later
-  // if ('developer_mode' in p && p.developer_mode) {
-  mainWindow.webContents.openDevTools();
-  // }
+  if ('developer_mode' in p && p.developer_mode) {
+    mainWindow.webContents.openDevTools();
+  }
 
   isGitInstalled().then(installed => {
     if (installed) {
