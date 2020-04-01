@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import fs from 'fs-extra';
-import path from 'path-extra';
 import App from './js/pages/root';
 import * as serviceWorker from './serviceWorker';
 import { createElectronHandler, registerLogHandler } from './logger';
