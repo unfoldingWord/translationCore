@@ -1,21 +1,21 @@
 // TRICKY: Configuration of redux-logger to eliminate crashes react devTools console and minimize memory consumption.
 //  Tweak to find a balance - if object depth goes over 5, the react devTools console will crash (and the app with it).
-//  - by stringifying the deeper parts of the object we prevent crashing, but increase memory usage and slow down redux-logger.
+//  - by stringify-ing the deeper parts of the object we prevent crashing, but increase memory usage and slow down redux-logger.
 //  - by replacing with depthLimitString the deeper parts of the object we prevent crashing, but reduce memory usage and do
 //      not slow down redux-logger. But lose debugging detail.
 
-const limitStringify = { depth: 4, stringify: true }; // configuration to limit nesting to this depth, anything deeper is stringified
-// const limitNoStringify = { depth: 4, stringify: false }; // configuration to limit nesting to this depth, anything deeper is replaced with depthLimitString
-const noLimit = { noLimit: true }; // configuration to not limit nesting for reducer
-const skipLogging = { skip: true }; // configuration to not log a reducer
-const defaultLimit = noLimit; // default setting for reducers not specified in limitReducers, set this to skipLogging to skip logging of any reducer not in limitReducers
+const LIMIT_STRINGIFY = { depth: 4, stringify: true }; // configuration to limit nesting to this depth, anything deeper is stringified
+// const LIMIT_NO_STRINGIFY = { depth: 4, stringify: false }; // configuration to limit nesting to this depth, anything deeper is replaced with depthLimitString
+const LIMIT_NONE = { noLimit: true }; // configuration to not limit nesting for reducer
+const SKIP_LOGGING = { skip: true }; // configuration to not log a reducer
+const defaultLimit = LIMIT_NONE; // default setting for reducers not specified in limitReducers, set this to SKIP_LOGGING to skip logging of any reducer not in limitReducers
 
 // Add limits for specific reducers - the reducers here are both large and deeply nested
 // and will crash the react devTools console if not limited.
 const limitReducers = {
-  projectDetailsReducer: limitStringify,
+  projectDetailsReducer: LIMIT_STRINGIFY,
   resourcesReducer: { depth: 3, stringify: true },
-  toolsReducer: skipLogging,
+  toolsReducer: SKIP_LOGGING,
 };
 
 // default parameter values for stateTransformer methods
@@ -61,13 +61,11 @@ const stateTransformerRecursive = (state, depth = maxStateDepth, stringify = sho
 /**
  * base method to limit depth of state nesting.  Supports special handling for each reducer
  * @param {object} state - state object to limit depth on
- * @param {number} depth - remaining depth to limit object nesting
- * @param {boolean} stringify - if true, then stringify when we hit maximum depth, otherwise replace with depthLimitString
  * @return {string|{}} - new limited state
  */
-const stateTransformer = (state, depth = maxStateDepth, stringify = showFullDepth) => {
+const stateTransformer = (state) => {
   let newState = {};
-  let keys = (typeof state === 'object' && state !== null && Object.keys(state)) || [];
+  const keys = (typeof state === 'object' && state !== null && Object.keys(state)) || [];
 
   if (keys.length) { // if reducers found
     for (let i = 0, l = keys.length; i < l; i++) {
