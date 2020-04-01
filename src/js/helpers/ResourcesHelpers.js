@@ -546,9 +546,6 @@ export const areResourcesNewer = () => {
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
-  console.log('__dirname', __dirname);
-  console.log('fs.readDirsyn', fs.readdirSync(__dirname));
-
   if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
     console.error('sourceContentUpdaterManifest does not exist');
     return false;
