@@ -15,14 +15,6 @@ console.log('Electron', process.versions.electron);
 console.log('Chrome', process.versions.chrome);
 console.log('Node', process.versions.node);
 
-let currentPath = path.join('.');
-let files = fs.readdirSync(currentPath);
-console.log(currentPath + ': ' + JSON.stringify(files));
-currentPath = path.join('./src');
-files = fs.readdirSync(currentPath);
-console.log(currentPath + ': ' + JSON.stringify(files));
-
-
 ReactDOM.render(<App/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
