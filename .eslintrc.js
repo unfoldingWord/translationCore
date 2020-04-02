@@ -42,7 +42,7 @@ module.exports = {
     "no-nested-ternary": "error",
     "no-duplicate-imports": ["error", {"includeExports": false}],
     "import/order": "error",
-    "import/first": "off",
+    "import/first": "error",
     "import/default": "off",
     "import/namespace": "off",
     "indent": ["error", 2],
