@@ -15,7 +15,7 @@
     "electron-build": "electron-packager ./build --out=dist",
     "electron-build-win": "electron-packager ./build --out=dist --arch=all",
     "react-start": "craco start",
-    "react-build": "craco build NODE_OPTIONS=--max-old-space-size=8192",
+    "react-build": "node --max-old-space-size=8192 && craco build",
     "build-main": "webpack --config electron/webpack.config.js",
     "remove-build-folders": "rm -rf dist && rm -rf build",
     "start": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000/ && cross-env NODE_ENV=development npm run electron-start\"",
