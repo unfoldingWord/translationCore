@@ -1,3 +1,4 @@
+/* eslint-disable import/order */
 import isEqual from 'deep-equal';
 import { loadSettings, loadUserdata } from './loadMethods';
 import {
