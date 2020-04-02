@@ -25,7 +25,7 @@ function copy(src, dest) {
   });
 }
 
-// TODO: dist instead of out
+// TODO: dist folder name instead of out
 const BUILD_DIR = './dist/';
 const RELEASE_DIR = './release/';
 
