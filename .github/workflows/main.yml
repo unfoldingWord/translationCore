@@ -18,6 +18,7 @@ on:
       - master
       - develop
       - release-*
+      - sandbox-*
 
 jobs:
   test:
