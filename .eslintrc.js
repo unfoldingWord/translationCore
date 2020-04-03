@@ -41,7 +41,7 @@ module.exports = {
     "no-throw-literal": "warn",
     "no-nested-ternary": "error",
     "no-duplicate-imports": ["error", {"includeExports": false}],
-    "import/order": "error",
+    "import/order": ["error", {"groups": ["index", "sibling", "parent", "internal", "external", "builtin"]}],
     "import/first": "off",
     "import/default": "off",
     "import/namespace": "off",
