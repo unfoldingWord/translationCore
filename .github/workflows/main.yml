@@ -123,7 +123,6 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           npm run build
-          # ./node_modules/.bin/gulp build --linux
           ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/$ARTIFACT_NAME
 
       - uses: actions/upload-artifact@v1
@@ -191,7 +190,6 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           npm run build-win
-          # ./node_modules/.bin/gulp build --win
 #     x64
       - name: Set x64 artifact name
         run: echo "::set-env name=ARTIFACT_X64::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
@@ -290,7 +288,6 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           npm run build
-          # ./node_modules/.bin/gulp build --macos
 
       - name: bundle macOS
         run: ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
