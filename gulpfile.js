@@ -25,7 +25,6 @@ function copy(src, dest) {
   });
 }
 
-// TODO: dist folder name instead of out
 const BUILD_DIR = './dist/';
 const RELEASE_DIR = './release/';
 
@@ -346,7 +345,6 @@ gulp.task('release-win64', () => {
     throw new Error('The --out argument is required.');
   }
 
-  // TODO: MAY CHANGE
   const buildPath = BUILD_DIR + p.name + '-win32-x64/';
 
   if (!fs.existsSync(buildPath)) {
@@ -368,7 +366,6 @@ gulp.task('release-win32', () => {
     throw new Error('The --out argument is required.');
   }
 
-  // TODO: MAY CHANGE
   const buildPath = BUILD_DIR + p.name + '-win32-ia32/';
 
   if (!fs.existsSync(buildPath)) {
