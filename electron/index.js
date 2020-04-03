@@ -48,7 +48,7 @@ function createMainWindow() {
 
   // TODO: electronite: restore later
   // if ('developer_mode' in p && p.developer_mode) {
-  // mainWindow.webContents.openDevTools();// TODO:
+  // mainWindow.webContents.openDevTools();
   // }
 
   isGitInstalled().then(installed => {
