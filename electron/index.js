@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 const {
   app, dialog, ipcMain, BrowserWindow, Menu,
 } = require('electron');
