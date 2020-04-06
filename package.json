@@ -8,7 +8,7 @@
   "main": "main.js",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "prebuild": "npm run remove-build-folders && npm run react-build && npm run build-main && copyfiles package.json build/",
+    "prebuild": "npm run remove-build-folders && npm run react-build && npm run build-main",
     "build": "npm run electron-build",
     "build-win": "npm run prebuild && npm run electron-build-win",
     "electron-start": "electron .",
