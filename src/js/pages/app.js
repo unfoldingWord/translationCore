@@ -27,9 +27,13 @@ import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from '../helpers/logger';
 // helpers
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
-//consts
-import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
-
+// constants
+import {
+  APP_VERSION,
+  LOG_FILES_PATH,
+  LOCALE_DIR,
+  TOOLS_DIR,
+} from '../common/constants';
 const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
@@ -38,8 +42,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     // load app locale
-    const localeDir = path.join('./src/locale');
-    this.props.loadLocalization(localeDir, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
+    this.props.loadLocalization(LOCALE_DIR, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
   }
 
   componentWillMount() {
@@ -55,7 +58,7 @@ class Main extends Component {
       loadTools,
     } = this.props;
 
-    loadTools(path.join('./src/tC_apps'));
+    loadTools(TOOLS_DIR);
 
     if (localStorage.getItem('version') !== APP_VERSION) {
       localStorage.setItem('version', APP_VERSION);

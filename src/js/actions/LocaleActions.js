@@ -1,9 +1,4 @@
-/**
- * These actions are used for controlling localization within the application.
- * @see js/components/Locale
- * @module LocaleActions
- */
-
+/* eslint-disable import/order */
 import path from 'path';
 import fs from 'fs-extra';
 import moment from 'moment';

@@ -1,19 +1,19 @@
-const {app, dialog, ipcMain, BrowserWindow, Menu} = require('electron');
+const {
+  app, dialog, ipcMain, BrowserWindow, Menu,
+} = require('electron');
 require('dotenv').config();
 const path = require('path-extra');
-const ospath = require('ospath');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
+const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
+const DownloadManager = require('../src/js/DownloadManager');
 const {
   createWindow,
   defineWindow,
-  getWindow
+  getWindow,
 } = require('./electronWindows');
-const { isGitInstalled, showElectronGitSetup} = require('../src/js/helpers/InstallationHelpers');
-const { injectFileLogging } = require('../src/js/helpers/logger');
-const DownloadManager = require('../src/js/DownloadManager');
+const MenuTemplate = require('./MenuTemplate').template;
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
-
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
 process.env.tcVersion = p.version;
@@ -24,10 +24,6 @@ process.env.tcVersion = p.version;
 let mainWindow;
 let helperWindow;
 let splashScreen;
-
-// to capture start up console logging
-const version = `v${p.version} (${process.env.BUILD})`;
-injectFileLogging(path.join(ospath.home(), 'translationCore', 'logs'), version);
 
 const downloadManager = new DownloadManager();
 
@@ -46,15 +42,13 @@ function createMainWindow() {
     show: false,
     center: true,
     // useContentSize: true, // TODO: investigate if needed
-    webPreferences: {
-      nodeIntegration: true
-    },
+    webPreferences: { nodeIntegration: true },
   };
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
   // TODO: electronite: restore later
   // if ('developer_mode' in p && p.developer_mode) {
-  //   mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
   // }
 
   isGitInstalled().then(installed => {
@@ -120,12 +114,10 @@ function createSplashWindow() {
     height: 600,
     resizable: false,
     autoHideMenuBar: true,
-    webPreferences: {
-      nodeIntegration: true
-    },
+    webPreferences: { nodeIntegration: true },
     frame: false,
     show: true,
-    center: true
+    center: true,
   };
   splashScreen = defineWindow('splash', windowOptions);
 
@@ -177,40 +169,7 @@ function createHelperWindow(url) {
 // });
 
 // build menu
-
-const menuTemplate = [
-  {
-    label: 'Window',
-    role: 'window',
-    submenu: [
-      {
-        label: 'Minimize',
-        accelerator: 'CmdOrCtrl+M',
-        role: 'minimize'
-      },
-      {
-        label: 'Reload',
-        accelerator: 'CmdOrCtrl+R',
-        click: function(item, focusedWindow) {
-          if (focusedWindow) {
-            focusedWindow.reload();
-          }
-        }
-      },
-      {
-        label: 'Toggle Developer Tools',
-        accelerator:
-          process.platform === 'darwin' ? 'Alt+Command+I' : 'Ctrl+Shift+I',
-        click: function(item, focusedWindow) {
-          if (focusedWindow) {
-            focusedWindow.webContents.toggleDevTools();
-          }
-        }
-      }
-    ]
-  }
-];
-const menu = Menu.buildFromTemplate(menuTemplate);
+const menu = Menu.buildFromTemplate(MenuTemplate);
 Menu.setApplicationMenu(menu);
 
 // prevent multiple instances of the main window
@@ -219,6 +178,7 @@ app.requestSingleInstanceLock();
 
 app.on('second-instance', () => {
   const window = getWindow(MAIN_WINDOW_ID);
+
   if (window) {
     if (window.isMinimized()) {
       window.restore();
@@ -231,7 +191,7 @@ app.on('second-instance', () => {
 app.on('window-all-closed', () => {
   // // on macOS it is common for applications to stay open until the user explicitly quits
   // if (process.platform !== 'darwin') {
-    app.quit();
+  app.quit();
   // }
 });
 
@@ -283,8 +243,8 @@ ipcMain.on('download', function (event, args) {
     .then((dl) => {
       event.sender.send('download-success', dl.getSavePath());
     }).catch(error => {
-    event.sender.send('download-error', error);
-  });
+      event.sender.send('download-error', error);
+    });
 });
 
 ipcMain.on('load-local', function (event, arg) {

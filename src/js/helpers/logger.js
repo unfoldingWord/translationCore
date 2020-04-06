@@ -6,7 +6,7 @@ const path = require('path-extra');
  * @param logDir
  * @return {*}
  */
-function getLogFilePathForCurrentDate(logDir = '') {
+export function getLogFilePathForCurrentDate(logDir = '') {
   const logPath = path.join(logDir, new Date().toDateString() + '.log');
   return logPath;
 }
@@ -16,7 +16,7 @@ function getLogFilePathForCurrentDate(logDir = '') {
  * @param logDir
  * @return {string}
  */
-function getCurrentLog(logDir = '') {
+export function getCurrentLog(logDir = '') {
   let logData = '';
   const logPath = getLogFilePathForCurrentDate(logDir);
 
@@ -38,7 +38,7 @@ function getCurrentLog(logDir = '') {
  * @param {string} [logDir=''] - directory where logs will be stored
  * @param {string} appVersion - the version of the application (commit)
  */
-function injectFileLogging(logDir = '', appVersion='') {
+export function injectFileLogging(logDir = '', appVersion='') {
   fs.ensureDirSync(logDir);
   const logPath = getLogFilePathForCurrentDate(logDir);
   const levels = [
@@ -71,7 +71,7 @@ function injectFileLogging(logDir = '', appVersion='') {
  * @param {string} appVersion - the version of the application
  * @param {array} args - arguments to the logger
  */
-function writeLogSync(path, level, appVersion, args) {
+export function writeLogSync(path, level, appVersion, args) {
   // stringify args if applicable
   const stringableLevels = ['info', 'warn', 'error'];
   let data = args;
@@ -90,7 +90,7 @@ function writeLogSync(path, level, appVersion, args) {
  * Converts arguments to strings as necessary
  * @param {array} args arguments to the logger
  */
-function stringifyArgs(args) {
+export function stringifyArgs(args) {
   const stringArgs = [];
 
   for (const arg of args) {
@@ -106,11 +106,3 @@ function stringifyArgs(args) {
   }
   return stringArgs;
 }
-
-const logger = {
-  getCurrentLog,
-  getLogFilePathForCurrentDate,
-  injectFileLogging,
-};
-
-module.exports = logger;
