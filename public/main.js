@@ -118,7 +118,7 @@ function createSplashWindow() {
   const windowOptions = {
     width: 600,
     height: 600,
-    resizable: false,
+    resizable: true,
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
