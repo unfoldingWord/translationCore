@@ -10,6 +10,9 @@ import {
   ALERT_SELECTIONS_INVALIDATED_ID,
   WORD_ALIGNMENT,
 } from '../common/constants';
+import waBadge from '../../tC_apps/wordAlignment/badge.png';
+import tnBadge from '../../tC_apps/translationNotes/badge.png';
+import twBadge from '../../tC_apps/translationWords/badge.png';
 
 /**
  * Loads all of the tools found in a directory
@@ -87,17 +90,17 @@ export const loadTool = async (toolDir) => {
     switch (toolName) { // tricky, with webpack the paths to require must be defined at compile time, not generated at runtime
     case 'wordAlignment':
       module = require('../../tC_apps/wordAlignment/index');
-      badge = require('../../tC_apps/wordAlignment/badge.png');
+      badge = waBadge;
       break;
 
     case 'translationWords':
       module = require('../../tC_apps/translationWords/index');
-      badge = require('../../tC_apps/translationWords/badge.png');
+      badge = twBadge;
       break;
 
     case 'translationNotes':
       module = require('../../tC_apps/translationNotes/index');
-      badge = require('../../tC_apps/translationNotes/badge.png');
+      badge = tnBadge;
       break;
 
     default:
