@@ -15,6 +15,8 @@ module.exports = {
           { from: './tcResources', to: 'static/tCResources' },
           { from: './src/tC_apps', to: 'static/tC_apps' },
           { from: './src/locale', to: 'static/locale' },
+          { from: './package.json', to: 'package.json' },
+          { from: '.env', to: './' },
         ]),
       ],
     },
