@@ -1,7 +1,7 @@
 const {
   app, dialog, ipcMain, BrowserWindow, Menu,
 } = require('electron');
-require('dotenv').config();
+const dotenv = require('dotenv');
 const path = require('path-extra');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
@@ -24,6 +24,16 @@ process.env.tcVersion = p.version;
 let mainWindow;
 let helperWindow;
 let splashScreen;
+
+let results = dotenv.config(); // first try default path
+
+if (results.error) {
+  results = dotenv.config({ path: path.resolve(__dirname, '.env') }); // try production path
+}
+
+if (results.error) {
+  console.log(`dotenv failed`);
+}
 
 const downloadManager = new DownloadManager();
 

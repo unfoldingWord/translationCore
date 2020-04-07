@@ -8,7 +8,7 @@
   "main": "main.js",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "prebuild": "npm run remove-build-folders && npm run react-build && npm run build-main && copyfiles package.json build/",
+    "prebuild": "npm run remove-build-folders && npm run react-build && npm run build-main",
     "build": "npm run electron-build",
     "build-win": "npm run prebuild && npm run electron-build-win",
     "electron-start": "electron .",
@@ -76,7 +76,6 @@
     "codecov": "3.0.2",
     "concurrently": "5.1.0",
     "copy-webpack-plugin": "5.1.1",
-    "copyfiles": "2.2.0",
     "cross-env": "7.0.2",
     "css-loader": "3.4.2",
     "electron": "6.0.7",
