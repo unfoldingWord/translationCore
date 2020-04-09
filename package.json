@@ -55,7 +55,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/klappy/translationCore.git"
+    "url": "git+https://github.com/unfoldingWord/translationCore.git"
   },
   "keywords": [
     "Translation",
@@ -70,9 +70,9 @@
   },
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/unfoldingWord-dev/translationCore/issues"
+    "url": "https://github.com/unfoldingWord/translationCore/issues"
   },
-  "homepage": "https://github.com/unfoldingWord-dev/translationCore#readme",
+  "homepage": "https://github.com/unfoldingWord/translationCore#readme",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-eslint": "7.2.3",
