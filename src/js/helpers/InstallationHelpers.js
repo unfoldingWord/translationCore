@@ -1,14 +1,13 @@
 const exec = require('child_process').exec;
+const env = require('tc-electron-env');
 const fs = require('fs-extra');
 const mkdirp = require('mkdirp');
 const path = require('path-extra');
 const open = require('opn');
 const rimraf = require('rimraf');
-const ospath = require('ospath');
 const download = require('./DownloadHelpers').download;
 
 const GIT_VERSION = '2.9.2';
-
 module.exports.GIT_VERSION = GIT_VERSION;
 
 /***
@@ -19,7 +18,7 @@ module.exports.GIT_VERSION = GIT_VERSION;
  */
 const downloadWinGit = (version, arch) => {
   let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
-  let dir = path.join(ospath.home(), 'translationCore', '.temp');
+  let dir = path.join(env.home(), 'translationCore', '.temp');
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   console.log('Downloading Git to ' + dest);
   mkdirp.sync(dir);

@@ -1,9 +1,4 @@
-/**
- * These actions are used for controlling localization within the application.
- * @see js/components/Locale
- * @module LocaleActions
- */
-
+/* eslint-disable import/order */
 import path from 'path';
 import fs from 'fs-extra';
 import moment from 'moment';
@@ -46,7 +41,7 @@ const explodeLocaleName = (fileName) => {
  * that should not otherwise be translated. e.g. legal entities
  * @param {object} translation localized strings
  * @param {string} fileName the name of the locale file including the file extension.
- * @param {list} nonTranslatableStrings a list of non-translatable strings to inject
+ * @param {array} nonTranslatableStrings a list of non-translatable strings to inject
  * @return {object} the enhanced translation
  */
 const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) => {
@@ -66,7 +61,8 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) 
 
 /**
  * Sets the currently active language
- * @param languageCode
+ * @param {string} languageCode
+ * @param {function} setActiveLanguage
  * @return {function(*)}
  */
 export const setLanguage = (languageCode, setActiveLanguage) => (dispatch) => {
@@ -92,6 +88,9 @@ export const setLocaleLoaded = () => ({ type: types.LOCALE_LOADED });
  *
  * @param {string} localeDir directory containing locale files
  * @param {string} appLanguage the language code that will be enabled by default
+ * @param {function} initialize
+ * @param {function} addTranslationForLanguage
+ * @param {function} setActiveLanguage
  * @return {function(*)}
  */
 export const loadLocalization = (localeDir, appLanguage = null, initialize, addTranslationForLanguage, setActiveLanguage) => (dispatch) => {
@@ -185,9 +184,10 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
 
 /**
  * Sets the active locale from the system locale
- * @param dispatch
- * @param languages
- * @param translations
+ * @param {function} dispatch
+ * @param {array} languages
+ * @param {array} translations
+ * @param {function} setActiveLanguage
  * @return {Promise}
  */
 const setSystemLocale = (dispatch, languages, translations, setActiveLanguage) => osLocale().then(locale => {
@@ -199,11 +199,12 @@ const setSystemLocale = (dispatch, languages, translations, setActiveLanguage) =
  * Safely sets the active language by falling back to an equivalent locale if
  * needed.
  *
- * @param dispatch
+ * @param {function} dispatch
  * @param {string} locale the locale to set
- * @param {list} languages a list of loaded languages
+ * @param {array} languages a list of loaded languages
  * @param {object} translations a dictionary of loaded translations
- * @return {bool} returns true of the language was successfully set.
+ * @param {function} setActiveLanguage
+ * @return {boolean} returns true of the language was successfully set.
  */
 const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage) => {
   const shortLocale = locale.split('_')[0];

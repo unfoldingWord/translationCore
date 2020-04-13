@@ -9,7 +9,7 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import { delay } from '../common/utils';
 import { getTranslate } from '../selectors';
-import BooksOfBible from '../../../tcResources/books';
+import { ALL_BIBLE_BOOKS } from '../common/BooksOfTheBible';
 // actions
 import consts from './ActionTypes';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -208,7 +208,7 @@ export function setBookIDInProjectInformationReducer(bookId, inStepper) {
       const translate = getTranslate(getState());
 
       if (bookId !== originalBook) {
-        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', { originalBook: BooksOfBible[originalBook], suggestedBook: BooksOfBible[bookId] }), (res) => {
+        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', { originalBook: ALL_BIBLE_BOOKS[originalBook], suggestedBook: ALL_BIBLE_BOOKS[bookId] }), (res) => {
           if (res === translate('buttons.ok_button')) {
             dispatch({
               type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,

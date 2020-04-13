@@ -1,8 +1,8 @@
 /* eslint-disable require-await */
 /* eslint-disable require-await */
 import path from 'path-extra';
-import ospath from 'ospath';
 import sourceContentUpdater from 'tc-source-content-updater';
+import env from 'tc-electron-env';
 import {
   getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';
@@ -19,7 +19,7 @@ import {
 import consts from './ActionTypes';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 
 /**
  * Resets the state of the source content updates reducer.
@@ -41,7 +41,7 @@ const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertM
       () => {
         dispatch(closeAlertDialog());
         closeSourceContentDialog();
-      }
+      },
     ),
   );
 });
@@ -79,8 +79,8 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
           failedAlertAndRetry(
             closeSourceContentDialog,
             () => getListOfSourceContentToUpdate(closeSourceContentDialog),
-            'updates.failed_checking_for_source_content_updates'
-          )
+            'updates.failed_checking_for_source_content_updates',
+          ),
         );
       });
   } else {
@@ -129,8 +129,8 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
           failedAlertAndRetry(
             () => dispatch(closeAlertDialog()),
             () => downloadSourceContentUpdates(languageIdListToDownload),
-            'updates.source_content_updates_unsuccessful_download'
-          )
+            'updates.source_content_updates_unsuccessful_download',
+          ),
         );
       });
   } else {
@@ -165,8 +165,8 @@ export const downloadMissingResource = (resourceDetails) => (async (dispatch, ge
           failedAlertAndRetry(
             () => dispatch(closeAlertDialog()),
             () => downloadMissingResource(resourceDetails),
-            'updates.source_content_updates_unsuccessful_download'
-          )
+            'updates.source_content_updates_unsuccessful_download',
+          ),
         );
       });
   } else {

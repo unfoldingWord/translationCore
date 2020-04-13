@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
-import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
+import env, { getBuild } from 'tc-electron-env';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
@@ -27,10 +27,14 @@ import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from '../helpers/logger';
 // helpers
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
-//consts
-import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
-
-const version = `v${APP_VERSION} (${process.env.BUILD})`;
+// constants
+import {
+  APP_VERSION,
+  LOG_FILES_PATH,
+  LOCALE_DIR,
+  TOOLS_DIR,
+} from '../common/constants';
+const version = `v${APP_VERSION} (${getBuild()})`;
 injectFileLogging(LOG_FILES_PATH, version);
 console.log('SYSTEM INFO:\n' + getOsInfoStr());
 
@@ -38,12 +42,11 @@ class Main extends Component {
   constructor(props) {
     super(props);
     // load app locale
-    const localeDir = path.join(__dirname, '../../locale');
-    this.props.loadLocalization(localeDir, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
+    this.props.loadLocalization(LOCALE_DIR, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
   }
 
   componentWillMount() {
-    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
   }
 
@@ -55,7 +58,7 @@ class Main extends Component {
       loadTools,
     } = this.props;
 
-    loadTools(path.join(__dirname, '../../../tC_apps'));
+    loadTools(TOOLS_DIR);
 
     if (localStorage.getItem('version') !== APP_VERSION) {
       localStorage.setItem('version', APP_VERSION);
@@ -128,5 +131,5 @@ const mapDispatchToProps = {
 
 export default withLocalize(connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Main));

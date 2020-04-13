@@ -2,8 +2,8 @@
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 import _ from 'lodash';
+import env from 'tc-electron-env';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles, getProjectBookId, getCurrentToolName,
@@ -24,7 +24,7 @@ import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
 
 // constants
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
 
 /**
@@ -62,7 +62,7 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
 
     if (fs.existsSync(bibleFolderPath)) {
       let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => // filter out .DS_Store
-        folder !== '.DS_Store'
+        folder !== '.DS_Store',
       ); // ex. v9
       const versionNumber = versionNumbers[versionNumbers.length - 1];
       let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
@@ -154,7 +154,7 @@ const migrateChapterToVerseObjects = chapterData => {
 export const getLatestVersion = (versions) => {
   if (versions && (versions.length > 0)) {
     const sortedVersions = versions.sort((a, b) =>
-      -ResourceAPI.compareVersions(a, b) // do inverted sort
+      -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
     return sortedVersions[0]; // most recent version will be first
   } else {

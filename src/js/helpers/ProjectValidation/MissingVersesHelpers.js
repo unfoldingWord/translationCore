@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import env from 'tc-electron-env';
 import ResourceAPI from '../ResourceAPI';
 // constants
-const USER_RESOURCES_DIR = path.join(ospath.home(), 'translationCore/resources');
+const USER_RESOURCES_DIR = path.join(env.home(), 'translationCore/resources');
 
 /**
  * Determines if a project is missing verses

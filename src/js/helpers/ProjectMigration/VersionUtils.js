@@ -1,3 +1,4 @@
+import { APP_VERSION } from '../../common/constants';
 import * as manifestUtils from './manifestUtils';
 export const VERSION_KEY = 'tc_version';
 
@@ -58,5 +59,5 @@ export const setVersionInManifest = (projectPath, version) => {
  * @description - returns the application version (set in package.json)
  * @return {String} application version
  */
-export const getApplicationVersion = () => process.env.npm_package_version;
+export const getApplicationVersion = () => APP_VERSION;
 

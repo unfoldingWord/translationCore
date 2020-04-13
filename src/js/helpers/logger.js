@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
-import path from 'path-extra';
+const fs = require('fs-extra');
+const path = require('path-extra');
 
 /**
  * get the log file for current date
@@ -71,7 +71,7 @@ export function injectFileLogging(logDir = '', appVersion='') {
  * @param {string} appVersion - the version of the application
  * @param {array} args - arguments to the logger
  */
-function writeLogSync(path, level, appVersion, args) {
+export function writeLogSync(path, level, appVersion, args) {
   // stringify args if applicable
   const stringableLevels = ['info', 'warn', 'error'];
   let data = args;
@@ -90,7 +90,7 @@ function writeLogSync(path, level, appVersion, args) {
  * Converts arguments to strings as necessary
  * @param {array} args arguments to the logger
  */
-function stringifyArgs(args) {
+export function stringifyArgs(args) {
   const stringArgs = [];
 
   for (const arg of args) {

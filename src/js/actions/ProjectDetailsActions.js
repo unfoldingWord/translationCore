@@ -343,8 +343,8 @@ export function renameProject(projectSaveLocation, newProjectName) {
             resolve();
           },
           continueText,
-          cancelText
-        )
+          cancelText,
+        ),
       );
     }
   });
@@ -367,7 +367,7 @@ export function showRenamedDialog() {
           dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         },
-        translate('buttons.ok_button')
+        translate('buttons.ok_button'),
       ));
     });
   });
@@ -485,8 +485,8 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
           }
         },
         cancelText,
-        confirmText
-      )
+        confirmText,
+      ),
     );
   });
 }
@@ -570,8 +570,8 @@ export function doDcsRenamePrompting() {
             }
           },
           renameText,
-          createNewText
-        )
+          createNewText,
+        ),
       );
     });
   });
@@ -687,7 +687,7 @@ export function handleDcsOperation(createNew) {
       () => {
         console.log('cancelled');
         resolve();
-      } // on cancel
+      }, // on cancel
     ));
   }));
 }
@@ -809,7 +809,7 @@ function handleDcsRenameCollisionPromise(createNew, doLocalProjectRenamePromptin
 
     dispatch(
       AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
-        { project: projectName, door43: translate('_.door43') }
+        { project: projectName, door43: translate('_.door43') },
       ),
       (result) => {
         dispatch(AlertModalActions.closeAlertDialog());
@@ -835,8 +835,8 @@ function handleDcsRenameCollisionPromise(createNew, doLocalProjectRenamePromptin
       },
       renameText,
       continueText,
-      contactHelpDeskText
-      )
+      contactHelpDeskText,
+      ),
     );
   }));
 }

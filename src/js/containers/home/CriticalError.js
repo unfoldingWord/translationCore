@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 // components
 import FeedbackDialogContainer from '../FeedbackDialogContainer';
+import TcIcon from '../../../images/TC_Icon.png';
 
 const styles = {
   root: {
@@ -29,7 +30,7 @@ function CriticalError({ translate, returnHome }) {
     <div style={styles.root}>
       <div style={styles.content}>
         <img
-          src="images/TC_Icon.png"
+          src={TcIcon}
           style={styles.logo}
           width="130px"
         />

@@ -70,6 +70,7 @@ class ToolsManagementContainer extends Component {
       toggleHomeView,
       sourceContentUpdateCount,
     } = this.props;
+    const name = ''; // TODO - we were reading this from a global variable that was always an empty string, need to remove
 
     const instructions = (
       <div>
@@ -83,7 +84,7 @@ class ToolsManagementContainer extends Component {
             {
               actions: translate('actions'),
               check_for_content_updates: translate('updates.check_for_content_updates'),
-            }
+            },
           )}
         </p>
       </div>
@@ -176,5 +177,5 @@ ToolsManagementContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ToolsManagementContainer);

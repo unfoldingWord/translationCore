@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import open from 'open';
 import { DCS_BASE_URL } from '../../../common/constants';
+import D43Logo from '../../../../images/D43_LOGO.png';
 
 class Login extends Component {
   constructor(props) {
@@ -58,7 +59,7 @@ class Login extends Component {
       <div style={{
         display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%',
       }}>
-        <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png" />
+        <img style={{ height: 64, width: 64 }} src={D43Logo} />
         <div>
           <span style={{ fontSize: 20, fontWeight: 'bold' }}>{translate('buttons.d43_login_button', { door43: translate('_.door43') })}</span>
           <Glyphicon

@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 import path from 'path-extra';
 import fs from 'fs-extra';
 import React from 'react';
@@ -7,8 +8,6 @@ import { getTranslate } from '../../selectors';
 import * as usfmHelpers from '../usfmHelpers';
 import { getProjectManifest } from '../manifestHelpers';
 import { isValidBibleBook } from '../bibleHelpers';
-//static
-import books from '../../../../tcResources/books';
 //constants
 import {
   APP_VERSION,
@@ -172,7 +171,7 @@ export const getUniqueBookIds = (projectPath, limit = -1, bookIDs = []) => {
 
         const id = usfmHelpers.parseUsfmDetails(usfmData).book.id;
 
-        if (newIDs.indexOf(id) === -1 && books[id]) {
+        if (newIDs.indexOf(id) === -1 && isValidBibleBook(id)) {
           newIDs.push(id);
         }
       }

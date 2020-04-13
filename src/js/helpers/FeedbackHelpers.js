@@ -2,12 +2,13 @@ import os from 'os';
 import sgMail from '@sendgrid/mail';
 import stringify from 'json-stringify-safe';
 import AdmZip from 'adm-zip';
+import { getBuild, getEnv } from 'tc-electron-env';
 import { getQuoteAsString } from 'checking-tool-wrapper';
 import { openAlert } from '../actions/AlertActions';
 import { getTranslate } from '../selectors';
-import appPackage from '../../../package';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as FeedbackDialog from '../components/dialogComponents/FeedbackDialog';
+import { APP_VERSION } from '../common/constants';
 
 /**
  *
@@ -81,8 +82,9 @@ export const getOsInfoStr = () => {
 export const submitFeedback = ({
   category, message, name, email, state,
 }) => {
+  const processEnv = getEnv();
   let fromContact = {
-    email: process.env.TC_HELP_DESK_EMAIL,
+    email: processEnv.TC_HELP_DESK_EMAIL,
     name: 'Help Desk',
   };
 
@@ -93,7 +95,7 @@ export const submitFeedback = ({
     };
   }
 
-  let fullMessage = `${message}\n\nApp Version:\n${appPackage.version} (${process.env.BUILD})`;
+  let fullMessage = `${message}\n\nApp Version:\n${APP_VERSION} (${getBuild()})`;
 
   if (name) {
     fullMessage += `\n\nName: ${name}`;
@@ -103,11 +105,11 @@ export const submitFeedback = ({
     fullMessage += `\n\nEmail: ${email}`;
   }
 
-  sgMail.setApiKey(process.env.TC_HELP_DESK_TOKEN);
+  sgMail.setApiKey(processEnv.TC_HELP_DESK_TOKEN);
   const msg = {
     to: [
       {
-        email: process.env.TC_HELP_DESK_EMAIL,
+        email: processEnv.TC_HELP_DESK_EMAIL,
         name: 'Help Desk',
       },
     ],
