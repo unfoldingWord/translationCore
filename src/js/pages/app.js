@@ -85,7 +85,7 @@ class Main extends Component {
             <KonamiContainer />
             <PopoverContainer />
             <Grid fluid style={{
-              padding: 0, display: 'flex', flexDirection: 'column', height: '100%',
+              padding: 0, display: 'flex', flexDirection: 'column', height: '100vh',
             }}>
               <Row style={{ margin: 0 }}>
                 <LocalizedStatusBarContainer/>
