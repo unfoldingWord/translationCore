@@ -93,6 +93,8 @@ export const loadTool = async (toolDir) => {
     case 'translationWords':
       module = require('../../tC_apps/translationWords/index');
       badge = require('../../tC_apps/translationWords/badge.png');
+      // TRICKY: Temporary fix for translationWords badge image
+      badge = badge.default;
       break;
 
     case 'translationNotes':
