@@ -6,8 +6,16 @@ import configureStore from '../redux/configureStore';
 import { loadState, saveState } from '../localStorage';
 import Application from './app';
 
-import './../../css/bootstrap.min.css';
-import './../../css/bootstrap-theme.min.css';
+import './../../fonts/NotoSans-Bold.ttf';
+import './../../fonts/NotoSans-Italic.ttf';
+import './../../fonts/NotoSans-Regular.ttf';
+import './../../fonts/NotoSans-BoldItalic.ttf';
+import './../../fonts/SILEOTSR.ttf';
+import './../../fonts/glyphicons-halflings-regular.ttf';
+import './../../fonts/glyphicons-halflings-regular.woff';
+import './../../fonts/glyphicons-halflings-regular.woff2';
+import './../../fonts/glyphicons-halflings-regular.eot';
+import './../../fonts/glyphicons-halflings-regular.svg';
 import './../../css/styles.css';
 
 //loading persistedState from filesystem using loadState()
