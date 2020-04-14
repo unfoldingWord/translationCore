@@ -23,7 +23,7 @@
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix",
     "test-one": "craco test",
-    "test": "eslint ./src && craco test --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage",
+    "test": "eslint ./src && craco test --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage --watchAll=false",
     "ci-test": "eslint ./src && craco test --max-old-space-size=8192 --maxWorkers=4 --testPathIgnorePatterns=src/tC_apps/ --logHeapUsage --coverage",
     "doc": "jsdoc -c jsdoc/jsdoc.json",
     "find:extra-locale": "node scripts/locale/find_extras.js src/locale/English-en_US.json src/js",
