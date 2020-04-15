@@ -94,9 +94,9 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   actions: {
-    goToProjectValidationStep: (val) => {
-      dispatch(ProjectImportStepperActions.goToProjectValidationStep(val));
-    },
+    // goToProjectValidationStep: (val) => {
+    //   dispatch(ProjectImportStepperActions.goToProjectValidationStep(val));
+    // },
     cancel:() => {
       dispatch(ProjectImportStepperActions.confirmContinueOrCancelImportValidation());
     },
@@ -106,9 +106,9 @@ const mapDispatchToProps = (dispatch) => ({
     toggleNextDisabled: (isDisabled) => {
       dispatch(ProjectImportStepperActions.toggleNextButton(isDisabled));
     },
-    updateStepData:(stepIndex, data) => {
-      dispatch(ProjectImportStepperActions.updateStepData(stepIndex, data));
-    },
+    // updateStepData:(stepIndex, data) => {
+    //   dispatch(ProjectImportStepperActions.updateStepData(stepIndex, data));
+    // },
     loadProjectLicenseMarkdownFile: (licenseId) => {
       dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
     },

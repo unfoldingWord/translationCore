@@ -1,5 +1,6 @@
 module.exports = {
   "extends": [
+    "eslint-config-react-app",
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:import/errors",
@@ -40,8 +41,8 @@ module.exports = {
     "no-throw-literal": "warn",
     "no-nested-ternary": "error",
     "no-duplicate-imports": ["error", {"includeExports": false}],
-    "import/order": "error",
-    "import/first": "error",
+    "import/order": ["error", {"groups": [ "builtin", "external", "internal", "parent", "sibling", "index" ]}],
+    "import/first": "off",
     "import/default": "off",
     "import/namespace": "off",
     "indent": ["error", 2],
@@ -81,7 +82,12 @@ module.exports = {
     "radix": "off",
     "guard-for-in": "off",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "jsx-a11y/anchor-has-content": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "no-mixed-operators": "off",
+    "jsx-a11y/alt-text": "off",
+    "eqeqeq": "off"
   },
   "settings": {
     "react": {

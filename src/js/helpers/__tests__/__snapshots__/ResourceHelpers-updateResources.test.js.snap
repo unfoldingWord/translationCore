@@ -2,29 +2,29 @@
 
 exports[`migrate project resources migrate tN resources - resource changes 1`] = `
 Array [
-  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
-  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
-  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationNotes/tit/currentContextId/contextId.json - is changed",
+  "/Users/jest/mock/path/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
+  "/Users/jest/mock/path/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/2/2/2019-04-24T16_01_01.823Z.json - is changed",
+  "/Users/jest/mock/path/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationNotes/tit/currentContextId/contextId.json - is changed",
 ]
 `;
 
 exports[`migrate project resources migrate tW resources - resource changes 1`] = `
 Array [
-  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
-  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
-  "<HOME_DIR>/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationWords/tit/currentContextId/contextId.json - is changed",
+  "/Users/jest/mock/path/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/invalidated/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
+  "/Users/jest/mock/path/translationCore/projects/en_tit_checking/.apps/translationCore/checkData/selections/tit/1/4/2019-04-24T16_03_28.617Z.json - is changed",
+  "/Users/jest/mock/path/translationCore/projects/en_tit_checking/.apps/translationCore/index/translationWords/tit/currentContextId/contextId.json - is changed",
 ]
 `;
 
 exports[`migrate tCore resources remove old helps with default resources 1`] = `
 Array [
-  "<HOME_DIR>/translationCore/resources/el-x-koine/bibles/ugnt",
-  "<HOME_DIR>/translationCore/resources/en/bibles/ult",
-  "<HOME_DIR>/translationCore/resources/en/bibles/ust",
-  "<HOME_DIR>/translationCore/resources/en/lexicons/ugl",
-  "<HOME_DIR>/translationCore/resources/en/lexicons/uhl",
-  "<HOME_DIR>/translationCore/resources/hbo/bibles/uhb",
-  "<HOME_DIR>/translationCore/resources/hi/lexicons/ugl",
-  "<HOME_DIR>/translationCore/resources/hi/lexicons/uhl",
+  "/Users/jest/mock/path/translationCore/resources/el-x-koine/bibles/ugnt",
+  "/Users/jest/mock/path/translationCore/resources/en/bibles/ult",
+  "/Users/jest/mock/path/translationCore/resources/en/bibles/ust",
+  "/Users/jest/mock/path/translationCore/resources/en/lexicons/ugl",
+  "/Users/jest/mock/path/translationCore/resources/en/lexicons/uhl",
+  "/Users/jest/mock/path/translationCore/resources/hbo/bibles/uhb",
+  "/Users/jest/mock/path/translationCore/resources/hi/lexicons/ugl",
+  "/Users/jest/mock/path/translationCore/resources/hi/lexicons/uhl",
 ]
 `;

@@ -3,8 +3,12 @@ import PropTypes from 'prop-types';
 // components
 import { Card } from 'material-ui/Card';
 import ProjectValidationContentWrapper from '../ProjectValidationContentWrapper';
-import LicenseMarkdown from './LicenseMarkdown';
+import publicDomain from '../../../../images/publicDomain.png';
+import ccBy from '../../../../images/ccBy.png';
+import ccBySa from '../../../../images/ccBySa.png';
+import noCircle from '../../../../images/noCircle.png';
 import CopyrightCard from './CopyrightCard';
+import LicenseMarkdown from './LicenseMarkdown';
 
 class CopyrightCheck extends Component {
   constructor(props) {
@@ -32,22 +36,22 @@ class CopyrightCheck extends Component {
       {
         title: 'CC0 / Public Domain',
         id: 'CC0 1.0 Public Domain',
-        imageName: 'publicDomain.png',
+        image: publicDomain,
       },
       {
         title: 'Creative Commons Attribution (CC BY)',
         id: 'CC BY 4.0',
-        imageName: 'ccBy.png',
+        image: ccBy,
       },
       {
         title: 'Creative Commons Attribution-ShareAlike (CC BY-SA)',
         id: 'CC BY-SA 4.0',
-        imageName: 'ccBySa.png',
+        image: ccBySa,
       },
       {
         title: translate('project_validation.none_of_above'),
         id: 'none',
-        imageName: 'noCircle.png',
+        image: noCircle,
       },
     ];
     const instructions = (
@@ -86,7 +90,7 @@ class CopyrightCheck extends Component {
                       id={license.id}
                       title={license.title}
                       selectProjectLicense={this.props.selectProjectLicense}
-                      imageName={license.imageName}
+                      image={license.image}
                       selectedLicenseId={selectedLicenseId}
                       toggleShowLicenseFile={(licenseId) => this.toggleShowLicenseFile(licenseId)}
                     />

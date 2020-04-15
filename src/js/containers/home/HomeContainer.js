@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { getBuild } from 'tc-electron-env';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // components
 import WelcomeSplash from '../../components/home/WelcomeSplash';
@@ -16,7 +17,6 @@ import * as CSVExportActions from '../../actions/CSVExportActions';
 import * as ProjectUploadActions from '../../actions/ProjectUploadActions';
 import * as USFMExportActions from '../../actions/USFMExportActions';
 import * as ProjectInformationCheckActions from '../../actions/ProjectInformationCheckActions';
-import * as LocaleActions from '../../actions/LocaleActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { openTool, warnOnInvalidations } from '../../actions/ToolActions';
 import * as AlertModalActions from '../../actions/AlertModalActions';
@@ -122,7 +122,7 @@ class HomeContainer extends Component {
                   display: 'flex', flexDirection: 'column', justifyContent: 'center',
                 }}>
                   <HomeScreenNavigation translate={translate} {...this.props} />
-                  <AppVersion actions={this.props.actions} version={`${APP_VERSION} (${process.env.BUILD})`} />
+                  <AppVersion actions={this.props.actions} version={`${APP_VERSION} (${getBuild()})`} />
                 </div>
               </div>
             </div>
@@ -130,7 +130,7 @@ class HomeContainer extends Component {
         }
         <LicenseModal
           translate={translate}
-          version={`${APP_VERSION} (${process.env.BUILD})`}
+          version={`${APP_VERSION} (${getBuild()})`}
           actions={this.props.actions}
           showLicenseModal={showLicenseModal}
         />
@@ -185,12 +185,12 @@ const mapDispatchToProps = (dispatch) => ({
     openOnlyProjectDetailsScreen: (projectSaveLocation) => {
       dispatch(ProjectInformationCheckActions.openOnlyProjectDetailsScreen(projectSaveLocation));
     },
-    openLocaleScreen: () => {
-      dispatch(LocaleActions.openLocaleScreen());
-    },
-    closeLocaleScreen: () => {
-      dispatch(LocaleActions.closeLocaleScreen());
-    },
+    // openLocaleScreen: () => {
+    //   dispatch(LocaleActions.openLocaleScreen());
+    // },
+    // closeLocaleScreen: () => {
+    //   dispatch(LocaleActions.closeLocaleScreen());
+    // },
     getProjectProgressForTools: (toolName) => {
       dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName));
     },
@@ -214,5 +214,5 @@ HomeContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(HomeContainer);

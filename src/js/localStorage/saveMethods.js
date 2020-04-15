@@ -2,19 +2,18 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
+import { SETTINGS_PATH } from '../common/constants';
 
-const PARENT = path.datadir('translationCore');
-const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
 /**
  * @description saves all data in settingsReducer to the specified directory.
  * @param {object} state - object of reducers (objects).
- * @const {string} SETTINGS_DIRECTORY - directory to path where settigns is being saved.
+ * @const {string} SETTINGS_PATH - directory to path where settigns is being saved.
  */
 export const saveSettings = state => {
   try {
-    fs.outputJsonSync(SETTINGS_DIRECTORY, state.settingsReducer, { spaces: 2 });
+    fs.outputJsonSync(SETTINGS_PATH, state.settingsReducer, { spaces: 2 });
   } catch (err) {
     console.warn(err);
   }
@@ -116,7 +115,7 @@ function generateSavePath(state, checkDataName, modifiedTimestamp) {
         bookAbbreviation,
         chapter,
         verse,
-        fileName.replace(/[:"]/g, '_')
+        fileName.replace(/[:"]/g, '_'),
       );
       return savePath;
     }

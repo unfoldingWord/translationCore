@@ -27,7 +27,7 @@ export const convert = (sourceProjectPath, selectedProjectFilename) => new Promi
         <div>
             The project you selected ({sourceProjectPath}) is an invalid tstudio or tcore project. <br />
             Please verify the project you selected is a valid  tstudio or tcore file.
-        </div>
+        </div>,
       );
     }
     resolve(projectInfo);

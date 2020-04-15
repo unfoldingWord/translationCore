@@ -57,7 +57,7 @@ class MergeConflictsCheck extends Component {
           open={card ? card.open : false}
           onCheck={this.onCheck}
           openCard={this.openCard}
-        />
+        />,
       );
     }
     return conflictCards;

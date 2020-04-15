@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import path from 'path';
 import fs from 'fs-extra';
 import * as Version from './VersionUtils';

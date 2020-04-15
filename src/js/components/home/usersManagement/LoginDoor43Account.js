@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
 import TextField from 'material-ui/TextField';
+import D43Logo from '../../../../images/D43_LOGO.png';
 
 /**
  * Renders the login and back buttons
@@ -195,7 +196,7 @@ class LoginDoor43Account extends Component {
           alignItems: 'center',
           width: '100%',
         }}>
-          <img style={{ height: 64, width: 64 }} src="images/D43_LOGO.png"/>
+          <img style={{ height: 64, width: 64 }} src={D43Logo}/>
           <div>
             <span style={{ fontSize: 20, fontWeight: 'bold' }}>
               {

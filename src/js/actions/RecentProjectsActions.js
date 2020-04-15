@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import env from 'tc-electron-env';
 import consts from './ActionTypes';
 // constants
-const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
+const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
 
 /**
  * Reads projects from the fs in ~/translationCore/

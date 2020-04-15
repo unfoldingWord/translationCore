@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';

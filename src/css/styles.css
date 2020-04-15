@@ -1,6 +1,9 @@
 
 @import 'colorscheme.css';
 @import 'BodyContainer.css';
+@import 'hint.min.css';
+@import 'bootstrap.min.css';
+@import 'bootstrap-theme.min.css';
 /*
 ** Fills the screen, so that the ScrollableSection in
 ** RootStyles.js works. Every ancestor of the ScrollableSection

@@ -1,9 +1,8 @@
+/* eslint-disable eqeqeq */
 import fs from 'fs-extra';
-import path from 'path-extra';
 import CryptoJS from 'crypto-js';
+import { SETTINGS_PATH } from '../common/constants';
 //  consts declaration
-const PARENT = path.datadir('translationCore', 'projects');
-const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 
 export const loadSettings = () => {
   // defining as undefined so that we dont forget that we must
@@ -11,8 +10,8 @@ export const loadSettings = () => {
   let settings = undefined;
 
   try {
-    if (fs.existsSync(SETTINGS_DIRECTORY)) {
-      settings = fs.readJsonSync(SETTINGS_DIRECTORY);
+    if (fs.existsSync(SETTINGS_PATH)) {
+      settings = fs.readJsonSync(SETTINGS_PATH);
 
       if (!settings.toolsSettings) {
         settings.toolsSettings = {};

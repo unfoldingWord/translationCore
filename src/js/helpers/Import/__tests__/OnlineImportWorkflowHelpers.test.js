@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import path from 'path-extra';
 import fs from 'fs-extra';
-import ospath from 'ospath';
+import env from 'tc-electron-env';
 import {
   generateImportPath,
   verifyThisIsTCoreOrTStudioProject,
@@ -12,7 +12,7 @@ jest.mock('fs-extra');
 
 describe('OnlineImportWorkflowHelpers.generateImportPath', function () {
   beforeEach(() => {
-    const destDir = path.join(ospath.home(), 'translationCore', 'imports',
+    const destDir = path.join(env.home(), 'translationCore', 'imports',
       'sample_project');
     fs.ensureDirSync(destDir);
   });
@@ -27,15 +27,15 @@ describe('OnlineImportWorkflowHelpers.generateImportPath', function () {
   test('should throw error if already exists', async () => {
     const url = DCS_BASE_URL + '/klappy/sample_project.git';
 
-    await expect(generateImportPath(url)).
-      rejects.
-      toEqual(new Error('Project sample_project has already been imported.'));
+    await expect(generateImportPath(url))
+      .rejects
+      .toEqual(new Error('Project sample_project has already been imported.'));
   });
 
   test('null link should show error', async () => {
-    await expect(generateImportPath(null)).
-      rejects.
-      toEqual(new Error('The URL null does not reference a valid project'));
+    await expect(generateImportPath(null))
+      .rejects
+      .toEqual(new Error('The URL null does not reference a valid project'));
   });
 
   test('should handle missing .git', async () => {
