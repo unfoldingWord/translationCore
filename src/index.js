@@ -6,7 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import { createElectronHandler, registerLogHandler } from './logger';
 
 // forward logs to electron's main thread
-registerLogHandler(createElectronHandler('log-event'));
+if (process.env.NODE_ENV === 'production') {
+  registerLogHandler(createElectronHandler('log-event'));
+}
 
 // log versions
 console.log('Electron', process.versions.electron);
