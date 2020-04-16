@@ -98,7 +98,7 @@ function createWindow(windowId, options = {}) {
   if (IS_DEVELOPMENT) {
     window.loadURL('http://localhost:3000');
 
-    // Install React Dev Tools
+    // Install Dev Tools
     try {
       const {
         default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS,
