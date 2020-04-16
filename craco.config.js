@@ -8,6 +8,7 @@ module.exports = (mode) => {
     { from: './tcResources', to: 'static/tCResources' },
     { from: './src/tC_apps', to: 'static/tC_apps' },
     { from: './src/locale', to: 'static/locale' },
+    { from: './src/assets/projectLicenses', to: 'static/projectLicenses' },
     { from: './package.json', to: 'package.json' },
   ];
 
