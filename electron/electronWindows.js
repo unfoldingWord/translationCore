@@ -1,5 +1,5 @@
-const {BrowserWindow} = require('electron');
 const path = require('path');
+const { BrowserWindow } = require('electron');
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -52,17 +52,19 @@ function defineWindow(windowId, options = {}) {
   if (!options.webPreferences) {
     options.webPreferences = {};
   }
+
   if (!options.webPreferences.additionalArguments) {
     options.webPreferences.additionalArguments = [];
   }
+
   const windowOptions = {
     ...options,
     webPreferences: {
       ...options.webPreferences,
       additionalArguments: [
         ...options.webPreferences.additionalArguments,
-        `--window-id=${windowId}`]
-    }
+        `--window-id=${windowId}`],
+    },
   };
   const window = new BrowserWindow(windowOptions);
 
@@ -96,18 +98,20 @@ function createWindow(windowId, options = {}) {
   if (IS_DEVELOPMENT) {
     window.loadURL('http://localhost:3000');
 
-    // install some developer tools
+    // Install Dev Tools
     try {
       const {
-        default: installExtension,
-        REACT_DEVELOPER_TOOLS
-      } = require('electron-devtools-installer');
+        default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS,
+      } = require(
+        'electron-devtools-installer');
 
-      installExtension(REACT_DEVELOPER_TOOLS).catch(e => {
-        console.error('Could not install React developer tools', e);
+      [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS].forEach(extension => {
+        installExtension(extension)
+          .then((name) => console.log(`createMainWindow() - Added Extension: ${name}`))
+          .catch((err) => console.warn('createMainWindow() - An error occurred: ', err));
       });
     } catch (e) {
-      console.error('Could not install developer extensions', e);
+      console.error('createMainWindow() - Failed to load electron developer tools', e);
     }
   } else {
     window.loadURL(`file://${path.join(__dirname, '/index.html')}`);
@@ -128,5 +132,5 @@ module.exports = {
   getWindowId,
   defineWindow,
   createWindow,
-  closeAllWindows
+  closeAllWindows,
 };
