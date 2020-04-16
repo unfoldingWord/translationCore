@@ -34,9 +34,12 @@ import {
   LOCALE_DIR,
   TOOLS_DIR,
 } from '../common/constants';
-const version = `v${APP_VERSION} (${getBuild()})`;
-injectFileLogging(LOG_FILES_PATH, version);
-console.log('SYSTEM INFO:\n' + getOsInfoStr());
+
+if (process.env.NODE_ENV === 'production') {
+  const version = `v${APP_VERSION} (${getBuild()})`;
+  injectFileLogging(LOG_FILES_PATH, version);
+  console.log('SYSTEM INFO:\n' + getOsInfoStr());
+}
 
 class Main extends Component {
   constructor(props) {

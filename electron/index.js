@@ -93,23 +93,6 @@ function createMainWindow() {
     mainWindow = null;
   });
 
-  // TODO: electronite: restore later
-  // if (process.env.NODE_ENV === 'development') {
-  //   // Install React Dev Tools
-  //   try {
-  //     const { default: installExtension, REACT_DEVELOPER_TOOLS } = require(
-  //       'electron-devtools-installer');
-  //
-  //     installExtension(REACT_DEVELOPER_TOOLS).then((name) => {
-  //       console.log(`createMainWindow() - Added Extension: ${name}`);
-  //     }).catch((err) => {
-  //       console.warn('createMainWindow() - An error occurred: ', err);
-  //     });
-  //   } catch (e) {
-  //     console.error('createMainWindow() - Failed to load electron developer tools', e);
-  //   }
-  // }
-
   return mainWindow;
 }
 
