@@ -173,7 +173,7 @@
     "tc-electron-env": "0.9.0",
     "tc-source-content-updater": "0.6.18",
     "tc-strings": "0.1.7",
-    "tc-tool": "github:unfoldingWord/tc-tool#bugfix-mannycolon-6830",
+    "tc-tool": "4.1.0",
     "tc-ui-toolkit": "1.1.1",
     "truncate-utf8-bytes": "1.0.2",
     "tsv-groupdata-parser": "0.9.15",
