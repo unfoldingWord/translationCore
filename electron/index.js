@@ -93,24 +93,6 @@ function createMainWindow() {
     mainWindow = null;
   });
 
-  if (process.env.NODE_ENV === 'development') {
-    // Install React Dev Tools
-    try {
-      const {
-        default: installExtension, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS,
-      } = require(
-        'electron-devtools-installer');
-
-      [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS].forEach(extension => {
-        installExtension(extension)
-          .then((name) => console.log(`createMainWindow() - Added Extension: ${name}`))
-          .catch((err) => console.warn('createMainWindow() - An error occurred: ', err));
-      });
-    } catch (e) {
-      console.error('createMainWindow() - Failed to load electron developer tools', e);
-    }
-  }
-
   return mainWindow;
 }
 
