@@ -26,10 +26,11 @@ function loadEnv() {
 const config = loadEnv();
 config['BROWSER'] = 'none';
 config['BUILD'] = commit.slice(0, 7);
+
 let data = '';
 
 for (let key of Object.keys(config)) {
   data += `${key}=${config[key]}\n`;
 }
 
-fs.writeFileSync('./.env', data.trim());
+fs.writeFileSync(ENV_PATH, data.trim());
