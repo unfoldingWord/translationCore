@@ -11,22 +11,21 @@ import BaseDialog from './BaseDialog';
  * @property {bool} open - controls whether the dialog is open or closed
  * @property {func} onArchive - callback when the user confirms.
  * @property {func} onClose - callback when the dialog is closed
- * @property {*} message - the error message
  */
 class ArchiveDialog extends React.Component {
   render() {
     const {
-      translate, open, onArchive, onClose, message,
+      translate, open, onArchive, onClose,
     } = this.props;
     return (
       <BaseDialog open={open}
-                  primaryLabel={translate('buttons.ok_button')}
+                  primaryLabel={translate('project.archive_project')}
                   onSubmit={onArchive}
                   onClose={onClose}
-                  title={translate('success')}
+                  title={translate('alert')}
                   modal={false}>
         <span id="message">
-          {message}
+          {translate('project.confirm_archive')}
         </span>
       </BaseDialog>
     );
@@ -37,8 +36,7 @@ ArchiveDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   onArchive: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
-  message: PropTypes.any.isRequired,
+  onClose: PropTypes.func.isRequired
 };
 
 export default ArchiveDialog;
