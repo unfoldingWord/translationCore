@@ -4,10 +4,11 @@ import fs from 'fs-extra';
 import consts from '../ActionTypes';
 // helpers
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
-import { getTranslate } from '../../selectors';
+import { getProjectSaveLocation, getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
 import { generateTimestamp } from '../../helpers';
 import { openAlertDialog } from '../AlertModalActions';
+import { closeProject } from './ProjectLoadingActions';
 
 /**
  * @description With the list of project directories, generates an array of project detail objects
@@ -48,6 +49,13 @@ export const archiveProject = (projectPath) => (dispatch, getState) => {
 const executeArchive = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const archiveDir = path.join(env.home(), 'translationCore', '.archive');
+
+  // Close project
+  const openedProjectPath = getProjectSaveLocation(getState());
+
+  if (projectPath === openedProjectPath) {
+    dispatch(closeProject());
+  }
 
   // Archive project
   try {
