@@ -1,7 +1,7 @@
 sudo: true
 language: node_js
 node_js:
-  - 10.12.0
+  - 8.16.1
 os:
   - linux
 before_install:
