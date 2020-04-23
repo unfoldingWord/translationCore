@@ -61,6 +61,7 @@ function ConfirmationDialog(props) {
     }
   };
 
+  // NOTE: we could potentially support ignorable confirmations with a little more work here.
   return (
     <IgnorableAlert
       open={open}

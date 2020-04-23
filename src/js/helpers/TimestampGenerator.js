@@ -5,7 +5,7 @@
  * @param {String} str A date string. If null, will be current date
  * @return {String} The timestamp in milliseconds
  ******************************************************************************/
-export const generateTimestamp = (str=null) => {
+export const generateTimestamp = (str) => {
   if (!str) {
     return (new Date()).toJSON();
   } else {
