@@ -1,3 +1,4 @@
+const path = require('path');
 const { ESLINT_MODES } = require('@craco/craco');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -30,6 +31,14 @@ module.exports = (mode) => {
         plugins: [
           new CopyWebpackPlugin(copyPatterns),
         ],
+        externals: {
+          agentkeepalive: 'commonjs2 agentkeepalive',
+        },
+        resolve: {
+          alias: {
+            'agentkeepalive': path.resolve('./node_modules/agentkeepalive'),
+          },
+        },
       },
     },
     eslint: { mode: ESLINT_MODES.file },
