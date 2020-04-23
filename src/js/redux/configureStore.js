@@ -7,9 +7,9 @@ import rootReducers from '../reducers/index.js';
 import { confirmationMiddleware } from '../middleware/confirmation/confirmationMiddleware';
 
 let middlewares = [
+  confirmationMiddleware,
   thunkMiddleware,
   promise,
-  confirmationMiddleware,
 ];
 
 if (process.env.REDUX_LOGGER || process.env.NODE_ENV === 'development') {

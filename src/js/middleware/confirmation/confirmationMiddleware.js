@@ -5,10 +5,11 @@
  * that need some sort of confirmation. Without this middleware you would need a reducer for
  * each confirmation case.
  *
- * Do add confirmation to your actions you need to add a `meta` field to the action object.
- *
+ * To add confirmation to your actions you need to add a `meta` field to the action object.
+ * This works well if you don't have any side-effects.
  * ```
  * {
+ *   ...
  *   meta: {
  *     shouldConfirm: true,
  *     tile: "Optional Dialog Title",
@@ -17,6 +18,18 @@
  *     cancelButtonText: "Cancel",
  *   }
  * }
+ * ```
+ *
+ * Alternatively, you can call `confirmAction`. This allows you to dispatch more complex actions
+ * such as thunks that produce side-effects.
+ *
+ * ```
+ * dispatch(confirmAction({ message: "Are you sure" }, (disp) => {
+ *   // This thunk is dispatched when confirmed
+ *   disp({
+ *     ...
+ *   });
+ * }));
  * ```
  */
 
@@ -30,14 +43,24 @@ const types = {
 
 // Middleware
 
+/**
+ * Put this at the front of your middleware array when configuring redux.
+ * @param store
+ * @returns {function(*): function(...[*]=)}
+ */
 export const confirmationMiddleware = store => next => action => {
   if (action.type === types.CONFIRMATION_APPROVED) {
+    console.log(action);
     // allow the original action
     next(action.action);
     return next(action);
   } else if (action.meta && action.meta.shouldConfirm) {
     // display confirmation before executing action
-    return next({ type: types.CONFIRMATION_REQUEST, action });
+    return next({
+      type: types.CONFIRMATION_REQUEST,
+      meta: action.meta,
+      action,
+    });
   } else {
     return next(action);
   }
@@ -52,7 +75,10 @@ export const confirmationReducer = (state = INITIAL_STATE, action) => {
   case types.CONFIRMATION_REQUEST:
     return [
       ...state,
-      action.action,
+      {
+        meta: action.meta,
+        action: action.action,
+      },
     ];
   case types.CONFIRMATION_REJECTED:
   case types.CONFIRMATION_APPROVED:
@@ -81,5 +107,18 @@ export const rejectConfirmation = (action) => ({
 });
 export const approveConfirmation = (action) => ({
   type: types.CONFIRMATION_APPROVED,
+  action,
+});
+/**
+ * Manually insert a confirmation request.
+ * This allows you to build more complex logic.
+ * For example, you could execute a thunk on approval.
+ * @param confirmProps - properties passed to the confirmation dialog
+ * @param action - the action to execute if approved.
+ * @returns {{action: *, type: string}}
+ */
+export const confirmAction = (confirmProps, action) => ({
+  type: types.CONFIRMATION_REQUEST,
+  meta: confirmProps,
   action,
 });

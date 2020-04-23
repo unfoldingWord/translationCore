@@ -34,30 +34,30 @@ function useStableProp(prop) {
  */
 function ConfirmationDialog(props) {
   const {
-    action, approve, reject, translate,
+    confirmation, approve, reject, translate,
   } = props;
   // TRICKY: stabilize the action so text does not flicker when closing.
-  const stableAction = useStableProp(action);
+  const stableConfirmation = useStableProp(confirmation);
   let title, message, confirmText, cancelText;
 
-  if (stableAction && stableAction.meta) {
-    title = stableAction.meta.title;
-    message = stableAction.meta.message;
-    confirmText = stableAction.meta.confirmButtonText;
-    cancelText = stableAction.meta.cancelButtonText;
+  if (stableConfirmation && stableConfirmation.meta) {
+    title = stableConfirmation.meta.title;
+    message = stableConfirmation.meta.message;
+    confirmText = stableConfirmation.meta.confirmButtonText;
+    cancelText = stableConfirmation.meta.cancelButtonText;
   }
 
-  const open = !!action;
+  const open = !!confirmation;
 
   const onApprove = () => {
     if (open) {
-      approve(stableAction);
+      approve(stableConfirmation.action);
     }
   };
 
   const onReject = () => {
     if (open) {
-      reject(stableAction);
+      reject(stableConfirmation);
     }
   };
 
@@ -80,13 +80,13 @@ ConfirmationDialog.propTypes = {
    * Deeply nested keys are not currently supported.
    */
   stateKey: PropTypes.string.isRequired,
-  action: PropTypes.object.isRequired,
+  confirmation: PropTypes.object.isRequired,
   approve: PropTypes.func.isRequired,
   reject: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state, { stateKey }) => ({ action: getNextConfirmation(state[stateKey]) });
+const mapStateToProps = (state, { stateKey }) => ({ confirmation: getNextConfirmation(state[stateKey]) });
 const mapDispatchToProps = {
   approve: approveConfirmation,
   reject: rejectConfirmation,
