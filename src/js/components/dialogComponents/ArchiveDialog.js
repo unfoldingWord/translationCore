@@ -19,11 +19,11 @@ class ArchiveDialog extends React.Component {
     } = this.props;
     return (
       <BaseDialog open={open}
-                  primaryLabel={translate('project.archive_project')}
-                  onSubmit={onArchive}
-                  onClose={onClose}
-                  title={translate('alert')}
-                  modal={false}>
+        primaryLabel={translate('project.archive_project')}
+        onSubmit={onArchive}
+        onClose={onClose}
+        title={translate('alert')}
+        modal={false}>
         <span id="message">
           {translate('project.confirm_archive')}
         </span>
@@ -36,7 +36,7 @@ ArchiveDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   onArchive: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ArchiveDialog;

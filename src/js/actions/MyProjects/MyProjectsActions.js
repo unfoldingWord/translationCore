@@ -24,6 +24,11 @@ export function getMyProjects() {
  * Archived projects can be restored at a later time.
  * @param projectPath {string} the path to the project that will be archived.
  */
-export const archiveProject = (projectPath) => (dispatch) => {
-  // TODO: archive the project
-};
+export const archiveProject = (projectPath) => ({
+  type: 'ARCHIVE_PROJECT',
+  path: projectPath,
+  meta: {
+    shouldConfirm: true,
+    message: 'Are you sure you want to archive this project?',
+  },
+});
