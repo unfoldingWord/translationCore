@@ -10,7 +10,7 @@ import consts from './ActionTypes';
  * @param {Boolean} loading - true displays spinning icon and no action button in dialog.
  * @return {object} action content.
  */
-export function openAlertDialog(alertMessage, loading) {
+export function openAlertDialog(alertMessage, loading=false) {
   return {
     type: consts.OPEN_ALERT_DIALOG,
     alertMessage,

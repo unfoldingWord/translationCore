@@ -1,8 +1,13 @@
+import path from 'path-extra';
+import env from 'tc-electron-env';
+import fs from 'fs-extra';
 import consts from '../ActionTypes';
 // helpers
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 import { getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
+import { generateTimestamp } from '../../helpers';
+import { openAlertDialog } from '../AlertModalActions';
 
 /**
  * @description With the list of project directories, generates an array of project detail objects
@@ -29,14 +34,38 @@ export function getMyProjects() {
 export const archiveProject = (projectPath) => (dispatch, getState) => {
   const translate = getTranslate(getState());
 
+  // Display confirmation
   dispatch(confirmAction({
     message: translate('projects.confirm_archive'),
     confirmButtonText: translate('projects.archive_project'),
-  }, (disp) => {
-    // TODO: archive the project
-    disp({
-      type: consts.ARCHIVE_PROJECT,
-      path: projectPath,
-    });
-  }));
+  }, executeArchive(projectPath)));
+};
+
+/**
+ * Immediately archives a project and removes it from the project list.
+ * @returns {function(...[*]=)}
+ */
+const executeArchive = (projectPath) => async (dispatch, getState) => {
+  const translate = getTranslate(getState());
+  const archiveDir = path.join(env.home(), 'translationCore', '.archive');
+
+  // Archive project
+  try {
+    await fs.ensureDir(archiveDir);
+    await fs.copy(projectPath, path.join(archiveDir, `${path.basename(projectPath)} (${generateTimestamp()})`));
+    await fs.remove(projectPath);
+  } catch (e) {
+    console.error(`Could not archive ${projectPath}`, e);
+    dispatch(openAlertDialog(translate('projects.archive_failed')));
+    return;
+  }
+
+  // Update reducers
+  dispatch({
+    type: consts.ARCHIVE_PROJECT,
+    path: projectPath,
+  });
+
+  // Success alert
+  dispatch(openAlertDialog(translate('projects.archive_complete')));
 };

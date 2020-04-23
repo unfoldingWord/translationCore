@@ -136,6 +136,8 @@
     "zip_files": "Zip Files",
     "archive": "Archive",
     "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
     "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click Archive Project below.",
     "error_setting_up_project": "Oops! We have encountered a problem setting up your project to be loaded. Please contact Help Desk (${email}) for assistance.",
     "error_loading": "Oops! We have encountered a problem loading your project. Please contact Help Desk (${email}) for assistance.",
