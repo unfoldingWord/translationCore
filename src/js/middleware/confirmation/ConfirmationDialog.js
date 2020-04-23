@@ -38,11 +38,13 @@ function ConfirmationDialog(props) {
   } = props;
   // TRICKY: stabilize the action so text does not flicker when closing.
   const stableAction = useStableProp(action);
-  let title, message;
+  let title, message, confirmText, cancelText;
 
   if (stableAction && stableAction.meta) {
     title = stableAction.meta.title;
     message = stableAction.meta.message;
+    confirmText = stableAction.meta.confirmButtonText;
+    cancelText = stableAction.meta.cancelButtonText;
   }
 
   const open = !!action;
@@ -63,11 +65,11 @@ function ConfirmationDialog(props) {
     <IgnorableAlert
       open={open}
       title={title ? title : translate('alert')}
-      confirmText={translate('buttons.ok_button')}
+      confirmText={confirmText ? confirmText : translate('buttons.ok_button')}
       onConfirm={onApprove}
-      cancelText={translate('buttons.cancel_button')}
+      cancelText={cancelText ? cancelText : translate('buttons.cancel_button')}
       onCancel={onReject}>
-      {message ? message : translate('are_you_sure')}
+      {message ? message : 'Missing confirmation message'}
     </IgnorableAlert>
   );
 }

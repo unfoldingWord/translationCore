@@ -13,6 +13,8 @@
  *     shouldConfirm: true,
  *     tile: "Optional Dialog Title",
  *     message: "Message to display in the confirmation dialog",
+ *     confirmButtonText: "Approve",
+ *     cancelButtonText: "Cancel",
  *   }
  * }
  * ```
