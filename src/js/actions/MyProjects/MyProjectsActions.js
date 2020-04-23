@@ -18,3 +18,12 @@ export function getMyProjects() {
     });
   });
 }
+
+/**
+ * Moves a project into the archive.
+ * Archived projects can be restored at a later time.
+ * @param projectPath {string} the path to the project that will be archived.
+ */
+export const archiveProject = (projectPath) => (dispatch) => {
+  // TODO: archive the project
+};

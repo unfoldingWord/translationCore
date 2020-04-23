@@ -34,6 +34,7 @@ class Menu extends React.Component {
     const {
       projectSaveLocation,
       translate,
+      onArchive,
       onExportCSV,
       onExportUSFM,
       onUpload,
@@ -105,6 +106,16 @@ class Menu extends React.Component {
               <Glyphicon glyph='pencil' style={glyphStyle}/>
               <div>{translate('projects.edit_project_details')}</div>
             </div>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                onArchive(projectSaveLocation);
+              }}
+            >
+              <Glyphicon glyph='folder-close' style={glyphStyle}/>
+              <div>{translate('projects.archive')}</div>
+            </div>
           </div>
         </Popover>
       </div>
@@ -117,6 +128,7 @@ Menu.propTypes = {
   projectSaveLocation: PropTypes.string.isRequired,
   user: PropTypes.any.isRequired,
   onEdit: PropTypes.func.isRequired,
+  onArchive: PropTypes.func.isRequired,
   onUpload: PropTypes.func.isRequired,
   onExportCSV: PropTypes.func.isRequired,
   onExportUSFM: PropTypes.func.isRequired,
