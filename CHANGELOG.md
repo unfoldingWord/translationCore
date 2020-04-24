@@ -1,5 +1,14 @@
 # Changelog
 
+## [v2.1.2](https://github.com/unfoldingWord/translationCore/tree/v2.1.2) (2020-04-21)
+
+[Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.1.1...v2.1.2)
+
+**Fixed bugs:**
+
+- Ruth tN "problem with content" error [\#6831](https://github.com/unfoldingWord/translationCore/issues/6831)
+
+
 ## [v2.1.1](https://github.com/unfoldingWord/translationCore/tree/v2.1.1) (2020-03-02)
 
 [Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.1.0...v2.1.1)
