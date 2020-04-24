@@ -1,4 +1,3 @@
-const path = require('path');
 const { ESLINT_MODES } = require('@craco/craco');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
