@@ -31,13 +31,8 @@ module.exports = (mode) => {
         plugins: [
           new CopyWebpackPlugin(copyPatterns),
         ],
-        externals: {
-          agentkeepalive: 'commonjs2 agentkeepalive',
-        },
         resolve: {
-          alias: {
-            'agentkeepalive': path.resolve('./node_modules/agentkeepalive'),
-          },
+          mainFields: ['module', 'main'],
         },
       },
     },
