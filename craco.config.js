@@ -30,6 +30,9 @@ module.exports = (mode) => {
         plugins: [
           new CopyWebpackPlugin(copyPatterns),
         ],
+        resolve: {
+          mainFields: ['module', 'main'],
+        },
       },
     },
     eslint: { mode: ESLINT_MODES.file },
