@@ -6,7 +6,6 @@ import consts from '../ActionTypes';
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 import { getProjectSaveLocation, getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
-import { generateTimestamp } from '../../helpers';
 import { openAlertDialog } from '../AlertModalActions';
 import { closeProject } from './ProjectLoadingActions';
 
@@ -59,8 +58,9 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 
   // Archive project
   try {
+    const timestamp = (new Date()).toISOString();
     await fs.ensureDir(archiveDir);
-    await fs.copy(projectPath, path.join(archiveDir, `${path.basename(projectPath)} (${generateTimestamp()})`));
+    await fs.copy(projectPath, path.join(archiveDir, `${path.basename(projectPath)} (${timestamp})`));
     await fs.remove(projectPath);
   } catch (e) {
     console.error(`Could not archive ${projectPath}`, e);

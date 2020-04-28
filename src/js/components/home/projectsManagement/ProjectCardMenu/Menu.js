@@ -106,6 +106,7 @@ class Menu extends React.Component {
               <Glyphicon glyph='pencil' style={glyphStyle}/>
               <div>{translate('projects.edit_project_details')}</div>
             </div>
+            <hr style={{ margin: '4px 0 0 0' }}/>
             <div
               style={menuItemStyle}
               onClick={() => {
