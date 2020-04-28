@@ -43,7 +43,7 @@ export const archiveProject = (projectPath) => (dispatch, getState) => {
 
 /**
  * Immediately archives a project and removes it from the project list.
- * @returns {function(...[*]=)}
+ * @returns
  */
 const executeArchive = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
