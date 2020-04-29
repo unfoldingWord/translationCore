@@ -48,7 +48,7 @@ import {
   setDefaultProjectCategories,
 } from '../../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../../helpers/bibleHelpers';
-import { delay } from '../../common/utils';
+import { delay, logMemory } from '../../common/utils';
 import * as Bible from '../../common/BooksOfTheBible';
 // constants
 import {
@@ -132,6 +132,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
   const projectDir = path.join(PROJECTS_PATH, name);
   const translate = getTranslate(getState());
   console.log('openProject() projectDir=' + projectDir);
+  logMemory('project open:');
 
   try {
     dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
@@ -212,6 +213,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   }
   dispatch(closeAlertDialog());
+  logMemory('project opened:');
 };
 
 /**

@@ -28,6 +28,7 @@ import { injectFileLogging } from '../helpers/logger';
 // helpers
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
 // constants
+import { logMemory } from '../common/utils';
 import {
   APP_VERSION,
   LOG_FILES_PATH,
@@ -40,6 +41,8 @@ if (process.env.NODE_ENV === 'production') {
   injectFileLogging(LOG_FILES_PATH, version);
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
 }
+
+logMemory('start up:', true);
 
 class Main extends Component {
   constructor(props) {
