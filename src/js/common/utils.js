@@ -16,10 +16,12 @@ export async function logMemory(title, intial = false) {
   if (remoteProcess) {
     output += `electron.remote.process.getHeapStatistics() = ${JSON.stringify(remoteProcess.getHeapStatistics(), null, 2)}\n`;
     output += `electron.remote.process.getSystemMemoryInfo() = ${JSON.stringify(remoteProcess.getSystemMemoryInfo(), null, 2)}\n`;
+    output += `process.getHeapStatistics() = ${JSON.stringify(localProcess.getHeapStatistics(), null, 2)}\n`;
+    output += `process.getSystemMemoryInfo() = ${JSON.stringify(localProcess.getSystemMemoryInfo(), null, 2)}\n`;
   }
 
-  const processMemoryInfo2 = await localProcess.getProcessMemoryInfo();
-  output += `process.getProcessMemoryInfo() = ${JSON.stringify(processMemoryInfo2, null, 2)}\n`;
+  const processMemoryInfo = await localProcess.getProcessMemoryInfo();
+  output += `process.getProcessMemoryInfo() = ${JSON.stringify(processMemoryInfo, null, 2)}\n`;
   output += emphasis + '\n';
   console.log(output);
 }
