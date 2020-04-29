@@ -59,7 +59,7 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
   // Archive project
   try {
     // TRICKY: macOS does not support `:` in file names, so convert them and the macOS `/` to `-`.
-    const timestamp = (new Date()).toISOString().replace(/:/g, '-').replace(/\//g, '-');
+    const timestamp = (new Date()).toISOString().replace(/[:/]/g, '_');
     await fs.ensureDir(archiveDir);
     await fs.copy(projectPath, path.join(archiveDir, `${path.basename(projectPath)} (${timestamp})`));
     await fs.remove(projectPath);
