@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "Archivos comprimidos .zip",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "¡Uy! Hemos encontrado un problema de configuración al cargar su proyecto. Por favor, póngase en contacto con el Help Desk (${email}) para obtener ayuda.",
     "error_loading": "¡Uy! Hemos encontrado un problema al cargar su proyecto. Por favor, póngase en contacto con el Help Desk (${email}) para obtener ayuda.",
     "no_project": "No se seleccionó ningún proyecto",
