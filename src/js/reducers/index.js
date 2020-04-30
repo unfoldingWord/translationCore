@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 // List of reducers
 import { localizeReducer as localize } from 'react-localize-redux';
+import { confirmationReducer } from '../middleware/confirmation/confirmationMiddleware';
 import toolsReducer from './toolsReducer';
 import modalReducer from './modalReducer';
 import loginReducer from './loginReducer';
@@ -49,6 +50,7 @@ const rootReducers = combineReducers({
   localImportReducer,
   sourceContentUpdatesReducer,
   softwareUpdateReducer,
+  confirm: confirmationReducer,
 });
 
 export default rootReducers;

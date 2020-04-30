@@ -5,6 +5,7 @@ import { openOnlyProjectDetailsScreen } from '../../../../actions/ProjectInforma
 import { uploadProject } from '../../../../actions/ProjectUploadActions';
 import { exportToCSV } from '../../../../actions/CSVExportActions';
 import { exportToUSFM } from '../../../../actions/USFMExportActions';
+import { archiveProject } from '../../../../actions/MyProjects/MyProjectsActions';
 import Menu from './Menu';
 
 /**
@@ -18,6 +19,7 @@ class ProjectCardMenu extends React.Component {
       translate,
       openOnlyProjectDetailsScreen,
       uploadProject,
+      archiveProject,
       exportToUSFM,
       exportToCSV,
     } = this.props;
@@ -27,6 +29,7 @@ class ProjectCardMenu extends React.Component {
       onUpload={uploadProject}
       onExportCSV={exportToCSV}
       onExportUSFM={exportToUSFM}
+      onArchive={archiveProject}
       projectSaveLocation={projectSaveLocation}/>;
   }
 }
@@ -37,6 +40,7 @@ ProjectCardMenu.propTypes = {
   translate: PropTypes.func.isRequired,
 
   openOnlyProjectDetailsScreen: PropTypes.func.isRequired,
+  archiveProject: PropTypes.func.isRequired,
   uploadProject: PropTypes.func.isRequired,
   exportToCSV: PropTypes.func.isRequired,
   exportToUSFM: PropTypes.func.isRequired,
@@ -45,6 +49,7 @@ ProjectCardMenu.propTypes = {
 const mapDispatchToProps = {
   openOnlyProjectDetailsScreen,
   uploadProject,
+  archiveProject,
   exportToCSV,
   exportToUSFM,
 };
