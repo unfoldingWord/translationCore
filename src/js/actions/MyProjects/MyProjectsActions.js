@@ -3,7 +3,8 @@ import consts from '../ActionTypes';
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 
 /**
- * @description With the list of project directories, generates an array of project detail objects
+ * With the list of project directories, generates an array of project detail objects
+ * @returns {array} List of projects
  */
 export function getMyProjects() {
   return ((dispatch, getState) => {
