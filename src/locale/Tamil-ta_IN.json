@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "ஜிப் கோப்புகள்\n",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "அச்சச்சோ! உங்கள் திட்டத்தை ஏற்றுவதற்கு அமைப்பதில் சிக்கலை எதிர்கொண்டோம். உதவிக்கு உதவி மையத்தை (${email}) தொடர்பு கொள்ளவும்.\n",
     "error_loading": "அச்சச்சோ! உங்கள் திட்டத்தை ஏற்றுவதில் சிக்கலை எதிர்கொண்டோம். உதவிக்கு உதவி மையத்தை ($ {email}) தொடர்பு கொள்ளவும்.\n",
     "no_project": "எந்த திட்டமும் தேர்ந்தெடுக்கப்படவில்லை\n",
