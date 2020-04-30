@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "File Zip",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "Ups! Kami mengalami masalah saat menyiapkan proyek Anda untuk dimuat. Silakan hubungi Help Desk (${email}) untuk bantuan.",
     "error_loading": "Ups! Kami mengalami masalah saat memuat proyek Anda. Silakan hubungi Help Desk (${email}) untuk bantuan.",
     "no_project": "Tidak ada proyek yang dipilih",
