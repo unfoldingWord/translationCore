@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "జిప్ ఫైల్స్",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "అయ్యో! మీ ప్రాజెక్టు ఎగుమతి కావడానికి చేస్తున్న ఏర్పాట్లలో ఒక సమస్య వచ్చింది. దయచేసి హెల్ప్ డెస్క్ (${email}) సంప్రదించండి.",
     "error_loading": "అయ్యో! మీ ప్రాజెక్టు ఎగుమతి కావడానికి చేస్తున్న ఏర్పాట్లలో ఒక సమస్య వచ్చింది. దయచేసి హెల్ప్ డెస్క్ (${email}) సంప్రదించండి.",
     "no_project": "ఎటువంటి ప్రాజెక్టూ ఎంపిక చెయ్యబడలేదు",
