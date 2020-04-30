@@ -27,7 +27,8 @@ module.exports = {
     "jest",
     "prettier",
     "import",
-    "react-hooks"
+    "react-hooks",
+    "jsdoc"
   ],
   "rules": {
     "array-callback-return": "error",
@@ -87,7 +88,9 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "off",
     "no-mixed-operators": "off",
     "jsx-a11y/alt-text": "off",
-    "eqeqeq": "off"
+    "eqeqeq": "off",
+    "jsdoc/require-returns-type": "warn",
+    "jsdoc/valid-types": "warn"
   },
   "settings": {
     "react": {

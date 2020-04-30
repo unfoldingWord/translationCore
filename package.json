@@ -85,6 +85,7 @@
     "enzyme-to-json": "3.3.5",
     "eslint-config-prettier": "6.10.0",
     "eslint-plugin-jest": "23.8.2",
+    "eslint-plugin-jsdoc": "^24.0.0",
     "eslint-plugin-prettier": "3.1.2",
     "fetch-mock": "5.13.1",
     "file-loader": "6.0.0",
