@@ -34,7 +34,6 @@ import {
   getTranslate,
   getUsername,
   getProjects,
-  getCurrentToolName,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -48,7 +47,7 @@ import {
   setDefaultProjectCategories,
 } from '../../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../../helpers/bibleHelpers';
-import { delay, logMemory } from '../../common/utils';
+import { delay } from '../../common/utils';
 import * as Bible from '../../common/BooksOfTheBible';
 // constants
 import {
@@ -132,7 +131,6 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
   const projectDir = path.join(PROJECTS_PATH, name);
   const translate = getTranslate(getState());
   console.log('openProject() projectDir=' + projectDir);
-  logMemory('project open:');
 
   try {
     dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
@@ -185,7 +183,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
 
       // connect tool api
       console.log('openProject() - connect tool api');
-      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
+      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId, t.name);
 
       t.api.triggerWillConnect(toolProps);
     }
@@ -213,7 +211,6 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   }
   dispatch(closeAlertDialog());
-  logMemory('project opened:');
 };
 
 /**
@@ -225,14 +222,13 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
  * @param bookId
  * @returns {*}
  */
-function makeToolProps(dispatch, state, projectDir, bookId) {
+function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
   const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
-  const toolName = getCurrentToolName(state) || null;
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
   return {
@@ -240,6 +236,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     resources: resourceApi,
     // project api
     project: projectApi,
+    projectSaveLocation: projectDir,
 
     // flattened project api methods that may be deprecated in the future.
     readProjectDataDir: projectApi.readDataDir,
