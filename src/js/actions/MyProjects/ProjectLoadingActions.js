@@ -216,11 +216,12 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
 /**
  * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
  * This is just a temporary prop generator until we can properly abstract the tc api.
- * @param dispatch
- * @param state
- * @param projectDir
- * @param bookId
- * @returns {*}
+ * @param {Function} dispatch
+ * @param {Object} state
+ * @param {String} projectDir
+ * @param {String} bookId
+ * @param {String} toolName
+ * @returns {Object}
  */
 function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const projectApi = new ProjectAPI(projectDir);
