@@ -34,7 +34,6 @@ import {
   getTranslate,
   getUsername,
   getProjects,
-  getCurrentToolName,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -184,7 +183,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
 
       // connect tool api
       console.log('openProject() - connect tool api');
-      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
+      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId, t.name);
 
       t.api.triggerWillConnect(toolProps);
     }
@@ -217,20 +216,20 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
 /**
  * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
  * This is just a temporary prop generator until we can properly abstract the tc api.
- * @param dispatch
- * @param state
- * @param projectDir
- * @param bookId
- * @returns {*}
+ * @param {Function} dispatch
+ * @param {Object} state
+ * @param {String} projectDir
+ * @param {String} bookId
+ * @param {String} toolName
+ * @returns {Object}
  */
-function makeToolProps(dispatch, state, projectDir, bookId) {
+function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
   const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
-  const toolName = getCurrentToolName(state) || null;
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
   return {
@@ -238,6 +237,7 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     resources: resourceApi,
     // project api
     project: projectApi,
+    projectSaveLocation: projectDir,
 
     // flattened project api methods that may be deprecated in the future.
     readProjectDataDir: projectApi.readDataDir,
