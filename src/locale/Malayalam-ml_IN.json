@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "സിപ്പ് ഫയലുകൾ",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "ക്ഷമിക്കണം! നിങ്ങളുടെ പ്രോജക്റ്റ് ലോഡുചെയ്യുന്നതിനായി സജ്ജീകരിക്കുന്നതിൽ ഞങ്ങൾക്ക് ഒരു പ്രശ്നം നേരിട്ടു. സഹായത്തിനായി ഹെൽപ്പ് ഡെസ്കുമായി(${email}) ബന്ധപ്പെടുക.\n for assistance.",
     "error_loading": "ക്ഷമിക്കണം! നിങ്ങളുടെ പ്രോജക്റ്റ് ലോഡുചെയ്യുന്നതിൽ ഞങ്ങൾക്ക് ഒരു പ്രശ്നം നേരിട്ടു. സഹായത്തിനായി ഹെൽപ്പ് ഡെസ്കുമായി (${email}) ബന്ധപ്പെടുക.",
     "no_project": "ഒരു പ്രോജക്റ്റും തിരഞ്ഞെടുത്തിട്ടില്ല",

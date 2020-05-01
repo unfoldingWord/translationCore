@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "Zip File khan",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "Oops! Aapni laga kaam tu load kuribole amikhan sthapankaran te samasya hoise. Morom pora modot lobo karne Help Desk (${email}) te samparka kuribi.",
     "error_loading": "Oops! Aapni laga kaam tu load kuribole amikhan samasya hoise. Morom pora modot lobo karne Help Desk (${email}) te samparka kuribi.",
     "no_project": "Ekubi kaam chuniya huwa nai",

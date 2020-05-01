@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "ज़िप फ़ाइलें",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "ऊप्स! आपके प्रोजेक्ट को लोड किए जाने के लिए हमने एक समस्या का सामना किया है। कृपया सहायता के लिए सहायता डेस्क (${email}) से संपर्क करें।",
     "error_loading": "ऊप्स! हमें आपकी परियोजना को लोड करने में कोई समस्या हुई है। कृपया सहायता के लिए सहायता डेस्क (${email}) से संपर्क करें।",
     "no_project": "कोई भी परियोजना चयनित नहीं थी",

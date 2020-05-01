@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "\"ଜିପ୍ ଫାଇଲ୍‌ମାନ",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "\"ଓହୋ! ଆମ୍ଭକୁ ଆପଣଙ୍କ ପ୍ରକଳ୍ପକୁ ଲୋଡିଙ୍ଗ୍ କରିବା ନିମନ୍ତେ ଏକ ସମସ୍ୟାର ହୋଇଅଛି। ଦୟାକରି ସାହାଯ୍ୟ ନିମନ୍ତେ ସାହାଯ୍ୟକାରୀ ଡେସ୍କ୍${email}ଠାରେ ସମ୍ପର୍କ କରନ୍ତୁ।\"",
     "error_loading": "\"ଓହୋ! ଆମ୍ଭକୁ ଆପଣଙ୍କ ପ୍ରକଳ୍ପକୁ ଲୋଡିଙ୍ଗ୍ କରିବାରେ କିଛି ସମସ୍ୟା ହେଉଅଛି।ଦୟାକରି ସାହାଯ୍ୟ ନିମନ୍ତେ ସାହାଯ୍ୟକାରୀ ଡେସ୍କ୍${email}ଠାରେ ସମ୍ପର୍କ କରନ୍ତୁ।\"",
     "no_project": "\"କୌଣସି ପ୍ରକଳ୍ପକୁ ଚୟନ କରାଯାଇନାହିଁ\"",

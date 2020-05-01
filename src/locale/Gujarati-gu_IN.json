@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "ઝિપ ફાઇલો",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "અરે! તમારા પ્રોજેક્ટને લોડ કરતી વખતે અમે એક સમસ્યાનો સામનો કર્યો છે. કૃપા કરીને મદદ માટે સહાયતા કેન્દ્ર (${email}) નો સંપર્ક કરો.",
     "error_loading": "અરે! તમારા પ્રોજેક્ટને લોડ કરતી વખતે અમે એક સમસ્યાનો સામનો કર્યો છે. કૃપા કરીને મદદ માટે સહાયતા કેન્દ્ર (${email}) નો સંપર્ક કરો.",
     "no_project": "કોઈપણ પ્રોજેક્ટ પસંદ કરવામાં આવ્યો ન હતો",

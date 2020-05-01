@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "Arquivos compactados em ZIP",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "Opa! Surgiu um problema ao configurar seu projeto para ser carregado. Entre em contato com o Suporte (${email}) para obter assistência.",
     "error_loading": "Opa! Surgiu um problema ao configurar seu projeto para ser carregado. Favor contactar Suporte (${email}) para obter assistência.",
     "no_project": "Nenhum projeto foi selecionado",
