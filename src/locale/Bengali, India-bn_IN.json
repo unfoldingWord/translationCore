@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "জিপ ফাইল সমূহ ",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "উপস! আপনার প্রকল্পকে লোড করতে গিয়ে আমরা একটি সমস্যার সম্মুখীন হয়েছি I দয়া করে সহায়তার জন্য হেল্প ডেস্ক ${email} এর সাথে যোগাযোগ করুন I ",
     "error_loading": "উপস! আপনার প্রকল্পকে লোড করতে গিয়ে আমরা একটি সমস্যার সম্মুখীন হয়েছি I দয়া করে সহায়তার জন্য হেল্প ডেস্ক ${email} এর সাথে যোগাযোগ করুন I ",
     "no_project": "কোনো প্রকল্পকে নির্বাচিত করা হয় নি ",
