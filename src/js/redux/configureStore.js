@@ -4,8 +4,10 @@ import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import rootReducers from '../reducers/index.js';
+import { confirmationMiddleware } from '../middleware/confirmation/confirmationMiddleware';
 
 let middlewares = [
+  confirmationMiddleware,
   thunkMiddleware,
   promise,
 ];

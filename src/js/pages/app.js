@@ -35,6 +35,7 @@ import {
   LOCALE_DIR,
   TOOLS_DIR,
 } from '../common/constants';
+import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
 if (process.env.NODE_ENV === 'production') {
   const version = `v${APP_VERSION} (${getBuild()})`;
@@ -98,6 +99,7 @@ class Main extends Component {
               </Row>
               <BodyContainer />
             </Grid>
+            <ConfirmationDialog stateKey="confirm"/>
           </div>
         </MuiThemeProvider>
       );

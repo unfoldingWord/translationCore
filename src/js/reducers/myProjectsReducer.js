@@ -9,6 +9,8 @@ const myProjectsReducer = (state = initialState, action) => {
       ...state,
       projects: action.projects,
     };
+  case types.ARCHIVE_PROJECT:
+    return { projects: state.projects.filter(p => p.projectSaveLocation !== action.path) };
   default:
     return state;
   }

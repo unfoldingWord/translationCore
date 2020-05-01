@@ -134,6 +134,11 @@
   },
   "projects": {
     "zip_files": "ಜಿಪ್ ಫೈಲ್ಸ್",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "ಅಯ್ಯೋ! ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಲೋಡ್ ಮಾಡುವ ಸಮಯದಲ್ಲಿ ನಾವು ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎದುರ್ಗೊಂಡಿದ್ದೇವೆ. ದಯವಿಟ್ಟು ಸಹಾಯಕ್ಕಾಗಿ ಸಹಾಯ ಕೇಂದ್ರವನ್ನು (${email}) ಸಂಪರ್ಕ್ಷಿಸಿರಿ.",
     "error_loading": "ಅಯ್ಯೋ! ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಲೋಡ್ ಮಾಡುವ ಸಮಯದಲ್ಲಿ ನಾವು ಒಂದು ಸಮಸ್ಯೆಯನ್ನು ಎದುರ್ಗೊಂಡಿದ್ದೇವೆ. ದಯವಿಟ್ಟು ಸಹಾಯಕ್ಕಾಗಿ ಸಹಾಯ ಕೇಂದ್ರವನ್ನು (${email}) ಸಂಪರ್ಕ್ಷಿಸಿರಿ.",
     "no_project": "ಯಾವ ಯೋಜನೆಯು ಆಯ್ಕೆಮಾಡಲ್ಪಟ್ಟಿಲ್ಲ",
