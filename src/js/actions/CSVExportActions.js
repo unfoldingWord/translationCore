@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import zipFolder from 'zip-folder';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electronite';
 import { getQuoteAsString } from 'checking-tool-wrapper';
 import env from 'tc-electron-env';
 import { getTranslate } from '../selectors';

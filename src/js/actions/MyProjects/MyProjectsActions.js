@@ -10,7 +10,8 @@ import { openAlertDialog } from '../AlertModalActions';
 import { closeProject } from './ProjectLoadingActions';
 
 /**
- * @description With the list of project directories, generates an array of project detail objects
+ * With the list of project directories, generates an array of project detail objects
+ * @returns {array} List of projects
  */
 export function getMyProjects() {
   return ((dispatch, getState) => {
@@ -43,7 +44,6 @@ export const archiveProject = (projectPath) => (dispatch, getState) => {
 
 /**
  * Immediately archives a project and removes it from the project list.
- * @returns
  */
 const executeArchive = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());

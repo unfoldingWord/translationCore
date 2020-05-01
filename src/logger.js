@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { remote } from 'electronite';
 
 /**
  * The console.log levels that will be intercepted.
