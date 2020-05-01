@@ -16,7 +16,6 @@ import {
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
 } from '../common/constants';
-import { logMemory } from '../common/utils';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
@@ -92,7 +91,6 @@ export function prepareToolForLoading(name) {
  */
 export const openTool = (name) => (dispatch, getData) => new Promise(async (resolve, reject) => {
   console.log('openTool(' + name + ')');
-  logMemory('tool open');
   const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
   dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
@@ -111,7 +109,6 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
     reject(e);
   }
   resolve();
-  logMemory('tool opened');
 });
 
 /**

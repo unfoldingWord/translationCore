@@ -26,7 +26,6 @@ import {
 import ProjectAPI from '../helpers/ProjectAPI';
 import CoreAPI from '../helpers/CoreAPI';
 import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
-import { logMemory } from '../common/utils';
 
 const styles = {
   container: {
@@ -222,9 +221,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(loadResourceArticle(resourceType, articleId, languageId, category, async));
   },
   updateTargetVerse(chapter, verse, text) {
-    logMemory('updateTargetVerse() - call:');
     dispatch(updateTargetVerse(chapter, verse, text));
-    logMemory('updateTargetVerse() - call:');
   },
   setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData) {
     dispatch(setToolSettings(NAMESPACE, settingsPropertyName, toolSettingsData));
