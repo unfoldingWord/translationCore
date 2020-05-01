@@ -1,4 +1,4 @@
-const electron = require('electron');
+const electron = require('electronite');
 
 export function delay(ms) {
   return new Promise((resolve) =>
