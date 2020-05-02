@@ -230,7 +230,7 @@ function Stats(path, exists, isDir) {
 /**
  * ensure this actually contains an array of file names (strings)
  * @param path
- * @return {arg is Array<any>}
+ * @return {boolean}
  */
 function isValidDirectory(path) {
   const dir = mockFS[path];

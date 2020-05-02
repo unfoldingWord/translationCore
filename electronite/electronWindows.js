@@ -1,5 +1,5 @@
 const path = require('path');
-const { BrowserWindow } = require('electron');
+const { BrowserWindow } = require('electronite');
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -9,7 +9,7 @@ const windows = [];
 /**
  * Returns the window with the id
  * @param {string} windowId
- * @returns {Electron.BrowserWindow}
+ * @returns {Electronite.BrowserWindow}
  */
 function getWindow(windowId) {
   return windows[windowId];

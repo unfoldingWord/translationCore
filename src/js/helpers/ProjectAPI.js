@@ -858,20 +858,27 @@ export default class ProjectAPI {
       const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
 
       if (fs.existsSync(contextIdPath)) {
-        const currentContextId = fs.readJSONSync(contextIdPath);
-        return currentContextId;
-      } else {
-        console.warn(`The project doesn't have a currentContextId, thus getting the first item on the groupsData list`);
-        console.warn(`contextIdPath, ${contextIdPath} doesn't exist`);
-        const groupsData = this.getGroupsData(toolName);
-        const groupsDataKeys = Object.keys(groupsData);
-        const firstKey = groupsDataKeys[0];
-        const groupData = groupsData[firstKey][0];
-        const { contextId } = groupData || { contextId: null };
-        return contextId;
+        try {
+          const currentContextId = fs.readJSONSync(contextIdPath);
+
+          if (currentContextId) {
+            return currentContextId;
+          }
+        } catch (error) {
+          console.error(`readCurrentContextIdSync() - error reading ${contextIdPath}`, error);
+        }
       }
+
+      console.warn(`readCurrentContextIdSync() - contextIdPath, ${contextIdPath} doesn't exist or is invalid`);
+      const groupsData = this.getGroupsData(toolName);
+      const groupsDataKeys = Object.keys(groupsData);
+      const firstKey = groupsDataKeys[0];
+      console.warn(`The project doesn't have a currentContextId, thus getting the first item on the groupsData list`);
+      const groupData = groupsData[firstKey][0];
+      const { contextId } = groupData || { contextId: null };
+      return contextId;
     } catch (error) {
-      console.error(error);
+      console.error(`readCurrentContextIdSync() - failure getting first item`, error);
       return null;
     }
   }
