@@ -46,7 +46,7 @@ const types = {
 /**
  * Put this at the front of your middleware array when configuring redux.
  * @param store
- * @returns {function(*): function(...[*]=)}
+ * @returns {function(*): function(...[*])}
  */
 export const confirmationMiddleware = store => next => action => {
   if (action.type === types.CONFIRMATION_APPROVED) {

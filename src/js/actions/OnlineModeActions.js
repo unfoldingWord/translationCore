@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { remote } from 'electronite';
 
 // actions
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';

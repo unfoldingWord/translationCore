@@ -1,7 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import React from 'react';
 import path from 'path-extra';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electronite';
 import consts from '../ActionTypes';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
