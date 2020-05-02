@@ -74,6 +74,9 @@ const ToolsCards = ({
                 language_id: languageId,
                 resource_id: resourceId,
               } = originalLanguageBookManifest;
+              console.log('====================================');
+              console.log('originalLanguageBookManifest', originalLanguageBookManifest);
+              console.log('====================================');
               const { tsv_relation } = manifest;
               const tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
               const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
