@@ -12,6 +12,7 @@ const initialState = {
   buttonLink: null,
   callback: null,
   callback2: null,
+  notCloseableAlert: false,
 };
 
 describe('alertModalReducer', () => {
@@ -37,6 +38,7 @@ describe('alertModalReducer', () => {
       buttonLink: null,
       callback: null,
       callback2: null,
+      notCloseableAlert: false,
     });
 
     expect(
@@ -57,6 +59,7 @@ describe('alertModalReducer', () => {
       buttonLink: null,
       callback: null,
       callback2: null,
+      notCloseableAlert: false,
     });
   });
 
