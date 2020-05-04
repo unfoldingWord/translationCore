@@ -1,6 +1,5 @@
 
 :root {
-
   --accent-color: #2196F3;
   --accent-color-light: #44C6FF;
   --accent-color-dark: #19579E;
@@ -21,30 +20,29 @@
   --background-color-dark: #333333;
 
   --border-color: #CCCCCC;
-
 }
 
 @font-face {
   font-family: Noto Sans;
-  src: url(../src/fonts/NotoSans-Regular.ttf);
+  src: url(./fonts/NotoSans-Regular.ttf);
   font-weight: normal;
 }
 @font-face {
   font-family: Noto Sans;
   font-style: italic;
-  src: url(../src/fonts/NotoSans-Italic.ttf);
+  src: url(./fonts/NotoSans-Italic.ttf);
 }
 @font-face {
   font-family: Noto Sans;
   font-weight: bold;
-  src: url(../src/fonts/NotoSans-Bold.ttf);
+  src: url(./fonts/NotoSans-Bold.ttf);
 }
 
 @font-face {
   font-family: Noto Sans;
   font-style: italic;
   font-weight: bold;
-  src: url(../src/fonts/NotoSans-BoldItalic.ttf);
+  src: url(./fonts/NotoSans-BoldItalic.ttf);
 }
 
 /*
@@ -52,7 +50,7 @@ special font for Hebrew
 */
 @font-face {
   font-family: Ezra;
-  src: url(../src/fonts/SILEOTSR.ttf);
+  src: url(./fonts/SILEOTSR.ttf);
   font-weight: normal;
   unicode-range: U+0590-05FF;
 }
@@ -60,7 +58,7 @@ special font for Hebrew
 /*
   use Ezra for Hebrew characters and then Noto Sans for other characters
 */
-* {
+ * {
   font-family: Ezra, Noto Sans;
 }
 
