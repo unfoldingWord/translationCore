@@ -36,6 +36,10 @@ import {
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
+console.log('====================================');
+console.log('process.env.PUBLIC_URL', process.env.PUBLIC_URL);
+console.log('====================================');
+
 if (process.env.NODE_ENV === 'production') {
   const version = `v${APP_VERSION} (${getBuild()})`;
   injectFileLogging(LOG_FILES_PATH, version);

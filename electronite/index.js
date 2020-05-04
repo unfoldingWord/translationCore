@@ -115,7 +115,7 @@ function createSplashWindow() {
   splashScreen = defineWindow('splash', windowOptions);
 
   if (IS_DEVELOPMENT) {
-    splashScreen.loadURL('http://localhost:3000/splash.html');
+    splashScreen.loadURL(`file://${path.join(__dirname, '../public/splash.html')}`);
   } else {
     splashScreen.loadURL(`file://${path.join(__dirname, '/splash.html')}`);
   }

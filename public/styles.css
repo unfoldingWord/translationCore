@@ -24,6 +24,46 @@
 
 }
 
+@font-face {
+  font-family: Noto Sans;
+  src: url(../src/fonts/NotoSans-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Noto Sans;
+  font-style: italic;
+  src: url(../src/fonts/NotoSans-Italic.ttf);
+}
+@font-face {
+  font-family: Noto Sans;
+  font-weight: bold;
+  src: url(../src/fonts/NotoSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: Noto Sans;
+  font-style: italic;
+  font-weight: bold;
+  src: url(../src/fonts/NotoSans-BoldItalic.ttf);
+}
+
+/*
+special font for Hebrew
+*/
+@font-face {
+  font-family: Ezra;
+  src: url(../src/fonts/SILEOTSR.ttf);
+  font-weight: normal;
+  unicode-range: U+0590-05FF;
+}
+
+/*
+  use Ezra for Hebrew characters and then Noto Sans for other characters
+*/
+* {
+  font-family: Ezra, Noto Sans;
+}
+
 #scrollableSection {
   height: 100%;
   position: relative;
