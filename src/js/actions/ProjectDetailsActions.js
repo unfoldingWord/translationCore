@@ -553,7 +553,8 @@ export function doDcsRenamePrompting() {
       const projectName = path.basename(projectSaveLocation);
 
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
+        AlertModalActions.openOptionDialog(
+          translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
           async (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
@@ -571,6 +572,9 @@ export function doDcsRenamePrompting() {
           },
           renameText,
           createNewText,
+          null,
+          null,
+          true,// making the alert not closeable
         ),
       );
     });
