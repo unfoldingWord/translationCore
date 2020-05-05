@@ -131,7 +131,7 @@ jobs:
           npm run build
           ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/$ARTIFACT_NAME
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         name: Upload artifacts
         with:
           name: ${{ env.ARTIFACT_NAME }}
@@ -211,7 +211,7 @@ jobs:
 #          dir ../
 #          dir ../artifacts
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         name: Upload x64 artifacts
         with:
           name: ${{ env.ARTIFACT_X64 }}
@@ -225,7 +225,7 @@ jobs:
           echo "Generating executable ../artifacts/x32/${{ env.ARTIFACT_X32 }}"
           ./node_modules/.bin/gulp release-win32 --out=../artifacts/x32/${{ env.ARTIFACT_X32 }}
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         name: Upload x32 artifacts
         with:
           name: ${{ env.ARTIFACT_X32 }}
@@ -298,7 +298,7 @@ jobs:
       - name: bundle macOS
         run: ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         name: Upload artifacts
         with:
           name: ${{ env.ARTIFACT_NAME }}
