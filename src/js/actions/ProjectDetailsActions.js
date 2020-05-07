@@ -161,10 +161,11 @@ export function setProjectToolGL(toolName, selectedGL) {
 /**
  * calculate project progress for specific tool and save results
  * @param {String} toolName
+ * @param {String} glID - optional gateway language
  * @param {Object} results - optional object to return progress calculation
  * @return {Function}
  */
-export function getProjectProgressForTools(toolName, results = null) {
+export function getProjectProgressForTools(toolName, glID = null, results = null) {
   return (dispatch, getState) => {
     let progress = 0;
 
@@ -177,7 +178,7 @@ export function getProjectProgressForTools(toolName, results = null) {
       const currentToolApi = toolApi[toolName];
 
       if (currentToolApi && currentToolApi.api) {
-        progress = currentToolApi.api.trigger('getProgress') || 0;
+        progress = currentToolApi.api.trigger('getProgress', glID) || 0;
       }
     } catch (e) {
       console.error(`getProjectProgressForTools(${toolName} - error getting progress`, e);
