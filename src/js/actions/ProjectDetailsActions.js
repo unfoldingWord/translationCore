@@ -13,7 +13,6 @@ import {
   getToolsByKey,
   getToolsSelectedGLs,
   getProjectBookId,
-  getToolGatewayLanguage,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -160,10 +159,10 @@ export function setProjectToolGL(toolName, selectedGL) {
     }
 
     const state = getState();
-    const currentGL = getToolGatewayLanguage(state, toolName);
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
     const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
+    const ifGlChanged = selectedGL !== previousGLForTool;
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
@@ -171,7 +170,7 @@ export function setProjectToolGL(toolName, selectedGL) {
       selectedGL,
     });
 
-    if (toolName === TRANSLATION_NOTES && (selectedGL !== previousGLForTool)) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+    if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
       await dispatch(prepareToolForLoading(toolName));
       dispatch(batchActions([
@@ -179,7 +178,7 @@ export function setProjectToolGL(toolName, selectedGL) {
       ]));
     }
 
-    if (currentGL !== selectedGL) { // if GL has been changed
+    if (ifGlChanged) { // if GL has been changed
       dispatch(updateToolProperties(toolName));
     }
   };
