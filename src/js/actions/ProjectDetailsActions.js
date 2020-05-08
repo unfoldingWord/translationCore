@@ -12,6 +12,8 @@ import {
   getToolCategories,
   getToolsByKey,
   getToolsSelectedGLs,
+  getProjectBookId,
+  getToolGatewayLanguage,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -37,6 +39,7 @@ import {
   TRANSLATION_NOTES,
 } from '../common/constants';
 import consts from './ActionTypes';
+import { connectToolApi } from './MyProjects/ProjectLoadingActions';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
@@ -132,14 +135,34 @@ export const setSaveLocation = pathLocation => ({
 
 export const resetProjectDetail = () => ({ type: consts.RESET_PROJECT_DETAIL });
 
+/**
+ * updates tool properties
+ * @param {string} toolName
+ * @return {function(...[*]=)}
+ */
+export const updateToolProperties = (toolName) => (dispatch, getState) => {
+  console.log(`updateToolProperties(${toolName})`);
+  const state = getState();
+  const projectSaveLocation = getProjectSaveLocation(state);
+  const bookId = getProjectBookId(state);
+  const toolApi = getToolsByKey(state);
+  const currentToolApi = toolApi[toolName];
+
+  if (currentToolApi) {
+    dispatch(connectToolApi(projectSaveLocation, bookId, currentToolApi));
+  }
+};
+
 export function setProjectToolGL(toolName, selectedGL) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
+    const state = getState();
+    const currentGL = getToolGatewayLanguage(state, toolName);
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
-    const toolsGLs = getToolsSelectedGLs(getState());
+    const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
 
     dispatch({
@@ -155,17 +178,20 @@ export function setProjectToolGL(toolName, selectedGL) {
         { type: consts.OPEN_TOOL, name: null },
       ]));
     }
+
+    if (currentGL !== selectedGL) { // if GL has been changed
+      dispatch(updateToolProperties(toolName));
+    }
   };
 }
 
 /**
  * calculate project progress for specific tool and save results
  * @param {String} toolName
- * @param {String} glID - optional gateway language
  * @param {Object} results - optional object to return progress calculation
  * @return {Function}
  */
-export function getProjectProgressForTools(toolName, glID = null, results = null) {
+export function getProjectProgressForTools(toolName, results = null) {
   return (dispatch, getState) => {
     let progress = 0;
 
@@ -178,7 +204,7 @@ export function getProjectProgressForTools(toolName, glID = null, results = null
       const currentToolApi = toolApi[toolName];
 
       if (currentToolApi && currentToolApi.api) {
-        progress = currentToolApi.api.trigger('getProgress', glID) || 0;
+        progress = currentToolApi.api.trigger('getProgress') || 0;
       }
     } catch (e) {
       console.error(`getProjectProgressForTools(${toolName} - error getting progress`, e);

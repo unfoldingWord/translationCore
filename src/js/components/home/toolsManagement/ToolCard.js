@@ -88,14 +88,14 @@ class ToolCard extends Component {
     return gatewayLanguageList;
   }
 
-  loadProgress(selectedGL = null) {
+  loadProgress() {
     const { tool, actions } = this.props;
     const { progress } = this.state;
 
     setTimeout(() => {
       const results = {};
       // TODO: This is an antipattern. Should update the state and use the prop coming from the state instead of assigning the result to an argument.
-      actions.getProjectProgressForTools(tool.name, selectedGL, results);
+      actions.getProjectProgressForTools(tool.name, results);
       const toolProgress = results.progress;
 
       if (progress !== toolProgress) {
@@ -108,7 +108,7 @@ class ToolCard extends Component {
     if (selectedGL && selectedGL.trim()) {
       this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
       this.setState({ selectedGL });
-      this.loadProgress(selectedGL);
+      this.loadProgress();
     }
   }
 

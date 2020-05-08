@@ -140,8 +140,8 @@ const mapDispatchToProps = (dispatch) => ({
     loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
       dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
     },
-    getProjectProgressForTools: (toolName, selectedGL, results) => {
-      dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, selectedGL, results));
+    getProjectProgressForTools: (toolName, results) => {
+      dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, results));
     },
     setProjectToolGL: (toolName, selectedGL) => {
       dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
