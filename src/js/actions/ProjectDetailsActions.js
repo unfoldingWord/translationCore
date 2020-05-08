@@ -138,7 +138,7 @@ export const resetProjectDetail = () => ({ type: consts.RESET_PROJECT_DETAIL });
 /**
  * updates tool properties
  * @param {string} toolName
- * @return {function(...[*]=)}
+ * @return {Promise}
  */
 export const updateToolProperties = (toolName) => (dispatch, getState) => {
   console.log(`updateToolProperties(${toolName})`);

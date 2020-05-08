@@ -127,7 +127,7 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
  * @param {string} projectSaveLocation
  * @param {string} bookId
  * @param {object} tool
- * @return {function(...[*]=)}
+ * @return {Promise}
  */
 export const connectToolApi = (projectSaveLocation, bookId, tool) => (dispatch, getState) => {
   console.log(`connectToolApi(${tool.name}) - connect tool api`);
