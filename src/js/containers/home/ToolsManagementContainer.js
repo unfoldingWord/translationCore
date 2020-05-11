@@ -70,7 +70,6 @@ class ToolsManagementContainer extends Component {
       toggleHomeView,
       sourceContentUpdateCount,
     } = this.props;
-    const name = ''; // TODO - we were reading this from a global variable that was always an empty string, need to remove
 
     const instructions = (
       <div>
@@ -102,7 +101,6 @@ class ToolsManagementContainer extends Component {
             toolsCategories={toolsCategories}
             manifest={manifest}
             translate={translate}
-            bookName={name}
             loggedInUser={loggedInUser}
             toggleHomeView={toggleHomeView}
             actions={{ ...this.props.actions }}

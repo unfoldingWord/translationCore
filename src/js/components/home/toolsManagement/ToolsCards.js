@@ -17,7 +17,6 @@ const ToolsCards = ({
   actions,
   translate,
   onSelectTool,
-  bookName,
   loggedInUser,
   projectSaveLocation,
   manifest,
@@ -39,7 +38,7 @@ const ToolsCards = ({
         </Card>
       </MuiThemeProvider>
     );
-  } else if (bookName.length === 0 && projectSaveLocation === 0) {
+  } else if (!projectSaveLocation) {
     return (
       <MuiThemeProvider>
         <Card style={{
@@ -125,7 +124,6 @@ ToolsCards.propTypes = {
   onSelectTool: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
-  bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   manifest: PropTypes.object.isRequired,
