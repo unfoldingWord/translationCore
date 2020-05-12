@@ -123,6 +123,20 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
 };
 
 /**
+ * creates properties for tools and sends properties to tool before connecting
+ * @param {string} projectSaveLocation
+ * @param {string} bookId
+ * @param {object} tool
+ * @return {Promise}
+ */
+export const connectToolApi = (projectSaveLocation, bookId, tool) => (dispatch, getState) => {
+  console.log(`connectToolApi(${tool.name}) - connect tool api`);
+  const toolProps = makeToolProps(dispatch, getState(), projectSaveLocation, bookId, tool.name);
+
+  tool.api.triggerWillConnect(toolProps);
+};
+
+/**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
@@ -181,11 +195,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       // select default categories
       setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
 
-      // connect tool api
-      console.log('openProject() - connect tool api');
-      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId, t.name);
-
-      t.api.triggerWillConnect(toolProps);
+      dispatch(connectToolApi(validProjectDir, bookId, t));
     }
 
     await dispatch(displayTools());

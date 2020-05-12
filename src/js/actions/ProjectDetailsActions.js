@@ -12,6 +12,7 @@ import {
   getToolCategories,
   getToolsByKey,
   getToolsSelectedGLs,
+  getProjectBookId,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -37,6 +38,7 @@ import {
   TRANSLATION_NOTES,
 } from '../common/constants';
 import consts from './ActionTypes';
+import { connectToolApi } from './MyProjects/ProjectLoadingActions';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
@@ -132,15 +134,35 @@ export const setSaveLocation = pathLocation => ({
 
 export const resetProjectDetail = () => ({ type: consts.RESET_PROJECT_DETAIL });
 
+/**
+ * updates tool properties
+ * @param {string} toolName
+ * @return {Promise}
+ */
+export const updateToolProperties = (toolName) => (dispatch, getState) => {
+  console.log(`updateToolProperties(${toolName})`);
+  const state = getState();
+  const projectSaveLocation = getProjectSaveLocation(state);
+  const bookId = getProjectBookId(state);
+  const toolApi = getToolsByKey(state);
+  const currentToolApi = toolApi[toolName];
+
+  if (currentToolApi) {
+    dispatch(connectToolApi(projectSaveLocation, bookId, currentToolApi));
+  }
+};
+
 export function setProjectToolGL(toolName, selectedGL) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
+    const state = getState();
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
-    const toolsGLs = getToolsSelectedGLs(getState());
+    const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
+    const ifGlChanged = selectedGL !== previousGLForTool;
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
@@ -148,12 +170,16 @@ export function setProjectToolGL(toolName, selectedGL) {
       selectedGL,
     });
 
-    if (toolName === TRANSLATION_NOTES && (selectedGL !== previousGLForTool)) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+    if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
       await dispatch(prepareToolForLoading(toolName));
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },
       ]));
+    }
+
+    if (ifGlChanged) { // if GL has been changed
+      dispatch(updateToolProperties(toolName));
     }
   };
 }

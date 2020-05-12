@@ -1,4 +1,4 @@
-/* eslint-disable default-case */
+/* eslint-disable default-case,object-curly-newline */
 /* eslint-disable import/named */
 /* eslint-env jest */
 import fs from 'fs-extra';
@@ -41,6 +41,11 @@ jest.mock('../js/actions/ProjectUploadActions', () => ({
   prepareProjectRepo: jest.fn(() => async () => {
   }),
   pushProjectRepo: jest.fn(() => async () => {
+  }),
+}));
+jest.mock('../js/actions/MyProjects/ProjectLoadingActions', () => ({
+  ...require.requireActual('../js/actions/MyProjects/ProjectLoadingActions'),
+  connectToolApi: jest.fn(() => () => {
   }),
 }));
 jest.mock('../js/selectors', () => ({
@@ -212,7 +217,11 @@ describe('getProjectProgressForTools() should create an action to get the projec
 
 describe('setProjectToolGL() should create an action to get the project GL for tools', () => {
   const initialState = {
-    projectDetailsReducer: {},
+    projectDetailsReducer: {
+      manifest: {
+        toolsSelectedGLs: { wordAlignment: 'hi' },
+      },
+    },
     resourcesReducer: { bibles: { } },
   };
 
@@ -226,20 +235,20 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
   });
 
-  it('should set GL for word alignment', () => {
+  it('should set GL for word alignment', async () => {
     const store = mockStore(initialState);
     const expectedActions = [
       {
         selectedGL: 'hi', toolName: WORD_ALIGNMENT, type: 'SET_GL_FOR_TOOL',
       },
     ];
-    store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
+    await store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
     expect(ResourcesHelpers.updateGroupIndexForGl).not.toHaveBeenCalled();
   });
 
-  it('should set GL for translationNotes', () => {
+  it('should set GL for translationNotes', async () => {
     const initialState = {
       projectDetailsReducer: { manifest: { toolsSelectedGLs: { translationNotes: 'en' } } },
       resourcesReducer: {
@@ -258,10 +267,24 @@ describe('setProjectToolGL() should create an action to get the project GL for t
       manifest: { hello: 'world' },
     };
     const store = mockStore(initialState);
-    const expectedActions = [{
-      'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
-    }];
-    store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
+    const expectedActions = [
+      {
+        'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
+      },
+      {
+        'meta': {
+          'batch': true,
+        },
+        'payload': [
+          {
+            'name': null,
+            'type': 'OPEN_TOOL',
+          },
+        ],
+        'type': 'BATCHING_REDUCER.BATCH',
+      },
+    ];
+    await store.dispatch(actions.setProjectToolGL(TRANSLATION_NOTES, 'hi'));
     const receivedActions = store.getActions();
     expect(receivedActions).toEqual(expectedActions);
     expect(ResourcesHelpers.updateGroupIndexForGl).toHaveBeenCalled();

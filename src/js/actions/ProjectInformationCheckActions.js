@@ -19,6 +19,7 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
 import { closeProject, loadProjectDetails } from './MyProjects/ProjectLoadingActions';
+import * as BodyUIActions from './BodyUIActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -546,6 +547,7 @@ export function saveAndCloseProjectInformationCheckIfValid() {
         // TRICKY: close the project so that changes can be re-loaded by the tools.
         dispatch(closeProject());
         dispatch(MyProjectsActions.getMyProjects());
+        dispatch(BodyUIActions.goToStep(2)); // go to projects page now that project is closed
       }
     }
     dispatch(AlertModalActions.closeAlertDialog());
