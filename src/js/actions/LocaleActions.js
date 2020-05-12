@@ -9,6 +9,7 @@ import * as nonTranslatable from '../../locale/nonTranslatable';
 import types from './ActionTypes';
 import { setSetting } from './SettingsActions';
 export const APP_LOCALE_SETTING = 'appLocale';
+import { LOCALE_DIR } from '../common/constants';
 
 const DEFAULT_LOCALE = 'en_US';
 
@@ -60,12 +61,28 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) 
 };
 
 /**
+ * Returns the translation file for a given language.
+ * @param {string} languageCode - language Code.
+ */
+const getTranslation = (languageCode) => {
+  const files = fs.readdirSync(LOCALE_DIR);
+  const file = files.find(file => file.includes(languageCode));
+  const localeFile = path.join(LOCALE_DIR, file);
+  const translation = JSON.parse(fs.readFileSync(localeFile));
+  return enhanceTranslation(translation, file, nonTranslatable);
+};
+
+/**
  * Sets the currently active language
  * @param {string} languageCode
  * @param {function} setActiveLanguage
+ * @param {function} addTranslationForLanguage
  * @return {function(*)}
  */
-export const setLanguage = (languageCode, setActiveLanguage) => (dispatch) => {
+export const setLanguage = (languageCode, setActiveLanguage, addTranslationForLanguage) => (dispatch) => {
+  const translation = getTranslation(languageCode);
+  addTranslationForLanguage(translation, languageCode);
+
   // save user setting
   dispatch(setSetting(APP_LOCALE_SETTING, languageCode));
   // enable the locale
@@ -94,6 +111,8 @@ export const setLocaleLoaded = () => ({ type: types.LOCALE_LOADED });
  * @return {function(*)}
  */
 export const loadLocalization = (localeDir, appLanguage = null, initialize, addTranslationForLanguage, setActiveLanguage) => (dispatch) => {
+  console.time('locale test');
+
   if (!fs.existsSync(localeDir)) {
     return Promise.reject(`Missing locale dir at ${localeDir}`);
   }
@@ -152,11 +171,9 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       },
     });
 
-    for (const languageCode in translations) {
-      if (translations.hasOwnProperty(languageCode)) {
-        addTranslationForLanguage(translations[languageCode], languageCode);
-      }
-    }
+    // Only loading translation for current app language
+    addTranslationForLanguage(translations[appLanguage], appLanguage);
+
     return { languages, translations };
   }).then(({ languages, translations }) => {
     if (appLanguage === DEFAULT_LOCALE) {
@@ -177,6 +194,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
     }
   }).then(() => {
     dispatch(setLocaleLoaded());
+    console.timeEnd('locale test');
   }).catch(err => {
     console.log('Failed to initialize localization', err);
   });
