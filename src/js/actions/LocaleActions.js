@@ -169,7 +169,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       },
     });
 
-    let languageCode = appLanguage;
+    let languageCode = appLanguage || DEFAULT_LOCALE;
 
     if (!translations[languageCode] && languageCode) {
       const shortLocale = languageCode.split('_')[0];
