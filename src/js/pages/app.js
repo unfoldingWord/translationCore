@@ -43,11 +43,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 class Main extends Component {
-  componentWillMount() {
-    const tCDir = path.join(env.home(), 'translationCore', 'projects');
-    fs.ensureDirSync(tCDir);
-  }
-
   componentDidMount() {
     const {
       loadTools,
@@ -60,6 +55,9 @@ class Main extends Component {
       migrateResourcesFolder,
       addTranslationForLanguage,
     } = this.props;
+
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
+    fs.ensureDirSync(tCDir);
 
     loadLocalization(LOCALE_DIR, appLanguage, initialize, addTranslationForLanguage, setActiveLanguage);
 
