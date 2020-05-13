@@ -111,8 +111,6 @@ export const setLocaleLoaded = () => ({ type: types.LOCALE_LOADED });
  * @return {function(*)}
  */
 export const loadLocalization = (localeDir, appLanguage = null, initialize, addTranslationForLanguage, setActiveLanguage) => (dispatch) => {
-  console.time('locale test');
-
   if (!fs.existsSync(localeDir)) {
     return Promise.reject(`Missing locale dir at ${localeDir}`);
   }
@@ -194,7 +192,6 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
     }
   }).then(() => {
     dispatch(setLocaleLoaded());
-    console.timeEnd('locale test');
   }).catch(err => {
     console.log('Failed to initialize localization', err);
   });
