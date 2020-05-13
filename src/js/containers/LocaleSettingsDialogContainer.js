@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withLocalize } from 'react-localize-redux';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 import { setLanguage } from '../actions/LocaleActions';
+import { LOCALE_DIR } from '../common/constants';
 import { LocaleSelectListContainer } from './Locale';
 
 const styles = {
@@ -56,7 +57,7 @@ class LocaleSettingsDialogContainer extends React.Component {
 
     // TRICKY: the initial state is null
     if (selectedLanguage) {
-      setLanguage(selectedLanguage, setActiveLanguage, addTranslationForLanguage);
+      setLanguage(selectedLanguage, setActiveLanguage, addTranslationForLanguage, LOCALE_DIR);
     }
     onClose();
   }

@@ -9,7 +9,6 @@ import * as nonTranslatable from '../../locale/nonTranslatable';
 import types from './ActionTypes';
 import { setSetting } from './SettingsActions';
 export const APP_LOCALE_SETTING = 'appLocale';
-import { LOCALE_DIR } from '../common/constants';
 
 const DEFAULT_LOCALE = 'en_US';
 
@@ -63,11 +62,12 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) 
 /**
  * Returns the translation file for a given language.
  * @param {string} languageCode - language Code.
+ * @param {string} localeDir - locale directory.
  */
-const getTranslation = (languageCode) => {
-  const files = fs.readdirSync(LOCALE_DIR);
+const getTranslation = (languageCode, localeDir) => {
+  const files = fs.readdirSync(localeDir);
   const file = files.find(file => file.includes(languageCode));
-  const localeFile = path.join(LOCALE_DIR, file);
+  const localeFile = path.join(localeDir, file);
   const translation = JSON.parse(fs.readFileSync(localeFile));
   return enhanceTranslation(translation, file, nonTranslatable);
 };
@@ -77,10 +77,11 @@ const getTranslation = (languageCode) => {
  * @param {string} languageCode
  * @param {function} setActiveLanguage
  * @param {function} addTranslationForLanguage
+ * @param {string} localeDir
  * @return {function(*)}
  */
-export const setLanguage = (languageCode, setActiveLanguage, addTranslationForLanguage) => (dispatch) => {
-  const translation = getTranslation(languageCode);
+export const setLanguage = (languageCode, setActiveLanguage, addTranslationForLanguage, localeDir) => (dispatch) => {
+  const translation = getTranslation(languageCode, localeDir);
   addTranslationForLanguage(translation, languageCode);
 
   // save user setting
@@ -169,8 +170,22 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       },
     });
 
+    let languageCode = appLanguage;
+
+    if (!translations[languageCode] && languageCode) {
+      console.log('====================================');
+      console.log('appLanguage NOT FOUND', languageCode);
+      console.log('====================================');
+      const shortLocale = languageCode.split('_')[0];
+      const equivalentLocale = translations[shortLocale]['_']['locale'];
+      languageCode = equivalentLocale;
+      console.log('====================================');
+      console.log('_equivalentLocale', equivalentLocale);
+      console.log('====================================');
+    }
+
     // Only loading translation for current app language
-    addTranslationForLanguage(translations[appLanguage], appLanguage);
+    addTranslationForLanguage(translations[languageCode], languageCode);
 
     return { languages, translations };
   }).then(({ languages, translations }) => {

@@ -1,11 +1,13 @@
 /* eslint-disable array-callback-return */
 import path from 'path';
+import fs from 'fs-extra';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import _ from 'lodash';
 import reducer from '../js/reducers/localeSettings';
 import * as actions from '../js/actions/LocaleActions';
 import types from '../js/actions/ActionTypes';
+import * as nonTranslatable from '../locale/nonTranslatable';
 
 jest.unmock('fs-extra');
 jest.unmock('react-localize-redux');
@@ -41,14 +43,31 @@ describe('actions', () => {
 
   it('should create an action to set the active language', () => {
     let language = 'en_US';
+    let localeDir = path.join(__dirname, './fixtures/locale');
+    const translationPath = path.join(localeDir, 'English-en_US.json');
+
+    const translation = fs.readJsonSync(translationPath);
+    const enhancedTranslation = {
+      ...translation,
+      '_': {
+        'language_name': 'English',
+        'short_locale': 'en',
+        'locale': language,
+        ...nonTranslatable,
+      },
+    };
     const expectedActions = [
+      {
+        type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE',
+        payload: { translation: enhancedTranslation, languageCode: language },
+      },
       {
         type: types.SET_SETTING, key: 'appLocale', value: language,
       },
       { type: '@@localize/SET_ACTIVE_LANGUAGE', payload: { languageCode: language } },
     ];
     store = mockStore({});
-    store.dispatch(actions.setLanguage(language, setActiveLanguage));
+    store.dispatch(actions.setLanguage(language, setActiveLanguage, addTranslationForLanguage, localeDir));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
@@ -63,7 +82,7 @@ describe('actions', () => {
           }
         });
         addTranslationActions = _.compact(addTranslationActions);
-        expect(addTranslationActions).toHaveLength(4);
+        expect(addTranslationActions).toHaveLength(1);
         const action = addTranslationActions[0];
         const translation = action.payload.translation;
         expect(translation).toHaveProperty('_');
@@ -79,9 +98,6 @@ describe('actions', () => {
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
         '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', //en_US
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', // for short locale addition
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', //na_NA
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', // for short locale addition
         'LOCALE_LOADED',
       ];
       store = mockStore({});
@@ -96,9 +112,6 @@ describe('actions', () => {
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
         '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', //en_US
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', // for short locale addition
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', //na_NA
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', // for short locale addition
         '@@localize/SET_ACTIVE_LANGUAGE',
         'LOCALE_LOADED',
       ];
@@ -120,10 +133,7 @@ describe('actions', () => {
       let localeDir = path.join(__dirname, './fixtures/locale');
       const expectedActionTypes = [
         { type: '@@localize/INITIALIZE', languageCode: undefined },
-        { type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', languageCode: 'en_US' }, // en_US
-        { type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', languageCode: 'en' }, // for short locale addition
         { type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', languageCode: 'na_NA' }, // na_NA
-        { type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', languageCode: 'na' }, // for short locale addition
         { type: '@@localize/SET_ACTIVE_LANGUAGE', languageCode: 'na_NA' },
         { type: 'LOCALE_LOADED' },
       ];

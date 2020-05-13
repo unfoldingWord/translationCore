@@ -8,6 +8,7 @@ import { withLocalize } from 'react-localize-redux';
 import { LocaleSelectListContainer } from '../../../containers/Locale';
 import { setLanguage } from '../../../actions/LocaleActions';
 import LocaleSettingsDialog from '../../../containers/LocaleSettingsDialogContainer';
+import { LOCALE_DIR } from '../../../common/constants';
 import TermsAndConditionsPage from './pages/TermsAndConditionsPage';
 import StatementOfFaithPage from './pages/StatementOfFaithPage';
 import CreativeCommonsPage from './pages/CreativeCommonsPage';
@@ -206,8 +207,10 @@ class CreateLocalAccount extends Component {
   }
 
   handleLocaleChange(language) {
-    const { setLanguage, setActiveLanguage } = this.props;
-    setLanguage(language, setActiveLanguage);
+    const {
+      setLanguage, setActiveLanguage, addTranslationForLanguage,
+    } = this.props;
+    setLanguage(language, setActiveLanguage, addTranslationForLanguage, LOCALE_DIR);
   }
 
   handleUsernameChange(event) {
@@ -328,6 +331,7 @@ CreateLocalAccount.propTypes = {
   }),
   setView: PropTypes.func.isRequired,
   loginUser: PropTypes.func.isRequired,
+  addTranslationForLanguage: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = { setLanguage };
