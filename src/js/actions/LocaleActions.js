@@ -177,9 +177,6 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       languageCode = equivalentLocale;
     }
 
-    languageCode = null;
-    appLanguage = null;
-
     if (languageCode) {
       // Only loading translation for current app language
       addTranslationForLanguage(translations[languageCode], languageCode);

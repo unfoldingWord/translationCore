@@ -111,8 +111,8 @@ describe('actions', () => {
       let localeDir = path.join(__dirname, './fixtures/locale');
       const expectedActionTypes = [
         '@@localize/INITIALIZE',
-        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', //en_US
         '@@localize/SET_ACTIVE_LANGUAGE',
+        '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', //en_US
         'LOCALE_LOADED',
       ];
       store = mockStore({});
@@ -135,6 +135,7 @@ describe('actions', () => {
         { type: '@@localize/INITIALIZE', languageCode: undefined },
         { type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', languageCode: 'na_NA' }, // na_NA
         { type: '@@localize/SET_ACTIVE_LANGUAGE', languageCode: 'na_NA' },
+        { type: '@@localize/ADD_TRANSLATION_FOR_LANGUAGE', languageCode: 'na_NA' }, // na_NA
         { type: 'LOCALE_LOADED' },
       ];
       store = mockStore({});
