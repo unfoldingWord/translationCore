@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { withLocalize } from 'react-localize-redux';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 import { setLanguage } from '../actions/LocaleActions';
+import { LOCALE_DIR } from '../common/constants';
 import { LocaleSelectListContainer } from './Locale';
 
 const styles = {
@@ -47,13 +48,16 @@ class LocaleSettingsDialogContainer extends React.Component {
    */
   _handleSave() {
     const {
-      setLanguage, onClose, setActiveLanguage,
+      onClose,
+      setLanguage,
+      setActiveLanguage,
+      addTranslationForLanguage,
     } = this.props;
     const { selectedLanguage } = this.state;
 
     // TRICKY: the initial state is null
     if (selectedLanguage) {
-      setLanguage(selectedLanguage, setActiveLanguage);
+      setLanguage(selectedLanguage, setActiveLanguage, addTranslationForLanguage, LOCALE_DIR);
     }
     onClose();
   }
@@ -102,7 +106,8 @@ LocaleSettingsDialogContainer.propTypes = {
   onClose: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   setLanguage: PropTypes.func,
-  setActiveLanguage:  PropTypes.func.isRequired,
+  setActiveLanguage: PropTypes.func.isRequired,
+  addTranslationForLanguage: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = { setLanguage };

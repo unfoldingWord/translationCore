@@ -43,24 +43,23 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    // load app locale
-    this.props.loadLocalization(LOCALE_DIR, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
-  }
-
-  componentWillMount() {
-    const tCDir = path.join(env.home(), 'translationCore', 'projects');
-    fs.ensureDirSync(tCDir);
-  }
-
   componentDidMount() {
     const {
-      migrateResourcesFolder,
-      migrateToolsSettings,
-      getAnchorTags,
       loadTools,
+      initialize,
+      appLanguage,
+      getAnchorTags,
+      loadLocalization,
+      setActiveLanguage,
+      migrateToolsSettings,
+      migrateResourcesFolder,
+      addTranslationForLanguage,
     } = this.props;
+
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
+    fs.ensureDirSync(tCDir);
+
+    loadLocalization(LOCALE_DIR, appLanguage, initialize, addTranslationForLanguage, setActiveLanguage);
 
     loadTools(TOOLS_DIR);
 

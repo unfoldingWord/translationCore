@@ -49,7 +49,7 @@ export const loadTools = (toolsDir) => (dispatch) => {
         dispatch(registerTool(tools[i]));
       }
     });
-  }, 500);
+  }, 50);
 };
 
 /**

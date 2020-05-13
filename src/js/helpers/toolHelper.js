@@ -64,7 +64,8 @@ export const loadTool = async (toolDir) => {
   const validatePaths = [packagePath];
 
   for (const p of validatePaths) {
-    const exists = fs.existsSync(p);
+    // eslint-disable-next-line no-await-in-loop
+    const exists = await fs.exists(p);
 
     if (!exists) {
       throw new Error(`Error loading tool "${toolName}". Missing ${p}`);
