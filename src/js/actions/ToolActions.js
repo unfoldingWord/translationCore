@@ -16,7 +16,6 @@ import {
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
 } from '../common/constants';
-import { delay } from '../common/utils';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
@@ -42,17 +41,15 @@ const registerTool = tool => ({
  * @param {string} toolsDir - path to the tools directory
  * @returns {Function}
  */
-export const loadTools = (toolsDir) => async (dispatch) => {
+export const loadTools = (toolsDir) => (dispatch) => {
   // TRICKY: push this off the render thread just for a moment to simulate threading.
-  await delay(0);
-  loadToolsInDir(toolsDir).then((tools) => {
-    const actions = [];
-
-    for (let i = 0, len = tools.length; i < len; i++) {
-      actions.push(registerTool(tools[i]));
-    }
-    batchActions(actions);
-  });
+  setTimeout(() => {
+    loadToolsInDir(toolsDir).then((tools) => {
+      for (let i = 0, len = tools.length; i < len; i++) {
+        dispatch(registerTool(tools[i]));
+      }
+    });
+  }, 50);
 };
 
 /**

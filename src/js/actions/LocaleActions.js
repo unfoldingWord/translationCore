@@ -102,7 +102,6 @@ export const setLocaleLoaded = () => ({ type: types.LOCALE_LOADED });
  * and initializes the localization library.
  *
  * The default language is english.
- * TODO: for now we are loading all translations up-front. However we could instead load one at a time as needed in `setLanguage` for better performance.
  *
  * @param {string} localeDir directory containing locale files
  * @param {string} appLanguage the language code that will be enabled by default
@@ -173,15 +172,9 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
     let languageCode = appLanguage;
 
     if (!translations[languageCode] && languageCode) {
-      console.log('====================================');
-      console.log('appLanguage NOT FOUND', languageCode);
-      console.log('====================================');
       const shortLocale = languageCode.split('_')[0];
       const equivalentLocale = translations[shortLocale]['_']['locale'];
       languageCode = equivalentLocale;
-      console.log('====================================');
-      console.log('_equivalentLocale', equivalentLocale);
-      console.log('====================================');
     }
 
     // Only loading translation for current app language
