@@ -169,7 +169,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       },
     });
 
-    let languageCode = appLanguage || DEFAULT_LOCALE;
+    let languageCode = appLanguage;
 
     if (!translations[languageCode] && languageCode) {
       const shortLocale = languageCode.split('_')[0];
@@ -177,8 +177,13 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       languageCode = equivalentLocale;
     }
 
-    // Only loading translation for current app language
-    addTranslationForLanguage(translations[languageCode], languageCode);
+    languageCode = null;
+    appLanguage = null;
+
+    if (languageCode) {
+      // Only loading translation for current app language
+      addTranslationForLanguage(translations[languageCode], languageCode);
+    }
 
     return { languages, translations };
   }).then(({ languages, translations }) => {
@@ -190,13 +195,13 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       // set selected locale
       console.log(`Saved locale: ${appLanguage}`);
 
-      if (!setActiveLanguageSafely(dispatch, appLanguage, languages, translations, setActiveLanguage)) {
+      if (!setActiveLanguageSafely(dispatch, appLanguage, languages, translations, setActiveLanguage, addTranslationForLanguage)) {
         // fall back to system locale
-        return setSystemLocale(dispatch, languages, translations, setActiveLanguage);
+        return setSystemLocale(dispatch, languages, translations, setActiveLanguage, addTranslationForLanguage);
       }
     } else {
       // select system language
-      return setSystemLocale(dispatch, languages, translations, setActiveLanguage);
+      return setSystemLocale(dispatch, languages, translations, setActiveLanguage, addTranslationForLanguage);
     }
   }).then(() => {
     dispatch(setLocaleLoaded());
@@ -213,9 +218,9 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
  * @param {function} setActiveLanguage
  * @return {Promise}
  */
-const setSystemLocale = (dispatch, languages, translations, setActiveLanguage) => osLocale().then(locale => {
+const setSystemLocale = (dispatch, languages, translations, setActiveLanguage, addTranslationForLanguage) => osLocale().then(locale => {
   console.log(`System Locale: ${locale}`);
-  setActiveLanguageSafely(dispatch, locale, languages, translations, setActiveLanguage);
+  setActiveLanguageSafely(dispatch, locale, languages, translations, setActiveLanguage, addTranslationForLanguage);
 });
 
 /**
@@ -229,19 +234,21 @@ const setSystemLocale = (dispatch, languages, translations, setActiveLanguage) =
  * @param {function} setActiveLanguage
  * @return {boolean} returns true of the language was successfully set.
  */
-const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage) => {
+const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage, addTranslationForLanguage) => {
   const shortLocale = locale.split('_')[0];
 
   if (_.indexOf(languages, locale) >= 0) {
     // matched locale
     dispatch(setActiveLanguage(locale));
     moment.locale(locale); // set locale of moment
+    addTranslationForLanguage(translations[locale], locale);
   } else if (_.indexOf(languages, shortLocale) >= 0) {
     // equivalent locale
     let equivalentLocale = translations[shortLocale]['_']['locale'];
     console.warn(`Using equivalent locale: ${equivalentLocale}`);
     dispatch(setActiveLanguage(equivalentLocale));
     moment.locale(equivalentLocale); // set locale of moment
+    addTranslationForLanguage(translations[equivalentLocale], equivalentLocale);
   } else {
     console.error(`No translations found for locale: ${locale}`);
     return false;
