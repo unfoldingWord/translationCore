@@ -20,22 +20,6 @@ import {
 } from '../../../selectors';
 import HomeStep from './HomeStep';
 
-const mapStateToProps = (state) => {
-  const projectSaveLocation = getProjectSaveLocation(state);
-  return {
-    isUserLoggedIn: getIsUserLoggedIn(state),
-    username: getUsername(state),
-    isProjectLoaded: !!projectSaveLocation,
-    projectName: getProjectName(state),
-    stepIndex: getHomeScreenStep(state),
-    activeSteps: getActiveHomeScreenSteps(state),
-    projectNickname: getProjectNickname(state),
-    toolName: getSelectedToolTitle(state),
-  };
-};
-
-const mapDispatchToProps = { goToStep };
-
 /**
  * The home stepper
  */
@@ -142,5 +126,21 @@ HomeStepper.propTypes = {
   projectNickname: PropTypes.string,
   toolName: PropTypes.string,
 };
+
+const mapStateToProps = (state) => {
+  const projectSaveLocation = getProjectSaveLocation(state);
+  return {
+    isUserLoggedIn: getIsUserLoggedIn(state),
+    username: getUsername(state),
+    isProjectLoaded: !!projectSaveLocation,
+    projectName: getProjectName(state),
+    stepIndex: getHomeScreenStep(state),
+    activeSteps: getActiveHomeScreenSteps(state),
+    projectNickname: getProjectNickname(state),
+    toolName: getSelectedToolTitle(state),
+  };
+};
+
+const mapDispatchToProps = { goToStep };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeStepper);
