@@ -9,7 +9,7 @@ import * as AlertModalActions from '../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
 import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 // helpers
-import Repo from '../helpers/Repo.js';
+import Repo, * as REPO from '../helpers/Repo.js';
 import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import { delay } from '../common/utils';
@@ -81,6 +81,45 @@ async function saveChangesInOldProjects(projectPath) {
   } catch (e) {
     console.error('uploadProject: migrateSaveChangesInOldProjects() - migration error', e);
   }
+}
+
+/**
+ * convert git error message to localized message
+ * @param {String|Object} error
+ * @param {Function} translate
+ * @param {String} projectName
+ * @return {*}
+ */
+export function gitErrorToLocalizedPrompt(error, translate, projectName) {
+  let message = 'unknown';
+
+  if (error.status === 401) {
+    message = translate('users.session_invalid');
+  } else {
+    const errorStr = error.toString();
+
+    if (errorStr.includes(REPO.GIT_ERROR_REPO_ARCHIVED)) {
+      message = translate('projects.archived');
+    } else if (error.code === REPO.NETWORK_ERROR_IP_ADDR_NOT_FOUND ||
+      errorStr.includes(REPO.GIT_ERROR_UNABLE_TO_CONNECT) ||
+      errorStr.includes(REPO.NETWORK_ERROR_TIMEOUT) ||
+      errorStr.includes(REPO.NETWORK_ERROR_INTERNET_DISCONNECTED) ||
+      errorStr.includes(REPO.NETWORK_ERROR_UNABLE_TO_ACCESS) ||
+      errorStr.includes(REPO.NETWORK_ERROR_REMOTE_HUNG_UP)) {
+      message = translate('no_internet');
+    } else if (errorStr.includes(
+      REPO.GIT_ERROR_PUSH_NOT_FF)) {
+      message = translate('projects.upload_modified_error',
+        { project_name: projectName, door43: translate('_.door43') });
+    } else if (error.hasOwnProperty('message')) {
+      message = translate('projects.uploading_error', { error: error.message });
+    } else if (error.hasOwnProperty('data') && error.data) {
+      message = translate('projects.uploading_error', { error: error.data });
+    } else { // unknown error
+      message = error.message || error;
+    }
+  }
+  return message;
 }
 
 /**
@@ -161,33 +200,8 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
         } catch (err) {
           // handle server and networking errors
           console.error('uploadProject ERROR', err);
-
-          if (err.status === 401) {
-            return dispatch(
-              AlertModalActions.openAlertDialog(translate('users.session_invalid'), false));
-          } else if (err.code === 'ENOTFOUND' ||
-              err.toString().includes('connect ETIMEDOUT') ||
-              err.toString().includes('INTERNET_DISCONNECTED') ||
-              err.toString().includes('unable to access') ||
-              err.toString().includes('The remote end hung up')) {
-            const message = translate('no_internet');
-            dispatch(AlertModalActions.openAlertDialog(message));
-          } else if (err.toString().includes(
-            'not a simple fast-forward')) {
-            const message = translate('projects.upload_modified_error',
-              { project_name: projectName, door43: translate('_.door43') });
-            dispatch(AlertModalActions.openAlertDialog(message));
-          } else if (err.hasOwnProperty('message')) {
-            dispatch(AlertModalActions.openAlertDialog(
-              translate('projects.uploading_error',
-                { error: err.message })));
-          } else if (err.hasOwnProperty('data') && err.data) {
-            dispatch(AlertModalActions.openAlertDialog(
-              translate('projects.uploading_error', { error: err.data })));
-          } else {
-            dispatch(
-              AlertModalActions.openAlertDialog(err.message || err, false));
-          }
+          const message = gitErrorToLocalizedPrompt(err, translate, projectName);
+          dispatch(AlertModalActions.openAlertDialog(message, false));
           resolve();
         }
         dispatch(MyProjectsActions.getMyProjects()); // update list and deselect this project
