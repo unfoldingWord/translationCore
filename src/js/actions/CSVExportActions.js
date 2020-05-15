@@ -450,7 +450,8 @@ export const loadProjectDataByType = (projectPath, type) => new Promise((resolve
 
           try {
             const data = fs.readJsonSync(dataPath);
-            data.userName = data.userName || 'Anonymous';
+            // TRICKY: some checks use a camel case username and others do not.
+            data.userName = data.userName || data.username || 'Anonymous';
             checkDataArray.push(data);
           } catch (err) {
             console.log('loadProjectDataByType(projectPath, type) ', projectPath, type);
