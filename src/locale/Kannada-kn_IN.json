@@ -133,6 +133,7 @@
     "cc_by_sa": "ಎ ಕ್ರಿಯೇಟಿವ್ ಕಾಮನ್ಸ್ ಅಟ್ರಿಭುಶನ್-ಶೇರ್. ಎಲೈಕ್ 4.0 ಇಂಟರ್ನಾಶನಲ್ ಲೈಸನ್ಸ್."
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}",
     "zip_files": "ಜಿಪ್ ಫೈಲ್ಸ್",
     "archive": "Archive",
     "archive_project": "Archive Project",
