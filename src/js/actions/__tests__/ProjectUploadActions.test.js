@@ -51,7 +51,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
   test('repo archived', () => {
     // given
     const error = new Error('error: ' + REPO.GIT_ERROR_REPO_ARCHIVED);
-    const expectedMessage = 'projects.archived';
+    const expectedMessage = 'projects.archived: {"project_name":"projectName","door43":"_.door43","app_name":"_.app_name"}';
 
     // when
     const results = ProjectUploadActions.gitErrorToLocalizedPrompt(error, mock_translate, `projectName`);

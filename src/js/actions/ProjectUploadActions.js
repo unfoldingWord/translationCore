@@ -99,7 +99,12 @@ export function gitErrorToLocalizedPrompt(error, translate, projectName) {
     const errorStr = error.toString();
 
     if (errorStr.includes(REPO.GIT_ERROR_REPO_ARCHIVED)) {
-      message = translate('projects.archived');
+      message = translate('projects.archived',
+        {
+          project_name: projectName,
+          door43: translate('_.door43'),
+          app_name: translate('_.app_name'),
+        });
     } else if (error.code === REPO.NETWORK_ERROR_IP_ADDR_NOT_FOUND ||
       errorStr.includes(REPO.GIT_ERROR_UNABLE_TO_CONNECT) ||
       errorStr.includes(REPO.NETWORK_ERROR_TIMEOUT) ||
