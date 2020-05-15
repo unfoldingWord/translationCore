@@ -15,6 +15,9 @@ import * as AlertModalActions from './AlertModalActions';
  * automatically or ask user
  */
 export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAlignments = false) => dispatch => new Promise(async (resolve, reject) => {
+  console.log('====================================');
+  console.log('getUsfm3ExportFile 1');
+  console.log('====================================');
   //Get path for alignment conversion
   const {
     wordAlignmentDataPath, projectTargetLanguagePath, chapters,
@@ -25,9 +28,16 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
   console.log('getUsfm3ExportFile: Saving Alignments to USFM');
   let usfm = null;
 
+  console.log('====================================');
+  console.log('getUsfm3ExportFile 2');
+  console.log('====================================');
+
   try {
     usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
       wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id);
+    console.log('====================================');
+    console.log('usfm 1', usfm);
+    console.log('====================================');
   } catch (e) {
     if (e && e.error && e.error.type === 'InvalidatedAlignments') {
       console.info('Error converting alignment, prompting user to fix it.');
@@ -40,17 +50,31 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
       } else {
         res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
 
+        console.log('====================================');
+        console.log('res', res);
+        console.log('====================================');
+
         /** The flag output indicates that it is a silent upload */
         if (!output) {
+          console.log('====================================');
+          console.log('output', output);
+          console.log('====================================');
           dispatch(USFMExportActions.displayLoadingUSFMAlert(manifest));
         }
       }
 
       if (res === 'Export') {
         console.log('getUsfm3ExportFile: Resetting Alignments');
-        //The user chose to continue and reset the alignments
+        // The user chose to continue and reset the alignments
         await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
+        console.log('====================================');
+        console.log('resetAlignmentsForVerse');
+        console.log('====================================');
         usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
+        console.log('====================================');
+        console.log('usfm', usfm);
+        console.log('====================================');
+        resolve(usfm);
       } else {
         console.error('getUsfm3ExportFile: Conversion Failed - invalid alignments', e);
         reject(e);
