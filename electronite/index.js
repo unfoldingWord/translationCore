@@ -51,15 +51,13 @@ function createMainWindow() {
     minHeight: 689,
     show: false,
     center: true,
-    // useContentSize: true, // TODO: investigate if needed
     webPreferences: { nodeIntegration: true },
   };
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
-  // TODO: electronite: restore later
-  // if ('developer_mode' in p && p.developer_mode) {
-  // mainWindow.webContents.openDevTools();
-  // }
+  if ('developer_mode' in p && p.developer_mode) {
+    mainWindow.webContents.openDevTools();
+  }
 
   isGitInstalled().then(installed => {
     if (installed) {
@@ -154,12 +152,6 @@ function createHelperWindow(url) {
     helperWindow.webContents.send('unmaximize');
   });
 }
-
-// TODO: electronite disabling this since it makes it a pain to debug things if the app just shuts down
-// process.on('uncaughtException', (err) => {
-//   console.error(`uncaugtException`, err);
-//   closeAllWindows();
-// });
 
 // build menu
 const menu = Menu.buildFromTemplate(MenuTemplate);
