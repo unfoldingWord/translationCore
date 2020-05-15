@@ -133,6 +133,7 @@
     "cc_by_sa": "Licença \"Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)\". "
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}",
     "zip_files": "Arquivos compactados em ZIP",
     "archive": "Arquivar",
     "archive_project": "Arquivar Projeto",
