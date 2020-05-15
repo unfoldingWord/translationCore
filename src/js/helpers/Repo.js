@@ -11,6 +11,18 @@ import GitApi, {
   getSavedRemote,
 } from './GitApi';
 
+// consts
+export const GIT_ERROR_UNKNOWN_PROBLEM = 'An unknown problem occurred during import';
+export const GIT_ERROR_UNABLE_TO_CONNECT = 'Unable to connect to the server. Please check your Internet connection.';
+export const GIT_ERROR_PROJECT_NOT_FOUND = 'Project not found';
+export const GIT_ERROR_PUSH_NOT_FF = 'not a simple fast-forward';
+export const GIT_ERROR_REPO_ARCHIVED = 'repo is archived';
+export const NETWORK_ERROR_IP_ADDR_NOT_FOUND = 'ENOTFOUND';
+export const NETWORK_ERROR_TIMEOUT = 'connect ETIMEDOUT';
+export const NETWORK_ERROR_UNABLE_TO_ACCESS = 'unable to access';
+export const NETWORK_ERROR_INTERNET_DISCONNECTED = 'INTERNET_DISCONNECTED';
+export const NETWORK_ERROR_REMOTE_HUNG_UP = 'The remote end hung up';
+
 const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
 const projectRegExp = new RegExp(`^https?://${dcsHostname}/([^/]+)/([^/.]+)(\\.git)?$`);
 let doingSave = false;
@@ -423,18 +435,20 @@ export default class Repo {
  */
 export function convertGitErrorMessage(err, link) {
   console.warn('convertGitErrorMessage()', { err, link });
-  let errMessage = 'An unknown problem occurred during import';
+  let errMessage = GIT_ERROR_UNKNOWN_PROBLEM + ': ' + err; // default message
 
-  if (err.includes('fatal: unable to access')) {
-    errMessage = 'Unable to connect to the server. Please check your Internet connection.';
+  if (err.includes('repo is archived')) {
+    errMessage = GIT_ERROR_REPO_ARCHIVED;
+  } else if (err.includes('fatal: unable to access')) {
+    errMessage = GIT_ERROR_UNABLE_TO_CONNECT;
   } else if (err.includes('fatal: The remote end hung up')) {
-    errMessage = 'Unable to connect to the server. Please check your Internet connection.';
+    errMessage = GIT_ERROR_UNABLE_TO_CONNECT;
   } else if (err.includes('Failed to load')) {
-    errMessage = 'Unable to connect to the server. Please check your Internet connection.';
+    errMessage = GIT_ERROR_UNABLE_TO_CONNECT;
   } else if (err.includes('fatal: repository') && err.includes('not found')) {
-    errMessage = 'Project not found: \'' + link + '\'';
+    errMessage = GIT_ERROR_PROJECT_NOT_FOUND + ': \'' + link + '\'';
   } else if (err.includes('error: failed to push some refs')) {
-    errMessage = 'not a simple fast-forward';
+    errMessage = GIT_ERROR_PUSH_NOT_FF;
   }
   console.warn('convertGitErrorMessage() returning message:', errMessage);
   return errMessage;
