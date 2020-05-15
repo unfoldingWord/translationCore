@@ -55,7 +55,7 @@ function createMainWindow() {
   };
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
-  if (process.env.developer_mode) {
+  if (process.env.DEVELOPER_MODE === 'true' || process.env.developer_mode === 'true') {
     mainWindow.webContents.openDevTools();
   }
 
