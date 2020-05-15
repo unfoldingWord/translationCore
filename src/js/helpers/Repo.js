@@ -435,7 +435,7 @@ export default class Repo {
  */
 export function convertGitErrorMessage(err, link) {
   console.warn('convertGitErrorMessage()', { err, link });
-  let errMessage = GIT_ERROR_UNKNOWN_PROBLEM;
+  let errMessage = GIT_ERROR_UNKNOWN_PROBLEM + ': ' + err; // default message
 
   if (err.includes('repo is archived')) {
     errMessage = GIT_ERROR_REPO_ARCHIVED;

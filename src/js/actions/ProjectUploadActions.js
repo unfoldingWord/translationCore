@@ -107,10 +107,17 @@ export function gitErrorToLocalizedPrompt(error, translate, projectName) {
       errorStr.includes(REPO.NETWORK_ERROR_UNABLE_TO_ACCESS) ||
       errorStr.includes(REPO.NETWORK_ERROR_REMOTE_HUNG_UP)) {
       message = translate('no_internet');
-    } else if (errorStr.includes(
-      REPO.GIT_ERROR_PUSH_NOT_FF)) {
+    } else if (errorStr.includes(REPO.GIT_ERROR_PUSH_NOT_FF)) {
       message = translate('projects.upload_modified_error',
         { project_name: projectName, door43: translate('_.door43') });
+    } else if (errorStr.includes(REPO.GIT_ERROR_UNKNOWN_PROBLEM)) {
+      const parts = errorStr.split(REPO.GIT_ERROR_UNKNOWN_PROBLEM);
+      let details = parts.length > 1 ? parts[1] : errorStr;
+
+      if (details[0] === ':') {
+        details = details.substr(1).trim();
+      }
+      message = translate('projects.uploading_error', { error: details });
     } else if (error.hasOwnProperty('message')) {
       message = translate('projects.uploading_error', { error: error.message });
     } else if (error.hasOwnProperty('data') && error.data) {
