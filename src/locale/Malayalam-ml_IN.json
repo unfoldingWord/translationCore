@@ -133,7 +133,7 @@
     "cc_by_sa": "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ-ഷെയർഅലൈക്ക് 4.0 അന്താരാഷ്ട്ര ലൈസൻസ്."
   },
   "projects": {
-    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}",
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "സിപ്പ് ഫയലുകൾ",
     "archive": "Archive",
     "archive_project": "Archive Project",
