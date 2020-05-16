@@ -133,6 +133,7 @@
     "cc_by_sa": "ਕਰੀਏਟਿਵ ਕਾਮਨਜ਼ ਐਟ੍ਰਬ੍ਯੂਸ਼ਨ-ਸ਼ੇਅਰਲਾਈਕ 4.0 ਇੰਟਰਨੈਸ਼ਨਲ ਲਾਇਸੰਸ."
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "ਜ਼ਿਪ ਫਾਇਲ",
     "archive": "Archive",
     "archive_project": "Archive Project",
