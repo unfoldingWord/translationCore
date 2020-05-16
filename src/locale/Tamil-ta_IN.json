@@ -133,6 +133,7 @@
     "cc_by_sa": "கிரியேட்டிவ் காமன்ஸ் பண்புக்கூறு-ஷேர்அலைக் 4.0 சர்வதேச உரிமம்.\n"
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "ஜிப் கோப்புகள்\n",
     "archive": "Archive",
     "archive_project": "Archive Project",
