@@ -3,6 +3,8 @@
 import * as WordAlignmentHelpers from '../helpers/WordAlignmentHelpers';
 import * as manifestHelpers from '../helpers/manifestHelpers';
 import * as exportHelpers from '../helpers/exportHelpers';
+import { getTranslate } from '../selectors';
+import { delay } from '../common/utils';
 import * as USFMExportActions from './USFMExportActions';
 import * as AlertModalActions from './AlertModalActions';
 
@@ -14,30 +16,22 @@ import * as AlertModalActions from './AlertModalActions';
  * @param {boolean} resetAlignments - Flag to set whether export will reset alignments
  * automatically or ask user
  */
-export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAlignments = false) => dispatch => new Promise(async (resolve, reject) => {
-  console.log('====================================');
-  console.log('getUsfm3ExportFile 1');
-  console.log('====================================');
-  //Get path for alignment conversion
+export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAlignments = false) => (dispatch, getState) => new Promise(async (resolve, reject) => {
+  console.info('getUsfm3ExportFile()');
+  const translate = getTranslate(getState());
+  // Get path for alignment conversion
   const {
     wordAlignmentDataPath, projectTargetLanguagePath, chapters,
   } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectSaveLocation);
   const manifest = manifestHelpers.getProjectManifest(projectSaveLocation);
   exportHelpers.makeSureUsfm3InHeader(projectSaveLocation, manifest);
-  /** Convert alignments from the filesystem under the project alignments folder */
-  console.log('getUsfm3ExportFile: Saving Alignments to USFM');
+  // Convert alignments from the filesystem under the project alignments folder
+  console.info('getUsfm3ExportFile: Saving Alignments to USFM');
   let usfm = null;
-
-  console.log('====================================');
-  console.log('getUsfm3ExportFile 2');
-  console.log('====================================');
 
   try {
     usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
       wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectSaveLocation, manifest.project.id);
-    console.log('====================================');
-    console.log('usfm 1', usfm);
-    console.log('====================================');
   } catch (e) {
     if (e && e.error && e.error.type === 'InvalidatedAlignments') {
       console.info('Error converting alignment, prompting user to fix it.');
@@ -49,32 +43,22 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
         res = 'Export';
       } else {
         res = await dispatch(displayAlignmentErrorsPrompt(projectSaveLocation, chapter, verse));
-
-        console.log('====================================');
-        console.log('res', res);
-        console.log('====================================');
+        await delay(500);
 
         /** The flag output indicates that it is a silent upload */
         if (!output) {
-          console.log('====================================');
-          console.log('output', output);
-          console.log('====================================');
           dispatch(USFMExportActions.displayLoadingUSFMAlert(manifest));
         }
       }
 
       if (res === 'Export') {
-        console.log('getUsfm3ExportFile: Resetting Alignments');
-        // The user chose to continue and reset the alignments
+        const bookName = manifest.project ? manifest.project.name : null;
+        const reference = bookName ? `${bookName} ${chapter}:${verse}` : '';
+        dispatch(AlertModalActions.openAlertDialog(`${translate('resetting_alignments')} ${reference}`, true));
+        console.info('getUsfm3ExportFile: Resetting Alignments');
+        // The user chose to continue and reset the alignment
         await WordAlignmentHelpers.resetAlignmentsForVerse(projectSaveLocation, chapter, verse);
-        console.log('====================================');
-        console.log('resetAlignmentsForVerse');
-        console.log('====================================');
         usfm = await dispatch(getUsfm3ExportFile(projectSaveLocation, output, true));
-        console.log('====================================');
-        console.log('usfm', usfm);
-        console.log('====================================');
-        resolve(usfm);
       } else {
         console.error('getUsfm3ExportFile: Conversion Failed - invalid alignments', e);
         reject(e);
@@ -89,12 +73,12 @@ export const getUsfm3ExportFile = (projectSaveLocation, output = false, resetAli
 
   if (output) { /** output indicates that it is a silent upload */
     //Write converted usfm to specified location
-    console.log('getUsfm3ExportFile: Writing Alignments to ' + output);
+    console.info('getUsfm3ExportFile: Writing Alignments to ' + output);
     WordAlignmentHelpers.writeToFS(output, usfm);
   } else {
     dispatch(AlertModalActions.closeAlertDialog());
   }
-  console.log('getUsfm3ExportFile: Conversion Complete');
+  console.info('getUsfm3ExportFile: Conversion Complete');
   resolve(usfm);
 });
 
