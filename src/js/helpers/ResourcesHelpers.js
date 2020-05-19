@@ -628,7 +628,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
-  const STATIC_RESOURCES_BIBLES_PATH = path.join('./tcResources', languageId, 'bibles');
+  const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languageId, 'bibles');
   const fileName = 'index.json';
   let bibleIndexPath;
 
@@ -641,6 +641,8 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
 
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
+    } else {
+      console.error(`versionPath is undefined, versionPath:${versionPath}`);
     }
   }
 

@@ -64,6 +64,7 @@
   "email_address_optional": "Endereço de e-mail (opcional):",
   "invalid_email": "Endereço de email inválido",
   "include_app_logs": "Incluir Logs da aplicação",
+  "resetting_alignments": "Redefinindo o alinhamento para",
   "alignment_prompt": "Gostaria de exportar os dados de alinhamento com o seu texto?",
   "include_alignment_check": "Incluir dados de alinhamento",
   "loading_verse_edits": "Carregando Edições de Versículos",
@@ -133,7 +134,7 @@
     "cc_by_sa": "Licença \"Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)\". "
   },
   "projects": {
-    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
+    "archived": "O projeto (${project_name}) não pode ser carregado porque foi arquivado em ${door43}.<br/><br/>Para carregar esse projeto, por gentileza, primeiramente desarquive-o em ${door43} ou renomei-o em ${app_name}.",
     "zip_files": "Arquivos compactados em ZIP",
     "archive": "Arquivar",
     "archive_project": "Arquivar Projeto",
