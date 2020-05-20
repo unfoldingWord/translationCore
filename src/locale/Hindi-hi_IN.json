@@ -64,6 +64,7 @@
   "email_address_optional": "ईमेल पता (वैकल्पिक):",
   "invalid_email": "अमान्य ईमेल पता",
   "include_app_logs": "एप्लिकेशन लॉग शामिल करें",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "क्या आप अपने पाठ के साथ संरेखण डेटा निर्यात करना चाहते हैं?",
   "include_alignment_check": "संरेखण डेटा शामिल करें",
   "loading_verse_edits": "आयत का संपादन लोड हो रहा है",
