@@ -76,14 +76,42 @@ body {
     src: url(../fonts/NotoSans-BoldItalic.ttf);
 }
 
-/*
-special font for Hebrew
- */
+/* special font for Hebrew */
 @font-face {
   font-family: Ezra;
   src: url(../fonts/SILEOTSR.ttf);
   font-weight: normal;
   unicode-range: U+0590-05FF;
+}
+
+/* Padauk - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(../fonts/complexScript/Padauk-Regular.woff);
+  font-weight: normal;
+}
+/* Padauk bold - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(../fonts/complexScript/Padauk-Bold.woff);
+  font-weight: bold;
+}
+/* Awami Nastaliq - supports a wide variety of languages of Pakistan that are written with the sloping Nastaliq style. */
+@font-face {
+  font-family: AwamiNastaliq;
+  src: url(../fonts/complexScript/AwamiNastaliq-Regular.woff);
+}
+/* Scheherazade - supports a wide range of Arabic characters, and therefore will handle many languages other than Arabic itself. */
+@font-face {
+  font-family: Scheherazade;
+  src: url(../fonts/complexScript/Scheherazade-Regular.woff);
+  font-weight: normal;
+}
+/* Scheherazade bold */
+@font-face {
+  font-family: Scheherazade;
+  src: url(../fonts/complexScript/Scheherazade-Bold.woff);
+  font-weight: bold;
 }
 
 /*
@@ -92,6 +120,36 @@ use Ezra for Hebrew characters and then Noto Sans for other characters
 * {
   font-family: Ezra, Noto Sans;
 }
+
+.Padauk-text {
+  font-family: Padauk, sans-serif;
+  font-size: 150%;
+  font-feature-settings: "wtri" 1;
+}
+
+.AwamiNastaliq-text {
+  font-family: AwamiNastaliq, sans-serif;
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  font-size: 200%;
+  direction: rtl;
+  text-align: right;
+}
+
+.Scheherazade-text {
+  font-family: Scheherazade, sans-serif;
+  font-feature-settings: "cv12" 0;
+  font-size: 200%;
+  direction: rtl;
+  text-align: right;
+}
+/*
+Add new complex script fonts below.
+
+Remember to follow the same naming convention used above.
+For example, .NewFontName-text { css styling + font setting }
+*/
+
+
 
 /*
 The following .nav-tabs and .nav-pills classes handle the styling for the tabs in the
