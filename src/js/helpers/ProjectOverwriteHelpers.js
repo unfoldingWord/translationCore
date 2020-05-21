@@ -210,7 +210,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
             );
 
             if (selectionsObject) {
-              console.log(`validateSelectionsForTool() - invalidated selections for ${chapter}:${verse} '${checkingOccurrence.contextId.quote}' in '${toolName}'`);
+              console.log(`validateSelectionsForTool() - invalidated selections for ${chapter}:${verse} '${JSON.stringify(checkingOccurrence.contextId)}' in '${toolName}'`);
               //If selections are changed, they need to be cleared
               selectionsChanged = true;
               const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
