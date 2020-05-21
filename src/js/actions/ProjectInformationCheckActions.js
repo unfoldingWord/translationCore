@@ -147,6 +147,7 @@ function saveCheckingDetailsToProjectInformationReducer() {
       languageName,
       contributors,
       checkers,
+      languageFont,
     } = getState().projectInformationCheckReducer;
 
     const actions = [
@@ -172,6 +173,11 @@ function saveCheckingDetailsToProjectInformationReducer() {
         type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
         checkers,
       },
+      {
+        type: consts.ADD_MANIFEST_PROPERTY,
+        propertyName: 'languageFont',
+        value: languageFont,
+      },
     ];
     dispatch(batchActions(actions));
     dispatch(clearProjectInformationReducer());
@@ -188,6 +194,7 @@ function setProjectDetailsInProjectInformationReducer(manifest) {
     dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
     dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
     dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
+    dispatch(setLanguageFontInProjectInformationReducer(manifest.languageFont || 'default'));
     const project = manifest.project || {};
     const resource = manifest.resource || {};
     dispatch(setBookIDInProjectInformationReducer(project.id || ''));
@@ -562,5 +569,22 @@ export function cancelAndCloseProjectInformationCheck() {
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+  });
+}
+
+/**
+ * Temporary stores languageFont selection in ProjectInformationReducer to later be saved in manifest if users saves changes.
+ * @param {string} languageFont - language font name.
+ */
+export function setLanguageFontInProjectInformationReducer(languageFont) {
+  return ((dispatch) => {
+    console.log('====================================');
+    console.log('setLanguageFontInProjectInformationReducer languageFont', languageFont);
+    console.log('====================================');
+    dispatch({
+      type: consts.SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER,
+      languageFont,
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
   });
 }

@@ -2,10 +2,10 @@ import { addObjectPropertyToManifest } from './ProjectDetailsActions';
 
 /**
  * Saves a font name in the manifest of the current project.
- * @param {string} fontName - font name.
+ * @param {string} languageFont - language font name.
  */
-export function setProjectFont(fontName) {
+export function setProjectFont(languageFont) {
   return ((dispatch) => {
-    dispatch(addObjectPropertyToManifest('font', fontName));
+    dispatch(addObjectPropertyToManifest('languageFont', languageFont));
   });
 }
