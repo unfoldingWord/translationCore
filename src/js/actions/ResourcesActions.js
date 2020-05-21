@@ -6,7 +6,10 @@ import _ from 'lodash';
 import env from 'tc-electron-env';
 import SimpleCache from '../helpers/SimpleCache';
 import {
-  getBibles, getProjectBookId, getCurrentToolName,
+  getBibles,
+  getCurrentToolName,
+  getProjectBookId,
+  getTranslate,
 } from '../selectors';
 // actions
 // helpers
@@ -365,10 +368,6 @@ export function loadTargetLanguageBook() {
           // load chapter
           bookData[chapterNumber] = fs.readJsonSync(
             path.join(bookPath, file));
-        } else if (file === 'manifest.json') {
-          // load manifest
-          bookData['manifest'] = fs.readJsonSync(
-            path.join(bookPath, file));
         }
       }
 
@@ -380,9 +379,16 @@ export function loadTargetLanguageBook() {
         if (manifest.target_language && manifest.target_language.id) {
           if (!bookData.manifest) {
             bookData.manifest = {};
+          } else { // for tool compatibility
+            const translate = getTranslate(getState());
+            bookData.manifest.language_id = manifest.target_language.id;
+            bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
+            bookData.manifest.direction = manifest.target_language.direction;
+            bookData.manifest.resource_id = TARGET_LANGUAGE;
+            bookData.manifest.subject = 'Bible'; // TODO: is this still needed?
+            bookData.manifest.resource_title = ''; // TODO: is this still needed?
+            bookData.manifest.description = translate('tools.target_language');
           }
-          bookData.manifest.language_id = manifest.target_language.id;
-          bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
         }
       }
 
