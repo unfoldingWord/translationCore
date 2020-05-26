@@ -226,7 +226,7 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
@@ -648,7 +648,7 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
@@ -1070,7 +1070,7 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
@@ -1405,7 +1405,7 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",

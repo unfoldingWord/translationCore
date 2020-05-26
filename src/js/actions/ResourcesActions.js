@@ -375,20 +375,18 @@ export function loadTargetLanguageBook() {
 
       if (fs.existsSync(projectManifestPath)) { // read user selections from manifest if present
         const manifest = fs.readJsonSync(projectManifestPath);
+        bookData.manifest = {};
 
-        if (manifest.target_language && manifest.target_language.id) {
-          if (!bookData.manifest) {
-            bookData.manifest = {};
-          } else { // for tool compatibility
-            const translate = getTranslate(getState());
-            bookData.manifest.language_id = manifest.target_language.id;
-            bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
-            bookData.manifest.direction = manifest.target_language.direction;
-            bookData.manifest.resource_id = TARGET_LANGUAGE;
-            bookData.manifest.subject = 'Bible'; // TODO: is this still needed?
-            bookData.manifest.resource_title = ''; // TODO: is this still needed?
-            bookData.manifest.description = translate('tools.target_language');
-          }
+        if (manifest) {
+          // copy data for tools
+          const translate = getTranslate(getState());
+          bookData.manifest.language_id = manifest.target_language.id;
+          bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
+          bookData.manifest.direction = manifest.target_language.direction;
+          bookData.manifest.resource_id = TARGET_LANGUAGE;
+          bookData.manifest.subject = 'Bible'; // TODO: is this still needed?
+          bookData.manifest.resource_title = ''; // TODO: is this still needed?
+          bookData.manifest.description = translate('tools.target_language');
         }
       }
 
