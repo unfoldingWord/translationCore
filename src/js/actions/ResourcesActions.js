@@ -6,7 +6,10 @@ import _ from 'lodash';
 import env from 'tc-electron-env';
 import SimpleCache from '../helpers/SimpleCache';
 import {
-  getBibles, getProjectBookId, getCurrentToolName,
+  getBibles,
+  getCurrentToolName,
+  getProjectBookId,
+  getTranslate,
 } from '../selectors';
 // actions
 // helpers
@@ -365,10 +368,6 @@ export function loadTargetLanguageBook() {
           // load chapter
           bookData[chapterNumber] = fs.readJsonSync(
             path.join(bookPath, file));
-        } else if (file === 'manifest.json') {
-          // load manifest
-          bookData['manifest'] = fs.readJsonSync(
-            path.join(bookPath, file));
         }
       }
 
@@ -377,12 +376,19 @@ export function loadTargetLanguageBook() {
       if (fs.existsSync(projectManifestPath)) { // read user selections from manifest if present
         const manifest = fs.readJsonSync(projectManifestPath);
 
-        if (manifest.target_language && manifest.target_language.id) {
-          if (!bookData.manifest) {
-            bookData.manifest = {};
-          }
-          bookData.manifest.language_id = manifest.target_language.id;
-          bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
+        if (manifest) {
+          const translate = getTranslate(getState());
+
+          // copy data for tools
+          bookData.manifest = {
+            language_id: manifest.target_language.id,
+            language_name: manifest.target_language.name || manifest.target_language.id,
+            direction: manifest.target_language.direction,
+            resource_id: TARGET_LANGUAGE,
+            description: translate('tools.target_language'),
+          };
+        } else {
+          bookData.manifest = {};
         }
       }
 
