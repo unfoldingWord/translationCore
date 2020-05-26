@@ -4,7 +4,6 @@ import fs from 'fs-extra';
 import usfmjs from 'usfm-js';
 import path from 'path-extra';
 // constants
-import { TARGET_LANGUAGE } from '../../common/constants';
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**

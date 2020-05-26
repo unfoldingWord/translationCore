@@ -12,7 +12,7 @@ import * as BibleHelpers from '../bibleHelpers';
 // actions
 import * as ResourcesActions from '../../actions/ResourcesActions';
 // constants
-import { IMPORTS_PATH, TARGET_LANGUAGE } from '../../common/constants';
+import { IMPORTS_PATH } from '../../common/constants';
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
   const usfmData = await verifyIsValidUsfmFile(sourceProjectPath);
