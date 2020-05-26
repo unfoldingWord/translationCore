@@ -381,7 +381,6 @@ export function loadTargetLanguageBook() {
 
           // copy data for tools
           bookData.manifest = {
-            ...manifest,
             language_id: manifest.target_language.id,
             language_name: manifest.target_language.name || manifest.target_language.id,
             direction: manifest.target_language.direction,
