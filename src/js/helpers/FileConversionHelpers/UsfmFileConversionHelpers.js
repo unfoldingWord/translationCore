@@ -12,7 +12,7 @@ import * as BibleHelpers from '../bibleHelpers';
 // actions
 import * as ResourcesActions from '../../actions/ResourcesActions';
 // constants
-import { IMPORTS_PATH, TARGET_LANGUAGE } from '../../common/constants';
+import { IMPORTS_PATH } from '../../common/constants';
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
   const usfmData = await verifyIsValidUsfmFile(sourceProjectPath);
@@ -201,19 +201,6 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         </div>
       );
     }
-
-    // generating and saving manifest for target language for scripture pane to use as reference
-    const targetLanguageManifest = {
-      language_id: manifest.target_language.id || '',
-      language_name: manifest.target_language.name || '',
-      direction: manifest.target_language.direction || '',
-      subject: 'Bible',
-      resource_id: TARGET_LANGUAGE,
-      resource_title: '',
-      description: 'Target Language',
-    };
-    const projectBibleDataManifestPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'manifest.json');
-    fsQueue.push(fs.outputJson(projectBibleDataManifestPath, targetLanguageManifest, { spaces: 2 }));
     await Promise.all(fsQueue);
   } catch (error) {
     console.log('generateTargetLanguageBibleFromUsfm() error:', error);

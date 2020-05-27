@@ -40,7 +40,6 @@ describe('generateTargetBibleFromUSFMPath', () => {
     helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
     const bookPath = path.join(projectPath, manifest.project.id);
     expect(fs.existsSync(bookPath)).toBeTruthy();
-    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeTruthy();
     expect(fs.existsSync(path.join(bookPath, '3.json'))).toBeTruthy();
@@ -89,7 +88,6 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
       helpers.generateTargetBibleFromTstudioProjectPath(projectPath, manifest);
       const bookPath = path.join(projectPath, manifest.project.id);
       expect(fs.existsSync(path.join(bookPath, '1.json'))).toBeTruthy();
-      expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
   });
 
@@ -121,7 +119,6 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
       expect(fs.existsSync(path.join(bookPath, '2.json'))).toBeFalsy();
       expect(fs.readJSONSync(path.join(bookPath, '3.json'))[8]).toBeDefined();
       expect(fs.readJSONSync(path.join(bookPath, '3.json'))[3]).toBeDefined();
-      expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     });
   });
 
@@ -145,7 +142,6 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     expect(json3[8]).toBeDefined();
     expect(json3[3]).toBeDefined();
     expect(json3[22]).not.toBeDefined();
-    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     const headers = fs.readJSONSync(path.join(bookPath, 'headers.json'));
     expect(headers.length).toEqual(1);
   });
@@ -173,7 +169,6 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
     const json4 = fs.readJSONSync(path.join(bookPath, '4.json'));
     expect(json4['front']).toBeDefined();
     expect(fs.existsSync(path.join(bookPath, '5.json'))).toBeFalsy();
-    expect(fs.existsSync(path.join(bookPath, 'manifest.json'))).toBeTruthy();
     const headers = fs.readJSONSync(path.join(bookPath, 'headers.json'));
     expect(headers.length).toEqual(16);
   });

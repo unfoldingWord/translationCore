@@ -1,7 +1,11 @@
 /* eslint-disable no-async-promise-executor */
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
-import { getTranslate, getSourceBook } from '../selectors';
+import {
+  getSourceBook,
+  getToolGatewayLanguage,
+  getTranslate,
+} from '../selectors';
 import {
   loadToolsInDir,
   getInvalidCountForTool,
@@ -77,10 +81,12 @@ export function saveResourcesUsed(toolName, gl) {
  *  useful for checking the progress of a tool
  * @param {String} toolName - Name of the tool
  */
-export function prepareToolForLoading(name) {
-  return (dispatch) => {
+export function prepareToolForLoading(toolName) {
+  return (dispatch, getState) => {
     // Load older version of OL resource if needed by tN tool
-    dispatch(loadOlderOriginalLanguageResource(name));
+    dispatch(loadOlderOriginalLanguageResource(toolName));
+    const language = getToolGatewayLanguage(getState(), toolName);
+    dispatch(saveResourcesUsed(toolName, language));
   };
 }
 
