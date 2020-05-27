@@ -267,6 +267,9 @@ class ProjectInformationCheck extends Component {
                   updateLanguageFont={(languageFont) => this.props.actions.updateLanguageFont(languageFont)}
                 />
               </div>
+              <div className={'project-details-right-column project-details-column'}>
+
+              </div>
               <div className={'project-details-left-column project-details-column'}>
                 <ContributorsArea
                   id={'contributor-area'}

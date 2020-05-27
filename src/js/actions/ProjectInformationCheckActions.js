@@ -110,7 +110,6 @@ export function validate(results = {}) {
  */
 export function finalize() {
   return (async (dispatch, getState) => {
-    console.log('ProjectInformationCheckActions.finalize()');
     const translate = getTranslate(getState());
     dispatch(AlertModalActions.openAlertDialog(translate('projects.preparing_project_alert'), true));
     await delay(100);
@@ -578,9 +577,6 @@ export function cancelAndCloseProjectInformationCheck() {
  */
 export function setLanguageFontInProjectInformationReducer(languageFont) {
   return ((dispatch) => {
-    console.log('====================================');
-    console.log('setLanguageFontInProjectInformationReducer languageFont', languageFont);
-    console.log('====================================');
     dispatch({
       type: consts.SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER,
       languageFont,
