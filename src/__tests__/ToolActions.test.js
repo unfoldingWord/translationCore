@@ -91,6 +91,16 @@ describe('Tool Actions.openTool', () => {
       },
       { 'name': TRANSLATION_NOTES, 'type': 'OPEN_TOOL' },
       {
+        'propertyName': 'tc_orig_lang_check_version_translationNotes',
+        'type': 'ADD_MANIFEST_PROPERTY',
+        'value': 0.8,
+      },
+      {
+        'propertyName': 'tc_en_check_version_translationNotes',
+        'type': 'ADD_MANIFEST_PROPERTY',
+        'value': 'unknown',
+      },
+      {
         'type': 'BATCHING_REDUCER.BATCH',
         'meta': { 'batch': true },
         'payload': [
