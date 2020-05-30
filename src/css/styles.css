@@ -113,6 +113,7 @@ body {
   src: url(../fonts/complexScript/Scheherazade-Bold.woff);
   font-weight: bold;
 }
+/* Add new fonts below */
 
 /*
 use Ezra for Hebrew characters and then Noto Sans for other characters
@@ -143,9 +144,10 @@ use Ezra for Hebrew characters and then Noto Sans for other characters
   text-align: right;
 }
 /*
-Add new complex script fonts below.
+Add new complex script font classes below.
 
-Remember to follow the same naming convention used above.
+Remember to follow the same naming convention used above,
+otherwise it won't work as expected.
 For example, .NewFontName-text { css styling + font setting }
 */
 
