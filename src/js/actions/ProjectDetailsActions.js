@@ -236,7 +236,7 @@ export function setProjectManifest(manifest) {
 }
 
 /**
- * @description adds a new key name to the manifest object
+ * Adds a new key name to the manifest object
  * @param {String} propertyName - key string name.
  * ex.
  * manifest {

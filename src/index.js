@@ -11,9 +11,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // log versions
-console.log('Electron', process.versions.electron);
-console.log('Chrome', process.versions.chrome);
-console.log('Node', process.versions.node);
+console.info('Electron', process.versions.electron);
+console.info('Chrome', process.versions.chrome);
+console.info('Node', process.versions.node);
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

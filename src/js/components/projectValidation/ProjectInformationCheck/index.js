@@ -10,6 +10,7 @@ import TextPrompt from './TextPrompt';
 import LanguageIdTextBox from './LanguageIdTextBox';
 import LanguageNameTextBox from './LanguageNameTextBox';
 import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
+import LanguageFontDropdownMenu from './LanguageFontDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 
@@ -112,6 +113,7 @@ class ProjectInformationCheck extends Component {
       languageDirection,
       contributors,
       checkers,
+      languageFont,
     } = this.props.reducers.projectInformationCheckReducer;
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const { developerMode } = this.props.reducers.settingsReducer.currentSettings;
@@ -255,6 +257,18 @@ class ProjectInformationCheck extends Component {
                   updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId, true)}
                   developerMode={developerMode}
                 />
+              </div>
+              <div className={'project-details-left-column project-details-column'}>
+                <LanguageFontDropdownMenu
+                  id={'language-font-SelectField'}
+                  className={'project-details-item language-font-select select-field'}
+                  translate={translate}
+                  languageFont={languageFont}
+                  updateLanguageFont={(languageFont) => this.props.actions.updateLanguageFont(languageFont)}
+                />
+              </div>
+              <div className={'project-details-right-column project-details-column'}>
+
               </div>
               <div className={'project-details-left-column project-details-column'}>
                 <ContributorsArea
