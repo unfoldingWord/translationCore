@@ -537,7 +537,7 @@ export const areResourcesNewer = () => {
 
   if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
     console.log(
-      `%c areResourcesNewer() - no source content manifest: ${userSourceContentUpdaterManifestPath}`,
+      `%c areResourcesNewer() - no USER source content manifest: ${userSourceContentUpdaterManifestPath}`,
       'color: #00539C',
     );
     return true;
@@ -547,7 +547,7 @@ export const areResourcesNewer = () => {
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
   if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
-    console.error('sourceContentUpdaterManifest does not exist');
+    console.error(`%c areResourcesNewer() - no STATIC source content manifest: ${sourceContentUpdaterManifestPath}`);
     return false;
   }
 
