@@ -14,6 +14,7 @@ const InitialState = {
   localImport: false,
   overwritePermitted: false,
   skipProjectNameCheck: false,
+  languageFont: 'default',
 };
 
 const projectInformationCheckReducer = (state = InitialState, action) => {
@@ -89,6 +90,11 @@ const projectInformationCheckReducer = (state = InitialState, action) => {
     return {
       ...state,
       skipProjectNameCheck: action.skipProjectNameCheck,
+    };
+  case consts.SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER:
+    return {
+      ...state,
+      languageFont: action.languageFont,
     };
   case consts.CLEAR_PROJECT_INFORMATION_REDUCER:
     return InitialState;

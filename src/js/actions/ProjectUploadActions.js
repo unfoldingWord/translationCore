@@ -28,17 +28,17 @@ export async function prepareProjectRepo(user, projectName, projectPath) {
   let repo;
 
   try {
-    console.log('uploadProject: Creating Repo');
+    console.info('uploadProject: Creating Repo');
     const remoteRepo = await GogsApiHelpers.createRepo(user,
       projectName);
-    console.log('uploadProject: Creating Repo Owner URL');
+    console.info('uploadProject: Creating Repo Owner URL');
     const remoteUrl = GogsApiHelpers.getRepoOwnerUrl(user,
       remoteRepo.name);
-    console.log('uploadProject: Found remote Repo: ' + (remoteRepo.name || 'FAILED'));
+    console.info('uploadProject: Found remote Repo: ' + (remoteRepo.name || 'FAILED'));
 
     repo = await Repo.open(projectPath, user);
     await repo.addRemote(remoteUrl, 'origin');
-    console.log('uploadProject: saving changes to git');
+    console.info('uploadProject: saving changes to git');
     await repo.save('Commit before upload');
   } catch (err) {
     console.error('Error Preparing Repo', err);
@@ -53,7 +53,7 @@ export async function prepareProjectRepo(user, projectName, projectPath) {
  * @return {Promise<*>}
  */
 export async function pushProjectRepo(repo) {
-  console.log('uploadProject: pushing git changes to remote');
+  console.info('uploadProject: pushing git changes to remote');
   let response = {};
 
   try {
@@ -144,7 +144,7 @@ export function gitErrorToLocalizedPrompt(error, translate, projectName) {
 export function uploadProject(projectPath, user, onLine = navigator.onLine) {
   return (dispatch, getState) => new Promise(async (resolve) => {
     const translate = getTranslate(getState());
-    console.log('uploadProject: attempting to upload: ' + projectPath);
+    console.info('uploadProject: attempting to upload: ' + projectPath);
     dispatch(ProjectLoadingActions.closeProject()); // close any open projects first
 
     // if no Internet connection is found then alert the user and stop upload process
@@ -168,7 +168,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
           dispatch(showStatus(translate('projects.loading_project_alert')));
           await delay(500);
           await saveChangesInOldProjects(projectPath);
-          console.log('uploadProject: saving alignments');
+          console.info('uploadProject: saving alignments');
           const filePath = path.join(projectPath, projectName + '.usfm');
 
           await dispatch(
@@ -187,7 +187,7 @@ export function uploadProject(projectPath, user, onLine = navigator.onLine) {
               translate('projects.uploading_error',
                 { error: response.errors })));
           } else {
-            console.log('uploadProject: upload success');
+            console.info('uploadProject: upload success');
             const userDcsUrl = GogsApiHelpers.getUserDoor43Url(user,
               projectName);
 
