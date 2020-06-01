@@ -546,8 +546,11 @@ export const areResourcesNewer = () => {
   const sourceContentUpdaterManifestPath = path.join(STATIC_RESOURCES_PATH,
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
+  console.log(`areResourcesNewer() - STATIC source content manifest path: ${sourceContentUpdaterManifestPath}`);
   if (!fs.existsSync(sourceContentUpdaterManifestPath)) {
-    console.error(`%c areResourcesNewer() - no STATIC source content manifest: ${sourceContentUpdaterManifestPath}`);
+    console.error(`%c areResourcesNewer() - no STATIC source content manifest: ${sourceContentUpdaterManifestPath}`,
+      'color: #00539C',
+    );
     return false;
   }
 
