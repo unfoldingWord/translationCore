@@ -64,7 +64,7 @@
   "email_address_optional": "Alamat email (opsional):",
   "invalid_email": "Alamat email tidak valid",
   "include_app_logs": "Sertakan log aplikasi",
-  "resetting_alignments": "Resetting alignment for",
+  "resetting_alignments": "Mengatur Ulang Alignment",
   "alignment_prompt": "Apakah anda ingin mengekspor data penyelarasan dengan teks anda?",
   "include_alignment_check": "Sertakan data penyelarasan",
   "loading_verse_edits": "Memuat Ayat Editan",
@@ -134,7 +134,7 @@
     "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International License."
   },
   "projects": {
-    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
+    "archived": "Proyek ($ {project_name}) tidak dapat diupload karena telah diarsipkan pada $ {door43}. <br/> <br/> Untuk mengunggah proyek ini, silakan batalkan pengarsipan proyek pada $ {door43} terlebih dahulu atau ganti nama proyek di $ {app_name}.",
     "zip_files": "File Zip",
     "archive": "Arsip",
     "archive_project": "Proyek Arsip",
@@ -240,7 +240,7 @@
     "publicly_available": "Mereka yang terdaftar sebagai kontributor atau pemeriksa akan dibuat tersedia untuk umum.",
     "field_required": "Bagian in diperlukan",
     "language_direction": "Arah Bahasa",
-    "language_font": "Language Font",
+    "language_font": "Font Bahasa",
     "ltr": "Kiri ke kanan",
     "rtl": "Kanan ke kiri",
     "invalid_language_name": "Nama bahasa tidak valid",
