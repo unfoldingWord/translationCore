@@ -260,8 +260,8 @@ class ProjectInformationCheck extends Component {
               </div>
               <div className={'project-details-left-column project-details-column'}>
                 <ProjectFontDropdownMenu
-                  id={'language-font-SelectField'}
-                  className={'project-details-item language-font-select select-field'}
+                  id={'project-font-SelectField'}
+                  className={'project-details-item project-font-select select-field'}
                   translate={translate}
                   projectFont={projectFont}
                   updateProjectFont={(projectFont) => this.props.actions.updateProjectFont(projectFont)}

@@ -140,7 +140,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               }
             }
           >
-            *
+            * 
             required
           </span>
         </div>
@@ -298,7 +298,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         }
                       />
                     </div>
-
+                    
                   </div>
                   <div
                     style={
@@ -615,7 +615,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         }
                       />
                     </div>
-
+                    
                   </div>
                   <div
                     style={
@@ -820,7 +820,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-
+                     
                   </div>
                   <div
                     id="language-direction-SelectField"
@@ -1102,7 +1102,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-
+                     
                   </div>
                   <div
                     id="book-dropdown-menu-selectField"
@@ -1326,11 +1326,11 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               className="project-details-left-column project-details-column"
             >
               <div
-                className="project-details-item language-font-select select-field"
-                id="language-font-SelectField-wrapper"
+                className="project-details-item project-font-select select-field"
+                id="project-font-SelectField-wrapper"
               >
                 <label
-                  htmlFor="language-font-SelectField"
+                  htmlFor="project-font-SelectField"
                   style={
                     Object {
                       "margin": 0,
@@ -1384,10 +1384,10 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-
+                     
                   </div>
                   <div
-                    id="language-font-SelectField"
+                    id="project-font-SelectField"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
@@ -1453,7 +1453,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         }
                       >
-
+                        
                       </div>
                       <button
                         disabled={false}
@@ -1767,7 +1767,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
@@ -1874,7 +1874,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
@@ -2050,7 +2050,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
@@ -2157,7 +2157,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
