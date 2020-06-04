@@ -5,7 +5,7 @@ module.exports = (mode) => {
   console.log('Environment:', mode.env);
   const isProduction = mode.env === 'production';
   const copyPatterns = [
-    { from: './tcResources', to: 'static/tCResources' },
+    { from: './tcResources', to: 'static/tcResources' },
     { from: './src/tC_apps', to: 'static/tC_apps' },
     { from: './src/locale', to: 'static/locale' },
     { from: './src/assets/projectLicenses', to: 'static/projectLicenses' },
