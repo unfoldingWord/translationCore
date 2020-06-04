@@ -5,12 +5,12 @@ import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
 import complexScriptFonts from '../../../common/complexScriptFonts';
 
-const LanguageDirectionDropdownMenu = ({
+const ProjectFontDropdownMenu = ({
   id,
   className,
   translate,
-  languageFont,
-  updateLanguageFont,
+  projectFont,
+  updateProjectFont,
 }) => (
   <div
     id={id+'-wrapper'}
@@ -18,17 +18,17 @@ const LanguageDirectionDropdownMenu = ({
   >
     <label htmlFor={id} style={{ margin: 0 }}>
       <Glyphicon glyph={'font'} style={{ color: '#000000', fontSize: '16px' }} />&nbsp;
-      <span>{translate('project_validation.language_font')}</span>&nbsp;
+      <span>{translate('project_validation.project_font')}</span>&nbsp;
       <span className={'required'}/>
     </label>
     <SelectField
       id={id}
-      value={languageFont || ''}
-      errorText={languageFont === '' ? translate('project_validation.field_required') : null}
+      value={projectFont || ''}
+      errorText={projectFont === '' ? translate('project_validation.field_required') : null}
       errorStyle={{ color: '#cd0033' }}
       underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
       onChange={(event, index, value) => {
-        updateLanguageFont(value);
+        updateProjectFont(value);
       }}
     >
       <MenuItem key="NotoSans-font-menu-item" value={'default'} primaryText={'Noto Sans (Default)'} />
@@ -42,17 +42,17 @@ const LanguageDirectionDropdownMenu = ({
   </div>
 );
 
-LanguageDirectionDropdownMenu.defaultProps = {
-  id: 'language-font-SelectField',
-  className: 'language-font-select',
+ProjectFontDropdownMenu.defaultProps = {
+  id: 'project-font-SelectField',
+  className: 'project-font-select',
 };
 
-LanguageDirectionDropdownMenu.propTypes = {
+ProjectFontDropdownMenu.propTypes = {
   id: PropTypes.string,
   className: PropTypes.string,
   translate: PropTypes.func.isRequired,
-  languageFont: PropTypes.string.isRequired,
-  updateLanguageFont: PropTypes.func.isRequired,
+  projectFont: PropTypes.string.isRequired,
+  updateProjectFont: PropTypes.func.isRequired,
 };
 
-export default LanguageDirectionDropdownMenu;
+export default ProjectFontDropdownMenu;
