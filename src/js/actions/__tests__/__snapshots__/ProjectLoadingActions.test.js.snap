@@ -132,8 +132,8 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
-    "languageFont": "default",
-    "type": "SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER",
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -402,8 +402,8 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
-    "languageFont": "default",
-    "type": "SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER",
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -550,8 +550,8 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
-    "languageFont": "default",
-    "type": "SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER",
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -838,8 +838,8 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
-    "languageFont": "default",
-    "type": "SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER",
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -986,8 +986,8 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
-    "languageFont": "default",
-    "type": "SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER",
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -1345,8 +1345,8 @@ Array [
     "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
   },
   Object {
-    "languageFont": "default",
-    "type": "SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER",
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,

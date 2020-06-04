@@ -165,8 +165,8 @@ const mapDispatchToProps = (dispatch) => ({
     displayOverwriteButton: (enable) => {
       dispatch(ProjectValidationActions.displayOverwriteButton(enable));
     },
-    updateLanguageFont: (languageFont) => {
-      dispatch(ProjectInformationCheckActions.setLanguageFontInProjectInformationReducer(languageFont));
+    updateProjectFont: (projectFont) => {
+      dispatch(ProjectInformationCheckActions.setProjectFontInProjectInformationReducer(projectFont));
     },
   },
 });
