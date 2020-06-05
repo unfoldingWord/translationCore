@@ -146,7 +146,7 @@ function saveCheckingDetailsToProjectInformationReducer() {
       languageName,
       contributors,
       checkers,
-      languageFont,
+      projectFont,
     } = getState().projectInformationCheckReducer;
 
     const actions = [
@@ -174,8 +174,8 @@ function saveCheckingDetailsToProjectInformationReducer() {
       },
       {
         type: consts.ADD_MANIFEST_PROPERTY,
-        propertyName: 'languageFont',
-        value: languageFont,
+        propertyName: 'projectFont',
+        value: projectFont,
       },
     ];
     dispatch(batchActions(actions));
@@ -193,7 +193,7 @@ function setProjectDetailsInProjectInformationReducer(manifest) {
     dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
     dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
     dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
-    dispatch(setLanguageFontInProjectInformationReducer(manifest.languageFont || 'default'));
+    dispatch(setProjectFontInProjectInformationReducer(manifest.projectFont || 'default'));
     const project = manifest.project || {};
     const resource = manifest.resource || {};
     dispatch(setBookIDInProjectInformationReducer(project.id || ''));
@@ -572,14 +572,14 @@ export function cancelAndCloseProjectInformationCheck() {
 }
 
 /**
- * Temporary stores languageFont selection in ProjectInformationReducer to later be saved in manifest if users saves changes.
- * @param {string} languageFont - language font name.
+ * Temporary stores projectFont selection in ProjectInformationReducer to later be saved in manifest if users saves changes.
+ * @param {string} projectFont - language font name.
  */
-export function setLanguageFontInProjectInformationReducer(languageFont) {
+export function setProjectFontInProjectInformationReducer(projectFont) {
   return ((dispatch) => {
     dispatch({
-      type: consts.SET_LANGUAGE_FONT_IN_PROJECT_INFORMATION_REDUCER,
-      languageFont,
+      type: consts.SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER,
+      projectFont,
     });
     dispatch(toggleProjectInformationCheckSaveButton());
   });
