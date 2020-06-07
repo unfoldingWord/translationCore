@@ -131,9 +131,10 @@ use Ezra for Hebrew characters and then Noto Sans for other characters
 .AwamiNastaliq-text {
   font-family: AwamiNastaliq, Noto Sans;
   font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
-  font-size: 140%;
+  font-size: 115%;
   direction: rtl;
   text-align: right;
+  line-height: initial;
 }
 
 .Scheherazade-text {

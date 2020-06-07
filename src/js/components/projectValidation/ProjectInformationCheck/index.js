@@ -31,8 +31,10 @@ class ProjectInformationCheck extends Component {
     if (contributors.includes('')) {
       this.setState({ contributorsRequiredFieldMessage: true });
     } else {
-      contributors.unshift('');
-      this.props.actions.setContributorsInProjectInformationReducer(contributors);
+      // avoiding editing the original reference of the array
+      const newContributors = contributors.slice();
+      newContributors.unshift('');
+      this.props.actions.setContributorsInProjectInformationReducer(newContributors);
     }
   }
 
@@ -43,8 +45,10 @@ class ProjectInformationCheck extends Component {
     if (checkers.includes('')) {
       this.setState({ checkersRequiredFieldMessage: true });
     } else {
-      checkers.unshift('');
-      this.props.actions.setCheckersInProjectInformationReducer(checkers);
+      // avoiding editing the original reference of the array
+      const newCheckers = checkers.slice();
+      newCheckers.unshift('');
+      this.props.actions.setCheckersInProjectInformationReducer(newCheckers);
     }
   }
 
