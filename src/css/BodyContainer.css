@@ -1,9 +1,0 @@
-  #scrollableSection {
-    height: 100%;
-    position: relative;
-    overflow-y: auto;
-    bottom: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: calc(100vw - 250px);
-  }
