@@ -81,7 +81,7 @@ ConfirmationDialog.propTypes = {
    * Deeply nested keys are not currently supported.
    */
   stateKey: PropTypes.string.isRequired,
-  confirmation: PropTypes.object.isRequired,
+  confirmation: PropTypes.object,
   approve: PropTypes.func.isRequired,
   reject: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,

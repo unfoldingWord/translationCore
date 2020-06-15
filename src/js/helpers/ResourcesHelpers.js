@@ -597,7 +597,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
         fs.removeSync(contentZipPath);
       }
     } else {
-      console.warn(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
+      console.info(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
   }
 };
