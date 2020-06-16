@@ -1,3 +1,8 @@
+---
+name: Release Checklist
+about: Steps needed to release
+
+---
 Release Steps Sign Off
 
 ### Features / Specifications
