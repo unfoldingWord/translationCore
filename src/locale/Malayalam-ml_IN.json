@@ -74,6 +74,7 @@
   "sending_feedback": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നു",
   "sending_feedback_failed": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു",
   "critical_error_warning": "മുന്നറിയിപ്പ്: ഗുരുതരമായൊരു തെറ്റു് സംഭവിച്ചു!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "സോഫ്റ്റ്വെയർ അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "check_for_content_updates": "ഉള്ളടക്ക അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
