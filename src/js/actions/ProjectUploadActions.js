@@ -84,17 +84,19 @@ async function saveChangesInOldProjects(projectPath) {
 }
 
 /**
- * convert git error message to localized message
+ * convert git error message to localized message and determine if known or unknown
  * @param {String|Object} error
  * @param {Function} translate
  * @param {String} projectName
- * @return {*}
+ * @return {String} message
  */
 export function gitErrorToLocalizedPrompt(error, translate, projectName) {
   let message = 'unknown';
+  let isUnknown = true;
 
   if (error.status === 401) {
     message = translate('users.session_invalid');
+    isUnknown = false;
   } else {
     const errorStr = error.toString();
 
@@ -105,6 +107,7 @@ export function gitErrorToLocalizedPrompt(error, translate, projectName) {
           door43: translate('_.door43'),
           app_name: translate('_.app_name'),
         });
+      isUnknown = false;
     } else if (error.code === REPO.NETWORK_ERROR_IP_ADDR_NOT_FOUND ||
       errorStr.includes(REPO.GIT_ERROR_UNABLE_TO_CONNECT) ||
       errorStr.includes(REPO.NETWORK_ERROR_TIMEOUT) ||
@@ -112,9 +115,11 @@ export function gitErrorToLocalizedPrompt(error, translate, projectName) {
       errorStr.includes(REPO.NETWORK_ERROR_UNABLE_TO_ACCESS) ||
       errorStr.includes(REPO.NETWORK_ERROR_REMOTE_HUNG_UP)) {
       message = translate('no_internet');
+      isUnknown = false;
     } else if (errorStr.includes(REPO.GIT_ERROR_PUSH_NOT_FF)) {
       message = translate('projects.upload_modified_error',
         { project_name: projectName, door43: translate('_.door43') });
+      isUnknown = false;
     } else if (errorStr.includes(REPO.GIT_ERROR_UNKNOWN_PROBLEM)) {
       const parts = errorStr.split(REPO.GIT_ERROR_UNKNOWN_PROBLEM);
       let details = parts.length > 1 ? parts[1] : errorStr;
@@ -122,14 +127,23 @@ export function gitErrorToLocalizedPrompt(error, translate, projectName) {
       if (details[0] === ':') {
         details = details.substr(1).trim();
       }
-      message = translate('projects.uploading_error', { error: details });
+      console.error( `Unknown GIT error: ${details}`);
     } else if (error.hasOwnProperty('message')) {
-      message = translate('projects.uploading_error', { error: error.message });
+      console.error( `Unknown error: ${error.message}`);
     } else if (error.hasOwnProperty('data') && error.data) {
-      message = translate('projects.uploading_error', { error: error.data });
+      console.error( `Unknown upload error: ${error.data}`);
     } else { // unknown error
-      message = error.message || error;
+      console.error( 'Unknown error:', errorStr || error);
     }
+  }
+
+  if (isUnknown) {
+    message = translate('unknown_networking_error',
+      {
+        actions: translate('actions'),
+        user_feedback: translate('user_feedback'),
+        app_name: translate('_.app_name'),
+      });
   }
   return message;
 }
