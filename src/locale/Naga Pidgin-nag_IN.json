@@ -74,6 +74,7 @@
   "sending_feedback": "Pratikriya pathai ashe",
   "sending_feedback_failed": "Pratikriya pathabole byartha hoise",
   "critical_error_warning": "Chetawni: ekta mahatwapurna golti ulaise!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
