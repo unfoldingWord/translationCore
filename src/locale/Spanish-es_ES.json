@@ -74,6 +74,7 @@
   "sending_feedback": "Enviando Comentario",
   "sending_feedback_failed": "Error al Enviar el Comentario",
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "Revisa si hay actualizaciones de software",
     "check_for_content_updates": "Revisa si hay actualizaciones de contenido",
