@@ -74,6 +74,7 @@
   "sending_feedback": "Отправка отзыва",
   "sending_feedback_failed": "Не удалось отправить отзыв",
   "critical_error_warning": "Внимание: Произошла критическая ошибка!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "Проверить обновления программного обеспечения",
     "check_for_content_updates": "Проверить обновления содержимого",
