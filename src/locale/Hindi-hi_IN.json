@@ -74,6 +74,7 @@
   "sending_feedback": "प्रतिक्रिया भेजना",
   "sending_feedback_failed": "प्रतिक्रिया भेजने में विफल",
   "critical_error_warning": "चेतावनी: एक गंभीर त्रुटि हुई है!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अपडेट्स के लिए जाँच करें",
