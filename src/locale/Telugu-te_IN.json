@@ -74,6 +74,7 @@
   "sending_feedback": "సమాచారాన్ని తిరిగి పంపించండి",
   "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
   "critical_error_warning": "Warning: A critical error has occurred!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "మీ సాఫ్ట్ వేర్ నవీకరణలు సరిచూడండి",
     "check_for_content_updates": "సమాచార నవీకరణల తనిఖీ",
