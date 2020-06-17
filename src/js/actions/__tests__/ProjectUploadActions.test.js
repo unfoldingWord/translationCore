@@ -90,7 +90,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
     // given
     const details = 'details';
     const error = new Error('error: ' + REPO.GIT_ERROR_UNKNOWN_PROBLEM + ': ' + details);
-    const expectedMessage = `projects.uploading_error: {"error":"${details}"}`;
+    const expectedMessage = 'unknown_networking_error: {"actions":"actions","user_feedback":"user_feedback","app_name":"_.app_name"}';
 
     // when
     const results = ProjectUploadActions.gitErrorToLocalizedPrompt(error, mock_translate, `projectName`);
@@ -103,7 +103,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
     // given
     const errStr = 'Error';
     const error = new Error(errStr);
-    const expectedMessage = `projects.uploading_error: {"error":"${errStr}"}`;
+    const expectedMessage = 'unknown_networking_error: {"actions":"actions","user_feedback":"user_feedback","app_name":"_.app_name"}';
 
     // when
     const results = ProjectUploadActions.gitErrorToLocalizedPrompt(error, mock_translate, `projectName`);
@@ -116,7 +116,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
     // given
     const error = new Error('error');
     error.message = 'message';
-    const expectedMessage = `projects.uploading_error: {"error":"${error.message}"}`;
+    const expectedMessage = 'unknown_networking_error: {"actions":"actions","user_feedback":"user_feedback","app_name":"_.app_name"}';
 
     // when
     const results = ProjectUploadActions.gitErrorToLocalizedPrompt(error, mock_translate, `projectName`);
@@ -128,7 +128,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
   test('has data', () => {
     // given
     const error = { data: 'data' };
-    const expectedMessage = `projects.uploading_error: {"error":"${error.data}"}`;
+    const expectedMessage = 'unknown_networking_error: {"actions":"actions","user_feedback":"user_feedback","app_name":"_.app_name"}';
 
     // when
     const results = ProjectUploadActions.gitErrorToLocalizedPrompt(error, mock_translate, `projectName`);
@@ -140,7 +140,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
   test('unknown string', () => {
     // given
     const error = 'data';
-    const expectedMessage = error;
+    const expectedMessage = 'unknown_networking_error: {"actions":"actions","user_feedback":"user_feedback","app_name":"_.app_name"}';
 
     // when
     const results = ProjectUploadActions.gitErrorToLocalizedPrompt(error, mock_translate, `projectName`);
