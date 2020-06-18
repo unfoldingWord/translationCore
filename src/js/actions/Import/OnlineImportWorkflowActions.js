@@ -50,6 +50,7 @@ async function downloadProject(url, importPath, translate) {
   try {
     await Repo.clone(url, importPath);
   } catch (e) {
+    console.error('downloadProject() error', e);
     const message = getLocalizedErrorPrompt(e, url, translate);
     throw message;
   }

@@ -1,6 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import React from 'react';
 import path from 'path-extra';
+import { renderToString } from 'react-dom/server';
 // helpers
 import * as REPO from '../../helpers/Repo.js';
 import * as UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
@@ -60,12 +61,18 @@ export const projectHasTstudioOrTcoreFileExtension = (sourceProjectPath) => {
 export const getSafeErrorMessage = (error, defaultErrorMessage) => {
   let errorMessage = error || defaultErrorMessage;
 
-  if (error && (error.type !== 'div') && (error.type !== 'span')) {
-    if (error.stack) {
-      console.warn(error.stack); // log error before replacing with translated message
-      errorMessage = defaultErrorMessage;
+  if (error) {
+    console.warn('getSafeErrorMessage()', error); // log error as string
+
+    if ((error.type !== 'div') && (error.type !== 'span')) {
+      if (error.stack) {
+        console.warn('getSafeErrorMessage()', error.stack); // log error stack before replacing with translated message
+        errorMessage = defaultErrorMessage;
+      } else {
+        console.warn('getSafeErrorMessage()', error.toString()); // log error as string
+      }
     } else {
-      console.warn(error.toString()); // make message printable
+      console.warn('getSafeErrorMessage()', renderToString(error)); // log react message as string
     }
   }
   return errorMessage;
