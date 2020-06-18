@@ -222,7 +222,9 @@
     "dcs_rename_failed": "Tempat penyimpanan ${door43} tidak diperbarui namanya.<br/> <br/>Apakah Anda ingin mencoba mengubah Tempta penyimpanan ${door43} atau melanjutkan tanpa mengubah nama?",
     "dcs_create_new_failed": "Tempat penyimpanan ${door43} tidak dapat dibuat.<br/><br/>Apakah Anda ingin mencoba membuat tempat penyimpanan ${door43} atau melanjutkan tanpa mengubah nama?",
     "dcs_rename_conflict": "Mengubah nama gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda harus mengganti nama proyek lokal atau mengganti nama Proyek ${door43} Anda.",
-    "dcs_create_new_conflict": "Membuat tempat penyimpanan baru gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda perlu mengganti nama proyek lokal atau mengganti nama proyek ${door43} Anda ."
+    "dcs_create_new_conflict": "Membuat tempat penyimpanan baru gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda perlu mengganti nama proyek lokal atau mengganti nama proyek ${door43} Anda .",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Nama Bahasa tidak valid untuk Kode",
