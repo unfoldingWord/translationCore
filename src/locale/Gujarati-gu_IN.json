@@ -222,7 +222,9 @@
     "dcs_rename_failed": "${door43} સંગ્રહને બીજું નામ આપવામાં આવ્યું ન હતું.<br/><br/>શું તમે ${door43} સંગ્રહને બીજું નામ આપવા માગો છો કે બીજા નામ વિના જારી રાખવા માગો છો?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "બીજું નામ નિષ્ફળ નિવડ્યું છે કેમ કે આ નામ સાથેનો સંગ્રહ પહેલેથી જ ઉપલબ્ધ છે.<br/><br/>${door43} પર તમારા પ્રોજેક્ટને અપલોડ કરવા, તમારે તમારા સ્થાનિક પ્રોજેક્ટને બીજું નામ આપવું પડશે અથવા તમારા ${door43} પ્રોજેક્ટને બીજું નામ આપવું પડશે.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "કોડ માટે ભાષાનું નામ માન્ય નથી",
