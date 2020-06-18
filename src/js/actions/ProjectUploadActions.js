@@ -9,9 +9,10 @@ import * as AlertModalActions from '../actions/AlertModalActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
 import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 // helpers
-import Repo, * as REPO from '../helpers/Repo.js';
+import Repo from '../helpers/Repo.js';
 import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
+import * as FileConversionHelpers from '../helpers/FileConversionHelpers';
 import { delay } from '../common/utils';
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -91,51 +92,7 @@ async function saveChangesInOldProjects(projectPath) {
  * @return {String} message
  */
 export function gitErrorToLocalizedPrompt(error, translate, projectName) {
-  let message = 'unknown';
-  let isUnknown = true;
-
-  if (error.status === 401) {
-    message = translate('users.session_invalid');
-    isUnknown = false;
-  } else {
-    const errorStr = error.toString();
-
-    if (errorStr.includes(REPO.GIT_ERROR_REPO_ARCHIVED)) {
-      message = translate('projects.archived',
-        {
-          project_name: projectName,
-          door43: translate('_.door43'),
-          app_name: translate('_.app_name'),
-        });
-      isUnknown = false;
-    } else if (error.code === REPO.NETWORK_ERROR_IP_ADDR_NOT_FOUND ||
-      errorStr.includes(REPO.GIT_ERROR_UNABLE_TO_CONNECT) ||
-      errorStr.includes(REPO.NETWORK_ERROR_TIMEOUT) ||
-      errorStr.includes(REPO.NETWORK_ERROR_INTERNET_DISCONNECTED) ||
-      errorStr.includes(REPO.NETWORK_ERROR_UNABLE_TO_ACCESS) ||
-      errorStr.includes(REPO.NETWORK_ERROR_REMOTE_HUNG_UP)) {
-      message = translate('no_internet');
-      isUnknown = false;
-    } else if (errorStr.includes(REPO.GIT_ERROR_PUSH_NOT_FF)) {
-      message = translate('projects.upload_modified_error',
-        { project_name: projectName, door43: translate('_.door43') });
-      isUnknown = false;
-    } else if (errorStr.includes(REPO.GIT_ERROR_UNKNOWN_PROBLEM)) {
-      const parts = errorStr.split(REPO.GIT_ERROR_UNKNOWN_PROBLEM);
-      let details = parts.length > 1 ? parts[1] : errorStr;
-
-      if (details[0] === ':') {
-        details = details.substr(1).trim();
-      }
-      console.error( `Unknown GIT error: ${details}`);
-    } else if (error.hasOwnProperty('message')) {
-      console.error( `Unknown error: ${error.message}`);
-    } else if (error.hasOwnProperty('data') && error.data) {
-      console.error( `Unknown upload error: ${error.data}`);
-    } else { // unknown error
-      console.error( 'Unknown error:', errorStr || error);
-    }
-  }
+  let { message, isUnknown } = FileConversionHelpers.getLocalizedErrorMessage(error, translate, projectName);
 
   if (isUnknown) {
     message = translate('unknown_networking_error',
