@@ -56,7 +56,7 @@ async function downloadProject(url, importPath, translate) {
 }
 
 /**
- * convert git error message to localized message and determine if known or unknown
+ * convert error message to localized message and determine if known or unknown
  * @param {String|Object} error
  * @param {String} projectUrl
  * @param {Function} translate
