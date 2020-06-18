@@ -35,7 +35,7 @@ describe('ProjectUploadActions.gitErrorToLocalizedPrompt', () => {
     expect(results).toEqual(expectedMessage);
   });
 
-  test('Invalid users session', () => {
+  test('IP address not found', () => {
     // given
     const error = new Error('error');
     error.code = REPO.NETWORK_ERROR_IP_ADDR_NOT_FOUND;
