@@ -222,7 +222,9 @@
     "dcs_rename_failed": "Хранилище ${door43} не было переименовано.<br/><br/>Вы хотите повторить попытку переименования хранилища ${door43} или продолжить без переименования?",
     "dcs_create_new_failed": "Хранилище ${door43} не может быть создано.<br/><br/>Вы хотите повторить попытку создания хранилища ${door43} или продолжить без переименования?",
     "dcs_rename_conflict": "Не удалось переименовать, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
-    "dcs_create_new_conflict": "Не удалось создать новое хранилище, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}."
+    "dcs_create_new_conflict": "Не удалось создать новое хранилище, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
