@@ -222,7 +222,9 @@
     "dcs_rename_failed": "El repositorio ${door43} no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio ${door43} o continuar sin renombrar?",
     "dcs_create_new_failed": "El repositorio ${door43} no pudo ser creado.<br/><br/>¿Desea intentar nuevamente crear el repositorio ${door43} o continuar sin renombrar?",
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a ${door43}, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto ${door43}.",
-    "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} ."
+    "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} .",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",
