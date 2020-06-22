@@ -74,6 +74,7 @@
   "sending_feedback": "प्रतिक्रिया भेजना",
   "sending_feedback_failed": "प्रतिक्रिया भेजने में विफल",
   "critical_error_warning": "चेतावनी: एक गंभीर त्रुटि हुई है!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अपडेट्स के लिए जाँच करें",
@@ -221,7 +222,9 @@
     "dcs_rename_failed": "${door43} रिपोजिटरी का नाम बदल नहीं लिया गया था।<br/><br/>क्या आप ${door43} रिपोजिटरी का नाम बदलना चाहते हैं या नाम बदलने के बिना जारी रखना चाहते हैं?",
     "dcs_create_new_failed": "के ${door43} भंडार नहीं बनाया जा सका.<br/><br/>क्या आप चाहते हैं करने के लिए पुन: प्रयास करें बनाने के ${door43} भंडार या जारी रखने के बिना नाम बदलना?",
     "dcs_rename_conflict": "नाम बदलें विफल रहा क्योंकि इस नाम के साथ एक रिपोजिटरी पहले से मौजूद है।<br/><br/>अपने प्रोजेक्ट को ${door43} पर अपलोड करने में सक्षम होने के लिए, आपको या तो अपनी स्थानीय प्रोजेक्ट का नाम बदलने या अपने ${door43} प्रोजेक्ट का नाम बदलने की आवश्यकता है।",
-    "dcs_create_new_conflict": "बनाने के लिए नए भंडार में विफल रहा है क्योंकि एक रिपोजिटरी इस नाम के साथ पहले से ही मौजूद है ।<br/><br/>करने के लिए सक्षम होना करने के लिए अपलोड करने के लिए अपनी परियोजना ${door43}, आप की जरूरत करने के लिए का नाम बदलें या तो अपने स्थानीय परियोजना का नाम बदलें या अपने ${door43} परियोजना है ।"
+    "dcs_create_new_conflict": "बनाने के लिए नए भंडार में विफल रहा है क्योंकि एक रिपोजिटरी इस नाम के साथ पहले से ही मौजूद है ।<br/><br/>करने के लिए सक्षम होना करने के लिए अपलोड करने के लिए अपनी परियोजना ${door43}, आप की जरूरत करने के लिए का नाम बदलें या तो अपने स्थानीय परियोजना का नाम बदलें या अपने ${door43} परियोजना है ।",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
