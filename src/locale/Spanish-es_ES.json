@@ -74,6 +74,7 @@
   "sending_feedback": "Enviando Comentario",
   "sending_feedback_failed": "Error al Enviar el Comentario",
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "Revisa si hay actualizaciones de software",
     "check_for_content_updates": "Revisa si hay actualizaciones de contenido",
@@ -140,7 +141,7 @@
     "archive_project": "Archive Project",
     "archive_failed": "The project could not be archived.",
     "archive_complete": "The project was successfully archived.",
-    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
+    "confirm_archive": "Archivar este proyecto significa que sea eliminado de la lista de proyectos, pero el proyecto sigue siendo guardado en tu ordenador. Si deseas continuar , haz cliq en  <strong>Archivar Proyecto</strong> abajo.",
     "error_setting_up_project": "¡Uy! Hemos encontrado un problema de configuración al cargar su proyecto. Por favor, póngase en contacto con el Help Desk (${email}) para obtener ayuda.",
     "error_loading": "¡Uy! Hemos encontrado un problema al cargar su proyecto. Por favor, póngase en contacto con el Help Desk (${email}) para obtener ayuda.",
     "no_project": "No se seleccionó ningún proyecto",
@@ -221,7 +222,9 @@
     "dcs_rename_failed": "El repositorio ${door43} no fue renombrado.<br/><br/>¿Quieres intentar nuevamente renombrar el repositorio ${door43} o continuar sin renombrar?",
     "dcs_create_new_failed": "El repositorio ${door43} no pudo ser creado.<br/><br/>¿Desea intentar nuevamente crear el repositorio ${door43} o continuar sin renombrar?",
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a ${door43}, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto ${door43}.",
-    "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} ."
+    "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} .",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",

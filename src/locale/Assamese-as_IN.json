@@ -74,6 +74,7 @@
   "sending_feedback": "Sending Feedback",
   "sending_feedback_failed": "Failed to Send Feedback",
   "critical_error_warning": "Warning: A critical error has occurred!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
@@ -221,7 +222,9 @@
     "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",

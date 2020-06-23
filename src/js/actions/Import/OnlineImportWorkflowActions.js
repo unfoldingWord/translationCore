@@ -40,6 +40,51 @@ import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpe
 import { tc_MIN_VERSION_ERROR, IMPORTS_PATH } from '../../common/constants';
 
 /**
+ * try to download project by doing git clone into directory
+ * @param {String} url
+ * @param {String} importPath
+ * @param {Function} translate
+ * @return {Promise<void>}
+ */
+async function downloadProject(url, importPath, translate) {
+  try {
+    await Repo.clone(url, importPath);
+  } catch (e) {
+    console.error('downloadProject() error', e);
+    const message = getLocalizedErrorPrompt(e, url, translate);
+    throw message;
+  }
+}
+
+/**
+ * convert error message to localized message and determine if known or unknown
+ * @param {String|Object} error
+ * @param {String} projectUrl
+ * @param {Function} translate
+ * @return {String} message
+ */
+export function getLocalizedErrorPrompt(error, projectUrl, translate) {
+  let { message, isUnknown } = FileConversionHelpers.getLocalizedErrorMessage(error, translate, null);
+
+  if (isUnknown) {
+    message = translate('projects.unknown_download_networking_error',
+      {
+        actions: translate('actions'),
+        user_feedback: translate('user_feedback'),
+        project_url: projectUrl,
+        app_name: translate('_.app_name'),
+      });
+  } else { // wrap error message with project detail
+    message = translate('projects.known_download_networking_error',
+      {
+        error_message: message,
+        project_url: projectUrl,
+      });
+  }
+  return message;
+}
+
+/**
  * Action that dispatches other actions to wrap up online importing
  */
 export const onlineImport = () => (dispatch, getState) => new Promise((resolve, reject) => {
@@ -64,7 +109,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
 
       await fs.ensureDir(importPath);
       console.log('onlineImport() - cloning repo into file system');
-      await Repo.clone(link, importPath);
+      await downloadProject(link, importPath, translate);
       const selectedProjectFilename = Repo.parseRemoteUrl(Repo.sanitizeRemoteUrl(link)).name;
       console.log('onlineImport() - selectedProjectFilename= ' + selectedProjectFilename);
 

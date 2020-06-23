@@ -74,6 +74,7 @@
   "sending_feedback": "ମତାମତ ପଠାନ୍ତୁ",
   "sending_feedback_failed": "ମତାମତ ପଠାଇବା ପାଇଁ ବିଫଳ ହେଲା",
   "critical_error_warning": "\"ସତର୍କ: ସମାଲୋଚନାମୂଳକ ତ୍ରୁଟିଘଟିଅଛି!\"",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "ସଫ୍ଟୱେର୍ ଅଦ୍ୟତନକୁ ଯାଞ୍ଚ କରନ୍ତୁ",
     "check_for_content_updates": "\"ଅଧିସୂଚନା ଅଦ୍ୟତନକୁ ଯାଞ୍ଚ କରନ୍ତୁ\"",
@@ -221,7 +222,9 @@
     "dcs_rename_failed": "\"${door43}ରିପୋଜିଟୋରୀକୁ ପୁନଃ ନାମାଙ୍କରଣ କରାଯାଇନଥିଲା। <br/><br/> କ'ଣ ଆପଣ ${door43}ରିପୋଜିଟୋରୀକୁ ପୁନଃ ନାମାଙ୍କରଣ କରିବାକୁ ଚାହୁଁଛନ୍ତି ନା ପୁନଃ ନାମାଙ୍କରଣ ବିନା ଜାରି ରଖିବାକୁ ଚାହୁଁଛନ୍ତି ?\"",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "\"ପୁନଃ ନାମାଙ୍କରଣ ବିଫଳ ହେଲା କାରଣ ଏହି ନାମର ସହିତ ଏକ ରିପୋଜିଟୋରୀ ପୂର୍ବରୁ ଅଛି।<br/><br/> ଆପଣଙ୍କ ପ୍ରକଳ୍ପ ${door43}ରେ ଅପ୍ଲୋଡ୍ କରିପାରିବ, ଆପଣଙ୍କୁ ନିଜ ସ୍ଥାନୀୟ ପ୍ରକଳ୍ପକୁ ପୁନଃ ନାମାଙ୍କରଣ କରିବା ଆବଶ୍ୟକ କିମ୍ବା ଆପଣଙ୍କ${door43} ପ୍ରକଳ୍ପକୁ ନାମାଙ୍କରଣ କରନ୍ତୁ।\"",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "\"\"କୋଡ୍ ନିମନ୍ତେ ଭାଷାର ନାମ ଅମାନ୍ୟ ଅଟେ\"",
