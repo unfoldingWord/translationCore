@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 import isEqual from 'deep-equal';
 import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import CheckBoxOutlineIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
 // constants
 import { TRANSLATION_WORDS } from '../../../common/constants';
 
@@ -30,12 +33,15 @@ const CategoryCheckbox = ({
 
   return (
     <Checkbox
+      checked={isChecked}
+      indeterminate={isIndeterminate}
       classes={{
         root: classes.root,
         checked: classes.checked,
       }}
-      checked={isChecked}
-      indeterminate={isIndeterminate}
+      icon={<CheckBoxOutlineIcon style={{ fontSize: '24px' }} />}
+      checkedIcon={<CheckBoxIcon style={{ fontSize: '24px' }} />}
+      indeterminateIcon={<IndeterminateCheckBoxIcon style={{ fontSize: '24px' }} />}
       onChange={(e) => onCategoryChecked(toolName, e.target.checked, availableSubcategories.map(cat => cat.id))}
     />
   );
