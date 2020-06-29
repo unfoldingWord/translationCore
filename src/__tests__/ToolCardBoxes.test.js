@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import ToolCardBoxes from '../js/components/home/toolsManagement/ToolCardBoxes';
 import { TRANSLATION_WORDS, TRANSLATION_NOTES } from '../js/common/constants';
@@ -77,9 +77,11 @@ test('translationNotes should have 4 boxes checked', () => {
     translate: jest.fn((txt) => 'translated: ' + txt),
     selectedGL: 'en',
     showPopover: jest.fn(() => {}),
+    onCategoryChecked: jest.fn(() => {}),
+    onSubcategoryChecked: jest.fn(() => {}),
   };
 
-  const component = mount(
+  const component = shallow(
     <ToolCardBoxes {...props}></ToolCardBoxes>,
   );
 

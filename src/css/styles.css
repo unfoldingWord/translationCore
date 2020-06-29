@@ -1,6 +1,5 @@
 
 @import 'colorscheme.css';
-@import 'BodyContainer.css';
 @import 'hint.min.css';
 @import 'bootstrap.min.css';
 @import 'bootstrap-theme.min.css';
@@ -145,7 +144,7 @@ use Ezra for Hebrew characters and then Noto Sans for other characters
   text-align: right;
 }
 /*
-Add new complex script font classes below.
+Add new complex script font classes above.
 
 Remember to follow the same naming convention used above,
 otherwise it won't work as expected.
@@ -153,6 +152,18 @@ For example, .NewFontName-text { css styling + font setting }
 */
 
 
+
+
+/* BodyContainer */
+#scrollableSection {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  bottom: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: calc(100vw - 250px);
+}
 
 /*
 The following .nav-tabs and .nav-pills classes handle the styling for the tabs in the
