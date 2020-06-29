@@ -28,7 +28,7 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext,
   console.log('promptForInvalidCheckFeedback(): ' + message);
   const onSelection = () => {
     if (moveToNext) {
-      dispatch(changeToNextContextId());
+      changeToNextContextId();
     }
   };
 
