@@ -179,7 +179,7 @@
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "4.0.1",
     "truncate-utf8-bytes": "1.0.2",
-    "tsv-groupdata-parser": "0.9.16",
+    "tsv-groupdata-parser": "github:translationCoreApps/tsv-groupdata-parser#bugfix-mcleanb-7023",
     "usfm-js": "2.1.0",
     "uuid": "3.2.1",
     "word-aligner": "1.0.0",
