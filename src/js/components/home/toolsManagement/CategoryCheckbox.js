@@ -25,7 +25,7 @@ const CategoryCheckbox = ({
   selectedCategories,
   availableSubcategories = [],
 }) => {
-  const currentSubcategoriesSelected = availableSubcategories.filter((subcat) => selectedCategories.includes(subcat.id));
+  const currentSubcategoriesSelected = availableSubcategories.filter((subcat) => subcat && selectedCategories.includes(subcat.id));
   const allSubcategoriesSelected = isEqual(availableSubcategories, currentSubcategoriesSelected);
   const allSubcategoriesUnselected = currentSubcategoriesSelected.length === 0;
   const isChecked = allSubcategoriesSelected;
