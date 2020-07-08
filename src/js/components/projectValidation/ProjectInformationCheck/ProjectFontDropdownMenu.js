@@ -13,7 +13,7 @@ const iconStyle = {
 
 /**
  * get a sorted list all sort choices including complexScriptFonts and default
- * @return {{primaryText, value, key: string}[]} sorted list of font choices
+ * @return {Array} sorted list of font choices
  */
 function getFontList() {
   // add all complex script fonts to font list
