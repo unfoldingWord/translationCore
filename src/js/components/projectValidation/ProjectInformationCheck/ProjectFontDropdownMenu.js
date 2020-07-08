@@ -5,6 +5,28 @@ import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
 import complexScriptFonts from '../../../common/complexScriptFonts';
 
+/**
+ * get a sorted list all sort choices including complexScriptFonts and default
+ * @return {{primaryText, value, key: string}[]} sorted list of font choices
+ */
+function getFontList() {
+  let fontList = Object.keys(complexScriptFonts).map((fontName) => ({
+    key: `${fontName}-font-menu-item`,
+    value: complexScriptFonts[fontName].font,
+    primaryText:fontName,
+  }));
+
+  // add default font
+  fontList.push({
+    key: 'NotoSans-font-menu-item',
+    value: 'default',
+    primaryText: 'Noto Sans (Default)',
+  });
+
+  fontList = fontList.sort((a, b) => a.primaryText < b.primaryText ? -1 : 1);
+  return fontList;
+};
+
 const ProjectFontDropdownMenu = ({
   id,
   className,
@@ -31,12 +53,8 @@ const ProjectFontDropdownMenu = ({
         updateProjectFont(value);
       }}
     >
-      <MenuItem key="NotoSans-font-menu-item" value={'default'} primaryText={'Noto Sans (Default)'} />
       {
-        Object.keys(complexScriptFonts).map((fontName) => {
-          const value = complexScriptFonts[fontName].font;
-          return <MenuItem key={`${fontName}-font-menu-item`} value={value} primaryText={fontName} />;
-        })
+        getFontList().map((font) => <MenuItem key={font.key} value={font.value} primaryText={font.primaryText} />)
       }
     </SelectField>
   </div>
