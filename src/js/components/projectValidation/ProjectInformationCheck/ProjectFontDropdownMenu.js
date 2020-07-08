@@ -5,12 +5,19 @@ import { SelectField, MenuItem } from 'material-ui';
 import TextFieldsIcon from '@material-ui/icons/TextFields';
 import complexScriptFonts from '../../../common/complexScriptFonts';
 
+const iconStyle = {
+  verticalAlign: 'top',
+  width: 24,
+  height: 24,
+};
+
 /**
  * get a sorted list all sort choices including complexScriptFonts and default
  * @return {{primaryText, value, key: string}[]} sorted list of font choices
  */
 function getFontList() {
-  let fontList = Object.keys(complexScriptFonts).map((fontName) => ({
+  // add all complex script fonts to font list
+  const fontList = Object.keys(complexScriptFonts).map((fontName) => ({
     key: `${fontName}-font-menu-item`,
     value: complexScriptFonts[fontName].font,
     primaryText:fontName,
@@ -23,14 +30,8 @@ function getFontList() {
     primaryText: 'Noto Sans (Default)',
   });
 
-  fontList = fontList.sort((a, b) => a.primaryText < b.primaryText ? -1 : 1);
-  return fontList;
-};
-
-const iconStyle = {
-  verticalAlign: 'top',
-  width: 24,
-  height: 24,
+  // return sorted font list
+  return fontList.sort((a, b) => a.primaryText < b.primaryText ? -1 : 1);
 };
 
 const ProjectFontDropdownMenu = ({
