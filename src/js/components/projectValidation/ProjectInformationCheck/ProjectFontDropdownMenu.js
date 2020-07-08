@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 // components
-import { Glyphicon } from 'react-bootstrap';
 import { SelectField, MenuItem } from 'material-ui';
+import TextFieldsIcon from '@material-ui/icons/TextFields';
 import complexScriptFonts from '../../../common/complexScriptFonts';
 
 /**
@@ -27,6 +27,12 @@ function getFontList() {
   return fontList;
 };
 
+const iconStyle = {
+  verticalAlign: 'top',
+  width: 24,
+  height: 24,
+};
+
 const ProjectFontDropdownMenu = ({
   id,
   className,
@@ -39,7 +45,7 @@ const ProjectFontDropdownMenu = ({
     className={className}
   >
     <label htmlFor={id} style={{ margin: 0 }}>
-      <Glyphicon glyph={'font'} style={{ color: '#000000', fontSize: '16px' }} />&nbsp;
+      <TextFieldsIcon style={iconStyle}/>&nbsp;
       <span>{translate('project_validation.project_font')}</span>&nbsp;
       <span className={'required'}/>
     </label>
