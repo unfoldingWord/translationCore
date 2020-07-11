@@ -1337,15 +1337,29 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                     }
                   }
                 >
-                  <span
-                    className="glyphicon glyphicon-font"
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root"
+                    focusable="false"
                     style={
                       Object {
-                        "color": "#000000",
-                        "fontSize": "16px",
+                        "height": 24,
+                        "verticalAlign": "top",
+                        "width": 24,
                       }
                     }
-                  />
+                    viewBox="0 0 24 24"
+                  >
+                    <defs>
+                      <path
+                        d="M24 24H0V0h24v24z"
+                        id="a"
+                      />
+                    </defs>
+                    <path
+                      d="M2.5 4v3h5v12h3V7h5V4h-13zm19 5h-9v3h3v7h3v-7h3V9z"
+                    />
+                  </svg>
                    
                   <span>
                     project_validation.project_font
