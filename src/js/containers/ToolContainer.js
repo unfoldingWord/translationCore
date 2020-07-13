@@ -26,6 +26,8 @@ import {
 import ProjectAPI from '../helpers/ProjectAPI';
 import CoreAPI from '../helpers/CoreAPI';
 import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
+import complexScriptFonts from '../common/complexScriptFonts';
+import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
 
 const styles = {
   container: {
@@ -116,6 +118,7 @@ class ToolContainer extends Component {
       sourceBook,
       currentToolName,
       toolName: currentToolName,
+      complexScriptFonts,
 
       // deprecated props
       showIgnorableDialog: (...args) => {
@@ -234,6 +237,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   loadLexiconEntry(lexiconId, entryId) {
     dispatch(loadLexiconEntry(lexiconId, entryId));
+  },
+  addObjectPropertyToManifest(propertyName, value) {
+    dispatch(addObjectPropertyToManifest(propertyName, value));
   },
 });
 
