@@ -131,17 +131,15 @@ use Ezra for Hebrew characters and then Noto Sans for other characters
   font-family: AwamiNastaliq, Noto Sans;
   font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
   font-size: 115%;
-  direction: rtl;
-  text-align: right;
   line-height: initial;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
 }
 
 .Scheherazade-text {
   font-family: Scheherazade, Noto Sans;
   font-feature-settings: "cv12" 0;
   font-size: 150%;
-  direction: rtl;
-  text-align: right;
 }
 /*
 Add new complex script font classes above.
