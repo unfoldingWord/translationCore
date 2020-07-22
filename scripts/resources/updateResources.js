@@ -24,7 +24,9 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
 
     await sourceContentUpdater.getLatestResources(localResourceList)
       .then(async () => {
-        await sourceContentUpdater.downloadResources(languages, resourcesPath, null, allAlignedBibles)
+        await sourceContentUpdater.downloadResources(languages, resourcesPath,
+          sourceContentUpdater.updatedCatalogResources,
+          allAlignedBibles)
           .then(resources => {
             resources.forEach(resource => {
               console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
