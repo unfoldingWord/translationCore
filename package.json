@@ -38,7 +38,7 @@
     "overwrite-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/el-x-koine tcResources/hi && npm run update-resources",
     "update-apps": "git submodule foreach --recursive git checkout develop && git submodule foreach --recursive git pull",
     "update-attributions": "node scripts/attributions/generateAttributionData.js src/js/components/home/license/attributionData.json",
-    "update-resources": "node scripts/resources/updateResources.js tcResources en hi el-x-koine hbo",
+    "update-resources": "node scripts/resources/updateResources.js tcResources en hi el-x-koine hbo ---allAlignedBibles",
     "update-version": "node ./scripts/versionScript.js"
   },
   "repository": {
@@ -174,7 +174,7 @@
     "string-punctuation-tokenizer": "2.0.0",
     "sudo-prompt": "6.2.1",
     "tc-electron-env": "0.9.0",
-    "tc-source-content-updater": "0.6.20",
+    "tc-source-content-updater": "0.7.0-alpha",
     "tc-strings": "0.1.7",
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "5.3.1",
