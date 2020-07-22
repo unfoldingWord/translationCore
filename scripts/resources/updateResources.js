@@ -9,7 +9,14 @@ const SourceContentUpdater = require('tc-source-content-updater').default;
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
-const updateResources = async (languages, resourcesPath) => {
+/**
+ * find resources to update
+ * @param {String} languages - languages to update resources
+ * @param {String} resourcesPath
+ * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
+ * @return {Promise<String>}
+ */
+const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
   const sourceContentUpdater = new SourceContentUpdater();
 
   try {
@@ -17,10 +24,17 @@ const updateResources = async (languages, resourcesPath) => {
 
     await sourceContentUpdater.getLatestResources(localResourceList)
       .then(async () => {
-        await sourceContentUpdater.downloadResources(languages, resourcesPath)
+        await sourceContentUpdater.downloadResources(languages, resourcesPath,
+          sourceContentUpdater.updatedCatalogResources, // list of static resources that are newer in catalog
+          allAlignedBibles)
           .then(resources => {
             resources.forEach(resource => {
               console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
+              const found = languages.find((language) => (language === resource.languageId));
+
+              if (!found) { // if language for resource was not in original list, then add it for language list to zip up
+                languages.push(resource.languageId);
+              }
             });
           })
           .catch(err => {
@@ -95,7 +109,14 @@ const areResourcesRecent = (resourcesPath) => {
   return false;
 };
 
-const executeResourcesUpdate = async (languages, resourcesPath) => {
+/**
+ * do update of resources
+ * @param {String} languages - languages to update resources
+ * @param {String} resourcesPath
+ * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
+ * @return {Promise<number>}
+ */
+const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles) => {
   let errors = false;
 
   if (areResourcesRecent(resourcesPath)) {
@@ -109,7 +130,7 @@ const executeResourcesUpdate = async (languages, resourcesPath) => {
       fs.removeSync(tempPath);
     }
 
-    errors = await updateResources(languages, resourcesPath);
+    errors = await updateResources(languages, resourcesPath, allAlignedBibles);
 
     if (errors) {
       console.log('Errors on downloading updated resources!!');
@@ -136,15 +157,49 @@ const executeResourcesUpdate = async (languages, resourcesPath) => {
   return 0; // no error
 };
 
+/**
+ * iterate through process arguments and separate out flags and other parameters
+ * @return {{flags: [], otherParameters: []}}
+ */
+function separateParams() {
+  const flags = [];
+  const otherParameters = [];
+
+  for (let i = 2, l = process.argv.length; i < l; i++) {
+    const param = process.argv[i];
+
+    if (param.substr(0, 1) === '-') { // see if flag
+      flags.push(param);
+    } else {
+      otherParameters.push(param);
+    }
+  }
+  return { flags, otherParameters };
+}
+
+/**
+ * see if flag is in flags
+ * @param {Array} flags
+ * @param {String} flag - flag to match
+ * @return {Boolean}
+ */
+function findFlag(flags, flag) {
+  const found = flags.find((item) => (item === flag));
+  return !!found;
+}
+
 // run as main
 if (require.main === module) {
-  if (process.argv.length < 4) {
-    console.error('Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]');
+  const { flags, otherParameters } = separateParams();
+
+  if (otherParameters.length < 2) {
+    console.error('Syntax: node scripts/resources/updateResources.js [flags] <path to resources> <language> [language...]');
     return 1;
   }
 
-  const resourcesPath = process.argv[2];
-  const languages = process.argv.slice(3);
+  const resourcesPath = otherParameters[0];
+  const languages = otherParameters.slice(1);
+  const allAlignedBibles = findFlag(flags, '--allAlignedBibles');
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
@@ -152,7 +207,7 @@ if (require.main === module) {
     return;
   }
 
-  executeResourcesUpdate(languages, resourcesPath).then(code => {
+  executeResourcesUpdate(languages, resourcesPath, allAlignedBibles).then(code => {
     process.exitCode = code; // set exit code, 0 = no error
   });
 }
