@@ -28,6 +28,11 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
           .then(resources => {
             resources.forEach(resource => {
               console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
+              const found = languages.find((language) => (language === resource.languageId));
+
+              if (!found) { // if language for resource was not in original list, then add it for language list to zip up
+                languages.push(resource.languageId);
+              }
             });
           })
           .catch(err => {
