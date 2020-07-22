@@ -109,6 +109,13 @@ const areResourcesRecent = (resourcesPath) => {
   return false;
 };
 
+/**
+ * do update of resources
+ * @param {String} languages - languages to update resources
+ * @param {String} resourcesPath
+ * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
+ * @return {Promise<number>}
+ */
 const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles) => {
   let errors = false;
 
