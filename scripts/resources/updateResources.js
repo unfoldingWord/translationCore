@@ -25,7 +25,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
     await sourceContentUpdater.getLatestResources(localResourceList)
       .then(async () => {
         await sourceContentUpdater.downloadResources(languages, resourcesPath,
-          sourceContentUpdater.updatedCatalogResources,
+          sourceContentUpdater.updatedCatalogResources, // list of static resources that are newer in catalog
           allAlignedBibles)
           .then(resources => {
             resources.forEach(resource => {
