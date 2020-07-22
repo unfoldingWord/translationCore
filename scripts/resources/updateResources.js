@@ -192,7 +192,7 @@ if (require.main === module) {
 
   const resourcesPath = otherParameters[0];
   const languages = otherParameters.slice(1);
-  const allAlignedBibles = findFlag(flags, '---allAlignedBibles');
+  const allAlignedBibles = findFlag(flags, '--allAlignedBibles');
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
