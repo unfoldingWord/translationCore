@@ -48,6 +48,8 @@
 
 **Closed issues:**
 
+- Modify build scripts to include all aligned Bibles [\#7074](https://github.com/unfoldingWord/translationCore/issues/7074)
+- change font drop down to show Ezra (default) as the font for Hebrew scripture resources. [\#7070](https://github.com/unfoldingWord/translationCore/issues/7070)
 - The padding has been lost on the right side of the reference lines in the check pane when displaying RTL languages [\#7043](https://github.com/unfoldingWord/translationCore/issues/7043)
 - Selected Arabic and Burmese text is sometimes not reproduced exactly in the "has been translated as" pane [\#7041](https://github.com/unfoldingWord/translationCore/issues/7041)
 - Font is not sizable in verse editing dialogs [\#7038](https://github.com/unfoldingWord/translationCore/issues/7038)
