@@ -370,13 +370,13 @@
     "description": "Open-licensed exegetical notes that provide historical, cultural, and linguistic information for translators. It provides translators and checkers with pertinent, just-in-time information to help them make the best possible translation decisions.",
     "format": "text/tsv",
     "identifier": "tn",
-    "issued": "2020-07-23",
+    "issued": "2020-07-24",
     "language": {
       "direction": "ltr",
       "identifier": "en",
       "title": "English"
     },
-    "modified": "2020-07-23",
+    "modified": "2020-07-24",
     "publisher": "unfoldingWord",
     "relation": [
       "en/ult",
@@ -388,13 +388,13 @@
       {
         "identifier": "tn",
         "language": "en",
-        "version": "30"
+        "version": "31"
       }
     ],
     "subject": "TSV Translation Notes",
     "title": "unfoldingWord® Translation Notes",
     "type": "help",
-    "version": "31"
+    "version": "32"
   },
   "checking": {
     "checking_entity": [
@@ -1064,5 +1064,5 @@
       ]
     }
   ],
-  "catalog_modified_time": "2020-07-23T01:14:44+00:00"
+  "catalog_modified_time": "2020-07-23T19:48:44+00:00"
 }
