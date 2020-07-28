@@ -1,0 +1,263 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Paul, an apostle—not an apostle from men nor by human agency, but through Jesus Christ and God the Father, who raised him from the dead—\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and all the brothers with me, to the churches of Galatia:\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Grace to you and peace from God our Father and the Lord Jesus Christ,\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "who gave himself for our sins so that he might deliver us from this present evil age, according to the will of our God and Father,\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "to him be the glory forever and ever. Amen.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am amazed that you are turning away so quickly from him who called you by the grace of Christ. I am amazed that you are turning to a different gospel.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is not to say that there is another gospel, but there are some men who cause you trouble and want to change the gospel of Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But even if we or an angel from heaven should proclaim to you a gospel other than the one we proclaimed to you, let him be cursed.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As we have said before, so now I say again, \"If someone proclaims to you a gospel other than the one you received, let him be cursed.\"\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For am I now seeking the approval of men or God? Am I seeking to please men? If I am still trying to please men, I am not a servant of Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I want you to know, brothers, that the gospel I proclaimed is not man's gospel.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I did not receive it from any man, nor was I taught it. Instead, it was by revelation of Jesus Christ to me.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have heard about my former life in Judaism, how I was persecuting the church of God beyond measure and that I was trying to destroy it.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I advanced in Judaism beyond many of those who were my own age, from out of my own people. That is how extremely zealous I was for the traditions of my fathers.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when God, who had set me apart from my mother's womb, and who called me through his grace,\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "was pleased to reveal his Son in me, so that I would proclaim him among the Gentiles, I did not immediately consult with flesh and blood.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I did not go up to Jerusalem to those who had become apostles before me. Instead, I went to Arabia and then returned to Damascus.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then after three years I went up to Jerusalem to get to know Cephas and I stayed with him fifteen days.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I saw none of the other apostles except James, the Lord's brother.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In what I write to you, I assure you before God, that I am not lying.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I went to the regions of Syria and Cilicia.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was still not personally known to the churches of Judea that are in Christ.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They only heard it being said, \"The man who once persecuted us is now proclaiming the faith he once tried to destroy.\"\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they glorified God because of me.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

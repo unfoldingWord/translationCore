@@ -1,0 +1,315 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I heard a loud voice call out of the temple and say to the seven angels, \"Go and pour out on the earth the seven bowls of God's wrath.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The first angel went and poured out his bowl on the earth; ugly and painful sores came on the people who had the mark of the beast, those who worshiped his image.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The second angel poured out his bowl into the sea. It became blood, like the blood of a dead person, and every living thing in the sea died.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The third angel poured out his bowl into the rivers and the springs of water, and they became blood.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I heard the angel of the waters say,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"You are righteous—the one who is and who was, the Holy One—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you have judged these things.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older copies read, \\fqa You are righteous, Lord—the one who is and who was and who is to be, because you have judged these things \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because they poured out the blood of the saints and prophets,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have given them blood to drink;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it is what they deserve.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I heard the altar reply,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Yes, Lord God Almighty,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "your judgments are true and righteous.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fourth angel poured out his bowl on the sun, and it was given permission to scorch the people with fire.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were scorched by the terrible heat, and they blasphemed the name of God, who has the power over these plagues. They did not repent or give him glory.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the fifth angel poured out his bowl on the throne of the beast, and darkness covered its kingdom. They chewed on their tongues because of the pain.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They blasphemed the God of heaven because of their pain and sores, and they still refused to repent of what they had done.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sixth angel poured out his bowl into the great river, the Euphrates. Its water was dried up in order to prepare the way for the kings that would come from the east.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I saw three unclean spirits that looked like frogs coming out of the mouths of the dragon, of the beast, and of the false prophet.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For they are spirits of demons performing miraculous signs. They were going out to the kings of the whole world in order to gather them together for the battle on the great day of God Almighty.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(\"Look! I am coming as a thief! Blessed is the one who keeps watching, keeping his garments on so that he will not go out naked and they see his shameful condition.\")\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They brought them together at the place that is called Armageddon in Hebrew.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the seventh angel poured out his bowl into the air. Then a loud voice came out of the temple and from the throne, saying, \"It is done!\"\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were flashes of lightning, rumbles, crashes of thunder, and a terrible earthquake—an earthquake greater than any that has ever happened since human beings have been on the earth, so great was this earthquake.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The great city was split into three parts, and the nations' cities collapsed. Then God called to mind Babylon the great, and he gave that city the cup filled with the wine made from his furious wrath.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every island disappeared, and the mountains were no longer found.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Great hailstones, weighing about a talent, came down from the sky upon the people. They cursed God for the plague of hail because that plague was so terrible.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

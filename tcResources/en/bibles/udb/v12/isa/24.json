@@ -1,0 +1,653 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some day Yahweh is going to destroy the earth.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will devastate it and cause it to become a desert,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will scatter its people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will scatter everyone:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "priests and common people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "servants and their masters,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "maids and their mistresses,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "buyers and sellers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "lenders and borrowers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people who owe money and people who are owed money.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nothing that is worth anything will be left on earth;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "everything valuable will be destroyed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That will surely happen because Yahweh has said it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything on the earth will dry up and die;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "its important people will become weak and unimportant.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The earth has become unacceptable to Yahweh because the people who live on it have disobeyed his laws;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have rejected the covenant that he intends to last forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, Yahweh will curse the earth;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the people who live on it must be punished because of the sins that they have committed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will be destroyed by fire,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and only a few people will remain alive.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The grapevines will wither,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be no grapes to make wine.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All the people who were previously happy will now groan and mourn.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will no longer play cheerful songs with tambourines,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people will no longer play joyfully on their harps,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people will no longer shout noisily during their celebrations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will no longer sing while they drink wine,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all their alcoholic drinks will taste bitter.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Towns and cities will be desolate;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "every house will be locked to prevent thieves from entering, for no one will live in them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mobs will gather in the streets, wanting wine;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one on the earth will be happy anymore.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cities will be ruined,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all their gates will be battered into pieces.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be like that all over the earth:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there will only be a few people still alive,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "like what happens when workers beat all the olives off a tree and there are only a few left,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or when they harvest the grapes and there are only a few left on the vines.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those in the west will sing with great happiness;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will declare that Yahweh is very great.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those in the east of Israel will also praise Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those along the coastlines of the sea will praise Yahweh, the God the people Israel worship.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We will hear people in the most distant places on the earth singing praise to Yahweh, the truly righteous one.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But now, I am very sad.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Weep for me, because I have become thin and weak.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Terrible things are happening!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Treacherous people still betray others everywhere.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people all over the earth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will be terrified,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will fall into deep pits and traps.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who try to flee because they are terrified\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will fall into deep pits,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and those who climb out of the pits\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will be caught by traps.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The sky will split open and torrents of rain will fall;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the foundations of the earth will shake.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The earth will split apart and be shattered;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will shake violently.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be as though the earth will stagger like a drunk;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will shake like a hammock in a windstorm.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It will collapse and not be able to rise again,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because the guilt of the people who rebel against Yahweh is very great.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, Yahweh will punish the wicked powerful beings in the skies\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the wicked kings on the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will all be gathered together and thrown into a dungeon.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will be shut in that dungeon,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and later they will be punished.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time the light of the moon and the sun will be lessened;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will be as though they are ashamed in the presence of Yahweh,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because he, Yahweh, commander of the angel armies, will rule gloriously on Mount Zion,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the presence of all the leaders of his people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

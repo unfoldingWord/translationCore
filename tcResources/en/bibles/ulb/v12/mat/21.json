@@ -1,0 +1,572 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As Jesus and his disciples approached Jerusalem and came to Bethphage, to the Mount of Olives, then Jesus sent two disciples,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "saying to them, \"Go into the next village, and you will immediately find a donkey tied up there, and a colt with her. Untie them and bring them to me.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If anyone says anything to you about that, you will say, 'The Lord has need of them,' and that person will immediately send them with you.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now this came about that what was spoken through the prophet might be fulfilled. He said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Tell the daughter of Zion,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'See, your King is coming to you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Humble and riding on a donkey—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on a colt, the foal of a donkey.'\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the disciples went and did just as Jesus had instructed them.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They brought the donkey and the colt and put their cloaks on them, and Jesus sat upon the cloaks.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Most of the crowd spread their cloaks on the road, and others cut branches from the trees and spread them in the road.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the crowds that went before Jesus and those that followed him were shouting, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Hosanna to the son of David!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Blessed is the one who comes in the name of the Lord!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Hosanna in the highest!\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Jesus had come into Jerusalem, all the city was stirred and said, \"Who is this?\"\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The crowds answered, \"This is Jesus the prophet from Nazareth in Galilee.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus entered the temple. He cast out all those who bought and sold in the temple, and turned over the tables of the money changers and the seats of those who sold doves.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"It is written, 'My house will be called a house of prayer,' but you make it a den of robbers.\"\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the blind and the lame came to him in the temple, and he healed them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when the chief priests and the scribes saw the marvelous things that he did, and when they heard the children shouting in the temple and saying, \"Hosanna to the Son of David,\" they became very angry.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said to him, \"Do you hear what they are saying?\" Jesus said to them, \"Yes! But have you never read, 'Out of the mouths of little children and nursing infants you have prepared praise'?\"\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus left them and went out of the city to Bethany and spent the night there.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now in the morning as he returned to the city, he was hungry.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Seeing a fig tree along the roadside, he went to it and found nothing on it except leaves. He said to it, \"May there be no fruit from you ever again,\" and immediately the fig tree withered.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the disciples saw it, they marveled and said, \"How did the fig tree immediately wither away?\"\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus answered and said to them, \"Truly I say to you, if you have faith and do not doubt, you will not only do what was done to this fig tree, but you will even say to this mountain, 'Be taken up and thrown into the sea,' and it will be done.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever you ask for in prayer, believing, you will receive.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Jesus had come into the temple, the chief priests and the elders of the people came to him as he was teaching and said, \"By what authority do you do these things, and who gave you this authority?\"\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus answered and said to them, \"I also will ask you one question. If you tell me, I will tell you by what authority I do these things.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The baptism of John—from where did it come? From heaven or from men?\" They discussed among themselves, saying, \"If we say, 'From heaven,' he will say to us, 'Why then did you not believe him?'\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if we say, 'From men,' we fear the crowd, because they all view John as a prophet.\"\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they answered Jesus and said, \"We do not know.\" He also said to them, \"Neither will I tell you by what authority I do these things.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But what do you think? A man had two sons. He went to the first and said, 'Son, go work today in the vineyard.'\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The son answered and said, 'I will not,' but afterward he changed his mind and went.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the man went to the second son and said the same thing. He answered and said, 'I will go, sir,' but he did not go.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Which of the two sons did his father's will?\" They said, \"The first one.\" Jesus said to them, \"Truly I say to you, the tax collectors and the prostitutes will enter the kingdom of God before you do.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For John came to you in the way of righteousness, but you did not believe him. But the tax collectors and the prostitutes believed him. But you, even when you saw this, you did not repent afterward and believe him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to another parable. There was a man, a landowner. He planted a vineyard, set a hedge about it, dug a winepress in it, built a watchtower, and rented it out to vine growers. Then he went into another country.\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the time of the fruit harvest approached, he sent some servants to the vine growers to get his fruit.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the vine growers took his servants, beat one, killed another, and stoned still another.\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Again, the owner sent other servants, more than the first, but the vine growers treated them in the same way.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After that, the owner sent his own son to them, saying, 'They will respect my son.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when the vine growers saw the son, they said among themselves, 'This is the heir. Come, let us kill him and take over the inheritance.'\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they took him, threw him out of the vineyard and killed him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now when the owner of the vineyard comes, what will he do to those vine growers?\"\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said to him, \"He will destroy those miserable men in the most severe way, and will then rent out the vineyard to other vine growers, men who will give him his share of crops at the harvest time.\"\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus said to them, \"Did you never read in the scriptures,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'The stone which the builders rejected\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "has been made the cornerstone.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "This was from the Lord,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and it is marvelous in our eyes'?\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore I say to you, the kingdom of God will be taken away from you and will be given to a nation that produces its fruits.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever falls on this stone will be broken to pieces. But anyone on whom it falls will be crushed.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the chief priests and the Pharisees heard his parables, they understood he was speaking about them.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Seeking to arrest him, they were afraid of the crowd, because the people regarded him as a prophet.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

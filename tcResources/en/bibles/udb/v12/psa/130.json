@@ -1,0 +1,196 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I have great troubles, so I call out to you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, hear me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while I call out to you to have mercy on me!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, if you kept a record of the sins that we have committed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not one of us would escape from being condemned and punished!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you forgive us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that we have an awesome respect for you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has said that he would help me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I trust what he said, and I wait eagerly for him to do that.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wait for Yahweh to help me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "more than watchmen wait for the morning to come;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "yes, I wait more eagerly than they do!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, my fellow Israelites, confidently expect that Yahweh will bless us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will bless us because he has mercy on us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is very willing to save us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is he who will save us Israelite people from being punished for all the sins that we have committed.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written for people going up to the temple to worship.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

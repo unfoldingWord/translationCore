@@ -1,0 +1,794 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My God, my God, why have you abandoned me?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why do you stay so far from me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and why do you not listent to me?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Why do you not hear me when I am suffering and groaning?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My God, every day I call to you during the daytime, but you do not answer me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I call to you during the night; I am not silent at all.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you are holy.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You sit on your throne as king, and we the people of Israel praise you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our ancestors trusted in you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Because they trusted in you, you rescued them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they called out to you for help, you saved them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They trusted in you, and they were not disappointed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you have not rescued me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People despise me and consider that I am not a man;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they think that I am a worm!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Everyone scorns me and despises me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone who sees me makes fun of me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They sneer at me and insult me by shaking their heads at me as though I were an evil man.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They say,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"He trusts in Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so Yahweh should save him!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He says that Yahweh is very pleased with him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if that is so, Yahweh should rescue him!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, God, have been with me since I was in my mother's womb,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you taught me to trust you when I was at my mother's breasts.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was as though you had adopted me right when I was born.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You have been my God ever since I was born.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So do not stay far from me now\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because enemies who will cause me much trouble are near me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there is no one else who can help me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My enemies surround me like a herd of wild bulls.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Fierce people, like those strong bulls that graze on the hills in the region of Bashan, surround me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are like roaring lions that are attacking the animals that they want to eat;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they rush toward me to kill me;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they are like lions that have their mouths open, ready to chew their victims to pieces.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am completely exhausted,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all my bones are out of their joints.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I no longer expect that God will save me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am completely discouraged.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My strength is all dried up\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a broken piece of a clay jar that has dried in the sun.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am so thirsty that my tongue sticks to the roof of my mouth.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God, I think that you are about to let my body die and become dust!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My enemies are like wild dogs that surround me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "A group of evil men has encircled me, ready to attack me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They have pierced through my hands and my feet.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am so weak and thin that I can count all my bones.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "My enemies stare at me and gloat about what has happened to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They looked at the clothes that I was wearing\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and gambled to determine which piece each of them would get.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, be concerned for me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You who are my source of strength,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "come quickly and help me!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rescue me from those who want to kill me with their swords.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Save my life from the power of those who are like wild dogs.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Snatch me away from my enemies who are like lions with jaws open and ready to chew me up!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Grab me away from those men who are like wild oxen that attack other animals with their horns!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you save me from them, I will declare to my fellow Israelites how great you are.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will praise you among the group of your people gathered together to worship you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people who have an awesome respect for Yahweh, praise him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All you who are descended from Jacob, honor Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All you Israelite people, revere him!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does not despise or ignore those who are suffering;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he does not hide his face from them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He has listened to them when they cried out to him for help.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, in the great gathering of your people, I will praise you for what you have done.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "In the presence of those who have an awesome respect for you, I will offer the sacrifices that I promised.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The poor people whom I have invited to the meal will eat as much as they want.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All who come to worship Yahweh will praise him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I pray that God will enable you all to live a long and happy life!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I pray that people in all nations, even in the remote areas, will think about Yahweh and turn to him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that people from all the clans in the world will bow down before him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh is the king!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He rules all the nations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the rich people on the earth will celebrate and bow before him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Some day they will die, for they cannot avoid it,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they will prostrate themselves on the ground in his presence.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People in the future generations will also serve Yahweh.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will tell their children about what Yahweh has done.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who are not yet born, who will live in future years, will learn how Yahweh rescued his people.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People will tell them, \"Yahweh did it!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director, to be sung to the tune 'Doe of the Dawn'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

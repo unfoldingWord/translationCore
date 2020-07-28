@@ -1,0 +1,459 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Moses summoned all the people of Israel and said to them,\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\"You Israelite people, listen to all the rules and decrees that I am giving to you today. Learn them and be sure to obey them.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When we were at Mount Sinai, Yahweh our God made a covenant with us.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But this covenant was not only for our ancestors. He made it also for us, who are alive now.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh spoke with us face to face on that mountain, from the middle of the fire.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day, I stood between your ancestors and Yahweh to tell them what he said, because they were afraid of the fire, and they did not want to climb up the mountain. This is what Yahweh said:\n"
+      },
+      {
+        "tag": "mi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'I am Yahweh your God, the one you worship. I am the one who brought you out of the land of Egypt. I am the one who freed you from being slaves there.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must worship only me; you must not worship any other god.\n"
+      },
+      {
+        "tag": "li",
+        "nextChar": "\n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not make a carved figure of anything that represents any living creature that exists in the skies, or on the earth, in the waters of the earth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not bow down to any idol and worship it, because I am Yahweh God, and I will not tolerate you doing that. I will punish anyone who does that, and their children, grandchildren, and great grandchildren.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I will steadfastly love thousands of generations of those who love me and obey my commandments.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not speak my name carelessly or for wrong purposes, because I am Yahweh God, the one whom you should worship, and I will certainly punish those who do that.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not forget that the seventh day of every week is for you to honor me specially, as I, Yahweh your God, am commanding you.\n"
+      },
+      {
+        "tag": "li",
+        "nextChar": "\n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are six days each week for you to do all your work,\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but the seventh day is a rest day, a day dedicated to me, Yahweh your God. On that day you must not do any work. You and your sons and daughters and your male and female slaves must not work. You must not even force your livestock to work, and you must not tell foreigners to work, those who are living in your country. You must allow your slaves to rest on that day just like you do.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not forget that you were slaves in Egypt, and that I, Yahweh your God, brought you out from there by my very great power. That is the reason that I am commanding that all of you must rest on the seventh day each week.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Honor your fathers and your mothers, just like I, Yahweh your God, am commanding you, in order that you as a people group may live a long time in the land that I, Yahweh your God, will give you, and in order that things will go well for you there.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not murder anyone.\n"
+      },
+      {
+        "tag": "li",
+        "nextChar": "\n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not commit adultery.\n"
+      },
+      {
+        "tag": "li",
+        "nextChar": "\n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not steal anything.\n"
+      },
+      {
+        "tag": "li",
+        "nextChar": "\n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not tell lies about anyone when you are speaking in court.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not covet someone else's wife, someone else's house, someone else's fields, someone else's male slave or female slave, someone else's livestock, someone else's donkeys, or anything else that another person owns.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those are the commandments that Yahweh spoke to your ancestors. When they were gathered there at the bottom of the mountain, he spoke with a very loud voice from the middle of the fire, and there were dark clouds surrounding the mountain. He spoke only those Ten Commandments, no more. Then he wrote them on two stone tablets and gave them to me.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After your ancestors heard Yahweh's voice when he spoke to them out of the darkness, while there was a big fire burning on the mountain, their leaders and elders came to me,\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and one of them said, 'Listen to us! Yahweh our God showed us that he is very great and glorious when we heard him speak from the fire. Today we have realized that it is possible for us human beings to continue to live even though God has spoken to us.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we are afraid that we will die. We are afraid that this immense fire will burn us all up, if we go on hearing Yahweh's voice.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We are the only people on earth who have remained alive after hearing the all-powerful God speak to them from a fire!\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Moses, you go up the mountain and listen to everything that Yahweh our God says. Then come back and tell us everything that he has said, and we will listen to what he has said and obey it.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh heard your leaders say that, so when I went back up the mountain, Yahweh said to me, 'I have heard what your leaders have said, and what they have said is right.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I surely wish that they would always think like that and have an awesome respect for me and obey all my commandments, in order that things may go well for them and for their descendants forever.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So go down and tell them to return to their tents.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But then you come back up here and stand near me, and I will give to you all the rules and decrees that I want them to obey. Then you can teach them to the people, in order that they will obey them when they are in the land that I am giving to them.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I went back down to the people and said to them, 'Be sure that you do everything that Yahweh our God has commanded us to do. Do not disobey any of his laws.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Conduct your lives as Yahweh our God has commanded us to do, in order that you may live a long time, and in order that things will go well for you when you are living in the land that you will occupy.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

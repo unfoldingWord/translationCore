@@ -1,0 +1,227 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Terrible things will happen to you people of Ethiopia!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "In your land there are many boats at the upper part of the Nile River.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your rulers send ambassadors that sail quickly down the river in papyrus boats.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Tell your messengers to go quickly!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Go to people who are tall and who have smooth skins.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People everywhere are afraid of those people,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because they conquer and destroy other nations;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are people who live in a land that rivers divide.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You messengers must tell to the people of the world,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to all people everywhere,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Look when the battle flag is lifted on top of the mountain,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and listen when the ram's horn blows\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to signal that the battle is about to begin.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen because Yahweh has told me this:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"I will watch quietly from where I live.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will watch quietly like the heat that shimmers as it rises on a summer day.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will work effectively like the cloud of mist that settles during the heat of harvest.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Before the harvest, the farmer sees the grapevines making blossoms and the flowers growing into grapes, \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he knows that the time is right to cut off the new growth and spreading branches that keep the tree from growing strong.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In the same way I know when the time is right to take action against that nation, and I will send an army to attack it. \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the soldiers in that nation's army will be killed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and their corpses will lie in the fields for vultures to eat their flesh in the summer.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then wild animals will chew on their bones all during the winter.\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, the people of the nation that rivers divide will take gifts to Yahweh in Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Those people are tall and have smooth skins; people everywhere are afraid of those people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they conquer and destroy other nations,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "will take gifts to Jerusalem, the city where Yahweh, commander of the angel armies, lives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

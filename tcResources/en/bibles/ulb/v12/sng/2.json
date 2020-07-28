@@ -1,0 +1,538 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am a meadow flower of Sharon,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a lily of the valleys.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The man speaking to the woman\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a lily among thorns,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so is my love among the young women.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As an apricot tree among the trees of the forest,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so is my beloved among the young men.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I sit down under his shadow with great delight,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his fruit is sweet to my taste.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He brought me to the house of wine,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his banner over me was love.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Revive me with raisin cakes and refresh me with apricots,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for I am weak with love.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His left hand is under my head,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his right hand embraces me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the other women\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want you to swear, daughters of Jerusalem,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "by the gazelles and the does of the fields,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you will not awaken or arouse love\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "until she pleases.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is the sound of my beloved! Listen, here he comes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "leaping over the mountains,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "jumping over the hills.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved is like a gazelle or a young stag;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "look, he is standing behind our wall,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "gazing through the window,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "peering through the lattice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved spoke to me and said,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Arise, my love;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My beautiful one, come away with me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, the winter is past;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the rain is over and gone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The flowers have appeared in the land;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the time for pruning and the singing of birds has come,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the sound of the doves is heard in our land.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fig tree ripens her green figs,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the vines are in blossom;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they give off their fragrance.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Arise, my love, my beautiful one, and come away.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My dove, in the clefts of the rock,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the secret clefts of the mountain crags,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let me see your face.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let me hear your voice,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for your voice is sweet, and your face is lovely.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Catch the foxes for us, the little foxes\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that spoil vineyards,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for our vineyard is in blossom.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved is mine, and I am his;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he grazes among the lilies with pleasure.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Go away, my beloved,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "before the soft winds of dawn blow and the shadows flee away.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Go away; be like a gazelle or a young stag\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on the rugged mountains.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

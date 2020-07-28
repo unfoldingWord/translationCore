@@ -1,0 +1,461 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, God of my salvation,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I cry out day and night before you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to my prayer;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "pay attention to my cry.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I am filled with troubles,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and my life has reached Sheol.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People treat me like those who go down into the pit;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am a man with no strength.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am abandoned among the dead;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am like the dead who lie in the grave,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "about whom you care no more\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they are cut off from your power.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You place me in the lowest part of the pit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the dark and deep places.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your wrath lies heavy on me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and all your waves crash over me.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of you, my acquaintances avoid me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You have made me a shocking sight to them.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am hemmed in and I cannot escape.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My eyes grow weary from trouble;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "All day long I call out to you, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I spread out my hands to you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will you do wonders for the dead?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Will those who have died rise and praise you?\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will your covenant faithfulness be proclaimed in the grave,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your loyalty in the place of the dead?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will your wonderful deeds be known in the darkness,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or your righteousness in the place of forgetfulness?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I cry to you, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the morning my prayer comes before you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, why do you reject me?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why do you hide your face from me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have always been afflicted and on the verge of death since my youth.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have suffered from your terrors; I am in despair.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your angry actions have passed over me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and your terrifying deeds have annihilated me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They surround me like water all the day long;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they have all encircled me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have removed every friend and acquaintance from me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My only acquaintance is the darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A song, a psalm of the sons of Korah; for the chief musician; set to the Mahalath Leannoth style. A maschil of Heman the Ezrahite.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

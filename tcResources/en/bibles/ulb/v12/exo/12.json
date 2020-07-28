@@ -1,0 +1,549 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh spoke to Moses and Aaron in the land of Egypt. He said,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"For you, this month will be the start of months, the first month of the year to you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell the assembly of Israel, 'On the tenth day of this month they must each take a lamb or young goat for themselves, each family doing this, a lamb for each household.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If the household is too small for a lamb, the man and his next door neighbor are to take lamb or young goat meat that will be enough for the number of the people. It should be enough for everyone to eat, so they must take enough meat to feed them all.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your lamb or young goat must be without blemish, a one-year-old male. You may take one of the sheep or goats.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must keep it until the fourteenth day of that month. Then the whole assembly of Israel must kill these animals at twilight.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must take some of the blood and put it on the two side doorposts and on the tops of the doorframes of the houses in which you will eat the meat.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must eat the meat that night, after first roasting it over a fire. Eat it with bread made without yeast, along with bitter herbs.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not eat it raw or boiled in water. Instead, roast it over fire with its head, legs and inner parts.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not let any of it be left over until morning. You must burn whatever is left over in the morning.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is how you must eat it: with your belt fastened, your shoes on your feet, and your staff in your hand. You must eat it hurriedly. It is Yahweh's Passover.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says this: I will go through the land of Egypt in that night and attack all the firstborn of man and animal in the land of Egypt. I will bring punishment on all the gods of Egypt. I am Yahweh.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The blood will be a sign on your houses for my coming to you. When I see the blood, I will pass over you when I attack the land of Egypt. This plague will not come on you and destroy you.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This day will become a memorial day for you, which you must observe as a festival for Yahweh. It will always be a law for you, throughout your people's generations, that you must observe this day.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will eat bread without yeast during seven days. On the first day you will remove the yeast from your houses. Whoever eats leavened bread from the first day until the seventh day, that person must be cut off from Israel.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the first day there will be an assembly that is set apart to me, and on the seventh day there will be another such gathering. No work will be done on these days, except the cooking for everyone to eat. That must be the only work that may be done by you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must observe this Festival of Unleavened Bread because it is on this day that I will have brought your people, armed group by armed group, out of the land of Egypt. So you must observe this day throughout your people's generations. This will always be a law for you.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must eat unleavened bread from twilight of the fourteenth day in the first month of the year, until twilight of the twenty-first day of the month.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "During these seven days, no yeast must be found in your houses. Whoever eats bread made with yeast must be cut off from the community of Israel, whether that person is a foreigner or someone born in your land.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must eat nothing made with yeast. Wherever you live, you must eat bread made without yeast.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Moses summoned all the elders of Israel and said to them, \"Go and select lambs or kids that will be enough to feed your families and kill the Passover lamb.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then take a bunch of hyssop and dip it in the blood that will be in a basin. Apply the blood in the basin to the top of the doorframe and the two doorposts. None of you is to go out of the door of his house until the morning.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh will pass through to attack the Egyptians. When he sees the blood on the top of the doorframe and on the two doorposts, he will pass over your door and not permit the destroyer to come into your houses to attack you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must observe this event. This will always be a law for you and your descendants.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you enter the land that Yahweh will give you, just as he has promised to do, you must observe this act of worship.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When your children ask you, 'What does this act of worship mean?'\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then you must say, 'It is the sacrifice of Yahweh's Passover, because Yahweh passed over the Israelites' houses in Egypt when he attacked the Egyptians. He set our households free.'\" Then the people bowed down and worshiped Yahweh.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Israelites went and did exactly as Yahweh had commanded Moses and Aaron.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It happened at midnight that Yahweh attacked all the firstborn in the land of Egypt, from the firstborn of Pharaoh, who sat on his throne, to the firstborn of the person in prison and all the firstborn of cattle.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pharaoh got up in the night—he, all his servants, and all the Egyptians. There was loud lamenting in Egypt, for there was not a house where there was not someone dead.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pharaoh summoned Moses and Aaron in the night and said, \"Get up, get out from among my people, you and the Israelites. Go, worship Yahweh, as you have said you wanted to do.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Take your flocks and your herds, as you have said, and go, and also bless me.\"\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Egyptians were in a great hurry to send them out of the land, for they said, \"We will all die.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the people took their dough without adding any yeast. Their kneading bowls were already tied up in their clothes and on their shoulders.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now the people of Israel did as Moses told them. They asked the Egyptians for articles of silver, articles of gold, and clothing.\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh made the Egyptians eager to please the Israelites. So the Egyptians gave them whatever they asked for. In this way, the Israelites plundered the Egyptians.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Israelites journeyed from Rameses to Succoth. They numbered about 600,000 men on foot, in addition to the women and children.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A mixed multitude also went with them, together with flocks and herds, a very large number of livestock.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They baked bread without yeast in the dough that they brought from Egypt. It was without yeast because they had been driven out of Egypt and could not delay to prepare food.\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Israelites had lived in Egypt for 430 years.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At the end of 430 years, on that very day, all of Yahweh's armed groups went out from the land of Egypt.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This was a night to stay awake, for Yahweh to bring them out from the land of Egypt. This was Yahweh's night to be observed by all the Israelites throughout their people's generations.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh said to Moses and Aaron, \"Here is the rule for the Passover: No foreigner may share in eating it.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, every Israelite's slave, bought with money, may eat it after you have circumcised him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Foreigners and hired servants must not eat any of the food.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The food must be eaten in one house. You must not carry any of the meat out of the house, and you must not break any bone of it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the community of Israel must observe the festival.\n"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a foreigner lives with you and wants to observe the Passover to Yahweh, all his male relatives must be circumcised. Then he may come and observe it. He will become like the people who were born in the land. However, no uncircumcised person may eat any of the food.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This same law will apply to both the native born and to the foreigner who lives among you.\"\n"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So all the Israelites did exactly as Yahweh had commanded Moses and Aaron.\n"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It came about that very day that Yahweh brought Israel out of the land of Egypt by their armed groups.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

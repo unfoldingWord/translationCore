@@ -1,0 +1,528 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh said to Job,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Do you still want to argue with me, the Almighty One?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Since you criticize me, you should be able to answer my questions!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job replied to Yahweh,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Now I realize that I am completely worthless. So how could I answer those questions?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will put my hand over my mouth and not say anything.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have already said more than I should have said,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so now I will say nothing more.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh again spoke to Job from inside a powerful storm. He said,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I want to ask you some questions,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so act like a man and\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "get ready to answer my questions.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Are you going to accuse me and say that I am unjust?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Are you going to say that what I have done is wrong, in order that you can say that what you have done is right?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you have the same amount of power as I do?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Can your voice sound as loud as thunder, as mine can?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you can do that, then put on the robes\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that show that you are glorious and are greatly honored!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Show that you are very angry;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "show that you have the right to humble people who are very proud!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Humble those proud people just by looking at them angrily!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Crush wicked people quickly!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bury them in the ground!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Send them to the place where dead people are,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where they will not be able to get out!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do that, I will congratulate you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and say that truly you can save yourself by your own ability.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Think also about hippopotamuses.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I made you, and I made them also.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They eat grass, like oxen do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their legs are very strong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the muscles of their bellies are very powerful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their tails are stiff like the branches of a cedar tree.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The muscles of their thighs are close together.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their thigh bones are like tubes made of bronze,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the bones of their legs are like bars made of iron.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hippopotamuses are among the strongest of the animals that I made,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I, who created them, am the only one who can kill them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the hills grows food for them to eat\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while many other wild animals play nearby.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They lie down in the water under the lotus plants;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they hide in tall reeds in the swamps.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The hippopotamuses find shade under the lotus plants,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they are surrounded by willow trees growing in the streams.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are not disturbed by raging, flooding rivers;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are not even disturbed when rivers like the Jordan River rush over them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one can catch them with hooks\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or by piercing their noses with the teeth of a trap!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

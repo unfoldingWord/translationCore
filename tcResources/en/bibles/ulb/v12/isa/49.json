@@ -1,0 +1,637 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to me, you coastlands! Now give my your attention, you distant peoples.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh has called me from birth by name, when my mother brought me into the world.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has made my mouth like a sharp sword; he hid me in the shadow of his hand;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he has made me into a polished arrow; in his quiver he has hidden me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to me, \"You are my servant, Israel, through whom I show my glory.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I replied, \"Though I thought I have labored in vain, I have spent my energy for nothing,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "yet my justice is with Yahweh, and my reward is with my God.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now Yahweh has spoken—he who formed me from birth to be his servant,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to restore Jacob again to himself, so that Israel would be gathered to him,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "for I am honored in the eyes of Yahweh, and my God has become my strength—\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and he says, \"It is too small a thing for you to be my servant to reestablish the tribes of Jacob,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and to restore the survivors of Israel. I will make you a light to the Gentiles,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that you may be my salvation to the ends of the earth.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says, the Redeemer of Israel, their Holy One,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to the one whose life is despised, hated by the nations, and a slave of rulers,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Kings will see you and arise, and princes will see you and bow down,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because of Yahweh who is faithful, even the Holy One of Israel, who has chosen you.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"At a time I decide to show my favor I will answer you, and in a day of salvation I will help you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will protect you, and give you as a covenant for the people,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to rebuild the land, to reassign the desolate inheritance.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will say to the prisoners, 'Come out;' to those in dark dungeons, 'Show yourselves.'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will graze along the roads, and on all the bare slopes will be their pasture.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will not be hungry or thirsty; nor will the heat or sun beat on them,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "for he who has mercy on them will lead them; he will guide them to springs of water.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will make all my mountains into a road, and make my highways level.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, these will come from far away, some from the north and the west; and others from the land of Sinim.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing, heavens, and be joyful, earth; break into singing, you mountains!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "For Yahweh comforts his people, and will have compassion on his afflicted.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Zion said, \"Yahweh has forsaken me, and the Lord has forgotten me.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Can a woman forget her baby, nursing at her breast, so she does not have compassion on the son she has borne?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yes, they may forget, but I will not forget you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, I have inscribed your name on my palms; your walls are continually before me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your children are hurrying back, while those who destroyed you are going away.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look around and see, they are all gathering and coming to you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "As surely as I live—this is Yahweh's declaration—you will surely wear them like jewelry, and you will put them on like a bride.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Though you were a waste and desolate, a land that was in ruins,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "now you will be too small for the inhabitants, and those who devoured you will be far away.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The children born during the time of your bereavement will say in your hearing,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'The place is too cramped for us, make room for us, so we may live here.'\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then you will ask yourself, 'Who has borne these children for me?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I was bereaved and barren, exiled and divorced. Who has raised these children?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Look, I was left all alone; where did these come from?'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what the Lord Yahweh says,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Look, I will raise my hand to the nations; I will raise my signal flag to the peoples.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will bring your sons in their arms and carry your daughters on their shoulders.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Kings will be your foster fathers, and their queens your nursemaids;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they will bow down to you with their faces to the earth and lick the dust of your feet;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and you will know that I am Yahweh; those who wait for me will not be put to shame.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can the spoils be taken from the warrior, or captives be rescued from the fierce?\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa from the fierce \\fqa* , the Hebrew text has \\fqa from the righteous \\fqa* , but most modern versions correct it to \\fqa from the fierce \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But this is what Yahweh says,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Yes, the captives will be taken away from the warrior, and spoils will be rescued;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "for I will oppose your adversary and save your children.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will feed your oppressors with their own flesh; and they will get drunk on their own blood, as if it were wine.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then all mankind will know that I, Yahweh, am your Savior and your Redeemer, the Mighty One of Jacob.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

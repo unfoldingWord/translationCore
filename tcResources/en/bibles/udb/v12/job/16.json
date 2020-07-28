@@ -1,0 +1,532 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Job replied to Eliphaz and the others,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I have heard things like that before;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all of you, instead of helping me, are only causing me to feel more miserable.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will your speeches, which are only wind, never end?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Eliphaz, what bothers you that makes you continue replying like this to me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If it were you three and not I who were suffering,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I could, in your place, say the things that you are saying.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I could make great speeches to criticize you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I could shake my head at you to ridicule you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then you would see whether my words encouraged you or not;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you would see whether they made you feel your pain less.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now, if I talk, my pain does not decrease,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and if I am silent, my pain still certainly does not go away.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, you have now taken away all my strength;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have destroyed all my family.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have shriveled me up,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people think that shows me to be a sinner.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They see that I am only skin and bones,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they think that proves that I am guilty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because God is very angry with me and hates me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though he were a wild animal that tore me apart with his teeth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he was my enemy.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People gape at me with their mouths open to sneer at me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have struck me on the face to ridicule me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they crowd around me to threaten me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though God has handed me over to people who refuse to honor him\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and has put me into the power of the wicked.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Previously, I was living peacefully,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he crushed me;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it is as though he grabbed my neck and smashed me to pieces;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though he set me up like a target.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though I were a target, and that people were surrounding me and shooting arrows at me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "God's arrows pierce my kidneys\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and cause the bile from my liver to spill onto the ground;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God does not pity me at all.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though I were a wall that he is breaking through time after time;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he rushes at me like a soldier who is attacking his enemy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because I am mourning, I wear pieces of rough cloth that I have sewed together,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I sit here in the dirt, very depressed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My face is red because I have cried very much,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there are dark circles around my eyes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All this has happened to me even though I have not acted violently toward anyone,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and even though I always pray sincerely to God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I die, I want the ground to act as though I had been murdered;\nI want it to cry out against those who killed me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I do not want anyone to stop me while I am demanding that God act justly toward me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But even now, I know that there is someone in heaven who will testify for me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will say that what I have done is right.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My three friends scorn me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but my eyes are full of tears while I cry out to God.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I pray that the one who knows what I have done would come to plead with God for me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as a person pleads for his friend.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I say this because within a few years I will die;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will walk along the road to a place from which I will never return.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

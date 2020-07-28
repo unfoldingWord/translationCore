@@ -1,0 +1,97 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, my heart is not proud or my eyes haughty.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I do not have great hopes for myself\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or concern myself with things that are beyond me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed I have stilled and quieted my soul;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like a weaned child with his mother,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my soul within me is like a weaned child.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel, hope in Yahweh\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "now and forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A song of ascents; of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

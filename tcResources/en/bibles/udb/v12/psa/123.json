@@ -1,0 +1,120 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I look up toward you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "up to heaven, from where you rule.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As servants ask their masters for what they need\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and as maids ask their mistresses for what they need,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we ask you, Yahweh our God, for what we need,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "until you act mercifully toward us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, act very mercifully toward us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because our enemies have acted very contemptuously toward us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Arrogant people have made fun of us for a long time,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and proud people have oppressed us and have acted as though we were worthless.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written for people going up to the temple to worship\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

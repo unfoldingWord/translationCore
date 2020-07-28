@@ -1,0 +1,218 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh our Lord, people all over the world know that you are very great!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We see your greatness every time we look toward the heavens!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have taught little children and infants to praise you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they cause your enemies and those who try to get revenge on you to be silent.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I look up at the sky at night\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and see the things that you have made—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the moon and the stars that you have set in place.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is amazing to me that you think about people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that you are concerned about us humans!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You made the angels in heaven to be only a little more important than we are;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you caused us to be like kings!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You put us in charge of everything that you made;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you gave us authority over all things—\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the sheep and the cattle,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and even the wild animals,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the birds, the fish,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and everything else that swims in the seas.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh our Lord,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people all over the world know that you are very great!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director, to be accompanied by a stringed instrument\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

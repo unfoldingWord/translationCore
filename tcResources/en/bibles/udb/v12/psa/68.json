@@ -1,0 +1,877 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, arise and scatter your enemies,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and cause those who hate you to run away from you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As wind blows smoke away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you chase your enemies away.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "As wax melts when it is near a fire,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "may you cause wicked people to disappear.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But may the righteous people be joyful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "may they rejoice when they are in God's presence;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "may they be happy and very joyful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to God; sing to praise him;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "sing a song for him who rides in the desert plains;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "his name is Yahweh; be glad when you are in his presence.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, who lives in his sacred temple, is like a father to those who are orphans,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is the one who protects widows.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He provides families for those who have no one to live with.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He frees prisoners and enables them to be successful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who rebel against him will be forced to live in a very hot and dry land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, you led your people out of Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then you marched with them through the desert.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After you did that,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the earth shook at Mount Sinai when you appeared to your people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and rain poured down from the sky, and your people worshiped you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You caused plenty of rain to fall there in the wilderness,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and so you enabled good crops to grow again on that land that you gave to us Israelites.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your people built homes there;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you were good to them, you provided food for those who were poor.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord spoke this message,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and many people took his message to other places.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Almighty God scattered the enemy kings and their armies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it reminded me of a snowstorm on Mount Zalmon!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a very high mountain in the Bashan hills,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a mountain that has many peaks.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the people who live near that mountain should not envy those who live near Mount Zion,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the mountain on which God chose to live!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh will live there forever!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After we defeated all our enemies,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it was as though the Lord, surrounded by many thousands of strong chariots, descended from Mount Sinai\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and came into the sacred temple in Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He ascended the sacred mountain where his temple is\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and took with him many people who had been captured in battles;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he received gifts from the enemies whom he had defeated.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He received gifts even from those who had rebelled against him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Yahweh, our God, will live there in his sacred temple forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise the Lord, who helps us carry our heavy loads every day;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he is the one who saves us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our God is the God who saves us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is Yahweh, our Lord, the one who allows us to escape from dying in battles.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God will smash the heads of his enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the long-haired skulls of those who continue to behave sinfully.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord said, \"I will bring back the corpses of my enemies who were killed in Bashan,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I will bring back those who sank deep in the ocean and drowned.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will do that so that you may wash your feet in their blood,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and your dogs can also lap up some of your enemies' blood.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, many people see you march triumphantly into your sacred temple,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "celebrating that you have defeated your enemies.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You march like a king does, and a large crowd walks with you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The singers are in front, and the people who play stringed instruments are at the rear,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and young women who are beating their tambourines are between them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are all singing, \"You Israelite people, praise God when you gather together;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "praise Yahweh, all you who are descendants of Jacob!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "First come the people of the tribe of Benjamin, the smallest tribe,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and following them come the leaders of the tribe of Judah and their group,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and following them come the leaders of the tribes of Zebulun and Naphtali.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of Israel, God made our tribes very strong.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God, help us with your power as you helped us in the past.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Show us that you are strong, there where you are in your temple in Jerusalem;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "kings bring gifts to you there.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shout as you defeat your enemies, such as those in Egypt, who are like wild animals living in the reeds.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Shout as you defeat the powerful nations, who are like herds of bulls.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Shame them; make them bow down and give you gifts.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Drive away and scatter the people groups who love to attack other nations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the leaders of Egypt will bring gifts to you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "then the people in Ethiopia will rush to lift up their hands to praise you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people who are citizens of kingdoms all over the world, sing to God!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Sing praises to Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to the God, the one who rides in the sky,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the sky that he created long ago.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Listen as he shouts with a very powerful voice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Proclaim that God is very powerful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is the king that rules over Israel,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and in the skies he also shows that he is powerful.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is awesome as he comes out of his sacred temple;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is the God whom we Israelite people worship.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He gives power and strength to his people.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise God!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12-13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They proclaimed, \"Many kings and their armies are running away from our army!\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When our army brought back to their homes the things that they captured,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the women who were at home divided up those things among themselves and among their families.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They got statues of pigeons whose wings were covered with silver\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and whose feathers were covered with pure yellow gold.\n"
+      },
+      {
+        "type": "text",
+        "text": "\nBut some of the people stayed with the sheep and did not go to fight in the battle. Why did you not go?\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

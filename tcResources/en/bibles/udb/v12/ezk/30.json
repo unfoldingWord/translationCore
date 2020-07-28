@@ -1,0 +1,592 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh gave me another message. He said,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, prophesy about what will happen to Egypt. Say that this is what I, the Lord Yahweh, say:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'Weep and wail,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because terrible things will happen one day that is coming.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That day is near,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the day when I, Yahweh, will punish people;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it will be like a day of full of storm clouds and disaster for many nations.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "An enemy army will come to attack Egypt with their swords,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be great distress for the people in Cush.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The enemy army will kill many people in Egypt;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will take away everything of value,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will even tear the buildings down to their foundations.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Soldiers of Cush, Libya, Lydia, and all the foreigners in the land of Egypt, together with the Jews living in Egypt—they will all die because of war.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'This army will defeat Egypt's allies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the power that the people of Egypt are so proud of will end.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "From the city of Migdol in the north to the city of Syene in the south, they will kill the soldiers of Egypt's allies.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "This is what Yahweh the Lord declares.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Egypt's allies' soldiers will be shocked, and her allies' cities will be destroyed, surrounded by ruined cities in nearby nations.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then, when I cause everything in Egypt to be burn down,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and when I cause their enemies to defeat all their allies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people will know that I, Yahweh, have the power to do what I say that I will do.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, I will send messengers to go swiftly up the Nile River in boats to terrify the people of Cush, who still think they are safe. They will be horrified when they hear that Egypt has been destroyed. This will soon happen!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what I, Yahweh the Lord, say:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "By the power of King Nebuchadnezzar of Babylon\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will destroy very many people in Egypt.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nebuchadnezzar and his army, whose soldiers have no pity on anyone,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will come to destroy Egypt.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will pull out their swords\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and fill Egypt with the corpses of those whom they have killed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the streams of the Nile River to become dry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will sell the nation of Egypt to evil men.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "By the power of foreigners\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will ruin the land and everything that is in it.\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "That will surely happen because I, Yahweh, have said it will happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is also what I, Yahweh the Lord, say:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will cause the enemy to destroy the idols\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the city of Memphis.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "No longer will there be a king in Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will terrify everyone in the land of Egypt.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause all people to leave the region of Pathros in southern Egypt.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will start fires in the city of Zoan in northeast Egypt\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and punish the people in the city of Thebes in southern Egypt.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will punish the soldiers in the fortress of Pelusium in northern Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will destroy the people in Thebes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will burn Egypt with fire;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the people in Pelusium will suffer severe pain.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Enemies will conquer Thebes,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the enemies of Memphis will attack the people who live there every day.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The enemy will kill many young men in the cities of Heliopolis and Bubastis in northern Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people who are left will have to go to Babylon.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be a dark day of destruction at the city of Tahpanhes in northeast Egypt\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when I cause the power of Egypt to end;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that country will no longer be strong.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It will be as though a dark cloud will cover Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because the people of its villages will go to Babylon as prisoners.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is how I will punish Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people will know that I, Yahweh, have the power to do what I say that I will do.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Almost eleven years after the Babylonians took us Israelites to their country, Yahweh gave me another message on the seventh day of the first month of that year. He said,\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, I have enabled the army of Nebuchadnezzar to defeat the army of the king of Egypt. It is as though I have broken one of the arms of the king of Egypt, and it has not been bandaged in order that it could be healed, and it has not been put in splints in order that after it heals the arm will be strong enough to hold a sword.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, this is what I, Yahweh the Lord, say: I am the enemy of the king of Egypt. I will completely destroy Egypt's power; it is as though now I will break both of the king's arms, the good one and the broken one, and cause the sword to fall from his hand.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will scatter the people of Egypt among the nations.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though I will strengthen the arms of the king of Babylon and put a sword in his hand, and as though I will break the arms of the king of Egypt, and he will groan in front of the king of Babylon like a soldier who is wounded and about to die.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the king of Babylon to become stronger and stronger, and the king of Egypt to become completely weak. When that happens, when I make the Babylonian army strong, they will use that power to attack Egypt.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will scatter the people of Egypt among the nations. And when that happens, people will know that I, Yahweh, have the power to do what I say that I will do.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

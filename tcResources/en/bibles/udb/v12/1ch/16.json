@@ -1,0 +1,818 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They brought the sacred chest to Jerusalem and put it inside the sacred tent that David had told his workers to set up. Then they brought offerings to be completely burned on the altar and offerings to enable them to promise friendship with God.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When David had finished presenting all those offerings, he asked Yahweh to bless the people.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gave a loaf of bread, some dates, and some raisins to every Israelite man and woman who was there.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David appointed some of the descendants of Levi to stand in front of the sacred tent in which the sacred chest had been placed, to lead the people who worshiped and thanked and praised Yahweh, the God of the Israelite people.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Asaph, who played the cymbals, was their leader. Zechariah was his assistant. The other descendants of Levi who helped Asaph were Jaaziel, Shemiramoth, Jehiel, Mattithiah, Eliab, Benaiah, Obed-Edom, and Jeiel. They played lyres and harps.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Benaiah and Jahaziel were priests who blew trumpets frequently in front of the sacred tent in which was the sacred chest.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day, David gave to Asaph and his helpers this psalm to praise Yahweh:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Thank Yahweh and pray to him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Tell the people of all nations what he has done.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to him; sing songs to praise him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Tell about all his miraculous deeds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be glad that you belong to him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those who want to know Yahweh better should rejoice.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ask Yahweh to help you and give you his strength, \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and always seek to be with him! \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not forget the wonderful things that he has done,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the miracles and the just laws that he has decreed for us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We people are the descendants of his servant Jacob;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we are the people of Israel whom he has chosen.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is our God.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "His just laws are known by people throughout the world.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He never forgets the covenants that he has made;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he made a promise that will last for a thousand generations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is the covenant that he made with Abraham,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he repeated that covenant to Isaac.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was an covenant for the Israelite people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he wanted that covenant to endure forever.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What he said was, \"I will give the region of Canaan to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to belong to you and your descendants forever.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Yahweh's people were only a few in number,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a tiny group of people who were living in that land like strangers,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "they continued to wander from one place to another,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from one kingdom to another.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He did not allow others to oppress them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he warned kings by saying to them,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Do not harm the people whom I have chosen!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Do not harm my prophets!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people throughout the world, sing to Yahweh.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Every day proclaim to others that he has saved us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell among the nations that he is great;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "tell all the people groups the marvelous things that he has done.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is great, and he deserves to be praised very much.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He should be revered more than all the gods,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because all the gods that the other people groups worship are only idols,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but Yahweh is truly great; he created the skies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God shows his splendor and majesty; they shine from where he rules.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Strength and beauty are in the place where he lives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people in nations all over the world, praise Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Praise Yahweh for his glorious power!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh with the glory his name deserves.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Come before him with offerings to give to him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Bow down and worship Yahweh because he is holy and his holiness shines out from him with wonderful beauty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be very afraid in his presence, because he is good and powerful, completely different than you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He put the earth firmly in its place; and nothing ever will be able to move it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything in the sky and on the earth should be happy.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People everywhere should say, \"Yahweh is our king!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The oceans and all the creatures that are in the oceans should shout;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the fields and everything that is in them should rejoice.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they do that, it will be as though the trees in the forest will sing joyfully in front of Yahweh.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "That will happen when he comes to judge everyone on the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Thank Yahweh, because everything that he does is good.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He faithfully loves us forever.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say to him, \"God, you are the one who rescues us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so gather us together and save us from the armies of other nations.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When you do that, we will thank you ,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we will be happy to praise you.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh, the God of us Israelite people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He has always existed, and he will exist forever.\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "After the people finished singing that song, they all said \"Amen!\", and they praised Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David left Asaph and the other members of his clan there in front of the tent in which Yahweh's sacred chest had been placed. He told them that they must do their work there every day.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David also left Obed Edom and 68 other descendants of Levi to work with them. Hosah and Obed Edom guarded the entrances of the sacred tent.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David also told Zadok the high priest and the other priests who worked with him to remain in front of Yahweh's sacred tent, at the place where the Israelite people worshiped Yahweh there in the city of Gibeon.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every morning and every evening they burned offerings on the altar, obeying the rules that had been written by Moses, rules that Yahweh had given to the Israelite people.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With them were Heman and Jeduthun and other descendants of Levi. They were chosen to sing songs to praise Yahweh because he faithfully loves his people forever.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heman and Jeduthun were appointed to play the trumpets and cymbals when the other descendants of Levi sang sacred songs. The sons of Jeduthun were appointed to guard the gates of the sacred tent.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then all the people left. They all returned to their homes, and David returned home to ask Yahweh to bless his family.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

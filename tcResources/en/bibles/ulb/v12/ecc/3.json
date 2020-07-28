@@ -1,0 +1,357 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For everything there is an appointed time, and a season for every purpose under heaven.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a time to be born and a time to die,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time to plant and a time to pull up plants,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a time to kill and a time to heal,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time to tear down and a time to build up.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a time to weep and a time to laugh,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time to mourn and a time to dance,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a time to throw away stones and a time to gather stones,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time to embrace other people, and a time to refrain from embracing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a time to look for things and a time to stop looking,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time to keep things and a time to throw away things,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a time to tear clothing and a time to repair clothing,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time to keep silent and a time to speak.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a time to love and a time to hate,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "a time for war and a time for peace.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What profit does the worker gain in his labor?\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen the work that God has given to human beings to complete.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God has made everything suitable for its own time. He has also placed eternity in their hearts. But mankind cannot understand the deeds that God has done, from their beginning all the way to their end.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know that there is nothing better for anyone than to rejoice and to do good so long as he lives—\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and that everyone should eat and drink, and should understand how to enjoy the good that comes from all his work. This is a gift from God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know that whatever God does lasts forever. Nothing can be added to it or taken away, because it is God who has done it so that people will approach him with honor.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever exists has already existed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "whatever will exist has already existed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "God makes human beings seek hidden things.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa God makes human beings seek hidden things \\fqa* , other modern versions interpret this line in different ways. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen the wickedness that is under the sun, where there should be justice, and in place of righteousness, wickedness was there.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said in my heart, \"God will judge the righteous and the wicked at the right time for every matter and every deed.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said in my heart, \"God tests human beings to show them that they are like animals.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the fate of the children of mankind and the fate of animals is the same fate for them. The death of one is like the death of the other. The breath is the same for all of them. There is no advantage for mankind over the animals. For is not everything just a breath?\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything is going to the same place. Everything comes from the dust, and everything returns to the dust.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who knows whether the spirit of mankind goes upward and the spirit of animals goes downward into the earth?\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some modern versions have \\fqa Who knows the spirit of mankind, which goes upward, and the spirit of animals, which goes downward into the earth? \\fqa* ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So again I realized that there is nothing better for anyone than to take pleasure in his work, for that is his assignment. Who can bring him back to see what happens after him?\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

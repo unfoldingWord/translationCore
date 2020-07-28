@@ -1,0 +1,425 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now faith is being sure of the things hoped for and certain of things that are not seen.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For because of this the ancestors were approved for their faith.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By faith we understand that the universe was created by God's command, so that what is visible was not made out of things that were visible.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Abel offered God a better sacrifice than Cain, through which he was attested to be righteous, and God spoke well of him because of his offerings, and by faith Abel still speaks, even though he is dead.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Enoch was taken up so that he did not see death. \"He was not found, because God took him.\" For before he was taken up, it was testified that he had pleased God.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now without faith it is impossible to please him. For it is necessary that anyone coming to God must believe that he exists and that he is a rewarder of those who seek him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Noah, having been given a divine message about things not yet seen, with godly reverence built a ship to save his household. By doing this, he condemned the world and became an heir of the righteousness that is according to faith.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Abraham, when he was called, obeyed and went out to the place that he was to receive as an inheritance. He went out, not knowing where he was going.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that he lived in the land of promise as a foreigner. He lived in tents with Isaac and Jacob, fellow heirs of the same promise.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For he was looking forward to the city with foundations, whose architect and builder is God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith, even though Sarah herself was barren, that Abraham received ability to father a child. This happened even though he was too old, since he considered as faithful the one who had given the promise. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft There is some question about whether it was Abraham's faith or Sarah's faith that was in view. \\fqa By faith Sarah, though she was old, received the power to have a child, even though she was too old to bear a child, since she considered the one who gave the promise to be faithful \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, from this one man—and he was almost dead—were born descendants as many as the stars in the sky and as countless as sand by the seashore.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was in faith that all these died without receiving the promises. Instead, after seeing and greeting them from far off, they admitted that they were foreigners and exiles on earth.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For those who say such things make it clear that they are seeking a homeland.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they had been thinking of the country from which they had gone out, they would have had opportunity to return.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as it is, they desire a better country, that is, a heavenly one. Therefore God is not ashamed to be called their God, since he has prepared a city for them.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Abraham, when he was tested, offered Isaac. It was his only son whom he offered, he who had received the promises.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was Abraham to whom it had been said, \"It is through Isaac that your descendants will be named.\"\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Abraham reasoned that God was able to raise up Isaac from the dead, and figuratively speaking, it was from them that he received him back.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was also by faith about things to come that Isaac blessed Jacob and Esau.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Jacob, when he was dying, blessed each of Joseph's sons. Jacob worshiped, leaning on the top of his staff.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Joseph, when his end was near, spoke of the departure of the children of Israel from Egypt and instructed them about his bones.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Moses, when he was born, was hidden for three months by his parents because they saw he was a beautiful child. They were not afraid of the king's command.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Moses, after he had grown up, refused to be called the son of Pharaoh's daughter.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead, he chose to suffer with the people of God, rather than to enjoy the pleasures of sin for a while.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He reasoned that the disgrace of following Christ was greater riches than Egypt's treasures. For he was fixing his eyes on his reward.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Moses left Egypt. He did not fear the king's anger, for he endured as if he were seeing the one who is invisible.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that he kept the Passover and the sprinkling of the blood, so that the destroyer of the firstborn should not touch the Israelites' firstborn sons.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that they passed through the Sea of Reeds as if over dry land. When the Egyptians tried to do this, they were swallowed up.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Jericho's walls fell down, after they had been circled around for seven days.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was by faith that Rahab the prostitute did not die with those who were disobedient, because she had received the spies in peace.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What more can I say? For the time will fail me if I tell about Gideon, Barak, Samson, Jephthah, David, Samuel, and about the prophets.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was through faith that they conquered kingdoms, worked justice, and received promises. They stopped the mouths of lions,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "extinguished the power of fire, escaped the edge of the sword, were healed of illnesses, became mighty in battle, and defeated foreign armies.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Women received back their dead by resurrection. Others were tortured, not accepting release, so that they might experience a better resurrection.\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Others had testing in mocking and whippings, and even chains and imprisonment.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were stoned. They were sawn in two. They were killed with the sword. They went about in sheepskins and goatskins. They were destitute, oppressed, mistreated. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older versions read, \\fqa They were stoned. They were sawn in two. They were put to the test. They were killed with the sword \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The world was not worthy of them. They were always wandering about in the deserts and mountains, and in caves and holes in the ground.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Although all these people were approved by God because of their faith, they did not receive the promise.\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God planned something better for us, so that without us, they would not be made perfect.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

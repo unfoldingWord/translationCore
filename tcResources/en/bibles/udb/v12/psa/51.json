@@ -1,0 +1,474 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O God, act mercifully toward me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you love me faithfully;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you are very merciful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "forget the ways that I disobeyed you!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Make me acceptable to you again, even though I did wrong things;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "forgive the guilt of my sin and accept me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I say that because I know the ways that I have disobeyed you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I cannot forget them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, you only, are the one I that have really sinned against,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you have seen the evil things that I have done.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When you say that I am guilty, you are right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and when you judge me, you justly say that I deserve to be punished.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have been a sinner since the day that I was born;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "truly, I have been like that since my mother conceived me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What you desire is that in my inner being I desire what is true\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that you can teach me in my inner being how to act wisely.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Forgive the guilt of my sins, and after that happens, I will be completely acceptable to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if you forgive me, then I will be absolutely right with you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Allow me to rejoice again;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have made me immeasurably sad,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but now let me rejoice again.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not continue to remember the sins that I have committed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "forget the evil things that I have done.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O God, make me want to do the things that you approve of.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Make me want to do only what is right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not reject me as one of your people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not make your holy Spirit leave me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Make me happy again by rescuing me from my guilt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and always help me by making me sincerely want to obey you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do that, I will teach other sinners what you want them to do;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will repent and obey you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O God, you are the one who saves me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "forgive me for being guilty of causing someone who was not my enemy to die.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When you do that, I will sing joyfully about your being very good and righteous.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O Yahweh, help me to speak\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that I may praise you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people only bring sacrifices to you, that does not please you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If that were enough to please you, I would do the same.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But you are not pleased with burnt offerings alone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sacrifice that you really want is for people to be truly humble and sorry for having sinned.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "O God, you will not refuse that kind of sacrifice.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O God, be good to the people who live in Jerusalem;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "make them able to rebuild the city walls.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, they will bring you the proper sacrifices:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "normal animal sacrifices and sacrifices to be completely burned.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will burn young bulls on your altar,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will be pleased.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director, concerning the time when the prophet Nathan rebuked David after he had committed adultery with Bathsheba.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

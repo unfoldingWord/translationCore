@@ -1,0 +1,397 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make the tabernacle with ten curtains made from fine linen and blue, purple, and scarlet wool with the designs of cherubim. This will be the work of a very skilled craftsman.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The length of each curtain must be twenty-eight cubits, the width four cubits. All the curtains must be of the same size.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Five curtains must be joined to each other, and the other five curtains must also be joined to each other.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make loops of blue along the outer edge of the end curtain of one set. In the same way, you must do the same along the outer edge of the end curtain in the second set.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make fifty loops on the first curtain, and you must make fifty loops on the end curtain in the second set. Do this so that the loops will be opposite to each other.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make fifty clasps of gold and join the curtains together with them so that the tabernacle becomes united.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make curtains of goats' hair for a tent over the tabernacle. You must make eleven of these curtains.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The length of each curtain must be thirty cubits, and the width of each curtain must be four cubits. Each of the eleven curtains must be of the same size.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must join five curtains to each other and the other six curtains to each other. You must double over the sixth curtain in the front of the tent.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make fifty loops on the edge of the end curtain of the first set, and fifty loops on the edge of the end curtain that joins the second set.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make fifty bronze clasps and put them into the loops. Then you join the tent together so that it may be one piece.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The leftover half curtain, that is, the overhanging part remaining from the tent's curtains, must hang at the back of the tabernacle.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There must be one cubit of curtain on one side, and one cubit of curtain on the other side—that which is left over of the length of the tent's curtains must hang over the sides of the tabernacle on one side and on the other side, to cover it.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make for the tabernacle a covering of ram skins dyed red, and another covering of fine leather to go above that.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make upright frames out of acacia wood for the tabernacle.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The length of each frame must be ten cubits, and its width must be one and a half cubits.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There must be two wooden pegs in each frame for joining the frames to each other. You are to make all the tabernacle's frames in this way.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you make the frames for the tabernacle, you must make twenty frames for the south side.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make forty silver bases to go under the twenty frames. There must be two bases under the first frame to be its two pedestals, and also two bases under each of the other frames for their two pedestals.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the second side of the tabernacle, on the north side, you must make twenty frames\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and their forty silver bases. There must be two bases under the first frame, two bases under the next frame, and so on.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the back side of the tabernacle on the west side, you must make six frames.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make two frames for the back corners of the tabernacle.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These frames must be separate at the bottom, but joined at the top to the same ring. It must be this way for both of the back corners.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There must be eight frames, together with their silver bases. There must be sixteen bases in all, two bases under the first frame, two bases under the next frame, and so on.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make crossbars of acacia wood—five for the frames of the one side of the tabernacle,\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "five crossbars for the frames of the other side of the tabernacle, and five crossbars for the frames for the back side of the tabernacle to the west.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The crossbar in the center of the frames, that is, halfway up, must reach from end to end.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must cover the frames with gold. You must make their rings of gold, for them to serve as holders for the crossbars, and you must cover the bars with gold.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must set up the tabernacle by following the plan you were shown on the mountain.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make a curtain of blue, purple, and scarlet wool, and of fine linen, with designs of cherubim, the work of a skillful workman.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must hang it on four pillars of acacia wood covered with gold. These pillars must have hooks of gold set on four silver bases.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must hang up the curtain under the clasps, and you must bring in the ark of the testimony. The curtain is to separate the holy place from the most holy place.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must put the atonement lid on the ark of the testimony, which is in the most holy place.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must place the table outside the curtain. You must place the lampstand opposite the table on the south side of the tabernacle. The table must be on the north side.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must make a hanging for the tent entrance. You must make it out of blue, purple, and scarlet material and fine twined linen, the work of an embroiderer.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the hanging, you must make five pillars of acacia and cover them with gold. Their hooks must be of gold, and you must cast five bronze bases for them.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

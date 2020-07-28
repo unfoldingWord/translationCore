@@ -1,0 +1,632 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Terrible things will happen to Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the city whose people have rebelled against Yahweh\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and who have become unacceptable to him because of the sins that they have committed.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They act violently toward others and they oppress other people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people there pay no attention to the prophets whom Yahweh has sent to tell them the wrong things that they are doing\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and try to correct them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The people in Jerusalem do not trust in their God or worship him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their leaders are like roaring lions;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are like wolves that attack during the evening,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and eat everything that they kill,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that the next morning there is nothing left of those animals to eat.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The prophets in Jerusalem are proud,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the priests give messages that no one should trust.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They make the temple unholy by doing things that are against the law of Moses.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh is also in the city, and he never does what is wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He treats people justly, day after day;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but wicked people are never ashamed about their wrongdoing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says this:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"I have destroyed many nations;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I have destroyed their strong city walls and towers.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Now I have caused the streets in those cities to be completely deserted.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those cities are ruined and there is no one still alive there.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are all dead.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I said to myself,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Because of what I have done to those other nations,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "surely the people of Jerusalem will honor me now\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and allow me to correct them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If they do that, I will not destroy them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will not punish them like I said that I would do.'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But in spite of knowing how I punished those other nations,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they were still eager to get up early each morning\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and continue to perform evil deeds.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh declares:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"Wait for the day when I will take action to plunder you!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I have decided to gather the people of the kingdoms of the earth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and cause them to know that I am very angry with them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All over the earth I will punish and destroy people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will burn them up with my anger as if it were fire!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, I will cause all people to be changed\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and enable them to speak only what is pure,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that everyone can worship me as one people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then my people who were forced to go to other countries, those who live along the upper part of the Nile River in Ethiopia,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will come to me and bring offerings to me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, you people in Jerusalem will no longer be ashamed about what has happened to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you no longer will be rebelling against me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will get rid of all the people among you who are very proud.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one on Zion, my holy hill, will strut around proudly anymore.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are still alive in Israel will be poor and humble;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will trust in me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those people who are still alive in Israel will not do anything wrong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will tell no lies or deceive anyone.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will eat and sleep safely,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because no one will cause them to be afraid.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people who live in Jerusalem and other places in Israel,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "sing and shout loudly!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Be glad, and rejoice with all your inner being,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because Yahweh will take away the charges against you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will make your enemies go enemies far away from you!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh himself, the king of the Israelites, will live among you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will never again be afraid that others will harm you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, other people will say to us people of Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"You people of Jerusalem, do not be afraid; do not become weak or discouraged.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh your God will live among you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is mighty, and he will rescue you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will be very happy about you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he loves you, he will cause you to rest without being anxious.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will sing loudly to rejoice about you,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "like people who are happy at a festival. Yahweh says, \"I will no longer allow any enemies to destroy you. You will no longer be defeated or ashamed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Truly, I will severely punish all those who oppressed you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will rescue those who are helpless and those who were forced to go to other countries, just as a shepherd would rescue his lost sheep.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will give them praise and honor in every country where they were exiled,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "places where they had been disgraced.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, I will gather you together and bring you back home to Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will cause you to greatly praised and honored\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "among all the nations of the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will see when I bring your people home again.\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "This is what Yahweh, has declared!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

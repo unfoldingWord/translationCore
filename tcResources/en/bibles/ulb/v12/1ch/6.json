@@ -1,0 +1,896 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Levi were Gershon, Kohath, and Merari.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Kohath were Amram, Izhar, Hebron, and Uzziel.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The children of Amram were Aaron, Moses, and Miriam. The sons of Aaron were Nadab, Abihu, Eleazar, and Ithamar.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eleazar became the father of Phinehas, and Phinehas became the father of Abishua.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Abishua became the father of Bukki, and Bukki became the father of Uzzi.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Uzzi became the father of Zerahiah, and Zerahiah became the father of Meraioth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Meraioth became the father of Amariah, and Amariah became the father of Ahitub.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ahitub became the father of Zadok, and Zadok became the father of Ahimaaz.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ahimaaz became the father of Azariah, and Azariah became the father of Johanan.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Johanan became the father of Azariah, who served in the temple that Solomon built in Jerusalem.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Azariah became the father of Amariah, and Amariah became the father of Ahitub.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ahitub became the father of Zadok, and Zadok became the father of Shallum.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shallum became the father of Hilkiah, and Hilkiah became the father of Azariah.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Azariah became the father of Seraiah, and Seraiah became the father of Jozadak.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jozadak went into captivity when Yahweh exiled Judah and Jerusalem by the hand of Nebuchadnezzar.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Levi were Gershon, Kohath, and Merari.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Gershon were Libni and Shimei.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Kohath were Amram, Izhar, Hebron, and Uzziel.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Merari were Mahli and Mushi. These are the clans of the Levites listed according to their fathers.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Gershon: His son was Libni. Libni's son was Jahath. His son was Zimmah.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His son was Joah. His son was Iddo. His son was Zerah. His son was Jeatherai.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Kohath: His son was Amminadab. His son was Korah. His son was Assir.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His son was Elkanah. His son was Ebiasaph. His son was Assir.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His son was Tahath. His son was Uriel. His son was Uzziah. His son was Shaul.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Elkanah were Amasai, Ahimoth,\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And a son named Elkanah; Zophai his son, Nahath his son, \n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eliab his son, Jeroham his son, and Elkanah his son. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The LXX adds to the list \\fqa Samuel his son \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Samuel were the firstborn, Joel, and Abijah, the second-born.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The son of Merari was Mahli. His son was Libni. His son was Shimei. His son was Uzzah.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His son was Shimea. His son was Haggiah. His son was Asaiah.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the names of the men whom David put in charge of music in the house of Yahweh, after the ark came to rest there.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They served by singing before the tabernacle, the tent of meeting, until Solomon had built the house of Yahweh in Jerusalem. They fulfilled their duties according to the instructions given to them.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were those who served with their sons. From the clans of the Kohathites came Heman the musician. Here were his ancestors, going back in time: Heman was the son of Joel. Joel was the son of Samuel.\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Samuel was the son of Elkanah. Elkanah was the son of Jeroham. Jeroham was the son of Eliel. Eliel was the son of Toah.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Toah was the son of Zuph. Zuph was the son of Elkanah. Elkanah was the son of Mahath. Mahath was the son of Amasai. Amasai was son of Elkanah.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Amasai was the son of Elkanah. Elkanah was the son of Joel. Joel was the son of Azariah. Azariah was the son of Zephaniah.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zephaniah was the son of Tahath. Tahath was the son of Assir. Assir was the son of Ebiasaph. Ebiasaph was the son of Korah.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Korah was the son of Izhar. Izhar was the son of Kohath. Kohath was the son of Levi. Levi was the son of Israel.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heman's colleague was Asaph, who stood at his right hand. Asaph was the son of Berekiah. Berekiah was the son of Shimea. \n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shimea was the son of Michael. Michael was the son of Baaseiah. Baaseiah was the son of Malkijah.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Malkijah was the son of Ethni. Ethni was the son of Zerah. Zerah was the son of Adaiah.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Adaiah was the son of Ethan. Ethan was the son of Zimmah. Zimmah was the son of Shimei.\n"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shimei was the son of Jahath. Jahath was the son of Gershon. Gershon was the son of Levi.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At Heman's left hand were his colleagues the sons of Merari. They included Ethan son of Kishi. Kishi was the son of Abdi. Abdi was the son of Malluk.\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Malluk was the son of Hashabiah. Hashabiah was the son of Amaziah. Amaziah was the son of Hilkiah.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hilkiah was the son of Amzi. Amzi was the son of Bani. Bani was the son of Shemer.\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shemer was the son of Mahli. Mahli was the son of Mushi. Mushi was the son of Merari. Merari was the son of Levi.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their associates, the Levites, were assigned to do all the work for the tabernacle, the house of God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aaron and his sons made the offerings on the altar for burnt offerings; and the offering on the incense altar for all the work on the most holy place. These offerings made atonement for Israel, according to all that Moses the servant of God had commanded.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aaron's descendants are reckoned as follows: Aaron's son was Eleazar. Eleazar's son was Phinehas. Phinehas's son was Abishua.\n"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Abishua's son was Bukki. Bukki's son was Uzzi. Uzzi's son was Zerahiah.\n"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zerahiah's son was Meraioth. Meraioth's son was Amariah. Amariah's son was Ahitub.\n"
+      }
+    ]
+  },
+  "53": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ahitub's son was Zadok. Zadok's son was Ahimaaz.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "54": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the locations where Aaron's descendants were assigned to live, that is, for the descendants of Aaron who were from the clans of the Kohathites (the first lot was theirs).\n"
+      }
+    ]
+  },
+  "55": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To them they gave Hebron in the land of Judah and its pasturelands,\n"
+      }
+    ]
+  },
+  "56": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but the fields of the city and its villages they gave to Caleb son of Jephunneh.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "57": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To the descendants of Aaron they gave: Hebron (a city of refuge), and Libnah with its pasturelands, Jattir, Eshtemoa with its pasturelands,\n"
+      }
+    ]
+  },
+  "58": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hilen with its pasturelands, and Debir with its pasturelands.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "59": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They also gave to the descendants of Aaron: Ashan with its pasturelands, Juttah, "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The place name \\fqa Juttah \\fqa* is not in the MT but is found in the Syriac version; also see JOS 21:16. ",
+        "endTag": "f*",
+        "nextChar": " "
+      },
+      {
+        "type": "text",
+        "text": "and Beth Shemesh with its pasturelands;\n"
+      }
+    ]
+  },
+  "60": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and from the tribe of Benjamin they were given Geba with its pasturelands, Alemeth with its pasturelands, and Anathoth with its pasturelands. All their cities numbered thirteen.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "These towns were distributed among the clans of the Kohathite, thirteen in all.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "61": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To the rest of clans of the Kohathites were allotted ten cities from the half tribe of Manasseh.\n"
+      }
+    ]
+  },
+  "62": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To Gershon's descendants in their various clans were given thirteen cities from the tribes of Issachar, Asher, Naphtali, and the half tribe of Manasseh in Bashan.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "63": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To Merari's descendants they gave twelve cities, clan by clan, from the tribes of Reuben, Gad, and Zebulun.\n"
+      }
+    ]
+  },
+  "64": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the people of Israel gave these cities with their pasturelands to the Levites.\n"
+      }
+    ]
+  },
+  "65": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They assigned by lot the towns mentioned earlier from the tribes of Judah, Simeon, and Benjamin.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "66": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of the clans of the Kohathites were given cities from the territory of the tribe of Ephraim.\n"
+      }
+    ]
+  },
+  "67": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They gave them: Shechem (a city of refuge) with its pasturelands in the hill country of Ephraim, Gezer with its pasturelands,\n"
+      }
+    ]
+  },
+  "68": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jokmeam with its pasturelands, Beth Horon with its pasturelands,\n"
+      }
+    ]
+  },
+  "69": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aijalon with its pasturelands, and Gath Rimmon with its pasturelands.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "70": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The half tribe of Manasseh gave the Kohathites Aner with its pasturelands and Bileam with its pasturelands. These became the possessions of the rest of the Kohathite clans.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "71": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To Gershon's descendants out of the clans of the half tribe of Manasseh, they gave Golan in Bashan with its pasturelands and Ashtaroth with its pasturelands.\n"
+      }
+    ]
+  },
+  "72": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The tribe of Issachar gave to Gershon's descendants Kedesh with its pasturelands, Daberath with its pasturelands,\n"
+      }
+    ]
+  },
+  "73": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ramoth with its pasturelands, and Anem with its pasturelands.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "74": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Issachar received from the tribe of Asher: Mashal with its pasturelands, Abdon with its pasturelands,\n"
+      }
+    ]
+  },
+  "75": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hukok with its pasturelands, and Rehob with its pasturelands.\n"
+      }
+    ]
+  },
+  "76": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They received from the tribe of Naphtali: Kedesh in Galilee with its pasturelands, Hammon with its pasturelands, and Kiriathaim with its pasturelands.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "77": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The rest of Merari's descendants received from the tribe of Zebulun: Jokneam, Kartah, "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The names \\fqa Jokneam \\fqa* and \\fqa Kartah \\fqa* are not found in the MT but are in the LXX. Compare the list in Josh. 21:34. ",
+        "endTag": "f*",
+        "nextChar": " "
+      },
+      {
+        "type": "text",
+        "text": "and Rimmono with its pasturelands and Tabor with its pasturelands; \n"
+      }
+    ]
+  },
+  "78": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and from the tribe of Reuben, across the Jordan on the east side of Jericho, they received Bezer in the desert, Jahzah, \n"
+      }
+    ]
+  },
+  "79": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Kedemoth and its pasturelands, and Mephaath and its pasturelands.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "80": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Levites received from the tribe of Gad: Ramoth in Gilead with its pasturelands, Mahanaim with its pasturelands,\n"
+      }
+    ]
+  },
+  "81": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heshbon with its pasturelands, and Jazer with its pasturelands.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

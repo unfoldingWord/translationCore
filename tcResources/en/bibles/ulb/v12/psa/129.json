@@ -1,0 +1,191 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Often since my youth they have attacked me,\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let Israel say.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Often since my youth they have attacked me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "yet they have not defeated me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The plowers plowed on my back;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they made their furrows long.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is righteous;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he has cut the ropes of the wicked.\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May they all be put to shame and turned back,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who hate Zion.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May they be like the grass on the housetops\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that withers before it grows up,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that cannot fill the reaper's hand\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or the chest of the one who binds bundles of grain together.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May those who pass by not say,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"May the blessing of Yahweh be on you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "we bless you in the name of Yahweh.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A song of ascents.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

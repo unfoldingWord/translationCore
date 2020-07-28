@@ -1,0 +1,260 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The earth and everything in it belongs to Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all the people in the world belong to him, too;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "he built the land on the water,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "above the water that is deep below.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who will be allowed to go up onto Mount Zion in Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order to stand and worship in Yahweh's holy temple?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Only those whose actions and thoughts are pure,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who have not worshiped idols,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and who do not tell lies when they have solemnly promised to tell the truth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will bless them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When God judges them, he will rescue them and say that they have done nothing wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are the people who come to God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are the ones who desire to worship God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and serve the God of Jacob.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Open up the temple gates\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that our glorious king may enter!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you know who the glorious king is?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is Yahweh, the one who is very strong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is Yahweh, who conquers all his enemies in battles!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Open up the temple gates\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that our glorious king may enter!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you know who the glorious king is?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is Yahweh, commander of the angel armies;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is our glorious king!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

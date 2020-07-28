@@ -1,0 +1,495 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Does not man have hard labor on earth?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Are not his days like the days of a hired man?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like a slave earnestly desires the shadows of evening,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like a hired man looks for his wages—\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so I have been made to endure months of misery;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have been given trouble-filled nights.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I lie down, I say to myself,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'When will I get up and when will the night be gone?'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am full of tossing to and fro until the day's dawning.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My flesh is clothed with worms and clods of dust;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the sores in my skin harden up and then dissolve and run afresh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My days are swifter than a weaver's shuttle;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they pass without hope.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, call to mind that my life is only a breath;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my eye will no more see good.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The eye of God, who sees me, will see me no more;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God's eyes will be on me, but I will not exist.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a cloud is consumed and vanishes away,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so he who goes down to Sheol will come up no more.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will return no more to his house;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "neither will his place know him again.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore I will not restrain my mouth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will speak in the anguish of my spirit;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will complain in the bitterness of my soul.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Am I the sea or a sea monster\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you place a guard over me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I say, 'My bed will comfort me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and my couch will ease my complaint,'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then you scare me with dreams\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and terrify me through visions,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that I would choose strangling\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and death rather than preserving these bones of mine.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I loathe my life; I would not wish to always be alive;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let me alone for my days are useless.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What is man that you should pay attention to him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you should set your mind on him,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that you should observe him every morning\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and test him every moment?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How long will it be before you look away from me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "before you let me alone long enough for me to swallow down my own saliva?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even if I have sinned, what would that do to you, you who watch men?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why have you made a target of me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that I am a burden for you?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you not pardon my transgression and take away my iniquity?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For now will I lie down in the dust;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will seek me carefully, but I will not exist.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

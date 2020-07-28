@@ -1,0 +1,551 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Job resumed speaking and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Oh, that I were as I was in the past months\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when God cared for me,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "when his lamp shined on my head,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and when I walked through darkness by his light.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that I were as I was in the ripeness of my days\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when the friendship of God was on my tent,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "when the Almighty was yet with me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and my children were around me,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "when my way was covered with cream,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the rock poured out for me streams of oil!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I went out to the city gate,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when I sat in my place in the city square,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the young men saw me and kept their distance from me in respect,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the aged people rose and stood for me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The princes used to refrain from talking when I came;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they would lay their hand on their mouths.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The voices of the noblemen were hushed,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their tongue clung to the roof of their mouths.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For after their ears heard me, they would then bless me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "after their eyes saw me, they would then give witness to me and approve of me\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because I rescued the one who was poor when he cried out,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the one who had no father when he had no one to help him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The blessing of him who was about to perish came on me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I caused the widow's heart to sing for joy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I put on righteousness, and it clothed me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my justice was like a robe and a turban.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was eyes to blind people;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I was feet to lame people.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was a father to needy people;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I would examine the case even of one whom I did not know.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I broke the jaws of the unrighteous man;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I plucked the victim out from between his teeth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I said, 'I will die in my nest;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will multiply my days like the grains of sand.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My roots are spread out to the waters,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and dew lies all night on my branches.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The honor in me is always fresh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the bow of my strength is always new in my hand.'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To me men listened; they waited for me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they stayed silent to hear my advice.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After my words were done, they did not speak again;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my speech dropped like water on them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They always waited for me as they waited for rain;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they opened their mouth wide to drink in my words,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as they would do for the latter rain.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I smiled on them when they did not expect it;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they did not reject the light of my face.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I selected their way and sat as their chief;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I lived like a king in his army,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like one who comforts mourners.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

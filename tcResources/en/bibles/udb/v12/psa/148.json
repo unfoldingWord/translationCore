@@ -1,0 +1,361 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise him, you angels who are in the heavens;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "praise him, you angels up in the sky!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you angels who belong to him, praise him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All you who are in the armies of Yahweh, praise him!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sun and moon, you also must praise him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You shining stars, you praise him!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You highest heavens, praise him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You waters that are high above the sky, praise him!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want all of these to praise Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because by commanding that they exist, he created them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He set them in place;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he commanded that they should be there forever.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They cannot disobey that command!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything on the earth, praise Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You huge creatures and everything else that is deep in the ocean,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "fire and hail, snow and frost,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and strong winds that obey what he commands,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I tell all of you to praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hills and mountains,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "fruit trees and cedar trees,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "all the wild animals and all tame animals,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "reptiles and other things that creep on the ground,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all the birds, I tell all of you to praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You kings on this earth and all the people that you rule,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you princes and all other rulers,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "you young men and young women,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you old people and children, everyone, praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want them all to praise Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he is greater than anyone else.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "His power controls everything on the earth and in the heavens.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He caused us, his people, to be strong\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that we Israelite people who are very precious to him\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "should praise him,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

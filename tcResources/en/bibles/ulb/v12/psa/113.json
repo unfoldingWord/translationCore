@@ -1,0 +1,228 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Praise him, you servants of Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "praise the name of Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blessed be the name of Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "both now and forevermore.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From the rising of the sun to its setting,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh's name should be praised.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is exalted above all nations,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his glory reaches above the skies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who is like Yahweh our God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who has his seat on high,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "who looks down\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at the sky and at the earth?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He raises up the poor out of the dirt\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and lifts up the needy from the ash heap,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that he may seat him with princes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with the princes of his people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gives a home to the barren woman of the house,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he makes her a joyful mother of children.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

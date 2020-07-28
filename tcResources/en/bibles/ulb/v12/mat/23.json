@@ -1,0 +1,441 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus spoke to the crowds and to his disciples.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said, \"The scribes and the Pharisees sit in Moses' seat.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore whatever they command you to do, do these things and observe them. But do not imitate their deeds, for they say things but then do not do them.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, they bind heavy burdens that are difficult to carry, and then they put them on people's shoulders. But they themselves will not move a finger to carry them.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do all their deeds to be seen by people. For they make their phylacteries wide, and they enlarge the edges of their garments.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They love the chief places at feasts and the chief seats in the synagogues,\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and special greetings in the marketplaces, and to be called 'Rabbi' by people.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you must not be called 'Rabbi,' for you have only one teacher, and all you are brothers.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And call no man on earth your father, for you have only one Father, and he is in heaven.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Neither must you be called 'teacher,' for you have only one teacher, the Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he who is greatest among you will be your servant.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever exalts himself will be humbled, and whoever humbles himself will be exalted.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But woe to you, scribes and Pharisees, hypocrites! You shut the kingdom of heaven against people. For you do not enter it yourselves, and neither do you allow those about to enter to do so.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The best ancient copies omit verse 14 (some copies add the verse after verse 12). \\fqa Woe to you, scribes and Pharisees, hypocrites! For you devour widows' houses, while you make a show of long prayers. You will therefore receive greater condemnation \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, scribes and Pharisees, hypocrites! For you go over sea and land to make one convert, and when he has become one, you make him twice as much a son of hell as you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, you blind guides, you who say, 'Whoever swears by the temple, it is nothing. But whoever swears by the gold of the temple, he is bound to his oath.'\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You blind fools! Which is greater, the gold or the temple that makes the gold holy?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And, 'Whoever swears by the altar, it is nothing. But whoever swears by the gift that is on it, he is bound to his oath.'\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You blind people! Which is greater, the gift or the altar that makes the gift holy?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, he who swears by the altar swears by it and by everything on it.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who swears by the temple swears by it and by the one who lives in it.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And the one who swears by heaven swears by the throne of God and by him who sits on it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, scribes and Pharisees, hypocrites! For you tithe mint and dill and cumin, but you have left undone the weightier matters of the law—justice and mercy and faith. But these you ought to have done and not to have left the other undone.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You blind guides, you who strain out a gnat but swallow a camel!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, scribes and Pharisees, hypocrites! For you clean the outside of the cup and of the plate, but inside they are full of greed and self-indulgence.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You blind Pharisee! Clean first the inside of the cup and of the plate, so that the outside may become clean also.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, scribes and Pharisees, hypocrites! For you are like whitewashed tombs, which on the outside look beautiful, but on the inside are full of dead men's bones and everything unclean.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the same way, you also outwardly appear righteous to men, but on the inside you are full of hypocrisy and lawlessness.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, scribes and Pharisees, hypocrites! For you build the tombs of the prophets and decorate the tombs of the righteous.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You say, 'If we had lived in the days of our fathers, we would not have been participants with them in shedding the blood of the prophets.'\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore you testify against yourselves that you are sons of those who killed the prophets.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You also fill up the measure of your fathers.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You serpents, you offspring of vipers, how will you escape the judgment of hell?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, see, I am sending you prophets and wise men and scribes. Some of them you will kill and crucify, and some you will whip in your synagogues and drive them out from city to city.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The result is that upon you will come all the righteous blood that has been shed on the earth, from the blood of righteous Abel, to the blood of Zechariah son of Barachiah, whom you killed between the sanctuary and the altar.\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Truly I say to you, all these things will come upon this generation.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jerusalem, Jerusalem, you who kill the prophets and stone those who are sent to you! How often did I long to gather your children together, just as a hen gathers her chicks under her wings, but you were not willing!\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, your house is left to you desolate.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I say to you, You will not see me from now on until you say, 'Blessed is he who comes in the name of the Lord.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

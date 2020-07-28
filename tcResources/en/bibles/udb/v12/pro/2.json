@@ -1,0 +1,487 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, listen to what I say,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and consider my commands to be as valuable as a treasure.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pay attention to wisdom\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and try hard to understand what is wise.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Call out to Yahweh to get insight,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "plead with him to help you understand more of what he wants you to know.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Search eagerly for wisdom, like you would search for silver—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like you would search for a treasure that someone has hidden.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do that, you will understand how to give Yahweh the respect he deserves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will succeed in knowing God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is the one who gives us wisdom.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is the one who tells us things that we need to know and understand.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He stores up good advice so he can give it to them who honor him by the way they live their lives.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He protects those who do with their lives what they say with their lips.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He guards justice and works to see it is done,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he keeps safe those who are faithful to him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will understand what Yahweh sees is right and what Yahweh determines is just to do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will show you the best way to live.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom will fill your life;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "knowing what Yahweh wants you to know will cause you to be joyful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will learn to tell the difference between right and wrong\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and that will keep you safe.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will not do what Yahweh forbids you to do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will stay away from those who imagine horrible things and talk about them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They go the wrong way,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they walk where there is no light.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are glad when they do what is wrong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they twist good things into bad and enjoy doing what they know is wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They bend the truth and live by deception\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and their lies hide what they have done.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom will keep you safe from the adulterous woman,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will not pay attention when a strange woman invites you to be with her.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those women left the husbands they married when they were young,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they forgot the promise they made to God to love only the one they married.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who enter her house are taken to their death,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because the way to her house takes them where dead people are buried. \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All who go to her to sleep with her have no way to get out of her house,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be so lost they will never find the way back to life.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must live your life in the same way that good men are living.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You should do the same things as those who do what is right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who do what is right will receive the land as a gift from Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and only those who do what they have promised will stay in the land for a long time.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who do bad things will have no claim to this land,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people who take advantage of others and do not keep their word, they will never have even a small part of the land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\nq\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

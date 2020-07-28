@@ -1,0 +1,143 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh reigns; he is robed in majesty;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh has clothed and girded himself with strength.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The world is firmly established; it cannot be moved.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your throne is established from ancient times;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you are from everlasting.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The oceans rise, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they have lifted up their voice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the oceans' waves crash and roar.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Above the crashing of many waves,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the mighty breakers of the sea,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh on high is mighty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your solemn commands are very trustworthy;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "holiness adorns your house,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh, forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

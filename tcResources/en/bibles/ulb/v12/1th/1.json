@@ -1,0 +1,132 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Paul, Silvanus, and Timothy to the church of the Thessalonians in God the Father and the Lord Jesus Christ. May grace and peace be to you. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older versions read, \\fqa May grace and peace be to you from God our Father and the Lord Jesus Christ \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We always give thanks to God for all of you, as we mention you in our prayers.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We remember without ceasing before our God and Father your work of faith, labor of love, and steadfastness of hope in our Lord Jesus Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Brothers loved by God, we know he has chosen you,\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because our gospel came to you not in word only, but also in power, in the Holy Spirit, and in much assurance. In the same way, you also know what kind of men we were among you for your sake.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You became imitators of us and of the Lord, as you received the word in much hardship with joy from the Holy Spirit.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a result, you became an example to all in Macedonia and Achaia who believe.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For from you the word of the Lord has rung out, and not only in Macedonia and Achaia—everywhere your faith in God has gone out. Therefore we do not need to say anything about it.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For they themselves report what kind of coming we had among you. They tell how you turned to God from the idols to serve the living and true God.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They report that you are waiting for his Son from heaven, whom he raised from the dead. This is Jesus, who frees us from the wrath to come.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

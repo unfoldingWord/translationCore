@@ -1,0 +1,295 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who is a wise man?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who knows what the events in life mean?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Wisdom in a man causes his face to shine,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the hardness of his face is changed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I advise you to obey the king's command because of God's oath to protect him.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not hurry out of his presence, and do not stand in support of something wrong, for the king does whatever he desires.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king's word rules, so who will say to him, \"What are you doing?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever keeps the king's commands avoids harm.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "A wise man's heart recognizes the proper course and time of action.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For every matter there is a correct response and a time to respond,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because the troubles of man are great.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one knows what is coming next.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who can tell him what is coming?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one is ruler over his breath so as to stop the breath,\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some versions have \\fqa No one is ruler over the wind so as to stop the wind \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and no one has power over the day of his death.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "No one is discharged from the army during a battle,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and wickedness will not rescue those who are its slaves.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have realized all this; I have applied my heart to every kind of work that is done under the sun. There is a time when a person oppresses another person to that person's hurt.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some modern versions have \\fqa to his own hurt \\fqa* . The Hebrew passage can be interpreted either way. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I saw the wicked buried publicly. They were taken from the holy area and buried and were praised by people in the city where they had done their wicked deeds. This also is uselessness.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some modern versions have other interpretations of this difficult verse: \\fqa I saw wicked people come and go into the holy place. They proudly spoke in the city about the things they had done. This also is uselessness \\fqa* . Other versions have \\fqa I saw wicked people come and go into the holy place. They were praised in the city for the things they had done. This also is uselessness \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a sentence against an evil crime is not executed quickly, it entices the hearts of human beings to do evil.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even though a sinner does evil a hundred times and still lives a long time, yet I know that it will be better for those who respect God, for those who stand before him and show him respect.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But it will not go well for a wicked man; his life will not be prolonged. His days are like a fleeting shadow because he does not honor God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is another useless vapor—something else that is done on the earth. Things happen to righteous people as they happen to wicked people, and things happen to wicked people as they happen to righteous people. I say that this also is useless vapor.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I recommend happiness, because a man has no better thing under the sun than to eat and drink and to be happy. It is happiness that will accompany him in his labor for all the days of his life that God has given him under the sun.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I applied my heart to know wisdom and to understand the work that is done on the earth, work often done without sleep for the eyes at night or in the day,\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then I considered all of God's deeds, and that man cannot understand the work that is done under the sun. No matter how much a man labors to find the answers, he will not find them. Even though a wise man might believe he knows, he really does not.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Joshua gathered all the tribes of Israel to Shechem and called for the elders of Israel, for their leaders, for their judges, and for their officers, and they presented themselves before God.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joshua said to all the people, \"This is what Yahweh, the God of Israel, says, 'Your ancestors long ago lived beyond the Euphrates River—Terah, the father of Abraham and the father of Nahor—and they worshiped other gods.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I took your father from beyond the Euphrates and led him into the land of Canaan and gave him many descendants through his son Isaac.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then to Isaac I gave Jacob and Esau. I gave Esau the hill country of Seir to possess, but Jacob and his children went down to Egypt.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I sent Moses and Aaron, and I afflicted the Egyptians with plagues. After that, I brought you out.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I brought your ancestors out of Egypt, and you came to the sea. The Egyptians pursued them with chariots and horsemen as far as the Sea of Reeds.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When your ancestors called out to Yahweh, he put darkness between you and the Egyptians. He brought the sea to come over them and cover them. You saw what I did in Egypt. Then you lived in the wilderness for a long time.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I brought you to the land of the Amorites, who lived on the other side of the Jordan. They fought with you, and I gave them into your hand. You took possession of their land, and I destroyed them before you.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Balak son of Zippor, king of Moab, got up and attacked Israel. He sent and called for Balaam son of Beor, to curse you.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I did not listen to Balaam. Indeed, he blessed you. So I rescued you out of his hand.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You went over the Jordan and came to Jericho. The leaders of Jericho fought against you, along with the Amorites, the Perizzites, the Canaanites, the Hittites, the Girgashites, the Hivites, and the Jebusites. I gave you victory over them and put them under your control.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I sent the hornet before you, which drove them and the two kings of the Amorites out before you. It did not happen by your sword or by your bow.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I gave you land on which you had not worked and cities that you had not built, and now you live in them. You eat the fruit of vineyards and olive orchards that you did not plant.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now fear Yahweh and worship him with all integrity and faithfulness; get rid of the gods that your ancestors worshiped beyond the Euphrates and in Egypt, and worship Yahweh.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If it seems wrong in your eyes for you to worship Yahweh, choose for yourselves this day whom you will serve, whether the gods your ancestors worshiped beyond the Euphrates, or the gods of the Amorites, in whose land you live. But as for me and my house, we will worship Yahweh.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people answered and said, \"We would never forsake Yahweh to serve other gods,\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "for it is Yahweh our God who brought us and our ancestors up from the land of Egypt, out of the house of slavery, and who did those great signs in our sight, and who preserved us in all the way that we went, and among all the nations through whom we passed.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh drove out before us all the peoples, including the Amorites who lived in the land. So we too will worship Yahweh, for he is our God.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Joshua said to the people, \"You cannot serve Yahweh, for he is a holy God; he is a jealous God; he will not forgive your transgressions and sins.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you forsake Yahweh and worship foreign gods, then he will turn and do you harm. He will consume you, after he has done good to you.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the people said to Joshua, \"No, we will worship Yahweh.\"\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Joshua said to the people, \"You are witnesses against yourselves that you have chosen for yourselves Yahweh, to worship him.\" They said, \"We are witnesses.\"\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Now put away the foreign gods that are with you, and turn your heart to Yahweh, the God of Israel.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people said to Joshua, \"We will worship Yahweh our God. We will listen to his voice.\"\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joshua made a covenant with the people that day. He put in place decrees and laws at Shechem.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joshua wrote these words in the book of the law of God. He took a large stone and set it up there beneath the oak tree that was beside Yahweh's sanctuary.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joshua said to all the people, \"Look, this stone will be a testimony against us. It has heard all the words Yahweh said to us. So it will be a witness against you, should you ever deny your God.\"\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Joshua sent the people away, each to his own inheritance.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After these things Joshua son of Nun, the servant of Yahweh, died, being 110 years old.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They buried him within the border of his own inheritance, at Timnath Serah, which is in the hill country of Ephraim, north of Mount Gaash.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel worshiped Yahweh all of Joshua's days, and all the days of the elders who outlived Joshua, those who had experienced everything that Yahweh had done for Israel.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The bones of Joseph, which the people of Israel brought up out of Egypt—they buried them at Shechem, in the piece of land that Jacob had bought from the sons of Hamor, the father of Shechem. He bought it for one hundred pieces of silver, and it became an inheritance for the descendants of Joseph.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eleazar son of Aaron also died. They buried him at Gibeah, the city of Phinehas his son, which had been given to him. It was in the hill country of Ephraim.\n\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel, return to Yahweh your God!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You have sinned because you have done wicked things.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So now, return to Yahweh, and think about how you will confess your sins to him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Say this to him:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Take away all our sins,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and accept us; please be kind to us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Please accept us back, so that we may praise you in our words and song.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Assyria cannot save us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is useless for us to ride horses into battle.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We will never again say, 'You are our gods'\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to the idols we have made with our own hands.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Even children with no fathers look to you, Yahweh, and they find that you are kind to them.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"I will forgive these people for having stopped honoring me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will love them without ceasing,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I have decided to stop being angry at them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will help the people of Israel as the dew helps the ground.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will prosper like the lilies bloom.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will become as strong as the cedar trees in Lebanon.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be like trees whose branches spread out.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will be as beautiful as the olive trees,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will please others as much as the fragrant cedar trees in Lebanon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will return and live under the protection that Israel has from me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will protect them from hardship.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will be successful like a field of grain that grows well, like grapevines that are growing well.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will become as famous as the wine that people produce in the land of Lebanon.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of Israel, I will completely stop you from worshiping idols. \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is I, Yahweh, who will take care of you. No idol can do that.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am like a cypress tree that grows and stays fresh the entire year;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all your good gifts come from me.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every wise person will understand the things about which I have written;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who have understanding will study these things and pay careful attention to them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The way in which Yahweh wants us to live is right.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those who do what is right live by them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The rebellious people, however, sin, unable to obey him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

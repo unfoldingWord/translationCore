@@ -1,0 +1,234 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I praise you because you rescued me. You did not allow me to die or my enemies to gloat over me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, my God, I called out for you to help me when I was wounded, and you healed me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You saved me from death. I was nearly dead, but you caused me to become healthy again.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you who are faithful to the covenant with Yahweh, sing to praise him! Remember what God, the holy one, has done and thank him!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When he becomes angry, he is angry for only a very short time, but he is good to us all of our lives.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We may cry during the night, but the next morning we will be joyful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for me, I was calm when I said to myself, \"No one will defeat me!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, because you were good to me, at first you caused me to be secure as though I were a high mountain.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But then I thought that you had turned away from me, and I became afraid.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I called out to you, and I pleaded for you to help me.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said, \"Yahweh, what will you gain if I die?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In what way will it benefit you if I go to the place where the dead people are?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When I am dead I will certainly not able to praise you, and I will not able to tell others that you are trustworthy!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, listen to me, and act mercifully to me! Yahweh, help me!\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now you have healed me, and you have changed me from being sad to dancing joyfully.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You have taken away the clothes that showed that I was very sad and given me clothes that showed that I was very joyful.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I will not be silent; I will sing out and praise you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh, you are my God, and I will thank you forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the dedication of the temple\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

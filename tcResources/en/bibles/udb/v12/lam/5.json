@@ -1,0 +1,469 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, think about what has happened to us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "See how no one respects us any longer.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Foreigners have seized our property,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and now they live in our homes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our enemies have killed our fathers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and caused our mothers to become widows.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now they make us pay for water to drink,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and pay for firewood.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The enemy runs after us and is very close to us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we are exhausted, but they do not allow us to rest.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In order to get enough food to remain alive,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we begged Egypt and Assyria to help us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our ancestors sinned, and now they are dead,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we are suffering for the sins that they committed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now the people who rule over us are themselves slaves to their own masters in Babylon.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There is no one who can rescue us from their power.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We go far to look for food, but we are in danger of dying when we do so,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of the robbers who live in the wilderness.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our skin has become hot like an oven,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we have a very high fever because we are extremely hungry.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our enemies have violated the women in Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they have done that to the young women in all the towns of Judea.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our enemies have hanged our leaders,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they have not respected our elders.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They force our young men to grind flour with millstones,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and young boys stagger while they are forced to carry heavy loads of firewood.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our elders no longer sit at the city gates to make important decisions;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the young men no longer play their musical instruments.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We are no longer joyful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "instead of dancing joyfully, we now mourn.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wreaths of flowers have fallen off our heads.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Terrible things have happened to us because of the sins that we committed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We are tired and discouraged,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we cannot see well because our eyes are full of tears.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jerusalem has no one living any more in it,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and jackals prowl around in it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh, you rule forever!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You continue to rule from one generation to the next generation.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So why have you forgotten us?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Will you abandon us for a very long time?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Please enable us to return to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and enable us to prosper as we did previously.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Please do that, or is it really true that you have rejected us forever?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Is it really true that you will never stop being extremely angry with us?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Pharisees and some of the scribes who had come from Jerusalem gathered around him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They saw that some of his disciples ate bread with hands that were defiled, that is, unwashed.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(For the Pharisees and all the Jews do not eat unless they wash their hands, because they hold to the tradition of the elders.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Pharisees come from the marketplace, they do not eat unless they bathe themselves, and they hold fast to many other traditions, such as the washing of cups, pots, copper vessels, and the couches upon which they eat.)\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Pharisees and the scribes asked Jesus, \"Why do your disciples not walk according to the tradition of the elders, for they eat their bread with unwashed hands?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he said to them, \"Isaiah prophesied well about you hypocrites. He wrote,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'This people honors me with their lips,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but their heart is far from me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Empty worship they offer me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "teaching the rules of men as their doctrines.'\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You abandon the commandment of God and hold fast to the tradition of men.\"\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He also said to them, \"How well you reject the commandment of God so you may keep your tradition!\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Moses said, 'Honor your father and your mother,' and, 'He who speaks evil of his father or mother will surely die.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you say, 'If a man says to his father or mother, \"Whatever help you would have received from me is Corban\"' (that is to say, 'Given to God'),\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then you no longer permit him to do anything for his father or his mother.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are making the commandment of God void by your tradition which you have handed down. And many similar things you do.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He called the crowd again and said to them, \"Listen to me, all of you, and understand.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is nothing from outside of a person that can defile him when it enters into him. It is what comes out of the person that defiles him.\"\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The best ancient copies omit vs. 16. \\fqa If any man has ears to hear, let him hear \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now when Jesus left the crowd and entered the house, his disciples asked him about the parable.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus said, \"Are you also still without understanding? Do you not see that whatever enters into a person from outside cannot defile him,\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because it cannot go into his heart, but it goes into his stomach and then passes out into the latrine?\" With this statement Jesus declared all foods clean.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said, \"It is that which comes out of the person that defiles him.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For from within a person, out of the heart, proceed evil thoughts, sexual immorality, theft, murder,\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "adultery, coveting, wickedness, deceit, sensuality, envy, slander, pride, folly.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All these evils come from within, and they are what defile a person.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He got up from there and went away to the region of Tyre and Sidon. There he went into a house and he wanted no one to know where he was, but he could not be hidden.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In fact "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some ancient copies have the word, \\fqa But \\fqa* as an alternative reading. ",
+        "endTag": "f*",
+        "nextChar": " "
+      },
+      {
+        "type": "text",
+        "text": ", as soon a woman whose little daughter had an unclean spirit heard about him, she came and fell down at his feet.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now the woman was a Greek, a Syrophoenician by descent. She begged him to cast out the demon from her daughter.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to her, \"Let the children first be fed. For it is not right to take the children's bread and throw it to the dogs.\"\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But she answered and said to him, \"Yes, Lord, even the dogs under the table eat the children's crumbs.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to her, \"Because you have said this, you are free to go. The demon has gone out of your daughter.\"\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She went back to her house and found the child lying on the bed, and the demon was gone.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he went out again from the region of Tyre, and went through Sidon to the Sea of Galilee up into the region of the Decapolis.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They brought to him someone who was deaf and had difficulty speaking, and they begged him to lay his hand on him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He took him aside from the crowd privately, and he put his fingers into his ears, and after spitting, he touched his tongue.\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He looked up to heaven, he sighed and said to him, \"Ephphatha,\" that is to say, \"Open!\"\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At once his ears were opened, his tongue was released, and he began to speak plainly.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus ordered them to tell no one. But the more he ordered them, the more abundantly they proclaimed it.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were extremely astonished, saying, \"He has done all things well. He even makes the deaf hear and the mute speak.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

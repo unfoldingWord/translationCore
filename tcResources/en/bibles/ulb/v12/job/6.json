@@ -1,0 +1,650 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Oh, if only my anguish were weighed;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "if only all my calamity were laid in the balance!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For now it would be heavier than the sand of the seas.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "That is why my words were reckless.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the arrows of the Almighty are in me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my spirit drinks up the poison;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the terrors of God have arranged themselves in array against me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Does the wild donkey bray in despair when he has grass?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Or does the ox low in hunger when it has fodder?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can that which has no taste be eaten without salt?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Or is there any taste in the white of an egg?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I refuse to touch them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they are like disgusting food to me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that I might have my request;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "oh, that God would grant me the thing I long for:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that it would please God to crush me once,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that he would let loose his hand and cut me off from this life!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May this still be my consolation—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even if I exult in pain that does not lessen:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that I have not denied the words of the Holy One.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What is my strength, that I should try to wait?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "What is my end, that I should prolong my life?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is my strength the strength of stones?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Or is my flesh made of bronze?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is it not true that I have no help in myself,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and that wisdom has been driven out of me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To the person who is about to faint, faithfulness should be shown by his friend;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even to him who forsakes the fear of the Almighty.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But my brothers have been as faithful to me as a desert streambed,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as channels of water that pass away to nothing,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "which are darkened because of ice over them,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and because of the snow that hides itself in them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they thaw out, they vanish;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when it is hot, they melt out of their place.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The caravans that travel by their way turn aside for water;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they wander into barren land and then perish.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Caravans from Tema looked there,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "while companies of Sheba hoped in them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were disappointed because they had been confident of finding water.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They went there, but they were deceived.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For now you friends are nothing to me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you see my dreadful situation and are afraid.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Did I say to you, 'Give something to me?'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Or, 'Offer me a gift from your wealth?'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Or, 'Save me from my adversary's hand?'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Or, 'Ransom me from the hand of my oppressors?'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Teach me, and I will hold my peace;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "make me understand where I have been wrong.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How painful are truthful words!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "But your arguments, how do they actually rebuke me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you plan to ignore\n my words,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "treating the words of a desperate man like the wind?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, you cast lots for a fatherless child,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and haggle over your friend like merchandise.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now, therefore, please look at me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for surely I would not lie to your face.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Relent, I beg you; let there be no injustice with you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Indeed, relent, for my cause is just.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is there evil on my tongue?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Cannot my mouth detect malicious things?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

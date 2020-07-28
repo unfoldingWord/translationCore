@@ -1,0 +1,379 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My spirit is consumed, and my days are over;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the grave is ready for me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Surely there are mockers with me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my eye must always see their provocation.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give now a pledge, be a guarantee for me with yourself;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who else is there who will help me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you, God, have kept their hearts from understanding;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "therefore, you will not exalt them over me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He who denounces his friends for a reward,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the eyes of his children will fail.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he has made me a byword of the people;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they spit in my face.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My eye is also dim because of sorrow;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all my body parts are as thin as shadows.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Upright men will be stunned by this;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the innocent man will stir himself up against godless men.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The righteous man will keep to his way;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he who has clean hands will grow stronger and stronger.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as for you all, come on now;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not find a wise man among you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My days are past; my plans are shattered,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and so are the desires of my heart. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some modern versions have \\fqa My days are past, as are my plans. The wishes of my heart are finished \\fqa* or \\fqa ... the strings of my heart have been broken \\fqa* . Others have \\fqa My days are past; my plans are over, as are the wishes of my heart \\fqa* ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These people, these mockers, change the night into day;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "light is near to darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If the only home I hope for is Sheol;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and if I have spread my couch in the darkness;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and if I have said to the pit, 'You are my father,'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to the worm, 'You are my mother or my sister,'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "where then is my hope?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "As for my hope, who can see any?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will hope go down with me to the gates of Sheol\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when we descend to the dust?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

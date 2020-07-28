@@ -1,0 +1,448 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In that day this song will be sung in the land of Judah:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We have a strong city; God has made salvation its walls and ramparts.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Open the gates, that the righteous nation that keeps faith may enter in.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The mind that is stayed on you, you will keep him in perfect peace, for he trusts in you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Trust in Yahweh forever; for in Yah, Yahweh, is an everlasting rock.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For he will bring down those who live proudly; the fortified city\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he will lay low, he will lay low to the ground; he will level it to the dust.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be trampled down by the feet of the poor and the treading of the needy.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The path of the righteous is level, Righteous One; the path of the righteous you make straight.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, in the path of your judgments, Yahweh, we wait for you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "your name and your reputation are our desire.\n"
+      },
+      {
+        "type": "text",
+        "text": " "
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have longed for you in the night; yes, my spirit within me seeks you earnestly.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "For when your judgments come on the earth, the inhabitants of the world learn about righteousness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let favor be shown to the wicked one, but he will not learn righteousness. In the land of uprightness he acts wickedly\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and does not see the majesty of Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, your hand is lifted up, but they do not notice.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But they will see your zeal for the people and be put to shame, because fire of your adversaries will devour them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you will bring about peace for us; for indeed, you have also accomplished all our works for us.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh our God, other masters besides you have ruled over us; but we praise your name alone.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are dead, they will not live; they are deceased, they will not arise.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Indeed, you came in judgment and destroyed them, and made every memory of them to perish.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have increased the nation, Yahweh, you have increased the nation; you are honored;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you have extended all the borders of the land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, in trouble have they looked to you; they whispered prayers when your discipline was on them.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft This difficult verse has many different translations among modern versions. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a pregnant woman nears the time for her to give birth, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "when she is in pain and cries out in her labor pains,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so we have been before you, Lord.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We have been pregnant, we have been in labor, but it is as if we have only given birth to wind. We have not brought salvation to the earth,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the inhabitants of the world have not fallen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your dead will live; their dead bodies will arise. Awake and sing for joy, you who live in the dust;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "for your dew is the dew of light, and the earth will bring forth its dead.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Go, my people, enter into your rooms and shut your doors behind you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "hide for a little while, until the indignation has passed by.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For, look, Yahweh is about to come out of his place to punish the inhabitants of the earth for their iniquity;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the earth will uncover her bloodshed, and will no longer conceal her slain.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

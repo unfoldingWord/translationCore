@@ -1,0 +1,557 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus, being full of the Holy Spirit, returned from the Jordan River, and was led by the Spirit in the wilderness,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "where for forty days he was tempted by the devil. He ate nothing during those days, and at the end of that time he was hungry.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The devil said to him, \"If you are the Son of God, command this stone to become bread.\"\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus answered him, \"It is written, 'Man does not live on bread alone.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the devil led Jesus up and showed him all the kingdoms of the world in an instant of time.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The devil said to him, \"I will give to you all this authority and all their splendor, for they have been given to me, and I can give it to anyone I want.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So then, if you will bow down and worship me, it will be yours.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Jesus answered and said to him, \"It is written, 'You will worship the Lord your God, and you will serve only him.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the devil led Jesus to Jerusalem and put him on the very highest point of the temple building, and said to him, \"If you are the Son of God, throw yourself down from here.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For it is written,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'He will give orders to his angels regarding you, to protect you,'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and, 'They will lift you up in their hands,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so that you will not strike your foot against a stone.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Answering him, Jesus said, \"It is said, 'Do not put the Lord your God to the test.'\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the devil had finished testing Jesus, he went away and left him until another time.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus returned to Galilee in the power of the Spirit, and news about him spread throughout the entire surrounding region.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he began to teach in their synagogues and he was praised by all.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He came into Nazareth, where he had been raised, and as was his custom, he entered the synagogue on the Sabbath day and he stood up to read aloud.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The scroll of the prophet Isaiah was handed to him. He opened the scroll and found the place where it was written,\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": " ",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"The Spirit of the Lord is upon me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because he anointed me to tell good news to the poor.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He has sent me to proclaim freedom to the captives,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and recovery of sight to the blind,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to set free those who are oppressed,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": " ",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "to proclaim the year of the Lord's favor.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he rolled up the scroll, gave it back to the attendant, and sat down. The eyes of all in the synagogue were fixed on him.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He began to speak to them, \"Today this scripture has been fulfilled in your hearing.\"\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone there spoke well of him and they were amazed at the gracious words which were coming out of his mouth, and they asked, \"Is this not the son of Joseph?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"Surely you will say this proverb to me, 'Doctor, heal yourself. Whatever we heard that you did in Capernaum, do the same in your hometown.'\"\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he said, \"Truly I say to you, no prophet is received in his own hometown.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But in truth I tell you that there were many widows in Israel during the time of Elijah, when the sky was shut up for three years and six months, and a great famine came upon all the land.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Elijah was sent to none of them, but only to Zarephath in Sidon, to a widow living there.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were many lepers in Israel during the time of Elisha the prophet, but none of them were healed except Naaman the Syrian.\"\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the people in the synagogue were filled with rage when they heard these things.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They got up, forced him out of the town, and led him to the cliff of the hill on which their town was built, so they might throw him off the cliff.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he passed through the middle of them and he went to another place.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he went down to Capernaum, a city in Galilee, and he began to teach them on the Sabbath.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were astonished at his teaching, because he spoke with authority.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now in the synagogue there was a man who had the spirit of an unclean demon, and he cried out with a loud voice,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Ah! What do we have to do with you, Jesus of Nazareth? Have you come to destroy us? I know who you are—the Holy One of God!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus rebuked the demon, saying, \"Do not speak! Come out of him!\" When the demon had thrown the man down in the middle of them, he came out of him, and did not harm him in any way.\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the people were very amazed, and they kept talking about it with one another. They said, \"What kind of words are these? He commands the unclean spirits with authority and power and they come out.\"\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So news about him began to spread into every part of the surrounding region.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus left the synagogue and entered into the house of Simon. Now Simon's mother-in-law was suffering with a high fever, and they pleaded with him on her behalf.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So he stood over her and rebuked the fever, and it left her. Immediately she got up and started serving them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the sun was setting, people brought to Jesus everyone who was sick with various kinds of diseases. He laid his hands on every one of them and healed them.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Demons also came out from many of them, crying out and saying, \"You are the Son of God!\" Jesus rebuked the demons and would not let them speak, because they knew that he was the Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When daybreak came, he went out into a solitary place. Crowds of people were looking for him and came to the place where he was. They tried to keep him from going away from them.\n"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he said to them, \"I must also preach the good news about the kingdom of God to many other cities, because this is the reason I was sent here.\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he continued to preach in the synagogues throughout Judea.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is our refuge and strength,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a very present help in trouble.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore we will not fear, though the earth should change,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "though the mountains should be shaken into the heart of the seas,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "though its waters roar and rage, and\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "though the mountains tremble with their swelling.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a river whose streams make the city of God happy,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the holy place where the Most High dwells.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is in the middle of her; she will not be moved;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God will help her, and he will do so at the dawn of morning.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The nations raged and the kingdoms were shaken;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he lifted up his voice, and the earth melted.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh of hosts is with us;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the God of Jacob is our refuge.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Come, behold the deeds of Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the destruction he has caused on earth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He makes wars cease to the ends of the earth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he breaks the bow and cuts the spear into pieces;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he burns up the shields.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be quiet and know that I am God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will be exalted among the nations; I will be exalted on the earth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh of hosts is with us;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the God of Jacob is our refuge.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician. A psalm of the sons of Korah; set to Alamoth. A song.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

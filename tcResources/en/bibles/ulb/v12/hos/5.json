@@ -1,0 +1,456 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Hear this, priests!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Pay attention, house of Israel!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Listen, house of the king!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For judgment is coming against you all.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You have been a snare at Mizpah\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a net spread over Tabor.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The rebels stand deep in slaughter,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but I will punish all of them.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some modern versions have \\fqa The rebels have dug a deep pit \\fqa* , \\fqa The rebels have dug deep at Shittim \\fqa* , or, continuing on from the previous verse, \\fqa a pit dug deep at Shittim \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know Ephraim,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Israel is not hidden from me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Ephraim, now you have become like a prostitute;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Israel is defiled.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their deeds will not allow them to turn to God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for the mind of adultery is in them,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they do not know Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The pride of Israel testifies against him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so Israel and Ephraim will stumble in their guilt;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Judah also will stumble with them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will go with their flocks and herds to seek Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but they will not find him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for he has withdrawn himself from them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were unfaithful to Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for they have borne illegitimate children.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Now the new moon festivals will devour them with their fields.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blow the horn in Gibeah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the trumpet in Ramah.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Sound a battle cry at Beth Aven:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'We will follow you, Benjamin!'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ephraim will become a desolation on the day of punishment.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Among the tribes of Israel I have declared what is certain to happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The leaders of Judah are like those who move a boundary stone.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will pour my wrath on them like water.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ephraim is crushed;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is crushed in judgment,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because he has willingly walked after idols.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I will be like a moth to Ephraim,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and like rot to the house of Judah.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Ephraim saw his sickness,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Judah saw his wound,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "then Ephraim went to Assyria,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Judah sent messengers to the great king.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "But he was not able to cure you people\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or heal your wound.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I will be like a lion to Ephraim,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and like a young lion to the house of Judah.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I, even I, will tear and go away;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will carry them off,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and there will be no one to rescue them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will go and return to my place,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "until they acknowledge their guilt and seek my face,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "until they earnestly seek me in their distress.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

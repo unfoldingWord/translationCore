@@ -1,0 +1,152 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, who are allowed to enter your sacred tent?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who are allowed to live on your sacred mountain?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Only those who always do what is right and do not sin may do that,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who always speak the truth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do not slander others.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They do not do to others things that are wrong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they do not say bad things about anyone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who honor God hate those whom he has rejected,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they respect those who have a fearful respect for Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They do what they have promised to do\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even if it causes them trouble to do that.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They lend money to others without charging interest,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they never accept bribes in order to lie about people who have not done anything wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Those who do those things will always live in safety.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

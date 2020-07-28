@@ -1,0 +1,184 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the holy mount stands the city he founded;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh loves the gates of Zion\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "more than all the tents of Jacob.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Glorious things are said of you, city of God.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I mention Rahab and Babylon to my followers.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "See, there are Philistia, and Tyre, along with Cush—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and will say, 'This one was born there.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Of Zion it will be said,\n\"Each of these was born in her;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the Most High himself will establish her.\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh writes in the census book of the nations,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"This one was born there.\"\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So also the singers and the dancers say together,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"All my fountains are in you.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of the sons of Korah; a song.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,684 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Comfort, comfort my people,\" says your God.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Speak tenderly to Jerusalem; and proclaim to her\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that her warfare has ended, that her iniquity is pardoned,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that she has received double from Yahweh's hand for all her sins.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A voice cries out,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"In the wilderness prepare the way of Yahweh;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "make straight in the Arabah a highway for our God.\" "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older modern versions have \\fqa A voice cries out in the wilderness \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every valley will be lifted up, and every mountain and hill will be leveled;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the rugged land will be made level, and the rough places a plain;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and the glory of Yahweh will be revealed, and all people will see it together; for the mouth of Yahweh has spoken it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A voice says, \"Cry.\" Another answers, \"What should I cry?\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"All flesh is grass, and all their covenant faithfulness is like the flower of the field.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The grass withers and the flower wilts when the breath of Yahweh blows on it; surely humanity is grass.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The grass withers, the flower wilts, but the word of our God will stand forever.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Go up on a high mountain, Zion, bearer of good news.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa Go up on a high mountain, Zion, bearer of good news \\fqa* , some versions have \\fqa You who are bearing good news to Zion, go up on a high mountain \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Shout out loud, Jerusalem. You who bring good news, raise your voice, do not be afraid.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa Jerusalem, proclaimer of good news \\fqa* , some versions have \\fqa proclaim good news to Jerusalem \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Say to the cities of Judah, \"Here is your God!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, the Lord Yahweh comes as a victorious warrior, and his strong arm rules for him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "See, his reward is with him, and those he has rescued go before him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will feed his flock like a shepherd, he will gather in his arm the lambs,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and carry them close to his heart,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and will gently lead the ewes nursing their young.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who has measured the waters in the hollow of his hand, measured the sky with the span of his hand,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "held the dust of the earth in a basket, weighed the mountains in scales,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "or the hills in a balance?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who has comprehended the mind of Yahweh, or instructed him as his counselor?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From whom did he ever receive instruction? Who taught him the correct way to do things,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and taught him knowledge, or showed to him the way of understanding?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, the nations are like a drop in a bucket, and are regarded like the dust on the scales;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "see, he weighs the isles as a speck.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lebanon is not sufficient fuel,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "nor its wild animals sufficient for a burnt offering.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the nations are insufficient before him; they are regarded by him as nothing.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To whom then will you compare God? To what idol will you liken him?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "An idol! A craftsman casts it: The goldsmith overlays it with gold\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and forges silver chains for it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To make an offering one chooses a wood that will not rot;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he seeks a skillful artisan to make an idol that will not fall over.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have you not known? Have you not heard? Has it not been told you from the beginning?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Have you not understood from the foundations of the earth?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is the one who sits above the horizon of the earth; and the inhabitants are like grasshoppers before him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He stretches out the heavens like a curtain and spreads them out as a tent to live in.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He reduces rulers to nothing and makes the rulers of the earth insignificant.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are barely planted, barely sown, their stem has barely taken root in the earth,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "when he blows upon them and they wither, and the wind carries them away like straw.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"To whom then will you compare me, whom do I resemble?\"\n says the Holy One.\n "
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look up at the sky! Who has created all these stars?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He leads out their formations and calls them all by name.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "By the greatness of his might and by the strength of his power, not one is missing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you say, Jacob, and declare, Israel,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"My way is hidden from Yahweh, and my God is not concerned about my vindication\"?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have you not known? Have you not heard?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The everlasting God, Yahweh, the Creator of the ends of the earth,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "does not get tired or weary; there is no limit to his understanding.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gives strength to the tired; and to the weak he gives renewed energy.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even young people become tired and weary, and young men stumble and fall:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but those who wait for Yahweh will renew their strength; they will soar with wings like eagles;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they will run and not be weary; they will walk and not faint.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

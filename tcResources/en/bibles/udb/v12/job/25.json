@@ -1,0 +1,136 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Bildad also replied:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"God is very powerful; everyone should honor him very much;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he causes everything to be peaceful high up in heaven, with no confusion at all.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can anyone count the angels who are in his army in heaven?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Is there any person on whom his light does not shine?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So how can God consider any person to be righteous?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "How can he accept any human being?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Consider this: God does not even think that the full moon is bright,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he does not even accept the stars in the heavens as worthy of him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So what about humans?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are as insignificant as maggots.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God does not think more highly of people than he thinks of worms.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

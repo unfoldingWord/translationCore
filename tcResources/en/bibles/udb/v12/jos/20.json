@@ -1,0 +1,122 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh said to Joshua,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Tell the Israelite people that they should choose some cities to which people can run in order to be safe, as I told Moses that you should do.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone kills another person accidentally, without intending to kill that person, then he can run to one of these cities and be safe.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that person arrives at the gate of one of those cities, he must stop there and tell the leaders of the city what happened. If they believe him, they must allow him to enter the city, and they must give him a place to live among them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If some relative of the dead person comes to that city to get revenge, the leaders of that city must not allow the relative to take the killer, because what happened was accidental. He did not hate that person; he did not deliberately kill him.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The person who killed someone else must stay in that city until the city judges put him on trial. Only if the judges decide that the person who has run to their city did not deliberately kill the other person will they allow him to stay in that city, and he must stay there until the high priest who was serving at the time of the offense dies. Then the man may safely go back to his own home.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the Israelites chose these cities to be cities to which people could run to be safe: Kedesh in the region of Galilee, in the hill country where the tribe of Naphtali lived; Shechem in the hill country where the tribe of Ephraim lived; and Kiriath Arba (which is now called Hebron) in the hill country where the tribe of Judah lived;\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bezer, on the east side of the Jordan River near Jericho, in the wilderness, where the tribe of Reuben lived; Ramoth in the region of Gilead, in the land where the tribe of Gad lived; and Golan in the region of Bashan, where the tribe of Manasseh lived.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Any Israelite or any foreigner who lived among them, anyone who had killed someone accidentally, was allowed to run to one of those cities. There he would be safe from some relative of the person who died coming there and killing him to get revenge. He could stay in that city until he was put on trial to decide whether he was telling the truth when he said that he did not kill that person on purpose.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

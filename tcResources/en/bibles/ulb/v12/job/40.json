@@ -1,0 +1,513 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh continued to speak to Job; he said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Should anyone who wishes to criticize try to correct the Almighty?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He who argues with God, let him answer.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job answered Yahweh and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"See, I am insignificant; how can I answer you?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I put my hand over my mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I spoke once, and I will not answer;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "indeed, twice, but I will proceed no further.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh answered Job out of a fierce storm and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Now gird up your loins like a man,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for I will ask you questions, and you must answer me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will you actually say that I am unjust?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Will you condemn me so you may claim you are right?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you have an arm like God's?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Can you thunder with a voice like him?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now clothe yourself in glory and dignity;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "array yourself in honor and majesty.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Scatter around the excess of your anger;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "look at everyone who is proud and bring him down.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look at everyone who is proud and bring him low;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "trample down wicked people where they stand.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bury them in the earth together;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "imprison their faces in the hidden place.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then will I also acknowledge about you\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that your own right hand can save you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look now at the behemoth, which I made when I made you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he eats grass like an ox.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See now, his strength is in his loins;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his power is in his belly's muscles.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He makes his tail like a cedar;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the sinews of his thighs are joined together.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His bones are like tubes of bronze;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his legs are like bars of iron.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is the chief of the creatures of God.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Only God, who made him, can defeat him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the hills provide him with food;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the beasts of the field play nearby.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He lies under the lotus plants\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the shelter of the reeds, in the marshes.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The lotus plants cover him with their shade;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the willows of the brook are all around him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, if a river floods its banks, he does not tremble;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is confident, though the Jordan should surge up to his mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can anyone capture him with a hook,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or pierce his nose through with a snare?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Bildad the Shuhite answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Dominion and fear are with him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he makes order in his high places of heaven.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is there any end to the number of his armies?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Upon whom does his light not shine?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How then can man be righteous with God?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How can he who is born of a woman be clean, acceptable to him?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, even the moon has no brightness to him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the stars are not pure in his sight.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How much less man, who is a worm—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a son of man, who is a worm!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

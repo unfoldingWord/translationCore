@@ -1,0 +1,674 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Job, do you know at what time of the year the female mountain goats give birth?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Have you watched the wild deer while their calves were being born?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you know how many months pass from the time they become pregnant until their calves are born?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they give birth, they crouch down,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then their labor pangs are done.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The young calves grow up in the open fields,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then they leave their mothers and do not return to them again.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who allows the wild donkeys to go wherever they want away from the cities?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am the one who has freed them and put them in the desert plain,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in places where grass does not grow.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do not like the noise in the cities;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the desert they do not have to listen to the shouts of those who forced them to work.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They go over the hills to find food;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there they search for grass to eat.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will a wild ox agree to work for you?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Will it allow you to keep it penned up at night in the place where you put feed for your animals?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can you fasten a rope on it\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that it will plow furrows in your fields, your fields in the valley?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Since it is very strong, can you for that reason trust it to work for you?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Can you go away after you tell it what work it should do and assume that it will do that work?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can you rely on it to come back from the field\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "bringing your grain to the place where you thresh it?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Think also about the ostriches. They joyfully flap their wings,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they have no love for their own young.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ostriches lay their eggs on top of the ground and then walk away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "leaving the eggs to be warmed in the sand.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ostriches never think about the possibility that some wild animal may step on the eggs and crush them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ostriches act cruelly toward their chicks;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they act as though the chicks belonged to some other ostrich.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They are not concerned if their chicks die,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that they may have laid their eggs for nothing.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is because I did not allow ostriches to be wise.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I did not enable them to be intelligent.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, when they get up and begin to run,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they scornfully laugh at horses with their riders\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because the horses cannot run as fast as the ostriches!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also, think about horses. Job, are you the one who made the horses to be strong?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Are you the one who put flowing manes on their necks?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Are you the one who enabled them to leap forward like locusts?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When they snort, they cause people to be afraid.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They paw the ground, rejoicing because they are very strong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as they prepare to rush into battle.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as if they were laughing at the thought of being afraid. They are not afraid of anything!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They do not run away when the soldiers in the battle are fighting each other with swords.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The quivers containing the riders' arrows rattle against the horses' sides,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the spears and javelins flash in the light of the sun.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The horses run very quickly, and they speedily cover the ground;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they rush into battle as soon as the trumpet is blown.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They neigh joyfully when they hear someone blowing the trumpet.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They can smell a battle even when they are far away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they understand what it means when the commanders shout their commands to their soldiers.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Think about big birds. Are you the one who enabled hawks to spread their wings\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and fly to the south for the winter?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do eagles fly high up into the cliffs to make their nests\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you commanded them to do that?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They live in holes in those cliffs.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are safe in those high pointed rocks because no animals can reach them there.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As they watch carefully from there,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they see animals far away that they can kill.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After an eagle kills an animal,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the baby eagles drink the blood of that animal;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they gather wherever there are dead people lying on the ground.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh, all you nations;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "exalt him, all you peoples.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For his covenant faithfulness is great toward us,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the trustworthiness of Yahweh endures forever.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Praise Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

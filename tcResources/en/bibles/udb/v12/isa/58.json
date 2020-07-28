@@ -1,0 +1,561 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh said to me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Shout loudly!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Shout like a loud trumpet!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Shout to warn my Israelite people about their sins!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They worship me every day;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they come to my temple because they say that they are eager to know what I want them to do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They act as though they were a nation that does things that are righteous,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that would never abandon the commands of me, their God.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They request me to decide matters justly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they are eager that I should come to them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They say, 'We have fasted to please you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you did not notice our doing that.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We humbled ourselves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you did not pay any attention!'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will tell you why I did not pay attention.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is because when you fast,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you do it only to please yourselves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you act cruelly toward all your workers.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You fast, but you also quarrel and fight with each other with your fists.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Doing things like that while you fast will certainly not cause me to hear your prayers where I am, high in heaven.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You bow your heads\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the tops of reeds bend when the wind blows,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and you wear rough clothes and cover your heads with ashes like people do when they are grieving.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That is what you do when you are fasting,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but do you really think that will please me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No, that is not the kind of fasting that I desire.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Instead you should seek to free those who have been unjustly put in prison,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and encourage those who are treated cruelly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and free those who have been oppressed in any way.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Share your food with those who are hungry\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to allow those who have no houses to stay in your houses.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Give clothes to those who do not have clothes,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not hide yourself from your relatives who need help from you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do those things,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "what you do for others will be like a light that shines when it dawns.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The troubles that have been caused by your sins will end quickly.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Others will know about your righteous behavior,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the glorious presence of Yahweh will protect you from behind\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like I protected the Israelite people when they left Egypt.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then you will call out to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will quickly answer and say, 'I am here to help you.'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Stop oppressing people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "stop falsely accusing people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and stop saying evil things about people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give food to those who are hungry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and give to people who are afflicted the things that they need.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Your doing that will be like a light that shines in the darkness;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "instead of doing evil to people, the good things you do for people will be like the sunshine at noontime.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will guide you continually,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will give you good things to satisfy you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will enable you to remain strong and healthy.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will be like a garden that is well watered,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a spring that never dries up.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your people will rebuild the cities that were destroyed long ago;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will build houses on top of the old foundations.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "People will say that you are the ones who are repairing the holes in the city walls,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and who are repairing the streets where people live.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not travel on the Sabbath days,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and on Sabbath days do not do only the things that you delight to do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Enjoy the Sabbath days, and consider them to be delightful.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The Sabbath days are my holy days.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Honor me, Yahweh, in everything that you do on the Sabbath days.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Do not talk about and do things to please yourselves.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you do all the things that I have just now told you to do; listen, and I will tell you what I will do for you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will enable you to be joyful.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will greatly honor you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it will be as though you were riding with me above the highest mountains!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will give to you the blessings that I gave to your ancestor Jacob.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Those things will surely happen because I, Yahweh, have said it.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

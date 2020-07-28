@@ -1,0 +1,74 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the year that Tartan came to Ashdod, when Sargon the king of Assyria sent him, he fought against Ashdod and took it.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time Yahweh spoke by Isaiah son of Amoz and said, \"Go and remove the sackcloth from your waist, and take your sandals off your feet.\" He did so, walking naked and barefoot.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh said, \"Just as my servant Isaiah has walked naked and barefoot for three years, it is a sign and an omen concerning Egypt and concerning Cush—\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "in this way the king of Assyria will lead away the captives of Egypt, and the exiles of Cush, young and old, naked and barefoot, and with buttocks uncovered, to the shame of Egypt.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be dismayed and ashamed, because of Cush their hope and of Egypt their glory.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The inhabitants of these coasts will say on that day, 'Indeed, this was our source of hope, where we fled for help to be rescued from the king of Assyria, and now, how can we escape?'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

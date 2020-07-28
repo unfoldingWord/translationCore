@@ -1,0 +1,699 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now when morning came, all the chief priests and elders of the people plotted against Jesus to put him to death.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They bound him, led him away, and delivered him to Pilate the governor.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then when Judas, who had betrayed him, saw that Jesus had been condemned, he repented and returned the thirty pieces of silver to the chief priests and elders,\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and said, \"I have sinned by betraying innocent blood.\" But they said, \"What is that to us? See to that yourself.\"\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he threw down the pieces of silver in the temple, and departed, and went out and hanged himself.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The chief priests took the pieces of silver and said, \"It is not lawful to put this into the treasury, because it is the price of blood.\"\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They discussed the matter together and with the money bought the potter's field in which to bury strangers.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For this reason that field has been called, \"The Field of Blood\" to this day.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then that which had been spoken by Jeremiah the prophet was fulfilled, saying, \"They took the thirty pieces of silver, the price set on him by the people of Israel,\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and they gave it for the potter's field, as the Lord had directed me.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now Jesus stood before the governor, and the governor asked him, \"Are you the King of the Jews?\" Jesus answered him, \"You say so.\"\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when he was accused by the chief priests and elders, he answered nothing.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Pilate said to him, \"Do you not hear all the charges against you?\"\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he did not answer even one word, so that the governor was greatly amazed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now at the feast it was the custom of the governor to release one prisoner chosen by the crowd.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time they had a notorious prisoner named Barabbas.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So when they were gathered together, Pilate said to them, \"Who do you want me to release for you? Barabbas, or Jesus who is called Christ?\"\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He knew that they had handed Jesus over to him because of envy.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While he was sitting on the judgment seat, his wife sent word to him and said, \"Have nothing to do with that innocent man. For I have suffered much today because of a dream I had about him.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now the chief priests and the elders persuaded the crowd to ask for Barabbas, and have Jesus killed.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The governor asked them, \"Which of the two do you want me to release to you?\" They said, \"Barabbas.\"\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pilate said to them, \"What should I do with Jesus who is called Christ?\" They all answered, \"Crucify him.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said, \"Why, what crime has he done?\" But they cried out even louder, \"Crucify him.\"\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So when Pilate saw that he could not do anything, but instead a riot was starting, he took water, washed his hands in front of the crowd, and said, \"I am innocent of the blood of this innocent man. See to it yourselves.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the people said, \"May his blood be on us and our children.\"\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he released Barabbas to them, but he scourged Jesus and handed him over to be crucified.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the soldiers of the governor took Jesus into the government headquarters and gathered the whole company of soldiers.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They stripped him and put a scarlet robe on him.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They made a crown of thorns and put it on his head, and placed a staff in his right hand. They knelt down before him and mocked him, saying, \"Hail, King of the Jews!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They spat on him, and they took the staff and struck him on the head again and again.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they had mocked him, they took the robe off him and put his own garments on him, and led him away to crucify him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As they came out, they found a man from Cyrene named Simon, whom they forced to go with them so that he might carry his cross.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They came to a place called Golgotha, which means \"The Place of a Skull.\"\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They gave him wine to drink mixed with gall. But when he tasted it, he would not drink.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they had crucified him, they divided up his garments by casting lots,\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and they sat and kept guard over him.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Above his head they put the charge against him, which read \"This is Jesus, the king of the Jews.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Two robbers were crucified with him, one on the right of him and one on the left.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who passed by insulted him, shaking their heads\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and saying, \"You who were going to destroy the temple and rebuild it in three days, save yourself! If you are the Son of God, come down from the cross!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the same way the chief priests were mocking him, along with the scribes and elders, and said,\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"He saved others, but he cannot save himself. He is the King of Israel. Let him come down off the cross, and then we will believe in him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He trusts in God, let God rescue him now, if God consents to release him. For he even said, 'I am the Son of God.'\"\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the same way the robbers who were crucified with him also spoke insults to him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now from the sixth hour darkness came over the whole land until the ninth hour.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About the ninth hour, Jesus cried with a loud voice and said, \"Eli, Eli, lama sabachthani?\" which means, \"My God, my God, why have you forsaken me?\"\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When some of those who were standing there heard it, they said, \"He is calling for Elijah.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Immediately one of them ran and took a sponge, filled it with sour wine, put it on a reed staff, and gave it to him to drink.\n"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The rest of them said, \"Leave him alone. Let us see whether Elijah comes to save him.\"\n"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus cried out again with a loud voice and gave up his spirit.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Behold, the curtain of the temple was split in two from the top to the bottom, and the earth shook, and the rocks split apart.\n"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The tombs were opened, and the bodies of the saints who had fallen asleep were raised.\n"
+      }
+    ]
+  },
+  "53": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They came out of the tombs after his resurrection, entered the holy city, and appeared to many.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "54": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now when the centurion and those who were watching Jesus saw the earthquake and the things that had happened, they became very afraid and said, \"Truly this was the Son of God.\"\n"
+      }
+    ]
+  },
+  "55": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Many women who had followed Jesus from Galilee to care for him were there looking on from a distance.\n"
+      }
+    ]
+  },
+  "56": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Among them were Mary Magdalene, Mary the mother of James and Joseph, and the mother of the sons of Zebedee.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "57": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When it was evening, there came a rich man from Arimathea, named Joseph, who was also a disciple of Jesus.\n"
+      }
+    ]
+  },
+  "58": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He approached Pilate and asked for the body of Jesus. Then Pilate ordered it to be given to him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "59": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joseph took the body, wrapped it in a clean linen cloth,\n"
+      }
+    ]
+  },
+  "60": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and laid it in his own new tomb that he had cut into the rock. Then he rolled a large stone against the door of the tomb and went away.\n"
+      }
+    ]
+  },
+  "61": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mary Magdalene and the other Mary were there, sitting opposite the tomb.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "62": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The next day, which was the day after the Preparation, the chief priests and the Pharisees were gathered together with Pilate.\n"
+      }
+    ]
+  },
+  "63": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said, \"Sir, we remember that when that deceiver was alive, he said, 'After three days will I rise again.'\n"
+      }
+    ]
+  },
+  "64": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore command that the tomb be made secure until the third day, otherwise his disciples may come and steal him and say to the people, 'He has risen from the dead,' and the last deception will be worse than the first.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "65": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pilate said to them, \"Take a guard. Go and make it as secure as you can.\"\n"
+      }
+    ]
+  },
+  "66": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they went and made the tomb secure, sealing the stone and placing the guard.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

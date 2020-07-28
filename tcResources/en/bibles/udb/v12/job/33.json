@@ -1,0 +1,745 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Now, Job, listen carefully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to all that I am going to say.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am ready to tell you what I think.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In my inner being I know that I am speaking honestly\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that I am speaking sincerely.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Almighty God has created me as well as you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and with his breath he has caused me to live.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So answer what I say if you can;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "think carefully what you will reply to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God considers that you and I are both the same;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he formed both of us from clay.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So you do not need to be afraid of me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will not speak against you harshly.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have heard you speak,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and this is what you have said:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'I am innocent, and I have not committed any sins;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am pure, and I have not done things that are wrong.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God finds reasons to accuse me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he considers that I am his enemy.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though he had put my feet in stocks,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he watches everything that I do.'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, what you have said is wrong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will tell you what you have said that is wrong.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God is much greater than any human.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So, why are you arguing against God? He does not have to tell us why he does anything.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God does, indeed, speak to us in various ways,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we do not pay any attention to what he says.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sometimes he speaks to us at night in dreams and visions\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when we are on our beds, heavily asleep.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He reveals things to us in those times;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he terrifies us by warning us about things.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He tells us those things in order that we may stop doing evil deeds\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to prevent us from becoming proud.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does not want us to be destroyed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he wants to prevent us from dying while we are still young.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God also corrects us by forcing us to lie on our beds, suffering much pain\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and fever in our bones.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The result is that we do not desire any food,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not even very special food.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our bodies become very thin so that we look like a skeleton,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and our bones stick out so others can count them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We know that we will soon die\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and go to the place where dead people are.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet sometimes an angel may come to one of us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "one of the thousands of angels who come to intervene between us and God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to tell us what are the right things for us to do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The angel is kind to us and says to God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Please release that person,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so that he does not descend to the place where dead people are!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Do that because I have found a way for you to keep him from dying!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Please let his body be strong again;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "please allow him to be strong like he was when he was young!'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If that happens, that person will pray to God, and God will accept him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will enter God's presence joyfully,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then he will tell others how God saved him from dying.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will sing as he says to everyone,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'I sinned, and I did things that were not right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but God did not punish me in the way that I deserved.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has saved me from dying and going to the place where dead people are,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will continue to enjoy being alive.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God does all these things for us many times;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "he preserves us from dying and going to the place where the dead are,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that we can continue to enjoy being alive.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Job, listen to me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not say anything more; just allow me to speak.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After I speak, if you have something more that you want to say to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "say it, because I would like to find a way to declare that you are innocent.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, if you have nothing more that you want to say, then just listen to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will teach you how to become wise.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

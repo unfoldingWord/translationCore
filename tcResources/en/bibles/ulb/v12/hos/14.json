@@ -1,0 +1,295 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel, return to Yahweh your God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for you have fallen because of your iniquity.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Take with you words and return to Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Say to him, \"Take away all our iniquity\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and accept what is good,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that we may offer to you the fruit of our lips.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The phrase \\fqa so that we may offer to you the fruit of our lips \\fqa* represents the interpretation of some ancient versions. The Hebrew text has \\fqa so that we may offer bulls, our lips \\fqa* . Some modern versions interpret this to mean, \\fqa so that we may offer to you bulls, which we have promised to do \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Assyria will not save us;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "we will not ride on horses to war.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Neither will we say anymore to the work of our hands,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'You are our gods,'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for in you the fatherless person finds compassion.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I will heal their turning away;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will love them freely,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for my anger has turned away from him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will be like the dew to Israel;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will blossom like the lily\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and take root like a cedar in Lebanon.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His branches will spread out;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his beauty will be like the olive trees,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his fragrance like the cedars in Lebanon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people who live in his shade will return;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they will revive like grain\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and blossom like vines.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His fame will be like the wine of Lebanon.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ephraim, what more have I to do with idols?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will answer him and care for him.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am like a cypress whose leaves are always green;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from me comes your fruit.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who is wise that he may understand these things?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who understands these things so that he may know them?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For the ways of Yahweh are right,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the righteous will walk in them,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the rebellious will stumble in them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

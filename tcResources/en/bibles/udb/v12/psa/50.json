@@ -1,0 +1,573 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, the all-powerful one, speaks;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he summons all people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from the east to the west.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His glory shines from Mount Zion in Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "an extremely beautiful city.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our God comes to us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is not silent.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "A great fire is in front of him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a storm is around him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He comes to judge his people.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He shouts to the angels in heaven\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to the people on the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He says, \"Summon those who faithfully worship me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who made a covenant with me by offering sacrifices to me.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The angels in heaven declare,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"God is righteous,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is the supreme judge.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God says, \"My people, listen!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You Israelite people, listen,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as I, your God, say what you have done that is wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am not rebuking you for making sacrifices to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for the offerings that you always burn on the altar for me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I do not really need the bulls from your barns\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the goats from your pens that you sacrifice,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because all the animals in the forest belong to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all the cattle on a thousand hills also belong to me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know and own all the birds in the mountains,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all the creatures that move around in the fields.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So if I were hungry, I would not tell you to bring me some food\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because everything in the world belongs to me!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I do not eat the flesh of the bulls that you sacrifice,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I do not drink the blood of the goats that you offer to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sacrifice that I really want is that you thank me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do all that you have promised to do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pray to me when you have troubles.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you do that, I will rescue you, and then you will praise me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I say this to the wicked people:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Why do you recite my commandments\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or talk about the covenant that I made with you?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you have refused to allow me to discipline you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you have rejected what I told you to do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every time that you see a thief, you become his friend,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you spend much time with those who commit adultery.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are always talking about doing wicked things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you are always trying to deceive people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are always accusing members of your own family\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and slandering them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You did all those things, and I did not say anything to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so you thought that I was a sinner just like you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But now I rebuke you and accuse you, right in front of you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So, all you who have ignored me, pay attention to this,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because if you do not, I will tear you to pieces,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be no one to rescue you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sacrifice that truly honors me is to thank me for what I have done;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will save those who always do the things that I want them to.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by Asaph\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

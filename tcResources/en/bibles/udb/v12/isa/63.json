@@ -1,0 +1,625 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I ask, \"Who is this who is coming from the city of Bozrah in Edom,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "whose clothes are stained red from blood?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Who is this who is wearing beautiful robes?\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He replies, \"It is I, Yahweh, declaring that I have defeated your enemies,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I am able to rescue you!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I ask him, \"What are those red spots on your clothes?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It appears that you have been treading on grapes to make wine.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He replies, \"I have been treading on my enemies, not on grapes.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I did it myself; no one helped me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I punished them because I was very angry with them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and my clothes became stained with their blood.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I did that because it was time for me to get revenge;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it was time to rescue my people from those who had oppressed them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I searched for someone who would enable me to help my people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I was amazed that there was no one to help me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So I defeated their enemies with my own power;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was able to do that because I was very angry.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because I was extremely angry, I punished the nations;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I caused them to stagger like drunk men,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I caused their blood to pour out on the ground.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will tell about all the things that Yahweh has done for his people because of his faithful love for them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will praise him for all that he has done.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh has done good things for us people of Israel;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he has acted mercifully toward us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he has steadfastly and faithfully loved us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh said, \"These are my people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will not deceive me\";\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so he rescued us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When we had many troubles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he was sad also.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He sent his angel from before his presence to rescue us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Because he loved us and was merciful to us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he saved us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it was as though he had picked our ancestors up and carried them all those years during which they were oppressed in Egypt.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we rebelled against him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we caused his Holy Spirit to be sad.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So he became like an enemy\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who fought against us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then we thought about what happened long ago,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "during the time when Moses led our ancestors out of Egypt.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We cried out, \"Where is the one who brought our ancestors through the Sea of Reeds\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while Moses led them?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Where is the one who sent his Holy Spirit\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to be among our ancestors?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Where is the one who showed his glorious power\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and caused the water to separate when Moses lifted his arm above it,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "with the result that he will be honored forever?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Where is the one who led our ancestors while they walked through the seabed?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They were like horses that were racing along and never stumbled.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were like cattle that walk down into a valley to rest,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the Spirit of Yahweh enabled them to go to a place where they could rest.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh, you led your people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you caused yourself to be praised.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Yahweh, look down from heaven;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "look down on us from your holy and glorious home.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You were previously very concerned about us, and you acted powerfully to help us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But it seems that you do not act mercifully and zealously for us anymore.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are our father, even if\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Abraham does not know what is happening to us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Jacob is not concerned about us, either,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but Yahweh, you are our father;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you rescued us long ago.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, why did you cause us to wander away from your road?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why did you cause us to be stubborn in our inner beings,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that we no longer honor you?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Help us like you did previously,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because we are the people who serve you and belong to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We, your holy people, possessed your sacred temple for only a short time,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and now our enemies have destroyed it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now it seems as though we never were ruled by you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as though we never belonged to you.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,408 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh said to me,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Ezekiel, sing a sad funeral song which will be a parable about the leaders of Israel. Say to the Israelite people,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'It is as though your mother had been a brave female lion\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who raised her cubs among other lions.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She taught one of them to hunt for other animals to kill,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he even learned to kill and eat people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people from other nations heard about him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they trapped him in a pit.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then they used hooks\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to drag him to Egypt.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His mother waited for him to return,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but soon she stopped hoping for that to happen.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So she raised another cub\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who also became very fierce.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He hunted along with other lions for animals to kill,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he even learned to kill and eat people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He mistreated his victims' widows,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he destroyed cities.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When he roared loudly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "everyone was terrified and abandoned everything they owned.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So people of other nations planned to kill him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and men came from many places\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to spread out a net for him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They caught him in it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They pulled him with hooks in his flesh and put him into an iron cage,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "then they took him to the king of Babylon.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There they locked him up so that the sound of his voice \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "could never be heard echoing on the hills of Israel.'\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": " \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'It is as though your mother\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "were a grapevine fertilized in blood,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and growing up beside a stream.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There was plenty of water,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so it had lots of branches and produced a lot of grapes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That grapevine grew and became taller than all the nearby trees;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "everyone could see that it was very strong and healthy.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And those branches were good for making scepters that symbolize the power of a king.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh became very angry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so he pulled up the vine by its roots\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and threw it on the ground,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where the very hot winds from the desert dried up all its fruit.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The strong branches wilted and were burned in a fire.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now Yahweh has planted that vine in a hot, dry desert.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A fire started to burn its stem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then started to burn the branches;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it burned all the grapes.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Now not even one strong branch remains;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they will never become scepters for a king.'\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "This funeral song must be sung very sadly.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

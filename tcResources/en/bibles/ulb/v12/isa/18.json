@@ -1,0 +1,179 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to the land of the rustling of wings, which is along the rivers of Cush;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "who send ambassadors by the sea, in vessels of papyrus on the waters.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Go, you swift messengers, to a nation tall and smooth,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to a people feared far and near, a nation strong and trampling down, whose land the rivers divide.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you inhabitants of the world and you who live on the earth,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "when a signal is lifted up on the mountains, look; and when the trumpet is blown, listen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh said to me, \"I will quietly observe from my home,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "like the simmering heat in sunshine, like a cloud of mist in the heat of harvest.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Before the harvest, when the blossoming is over, and the flower is ripening into a grape,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he will cut off the sprigs with pruning hooks, and he will cut down and take away the spreading branches.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be left together for the birds of the mountains and for the animals of the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The birds will summer on them, and all the animals of the earth will winter on them.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time tribute will be brought to Yahweh of hosts from a people tall and smooth,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "from a people feared far and near, a nation strong and trampling down, whose land the rivers divide,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to the place of the name of Yahweh of hosts, to Mount Zion.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,380 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"My time to live is almost ended; I have no strength left;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who have dug my grave are waiting for me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are around me are making fun of me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I must always see them mocking me.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"God, it is as though I were in prison;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "please pay the money in order that I may be released,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because there is certainly no one else who will help me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have prevented my friends from understanding what is true about me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you will not allow them to triumph over me, saying that I have done wrong things.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our ancestors said, 'It often happens that when someone betrays his friends in order to get some of their property,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is that person's children who will be punished for it;'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so I desire that will be true of these friends of mine who are lying about me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now people use that saying of our ancestors when they talk about me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they spit to insult me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My eyes have become dim because I am very sad,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and my arms and legs are as thin as shadows.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who are truly righteous will be shocked when they see what has happened to me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be angry at those who refuse to honor God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are truly righteous will continue to do what is right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who live righteously will continue to become stronger.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But all you friends of mine,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I do not find even one among you who is wise.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My time to live is almost ended; I have not been able to do the things that I planned to do.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "As for the things I have most desired, there is no hope of them happening.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My friends do not know when it is night and when it is day;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when it is night, they claim that it is daylight;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when it is becoming dark, they claim that it is getting light.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know that my home will be the place where dead people are,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where I will sleep in the darkness.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I can say to the grave, 'Where I am buried, that place will be like a father to me.'\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I can say to the maggots, 'You will be like a mother or younger sisters to me because that is where I will always be.'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is certainly no more hope left for me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one expects that I will have any more happiness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After I descend to the place where the dead are, I will not be able to expect anything good there.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I and the things I hope for will go down together into the soil.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

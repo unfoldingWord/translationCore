@@ -1,0 +1,232 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I saw in the right hand of the one who was seated on the throne a scroll written on the front and on the back, sealed with seven seals.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I saw a mighty angel proclaiming with a loud voice, \"Who is worthy to open the scroll and break its seals?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one in heaven or on the earth or under the earth was able to open the scroll or to read it.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wept bitterly because no one was found worthy to open the scroll or to read it.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But one of the elders said to me, \"Do not weep. Look! The Lion of the tribe of Judah, the Root of David, has conquered. He is able to open the scroll and its seven seals.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I saw a Lamb standing in the middle of the throne area and among the four living creatures and among the elders. He looked as though he had been killed. He had seven horns and seven eyes, which are the seven spirits of God sent out into all the earth.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He went and took hold of the scroll out of the right hand of the one who was seated on the throne.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When he had taken the scroll, the four living creatures and the twenty-four elders fell down before the Lamb. Each of them had a harp and a golden bowl full of incense, which are the prayers of the saints.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They sang a new song:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"You are worthy to take the scroll\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to open its seals.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For you were slaughtered, and with your blood you purchased people for God\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from every tribe, language, people, and nation.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You made them a kingdom and priests to serve our God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will reign on the earth.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I looked and heard the sound of many angels who encircled the throne and the living creatures and the elders. Their total number was ten thousands of ten thousands and thousands of thousands.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said in a loud voice,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"Worthy is the Lamb who has been slaughtered to receive power, wealth, wisdom, strength, honor, glory, and praise.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I heard every created thing that was in heaven and on the earth and under the earth and on the sea—everything in them—saying,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"To the one who sits on the throne and to the Lamb be praise, honor, glory, and the power to rule, forever and ever.\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The four living creatures said, \"Amen!\" and the elders fell down and worshiped.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older versions read, \\fqa the twenty-four elders fell down and worshiped the one who lives forever and ever \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

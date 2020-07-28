@@ -1,0 +1,777 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So now, Job, I beg you, hear my speech;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "listen to all my words.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See now, I have opened my mouth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my tongue has spoken in my mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My words come from the uprightness of my heart;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my lips speak pure knowledge.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Spirit of God has made me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the breath of the Almighty has given me life.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you can, answer me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "set your words in order before me and stand up.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, I am just as you are in God's sight;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I also have been formed out of the clay.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, terror of me will not make you afraid;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "neither will my pressure be heavy upon you.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have certainly spoken in my hearing;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have heard the sound of your words saying,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'I am clean and without transgression;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am innocent, and there is no sin in me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, God finds opportunities to attack me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he regards me as his enemy.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He puts my feet in stocks;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he watches all my paths.'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, in this you are not right—I will answer you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for God is greater than man.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you struggle against him?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He does not account for any of his doings.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For God speaks once—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "yes, twice, though man does not notice it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In a dream, in a vision of the night,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when deep sleep falls upon men,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in slumber on the bed—\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then God opens the ears of men,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and frightens them with threats,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "in order to pull man back from his sinful purposes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and keep pride from him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God keeps man's life back from the pit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his life from crossing over to death.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Man is punished also with pain on his bed,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with constant agony in his bones,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that his life abhors food,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his soul abhors delicacies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His flesh is consumed away so that it cannot be seen;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his bones, once not seen, now stick out.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, his soul draws close to the pit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his life to those who wish to destroy it.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if there is an angel who can be a mediator for him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a mediator, one from among the thousands of angels,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to show him what is right to do,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and if the angel is kind to him and says to God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'Save this person from going down to the pit;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have found a ransom for him,'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then his flesh will become fresher than a child's;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will return to the days of his youthful strength.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will pray to God, and God will be kind to him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that he sees God's face with joy.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God will give the person his triumph.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then that person will sing in front of other people and say,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'I sinned and perverted that which was right,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but my sin was not punished.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God has rescued my soul from going down into the pit;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my life will continue to see light.'\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, God does all these things with a person,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "twice, yes, even three times,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "to bring his soul back from the pit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that he may be enlightened with the light of life.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pay attention, Job, and listen to me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "be silent and I will speak.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you have anything to say, answer me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "speak, for I wish to prove that you are in the right.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If not, then listen to me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "remain silent, and I will teach you wisdom.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, answer me when I pray to you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You are the one who shows people that I am right to trust in you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You rescued me when I was in great trouble.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Act mercifully toward me and listen to me while I pray.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How long will you people shame me instead of honoring me?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You people love to falsely accuse me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All those who honor Yahweh—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he has chosen them to belong to him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh will listen to me when I pray to him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You should be afraid of Yahweh, but do not allow your fear to cause you to sin.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "While you lie on your bed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "silently examine what you are thinking in your inner being.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also, offer to Yahweh the proper sacrifices\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and continue trusting in him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some people ask, \"Will somone please bring good things to us?\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But I say, \"Yahweh, continue to act kindly toward us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have caused me to be very happy;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am happier than people who have harvested a great amount of grain and grapes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is in peace and security that I will lie down at night and sleep soundly\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I know that it is only you, Yahweh, who will keep me safe.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director; a psalm to be accompanied by people playing stringed instruments\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

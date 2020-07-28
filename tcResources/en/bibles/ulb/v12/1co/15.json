@@ -1,0 +1,654 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now I remind you, brothers, of the gospel I proclaimed to you, which you received and on which you stand.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is by this gospel that you are being saved, if you hold firmly to the word I preached to you, unless you believed in vain.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I delivered to you as of first importance what I also received, that Christ died for our sins according to the scriptures,\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that he was buried, and that he was raised on the third day according to the scriptures.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Christ appeared to Cephas, and then to the twelve;\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then he appeared to more than five hundred brothers at once. Most of them are still alive, but some have fallen asleep.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he appeared to James, then to all the apostles.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Last of all, he appeared to me, as if to a child born at the wrong time.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I am the least of the apostles. I am unworthy to be called an apostle because I persecuted the church of God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But by the grace of God I am what I am, and his grace in me was not in vain. Instead, I worked harder than all of them. Yet it was not I, but the grace of God that is with me.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore whether it is I or they, so we preach and so you believed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now if Christ is proclaimed as raised from the dead, how can some of you say there is no resurrection of the dead?\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if there is no resurrection of the dead, then not even Christ has been raised;\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and if Christ has not been raised, then our preaching is in vain, and your faith also is in vain.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also, we are found to be false witnesses about God, because we testified against God, saying he raised up Christ when he did not.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For if the dead are not raised, not even Christ has been raised;\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and if Christ has not been raised, your faith is in vain and you are still in your sins.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then those who have died in Christ have also perished.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If only in this life we have hope in Christ, of all people we are most to be pitied.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now Christ, who is the firstfruits of those who died, has been raised from the dead.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For since death came by a man, by a man also came the resurrection of the dead.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For as in Adam all die, so also in Christ all will be made alive.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But each in his own order: Christ, who is the firstfruits, and then those who belong to Christ will be made alive at his coming.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then will be the end, when Christ will hand over the kingdom to God the Father. This is when he will abolish all rule and all authority and power.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For he must reign until he has put all his enemies under his feet.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The last enemy to be destroyed is death.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For \"he has put everything under his feet.\" But when it says \"he has put everything,\" it is clear that this does not include the one who put everything in subjection to himself.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When all things are subjected to him, then the Son himself will be subjected to him who put all things into subjection under him, that God may be all in all.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Or else what will those do who are baptized for the dead? If the dead are not raised at all, why are they baptized for them?\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why then, are we in danger every hour?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every day I face death! This is as sure as my boasting in you, which I have in Christ Jesus our Lord.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What do I gain, from a human point of view, if I fought with beasts at Ephesus, if the dead are not raised? \"Let us eat and drink, for tomorrow we die.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be not deceived: \"Bad company corrupts good morals.\"\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sober up! Live righteously! Do not keep sinning. For some of you have no knowledge of God. I say this to your shame.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But someone will say, \"How are the dead raised, and with what kind of body will they come?\"\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are so ignorant! What you sow will not start to grow unless it dies.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What you sow is not the body that will be, but a bare seed. It may become wheat or something else.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God will give it a body as he chooses, and to each seed its own body.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Not all flesh is the same. Instead, there is one flesh of human beings, and another flesh for animals, and another flesh for birds, and another for fish.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are also heavenly bodies and earthly bodies. But the glory of the heavenly body is one kind and the glory of the earthly is another.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is one glory of the sun, and another glory of the moon, and another glory of the stars. For one star differs from another star in glory.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So also is the resurrection of the dead. What is sown is perishable, and what is raised is imperishable.\n"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is sown in dishonor; it is raised in glory. It is sown in weakness; it is raised in power.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is sown a natural body; it is raised a spiritual body. If there is a natural body, there is also a spiritual body.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So also it is written, \"The first man Adam became a living soul.\" The last Adam became a life-giving spirit.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the spiritual did not come first but the natural, and then the spiritual.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The first man is of the earth, made of dust. The second man is from heaven.\n"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Just as the one made from dust is, so also are those who are made of the dust, and as the man of heaven is, so also are those who are of heaven.\n"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Just as we have borne the image of the man of dust, we will also bear the image of the man of heaven.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now this I say, brothers, that flesh and blood cannot inherit the kingdom of God. Neither does what is perishable inherit what is imperishable.\n"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look! I tell you a secret truth: We will not all die, but we will all be changed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We will be changed in a moment, in the twinkling of an eye, at the last trumpet. For the trumpet will sound, and the dead will be raised imperishable, and we will be changed.\n"
+      }
+    ]
+  },
+  "53": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For this perishable body must put on what is imperishable, and this mortal body must put on immortality.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "54": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when this perishable body has put on what is imperishable, and when this mortal body has put on immortality, then will come about the saying that is written,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Death is swallowed up in victory.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "55": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Death, where is your victory?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Death, where is your sting?\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "56": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sting of death is sin, and the power of sin is the law.\n"
+      }
+    ]
+  },
+  "57": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But thanks be to God, who gives us the victory through our Lord Jesus Christ!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "58": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, my dear brothers, be steadfast and immovable. Always abound in the work of the Lord, because you know that your work in the Lord is not in vain.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

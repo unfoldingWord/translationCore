@@ -1,0 +1,517 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh spoke to Moses and to Aaron, saying,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Speak to the people of Israel, saying, 'These are the living things which you may eat among all the animals that are on the earth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You may eat any animal that has a split hoof and that also chews the cud.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, some animals either chew the cud or have a split hoof, and you must not eat them, animals such as the camel, because it chews the cud but does not have a split hoof. So the camel is unclean to you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also the rock badger, because it chews the cud but does not have a split hoof, it is also unclean to you.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The rabbit, because it chews the cud, but does not have a split hoof, is unclean to you.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The pig, although it has a split hoof, does not chew the cud, is unclean to you.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not eat any of their meat, nor touch their carcasses. They are unclean to you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The animals living in the water that you may eat are all those that have fins and scales, whether in the ocean or in the rivers.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But all living creatures that do not have fins and scales in the ocean or rivers, including all that move in the water and all the living creatures that are in the water— they must be detested by you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Since they must be detested, you must not eat of their meat; also, their carcasses must be detested.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever has no fins or scales in the water must be detested by you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The birds you must detest and that you must not eat are these: the eagle, the vulture,\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the kite, any kind of falcon,\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "every kind of raven,\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the horned owl and the screech owl, the seagull, and any kind of hawk.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must also detest the little owl and the great owl, the cormorant,\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the white owl and the barn owl, the osprey,\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the stork, any kind of heron, the hoopoe, and also the bat.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All winged insects that walk on four legs are detestable to you.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet you may eat any of the flying insects that also walk on four legs if they have jointed legs for hopping on the ground.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You may also eat any kind of locust, katydid, cricket, or grasshopper.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But all the flying insects that have four feet must be detested by you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will become unclean until evening by these animals if you touch a carcass of one of them.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever picks up one of their carcasses must wash his clothes and remain unclean until evening.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every animal which has a split hoof that is not completely divided or which does not chew the cud is unclean to you. Everyone who touches them will be unclean.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever walks on its paws among all the animals that walk on all four legs, they are unclean to you. Whoever touches such a carcass will be unclean until the evening.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever picks up such a carcass must wash his clothes and be unclean until the evening. These animals will be unclean to you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Of the animals that creep on the ground, these are the animals that will be unclean to you: the weasel, the rat, every kind of large lizard,\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the gecko, the monitor lizard, the lizard, the skink, and the chameleon.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Of all the animals that creep, these are the animals which will be unclean to you. Whoever touches them when they are dead will be unclean until evening.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If any of them dies and falls on anything, that thing will be unclean, whether it is made of wood, cloth, leather, or sackcloth. Whatever it is and whatever it is used for, it must be put into water; it will be unclean until evening. Then it will be clean.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For every clay pot into or onto which any unclean animal falls, whatever is in the pot will become unclean, and you must destroy that pot.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Any food that could be eaten but has water on it from such a pot is unclean. Any liquid that is for drinking from such a pot is unclean. \n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Anything that one of their carcasses falls on becomes unclean; if it is an oven or small stove, it must be broken to pieces. They are unclean and they must remain unclean to you. \n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A spring or cistern for collecting water remains clean; but anyone who touches their carcass is unclean.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If any part of their carcass falls upon any seeds for planting, those seeds will still be clean.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if water is put on the seeds, and if any part of their carcass falls on them, then they will be unclean to you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If any animal that you may eat dies, then he who touches the carcass will be unclean until evening.\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever eats any of that carcass must wash his clothes and be unclean until evening. Anyone who picks up such a carcass will wash his clothes and be unclean until evening.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every animal that creeps on the ground is to be detested; it must not be eaten.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever crawls on its belly, and whatever walks on all four legs, or whatever has many feet—all the animals that creep on the ground, these you must not eat, for they are to be detested.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not make yourselves unclean with any living creatures that creep; you must not make yourselves unclean with them, that you should be made impure by them.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I am Yahweh your God. You are to keep yourselves holy, therefore, and be holy, because I am holy. You must not defile yourselves with any kind of animal that moves about on the ground.\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I am Yahweh, who brought you up out of the land of Egypt, to be your God. You must therefore be holy, for I am holy.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the law regarding the animals, the birds, every living creature that moves in the waters, and of every creature that creeps on the ground,\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "for which a distinction is to be made between the unclean and the clean, and between the living things that may be eaten and the living things that may not be eaten.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

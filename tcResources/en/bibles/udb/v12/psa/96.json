@@ -1,0 +1,309 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to Yahweh a new song!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You people throughout the earth, sing to Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to Yahweh and praise him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Every day proclaim to others that he has saved us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell about his glory to all people groups;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "tell all people groups the marvelous things that he has done.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is great, and he deserves to be praised very much;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he should be revered more than all the gods.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the gods the other people groups worship are only idols,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but Yahweh is truly great; he created the skies!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God shows his splendor and majesty; they shine out from where he rules. \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Strength and beauty are in his holy house.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people in nations all over the earth, praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise Yahweh for his glorious power!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh as he deserves to be praised;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "bring an offering and come to his temple.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bow down before Yahweh because his holiness shines out from him with wonderful beauty.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Everyone on earth should be very afraid in his presence, because he is good and powerful, completely different than us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say to all the people groups, \"Yahweh is the king!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He put the world in its place, and nothing will ever be able to move it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will judge all the people groups fairly.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the beings that are in the heavens should be glad, and all the people on the earth should rejoice.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The oceans and all the creatures that are in the oceans should roar to praise Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fields and everything that grows in them should rejoice.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When they do that, it will be as though all the trees in the forests are singing joyfully\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "in front of Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That will happen when he comes to judge everyone on the earth.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will judge all the people fairly according to what he knows is true.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

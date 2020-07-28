@@ -1,0 +1,835 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Here is a list of the places where the Israelites went as Aaron and Moses led them after they left Egypt.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh commanded Moses to write down the names of the places where they went.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the fifteenth day of the first month of the year, the day after they celebrated the Passover, they left the city of Rameses in Egypt and marched boldly while the Egyptian army was coming behind them.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As they left, the people of Egypt were still burying the bodies of their firstborn sons. By killing them, Yahweh showed that the gods that the people of Egypt worshiped were false gods.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After leaving Rameses, they first went to Succoth and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Succoth and went to Etham, at the edge of the desert, and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Etham and returned to Pi Hahiroth, to the east of Baal Zephon, and set up their tents near Migdol.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Pi Hahiroth and walked through the Sea of Reeds and continued three days into the Etham Desert, and set their tents at Marah.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Marah and went to Elim. There were twelve springs and seventy palm trees there. They set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Elim and went to the area near the Sea of Reeds and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left the Sea of Reeds and went near the wilderness of Sinai and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left the wilderness of Sinai and went to Dophkah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Dophkah and went to Alush and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Alush and went and set up their tents at Rephidim, where they had no water to drink.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Rephidim and went to the wilderness of the Sinai and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left the wilderness of the Sinai and went to Kibroth Hattaavah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Kibroth Hattaavah and went to Hazeroth and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Hazeroth and went to Rithmah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Rithmah and went to Rimmon Perez and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Rimmon Perez and went to Libnah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Libnah and went to Rissah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Rissah and set up their tents at Kehelathah.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Kehelathah; they went to Mount Shepher and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Mount Shepher and went to Haradah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Haradah and went to Makheloth and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Makheloth and went to Tahath and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Tahath and went to Terah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Terah and went to Mithcah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Mithcah and went to Hashmonah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Hashmonah and went to Moseroth and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Moseroth and went to Bene Jaakan and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Bene Jaakan and went to Hor Haggidgad and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Hor Haggidgad and went to Jotbathah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Jotbathah and went to Abronah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Abronah and went to Ezion Geber and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Ezion Geber and went to the wilderness of Zin and set up their tents at Kadesh there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Kadesh and went to Mount Hor, at the border of Edom, and set up their tents there.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aaron the priest obeyed Yahweh and climbed up the mountain. There he died, on the first day of their fifth month, forty years after the Israelites left Egypt.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aaron was 123 years old when he died.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That was when the king of the city of Arad heard that the Israelites were coming. Arad was in the southern wilderness in the land of Canaan, where the Canaan people group lived.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Israelites left Mount Hor and went to Zalmonah and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Zalmonah and went to Punon and set up tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Punon and went to Oboth and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Oboth and went to Iye Abarim, which was on the border of the region of Moab, and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Iye Abarim and went to Dibon Gad and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Dibon Gad and set up their tents at Almon Diblathaim.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left Almon Diblathaim and went to the Abarim Mountains, near Nebo and set up their tents there.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they left the Abarim mountains and went to the plains of Moab, near the Jordan River, across from Jericho.\n"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They set up their tents there on the plains of Moab. Their tents stretched for several kilometers from Beth Jeshimoth to Abel Shittim.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While we were there on the plains of Moab near the Jordan River, across from Jericho, Yahweh spoke to Moses. He said,\n"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Tell this to the Israelite people, 'When you cross the Jordan River and enter the region of Canaan,\n"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "you must force all the people who live there to leave. Destroy all their carved figures and all cast figures made of metal. Wreck all the places where they worship their idols.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "53": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Take their land from them and start to live there, because I have given their land to you for you to own.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "54": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Divide up the land by casting lots to decide which group will get which area. Give the larger areas to the groups that have more people, and give the smaller areas to the groups that have fewer people. Each tribe will receive its own land.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "55": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do not force the people who live there to leave, they will cause you to have much trouble. They will be like sharp hooks in your eyes, and like thorns in your sides. And they will bring trouble to you, in that land where you will be living.\n"
+      }
+    ]
+  },
+  "56": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And then I will punish you, as I had planned to punish them.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

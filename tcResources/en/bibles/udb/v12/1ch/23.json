@@ -1,0 +1,507 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David was a very old man when he appointed his son Solomon to be the next king.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David gathered the leaders of Israel and the priests and other descendants of Levi.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He commanded some of his officials to count the descendants of Levi who were at least thirty years old, and they found out that there were thirty-eight thousand of them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David said, \"From those thirty-eight thousand men, I want twenty-four thousand of them to supervise the work at the temple of Yahweh, and I want six thousand of them to be officials and judges.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want four thousand to be guards at the gates, and four thousand to praise Yahweh, using the musical instruments that I have provided for them.\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David divided the descendants of Levi into three groups; each group consisted of men who were descendants of one of the three sons of Levi—Gershon, Kohath, and Merari.\n"
+      },
+      {
+        "tag": "s2",
+        "type": "section",
+        "content": "The descendants of Gershon are listed next.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Gershon were Ladan and Shimei.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were three sons of Ladan: Jehiel was the oldest, and his younger brothers Zetham and Joel.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were three of the sons of Shimei: Shelomoth, Haziel, and Haran.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They were all leaders of the clans of Ladan.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were four men who were sons of Shimei:\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jahath, who was his oldest son, and his younger brothers Ziza, Jeush, and Beriah.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Jeush and Beriah did not have many sons, so they were counted as though they were one family.\n"
+      },
+      {
+        "tag": "s2",
+        "type": "section",
+        "content": "The descendants of Kohath are listed next.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Kohath had four sons: Amram, Izhar, Hebron, and Uzziel.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were two sons of Amram: Aaron and Moses.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Aaron and his descendants were set apart to dedicate to Yahweh the very holy things, to offer sacrifices to Yahweh, to serve in his presence, and to declare to the people what Yahweh would do to bless them. They were to do those things forever.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Moses, the man who served God well, were counted as part of the tribe of Levi. They are listed next.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sons of Moses were Gershom and Eliezer.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The oldest son of Gershom was Shubael.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rehabiah was the oldest son of Eliezer.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Eliezer had no other sons, but Rehabiah had many sons.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The oldest son of Izhar was Shelomith.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hebron had four sons.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Jeriah was his oldest son, and his younger brothers were Amariah, Jahaziel, and Jekameam.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Uzziel had two sons.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Micah was the oldest son, and his younger brother was Isshiah.\n"
+      },
+      {
+        "tag": "s2",
+        "type": "section",
+        "content": "The descendants of Merari are listed next.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Merari had two sons: Mahli and Mushi.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The sons of Mahli were Eleazar and Kish.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eleazar had no sons; he had only daughters. So their cousins, the sons of Kish, married them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The three sons of Mushi were Mahli, Eder, and Jerimoth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those were the descendants of Levi, whose names were listed according to their families. They were chosen for special jobs by casting lots. Each person who was at least twenty years old was listed. They all worked in the temple of Yahweh.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David had said previously, \"Yahweh, the God to whom we Israelite people belong, has enabled us to have peace, and he has come to live in Jerusalem forever.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, the descendants of Levi no longer need to carry the sacred tent and the items used in the work there.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Obeying the final instructions of David before he died, instructions for doing this work at the temple, they counted only the descendants of Levi who were at least twenty years old.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The work of those descendants of Levi was to assist the descendants of Aaron in their work in Yahweh's temple. They were to be in charge of the temple courtyards and the side rooms, the ceremonies for purifying all the sacred things, and to do other work at the temple.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were also in charge of the loaves of bread on display before God, the loaves that were placed each week on the table in the temple, the flour for the flour offerings, and the wafers that were made without yeast. They also had to measure the ingredients, mix them, and bake the bread and wafers.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were also told to stand every morning at the temple and thank Yahweh and praise him. They were also required to do the same thing every evening.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And they were to do the same thing whenever offerings that were to be completely burned on the altar were presented to Yahweh on Sabbath days and during the new moon celebrations and other religious festivals. They were told how many of them should be there and what they should do each time.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the descendants of Levi did the work that was assigned to them by their fellow Israelites who were descendants of Aaron. They did that work at the sacred tent and in the holy place inside the tent, and later at the temple.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,522 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, the Lord Yahweh of hosts is about to take away from Jerusalem and from Judah\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "support and staff: the whole supply of bread and the whole supply of water,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the mighty man and the warrior, the judge and the prophet, the one who practices divination and the elder,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the captain of fifty and the respected citizen, the counselor, the expert craftsman and the skillful enchanter.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I will place mere youths as their leaders, and the young will rule over them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people will be oppressed, every one by another, and every one by his neighbor;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the child will insult the elderly, and the degraded will challenge the honorable.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A man will even take hold of his brother in his father's house\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and say, 'You have a coat; be our ruler, and let this ruin be in your hands.'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day he will shout and say,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'I will not be a healer; I have no bread or clothing.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will not make me ruler of the people.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Jerusalem has stumbled, and Judah has fallen,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because their speech and their actions are against Yahweh, defying the eyes of his glory.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The look on their faces witnesses against them; and they tell of their sin like Sodom; they do not hide it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Woe to them! For they have completed a catastrophe for themselves.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell the righteous person that it will be well, for they will eat the fruit of their deeds.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to the wicked! It will go badly for him, for the recompense of his hands will be done to him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My people—children are their oppressors, and women rule over them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "My people, those who guide you lead you astray and confuse the direction of your path.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh stands up for an accusation; he is standing to accuse the people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will come with judgment against the elders of his people and their leaders:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"You have ruined the vineyard; the plunder from the poor is in your houses.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you crush my people and grind the faces of the poor?\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "This is the declaration of the Lord Yahweh of hosts.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says that because the daughters of Zion are proud, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they walk with their necks extended, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with flirting eyes, walking with tiny steps as they go, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "making tinkling sounds from bracelets on their ankles.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": " \n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore the Lord will form scabs on the heads of the daughters of Zion, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Yahweh will make them bald.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day the Lord will remove their beautiful ankle jewelry, head bands, the crescent ornaments,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the ear pendants, the bracelets, and the veils;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the headscarves, the ankle chains, the sashes, and the perfume boxes, and the lucky charms.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will remove the rings and the nose jewels;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the festive robes, the mantles, the veils, and the handbags;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the hand mirrors, the fine linen, the head pieces, and the wraps.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead of sweet perfume there will be stench; and instead of a sash, a rope;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "instead of well-arranged hair, baldness; and instead of a robe, a covering of sackcloth;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and branding instead of beauty.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your men will fall by the sword, and your strong men will fall in war.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jerusalem's gates will lament and mourn; and she will be alone and sit upon the ground.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

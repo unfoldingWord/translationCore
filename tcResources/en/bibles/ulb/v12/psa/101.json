@@ -1,0 +1,205 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will sing of covenant faithfulness and justice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to you, Yahweh, I will sing praises.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will walk in the way of integrity.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Oh, when will you come to me?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will walk with integrity within my house.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will not put wrongdoing before my eyes;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I hate worthless evil;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it will not cling to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Perverse people will leave me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am not loyal to evil.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will destroy whoever secretly slanders his neighbor.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not tolerate anyone who has a proud demeanor and an arrogant attitude.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will look to the faithful of the land to sit at my side.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Those who walk in the way of integrity may serve me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Deceitful people will not remain within my house;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "liars will not be welcome before my eyes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Morning by morning I will destroy all the wicked from the land;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will remove all evildoers from the city of Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

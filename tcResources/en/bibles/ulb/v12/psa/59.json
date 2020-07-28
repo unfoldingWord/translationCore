@@ -1,0 +1,449 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rescue me from my enemies, my God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "set me on high away from those who rise up against me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep me safe from the workers of iniquity,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and save me from the bloodthirsty men.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For, see, they wait in ambush to take my life.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The powerful men gather themselves together against me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but not because of my transgression or my sin, Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They prepare to run at me although I am without fault;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "awake and help me and see.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, Yahweh God of hosts, the God of Israel,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "arise and punish all the nations;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not be merciful to any wicked transgressors.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They return at evening, they howl like dogs\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and go around the city.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, they belch out with their mouths;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "swords are in their lips,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for they say, \"Who hears us?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you, Yahweh, laugh at them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you hold all the nations in derision.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, my strength, I will pay attention to you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you are my high tower.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My God will meet me with his covenant faithfulness;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God will let me see my desire on my enemies.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not kill them, or my people will forget.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Scatter them by your power and make them fall, Lord our shield.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the sins of their mouths and the words of their lips,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let them be captured in their pride,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and for the curses and lies that they express.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Consume them in wrath, consume them so that they will be no more;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let them know that God rules in Jacob\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to the ends of the earth.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At evening they return,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "howling like dogs going around the city.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They wander about looking for food\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they growl like a dog if they are not satisfied.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I will sing about your strength,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and in the morning I will sing about your steadfast love!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For you have been my high tower\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a refuge in the day of my distress.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To you, my strength, I will sing praises;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for God is my high tower, the God of covenant faithfulness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician; set to Al Tashheth. A psalm of David. A michtam; when Saul sent, and they watched the house to kill him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

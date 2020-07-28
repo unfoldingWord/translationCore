@@ -1,0 +1,336 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hear my prayer, Yahweh; listen to my pleas.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Because of your faithfulness and righteousness, answer me!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not enter into judgment with your servant,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for in your sight no one is righteous.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The enemy has pursued my soul;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he has crushed me to the ground;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he has made me to live in darkness \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like those who have been dead a long time.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My spirit is overwhelmed within me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my heart despairs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I call to mind the old days;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I meditate on all your deeds;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I reflect on your accomplishments.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I spread my hands out to you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my soul thirsts for you in a parched land.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Answer me quickly, Yahweh, because my spirit faints.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do not hide your face from me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or I will become like those who go down into the pit.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let me hear your covenant faithfulness in the morning,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for I trust in you.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Show me the way where I should walk,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for I lift up my soul to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rescue me from my enemies, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I flee to you to hide.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Teach me to do your will,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for you are my God.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "May your good Spirit\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "lead me in the land of uprightness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, for your name's sake, keep me alive;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in your righteousness bring my soul out of trouble.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In your covenant faithfulness cut off my enemies\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and destroy all the enemies of my life,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for I am your servant.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

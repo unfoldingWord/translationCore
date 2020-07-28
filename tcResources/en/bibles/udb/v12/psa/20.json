@@ -1,0 +1,237 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We desire that Yahweh may help you when you call out to him when you have troubles!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We desire that God, whom our ancestor Jacob honored, may keep you safe from your enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We desire that he may reach out from his sacred temple and help you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and aid you from where he lives on Mount Zion.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We desire that he may accept all the offerings that you give him to be burned on the altar\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all your other offerings.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We desire that he may give to you what you desire in your heart,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that you may be able to accomplish all that you desire to do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you defeat your enemies, we will shout joyfully.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We will lift up a banner proclaiming that it is God who has helped you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "May Yahweh do for you all that you request him to do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know now that Yahweh rescues me, the one whom he has chosen to be king.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "From his holy place in heaven he will answer me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will save me by his great power.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some kings trust that because they have chariots they will be able to defeat their enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and some trust that their horses will enable them to defeat their enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we will trust in the power of Yahweh our God.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some will stumble and fall down,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we will be strong and not be moved.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, help the king defeat our enemies!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Answer us when we call out to you to help us!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

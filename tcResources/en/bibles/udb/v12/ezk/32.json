@@ -1,0 +1,694 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Almost twelve years after the Babylonians had taken us Israelites to their land, Yahweh gave me another message, on the first day of the twelfth month of that year. He told me,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, sing a sad song about Pharaoh the king of Egypt. Sing this to him:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'People think that you are like a lion among the nations;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but you are like a sea monster in the river\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "thrashing around in the water,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "churning up the water with your feet\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and making all the water muddy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I, the Lord Yahweh, say to you\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that I will send many people to throw my net over you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that they will haul you up onto the land.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will throw you into a field, where I will leave you to your fate.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will allow the birds to sit on you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all the wild animals will eat the flesh of your corpse until their stomachs are full.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause them to scatter your flesh on the hills\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and fill the valleys with the parts of your rotting body.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause them to fill the land with your blood,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and also the mountains;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will fill the ravines with your blood.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I kill you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will cover the sky and not allow the stars to shine.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will put a dark cloud in front of the sun,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the moon will not shine.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the stars in the sky to be dark,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be darkness over your entire land;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "this will surely happen because I, Yahweh the Lord, have said it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And I will terrify the people of many nations when they hear how I destroy you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there where I will send you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in countries that you have never known about.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause many people to be shocked because of what has happened to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "their kings will be horrified and shudder because I destroyed you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when I swung my sword in front of them to kill you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "At the time that you die,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all of them will tremble,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "fearing that I will kill them, too.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, the Lord Yahweh tell you, Egypt,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that the swords of the army of the king of Babylon will strike you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the mighty soldiers of Babylonia\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to kill your best soldiers—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the soldiers of Babylonia, who are more ruthless than those of any other nation.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will cause the people of Egypt to quit being proud,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they will kill very many of your people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will destroy all the cattle in Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "which graze alongside the streams.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "As a result, the water in those streams will never again become muddy\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of people and cattle walking in them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will allow the streams in Egypt to become calm again\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to flow as smoothly as olive oil flows.'\" This is what the Lord Yahweh announces.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He also says this: \"When I cause Egypt to become empty,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when I strip off everything that grows on the land,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and when I get rid of all the people who live there,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people will know that it is I, Yahweh, who have the power to do what I say that I will do.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There will be a sad song that people will sing about Egypt.\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "Women of many nations will sing it;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will chant it about Egypt and all its many people.\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "This will surely happen because Yahweh has said that it would happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the fifteenth day of that same month, Yahweh gave me another message. He said,\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, wail about the many people of Egypt, because I will send them to the place under the earth, where they and people of other mighty nations will be. I will send them there, along with others, down to the place where the dead are.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say to them, 'You people of Egypt, you think that you are more beautiful than the people of other nations. But you also will descend to the place where the godless dead people are.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will die along with many others whom their enemies have killed. Their enemies have begun to attack, and they will drag away a huge number people of Egypt.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the place where the dead people are, mighty leaders of other countries will make fun of you people of Egypt and your allies. They will say that you have come to lie dead with them, those godless people whom their enemies killed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The dead of the people of Assyria and their army will also be there. They will be surrounded by the dead of others whom their enemies killed.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their graves will be there in the deep pit, and the dead soldiers of their army will lie around their graves. The dead of all those who had terrified so many others will also be there, for their enemies will have killed them, too.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Many, many people from the country of Elam will be there, too, and Elam's servants, because their enemies will have killed them. These were soldiers who had terrified people in many places. At that time they will lie there in that deep pit below the earth, and they, along with the others who have gone there, will be disgraced.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Elam in their huge numbers will lie there among others who were slaughtered, surrounded by the graves of a huge crowd of other people. While they were alive, they caused people of other nations to be terrified; but they were godless, and now, because their enemies will have killed them, they will lie with others in that deep pit, disgraced.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The dead of all the soldiers of the lands of Meshech and Tubal will be there, surrounded by the graves of a huge crowd. While they were alive, they also caused people in many places to be terrified. They are uncircumcised people whom their enemies will have killed.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will not lie there beside the uncircumcised warriors who have gone to the grave highly honored with their shields over their bodies and their swords under their heads. While they were alive, they terrified many people on the earth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You king of Egypt, I will kill you also, and you will lie there with other godless people whom their enemies will have killed.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People of Edom will be there, along with their kings and leaders. They were powerful, but I will kill them. They will lie there in the place where the other godless people lie.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the rulers of countries north of Israel, including people from the city of Sidon, will be there. Because of their power, they terrified other people, but they will lie there. They were godless, and they will lie there along with others whom their enemies will have killed. They, along with everyone else who goes down into that deep pit, will be disgraced.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king of Egypt and all his army will see them, and they will be comforted about the death of their many people, because they know that there were other huge groups of people whom their enemies killed.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While that king was living, I allowed him to terrify others in many countries, but he and his huge army will be there among other godless people whom their enemies have killed.\" This will certainly surely happen because the Lord Yahweh has said that it would happen.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

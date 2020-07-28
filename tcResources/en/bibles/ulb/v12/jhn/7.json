@@ -1,0 +1,592 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After these things Jesus traveled about in Galilee, for he did not want to go into Judea because the Jews were seeking to kill him.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now the Jewish Festival of Shelters was near.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His brothers therefore said to him, \"Leave this place and go to Judea, so that your disciples also may see the works that you do.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one does anything in secret if he himself wants to be known openly. If you do these things, show yourself to the world.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For even his brothers did not believe in him.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus therefore said to them, \"My time has not yet come, but your time is always ready.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The world cannot hate you, but it hates me because I testify about it that its works are evil.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You go up to the festival; I am not going to this festival because my time has not yet been fulfilled.\"\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After he said these things to them, he stayed in Galilee.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when his brothers had gone up to the festival, then he also went up, not publicly but in secret.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Jews were looking for him at the festival and said, \"Where is he?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There was much discussion among the crowds about him. Some said, \"He is a good man.\" Others said, \"No, he leads the crowds astray.\"\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet no one spoke openly about him for fear of the Jews.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the festival was already half over, Jesus went up into the temple and began to teach.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the Jews marveled, saying, \"How does this man know so much? He has never been educated.\"\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus answered them and said, \"My teaching is not mine, but is of him who sent me.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If anyone wishes to do his will, he will know about this teaching, whether it comes from God, or whether I speak from myself.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever speaks from himself seeks his own glory, but whoever seeks the glory of him who sent him, that person is true, and there is no unrighteousness in him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Did not Moses give you the law? Yet none of you keeps the law. Why do you seek to kill me?\"\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The crowd answered, \"You have a demon. Who seeks to kill you?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus answered and said to them, \"I did one work, and you all marvel because of it.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Moses gave you circumcision (not that it is from Moses, but from the ancestors), and on the Sabbath you circumcise a man.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man receives circumcision on the Sabbath so that the law of Moses is not broken, why are you angry with me because I made a man completely healthy on the Sabbath?\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not judge according to appearance, but judge righteously.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of them from Jerusalem said, \"Is not this the one they seek to kill?\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, he speaks openly, and they say nothing to him. It cannot be that the rulers indeed know that this is the Christ, can it?\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet we know where this one is from. But when the Christ comes, no one will know where he is from.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus cried out in the temple, teaching and saying, \"You both know me and know where I come from. I have not come of myself, but he who sent me is true, and you do not know him.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know him because I come from him and he sent me.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were trying to arrest him, but no one laid a hand on him because his hour had not yet come.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But many in the crowd believed in him, and they said, \"When the Christ comes, will he do more signs than what this one has done?\"\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Pharisees heard the crowds whispering these things about Jesus, and the chief priests and the Pharisees sent officers to arrest him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus then said, \"I am still with you for a short amount of time, and then I go to him who sent me.\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will seek me but you will not find me; where I go, you will not be able to come.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Jews therefore said among themselves, \"Where will this man go that we will not be able to find him? Will he go to the dispersion among the Greeks and teach the Greeks?\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What is this word that he said, 'You will seek me but will not find me; where I go, you will not be able to come'?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now on the last, great day of the festival, Jesus stood and cried out, saying, \"If anyone is thirsty, let him come to me and drink.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He who believes in me, just as the scripture says, rivers of living water will flow from his stomach.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he said this about the Spirit, whom those who believed in him would receive; the Spirit had not yet been given because Jesus was not yet glorified.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of the crowd, when they heard these words, said, \"This is indeed the prophet.\"\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Others said, \"This is the Christ.\" But some said, \"Does the Christ come from Galilee?\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have the scriptures not said that the Christ will come from the descendants of David and from Bethlehem, the village where David was?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So there arose a division in the crowds because of him.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of them would have arrested him, but no one laid hands on him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the officers came back to the chief priests and Pharisees, who said to them, \"Why did you not bring him?\"\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The officers answered, \"Never has anyone spoken like this.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the Pharisees answered them, \"Have you also been deceived?\n"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have any of the rulers believed in him, or any of the Pharisees?\n"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But this crowd that does not know the law, they are cursed.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nicodemus (one of the Pharisees, who came to him earlier) said to them,\n"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Does our law judge a man before hearing from him and knowing what he does?\"\n"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They answered and said to him, \"Are you also from Galilee? Search and see that no prophet comes from Galilee.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "53": {
+    "verseObjects": [
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The best ancient copies omit Jhn. 7:53-8:11 ",
+        "endTag": "f*",
+        "nextChar": " "
+      },
+      {
+        "type": "text",
+        "text": "[Then everyone went to his own house.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

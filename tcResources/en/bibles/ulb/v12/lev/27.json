@@ -1,0 +1,398 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh spoke to Moses and said,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Speak to the people of Israel and say to them, 'If anyone makes a special vow to Yahweh, use the following valuations.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your standard value for a male from twenty to sixty years old must be fifty shekels of silver, after the shekel of the sanctuary.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For a female of the same ages your standard value must be thirty shekels.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From five years to twenty years old your standard value for a male must be twenty shekels, and for the female ten shekels.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From one month old to five years your standard value for a male must be five shekels of silver, and for a female three shekels of silver.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From sixty years old and up for a male your standard value must be fifteen shekels, and for a female ten shekels.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the person making the vow cannot pay the standard value, then the person being given must be presented to the priest, and the priest will value that person by the amount the one making the vow is able to afford.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone wants to sacrifice an animal to Yahweh, and if Yahweh accepts it, then that animal will be set apart to him.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The person must not alter or change such an animal, a good one for a bad one or a bad for a good. If he does at all change one animal for another, then both it and the one for which it is exchanged become holy.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, if what the person has vowed to give Yahweh is in fact unclean, so that Yahweh will not accept it, then the person must bring the animal to a priest.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priest will value it, by the market value of the animal. Whatever value the priest places on the animal, that will be its value.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If the owner wishes to redeem it, then a fifth of its value is to be added to its redemption price.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a man sets apart his house as a holy gift to Yahweh, then the priest will set its value as either good or bad. Whatever the priest values it, so it will be.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the owner who set apart his home wishes to redeem it, he must add a fifth of its value to its redemption price, and it will belong to him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man sets apart some of his own land, then the valuation of it will be in proportion to the amount of seed required to plant it—a homer of barley will be valued at fifty shekels of silver.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If he sets apart his field during the year of Jubilee, the valuation of it will stand.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if he sets apart his field after the year of Jubilee, then the priest must calculate the value of the field by the number of years that remain until the next year of Jubilee, and the valuation of it must be reduced.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If the man who set apart the field wishes to redeem it, then he must add a fifth to the valuation, and it will belong to him.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If he does not redeem the field, or if he has sold the field to another man, it cannot be redeemed any more.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead, the field, when it is released in the year of Jubilee, will be a holy gift to Yahweh, like the field that has been completely given to Yahweh. It will belong to the priest.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man sets apart a field that he has bought, but that field is not part of his family's land,\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then the priest will figure the valuation of it up to the year of Jubilee, and the man must pay its value on that day as a holy gift to Yahweh.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the year of Jubilee, the field will return to the man from whom it was bought, to the land's owner.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the valuations must be set by the weight of the sanctuary shekel. Twenty gerahs must be the equivalent of one shekel.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one may set apart the firstborn among animals, since the firstborn already belongs to Yahweh; whether ox or sheep, it is Yahweh's.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If it is an unclean animal, then the owner may buy it back at the valuation of it, and a fifth must be added to that value. If the animal is not redeemed, then it is to be sold at the set value.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But nothing that a man devotes to Yahweh, from all that he has, whether human or animal, or his family land, may be sold or redeemed. Everything that is devoted is very holy to Yahweh.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No ransom may be paid for the person who is devoted for destruction. That person must be put to death.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the tithe of the land, whether grain grown on the land or fruit from the trees, is Yahweh's. It is holy to Yahweh.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man redeems any of his tithe, he must add a fifth to its value.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for every tenth of the herd or the flock, whatever passes under the shepherd's rod, one-tenth must be set apart to Yahweh.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The shepherd must not search for the better or the worse animals, and he must not substitute one for another. If he changes it at all, then both it and that for which it is changed will be holy. It cannot be redeemed.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the commandments that Yahweh gave at Mount Sinai to Moses for the people of Israel.\n\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

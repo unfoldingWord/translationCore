@@ -1,0 +1,206 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Israelite people left Egypt,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "when the descendants of Jacob left people who spoke a foreign language,\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the land of Judah became the place where people worshiped God;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Israel became the land that he ruled over.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they came to the Sea of Reeds,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it was as though the water saw them and ran away!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When they came to the Jordan River,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the water in the river stopped flowing so that the Israelites could cross it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they came to Mount Sinai and there was a big earthquake,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it was as though the mountains skipped like goats\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the hills jumped around like lambs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone asks, \"What happened at the Sea of Reeds that caused the water to run away?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "What happened that caused the water in the Jordan River to stop flowing?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What happened that caused the mountains to skip like goats\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and caused the hills to jump around like lambs?\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, all the earth will tremble before the Lord!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Everyone will tremble in the presence of the God whom Jacob worshiped!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is the one who caused pools of water to flow from a rock for the Israelite people to drink,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is the one who caused a spring to flow from a solid rock cliff!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

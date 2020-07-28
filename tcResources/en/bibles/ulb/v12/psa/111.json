@@ -1,0 +1,242 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will give thanks to Yahweh with my whole heart\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the assembly of the upright, in their gathering.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The works of Yahweh are great,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "eagerly awaited by all those who desire them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His work is majestic and glorious,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his righteousness endures forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does wonderful things that will be remembered;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh is gracious and merciful.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gives food to his faithful followers.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will always call to mind his covenant.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He showed his powerful works to his people\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in giving them the inheritance of the nations.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The works of his hands are trustworthy and just;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all his instructions are reliable.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are established forever,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to be observed faithfully and properly.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gave victory to his people;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he ordained his covenant forever;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "holy and awesome is his name.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "To honor Yahweh is the beginning of wisdom;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who carry out his instructions have good understanding.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His praise endures forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

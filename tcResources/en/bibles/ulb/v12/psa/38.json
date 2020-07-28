@@ -1,0 +1,515 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, do not rebuke me in your anger;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not punish me in your wrath.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For your arrows pierce me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and your hand presses me down.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My whole body is sick because of your anger;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "there is no health in my bones because of my sin.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For my iniquities overwhelm me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they are a burden too heavy for me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My wounds are infected and smell\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because of my foolish sins.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am stooped over and humiliated every day;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I go about mourning all day long.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For within me, I am filled with burning;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "there is no health in my flesh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am numb and utterly crushed;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I groan because of the anguish of my heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lord, you understand my heart's deepest yearnings,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and my groanings are not hidden from you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My heart pounds, my strength fades,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and my eyesight dims.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My friends and companions shun me because of my condition;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my neighbors stand far off.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who seek my life lay snares for me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They who seek my harm speak destructive words\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and say deceitful words all day long.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I, I am like a deaf man and hear nothing;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am like a mute man who says nothing.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am like a man who does not hear\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and who has no reply.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Surely I wait for you, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will answer, Lord my God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I say this so that my enemies will not gloat over me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "If my foot slips, they will do terrible things to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I am about to stumble,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I am in constant pain.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I confess my guilt;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am concerned about my sin.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But my enemies are numerous;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who hate me wrongfully are many.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They repay me evil for good;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they hurl accusations at me although I have pursued what is good.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not abandon me, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my God, do not stay far away from me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Come quickly to help me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Lord, my salvation.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David, to bring to remembrance.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, people should praise you alone;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they must praise you, not us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you faithfully love us and always do what you have promised to do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is not right that other people groups should say about us,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"They claim that their God is very powerful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but if that is true, why does he not help them?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our God is in heaven,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he does whatever he wants!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But their idols are only statues made of silver and gold,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "things that humans have made.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their idols have mouths, but they cannot say anything;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have eyes, but they cannot see anything.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have ears, but they cannot hear anything;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have noses, but they cannot smell anything.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have hands, but they cannot feel anything;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have feet, but they cannot walk,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they cannot even make any sounds in their throats!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people who make those idols are as powerless as those idols,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who trust in those idols can accomplish nothing, just like their idols!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, my fellow Israelite people, trust in Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is the one who helps you and protects you like a shield.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You priests, descendants of Aaron, trust in Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is the one who helps you and protects you like a shield.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you who have a reverential respect for Yahweh, trust in him!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is the one who helps you and protects you like a shield.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has not forgotten us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will bless us Israelite people!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will bless the priests,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and he will bless all those who have a reverential respect for him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will bless important people and people who are considered to be unimportant, everyone!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish that Yahweh may give many children\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to you, my fellow Israelite people, and to your descendants.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish that Yahweh, the one who made heaven and the earth, may bless all of you!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The highest heavens belong to Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he gave everything that is on the earth to us people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Dead people are not able to praise Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they descend into the place where dead people are,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are unable to speak and cannot praise him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we who are alive will thank him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "now and forever.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

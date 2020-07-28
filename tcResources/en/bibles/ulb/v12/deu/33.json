@@ -1,0 +1,975 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the blessing with which Moses the man of God blessed the people of Israel before his death.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh came from Sinai\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and rose from Seir upon them.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He shined out from Mount Paran,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he came with ten thousands of holy ones.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "In his right hand were flashes of lightning.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, he loves the peoples;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all his holy ones are in your hand,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they bowed down at your feet;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they received your words.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Moses commanded us a law,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "an inheritance for the assembly of Jacob.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then there was a king in Jeshurun,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when the heads of the people had gathered,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all the tribes of Israel together.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let Reuben live and not die,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but may his men be few.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the blessing for Judah. Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Listen, Yahweh, to the voice of Judah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and bring him to his people again.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Fight for him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "be a help against his enemies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Levi, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Your Thummim and your Urim belong your loyal one,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the one whom you tested at Massah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with whom you struggled at the waters of Meribah.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The man who said about his father and mother, \"I have not seen them.\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Neither did he acknowledge his brothers,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "nor did he take account of his own children.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For he guarded your word\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and kept your covenant.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He teaches Jacob your decrees\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Israel your law.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will put incense before you\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and whole burnt offerings on your altar.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bless, Yahweh, his possessions,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and accept the work of his hands.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Shatter the loins of those who rise up against him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and those of the people who hate him, so that they do not rise up again.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Benjamin, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The one loved by Yahweh lives in security beside him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh shields him all the day long,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he lives between Yahweh's arms.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Joseph, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "May his land be blessed by Yahweh\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with the precious things of heaven, with the dew,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and with the deep that lies beneath.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May his land be blessed with the precious things of the harvest of the sun,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with the precious things of the produce of the months,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "with the finest things of the ancient mountains,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and with the precious things of the everlasting hills.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May his land be blessed with the precious things of the earth and its abundance,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and with the good will of him who was in the bush.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let the blessing come on the head of Joseph,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and on the top of the head of him who was prince over his brothers.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The firstborn of an ox, majestic is he,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his horns are the horns of a wild ox.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "With them he will push the peoples, all of them, to the ends of the earth.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "These are the ten thousands of Ephraim;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "these are the thousands of Manasseh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Zebulun, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Rejoice, Zebulun, in your going out,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and you, Issachar, in your tents.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will call the peoples to the mountains.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "There will they offer sacrifices of righteousness.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For they will suck the abundance of the seas,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and from the sand on the seashore.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Gad, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Blessed be he who enlarges Gad.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will live there like a lioness,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will tear off an arm or a head.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He provided the best part for himself,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for there was the leader's portion of land reserved.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He came with the heads of the people.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He carried out the justice of Yahweh\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his decrees with Israel.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Dan, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Dan is a lion cub\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that leaps out from Bashan.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Naphtali, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Naphtali, satisfied with favor,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and full of the blessing of Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "take possession of the land to the west and south.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "About Asher, Moses said:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Blessed be Asher more than the other sons;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let him be acceptable to his brothers,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and let him dip his foot in olive oil.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May your city bars be iron and bronze;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as long as will be your days, so long will your security be.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is no one like God, Jeshurun—the upright one,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who rides through the heavens to your help,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and in his majesty on the clouds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The eternal God is a refuge,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and underneath are the everlasting arms.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He thrust out the enemy from before you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he said, \"Destroy!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel dwelt in safety.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Jacob's spring was secure\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in a land of grain and new wine;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "indeed, let his heavens drop dew on him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your blessings are many, Israel!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who is like you, a people saved by Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the shield of your help,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the sword of your majesty?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Your enemies will come trembling to you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will trample down their high places.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is my shepherd; I will lack nothing.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He makes me to lie down in green pastures;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he leads me beside tranquil water.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He brings back my life;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he guides me along right paths for his name's sake.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even though I walk through a valley of darkest shadow,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not fear harm since you are with me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your rod and your staff comfort me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You prepare a table before me in the presence of my enemies;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have anointed my head with oil;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my cup runs over.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Surely goodness and covenant faithfulness will pursue me all the days of my life;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will live in the house of Yahweh for a very long time!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says to my master, \"Sit at my right hand\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "until I make your enemies your footstool.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will hold out the scepter of your strength from Zion;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "rule among your enemies.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your people will follow you in holy garments\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "of their own free will on the day of your power;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from the womb of the dawn your youth will be to you like the dew.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has sworn, and will not change:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"You are a priest forever,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "after the manner of Melchizedek.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord is at your right hand.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will kill kings on the day of his anger.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will judge the nations;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will fill the battlegrounds with dead bodies;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will kill the leaders in many countries.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will drink of the brook along the road,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and then he will lift his head up high after victory.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

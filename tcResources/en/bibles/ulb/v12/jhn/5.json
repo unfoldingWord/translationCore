@@ -1,0 +1,525 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After this there was a Jewish festival, and Jesus went up to Jerusalem.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now in Jerusalem by the sheep gate, there is a pool, which in Hebrew is called Bethesda, and it has five roofed porches.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A large number of people who were sick, blind, lame, or paralyzed were lying there. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The best ancient copies omit the phrase, \\fqa waiting for the moving of the water \\fqa*. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The best ancient copies omit vs. 4, \\fqa For an angel of the Lord went down and stirred up the water at certain times and whoever stepped in while the water was stirring was healed from whatever disease he suffered from \\fqa*. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A certain man was there who had been sick for thirty-eight years.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Jesus saw him lying there, and after he realized that he had been there a long time, he said to him, \"Do you want to be healthy?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sick man replied, \"Sir, I do not have anyone to put me into the pool when the water is stirred up. When I come, another steps down before me.\"\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus said to him, \"Get up, take up your bed, and walk.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Immediately the man was healed, and he took up his bed and walked.\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "Now that day was a Sabbath.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the Jews said to him who was healed, \"It is the Sabbath and you are not permitted to carry your mat.\"\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He replied, \"He who made me healthy said to me, 'Pick up your mat and walk.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They asked him, \"Who is the man that said to you, 'Pick it up and walk'?\"\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, the one who was healed did not know who it was because Jesus had gone away secretly, for there was a crowd in the place.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Afterward, Jesus found him in the temple and said to him, \"See, you have become healthy! Do not sin anymore, so that something worse will not happen to you.\"\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The man went away and reported to the Jews that it was Jesus who had made him healthy.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now because of these things the Jews persecuted Jesus, because he did these things on the Sabbath.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus replied to them, \"My Father is working even now, and I, too, am working.\"\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of this, the Jews sought even more to kill him because he not only broke the Sabbath, but also called God his own Father, making himself equal to God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus answered them, \"Truly, truly, the Son can do nothing of himself, except only what he sees the Father doing, for whatever the Father is doing, the Son does these things also.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the Father loves the Son and he shows him everything that he himself does, and he will show him greater things than these so that you will be amazed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For as the Father raises the dead and gives them life, so also the Son gives life to whomever he wishes.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the Father judges no one, but he has given all judgment to the Son\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that everyone will honor the Son just as they honor the Father. The one who does not honor the Son does not honor the Father who sent him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Truly, truly, he who hears my word and believes him who sent me has eternal life and will not be condemned, but he has passed from death to life.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Truly, truly, I tell you the time is coming, and is now, when the dead will hear the voice of the Son of God, and those who hear will live.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For just as the Father has life in himself, so he has also given to the Son so that he has life in himself,\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and the Father has given the Son authority to carry out judgment because he is the Son of Man.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be amazed at this, for there is a time coming in which everyone who is in the tombs will hear his voice\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and will come out. Those who have done good to the resurrection of life, and those who have done evil to the resurrection of judgment.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I can do nothing from myself. As I hear, I judge, and my judgment is righteous because I am not seeking my own will but the will of him who sent me.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If I should testify about myself, my testimony would not be true.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is another who testifies about me, and I know that the testimony that he gives about me is true.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have sent to John, and he has testified the truth.\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the testimony that I receive is not from man. I say these things that you might be saved.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "John was a lamp that was burning and shining, and you were willing to rejoice in his light for a while.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet the testimony that I have is greater than that of John, for the works that the Father has given me to accomplish, the very works that I do, testify about me that the Father has sent me.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Father who sent me has himself testified about me. You have neither heard his voice nor seen his form at any time.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You do not have his word remaining in you, for you are not believing in the one whom he has sent.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You search the scriptures because you think that in them you have eternal life, and these same scriptures testify about me,\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and you are not willing to come to me so that you may have life.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I do not receive praise from men,\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but I know that you do not have the love of God in yourselves.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have come in my Father's name, and you do not receive me. If another should come in his own name, you would receive him.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How can you believe, you who accept praise from one another but are not seeking the praise that comes from the only God?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not think that I myself will accuse you before the Father. The one who accuses you is Moses, in whom you have put your hope.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you believed Moses, you would believe me, because he wrote about me.\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do not believe his writings, how are you going to believe my words?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

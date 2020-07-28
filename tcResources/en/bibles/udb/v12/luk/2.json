@@ -1,0 +1,591 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Around that time Caesar Augustus sent out an official order that every person living under Roman rule must be registered in a public record.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This first happened during the time that Quirinius was governing the province of Syria.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So everyone had to go to his family's hometown to be registered.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That night, there were some shepherds who were taking care of their sheep in the fields near Bethlehem.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Suddenly an angel of the Lord appeared to them. A bright light shone all around them, showing the Lord's glory. So they became very afraid.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the angel said to them, \"Do not be afraid! I have come to tell you good news, which will benefit all people and will make you all very happy!\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Today, in the city of David, a baby has been born who will save you from your sins! He is the Messiah, the Lord!\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is how you will recognize him: In Bethlehem you will find a baby who has been wrapped in strips of cloth and placed in a feeding place for animals.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Suddenly a large group of angels from heaven appeared and joined the other angel. They all praised God, saying,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": " ",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"May all the angels in the highest heaven praise God! And may there be peace on earth among people who are pleasing to God!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After the angels left them and returned to heaven, the shepherds said to each other, \"We should go right now to Bethlehem to see this wonderful thing that has happened, which the Lord has told us about!\"\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they went quickly and when they had found the place where Mary and Joseph were staying, they saw the baby lying in a feeding place for animals.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After seeing him, they told everyone what had been told to them about this child.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the people who heard what the shepherds said to them were amazed.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Mary kept thinking about all the things she had heard and carefully remembered them.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The shepherds returned to the fields where their sheep were. They kept talking about how great God is and praising him for all the things that they had heard and seen, because everything happened exactly like the angels had told them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eight days later, it was the day when the baby was circumcised, and they gave him the name Jesus. This was the name the angel had told them to give him, even before he was conceived.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the required number of days for their purification had gone by, according to the law of Moses, Mary and Joseph traveled up to Jerusalem to dedicate their son to the Lord.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It had been written in the law of the Lord, \"Every male offspring that is the first to be born will be set apart to be holy to the Lord.\"\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The law of the Lord also said the parents of a newborn son must offer as a sacrifice: \"two turtledoves or two young pigeons.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time there was an old man in Jerusalem whose name was Simeon. He did what was pleasing to God and obeyed God's laws. He was eagerly waiting for God to send the Messiah to encourage the Israelite people, and the Holy Spirit was directing him.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Holy Spirit had previously revealed to him that he would see the Lord's promised Messiah before he died.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Joseph and Mary brought their baby, Jesus, to the temple in order to perform the rituals that God had commanded in his laws, the Spirit led Simeon to enter the temple courtyard.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he took Jesus up in his arms and praised God, saying,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Lord, you have made me content and I can now die in peace according to your promise.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen the one whom you sent to save people,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the one you prepared in the midst of all the peoples.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will be like a light that will reveal your truth to the Gentiles, and he will bring honor to the Israelite people.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus' father and mother were very amazed at what Simeon said about him. Then Simeon blessed them, and said to Jesus' mother, Mary,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Note what I say: God has determined that because of this child, many Israelite people will turn away from God, and many others will turn to God. He will be like a sign to warn people, and many people will oppose him.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a result, the thoughts of many people will be made evident. A sword will also pierce your own soul.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There was also in the temple courtyard a prophetess named Anna who was very old. Her father Phanuel was a member of the tribe of Asher. She had been married for seven years and then her husband died.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After that, she lived eighty-four more years as a widow. She was always serving in the temple area and worshiped God night and day. She often fasted and prayed.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that very moment, Anna came up to them and began thanking God for the baby. Then she spoke about Jesus to many people who were expecting God to redeem Jerusalem.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After Joseph and Mary had finished doing everything required of them by the laws of the Lord, they returned to their own town, Nazareth, in the district of Galilee.\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As the child grew up, he became strong and very wise, and God was very pleased with him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every year Jesus' parents went to Jerusalem to celebrate the Passover.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So when Jesus was twelve years old, they went up to Jerusalem for the festival as they always did.\n"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When all the days for the festival had ended, his parents started to return home, but Jesus stayed behind in Jerusalem. His parents did not know he was still there.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They assumed that he was with the other people who were traveling with them. After walking a whole day's jouney, they started to look for him among their relatives and friends.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they did not find him, they returned to Jerusalem to search for him.\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After three days, they found him in the temple courtyard, sitting in the midst of the Jewish religious teachers. He was listening to them teach, and he was asking them questions.\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the people who heard what he said were amazed at how much he understood and how well he answered the questions that the teachers asked.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When his parents saw him, they were very surprised. His mother said to him, \"My son, why have you done this to us? Your father and I have been very worried as we have been searching for you!\"\n"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"Why were you searching for me? Did you not know that I needed to be involved in what my Father does?\"\n"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But they did not understand the meaning of what he said to them.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he returned with them to Nazareth and he always obeyed them. His mother kept thinking deeply about all those things.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As the years passed, Jesus continued to become wiser and he grew taller. God and people continued to approve of him more and more.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4-5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joseph also traveled to his family's hometown, along with Mary, who was engaged to him and was pregnant. Because Joseph was a descendant of King David, they left the town of Nazareth in the region of Galilee and traveled to the region of Judea, to the town of Bethlehem, which is also known as the city of David. Joseph and Mary went there to be registered in the public record.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6-7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they arrived in Bethlehem, there was no place for them to stay in a place where visitors usually stayed. So they had to stay in a place where animals slept overnight. While they were there the time came for Mary to give birth and she gave birth to her first child, a son. She wrapped him in wide strips of cloth and laid him down where the food was kept for the animals inside the barn.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

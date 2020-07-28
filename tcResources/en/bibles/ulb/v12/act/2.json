@@ -1,0 +1,675 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the day of Pentecost came, they were all together in the same place.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Suddenly there came from heaven a sound like the rush of a violent wind, and it filled the whole house where they were sitting.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There appeared to them tongues like fire that were distributed, and they sat upon each one of them.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were all filled with the Holy Spirit and began to speak with other languages, as the Spirit gave them to speak.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now there were Jews who were living in Jerusalem, godly men, from every nation under heaven.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When this sound was heard, the multitude came together and was confused because everyone heard them speaking in his own language.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were amazed and marveled; they said, \"Really, are not all these who are speaking Galileans?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why is it that we are hearing them, each in our own language in which we were born?\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Parthians and Medes and Elamites, and those who live in Mesopotamia, in Judea and Cappadocia, in Pontus and Asia,\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Phrygia and Pamphylia, in Egypt and the parts of Libya toward Cyrene, and visitors from Rome,\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jews and proselytes, Cretans and Arabians, we hear them telling in our languages about the mighty works of God.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were all amazed and perplexed; they said to one another, \"What does this mean?\"\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But others mocked and said, \"They are full of new wine.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Peter stood with the eleven, raised his voice, and said to them, \"Men of Judea and all of you who live at Jerusalem, let this be known to you; pay attention to my words.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For these people are not drunk as you assume, for it is only the third hour of the day.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But this is what was spoken through the prophet Joel:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'It will be in the last days,' God says,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'I will pour out my Spirit on all people.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Your sons and your daughters will prophesy,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your young men will see visions,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and your old men will dream dreams.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also on my servants and my female servants in those days\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will pour out my Spirit, and they will prophesy.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will show wonders in the sky above\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and signs on the earth below,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "blood, fire, and vapor of smoke.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sun will be turned to darkness\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the moon to blood,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "before the great and remarkable day of the Lord comes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be that everyone who calls on the name of the Lord will be saved.'\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Men of Israel, hear these words: Jesus of Nazareth, a man accredited to you by God by the mighty deeds, the wonders, and the signs which God did through him in your midst, as you yourselves know.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This man was handed over by God's predetermined plan and foreknowledge; and you, by the hand of lawless men, put him to death by nailing him to a cross. \n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God raised him up, freeing him from the pains of death, because it was impossible for him to be held by it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For David says about him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'I saw the Lord always before my face,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for he is beside my right hand so that I should not be moved.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore my heart was glad and my tongue rejoiced.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Also, my flesh will live in certain hope.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you will not abandon my soul to Hades,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "neither will you allow your Holy One to see decay.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You revealed to me the ways of life;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will make me full of gladness with your face.'\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Brothers, I can speak to you confidently about the patriarch David, he both died and was buried, and his tomb is with us to this day.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, he was a prophet and knew that God had sworn with an oath to him, that he would set one of the fruit of his body upon his throne.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He saw what was to happen in the future and spoke about the resurrection of the Christ,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'He was neither abandoned to Hades, nor did his flesh see decay.'\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This Jesus—God raised him up, of which we all are witnesses.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore having been exalted to the right hand of God and having received the promised Holy Spirit from the Father, he has poured out what you see and hear.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For David did not ascend to the heaven, but he says,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'The Lord said to my Lord, \"Sit at my right hand,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "until I make your enemies the stool for your feet.\"'\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, let all the house of Israel certainly know that God has made him both Lord and Christ, this Jesus whom you crucified.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now when they heard this, they were pierced in their hearts, and said to Peter and the rest of the apostles, \"Brothers, what shall we do?\"\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Peter said to them, \"Repent and be baptized, each of you, in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the promise is to you and to your children and to all that are far off, as many people as the Lord our God will call.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With many other words he testified and urged them; he said, \"Save yourselves from this wicked generation.\"\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they received his word and were baptized, and there were added in that day about three thousand souls.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They continued in the apostles' teaching and fellowship, in the breaking of bread and in prayers.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Fear came upon every soul, and many wonders and signs were done through the apostles.\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All who believed were together and had all things in common,\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and they sold their property and possessions and distributed them to all, according to the needs anyone had.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So day after day they continued with one purpose in the temple, and they broke bread in homes, and they shared food with glad and humble hearts,\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "praising God and having favor with all the people, and every day the Lord added to their number those who were being saved.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

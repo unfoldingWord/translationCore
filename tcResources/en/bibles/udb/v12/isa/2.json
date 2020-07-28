@@ -1,0 +1,650 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is a message that Yahweh gave to Isaiah son of Amoz, in a vision about Judah and Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the future, the hill on which Yahweh's temple is built\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will be the most important place on the earth.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It will be as though it is the highest mountain,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as though it has been raised up above all other hills,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people from all over the world will come there.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People from many people groups will say to each other,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Come, let us go up to the hill,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to the temple of Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to worship the God whom Jacob worshiped.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There he will teach us what he desires us to know,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that our behavior will please him.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will teach us in Jerusalem;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we will learn there what Yahweh desires to tell us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will listen to the disputes between nations,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will settle their arguments.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then, instead of fighting against each other, they will hammer their swords into plow blades,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will hammer their spears into pruning knives.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The armies of the nations will no longer fight against each other,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will not even train men to fight in battles.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You descendants of Jacob,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "let us behave in the way that we should because Yahweh is with us!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you have abandoned us, your people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who are descendants of Jacob,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because everywhere your people practice the customs of people who live east of Israel.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They also perform rituals to find out what will happen in the future, like the people in Philistia do.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They make agreements with foreigners who do not know Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel is full of silver and gold;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there are very many treasures here.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The land is full of war horses\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and war chariots.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the land is also full of idols;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the people worship things that they have made with their own hands.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So now they will be humbled;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh will disgrace them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh, do not forgive them!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you people should crawl into the caves in the rock cliffs!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You should hide in pits in the ground\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you will be afraid of Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and of his glorious and awesome power.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will cause you people to no longer be arrogant\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will stop you from being proud.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "On that day people will praise and honor only Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, has chosen a day\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when he will judge those who are proud, every one of them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will humble them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will get rid of all those who think others should admire them, like the tall cedar trees in Lebanon,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and like all the great oak trees in the region of Bashan.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will get rid of all those who think they are as great as all the high hills,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as great as the high mountains.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will get rid of all those who think that they are like high towers\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and high strong walls inside of which they are safe.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will destroy all those who are rich because they own big ships that carry goods to other countries\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and own other beautiful ships, too.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will cause people to no longer be arrogant,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will cause them to stop being proud.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "On that day people will praise and honor only Yahweh.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All idols will disappear then.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Yahweh comes to terrify the people on the earth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will run to hide in caves in rock cliffs\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and in holes in the ground,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they are afraid of Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and of his glorious and awesome power.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day, people will get rid of all their gold and silver idols\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that they made to worship,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and they will throw them to the bats and rats.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they will crawl into caves\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and hide in holes in the cliffs.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will try to escape from Yahweh, who is coming to punish them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will fear what he will do because he is glorious and awesome,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when he comes to come to terrify the people on the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So do not trust that people will save you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they are as powerless as a person's breath.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "People certainly cannot help you!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

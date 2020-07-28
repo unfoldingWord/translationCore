@@ -1,0 +1,516 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The prayer of Habakkuk the prophet:\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The Hebrew text adds the expression \\fqa on shigionoth \\fqa* , which may refer to musical directions for singers. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I have heard your report, and I am afraid.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh, revive your work in the midst of these times; in the midst of these times make it known;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "remember to have compassion in your wrath.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God came from Teman, and the Holy One from Mount Paran. \n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah ",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His glory covered the heavens, and the earth was full of his praise.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With brightness like the light, two-pronged rays flash from his hand; \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and there he hid his power.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Deadly disease went before him, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the plague followed him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He stood and measured the earth; he looked and shook the nations.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Even the eternal mountains were shattered, and the everlasting hills bowed down.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His path is everlasting.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I saw the tents of Cushan in affliction, and the fabric of the tents in the land of Midian trembling.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Was Yahweh angry at the rivers? Was your wrath against the rivers,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or your fury against the sea,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when you rode upon your horses and your victorious chariots?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have brought out your bow without a cover; you put arrows to your bow! \n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah ",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You divided the earth with rivers.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The mountains saw you and twisted in pain.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Downpours of water passed over them; the deep sea raised a shout.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "It lifted up its waves.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sun and moon stood still in their high places\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at the flash of your arrows as they fly, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at the lightning of your flashing spear.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have marched over the earth with indignation. In wrath you have threshed the nations.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You went out for the salvation of your people, for the salvation of your anointed one.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You shatter the head of the house of the wicked to lay bare from the base up to the neck. \n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have pierced the head of his warriors with his own arrows since they came like a storm to scatter us,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their gloating was like one who devours the poor in a hiding place.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have traveled over the sea with your horses, and heaped up the great waters.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I heard, and my inner parts trembled! My lips quivered at the sound.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Decay comes into my bones, and under myself I tremble\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as I wait quietly for the day of distress to come upon the people who invade us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Though the fig tree does not bud \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there is no produce from the vines;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and though the produce of the olive tree disappoints \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the fields yield no food;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and though the flock is cut off from the fold \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there are no cattle in the stalls, this is what I will do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Still, I will rejoice in Yahweh. \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will be joyful because of the God of my salvation.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord Yahweh is my strength\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he makes my feet like the deer's.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He makes me go forward on my high places.\n"
+      },
+      {
+        "tag": "q3",
+        "type": "quote",
+        "text": "—To the music director, on my stringed instruments.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

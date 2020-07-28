@@ -1,0 +1,427 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"If someone steals a bull or a sheep and then kills it or sells it, he must pay five bulls for the bull that he stole, and he must pay four sheep for the sheep that he stole.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a thief is caught while he is breaking into someone's house at night, if the one who catches him kills the thief, he is not guilty of killing him.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if that happens during the daytime, the one who killed the thief is guilty of murdering him.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "A thief must pay for what he stole. If he has no animal with which to pay for the one that he stole, he must be sold to become someone else's slave, and the money from his sale must be used to pay for what he stole.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a thief still has the animal when he is caught, whether it is a bull or a donkey or a sheep, and it is still alive, the thief must pay back the stolen animal as well as another one of the same kind.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone allows his animals to eat grass in his field or in his vineyard, and if the animals stray away and eat the plants in another person's field, the owner of the animals must pay the owner of that field by giving him the best from his own field or vineyard.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone starts a fire and it spreads through the grass and starts burning in someone else's field, and the fire burns grain that is growing or grain that is already cut and stacked, then the person who started the fire must pay for what has been lost.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Suppose that someone gives another person some money or other valuable item and asks him to keep it in his house for a while. And suppose that a thief steals it from that person's house. If the thief is caught, the thief must pay back twice as much as he stole.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the thief is not caught, the owner of the house from which the item was stolen must stand before the judges so that the judges can say whether the owner of the house was the one who took the other man's valuable item.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If two people argue about which one of them owns a bull or a donkey or a sheep or some clothing, or something else that has been lost, they must stand before the judges. The one whom the judges say is lying must pay back to the real owner twice as many bulls or donkeys or sheep or items of clothing.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Suppose someone gives his donkey or bull or sheep or some other animal to someone else and asks him to take care of it for a while, and the animal dies or is injured or is stolen while no one is watching.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the person who was taking care of the animal must swear, knowing that God is listening, that he did not steal the animal. If he did not steal it, the owner of the animal must accept that the other person is telling the truth, and the other person will not have to pay anything back to the owner.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the animal was stolen while he was supposed to be taking care of it, the man who promised to take care of it must pay back the owner for the animal.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If he says that the animal was killed by wild animals, he must bring back the remains of the animal that was killed and show it to the animal's owner. If he does that, he will not have to pay anything for the animal.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone borrows an animal, and if that animal is hurt or dies when its owner is not there, the one who borrowed it must pay the owner for the animal.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if that happens when the owner of the animal is there, the one who borrowed it will not have to pay back anything. If the man who borrowed it only rented it, the money that he paid to rent it will be enough to pay for the animal dying or being injured.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"If a man forces a girl to sleep with him, a girl who is a virgin and who is not engaged to be married, he must pay the bride price for her and marry her.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if her father does not allow her to marry him, he must pay to the woman's father money that is the same as the bride price money that men pay for virgins.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must kill any woman who practices sorcery.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must kill any person who sleeps with an animal like a man sleeps with a woman.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must offer sacrifices only to Yahweh. You must kill anyone who offers a sacrifice to any other god.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not mistreat a foreigner who comes to live among you. Do not forget that you were previously foreigners in Egypt.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not mistreat any widow or any orphan.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you mistreat them and they ask me to help them, I will help them,\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and I will be angry with you; I will cause you to die in war. Your wives will become widows, and your children will no longer have fathers.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you lend money to any of my people who are poor, do not act like a moneylender and require him to pay interest on the money.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If he gives you his cloak to guarantee that he will pay the money back, you must give the cloak back to him before the sun goes down\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because he needs it to keep him warm during the night. That is the only covering that poor people have when they sleep at night. If you do not act mercifully toward him by giving back his cloak, when he cries out to me asking for my help, I will help him because I always act mercifully.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not insult God, and do not call on God to do harmful things to any ruler of your people.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not withhold from me the best parts of the grain that you harvest, or of the olive oil or the wine that you produce. You will give your firstborn sons to me.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Similarly, your firstborn male cattle and sheep belong to me. After those animals are born, allow them to stay with their mothers for seven days. On the eighth day you will give them to me.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are people who are set apart to me. I detest the meat of any animal that has been killed by wild animals. Therefore do not eat such meat. Instead, throw it where the dogs can eat it.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

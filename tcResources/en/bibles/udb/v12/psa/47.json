@@ -1,0 +1,222 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people all over the world, clap your hands!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Shout joyfully to praise God!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, who is much greater than any other god, is awesome;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is a king who rules over all the world!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He enabled us to defeat the armies of the people groups that lived in Canaan.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He chose for us this land where we now live;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we Israelite people, whom he loves, are proud that we own this land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God has gone up into his temple.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The people shouted joyfully and blew trumpets as he went up.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing songs to praise our God!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Sing to praise him !\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Sing to God, our king!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is the one who rules over everything in the world;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "sing a psalm to him!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God sits on his sacred throne\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as he rules over the people of all ethnic groups.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The rulers of those people groups gather in front of God's people, the people descended from Abraham.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "God has more power than the weapons of all the kings on the earth;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is great, and all people everywhere will honor him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by one of the descendants of Korah for the choir director\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"When the nation of Israel was like a young man, I loved him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He was like a son to me, whom I called out of Egypt.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the more I called out to them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the more they ran away.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Day after day they offered their sacrifices to the idols named Baal,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they burned incense to honor them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But it was I who taught them to do everything good, as a father teaches his son to walk.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was like a father, holding them by their little arms.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But they did not understand that I was the one who was taking care of them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With kindness I guided them, with the tender cords of human kindness I led them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I loved them so much that I guided them and led by my own hand.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They worked very hard, like a yoke of oxen pulling a plow, but I made their yoke light and loosened its weight on their jaws, so they did not suffer pain.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Israel will certainly return to Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Assyria will certainly rule over them,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because they refused to turn back to me and worship me as their God.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their enemies will attack Israel's cities with swords;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "their enemies will destroy the bars that keep their gates closed and safe.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Their enemies will destroy the people of Israel and put an end to all the plans they made.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My people are determined to turn away from me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They pretend to call out to me, the Most High God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I will allow no one to help them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you people of Israel—dear Israel—I cannot abandon you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I cannot give you over to your enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I do not want to act toward you as I acted toward Admah or make you like Zeboyim—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cities that I destroyed along with Sodom.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I have changed my mind about punishing you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I earnestly long to have mercy on you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have decided not to punish you severely.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I do not want to destroy you, the people of my Israel, whom I love.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Human beings would easily decide to do that,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I am God, not human.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am the Holy One who lives among you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will not come to you and be angry with you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will live their lives following my commands.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will roar like a lion.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And when I roar, my people will hear and will come trembling.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will come back to me from far away—\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "from the west they will come back to me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will come fluttering into the land\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a flock of birds coming up from Egypt.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "And some will be like pigeons that fly in from Assyria.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will let them live in their own homes once more, in the land of Israel.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I, Yahweh, have promised this.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"The people of Israel have continually lied to me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But the people of Judah they still obey me and are faithful to me, the Holy One.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

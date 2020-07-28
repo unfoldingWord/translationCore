@@ -1,0 +1,489 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the conversation between Habakkuk the prophet and Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said, \"Yahweh, how long must I continue to call to you for help before you respond?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I cry out, \"The people are acting so violently!\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you do not rescue me!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you make me watch people do what is wrong, but you do nothing?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I see people destroying things and acting violently; they fight and quarrel everywhere.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one obeys the law of Moses, and no one acts in a right way for very long.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Wicked people always defeat the righteous people in the courts,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because judges never make fair decisions.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh replied to me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"This is happening, but look around at what is happening in the other nations.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you look, you will be amazed, and even astonished, since I am doing something\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "during this time that you would never have believed would happen,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even if someone told you about it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Very soon I will bring the soldiers of Babylonia, who are fierce and swift.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will march across the entire earth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and conquer many other countries.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are a people whom others fear very much,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they do whatever they want to,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they believe that they are very great and that they have the right to judge everyone else.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The horses that pull their chariots go faster than leopards,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they are fiercer than wolves are in the evening.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The horses on which the soldiers ride gallop swiftly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the soldiers riding them come from distant places.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They are like eagles that swoop down to snatch their prey.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As they ride along,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are determined to act violently.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They advance eagerly, as fast as the wind over the desert,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and gather up as many prisoners as there are grains of sand!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They make fun of kings and princes of other countries,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they ridicule all the cities that have high walls around them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They pile up earth around those cities to capture them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They rush past like the wind,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then they go to attack other cities.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But they are very guilty,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they think that their own power is their god!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I said, \"Yahweh, are you not the eternal God?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You are my Holy One, so we will not die.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So why have you sent those men from Babylonia to judge us and kill us?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You are like our Rock, on top of which we can hide,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so why have you sent them to punish us?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are pure, and you cannot endure looking at what is evil,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so why are you ignoring men who are treacherous?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Why do you do nothing\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to punish those wicked men from Babylonia,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who destroy people who are more righteous than they are?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They treat us like fish in the sea,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or like other creatures in the sea, that have no ruler.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The soldiers of Babylonia think that we are fish for them to pull out of the sea with hooks\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or to catch in their nets, while they rejoice and celebrate.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they catch us, they will worship their weapons with which they captured us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and offer sacrifices to them and burn incense in front of them!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will say, 'These weapons have enabled us to become rich and eat expensive food.'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will you allow them to continue to conquer people forever?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Will you allow them to destroy people of other nations without any mercy for anyone?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

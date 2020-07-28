@@ -1,0 +1,100 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh said to Moses,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Speak to the people of Israel, saying, 'If a woman conceives and gives birth to a male child, then she will be unclean for seven days, just as she is unclean during the days of her monthly period.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the eighth day the flesh of a baby boy's foreskin must be circumcised.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the mother's purification from her bleeding will continue for thirty-three days. She must not touch any holy thing or come into the tabernacle area until the days of her purification are finished.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if she gives birth to a female child, then she will be unclean for two weeks, as she is during her period. Then the mother's purification will continue for sixty-six days.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the days of her purification are finished, for a son or for a daughter, she must bring a one year old lamb as a burnt offering, and a young pigeon or dove as a sin offering, to the entrance of the tent of meeting, to the priest.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he will offer it before Yahweh and make atonement for her, and she will be cleansed from the flow of her blood. This is the law regarding a woman who gives birth to either a male or a female child.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If she is not able to afford a lamb, then she must take two doves or two young pigeons, one as a burnt offering and the other as a sin offering, and the priest will make atonement for her; then she will be clean.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

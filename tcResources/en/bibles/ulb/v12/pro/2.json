@@ -1,0 +1,483 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, if you receive my words\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and treasure up my commandments with you,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "make your ears pay attention to wisdom\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and incline your heart to understanding.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you cry out for understanding\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and raise your voice for it,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "if you seek it like you would seek silver\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and search for understanding as you would seek hidden treasures,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then you will understand the fear of Yahweh\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and you will find the knowledge of God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh gives wisdom,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from his mouth comes knowledge and understanding.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He stores up sound wisdom for those who please him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is a shield for those who walk in integrity,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "he guards the paths of justice\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will preserve the way of those who are faithful to him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then you will understand righteousness, justice, and equity,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and every good path.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For wisdom will come into your heart,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and knowledge will be pleasant to your soul.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Discretion will watch over you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "understanding will guard you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will rescue you from the way of evil,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from those who speak perverse things,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "who abandon the right paths\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and walk in the ways of darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They rejoice when they do evil\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and delight in the perversities of evil.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They follow crooked paths,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and using deception they hide their tracks.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom and discretion will save you from an adulterous woman,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from an immoral woman and her flattering words.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She forsakes the companion of her youth\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and forgets the covenant of her God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For her house leads down to death\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and her tracks will lead you to those in the grave.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All who go in to her will not return again\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they will not find the paths of life.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So you will walk in the way of good people\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and follow the paths of righteous people.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For those doing right will make a home in the land,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and those with integrity will remain in it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the wicked will be cut off from the land,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the faithless will be cut off from it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

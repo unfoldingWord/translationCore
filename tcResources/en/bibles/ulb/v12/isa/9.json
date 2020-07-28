@@ -1,0 +1,500 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The gloom will be dispelled from her who was in anguish.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In an earlier time he humiliated\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the land of Zebulun and the land of Naphtali,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but in the later time he will make it glorious, the way to the sea, beyond the Jordan, Galilee of the nations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people who walked in darkness have seen a great light;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "those who have lived in the land of the shadow of death, the light has shone on them.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa the shadow of death \\fqa* , some versions have \\fqa darkness \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have multiplied the nation; you have increased their joy.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They rejoice before you like the joy at harvest time,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as men rejoice when they divide the plunder.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the yoke of his burden, the beam across his shoulder,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the rod of his oppressor, you have shattered as on the day of Midian.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For every boot treading in the tumult\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the garments rolled in blood\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "will be burned, fuel for the fire.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For to us a child has been born, to us a son has been given;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the rule will be on his shoulder;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and his name will be called Wonderful Counselor,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Mighty God, Everlasting Father,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Prince of Peace.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Of the increase of his government and of peace there will be no end,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as he rules on the throne of David, and over his kingdom,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to establish it and sustain it\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "with justice and with righteousness from this time onward and for evermore.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The zeal of Yahweh of hosts will do this.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord sent a word against Jacob, and it fell on Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the people will know, even Ephraim and the inhabitants of Samaria, who say in pride and with an arrogant heart,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"The bricks have fallen, but we will rebuild with chiseled stone; the sycamores have been cut down, but we will put cedars in their place.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore Yahweh will raise up against him Rezin, his adversary, and will stir up his enemies,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the Arameans on the east, and the Philistines on the west. They will devour Israel with open mouth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In all these things, his anger does not subside; instead, his hand is still stretched out.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet the people will not turn to him who struck them, nor will they seek Yahweh of hosts.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore Yahweh will cut off from Israel head and tail, palm branch and reed, in one day.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The leader and the noble man are the head; and the prophet that teaches lies is the tail.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who lead this people lead them astray, and those who are led by them are swallowed up.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore the Lord will not rejoice over their young men nor will he have compassion on their fatherless and widows,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "since every one is godless and an evildoer, and every mouth speaks foolish things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In all these things, his anger does not subside; instead, his hand is still stretched out.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wickedness burns like a fire; it devours the briers and thorns;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it even burns the thickets of the forest, which rise in a column of smoke.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Through the fury of Yahweh of hosts the land is scorched, and the people are like fuel for the fire.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "No man spares his brother.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will grab food on the right hand but still be hungry; they will eat food on the left hand but will not be satisfied.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Each will even eat the flesh of his own arm.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa the flesh of his own arm \\fqa* , some versions have \\fqa the flesh of his own children \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Manasseh will devour Ephraim, and Ephraim, Manasseh; and they together will attack Judah.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In all these things, his anger does not subside; instead, his hand is still stretched out.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

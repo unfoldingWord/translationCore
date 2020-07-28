@@ -1,0 +1,220 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Answer me when I call, God of my righteousness;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "give me room when I am hemmed in.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Have mercy on me and listen to my prayer.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people, how long will you turn my honor into shame?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How long will you love that which is worthless and seek after lies?\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But know that Yahweh sets apart the godly for himself.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh will hear when I call to him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tremble in fear, but do not sin!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Meditate in your heart on your bed and be silent.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Offer the sacrifices of righteousness\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and put your trust in Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Many say, \"Who will show us anything good?\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh, lift up the light of your face on us.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have given my heart more gladness\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "than others have when their grain and new wine abound.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is in peace that I will lie down and sleep,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for you alone, Yahweh, make me safe and secure.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician; on stringed instruments. A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

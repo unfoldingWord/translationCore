@@ -1,0 +1,553 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the beginning was the Word, and the Word was with God, and the Word was God.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This one was in the beginning with God.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All things were made through him, and without him there was not one thing made that has been made.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In him was life, and the life was the light of men.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The light shines in the darkness, and the darkness did not overcome it.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There was a man who was sent from God, whose name was John.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He came as a witness to testify about the light, that all might believe through him.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "John was not the light, but came that he might testify about the light.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The true light, which gives light to all men, was coming into the world.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He was in the world, and the world was made through him, and the world did not know him.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He came to his own, and his own did not receive him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But to as many as received him, who believed in his name, he gave the right to become children of God.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were not born of blood, nor of the will of the flesh, nor of the will of man, but of God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Word became flesh and lived among us. We have seen his glory, glory as of the one and only who came from the Father, full of grace and truth.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "John testified about him and cried out, saying, \"This was the one of whom I said, 'He who comes after me is greater than I am, for he was before me.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For from his fullness we have all received grace after grace.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the law was given through Moses. Grace and truth came through Jesus Christ.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one has seen God at any time. The one and only God, who is at the side of the Father, he has made him known.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the testimony of John when the Jews sent priests and Levites to him from Jerusalem to ask him, \"Who are you?\"\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He confessed—he did not deny, but confessed—\"I am not the Christ.\"\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they asked him, \"What are you then? Are you Elijah?\" He said, \"I am not.\" They said, \"Are you the prophet?\" He answered, \"No.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they said to him, \"Who are you, so that we may give an answer to those who sent us? What do you say about yourself?\"\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"I am a voice, crying in the wilderness:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'Make the way of the Lord straight,'\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "just as Isaiah the prophet said.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now some from the Pharisees were sent, \n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and they asked him and said to him, \"Why do you baptize then if you are not the Christ nor Elijah nor the prophet?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "John answered them, saying, \"I baptize with water. But among you stands someone you do not know.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is the one who comes after me, the strap of whose sandal I am not worthy to untie.\"\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These things were done in Bethany on the other side of the Jordan, where John was baptizing.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The next day John saw Jesus coming to him and said, \"Look, there is the Lamb of God, who takes away the sin of the world!\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the one of whom I said, 'The one who comes after me is more than me, for he was before me.'\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I did not know him, but it was so that he could be revealed to Israel that I came baptizing with water.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "John testified, saying, \"I saw the Spirit descending like a dove from heaven, and it stayed upon him.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I did not recognize him, but he who sent me to baptize in water said to me, 'Upon whom you shall see the Spirit descending and remaining on him, he is the one baptizing in the Holy Spirit.'\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have both seen and testified that this is the Son of God.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Again, the next day, as John was standing with two of his disciples,\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "they saw Jesus walking by, and John said, \"Look, the Lamb of God!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His two disciples heard him say this and they followed Jesus.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus turned and saw them following him and said to them, \"What do you want?\" They replied, \"Rabbi (which translated means teacher), where are you staying?\"\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"Come and see.\" Then they came and saw where he was staying; they stayed with him that day, for it was about the tenth hour.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One of the two who heard John speak and then followed Jesus was Andrew, the brother of Simon Peter.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He first found his own brother Simon and said to him, \"We have found the Messiah\" (which translated is: Christ).\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He brought him to Jesus, and Jesus looked at him and said, \"You are Simon son of John. You will be called Cephas\" (which is translated Peter).\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The next day, when Jesus wanted to leave to go to Galilee, he found Philip and said to him, \"Follow me.\"\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now Philip was from Bethsaida, the city of Andrew and Peter.\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Philip found Nathaniel and said to him, \"He of whom Moses wrote in the law, and the prophets, we have found him: Jesus son of Joseph, from Nazareth.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nathaniel said to him, \"Can any good thing come out of Nazareth?\" Philip said to him, \"Come and see.\"\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus saw Nathaniel coming to him and said about him, \"See, a true Israelite, in whom is no deceit!\"\n"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nathaniel said to him, \"How do you know me?\" Jesus answered and said to him, \"Before Philip called you, when you were under the fig tree, I saw you.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nathaniel replied, \"Rabbi, you are the Son of God! You are the King of Israel!\"\n"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus replied and said to him, \"Because I said to you, 'I saw you underneath the fig tree,' do you believe? You will see greater things than this.\"\n"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said, \"Truly, truly, I say to you, you will see the heavens opened, and the angels of God ascending and descending upon the Son of Man.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

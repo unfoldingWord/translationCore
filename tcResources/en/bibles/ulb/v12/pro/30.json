@@ -1,0 +1,814 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The words of Agur son of Jakeh—the utterance:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "This man declared to Ithiel, to Ithiel and Ucal:\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some versions have \\fqa This man declared, \"I am weary, O God, I am weary. I am unable to do anything.\" \\fqa* ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Surely I am more like an animal than any human\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I do not have the understanding of a human being.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have not learned wisdom,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "nor do I have knowledge of the Holy One.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who has gone up to heaven and come down?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who has gathered up the wind in the hollow of his hands?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who has gathered up the waters in a cloak?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who has established all the ends of the earth?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "What is his name, and what is the name of his son? Surely you know!\n"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every word of God is tested;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is a shield to those who take refuge in him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not add to his words,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or he will discipline you, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and you will be proved to be a liar.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Two things I ask of you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not withhold them from me before I die:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Put vanity and lies far away from me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Give me neither poverty nor riches,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "just give me the food I need.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For if I have too much, I might deny you and say, \"Who is Yahweh?\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Or if I become poor,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I might steal and profane the name of my God.\n"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not slander a slave before his master,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or he will curse you and you will be held guilty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a generation that curses their father\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and does not bless their mother.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a generation that is pure in their own eyes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and yet they are not washed of their filth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a generation whose eyes are raised up,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and how high are their eyelids lifted up!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is a generation whose teeth are swords,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their jawbones are like knives,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so they may devour the poor from the earth and the needy from among humanity.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The leech has two daughters: \"Give and give\" they cry.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "There are three things that are never satisfied,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "four that never say, \"Enough\":\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sheol; the barren womb;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "land that is never satisfied with water;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the fire that never says, \"Enough!\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The eye that mocks a father\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and scorns obedience to a mother,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his eyes will be pecked out by the ravens of the valley,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will be eaten by the vultures.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are three things that are too wonderful for me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "four that I do not understand:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the way of an eagle in the sky;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the way of a snake on a rock;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the way of a ship in the heart of the sea;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the way of a man with a young woman.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the way of an adulteress:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "she eats and she wipes her mouth\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and says, \"I have done nothing wrong.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Under three things the earth trembles,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and under four it cannot bear up:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a slave when he becomes king;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a fool when he is filled with food;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a hated woman when she marries;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a maid when she takes the place of her mistress.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Four things on earth are small\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and yet they are very wise:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the ants are creatures that are not strong,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but they prepare their food in the summer;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the rock badgers are not mighty creatures,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but they make their homes in the rocks.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Locusts have no king,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but all of them march in rank.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for the lizard, you can hold it in your two hands,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "yet they are found in kings' palaces.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are three things that are stately in their stride\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and four that are stately in how they walk:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a lion, strongest among wild animals—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it does not turn away from anything;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a strutting rooster; a goat;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a king whose soldiers are beside him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you have been foolish, exalting yourself,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or if you have been devising evil—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "put your hand over your mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As churning milk makes butter\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and as one's nose will produce blood if it is twisted,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so deeds done in anger produce conflict.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

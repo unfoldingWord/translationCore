@@ -1,0 +1,689 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the names of the priests and descendants of Levi that returned from Babylonia with Zerubbabel and Jeshua the high priest. They included\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Seraiah, Jeremiah, Ezra,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Amariah, Malluk, Hattush,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shecaniah, Rehum, Meremoth,\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Iddo, Ginnethon, Abijah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mijamin, Moadiah, Bilgah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shemaiah, Joiarib, Jedaiah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sallu, Amok, Hilkiah, and Jedaiah.\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "All those men were leaders of the priests and their associates during the time that Jeshua was the leader of all the priests.\n"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Here is a list of the descendants of Levi who returned: Jeshua, Binnui, Kadmiel, Sherebiah, Judah, and Mattaniah. Mattaniah and his brothers led the people in singing songs to thank God.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bakbukiah and Unni, their associates, formed a choir that stood across from the other group when they sang.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jeshua the high priest was the father of Joiakim, who was the father of Eliashib, who was the father of Joiada,\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "who was the father of Jonathan, who was the father of Jaddua.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Joiakim was the leader of all the priests, these were the leaders of the families of priests:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Meraiah, of the family of Seraiah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Hananiah, of the family of Jeremiah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Meshullam, of the family of Ezra,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Jehohanan, of the family of Amariah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jonathan, of the family of Malluk,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Joseph, of the family of Shecaniah.\n"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "More leaders were Adna, of the family of Harim,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Helkai, of the family of Meremoth,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zechariah, of the family of Iddo,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Meshullam, of the family of Ginnethon,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zicri, of the family of Abijah.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "There was also a leader of the family of Miniamin.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Piltai, of the family of Moadiah.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shammua, of the family of Bilgah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Jehonathan, of the family of Shemaiah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mattenai, of the family of Joiarib,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Uzzi, of the family of Jedaiah,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Kallai, of the family of Sallu,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Eber, of the family of Amok,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hashabiah, of the family of Hilkiah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Nethanel, of the family of Jedaiah.\n"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "During time when Eliashib led the Levites, this is a list of them all: Elisahib, Joiada, Johanan, and Jaddua were the leaders of all the priests. They wrote the names of the families who were descendants of Levi. When Darius was king of Persia, the priests were responsible for recording the names of those who were the heads of families.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They wrote the names of the leaders of the families who were descendants of Levi in the book of the annals until the time that Eliashib's grandson Johanan was the leader of all the priests.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were the leaders of the Levites: Hashabiah, Sherebiah, Jeshua son of Kadmiel, and their brothers who stood across from them to praise and give thanks to God. They did that just as King David, the man who served God, had instructed them.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mattaniah, Bakbukiah, Obadiah, Meshullam, Talmon, and Akkub were the gatekeepers. They stood guard at the storerooms close to the gates of the temple.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They did that work during the time of Joiakim son of Jeshua and the grandson of Jehozadak, during the time of Nehemiah the governor and Ezra the priest. Ezra also knew the Jewish laws very well.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When we dedicated the wall around Jerusalem, we summoned the descendants of Levi from the places around Israel where they lived, so they could come to celebrate the dedication of the wall. They would sing songs to thank God and many of them made music by playing cymbals and harps and other stringed instruments.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We summoned the descendants of Levi who constantly sang together. They came to Jerusalem from nearby areas where they had settled, and from places around Netophah, southeast of Jerusalem.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They came also from three places northeast of Jerusalem, Beth Gilgal and the areas around Geba and Azmaveth. Near Jerusalem the singers built villages where they lived.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priests and descendants of Levi performed rituals to make them clean in God's eyes, and they did the same for all the people, and even for the gates of the city and finally, for the wall.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I gathered together the leaders of Judah on top of the wall, and I appointed them to lead two large groups to march around the city on top of the wall, thanking God. As they faced the city, one group walked to the right toward the Dung Gate.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Behind their leaders marched Hoshaiah and half of the leaders of Judah.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who followed after them were Azariah, Ezra, Meshullam,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Judah, Benjamin, Shemaiah, Jeremiah,\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and some of the priests' sons who played their trumpets, including Zechariah the son of Jonathan, the son of Shemaiah, the son of Mattaniah,\nthe son of Micaiah, the son of Zaccur, a descendant of Asaph.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Behind them marched other members of Zechariah's family, including Shemaiah, Azarel, Milalai, Gilalai, Maai, Nethanel, Judah, and Hanani. They all were playing the same kinds of musical instruments that King David had played many years previously. Ezra, the man who knew the Jewish laws very well, marched in front of this group.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they reached the Fountain Gate, they went up the steps to the city of David, past the location of David's palace, and then to the wall at the Water Gate, on the east side of the city.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The other choir who were singing and thanking Yahweh marched to the left on top of the wall. I followed them with half of the people. We marched past the Tower of the Ovens to the Broad Wall.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From there we marched past Ephraim Gate, Jeshanah Gate, the Fish Gate, the Tower of Hananel, the Tower of the Hundred Soldiers, to the Sheep Gate. We finished marching near the gate into the temple.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Both the groups reached the house of God as they were singing and thanking him. They stood in their places there. I and the leaders who were with me also stood in our places.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My group included the priests Eliakim, Maaseiah, Miniamin, Micaiah, Elioenai, Zechariah, and Hananiah, with their trumpets.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There was another named Maaseiah, Shemaiah, Eleazar, Uzzi, Jehohanan, Malchijah, Elam, and Ezer. The singers sang with Jezrahiah who was their leader.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After we went outside the temple, we offered many sacrifices. We men all rejoiced because God had caused us to be very happy. The women and the children also rejoiced. People far away could hear the noise that we made there in Jerusalem.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day men were appointed to be in charge of the storerooms where they kept the money that people gave for the temple. They also were in charge of the tithes and the first part of the grain and fruit that was harvested each year. They also brought into the storerooms a part of the harvest from the fields for the priests and the descendants of Levi. This was done because the people of Judah were so happy to have servants serving in the house of Yahweh.\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priests and Levites were serving Yahweh in their rituals to purify things, and the musicians in the temple and the gatekeepers also did their work as King David and his son Solomon had declared that they should do.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ever since the time of David and Asaph, there have been directors of the singers, and they sang songs to praise and thank God.\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "During the years of Zerubbabel and in the days of Nehemiah the governor, all Israel contributed the food that the singers and temple gatekeepers needed every day. They set aside what the Levites needed to live on, and the Levites set aside for the descendants of Aaron, the first leader of all the priests, what they needed.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God stands in heaven in a meeting of all the spirits whom he has placed in charge of what he created.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He tells them that he has decided this:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"You must stop judging people unfairly;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you must no longer make decisions that favor wicked people!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must defend people who are poor and orphans;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you must act fairly toward those who are needy and those who have no one to help them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rescue them from the power of the wicked people!\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those rulers do not know or understand anything!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are very corrupt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and as a result of their corrupt behavior,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though the foundation of the world is being shaken!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I previously said to them, \"You think you are gods!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is as though you are all my sons,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but you will die as people do;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "your lives will end as the lives of all rulers end.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, arise and judge everyone on the earth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because all the people groups belong to you!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by Asaph\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

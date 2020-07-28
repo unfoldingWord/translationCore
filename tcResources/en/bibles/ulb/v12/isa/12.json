@@ -1,0 +1,122 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day you will say,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"I will give thanks to you, Yahweh. For though you were angry with me, your wrath  has turned away, and you have comforted me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, God is my salvation; I will trust and will not fear,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "for Yahweh, yes, Yahweh is my strength and song. He has become my salvation.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With joy you will draw water from the wells of salvation.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day you will say, \"Give thanks to Yahweh and call upon his name;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "declare his deeds among the peoples, proclaim that his name is exalted.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to Yahweh, for he has done glorious things; let this be known throughout the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cry aloud and shout for joy, you inhabitants of Zion, for great in your midst is the Holy One of Israel.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

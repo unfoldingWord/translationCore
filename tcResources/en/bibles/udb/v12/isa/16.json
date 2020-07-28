@@ -1,0 +1,451 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The rulers of Moab will say to each other,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"We must send some lambs from the city of Sela as a gift to the ruler of Judah to persuade him to not allow his army to attack us anymore.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We should send them through the desert to the king in Jerusalem.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The women of Moab will be left alone at the fords of the Arnon River;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be like birds that have been pushed out of their nests.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will cry out, \"Help us!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Tell us what we should do!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Protect us completely,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we who are running away from our enemies,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and do not betray us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Allow those of us who are fleeing from Moab to stay with you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "hide us from our enemies who want to destroy us!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Some day there will be no one to oppress us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and our enemies will stop destroying our land.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh will appoint someone to be king\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who will be a descendant of King David.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "As this man rules, he will be merciful and truthful.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will always do what is fair\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and quickly do what is righteous.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We people of Judah have heard about the people of Moab;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we have heard that they are very proud and conceited;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they are insolent,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but what they say about themselves is not true.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some day all the people in Moab will weep.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will all mourn,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because there will be no more raisin cakes in the city of Kir Hareseth.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But more than the cakes, they mourn for the people who lived there, who were all killed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The crops in the fields of Heshbon will wither,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the vineyards of Sibmah will wither also.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The armies of other nations will destroy Moab,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "which is like a beautiful grapevine\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "whose branches spread north to Jazer,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and east to the desert.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Its branches spread very far west,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to the west side of the Dead Sea.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I will weep for Jazer\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and for the grapevines of Sibmah.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will shed tears for all of you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will cry because people will no longer shout joyfully, like they usually do\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they gather the fruit that ripens in the summer and the other crops.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will no longer be glad at harvest time.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one will sing in the vineyards;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "no one will shout joyfully.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one will tread on grapes to get grape juice for wine;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there will be nothing to shout about joyfully.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I cry in my inner being for Moab;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my groaning is like a sad song played on a harp.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am sad in my inner being for Kir Hareseth.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Moab will go and pray at their high places,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but that will not help them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will cry out to their gods in their temples,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but no one will be able to rescue them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has already spoken those things about Moab.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now he says that exactly three years from now, he will destroy all the things that the people of Moab have been proud of. Even though they have a huge number of people in Moab now, only a few people will remain alive, and they will be weak.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

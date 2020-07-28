@@ -1,0 +1,268 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Isaiah received this message from Yahweh about the Moab people group:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In one night two important cities in Moab, Ar and Kir, will be destroyed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Dibon, the capital city, will go to their temple to mourn;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will go to their high places set on the hilltops, and there they will weep.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will wail because of what happened to Nebo and Medeba in the south;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will all shave the hair of their heads, and the men will cut off their beards to show that they are grieving.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the streets people will wear rough sackcloth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and on their flat rooftops and in the city plazas all people will wail\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "with tears streaming down their faces.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of the city of Heshbon and the towns of Elealeh in the north of Moab will cry out;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people as far away as the town of Jahaz in the south will hear them wailing.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Therefore the soldiers of Moab will tremble and cry out,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will be very afraid.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh feels very sorry for the people of Moab;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will flee to the towns of Zoar and Eglath Shelishiyah in the far south.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will cry as they walk up to the town of Luhith.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All along the road to the town of Horonaim people will mourn\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because their country has been destroyed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The water in the Valley of Nimrim will dry up.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The grass there will be withered;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the green plants will all be gone,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be nothing left that is green.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people will pick up their possessions\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and carry them across the brook of the Willows.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Throughout the country of Moab, people will be crying;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people as far away as Eglaim in the south and Beer Elim in the north will hear them wailing.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The stream near Dibon will become red from the blood of people who have been killed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I will cause the people of Moab to experience even more trouble:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "lions will attack those who are trying to escape from Moab\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and will also attack the people who remain in that country.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

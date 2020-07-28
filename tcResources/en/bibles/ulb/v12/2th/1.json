@@ -1,0 +1,137 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Paul, Silvanus, and Timothy, to the church of the Thessalonians in God our Father and the Lord Jesus Christ.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May grace be to you and peace from God our Father and the Lord Jesus Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We should always give thanks to God for you, brothers. For this is appropriate, because your faith is growing more and more, and the love each of you has for one another increases.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So we ourselves speak proudly about you among the churches of God. We talk about your patience and faith in all your persecutions. We talk about the afflictions that you endure.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is a sign of God's righteous judgment. The result is that you will be considered worthy of the kingdom of God for which you suffer.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is righteous for God to return affliction to those who afflict you,\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and relief to you who are afflicted with us. He will do this at the appearing of the Lord Jesus from heaven with the angels of his power.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In flaming fire he will take vengeance on those who do not know God and on those who do not respond to the gospel of our Lord Jesus.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be punished with eternal destruction away from the presence of the Lord and from the glory of his power.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will do this when he comes on that day to be glorified by his people and to be marveled at by all those who believed. For our testimony to you was believed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of this we also pray continually for you. We pray that our God will consider you worthy of your calling. We pray that he will fulfill every desire of goodness and every work of faith with power.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We pray these things so that the name of our Lord Jesus may be glorified by you. We pray that you will be glorified by him, because of the grace of our God and the Lord Jesus Christ.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

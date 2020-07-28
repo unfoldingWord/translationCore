@@ -1,0 +1,379 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the words and sayings of the descendant of King David, who is king in Jerusalem. The people call me 'The Teacher.'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Teacher says, \"Nothing is permanent.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is all like the morning mist or the wind;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It goes and comes, but for what reason?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What do people gain from all the work that they do here on the earth?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Each year old people die and babies are born,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the earth never changes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Each morning the sun rises, and each evening it sets,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then it hurries around to where it started from.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wind blows south,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then it turns around to start blowing to the north.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It goes around and around in circles.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the streams flow into the sea,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the sea is never full.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The water returns under the earth and comes up again into the rivers;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "then it flows to the sea again.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything is so unsatisfactory\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that we do not even want to talk about it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We see the same things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we become bored with them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We hear the same things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we want to hear something more.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything continues to be the same as it has always been.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Things that happen have happened previously, and they will happen again.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "What has been done before will be done again.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There is nothing really new in this world.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sometimes people say, \"Look at this! This is something new!\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But it has existed previously.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It existed before we were born.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People do not remember the things that happened long ago,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and in the future, people will not remember what we are doing now.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, the Teacher, have been the king of Israel for many years, ruling in Jerusalem.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By using my wisdom, I concentrated on understanding everything that was being done on the earth. It is a task that wears me out, just like anyone else who tries it.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It seems that nothing that happens on the earth really enables us to do anything useful. It is like trying to control the wind.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Many things that are crooked cannot be caused to become straight.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We cannot count things that we cannot see.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said to myself, \"I am wiser than any of those who ruled in Jerusalem before me. I am wiser and know more than any of them!\"\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I determined to learn more about being wise, and also to learn about doing things that are very stupid and foolish. But I found out that trying to understand those things was also useless, like trying to control the wind.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Anyone who becomes very wise also becomes very frustrated. The more one knows, the sadder he becomes.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

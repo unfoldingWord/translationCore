@@ -1,0 +1,473 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After the death of Saul, David returned from attacking the Amalekites and remained in Ziklag for two days.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the third day, a man came from Saul's camp with his clothes torn and with dirt on his head. When he came to David he lay facedown on the ground and prostrated himself.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to him, \"Where did you come from?\" He answered, \"I escaped from the camp of Israel.\"\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to him, \"Please tell me how things went.\" He answered, \"The people fled from the battle. Many have fallen and many are dead. Saul and Jonathan his son are also dead.\"\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to the young man, \"How do you know that Saul and Jonathan his son are dead?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The young man replied, \"By chance I happened to be on Mount Gilboa, and there Saul was leaning on his spear, and chariots and riders were about to catch up with him.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Saul turned around and saw me and called out to me. I answered, 'Here I am.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to me, 'Who are you?' I answered him, 'I am an Amalekite.'\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to me, 'Please stand over me and kill me, for great suffering has taken hold of me, but life is still in me.'\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I stood over him and killed him, because I knew that he would not live after he had fallen. Then I took the crown that was on his head and the band that was on his arm, and brought them here to you, my master.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David tore his clothes, and all the men with him did the same.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They mourned, wept, and fasted until evening for Saul, for Jonathan his son, for the people of Yahweh, and for the house of Israel because they had fallen by the sword.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to the young man, \"Where are you from?\" He answered, \"I am the son of a foreigner in the land, an Amalekite.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to him, \"Why were you not afraid to kill Yahweh's anointed king with your own hand?\"\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David called one of the young men and said, \"Go and kill him.\" So that man went and struck him down, and the Amalekite died.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David said to the dead Amalekite, \"Your blood is on your head because your own mouth has testified against you and said, 'I have killed Yahweh's anointed king.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David sung this funeral song about Saul and Jonathan his son.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He commanded the people to teach this Song of the Bow to the sons of Judah, which has been written in the Book of Jashar.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Your glory, Israel,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "is dead, killed on your high places!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How the mighty have fallen!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not tell it in Gath,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not proclaim it\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the streets of Ashkelon,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that the daughters of the\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Philistines may not rejoice,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that the daughters of the\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "uncircumcised may not celebrate.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mountains of Gilboa,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "let there not be dew or rain on you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "nor fields giving grain for offerings,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for there the shield of the mighty was defiled.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The shield of Saul is no longer anointed with oil.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From the blood of those who have been killed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from the bodies of the mighty,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the bow of Jonathan did not turn back,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the sword of Saul did not return empty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Saul and Jonathan were loved and gracious in life,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and in their death they were not separated.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They were swifter than eagles,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they were stronger than lions.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You daughters of Israel, weep over Saul,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who clothed you in scarlet as well as jewels,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and who put ornaments of gold on your clothing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How the mighty have fallen in the midst of the battle!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Jonathan is killed on your high places.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am distressed for you, my brother Jonathan.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You were very dear to me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Your love to me was wonderful,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "exceeding the love of women.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How the mighty have fallen,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the weapons of war perished!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

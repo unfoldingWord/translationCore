@@ -1,0 +1,220 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I thank you with all my inner being.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I sing to praise you, even though many people worship idols.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I look toward your sacred temple, I bow down\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and thank you because you faithfully love us and do all that you have promised.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You have given cause for people everywhere to honor you and what you have said more than anything else.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I called out to you, you answered me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you enabled me to be strong and brave.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, someday all the kings of this earth will praise you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they will have heard what you have said.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will sing about what you have done;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will sing and say that you are very great.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you are supreme,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you take care of people who are considered to be unimportant.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "However, you do not show yourself to proud people as faithful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I am in the middle of many troubles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you save me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "With your hand you rescue me from my enemies who are angry at me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you will do for me everything that you promised;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you faithfully love us forever.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Finish what you started to do for us, your Israelite people!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

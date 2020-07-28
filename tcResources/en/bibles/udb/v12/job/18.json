@@ -1,0 +1,473 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Bildad replied again:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Please stop talking!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you would stop talking and listen, we could tell you something.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you think that we are as stupid as cattle and as unrighteous?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By being very angry, you are only hurting yourself.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Do you think that everyone on the earth must leave to prove that you are right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or do you think that God must move the rocks in the mountains to please you?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What will happen is that the lives of wicked people like you end\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as quickly as we can put out a light or extinguish the flame of a fire.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the lamps above them in their tents are extinguished,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there will be no light in those tents.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While they are alive, they walk confidently,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but later it will be as though they stumbled and fell,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because they themselves do not pay attention to the advice that they give to others.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be as though they had walked into their own net\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or had fallen into a pit that they themselves dug.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be as though a trap had grabbed their heels and held them fast,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "as though the end of a rope that was hidden on the ground\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "had sprung up and seized them when they walked on it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everywhere they go, there will be things that cause them to be terrified;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will be as though those things were pursuing them and biting at their heels.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will become hungry, with the result that they will be strong no longer.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will continually experience disasters.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Diseases will spread all over their skin;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "diseases will cause their bodies to decay.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they die, they will be snatched away from their tents\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and brought to the one who rules over the dead.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then other people will live in their tents,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but only after they sprinkle sulfur on those tents to get rid of the disease!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because they will die and leave no descendants,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be like trees whose roots have dried up and whose branches have all withered.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one on the earth will remember them anymore;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one on any street will even remember their names.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will have to leave the earth, where there is light,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and rush into the place where it is dark.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will have no children or grandchildren,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no descendants where they will have previously lived.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People from the east to the west who hear about what happened to them, everyone,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will be shocked and horrified.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what happens to unrighteous people like you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people who do not know God.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

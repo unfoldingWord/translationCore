@@ -1,0 +1,316 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Job replied to Bildad:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I am a very weak and helpless man;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you do not really think that you have helped me at all, do you?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You certainly do not think that you have given me good advice, do you?—me, who am not wise at all.\n\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who helped you to say all those great things?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who inspired you to speak like you did?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The spirits of dead people tremble with fear,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who are under the waters \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and everyone who dwells with them. \n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God knows all about those who are in the place of the dead;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there is nothing down there that prevents God from seeing what is there.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God stretches out heaven \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "over the empty spaces, \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he places the earth in that huge empty space, but it is not resting on anything.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He fills the thick clouds with water\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and prevents that water from bursting the clouds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He causes clouds to obscure the moon.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He separates the light from the darkness\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and puts the horizon to mark the place where the night ends and the daytime begins.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When he is angry, it is as though he rebuked the pillars that hold up the sky.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are shocked, and they tremble.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By his power he calmed the sea;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by his skill he destroyed Rahab, the huge sea monster.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By his breath he caused the sky to be bright;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by his hand he killed the great dragon in the sea as it was fleeing from him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But those events show only a small amount of his power;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though we were hearing only whispers of his powerful voice.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When we hear thunder, we say, 'Who can really understand how great his power is?'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

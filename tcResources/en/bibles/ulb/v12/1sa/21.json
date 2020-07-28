@@ -1,0 +1,200 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then David came to Nob to see Ahimelech the priest. Ahimelech came to meet David trembling and said to him, \"Why are you alone and have no one with you?\"\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to Ahimelech the priest, \"The king has sent me on a mission and has said to me, 'Let no one know anything about the business I am sending you, and what I have commanded you.' I have directed the young men to a certain place.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now then what do you have on hand? Give me five loaves of bread, or whatever is here.\"\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priest answered David and said, \"There is no ordinary bread on hand, but there is holy bread—if the young men have kept themselves from women.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David answered the priest, \"Surely women have been kept from us for the past three days, as usual when I set out. The things belonging to the men have been set apart even on ordinary missions. How much more today will what they have be set apart!\"\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the priest gave him the bread that was set apart. For there was no bread there except the bread of the presence, which was removed from before Yahweh, in order to put hot bread in its place on the day it was taken away.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now one of the servants of Saul was there that day, detained before Yahweh. His name was Doeg the Edomite, the chief of Saul's herdsmen.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to Ahimelech, \"Now is there not here on hand any spear or sword? For I brought neither my sword nor my weapons with me, because the king's business was urgent.\"\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priest said, \"The sword of Goliath the Philistine, whom you killed in the Valley of Elah, is here wrapped in a cloth behind the ephod. If you want to take that, take it, for there is no other weapon here.\" David said, \"There is no other sword like that one; give it to me.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David arose and fled that day from Saul and went to Achish, the king of Gath.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Achish's servants said to him, \"Is not this David, the king of the land? Did they not sing to one another about him in dances,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'Saul has killed his thousands,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and David his ten thousands?'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David took these words to heart and was very afraid of Achish, the king of Gath.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He changed his behavior before them and pretended to be insane in their hands; he made marks on the doors of the gate and let his saliva run down his beard.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Achish said to his servants, \"Look, you see the man is mad. Why have you brought him to me?\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do I lack madmen, so that you have brought this fellow to behave like one in my presence? Will this fellow really come into my house?\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will thank Yahweh with my entire inner being\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "every time that those who do what is right come together.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The things that Yahweh has done are wonderful!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All those who are delighted with those things\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "desire to study them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because he is a great king and does wonderful things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people greatly honor him and respect him;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the righteous things that he does will endure forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has done wonderful things that people will always remember;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh always acts kindly and mercifully.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He provides food for those who have an awesome respect for him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he never forgets the covenant that he made with our ancestors.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By enabling his people to capture the lands that belonged to other people groups,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he has shown to us, his people, that he is very powerful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does everything fairly, as he has promised us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we can depend on him to help us when he commands us to do things.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What he commands must be obeyed forever;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he acted in a true and righteous manner when he gave us those commands.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He rescued us, his people, from being slaves in Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he made a covenant with us that will last forever.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is holy and awesome!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Having an awesome respect for Yahweh is the way to become wise.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All those who obey his commands will know what is good for them to decide to do.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We should praise him forever!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

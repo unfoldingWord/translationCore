@@ -1,0 +1,165 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blessed is the man who does not walk in the advice of the wicked,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or stand in the pathway with sinners,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or sit in the assembly of mockers.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But his delight is in the law of Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and on his law he meditates day and night.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will be like a tree planted by the streams of water\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that produces its fruit in its season,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "whose leaves do not wither;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "whatever he does will prosper.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked are not so,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but are instead like the chaff that the wind drives away.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the wicked will not stand in the judgment,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "nor sinners in the assembly of the righteous.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh approves of the way of the righteous,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the way of the wicked will perish.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

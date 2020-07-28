@@ -1,0 +1,120 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the king and Haman arrived at the second feast with Queen Esther.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On the second day of the feast, while servants were serving the wine, the king said to Esther, \"What is your petition, Queen Esther? I will give you whatever you ask for. What do you want? I would give you up to half of my kingdom.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Esther replied, \"If you are pleased with me, my king, and if you are willing to do what I ask, save my life! And save the lives of my people.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I and my people have been condemned to destruction by a decree. I and my people, we have been handed over to be annihilated—to be killed, destroyed. If we had only been sold into slavery, I would have kept quiet, for that kind of trouble would not have been worth bothering you about.\"\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then King Ahasuerus said to Queen Esther, \"Who is the man who did this? Where is the one whose heart is full of this kind of evil?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Esther replied, \"The man who is our enemy is this evil man Haman!\" Then Haman was terrified before the king and queen.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king got up in a rage. He left his wine and went outside into the palace garden to decide what to do. But Haman stayed in order to plead with Queen Esther, for her to intervene to save his life. He knew the king had decided to kill him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the king returned from the palace garden and went back to where they were serving the wine. Just then Haman had fallen on the couch where Esther was. The king said, \"Will he assault the queen in my own house, with me standing by?\" As soon as he said this, the servants put a cloth over Haman's face.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Harbona, one of the king's officials who served him said, \"Outside, near Haman's house, there is a gallows. It is twenty-three meters high. Haman made it for Mordecai, the one who spoke to protect the king!\" The king said, \"Hang him on it.\"\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they hanged Haman on the gallows that he had prepared for Mordecai. Then the king became less angry.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

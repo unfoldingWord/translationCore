@@ -1,0 +1,207 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I looked when the Lamb opened one of the seven seals, and I heard one of the four living creatures say in a voice that sounded like thunder, \"Come!\"\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I looked and there was a white horse. Its rider held a bow, and he was given a crown. He came out as a conqueror in order to conquer.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Lamb opened the second seal, I heard the second living creature say, \"Come!\"\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then another horse came out—fiery red. To its rider was given permission to take peace away from the earth, so that its people would slaughter one another. This rider was given a huge sword.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Lamb opened the third seal, I heard the third living creature say, \"Come!\" I saw a black horse, and its rider held a pair of scales in his hand.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I heard what seemed to be a voice among the four living creatures say, \"A choenix of wheat for one denarius, and three choenices of barley for a denarius. But do not harm the oil and the wine.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Lamb opened the fourth seal, I heard the voice of the fourth living creature say, \"Come!\"\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I saw a pale horse. The rider on it was named Death, and Hades was following him. They were given authority over one-fourth of the earth, to kill with the sword, with famine and disease, and with the wild animals of the earth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Lamb opened the fifth seal, I saw under the altar the souls of those who had been killed because of the word of God and the testimony which they held.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They cried out with a loud voice, \"How long, Ruler over all, holy and true, until you judge those who live on the earth, and until you avenge our blood?\"\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then each of them was given a white robe, and they were told that they should wait a little longer until the full number of their fellow servants and their brothers and sisters was reached who were to be killed, just as they had been killed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Lamb opened the sixth seal, I watched and there was a great earthquake. The sun became as black as sackcloth, and the full moon became like blood.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The stars in the heavens fell to the earth, just as a fig tree drops its unripe fruit when shaken by a stormy wind.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sky vanished like a scroll that was being rolled up. Every mountain and island was moved out of its place.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the kings of the earth and the important people, and the generals, and the rich, and the powerful, and everyone else, slave and free, hid in caves and among the rocks of the mountains.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said to the mountains and to the rocks, \"Fall on us! Hide us from the face of the one who is seated on the throne and from the Lamb's wrath.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the great day of their wrath has come. Who is able to stand?\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

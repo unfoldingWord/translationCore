@@ -1,0 +1,175 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How fortunate are those who do not do what the wicked people advise them to do,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "who do not imitate the behavior of sinful people,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and who do not join with people who ridicule God.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead, those with whom Yahweh is pleased delight in understanding what he teaches us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They read and think every day and every night about what Yahweh teaches.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They constantly do things that please God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as fruit trees that have been planted along the banks of a stream produce fruit at the right time every year.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Like trees that never wither,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they succeed in everything that they do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But wicked people are not like that!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Wicked people are as worthless as chaff\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that is blown away by the wind.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, when God judges all mankind, he will condemn the wicked.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Furthermore, the wicked will not be present when Yahweh gathers all the righteous people together.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh guides and protects righteous people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the path that the wicked walk on leads them to where God will destroy them forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is a message that Yahweh gave to Malachi for the Israelites.\n\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Esau who now live in Edom may say,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"Yes, God has demolished our cities, but we will rebuild houses in the ruins.\"\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "But Yahweh, commander of the angel armies, replies,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"They may build houses again, but I will demolish them again. Their country will be called 'The land where wicked people live,' and their people will be called 'The people with whom Yahweh is angry forever.'\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you Israelite people yourselves see what Yahweh will do to them, you will say, \"It is evident that Yahweh is very powerful even in foreign lands!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the Yahweh, commander of the angel armies, says to the people,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"Boys honor their fathers, and servants respect their masters. So, if I am like your father and your master, why do you not honor me? Why do you not obey me?\"\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "And Yahweh, commander of the angel armies, has something to say to you priests:\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"You show no respect for me! But you priests ask,\n"
+      },
+      {
+        "tag": "pi2",
+        "type": "paragraph",
+        "text": "'How have shown no respect for you?'\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I answer: Instead of honoring me, you have disgraced me by offering sacrifices on my altar that are unworthy of me, sacrifices that I would never accept. Then you dare to ask,\n"
+      },
+      {
+        "tag": "pi2",
+        "type": "paragraph",
+        "text": "'What sacrifices have we given that are unworthy of you?'\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "I answer: You think that it does not matter if you do not honor my altar.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You offer for sacrifices animals that are blind. Is that not wrong? You offer animals that are sick or lame. Do you really think I would accept such gifts? You would not dare to offer such gifts to your own governor! You know that he would not take them. You know that he would be displeased with you and would not welcome you!\"\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "That is what Yahweh, commander of the angel armies, says!\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Malachi, see you continually go through the motions of asking God to help us. But Yahweh, commander of the angel armies, says,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"If you bring to me sacrifices that are not acceptable to me, why should I help you?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh also says,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"I wish that one of you would shut the gates of the temple courtyard, in order that no one could offer those worthless sacrifices. I am not pleased with you, and I will not accept the offerings that you bring to me.\"\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "This is what Yahweh, commander of the angel armies, says.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He also says,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"People of other nations from east to west will indeed honor me. They will burn incense to honor me, and they will bring right offerings, offerings that I will accept. This will happen because people in all the nations will praise and honor me.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you priests—you priests act in a way that shows me no honor at all. You say,\n"
+      },
+      {
+        "tag": "pi2",
+        "type": "paragraph",
+        "text": "'It is all right if people disgrace the altar by bringing sacrifices that he will not accept.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You also say,\n"
+      },
+      {
+        "tag": "pi2",
+        "type": "paragraph",
+        "text": "'We are tired of burning all these sacrifices on the altar.'\n"
+      },
+      {
+        "tag": "pi2",
+        "type": "paragraph",
+        "text": "You turn up your noses at doing this. You bring sheep or goats that wild animals have attacked and torn in two. You also bring animals that are sick or that cannot walk. You cannot really think that I should accept these from you, can you?\"\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "This is what Yahweh, commander of the angel armies, says.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh also says,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"I will curse anyone who tries to cheat me by swearing that he will bring to me a perfect animal from his herd, and who then brings me one that has defects. If anyone does that, I will punish him, because I am a great king, and people of the other nations honor me, but you do not!\"\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "This is what Yahweh, commander of the angel armies, says.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2-3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"I have loved you.\" But I, Malachi, hear you people reply, \"How have you shown us that you love us?\"\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "Yahweh replies,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"Is it not true that Esau and Jacob were brothers? Yet I have a covenant with Jacob and his descendants, but I have no covenant with Esau and his descendants. I caused Esau's region to be abandoned, a place where wild dogs live.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

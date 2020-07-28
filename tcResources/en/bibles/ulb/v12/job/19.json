@@ -1,0 +1,645 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"How long will you make me suffer\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and break me into pieces with words?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These ten times you have reproached me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you are not ashamed that you have treated me harshly.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If it is indeed true that I have erred,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my error remains my own concern.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If indeed you will exalt yourselves above me\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and use my humiliation against me, \n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then you should know that God has done wrong to me\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and has caught me in his net.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, I cry out, \"Violence!\" but I get no answer.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I call out for help, but there is no justice.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has walled up my way so that I cannot pass,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he has set darkness in my path.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has stripped me of my glory,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he has taken the crown from my head.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has broken me down on every side, and I am gone;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he has pulled up my hope like a tree.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has also kindled his wrath against me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he regards me as one of his adversaries.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His troops come on together;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they cast up siege mounds against me\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and encamp around my tent.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has put my brothers far from me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my acquaintances are wholly alienated from me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My kinsfolk have failed me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my close friends have forgotten me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who once stayed as guests in my house and my female servants regard me as a stranger;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am an alien in their sight.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I call to my servant, but he gives me no answer\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "although I entreat him with my mouth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My breath is offensive to my wife;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am even disgusting to those who were born from my mother's womb.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even young children despise me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "if I rise to speak, they speak against me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All my familiar friends abhor me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those whom I love have turned against me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My bones cling to my skin and to my flesh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I survive only by the skin of my teeth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have pity upon me, have pity upon me, my friends,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for the hand of God has touched me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you pursue me like God does? \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Will you ever be satisfied with my flesh?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that my words were now written down!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Oh, that they were inscribed in a book!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that with an iron pen and lead\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they were engraved in the rock forever!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as for me, I know that my Redeemer lives,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and that at last he will stand on the earth;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "after my skin, that is, this body, is destroyed,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "then in my flesh I will see God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will see him with my own eyes—I, and not someone else. \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My heart fails within me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you say, 'How we will persecute him!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The root of his troubles lies in him,'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then be afraid of the sword,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because wrath brings the punishment of the sword,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that you may know there is a judgment.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

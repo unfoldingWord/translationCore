@@ -1,0 +1,138 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bring me justice, God, and plead my cause against an ungodly nation.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you are the God of my strength. Why have you rejected me?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why do I go about in mourning because of the oppression of the enemy?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, send out your light and your truth, let them lead me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let them bring me to your holy hill\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to your dwelling.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will go to the altar of God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to God my exceeding joy.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will praise you with the harp, God, my God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why are you bowed down, my soul?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why are you upset within me?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Hope in God, for again I will praise him who is my salvation and my God.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,638 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Compare a poor person who keeps his promises,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with a fool who is full of lies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And consider, having desire without knowledge\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "is like running so fast that you miss the path you want to take.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The folly of a fool destroys his life,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he becomes furious with Yahweh for his troubles.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are wealthy easily find many friends,\nbut a poor person will find that his poverty separates him from the one friend he had.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person who lies in order to become a friend will be punished for taking advantage,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as the one whose every word he speaks is a lie, he will not escape.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a person is generous with their gifts, many people will ask for favors,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it seems that everyone is a friend of the one who gives many gifts.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the brothers of one who is poor hate him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and even more do his friends hate him, and they go far away from him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he calls out to them, but they have left.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who makes every effort to learn about wisdom, loves himself;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "having understanding helps you know what is good and what is not.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The ones who lie when they give testimony will be punished,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the one whose every word is a lie, he will die.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a fool lives in luxury—it is not right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and it is even worse for a slave to rule over princes.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person with good sense is slow to get angry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and it is to his honor that he overlooks it when someone does him wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What is the wrath of the king like? It is like the roaring of a young lion,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but his kindness is like the dew on the grass.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A foolish child will ruin a father.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "A wife who is always quarreling will upset her husband like water that is constantly dripping.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We can inherit houses and money from our parents,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but a sensible wife is from Yahweh.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who is lazy finds that sleep comes easily to him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but anyone who refuses to work will go hungry.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who follows the command he was taught puts a guard over his life,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the one who does not think about how he lives his life will die.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One who is kind to the poor, it is as if he were lending to Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Yahweh will pay him for what he did.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Train your children and give them discipline while it is still possible to rescue them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but do not allow them to offend you so much that you consider taking their lives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A hot-tempered person will pay a price for his anger;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if you rescue him after he had has an outburst, you will have to do it again and again.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pay attention to good guidance and let others teach you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that you can become wise by the end of your life.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person has many plans that come from within him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but Yahweh has his own plans, and he will carry them out.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person wants loyalty,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a poor person is better than a liar.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Anyone who has respect for Yahweh will live a long life;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "such a person who has this respect for Yahweh will be satisfied,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and will come to no harm.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The lazy person puts his hand in the dish;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is not able to raise his hand up to his mouth to eat.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you punish someone who mocks others,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "an uninstructed person will learn how to be prudent.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you correct someone who has understanding,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will gain more knowledge.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Someone who steals from his father and alienates his mother\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "brings shame and disgrace to himself.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, if you will not listen to the teaching,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will wander away from the words of knowledge.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A lying witness laughs at anyone who acts justly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and wicked people act sinfully as easily as they eat food.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is ready to punish those who make themselves out to be better than other people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is ready to flog the backs of fools.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

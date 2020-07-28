@@ -1,0 +1,61 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the word that Jeremiah the prophet told Baruch son of Neriah. This happened when he wrote in a scroll these words at Jeremiah's dictation—this was in the fourth year of Jehoiakim son of Josiah, king of Judah, and he said,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Yahweh, God of Israel, says this to you, Baruch:\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have said, 'Woe is me, for Yahweh has added agony to my pain. My groaning has wearied me; I find no rest.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what you must say to him: 'Yahweh says this: See, what I built, I am now tearing down. What I planted, I am now pulling up—I will do this throughout all the earth.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But are you hoping for great things for yourself? Do not hope for that. For see, disaster is coming on all humanity—this is Yahweh's declaration—but I am giving you your life as your plunder everywhere you will go.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

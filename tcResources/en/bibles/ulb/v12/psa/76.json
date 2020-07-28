@@ -1,0 +1,302 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God has made himself known in Judah;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his name is great in Israel.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His tent is in Salem;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his dwelling place is in Zion.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There he broke the arrows of the bow,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the shield, the sword, and the other weapons of war.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You shine brightly and reveal your glory,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as you descend from the mountains, where you killed your victims.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The bravehearted were plundered;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they fell asleep.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "All the warriors were helpless.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At your rebuke, God of Jacob,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "both rider and horse fell asleep.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, yes you, are to be feared;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who can stand in your sight when you are angry?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From heaven you made your judgment heard;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the earth was afraid and silent\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "when you, God, arose to execute judgment\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to save all the oppressed of the earth.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Surely your angry judgment against humanity will bring you praise;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you gird yourself with what is left of your anger.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Make vows to Yahweh your God and keep them.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "May all who surround him bring gifts to him who is to be feared.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He cuts off the spirit of the princes;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is feared by the kings of the earth. \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician, on stringed instruments. A psalm of Asaph, a song.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

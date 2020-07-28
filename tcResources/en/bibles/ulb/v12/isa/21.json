@@ -1,0 +1,441 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A declaration about the desert by the sea.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Like stormwinds sweeping through the Negev it comes\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "passing through from the wilderness, from a terrible land.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A distressing vision has been given to me:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the treacherous man deals treacherously, and the destroyer destroys.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Go up and attack, Elam; besiege, Media;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will stop all her groaning.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore my loins are filled with pain;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "pains like the pains of a woman in labor have taken hold of me;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am bowed down by what I heard; I am disturbed by what I saw.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My heart pounds; I shake with fear. \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Twilight was my desire, but it brought me terror.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They prepare the table, they spread rugs and eat and drink;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "arise, princes, anoint your shields with oil.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For this is what the Lord said to me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Go, post a watchman; he must report what he sees.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When he sees a chariot, a pair of horsemen,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "riders on donkeys, and riders on camels,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "then he must pay attention and be very alert.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The watchman cries out,\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa The watchman cries out \\fqa* , some older versions have \\fqa A lion cries out \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Lord, on the watchtower I stand all day, every day,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and at my post I stand all night long.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Here comes a chariot with a man and a pair of horsemen.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He calls out, \"Babylon has fallen, fallen,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and all the carved figures of its gods are broken to the ground.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My threshed and winnowed ones, children of my threshing floor!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "What I have heard from Yahweh of hosts,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the God of Israel, I have declared to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A declaration about Dumah.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "One calls to me from Seir, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Watchman, what is left of the night? \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Watchman, what is left of the night?\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The watchman said, \"The morning comes and also the night. \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you want to ask, then ask; and come back again.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A declaration about Arabia.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In the wilderness of Arabia you spend the night, you caravans of Dedanites.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bring water for the thirsty;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "inhabitants of the land of Tema, meet the fugitives with bread.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For they have fled from the sword, from the drawn sword,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "from the bent bow, and from the weight of war.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For this is what the Lord said to me, \"Within a year, as a laborer hired for a year would see it, all the glory of Kedar will end.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Only a few of the archers, the warriors of Kedar will remain,\" for Yahweh, the God of Israel, has spoken.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said in his heart, \"I will now perish one day by Saul's hand; there is nothing better for me than to escape into the land of the Philistines; Saul will give up looking for me any more within all the borders of Israel; in this way I will escape out of his hand.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David arose and passed over, he and the six hundred men who were with him, to Achish son of Maok, the king of Gath.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David lived with Achish at Gath, he and his men, each man with his own household, and David with his two wives, Ahinoam the Jezreelite woman, and Abigail the Carmelite woman, Nabal's wife.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Saul was told that David had fled to Gath, so he looked for him no longer.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David said to Achish, \"If I have found favor in your eyes, let them give me a place in one of the cities in the country, that I may live there. Why should your servant live in the royal city with you?\"\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So that day Achish gave him Ziklag; that is why Ziklag belongs to the kings of Judah to this very day.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The number of days that David lived in the land of the Philistines was a full year and four months.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David and his men attacked various places, making raids on the Geshurites, the Girzites, and the Amalekites; for those nations were the inhabitants of the land, as you go to Shur, as far as the land of Egypt. They had been living there in the land from ancient times. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa the Girzites \\fqa* which is found in some ancient Hebrew copies, some modern versions have \\fqa the Gizrites \\fqa* which is found in the margin of some  Hebrew manuscripts. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David attacked the land and saved neither man nor woman alive; he took away the sheep, the oxen, the donkeys, the camels, and the clothing; he would return and come again to Achish.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Achish would say, \"Against whom have you made a raid today?\" David would answer, \"Against the south of Judah,\" or \"Against the south of the Jerahmeelites,\" or \"Against the south of the Kenites.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David would keep neither man nor woman alive to bring them to Gath, saying, \"So that they cannot say about us, 'David did such and such.'\" This was what he did all the while he was living in the country of the Philistines.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Achish believed David, saying, \"He has made his people Israel utterly abhor him; he will therefore be my servant forever.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

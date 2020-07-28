@@ -1,0 +1,258 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mighty people, praise Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Praise him because he is very glorious and powerful.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh with the glory his names deserves.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Bow down and worship Yahweh because he is holy and his holiness shines out from him with wonderful beauty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh's voice is heard above the oceans;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the glorious God thunders.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He appears over the huge oceans.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His voice is powerful and majestic.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh's voice breaks great cedar trees,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the cedars that grow in Lebanon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He causes earthquakes to shake the region of Lebanon as a young cow jumps;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he causes Mount Hermon to shake as a young bull jumps.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh's voice tells the lightning to flash.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His voice causes the desert to shake;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he shakes the wilderness of Kadesh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh's voice makes the large trees shake,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and strips the leaves from the trees\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while the people in the temple shout, \"Praise God!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh rules over the flood that covered the earth;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is our king who will rule forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh enables his people to be strong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he blesses them by causing things to go well for them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

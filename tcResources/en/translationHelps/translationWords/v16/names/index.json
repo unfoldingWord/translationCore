@@ -1,0 +1,1390 @@
+[
+  {
+    "id": "aaron",
+    "name": "Aaron"
+  },
+  {
+    "id": "abel",
+    "name": "Abel"
+  },
+  {
+    "id": "abiathar",
+    "name": "Abiathar"
+  },
+  {
+    "id": "abijah",
+    "name": "Abijah"
+  },
+  {
+    "id": "abimelech",
+    "name": "Abimelech"
+  },
+  {
+    "id": "abner",
+    "name": "Abner"
+  },
+  {
+    "id": "abraham",
+    "name": "Abraham, Abram"
+  },
+  {
+    "id": "absalom",
+    "name": "Absalom"
+  },
+  {
+    "id": "adam",
+    "name": "Adam"
+  },
+  {
+    "id": "adonijah",
+    "name": "Adonijah"
+  },
+  {
+    "id": "ahab",
+    "name": "Ahab"
+  },
+  {
+    "id": "ahasuerus",
+    "name": "Ahasuerus"
+  },
+  {
+    "id": "ahaz",
+    "name": "Ahaz"
+  },
+  {
+    "id": "ahaziah",
+    "name": "Ahaziah"
+  },
+  {
+    "id": "ahijah",
+    "name": "Ahijah"
+  },
+  {
+    "id": "ai",
+    "name": "Ai"
+  },
+  {
+    "id": "amalekite",
+    "name": "Amalek, Amalekite"
+  },
+  {
+    "id": "amaziah",
+    "name": "Amaziah"
+  },
+  {
+    "id": "ammon",
+    "name": "Ammon, Ammonite"
+  },
+  {
+    "id": "amnon",
+    "name": "Amnon"
+  },
+  {
+    "id": "amorite",
+    "name": "Amorite"
+  },
+  {
+    "id": "amos",
+    "name": "Amos"
+  },
+  {
+    "id": "amoz",
+    "name": "Amoz"
+  },
+  {
+    "id": "andrew",
+    "name": "Andrew"
+  },
+  {
+    "id": "annas",
+    "name": "Annas"
+  },
+  {
+    "id": "antioch",
+    "name": "Antioch"
+  },
+  {
+    "id": "apollos",
+    "name": "Apollos"
+  },
+  {
+    "id": "aquila",
+    "name": "Aquila"
+  },
+  {
+    "id": "arabah",
+    "name": "Arabah"
+  },
+  {
+    "id": "arabia",
+    "name": "Arabia, Arabian"
+  },
+  {
+    "id": "aram",
+    "name": "Aram, Aramean, Aramaic, Aram of Damascus"
+  },
+  {
+    "id": "ararat",
+    "name": "Ararat"
+  },
+  {
+    "id": "artaxerxes",
+    "name": "Artaxerxes"
+  },
+  {
+    "id": "asa",
+    "name": "Asa"
+  },
+  {
+    "id": "asaph",
+    "name": "Asaph"
+  },
+  {
+    "id": "ashdod",
+    "name": "Ashdod, Azotus"
+  },
+  {
+    "id": "asher",
+    "name": "Asher"
+  },
+  {
+    "id": "asherim",
+    "name": "Asherah, Asherah pole, Ashtoreth"
+  },
+  {
+    "id": "ashkelon",
+    "name": "Ashkelon"
+  },
+  {
+    "id": "asia",
+    "name": "Asia"
+  },
+  {
+    "id": "assyria",
+    "name": "Assyria, Assyrian, Assyrian Empire"
+  },
+  {
+    "id": "athaliah",
+    "name": "Athaliah"
+  },
+  {
+    "id": "azariah",
+    "name": "Azariah"
+  },
+  {
+    "id": "baal",
+    "name": "Baal"
+  },
+  {
+    "id": "baasha",
+    "name": "Baasha"
+  },
+  {
+    "id": "babel",
+    "name": "Babel"
+  },
+  {
+    "id": "babylon",
+    "name": "Babylon, Babylonia, Babylonian"
+  },
+  {
+    "id": "balaam",
+    "name": "Balaam"
+  },
+  {
+    "id": "barabbas",
+    "name": "Barabbas"
+  },
+  {
+    "id": "barnabas",
+    "name": "Barnabas"
+  },
+  {
+    "id": "bartholomew",
+    "name": "Bartholomew"
+  },
+  {
+    "id": "baruch",
+    "name": "Baruch"
+  },
+  {
+    "id": "bashan",
+    "name": "Bashan"
+  },
+  {
+    "id": "bathsheba",
+    "name": "Bathsheba"
+  },
+  {
+    "id": "beelzebul",
+    "name": "Beelzebul"
+  },
+  {
+    "id": "beersheba",
+    "name": "Beersheba"
+  },
+  {
+    "id": "benaiah",
+    "name": "Benaiah"
+  },
+  {
+    "id": "benjamin",
+    "name": "Benjamin, Benjamite"
+  },
+  {
+    "id": "berea",
+    "name": "Berea"
+  },
+  {
+    "id": "bethshemesh",
+    "name": "Beth Shemesh"
+  },
+  {
+    "id": "bethany",
+    "name": "Bethany"
+  },
+  {
+    "id": "bethel",
+    "name": "Bethel"
+  },
+  {
+    "id": "bethlehem",
+    "name": "Bethlehem, Ephrathah"
+  },
+  {
+    "id": "bethuel",
+    "name": "Bethuel"
+  },
+  {
+    "id": "boaz",
+    "name": "Boaz"
+  },
+  {
+    "id": "caesar",
+    "name": "Caesar"
+  },
+  {
+    "id": "caesarea",
+    "name": "Caesarea, Caesarea Philippi"
+  },
+  {
+    "id": "caiaphas",
+    "name": "Caiaphas"
+  },
+  {
+    "id": "cain",
+    "name": "Cain"
+  },
+  {
+    "id": "caleb",
+    "name": "Caleb"
+  },
+  {
+    "id": "cana",
+    "name": "Cana"
+  },
+  {
+    "id": "canaan",
+    "name": "Canaan, Canaanite"
+  },
+  {
+    "id": "capernaum",
+    "name": "Capernaum"
+  },
+  {
+    "id": "carmel",
+    "name": "Carmel, Mount Carmel"
+  },
+  {
+    "id": "chaldeans",
+    "name": "Chaldea, Chaldean"
+  },
+  {
+    "id": "cilicia",
+    "name": "Cilicia"
+  },
+  {
+    "id": "cityofdavid",
+    "name": "city of David"
+  },
+  {
+    "id": "colossae",
+    "name": "Colossae, Colossians"
+  },
+  {
+    "id": "corinth",
+    "name": "Corinth, Corinthians"
+  },
+  {
+    "id": "cornelius",
+    "name": "Cornelius"
+  },
+  {
+    "id": "crete",
+    "name": "Crete, Cretan"
+  },
+  {
+    "id": "cush",
+    "name": "Cush"
+  },
+  {
+    "id": "cyprus",
+    "name": "Cyprus"
+  },
+  {
+    "id": "cyrene",
+    "name": "Cyrene"
+  },
+  {
+    "id": "cyrus",
+    "name": "Cyrus"
+  },
+  {
+    "id": "damascus",
+    "name": "Damascus"
+  },
+  {
+    "id": "dan",
+    "name": "Dan"
+  },
+  {
+    "id": "daniel",
+    "name": "Daniel"
+  },
+  {
+    "id": "darius",
+    "name": "Darius"
+  },
+  {
+    "id": "david",
+    "name": "David"
+  },
+  {
+    "id": "delilah",
+    "name": "Delilah"
+  },
+  {
+    "id": "eden",
+    "name": "Eden, garden of Eden"
+  },
+  {
+    "id": "edom",
+    "name": "Edom, Edomite, Idumea"
+  },
+  {
+    "id": "egypt",
+    "name": "Egypt, Egyptian"
+  },
+  {
+    "id": "ekron",
+    "name": "Ekron, Ekronites"
+  },
+  {
+    "id": "elam",
+    "name": "Elam, Elamites"
+  },
+  {
+    "id": "eleazar",
+    "name": "Eleazar"
+  },
+  {
+    "id": "eliakim",
+    "name": "Eliakim"
+  },
+  {
+    "id": "elijah",
+    "name": "Elijah"
+  },
+  {
+    "id": "elisha",
+    "name": "Elisha"
+  },
+  {
+    "id": "elizabeth",
+    "name": "Elizabeth"
+  },
+  {
+    "id": "engedi",
+    "name": "En Gedi"
+  },
+  {
+    "id": "enoch",
+    "name": "Enoch"
+  },
+  {
+    "id": "ephesus",
+    "name": "Ephesus, Ephesian"
+  },
+  {
+    "id": "ephraim",
+    "name": "Ephraim, Ephraimite"
+  },
+  {
+    "id": "ephrathah",
+    "name": "Ephrath, Ephrathah"
+  },
+  {
+    "id": "esau",
+    "name": "Esau"
+  },
+  {
+    "id": "esther",
+    "name": "Esther, Hadasseh"
+  },
+  {
+    "id": "ethiopia",
+    "name": "Ethiopia, Ethiopian"
+  },
+  {
+    "id": "euphrates",
+    "name": "Euphrates River, the River"
+  },
+  {
+    "id": "eve",
+    "name": "Eve"
+  },
+  {
+    "id": "ezekiel",
+    "name": "Ezekiel"
+  },
+  {
+    "id": "ezra",
+    "name": "Ezra"
+  },
+  {
+    "id": "gabriel",
+    "name": "Gabriel"
+  },
+  {
+    "id": "gad",
+    "name": "Gad"
+  },
+  {
+    "id": "galatia",
+    "name": "Galatia, Galatians"
+  },
+  {
+    "id": "galilee",
+    "name": "Galilee, Galilean"
+  },
+  {
+    "id": "gath",
+    "name": "Gath, Gittite"
+  },
+  {
+    "id": "gaza",
+    "name": "Gaza"
+  },
+  {
+    "id": "gerar",
+    "name": "Gerar"
+  },
+  {
+    "id": "geshur",
+    "name": "Geshur, Geshurites"
+  },
+  {
+    "id": "gethsemane",
+    "name": "Gethsemane"
+  },
+  {
+    "id": "gibeah",
+    "name": "Gibeah"
+  },
+  {
+    "id": "gibeon",
+    "name": "Gibeon, Gibeonite"
+  },
+  {
+    "id": "gideon",
+    "name": "Gideon"
+  },
+  {
+    "id": "gilead",
+    "name": "Gilead, Gileadite"
+  },
+  {
+    "id": "gilgal",
+    "name": "Gilgal"
+  },
+  {
+    "id": "girgashites",
+    "name": "Girgashites"
+  },
+  {
+    "id": "golgotha",
+    "name": "Golgotha"
+  },
+  {
+    "id": "goliath",
+    "name": "Goliath"
+  },
+  {
+    "id": "gomorrah",
+    "name": "Gomorrah"
+  },
+  {
+    "id": "goshen",
+    "name": "Goshen"
+  },
+  {
+    "id": "greece",
+    "name": "Greece, Grecian"
+  },
+  {
+    "id": "greek",
+    "name": "Greek, Grecian"
+  },
+  {
+    "id": "habakkuk",
+    "name": "Habakkuk"
+  },
+  {
+    "id": "hagar",
+    "name": "Hagar"
+  },
+  {
+    "id": "haggai",
+    "name": "Haggai"
+  },
+  {
+    "id": "ham",
+    "name": "Ham"
+  },
+  {
+    "id": "hamath",
+    "name": "Hamath, Hamathites, Lebo Hamath"
+  },
+  {
+    "id": "hamor",
+    "name": "Hamor"
+  },
+  {
+    "id": "hananiah",
+    "name": "Hananiah"
+  },
+  {
+    "id": "hannah",
+    "name": "Hannah"
+  },
+  {
+    "id": "haran",
+    "name": "Haran"
+  },
+  {
+    "id": "hebron",
+    "name": "Hebron"
+  },
+  {
+    "id": "herodantipas",
+    "name": "Herod, Herod Antipas"
+  },
+  {
+    "id": "herodthegreat",
+    "name": "Herod, Herod the Great"
+  },
+  {
+    "id": "herodias",
+    "name": "Herodias"
+  },
+  {
+    "id": "hezekiah",
+    "name": "Hezekiah"
+  },
+  {
+    "id": "hilkiah",
+    "name": "Hilkiah"
+  },
+  {
+    "id": "hittite",
+    "name": "Hittite"
+  },
+  {
+    "id": "hivite",
+    "name": "Hivite"
+  },
+  {
+    "id": "horeb",
+    "name": "Horeb"
+  },
+  {
+    "id": "hosea",
+    "name": "Hosea"
+  },
+  {
+    "id": "hoshea",
+    "name": "Hoshea"
+  },
+  {
+    "id": "houseofdavid",
+    "name": "house of David"
+  },
+  {
+    "id": "iconium",
+    "name": "Iconium"
+  },
+  {
+    "id": "isaac",
+    "name": "Isaac"
+  },
+  {
+    "id": "isaiah",
+    "name": "Isaiah"
+  },
+  {
+    "id": "ishmael",
+    "name": "Ishmael, Ishmaelite"
+  },
+  {
+    "id": "jacob",
+    "name": "Israel, Israelite, Jacob"
+  },
+  {
+    "id": "issachar",
+    "name": "Issachar"
+  },
+  {
+    "id": "jamesbrotherofjesus",
+    "name": "James (brother of Jesus)"
+  },
+  {
+    "id": "jamessonofalphaeus",
+    "name": "James (son of Alphaeus)"
+  },
+  {
+    "id": "jamessonofzebedee",
+    "name": "James (son of Zebedee)"
+  },
+  {
+    "id": "japheth",
+    "name": "Japheth"
+  },
+  {
+    "id": "jebusites",
+    "name": "Jebus, Jebusite"
+  },
+  {
+    "id": "jehoiachin",
+    "name": "Jehoiachin"
+  },
+  {
+    "id": "jehoiada",
+    "name": "Jehoiada"
+  },
+  {
+    "id": "jehoiakim",
+    "name": "Jehoiakim"
+  },
+  {
+    "id": "jehoram",
+    "name": "Jehoram, Joram"
+  },
+  {
+    "id": "jehoshaphat",
+    "name": "Jehoshaphat"
+  },
+  {
+    "id": "jehu",
+    "name": "Jehu"
+  },
+  {
+    "id": "jephthah",
+    "name": "Jephthah"
+  },
+  {
+    "id": "jeremiah",
+    "name": "Jeremiah"
+  },
+  {
+    "id": "jericho",
+    "name": "Jericho"
+  },
+  {
+    "id": "jeroboam",
+    "name": "Jeroboam"
+  },
+  {
+    "id": "jerusalem",
+    "name": "Jerusalem"
+  },
+  {
+    "id": "jesse",
+    "name": "Jesse"
+  },
+  {
+    "id": "jethro",
+    "name": "Jethro, Reuel"
+  },
+  {
+    "id": "jezebel",
+    "name": "Jezebel"
+  },
+  {
+    "id": "jezreel",
+    "name": "Jezreel, Jezreelite"
+  },
+  {
+    "id": "joab",
+    "name": "Joab"
+  },
+  {
+    "id": "joash",
+    "name": "Joash"
+  },
+  {
+    "id": "job",
+    "name": "Job"
+  },
+  {
+    "id": "joel",
+    "name": "Joel"
+  },
+  {
+    "id": "johntheapostle",
+    "name": "John (the apostle)"
+  },
+  {
+    "id": "johnthebaptist",
+    "name": "John (the Baptist)"
+  },
+  {
+    "id": "johnmark",
+    "name": "John Mark"
+  },
+  {
+    "id": "jonah",
+    "name": "Jonah"
+  },
+  {
+    "id": "jonathan",
+    "name": "Jonathan"
+  },
+  {
+    "id": "joppa",
+    "name": "Joppa"
+  },
+  {
+    "id": "joram",
+    "name": "Joram"
+  },
+  {
+    "id": "jordanriver",
+    "name": "Jordan River, Jordan"
+  },
+  {
+    "id": "josephnt",
+    "name": "Joseph (NT)"
+  },
+  {
+    "id": "josephot",
+    "name": "Joseph (OT)"
+  },
+  {
+    "id": "joshua",
+    "name": "Joshua"
+  },
+  {
+    "id": "josiah",
+    "name": "Josiah"
+  },
+  {
+    "id": "jotham",
+    "name": "Jotham"
+  },
+  {
+    "id": "judah",
+    "name": "Judah"
+  },
+  {
+    "id": "kingdomofjudah",
+    "name": "Judah, kingdom of Judah"
+  },
+  {
+    "id": "judasiscariot",
+    "name": "Judas Iscariot"
+  },
+  {
+    "id": "judassonofjames",
+    "name": "Judas son of James"
+  },
+  {
+    "id": "judea",
+    "name": "Judea, Judah"
+  },
+  {
+    "id": "kadesh",
+    "name": "Kadesh, Kadesh-Barnea, Meribah Kadesh"
+  },
+  {
+    "id": "kedar",
+    "name": "Kedar"
+  },
+  {
+    "id": "kedesh",
+    "name": "Kedesh"
+  },
+  {
+    "id": "cherethites",
+    "name": "Kerethites"
+  },
+  {
+    "id": "kidronvalley",
+    "name": "Kidron Valley"
+  },
+  {
+    "id": "kingdomofisrael",
+    "name": "kingdom of Israel"
+  },
+  {
+    "id": "korah",
+    "name": "Korah, Korahite"
+  },
+  {
+    "id": "laban",
+    "name": "Laban"
+  },
+  {
+    "id": "lamech",
+    "name": "Lamech"
+  },
+  {
+    "id": "lazarus",
+    "name": "Lazarus"
+  },
+  {
+    "id": "leah",
+    "name": "Leah"
+  },
+  {
+    "id": "lebanon",
+    "name": "Lebanon"
+  },
+  {
+    "id": "levite",
+    "name": "Levi, Levite, Levitical"
+  },
+  {
+    "id": "leviathan",
+    "name": "Leviathan"
+  },
+  {
+    "id": "lot",
+    "name": "Lot"
+  },
+  {
+    "id": "luke",
+    "name": "Luke"
+  },
+  {
+    "id": "lystra",
+    "name": "Lystra"
+  },
+  {
+    "id": "maacah",
+    "name": "Maacah"
+  },
+  {
+    "id": "macedonia",
+    "name": "Macedonia"
+  },
+  {
+    "id": "maker",
+    "name": "Maker"
+  },
+  {
+    "id": "malachi",
+    "name": "Malachi"
+  },
+  {
+    "id": "manofgod",
+    "name": "man of God"
+  },
+  {
+    "id": "manasseh",
+    "name": "Manasseh"
+  },
+  {
+    "id": "martha",
+    "name": "Martha"
+  },
+  {
+    "id": "mary",
+    "name": "Mary, the mother of Jesus"
+  },
+  {
+    "id": "marysisterofmartha",
+    "name": "Mary (sister of Martha)"
+  },
+  {
+    "id": "marymagdalene",
+    "name": "Mary Magdalene"
+  },
+  {
+    "id": "matthew",
+    "name": "Matthew, Levi"
+  },
+  {
+    "id": "mede",
+    "name": "Mede, Medes, Media"
+  },
+  {
+    "id": "melchizedek",
+    "name": "Melchizedek"
+  },
+  {
+    "id": "memphis",
+    "name": "Memphis"
+  },
+  {
+    "id": "meshech",
+    "name": "Meshech"
+  },
+  {
+    "id": "mesopotamia",
+    "name": "Mesopotamia, Aram Naharaim"
+  },
+  {
+    "id": "micah",
+    "name": "Micah"
+  },
+  {
+    "id": "michael",
+    "name": "Michael"
+  },
+  {
+    "id": "midian",
+    "name": "Midian, Midianite"
+  },
+  {
+    "id": "miriam",
+    "name": "Miriam"
+  },
+  {
+    "id": "mishael",
+    "name": "Mishael"
+  },
+  {
+    "id": "mizpah",
+    "name": "Mizpah"
+  },
+  {
+    "id": "moab",
+    "name": "Moab, Moabite"
+  },
+  {
+    "id": "molech",
+    "name": "Molech, Moloch"
+  },
+  {
+    "id": "mordecai",
+    "name": "Mordecai"
+  },
+  {
+    "id": "moses",
+    "name": "Moses"
+  },
+  {
+    "id": "mounthermon",
+    "name": "Mount Hermon"
+  },
+  {
+    "id": "mountofolives",
+    "name": "Mount of Olives"
+  },
+  {
+    "id": "naaman",
+    "name": "Naaman"
+  },
+  {
+    "id": "nahor",
+    "name": "Nahor"
+  },
+  {
+    "id": "nahum",
+    "name": "Nahum"
+  },
+  {
+    "id": "naphtali",
+    "name": "Naphtali"
+  },
+  {
+    "id": "nathan",
+    "name": "Nathan"
+  },
+  {
+    "id": "nazareth",
+    "name": "Nazareth, Nazarene"
+  },
+  {
+    "id": "nebuchadnezzar",
+    "name": "Nebuchadnezzar"
+  },
+  {
+    "id": "negev",
+    "name": "Negev"
+  },
+  {
+    "id": "nehemiah",
+    "name": "Nehemiah"
+  },
+  {
+    "id": "nileriver",
+    "name": "Nile River, River of Egypt, the Nile"
+  },
+  {
+    "id": "nineveh",
+    "name": "Nineveh, Ninevite"
+  },
+  {
+    "id": "noah",
+    "name": "Noah"
+  },
+  {
+    "id": "obadiah",
+    "name": "Obadiah"
+  },
+  {
+    "id": "omri",
+    "name": "Omri"
+  },
+  {
+    "id": "paddanaram",
+    "name": "Paddan Aram"
+  },
+  {
+    "id": "paran",
+    "name": "Paran"
+  },
+  {
+    "id": "paul",
+    "name": "Paul, Saul"
+  },
+  {
+    "id": "peor",
+    "name": "Peor, Mount Peor, Baal Peor"
+  },
+  {
+    "id": "perizzite",
+    "name": "Perizzite"
+  },
+  {
+    "id": "persia",
+    "name": "Persia, Persians"
+  },
+  {
+    "id": "peter",
+    "name": "Peter, Simon Peter, Cephas"
+  },
+  {
+    "id": "pharaoh",
+    "name": "Pharaoh, king of Egypt"
+  },
+  {
+    "id": "philiptheapostle",
+    "name": "Philip, the apostle"
+  },
+  {
+    "id": "philip",
+    "name": "Philip, the evangelist"
+  },
+  {
+    "id": "philippi",
+    "name": "Philippi, Philippians"
+  },
+  {
+    "id": "philistia",
+    "name": "Philistia"
+  },
+  {
+    "id": "philistines",
+    "name": "Philistines"
+  },
+  {
+    "id": "phinehas",
+    "name": "Phinehas"
+  },
+  {
+    "id": "phonecia",
+    "name": "Phoenicia, Syrophoenician"
+  },
+  {
+    "id": "pilate",
+    "name": "Pilate"
+  },
+  {
+    "id": "pontus",
+    "name": "Pontus"
+  },
+  {
+    "id": "potiphar",
+    "name": "Potiphar"
+  },
+  {
+    "id": "priscilla",
+    "name": "Priscilla"
+  },
+  {
+    "id": "rabbah",
+    "name": "Rabbah"
+  },
+  {
+    "id": "rachel",
+    "name": "Rachel"
+  },
+  {
+    "id": "rahab",
+    "name": "Rahab"
+  },
+  {
+    "id": "ramah",
+    "name": "Ramah"
+  },
+  {
+    "id": "ramoth",
+    "name": "Ramoth"
+  },
+  {
+    "id": "rebekah",
+    "name": "Rebekah"
+  },
+  {
+    "id": "rehoboam",
+    "name": "Rehoboam"
+  },
+  {
+    "id": "reuben",
+    "name": "Reuben"
+  },
+  {
+    "id": "rimmon",
+    "name": "Rimmon"
+  },
+  {
+    "id": "rome",
+    "name": "Rome, Roman"
+  },
+  {
+    "id": "ruth",
+    "name": "Ruth"
+  },
+  {
+    "id": "saltsea",
+    "name": "Salt Sea, Dead Sea"
+  },
+  {
+    "id": "samaria",
+    "name": "Samaria, Samaritan"
+  },
+  {
+    "id": "samson",
+    "name": "Samson"
+  },
+  {
+    "id": "samuel",
+    "name": "Samuel"
+  },
+  {
+    "id": "sarah",
+    "name": "Sarah, Sarai"
+  },
+  {
+    "id": "saul",
+    "name": "Saul (OT)"
+  },
+  {
+    "id": "seaofgalilee",
+    "name": "Sea of Galilee, Sea of Kinnereth, lake of Gennesaret, Sea of Tiberias"
+  },
+  {
+    "id": "redsea",
+    "name": "Sea of Reeds, Red Sea"
+  },
+  {
+    "id": "sennacherib",
+    "name": "Sennacherib"
+  },
+  {
+    "id": "seth",
+    "name": "Seth"
+  },
+  {
+    "id": "sharon",
+    "name": "Sharon, Plain of Sharon"
+  },
+  {
+    "id": "sheba",
+    "name": "Sheba"
+  },
+  {
+    "id": "shechem",
+    "name": "Shechem"
+  },
+  {
+    "id": "shem",
+    "name": "Shem"
+  },
+  {
+    "id": "shiloh",
+    "name": "Shiloh"
+  },
+  {
+    "id": "shimei",
+    "name": "Shimei"
+  },
+  {
+    "id": "shinar",
+    "name": "Shinar"
+  },
+  {
+    "id": "sidon",
+    "name": "Sidon, Sidonians"
+  },
+  {
+    "id": "silas",
+    "name": "Silas, Silvanus"
+  },
+  {
+    "id": "simeon",
+    "name": "Simeon"
+  },
+  {
+    "id": "simonthezealot",
+    "name": "Simon the Zealot"
+  },
+  {
+    "id": "sinai",
+    "name": "Sinai, Mount Sinai"
+  },
+  {
+    "id": "sodom",
+    "name": "Sodom"
+  },
+  {
+    "id": "solomon",
+    "name": "Solomon"
+  },
+  {
+    "id": "stephen",
+    "name": "Stephen"
+  },
+  {
+    "id": "succoth",
+    "name": "Succoth"
+  },
+  {
+    "id": "syria",
+    "name": "Syria, Ashur"
+  },
+  {
+    "id": "tamar",
+    "name": "Tamar"
+  },
+  {
+    "id": "tarshish",
+    "name": "Tarshish"
+  },
+  {
+    "id": "tarsus",
+    "name": "Tarsus"
+  },
+  {
+    "id": "terah",
+    "name": "Terah"
+  },
+  {
+    "id": "mediterranean",
+    "name": "the sea, the Great Sea, the western sea, Mediterranean Sea"
+  },
+  {
+    "id": "thessalonica",
+    "name": "Thessalonica, Thessalonian"
+  },
+  {
+    "id": "thomas",
+    "name": "Thomas"
+  },
+  {
+    "id": "timothy",
+    "name": "Timothy"
+  },
+  {
+    "id": "tirzah",
+    "name": "Tirzah"
+  },
+  {
+    "id": "titus",
+    "name": "Titus"
+  },
+  {
+    "id": "troas",
+    "name": "Troas"
+  },
+  {
+    "id": "tubal",
+    "name": "Tubal"
+  },
+  {
+    "id": "tychicus",
+    "name": "Tychicus"
+  },
+  {
+    "id": "tyre",
+    "name": "Tyre, Tyrians"
+  },
+  {
+    "id": "ur",
+    "name": "Ur"
+  },
+  {
+    "id": "uriah",
+    "name": "Uriah"
+  },
+  {
+    "id": "uzziah",
+    "name": "Uzziah, Azariah"
+  },
+  {
+    "id": "vashti",
+    "name": "Vashti"
+  },
+  {
+    "id": "zacchaeus",
+    "name": "Zacchaeus"
+  },
+  {
+    "id": "zadok",
+    "name": "Zadok"
+  },
+  {
+    "id": "zebedee",
+    "name": "Zebedee"
+  },
+  {
+    "id": "zebulun",
+    "name": "Zebulun"
+  },
+  {
+    "id": "zechariahnt",
+    "name": "Zechariah (NT)"
+  },
+  {
+    "id": "zechariahot",
+    "name": "Zechariah (OT)"
+  },
+  {
+    "id": "zedekiah",
+    "name": "Zedekiah"
+  },
+  {
+    "id": "zephaniah",
+    "name": "Zephaniah"
+  },
+  {
+    "id": "zerubbabel",
+    "name": "Zerubbabel"
+  },
+  {
+    "id": "zoar",
+    "name": "Zoar"
+  }
+]

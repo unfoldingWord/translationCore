@@ -1,0 +1,941 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give thanks to Yahweh because he always does good things for us!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "His faithful love for us lasts forever, as he has promised us!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those whom Yahweh has saved should tell others\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that he has rescued them from their enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has gathered those of you who were exiled to many lands;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he has gathered you together from the east and the west,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from the north and from the south.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of those who returned from those countries wandered in the desert;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they were lost and had no homes to live in.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were hungry and thirsty,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they even collapsed in exhaustion.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were in trouble, they called out to Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he rescued them from being distressed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He led them along a straight road where they walked safely\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to cities in Canaan where they could live.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They should praise Yahweh for loving them faithfully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and for the wonderful things that he does for people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gives thirsty people plenty of water to drink,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he gives hungry people plenty of good things to eat.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of them were in very dark prisons;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they were prisoners, suffering because of chains fastened to their hands and feet.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were in prison because they had rebelled against the message of God;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they were there because they had despised the advice given by God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who is greater than all other gods.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is why God made them suffer hardships so that they would no longer be proud;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they got into trouble, there was no one who would help them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were in trouble, they called out to Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he rescued them from being distressed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He broke the chains that were on their hands and feet\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and brought them out of those very dark prisons.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of them foolishly rebelled against God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so they suffered for their sins.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They did not want to eat any food,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they almost died.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were in trouble, they called out to Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he rescued them from being distressed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When he commanded that they be healed, they were healed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he saved them from dying.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They should praise Yahweh for loving them faithfully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and for the wonderful things that he does for people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They should give offerings to him to show that they are thankful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they should sing joyfully about the miracles that he has performed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some of them sailed in ships;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they were selling things in cities far away.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As they were sailing, they also saw the miracles that Yahweh performed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the wonderful things that he did when they were on very deep seas.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gave orders to the winds, and they became strong\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and stirred up high waves.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The ships in which they were sailing were tossed high in the air,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then they sank into the troughs between the high waves;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "then the sailors were terrified at the danger.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They stumbled about and staggered like drunken men,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they did not know what to do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were in trouble, they called out to Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he rescued them from being distressed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He calmed the storm\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he stilled the waves.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were very glad when it became calm;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Yahweh brought them safely into a harbor as they wished.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They should praise Yahweh for loving them faithfully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and for the wonderful things that he does for people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They should praise him among the Israelite people when they have gathered together,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they should praise him in front of the leaders of the country.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sometimes Yahweh causes rivers to become dry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that the land becomes a wilderness,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and springs of water become dry land.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sometimes he causes land that has produced lots of crops to become salty wastelands,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that they do not produce crops.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He does that because the people who live there are very wicked.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But sometimes he causes pools of water to appear in deserts,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he causes springs to flow in very dry ground.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He brings hungry people into that land, to live there and to build cities there.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They plant seeds in their fields,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they plant grapevines that produce large crops of grapes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He blesses the people, and the women give birth to many children,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they have large herds of cattle.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the number of people became smaller and they were humiliated by their enemies\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by being oppressed and caused to suffer,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh shows contempt for the leaders who oppress them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and makes them to wander in a wilderness where there are no roads.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he rescues poor people from being in misery\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and causes their families to increase in number like flocks of sheep.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who live rightly see God do these things, and they rejoice;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "wicked people hear about these things, too,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they have nothing to say against Yahweh in reply.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are wise should think carefully about these things;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they should consider all the things that Yahweh has done to show that he faithfully loves them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "ms",
+        "content": "Book Five\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15-16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He broke down the prison gates that were made of bronze;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he cut through the prison bars that were made of iron.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They should praise Yahweh for loving them faithfully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and for the wonderful things that he does for people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As dead flies cause perfume to stink,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so a little folly can overpower wisdom and honor.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The heart of a wise person tends to the right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the heart of a fool tends to the left.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a fool walks down a road,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "his thinking is deficient,\n"
+      },
+      {
+        "tag": "q3",
+        "type": "quote",
+        "text": "proving to everyone he is a fool.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If the emotions of a ruler rise up against you, do not leave your work.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Calm can quiet down great outrage.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is an evil that I have seen under the sun,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a kind of error that comes from a ruler:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Fools are given leadership positions,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while successful men are given low positions.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen slaves riding horses,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and successful men walking like slaves on the ground.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Anyone who digs a pit\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "can fall into it, and whenever someone breaks down a wall,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a snake can bite him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever cuts out stones\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "can be hurt by them,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the man who chops wood\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "is endangered by it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If an iron blade is dull, and a man does not sharpen it, then he must use more strength, but wisdom provides an advantage for success.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a snake bites before it is charmed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "then there is no advantage for the charmer.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The words of a wise man's mouth are gracious,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the lips of a fool consume him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As words begin to flow from a fool's mouth, foolishness comes out,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and at the end his mouth flows with wicked madness.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A fool multiplies words,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but no one knows what is coming.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who knows what is coming after him?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The toil of fools wearies them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that they do not even know the road to town.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to you, land, if your king is a young boy,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and if your leaders begin feasting in the morning!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But blessed are you, land, if your king is the son of nobles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and if your leaders eat at the right time,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for strength, and not for drunkenness!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of laziness the roof sinks in,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and because of idle hands the house leaks.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People prepare food for laughter,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "wine brings enjoyment to life,\n"
+      },
+      {
+        "tag": "q3",
+        "type": "quote",
+        "text": "and money fills the need for everything.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not curse the king, not even in your mind,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not curse rich people in your bedroom.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "For a bird of the sky might carry your words;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "whatever has wings can spread the matter.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Paul, am writing this letter. Sosthenes, our fellow believer, is with me as I write this letter to you. God appointed me to be an apostle of Christ Jesus, and God chose me to serve him.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This letter is to the church of God in Corinth, to those whom Christ Jesus has set apart for God, with everyone else—everywhere—who calls on God to save them in the name of our Lord Jesus Christ, their Lord and ours.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May God our Father and the Lord Jesus Christ love you and give you peace.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I thank my God every day for you because of the many costly gifts that Christ Jesus has given to you because he loves you.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Christ has given you so many things. He helped you in all your speaking and in all your knowledge.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You yourselves are the proof that these statements about Christ are true.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is the reason you do not lack any gift from the Spirit of God while you wait for the day when God will make the Lord Jesus Christ known and will show him to everyone.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God will also make you strong so you can serve him to the very end, so you will bring no shame upon yourselves on the day that our Lord Jesus Christ returns to earth.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is keeping his promise to do that. God called you, so you can know and love his Son, Jesus Christ, who is our Lord.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My brothers and sisters, I beg you by the authority of Jesus, that you come to an agreement and that you settle your disagreements, and that you no longer divide yourselves into groups. Learn to see things from the same point of view and to work together to accomplish the same task.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those in Chloe's house have reported to me that there are divisions and disagreements among some of you.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the problem. Each of you claims to have loyalty to one leader or another. One says, \"I am loyal to Paul.\" Another says, \"I am loyal to Apollos.\" Someone else says, \"I am loyal to Peter.\" And the last one says, \"But I am loyal to Christ.\"\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Christ does not divide his loyalty. Paul was not crucified for you. The person who baptized you did not baptize you in the name of Paul.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I thank God that I baptized only a few people there; among them I baptized Crispus and Gaius.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It would not be true that I baptized them in my name.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(Now I remember that I also baptized the household of Stephanas, but other than those people, I do not remember baptizing anyone else in Corinth.)\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The most important work Christ sent me to do was to tell everyone the good news about him, not to baptize people. I did not proclaim the good news using human wisdom or clever words so instead I could use the power of the work of Christ dying on the cross.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For those who are dead to the things of God cannot understand him. Christ died for them on the cross, but this message is pointless to them. However, for those of us whom God has rescued and brought to life, this message allows God to powerfully work in us.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A prophet wrote in the scriptures:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"The wisdom of those who think they are wise,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will destroy,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will make the brilliant plans of the intelligent\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to be utter failures.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Where are the wise people of this world? They did not understand anything about God. Neither did the scholars, nor those skilled in debate. For God has shown that everything they call wisdom is really foolishness.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the wisdom of God, unbelievers did not come to know God by their own wisdom. So God was pleased to use a message that they thought was foolish. That is message we proclaimed and it had power to save all who believe it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Jews wanted public displays of miraculous power before they would follow anyone. The Greeks are looking for wisdom through new and fresh ways of thinking about spiritual ideas.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we proclaim a message about Christ, who died on a cross. For the Jews this message about the cross of Christ is something they cannot receive because death on a cross brings a curse with it. To the Greeks it is too foolish to deserve their attention.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But for us, we whom God called so we can know him, that message shows that God acted powerfully and wisely by sending Christ to die for us. The good news is not tied to any race or philosophy; in Christ there is no distinction between Jews and all the other nations and races on earth.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the things of God that appears foolish are really wiser that the most brilliant ideas human beings can imagine. And the things of God that appear weakest are stronger than the strongest and greatest human being who ever lived.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Brothers and sisters, look at the kind of person you were when God called you. See how unimportant you were. You were not the wisest of people. You were not important enough for people to obey you. You had no important ancestors.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead, God chose the things that made no sense to unbelievers so that they would stop praising themselves. God chose to use things that were weak to put to shame the things they believed were so strong.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God chose what the unbelievers think is of no importance in order to show that the things they consider to be important have no value.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God did this so that no human being could have any reason to praise himself and he should offer God all praise instead.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of what God has done, you are now joined to Christ Jesus, who has made clear to us how wise God is. He has put us right with God, he has set us apart for God, and he has rescued us and brought us to safety.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So, as the scriptures say:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"The one who praises himself should praise himself only in what the Lord has done for him.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

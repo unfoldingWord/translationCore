@@ -1,0 +1,774 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job replied,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Yes, yes, I know.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But how can anyone say to God, 'I am innocent'?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If someone wanted to argue with God about that,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God could ask him a thousand questions\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that person would not be able to answer any of them!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is very wise and powerful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one who has tried to argue against him has ever been able to win.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He even moves mountains in earthquakes without telling anyone in advance.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When he is angry, he turns the mountains upside down.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He sends earthquakes that shake the ground;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he causes the columns that support the earth to shake.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some days he speaks to the sun, and it does not rise,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and some nights he prevents the stars from shining.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He alone stretched [stretches] out the sky;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he alone puts his feet on the waves and stops their violence.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He set in their places the groups of stars— the Bear, Orion, the Pleiades, and the groups of stars in the southern sky.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does great things that we cannot understand;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he does more marvelous things than we are able to count.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He passes by where I am, but I cannot see him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he moves further on, but I do not see him go.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If he wants to snatch someone away, no one could stop him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one dares ask him, 'Why are you doing that?'\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God will not very easily stop being angry;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he defeated the servants of Rahab, the great sea monster.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If God took me to court,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "what could I say to answer him?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even though I would be innocent, I would not be able to answer him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All I could do would be to request God, my judge, to act mercifully toward me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If I summoned him to come to the courtroom and he said that he would come,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I would not believe that he would pay attention to what I would say.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He sends storms to batter me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he bruises me many times without any reason.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though he will not let me get my breath\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he causes me to suffer all the time.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If I tried to wrestle with him, there would be no way to defeat him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he is stronger than I am.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If I called him to appear in court,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there is no one who could force him to go there.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even though I was innocent, anything I said would cause him to punish me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even though I had not done anything wrong, he would still prove that I was guilty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have not done anything wrong, but that is not important anymore because I do not care what happens to me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I despise living.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Nothing is important to me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because God will get rid of all of us, both those who are innocent and those who are wicked.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people experience disaster and it causes them to suddenly die,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God laughs at it, even if they are innocent.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God has allowed wicked people to control what happens in the world.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is as though he had caused judges to be blind, no longer able to judge fairly.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If it is not God who has done that,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who, then, has done it?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My days pass very quickly, like a fast runner who passes one by;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though the days run away, and nothing good ever happens to me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My life goes by very rapidly, like a swiftly sailing boat made from reeds\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or like an eagle that swoops down to seize an animal.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If I smile and say to God, 'I will forget what I am complaining about;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will stop looking sad and try to be cheerful,'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then I become afraid because of all that I am suffering\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I know that God does not consider that I am innocent.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will condemn me anyway,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so why should I keep trying in vain to defend myself?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If I washed myself with snow\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or cleansed my hands with lye\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to get rid of my guilt,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "he would still throw me into a filthy pit;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as a result it would be as though even my clothes would detest me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is not a human, as I am,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so there is no way that I could answer him to prove that I am innocent\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if we went together to have a trial in a courtroom.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is no one to mediate,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one who has authority over both of us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish someone else could stop God from making me suffer,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that he would not continue to terrify me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If he did that, I would declare that I am innocent without being afraid of him\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I know within myself that I really have not done what is wrong like God thinks that I have.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

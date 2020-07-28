@@ -1,0 +1,229 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A declaration about Moab.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Indeed, in one night Ar of Moab is laid waste and destroyed;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "indeed, in one night Kir of Moab is laid waste and destroyed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have gone up to the temple, the people of Dibon went up to the heights to weep;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Moab laments over Nebo and over Medeba.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All their heads are shaved bare and all their beards are cut off.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In their streets they wear sackcloth; on their housetops\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and in the square everyone wails, melting in tears.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heshbon and Elealeh call out for help; their sound is heard as far as Jahaz.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So the armed men of Moab call out for help; they tremble within themselves.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My heart cries out for Moab; her fugitives flee to Zoar and to Eglath Shelishiyah.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They go up the ascent of Luhith weeping;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "on the road to Horonaim they loudly wail over their destruction.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The waters of Nimrim are a desolation;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the grass is withered; \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the vegetation has dried up; \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "there is no more green grass.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The abundance they have grown and stored\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they carry away over the brook of the poplars.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The cry has gone around the territory of Moab;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "the wailing as far as Eglaim and Beer Elim.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the waters of Dimon are full of blood; but I will bring even more upon Dimon.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "A lion will attack those who escape from Moab and also those remaining in the land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

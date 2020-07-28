@@ -1,0 +1,494 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Jacob left, taking with him all his family and possessions. When they arrived at Beersheba, he offered sacrifices to God, the one whom his father Isaac worshiped.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That night, God called to Jacob in a vision, saying, \"Jacob! Jacob!\" He replied, \"I am here!\"\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God said, \"I am God, the one your father worshiped. Do not be afraid to go down to Egypt, because I will give you many descendants, and they will become a great nation there.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will go down to Egypt with you, and later I will bring your descendants back to Canaan again. And Joseph will be with you when you die.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Jacob left Beersheba, and his sons took their father, their wives, and their children, in the carts that the king had sent for them to travel in.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In this way, Jacob and all his family went to Egypt. They took with them the livestock and all the other possessions that they had acquired in Canaan.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jacob went to Egypt with all his sons, his daughters, grandsons, and granddaughters—his whole family. \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is a list of the names of the members of Jacob's family who went with him to Egypt:\n"
+      },
+      {
+        "tag": "li",
+        "text": "Reuben, Jacob's oldest son;\n",
+        "children": [
+          {
+            "tag": "li",
+            "text": " \n",
+            "children": [],
+            "endTag": ""
+          }
+        ],
+        "endTag": ""
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Reuben's sons Hanok, Pallu, Hezron, and Carmi;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Simeon and his sons Jemuel, Jamin, Ohad, Jakin, Zohar, and Shaul, who was the son of woman who came from the Canaanite people group;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Levi and his sons Gershon, Kohath, and Merari;\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Judah and his sons, Shelah, Perez, and Zerah (his other sons, Er, and Onan, had died in Canaan land);\n"
+      },
+      {
+        "tag": "li",
+        "text": "the two sons of Perez: Hezron and Hamul;\n",
+        "children": [
+          {
+            "tag": "li",
+            "text": " \n",
+            "children": [],
+            "endTag": ""
+          }
+        ],
+        "endTag": ""
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Issachar and his sons Tola, Puah, Jashub, and Shimron;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zebulon and his sons Sered, Elon, and Jahleel\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were the sons of Jacob and Leah, who were born in Paddan Aram, in addition to Dinah his daughter. There were thirty-three sons and daughters altogether.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Gad and his sons Zephon, Haggi, Shuni, Ezbon, Eri, Arodi, and Areli;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Asher and his sons Imnah, Ishvah, Ishvi, and Beriah; and their sister Serah;\n"
+      },
+      {
+        "tag": "li",
+        "text": "Beriah's sons: Heber and Malkiel;\n",
+        "children": [
+          {
+            "tag": "li",
+            "text": " \n",
+            "children": [],
+            "endTag": ""
+          }
+        ],
+        "endTag": ""
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(Those were the children and grandchildren of Jacob and Zilpah, the slave woman whom Laban had given to his daughter Leah. These were sixteen people altogether.)\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joseph and Benjamin, the sons of Jacob's wife Rachel;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(Ephraim and Manasseh were Joseph's two sons. They did not go down to Egypt because they had been born in Egypt. They were sons of Asenath, the daughter of On, who was the priest in the temple in the city of On.)\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Benjamin and his sons Bela, Beker, Ashbel, Gera, Naaman, Ehi, Rosh, Muppim, Huppim, and Ard;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(These were the sons and grandsons of Rachel and Jacob. They were fourteen people altogether.)\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Dan and his son Hushim;\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Naphtali and his sons Jahziel, Guni, Jezer, and Shillem.\n"
+      },
+      {
+        "tag": "li",
+        "text": " \n",
+        "children": [],
+        "endTag": ""
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(These were the sons and grandsons of Jacob and Bilhah, the slave girl whom Laban had given to his daughter Rachel. They were seven people altogether.)\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Altogether there were sixty-six descendants of Jacob who went to Egypt with him. That number does not include his sons' wives.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Including Jacob and Joseph and Joseph's two sons who were born in Egypt, there were seventy members of Jacob's family when they were all there in Egypt.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jacob sent Judah to go ahead of the rest of them to talk with Joseph and to ask for directions on how to travel to Goshen. Then Judah returned to the rest of his family and they all traveled to the region of Goshen. When they arrived there,\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joseph got his chariot ready and went to Goshen to meet his father. When Joseph arrived, he threw his arms around his father's neck and cried for a long time.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jacob said to Joseph, \"I have seen you, and now I know that you are still alive! So I am ready to die.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Joseph said to his brothers and to the rest of his father's family, \"I will go to the king and say to him, 'My brothers and my father and the rest of his family, who were living in Canaan land, have all come to me.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men are all shepherds. They take care of their livestock, and they have brought with them their sheep, goats, and cattle, and everything else that they own.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the king summons you and asks, 'What work do you do?'\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "answer by saying, 'From the time when we were young, we have taken care of livestock, just as our ancestors did.' If you tell him that, he will let you live in the region of Goshen.\" Joseph told them to say that because the people of Egypt despised shepherds.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

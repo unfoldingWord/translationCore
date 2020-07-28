@@ -1,0 +1,490 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is King Solomon's most beautiful song.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish he would kiss me on my lips,\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaks to her lover\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because your love for me is more delightful than wine.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fragrance of the perfume on your skin is very sweet.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "And your honor is very great and is spreading,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the fragrance of the special oil that you have put on your skin.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That is why the other young women are attracted to you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Take me quickly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "take me to your home.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He is like a king to me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he has brought me into his bedroom.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am very happy about you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my love for you is better than wine.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is not surprising that the other young women adore you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the other women\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You women of Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am dark but beautiful;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "my dark skin is like the tents in Kedar,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or like the beautiful curtains in Solomon's palace.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But do not stare at me because the sun has made my skin dark.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "my brothers were angry with me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so they forced me to work out in the sunshine in the vineyards,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so I was not able to take good care of my body.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You whom I love, where will you take your flock of sheep today?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Where will you allow them to rest at noontime?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I want to know because it is not right for me to wander around like a prostitute\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "looking for you among the flocks that belong to your friends.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "Her lover answering her\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who are the most beautiful of all the women,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if you search for me and do not know where I will take my sheep,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "follow the tracks of the sheep.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Then allow your young goats to graze near the shepherds' tents.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are beautiful, my darling, like one of the young female horses\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that pull the chariots belonging to the king of Egypt.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your earrings are decorations for your cheeks,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there are strings of beads around your neck.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will make for you some gold earrings\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that are decorated with silver.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While the king was on his couch,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the smell of my perfume spread around the room.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The man who loves me stays between my breasts during the night like a bag of perfume tied around my neck.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is like a bunch of flowers from the vineyards at En Gedi.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "Her lover speaking to her\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You whom I love, you are beautiful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are very beautiful!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Your eyes are as delightful as doves.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who love me, you are very delightful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are wonderful!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "This green grass in the countryside will be like a couch where we can lie down.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Branches of cedar trees will shade us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the fir branches overhead are like a roof for us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

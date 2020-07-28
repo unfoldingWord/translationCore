@@ -1,0 +1,475 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"You people of Israel, I brought all your ancestors out of Egypt;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so listen to what I am saying about you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From all the people groups on the earth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I chose and took care of only you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That is the reason that I will punish you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for the sins that you have committed.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Two people certainly cannot walk together\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if they have not already agreed what place they will start walking from.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A lion in a forest certainly does not roar\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if it has not killed another animal.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It does not growl in its den\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if it is not eating the flesh of an animal that it has caught.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one can catch a bird\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if he does not set a trap for it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "A trap does not spring shut\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when some animal has not sprung the trap.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Similarly, all the people in a city certainly become afraid\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they hear someone blowing a trumpet\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to signal that enemies are attacking.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And when a city experiences disaster,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh is the one who has caused it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever Yahweh plans to do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he tells his prophets about it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone certainly becomes terrified when they hear a lion roar;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh the Lord has given messages to prophets,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they certainly must proclaim those messages,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even though they terrify people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Proclaim to the people who guard the strongholds in Ashdod,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to those who protect the fortresses in the land of Egypt, and say this,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Come together on the hills of Samaria,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and see how much the people in that city are frightened,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and see the way the people are suffering because of what they are doing to each other!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says that the people there do not know how to do things that are right.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Their homes are filled with valuable things that they have stolen or taken violently from others.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Yahweh our God says that soon their enemies will come\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and tear down their defenses\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and take away those valuable things.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has declared this:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"When a lion attacks a sheep,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "sometimes a shepherd is able to snatch from the lion's mouth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "only two legs or an ear of the sheep.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Similarly, only a few people from Samaria will escape,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as if someone could save only a part of a couch or a bed from a fire in the house.\"U\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, says this:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"Proclaim this message about the descendants of Jacob:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I, Yahweh, punish the people of Israel\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of the sins that they have committed,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will cause the altars at the town of Bethel to be destroyed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even the projections at the corners of the altars will be cut off and fall to the ground.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause the houses that they live in during the winter to be torn down;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the houses they live in during the summer, they will also be torn down.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Beautiful big houses and houses that are decorated with ivory will be destroyed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That will surely happen because I, Yahweh, have said it!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

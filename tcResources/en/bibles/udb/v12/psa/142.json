@@ -1,0 +1,218 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I cry out to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I plead for you to help me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am bringing to you all my problems;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am telling you all my troubles.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I am very discouraged,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you know what I should do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Wherever I walk, it is as though my enemies have hidden traps for me to fall into.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I look around,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but there is no one who sees me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one who will protect me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and no one who cares about what happens to me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Yahweh, I cry out to you to help me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are the one who protects me;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you are all that I need while I am alive.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to me while I cry out to you for help\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I am very distressed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Rescue me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because those who make me suffer are very strong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I cannot escape from them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Free me from my troubles\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that I may thank you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you do that, when I am with others who live rightly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will praise you for having been very good to me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm that David prayed when he was hiding in a cave.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

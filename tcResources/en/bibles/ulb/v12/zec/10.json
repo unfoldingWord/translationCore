@@ -1,0 +1,201 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ask for rain from Yahweh in the season of the spring rain—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh who makes thunderstorms—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he gives rain showers to everyone\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and vegetation in the field.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For household idols speak falsely; the diviners envision a lie;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they tell deceitful dreams and give empty comfort,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so they wander like sheep and suffer because there is no shepherd.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"My wrath burns against the shepherds; it is the male goats—the leaders—that I will punish. Yahweh of hosts will also attend to his flock, the house of Judah, and make them like his warhorse in battle!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From Judah will come the cornerstone; from him will come the tent peg; from him will come the war bow; from him will come every ruler together.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Many modern versions put the idea of \\fqa together \\fqa* at the start of the next verse. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be like warriors who trample their enemies into the mud of the streets in battle; they will make war, for Yahweh is with them, and they will shame those who ride warhorses.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will strengthen the house of Judah and save the house of Joseph; for I will restore them and have mercy on them. They will be as though I had not cast them off, for I am Yahweh their God, and I will respond to them.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Ephraim will be like a warrior, and their hearts will rejoice as with wine; their children will see and rejoice. Their hearts will rejoice in me!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will whistle for them and gather them, for I will rescue them, and they will become as great as they previously were!\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I sowed them among the peoples, but they will remember me in distant countries, so they and their children will live and return.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I will restore them from the land of Egypt and gather them from Assyria. I will bring them to the land of Gilead and Lebanon until there is no more room for them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will pass through the sea of their affliction; I will strike the waves of that sea and will dry up all the depths of the Nile. The majesty of Assyria will be brought down, and the scepter of Egypt will go away from the Egyptians.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will strengthen them in myself, and they will walk in my name—this is Yahweh's declaration.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

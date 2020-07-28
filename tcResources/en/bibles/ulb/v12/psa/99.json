@@ -1,0 +1,239 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh reigns; let the nations tremble.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He sits enthroned above the cherubim; the earth quakes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is great in Zion;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is exalted above all the nations.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let them praise your great and awesome name;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is holy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king is strong, and he loves justice.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You have established fairness;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have done righteousness and justice in Jacob.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh our God\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and worship at his footstool.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He is holy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Moses and Aaron were among his priests,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Samuel was among those who called on his name.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They called to Yahweh, and he answered them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He spoke to them from the pillar of cloud.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They kept his solemn commands\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the statutes that he gave them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You answered them, Yahweh our God.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "A forgiving God you were to them,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but one who punished their sinful deeds.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh our God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and worship at his holy hill,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for Yahweh our God is holy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

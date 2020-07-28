@@ -1,0 +1,403 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The word of Yahweh came to me again, saying,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"What do you mean, you who use this proverb concerning the land of Israel and say,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'Fathers eat sour grapes, and the children's teeth are made blunt'?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As I live—this is the Lord Yahweh's declaration—there will certainly no longer be any occasion for you to use this proverb in Israel.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Behold! Every life belong to me—the life of the father as well as the life of the son, they belong to me! The soul who sins is the one who will die!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What can be said about a man who is righteous and who carries out justice and righteousness—\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "if he does not eat upon the mountains or lift up his eyes to the idols of the house of Israel, and he does not defile his neighbor's wife, nor approached a woman during her monthly period, is he a righteous man?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What can be said about a man who does not oppress anyone, and he gives back to the debtor what was put up as security for a loan, and he does not commit theft but gives his food to the hungry and he covers the naked with clothes, is he a righteous man?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What can be said about a man who does not charge too much interest for the money he loans, and he does not take too much profit for what he sells? It is said of him that he carries out justice and establishes faithfulness between people.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If that man walks in my statutes and keeps my decrees to act faithfully, then the promise for this righteous man is this: He will surely live!—this is the Lord Yahweh's declaration.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But suppose that he has a violent son who sheds blood and does any one of these things that were mentioned, \n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some ancient copies and many modern versions leave out \\fqa to a brother \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(though his father has not done any of these things). He eats upon the mountains and he defiles his neighbor's wife, what can be said about him?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This man oppresses the poor and needy, and he seizes and robs, and he does not return a pledge, and he lifts up his eyes to the idols and commits disgusting actions,\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and he lends out money at too high interest and he makes too much profit on what he sells, should that man live? Surely he will not! He will certainly die and his blood will be on him because he has done all these detestable things.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But behold! Suppose there is a man who bears a son, and his son sees all the sins that his father has committed, and though he sees them, he does not do those things. \n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That son does not eat upon the mountains, and he does not lift up his eyes to the idols of the house of Israel, and he does not defile his neighbor's wife, what can be said about him?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That son does not oppress anyone, or seize a pledge, or take stolen things, but instead gives his food to the hungry and covers up the naked with clothes.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That son does not oppress anyone or take interest that is too high or make too much profit for a loan, but he carries out my decrees and walks according to my statutes; that son will not die for his father's sin: He will surely live!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His father, since he oppressed others by extortion and robbed his brother, and did what is not good among his people—behold, he will die in his iniquity.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you say, 'Why does the son not bear the iniquity of his father?' Because the son carries out justice and righteousness and keeps all my statutes; he does them. He will surely live!\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who sins, he is the one who will die. A son will not bear his father's iniquity, and a father will not bear his son's iniquity. The righteousness of the one who acts rightly will be on himself, and the wickedness of the wicked will be on himself.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the wicked turns away from all his sins that he has done, and keeps all my statutes and performs justice and righteousness, then he will certainly live and not die.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the transgressions that he has committed will not be called to mind against him. He will live by the righteousness that he practices.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do I greatly rejoice over the death of the wicked—this is the Lord Yahweh's declaration—and not in his turning away from his way so that he may live?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the righteous person turns away from his righteousness and commits iniquity and practices abominations like all the abominations that the wicked person does, then will he live? All the righteousness that he had done will not be called to mind when he betrays me in his treason. So he will die in the sins that he committed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you say, 'The way of the Lord is not fair!' Listen, house of Israel! Are my ways unfair? Is it not your ways that are unfair?\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the righteous man turns away from his righteousness, and commits iniquity and dies because of them, then he will die in the iniquity that he has done.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when a wicked man turns away from his wickedness that he has done and performs justice and righteousness, then he will preserve his life.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For he has seen and turned away from all the transgressions that he had done. He will surely live, and he will not die.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the house of Israel says, 'The way of the Lord is not fair!' How is my way not fair, house of Israel? It is your ways that are not fair.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore I will judge each man among you according to his ways, house of Israel!—this is the Lord Yahweh's declaration. Repent and turn away from all your transgressions so that they will not be stumbling blocks of iniquity against you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Throw away from yourselves all of the transgressions that you have committed; make for yourselves a new heart and a new spirit. Why should you die, house of Israel?\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I have no delight in the death of the one who dies—this is the Lord Yahweh's declaration—so repent and live!\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

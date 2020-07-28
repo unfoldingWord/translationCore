@@ -1,0 +1,600 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now these are the last words of David—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "David son of Jesse,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the man who was highly honored,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the one anointed by the God of Jacob,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the sweet psalmist of Israel.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"The Spirit of Yahweh spoke by me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his word was on my tongue.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The God of Israel spoke,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the Rock of Israel said to me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'The one who rules righteously over men,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who rules in the fear of God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will be like the morning light when the sun rises,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a morning without clouds,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when the tender grass springs up from the earth\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "through bright sunshine after rain.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, is my family not like this before God?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Has he not made an everlasting covenant with me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "ordered and sure in every way?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Does he not increase my salvation and fulfill my every desire?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the worthless will all be like thorns to be thrown away,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they cannot be gathered by one's hands.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The man who touches them\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "must use an iron tool or the shaft of a spear.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They must be burned up where they lie.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the names of David's mighty men: Jeshbaal the Hachmonite was the leader of the mighty men. He killed eight hundred men on one occasion.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa Jeshbaal \\fqa* , some versions have \\fqa Josheb-Basshebeth \\fqa* , \\fqa Jashobeam \\fqa* , \\fqa Ishbaal \\fqa* , or \\fqa Ishbosheth \\fqa* . These all are probably forms of the same name. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After him was Eleazar son of Dodai the Ahohite, one of the three mighty men. He was with David when they taunted the Philistines who had gathered together to do battle, and when the men of Israel had retreated.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eleazar stood and fought the Philistines until his hand became weary and his hand stiffened to the grip of his sword. Yahweh brought about a great victory that day. The army returned after Eleazar, only to strip the bodies.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After him was Shammah son of Agee, a Hararite. The Philistines gathered together where there was a field of lentils, and the army fled from them.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Shammah stood in the middle of the field and defended it. He killed the Philistines, and Yahweh brought about a great victory.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Three of the thirty soldiers went down to David at harvest time, to the cave of Adullam. The army of the Philistines was camped in the Valley of Rephaim.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time David was in his stronghold, a cave, while the Philistines had established at Bethlehem.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David was longing for water and said, \"If only someone would give me water to drink from the well at Bethlehem, the well that is by the gate!\"\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So these three mighty men broke through the army of the Philistines and drew water out of the well of Bethlehem, the well at the gate. They took the water and brought it to David, but he refused to drink it. Instead, he poured it out to Yahweh.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said, \"Yahweh, far be it from me, that I should do this. Should I drink the blood of men who have risked their lives?\" So he refused to drink it.\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "These things were done by the three mighty.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Abishai, brother of Joab and son of Zeruiah, was captain over the three. He once fought with his spear against three hundred men and killed them. He was often mentioned along with the three soldiers.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Was he not even more famous than the three? He was made their captain. However, his fame did not equal the fame of the three most famous soldiers.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Benaiah from Kabzeel was the son of Jehoiada; he was a strong man who did mighty feats. He killed the two sons of Ariel of Moab. He also went down into a pit and killed a lion while it was snowing.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he killed a very large Egyptian man. The Egyptian had a spear in his hand, but Benaiah fought against him with only a staff. He seized the spear out of the Egyptian's hand and then killed him with his own spear.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Benaiah son of Jehoiada did these feats, and he was named alongside the three mighty men.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He was more highly regarded than the thirty soldiers in general, but he was not regarded quite as highly as the three mighty men. Yet David put him in charge of his bodyguard.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The thirty included the following men: Asahel brother of Joab, Elhanan son of Dodo from Bethlehem,\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shammah the Harodite, Elika the Harodite,\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Helez the Paltite, Ira son of Ikkesh the Tekoite,\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Abiezer the Anathothite, Sibbekai "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some LXX manuscripts have the name \\fqa Sibbekai,\\fqa* see also 2SA 21:18 and 1CH 11:29. The Hebrew text has \\fqa Mebunnai \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": " "
+      },
+      {
+        "type": "text",
+        "text": "the Hushathite,\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zalmon the Ahohite, Maharai the Netophathite;\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heleb son of Baanah, the Netophathite, Ithai son of Ribai from Gibeah of the Benjamites,\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Benaiah the Pirathonite, Hiddai of the valleys of Gaash.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Abi-Albon the Arbathite, Azmaveth the Barhumite,\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eliahba the Shaalbonite, the sons of Jashen, Jonathan son of Shammah the Hararite;\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ahiam son of Sharar the Hararite,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Eliphelet son of Ahasbai the Maakathite, Eliam son of Ahithophel the Gilonite,\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hezro the Carmelite, Paarai the Arbite,\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Igal son of Nathan from Zobah, Bani from the tribe of Gad,\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zelek the Ammonite, Naharai the Beerothite, armor bearer to Joab son of Zeruiah,\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ira the Ithrite, Gareb the Ithrite,\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Uriah the Hittite—thirty-seven in all.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

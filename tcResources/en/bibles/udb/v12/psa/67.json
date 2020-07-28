@@ -1,0 +1,187 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, act mercifully toward us and bless us;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "act kindly toward us.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do this in order that everyone in the world may know what you want them to do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people of all nations may know that you have the power to save them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, I desire that all people groups may praise you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I want them all to praise you!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I desire that the people of all nations will be glad and sing joyfully\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you judge the people groups equally,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you guide all the nations in the world.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, I desire that the people groups may praise you;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I want them all to praise you!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Good crops have grown on our land;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "God, our God, has blessed us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because God has blessed us,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I desire that all people everywhere on the earth may have an awesome respect for him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm for the choir director, to be accompanied by stringed instruments.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

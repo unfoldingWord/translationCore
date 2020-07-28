@@ -1,0 +1,740 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Listen carefully to my words,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and let this be the comfort you offer to me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Put up with me, and I also will speak;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "after I have spoken, mock on.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for me, is my complaint to a person?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why should I not be impatient?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look at me and be astonished,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and lay your hand upon your mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I think about my sufferings, I am terrified,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and trembling seizes my body.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do wicked people continue to live,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "become old, and grow mighty in power?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their descendants are established with them in their sight,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their offspring are established before their eyes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their houses are safe from fear;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "neither is the rod of God on them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their bull breeds; it does not fail to do so;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their cow gives birth and does not lose her calf prematurely.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They send out their little ones like a flock,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their children dance.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They sing to the tambourine and harp\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and rejoice with the music of the flute.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They spend their days in prosperity,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they go down quietly to Sheol.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They say to God, 'Depart from us\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for we do not wish any knowledge of your ways.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What is the Almighty, that we should worship him?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "What advantage would we get if we prayed to him?'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, is not their prosperity in their own hands?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have nothing to do with the advice of wicked people.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How often is it that the lamp of wicked people is put out,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or that their calamity comes upon them?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How often does it happen that God distributes sorrows to them in his anger?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How often is it that they become like stubble before the wind\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or like chaff that the storm carries away?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You say, 'God lays up one's guilt for his children to pay.'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let him pay it himself, so that he might know his guilt.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let his eyes see his own destruction,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and let him drink of the wrath of the Almighty.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For what does he care about his family after him\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when the number of his months is cut off?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can anyone teach God knowledge\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "since he judges even those who are high?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One man dies in his full strength,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "being completely quiet and at ease.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His body is full of milk,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the marrow of his bones is moist.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Another man dies in bitterness of soul,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "one who has never experienced anything good.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They lie down alike in the dust;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the worms cover them both.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, I know your thoughts,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the ways in which you wish to wrong me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you say, 'Where now is the house of the prince?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Where is the tent in which the wicked man once lived?'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have you never asked traveling people?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do you not know the evidence they can tell,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that the wicked man is kept from the day of calamity,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and that he is led away from the day of wrath?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who will condemn the wicked man's way to his face?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who will repay him for what he has done?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet he will be borne to the grave;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "men will keep watch over his tomb.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The clods of the valley will be sweet to him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all people will follow after him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as there were innumerable people before him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How then do you comfort me with nonsense,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "since in your answers there is nothing but falsehood?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

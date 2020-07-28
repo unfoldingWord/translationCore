@@ -1,0 +1,372 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the words of the Teacher, the descendant of David and king in Jerusalem.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Teacher says this.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Like a vapor of mist,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a breeze in the wind,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "everything vanishes, leaving many questions.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What profit does mankind gain from all the work that they labor at under the sun?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One generation goes,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and another generation comes,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but the earth remains forever.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sun rises,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and it goes down\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and hurries back to the place where it rises again.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wind blows south\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and circles around to the north,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "always going around along its pathway\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and coming back again.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the rivers flow into the sea,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the sea is never full.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "To the place where the rivers go,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there they go again.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything becomes wearisome,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and no one can explain it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The eye is not satisfied by what it sees,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "nor is the ear fulfilled by what it hears.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whatever has been is what will be,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and whatever has been done is what will be done.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There is nothing new under the sun.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is there anything about which it may be said,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Look, this is new'?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Whatever exists has already existed for a long time,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "during ages which came long before us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one seems to remember the things that happened in ancient times,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the things that happened much later\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that will happen in the future\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "will not likely be remembered either.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am the Teacher, and I have been king over Israel in Jerusalem.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I applied my mind to study and to search out by wisdom everything that is done under heaven. That search is a burdensome task that God has given to the children of mankind to be busy with.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen all the deeds that are done under the sun, and look, they all amount to vapor and chasing the wind.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The twisted cannot be straightened!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The missing cannot be counted!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have spoken to my heart saying, \"Look, I have acquired greater wisdom than all who were before me in Jerusalem. My mind has seen great wisdom and knowledge.\"\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I applied my heart to know wisdom and also madness and folly. I came to understand that this also was an attempt to shepherd the wind.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For in the abundance of wisdom there is much frustration, and he who increases knowledge increases sorrow.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,504 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel is like a vine\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that produces many bundles of grapes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But the more their fruit increased, the richer they became.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "With that money they made more stone columns in honor of their idols.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are deceitful and cannot be trusted;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the time has come that they must pay for their sins.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh will break their altars into pieces—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the places where they gave sacrifices to their idols,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he promises to destroy those pillars beside which they worshiped their false gods.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They say, \"We have no king now because we did not honor or respect Yahweh.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But even if we had a king,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "how could a king help us?\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Israel make lying promises and false covenants;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and because their promises are not kept,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "their sort of justice kills people, as poisonous weeds in a field would do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those people of Samaria tremble with fear because of what happened to the calf idols at Beth Aven.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those people mourn over what happened to those idols,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as did the priests who served them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they rejoiced over them and praised their splendor,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but now those idols have been taken away from them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their idols will be carried to Assyria\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to be a gift for the great king.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The people of Israel will be disgraced;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be ashamed\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for having trusted in the advice they received by consulting idols.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king of Samaria will die.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will be like a small piece of wood that floats away down a stream.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The hilltop places known for their wickedness—altars where the people worshiped idols—will all be destroyed.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Thorns and thistles will grow and cover all the altars that were in Samaria.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The people will beg the mountains and say,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Cover us!\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to the hills, \"Fall on us!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People of Israel, since the days of Gibeah you have been sinning;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as if you have been living there ever since then, because you think as they did.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Enemies will attack you evildoers at Gibeah.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"When I decide to act, I will punish them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People groups will gather to fight against them;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "those people groups will capture them and put them in chains\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of their many sins.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ephraim is like a trained calf\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that loves to thresh grain, separating out the grain from the chaff,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I did not put a heavy yoke on her tender neck.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But now I will put Ephraim under that yoke,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and Judah must plow.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Jacob must break up the ground with the harrow.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Plow, now, and do what is right,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will reap the fruit of faithful love.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Do the hard work of breaking up the unplowed ground,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for now is the time for you to ask Yahweh to have mercy on you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so that he may come and rescue you because he does what is right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have sinned wickedly, and now you will have to bear the consequences.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You told lies, and now you must suffer the results of the lies you told.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You have trusted in your own abilities and wisdom,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you have relied on the soldiers in your armies.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sound of war will be among your people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all your fortified cities will be destroyed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It will be as when Shalman destroyed Beth Arbel in battle,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when mothers were killed while they were holding their children.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is what will be done to you, you people of the city of Bethel,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of all the evil things you have done.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When the battle begins at dawn,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the king of Israel will be destroyed; the enemy will kill him.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

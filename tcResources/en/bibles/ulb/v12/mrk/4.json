@@ -1,0 +1,473 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Again he began to teach beside the sea, and a large crowd gathered around him. He stepped into a boat that was on the sea, and he sat down in it. The whole crowd was on the shore beside the sea.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He taught them many things in parables, and in his teaching, this is what he said to them. \n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Listen, the farmer went out to sow his seed.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As he sowed, some seed fell on the road, and the birds came and devoured it.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Other seed fell on the rocky ground, where it did not have much soil. Immediately it sprang up, because it did not have deep soil.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when the sun rose, the plants were scorched, and because they had no root, they dried up.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Other seed fell among the thorn plants. The thorn plants grew up and choked it, and it did not produce a crop.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Other seed fell into good soil and it produced a crop growing up and increasing thirty, sixty, and even a hundred times.\"\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said, \"Whoever has ears to hear, let him hear!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Jesus was alone, those who were close to him and with the twelve asked him about the parables.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"To you is given the mystery of the kingdom of God. But to those outside everything is in parables,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that when they look, yes they look, but do not see,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and so that when they hear, yes they hear, but do not understand,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or else they would turn and God would forgive them.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said to them, \"Do you not understand this parable? How then will you understand all the other parables?\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The farmer who sows his seed is the one who sows the word.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the ones that fall beside the road, where the word was sown, but when they hear it, Satan immediately comes and takes away the word that was sown in them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the ones that are sown on rocky ground, who, when they hear the word, immediately receive it with joy.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have no root in themselves, but endure for a short time. Then tribulation or persecution comes because of the word, and immediately they stumble.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The others are the ones that were sown among the thorns. They hear the word,\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but the cares of the world, the deceitfulness of riches, and the desires of other things enter in and choke the word, and it does not produce a crop.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then those that were sown in the good soil are the ones who hear the word and receive it, and they produce crops—thirty, sixty, or a hundred times what was sown.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus said to them, \"Do you bring a lamp inside the house to put it under a basket, or under the bed? You bring it in and you put it on a lampstand.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For nothing is hidden that will not be known, and nothing is secret that will not come out into the open.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If anyone has ears to hear, let him hear!\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"Pay attention to what you hear, for the measure you use will be measured to you, and more will be added to you.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because whoever has, to him will be given more, and whoever does not have, even what he has will be taken.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He also said, \"The kingdom of God is like a man who sows his seed on the ground.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He sleeps at night and gets up by day, and the seed sprouts and grows, though he does not know how.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The earth bears grain by itself: First the blade, then the ear, then the mature grain in the ear.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the crop is ripe, he immediately sends in the sickle because the harvest has come.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Again he said, \"To what can we compare the kingdom of God, or what parable can we use to explain it?\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is like a mustard seed which, when it is sown, is the smallest of all the seeds on earth.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet, when it is sown, it grows and becomes greater than all the garden plants, and it forms large branches, so that the birds of heaven can make their nests in its shade.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With many parables like this he spoke the word to them, as much as they were able to understand,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and he did not speak to them without a parable. But when he was alone, he explained everything to his own disciples.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day, when evening had come, he said to them, \"Let us go over to the other side.\"\n"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they left the crowd, taking Jesus with them, just as he was, in the boat. There were other boats going along with him. \n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Just then a violent windstorm arose and the waves were breaking into the boat so that the boat was almost full of water.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Jesus himself was in the stern, asleep on a cushion. They woke him up, saying, \"Teacher, do you not care that we are about to die?\"\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He got up, rebuked the wind, and said to the sea, \"Peace! Be still!\" Then the wind ceased, and there was a great calm.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said to them, \"Why are you afraid? Do you still not have faith?\"\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were filled with great fear and said to one another, \"Who then is this, because even the wind and the sea obey him?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

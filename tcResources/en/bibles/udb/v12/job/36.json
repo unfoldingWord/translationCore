@@ -1,0 +1,760 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Elihu finished speaking by saying this:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Job, be patient with me a little longer\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I have something else to teach you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I have something else to say in order to prove that God does no wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will tell you what I have learned from many sources,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order to show that God, my creator, is just.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will not say anything to you that is false;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I, who am standing in front of you, am someone who understands things very well.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Really, God is very powerful, and he does not despise anyone,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he understands everything.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does not allow wicked people to remain alive—contrary to what you have claimed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he always acts justly toward those who are suffering.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He always watches over those who are righteous;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he makes them prosper, as if they were kings,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he causes others to honor them forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, if people who commit crimes are caught,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or if they suffer in prison for having done wrong,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "then God shows them what they have done;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he shows them the sins that they have committed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he shows them that they have been arrogant.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He causes them to listen to what he is warning them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he commands them to turn away from doing what is evil.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they listen to him and serve him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will prosper and be happy for all the years that they continue to live.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if they do not listen to him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will die violently\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they understand nothing about God and what he wants them to do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who fail to honor God continue being angry,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they do not cry out for help\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even when God is punishing them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They die while they are still young,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "disgraced because of their immoral behavior.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God actually rescues people by causing them to suffer;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by afflicting them, he causes them to listen to what he is telling them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Job, I think that God wants to bring you out of your troubles\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and allow you to live without distress;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he wants your table to be full of very nice food.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, now he is punishing you as he would punish the wicked;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God has judged you very rightly.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not let your anger give you an excuse to mock other people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not let a large amount of money paid as a bribe \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "compel you to ruin your life. \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If that happens, it certainly will not help you to cry out when you are distressed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "none of your strength will help you in that case.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not wish that it would be nighttime in order that you might mistreat others without anyone knowing it;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "night is the time when even entire people groups are destroyed!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be careful not to begin doing evil deeds,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because God has caused you to suffer to prevent you from doing evil.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Truly, people praise God because he is so powerful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there is certainly no teacher who teaches what he teaches.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one has told him what he should do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and no one has said to him, 'You have done what is wrong!'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People have always sung songs to praise him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so you also should never forget to praise him for what he has done.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All people have seen what he has done,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but we understand those things only a little.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How great God is! We are not able to know how great he is,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we do not understand how old he is.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He draws water up from the earth and puts it in clouds\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and causes it to become rain;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the rain pours down from the sky\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and causes abundant showers to fall on everyone.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one can understand how the clouds move across the sky\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or how it thunders in the sky where God lives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He causes lightning to flash all around him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he causes the oceans to remain dark.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By providing plenty of rain for everyone,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he gives them abundant food.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though he were holding the lightning in his hands,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then he commands it to strike where he wants it to.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When we hear his thunder, we know that there will be a storm,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the cattle know it, too.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

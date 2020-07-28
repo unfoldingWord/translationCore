@@ -1,0 +1,559 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Mighty One, God, Yahweh, has spoken\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and called the earth from the rising of the sun to its setting.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Out of Zion, the perfection of beauty,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God has shone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our God comes and does not stay silent;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a fire devours before him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and it is very stormy around him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He calls to the heavens above\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to the earth so that he may judge his people:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Gather my faithful ones together to me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who have made a covenant with me by sacrifice.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The heavens will declare his righteousness,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for God himself is judge.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Hear, my people, and I will speak;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am God, your God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will not reprove you for your sacrifices;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your burnt offerings are always before me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will take no bull out of your house,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or male goats out of your folds.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For every beast of the forest is mine,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the cattle on a thousand hills.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know all the birds of the mountains,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the wild beasts of the field are mine.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If I were hungry, I would not tell you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for the world is mine, and everything in it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will I eat the flesh of bulls\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or drink the blood of goats?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Offer to God the sacrifice of thanksgiving,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and pay your vows to the Most High.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Call on me in the day of trouble;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will rescue you, and you will glorify me.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But to the wicked God says,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"What have you to do with declaring my statutes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you have taken my covenant in your mouth,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "since you hate instruction\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and throw my words away?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you see a thief, you agree with him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you participate with those who commit adultery.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You give your mouth to evil,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and your tongue expresses deceit.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You sit and speak against your brother;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you slander your own mother's son.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have done these things, but I have kept silent,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so you thought that I was someone just like yourself.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "But I will reprove you and bring up, right before your eyes, all the things you have done.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give this careful consideration, you who forget God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "otherwise I will tear you to pieces,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and there will be no one to come to help you!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who offers a sacrifice of thanksgiving praises me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to anyone who plans his path in the right way\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will show God's salvation.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of Asaph.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

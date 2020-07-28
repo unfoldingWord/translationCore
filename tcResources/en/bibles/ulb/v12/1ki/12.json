@@ -1,0 +1,416 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rehoboam went to Shechem, for all Israel was coming to Shechem to make him king.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It happened that Jeroboam son of Nebat heard of this (for he was still in Egypt, where he had fled from the presence of King Solomon), for Jeroboam had settled down in Egypt. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some versions have, \\fqa then Jeroboam returned from Egypt \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they sent and called him, and Jeroboam and all the assembly of Israel came and said to Rehoboam,\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Your father made our yoke heavy. Now make lighter the hard work of your father and make lighter the heavy yoke that he put on us, and we will serve you.\"\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rehoboam said to them, \"Go away for three days, then come back to me.\" So the people went away.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "King Rehoboam consulted with the old men who had stood before Solomon his father while he was alive, and he said, \"How do you advise me to answer this people?\"\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They spoke to him and said, \"If you will be a servant today to these people and serve them, and answer them by saying good words to them, then they will always be your servants.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Rehoboam ignored the advice that the old men had given him and he consulted with the young men who had grown up with him and stood before him.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to them, \"What advice do you give me that we may answer the people who spoke to me and said, 'Lighten the yoke that your father put on us'?\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The young men who had grown up with Rehoboam spoke to him, saying, \"Speak to these people who told you that your father Solomon made their yoke heavy but that you must make it lighter. You should say to them, 'My little finger is thicker than my father's waist.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So now, although my father burdened you with a heavy yoke, I will add to your yoke. My father punished you with whips, but I will punish you with scorpions.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Jeroboam and all the people came to Rehoboam on the third day, as the king had instructed when he said, \"Come back to me on the third day.\"\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king answered the people roughly and ignored the advice of the old men that they had given him.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He spoke to them following the advice of the young men; he said, \"My father burdened you with a heavy yoke, but I will add to your yoke. My father punished you with whips, but I will punish you with scorpions.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the king did not listen to the people, for it was a turn of events brought about by Yahweh, that he might carry out his word that he had spoken by Ahijah the Shilonite to Jeroboam son of Nebat.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When all Israel saw that the king did not listen to them, the people answered him and said,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"What share do we have in David?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We have no inheritance in the son of Jesse!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Go to your tents, Israel.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Now see to your own house, David.\"\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "So Israel went back to their tents.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as for the people of Israel who lived in the cities of Judah, Rehoboam became king over them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then King Rehoboam sent Adoniram, who was over the forced laborers, but all Israel stoned him to death with stones. King Rehoboam fled quickly in his chariot to Jerusalem.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Israel has been in rebellion against the house of David to this day.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It happened that when all Israel heard that Jeroboam had returned, they sent and called him to their assembly and made him king over all Israel. There was no one who followed the family of David, except only the tribe of Judah.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Rehoboam arrived in Jerusalem, he assembled all the house of Judah and the tribe of Benjamin; there were 180,000 chosen men who were soldiers, to fight against the house of Israel, to restore the kingdom to Rehoboam son of Solomon.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the word of God came to Shemaiah, the man of God; it said,\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Speak to Rehoboam son of Solomon, king of Judah, to all the house of Judah and Benjamin, and to the rest of the people; say,\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'Yahweh says this: You must not attack or fight against your brothers the people of Israel. Each man must return to his home, for this thing has been made to happen by me.'\" So they listened to the word of Yahweh and turned back and went their way, and they obeyed his word.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jeroboam built Shechem in the hill country of Ephraim, and lived there. He went out from there and built Peniel.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jeroboam thought in his heart, \"Now the kingdom will return to the house of David.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If these people go up to offer sacrifices in the temple of Yahweh at Jerusalem, then the heart of these people will turn again to their master, to Rehoboam king of Judah. They will kill me and return to Rehoboam king of Judah.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So King Jeroboam sought advice and made two calves of gold; he said to the people, \"It is too much for you to go up to Jerusalem. Look, these are your gods, Israel, who brought you up out of the land of Egypt.\"\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He set up one in Bethel and the other in Dan.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So this act became a sin. The people went to one or the other, all the way to Dan.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jeroboam made houses on high places and he also made priests from among all the people, who were not among the sons of Levi.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jeroboam ordained a feast in the eighth month, on the fifteenth day of the month, like the feast that is in Judah, and he went up to the altar. He did so at Bethel, sacrificing to the calves that he had made, and he placed in Bethel the priests of the high places he had made.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jeroboam went up to the altar that he had made in Bethel on the fifteenth day in the eighth month, in the month he had planned in his own mind; he ordained a feast for the people of Israel and went up to the altar to burn incense.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

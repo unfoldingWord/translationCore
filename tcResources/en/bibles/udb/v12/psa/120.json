@@ -1,0 +1,173 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I was distressed, I called out to Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he answered me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I prayed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"Yahweh, rescue me from those who lie to me and try to deceive me!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people who lie to me, I will tell you what God will do to you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and what he will do to punish you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will punish you when soldiers shoot sharp arrows at you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "arrows that were hardened and made sharp\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "over hot coals from the wood of a broom tree.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is terrible for me, living among cruel people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like those who live in the regions of Meshech or Kedar.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have lived for a long time among people who hate to live with others peacefully.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every time I talk about living together peacefully,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they talk about starting a war.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written for people going up to the temple to worship\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

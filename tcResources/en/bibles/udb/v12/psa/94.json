@@ -1,0 +1,555 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you are able to get revenge on your enemies.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "So show them that you are going to punish them!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are the one who judges all people on the earth;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so arise and give them what they deserve.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, how long will those wicked people be glad?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is not right that they continue being glad!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do evil things, and they boast about doing them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "how long will they be allowed to continue doing that?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, it is as though those wicked people were crushing us, your people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they oppress the nation that you have made and that belongs to you alone.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They murder widows and orphans\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people from other countries who think it is safe to live in our land.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those wicked people say, \"Yahweh does not see anything;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the God whom those Israelites worship does not see the evil things that we do.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You evil people who rule Israel, you are foolish and stupid;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when will you become wise?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God made our ears;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do you think that he cannot hear what you say?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He created our eyes;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do you think that he cannot see the evil things that you do?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He corrects the leaders of other nations;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do you think that he will not punish you?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He is the one who knows everything;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "why do you think that he does not know what you do?\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh knows everything that people are thinking;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he knows that what they think is evil and useless.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, how fortunate are those who allow you to discipline them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who want you to teach them your laws.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When those people have had troubles, you cause those troubles to cease,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and someday it will be as though you will dig pits for the wicked people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that they will fall into those pits and die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will not abandon his people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will not desert those who belong to him .\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Someday judges will decide matters fairly for people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all honest people will be pleased about that.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when wicked people oppressed me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "no one defended me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one stood up to testify for me against those evil people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If Yahweh had not helped me at that time,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I would have been executed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my life would have gone to the place where dead people say nothing.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said, \"I am falling into disaster,\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but, Yahweh, you held me up by faithfully loving me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whenever I am very worried,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you comfort me and cause me to be happy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have nothing to do with wicked judges,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who establish laws that allow people to do what is not right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They plan to get rid of righteous people,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and they declare that innocent people must be executed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh has become like my fortress;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my God is like a huge rock on which I am protected.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will punish those wicked leaders in return for the things that they have done;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will get rid of them because of the sins that they have committed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "yes, Yahweh our God will wipe them out.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

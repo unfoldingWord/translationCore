@@ -1,0 +1,627 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like snow in summer or rain in harvest,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so a fool does not deserve honor.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As the sparrow flitters and the swallow darts when they fly,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so an undeserved curse does not alight.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A whip is for the horse, a bridle is for the donkey\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a rod is for the back of fools.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not answer a fool according to his folly,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or you will become like him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Answer a fool and join in on his folly,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so he will not become wise in his own eyes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever sends a message by the hand of a fool\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "cuts off his own feet and drinks violence.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like the legs of a paralytic which hang down\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "is a proverb in the mouth of fools.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like tying a stone in a sling\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "is giving honor to a fool.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like a thorn that goes into the hand of a drunkard\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "is a proverb in the mouth of fools.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like an archer who wounds all those around him\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "is one who hires a fool or hires anyone who passes by.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a dog returns to his own vomit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so is a fool who repeats his folly.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you see someone who is wise in his own eyes?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "There is more hope for a fool than for him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The lazy person says, \"There is a lion on the road!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "There is a lion between the open places!\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As the door turns on its hinges,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so is the lazy person upon his bed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The lazy person puts his hand into the dish\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and yet he has no strength to lift it up to his mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The lazy person is wiser in his own eyes\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "than seven men who respond with good judgment.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like one who takes hold of the ears of a dog,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "is a passerby who becomes angry at a dispute that is not his own.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like a madman who shoots burning arrows,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "is the one who deceives his neighbor\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and says, \"Was I not telling a joke?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For lack of wood, the fire goes out;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and where there is no gossiper quarreling ceases.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As charcoal is to burning coals and wood is to fire,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so is a quarrelsome person for kindling strife.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The words of a gossip are like delicious morsels;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they go down into the inner parts of the body.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like the glaze overlaying an earthen vessel\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so are burning lips and an evil heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One who hates others disguises his feelings with his lips\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he lays up deceit within himself.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will speak graciously, but do not believe him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for there are seven abominations in his heart.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Though his hatred is covered with deception,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his wickedness will be exposed in the assembly.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever digs a pit will fall into it\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the stone will roll back on the one who pushed it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A lying tongue hates the people it crushes\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a flattering mouth brings about ruin.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

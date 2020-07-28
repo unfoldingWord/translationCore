@@ -1,0 +1,190 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, you people of Jerusalem will sing this song:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Yahweh, we praise you!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Previously, you were angry with us,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but you are not angry now\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you have comforted us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Amazingly, you have come to save us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so we will trust in you and not be afraid.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh our God, you enable us to be strong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are the one about whom we sing;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have rescued us from our enemies.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You, his people, will greatly rejoice because he has rescued you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like you enjoy drinking water from a fountain.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time you will say,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"We should thank Yahweh! We should praise him !\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We should tell the people of all the people groups what he has done;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we should enable them to know that he is very great!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We should sing to Yahweh, because he has done wonderful things.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We should enable everyone in the world to know it!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of Jerusalem, shout joyfully to praise Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he is the great Holy One whom we Israelite people worship,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he lives among us!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

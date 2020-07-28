@@ -1,0 +1,530 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were the priests and Levites who came up with Zerubbabel son of Shealtiel and with Jeshua: Seraiah, Jeremiah, Ezra,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Amariah, Malluk, Hattush,\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shecaniah, Rehum, and Meremoth.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were Iddo, Ginnethon, Abijah,\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mijamin, Moadiah, Bilgah,\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shemaiah, and Joiarib, Jedaiah,\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sallu, Amok, Hilkiah, and Jedaiah. These were the leaders of the priests and their associates in the days of Jeshua.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Levites were Jeshua, Binnui, Kadmiel, Sherebiah, Judah, and Mattaniah, who was in charge of the thanksgiving songs, along with his associates.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bakbukiah and Unni, their associates, stood opposite them during the service.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jeshua was the father of Joiakim, Joiakim was the father of Eliashib, Eliashib was the father of Joiada,\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Joiada was the father of Jonathan, and Jonathan was the father of Jaddua.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the days of Joiakim these were the priests, the leaders of the families: Meraiah was the leader of Seraiah, Hananiah was the leader of Jeremiah,\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Meshullam was the leader of Ezra, Jehohanan was the leader of Amariah,\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jonathan was the leader of Malluk, and Joseph was the leader of Shebaniah.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Many modern versions, including the ULB and UDB, have \\fqa Malluk \\fqa* as a correction for \\fqa Malluki \\fqa* in the Hebrew text. The correct form of this name appears in Neh. 12:2. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": " \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Adna was the leader of Harim, Helkai the leader of Meremoth,\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zechariah was the leader of Iddo, Meshullam was the leader of Ginnethon, and\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zichri was the leader of Abijah. ... of Miniamin. Piltai was the leader of Moadiah.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The expression \\fqa ... of Miniamin \\fqa* is incomplete, because no leader of that family is named in the Hebrew text. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shammua was the leader of Bilgah, Jehonathan was the leader of Shemaiah,\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mattenai was the leader of Joiarib, Uzzi was the leader of Jedaiah,\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Kallai was the leader of Sallu, Eber was the leader of Amok,\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hashabiah was the leader of Hilkiah, and Nethanel was the leader of Jedaiah.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the days of Eliashib, the Levites Eliashib, Joiada, Johanan, and Jaddua were recorded as the heads of families, and the priests were recorded during the reign of Darius the Persian.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Levi, their leaders of families were recorded in the book of the annals up to the days of Johanan son of Eliashib.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The leaders of the Levites were Hashabiah, Sherebiah, and Jeshua son of Kadmiel, with their associates, who stood opposite them to give praise and to give thanks, responding section by section, in obedience to the command of David, the man of God.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mattaniah, Bakbukiah, Obadiah, Meshullam, Talmon, and Akkub were gatekeepers standing guard at the storerooms by the gates.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They served in the days of Joiakim son of Jeshua son of Jozadak, and in the days of Nehemiah the governor and of Ezra the priest and scribe.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At the dedication of the wall of Jerusalem, the people sought out the Levites wherever they lived, to bring them to Jerusalem to celebrate the dedication with joy, with thanksgivings and singing with cymbals, harps, and with lyres.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fellowship of singers gathered together from the district around Jerusalem and from the villages of the Netophathites.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They also came from Beth Gilgal and from the fields of Geba and Azmaveth, for the singers had built for themselves villages around Jerusalem.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priests and the Levites purified themselves, and then they purified the people, the gates, and the wall.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I had the leaders of Judah go up to the top of the wall, and I appointed two large choirs who gave thanks. One went to the right on the wall toward the Dung Gate.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hoshaiah and half the leaders of Judah followed them,\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and after them went Azariah, Ezra, Meshullam,\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Judah, Benjamin, Shemaiah, Jeremiah,\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and some of the priests' sons with trumpets, and Zechariah son of Jonathan son of Shemaiah son of Mattaniah son of Micaiah son of Zaccur son of Asaph.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There also were Zechariah's relatives, Shemaiah, Azarel, Milalai, Gilalai, Maai, Nethanel, Judah, Hanani, with the musical instruments of David the man of God. Ezra the scribe was in front of them.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By the Fountain Gate they went straight up on the stairs of the city of David, by the stairway to the wall above David's palace, to the Water Gate on the east.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The other choir of those who gave thanks went in the other direction. I followed them on the wall with half the people, above the Tower of Ovens, to the Broad Wall,\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and above the Gate of Ephraim, and by the Old Gate, and by the Fish Gate and the Tower of Hananel and the Tower of the Hundred, to the Sheep Gate, and they stopped at the Gate of the Guard.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So both choirs of those who gave thanks took their place in the house of God, and I also took my place with half of the officials with me.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the priests took their place: Eliakim, Maaseiah, Miniamin, Micaiah, Elioenai, Zechariah, and Hananiah, with the trumpets,\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and also Maaseiah, Shemaiah, Eleazar, Uzzi, Jehohanan, Malchijah, Elam, and Ezer, and the singers made themselves heard and Jezrahiah was their leader.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They offered great sacrifices that day, and rejoiced, for God had made them rejoice with great joy. Also the women and the children rejoiced. So the joy of Jerusalem could be heard far away.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day men were appointed to be in charge of the storerooms for the contributions, the firstfruits, and the tithes, to gather into them the portions required by the law for the priests and for the Levites. Each was assigned to work the fields near the towns. For Judah rejoiced over the priests and the Levites who were standing before them.\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They performed the service of their God, and the service of purification, and so did the singers and the gatekeepers, in keeping with the command of David and of Solomon his son.\n \n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For long ago, in the days of David and Asaph, there were directors of singers, and there were songs of praise and thanksgiving to God.\n"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the days of Zerubbabel and in the days of Nehemiah, all Israel gave the daily portions for the singers and the gatekeepers. They set aside the portion that was for the Levites, and the Levites set aside a portion for the descendants of Aaron.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

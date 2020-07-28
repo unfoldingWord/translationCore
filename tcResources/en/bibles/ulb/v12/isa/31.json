@@ -1,0 +1,228 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe to those who go down to Egypt for help and lean on horses,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and trust in chariots (for they are many) and in horsemen (for they are countless).\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But they are not concerned about the Holy One of Israel, nor do they seek Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet he is wise, and he will bring disaster and will not retract his words.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will arise against the evil house and against the helpers of those who commit sin.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Egypt is a man and not God, their horses flesh and not spirit.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When Yahweh reaches out with his hand, both the one who helps will stumble, and the one who is helped will fall; both will perish together.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says to me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"As a lion, even a young lion, growls over its torn prey,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "when a group of shepherds is called out against it,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but it does not tremble at their voices, nor creep away from their sound;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "thus Yahweh of hosts will descend to fight on Mount Zion, on that hill.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like birds in flight, so Yahweh of hosts will protect Jerusalem;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he will protect and rescue as he passes over it and preserves it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": " \n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Return to him from whom you have deeply turned away, people of Israel.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For in that day each one will get rid of his idols of silver \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and his idols of gold that your own hands have sinfully made.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Assyria will fall by the sword; a sword not wielded by man will consume him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will flee from the sword, and his young men will be forced to do hard labor.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will lose all confidence because of terror, and his princes will be afraid at the sight of Yahweh's battle flag—\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "this is Yahweh's declaration—whose fire is in Zion and whose firepot is in Jerusalem.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

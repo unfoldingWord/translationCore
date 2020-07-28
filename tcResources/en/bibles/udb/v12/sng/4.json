@@ -1,0 +1,551 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My darling, you are beautiful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are very beautiful!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Underneath your veil, your eyes are as gentle as doves.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Your long black hair moves from side to side like a flock of black goats\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "moving down the slopes of Mount Gilead.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your teeth are very white,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as white as sheep whose wool people have just cut,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as white as sheep that people have just washed in a stream.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You have all of your teeth on both sides;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "none of them is missing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your lips are like a scarlet ribbon,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and your mouth is lovely.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Beneath your veil,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "your cheeks are round and rosy like the halves of a pomegranate.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your long neck is beautiful, like the tower of King David\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that was built using layers of stone.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The ornaments on the necklaces around your neck are like a thousand shields hanging on the walls of a tower;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "each one belongs to a warrior.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your breasts are as delicate as two young twin deer\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "eating grass among lilies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Until dawn tomorrow morning,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when the nighttime shadows disappear,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will lie close to your breasts,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they are like two hills that smell like sweet spices.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My darling, you are completely beautiful;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "your body is perfectly formed!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My darling, it is as though you were in Lebanon\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "far away, where I cannot reach you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Come back to me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is as though you were on the top of Mount Hermon\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or the nearby peaks, where I cannot go to you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Come from the mountains, where the lions have their dens\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and where the leopards live on the mountains.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who are most dear to me, when I see you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you force me to love you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when I see you look at me, when I see a little of the jewelry that you wear around your neck.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My bride, your love for me is delightful!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It more delightful than wine!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The fragrance of your perfume\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "is more pleasing than any spice!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you kiss me, it is better than when I eat honey.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Your kisses are as sweet as milk mixed with honey.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The aroma of your clothes\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "is like the aroma of cedar trees in Lebanon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who are most dear to me, you are like a garden that the owner keeps locked\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that other men cannot enter it;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you are like a spring that is covered\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that others may not drink from it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are like an orchard of pomegranate trees\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "full of delicious fruit,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and plenty of plants that produce henna and nard spices,\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "saffron and calamus and cinnamon\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and many other kinds of incense,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "myrrh and aloes\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and many other fine spices.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are like a fountain in a garden,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a spring of clear water\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that flows down from the mountains of Lebanon.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The young woman speaking to her lover\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want the north wind and the south wind to come,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and blow on my garden,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "in order that the fragrance of the spices will spread through the air.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Similarly, I want the one who loves me to come and enjoy being close to me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like someone comes into a garden and enjoys eating the fruit that grows there.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman's lover speaking to her\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

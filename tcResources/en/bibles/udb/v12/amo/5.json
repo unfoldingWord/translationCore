@@ -1,0 +1,831 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of Israel, listen to this funeral song that I will sing about you:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"You are like a young woman,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but in spite of that, you will certainly be struck down\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will never get up again!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will lie on the ground, abandoned,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will be no one to help you stand up.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh the Lord says to the people of Israel:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"When your enemies attack you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and when a thousand of your soldiers go into battle,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "only a hundred will survive.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When a hundred soldiers march out from a city to fight,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "only ten will remain alive.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh continues to say to the people of Israel:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"You Israelite people, return to me!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If you do that, you will continue to remain alive.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not go to Bethel to seek my help;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not go to Gilgal to worship;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "do not go to Beersheba,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because your enemies will drag away the people of Gilgal to other countries,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will completely destroy Bethel.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So come to Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if you do that, you will remain alive.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you do not do that,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh will come down on you descendants of Joseph like a fire;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "that fire will burn everything in Bethel\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and nothing will be able to save that town.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people distort what is right; you make others think that it is something very bitter;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you treat good things as though they were evil.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God created all the groups of stars\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he put them in their places.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Each morning he causes the darkness to become the dawn,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and each evening he causes the daylight to become darkness.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He scoops up water from the oceans to become clouds,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then he dumps the water from the clouds onto the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The one who does those things is Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He causes strong soldiers to be killed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he causes the high walls around cities to fall down.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is the one who will punish you\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because you hate those who challenge anyone who tries to make unjust decisions;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you hate those who tell the truth in your courts.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You oppress poor people and force them to pay big taxes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So you have built big stone mansions for yourselves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you will not be able to live in them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You have planted vineyards,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but there will not be any grapes for you to harvest to make wine.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I know all of your sins\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the terrible crimes that you have committed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You oppress righteous people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you accept bribes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You do not allow judges to treat poor people justly.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is a time when many people do evil things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so people who have good sense say nothing at all.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In order to remain alive,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you must stop doing what is wrong, and start doing what is right.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you do that, Yahweh, commander of the angel armies, will be with you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as you claim that he always is.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Love what is good, and hate what is evil!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Try to cause judges in your courts to make decisions that are right!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you do those things, perhaps Yahweh, commander of the angel armies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will act mercifully toward you descendants of Joseph who are still alive.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Because I, Yahweh, will punish you for your sins, this is what I have solemnly declared:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "People will be wailing loudly in every street,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and people will be shocked in every plaza.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Farmers will be called to come and weep,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "along with the other official mourners who will wail for those who have died.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will be wailing in your vineyards,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I will punish you severely.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That will surely happen because I, Yahweh, have said it!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Terrible things will happen to you who want Yahweh to punish his enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because that will be a day of darkness, not of light.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, when you try to run from a lion,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will face a bear.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When you run into your house to be safe,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you put your hand on the wall,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will be bitten by a snake.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That day, when he punishes people, will certainly be awful, like a dark night\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "without even a little bit of light.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"I hate your religious celebrations\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the times when you gather to worship me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I detest them all.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even if you bring me offerings to burn on the altar and offerings of grain,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will no longer accept them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Even if you bring me offerings to restore fellowship with me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will not pay any attention to them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So stop singing noisy songs!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will not listen when you play harps.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead, act justly and righteously; you should do this and never stop;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "if you do, it will be like the water in a river that never stops flowing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You Israelite people, your ancestors wandered through the wilderness for forty years;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and during that time, they never brought any sacrifices and offerings to me!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you carried the two idols that you have made—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Sikkuth, the god whom you call 'king,'\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Kaiwan, the image of the star that you worship.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I will now force you to go to a country that is far beyond Damascus!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That will surely happen because I, Yahweh, commander of the angel armies, have said it!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

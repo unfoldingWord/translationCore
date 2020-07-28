@@ -1,0 +1,923 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Terrible things will happen to you judges who are unjust\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and who make unfair laws.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You refuse to help poor people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you do not allow them to get the things that they should get.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You allow people to steal things from widows\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do unfair things to children without fathers.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I punish you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "by sending people from distant lands to cause you disasters,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to whom will you run to get help?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Your valuable possessions will certainly not be safe anywhere.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will be able only to stumble along as your enemies take you away with other prisoners,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or else your corpses will lie on the ground with others who have been killed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But even after that happens,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh will still be very angry with you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will still be ready to strike you again with his fist.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"Terrible things will happen to Assyria.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is true that their army is like a rod or a club with which I punish other nations\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I am very angry with those nations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sometimes I send the Assyrians to attack a godless nation,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to fight against other people who have caused me to be angry.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I send them to capture people and to seize and take away their possessions,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and to trample them like people walk on mud in the streets.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the king of Assyria does not understand;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he does not realize that he is only like a weapon in my hand.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He only wants to destroy people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to get rid of many nations.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He says, 'All of my army commanders will soon be kings of these nations that I conquer!\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We destroyed the city of Kalno as we destroyed the city of Carchemish.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We destroyed the city of Hamath as we destroyed the city of Arpad;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we destroyed Samaria just like we destroyed Damascus.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We were able to destroy all those kingdoms that were full of the images of their gods,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "kingdoms whose gods were stronger than the gods in Jerusalem and Samaria.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So we will defeat Jerusalem and destroy the images of gods that are there,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as we destroyed Samaria and the images that were there!'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I am the Lord, and after I have used Assyria to finish what I want to do to punish the people in Jerusalem, I will punish the king of Assyria because he has been very proud and arrogant.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He says, 'By my own great power I have done these things.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I have been able to do them because I am very wise and very intelligent.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "My army removed the barriers at the borders of nations\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and carried away all their valuable things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "My mighty army has humiliated all their people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like someone who reaches into a bird's nest to take away the eggs,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we have taken away the treasures of other countries.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The people were not like birds that would have flapped their wings or chirp loudly to protest about their eggs being stolen;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the people did not object at all to their treasures being stolen.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I am Yahweh, and I say that an ax certainly cannot boast about being stronger than the person who uses it,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a saw is not greater than the person who uses it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "A rod cannot control the one who holds it,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a wooden club cannot lift up a person.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So the king of Assyria should not boast that he has done these things with his own wisdom and strength.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am the Lord Yahweh, commander of the angel armies, who will send a plague among the best soldiers of Assyria;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will be like a fire that will kill them and get rid of their glory.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is like a light for the people of Israel, like a fire;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the Holy One who rules Israel is like a flame.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The soldiers of Assyria are like thorns and briers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Yahweh will burn them up in one day.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are glorious forests and fertile farmlands in Assyria, but Yahweh will completely destroy them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be like a very sick person who shrivels up and then dies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There will be very few trees left in those forests;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even a child will be able to count them.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the future there will be only a few people left in Israel;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not many descendants of Jacob will still be alive.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But they will no longer rely on the king of Assyria,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the king of the nation that tried to destroy them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Instead, they will faithfully trust in Yahweh, the Holy One who rules Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those Israelites will return to their mighty God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now, the people of Israel are as numerous as the grains of sand on the seashore,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but only a few of them will return from the countries to which they will be exiled.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh has decided to destroy most of the Israelites,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that is what he must do because he is completely just.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, the Lord Yahweh, commander of the angel armies, has already decided to destroy the entire land of Israel.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what the Lord Yahweh, commander of the angel armies, says:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"My people in Jerusalem, do not be afraid of the army of Assyria when they beat you with rods and clubs,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the men of Egypt did to your ancestors long ago.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Soon I will no longer be angry with you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then I will be angry with the people of Assyria and destroy them!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, will strike them with his whip.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will do to them as he did when he defeated the army of the Midian people group,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and as he did when he caused the army of Egypt to drown in the Sea of Reeds.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One day in the future, Yahweh will cause the army of Assyria to stop oppressing you, his people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will end your suffering and your being slaves of the people of Assyria;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you will become too strong for them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One day in the future this will be the situation: The army of Assyria has entered northern Judah near Aiath;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have gone through Migron\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and stored their supplies at Micmash, north of Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have crossed through a mountain pass\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and set up their tents at Geba.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "People in Ramah will tremble because of they are afraid.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The people of Gibeah, where King Saul was born, have all run away.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of Gallim will cry out for help!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will shout to the people of the city of Laish near Jerusalem to warn them!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The people of Anathoth will suffer a lot.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Madmenah north of Jerusalem are all running away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people of Gebim close to Jerusalem are trying to hide.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The soldiers of Assyria will stop at the city of Nob outside Jerusalem.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will shake their fists\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as they threaten the people on Mount Zion in Jerusalem.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But listen to this! Yahweh, commander of the angel armies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with his great power will destroy the mighty army of Assyria.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is as though they are a huge tree that he will cut down.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will destroy the soldiers of Assyria\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as men use big axes to cut down the tall trees in the forests of Lebanon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I have many enemies!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There are many people who oppose me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Many people are saying about me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"God will certainly not help him.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh, you are like a shield that protects me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You greatly honor me, and you encourage me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I cry out to you, Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you answer me from Zion, your sacred hill.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At night I lay down and slept, and I woke up in the morning\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you, Yahweh, took care of me all during the night.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There may be thousands of enemy soldiers who surround me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I am not afraid.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, arise!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "My God, come and rescue me again!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will insult my enemies by slapping them on their cheeks;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when you strike them, you will destroy their power,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with the result that they cannot hurt anyone.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you are the one who saves your people from their enemies.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh, bless your people!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David when he was fleeing from his son Absalom\n"
+      }
+    ]
+  }
+}

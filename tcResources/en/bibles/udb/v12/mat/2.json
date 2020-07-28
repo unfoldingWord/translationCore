@@ -1,0 +1,308 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus was born in the town of Bethlehem in the province of Judea during the time that King Herod the Great ruled there. Some time after Jesus was born, some men from very far away to the east who studied the stars came to the city of Jerusalem.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They asked people, \"Where is the one who has been born king of the Jews? We have seen a star in the east that shows us he has been born, so we have come to worship him.\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When King Herod heard about what those men were asking, he became very worried. Many of the people in Jerusalem also became worried.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Herod called together all the ruling priests and teachers of the Jewish laws. He asked them where the prophets had predicted that the Messiah was to be born.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said to him, \"He will be born in the town of Bethlehem, here in the province of Judea, because the prophet Micah wrote long ago,\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'You who live in Bethlehem in the land of Judah, your town is certainly very important, because a man from your town will become a ruler. He will guide my people who live in Israel.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then King Herod secretly called those men who studied the stars. He asked them exactly when the star first appeared.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he said to them, \"Go to Bethlehem and inquire thoroughly where the infant is. When you have found him, come back and report to me so that I, myself, can go there and worship him, too.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the men went toward the town of Bethlehem. To their surprise, the star that they had seen while they were in the eastern country went ahead of them again until it stood above the house where the child was.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they saw the star, they rejoiced greatly and followed it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They found the house, entered it, and saw the child and his mother, Mary. They bowed down and worshiped him. Then they opened their treasure boxes and they gave him gold, expensive frankincense, and myrrh.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then God warned them in a dream not to return to King Herod. So they left for their country, but instead of traveling back on the same road, they went on a different road.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After the men who studied the stars left Bethlehem, an angel from the Lord appeared to Joseph in a dream. He said, \"Get up, take the child and his mother, and flee into the country of Egypt. Stay there until I tell you that you should leave, because King Herod is about to send soldiers to look for the child so that they can kill him.\"\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Joseph got up that same night; he took the child and his mother, and they fled into Egypt.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They stayed there until King Herod died, and then they left Egypt again. In this way, what God had told the prophet Hosea to write came true,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"I have called my son to come out of Egypt.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Before King Herod died, he realized that those men had tricked him, and he became furious. Because he thought that Jesus was still near Bethlehem, Herod sent soldiers there to kill all the boy babies two years old and younger. Herod calculated how old the baby was, according to what the men who studied the stars told him about when the star first appeared.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Herod did this, what the prophet Jeremiah had written long ago came true, when he wrote about Bethlehem near the town of Ramah:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Women in Ramah were weeping and wailing loudly.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Rachel, the ancestor of those women, was weeping for their dead children.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "People tried to comfort her, but they could not, because all the children were dead.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After Herod died and while Joseph and his family were still in Egypt, an angel that the Lord had sent appeared to Joseph in a dream. He said to Joseph,\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Get up and take the child and his mother and go back to the country of Israel to live, because the people who were trying to kill the child have died.\"\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Joseph took the child and his mother, and they went back to Israel.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Joseph heard that Archaelaus now ruled in the province of Judea instead of his father, King Herod the Great, he was afraid to go there. Then God instructed Joseph in a dream what to do, so Joseph, Mary, and the baby went to the district of Galilee.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They went to the town of Nazareth to live there. The result was that what the prophets had said long ago came true: \"People will say that he is from Nazareth.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

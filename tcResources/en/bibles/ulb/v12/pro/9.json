@@ -1,0 +1,393 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom has built her own house;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "she has carved seven pillars out of rocks.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She has slaughtered her animals; she has mixed her wine;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and she has set her table.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She has sent out her maids; she calls out\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from the highest points of the city,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Who is naive? Let him turn aside here!\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "To the one lacking good sense she speaks.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Come, eat my food,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and drink the wine I have mixed.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Leave your naive actions and live;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "walk in the path of understanding.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever disciplines a mocker receives abuse,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and whoever rebukes a wicked person receives insults.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not reprove a mocker, or he will hate you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "reprove a wise man, and he will love you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give to a wise person, and he will become even wiser;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "teach a righteous person, and he will add to his learning.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fear of Yahweh is the beginning of wisdom,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the knowledge of the Holy One is understanding.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For through me your days will be multiplied,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and years of life will be added to you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you are wise, you are wise for yourself,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and if you mock, you will carry it by yourself.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The woman of foolishness is ignorant;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "she is untaught and knows nothing.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She sits at the door of her house,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on a seat in the highest places of the town.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She is calling out to those who pass by in the streets,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to people walking straight on their way.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Let anyone who is naive turn aside here,\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "she says to those who have no sense.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Stolen waters are sweet,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and bread of secrecy is delicious.\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he does not know that the dead are there,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that her invited guests are in the depths of Sheol.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

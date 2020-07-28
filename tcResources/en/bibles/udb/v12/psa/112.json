@@ -1,0 +1,256 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "How fortunate are those who have an awesome respect for him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who happily obey his commands.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their children will prosper in their land;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "God will bless their descedants.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their families will be wealthy,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and their righteous deeds will endure forever.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For those who honor God, it is as if a light were shining on them in the darkness,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "on those who are kind, merciful and righteous.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Things will go well for those who generously lend money to others\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and who conduct their businesses honestly.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Righteous people will not be overwhelmed because of their troubles;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "other people will always treasure their memories of them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are not afraid when they receive bad news;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they confidently trust in Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are confident and not afraid\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they know that they will see God defeat their enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They give things generously to poor people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "their kind deeds will endure forever,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will be exalted and honored.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wicked people see those things and are angry;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they gnash their teeth angrily,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they will disappear and die.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The wicked things that they want to do will never happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

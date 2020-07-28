@@ -1,0 +1,190 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Only foolish people say to themselves, \"There is no God!\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "People who say that are corrupt; they commit terrible sins;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "there is not one of them who does what is good.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God looks down from heaven and sees humans;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he looks to see if any man is very wise\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and seeks to know God.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But everyone has turned away from God. They are depraved and do disgusting, filthy things.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "No one does what is good.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will all these evil people never learn what God will do to them?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They hurt Yahweh's people with terrible violence. They had no guilt in what they did. They had the same expression on their faces as people eating bread at dinner.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "And what is worse is that they never prayed to Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But someday those people will become very terrified,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "although they have nothing to fear.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "For God will cause those who attack you to die,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will scatter their bones.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They have rejected God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so he will cause them to be defeated and completely disgraced.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish that God would come and rescue the Israelite people!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "God, when you bless your people again,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "all the Israelite people, all the descendants of Jacob, will rejoice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director, to be sung using a tune called \"Mahalath.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

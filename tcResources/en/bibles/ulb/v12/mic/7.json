@@ -1,0 +1,685 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Woe is me!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have become like the gathering of summer fruit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and like the grapes that have been gleaned;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "there is no grape cluster to eat,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "no ripe early fig that my soul desires.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Faithful people have disappeared from the land;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "there is no upright person in all mankind.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They all lie in wait to shed blood;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "each one hunts his own brother with a net.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their hands are very good at doing harm:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the ruler asks for money,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the judge is ready for bribes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the powerful man is saying to others what he wants to obtain.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Thus they plot together.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The best of them is like a brier,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the most upright is worse than a thorn hedge.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "It is the day foretold by your watchmen,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the day of your punishment.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Now is the time of their confusion.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not trust any neighbor;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "put no confidence in any friend.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Be careful about what you say\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even to the woman who lies in your arms.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For a son dishonors his father,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a daughter rises up against her mother,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a daughter-in-law against her mother-in-law.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "A man's enemies are the people of his own house.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as for me, I will look to Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will wait for the God of my salvation;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my God will hear me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not rejoice over me, my enemy.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "After I fall,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will rise.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "When I sit in darkness,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh will be a light for me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because I sinned against Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will bear his rage\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "until he pleads my cause,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and executes judgment for me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will bring me to the light,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will see him rescue me in his justice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then my enemy will see it,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and shame will cover the one who said to me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Where is Yahweh your God?\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My eyes will look at her;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "she will be trampled down like the mud in the streets.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A day to build your walls will come;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on that day the boundaries will be extended very far.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day your people will come to you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from Assyria and the cities in Egypt,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from Egypt to the River,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from sea to sea,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and from mountain to mountain.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the land will be desolate\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because of the people who are living there,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because of the fruit of their actions.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shepherd your people with your rod,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the flock of your inheritance.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They live alone in a thicket,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the midst of a pastureland.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let them graze in Bashan and Gilead\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as in the old days.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As in the days when you came out of the land of Egypt,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will show them wonders.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The nations will see and be ashamed\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "of all their power.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They will put their hands on their mouths;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their ears will be deaf.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will lick the dust like a snake,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like creatures that crawl on the earth.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They will come out of their dens with fear;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they will come with fear to you, Yahweh our God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they will be afraid because of you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who is a God like you—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who takes away sin,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who passes over the transgression of the remnant of his inheritance?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He does not keep his anger forever,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because he delights in his covenant faithfulness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will again have compassion on us;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will trample our iniquities under your feet.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You will throw all our sins into the depths of the sea.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will give truth to Jacob\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and covenant faithfulness to Abraham,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as you swore to our ancestors in ancient days.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

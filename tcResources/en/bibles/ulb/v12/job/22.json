@@ -1,0 +1,640 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Eliphaz the Temanite answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Can a man be useful to God?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Can a wise man be useful to him?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is it any pleasure to the Almighty if you are righteous?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Is it gain to him if you make your ways blameless?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is it because of your reverence for him that he rebukes you\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and takes you to judgment?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is not your wickedness great?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Is there no end to your iniquities?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you have demanded guarantee of a loan from your brother for no reason,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and you have stripped away clothing from the naked.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have not given water to weary people to drink;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have withheld bread from hungry people\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "although you, a mighty man, possessed the earth,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "although you, an honored man, lived in it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have sent widows away empty;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the arms of the fatherless have been broken.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, snares are all around you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and sudden fear troubles you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is darkness, so that you cannot see;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "an abundance of waters covers you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is not God in the heights of heaven?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Look at the height of the stars, how high they are!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You say, 'What does God know?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Can he judge through the thick darkness?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Thick clouds are a covering to him, so that he does not see us;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he walks on the vault of heaven.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will you keep the old way\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that wicked men have walked—\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "those who were snatched away before their time,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those whose foundations have washed away like a river,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "those who said to God, 'Depart from us';\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who said, 'What can the Almighty do to us?'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet he filled their houses with good things;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the plans of wicked people are far from me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Righteous people see their fate and are glad;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "innocent people laugh them to scorn.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They say, 'Surely those who rose up against us are cut off;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "fire has consumed their possessions.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now agree with God and be at peace with him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in that way, good will come to you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Receive, I beg you, instruction from his mouth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "store up his words in your heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you return to the Almighty, you will be built up,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "if you put unrighteousness far away from your tents.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lay your treasure down in the dust,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the gold of Ophir among the stones of the brooks,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and the Almighty will be your treasure,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "precious silver to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For then you will take pleasure in the Almighty;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will lift up your face to God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will make your prayer to him, and he will hear you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will pay your vows to him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will also decree anything, and it will be confirmed for you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "light will shine on your paths.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God humbles a proud man,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he saves the one with lowered eyes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will rescue even the man who is not innocent;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who will be rescued through the cleanness of your hands.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

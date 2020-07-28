@@ -1,0 +1,512 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Almost nine years after the Babylonians had taken us Israelites to their land, on the tenth day of the tenth month of that year, Yahweh gave me this message:\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, write down what day of the month this is. On this day the army of the king of Babylon has surrounded Jerusalem.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell those rebellious Israelite people in Babylon a parable. Say this to them: This is what Yahweh the Lord says:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'Pour water into the cooking pot\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and put the pot on the fire.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Put into the pot some pieces of meat from one of your best sheep:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "put in the leg and shoulder, which are the best pieces.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then fill the rest of the pot with the best bones.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pile wood on the fire,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and cook the bones and the meat in the boiling water.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do that because this is what Yahweh the Lord says:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'Terrible things will happen to Jerusalem; it is city that is full of murderers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a city that is like a corroded copper pot,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the corrosion cannot be removed.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Take the pieces of meat out of the pot,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but do not choose which pieces to take out.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The blood of the people who were murdered in Jerusalem is still there;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they were murdered on the bare rocks,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not on the soil, where their blood could be covered.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I am the one who caused the blood of those who were murdered to be smeared on the bare rock,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where their blood could not be covered;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I did that in order that I could see it and then be angry and get revenge.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, this is what I, Yahweh the Lord, say:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'Terrible things will happen to that city that is full of murderers!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It will be as though I also will pile high the wood in the fire.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So heap on the wood\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and light the fire!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Cook the meat well,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and mix some spices with it;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "cook it until the bones are black.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then set the empty pot on the coals of the fire\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "until the pot becomes very hot and the copper glows,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so that the corrosion will disappear.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though I tried to get rid of that corrosion,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but I was not able to do it,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not even by putting that pot on the fire.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The corrosion in the pot represents your immoral behavior. I tried to cleanse you from your wicked behavior, but you did not allow me to do that. So you will not be cleansed from the guilt of your sin until I have punished you and I am no longer angry.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Yahweh, have said that I will surely punish you. And it is time for me to do that. I will not change my mind; I will not refrain from punishing you, and I will not pity you. I will judge you and punish you as you deserve to be punished for your sinful behavior. That will surely happen because I, Yahweh the Lord, have said it.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One day Yahweh gave me this message:\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, I am going to suddenly take from you your wife by means of a disease, your wife, whom you love very much. But when she dies, do not show that you are sad or lament or cry.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Groan quietly; do not cry openly for her. Keep your turban wrapped around your head, and instead of being barefoot, keep your sandals on your feet. Do not cover the lower part of your face to show that you are sad. And do not eat the kind of food that people who are mourning usually eat.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So one morning I talked to the people as usual, and that evening my wife suddenly died. The next morning I did what Yahweh had told me to do.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the people asked me, \"What do the things that you are doing signify to us?\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I answered them, \"This is what Yahweh told me:\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'Tell the Israelite people that I am about to destroy the temple, the building that you are very proud of, the building that you delight to look at. Your children whom you left in Jerusalem when you were forced to come to Babylon—your enemies will kill them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, you will do as I have done: You will not cover the lower part of your faces, or eat the kinds of food that people who are mourning usually eat.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will keep your turbans wrapped around your heads and keep your sandals on your feet. You will not mourn or cry, but your bodies will become very thin and slowly die; I will not forgive your sins at all. And you will groan for each other.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ezekiel will be a warning to you, and you must do what he has done. When that happens, you will know that I, Yahweh the Lord have the power to do what I say that I will do.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh said to me, \"Son of man, soon I will destroy their sacred temple, which they rejoice about and which they respect and delight to look at, and I will get rid of their sons and daughters also.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day, someone will escape from Jerusalem and come and tell you what has happened there.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, you will be able to speak again without constraint. You two will talk together. You will be a warning to the people; and they will know that I, Yahweh, have the power to do what I say that I will do.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

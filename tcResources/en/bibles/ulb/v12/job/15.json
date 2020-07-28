@@ -1,0 +1,781 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Eliphaz the Temanite answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Should a wise man answer with useless knowledge\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and fill himself with the east wind?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Should he reason with unprofitable talk\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or with speeches with which he can do no good?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, you diminish respect for God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you obstruct devotion to him,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "for your iniquity teaches your mouth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you choose to have the tongue of a crafty man.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your own mouth condemns you, not mine;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "indeed, your own lips testify against you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Are you the first man that was born?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Were you brought into existence before the hills?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Have you heard the secret knowledge of God?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do you limit wisdom to yourself?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What do you know that we do not know?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "What do you understand that is not also in us?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With us are both the gray-headed and the very aged men\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who are much older than your father.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Are the consolations of God too small for you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the words that are gentle toward you?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why does your heart carry you away?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why do your eyes flash,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that you turn your spirit against God\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and bring out such words from your mouth?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What is man that he should be clean?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "What is he who is born of a woman that he should be righteous?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, God puts no trust even in his holy ones;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "indeed, the heavens are not clean in his sight;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "how much less clean is one who is abominable and corrupt,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a man who drinks iniquity like water!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will show you; listen to me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will announce to you the things I have seen,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the things that wise men have passed down from their fathers,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the things that their ancestors did not hide.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were their ancestors, to whom alone the land was given,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and among whom no stranger ever passed.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked man twists in pain all his days,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the number of years that are laid up for the oppressor to suffer.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A sound of terrors is in his ears;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "while he is in prosperity, the destroyer will come upon him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does not think that he will return out of darkness;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the sword waits for him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He goes to various places for bread, saying, 'Where is it?'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He knows that the day of darkness is at hand.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Distress and anguish make him afraid;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they prevail against him, as a king ready for battle.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because he has reached out with his hand against God\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and has behaved proudly against the Almighty,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "this wicked man runs at God with a stiff neck,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with a thick shield.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is true, even though he has covered his face with his fat\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and gathered fat on his loins,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and has lived in desolate cities;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in houses which no man inhabits now\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and which were ready to become heaps.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will not be rich; his wealth will not last \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his possessions will not spread over the land.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will not depart out of darkness;\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Several modern versions leave out \\fqa He will not depart out of darkness \\fqa* , because they believe that this expression was mistakenly copied from 15:22. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a flame will dry up his stalks;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at the breath of God's mouth he will go away.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The Hebrew text has \\fqa He will go away by the breath of his mouth \\fqa* , which some modern versions, including the ULB and UDB, interpret as meaning the breath of God's mouth. However, other modern versions follow an ancient Greek reading, \\fqa his flower will fall with the wind \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let him not trust in useless things, deceiving himself;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for uselessness will be his reward.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will happen before his time should come to die;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his branch will not be green.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will drop his unripe grapes like a grapevine;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will cast off his flowers like the olive tree.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the company of godless people will be barren;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "fire will consume their tents of bribery.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They conceive mischief and give birth to iniquity;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their womb conceives deceit.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,678 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am very miserable!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am like someone who is hungry, who searches for fruit to eat\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and who finds no grapes or figs to eat\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because all the fruit has been picked.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone who honored God has disappeared from this land;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "not one of them is left.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The people who are left are all murderers;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though everyone is eager to kill his fellow countryman.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do what is evil with all their might.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Government officials and judges all ask for bribes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Important people tell others what they want,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they plot together about how to get it.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even the best people are as worthless as briers;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the people who we thought to be the most honest are worse than thornbushes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But Yahweh will soon judge them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Now is the time that he will punish people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they will be very confused because of it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So do not trust anyone!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Do not trust even a friend;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "even be careful what you say to your wife, whom you love.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Boys will despise their fathers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and girls will defy their mothers.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Women will defy their mothers-in-law.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Your enemies will be those who live in your own house.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for me, I wait for Yahweh to help me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I confidently expect that God, my Savior, will answer me when I pray.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You who are our enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not gloat about what has happened to us,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because even if we have experienced disasters,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those disasters will end, and we will be prosperous again.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Even if it is as though we are sitting in the darkness,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh will be our light.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We must be patient while Yahweh punishes us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because we have sinned against him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But later, it will be as though he will go to court and defend us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He will make sure that the judge makes a right decision about us.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It will be as though he will bring us out into the light,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and we will see him rescue us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our enemies will also see it, and they will be disgraced\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they ridiculed us, saying\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Why is Yahweh, that God of yours, not helping you?\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But with our own eyes we will see them be defeated;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we will see them trampled\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like mud in the streets.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people of Israel, at that time your cities will be rebuilt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and your territory will become larger.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your people will come back to you from many countries,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "from Assyria, from near the Euphrates River in the east, and from Egypt in the south,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "from the Dead Sea to the Mediterranean Sea,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and from many mountains.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the other countries on the earth will become desolate\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of the evil deeds that their people have done.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, protect your people as a shepherd protects his sheep with his staff.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Lead the people whom you have chosen to belong to you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Even though some of them live by themselves in a forest,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "give them the fertile pastureland\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "in the regions of Bashan and Gilead,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "which they possessed long ago.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Yes, I will perform miracles for you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the miracles that I performed when I rescued your ancestors from being slaves in Egypt.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People from many nations will see what Yahweh does for you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and they will be ashamed\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they do not have any power.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will put their hands over their mouths and their ears because they will be very amazed at what Yahweh does.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will not be able to say anything or hear anything, because they will be terrified.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Being very humiliated, they will crawl on the ground like snakes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will come out of their homes trembling\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and stand to honor Yahweh our God.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They will be very afraid of him\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and will tremble in front of him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, there is no God like you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you forgive the sins that the people who have survived committed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the people who belong to you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You do not remain angry forever;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are very happy to show us that you faithfully love us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will again act kindly toward us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You will get rid of the scroll on which you have written the sins that we have committed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as though you were trampling it under your feet\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or throwing it into the deep ocean.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will show that you faithfully do what you promised for us and faithfully love us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as you solemnly promised long ago to our ancestors Abraham and Jacob that you would do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

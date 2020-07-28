@@ -1,0 +1,323 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king rejoices in your strength, Yahweh!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How greatly he rejoices in the salvation you provide!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have given him his heart's desire\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and have not held back the request of his lips.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you bring him rich blessings;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you placed on his head a crown of purest gold.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He asked you for life; you gave it to him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you gave him long days forever and ever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His glory is great because of your victory;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have bestowed on him splendor and majesty.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you grant him lasting blessings;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you make him glad with the joy of your presence.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the king trusts in Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "through the covenant faithfulness of the Most High he will not be moved.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your hand will seize all your enemies;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your right hand will seize those who hate you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At the time of your anger, you will burn them up as in a fiery furnace.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh will consume them in his wrath,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the fire will devour them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will destroy their offspring from the earth\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their descendants from among the human race.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For they intended evil against you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they conceived a plot with which they will not succeed!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For you will turn them back;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will draw your bow before them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be exalted, Yahweh, in your strength;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "we will sing and praise your power.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician. A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

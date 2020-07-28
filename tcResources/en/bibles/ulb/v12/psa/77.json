@@ -1,0 +1,513 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will call out with my voice to God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will call with my voice to God, and my God will hear me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the day of my trouble I sought the Lord;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at night I stretched my hands out, and they would not become tired.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My soul refused to be comforted.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I thought of God as I groaned;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I thought about him as I grew faint.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You held my eyes open;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I was too troubled to speak.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I thought about the days of old,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "about times long past.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "During the night I called to mind the song I once sang.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I thought carefully\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and tried to understand what had happened.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will the Lord reject me forever?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Will he never again show me favor?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Was his covenant faithfulness gone forever?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Had his promise failed forever?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Had God forgotten to be gracious?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Had his anger shut off his compassion?\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said, \"This is my sorrow:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the changing of the right hand of the Most High toward us.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I will call to mind your deeds, Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will think about your wonderful deeds of old.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will ponder all your deeds\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and will reflect on them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your way, God, is holy;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "what god compares to our great God?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are the God who does wonders;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have revealed your strength among the peoples.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You gave your people victory by your great power—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the descendants of Jacob and Joseph.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The waters saw you, God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the waters saw you, and they were afraid;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the depths trembled.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The clouds poured down water;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the cloudy skies gave voice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your arrows flew about.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your thunderous voice was heard in the wind;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the lightning lit up the world;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the earth trembled and shook.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your path went through the sea\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and your way through the surging waters,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but your footprints were not seen.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You led your people like a flock\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "by the hand of Moses and Aaron.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician; after the manner of Jeduthun. A psalm of Asaph.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

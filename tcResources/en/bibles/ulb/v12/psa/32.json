@@ -1,0 +1,308 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blessed is the person whose transgression is forgiven,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "whose sin is covered.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blessed is the man to whom Yahweh reckons no guilt\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and in whose spirit there is no deceit.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I remained silent, my bones were wasting away\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "while I groaned all day long.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For day and night your hand was heavy upon me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My strength withered as in summer drought.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I acknowledged my sin to you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I no longer hid my iniquity.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I said, \"I will confess my transgressions to Yahweh,\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and you forgave the guilt of my sin.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of this, all who are godly should pray to you at a time of great distress.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Then when the surging waters overflow, they will not reach those people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are my hiding place; you will guard me from trouble.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You will surround me with the songs of victory.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will instruct you and teach you in the way which you should go.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will instruct you with my eye upon you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be like a horse or like a mule, which have no understanding;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it is only with bridle and bit to control them\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that they will go where you want them to.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked have many sorrows,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but Yahweh's covenant faithfulness will surround the one who trusts in him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be glad in Yahweh, and rejoice, you righteous;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "shout for joy, all you who are upright in heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David. A maschil.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

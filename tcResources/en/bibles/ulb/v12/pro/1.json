@@ -1,0 +1,714 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The proverbs of Solomon son of David, the king of Israel.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These proverbs are to teach wisdom and instruction,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to teach words of insight,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that you may receive instruction in order to live\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "by doing what is right, just, and fair.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These proverbs are also to give wisdom to the naive,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to give knowledge and discretion to young people.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let wise people listen and increase their learning,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and let discerning people get guidance,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "to understand proverbs, sayings,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and words of wise people and their riddles.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fear of Yahweh is the beginning of knowledge—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "fools despise wisdom and instruction.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, hear the instruction of your father\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and do not lay aside the rules of your mother;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "they will be a graceful wreath for your head\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and pendants hanging from your neck.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, if sinners try to entice you into their sin,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "refuse to follow them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they say, \"Come with us,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us lie in wait for blood,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us hide and attack innocent people for no reason.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let us swallow them up alive, like Sheol takes away those who are healthy,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and make them like those who fall into the pit.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We shall find all kinds of valuable things;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "we will fill our houses with what we steal from others.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Throw in your lot with us;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "we will all have one purse together.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, do not walk down that road with them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not let your foot touch where they walk;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "their feet run to evil\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they hurry to shed blood.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For it is useless to spread the net in the sight of any bird.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These men lie in wait for their own blood—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they set an ambush for their own lives.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So are the ways of everyone who gains riches by injustice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "unjust gain takes away the lives of those who hold on to it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom cries aloud in the street,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "she raises her voice in the open places;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "at the head of the noisy streets she cries out,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at the entrance of the city gates she speaks,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"How long, you naive people, will you love being naive?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How long, you mockers, will you delight in mockery,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and how long, you fools, will you hate knowledge?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pay attention to my correction;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will pour out my thoughts to you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will make my words known to you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have called, and you have refused to listen;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I reached out with my hand, but there was no one who paid attention.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you have ignored all my instruction\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and paid no attention to my correction.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will laugh at your calamity,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will mock you when the terror comes—\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "when your fearful dread comes like a storm\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and disaster sweeps over you like a whirlwind,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when distress and anguish come upon you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they will call upon me, and I will not answer;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they will desperately call for me, but they will not find me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because they hate knowledge\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and did not choose the fear of Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "they would not follow my instruction,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they despised all my correction.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will eat the fruit of their ways,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and with the fruit of their schemes they will be filled.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the naive are killed when they turn away,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the indifference of fools will destroy them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But whoever listens to me will live in safety\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and will rest secure with no fear of disaster.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,735 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the people in the province who went up from the captivity of King Nebuchadnezzar, who had exiled them in Babylon, the people who returned to each of their cities of Jerusalem and in Judea.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They came with Zerubbabel, Joshua, Nehemiah, Seraiah, Reelaiah, Mordecai, Bilshan, Mispar, Bigvai, Rehum, and Baanah.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "This is the record of the men of the people of Israel.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Parosh: 2,172.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Shephatiah: 372.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Arah: 775.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Pahath-Moab, through Jeshua and Joab: 2,812.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Elam: 1,254.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Zattu: 945.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Zakkai: 760.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Bani: 642.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Bebai: 623.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Azgad: 1,222.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Adonikam: 666.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Bigvai: 2,056.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Adin: 454.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Ater, through Hezekiah: ninety-eight.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Bezai: 323.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Jorah: 112.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Hashum: 223.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Gibbar: ninety-five.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Bethlehem: 123.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Netophah: fifty-six.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Anathoth: 128.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Azmaveth: forty-two.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Kiriath Arim, Kephirah, and Beeroth: 743.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Ramah and Geba: 621.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Michmas: 122.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Bethel and Ai: 223.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Nebo: fifty-two.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Magbish: 156.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of the other Elam: 1,254.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Harim: 320.\n"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Lod, Hadid, and Ono: 725.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Jericho: 345.\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Senaah: 3,630.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The priests: descendants of Jedaiah of the house of Jeshua: 973.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Immer's descendants: 1,052.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pashhur's descendants: 1,247.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Harim's descendants: 1,017.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Levites: descendants of Jeshua and Kadmiel, descendants of Hodaviah: seventy-four.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The temple singers, descendants of Asaph: 128.\n"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of the gatekeepers: descendants of Shallum, Ater, Talmon, Akkub, Hatita, and Shobai: 139 total.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who were assigned to serve in the temple: descendants of Ziha, Hasupha, Tabbaoth,\n"
+      }
+    ]
+  },
+  "44": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keros, Siaha, Padon,\n"
+      }
+    ]
+  },
+  "45": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lebanah, Hagabah, Akkub,\n"
+      }
+    ]
+  },
+  "46": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hagab, Shalmai, and Hanan.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "47": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Giddel: Gahar, Reaiah,\n"
+      }
+    ]
+  },
+  "48": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rezin, Nekoda, Gazzam,\n"
+      }
+    ]
+  },
+  "49": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Uzza, Paseah, Besai,\n"
+      }
+    ]
+  },
+  "50": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Asnah, Meunim, and Nephusim.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "51": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Bakbuk: Hakupha, Harhur,\n"
+      }
+    ]
+  },
+  "52": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bazluth, Mehida, Harsha,\n"
+      }
+    ]
+  },
+  "53": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Barkos, Sisera, Temah,\n"
+      }
+    ]
+  },
+  "54": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Neziah, and Hatipha.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "55": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The descendants of Solomon's servants: descendants of Sotai, Hassophereth, Peruda,\n"
+      }
+    ]
+  },
+  "56": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jaalah, Darkon, Giddel,\n"
+      }
+    ]
+  },
+  "57": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shephatiah, Hattil, Pochereth Hazzebaim, and Ami.\n"
+      }
+    ]
+  },
+  "58": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were 392 total descendants of those assigned to serve in the temple and descendants of Solomon's servants.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "59": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who left Tel Melah, Tel Harsha, Kerub, Addon, and Immer—but were not able to prove their ancestry from Israel\n"
+      }
+    ]
+  },
+  "60": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "—included 652 descendants of Delaiah, Tobiah, and Nekoda.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "61": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also, from the priest's descendants: the descendants of Habaiah, Hakkoz, and Barzillai (who took his wife from the daughters of Barzillai of Gilead and was called by their name).\n"
+      }
+    ]
+  },
+  "62": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They searched for their genealogical records, but could not find them, so they were excluded from the priesthood as unclean. \n"
+      }
+    ]
+  },
+  "63": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the governor told them they must not eat any of the holy sacrifices until a priest with Urim and Thummim approved.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "64": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The whole group totaled 42,360,\n"
+      }
+    ]
+  },
+  "65": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "not including their servants and their maidservants (these were 7,337) and their male and female temple singers (two hundred).\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "66": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their horses: 736. Their mules: 245.\n"
+      }
+    ]
+  },
+  "67": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their camels: 435. Their donkeys: 6,720.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "68": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they went to Yahweh's house in Jerusalem, the chief patriarchs offered freewill gifts to build the house.\n"
+      }
+    ]
+  },
+  "69": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They gave according to their ability to the work fund: sixty-one thousand gold darics, five thousand silver minas, and one hundred priestly tunics.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "70": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the priests and Levites, the people, the temple singers and gatekeepers, and those assigned to serve in the temple inhabited their cities. All the people in Israel were in their cities.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

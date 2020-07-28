@@ -1,0 +1,887 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"You people who live on islands in the ocean,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "be silent in front of me while I ask you some questions!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then you can be courageous and talk to me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We will meet together and decide which one of us is right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who has raised up this king to come from the east?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He is the one who does what is right with every step. He hands nations over to him and he defeats them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he tramples their kings under his feet.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He cuts their enemies and they are destroyed so they are like the dust, \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and his army shoots them with bows and arrows so that they are like the chaff when the wind blows. \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even though they in danger, they go very swiftly as\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they pursue their enemies, and nothing stops them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who has enabled rulers to do mighty deeds like that?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who has done that throughout all generations?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is I, Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was the first one to do things like that, and I will be the last one to do them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who live on islands in the ocean are afraid while they watch.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People in remote areas tremble and gather together.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They encourage each other and say to each other,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Be strong!'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The woodworkers encourage those who make things from gold,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the men who flatten metal encourage those who hammer it on an anvil.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They all say, 'The idol has been well made!'\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Then they carefully nail down the idol in order that it will not topple over!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh continues to say, \"You people of Israel are my servants;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are descendants of Jacob, whom I chose;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are descendants of Abraham, who I said was my friend.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I summoned you from very distant places on the earth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I said, 'I want you to serve me.'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I have chosen you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will not reject you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be afraid,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I will be with you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Do not be discouraged, because I am your God.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will enable you to be strong, and I will help you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will hold you up with my powerful arm by which I will rescue you, and I will be completely right to do so!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is certain that all those who are angry with you Israelite people will be disgraced.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those who oppose you will be wiped out;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will all die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you search for those who tried to conquer you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you will not find them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they will all disappear.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Those who attacked you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will not exist anymore,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because it will be as though I will hold you up by your right hand.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am Yahweh, your God,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I say to you, 'Do not be afraid,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I will help you.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Although others have treated you people of Israel like worms,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not be afraid of your enemies,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because I will help you!\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "This is what Yahweh solemnly says—the one who rescues you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the Holy One of Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He continues to say, \"I will cause you to be like a new threshing sledge, very sharp and two-edged.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will tear your enemies to bits\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "causing them to be like bits of chaff on the mountains.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will toss them up into the air,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a strong wind will blow them away.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When that happens, you will rejoice about what I have done for you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will praise me, Yahweh, the Holy One of Israel.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When poor and needy people need water and they have no water,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and their tongues are very dry because they are very thirsty,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I, Yahweh, will come and help them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I, the God to whom you Israelite people belong, will never abandon them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause rivers to flow for them on the barren hills.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will give them fountains in the valleys.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will fill the desert with pools of water.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Water from springs will flow into rivers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the rivers will flow across the dry ground.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will plant cedars, acacia, and myrtle, in the wilderness—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and olive trees I will plant in the desert plain— cypresses, pines, and boxtrees all together.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will do that in order that people who see it will think about it, and they will know and understand\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that it is I, Yahweh, who has done it;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it is what I, the Holy One of Israel, have done.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Yahweh, the king of Israel am speaking to you nations:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Come and tell me what your idols can do for you! Argue your best in defense of them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bring them here to tell us what is going to happen!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Ask them to tell us what things happened long ago,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "in order that we may think about those things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and learn if those things that they predicted really happened.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Or ask them to tell us about the future,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order for us to know what will happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, those idols should tell us what will happen in the future.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "If they do that, we will know that they are really gods.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Tell them to do something—either something good or something bad!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Tell them to do something that will cause us to be amazed and afraid!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But that is impossible, because idols are absolutely worthless;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they can do nothing,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I detest those who decide to worship idols.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"But I have incited a ruler who will come with his army from the north.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I have summoned him to come from his country, which is east of Israel,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and he will call on me for help.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will enable his army to conquer other rulers;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will trample those leaders like a man who makes clay pots first tramples the clay.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who told you people long ago that this would happen?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who predicted it, with the result that we can say, \"What he predicted was correct!\"?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "No one else said that it would happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was the first one to say to the people of Jerusalem:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Listen to this! I have appointed a messenger to tell good news to you!'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "None of your idols told you that.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "And when I asked them questions, none of them was able to give me any answers.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Think about it: Those idols are all useless, worthless things.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are as meaningless as the wind.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

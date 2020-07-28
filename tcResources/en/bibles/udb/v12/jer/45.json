@@ -1,0 +1,66 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After Jehoiakim son of King Josiah had been ruling Judah for almost four years, Baruch son of Neriah wrote down all the messages that the prophet Jeremiah had dictated. Jeremiah gave a message and he said,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Baruch, Yahweh, the God of Israel, has a message for you.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have said, 'Terrible things are happening to me! I have endured much pain already. And now Yahweh is causing me to be very sad, in addition to my having pain. I am exhausted from my groaning, and I am unable to rest!'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Baruch, this is what Yahweh says: 'I will destroy this nation that I established. This nation is like a tree that I planted and that I will now pull up with its roots. I will do this everywhere in the world.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So, should you desire that people do things to honor you in a special way? Do not desire that. It is true that I will cause all these people to experience a great disaster, but wherever you go, I will protect you, and you will not be killed.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

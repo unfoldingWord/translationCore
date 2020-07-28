@@ -1,0 +1,218 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, you care for me like a shepherd cares for his sheep,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so I have everything that I need.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You enable me to rest in peace\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as when a shepherd leads his sheep to places where there is plenty of green grass for them to eat,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as when he lets them lie down beside streams where the water is flowing slowly.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You renew my strength.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You show me how to live in the right way,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that I can honor you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even when I am walking in very dangerous places\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where I might die,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will not be afraid of anything\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you are with me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You protect me like a shepherd protects his sheep.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You prepare a great feast for me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in a place where my enemies can see me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You welcome me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as a guest whom you honor.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You have given me very many blessings!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am certain that you will be good to me\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and act mercifully toward me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as long as I live;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "then, O Yahweh, I will live in your home forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

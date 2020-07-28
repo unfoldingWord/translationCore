@@ -1,0 +1,249 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you rulers speak righteousness?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do you judge uprightly, you people?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No, you commit wickedness in your heart;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you distribute violence throughout the land with your hands.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked go astray even when they are in the womb;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they go astray from birth, speaking lies.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their poison is like a snake's poison;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they are like a deaf adder that stops up its ears,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that pays no attention to the voice of charmers,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "no matter how skillful they are.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Break their teeth in their mouths, God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "break out the great teeth of the young lions, Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let them melt away as water that runs off;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when they shoot their arrows, let them be as though they had no points.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let them be like a snail that melts and passes away,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like the untimely-born child of a woman that never sees the sunlight.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Before your pots can feel the thorn's burning heat,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will take them away with a whirlwind, the green thorns and the burning thorns alike.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The righteous will rejoice when he sees God's vengeance;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will wash his feet in the blood of the wicked,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that men will say, \"Truly, there is a reward for the righteous person;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "truly there is a God who judges the earth.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician; set to Al Tashheth. A psalm of David. A michtam.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

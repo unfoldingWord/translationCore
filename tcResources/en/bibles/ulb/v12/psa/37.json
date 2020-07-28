@@ -1,0 +1,937 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be irritated because of evildoers;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not be envious of those who act unrighteously.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For they will soon dry up as the grass\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and wither as the green plants.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Trust in Yahweh and do what is good;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "settle in the land and graze in faithfulness.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then delight yourself in Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will give you the desires of your heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give your ways to Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "trust in him, and he will act on your behalf.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will display your justice like the daylight\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and your innocence like the day at noon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be still before Yahweh and wait patiently for him.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do not be angry if someone succeeds in what he does,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or when he makes evil plots.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be angry and frustrated.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do not worry. This only makes trouble.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Evildoers will be cut off,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but those who wait for Yahweh will inherit the land.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In a little while the evil man will disappear;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you will look at his place, but he will be gone.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the meek will inherit the land\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and will delight in great prosperity.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked man plots against the righteous\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he grinds his teeth in rage against him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord laughs at him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for he sees that his day is coming.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked have drawn out their swords and have bent their bows\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to cast down the oppressed and needy,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to kill those who are upright.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their swords will pierce their own hearts,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their bows will be broken.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Better is the little that the righteous has\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "than the abundance of many wicked people.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the arms of the wicked people will be broken,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but Yahweh supports the righteous people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh watches over the blameless day by day,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their heritage will be forever.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will not be ashamed when times are bad.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "When famine comes, they will have enough to eat.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But evil men will perish.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh's enemies will be like the glory of the pastures;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they will be consumed and disappear in the smoke.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked person borrows but does not repay,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the righteous person is generous and gives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who are blessed by God will inherit the land;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who are cursed by him will be cut off.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is by Yahweh that a man's steps are established,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the man whose way is commendable in God's sight.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Though he stumbles, he will not fall down,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for Yahweh is holding him with his hand.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was young and now am old;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have never seen the righteous person abandoned\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or his children begging for bread.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the day long he is gracious and lends,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his children become a blessing.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Turn away from evil and do what is right;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "then you will be safe forever.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh loves justice\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and does not abandon his faithful followers.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They are preserved forever,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the descendants of the wicked will be cut off.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The righteous will inherit the land\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and live there forever.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The mouth of the righteous person speaks wisdom\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and increases justice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The law of his God is in his heart;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his feet will not slip.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wicked person watches the righteous person\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and seeks to kill him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will not abandon him into the evil person's hand\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or condemn him when he is judged.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wait for Yahweh and keep his way,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will raise you up to possess the land.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You will see when the wicked are cut off.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen the wicked and terrifying person\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "spread out like a green tree in its native soil.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when I passed by again, he was not there.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I looked for him, but he could not be found.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Observe the man of integrity, and mark the upright;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "there is a good future for a man of peace.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sinners will be totally destroyed;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the future for the wicked man is cut off.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Salvation of the righteous comes from Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he protects them in the times of trouble.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh helps them and rescues them.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He rescues them from evil men and saves them\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they have taken refuge in him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

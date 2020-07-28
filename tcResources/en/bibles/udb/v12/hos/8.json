@@ -1,0 +1,401 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"Get a trumpet and blow it.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There are enemies swooping down over my people,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "as an eagle swoops down over a victim.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "This is because my people have left my covenant with them\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and have violated the law I gave them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My people Israel cry out to me and say,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Our God, we are loyal to you!'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the people of Israel have thrown away what is good,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so their enemies will chase after them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel has appointed kings for themselves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they did not consult with me about it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They chose their own kings\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "without asking me to approve them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They took their silver and gold and formed them into the idols they worshiped,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the people will perish as a result.\"\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The prophet says, \"Yes, Yahweh has rejected your idol, you people of Samaria—an idol made in the form of a calf!\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh says, \"Perhaps these people will never again be innocent of evildoing. I am very angry with them!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The shame of it is that this idol came from Israel! A craftsman made it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is only an idol; it cannot be the true and living God!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will ensure that someone will smash it to bits.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is because these people do useless things, so something terrible will destroy them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Their grain standing in the fields will give no harvest.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And even if it does, foreign soldiers will eat everything it produces.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Other nations have destroyed Israel's power.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Now Israel is like an old, broken pot that no one wants.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They asked the king of Assyria for help;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they were like a wild donkey wandering off by itself.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The people of Israel have tried to pay other nations to protect them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Although they do this,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will soon gather them up to destroy them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will begin to become poor because they will have to pay money to Assyria's king.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Ephraim have built many altars on which to offer sacrifices for their sins;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "however, these altars have become places where the people commit terrible sins against me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even if I wrote out for the people of Israel my laws ten thousand times,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they would refuse to obey them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They would say they had never heard of them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let us think about the sacrifices that they give to me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They sacrifice the meat and then they eat it;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but I, Yahweh, am not pleased with those sacrifices.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will think about their sins and will punish the people for them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will make them go back to Egypt.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And why has this happened?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The people of Israel have forgotten me, the God who made them a nation. Instead of honoring me, they have built huge homes to live in.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And instead of worshiping Yahweh, the people of Judah have built walls around their cities for protection.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "So this is what I, Yahweh, will do:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will send a fire that will destroy all their palaces and all their fortified cities.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

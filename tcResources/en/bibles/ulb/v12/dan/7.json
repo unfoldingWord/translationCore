@@ -1,0 +1,550 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the first year of Belshazzar king of Babylonia, Daniel had a dream and visions in his mind while lying on his bed. Then he wrote down what he had seen in the dream. He wrote down the most important events:\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Daniel explained, \"In my vision at night I saw that the four winds of heaven were stirring up the great sea.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Four large animals, each one different from the other, came up out of the sea.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The first was like a lion but had eagle's wings. As I was looking, its wings were torn off and it was lifted from the ground and made to stand on two feet, like a man. The mind of a man was given to it.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then there was a second animal, like a bear, and it was bending over; it had three ribs between its teeth in its mouth. It was told, 'Get up and devour many people.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After this I looked again. There was another animal, one that looked like a leopard. On its back it had four wings like bird wings, and it had four heads. It was given authority to rule.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After this I saw in the visions of the night a fourth animal, terrifying, frightening, and very strong. It had large iron teeth; it devoured, broke in pieces, and trampled underfoot what was left. It was different from the other animals, and it had ten horns.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While I was considering the horns, I looked and saw another horn grow up among them, a little horn. Three of the first horns were wrenched out by the roots. I saw in this horn eyes like the eyes of a man and a mouth that was boasting about great things.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As I looked,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "thrones were set in place,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the Ancient of Days took his seat.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His clothing was as white as snow,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the hair of his head was like pure wool.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His throne was flames of fire,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and its wheels were burning fire.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A river of fire flowed out from before him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "millions served him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and one hundred million were standing before him.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The court was in session,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the books were opened.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I continued to look because of the boastful words spoken by the horn. I watched while the animal was killed, and its body was destroyed, and it was given over to be burned up.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for the rest of the four animals, their authority to rule was taken away, but their lives were prolonged for a period of time.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In my visions that night,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I saw one coming with the clouds of heaven like a son of man;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he came to the Ancient of Days\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and was presented before him.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Authority to rule and glory and royal power were given to him\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that all the peoples, nations, and languages should serve him.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His authority to rule is an everlasting authority that will not pass away,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his kingdom is one that will never be destroyed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for me, Daniel, my spirit was grieved inside of me, and the visions I saw in my mind troubled me.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I approached one of them standing there and asked him to show me the meaning of these things.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'These large animals, four in number, are four kings that will arise from the earth.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the holy people of the Most High will receive the kingdom, and they will possess it forever and ever.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I wanted to know more about the fourth animal—it was so different from the others and very horrifying with its iron teeth and bronze claws; it devoured, broke into pieces, and trampled on what was left with its feet.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wanted to know about the ten horns on its head, and about the other horn that grew up, and before which the three horns fell down. I wanted to know about the horn that had eyes and about the mouth that boasted about great things and that seemed greater than its companions.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As I looked, this horn waged war against the holy people and was defeating them\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "until the Ancient of Days came, and justice was given to the holy people of the Most High. Then the time came when the holy people received the kingdom.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what that person said, 'As for the fourth animal,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it will be a fourth kingdom on earth\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that will be different from all the other kingdoms.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "It will devour the whole earth,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and it will trample it down\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and break it into pieces.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for the ten horns,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "out of this kingdom ten kings will arise,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and another will arise after them.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will be different from the previous ones,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will conquer the three kings.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will speak words against the Most High\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and will oppress the holy people of the Most High God.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He will try to change the festivals and the law.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "These things will be given into his hand\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for one year, two years, and half a year.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the court will be in session,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they will take his royal power away\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to be consumed and destroyed at the end.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The kingdom and the dominion,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the greatness of the kingdoms under the whole heaven,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "will be given to the people\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who belong to the holy people of the Most High.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His kingdom is an everlasting kingdom,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and all other kingdoms will serve and obey him.'\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Here is the end of the matter. As for me, Daniel, my thoughts greatly alarmed me and my face changed in appearance. But I kept these things to myself.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh come, let us sing to Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us sing joyfully to the rock of our salvation.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let us enter his presence with thanksgiving;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us sing to him with psalms of praise.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh is a great God\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a great King superior to all gods.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In his hand are the depths of the earth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the heights of the mountains are his.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sea is his, for he made it,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his hands formed the dry land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh come, let us worship and bow down;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us kneel before Yahweh, our Creator:\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For he is our God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and we are the people of his pasture and the sheep of his hand.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Today—oh, that you would hear his voice!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Do not harden your heart, as at Meribah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or as on the day of Massah in the wilderness,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "where your forefathers tested me\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and tried me, though they had seen my deeds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For forty years I was angry with that generation\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and said, 'This is a people whose hearts wander astray;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they have not known my ways.'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore I vowed in my anger\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that they would never enter into my resting place.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

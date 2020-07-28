@@ -1,0 +1,321 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those whom God has forgiven for rebelling against him\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those whose sin God does not look at,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "these are the ones who are truly fortunate!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those whose record of sins Yahweh has erased\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who no longer do deceitful things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "these are the ones who are truly fortunate!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I did not confess my sins,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my body was very weak and sick,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I groaned all day long.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Day and night, Yahweh, you punished me severely.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "My strength disappeared like water that evaporates on a hot summer day.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I confessed my sins to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I stopped trying to hide them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I said to myself,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"I will tell Yahweh the wrong things that I have done.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When I confessed them, you forgave me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so now I am no longer guilty for my sins.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore the people who honor you should pray to you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they are in great trouble.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If they do that, difficulties will not come on them like a great flood.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are like a place where I can hide from my enemies;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you protect me from troubles\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and enable me to shout, praising you for saving me from my enemies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says to me, \"I will instruct you about how you should conduct your life.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will teach you and watch over you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be stupid like horses and mules that do not understand anything;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they need bits\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so they will go in the direction you want them to go.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wicked people will have many troubles that will make them sad,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who trust in Yahweh will experience him faithfully loving them all the time.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So, all you righteous people, rejoice about what Yahweh has done for you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you whose heart are pure, be glad and shout joyfully!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David, which will help people to be wise\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

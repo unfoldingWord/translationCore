@@ -1,0 +1,276 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I call out to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "please help me quickly!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Listen to me when I am calling to you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Accept my prayer as though it were incense being burned as an offering to you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Accept me while I lift up my hands to pray to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as you accept sacrifices that are offered to you in the evening.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, do not allow me to say things that are wrong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "guard what I say as a sentry guards a door.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Prevent me from wanting to do anything that is wrong\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and from joining with wicked men when they want to do evil deeds.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Do not even allow me to share in eating delightful food with them!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is all right if righteous people strike me or rebuke me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because they are trying to act kindly toward me to teach me to do what is right;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "if they do that, it will be as if someone honored me by anointing my head with olive oil;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I am always praying that you will punish the wicked because of the wicked deeds that they do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When their rulers are thrown down from the top of rocky cliffs,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will know that what I am saying here is good.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will know one day that their bodies will lie scattered on the ground in the place of the dead,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just as one scatters clods of earth when he plows a field.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Yahweh God, I continue to request that you help me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I ask you to protect me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not allow me to die now!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though people have set traps for me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "protect me from falling into those traps.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is as though they have spread nets to catch me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "keep me from being caught in those nets.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wish that wicked people may fall into the traps they have set to catch me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while I escape from them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

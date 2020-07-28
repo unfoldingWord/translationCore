@@ -1,0 +1,417 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is the word of Yahweh that came to Zephaniah son of Cushi son of Gedaliah son of Amariah son of Hezekiah, in the days of Josiah son of Amon, king of Judah.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I will utterly destroy everything from off the surface of the earth—this is Yahweh's declaration.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will destroy man and beast; I will destroy the birds of the heavens and the fish of the sea,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the ruins along with the wicked.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For I will cut off man from the surface of the earth—this is Yahweh's declaration.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will reach out with my hand over Judah and all the inhabitants of Jerusalem.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will cut off every remnant of Baal from this place and the names of the idolatrous people among the priests,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the people who on the housetops worship the heavenly bodies,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the people who worship and swear to Yahweh but who also swear by their king.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The Hebrew text has \\fqa by their king \\fqa* , but some modern versions read \\fqa by Milcom \\fqa* , the name of a pagan god that many people worshiped. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will also cut off those who have turned away from following Yahweh, those who neither seek Yahweh nor ask for his guidance.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be silent before the Lord Yahweh! For the day of Yahweh is near;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh has prepared the sacrifice and set apart his guests.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"It will come about on the day of Yahweh's sacrifice,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that I will punish the princes and the king's sons,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and everyone dressed in foreign clothes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day I will punish all those who leap over the threshold,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who fill their master's house with violence and deceit.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So it will be on that day—this is Yahweh's declaration—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that a cry of distress will come from the Fish Gate, wailing from the Second District,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a great crashing sound from the hills.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wail, inhabitants of the Market District,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for all the merchants will be ruined; all those who weigh out silver will be cut off.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will come about at that time that\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will search Jerusalem with lamps and punish the men\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who have settled into their wine and say in their heart,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'Yahweh will not do anything, either good or evil.'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their wealth will become plunder, and their houses will be an abandoned devastation!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They will build houses but not live in them, and plant vineyards but not drink their wine.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The great day of Yahweh is near, near and hurrying quickly!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The sound of the day of Yahweh will be that of a warrior crying bitterly!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That day will be a day of fury, a day of distress and anguish,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a day of storm and devastation, a day of darkness and gloom,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a day of clouds and thick darkness.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be a day of trumpets and alarms\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "against the fortified cities and the high battlements.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I will bring distress upon mankind, so that they will walk about like blind men\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "since they have sinned against Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Their blood will be poured out like dust, and their inner parts like dung.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Neither their silver nor their gold will be able to save them\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on the day of Yahweh's fury. In the fire of his jealousy the whole earth will be consumed,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for he will bring a complete, a terrible end of all the inhabitants of the earth.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

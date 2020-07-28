@@ -1,0 +1,346 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The heavens declare the glory of God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the skies make his handiwork known!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Day after day speech pours out;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "night after night it reveals knowledge.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is no speech or spoken words;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their voice is not heard.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet their words go out over all the earth,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their speech to the end of the world.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He has pitched a tent for the sun among them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sun is like a bridegroom coming out of his chamber\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and like a strong man who rejoices when he runs his race.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sun rises from the one horizon\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and crosses the sky to the other;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "nothing escapes its heat.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The law of Yahweh is perfect, restoring the soul;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the testimony of Yahweh is reliable, making the simple wise.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The instructions of Yahweh are right, making the heart glad;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the commandment of Yahweh is pure, bringing light to the eyes.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The fear of Yahweh is pure, enduring forever;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the righteous decrees of Yahweh are true and altogether right!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They are of greater value than gold, even more than much fine gold;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they are sweeter than honey and the dripping honey from the honeycomb.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yes, by them your servant is warned;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in obeying them there is great reward.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who can discern all his own errors?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Cleanse me from hidden faults.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep your servant also from arrogant sins;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let them not rule over me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Then I will be perfect,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will be innocent from many transgressions.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May the words of my mouth and the thoughts of my heart\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "be acceptable in your sight,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh, my rock and my redeemer.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician. A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

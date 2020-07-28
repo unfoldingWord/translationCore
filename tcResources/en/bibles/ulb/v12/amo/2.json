@@ -1,0 +1,525 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"For three sins of Moab,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even for four,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not turn away punishment,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because he burned the bones\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "of the king of Edom to lime.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will send fire on Moab,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and it will devour the fortresses of Kerioth.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Moab will die in an uproar,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with shouting and the sound of the trumpet.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will destroy the judge in her,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will kill all the princes with him,\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "says Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"For three sins of Judah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even for four,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not turn away punishment,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they rejected the law of Yahweh\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and did not keep his statutes.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Their lies caused them to go astray,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "after which their fathers had also walked.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will send fire on Judah,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and it will devour the fortresses of Jerusalem.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what Yahweh says:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"For three sins of Israel,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even for four,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not turn away punishment,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they sold the innocent for silver\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the needy for a pair of sandals.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They trample on the heads of the poor as people trample on dust on the ground;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they push the oppressed away.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "A man and his father sleep with the same girl\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and so profane my holy name.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They lie down beside every altar on clothes taken as pledges,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and in the house of their God they drink the wine of those who were fined.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet I destroyed the Amorite before them,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "whose height was like the height of cedars;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he was strong as the oaks.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yet I destroyed his fruit above\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his roots below.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Also, I brought you up out of the land of Egypt\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and led you forty years in the wilderness\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to possess the land of the Amorites.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I raised up prophets from among your sons\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and Nazirites from your young men.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Is it not so,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "people of Israel?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "—this is Yahweh's declaration.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you persuaded the Nazirites to drink wine\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and commanded the prophets not to prophesy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, I will crush you\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as a cart that is full of grain can crush someone.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The swift will find no escape;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the strong will not add to his own strength;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "neither will the mighty save himself.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The archer will not stand;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the fast runner will not escape;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the horseman will not save himself.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even the bravest warriors\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "will flee naked in that day\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "—this is Yahweh's declaration.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

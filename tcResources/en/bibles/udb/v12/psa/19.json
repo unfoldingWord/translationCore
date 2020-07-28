@@ -1,0 +1,386 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people look at everything that God has placed in the skies, they can see that he is very great;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they can see the great things that he has created.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Day after day it is as though the sun proclaims the glory of God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and night after night it is as though the moon and stars say that they know that God made them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They do not really speak;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they do not say any words.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There is no sound from them for anyone to hear.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But what they declare about God goes throughout the world,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and even people who live in the most distant places on earth can know it.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The sun is in the skies where God placed it;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "it rises each morning like a bridegroom who is happy as he comes out of his bedroom after his wedding.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is like a strong athlete who is very eager to start running in a race.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sun rises at one side of the sky and goes across the sky and sets on the other side;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "nothing can hide from its heat.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The instructions that Yahweh has given us are perfect;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they revive us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We can be sure that the things that Yahweh has told us will never change,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and by learning them people who have not been previously taught will become wise.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh's laws are fair;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when we obey them, we become joyful.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The commands of Yahweh are clear,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and by reading them we start to understand how God wants us to behave.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is good for people to revere Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that is something that they will do forever.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "What Yahweh has decreed is fair,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and it is always right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The things that God has decided are more valuable than gold,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even the finest gold.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They are sweeter than honey\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that drips from honeycombs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Furthermore, by reading them I learn what things are good to do and what things are evil,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and they promise a great reward\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to us who obey them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But here is no one who can know all his errors;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so Yahweh, forgive me for these things which I do that I do not realize are wrong.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep me from doing things that I know are wrong;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not let me keep doing the evil things I want to do.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If you do that, I will no longer be guilty for committing such sins,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will not commit the great sin of rebelling terribly against you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O Yahweh, you are like a huge rock on top of which I can be safe; you are the one who protects me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I hope that the things that I say and what I think will always please you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

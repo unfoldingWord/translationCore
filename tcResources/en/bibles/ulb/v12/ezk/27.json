@@ -1,0 +1,591 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Again the word of Yahweh came to me, saying,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Now you, son of man, begin a lamentation concerning Tyre,\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and say to Tyre, who lives within the gates of the sea, merchants of peoples to many islands, the Lord Yahweh says this to you:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Tyre, you have said, 'I am perfect in beauty.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your borders are in the heart of the seas; your builders have perfected your beauty.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have made all your planks with cypress from Mount Hermon;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they took cedar from Lebanon to make a mast for you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They made your oars from the oaks of Bashan;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they made your decks out of cypress wood from Cyprus, and they overlaid them with ivory.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your sails were made from colorful linen from Egypt that served as your banner; \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the colors of blue and purple from the coasts of Elishah are used for the awning on your boat.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those who were living in Sidon and Arvad were your rowers;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the sages of Tyre were within you; they were your pilots.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Highly experienced craftsmen from Byblos filled your seams;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all the ships of the sea and their sailors among you were carrying your merchandise for trade.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Persia, Lydia, and Libya were in your army, your men of war.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they hung shield and helmet within you; they showed your splendor.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Arvad and Helek in your army were on your walls surrounding you, and the people of Gammad were in your towers. They hung up their shields on your walls all around you! They completed your beauty.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tarshish was a trading partner with you because of your abundant wealth of goods to sell: Silver, iron, tin, and lead. They bought and sold your wares!\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Javan, Tubal, and Meshech—they traded slaves and in items made of bronze. They handled your merchandise.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Beth Togarmah provided horses, stallions, and mules as your merchandise.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The men of Rhodes were your traders on many coasts. Merchandise was in your hand; they sent back horn, ivory, and ebony as tribute!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aram was a dealer in your many products; they provided emeralds, purple, colored cloth, fine fabric, pearls, and rubies as your merchandise.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Judah and the land of Israel were trading with you. They provided wheat from Minnith, cakes, honey, oil, and balsam as your merchandise.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Damascus was a trader of all your products, of all your enormous wealth, and of the wine of Helbon and the wool of Zahar.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Dan and Javan from Izal provided you with merchandise of wrought iron, cinnamon, and calamus. This became merchandise for you.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Dedan was your dealer in fine saddle blankets.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Arabia and all the chiefs of Kedar were traders with you; they provided you with lambs, rams and goats.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The traders of Sheba and Raamah came to sell you the best of every spice and in all kinds of precious gems; they traded gold for your merchandise.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Haran, Kanneh, and Eden were traders with you, along with Sheba, Ashur, and Kilmad.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These were your dealers in ornate robes of violet cloths with woven colors, and in blankets of multicolored, embroidered, and well-woven cloth in your marketplaces.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The ships of Tarshish were the transporters of your merchandise!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "So you were filled up, heavily laden with cargo in the heart of the seas!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your rowers have brought you into vast seas;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the eastern wind has broken you in the middle of them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your wealth, merchandise, and trade goods; your sailors and pilots, and ship builders; your traders of merchandise and all the men of war who are in you, and all your crew—they will sink into the depths of the sea on the day of your destruction.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cities at the sea will tremble at the sound of your pilots' cry;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All those who handle oars will come down from their ships;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "mariners and all the pilots on the sea will stand on the land.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they will make you listen to their voice and will wail bitterly;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they will cast dust up on their heads. They will roll about in ashes.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will shave their heads bald for you and bind themselves with sackcloth,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and they will weep bitterly over you and they will cry out.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will lift up their wails of lamentation for you and sing dirges over you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who is like Tyre, who has now been brought to silence in the middle of the sea?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When your merchandise went ashore from the sea, it satisfied many peoples;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you enriched the kings of the earth with your great wealth and merchandise!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But when you were shattered by the seas, by deep waters,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your merchandise and all your crew sank!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the inhabitants of the coasts were appalled at you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and their kings shuddered in horror! Their faces trembled!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The merchants of the people hiss at you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have become a horror, and you will be no more forever.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

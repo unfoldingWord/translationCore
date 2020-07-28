@@ -1,0 +1,242 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May Yahweh help you in the day of trouble;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "may the name of the God of Jacob protect you\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and send help from the holy place\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to support you from Zion.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May he call to mind all your offerings\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and accept your burnt sacrifice.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May he grant you your heart's desire\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and fulfill all your plans.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then we will rejoice in your victory,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and, in the name of our God, we will raise banners.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "May Yahweh grant all your petitions.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now I know that Yahweh will rescue his anointed one;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will answer him from his holy heaven\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with the strength of his right hand that can rescue him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some trust in chariots and others in horses,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but we call on Yahweh our God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will be brought down and fall,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but we will rise and stand upright!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, rescue the king;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "help us when we call.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician. A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

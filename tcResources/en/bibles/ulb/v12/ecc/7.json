@@ -1,0 +1,710 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A good name is better than costly perfume,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the day of death is better than the day of birth.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better to go to a house of mourning\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than to a house of feasting,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "for mourning comes to all people at the end of life,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so living people must take this to heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Grief is better than laughter,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for after sadness of face comes gladness of heart.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The heart of the wise is in the house of mourning,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the heart of fools is in the house of feasting.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better to listen to the rebuke of the wise\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than to listen to the song of fools.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For like the crackling of thorns burning under a pot,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so also is the laughter of fools.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "This, too, is vapor.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Extortion certainly makes a wise man foolish,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and a bribe corrupts the heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Better is the end of a matter than the beginning;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people patient in spirit are better than the proud in spirit.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be quick to anger in your spirit,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "for anger resides in the hearts of fools.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not say, \"Why were the days of old better than these?\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "For it is not because of wisdom that you ask this question.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom, like an inheritance, is good.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It benefits those who see the sun.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For wisdom provides protection as money can provide protection,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the advantage of knowledge is that wisdom gives life to whoever has it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Consider the deeds of God:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Who can straighten out anything he has made crooked?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When times are good, live happily in that good,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but when times are bad, consider this:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "God has allowed both to exist side by side.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "For this reason, no one will find out anything that is coming after him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have seen many things in my meaningless days.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There are righteous people who perish in spite of their righteousness,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and there are wicked people who live a long life in spite of their evil.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be self-righteous,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "wise in your own eyes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Why should you destroy yourself?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be too wicked or foolish.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why should you die before your time?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is good that you should take hold of this wisdom,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that you should not let go of righteousness.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "For the person who fears God will meet all his obligations.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Instead of \\fqa will meet all his obligations \\fqa* , some modern versions have different interpretations of this difficult passage. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom is powerful in the wise man,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "more than ten rulers in a city.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is not a righteous man on earth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who does good and never sins.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not listen to every word that is spoken,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you might hear your servant curse you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Similarly, you know yourself that in your own heart\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have often cursed others.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All this have I proven by wisdom. I said,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"I will be wise,\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but it was more than I could be.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wisdom is far off and very deep.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who can find it?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I turned my heart to learn and examine\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and seek wisdom and the explanations of reality,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and to understand that evil is stupid\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and that folly is madness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I found that more bitter than death is any woman\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "whose heart is full of snares and nets,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and whose hands are chains.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Whoever pleases God will escape from her,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the sinner will be taken by her.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Consider what I have discovered,\" says the Teacher. \"I have been adding one discovery to another in order to find an explanation of reality.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what I am still looking for, but I have not found it. I did find one righteous man among a thousand, but a woman among all those I did not find.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have discovered only this: That God created humanity upright, but they have gone away looking for many difficulties.\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

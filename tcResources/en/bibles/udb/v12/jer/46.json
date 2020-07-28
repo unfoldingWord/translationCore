@@ -1,0 +1,850 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are messages that Yahweh gave to the prophet Jeremiah about other nations.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After Jehoiakim son of King Josiah, had been ruling Judah for almost four years, this message about Egypt was given to me by Yahweh. It was when the army of King Necho of Egypt was defeated by the army of King Nebuchadnezzar of Babylon at Carchemish by the Euphrates River.\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "This is what Yahweh said: \"The officers of the army of Egypt are saying to their troops,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'Prepare your small and large shields\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and march out to fight the battle!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Put harnesses on your horses,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and get on their backs.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Get into your positions for the battle;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "put on your helmets.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Sharpen your spears,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and put on your armor!'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But what do I see?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I see that the soldiers of Egypt will be terrified and will be fleeing.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Even the bravest of their soldiers will be running away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "without even looking backward!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I, Yahweh, say that their soldiers will be terrified on all sides!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even the fastest runners will try to run away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but even the greatest of their warriors will not escape.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "In the north, by the Euphrates River,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will stumble and fall.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "What group is this that will be covering the land\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the water of the Nile River covers the land when it floods and its waves surge?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The kingdom of Egypt rises and falls \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the Nile that surging with a flood of water,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and Egypt will boast that they will cover the earth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and will destroy cities and the people who live in them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You riders of horses, charge into the battle!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You drivers of chariots, drive furiously like a crazy person!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "All you warriors from Ethiopia and Libya\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who carry your shields,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you warriors from Lydia\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who shoot arrows,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you come!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But, you need to know that this is the day when I, Yahweh, commander of the angel armies, will get revenge on my enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "With my sword I will kill my enemies until I am satisfied;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "my sword will be like a monster that drinks the blood of the animals it kills until it is no longer thirsty.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The enemy soldiers who will be killed in the north beside the Euphrates River\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "will be like a sacrifice to me, the Lord Yahweh, commander of the angel armies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You innocent people of Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "go up to the region of Gilead to obtain medicine;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but it will be useless to take all those medicines;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will not be healed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People in the other nations hear how you were humiliated.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "People all over the earth hear you wailing.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Your mighty warriors stumble over each other\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they all fall down together.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Yahweh gave to the prophet Jeremiah this message about King Nebuchadnezzar when he planned to attack Egypt with his army:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Shout this message throughout Egypt!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Proclaim it in the cities of Migdol, Memphis, and Tahpenes!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'Get into your positions for the battle;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Prepare to defend yourselves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because everyone around you will be killed.'\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do those whose strength you trust fall down?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They cannot stand up,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because Yahweh will knock them down.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The soldiers from other countries will stumble and fall over each other,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then they will say to each other,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Let us get up and go back to our own people, to our own land.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Let us get away from the swords of our enemies!\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There in Egypt they will say,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"The king of Egypt talks loudly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but when our army had an opportunity to defeat our enemies, they failed.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, the King, who is called Yahweh, commander of the angel armies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "say this:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'As surely as I live, an army is coming to fight against the army of Egypt.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They will be extremely powerful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as though they were as tall as Tabor Hill,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or as high as Mount Carmel, close to the Mediterranean Sea.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you people who live in Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "pack your possessions and prepare to be exiled.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Memphis will be destroyed;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will become a ruin, and no people will be living there.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Egypt is like a beautiful young cow,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but a powerful king from the northeast is surely coming to attack it\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a horsefly bites a cow.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The mercenaries that Egypt has hired are like fat calves because of the Egyptians' money;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they also will turn around and run away;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they will not stand there and fight,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because it will be a day when there will be a great disaster for Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a day when their people will be greatly punished.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The soldiers of Egypt will run away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as silently as a snake slithers away.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The army of the enemy will advance;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will march along carrying their axes\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like men who cut down trees.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Yahweh, say that they will kill the soldiers of Egypt\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as though they were cutting down a forest of trees,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because the enemy soldiers will be as numerous as a swarm of locusts.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people of Egypt will be humiliated;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will be conquered by people from the northeast.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Yahweh, commander of the angel armies, the God whom Israel worships, say, 'I will punish Amon, the god whom the people of the city of Thebes worship, and all the other gods in Egypt. I will punish the king of Egypt and all those who trust in him.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause them to be captured by those who want to kill them—Nebuchadnezzar the king of Babylon, and his army officers. But many years later, people will live in Egypt again. That will surely happen because I, Yahweh, have said it.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you people of Israel who serve me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not be at all dismayed now,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because some day I will bring you back from distant places;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will bring your descendants from the land to which they were exiled.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Then you Israelite people will again live peacefully and safely,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there will not be any nation to cause you to be terrified.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Yahweh, say to you people of Israel who serve me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "'Do not be afraid,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because I will be with you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will completely destroy the nations among whom I have scattered you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I will not completely get rid of you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will punish you, but I will punish you only as severely as you deserve:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it would be wrong if I did not punish you at all.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

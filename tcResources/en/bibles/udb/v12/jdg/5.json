@@ -1,0 +1,916 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day, Deborah and Barak (the son of Abinoam) sang this song:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"When the leaders of the Israelite people really lead them, and the people willingly follow them, it is time to praise Yahweh!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen, you kings! Pay attention, you leaders!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will sing to Yahweh. With this song I will praise Yahweh, the God of Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O Yahweh, when you came from Seir, when you marched from that land, also known as Edom,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the earth shook,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and rain poured down from the skies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The mountains shook when you came,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just like Mount Sinai shook when you appeared there,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you are Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the God of Israel.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Shamgar was our leader and in the days of Jael,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we were afraid to walk on the main roads;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "instead, caravans of travelers walked on winding, less traveled roads\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to avoid being molested.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There were few warriors willing to fight in Israel\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "until I, Deborah, became their leader.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I became like a mother to the Israelite people.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When the Israelite people abandoned Yahweh and chose new gods,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "enemies attacked the gates of the cities,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and then they took away the shields and spears from forty thousand Israelite soldiers.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Not one was left with a metal weapon.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am thankful for the leaders and soldiers who volunteered to fight.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I praise you, Yahweh, for them!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You wealthy people who ride on donkeys,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "sitting on nice padded saddles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you people who just walk on the road,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "think about all this!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to the voices of the singers who gather at the places where the animals drink water.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They tell about how Yahweh acted righteously\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when he enabled the Israelite warriors to conquer their enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh's people marched down to the city gates.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people came to my house and shouted,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Deborah, wake up! Wake up and start singing!'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They also shouted,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'Barak (son of Abinoam), get up, and capture our enemies!'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Later, some of the Israelite people who survived the battle\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "came down from the highlands to where their leaders were.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "These were men who belonged to Yahweh and they came down to me\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to fight their enemies alongside these warriors.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some came from the tribe descended from Ephraim.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They came from land that once belonged to the descendants of Amalek.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Men from the tribe descended from Benjamin followed them.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Troops from the group descended from Machir also came down,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and officers from the tribe descended from Zebulun came down, carrying staffs to show they were important.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Leaders from the tribes descended from Issachar joined Barak and me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They followed Barak, rushing down into the valley.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But men from the tribe descended from Reuben could not decide what they should do.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why did you men stay at your fireplaces,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "waiting to hear the shepherds whistle for their flocks of sheep to come to the pens?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Men in the tribe descended from Reuben could not decide\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "whether they would join us to fight our enemies, or not.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Similarly, the men living in the Gilead area stayed at home, east of the Jordan River.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And the men from the tribe descended from Dan,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "why did they stay home?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The tribe descended from Asher sat by the seashore.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They stayed in their coves.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But men from the tribe descended from Zebulun risked their lives on the battlefield,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and men descended from Naphtali were ready to do that, also.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The kings of Canaan fought us at Taanach, near the springs in Megiddo Valley.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But since they did not defeat us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they did not carry away any silver or other treasures from the battle.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was as though the stars in the heavens fought for us\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and as though those stars in their paths fought against Sisera.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The river Kishon swept them away—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that river that has been there for ages.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will tell myself to be brave and continue marching on.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The hooves of the horses of Sisera's army pounded the ground.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Those powerful horses kept galloping along.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The angel sent by Yahweh said,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'I curse the people of the town of Meroz\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because they did not come to help Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to defeat the mighty warriors of Canaan.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God is very pleased with Jael,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "(the wife of Heber the Kenite).\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is more pleased with her than with all the other women who live in tents.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sisera asked for some water,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Jael gave him some milk.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "She brought him some yogurt in a bowl that was suitable for kings.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then, when he was asleep, she reached for a tent peg with her left hand,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and she reached for a hammer with her right hand.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "She hit Sisera hard with it and crushed his head.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "She pounded the tent peg right through his head.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He collapsed at her feet\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he fell and he layed there and did not move.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "At her feet he sank down,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and there he fell limp. He was dead.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sisera's mother looked out from her window.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "She waited for him to return.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "She said, 'Why is he taking so long to come home in his chariot?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why do I not hear the sound of the wheels of his chariot?'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Her wisest princesses replied to her,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and she kept consoling herself by repeating those words:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'Perhaps they are dividing up the things and the people they captured after the battle.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Each soldier will get one or two women who will bear them children.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Sisera will get some beautiful robes,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and some beautiful embroidered robes for me.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But that is not what happened! Yahweh, I hope that all your enemies will die as Sisera did!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "And I desire that all those who love you, Yahweh, be as strong as the sun when it rises!\"\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "There was peace again in the land for forty years.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

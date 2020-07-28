@@ -1,0 +1,217 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Masters, give to slaves what is right and fair. You know that you also have a master in heaven.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Continue steadfastly in prayer. Stay alert in it in thanksgiving.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pray together for us also, that God would open a door for the word, to speak the secret truth of Christ. Because of this, I am chained up.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pray that I may make it clear, as I ought to speak.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Walk in wisdom toward those outside, and redeem the time.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let your words always be with grace. Let them be seasoned with salt, so that you may know how you should answer each person.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As for the things concerning me, Tychicus will make them known to you. He is a beloved brother, a faithful servant, and fellow slave in the Lord.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I sent him to you for this, that you might know the matters about us, and so that he may encourage your hearts.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older versions read, \\fqa I sent him to you for this, that he might know the matters about you, and that he may encourage your hearts \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I sent him together with Onesimus, the faithful and beloved brother, who is one of you. They will tell you everything that has happened here.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Aristarchus, my fellow prisoner, greets you, as well as Mark, the cousin of Barnabas (about whom you received orders; if he comes to you, receive him),\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and also Jesus who is called Justus. These alone of the circumcision are my fellow workers for the kingdom of God. They have been a comfort to me.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Epaphras greets you. He is one of you and a slave of Christ Jesus. He always strives for you in prayer, so that you may stand complete and fully assured in all the will of God.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I bear witness of him, that he works hard for you, for those in Laodicea, and for those in Hierapolis.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Luke the beloved physician and Demas greet you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Greet the brothers in Laodicea, and Nympha, and the church that is in her house.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When this letter has been read among you, have it read also in the church of the Laodiceans, and see that you also read the letter from Laodicea.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say to Archippus, \"Look to the ministry that you have received in the Lord, that you should fulfill it.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This greeting is with my own hand—Paul. Remember my chains. May grace be with you.\n\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

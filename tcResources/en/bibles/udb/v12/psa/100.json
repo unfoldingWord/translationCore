@@ -1,0 +1,152 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone in the world should shout joyfully to Yahweh!\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We should worship Yahweh gladly!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We should come before him singing joyful songs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We should acknowledge that Yahweh is God;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is he who made us, and so we belong to him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "We are the people that he takes care of;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we are like sheep that their shepherd cares for.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Enter the gates of his temple thanking him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "enter the courtyard of the temple singing songs to praise him!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Thank him and praise him\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because Yahweh always does good things for us.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He faithfully loves us as he promised us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he is faithful.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of thanksgiving\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

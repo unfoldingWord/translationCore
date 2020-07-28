@@ -1,0 +1,459 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh God, you who rescue me, all during each day I call out to you to help me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I cry out to you during each night also.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to my prayer\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while I cry out to you for help!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have experienced many troubles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I am about to die and go where dead people are.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because I have no more strength,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "other people believe that I will soon die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am like a corpse that has been abandoned;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am like dead people who lie in their graves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people who have been completely forgotten\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you do not take care of them anymore.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though you have thrown me into a deep, dark pit,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "into a place where they throw corpses.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It seems as though you are very angry with me,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and it is as though you have crushed me as ocean waves crash down on people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have caused my friends to avoid me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I have become repulsive to them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is as though I were in a prison and cannot escape.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My eyes cannot see well because I cry very much.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh, every day I call out to you to help me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I lift up my hands to you while I pray.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You certainly do not perform miracles for dead people!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Their spirits do not arise to praise you!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Corpses in the grave certainly do not tell about your faithfully loving us,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and in the place where people are finally destroyed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one tells about what you faithfully do for us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No one in the deep, dark pit ever sees the miracles that you perform,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and no one in the place where people have been completely forgotten tells about your being good to us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But as for me, Yahweh, I cry out to you to help me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "each morning I pray to you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, why do you reject me?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why do you turn away from me?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the time since I was young, I have suffered and have often almost died;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am in despair because of enduring the terrible things that you have done to me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I feel that you have crushed me because of your being angry with me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the terrible things that you are doing to me are almost destroying me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though they surround me like a flood;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are closing in on me from all sides.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have caused even my friends and others whom I love to avoid me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and it is as though the only friend that I have is darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm that expresses sadness, written for the choir director by Zerah's son Heman, one of the descendants of Korah\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

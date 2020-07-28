@@ -1,0 +1,147 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, who may stay in your tabernacle?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who may live on your holy hill?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever walks blamelessly, does what is right\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and speaks truth from his heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does not slander with his tongue,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he does not harm others,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he does not insult his neighbor.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The worthless person is despised in his eyes,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but he honors those who fear Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He swears to his own disadvantage and does not take back his promises.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He does not charge interest when he lends money.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He does not take bribes to testify against the innocent.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He who does these things will never be shaken.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

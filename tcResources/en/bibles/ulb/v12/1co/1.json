@@ -1,0 +1,368 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Paul, called by Christ Jesus to be an apostle by the will of God, and Sosthenes our brother,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "to the church of God at Corinth, to those who have been sanctified in Christ Jesus, who are called to be holy people. We are also writing to all who call on the name of our Lord Jesus Christ in every place, their Lord and ours.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May grace and peace be to you from God our Father and the Lord Jesus Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I always give thanks to my God for you because of the grace of God that Christ Jesus gave to you.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has made you rich in every way, in all speech and with all knowledge,\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "just as the testimony about Christ has been confirmed as true among you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore you lack no spiritual gift as you eagerly wait for the revelation of our Lord Jesus Christ.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will also strengthen you to the end, so that you will be blameless on the day of our Lord Jesus Christ.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God is faithful, who called you into the fellowship of his Son, Jesus Christ our Lord.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now I urge you, brothers, through the name of our Lord Jesus Christ, that you all agree, and that there be no divisions among you. I urge that you be joined together with the same mind and by the same purpose.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For it has been made clear to me, my brothers, by Chloe's people that there are factions among you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I mean this: Each one of you says, \"I am with Paul,\" or \"I am with Apollos,\" or \"I am with Cephas,\" or \"I am with Christ.\"\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Is Christ divided? Was Paul crucified for you? Were you baptized in the name of Paul?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I thank God that I baptized none of you, except Crispus and Gaius.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This was so that no one would say that you were baptized into my name.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "(I also baptized the household of Stephanas. Beyond that, I do not know if I baptized any others.)\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Christ did not send me to baptize but to preach the gospel. He did not send me to preach with words of human wisdom, so that the cross of Christ should not be emptied of its power.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the message about the cross is foolishness to those who are dying. But among those whom God is saving, it is the power of God.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For it is written,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"I will destroy the wisdom of the wise.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will frustrate the understanding of the intelligent.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Where is the wise person? Where is the scholar? Where is the debater of this world? Has not God turned the wisdom of the world into foolishness?\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Since the world in its wisdom did not know God, it pleased God through the foolishness of preaching to save those who believe.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Jews ask for miraculous signs and Greeks seek wisdom.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we preach Christ crucified, a stumbling block to Jews and foolishness to Greeks.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But to those whom God has called, both Jews and Greeks, we preach Christ as the power and the wisdom of God.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the foolishness of God is wiser than people, and the weakness of God is stronger than people.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look at your calling, brothers. Not many of you were wise by human standards. Not many of you were powerful. Not many of you were of noble birth.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God chose the foolish things of the world to shame the wise. God chose what is weak in the world to shame what is strong.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God chose what is low and despised in the world. He even chose things that are regarded as nothing, to bring to nothing things that are held as valuable.\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He did this so that no one would have a reason to boast before him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because of what God did, now you are in Christ Jesus, who became for us wisdom from God. He became our righteousness, holiness, and redemption.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As a result, as scripture says, \"Let the one who boasts, boast in the Lord.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

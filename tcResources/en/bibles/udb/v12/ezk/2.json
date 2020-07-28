@@ -1,0 +1,126 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The voice said to me, \"Son of man, stand up while I speak to you.\"\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While he spoke to me, God's Spirit entered me and enabled me to stand up. Then I heard him speak to me.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said, \"Son of man, I will send you to the Israelite people. They are people who have turned away from me and rebelled against me. Their ancestors rebelled against me, and they themselves are still rebelling against me.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people to whom I will send you are very stubborn. But say to them, 'This is what Yahweh the Lord says to you.'\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And when you tell them my messages, perhaps those rebellious people will heed those messages and perhaps they will not heed them; but they will know that a prophet has been among them!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And you, son of man, you must not be afraid of them or afraid of what they say. Living among them will be like living in the midst of briers or scorpions, but do not be afraid of them. They are rebellious people, but do not allow them to frighten you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell them my message, but do not expect them to pay attention to it, because they are very rebellious.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But son of man, you must pay attention to what I say. Do not be rebellious like they are. Now open your mouth and eat what I give to you.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then, as I watched, I saw his hand that was stretched toward me. In his hand was a scroll.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He unrolled the scroll. On both sides of it were written words that expressed sorrow and mourning and words about trouble.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

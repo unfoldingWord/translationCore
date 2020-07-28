@@ -1,0 +1,164 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I saw another sign in heaven, great and marvelous: There were seven angels with seven plagues, which are the final plagues, for with them the wrath of God will be completed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I saw what appeared to be a sea of glass mixed with fire. Standing beside the sea were those who had been victorious over the beast and his image, and over the number representing his name. They were holding harps given to them by God.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were singing the song of Moses, the servant of God, the song of the Lamb:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Great and marvelous are your deeds,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Lord God, the Almighty.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Just and true are your ways,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "King of the nations.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who will not fear you, Lord,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and glorify your name?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For you alone are holy.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "All nations will come\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and worship before you\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because your righteous deeds have been revealed.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After these things I looked, and the temple having the tent of witness was open in heaven.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Out of the most holy place came the seven angels holding the seven plagues. They were clothed with pure, bright linen and had golden sashes around their chests.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "One of the four living creatures gave to the seven angels seven golden bowls full of the wrath of God, who lives forever and ever.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The temple was filled with smoke from the glory of God and from his power. No one could enter it until the seven plagues of the seven angels were completed.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

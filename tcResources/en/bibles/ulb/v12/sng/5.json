@@ -1,0 +1,567 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have come into my garden, my sister, my bride;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have gathered my myrrh with my spice.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have eaten my honeycomb with my honey;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have drunk my wine with my milk.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The friends speaking to the man and the woman\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Eat, friends;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "drink and be drunk with love.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I was asleep, but my heart was awake.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "There is the sound of my beloved knocking and saying,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Open to me, my sister, my love, my dove, my undefiled one,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for my head is wet with dew,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my hair with the night's dampness.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I have taken off my robe; must I put it on again?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I have washed my feet; must I get them dirty?\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved put in his hand through the opening of the door latch,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and my heart was stirred up for him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I got up to open the door for my beloved;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my hands were dripping with myrrh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my fingers with moist myrrh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on the door handle.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I opened the door for my beloved,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but my beloved had turned and gone.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My heart sank when he spoke.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some versions read \\fqa sank because he had turned away \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I looked for him, but I did not find him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I called him, but he did not answer me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The watchmen found me as they were making their rounds in the city.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They struck me and wounded me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the guards on the walls took away my cloak from me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the women of the city\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want you to swear, daughters of Jerusalem,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that if you find my beloved—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "What will you make known to him?—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that I am sick from love.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The women of the city speaking to the woman\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How is your beloved better than another beloved man,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "most beautiful among women?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why is your beloved better than another beloved,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you ask us to take an oath like this?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the women of the city\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved is radiant and ruddy,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "outstanding among ten thousand.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His head is the purest gold;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his hair is curly and as black as a raven.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His eyes are like doves beside streams of water,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "bathed in milk, mounted like jewels.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His cheeks are like beds of spices,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "yielding aromatic scents.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some versions read \\fqa towers of aromatic scents \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His lips are lilies, dripping liquid myrrh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His arms are rounded gold set with jewels;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his abdomen is ivory covered with sapphires.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His legs are pillars of marble, set on bases of pure gold;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his appearance is like Lebanon, choice as the cedars.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His mouth is most sweet;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is completely lovely.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "This is my beloved, and this is my friend,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "daughters of Jerusalem.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "sp",
+        "text": "The man speaking to the woman\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

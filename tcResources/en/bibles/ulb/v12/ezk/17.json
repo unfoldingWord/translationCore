@@ -1,0 +1,379 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The word of Yahweh came to me, saying,\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Son of man, present a riddle and speak a parable to the house of Israel.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say, 'The Lord Yahweh says this:\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "A large eagle with large wings and long pinions, full of feathers,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and that was multicolored went to Lebanon and took hold of the top of a cedar tree.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It broke off the tips of the branches and took them to the land of Canaan;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he planted it in a city of merchants.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He also took some seed of the land and planted it in fertile soil.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He placed it beside a large body of water like a willow.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then it sprouted and became a spreading vine low to the ground.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Its branches turned toward him, and its roots grew under it.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "So it became a vine and produced branches and sent out shoots.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But there was another great eagle with large wings and many feathers.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Behold! This vine turned its roots toward the eagle,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and it spread out its branches toward the eagle from the place it had been planted so it would be watered.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It had been planted in good soil beside a large body of water\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so it would produce branches and sprout fruit, to become a magnificent vine.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say to the people, 'The Lord Yahweh says this: Will it prosper?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Will it not be uprooted and stripped of its fruit so that it withers, and all its fresh growth will wither?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "No strong arm or many people will be needed to pull it out by its roots.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So behold! After it has been planted, will it grow? Will it not wither when the eastern wind touches it?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "It will completely wither away in the garden plot where it sprouted.'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the word of Yahweh came to me, saying,\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"Speak to the rebellious house, 'Do you not know what these things mean? Behold! The king of Babylon came to Jerusalem and took her king and her princes and brought them to him in Babylon.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he took a royal descendant, made a covenant with him, and brought him under an oath. He took away the powerful people of the land,\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so the kingdom might become lowly and not lift itself up. By keeping his covenant the land will survive.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the king of Jerusalem rebelled against him by sending his ambassadors to Egypt to acquire horses and an army. Will he succeed? Will the one doing these things escape? If he breaks the covenant, will he escape?\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As I live!—this is the Lord Yahweh's declaration—he will surely die in the land of the king who made him king, the king whose oath he despised, and whose covenant he broke. He will die in the middle of Babylon.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Pharaoh with his mighty army and a great company of men will not help him in battle, when ramps are constructed and siege walls are built up to cut off many lives. \n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For the king despised his oath by breaking the covenant. Behold, he reached out with his hand to make a promise and yet he did all these things. He will not escape.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore the Lord Yahweh says this: As I live, was it not my oath that he despised and my covenant that he broke? So I will bring his punishment on his head!\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will spread my net out over him, and he will be caught in my hunting net. Then I will bring him to Babylon and execute judgment on him there for his treason that he committed when he betrayed me!\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All of his refugees in his armies will fall by the sword, and the ones who remain will be scattered in every direction. Then you will know that I am Yahweh; I have declared this would happen.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Lord Yahweh says this, 'So I myself will take away the highest part of the cedar tree, and I will plant it away from its tender branches. I will break it off, and I myself will plant it on a high mountain.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will plant it on the mountains of Israel so it will bear branches and produce fruit, and it will become a majestic cedar so that every winged bird will live under it. They will nest in the shade of its branches.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then all the trees of the field will know that I am Yahweh. I bring down the high trees and I raise up the low trees. I wither the watered tree and I cause the dried tree to bloom. I am Yahweh, I have declared that this will happen; and I have done it.'\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

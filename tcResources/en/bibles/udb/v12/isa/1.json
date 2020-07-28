@@ -1,0 +1,946 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The vision of Isaiah son of Amoz, that Yahweh showed him about Judah and Jerusalem during the years of Uzziah, Jotham, Ahaz, and Hezekiah, kings of Judah. \n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Hear, O heavens, and listen, O earth, because this is what Yahweh said:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"I have raised people since they were born,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they have rebelled against me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oxen know their owners,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and donkeys know who feeds them,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but Israel does not know;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Israel does not understand.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Terrible things will happen to this sinful nation, this people group weighted down by their sin,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "these children of people who do evil things,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "these sons who are unjust.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They have left Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the Holy One of Israel.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They have turned away from him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Why do you do things for which Yahweh should punish you?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Why do you continue to rebel against him?\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You are like someone whose\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "whole mind and heart are sick.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From the bottom of the foot to the top of the head,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "nothing is healthy.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "There are open wounds, cuts, and sores\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "that have not been cleaned or bandaged,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and no one has put oil on them to heal them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Enemies have ruined your country;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they have burned your towns, and there is no one left.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Foreigners plunder the crops in your fields while you watch;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they destroy everything that they see.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The city of Jerusalem has become as small as a shepherd's hut.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is like a shelter in a vineyard;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it is like a watchman's hut in a field of melons.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is a city surrounded by its enemies who are waiting to attack it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If Yahweh, commander of the angel armies, had not allowed a few of his people to survive,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "we would have all been destroyed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the cities of Sodom and Gomorrah were destroyed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen to what Yahweh has to say to you, you rulers of Sodom!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Listen to the law of our God, you people of Gomorrah!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"What do your many sacrifices mean to me?\" says Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"I do not want any more burnt offerings of rams, or the fat of bulls.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The blood of bulls, lambs, or goats does not make me happy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you come to my temple to worship me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "who has told you to tramp around in my courtyard while you perform all those rituals?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Stop bringing to me those offerings, because they are useless to me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I am disgusted with the incense that the priests burn!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And your feasts to celebrate the new moon each month and your Sabbath days and your other festivals—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I hate them because of the wicked things that you do!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I hate all your celebrations of the new moon and the other festivals that you celebrate.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They are like a heavy burden that I am tired of carrying.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So when you lift up your hands to pray to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will not look at you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Even if you pray to me often,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will not listen to you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because it is as though your hands are covered with the blood of people whom you have killed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wash your hearts and become clean!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Get rid of your evil behavior!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Stop doing things that are wrong!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Learn to do deeds that are good and\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "try to cause people to do what is just.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Stop people from mistreating others,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and defend orphans and widows when people take them to court.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"You need to think about what you do.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Even though your sins are like scarlet red,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they will be as white as snow;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "though your sins are like crimson red,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they will be as white as sheeps' wool.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you are willing to obey me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will eat good food from the land.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if you turn away from me and rebel against me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "your enemies will slaughter you.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That will happen because Yahweh said it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At one time you people of Jerusalem faithfully worshiped only Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but now you have become like prostitutes who are not faithful to any husband.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "The people there always acted justly and righteously,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but now your city is full of murderers.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your silver is no longer pure,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and your wine has become mixed with water.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your leaders are rebels;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are friends of thieves.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They all want to get money\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and make others to give them gifts in order to decide cases in court in their favor.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They do not defend orphans in court,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they do not help widows to get what they should receive.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore Yahweh, commander of the angel armies, the mighty God of Israel, says,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"I will get revenge against those who are against me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and avenge myself on my enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will raise my fist to strike you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will punish you severely,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as though you were silver and I needed to heat you very greatly to melt you and get rid of the impurities.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After that happens, I will give you good judges like you had in the past.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You will have wise counselors like you had long ago.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then people will call your city a city where people act righteously,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a faithful city.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because the people of Jerusalem will do what is fair,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh will restore their city,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and he will save those who repent\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of their righteousness.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But he will crush rebels and sinners,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who forsake him will disappear.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"You will be ashamed because you worshiped idols under the oak trees that you thought were sacred,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you will be disgraced because you worshiped idols in the gardens that you loved so much.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will be like a very large tree that has withered leaves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a garden that has dried up because it has no water.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those among you who are very strong will become like dry wood,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the work they do will be like a spark.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Both they and the evil things that they do will burn up,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and no one will be able to put out the fire.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

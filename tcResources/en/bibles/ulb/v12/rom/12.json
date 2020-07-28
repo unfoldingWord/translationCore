@@ -1,0 +1,254 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I urge you therefore, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God. This is your reasonable service.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be conformed to this world, but be transformed by the renewal of your mind. Do this to know what is the good, acceptable, and perfect will of God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I say, because of the grace that was given to me, that everyone who is among you should not think more highly of themselves than they ought to think. Instead, they should think in a wise way, just as God has given out to each one a certain amount of faith.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For we have many members in one body, but not all the members have the same function.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the same way, we who are many are one body in Christ, and are individually members of each other.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We have different gifts according to the grace that was given to us. If one's gift is prophecy, let it be done according to the proportion of his faith.\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If one's gift is service, let him serve. If one has the gift of teaching, let him teach.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If one's gift is encouragement, let him encourage. If one's gift is giving, let him do it generously. If one's gift is leading, let it be done with care. If one's gift is in showing mercy, let it be done with cheerfulness.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let love be without hypocrisy. Abhor what is evil; hold on to that which is good.\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Concerning love of the brothers, be affectionate to one another. Concerning honor, respect one another.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Concerning diligence, do not be hesitant. Concerning the spirit, be eager. Concerning the Lord, serve him.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rejoice in certain hope, be patient in suffering, be faithful in prayer. \n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Share in the needs of the saints. Find many ways to show hospitality.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Bless those who persecute you; bless and do not curse.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Rejoice with those who rejoice; weep with those who weep.\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be of the same mind toward one another. Do not think in proud ways, but accept lowly people. Do not be wise in your own thoughts.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Repay no one evil for evil. Do good things in the sight of all people.\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If possible, as far as it depends on you, live at peace with all people.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not avenge yourselves, beloved, but give way to the wrath of God. For it is written, \"'Vengeance belongs to me; I will repay,' says the Lord.\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"But if your enemy is hungry, feed him.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "If he is thirsty, give him a drink.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For if you do this, you will heap coals of fire on his head.\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not be overcome by evil, but overcome evil with good.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

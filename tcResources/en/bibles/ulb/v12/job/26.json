@@ -1,0 +1,322 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"How you have helped one who has no power!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How you have saved the arm that has no strength!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How you have advised one who has no wisdom\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and announced to him sound knowledge!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With whose help have you spoken these words?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Whose spirit was it that came out from you?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The dead are made to tremble,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "those who are beneath the waters\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and all who dwell in them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sheol is naked before God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "destruction itself has no covering against him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He stretches out the northern skies \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "over the empty space,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he hangs the earth over nothing.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He binds up the waters in his thick clouds,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the clouds are not torn under them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He covers the surface of the moon\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and spreads his clouds on it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He has engraved a circular boundary on the surface of the waters\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as the line between light and darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The pillars of heaven tremble\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and are astonished at his rebuke.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He calmed the sea with his power;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "by his understanding he shattered Rahab.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "By his breath he made the skies clear; \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his hand pierced the fleeing serpent.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, these are but the fringes of his ways;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "how small a whisper do we hear of him!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Who can understand the thunder of his power?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

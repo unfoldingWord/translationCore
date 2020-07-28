@@ -1,0 +1,631 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, is about to take away from Jerusalem and other places in Judah\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "everything that you depend on—\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all food and water.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will take away heroes and other soldiers,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "judges and prophets,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people who do rituals to find out what will happen in the future and the elders,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "army officers and other important people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "advisors, skilled craftsmen, and those who perform rituals of magic.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"I will appoint boys to be leaders;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "young children will rule.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will treat each other cruelly:\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people will fight against their neighbors.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Young people will say shameful things against older people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and vulgar people will sneer at people whom others usually honor.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that time, someone will grab one of his brothers in his father's house and say to him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'You still have a coat; people respect you for that.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So you be our leader!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You rule this city, which is now a pile of ruins.'\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But his brother will reply,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "'No, I cannot help you,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because I do not have any extra food or clothes in this house.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "So do not make me your leader!'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people in Jerusalem and the other towns in Judah have disobeyed God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because everything that the people do and say there opposes Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the powerful and glorious one,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and they refuse to obey him.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They rebel against him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They even show on their faces that they oppose Yahweh.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They are proud about their sins,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like the people of Sodom were long ago;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "they do not try to hide their sins; they talk about them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Because of their sins, terrible things will certainly happen to them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You people must tell the righteous people that good things will happen to them;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they will enjoy the blessings that they will receive for their good deeds.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But terrible things will happen to wicked people;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh will pay them back for the evil things that they have done.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Youths who have become leaders treat my people cruelly,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and women rule over my people.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "My people, your leaders are misleading you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they are causing you to do all kinds of evil things.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is as though Yahweh had taken his place in a courtroom\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and were ready to accuse his people of breaking the covenant between themselves and him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will stand up to declare why he should punish the elders and rulers of his people;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he says, \"The people of Israel are like a vineyard that I planted,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but you leaders have made unable to bear any fruit.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Your houses are full of things that you have stolen from poor people.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You should stop making my people suffer.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is as though you were pushing the faces of poor people into the ground.\"\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "That is what Yahweh, commander of the angel armies, says.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says this:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"The women of Jerusalem are haughty;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they walk around sticking their chins out,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and flirting with men with their eyes.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "They walk with tiny steps\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "with bracelets on their ankles that jingle.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the Lord will cause sores to be on their heads,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he will cause those beautiful women in Jerusalem to become bald.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At the time that the Lord does that, he will also cause others to take away from the women of Jerusalem all of the beautiful things they like to wear—the ornaments on their ankles and their headbands, their crescent necklaces,\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "their earrings and bracelets and veils,\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "their scarves and ankle bracelets and sashes, their perfumes and charms.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will cause others to remove the women's finger rings and nose rings,\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "their nice robes and capes and veils and purses,\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "their mirrors and nice linen clothes, the ornaments for their heads, and the shawls.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Instead of smelling nice from perfume, they will stink;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "instead of beautiful sashes, they will have ropes around their waists.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Instead of having fancy hairdos, they will be bald.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Instead of fancy robes, they will wear rough sackcloth,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Instead of beauty, scars of branding.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your men will die by their enemies' swords,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and your soldiers will also die in battle.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People will mourn and cry at the gates of the city.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "The city will be like a woman who sits on the ground because all her friends have deserted her.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,721 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, if you provide a guarantee for a neighbor who takes out a loan,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or if you give the promise that you will pay for a loan of a person you do not know,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "you laid a trap for yourself by making the promise,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you have been caught by agreeing to a contract for someone you did not know.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do this, my son, and deliver yourself from this difficulty:\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "humbly go to your neighbor and beg him to cancel the agreement that you made.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not sleep,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not rest until you go and talk with him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Save yourself,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like a deer that escapes from the hunter;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or like a bird that flies away from the hand of one who hunts for birds.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You lazy person, learn something from watching the ants.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Become wise and watch what they do.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The ant has no commander, officer, or ruler telling him what to do,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "but during the summer it works hard,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "gathering and storing food to eat during the winter.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But you lazy person, how long will you continue to sleep ?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When will you rise and go to work?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You sleep a for a little time, and then you say, \"A little more sleep, a little more resting in bed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "a little more folding of the hands to take a nap.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Suddenly poverty will take over your life like a thief who steals everything from you.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A worthless person — a person who does bad to others—he lives by the lies he speaks to others.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They tell tales by winking their eyes and they give signals by moving their feet, and they make plans by pointing with their fingers.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who does bad things lays out plans within himself;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he stirs up constant conflict wherever he goes.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "His own disaster will overtake him in a second;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will be crushed to the point that he cannot be healed.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There are six, even seven, things that Yahweh hates.\n"
+      },
+      {
+        "tag": "q3",
+        "nextChar": "\n",
+        "type": "quote"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh hates the eyes of the proud, the tongue that tells lies,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the hands that shed the blood of the innocent,\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "a heart that plots and makes plans to do evil things to others,\n"
+      },
+      {
+        "tag": "q3",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the witness who breathes out lies when he gives testimony,\n"
+      },
+      {
+        "tag": "q3",
+        "type": "quote",
+        "text": "and the one who causes strife between members of the same family.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, obey the command of your father,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and do not walk away from what your mother taught you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep these lessons and tie them close inside as a part of yourself;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "tie them around your neck, to remind you how important they are to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When you walk, those lessons will guide you.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "When you sleep, they will watch over you and protect you.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "When you wake up in the morning, they will teach you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These commands are like a lamp for you, and what we teach you is like a light to guide you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "When people correct you, this is to continually teach you the right way to live.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These lessons keep you from the immoral woman,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they tell you about her enticing words and warn you to be on guard.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not throw your desires after such a woman, nor should you desire her beauty;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not let her capture you by the way she looks at you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sleeping with a prostitute may cost you only the price of a loaf of bread,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but if you sleep with another man's wife, it may cost you your life.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can you carry hot coals in your pockets and not be burned?\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Can you walk on burning coals and not scorch your feet?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So is anyone who sleeps with another man's wife—he will suffer for doing that.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It is certain he will be severely punished.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We do not despise a thief if he steals some food because he is very hungry.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if he steals something and then is caught by others,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he will have to pay back seven times as much as he stole,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "even if he must sell everything that is in his house to get enough money to repay what he stole.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But a man who commits adultery is has no good judgment\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he is destroying his own self.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Wounds and shame will come to him;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "he will never forget how others disgraced him for his deed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because that woman's husband will be jealous, he will become furious,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and when he gets revenge, he will not act mercifully toward that man.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And he will not accept any bribe to stop him.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

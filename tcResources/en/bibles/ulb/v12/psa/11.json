@@ -1,0 +1,178 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I take refuge in Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "how will you say to me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"Flee like a bird to the mountain\"?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For see! The wicked prepare their bows.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They make ready their arrows on the strings\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to shoot in the darkness at the upright in heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For if the foundations are ruined,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "what can the righteous do?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is in his holy temple;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his eyes watch, his eyes examine the children of mankind.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh examines both the righteous and the wicked,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but he hates those who love to do violence.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He rains burning coals and brimstone upon the wicked;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a scorching wind will be their portion from his cup!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh is righteous, and he loves righteousness;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the upright will see his face.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician. A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

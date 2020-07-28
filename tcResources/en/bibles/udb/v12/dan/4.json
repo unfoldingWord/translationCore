@@ -1,0 +1,546 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Several years after Nebuchadnezzar started to rule, he sent this message to every people, nation, and language in his empire. He wrote,\n"
+      },
+      {
+        "tag": "pi",
+        "type": "paragraph",
+        "text": "\"I wish that all things will go very well with you!\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I want you to know about all the ways in which God Most High has shown his power, and how he has done so many amazing things for me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He performs great miracles that show his power;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he does wonderful things.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He will always be king;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he will rule from one generation to another without end.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Nebuchadnezzar, was living in my palace without a care, and I was enjoying every luxury.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But one night I had a dream that caused me to be very afraid. I saw visions that terrified me as I lay on my bed.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I summoned all those in Babylon who were wise so that they could come and tell me what my dream meant.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the men who worked magic, those who claimed to speak with the dead, the wise men, and those who made predictions from the stars came to me. I told them what I had dreamed, but they could not tell me what it meant.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At last, Daniel came to me, and I decided to tell him what I had dreamed. (He is also named Belteshazzar, to honor my own god, and I knew that the spirit of the holy gods was in him).\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said to him, \"Belteshazzar, you are the most important of all my magicians. I know that the spirit of the holy gods is in you and that you can reveal the meaning of any mystery. There is none that is too difficult for you. So tell me what my dream means.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what I dreamed while I was lying in bed: I saw a large tree growing in the middle of the earth.\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The tree was very strong and had grown very tall. It seemed that its top reached up to the sky and that everyone in the world could see it.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It had beautiful leaves, and it had fruit for people and all creatures to eat. Wild animals rested in its shade and birds built nests in its branches. All the living creatures got food from that tree.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"While I was lying in bed, I saw in my dream a holy angel come down from heaven.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He shouted, 'Cut down that tree, and cut off its branches. Strip off all of its leaves, and scatter its fruit. Chase away the animals that are lying in the shade of the tree and the birds that are in its branches.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But leave the tree stump and the roots in the ground. Fasten a band of iron and bronze around the stump and let it stay there with grass around it.\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Cause that man to live out in the fields among the animals and plants. Cause the dew from the sky to make his body damp each morning. Take away his sanity and let him have the mind like an animal's mind for seven years.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'The holy ones in heaven have issued a decree. They want everyone to know that God Most High rules over all the kingdoms in this world. He is the one who chooses the people to rule these kingdoms. He sometimes places very unimportant people in places of importance.'\n"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Belteshazzar, that is what I, King Nebuchadnezzar, saw in my dream. Now you must tell me what the dream means. No one else can tell me. I asked all the very wise men in my kingdom to tell me what it means, but they were unable to do that. But you can tell me because the spirit of the holy gods is in you.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Daniel, who was also named Belteshazzar, did not say anything for some time because he was very worried about the meaning of the dream. Then the king said to him, \"Belteshazzar, do not be afraid about the dream or what it means.\" Daniel replied to the king, \"Sir, I wish that the events that were predicted in your dream would happen to those who hate you, and that the meaning of your dream would happen only to your enemies and not to you.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In your dream you saw a very strong and tall tree. It seemed to reach up to the sky, and everyone in the world could see it.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It had beautiful leaves, and it had produced much fruit for all people and creatures to eat. Wild animals rested in the shade of that tree, and birds built nests in its branches.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "O king, that tree is you! You have become very powerful. Your greatness has grown and reached up to the sky, and you rule people all over the world.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then you saw a holy angel come down from heaven; he said, 'Cut down that tree, and cut off its branches. Strip off all of its leaves, and scatter its fruit. But leave the stump of the tree and its roots in the ground. Fasten a band of iron and bronze around the stump and allow it to stay there with grass around it. Each morning bring dew from the sky to make this man, who is represented by that tree, damp. Cause him to live in the fields with the animals for seven years.'\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what your dream means, O king. This is what the Most High God has declared will happen to you.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will be forced to live away from other human beings. You will live in the fields with the wild animals. You will eat grass like an ox, and dew from the sky will make you wet every morning. You will live that way for seven years until you learn that it is the Most High God who rules over the kingdoms of the world. He appoints the ones he chooses to rule over them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But the stump of the tree and its roots were left in the ground. That means that you will rule your kingdom again when you learn that it is God who is over everything and everyone.\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your Majesty, please do what I am telling you to do. Stop sinning and do what is right. Turn away from your evil behavior. Act mercifully to those whom other people are mistreating. If you do that, perhaps you will continue to prosper.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and he looked out over the city and said to those around him, \"I have built this great city of Babylon to be the place where I rule! I have built it with my own power to show people my honor and my greatness.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The king had just finished speaking when a voice came from heaven and said, \"King Nebuchadnezzar, this is what must happen: You are no longer the ruler of this kingdom!\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will live away from human society. You will live in the fields with wild animals, and you will eat grass as an ox does. You will live that way for seven years until you learn that it is I, the Most High, who rules over the kingdoms of this world, and I appoint whomever I wish to rule over them.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At that very moment everything that had been said about Nebuchadnezzar came true. He was driven away from other human beings. He ate grass like an ox, and dew from the sky made me wet every morning. My hair grew as long the feathers of an eagle, and my fingernails became like the claws of a bird.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After those seven years ended, I, Nebuchadnezzar, looked up toward heaven and acknowledged that what God said was true. Then I could think correctly again, and my sanity was restored. I praised and worshiped the Most High, and I honored him, the one who lives forever.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He rules forever;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "his ruling power is an everlasting authority.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He regards all the people in the world as insignificant.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He has the power to do whatever he wants to do.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He does whatever he wants with the angel armies in heaven and with us who live on the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "So no one can correct him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one can challenge him;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one can say to him, \"Why are you doing these things?\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "pi",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I was able to think correctly again, I was honored again; and for the glory of my kingdom, my splendor and the shining brightness of my reign were brought back to my kingdom again. My advisors returned to me, and I became greater and more powerful than I was before.\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now I, Nebuchadnezzar, praise and honor God, the king who rules in heaven. All of his actions are just and right. And he is able to make the proud humble.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28-29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All these things happened to King Nebuchadnezzar: Twelve months later, he was walking around on the roof of his palace in Babylon,\n"
+      }
+    ]
+  }
+}

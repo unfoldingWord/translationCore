@@ -1,0 +1,354 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus was led up by the Spirit into the wilderness to be tempted by the devil.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When he had fasted forty days and forty nights, he was hungry.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The tempter came and said to him, \"If you are the Son of God, command these stones to become bread.\"\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Jesus answered and said to him, \"It is written, 'Man shall not live on bread alone, but by every word that comes out of the mouth of God.'\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the devil took him into the holy city and set him on the highest point of the temple building,\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and said to him, \"If you are the Son of God, throw yourself down, for it is written,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'He will command his angels to take care of you,'\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "and,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'They will lift you up in their hands,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that you will not hit your foot against a stone.'\"\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus said to him, \"Again it is written, 'You must not test the Lord your God.'\"\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Again, the devil took him up to a very high hill and showed him all the kingdoms of the world along with all their splendor.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said to him, \"All these things I will give you, if you fall down and worship me.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Jesus said to him, \"Go away from here, Satan! For it is written,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "'You will worship the Lord your God, and you will serve only him.'\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then the devil left him, and behold, angels came and served him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now when Jesus heard that John had been arrested, he withdrew into Galilee.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He left Nazareth and went and lived in Capernaum, which is by the Sea of Galilee, in the territories of Zebulun and Naphtali.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This happened to fulfill what was said by Isaiah the prophet,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"The land of Zebulun and the land of Naphtali,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "toward the sea, beyond the Jordan,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Galilee of the Gentiles!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people who sat in darkness\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "have seen a great light,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and to those who sat in the region and shadow of death,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "upon them has a light arisen.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From that time Jesus began to preach and say, \"Repent, for the kingdom of heaven has come near.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As he was walking by the Sea of Galilee, he saw two brothers, Simon who is called Peter, and Andrew his brother, casting a net into the sea, for they were fishermen.\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus said to them, \"Come, follow me, and I will make you fishers of men.\"\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Immediately they left the nets and followed him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As Jesus was going on from there he saw two other brothers, James son of Zebedee, and John his brother. They were in the boat with Zebedee their father mending their nets. He called them,\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and they immediately left the boat and their father and followed him.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Jesus went about in all of Galilee, teaching in their synagogues, preaching the gospel of the kingdom, and healing every kind of disease and sickness among the people.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The news about him went out into all of Syria, and the people brought to him all those who were sick, ill with various diseases and pains, those possessed by demons, and the epileptic and paralytic. Jesus healed them.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Large crowds followed him from Galilee, the Decapolis, Jerusalem, and Judea, and from beyond the Jordan.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

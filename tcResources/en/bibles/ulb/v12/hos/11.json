@@ -1,0 +1,394 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"When Israel was a young man I loved him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I called my son out of Egypt.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The more they were called,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the more they went away from me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "They sacrificed to the Baals\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and burned incense to idols.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some ancient and most modern versions have \\fqa they went away from me \\fqa* . The Hebrew text has \\fqa they went away from them \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yet it was I who taught Ephraim to walk.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "It was I who lifted them up by their arms,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but they did not know that I cared for them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I led them with cords of humanity,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with bands of love.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I was to them like someone who eased the yoke on their jaws,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I bent down to them and fed them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Will they not return to the land of Egypt?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Will Assyria not rule over them\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they refuse to return to me?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The sword will fall on their cities\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and destroy the bars of their gates;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it will destroy them\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because of their own plans.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My people are determined to turn away from me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Though they call to the Most High,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "no one will help them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How can I give you up, Ephraim?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How can I hand you over, Israel?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How can I make you like Admah?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "How can I make you like Zeboyim?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My heart has changed within me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "all my compassions have been stirred up.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will not execute my fierce anger;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will not again destroy Ephraim.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For I am God\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and not a man;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am the Holy One among you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will not come in wrath.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will follow Yahweh;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he will roar like a lion.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "When he roars, \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his children will come trembling from the west.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will come trembling like a bird from Egypt,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like a dove from the land of Assyria.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will make them live in their homes—this is the declaration of Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ephraim surrounds me with falsehood,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the house of Israel with deceit.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "But Judah is still going about with me, God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and is faithful to me, the Holy One.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

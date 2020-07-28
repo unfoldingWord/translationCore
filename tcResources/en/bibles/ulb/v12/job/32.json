@@ -1,0 +1,445 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So these three men stopped answering Job because he was righteous in his own eyes.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then was kindled the anger of Elihu son of Barakel the Buzite, of the family of Ram; it was kindled against Job because he justified himself rather than God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Elihu's anger was also kindled against his three friends because they had found no answer to Job, and yet they had condemned Job.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now Elihu had waited to speak to Job because the other men were older than he.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "However, when Elihu saw that there was no answer in the mouths of these three men, his anger was kindled.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Elihu son of Barakel the Buzite spoke up and said,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "\"I am young, and you are very old.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "That is why I held back and did not dare to tell you my own opinion.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I said, \"Length of days should speak;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a multitude of years should teach wisdom.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But there is a spirit in a man;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the breath of the Almighty gives him understanding.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is not only the great people who are wise,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "nor the aged people alone who understand justice.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore I say to you, 'Listen to me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will also tell you my knowledge.'\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, I waited for your words;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I listened to your arguments\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "while you were thinking about what to say.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Indeed, I paid attention to you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but, see, there was not one of you who could convince Job\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or who could respond to his words.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be careful not to say, 'We have found wisdom!'\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God will have to defeat Job; mere man cannot do it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Job has not directed his words against me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so I will not answer him with your words.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These three men are dumbfounded; they can answer Job no longer;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they have not a word more to say.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Should I wait because they are not speaking,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because they stand there silent and answer no more?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "No, I also will answer on my part;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will also tell them my knowledge.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I am full of words;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the spirit in me compels me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, my breast is like fermenting wine that has no vent;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like new wineskins, it is ready to burst.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will speak so that I may be refreshed;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will open my lips and answer.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will not show favoritism;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "neither will I give honorific titles to any man.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For I do not know how to give such titles;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "if I did so, my Maker would soon take me away.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

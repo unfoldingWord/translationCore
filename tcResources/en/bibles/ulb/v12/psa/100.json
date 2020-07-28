@@ -1,0 +1,137 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Shout joyfully to Yahweh, all the earth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Serve Yahweh with gladness;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "come before his presence with joyful singing.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Know that Yahweh is God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he made us, and we are his.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "We are his people and the sheep of his pasture.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Enter into his gates with thanksgiving\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and into his courts with praise.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Give thanks to him and bless his name.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh is good; his covenant faithfulness endures forever\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his truthfulness through all generations.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of thanksgiving.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

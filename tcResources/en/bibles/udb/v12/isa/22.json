@@ -1,0 +1,563 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh gave this message about Jerusalem, about the valley where Yahweh showed me this vision.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Why is everyone foolishly running up to their flat rooftops?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everyone in the city seems to be shouting.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There are a lot of corpses in the city,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but they were not killed by their enemies' swords.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "They did not die in battles;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "instead, they died from diseases and hunger.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the leaders of the city fled.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But then they were captured because they did not have bows and arrows to defend themselves.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Your soldiers tried to flee while the enemy army was still far away,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but they also were captured.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That is why I said, \"Allow me to cry alone;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "do not try to comfort me about my people being slaughtered.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, has chosen a time when there will be a great uproar, soldiers marching, and people being terrified\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the valley where I received this vision.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It will be a time when our city walls will be battered down\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people's cries for help will be heard in the mountains.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The armies from Elam and Kir in Media will attack,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "driving chariots and carrying shields.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our beautiful valleys will be filled with our enemies' chariots,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the men who drive the chariots will stand outside our city gates.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God will cause the walls that protect the cities in Judah to fall down.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You people of Jerusalem will run to get the weapons that are stored in the building called \"the Hall of the Forest.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will see that there are many breaks in the walls of Jerusalem.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You will store water in the lower pool in the city.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will inspect the houses in Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and some of them you will tear down to use the stones to repair the city wall.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Between the walls of the city you will build a reservoir to store water from the old pool.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But you will never request help from the one who made the city;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have never depended on Yahweh, who planned this city long ago.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, told you to weep and mourn;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he told you to shave your heads and to wear rough sackcloth\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "to show that you were sorry for the sins that you had committed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But instead of doing that, you were happy and celebrated;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you slaughtered cattle and sheep\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order to cook their meat and eat it and drink wine.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You said, \"Let us eat and drink all that we want to,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because it is possible that we will die tomorrow!\"\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So Yahweh, commander of the angel armies, revealed this to me: \"I will never forgive my people for sinning like this!\"\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, said this to me: \"Go to Shebna, the official who supervises the workers in the palace, and give this message to him:\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'Who do you think you are?\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Who gave you the authority to build a beautiful tomb where you will be buried,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "chiseling it out of the rocky cliff high above this valley?'\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You think that you are a great man, but Yahweh is about to hurl you away.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "It will be as though he had seized you,\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "rolled you into a ball,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and thrown you away in a large distant land.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will die and be buried there,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and your beautiful chariots will stay there in the hands of your enemies.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "And because of what happens to you, your master, the king, will be very ashamed.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"I will force you to quit working in the palace;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will be forced out from your important position.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I will summon Hilkiah's son Eliakim, who has served me well, to replace you.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will make him wear your robe and fasten your sash around him, and I will give to him the authority that you had. He will be like a father to the people of Jerusalem and all the other towns in Judah.\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will give to him authority over what happens in the palace where King David lived; when he decides something, no one will be able to oppose it; when he refuses to do something, no one will be able to force him to do it.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause his family to be greatly respected, because I will put him firmly in his position as supervisor of the workers in the palace, like a nail that is firmly hammered into a wall.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Others will enable him to have much responsibility, with the result that all the members of his family, even the most insignificant ones, will be honored.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, commander of the angel armies, also says, \"Shebna is like a peg that is firmly fastened to the wall. But there will be a time when I will remove him from his position; he will lose his power, and everything that he promoted will fail.\" That will surely happen because Yahweh has said it.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

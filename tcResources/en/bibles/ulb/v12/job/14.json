@@ -1,0 +1,519 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Man, who is born of woman,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "lives only a few days and is full of trouble.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He sprouts from the ground like a flower and is cut down;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he flees like a shadow and does not last.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do you look at any of these?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do you bring me into judgment with you?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Who can bring something clean out of something unclean? No one.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Man's days are determined.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The number of his months is with you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you have appointed his limits that he cannot pass.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look away from him that he may rest,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that he may enjoy his day like a hired man if he can do so.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There can be hope for a tree;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "if it is cut down, it might sprout again,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that its tender stalk does not disappear.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Though its root grows old in the earth,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and its stump dies in the ground,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "yet even if it only smells water, it will bud\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and send out branches like a plant.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But man dies; he becomes weak;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "indeed, man stops breathing, and then where is he?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "As water disappears from a lake,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and as a river loses water and dries up,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so people lie down and do not rise again.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Until the heavens are no more, they will not awake\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "nor be roused out of their sleep.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that you would hide me away in Sheol away from troubles,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and that you would keep me in private until your wrath is over,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you would set me a fixed time to stay there and then call me to mind!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man dies, will he live again?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "If so, I would wish to wait all my weary time there\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "until my release should come.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You would call, and I would answer you.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "You would have a desire for the work of your hands.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You would number and care for my footsteps;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you would not keep track of my sin.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My transgression would be sealed up in a bag;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you would cover up my iniquity.\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But even mountains fall and come to nothing;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "even rocks are moved out of their place;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the waters wear down the stones;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their flooding washes away the dust of the earth.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Like this, you destroy the hope of man.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You always defeat him, and he passes away;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you change his face and send him away to die.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If his sons are honored, he does not know it;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and if they are brought low, he does not see it.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He feels only the pain of his own body,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he mourns for himself.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

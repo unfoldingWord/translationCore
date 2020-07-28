@@ -1,0 +1,421 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, do not be silent!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Do not ignore us and remain unmoved, God.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Look, your enemies are making a commotion,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and those who hate you have raised their heads.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They conspire against your people\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and plan together against your protected ones.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have said, \"Come, and let us destroy them as a nation.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Then the name of Israel will no longer be remembered.\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They have schemed together with one strategy;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "against you they have made an alliance.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This includes the tents of Edom and the Ishmaelites,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the people of Moab and the Hagrites, who plot together with\n"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Gebal, Ammon, Amalek;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "it also includes Philistia and the inhabitants of Tyre.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Assyria also is allied with them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they are helping the descendants of Lot.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do to them as you did to Midian,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as you did to Sisera and to Jabin at the Kishon River.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They perished at Endor\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and became like manure for the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Make their nobles like Oreb and Zeeb,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and all their princes like Zebah and Zalmunna.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They said, \"Let us take for ourselves\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the pastures of God.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My God, make them like the whirling dust,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like chaff before the wind,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "like the fire that burns the forest,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and like the flame that sets the mountains on fire.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Chase them with your strong wind,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and terrify them with your windstorm.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Fill their faces with shame\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that they might seek your name, Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May they be put to shame and be terrified forever;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "may they perish in disgrace.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then they will know that you alone, Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "are the Most High over all the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A song. A psalm of Asaph.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

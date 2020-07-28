@@ -1,0 +1,176 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day seven women will take hold of one man and say, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Our own food we will eat, our own clothing we will wear.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But let us take your name to remove our shame.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "On that day the branch of Yahweh will be beautiful and glorious, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the fruit of the land will be tasty \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and delightful for those survivors in Israel.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": " \n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will happen that the one who is left in Zion \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the one who remains in Jerusalem will be called holy, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "everyone who is written down as living in Jerusalem.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": " \n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This will happen when the Lord will have washed away the filth of the daughters of Zion, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and will have cleansed the blood stains from Jerusalem's midst, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "by means of the spirit of judgment and the spirit of flaming fire.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then over the whole site of Mount Zion and over her place of assembly, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Yahweh will create cloud and smoke by day, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and the shining of a flaming fire by night; \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "it will be a canopy over all the glory.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It will be a shelter for shade in the daytime from the heat, \n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and a refuge and a cover from the storm and rain.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Out of the depths I cry to you, Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Lord, hear my voice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let your ears be attentive\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to my pleas for mercy.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you, Yahweh, would mark iniquities,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Lord, who could stand?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But there is forgiveness with you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that you may be revered.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I wait for Yahweh, my soul waits,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and in his word I hope.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My soul waits for the Lord\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "more than watchmen wait for the morning.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Israel, hope in Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh is merciful,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he is very willing to forgive.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is he who will redeem Israel\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from all his sins.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A song of ascents.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

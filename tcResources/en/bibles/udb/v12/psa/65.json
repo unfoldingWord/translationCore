@@ -1,0 +1,368 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, it is right for us to praise you in Jerusalem\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and to do what we have promised you that we would do\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because you answer our prayers.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "People everywhere will come to you\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Our many sins are like a very heavy burden to us,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "but you forgive us.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "How fortunate are those whom you have chosen\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to always be in your temple courtyards.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "We will be satisfied with all the blessings that you will give us because we worship you in your sacred temple.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, when we pray to you, you answer us and save us by doing awesome deeds;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are the one who rescues us;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "people who live in very remote places on the earth, on the other side of the oceans, trust in you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are the one who put the mountains in their places,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "showing that you are very powerful.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You are the one who calms the seas when they roar,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and stop the waves from pounding on the shore;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you also calm people when they cause a lot of trouble.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People who live in very remote places on the earth\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "are awed by the miracles that you perform;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "because of what you do,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "people who live far to the west and far to the east shout joyfully.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You take care of the soil and send rain,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "causing many good things to grow;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you fill the streams with water\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and cause grain to grow.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "This is what you have determined would happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You send plenty of rain on the fields that have been plowed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you fill the furrows with water.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "With showers you soften the hard clods of soil,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and you bless the soil by causing young plants to grow.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Because you bless the soil, there are very good crops at harvest season;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "wherever you have gone, good crops are very abundant.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The pastures in the wilderness are wet with the morning dew,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though the hills are singing joyful songs.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The meadows are covered with sheep and goats,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the valleys are full of grain;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is as though they also sing and shout joyfully.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

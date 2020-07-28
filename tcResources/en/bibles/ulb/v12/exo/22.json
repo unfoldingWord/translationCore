@@ -1,0 +1,384 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man steals an ox or a sheep and kills it or sells it, then he must pay five oxen for one ox, and four sheep for one sheep.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a thief is found breaking in, and if he is struck so that he dies, in that case no guilt for murder will attach to anyone on his account.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the sun has risen before he breaks in, guilt for murder will attach to the person who kills him.\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "A thief must make restitution. If he has nothing, then he must be sold for his theft.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If the stolen animal is found alive in his possession, whether it is an ox, a donkey, or a sheep, he must pay back double.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man grazes his livestock in a field or vineyard and lets his animal loose, and it grazes in another man's field, he must make restitution from the best of his own field and from the best of his own vineyard.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a fire breaks out and spreads in thorns so that stacked grain, or standing grain, or a field is consumed, the one who started the fire must surely make restitution.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man gives money or goods to his neighbor for safe keeping, and if it is stolen out of the man's house, if the thief is found, that thief must pay double.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the thief is not found, then the owner of the house must come before the judges to see whether he has put his own hand on his neighbor's property.\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For every dispute about something, whether it is an ox, a donkey, a sheep, clothing, or any other missing thing about which one says, \"This belongs to me,\" the claim of both parties must come before the judges. The man whom the judges find guilty must pay double to his neighbor.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man gives his neighbor a donkey, an ox, a sheep, or any animal to keep, and if it dies or is hurt or is carried away without anyone seeing it,\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "an oath to Yahweh must be taken by them both, as to whether or not one person has put his hand on his neighbor's property. The owner must accept this, and the other will make no restitution.\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if it was stolen from him, the other must make restitution to the owner for it.\n"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If an animal was torn in pieces, let the other man bring the animal as evidence. He will not have to pay for what was torn.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man borrows any animal from his neighbor and the animal is injured or dies without the owner being with it, the other man must surely make restitution.\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But if the owner was with it, the other man will not have to pay; if the animal was hired, it will be paid for by its hiring fee.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If a man seduces a virgin who is not engaged, and if he sleeps with her, he must surely make her his wife by paying the bride wealth required for this.\n"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If her father completely refuses to give her to him, he must pay money equal to the bride wealth of virgins.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not allow a sorceress to live.\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever sleeps with a beast must surely be put to death.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever sacrifices to any god except to Yahweh must be completely destroyed.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not wrong a foreigner or oppress him, for you were foreigners in the land of Egypt.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not mistreat any widow or fatherless child.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you afflict them at all, and if they call out to me, I will surely hear their call.\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My anger will burn, and I will kill you with the sword; your wives will become widows, and your children will become fatherless.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you lend money to any of my people among you who are poor, you must not be like a moneylender to him or charge him interest.\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you take your neighbor's garment in pledge, you must return it to him before the sun goes down,\n"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "for that is his only covering; it is his garment for his body. What else can he sleep in? When he calls out to me, I will hear him, for I am compassionate.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not blaspheme me, God, nor curse a ruler of your people.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must not hold back offerings from your harvest or your winepresses. You must give to me the firstborn of your sons.\n"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You must also do the same with your oxen and your sheep. For seven days they may remain with their mothers, but on the eighth day you must give them to me.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You will be people that are set apart for me. So you must not eat any meat that was torn by animals in the field. Instead, you must throw it to the dogs.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

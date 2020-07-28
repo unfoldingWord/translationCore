@@ -1,0 +1,387 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing aloud to God our strength;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "shout out for joy to the God of Jacob.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing a song and play the tambourine,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the pleasant lyre with the harp.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Blow the trumpet on the day of the new moon,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "on the day of the full moon, when our feast day begins.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For it is a statute for Israel,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a decree given by the God of Jacob.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He issued it as a regulation in Joseph\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "when he went against the land of Egypt,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "where I heard a voice that I did not recognize:\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I removed the burden from his shoulder;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his hands were freed from holding the basket.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In your distress you called out, and I helped you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I answered you from a dark thundercloud.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I tested you at the waters of Meribah.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen, my people, for I will warn you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Israel, if you would only listen to me!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There must be no foreign god among you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you must not worship any foreign god.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am Yahweh your God,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "who brought you out of the land of Egypt.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Open your mouth wide, and I will fill it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But my people did not listen to my words;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Israel did not obey me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I gave them over to their own stubborn way\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that they might do what seemed right to them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that my people would listen to me;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "oh, that my people would walk in my paths.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then I would quickly subdue their enemies\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and turn my hand against their oppressors.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May those who hate Yahweh cringe in fear before him!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "May they be humiliated forever.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I would feed Israel with the finest wheat;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I would satisfy you with honey out of the rock.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician; set to the Gittith style. A psalm of Asaph.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

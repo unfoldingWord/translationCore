@@ -1,0 +1,617 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not boast about tomorrow,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for you do not know what a day may bring.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let someone else praise you and not your own mouth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a stranger and not your own lips.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Consider the heaviness of a stone and the weight of sand—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the provocation of a fool is heavier than both.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There is the cruelty of rage and the flood of anger,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but who is able to stand before jealousy?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Better is an open rebuke\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "than hidden love.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Faithful are the wounds caused by a friend,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but an enemy may kiss you profusely.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person who has eaten to the full rejects even a honeycomb,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but to the hungry person, every bitter thing is sweet.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Like a bird that wanders from its nest \n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "is a man who strays from where he lives.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Perfume and incense make the heart rejoice,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the sweetness of a friend comes from his sincere counsel.\n"
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Modern versions have different interpretations of this difficult verse. ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not forsake your friend and your friend's father,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and do not go to your brother's house on the day of your calamity.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Better is a neighbor who is nearby than a brother who is far away.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be wise, my son, and make my heart rejoice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "then I will give back an answer to the one who mocks me.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A prudent man sees trouble and hides himself,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but the naive people go on and suffer because of it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Take a garment of one who has put up security for a stranger,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and hold it in pledge when he puts up security for an immoral woman.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Whoever gives his neighbor a blessing with a loud voice early in the morning,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that blessing will be considered to be a curse!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A quarreling wife is like\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the constant dripping on a rainy day;\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "restraining her is like restraining the wind,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or trying to catch oil in your right hand.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Iron sharpens iron;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the same way, a man sharpens his friend.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who tends a fig tree will eat its fruit,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the one who protects his master will be honored.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Just as water reflects a person's face,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so a person's heart reflects the person.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Just as Sheol and Abaddon are never satisfied,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so a man's eyes are never satisfied.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A crucible is for silver and a furnace is for gold;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and a person is tested when he is praised.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even if you crush a fool with the pestle—along with the grain—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "yet his foolishness will not leave him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Be sure you know the condition of your flocks\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and be concerned about your herds,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "for wealth is not forever.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Does a crown endure for all generations?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You should know when the hay is gone and the new growth appears,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the time when the grass from the hills is gathered in.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Those lambs will provide your clothing\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the goats will provide the price of the field.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There will be goats' milk for your food—the food for your household—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and nourishment for your servant girls.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

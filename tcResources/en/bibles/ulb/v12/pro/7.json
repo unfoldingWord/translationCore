@@ -1,0 +1,605 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My son, keep my words\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and store up my commands within yourself.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep my commands and live\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and keep my instruction as the apple of your eye.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tie them on your fingers;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "write them on the tablet of your heart.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Say to wisdom, \"You are my sister,\"\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and call understanding your kinsman,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "in order to keep yourself from the adulterous woman,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from the immoral woman with her smooth words.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "At the window of my house\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I was looking out through the lattice.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I looked at the naive people,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I noticed among the young men\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "a youth who had no sense.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "That young man passed down the street near her corner,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he went toward her house.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It was twilight, in the evening of the day,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "at the time of night and darkness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There a woman met him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "dressed like a prostitute, with a false heart.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She was loud and wayward;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "her feet did not stay at home.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now in the streets, then in the market place,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and at every corner she waited in ambush.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So she grabbed him and kissed him,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with a strong face she said to him,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"I made my peace offering today,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I paid my vows,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so came I out to meet you,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to eagerly seek your face, and I have found you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have spread coverings on my bed,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "colored linens from Egypt.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I have sprinkled my bed\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with myrrh, aloes, and cinnamon.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Come, let us drink our fill of love until morning;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us take great pleasure in acts of love.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For my husband is not at his house;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he has gone on a long journey.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He took a bag of money with him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he will return on the day of the full moon.\"\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With much talk she turned him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with her smooth lips she misled him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He went after her suddenly\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like an ox going to slaughter,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "like a deer caught in a trap,  "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft \\fqa Deer \\fqa* could be a stag or an antelope. The Vulgate has: \\fqa lamb \\fqa*. The LXX has: \\fqa like a dog to the muzzle \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "until an arrow pierces through its liver.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He was like a bird rushing into a snare.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He did not know that it would cost his life.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now, my sons, listen to me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "pay attention to the words of my mouth.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May your heart not turn aside onto her paths;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "do not be led astray onto her paths.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "She has caused many people to fall down pierced;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "her dead victims are very many.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Her house is on the paths to Sheol;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they go down to the dark bedrooms of death.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

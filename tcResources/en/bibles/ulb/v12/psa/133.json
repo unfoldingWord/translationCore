@@ -1,0 +1,107 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Behold, how good and how pleasant it is\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for brothers to live together!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is like fine oil on the head\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "pouring down on the beard—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Aaron's beard,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and then it pours down on the collar of his robes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is like the dew of Hermon\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "which falls on the mountains of Zion.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "For there Yahweh commanded the blessing—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "life forevermore.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A song of ascents, of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

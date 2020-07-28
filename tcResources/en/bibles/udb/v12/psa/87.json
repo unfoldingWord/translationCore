@@ -1,0 +1,197 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The city is established on his holy mountain.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh loves that city, Jerusalem, more than he loves any other place in Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All you people in Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "other people say wonderful things about your city.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "And Yahweh said, \"I will talk of Rahab and Babyon \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and the people there who know me.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "There are some who know me among the people of Egypt and Babylonia,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they live in the lands of Philistia and Tyre and Ethiopia,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will say, 'Our home is Jerusalem and our land is Zion.'\" \n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Concerning Zion, people will say,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"All of these people who were born far away, \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they call Jerusalem their home, \n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and Almighty God will cause that city to remain strong.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will write a list of the names of the people of various groups who belong to him,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and he will say that he considers them all to be citizens of Jerusalem.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will all dance and sing, saying,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"Jerusalem is the source of all our blessings.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by one of the descendants of Korah\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

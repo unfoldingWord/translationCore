@@ -1,0 +1,556 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then Job answered and said,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"No doubt you are the people;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "wisdom will die with you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But I have understanding as well as you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I am not inferior to you.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Indeed, who does not know such things as these?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am something for my neighbor to laugh at—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I, one who called on God and who was answered by him!\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I, a just and blameless man—I am now something to laugh at.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the thought of someone who is at ease, there is contempt for misfortune;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he thinks in a way that brings more misfortune to those whose foot is slipping.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The tents of robbers prosper,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and those who provoke God feel secure;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "their own hands are their gods.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But now ask the beasts, and they will teach you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "ask the birds of the heavens, and they will tell you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Or speak to the earth, and it will teach you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the fish of the sea will declare to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Which animal among all these does not know\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that the hand of Yahweh has done this?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In his hand is the life of every living thing\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and the breath of all mankind.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Does not the ear test words\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "just as the palate tastes its food?\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With aged men is wisdom;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in length of days is understanding.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With God are wisdom and might;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he has counsel and understanding.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, he breaks down, and it cannot be built again;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "if he imprisons someone, there can be no release.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "See, if he withholds the waters, they dry up;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and if he sends them out, they overwhelm the land.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "With him are strength and wisdom;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "people who are deceived and the deceiver are both in his power.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He leads counselors away barefoot in sorrow;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he turns judges into fools.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He takes off the chain of authority from kings;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he wraps a cloth about their waists.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He leads priests away barefoot in sorrow\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and overthrows mighty people.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He removes the speech of those who had been trusted\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and takes away the understanding of the elders.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He pours contempt upon princes\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and unfastens the belt of strong people.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He reveals the deep things of darkness\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and brings deep shadows into the light.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He makes nations strong, and he also destroys them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "He enlarges nations, and he also leads them along as prisoners.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He takes away understanding from the leaders of the people of the earth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he causes them to wander in a wilderness where there is no path.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They grope in the dark without light;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he makes them stagger like a drunk man.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

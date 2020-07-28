@@ -1,0 +1,499 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The Song of Songs, which is Solomon's.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Oh, that he would kiss me with the kisses of his mouth,\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for your love is better than wine.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your anointing oils have a delightful fragrance;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your name is like flowing perfume,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so the young women love you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Take me with you, and we will run.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The king has brought me into his rooms.\n"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "We are glad; We rejoice about you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let us celebrate your love; it is better than wine.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "It is natural for the other women to adore you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the other women\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am dark but lovely,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you daughters of Jerusalem—\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "dark like the tents of Kedar,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "lovely like the curtains of Solomon.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not stare at me because I am dark,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "because the sun has scorched me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "My mother's sons were angry with me;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they made me keeper of the vineyards,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but my own vineyard I have not kept.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tell me, you whom my soul loves,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "where do you feed your flock?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Where do you rest your flock at noontime?\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Why should I be like someone who wanders\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "beside the flocks of your companions?\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "sp",
+        "text": "The man speaking to the woman\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do not know, most beautiful among women,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "follow the tracks of my flock,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and pasture your young goats near the shepherds' tents.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I compare you, my love,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to a mare among Pharaoh's chariot horses.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Your cheeks are beautiful with ornaments,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your neck with strings of jewels.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We will make for you gold ornaments\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with silver studs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to herself\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While the king lay on his couch,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "my nard emitted its fragrance.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved is to me like a bag of myrrh\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "that spends the night lying between my breasts.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "My beloved is to me like a cluster of henna flowers\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in the vineyards of En Gedi.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "sp",
+        "text": "The man speaking to the woman\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen, you are beautiful, my love;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "listen, you are beautiful;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "your eyes are doves.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "sp",
+        "text": "The woman speaking to the man\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Listen, you are handsome, my beloved, how handsome.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The lush plants are our bed.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The beams of our house are cedars;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "our rafters are firs.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

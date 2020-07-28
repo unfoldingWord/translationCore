@@ -1,0 +1,220 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, listen to me\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and answer my prayer.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "While I am discouraged and far from my home,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am calling out to you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Lead me to a place that will be like a high rock\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "on top of which I will be safe.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "You have been my refuge;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have been like a strong tower\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in which my enemies cannot attack me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Allow me to live close to your sacred tent all during my life!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Allow me to be safe as a little bird is safe under its mother's wings.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, you heard me when I solemnly promised to give offerings to you;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you have given to me the blessings that belong to those who have an awesome respect for you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am the king of Israel;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "please allow me to live and rule for many years,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and allow my descendants to rule also.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Allow us to rule forever while you observe us;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "watch over us while you faithfully love us and do for us what you promised.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you do that, I will always sing to praise you\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "while I offer to you each day the sacrifices that I promised to give to you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director, to be accompanied by musical instruments.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

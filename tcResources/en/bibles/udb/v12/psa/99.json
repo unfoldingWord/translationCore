@@ -1,0 +1,254 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is the supreme king,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "so all the people groups should tremble in his presence!\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He sits on his throne in the temple above the statues of winged creatures,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so the earth should quake!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is a mighty king in Jerusalem;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is also the supreme ruler of all the people groups.\n"
+      },
+      {
+        "tag": "q2",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They should praise him because he is very great;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is holy!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is a mighty king who loves what is just;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he has acted justly and fairly in Israel.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh, our God!\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Worship him in front of his footstool, the sacred chest in his temple,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "where he rules people.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He is holy!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Moses and Aaron were two of his priests;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Samuel also was someone who prayed to him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Those three cried out to Yahweh to help them,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and he answered them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He spoke to Moses and Aaron from the cloud that was like a huge pillar;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "they obeyed all the laws and commandments that he gave to them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, our God, you answered your people\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when they cried out to you to help them;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "you are a God who forgave them for the sins that they had committed,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "even though you punished them for the things that they did that were wrong.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Praise Yahweh, our God,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and worship him at the temple on his sacred hill;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is right to do that because Yahweh, our God, is holy!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

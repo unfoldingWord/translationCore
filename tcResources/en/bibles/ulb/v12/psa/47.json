@@ -1,0 +1,233 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Clap your hands, all you peoples;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "shout to God with the sound of triumph.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh Most High is terrifying;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is a great King over all the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He subdues peoples under us\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and nations under our feet.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He chooses our inheritance for us,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the glory of Jacob whom he loved.\n"
+      },
+      {
+        "tag": "qs",
+        "type": "quote",
+        "text": "Selah",
+        "endTag": "qs*"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God has gone up with a shout,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Yahweh with the sound of a trumpet.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing praises to God, sing praises;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "sing praises to our King, sing praises.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For God is the King over all the earth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "sing praises with understanding.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God reigns over the nations;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "God sits on his holy throne.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The princes of the peoples have gathered together\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "to the people of the God of Abraham;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for the shields of the earth belong to God;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he is greatly exalted.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "For the chief musician. A psalm of the sons of Korah.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

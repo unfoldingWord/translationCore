@@ -1,0 +1,173 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, by your power save me from my enemies,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and show people that I have not done anything that is wrong!\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, listen to my prayer;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "listen to what I say to you\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "because strangers are trying to attack me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "proud men are wanting to kill me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "men who have no respect for you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But God is the one who helps me;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "Yahweh defends me from my enemies.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He will cause the evil things that they want to do to me to happen to them instead;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because you faithfully do what you have promised to me, destroy them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I will gladly give an offering to you because I want to,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will thank you, for you are good to me;\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "you have rescued me from all my troubles,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I have seen that you have defeated my enemies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm written by David for the choir director, to be accompanied by stringed instruments; it was written when the people of Ziph went to Saul and told him that David was hiding in their area.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

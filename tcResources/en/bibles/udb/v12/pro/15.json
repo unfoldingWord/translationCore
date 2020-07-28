@@ -1,0 +1,749 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A gentle answer turns away anger,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but a harsh reply stirs up anger even more.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When wise people speak, they give praise to the value of knowledge;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "foolish people continually say foolish things.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh sees everything that is happening;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he keeps account of the evil and of the good.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A person who can give healing with what they say is like a tree that gives life;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when someone lies to you, it can feel like they have crushed you.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A fool has contempt for his father when he disciplines him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the one who learns from correction has insight.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "In the families of those who do right there are great treasures,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the wealth that the wicked have gives them great troubles.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The wise scatter knowledge about like the farmer scatters his seed,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the hearts of fools are not so generous.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh hates it when the wicked offer their sacrifices,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but when those who please him pray, he is delighted.\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh hates the way the wicked live,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he loves the one who runs after what is right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh will discipline those who lose their way,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and those who hate correction will die.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The places of death and destruction are known to Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "how much more does Yahweh know everything within the minds of the people he has made?\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who thinks he is better than anyone, he resents being corrected by anyone;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he thinks he is so smart, he will never talk with one who is wise.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people are happy, they have smiles on their faces,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but sadness is so strong it crushes the person.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The longing of the one who is wise is to gain more knowledge,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but foolish people only say foolish things.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Every day for one who is oppressed is misery for him,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who have a happy heart, for them life is a never-ending party.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is much better to have only a little and to give Yahweh the honor he deserves,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than to have great wealth along with much confusion.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "It is better to have a simple meal with vegetables when there is love in the home,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "than to enjoy a delicious meal served by people who hate you.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When a person is angry, he stirs up more arguments,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but one who does not quickly become angry, he is able to stop an argument and make peace.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The life of a lazy person is like someone trying to walk through a hedge of thorns,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but those who do what pleases Yahweh are like those who are walking on a level highway.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "A wise child brings happiness to his father,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but it is a foolish person who despises his mother.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Foolish people enjoy their folly;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "those who have insight live a good life.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When there is no one giving advice, plans go wrong,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but with many advisors, they will succeed.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "People rejoice when they give a good answer,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and how nice is the right word spoken at the right moment.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The path leading to life goes up, away from death;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he follows that way and turns from the place of the dead.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh destroys the generations of proud people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he protects the little owned by a widow.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh hates what wicked people are thinking about,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but when people say what is kind, they are pure.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The thief brings many troubles to his family,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but the one who refuses to accept bribes will live.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The people who do right think carefully before they answer;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it is like the wicked pour out of their mouths all kinds of evil when they talk.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is far away from wicked people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but he listens to the prayers of those who do what is right.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When people smile, it makes them happy,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and good news brings healing to the body.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If you pay attention when someone corrects you,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you will stay among those who are wise.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The one who refuses to follow discipline, despises himself;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the one who receives correction gains understanding as well.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The honor that Yahweh deserves will be the lesson that will teach you wisdom,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then humility comes before honor.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

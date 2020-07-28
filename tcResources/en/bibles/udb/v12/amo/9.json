@@ -1,0 +1,521 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh showed me another vision. In the vision, I saw him standing next to the altar. He said,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "\"Strike the tops of the pillars of the temple,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "until they become loose and fall down,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so that the foundation will shake.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Then cause the pieces of the temple to fall down on the people who are inside.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will kill with a sword anyone who tries to flee;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "no one will escape.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they dig deep pits in the ground, even all the way to the place of the dead,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "or if they try to climb up to the sky\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "in order to escape,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will reach out and grab them.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If they go to the top of Mount Carmel to escape,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will search for them and seize them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "If they try to hide from me at the bottom of the sea,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will command the huge sea monster to bite them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "If their enemies capture them and force them to go to other countries,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will command that they be killed there with swords.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I am determined to get rid of them, not to help them.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When Yahweh, commander of the angel armies, touches the earth, it melts,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and all over the earth many people die, and the others mourn for them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "It is as though Yahweh causes the earth repeatedly to rise and fall\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "like water in the Nile River rises and falls.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He builds his beautiful palace in heaven\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and sets the sky to be like a dome over the earth.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He scoops up the water from the ocean and puts it into clouds,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and then empties the clouds onto the earth.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "His name is Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh says, \"You people of Israel,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "you are certainly now no more important to me than the people of Ethiopia.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I brought your ancestors here from Egypt,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "but I also brought the people of Philistia from the Island of Crete,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I brought the people of Aram from the region of Kir.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I, Yahweh the Lord, have seen that you people in the kingdom of Israel are very sinful,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so I will destroy you.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "But I will not get rid of all you descendants of Jacob.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "That is what will surely happen because I, Yahweh, have said it.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I command it, it will be as though I will shake you Israelite people who are living in various nations,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "as farmer shakes a sieve to separate the stone pebbles from the grain\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in order that they do not fall on the ground with the grain.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "From among my people,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "all you sinful people who say, 'We will not experience disasters; nothing evil will happen to us,'\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "your enemies will kill you with their swords.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\"The kingdom over which King David ruled has been destroyed, like a house that collapsed and then became ruins.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "But some day I will cause it to be a kingdom again.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I will cause it to prosper again\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "just like it did previously.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When that happens, your armies will seize the remaining part of the region of Edom,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and they will also seize the other nations that previously belonged to me.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I, Yahweh, have said that I will do these things,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and I will certainly cause them to happen.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "There will be a time when your crops will grow very well;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "very soon after the crops are harvested,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "farmers will plow the ground to plant more crops in it again,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and soon after the vineyards are planted,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "farmers will harvest grapes and tread on them to make wine.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "And because there will be very much wine,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "it will seem as though wine is flowing down from the hills.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will cause you, my Israelite people, to prosper again.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "You will rebuild your towns and live in them.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "You will plant vineyards and drink the wine made from the grapes that grows in them.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will enable you to live in your land again,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "the land that I gave to your ancestors;\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "never again will you be forced to leave it.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "That is what will surely happen because I, Yahweh, have said it.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then King Ahasuerus imposed a tax on the land and on the coastlands along the sea.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the achievements of his power and might, together with the full account of the greatness of Mordecai to which the king had raised him, they are written in the book of the chronicles of the kings of Media and Persia.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Mordecai the Jew was second in rank to King Ahasuerus. He was great among the Jews and popular with his many Jewish brothers, for he sought the welfare of his people and he spoke for the peace of all his people.\n\n"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

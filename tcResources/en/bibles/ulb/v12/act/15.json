@@ -1,0 +1,502 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Some men came down from Judea to Antioch and taught the brothers, saying, \"Unless you are circumcised according to the custom of Moses, you cannot be saved.\"\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This brought Paul and Barnabas into a sharp dispute and debate with them. So Paul and Barnabas along with some others from among them were appointed to go up to Jerusalem to meet with the apostles and elders about this question.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They therefore, being sent by the church, passed through both Phoenicia and Samaria and announced the conversion of the Gentiles. They brought great joy to all the brothers.\n"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they came to Jerusalem, they were welcomed by the church and the apostles and the elders, and they reported all the things that God had done with them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But certain men who believed, who belonged to the group of Pharisees, stood up and said, \"It is necessary to circumcise them and to command them to keep the law of Moses.\"\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So the apostles and the elders gathered together to consider this matter.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After much debate, Peter stood up and said to them,\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\"Brothers, you know that a good while ago God made a choice among you, that by my mouth the Gentiles should hear the word of the gospel, and believe.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "God, who knows the heart, witnesses to them, giving them the Holy Spirit, just as he did to us;\n"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and he made no distinction between us and them, making their hearts clean by faith.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now therefore why do you test God, that you should put a yoke upon the neck of the disciples which neither our fathers nor we were able to bear?\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we believe that we shall be saved through the grace of the Lord Jesus, just as they were.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "All the multitude kept silent while they listened to Barnabas and Paul report the signs and wonders God had worked among the Gentiles through them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After they stopped speaking, James answered, saying,\n"
+      },
+      {
+        "tag": "p",
+        "type": "paragraph",
+        "text": "\"Brothers, listen to me.\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Simon has told how God first graciously helped the Gentiles in order to take from them a people for his name.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The words of the prophets agree with this, as it is written,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "'After these things I will return,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and I will build again the tent of David, which has fallen down;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "I will set up and restore its ruins again,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "so that the remnant of men may seek the Lord,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "including all the Gentiles called by my name.'\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what the Lord says, who has done these things that have been known from ancient times. "
+      },
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft Some older versions read, \\fqa This is what the Lord says, to whom are known all his deeds from ancient times \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore, my opinion is, that we should not trouble those of the Gentiles who turn to God.\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But we will write to them that they must keep away from the pollution of idols, from sexual immorality, and from the meat of strangled animals, and from blood.\n"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Moses has been proclaimed in every city from the ancient times and he is read in the synagogues every Sabbath.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then it seemed good to the apostles and the elders, with the whole church, to choose Judas called Barsabbas, and Silas, who were leaders of the church, and send them to Antioch with Paul and Barnabas.\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They wrote this: \"From the apostles and elders, your brothers, to the Gentile brothers in Antioch, Syria, and Cilicia: Greetings!\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "We have heard that certain men have gone out from us, with no orders from us, and have disturbed you with teachings that upset your souls.\n"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This being so, all of us have agreed to choose men and to send them to you along with our beloved Barnabas and Paul,\n"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "men who have risked their lives for the name of our Lord Jesus Christ.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Therefore we are sending Judas and Silas, who will tell you the same thing themselves in their own words.\n"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For it seemed good to the Holy Spirit and to us, to lay upon you no greater burden than these necessary things:\n"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "that you abstain from things sacrificed to idols, blood, things strangled, and from sexual immorality. If you keep yourselves from these, it shall be well with you. Farewell.\"\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So they, when they were dismissed, came down to Antioch; after they gathered the multitude together, they delivered the letter.\n"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they had read it, they rejoiced because of the encouragement.\n"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Judas and Silas, also prophets, encouraged the brothers with many words and strengthened them.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After they had spent some time there, they were sent away in peace from the brothers to those who had sent them.\n"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "tag": "f",
+        "type": "footnote",
+        "content": "+ \\ft The best ancient copies omit verse 34 (See: Acts 15:40), \\fqa But it seemed good to Silas to remain there \\fqa* . ",
+        "endTag": "f*",
+        "nextChar": "\n"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Paul and Barnabas stayed in Antioch along with many others, where they taught and proclaimed the word of the Lord.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "After some days Paul said to Barnabas, \"Let us return now and visit the brothers in every city where we proclaimed the word of the Lord, and see how they are.\"\n"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Barnabas wanted to also take with them John who was called Mark.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Paul thought it was not good to take Mark, who had left them in Pamphylia and did not go further with them in the work.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then there arose a sharp disagreement, so that they separated from each other, and Barnabas took Mark with him and sailed away to Cyprus.\n"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But Paul chose Silas and left, after he was entrusted by the brothers to the grace of the Lord.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then he went through Syria and Cilicia, strengthening the churches.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

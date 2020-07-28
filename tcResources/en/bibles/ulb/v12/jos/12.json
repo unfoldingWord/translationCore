@@ -1,0 +1,263 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Now these are the kings of the land, whom the men of Israel conquered. The Israelites took possession of the land on the east side of the Jordan where the sun rises, from the Valley of the Arnon River to Mount Hermon, and all the Arabah to the east.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sihon, king of the Amorites, lived in Heshbon. He ruled from Aroer, which is on the rim of the Arnon Gorge from the middle of the valley, and half of Gilead down to the Jabbok River on the border of the Ammonites.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sihon also ruled over the Arabah to the Sea of Kinnereth, to the east, to the Sea of the Arabah (the Salt Sea) eastward, all the way to Beth Jeshimoth and southward, toward the foot of the slopes of Mount Pisgah.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Og, king of Bashan, one of the remnant of the Rephaim, lived in Ashtaroth and Edrei.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He ruled over Mount Hermon, Salekah, and all Bashan, to the border of the people of Geshur and the Maacathites, and half of Gilead, to the border of Sihon, king of Heshbon.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Moses the servant of Yahweh, and the people of Israel had defeated them, and Moses the servant of Yahweh, gave the land as a possession to the Reubenites, the Gadites, and the half tribe of Manasseh.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These are the kings of the land whom Joshua and the people of Israel defeated on the west side of the Jordan, from Baal Gad in the valley near Lebanon to Mount Halak near Edom. Joshua gave land to the tribes of Israel for them to possess.\n"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He gave them the hill country, the lowlands, the Arabah, the sides of the mountains, the wilderness, and the Negev—the land of the Hittites, Amorites, Canaanites, Perizzites, Hivites, and Jebusites.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "The kings included the king of Jericho, the king of Ai which is beside Bethel,\n"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Jerusalem, the king of Enaim,\n"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Jarmuth, the king of Lachish,\n"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Eglon, the king of Gezer,\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Debir, the king of Geder,\n"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Hormah, the king of Arad,\n"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Libnah, the king of Adullam,\n"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Makkedah, the king of Bethel,\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Tappuah, the king of Hepher,\n"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Aphek, the king of Lasharon,\n"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Madon, the king of Hazor,\n"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Shimron Meron, the king of Akshaph,\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Taanach, the king of Megiddo,\n"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Kedesh, the king of Jokneam in Carmel,\n"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "the king of Dor in Naphoth Dor, the king of Goyim in Gilgal,\n"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "and the king of Tirzah. The number of kings was thirty-one in all.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}

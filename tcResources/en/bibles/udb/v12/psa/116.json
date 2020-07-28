@@ -1,0 +1,423 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I love Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because he hears me when I cry to him for help.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He listens to me,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "so I will call out to him all during my life.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Everything around me caused me to think that I would die;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I was very afraid that I would die and go to the place where dead people are.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "I was very distressed and afraid.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "But then I called out to Yahweh, saying,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "\"Yahweh, I plead with you to save me!\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is kind and does what is right;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "he is our God, and he acts mercifully to us.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He protects those who are helpless;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "when I thought that I would die, he saved me.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I must encourage myself\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because Yahweh has done very good things for me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh has saved me from dying\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "and has kept me from troubles that would cause me to cry.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "He has kept me from disaster.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So here on the earth where people are still alive,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I live, knowing that Yahweh is directing me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I continued to believe in Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "even when I said, \"I am greatly afflicted.\"\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Even when I was distressed and said, \"I cannot trust anyone,\"\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I continued to trust in Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So now I will tell you what I will offer to Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "because of all the good things that he has done for me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I will offer to him a cup of wine\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "to thank him for saving me.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I am together with many people who belong to Yahweh,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will give to him the offerings that I solemnly promised to give to him.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh is very grieved when one of his people dies.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "I am one of those who serves Yahweh;\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I serve him like my mother did.\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "He has ended my troubles.\n"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So I will offer to him a sacrifice to thank him,\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "and I will pray to him.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "q1",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18-19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When I am together with many of the people who belong to Yahweh\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "in the courtyard outside his temple in Jerusalem,\n"
+      },
+      {
+        "tag": "q2",
+        "type": "quote",
+        "text": "I will give to him the offerings that I solemnly promised to give to him.\n"
+      },
+      {
+        "tag": "q1",
+        "type": "quote",
+        "text": "Praise Yahweh!\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, I am crying out to you; come quickly to me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Listen to me when I call to you.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May my prayer be like incense before you;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "may my lifted hands be like the evening sacrifice.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Yahweh, place a guard over my mouth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "guard the door of my lips.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Do not let my heart desire any evil thing\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "or participate in sinful activities\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "with men who behave wickedly.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "May I not eat any of their delicacies.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let a righteous man hit me; it will be a kindness to me.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let him correct me; it will be like oil on my head;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "may my head not refuse to accept it.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "But my prayer is always against their wicked deeds.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Their leaders will be thrown down from the top of cliffs;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "they will hear that my own words are pleasant.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They will have to say, \"As when one plows and breaks up the ground,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so our bones have been scattered at the mouth of Sheol.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Surely my eyes are on you, Yahweh, Lord;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "in you I take refuge; do not leave my soul defenseless.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Protect me from the snares that they have laid for me,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from the traps of evildoers.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let the wicked fall into their own nets\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "while I escape.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "m",
+        "nextChar": "\n",
+        "type": "paragraph"
+      },
+      {
+        "tag": "d",
+        "text": "A psalm of David.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  }
+}

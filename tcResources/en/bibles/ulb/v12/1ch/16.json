@@ -1,0 +1,813 @@
+{
+  "1": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They brought in the ark of God and put it in the middle of the tent that David had set up for it. Then they offered burnt offerings and fellowship offerings before God.\n"
+      }
+    ]
+  },
+  "2": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When David had finished sacrificing the burnt offering and the fellowship offerings, he blessed the people in the name of Yahweh.\n"
+      }
+    ]
+  },
+  "3": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He distributed to every Israelite, both to men and women, a loaf of bread, and a piece of meat, and a cake of raisins.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "4": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "David appointed certain Levites to serve before the ark of Yahweh, and to celebrate, thank and praise Yahweh, the God of Israel.\n"
+      }
+    ]
+  },
+  "5": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "These Levites were Asaph the leader, and second to him Zechariah, Jaaziel, Shemiramoth, Jehiel, Mattithiah, Eliab, Benaiah, Obed Edom, and Jeiel. These were to play with stringed instruments and with harps. Asaph was to sound the cymbals, sounding loudly.\n"
+      }
+    ]
+  },
+  "6": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Benaiah and Jahaziel the priests were to blow the trumpets regularly, before the ark of the covenant of God.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "7": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then on that day David first appointed Asaph and his brothers to sing this song of thanksgiving to Yahweh.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "8": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give thanks to Yahweh, call on his name;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "make known his deeds among the nations.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "9": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to him, sing praises to him;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "speak of all his marvelous deeds.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "10": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Boast in his holy name;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let the heart of those who seek Yahweh rejoice.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "11": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Seek Yahweh and his strength;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "seek his presence continually.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "12": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Recall the marvelous things he has done,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his miracles and the decrees from his mouth,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "13": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "you descendants of Israel his servant,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "you people of Jacob, his chosen ones.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "14": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He is Yahweh, our God.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "His decrees are on all the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "15": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Keep his covenant in mind forever,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "the word that he commanded for a thousand generations.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "16": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He calls to mind the covenant that he made with Abraham,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and his oath to Isaac.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "17": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "This is what he confirmed to Jacob as a statute,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and to Israel as an everlasting covenant.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "18": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He said, \"I will give you the land of Canaan\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "as your share of your inheritance.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "19": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "When they were only few in number,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so very few, and they were strangers in the land,\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "20": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "they wandered from nation to nation,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from one kingdom to another.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "21": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "He did not allow anyone to oppress them;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "he punished kings for their sakes.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "22": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "he said, \"Do not touch my anointed ones,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and do not harm my prophets.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "23": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Sing to Yahweh, all the earth;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "announce his salvation day after day.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "24": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Declare his glory among the nations,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "his marvelous deeds among all the nations.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "25": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For Yahweh is great and is to be praised greatly,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and he is to be feared above all other gods.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "26": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "For all the gods of the nations are idols,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "but it is Yahweh who made the heavens.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "27": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Splendor and majesty are in his presence.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Strength and joy are in his place.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "28": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ascribe to Yahweh, you clans of peoples,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "ascribe to Yahweh glory and strength!\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "29": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Ascribe to Yahweh the glory his name deserves.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Bring an offering and come before him.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Bow down to Yahweh in the splendor of holiness.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "30": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Tremble before him, all the earth.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "The world also is established; it cannot be shaken.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "31": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let the heavens be glad, and let the earth rejoice;\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "let them say among the nations, \"Yahweh reigns.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "32": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Let the sea roar, and that which fills it shout with joy.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Let the fields be joyful, and all that is in them.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "33": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then let the trees in the forest shout for joy before Yahweh,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for he is coming to judge the earth.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "34": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Give thanks to Yahweh, for he is good,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "for his covenant faithfulness endures forever.\n"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "35": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then say, \"Save us, God of our salvation.\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "Gather us together and rescue us from the other nations,\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "so that we may give thanks to your holy name\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "and glory in your praises.\"\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "q",
+        "nextChar": "\n",
+        "type": "quote"
+      }
+    ]
+  },
+  "36": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "May Yahweh, the God of Israel, be praised\n"
+      },
+      {
+        "tag": "q",
+        "type": "quote",
+        "text": "from everlasting to everlasting.\n"
+      },
+      {
+        "tag": "m",
+        "type": "paragraph",
+        "text": "All the people said, \"Amen\" and praised Yahweh.\n"
+      },
+      {
+        "type": "text",
+        "text": "\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      },
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  },
+  "37": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "So David left Asaph and his brothers there before the ark of the covenant of Yahweh, to serve continually before the ark, as every day's work required.\n"
+      }
+    ]
+  },
+  "38": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Obed Edom with those sixty-eight relatives were included. Obed Edom son of Jeduthun, along with Hosah, were to be gatekeepers.\n"
+      }
+    ]
+  },
+  "39": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Zadok the priest and his fellow priests were to serve before the tabernacle of Yahweh at the high place in Gibeon.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "40": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "They were to offer burnt offerings to Yahweh on the altar for burnt offerings continually morning and evening, according to all that is written in the law of Yahweh, which he gave as a command to Israel.\n"
+      }
+    ]
+  },
+  "41": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heman and Jeduthun were with them, together with the rest who were chosen by name, to give thanks to Yahweh, because his covenant faithfulness endures forever.\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "42": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Heman and Jeduthun were in charge of those who played trumpets, cymbals, and the other instruments for the sacred music. The sons of Jeduthun guarded the gate.\n"
+      }
+    ]
+  },
+  "43": {
+    "verseObjects": [
+      {
+        "type": "text",
+        "text": "Then all the people returned to their homes, and David returned to bless his own household.\n\n\n"
+      },
+      {
+        "tag": "s5",
+        "nextChar": "\n",
+        "type": "section"
+      }
+    ]
+  },
+  "front": {
+    "verseObjects": [
+      {
+        "tag": "p",
+        "nextChar": "\n",
+        "type": "paragraph"
+      }
+    ]
+  }
+}
