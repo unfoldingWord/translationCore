@@ -11,6 +11,7 @@
 
 **Fixed bugs:**
 
+- tN smurf bar links are incorrectly rendered after changing to the Hindi GL, then changing back to English [\#7084](https://github.com/unfoldingWord/translationCore/issues/7084)
 - The edit cursor is incorrectly positioned in edit dialogs for RTL projects [\#7081](https://github.com/unfoldingWord/translationCore/issues/7081)
 - Problems with the hover-over target words in wA when the project is using the Scheherazade font  [\#7011](https://github.com/unfoldingWord/translationCore/issues/7011)
 - Variance in the rendering of texts using Awami Nastaliq [\#6993](https://github.com/unfoldingWord/translationCore/issues/6993)
