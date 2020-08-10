@@ -17,11 +17,9 @@ const ToolsCards = ({
   actions,
   translate,
   onSelectTool,
-  bookName,
   loggedInUser,
   projectSaveLocation,
   manifest,
-  invalidatedReducer,
   toolsCategories,
   originalLanguageBookManifest,
   onMissingResource,
@@ -40,7 +38,7 @@ const ToolsCards = ({
         </Card>
       </MuiThemeProvider>
     );
-  } else if (bookName.length === 0 && projectSaveLocation === 0) {
+  } else if (!projectSaveLocation) {
     return (
       <MuiThemeProvider>
         <Card style={{
@@ -110,7 +108,6 @@ const ToolsCards = ({
                 }}
                 isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
-                invalidatedReducer={invalidatedReducer}
                 glSelected={glSelected || ''}
                 sourceContentUpdateCount={sourceContentUpdateCount}
               />
@@ -127,11 +124,9 @@ ToolsCards.propTypes = {
   onSelectTool: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   actions: PropTypes.object.isRequired,
-  bookName: PropTypes.string.isRequired,
   loggedInUser: PropTypes.bool.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   manifest: PropTypes.object.isRequired,
-  invalidatedReducer: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
   originalLanguageBookManifest: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,

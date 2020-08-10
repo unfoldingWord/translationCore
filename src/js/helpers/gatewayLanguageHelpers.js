@@ -1,10 +1,11 @@
+/* eslint-disable no-template-curly-in-string */
+/* eslint-disable default-case */
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import { getAlignedText } from 'tc-ui-toolkit';
-
-import { getSelectedToolName, getToolGatewayLanguage } from '../selectors';
+import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
   TRANSLATION_ACADEMY,
   TRANSLATION_HELPS,
@@ -20,7 +21,6 @@ import { getLanguageByCodeSelection, sortByNamesCaseInsensitive } from './Langua
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import ResourceAPI from './ResourceAPI';
-// constants
 
 /**
  *
@@ -29,14 +29,14 @@ import ResourceAPI from './ResourceAPI';
  * @return {{gatewayLanguageCode: *, gatewayLanguageQuote: *}}
  */
 export const getGatewayLanguageCodeAndQuote = (state, contextId = null) => {
-  const toolName = getSelectedToolName(state);
+  const toolName = getCurrentToolName(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
   const { toolsSelectedGLs } = state.projectDetailsReducer.manifest;
   const gatewayLanguageQuote = getAlignedGLText(
     toolsSelectedGLs,
     contextId || state.contextIdReducer.contextId,
     state.resourcesReducer.bibles,
-    toolName
+    toolName,
   );
 
   return {
@@ -516,14 +516,14 @@ export function getAlignedTextFromBible(contextId, bible) {
 }
 
 /**
- * Return book code with highest precidence
+ * Return book code with highest precedence
  * @param {*} a - First book code of 2
  * @param {*} b - second book code
  */
 export function bibleIdSort(a, b) {
   const biblePrecedence = ['udb', 'ust', 'ulb', 'ult', 'irv']; // these should come first in this order if more than one aligned Bible, from least to greatest
 
-  if (biblePrecedence.indexOf(a) == biblePrecedence.indexOf(b)) {
+  if (biblePrecedence.indexOf(a) === biblePrecedence.indexOf(b)) {
     return (a < b ? -1 : a > b ? 1 : 0);
   } else {
     return biblePrecedence.indexOf(b) - biblePrecedence.indexOf(a);

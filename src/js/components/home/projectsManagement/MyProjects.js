@@ -11,7 +11,7 @@ const MyProjects = ({
       key={index}
       translate={translate}
       projectDetails={projectDetails}
-      onSelect={onSelect}/>
+      onSelect={onSelect}/>,
   );
 
   if (myProjects.length === 0) {
@@ -20,7 +20,7 @@ const MyProjects = ({
         <b>
           {translate('projects.no_projects_found')}
         </b>
-      </p>
+      </p>,
     );
   }
 

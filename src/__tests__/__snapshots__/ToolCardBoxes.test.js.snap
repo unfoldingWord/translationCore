@@ -1,0 +1,1582 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`translationNotes should have 4 boxes checked 1`] = `
+<div
+  style={
+    Object {
+      "margin": "0 2% 0 6%",
+    }
+  }
+>
+  <div
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      >
+        <WithStyles(CategoryCheckbox)
+          availableSubcategories={
+            Array [
+              "writing-background",
+              "writing-endofstory",
+            ]
+          }
+          onCategoryChecked={[MockFunction]}
+          selectedCategories={
+            Array [
+              "writing-background",
+              "translate-numbers",
+              "translate-fraction",
+              "figs-idiom",
+              "figs-irony",
+              "figs-metaphor",
+              "figs-rquestion",
+              "figs-simile",
+              "figs-apostrophe",
+              "figs-explicit",
+              "figs-hypo",
+              "figs-activepassive",
+              "figs-pronouns",
+              "figs-you",
+              "figs-123person",
+              "figs-abstractnouns",
+            ]
+          }
+          toolName="translationNotes"
+        />
+      </div>
+      <div>
+        translated: tool_card_categories.discourse
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-up"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
+    </div>
+    <div
+      key="0"
+      style={
+        Object {
+          "alignItems": "left",
+          "display": "flex",
+          "flexWrap": "wrap",
+          "marginBottom": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        key="0"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="writing-background"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="1"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="writing-endofstory"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+    </div>
+  </div>
+  <div
+    key="1"
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      >
+        <WithStyles(CategoryCheckbox)
+          availableSubcategories={
+            Array [
+              "translate-numbers",
+              "translate-fraction",
+            ]
+          }
+          onCategoryChecked={[MockFunction]}
+          selectedCategories={
+            Array [
+              "writing-background",
+              "translate-numbers",
+              "translate-fraction",
+              "figs-idiom",
+              "figs-irony",
+              "figs-metaphor",
+              "figs-rquestion",
+              "figs-simile",
+              "figs-apostrophe",
+              "figs-explicit",
+              "figs-hypo",
+              "figs-activepassive",
+              "figs-pronouns",
+              "figs-you",
+              "figs-123person",
+              "figs-abstractnouns",
+            ]
+          }
+          toolName="translationNotes"
+        />
+      </div>
+      <div>
+        translated: tool_card_categories.numbers
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-up"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
+    </div>
+    <div
+      key="1"
+      style={
+        Object {
+          "alignItems": "left",
+          "display": "flex",
+          "flexWrap": "wrap",
+          "marginBottom": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        key="0"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="translate-numbers"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="1"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="translate-fraction"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+    </div>
+  </div>
+  <div
+    key="2"
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      >
+        <WithStyles(CategoryCheckbox)
+          availableSubcategories={
+            Array [
+              "figs-idiom",
+              "figs-irony",
+              "figs-metaphor",
+              "figs-rquestion",
+              "figs-simile",
+              "figs-apostrophe",
+              "figs-euphemism",
+            ]
+          }
+          onCategoryChecked={[MockFunction]}
+          selectedCategories={
+            Array [
+              "writing-background",
+              "translate-numbers",
+              "translate-fraction",
+              "figs-idiom",
+              "figs-irony",
+              "figs-metaphor",
+              "figs-rquestion",
+              "figs-simile",
+              "figs-apostrophe",
+              "figs-explicit",
+              "figs-hypo",
+              "figs-activepassive",
+              "figs-pronouns",
+              "figs-you",
+              "figs-123person",
+              "figs-abstractnouns",
+            ]
+          }
+          toolName="translationNotes"
+        />
+      </div>
+      <div>
+        translated: tool_card_categories.figures
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-up"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
+    </div>
+    <div
+      key="2"
+      style={
+        Object {
+          "alignItems": "left",
+          "display": "flex",
+          "flexWrap": "wrap",
+          "marginBottom": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        key="0"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-idiom"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="1"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-irony"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="2"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-metaphor"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="3"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-rquestion"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="4"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-simile"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="5"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-apostrophe"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="6"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-euphemism"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+    </div>
+  </div>
+  <div
+    key="3"
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      >
+        <WithStyles(CategoryCheckbox)
+          availableSubcategories={
+            Array [
+              "figs-explicit",
+            ]
+          }
+          onCategoryChecked={[MockFunction]}
+          selectedCategories={
+            Array [
+              "writing-background",
+              "translate-numbers",
+              "translate-fraction",
+              "figs-idiom",
+              "figs-irony",
+              "figs-metaphor",
+              "figs-rquestion",
+              "figs-simile",
+              "figs-apostrophe",
+              "figs-explicit",
+              "figs-hypo",
+              "figs-activepassive",
+              "figs-pronouns",
+              "figs-you",
+              "figs-123person",
+              "figs-abstractnouns",
+            ]
+          }
+          toolName="translationNotes"
+        />
+      </div>
+      <div>
+        translated: tool_card_categories.culture
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-down"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    key="4"
+    style={
+      Object {
+        "display": "flex",
+        "flexWrap": "wrap",
+        "margin": "0 0 5 0",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "width": "92%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "width": "38px",
+          }
+        }
+      >
+        <WithStyles(CategoryCheckbox)
+          availableSubcategories={
+            Array [
+              "figs-hypo",
+              "figs-activepassive",
+              "figs-gendernotations",
+              "figs-pronouns",
+              "figs-you",
+              "figs-123person",
+              "figs-abstractnouns",
+              "figs-distinguish",
+            ]
+          }
+          onCategoryChecked={[MockFunction]}
+          selectedCategories={
+            Array [
+              "writing-background",
+              "translate-numbers",
+              "translate-fraction",
+              "figs-idiom",
+              "figs-irony",
+              "figs-metaphor",
+              "figs-rquestion",
+              "figs-simile",
+              "figs-apostrophe",
+              "figs-explicit",
+              "figs-hypo",
+              "figs-activepassive",
+              "figs-pronouns",
+              "figs-you",
+              "figs-123person",
+              "figs-abstractnouns",
+            ]
+          }
+          toolName="translationNotes"
+        />
+      </div>
+      <div>
+        translated: tool_card_categories.grammar
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignSelf": "flex-end",
+        }
+      }
+    >
+      <Glyphicon
+        bsClass="glyphicon"
+        glyph="chevron-up"
+        onClick={[Function]}
+        style={
+          Object {
+            "fontSize": "18px",
+            "margin": "0 12px 0 0",
+            "textAlign": "right",
+            "width": "20px",
+          }
+        }
+      />
+    </div>
+    <div
+      key="4"
+      style={
+        Object {
+          "alignItems": "left",
+          "display": "flex",
+          "flexWrap": "wrap",
+          "marginBottom": 5,
+          "width": "100%",
+        }
+      }
+    >
+      <div
+        key="0"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-hypo"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="1"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-activepassive"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="2"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-gendernotations"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="3"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-pronouns"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="4"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-you"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="5"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-123person"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="6"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-abstractnouns"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-right"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+      <div
+        key="7"
+        style={
+          Object {
+            "display": "flex",
+            "width": "48%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginLeft": "36px",
+              "marginRight": "10px",
+            }
+          }
+        >
+          <WithStyles(SubcategoryCheckbox)
+            onSubcategoryChecked={[MockFunction]}
+            selectedCategories={
+              Array [
+                "writing-background",
+                "translate-numbers",
+                "translate-fraction",
+                "figs-idiom",
+                "figs-irony",
+                "figs-metaphor",
+                "figs-rquestion",
+                "figs-simile",
+                "figs-apostrophe",
+                "figs-explicit",
+                "figs-hypo",
+                "figs-activepassive",
+                "figs-pronouns",
+                "figs-you",
+                "figs-123person",
+                "figs-abstractnouns",
+              ]
+            }
+            subcategory="figs-distinguish"
+            toolName="translationNotes"
+          />
+        </div>
+        <Hint
+          label="Article Not Found: undefined: Could not find article for undefined"
+          position="top-left"
+          size="large"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          />
+        </Hint>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`translationWords should have three boxes unchecked 1`] = `
+<div
+  style={
+    Object {
+      "margin": "0 2% 0 6%",
+    }
+  }
+/>
+`;

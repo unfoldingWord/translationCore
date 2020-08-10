@@ -1,0 +1,330 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "margin": "auto",
+      "width": 250,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": "100%",
+      }
+    }
+  >
+    <img
+      src="D43_LOGO.png"
+      style={
+        Object {
+          "height": 64,
+          "width": 64,
+        }
+      }
+    />
+    <div>
+      <span
+        style={
+          Object {
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        buttons.d43_login_button
+      </span>
+      <span
+        className="glyphicon glyphicon-info-sign"
+        id="info-btn"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+            "fontSize": "16px",
+            "marginLeft": "5px",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div
+    onKeyPress={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "flexDirection": "column",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="Username"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "cursor": "auto",
+          "display": "inline-block",
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": 16,
+          "height": 72,
+          "lineHeight": "24px",
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    >
+      <label
+        htmlFor="username-input"
+        style={
+          Object {
+            "color": "var(--text-color-dark)",
+            "fontWeight": "500",
+            "lineHeight": "22px",
+            "muiPrepared": true,
+            "opacity": "0.3",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 38,
+            "transform": "scale(1) translate(0, 0)",
+            "transformOrigin": "left top",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "userSelect": "none",
+            "zIndex": 1,
+          }
+        }
+      >
+        users.username
+      </label>
+      <input
+        autoFocus={true}
+        disabled={false}
+        id="username-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "WebkitOpacity": 1,
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "appearance": "textfield",
+            "backgroundColor": "rgba(0,0,0,0)",
+            "border": "none",
+            "boxSizing": "border-box",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "cursor": "inherit",
+            "font": "inherit",
+            "height": "100%",
+            "marginTop": 14,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+        type="text"
+      />
+      <div>
+        <hr
+          aria-hidden="true"
+          style={
+            Object {
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": 1,
+              "borderColor": "#e0e0e0",
+              "borderLeft": "none",
+              "borderRight": "none",
+              "borderTop": "none",
+              "bottom": 8,
+              "boxSizing": "content-box",
+              "margin": 0,
+              "muiPrepared": true,
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <hr
+          aria-hidden="true"
+          style={
+            Object {
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": 2,
+              "borderColor": "var(--accent-color-dark)",
+              "borderLeft": "none",
+              "borderRight": "none",
+              "borderTop": "none",
+              "bottom": 8,
+              "boxSizing": "content-box",
+              "margin": 0,
+              "muiPrepared": true,
+              "position": "absolute",
+              "transform": "scaleX(0)",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div
+      className="Passowrd"
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "cursor": "auto",
+          "display": "inline-block",
+          "fontFamily": "Roboto, sans-serif",
+          "fontSize": 16,
+          "height": 72,
+          "lineHeight": "24px",
+          "muiPrepared": true,
+          "position": "relative",
+          "transition": "height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+          "width": "100%",
+        }
+      }
+    >
+      <label
+        htmlFor="password-input"
+        style={
+          Object {
+            "color": "var(--text-color-dark)",
+            "fontWeight": "500",
+            "lineHeight": "22px",
+            "muiPrepared": true,
+            "opacity": "0.3",
+            "pointerEvents": "none",
+            "position": "absolute",
+            "top": 38,
+            "transform": "scale(1) translate(0, 0)",
+            "transformOrigin": "left top",
+            "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+            "userSelect": "none",
+            "zIndex": 1,
+          }
+        }
+      >
+        users.password
+      </label>
+      <input
+        disabled={false}
+        id="password-input"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        style={
+          Object {
+            "WebkitOpacity": 1,
+            "WebkitTapHighlightColor": "rgba(0,0,0,0)",
+            "appearance": "textfield",
+            "backgroundColor": "rgba(0,0,0,0)",
+            "border": "none",
+            "boxSizing": "border-box",
+            "color": "rgba(0, 0, 0, 0.87)",
+            "cursor": "inherit",
+            "font": "inherit",
+            "height": "100%",
+            "marginTop": 14,
+            "muiPrepared": true,
+            "outline": "none",
+            "padding": 0,
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+        type="password"
+      />
+      <div>
+        <hr
+          aria-hidden="true"
+          style={
+            Object {
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": 1,
+              "borderColor": "#e0e0e0",
+              "borderLeft": "none",
+              "borderRight": "none",
+              "borderTop": "none",
+              "bottom": 8,
+              "boxSizing": "content-box",
+              "margin": 0,
+              "muiPrepared": true,
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <hr
+          aria-hidden="true"
+          style={
+            Object {
+              "borderBottomStyle": "solid",
+              "borderBottomWidth": 2,
+              "borderColor": "var(--accent-color-dark)",
+              "borderLeft": "none",
+              "borderRight": "none",
+              "borderTop": "none",
+              "bottom": 8,
+              "boxSizing": "content-box",
+              "margin": 0,
+              "muiPrepared": true,
+              "position": "absolute",
+              "transform": "scaleX(0)",
+              "transition": "all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms",
+              "width": "100%",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className="btn-prime-reverse"
+      disabled={true}
+      id="login-btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "margin": "40px 0px 10px",
+          "width": "100%",
+        }
+      }
+    >
+      buttons.log_in_button
+    </button>
+    <button
+      className="btn-second"
+      id="setview-btn"
+      onClick={[Function]}
+      style={
+        Object {
+          "margin": "10px 0px 20px",
+          "width": "100%",
+        }
+      }
+    >
+      buttons.back_button
+    </button>
+  </div>
+</div>
+`;

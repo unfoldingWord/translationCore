@@ -26,9 +26,10 @@ export function openAlertDialog(alertMessage, loading) {
  * @param {String} button2Text - button text to show left of right button. (optional - if not present button is not added)
  * @param {String} buttonLinkText - button text to show on left link button. (optional - if not present button is not added)
  * @param {function} callback2 - optional callback function that is called user clicks on button2Text.
+ * @param {Boolean} notCloseableAlert - boolean to make the alert not closeable. (optional - if not present alert is closeable by clicking the x otherwise the x doesnt show up)
  * @return {Object} action content.
  */
-export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null) {
+export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null, notCloseableAlert) {
   return {
     type: consts.OPEN_OPTION_DIALOG,
     alertMessage,
@@ -37,6 +38,7 @@ export function openOptionDialog(alertMessage, callback, button1Text, button2Tex
     button1Text,
     button2Text,
     buttonLinkText,
+    notCloseableAlert,
   };
 }
 

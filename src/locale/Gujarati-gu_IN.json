@@ -64,6 +64,7 @@
   "email_address_optional": "ઇમેઇલ એડ્રેસ (વૈકલ્પિક):",
   "invalid_email": "અમાન્ય ઈમેલ એડ્રેસ",
   "include_app_logs": "એપ્લિકેશન લોગનો સમાવેશ કરો",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "શું તમે ગોઠવણીની માહિતીને તમારા લખાણ સાથે નિકાસ કરવા માગો છો?",
   "include_alignment_check": "ગોઠવણી માહિતીનો સમાવેશ કરો",
   "loading_verse_edits": "કલમનો ઉમેરો કરવાનું લોડ કરી રહ્યું છે",
@@ -73,6 +74,7 @@
   "sending_feedback": "પ્રતિસાદ મોકલી રહ્યું છે",
   "sending_feedback_failed": "પ્રતિસાદ મોકલવામાં નિષ્ફળ ગયું",
   "critical_error_warning": "ચેતવણી: એક મહત્વપૂર્ણ ભૂલ આવી છે!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "સોફ્ટવેર અપડેટ માટે ચકાસો",
     "check_for_content_updates": "વિષયાર્થના અપડેટ માટે ચકાસો",
@@ -133,7 +135,13 @@
     "cc_by_sa": "ક્રિએટિવ કોમન્સ એટ્રિબ્યુશન-ShareAlike 4.0 આંતરરાષ્ટ્રીય લાયસન્સ."
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "ઝિપ ફાઇલો",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "અરે! તમારા પ્રોજેક્ટને લોડ કરતી વખતે અમે એક સમસ્યાનો સામનો કર્યો છે. કૃપા કરીને મદદ માટે સહાયતા કેન્દ્ર (${email}) નો સંપર્ક કરો.",
     "error_loading": "અરે! તમારા પ્રોજેક્ટને લોડ કરતી વખતે અમે એક સમસ્યાનો સામનો કર્યો છે. કૃપા કરીને મદદ માટે સહાયતા કેન્દ્ર (${email}) નો સંપર્ક કરો.",
     "no_project": "કોઈપણ પ્રોજેક્ટ પસંદ કરવામાં આવ્યો ન હતો",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "${door43} સંગ્રહને બીજું નામ આપવામાં આવ્યું ન હતું.<br/><br/>શું તમે ${door43} સંગ્રહને બીજું નામ આપવા માગો છો કે બીજા નામ વિના જારી રાખવા માગો છો?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "બીજું નામ નિષ્ફળ નિવડ્યું છે કેમ કે આ નામ સાથેનો સંગ્રહ પહેલેથી જ ઉપલબ્ધ છે.<br/><br/>${door43} પર તમારા પ્રોજેક્ટને અપલોડ કરવા, તમારે તમારા સ્થાનિક પ્રોજેક્ટને બીજું નામ આપવું પડશે અથવા તમારા ${door43} પ્રોજેક્ટને બીજું નામ આપવું પડશે.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "કોડ માટે ભાષાનું નામ માન્ય નથી",
@@ -233,6 +243,7 @@
     "publicly_available": "જે લોકો યોગદાનકર્તાઓ અથવા શોધ કરનારાઓ તરીકે યાદીમાં છે તેઓને જાહેર રીતે ઉપલબ્ધ કરાવવામાં આવશે.",
     "field_required": "આ માહિતી જરૂરી છે",
     "language_direction": "ભાષા નિયંત્રણ",
+    "project_font": "Project Font",
     "ltr": "ડાબેથી જમણે",
     "rtl": "જમણે થી ડાબે",
     "invalid_language_name": "ભાષાનું નામ માન્ય નથી",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "સામગ્રીનિ માહિતી લોડ કરી રહ્યું છે.",
     "resource_missing_for_tool": "આ વર્તમાન સામગ્રીને UGNT ના અલગ સંસ્કરણનિ જરૂર છે. આ સંસાધન પાછા મેળવવા કૃપા કરીને ડાઉનલોડ પર ક્લિક કરો.",
     "no_checks_selected": "આ સાધનને શરૂ કરવા માટે તમારે શ્રેણી પસંદ કરવી પડશે",

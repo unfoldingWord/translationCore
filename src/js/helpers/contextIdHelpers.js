@@ -60,3 +60,14 @@ export const saveContextId = (state, contextId) => {
     console.warn(err);
   }
 };
+
+/**
+ * make sure context IDs are for same verse.  Optimized over isEqual()
+ * @param {Object} contextId1
+ * @param {Object} contextId2
+ * @return {boolean} returns true if context IDs are for same verse
+ */
+export function isSameVerse(contextId1, contextId2) {
+  return (contextId1.reference.chapter === contextId2.reference.chapter) &&
+    (contextId1.reference.verse === contextId2.reference.verse);
+}

@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
-import ospath from 'ospath';
 import { Grid, Row } from 'react-bootstrap';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
+import env, { getBuild } from 'tc-electron-env';
 // container
 import AlertContainer from '../containers/AlertContainer';
 import ScreenDimmerContainer from '../containers/ScreenDimmerContainer';
@@ -27,35 +27,41 @@ import { withLocale } from '../containers/Locale';
 import { injectFileLogging } from '../helpers/logger';
 // helpers
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';
-//consts
-import { APP_VERSION, LOG_FILES_PATH } from '../common/constants';
+// constants
+import {
+  APP_VERSION,
+  LOG_FILES_PATH,
+  LOCALE_DIR,
+  TOOLS_DIR,
+} from '../common/constants';
+import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
-const version = `v${APP_VERSION} (${process.env.BUILD})`;
-injectFileLogging(LOG_FILES_PATH, version);
-console.log('SYSTEM INFO:\n' + getOsInfoStr());
+if (process.env.NODE_ENV === 'production') {
+  const version = `v${APP_VERSION} (${getBuild()})`;
+  injectFileLogging(LOG_FILES_PATH, version);
+  console.log('SYSTEM INFO:\n' + getOsInfoStr());
+}
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    // load app locale
-    const localeDir = path.join(__dirname, '../../locale');
-    this.props.loadLocalization(localeDir, this.props.appLanguage, this.props.initialize, this.props.addTranslationForLanguage, this.props.setActiveLanguage);
-  }
-
-  componentWillMount() {
-    const tCDir = path.join(ospath.home(), 'translationCore', 'projects');
-    fs.ensureDirSync(tCDir);
-  }
-
   componentDidMount() {
     const {
-      migrateResourcesFolder,
-      migrateToolsSettings,
-      getAnchorTags,
       loadTools,
+      initialize,
+      appLanguage,
+      getAnchorTags,
+      loadLocalization,
+      setActiveLanguage,
+      migrateToolsSettings,
+      migrateResourcesFolder,
+      addTranslationForLanguage,
     } = this.props;
 
-    loadTools(path.join(__dirname, '../../../tC_apps'));
+    const tCDir = path.join(env.home(), 'translationCore', 'projects');
+    fs.ensureDirSync(tCDir);
+
+    loadLocalization(LOCALE_DIR, appLanguage, initialize, addTranslationForLanguage, setActiveLanguage);
+
+    loadTools(TOOLS_DIR);
 
     if (localStorage.getItem('version') !== APP_VERSION) {
       localStorage.setItem('version', APP_VERSION);
@@ -82,13 +88,14 @@ class Main extends Component {
             <KonamiContainer />
             <PopoverContainer />
             <Grid fluid style={{
-              padding: 0, display: 'flex', flexDirection: 'column', height: '100%',
+              padding: 0, display: 'flex', flexDirection: 'column', height: '100vh',
             }}>
               <Row style={{ margin: 0 }}>
                 <LocalizedStatusBarContainer/>
               </Row>
               <BodyContainer />
             </Grid>
+            <ConfirmationDialog stateKey="confirm"/>
           </div>
         </MuiThemeProvider>
       );
@@ -110,7 +117,6 @@ Main.propTypes = {
   isLocaleLoaded: PropTypes.bool,
   appLanguage: PropTypes.any,
   loadTools: PropTypes.func.isRequired,
-  reducers: PropTypes.object.isRequired,
   initialize: PropTypes.func.isRequired,
 };
 
@@ -129,5 +135,5 @@ const mapDispatchToProps = {
 
 export default withLocalize(connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Main));

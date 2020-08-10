@@ -1,9 +1,10 @@
 /* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { PROJECT_LICENSES_PATH } from '../common/constants';
 
 /**
- * @description saves the LICENSE.md in project folder and
+ * Saves the LICENSE.md in project folder and
  * adds the license Id to project manifest
  * @param {String} licenseId
  */
@@ -15,16 +16,20 @@ export async function saveProjectLicense(licenseId, projectSaveLocation) {
 }
 
 /**
- * reads in the license markdown file from the filesystem.
+ * Reads in the license markdown file from the filesystem.
  * @param {String} licenseId
  */
 export function loadProjectLicenseMarkdownFile(licenseId) {
   const fileName = licenseId + '.md';
-  const projectLicensesPath = path.join(__dirname, '../../assets/projectLicenses', fileName);
+  const projectLicensePath = path.join(PROJECT_LICENSES_PATH, fileName);
 
-  return fs.readFileSync(projectLicensesPath, 'utf8');
+  return fs.readFileSync(projectLicensePath, 'utf8');
 }
 
+/**
+ * Assigns a License To project Imported from D43
+ * @param {string} projectPath
+ */
 export async function assignLicenseToOnlineImportedProject(projectPath) {
   try {
     const manifestPath = path.join(projectPath, 'manifest.json');

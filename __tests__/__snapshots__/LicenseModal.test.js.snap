@@ -48,7 +48,7 @@ ShallowWrapper {
       >
         <div>
           <span>
-            translationCore 2.1.0 (undefined)
+            translationCore 2.1.2 (undefined)
           </span>
           <Glyphicon
             bsClass="glyphicon"
@@ -110,7 +110,7 @@ ShallowWrapper {
         >
           <div>
             <span>
-              translationCore 2.1.0 (undefined)
+              translationCore 2.1.2 (undefined)
             </span>
             <Glyphicon
               bsClass="glyphicon"
@@ -155,7 +155,7 @@ ShallowWrapper {
           "avatar": null,
           "children": <div>
             <span>
-              translationCore 2.1.0 (undefined)
+              translationCore 2.1.2 (undefined)
             </span>
             <Glyphicon
               bsClass="glyphicon"
@@ -186,7 +186,7 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <span>
-                translationCore 2.1.0 (undefined)
+                translationCore 2.1.2 (undefined)
               </span>,
               <Glyphicon
                 bsClass="glyphicon"
@@ -210,10 +210,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "translationCore 2.1.0 (undefined)",
+                "children": "translationCore 2.1.2 (undefined)",
               },
               "ref": null,
-              "rendered": "translationCore 2.1.0 (undefined)",
+              "rendered": "translationCore 2.1.2 (undefined)",
               "type": "span",
             },
             Object {
@@ -294,7 +294,7 @@ ShallowWrapper {
           >
             <div>
               <span>
-                translationCore 2.1.0 (undefined)
+                translationCore 2.1.2 (undefined)
               </span>
               <Glyphicon
                 bsClass="glyphicon"
@@ -339,7 +339,7 @@ ShallowWrapper {
             "avatar": null,
             "children": <div>
               <span>
-                translationCore 2.1.0 (undefined)
+                translationCore 2.1.2 (undefined)
               </span>
               <Glyphicon
                 bsClass="glyphicon"
@@ -370,7 +370,7 @@ ShallowWrapper {
             "props": Object {
               "children": Array [
                 <span>
-                  translationCore 2.1.0 (undefined)
+                  translationCore 2.1.2 (undefined)
                 </span>,
                 <Glyphicon
                   bsClass="glyphicon"
@@ -394,10 +394,10 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "host",
                 "props": Object {
-                  "children": "translationCore 2.1.0 (undefined)",
+                  "children": "translationCore 2.1.2 (undefined)",
                 },
                 "ref": null,
-                "rendered": "translationCore 2.1.0 (undefined)",
+                "rendered": "translationCore 2.1.2 (undefined)",
                 "type": "span",
               },
               Object {

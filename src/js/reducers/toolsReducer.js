@@ -113,7 +113,7 @@ export const getNames = state => {
  * @param state
  * @return {string | undefined}
  */
-export const getSelectedToolName = (state) => {
+export const getCurrentToolName = (state) => {
   if (state && state.selectedTool) {
     return state.selectedTool;
   } else {
@@ -202,7 +202,7 @@ export const getSelectedToolApi = state => {
  * @return {ApiController[]}
  */
 export const getSupportingToolApis = state => {
-  const name = getSelectedToolName(state);
+  const name = getCurrentToolName(state);
   const apis = {};
 
   for (let i = 0, len = state.tools.byObject.length; i < len; i++) {

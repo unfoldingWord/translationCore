@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -8,7 +9,6 @@ import { getOtherTnsOLVersions } from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
-  getContext,
   getToolGatewayLanguage,
   getBibles,
   getProjectSaveLocation,
@@ -538,7 +538,7 @@ export const areResourcesNewer = () => {
   if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
     console.log(
       `%c areResourcesNewer() - no source content manifest: ${userSourceContentUpdaterManifestPath}`,
-      'color: #00539C'
+      'color: #00539C',
     );
     return true;
   }
@@ -561,7 +561,7 @@ export const areResourcesNewer = () => {
   if (tCoreVersion !== APP_VERSION) { // TRICKY: for safety we refresh on any difference of version dates in case resources not compatible with newer or older version of tCore
     console.log(
       `%c areResourcesNewer() - tCore version changed from ${tCoreVersion} to ${APP_VERSION}, updating all`,
-      'color: #00539C'
+      'color: #00539C',
     );
     return true;
   }
@@ -570,7 +570,7 @@ export const areResourcesNewer = () => {
 
   console.log(
     `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', newer - updating all' : ''),
-    'color: #00539C'
+    'color: #00539C',
   );
   return newer;
 };
@@ -597,7 +597,7 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
         fs.removeSync(contentZipPath);
       }
     } else {
-      console.warn(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
+      console.info(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
   }
 };
@@ -628,8 +628,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} bibleVersion - optional release version, if null then get latest
  */
 export function getBibleIndex(languageId, bibleId, bibleVersion) {
-  const STATIC_RESOURCES_BIBLES_PATH = path.join(__dirname,
-    '../../../tcResources', languageId, 'bibles');
+  const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languageId, 'bibles');
   const fileName = 'index.json';
   let bibleIndexPath;
 
@@ -642,6 +641,8 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
 
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
+    } else {
+      console.error(`versionPath is undefined, versionPath:${versionPath}`);
     }
   }
 
@@ -705,8 +706,7 @@ export function getLanguageIdsFromResourceFolder(bookId) {
       languageIds = languageIds.filter(languageId => languageId !== Bible.OT_ORIG_LANG);
     }
     languageIds = languageIds.filter(languageID => {
-      let valid = (fs.lstatSync(path.join(USER_RESOURCES_PATH, languageID)).
-        isDirectory());
+      let valid = (fs.lstatSync(path.join(USER_RESOURCES_PATH, languageID)).isDirectory());
       return valid;
     });
     return languageIds;
@@ -738,7 +738,7 @@ export function addResource(resources, languageId, bibleId) {
   }
 
   const pos = resources.findIndex(resource =>
-    ((resource.languageId === languageId) && (resource.bibleId === bibleId))
+    ((resource.languageId === languageId) && (resource.bibleId === bibleId)),
   );
 
   if (pos < 0) { // if we don't have resource
@@ -756,9 +756,9 @@ export function getAvailableScripturePaneSelections(resourceList) {
   return ((dispatch, getState) => {
     try {
       resourceList.splice(0, resourceList.length); // remove any pre-existing elements
-      const contextId = getContext(getState());
-      const { resourcesReducer: { bibles } } = getState();
-      const bookId = contextId && contextId.reference.bookId;
+      const state = getState();
+      const { resourcesReducer: { bibles } } = state;
+      const bookId = getProjectBookId(state);
       const languagesIds = getLanguageIdsFromResourceFolder(bookId);
 
       // add target Bible if in resource reducer
@@ -777,8 +777,8 @@ export function getAvailableScripturePaneSelections(resourceList) {
         const biblesPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles');
 
         if (fs.existsSync(biblesPath)) {
-          const biblesFolders = fs.readdirSync(biblesPath).
-            filter(folder => folder !== '.DS_Store');
+          const biblesFolders = fs.readdirSync(biblesPath)
+            .filter(folder => folder !== '.DS_Store');
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
@@ -871,7 +871,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
     toolName,
     gatewayLangId,
     bookId,
-    biblesLoaded
+    biblesLoaded,
   );
 
   if (Array.isArray(validBibles)) {
@@ -981,7 +981,7 @@ function copyMissingSubfolders(source, destination, languageId) {
       fs.copySync(sourcePath, destinationPath);
       console.log(
         `%c Copied ${languageId} lexicon from static lexicons to user resources path.`,
-        'color: #0D355A'
+        'color: #0D355A',
       );
     }
   });
@@ -1014,7 +1014,7 @@ export function removeOldThelps() {
       if (fs.existsSync(helpsFolder)) {
         console.log(
           `%c    removeOldThelps() - removing: ${helpsFolder}`,
-          'color: #00aced'
+          'color: #00aced',
         );
 
         const removedFolders = getFilteredSubFolders(helpsFolder);
@@ -1097,8 +1097,8 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourceId).sort((a, b) =>
-      -ResourceAPI.compareVersions(a, b) // do inverted sort
+    const requiredVersions = getOtherTnsOLVersions(resourcePath, resourceId).sort((a, b) =>
+      -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
@@ -1228,7 +1228,7 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
   fs.copySync(staticResourcePath, userResourcePath);
   console.log(
     `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-    'color: #00aced'
+    'color: #00aced',
   );
   // extract zipped contents
   extractZippedResourceContent(userResourcePath, resourceType === 'bibles');

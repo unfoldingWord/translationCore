@@ -61,13 +61,15 @@ class ToolCardBoxes extends React.Component {
       const category = availableCategories[cat];
 
       for (const group in category) {
-        fullText = loadArticleData(
-          TRANSLATION_ACADEMY,
-          category[group].id,
-          selectedGL
-        );
+        if (group && category[group]) {
+          fullText = loadArticleData(
+            TRANSLATION_ACADEMY,
+            category[group].id,
+            selectedGL,
+          );
 
-        articles[category[group].id] = fullText.substr(0,600) ;
+          articles[category[group].id] = fullText.substr(0, 600);
+        }
       }
     }
 

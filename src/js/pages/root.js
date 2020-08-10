@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { LocalizeProvider } from 'react-localize-redux';
 import setupSubscriptions from 'redux-subscriptions';
 import configureStore from '../redux/configureStore';
 import { loadState, saveState } from '../localStorage';
 import Application from './app';
+
+import './../../fonts/NotoSans-Bold.ttf';
+import './../../fonts/NotoSans-Italic.ttf';
+import './../../fonts/NotoSans-Regular.ttf';
+import './../../fonts/NotoSans-BoldItalic.ttf';
+import './../../fonts/SILEOTSR.ttf';
+import './../../fonts/glyphicons-halflings-regular.ttf';
+import './../../fonts/glyphicons-halflings-regular.woff';
+import './../../fonts/glyphicons-halflings-regular.woff2';
+import './../../fonts/glyphicons-halflings-regular.eot';
+import './../../fonts/glyphicons-halflings-regular.svg';
+import './../../css/styles.css';
 
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();
@@ -23,14 +35,19 @@ const store = configureStore(persistedState);
 store.subscribe(setupSubscriptions(store)(
   ({ prevState, newState }) => {
     saveState(prevState, newState);
-  }
+  },
 ));
 
-module.exports.App = (
-  <Provider store={store}>
-    <LocalizeProvider store={store}>
-      <Application />
-    </LocalizeProvider>
-  </Provider>
-);
-module.exports.dispatch = store.dispatch;
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <LocalizeProvider store={store}>
+          <Application/>
+        </LocalizeProvider>
+      </Provider>
+    );
+  }
+}
+
+export default App;

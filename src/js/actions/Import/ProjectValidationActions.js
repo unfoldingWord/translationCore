@@ -127,7 +127,7 @@ export const updateProjectFolderToNameSpecification = (projectPath) => ((dispatc
             <div>
               {translate('projects.project_exists', { project_path: newProjectNamePath })} <br/>
               {translate('projects.reimporting_not_supported')}
-            </div>
+            </div>,
           );
         }
       } else {

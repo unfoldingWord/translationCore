@@ -25,5 +25,5 @@ ScreenDimmerConatainer.propTypes = { homeScreenReducer: PropTypes.object.isRequi
 const mapStateToProps = (state) => ({ homeScreenReducer: state.homeScreenReducer });
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
 )(ScreenDimmerConatainer);

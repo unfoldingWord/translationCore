@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+  <title>translationCore</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+<div style="height: 100%; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center">
+  <img class="App-logo" height="300px" style="height: 300px" src="./TC_Icon.png" />
+  <h3 style="font-weight: bold; margin-top: 40px">Welcome to translationCore!</h3>
+  <div id="version" style="margin: 10px 0 30px; font-size: 18px"></div>
+  <h4>Loading...</h4>
+</div>
+<script>
+  (function () {
+    console.log('showing splash screen...');
+    var versiondiv = document.getElementById('version');
+    var version = process.env.tcVersion;
+    versiondiv.innerHTML = "Version " + version + ' (' + process.env.BUILD + ')';
+  })();
+</script>
+</body>
+</html>

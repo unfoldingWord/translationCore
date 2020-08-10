@@ -14,7 +14,7 @@ export const getAttributions = (attributionMap) => {
           {attributionMap[name].license}
         </p>
         <hr style={{ width: '50%' }}/>
-      </div>
+      </div>,
     );
   });
   return attributions;

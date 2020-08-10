@@ -1,8 +1,3 @@
-/**
- * @module Actions/CopyrightCheck
- */
-
-// modules
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { getTranslate } from '../selectors';
@@ -54,8 +49,8 @@ export function finalize() {
             dispatch(BodyUIActions.goToStep(2));
             dispatch({ type: consts.RESET_PROJECT_DETAIL });
           },
-          translate('buttons.cancel_button')
-        )
+          translate('buttons.cancel_button'),
+        ),
       );
     }
   });

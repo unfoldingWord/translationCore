@@ -2,17 +2,21 @@
 /* eslint-disable no-nested-ternary */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 import _ from 'lodash';
+import env from 'tc-electron-env';
 import SimpleCache from '../helpers/SimpleCache';
 import {
-  getBibles, getContext, getProjectBookId, getSelectedToolName,
+  getBibles,
+  getCurrentToolName,
+  getProjectBookId,
+  getTranslate,
 } from '../selectors';
 // actions
 // helpers
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as SettingsHelpers from '../helpers/SettingsHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
+import ResourceAPI from '../helpers/ResourceAPI';
 import * as Bible from '../common/BooksOfTheBible';
 import {
   ORIGINAL_LANGUAGE,
@@ -23,7 +27,7 @@ import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
 
 // constants
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore/resources');
+const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
 
 /**
@@ -61,7 +65,7 @@ export const loadChapterResource = function (bibleID, bookId, languageId, chapte
 
     if (fs.existsSync(bibleFolderPath)) {
       let versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => // filter out .DS_Store
-        folder !== '.DS_Store'
+        folder !== '.DS_Store',
       ); // ex. v9
       const versionNumber = versionNumbers[versionNumbers.length - 1];
       let bibleVersionPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleID, versionNumber);
@@ -145,7 +149,24 @@ const migrateChapterToVerseObjects = chapterData => {
 };
 
 /**
- * Loads an entire bible resource.
+ * Returns the versioned folder within the directory with the highest value.
+ * e.g. `v10` is greater than `v9`
+ * @param {Array} versions - list of versions found
+ * @returns {string|null} the latest version found
+ */
+export const getLatestVersion = (versions) => {
+  if (versions && (versions.length > 0)) {
+    const sortedVersions = versions.sort((a, b) =>
+      -ResourceAPI.compareVersions(a, b), // do inverted sort
+    );
+    return sortedVersions[0]; // most recent version will be first
+  } else {
+    return null;
+  }
+};
+
+/**
+ * Loads a bible book resource.
  * @param bibleId
  * @param bookId
  * @param languageId
@@ -158,7 +179,7 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
 
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-      const versionNumber = version || versionNumbers[versionNumbers.length - 1];
+      const versionNumber = version || getLatestVersion(versionNumbers);
       const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
       const cacheKey = 'book:' + bookPath;
@@ -187,17 +208,18 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
           bookCache.set(cacheKey, bibleData);
         }
 
+        console.log(`loadBookResource() - Loaded ${bibleId}, ${bookId}, ${languageId}, ${versionNumber}`);
         return bibleData;
       } else {
-        console.warn(`Bible path not found: ${bookPath}`);
+        console.warn(`loadBookResource() - Bible path not found: ${bookPath}`);
       }
     } else {
-      console.log('Directory not found, ' + bibleFolderPath);
+      console.log('loadBookResource() - Directory not found, ' + bibleFolderPath);
     }
-    return null;
   } catch (error) {
-    console.error(`Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
+    console.error(`loadBookResource() - Failed to load book. Bible: ${bibleId} Book: ${bookId} Language: ${languageId}`, error);
   }
+  return null;
 };
 
 /**
@@ -290,14 +312,16 @@ export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
 };
 
 /**
- * make sure required bible books for current tool are loaded into resources
+ * Make sure required bible books for current tool are loaded into resources.
+ * @param {object} contextId - context id.
  */
-export const makeSureBiblesLoadedForTool = () => (dispatch, getState) => {
-  const toolName = getSelectedToolName(getState());
+export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) => {
+  console.log('makeSureBiblesLoadedForTool(): contextId', contextId);
   const state = getState();
+  const toolName = getCurrentToolName(state);
   const { bibles } = state.resourcesReducer;
-  const contextId = getContext(state);
-  const bookId = contextId && contextId.reference.bookId;
+  const bookId = contextId && contextId.reference.bookId || getProjectBookId(state);
+
   dispatch(updateOrigLangPaneSettings(bookId));
   const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName);
 
@@ -344,10 +368,6 @@ export function loadTargetLanguageBook() {
           // load chapter
           bookData[chapterNumber] = fs.readJsonSync(
             path.join(bookPath, file));
-        } else if (file === 'manifest.json') {
-          // load manifest
-          bookData['manifest'] = fs.readJsonSync(
-            path.join(bookPath, file));
         }
       }
 
@@ -356,12 +376,19 @@ export function loadTargetLanguageBook() {
       if (fs.existsSync(projectManifestPath)) { // read user selections from manifest if present
         const manifest = fs.readJsonSync(projectManifestPath);
 
-        if (manifest.target_language && manifest.target_language.id) {
-          if (!bookData.manifest) {
-            bookData.manifest = {};
-          }
-          bookData.manifest.language_id = manifest.target_language.id;
-          bookData.manifest.language_name = manifest.target_language.name || manifest.target_language.id;
+        if (manifest) {
+          const translate = getTranslate(getState());
+
+          // copy data for tools
+          bookData.manifest = {
+            language_id: manifest.target_language.id,
+            language_name: manifest.target_language.name || manifest.target_language.id,
+            direction: manifest.target_language.direction,
+            resource_id: TARGET_LANGUAGE,
+            description: translate('tools.target_language'),
+          };
+        } else {
+          bookData.manifest = {};
         }
       }
 
@@ -380,7 +407,7 @@ export function loadTargetLanguageBook() {
  */
 export const loadBookTranslations = (bookId, toolName = null) => (dispatch, getState) => {
   if (toolName === null) {
-    toolName = getSelectedToolName(getState());
+    toolName = getCurrentToolName(getState());
   }
 
   // translations of the source book
@@ -423,7 +450,7 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
  * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
  * @param {Boolean} async - if true then do an async file read which does not block UI updates
  */
-export const loadResourceArticle = (resourceType, articleId, languageId, category='', async = false) => ((dispatch) => {
+export const loadResourceArticle = (resourceType, articleId, languageId, category = '', async = false) => ((dispatch) => {
   if (async) {
     ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category).then((articleData) => {
       // populate reducer with markdown data
@@ -450,9 +477,9 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
 });
 
 /**
- * @description - Get the lexicon entry and add it to the reducer
- * @param {String} lexiconId - the id of the lexicon to populate
- * @param {Number} entryId - the number of the entry
+ * Get the lexicon entry and add it to the reducer
+ * @param {string} lexiconId - the id of the lexicon to populate
+ * @param {number} entryId - the number of the entry
  */
 export const loadLexiconEntry = (lexiconId, entryId) => ((dispatch) => {
   try {
@@ -476,4 +503,18 @@ export const loadLexiconEntry = (lexiconId, entryId) => ((dispatch) => {
   } catch (error) {
     console.error(error);
   }
+});
+
+/**
+ * Updates the verse text in the target language bible resource.
+ * This will not write any changes to the disk.
+ * @param {number} chapter
+ * @param {number} verse
+ * @param {string} text
+ */
+export const updateTargetVerse = (chapter, verse, editedText) => ({
+  type: consts.UPDATE_TARGET_VERSE,
+  editedText,
+  chapter,
+  verse,
 });

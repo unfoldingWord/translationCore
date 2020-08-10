@@ -16,7 +16,7 @@ import {
 describe('migrate tCore resources', () => {
   beforeEach(() => {
     fs.__resetMockFS();
-    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(USER_RESOURCES_PATH, '..'));
+    fs.__loadFilesIntoMockFs(['resources'], path.join('src', '__tests__', 'fixtures'), path.join(USER_RESOURCES_PATH, '..'));
   });
 
   it('remove old helps with default resources', () => {
@@ -32,7 +32,7 @@ describe('migrate tCore resources', () => {
 });
 
 describe('migrate project resources', () => {
-  const projectSourcePath = path.join('__tests__', 'fixtures', 'project', 'checkingResources');
+  const projectSourcePath = path.join('src', '__tests__', 'fixtures', 'project', 'checkingResources');
   const expectedFileCount = 246;
 
   beforeEach(() => {

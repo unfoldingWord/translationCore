@@ -3,9 +3,10 @@ import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import { recoverFailedOnlineImport } from '../OnlineImportWorkflowActions';
+import { getLocalizedErrorPrompt, recoverFailedOnlineImport } from '../OnlineImportWorkflowActions';
 // helpers
 import { IMPORTS_PATH, DCS_BASE_URL } from '../../../common/constants';
+import * as REPO from '../../../helpers/Repo';
 jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -16,9 +17,9 @@ const projectSaveLocation = IMPORTS_PATH;
 // let mock_cloneManifest = null;
 
 //mocking functions that are relevant to OnlineImportWorkflowActions but not required
-// jest.mock('../src/js/helpers/Import/OnlineImportWorkflowHelpers', () => (
+// jest.mock('../js/helpers/Import/OnlineImportWorkflowHelpers', () => (
 //   {
-//     ...require.requireActual('../src/js/helpers/Import/OnlineImportWorkflowHelpers'),
+//     ...require.requireActual('../js/helpers/Import/OnlineImportWorkflowHelpers'),
 //     clone: async () => {
 //       return mock_saveJson(mock_cloneManifest);
 //     }
@@ -47,6 +48,14 @@ jest.mock('../../../helpers/TargetLanguageHelpers', ()=> ({
   targetBibleExists:() => false,
 }));
 jest.mock('../../../helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({ ensureSupportedVersion: () => {} }));
+
+const mock_translate = (t, opts) => {
+  if (opts) {
+    return t + ': ' + JSON.stringify(opts);
+  } else {
+    return t;
+  }
+};
 
 describe('OnlineImportWorkflowActions.onlineImport', () => {
   let initialState = {};
@@ -97,5 +106,100 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
     const store = mockStore(initialState);
     store.dispatch(recoverFailedOnlineImport('import failed'));
     expect(store.getActions()).toMatchSnapshot();
+  });
+});
+
+describe('OnlineImportWorkflowActions.getLocalizedErrorPrompt', () => {
+  test('Invalid users session', () => {
+    // given
+    const error = new Error('error');
+    error.status = 401;
+    const expectedError = 'users.session_invalid';
+    const expectedMessage = `projects.known_download_networking_error: {"error_message":"${expectedError}","project_url":"projectUrl"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
+  });
+
+  test('IP address not found', () => {
+    // given
+    const error = new Error('error');
+    error.code = REPO.NETWORK_ERROR_IP_ADDR_NOT_FOUND;
+    const expectedError = 'no_internet';
+    const expectedMessage = `projects.known_download_networking_error: {"error_message":"${expectedError}","project_url":"projectUrl"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
+  });
+
+  test('unable to connect', () => {
+    // given
+    const details = 'details';
+    const error = new Error('error: ' + REPO.GIT_ERROR_UNABLE_TO_CONNECT + ': ' + details);
+    const expectedError = 'no_internet';
+    const expectedMessage = `projects.known_download_networking_error: {"error_message":"${expectedError}","project_url":"projectUrl"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
+  });
+
+  test('unknown git problem', () => {
+    // given
+    const details = 'details';
+    const error = new Error('error: ' + REPO.GIT_ERROR_UNKNOWN_PROBLEM + ': ' + details);
+    const expectedMessage = `projects.unknown_download_networking_error: {"actions":"actions","user_feedback":"user_feedback","project_url":"projectUrl","app_name":"_.app_name"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
+  });
+
+  test('unknown problem', () => {
+    // given
+    const errStr = 'Error';
+    const error = new Error(errStr);
+    const expectedMessage = `projects.unknown_download_networking_error: {"actions":"actions","user_feedback":"user_feedback","project_url":"projectUrl","app_name":"_.app_name"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
+  });
+
+  test('has message', () => {
+    // given
+    const error = new Error('error');
+    error.message = 'message';
+    const expectedMessage = `projects.unknown_download_networking_error: {"actions":"actions","user_feedback":"user_feedback","project_url":"projectUrl","app_name":"_.app_name"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
+  });
+
+  test('unknown string', () => {
+    // given
+    const error = 'data';
+    const expectedMessage = `projects.unknown_download_networking_error: {"actions":"actions","user_feedback":"user_feedback","project_url":"projectUrl","app_name":"_.app_name"}`;
+
+    // when
+    const results = getLocalizedErrorPrompt(error, `projectUrl`, mock_translate);
+
+    // then
+    expect(results).toEqual(expectedMessage);
   });
 });

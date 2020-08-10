@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() does not rename project if new project name is different than spec and we have duplicate 1`] = `Array []`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() does nothing if project name is valid 1`] = `Array []`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() does nothing if projectSaveLocation is not set 1`] = `Array []`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if lang_id changed 1`] = `
+Array [
+  Object {
+    "pathLocation": "am_ult_eph_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+]
+`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if new project name is different than spec 1`] = `
+Array [
+  Object {
+    "pathLocation": "fr_ult_eph_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+]
+`;
+
+exports[`ProjectDetailsActions.updateProjectNameIfNecessaryAndDoPrompting() renames project if resource.id (resourceId) changed 1`] = `
+Array [
+  Object {
+    "pathLocation": "fr_lib_eph_book",
+    "type": "SET_SAVE_PATH_LOCATION",
+  },
+]
+`;
+
+exports[`doDcsRenamePrompting on click create, should call create new 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_project",
+    "button1": "buttons.rename_repo",
+    "button2": "buttons.create_new_repo",
+    "buttonLink": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`doDcsRenamePrompting on click rename, should call rename 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_project",
+    "button1": "buttons.rename_repo",
+    "button2": "buttons.create_new_repo",
+    "buttonLink": null,
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+]
+`;
+
+exports[`doLocalProjectRenamePrompting on click rename, should render and open project details 1`] = `
+Array [
+  Object {
+    "type": "ProjectInformationCheckActions.openOnlyProjectDetailsScreen",
+  },
+  Object {
+    "alertMessage": "projects.renaming_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsOperation on repo does not exist, should call create new 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+  Object {
+    "alertMessage": "projects.uploading_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsOperation on repo does not exist, should call rename 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+  Object {
+    "alertMessage": "projects.renaming_alert",
+    "loading": true,
+    "type": "OPEN_ALERT_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsOperation should handle repo exists 1`] = `
+Array [
+  Object {
+    "type": "CONFIRM_ONLINE_MODE",
+  },
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.do_not_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsRenameCollision on click continue, should do nothing 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.do_not_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`handleDcsRenameCollision on click rename, should render and open project details 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_conflict",
+    "button1": "buttons.rename_local",
+    "button2": "buttons.do_not_rename",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`showDcsRenameFailure on click help desk, should call contactHelpDesk and then show prompt again 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`showDcsRenameFailure on click retry, should call continue 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;
+
+exports[`showDcsRenameFailure on click retry, should call retry 1`] = `
+Array [
+  Object {
+    "alertText": "projects.dcs_rename_failed",
+    "button1": "buttons.retry",
+    "button2": "buttons.continue_button",
+    "buttonLink": "buttons.contact_helpdesk",
+    "callback": [Function],
+    "type": "OPEN_OPTION_DIALOG",
+  },
+  Object {
+    "type": "CLOSE_ALERT_DIALOG",
+  },
+]
+`;

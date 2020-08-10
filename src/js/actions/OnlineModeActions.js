@@ -1,4 +1,4 @@
-import { remote } from 'electron';
+import { remote } from 'electronite';
 
 // actions
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
@@ -13,19 +13,20 @@ const { BrowserWindow } = remote;
 export function getAnchorTags() {
   return ((dispatch) => {
     document.body.onclick = (e) => {
-      e = e || event;
-      var isLink = findParent('a', e.target || e.srcElement) && e.target.href && e.target.href.includes('http');
+      if (e) {
+        const isLink = findParent('a', e.target || e.srcElement) && e.target.href && e.target.href.includes('http');
 
-      if (isLink) {
-        e.preventDefault();
-        dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
-          let win = new BrowserWindow({ width: 800, height: 600 });
+        if (isLink) {
+          e.preventDefault();
+          dispatch(OnlineModeConfirmActions.confirmOnlineAction(() => {
+            let win = new BrowserWindow({ width: 800, height: 600 });
 
-          win.on('closed', () => {
-            win = null;
-          });
-          win.loadURL(e.target.href);
-        }));
+            win.on('closed', () => {
+              win = null;
+            });
+            win.loadURL(e.target.href);
+          }));
+        }
       }
     };
 

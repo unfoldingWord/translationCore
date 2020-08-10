@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
 import path from 'path-extra';
-import ospath from 'ospath';
 import fs from 'fs-extra';
+import env from 'tc-electron-env';
 // constants
-const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
+const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
 
 /**
  * Loads a json file.

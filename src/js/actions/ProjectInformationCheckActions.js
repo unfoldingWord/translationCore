@@ -9,7 +9,7 @@ import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
 import * as ProjectSettingsHelpers from '../helpers/ProjectSettingsHelpers';
 import { delay } from '../common/utils';
 import { getTranslate } from '../selectors';
-import BooksOfBible from '../../../tcResources/books';
+import { ALL_BIBLE_BOOKS } from '../common/BooksOfTheBible';
 // actions
 import consts from './ActionTypes';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
@@ -19,6 +19,7 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as ProjectValidationActions from './Import/ProjectValidationActions';
 import * as AlertModalActions from './AlertModalActions';
 import { closeProject, loadProjectDetails } from './MyProjects/ProjectLoadingActions';
+import * as BodyUIActions from './BodyUIActions';
 // constants
 const PROJECT_INFORMATION_CHECK_NAMESPACE = 'projectInformationCheck';
 
@@ -109,7 +110,6 @@ export function validate(results = {}) {
  */
 export function finalize() {
   return (async (dispatch, getState) => {
-    console.log('ProjectInformationCheckActions.finalize()');
     const translate = getTranslate(getState());
     dispatch(AlertModalActions.openAlertDialog(translate('projects.preparing_project_alert'), true));
     await delay(100);
@@ -146,6 +146,7 @@ function saveCheckingDetailsToProjectInformationReducer() {
       languageName,
       contributors,
       checkers,
+      projectFont,
     } = getState().projectInformationCheckReducer;
 
     const actions = [
@@ -171,6 +172,11 @@ function saveCheckingDetailsToProjectInformationReducer() {
         type: consts.SAVE_CHECKERS_LIST_IN_MANIFEST,
         checkers,
       },
+      {
+        type: consts.ADD_MANIFEST_PROPERTY,
+        propertyName: 'projectFont',
+        value: projectFont,
+      },
     ];
     dispatch(batchActions(actions));
     dispatch(clearProjectInformationReducer());
@@ -187,6 +193,7 @@ function setProjectDetailsInProjectInformationReducer(manifest) {
     dispatch(setLanguageNameInProjectInformationReducer(targetLanguage.name || ''));
     dispatch(setLanguageIdInProjectInformationReducer(targetLanguage.id || ''));
     dispatch(setLanguageDirectionInProjectInformationReducer(targetLanguage.direction || ''));
+    dispatch(setProjectFontInProjectInformationReducer(manifest.projectFont || 'default'));
     const project = manifest.project || {};
     const resource = manifest.resource || {};
     dispatch(setBookIDInProjectInformationReducer(project.id || ''));
@@ -208,7 +215,7 @@ export function setBookIDInProjectInformationReducer(bookId, inStepper) {
       const translate = getTranslate(getState());
 
       if (bookId !== originalBook) {
-        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', { originalBook: BooksOfBible[originalBook], suggestedBook: BooksOfBible[bookId] }), (res) => {
+        dispatch(AlertModalActions.openOptionDialog(translate('projects.project_already_identified', { originalBook: ALL_BIBLE_BOOKS[originalBook], suggestedBook: ALL_BIBLE_BOOKS[bookId] }), (res) => {
           if (res === translate('buttons.ok_button')) {
             dispatch({
               type: consts.SET_BOOK_ID_IN_PROJECT_INFORMATION_REDUCER,
@@ -546,6 +553,7 @@ export function saveAndCloseProjectInformationCheckIfValid() {
         // TRICKY: close the project so that changes can be re-loaded by the tools.
         dispatch(closeProject());
         dispatch(MyProjectsActions.getMyProjects());
+        dispatch(BodyUIActions.goToStep(2)); // go to projects page now that project is closed
       }
     }
     dispatch(AlertModalActions.closeAlertDialog());
@@ -560,5 +568,19 @@ export function cancelAndCloseProjectInformationCheck() {
     dispatch(ProjectImportStepperActions.removeProjectValidationStep(PROJECT_INFORMATION_CHECK_NAMESPACE));
     dispatch(ProjectImportStepperActions.toggleProjectValidationStepper(false));
     dispatch({ type: consts.CLEAR_PROJECT_INFORMATION_REDUCER });
+  });
+}
+
+/**
+ * Temporary stores projectFont selection in ProjectInformationReducer to later be saved in manifest if users saves changes.
+ * @param {string} projectFont - language font name.
+ */
+export function setProjectFontInProjectInformationReducer(projectFont) {
+  return ((dispatch) => {
+    dispatch({
+      type: consts.SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER,
+      projectFont,
+    });
+    dispatch(toggleProjectInformationCheckSaveButton());
   });
 }

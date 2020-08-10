@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import path from 'path-extra';
 import { getTranslate, getProjectSaveLocation } from '../selectors';
 import { deleteProjectFromImportsFolder } from '../helpers/Import/ProjectImportFilesystemHelpers';
@@ -216,8 +217,8 @@ export const confirmContinueOrCancelImportValidation = () => ((dispatch, getStat
           }
         },
         continueText,
-        cancelText
-      )
+        cancelText,
+      ),
     );
   }
 });

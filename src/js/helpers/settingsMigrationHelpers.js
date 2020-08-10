@@ -1,3 +1,4 @@
+/* eslint-disable no-new-object */
 import * as Bible from '../common/BooksOfTheBible';
 import {
   ORIGINAL_LANGUAGE, TARGET_LANGUAGE, TARGET_BIBLE,

@@ -11,9 +11,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -42,22 +39,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -141,6 +126,14 @@ Array [
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -241,13 +234,11 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
         "resource_id": "targetLanguage",
-        "resource_title": "",
-        "subject": "Bible",
       },
     },
     "bibleId": "targetBible",
@@ -290,9 +281,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -321,22 +309,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -420,6 +396,14 @@ Array [
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -560,6 +544,14 @@ Array [
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -678,13 +670,11 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
         "resource_id": "targetLanguage",
-        "resource_title": "",
-        "subject": "Bible",
       },
     },
     "bibleId": "targetBible",
@@ -727,9 +717,6 @@ Array [
     "type": "CLEAR_RESOURCES_REDUCER",
   },
   Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
-  },
-  Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
   },
   Object {
@@ -758,22 +745,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -857,6 +832,14 @@ Array [
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -997,6 +980,14 @@ Array [
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -1115,13 +1106,11 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
         "resource_id": "targetLanguage",
-        "resource_title": "",
-        "subject": "Bible",
       },
     },
     "bibleId": "targetBible",
@@ -1144,22 +1133,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1189,22 +1166,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1229,7 +1194,7 @@ Array [
         "isSelected": true,
         "lastOpened": null,
         "projectName": "en_tit",
-        "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_tit",
+        "projectSaveLocation": "/Users/jest/mock/path/translationCore/projects/en_tit",
         "target_language": Object {
           "book": Object {
             "name": "Titus",
@@ -1257,9 +1222,6 @@ Array [
   },
   Object {
     "type": "CLEAR_RESOURCES_REDUCER",
-  },
-  Object {
-    "type": "CLEAR_PREVIOUS_FILTERS",
   },
   Object {
     "type": "RESET_PROJECT_VALIDATION_REDUCER",
@@ -1290,22 +1252,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1389,6 +1339,14 @@ Array [
   Object {
     "languageDirection": "ltr",
     "type": "SET_LANGUAGE_DIRECTION_IN_PROJECT_INFORMATION_REDUCER",
+  },
+  Object {
+    "nextDisabled": true,
+    "type": "UPDATE_PROJECT_VALIDATION_NEXT_BUTTON_STATUS",
+  },
+  Object {
+    "projectFont": "default",
+    "type": "SET_PROJECT_FONT_IN_PROJECT_INFORMATION_REDUCER",
   },
   Object {
     "nextDisabled": true,
@@ -1489,13 +1447,11 @@ Array [
         "9": "But avoid foolish debates and genealogies and strife and conflict about the law. Those things are unprofitable and worthless.",
       },
       "manifest": Object {
-        "description": "Target Language",
+        "description": "tools.target_language",
         "direction": "ltr",
         "language_id": "en",
         "language_name": "English",
         "resource_id": "targetLanguage",
-        "resource_title": "",
-        "subject": "Bible",
       },
     },
     "bibleId": "targetBible",
@@ -1518,22 +1474,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1563,22 +1507,10 @@ Array [
         "type": "RESET_PROJECT_DETAIL",
       },
       Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_DATA",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_GROUPS_INDEX",
-      },
-      Object {
-        "type": "CLEAR_CONTEXT_ID",
-      },
-      Object {
         "type": "CLOSE_TOOL",
       },
       Object {
         "type": "CLEAR_RESOURCES_REDUCER",
-      },
-      Object {
-        "type": "CLEAR_PREVIOUS_FILTERS",
       },
     ],
     "type": "BATCHING_REDUCER.BATCH",
@@ -1603,7 +1535,7 @@ Array [
         "isSelected": true,
         "lastOpened": null,
         "projectName": "en_ult_tit_book",
-        "projectSaveLocation": "<HOME_DIR>/translationCore/projects/en_ult_tit_book",
+        "projectSaveLocation": "/Users/jest/mock/path/translationCore/projects/en_ult_tit_book",
         "target_language": Object {
           "book": Object {
             "name": "Titus",

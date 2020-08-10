@@ -17,6 +17,7 @@ class Alert extends Component {
       button1,
       button2,
       buttonLink,
+      notCloseableAlert,
     } = this.props.alertModalReducer;
     let { closeAlertDialog } = this.props.actions;
     const { translate } = this.props;
@@ -49,7 +50,7 @@ class Alert extends Component {
             callback_(button2);
           } : closeAlertDialog}
         > {this.props.alertModalReducer.button2}
-        </button>
+        </button>,
       );
     }
 
@@ -63,24 +64,32 @@ class Alert extends Component {
             callback(buttonLink);
           } : closeAlertDialog}
         > {this.props.alertModalReducer.buttonLink}
-        </button>
+        </button>,
       );
+    }
+
+    let xComponent = (
+      <Glyphicon
+        onClick={callback2 || closeAlertDialog}
+        glyph={'remove'}
+        style={{
+          color: 'var(--reverse-color)',
+          cursor: 'pointer',
+          fontSize: '18px',
+          float: 'right',
+        }}
+      />
+    );
+
+    if (notCloseableAlert) {
+      xComponent = null;
     }
 
     const headerContent = (
       <div>
         <span>{translate('alert')}</span>
         {
-          alertDialogLoading || !button2 ? null : <Glyphicon
-            onClick={callback2 || closeAlertDialog}
-            glyph={'remove'}
-            style={{
-              color: 'var(--reverse-color)',
-              cursor: 'pointer',
-              fontSize: '18px',
-              float: 'right',
-            }}
-          />
+          alertDialogLoading || !button2 ? null : xComponent
         }
       </div>
     );

@@ -1,15 +1,8 @@
 import isEqual from 'deep-equal';
-import { getSelectedToolName } from '../selectors';
 import { loadSettings, loadUserdata } from './loadMethods';
 import {
   saveSettings,
   saveTargetLanguage,
-  saveComments,
-  saveVerseEdit,
-  saveSelections,
-  saveReminders,
-  saveInvalidated,
-  saveGroupsData,
   saveLocalUserdata,
   saveProjectManifest,
   saveProjectSettings,
@@ -61,46 +54,12 @@ export const saveState = (prevState, newState) => {
       saveProjectSettings(newState);
     }
 
-    // only save checkData and targetLanguage reducers if contextId hasn't changed
-    if (isEqual(prevState.contextIdReducer.contextId, newState.contextIdReducer.contextId)) {
-      if (!isEqual(prevState.commentsReducer, newState.commentsReducer)) {
-        saveComments(newState);
-      }
+    // only save targetLanguage when data has changed and not empty
+    const { targetLanguage } = newState.resourcesReducer.bibles;
+    const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);
 
-      if (!isEqual(prevState.selectionsReducer, newState.selectionsReducer)) {
-        saveSelections(newState);
-      }
-
-      if (!isEqual(prevState.verseEditReducer, newState.verseEditReducer)) {
-        saveVerseEdit(newState);
-      }
-
-      if (!isEqual(prevState.remindersReducer, newState.remindersReducer)) {
-        saveReminders(newState);
-      }
-
-      if (!isEqual(prevState.invalidatedReducer, newState.invalidatedReducer)) {
-        saveInvalidated(newState);
-      }
-
-      // only save targetLanguage when data has changed and not empty
-      const { targetLanguage } = newState.resourcesReducer.bibles;
-      const targetLanguageHasData = (targetLanguage && Object.keys(targetLanguage).length > 0);
-
-      if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
-        saveTargetLanguage(newState);
-      }
-    }
-
-    if (
-      // make sure that groupsData has changed
-      !isEqual(prevState.groupsDataReducer.groupsData, newState.groupsDataReducer.groupsData) &&
-      // make sure project has not changed
-      isEqual(prevState.projectDetailsReducer.manifest, newState.projectDetailsReducer.manifest) &&
-      // make sure tool has not changed
-      isEqual(getSelectedToolName(prevState), getSelectedToolName(newState))
-    ) {
-      saveGroupsData(newState, prevState);
+    if (targetLanguageHasData && !isEqual(prevState.resourcesReducer.bibles.targetLanguage, targetLanguage)) {
+      saveTargetLanguage(newState);
     }
   } catch (err) {
     console.warn(err);

@@ -144,7 +144,7 @@ class ContentUpdateDialog extends React.Component {
                   <ResourceListItem key={resource.languageId}
                     resource={resource}
                     checked={selectedItems.includes(resource.languageId)}
-                    handleItemOnCheck={handleListItemSelection}/>
+                    handleItemOnCheck={handleListItemSelection}/>,
                 )}
               </tbody>
             </table>

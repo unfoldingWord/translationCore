@@ -1,3 +1,4 @@
+/* eslint-disable no-throw-literal */
 /* eslint-disable no-console */
 import fs from 'fs-extra';
 import path from 'path-extra';
@@ -295,7 +296,7 @@ export const getProjectId = (projectPath) => {
     projectId = (manifest && manifest.project) ? manifest.project.id : undefined;
     return projectId;
   }
-  throw 'Cannot read project manifest: ', manifestPath;
+  throw `Cannot read project manifest: ${manifestPath}`;
 };
 
 /**

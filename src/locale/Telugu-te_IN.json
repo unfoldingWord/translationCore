@@ -64,6 +64,7 @@
   "email_address_optional": "ఈ మెయిల్ చిరునామా (ఐచ్చికం)",
   "invalid_email": "సరికాని ఈ మెయిల్ చిరునామా",
   "include_app_logs": "దరఖాస్తు పదాలు జతచెయ్యండి",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "అమరిక సమాచారాన్ని మీ భాగంతో వెలుపలికి పంపాలని కోరుతున్నారా?",
   "include_alignment_check": "అమరిక సమాచారాన్ని జతచెయ్యండి",
   "loading_verse_edits": "వచన సవరణలు నమోదుఅవుతున్నాయి",
@@ -73,6 +74,7 @@
   "sending_feedback": "సమాచారాన్ని తిరిగి పంపించండి",
   "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
   "critical_error_warning": "Warning: A critical error has occurred!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "మీ సాఫ్ట్ వేర్ నవీకరణలు సరిచూడండి",
     "check_for_content_updates": "సమాచార నవీకరణల తనిఖీ",
@@ -133,7 +135,13 @@
     "cc_by_sa": "క్రియేటివ్ కామన్స్ యాట్రిబ్యూషన్ షేర్ అలైక్ 4.0 ఇంటర్నేషనల్ లైసెన్సు"
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "జిప్ ఫైల్స్",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "అయ్యో! మీ ప్రాజెక్టు ఎగుమతి కావడానికి చేస్తున్న ఏర్పాట్లలో ఒక సమస్య వచ్చింది. దయచేసి హెల్ప్ డెస్క్ (${email}) సంప్రదించండి.",
     "error_loading": "అయ్యో! మీ ప్రాజెక్టు ఎగుమతి కావడానికి చేస్తున్న ఏర్పాట్లలో ఒక సమస్య వచ్చింది. దయచేసి హెల్ప్ డెస్క్ (${email}) సంప్రదించండి.",
     "no_project": "ఎటువంటి ప్రాజెక్టూ ఎంపిక చెయ్యబడలేదు",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "The ${door43} repository was not renamed.<br/><br/>Do you want to retry renaming the ${door43} repository or continue without renaming?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "Rename failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "గుర్తుకు భాష పేరు సరిపోదు",
@@ -233,6 +243,7 @@
     "publicly_available": "సహాయకారులు, తనిఖీ చేయువారుగా నమోదు కాబడినవారు బహిరంగంగా అందుబాటులో ఉంటారు",
     "field_required": "ఈ విభాగం అవరసరం",
     "language_direction": "భాష మార్గదర్శకత్వం",
+    "project_font": "Project Font",
     "ltr": "ఎడమ నుండి కుడికి",
     "rtl": "కుడి నుండి ఎడమకు",
     "invalid_language_name": "భాష పేరు సరియైనది కాదు",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "పరికరం సమాచారం దిగుమతి అవుతుంది",
     "resource_missing_for_tool": "ప్రస్తుతం పరికరంకు భిన్నమైన యు.జి.ఎన్.టి అవువాదం అవసరం. ఈ వనరును తిరిగి పొందడానికి దౌన్ లోడ్ ను తట్టండి",
     "no_checks_selected": "ఈ పరికరం ఆరంభించదడానికి ఒక విభాగాన్ని ఎంపిక చెయ్యాలి",

@@ -18,7 +18,6 @@ import * as ProjectImportStepperActions from '../ProjectImportStepperActions';
 import { openSoftwareUpdate } from '../SoftwareUpdateActions';
 //helpers
 import * as manifestHelpers from '../../helpers/manifestHelpers';
-import { changeSelections } from '../SelectionsActions';
 import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
@@ -33,7 +32,8 @@ import {
   getToolGatewayLanguage,
   getTools,
   getTranslate,
-  getUsername, getProjects,
+  getUsername,
+  getProjects,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -123,6 +123,20 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
 };
 
 /**
+ * creates properties for tools and sends properties to tool before connecting
+ * @param {string} projectSaveLocation
+ * @param {string} bookId
+ * @param {object} tool
+ * @return {Promise}
+ */
+export const connectToolApi = (projectSaveLocation, bookId, tool) => (dispatch, getState) => {
+  console.log(`connectToolApi(${tool.name}) - connect tool api`);
+  const toolProps = makeToolProps(dispatch, getState(), projectSaveLocation, bookId, tool.name);
+
+  tool.api.triggerWillConnect(toolProps);
+};
+
+/**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
@@ -135,11 +149,10 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
   try {
     dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
     dispatch({ type: consts.CLEAR_RESOURCES_REDUCER });
-    dispatch({ type: consts.CLEAR_PREVIOUS_FILTERS });
     dispatch(initializeReducersForProjectOpenValidation());
 
     // TRICKY: prevent dialog from flashing on small projects
-    await delay(300);
+    await delay(200);
     await isProjectSupported(projectDir, translate);
     await migrateProject(projectDir, null, getUsername(getState()));
 
@@ -182,11 +195,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       // select default categories
       setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
 
-      // connect tool api
-      console.log('openProject() - connect tool api');
-      const toolProps = makeToolProps(dispatch, getState(), validProjectDir, bookId);
-
-      t.api.triggerWillConnect(toolProps);
+      dispatch(connectToolApi(validProjectDir, bookId, t));
     }
 
     await dispatch(displayTools());
@@ -217,25 +226,28 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
 /**
  * TODO: this is very similar to what is in the {@link ToolContainer} and probably needs to be abstracted.
  * This is just a temporary prop generator until we can properly abstract the tc api.
- * @param dispatch
- * @param state
- * @param projectDir
- * @param bookId
- * @returns {*}
+ * @param {Function} dispatch
+ * @param {Object} state
+ * @param {String} projectDir
+ * @param {String} bookId
+ * @param {String} toolName
+ * @returns {Object}
  */
-function makeToolProps(dispatch, state, projectDir, bookId) {
+function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const projectApi = new ProjectAPI(projectDir);
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
   const { code } = getActiveLocaleLanguage(state);
   const sourceBook = getSourceBook(state);
   const targetBook = getTargetBook(state);
+  const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
   return {
     //resource api
     resources: resourceApi,
     // project api
     project: projectApi,
+    projectSaveLocation: projectDir,
 
     // flattened project api methods that may be deprecated in the future.
     readProjectDataDir: projectApi.readDataDir,
@@ -260,6 +272,10 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     sourceBook,
     targetBook,
 
+    bookId,
+    toolName,
+    gatewayLanguageCode,
+
     contextId: {
       reference: {
         bookId,
@@ -269,7 +285,6 @@ function makeToolProps(dispatch, state, projectDir, bookId) {
     },
     username: getUsername(state),
     toolsSelectedGLs: getToolsSelectedGLs(state),
-    actions: { changeSelections: (selections) => dispatch(changeSelections(selections)) },
     // deprecated props
     readProjectDir: (...args) => {
       console.warn('DEPRECATED: readProjectDir is deprecated. Use readProjectDataDir instead.');
@@ -359,12 +374,8 @@ export function closeProject() {
       { type: consts.RESET_PROJECT_DETAIL },
       BodyUIActions.toggleHomeView(true),
       ProjectDetailsActions.resetProjectDetail(),
-      { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-      { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-      { type: consts.CLEAR_CONTEXT_ID },
       { type: consts.CLOSE_TOOL },
       { type: consts.CLEAR_RESOURCES_REDUCER },
-      { type: consts.CLEAR_PREVIOUS_FILTERS },
     ];
 
     dispatch(batchActions(actions));

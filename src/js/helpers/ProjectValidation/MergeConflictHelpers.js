@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-loop-func */
 import usfmParser from 'usfm-js';
 import fs from 'fs-extra';
 import Path from 'path-extra';

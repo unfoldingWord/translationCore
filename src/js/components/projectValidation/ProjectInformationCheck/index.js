@@ -10,6 +10,7 @@ import TextPrompt from './TextPrompt';
 import LanguageIdTextBox from './LanguageIdTextBox';
 import LanguageNameTextBox from './LanguageNameTextBox';
 import LanguageDirectionDropdownMenu from './LanguageDirectionDropdownMenu';
+import ProjectFontDropdownMenu from './ProjectFontDropdownMenu';
 import ContributorsArea from './ContributorsArea';
 import CheckersArea from './CheckersArea';
 
@@ -30,8 +31,10 @@ class ProjectInformationCheck extends Component {
     if (contributors.includes('')) {
       this.setState({ contributorsRequiredFieldMessage: true });
     } else {
-      contributors.unshift('');
-      this.props.actions.setContributorsInProjectInformationReducer(contributors);
+      // avoiding editing the original reference of the array
+      const newContributors = contributors.slice();
+      newContributors.unshift('');
+      this.props.actions.setContributorsInProjectInformationReducer(newContributors);
     }
   }
 
@@ -42,8 +45,10 @@ class ProjectInformationCheck extends Component {
     if (checkers.includes('')) {
       this.setState({ checkersRequiredFieldMessage: true });
     } else {
-      checkers.unshift('');
-      this.props.actions.setCheckersInProjectInformationReducer(checkers);
+      // avoiding editing the original reference of the array
+      const newCheckers = checkers.slice();
+      newCheckers.unshift('');
+      this.props.actions.setCheckersInProjectInformationReducer(newCheckers);
     }
   }
 
@@ -112,6 +117,7 @@ class ProjectInformationCheck extends Component {
       languageDirection,
       contributors,
       checkers,
+      projectFont,
     } = this.props.reducers.projectInformationCheckReducer;
     const { projectSaveLocation } = this.props.reducers.projectDetailsReducer;
     const { developerMode } = this.props.reducers.settingsReducer.currentSettings;
@@ -255,6 +261,18 @@ class ProjectInformationCheck extends Component {
                   updateBookId={(bookId) => this.props.actions.setBookIDInProjectInformationReducer(bookId, true)}
                   developerMode={developerMode}
                 />
+              </div>
+              <div className={'project-details-left-column project-details-column'}>
+                <ProjectFontDropdownMenu
+                  id={'project-font-SelectField'}
+                  className={'project-details-item project-font-select select-field'}
+                  translate={translate}
+                  projectFont={projectFont}
+                  updateProjectFont={(projectFont) => this.props.actions.updateProjectFont(projectFont)}
+                />
+              </div>
+              <div className={'project-details-right-column project-details-column'}>
+
               </div>
               <div className={'project-details-left-column project-details-column'}>
                 <ContributorsArea

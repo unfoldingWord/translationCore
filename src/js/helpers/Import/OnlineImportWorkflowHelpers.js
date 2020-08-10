@@ -1,6 +1,6 @@
 import path from 'path-extra';
-import ospath from 'ospath';
 import fs from 'fs-extra';
+import env from 'tc-electron-env';
 import Repo from '../Repo';
 
 /**
@@ -16,7 +16,7 @@ export async function generateImportPath(url) {
     throw new Error(`The URL ${url} does not reference a valid project`);
   }
 
-  let importPath = path.join(ospath.home(), 'translationCore', 'imports', project.name);
+  let importPath = path.join(env.home(), 'translationCore', 'imports', project.name);
   const exists = await fs.pathExists(importPath);
 
   if (exists) {

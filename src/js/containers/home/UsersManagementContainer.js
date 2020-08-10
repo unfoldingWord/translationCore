@@ -80,7 +80,7 @@ class UsersManagementContainer extends Component {
   }
 }
 
-const mapStateToProps = (state,) => ({
+const mapStateToProps = (state) => ({
   reducers: {
     homeScreenReducer: state.homeScreenReducer,
     loginReducer: state.loginReducer,
@@ -122,5 +122,5 @@ UsersManagementContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(UsersManagementContainer);

@@ -1,0 +1,359 @@
+name: Node CI
+
+env:
+  UPDATE_RESOURCES: true
+  REPOSITORY: ${{ github.repository }}
+  SHA: ${{ github.event.after }}
+  REF: ${{ github.ref }}
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+      - release-*
+      - sandbox-*
+  pull_request:
+    branches:
+      - master
+      - develop
+      - release-*
+      - sandbox-*
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    container: neutrinog/concourse-tasks:latest
+    env:
+      CI: true
+
+    steps:
+#     - name: Dump GitHub context
+#       env:
+#         GITHUB_CONTEXT: ${{ toJson(github) }}
+#       run: echo "$GITHUB_CONTEXT"
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.16.3'
+    - name: Node version
+      run: |
+        node --version
+        npm --version
+
+#    - uses: actions/checkout@v2
+#    - name: Checkout submodules
+#      shell: bash
+#      run: |
+#        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+#        git submodule sync --recursive
+#        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+    - name: Checkout codebase
+      uses: actions/checkout@v1
+      with:
+        submodules: recursive
+
+    - name: npm install
+      run: npm ci
+
+    - name: npm test
+      run: npm run ci-test
+
+    - name: upload coverage
+      run: ./node_modules/.bin/codecov -t ${{ secrets.CODECOV_TOKEN }}
+
+    - name: npm lint
+      run: npm run lint
+
+  build-linux:
+    name: Build Linux
+    needs: test
+    runs-on: ubuntu-latest
+    container: neutrinog/concourse-tasks:latest
+    env:
+      TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
+      TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
+      APP_NAME: tC
+      CI: true
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.16.3'
+      - name: Node version
+        run: |
+          node --version
+          npm --version
+
+#      - uses: actions/checkout@v2
+#      - name: Checkout submodules
+#        shell: bash
+#        run: |
+#          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+#          git submodule sync --recursive
+#          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+      - name: Checkout codebase
+        uses: actions/checkout@v1
+        with:
+          submodules: recursive
+
+      - name: Read version and commit sha
+        run: |
+          echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
+          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+
+      - name: Set artifact name
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb")"
+
+      - name: Bundle environment variables
+        run: |
+          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
+          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
+          echo "BUILD=$HASH" >> .env
+
+      - name: npm install
+        run: npm ci
+
+      - name: Download latest language names
+        if: env.UPDATE_RESOURCES
+        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+
+      - name: Update resources
+        if: env.UPDATE_RESOURCES
+        run: npm run update-resources
+
+      - name: build linux
+        id: build
+        run: |
+          echo "Building $APP_VERSION-$HASH"
+          npm run build
+          ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/$ARTIFACT_NAME
+
+      - uses: actions/upload-artifact@v1
+        name: Upload artifacts
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ../artifacts/
+
+  build-windows:
+    name: Build Windows
+    needs: test
+    runs-on: windows-latest
+    env:
+      TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
+      TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
+      APP_NAME: tC
+      CI: true
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.16.3'
+
+      - name: Node version
+        run: |
+          node --version
+          npm --version
+
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+#      - name: Checkout codebase
+#        uses: actions/checkout@v1
+#        with:
+#          submodules: recursive
+
+      - name: Read version and commit sha
+        run:
+          echo "::set-env name=HASH::$(node -p -e "'${{ github.sha }}'.substring(0, 7)")"
+          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+
+      - name: Bundle environment variables
+        run: |
+          echo "TC_HELP_DESK_TOKEN=${{ env.TC_HELP_DESK_TOKEN }}" >> .env
+          echo "TC_HELP_DESK_EMAIL=${{ env.TC_HELP_DESK_EMAIL }}" >> .env
+          echo "BUILD=${{ env.HASH }}" >> .env
+
+      - name: npm install
+        run: npm ci
+
+      - name: Download latest language names
+        if: env.UPDATE_RESOURCES
+        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+
+      - name: Update resources
+        if: env.UPDATE_RESOURCES
+        run: npm run update-resources
+
+      - name: build windows
+        run: |
+          echo "Building $APP_VERSION-$HASH"
+          npm run build-win
+#     x64
+      - name: Set x64 artifact name
+        run: echo "::set-env name=ARTIFACT_X64::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
+
+      - name: bundle x64 windows
+        run: |
+          echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
+          ./node_modules/.bin/gulp release-win64 --out=../artifacts/x64/${{ env.ARTIFACT_X64 }}
+
+#      - name: list directories
+#        run: |
+#          dir .
+#          dir ../
+#          dir ../artifacts
+
+      - uses: actions/upload-artifact@v1
+        name: Upload x64 artifacts
+        with:
+          name: ${{ env.ARTIFACT_X64 }}
+          path: ../artifacts/x64/
+#     x32
+      - name: Set x32 artifact name
+        run: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
+
+      - name: bundle x32 windows
+        run: |
+          echo "Generating executable ../artifacts/x32/${{ env.ARTIFACT_X32 }}"
+          ./node_modules/.bin/gulp release-win32 --out=../artifacts/x32/${{ env.ARTIFACT_X32 }}
+
+      - uses: actions/upload-artifact@v1
+        name: Upload x32 artifacts
+        with:
+          name: ${{ env.ARTIFACT_X32 }}
+          path: ../artifacts/x32/
+
+  build-macos:
+    name: Build macOS
+    needs: test
+    runs-on: macos-latest
+    env:
+      TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
+      TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
+      APP_NAME: tC
+      CI: true
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.16.3'
+
+      - name: Node version
+        run: |
+          node --version
+          npm --version
+
+      - uses: actions/checkout@v2
+      - name: Checkout submodules
+        shell: bash
+        run: |
+          auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+          git submodule sync --recursive
+          git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+
+#      - name: Checkout codebase
+#        uses: actions/checkout@v1
+#        with:
+#          submodules: recursive
+
+      - name: Read version and commit sha
+        run: |
+          echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
+          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+
+      - name: Set artifact name
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-mac-x64-$APP_VERSION-$HASH.dmg")"
+
+      - name: Bundle environment variables
+        run: |
+          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
+          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
+          echo "BUILD=$HASH" >> .env
+
+      - name: npm install
+        run: npm ci
+
+      - name: Download latest language names
+        if: env.UPDATE_RESOURCES
+        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+
+      - name: Update resources
+        if: env.UPDATE_RESOURCES
+        run: npm run update-resources
+
+      - name: build macOS
+        id: build
+        run: |
+          echo "Building $APP_VERSION-$HASH"
+          npm run build
+
+      - name: bundle macOS
+        run: ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
+
+      - uses: actions/upload-artifact@v1
+        name: Upload artifacts
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: ../artifacts/
+
+  notify:
+    name: Notify
+    needs: [build-macos, build-windows, build-linux]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get short hash
+        run: |
+          echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
+
+#      - name: Dump GitHub context
+#        env:
+#          GITHUB_CONTEXT: ${{ toJson(github) }}
+#        run: echo "$GITHUB_CONTEXT"
+
+      - name: Notify Zulip of pull request
+        if: github.event_name == 'pull_request'
+        env:
+          TOKEN: ${{ secrets.ZULIP_TOKEN }}
+          USER: github-bot@unfoldingword.zulipchat.com
+          ORG: unfoldingword
+          CHANNEL: SOFTWARE/github
+          SUBJECT: tC builds
+          PR_NUMBER: ${{ github.event.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
+            -u $USER:$TOKEN \
+            -d "type=stream" \
+            -d "to=$CHANNEL" \
+            -d "subject=$SUBJECT" \
+            -d "content=Pull request [$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$SHA).
+                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
+
+      - name: Get branch name
+        if: github.event_name == 'push'
+        run: echo "::set-env name=BRANCH::$(node -p -e "'$REF'.substr(11)")" # strips off "refs/heads/"
+
+      - name: Notify Zulip of push
+        if: github.event_name == 'push'
+        env:
+          TOKEN: ${{ secrets.ZULIP_TOKEN }}
+          USER: github-bot@unfoldingword.zulipchat.com
+          ORG: unfoldingword
+          CHANNEL: SOFTWARE/github
+          SUBJECT: tC builds
+        run: |
+          curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
+            -u $USER:$TOKEN \
+            -d "type=stream" \
+            -d "to=$CHANNEL" \
+            -d "subject=$SUBJECT" \
+            -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$BRANCH) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
+                        You can view logs and download artifacts from the [Actions](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."

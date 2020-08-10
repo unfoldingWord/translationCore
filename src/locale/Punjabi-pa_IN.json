@@ -64,6 +64,7 @@
   "email_address_optional": "ਈਮੇਲ ਪਤਾ (ਅਖ਼ਤਿਆਰੀ):",
   "invalid_email": "ਗਲਤ ਈਮੇਲ",
   "include_app_logs": "ਐਪਲੀਕੇਸ਼ਨ ਲੌਗ ਸ਼ਾਮਲ ਕਰੋ",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "ਕੀ ਤੁਸੀਂ ਆਪਣੇ ਪਾਠ ਨਾਲ ਅਲਾਈਨਮੈਂਟ ਡੇਟਾ ਨਿਰਯਾਤ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?",
   "include_alignment_check": "ਅਲਾਈਨਮੈਂਟ ਡੇਟਾ ਸ਼ਾਮਲ ਕਰੋ",
   "loading_verse_edits": "ਲੋਡਿੰਗ ਆਇਤ ਐਡੀਟ",
@@ -73,6 +74,7 @@
   "sending_feedback": "ਸੁਝਾਅ ਭੇਜ ਰਿਹਾ ਹੈ",
   "sending_feedback_failed": "ਸੁਝਾਅ ਭੇਜਣ ਵਿੱਚ ਅਸਫਲ",
   "critical_error_warning": "\nਚੇਤਾਵਨੀ: ਇਕ ਗੰਭੀਰ ਗਲਤੀ ਆਈ ਹੈ!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "\nਸਾੱਫਟਵੇਅਰ ਅਪਡੇਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
     "check_for_content_updates": "ਸਮੱਗਰੀ ਦੇ ਅਪਡੇਟਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
@@ -133,7 +135,13 @@
     "cc_by_sa": "ਕਰੀਏਟਿਵ ਕਾਮਨਜ਼ ਐਟ੍ਰਬ੍ਯੂਸ਼ਨ-ਸ਼ੇਅਰਲਾਈਕ 4.0 ਇੰਟਰਨੈਸ਼ਨਲ ਲਾਇਸੰਸ."
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "ਜ਼ਿਪ ਫਾਇਲ",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "ਓਹ ਹੋ! ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਲੋਡ ਕਰਨ ਲਈ ਸੈਟਅਪ ਕਰਨ ਵਿੱਚ ਸਾਨੂੰ ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਸਹਾਇਤਾ ਲਈ ਹੈਲਪ ਡੈਸਕ  (${email})  ਨਾਲ ਸੰਪਰਕ ਕਰੋ.",
     "error_loading": "ਓਹ ਹੋ! ਤੁਹਾਡੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ ਲੋਡ ਕਰਨ ਵਿੱਚ ਸਾਨੂੰ ਇੱਕ ਸਮੱਸਿਆ ਆਈ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਸਹਾਇਤਾ ਲਈ ਹੈਲਪ ਡੈਸਕ (${email}) ਨਾਲ ਸੰਪਰਕ ਕਰੋ.",
     "no_project": "ਕੋਈ ਵੀ ਪ੍ਰੋਜੈਕਟ ਨਹੀਂ ਚੁਣਿਆ ਗਿਆ ਹੈ",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "$  ${door43} <br ਰਿਪੋਜ਼ਟਰੀ ਦਾ ਨਾਂ ਬਦਲਿਆ ਨਹੀਂ ਗਿਆ. <br/> <br/> ਕੀ ਤੁਸੀਂ $  ${door43} ਰਿਪੋਜ਼ਟਰੀ ਦਾ ਨਾਂ ਬਦਲਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨੀ ਚਾਹੁੰਦੇ ਹੋ ਜਾਂ ਬਿਨਾਂ ਨਾਮ ਬਦਲੇ ਜਾਰੀ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "ਨਾਮ ਬਦਲਣਾ ਅਸਫਲ ਕਿਉਂਕਿ ਇਸ ਨਾਮ ਨਾਲ ਇੱਕ ਰਿਪੋਜ਼ਟਰੀ ਪਹਿਲਾਂ ਹੀ ਮੌਜੂਦ ਹੈ. <br/> <br/> ਆਪਣੇ ਪ੍ਰੋਜੈਕਟ ਨੂੰ $ {ਡੋਰ 43 upload 'ਤੇ ਅਪਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਬਣਨ ਲਈ, ਤੁਹਾਨੂੰ ਜਾਂ ਤਾਂ ਆਪਣੇ ਸਥਾਨਕ ਪ੍ਰੋਜੈਕਟ ਦਾ ਨਾਮ ਬਦਲਣ ਦੀ ਜਾਂ ਆਪਣੇ $ {ਡੋਰ 43} ਪ੍ਰੋਜੈਕਟ ਦਾ ਨਾਮ ਬਦਲਣ ਦੀ ਜ਼ਰੂਰਤ ਹੈ.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "ਭਾਸ਼ਾ ਦਾ ਨਾਮ ਕੋਡ ਲਈ ਯੋਗ ਨਹੀਂ ਹੈ",
@@ -233,6 +243,7 @@
     "publicly_available": "ਯੋਗਦਾਨ ਪਾਉਣ ਵਾਲਿਆਂ ਜਾਂ ਚੈਕਰਾਂ ਵਜੋਂ ਸੂਚੀਬੱਧ ਲੋਕਾਂ ਨੂੰ ਸਰਵਜਨਕ ਤੌਰ ਤੇ ਉਪਲਬਧ ਕਰਾਇਆ ਜਾਵੇਗਾ.",
     "field_required": "ਇਸ ਖੇਤਰ ਲੋੜੀਂਦਾ ਹੈ",
     "language_direction": "ਭਾਸ਼ਾ ਦਿਸ਼ਾ",
+    "project_font": "Project Font",
     "ltr": "ਖੱਬੇ ਤੋਂ ਸੱਜੇ",
     "rtl": "ਸੱਜੇ ਤੋਂ ਖੱਬੇ",
     "invalid_language_name": "ਭਾਸ਼ਾ ਦਾ ਨਾਮ ਠੀਕ ਨਹੀਂ ਹੈ",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "ਟੂਲ ਡਾਟਾ ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ.",
     "resource_missing_for_tool": "ਮੌਜੂਦਾ ਟੂਲ ਨੂੰ ਯੂਜੀਐਨਟੀ ਦੇ ਵੱਖਰੇ ਵਰਜਨ ਦੀ ਜ਼ਰੂਰਤ ਹੈ. ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਸਰੋਤ ਨੂੰ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਡਾਉਨਲੋਡ ਤੇ ਕਲਿਕ ਕਰੋ.",
     "no_checks_selected": "ਤੁਹਾਨੂੰ ਇਸ ਸਾਧਨ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇੱਕ ਸ਼੍ਰੇਣੀ ਦੀ ਚੋਣ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ",

@@ -1,6 +1,8 @@
 
 @import 'colorscheme.css';
-@import 'BodyContainer.css';
+@import 'hint.min.css';
+@import 'bootstrap.min.css';
+@import 'bootstrap-theme.min.css';
 /*
 ** Fills the screen, so that the ScrollableSection in
 ** RootStyles.js works. Every ancestor of the ScrollableSection
@@ -73,9 +75,7 @@ body {
     src: url(../fonts/NotoSans-BoldItalic.ttf);
 }
 
-/*
-special font for Hebrew
- */
+/* special font for Hebrew */
 @font-face {
   font-family: Ezra;
   src: url(../fonts/SILEOTSR.ttf);
@@ -83,11 +83,88 @@ special font for Hebrew
   unicode-range: U+0590-05FF;
 }
 
+/* Padauk - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(../fonts/complexScript/Padauk-Regular.woff);
+  font-weight: normal;
+}
+/* Padauk bold - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(../fonts/complexScript/Padauk-Bold.woff);
+  font-weight: bold;
+}
+/* Awami Nastaliq - supports a wide variety of languages of Pakistan that are written with the sloping Nastaliq style. */
+@font-face {
+  font-family: AwamiNastaliq;
+  src: url(../fonts/complexScript/AwamiNastaliq-Regular.woff);
+}
+/* Scheherazade - supports a wide range of Arabic characters, and therefore will handle many languages other than Arabic itself. */
+@font-face {
+  font-family: Scheherazade;
+  src: url(../fonts/complexScript/Scheherazade-Regular.woff);
+  font-weight: normal;
+}
+/* Scheherazade bold */
+@font-face {
+  font-family: Scheherazade;
+  src: url(../fonts/complexScript/Scheherazade-Bold.woff);
+  font-weight: bold;
+}
+/* Add new fonts below */
+
 /*
 use Ezra for Hebrew characters and then Noto Sans for other characters
  */
 * {
   font-family: Ezra, Noto Sans;
+}
+
+.default-text {
+  font-size: 100%;
+}
+
+.Padauk-text {
+  font-family: Padauk, Noto Sans;
+  font-size: 130%;
+  font-feature-settings: "wtri" 1;
+}
+
+.AwamiNastaliq-text {
+  font-family: AwamiNastaliq, Noto Sans;
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  font-size: 115%;
+  line-height: initial;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+}
+
+.Scheherazade-text {
+  font-family: Scheherazade, Noto Sans;
+  font-feature-settings: "cv12" 0;
+  font-size: 150%;
+}
+/*
+Add new complex script font classes above.
+
+Remember to follow the same naming convention used above,
+otherwise it won't work as expected.
+For example, .NewFontName-text { css styling + font setting }
+*/
+
+
+
+
+/* BodyContainer */
+#scrollableSection {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  bottom: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: calc(100vw - 250px);
 }
 
 /*
