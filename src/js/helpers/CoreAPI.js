@@ -7,14 +7,18 @@ import { openIgnorableAlert } from '../actions/AlertActions';
 
 /**
  * Provides an interface with which tools can interact with tC.
+ * TRICKY: When adding new methods don't forget to bind the method to this.
  */
 export default class CoreAPI {
   constructor(dispatch) {
     this.dispatch = dispatch;
     this.showDialog = this.showDialog.bind(this);
+    this.showIgnorableAlert = this.showIgnorableAlert.bind(this);
     this.showIgnorableDialog = this.showIgnorableDialog.bind(this);
     this.showLoading = this.showLoading.bind(this);
+    this.showAlert = this.showAlert.bind(this);
     this.closeLoading = this.closeLoading.bind(this);
+    this.closeAlert = this.closeAlert.bind(this);
   }
 
   /**
@@ -84,9 +88,10 @@ export default class CoreAPI {
   /**
    * Display an alert
    * @param {string} message - the message to display
+   * @param {boolean} loading - show Loading icon or not.
    */
-  showAlert(message) {
-    this.dispatch(openAlertDialog(message));
+  showAlert(message, loading) {
+    this.dispatch(openAlertDialog(message, loading));
   }
 
   /**

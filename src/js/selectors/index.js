@@ -8,20 +8,15 @@ import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
-import * as fromSelectionsReducer from '../reducers/selectionsReducer';
 import * as fromProjectValidationReducer
   from '../reducers/projectValidationReducer';
-import * as fromVerseEditReducer from '../reducers/verseEditReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
-import * as fromContextIdReducer from '../reducers/contextIdReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';
 import * as fromProjectInformationCheckReducer from '../reducers/projectInformationCheckReducer';
 import * as fromSourceContentUpdatesReducer from '../reducers/sourceContentUpdatesReducer';
 import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
-import * as fromGrouspIndex from '../reducers/groupsIndexReducer';
-import * as fromGroupsData from '../reducers/groupsDataReducer';
 import * as fromSoftwareUpdateReducer from '../reducers/softwareUpdateReducer';
 
 /**
@@ -54,16 +49,6 @@ export const getProjects = state =>
  */
 export const getAlertIsOpen = state =>
   fromAlertModalReducer.getAlertIsOpen(state.alertModalReducer);
-
-/**
- * Retrieves the edited verse object formatted for saving to the disk.
- * @param state
- * @param toolName
- * @return {*}
- */
-export const getEditedVerse = (state, toolName) =>
-  fromVerseEditReducer.getSaveStructure(state.verseEditReducer, toolName);
-
 
 /**
  * Returns the title of the currently selected tool.
@@ -283,15 +268,6 @@ export const getProjectSettings = (state) =>
   fromProjectDetailsReducer.getSettings(state.projectDetailsReducer);
 
 /**
- * Retrieves selections.
- * This needs better documentation. What are selections?
- * @param {object} state
- * @return {list}
- */
-export const getSelections = (state) =>
-  fromSelectionsReducer.getSelections(state.selectionsReducer);
-
-/**
  * Returns the current step of the project validation screen
  * @param {object} state
  * @return {int}
@@ -340,8 +316,8 @@ export const getIsOverwritePermitted = (state) =>
  * @param {Object} state
  * @return {String | undefined}
  */
-export const getSelectedToolName = state =>
-  fromToolsReducer.getSelectedToolName(state.toolsReducer);
+export const getCurrentToolName = state =>
+  fromToolsReducer.getCurrentToolName(state.toolsReducer);
 
 /**
  * Returns the tool selected by the user
@@ -378,47 +354,6 @@ export const getSelectedToolContainer = state =>
   fromToolsReducer.getSelectedToolContainer(state.toolsReducer);
 
 /**
- * Returns the current context id.
- * This is an object with the current Bible reference.
- * @param state
- * @return {object}
- */
-export const getContext = state =>
-  fromContextIdReducer.getContext(state.contextIdReducer);
-
-/**
- * Returns the currently selected verse in the target language bible
- * @param state
- * @return {*}
- */
-export const getSelectedTargetVerse = (state) => {
-  const context = getContext(state);
-
-  if (context) {
-    const { reference: { chapter, verse } } = context;
-    return fromResourcesReducer.getTargetVerse(state.resourcesReducer, chapter,
-      verse);
-  } else {
-    return null;
-  }
-};
-
-/**
- * Return the currently selected chapter in the target language bible
- * @param state
- * @return {*}
- */
-export const getSelectedTargetChapter = (state) => {
-  const context = getContext(state);
-
-  if (context) {
-    const { reference: { chapter } } = context;
-    return fromResourcesReducer.getTargetChapter(state.resourcesReducer,
-      chapter);
-  }
-};
-
-/**
  * Returns the target language bible
  * @param state
  * @return {*}
@@ -433,38 +368,6 @@ export const getTargetBook = state =>
  */
 export const getSourceBook = state =>
   fromResourcesReducer.getSourceBook(state.resourcesReducer);
-
-/**
- * Returns the currently selected verse in the original language bible
- * @param state
- * @return {*}
- */
-export const getSelectedSourceVerse = (state) => {
-  const context = getContext(state);
-
-  if (context) {
-    const { reference: { chapter, verse } } = context;
-    return fromResourcesReducer.getOriginalVerse(state.resourcesReducer,
-      chapter, verse);
-  } else {
-    return null;
-  }
-};
-
-/**
- * Return the currently selected chapter in the original language bible
- * @param state
- * @return {*}
- */
-export const getSelectedSourceChapter = (state) => {
-  const context = getContext(state);
-
-  if (context) {
-    const { reference: { chapter } } = context;
-    return fromResourcesReducer.getOriginalChapter(state.resourcesReducer,
-      chapter);
-  }
-};
 
 /**
  * Checks if the home screen is visible
@@ -514,11 +417,11 @@ export const getProjectToolProgress = (state, toolName) =>
 export const getToolsSelectedGLs = (state) =>
   fromProjectDetailsReducer.getToolsSelectedGLs(state.projectDetailsReducer);
 
-export const getGroupsIndex = (state) =>
-  fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
+// export const getGroupsIndex = (state) =>
+//   fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
 
-export const getGroupsData = (state) =>
-  fromGroupsData.getGroupsData(state.groupsDataReducer);
+// export const getGroupsData = (state) =>
+//   fromGroupsData.getGroupsData(state.groupsDataReducer);
 
 export const getBibles = (state) =>
   fromResourcesReducer.getBibles(state.resourcesReducer);

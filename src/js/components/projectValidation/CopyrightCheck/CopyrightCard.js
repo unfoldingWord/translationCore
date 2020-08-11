@@ -8,7 +8,7 @@ const CopyrightCard = ({
   selectProjectLicense,
   title,
   id,
-  imageName,
+  image,
   index,
   selectedLicenseId,
   toggleShowLicenseFile,
@@ -20,7 +20,7 @@ const CopyrightCard = ({
       display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', borderBottom: index === 3 ? '' : '1px solid var(--background-color)', padding: '22px',
     }}>
       <div style={{ display: 'flex' }}>
-        <img src={'images/' + imageName} height="70px" />
+        <img src={image} height="70px" />
         <div style={{ marginLeft: '20px' }}>
           <h4 style={{ fontWeight: 'bold' }}>
             {title}
@@ -47,7 +47,7 @@ CopyrightCard.propTypes = {
   selectProjectLicense: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  imageName: PropTypes.string.isRequired,
+  image: PropTypes.any.isRequired,
   index: PropTypes.number.isRequired,
   selectedLicenseId: PropTypes.any,
   toggleShowLicenseFile: PropTypes.func.isRequired,

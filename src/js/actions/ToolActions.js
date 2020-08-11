@@ -1,28 +1,33 @@
-
 /* eslint-disable no-async-promise-executor */
+import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
 import {
+  getSourceBook,
   getToolGatewayLanguage,
   getTranslate,
-  getProjectSaveLocation,
 } from '../selectors';
-import { loadProjectGroupData, loadProjectGroupIndex } from '../helpers/ResourcesHelpers';
 import {
-  loadToolsInDir, isInvalidationAlertDisplaying, getInvalidCountForTool,
+  loadToolsInDir,
+  getInvalidCountForTool,
+  isInvalidationAlertDisplaying,
 } from '../helpers/toolHelper';
-import { delay } from '../common/utils';
-import { WORD_ALIGNMENT } from '../common/constants';
+import ResourceAPI from '../helpers/ResourceAPI';
+import {
+  WORD_ALIGNMENT,
+  ALERT_SELECTIONS_INVALIDATED_ID,
+  ALERT_SELECTIONS_INVALIDATED_MSG,
+  ALERT_ALIGNMENTS_RESET_ID,
+  ALERT_ALIGNMENTS_RESET_MSG,
+  ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+} from '../common/constants';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
 import { openAlertDialog, closeAlertDialog } from './AlertModalActions';
-import * as GroupsDataActions from './GroupsDataActions';
-import { loadCurrentContextId } from './ContextIdActions';
+import * as AlertActions from './AlertActions';
 import * as BodyUIActions from './BodyUIActions';
-import { loadGroupsIndex } from './GroupsIndexActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
-// helpers
-import { showInvalidatedWarnings } from './SelectionsActions';
+import * as ProjectDetailsActions from './ProjectDetailsActions';
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -48,45 +53,40 @@ export const loadTools = (toolsDir) => (dispatch) => {
         dispatch(registerTool(tools[i]));
       }
     });
-  }, 500);
+  }, 50);
 };
+
+/**
+ * save to project manifest the original lang and gl used for tool checking or alignment
+ * @param toolName
+ * @param gl
+ */
+export function saveResourcesUsed(toolName, gl) {
+  return (dispatch, getState) => {
+    const sourceBook = getSourceBook(getState());
+    const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
+    dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
+
+    if (toolName !== WORD_ALIGNMENT) {
+      const resources = ResourceAPI.default();
+      const helpDir = resources.getLatestTranslationHelp(gl, toolName);
+      const glVersion = (helpDir && path.basename(helpDir)) || 'unknown';
+      dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_' + gl + '_check_version_' + toolName, glVersion));
+    }
+  };
+}
 
 /**
  * This function prepares the data needed to load a tool, also
  *  useful for checking the progress of a tool
- * @param {String} name - Name of the tool
+ * @param {String} toolName - Name of the tool
  */
-export function prepareToolForLoading(name) {
-  return async (dispatch, getData) => {
-    const translate = getTranslate(getData());
-
-    dispatch(batchActions([
-      { type: types.CLEAR_PREVIOUS_GROUPS_DATA },
-      { type: types.CLEAR_PREVIOUS_GROUPS_INDEX },
-      { type: types.CLEAR_CONTEXT_ID },
-    ]));
-
+export function prepareToolForLoading(toolName) {
+  return (dispatch, getState) => {
     // Load older version of OL resource if needed by tN tool
-    dispatch(loadOlderOriginalLanguageResource(name));
-
-    // load group data
-    const projectDir = getProjectSaveLocation(getData());
-    const groupData = loadProjectGroupData(name, projectDir);
-
-    dispatch({
-      type: types.LOAD_GROUPS_DATA_FROM_FS,
-      allGroupsData: groupData,
-    });
-
-    // load group index
-    const language = getToolGatewayLanguage(getData(), name);
-    const groupIndex = loadProjectGroupIndex(language, name, projectDir, translate);
-    dispatch(loadGroupsIndex(groupIndex));
-
-    dispatch(loadCurrentContextId(name));
-    //TRICKY: need to verify groups data after the contextId has been loaded, or changes are not saved
-    await dispatch(GroupsDataActions.verifyGroupDataMatchesWithFs(name));
-    // wait for filesystem calls to finish
+    dispatch(loadOlderOriginalLanguageResource(toolName));
+    const language = getToolGatewayLanguage(getState(), toolName);
+    dispatch(saveResourcesUsed(toolName, language));
   };
 }
 
@@ -100,7 +100,6 @@ export const openTool = (name) => (dispatch, getData) => new Promise(async (reso
   const translate = getTranslate(getData());
   dispatch(ModalActions.showModalContainer(false));
   dispatch(openAlertDialog(translate('tools.loading_tool_data'), true));
-  await delay(300);
 
   try {
     dispatch({ type: types.OPEN_TOOL, name });
@@ -142,4 +141,31 @@ export const warnOnInvalidations = (toolName) => (dispatch, getState) => {
   } catch (e) {
     console.warn('warnOnInvalidations() - error getting invalid checks', e);
   }
+};
+
+/**
+ * displays warning that selections, alignments, or both have been invalidated
+ * @param {boolean} showSelectionInvalidated
+ * @param {boolean} showAlignmentsInvalidated
+ * @param {Function|Null} callback - optional callback after OK button clicked
+ * @return {Function}
+ */
+export const showInvalidatedWarnings = (showSelectionInvalidated, showAlignmentsInvalidated,
+  callback = null) => (dispatch, getState) => {
+  let message = null;
+  let id = null;
+
+  if (showSelectionInvalidated && showAlignmentsInvalidated) {
+    message = ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG;
+    id = ALERT_ALIGNMENTS_RESET_ID;
+  } else if (showSelectionInvalidated) {
+    message = ALERT_SELECTIONS_INVALIDATED_MSG;
+    id = ALERT_SELECTIONS_INVALIDATED_ID;
+  } else { // (showAlignmentsInvalidated)
+    message = ALERT_ALIGNMENTS_RESET_MSG;
+    id = ALERT_ALIGNMENTS_RESET_ID;
+  }
+
+  const translate = getTranslate(getState());
+  dispatch(AlertActions.openIgnorableAlert(id, translate(message), { onConfirm: callback }));
 };

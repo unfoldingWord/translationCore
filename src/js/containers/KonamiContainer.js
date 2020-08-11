@@ -60,5 +60,5 @@ const mapDispatchToProps = {
 
 export default withLocale(connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(KonamiContainer));

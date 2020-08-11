@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import path from 'path';
 import fs from 'fs-extra';
+import isEqual from 'deep-equal';
 // helpers
 import * as MigrationActions from '../MigrationActions';
 import { getFoldersInResourceFolder } from '../../helpers/ResourcesHelpers';
@@ -23,7 +24,7 @@ describe('migrate tCore resources', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     // simulate static resources path
-    fs.__loadFilesIntoMockFs(['resources'], path.join('__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, '..'));
+    fs.__loadFilesIntoMockFs(['resources'], path.join('src', '__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, '..'));
     fs.moveSync(path.join(STATIC_RESOURCES_PATH, '../resources'), STATIC_RESOURCES_PATH);
     fs.removeSync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult/v11')); // remove old version
     fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, STATIC_RESOURCES_PATH);
@@ -33,8 +34,8 @@ describe('migrate tCore resources', () => {
   describe('Test without grc resource migration', () => {
     it('test with no user resources', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = false;
+      const expectedHelpsVers = [];
+      const expectedBibleVers = [];
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
       // when
@@ -43,13 +44,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with t4t - should not delete', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = [];
+      const expectedBibleVers = ['v12.1'];
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
@@ -59,13 +60,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with old en_ult - should delete old version', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = false;
+      const expectedHelpsVers = [];
+      const expectedBibleVers = [];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -84,13 +85,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with t4t, old tHelps resources and up to date resources - should not delete anything', () => {
       // given
-      const oldHelpsExpected = true;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = ['v8.1'];
+      const expectedBibleVers = ['v12.1'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -106,13 +107,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with t4t, old tHelps resources, up to date resources and different app version - should remove old helps and keep old bibles', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = [];
+      const expectedBibleVers = ['v12.1'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -128,13 +129,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with t4t, old tHelps resources and not up to date resources - should remove old helps and keep old bibles', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = [];
+      const expectedBibleVers = ['v12.1'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -151,13 +152,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with t4t, old tHelps resources and up to date resources - should not delete anything', () => {
       // given
-      const oldHelpsExpected = true;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = ['v8.1'];
+      const expectedBibleVers = ['v12.1'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -174,13 +175,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with old tHelps resources - should delete', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = false;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = false;
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'hi/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'x-test/translationHelps/translationWords'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
@@ -190,13 +191,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with current el-x-koine tHelps resources - should not delete', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = false;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = false;
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'el-x-koine/translationHelps/translationWords'));
       const manifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -210,13 +211,13 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with old el-x-koine tHelps resources (no manifest.json) - should update', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = false;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = false;
       fs.removeSync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/translationHelps/translationWords/v8/manifest.json'));
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/translationHelps/translationWords/v8'), path.join(USER_RESOURCES_PATH, 'el-x-koine/translationHelps/translationWords/v7'));
       const manifestPath = path.join(STATIC_RESOURCES_PATH, 'source-content-updater-manifest.json');
@@ -231,7 +232,7 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected);
+      verifyResources(expectedHelpsVers, expectedBibleVers);
     });
 
     it('test with empty uhb folder - should upgrade', () => {
@@ -290,8 +291,8 @@ describe('migrate tCore resources', () => {
 
     it('test with xx in grc/bible - should migrate to el-x-koine', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = ['v0.2'];
       const bibleId = 'xx';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
@@ -302,14 +303,14 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected, 'el-x-koine/bibles/' + bibleId);
+      verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
       expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
     });
 
     it('test with older version of xx in grc/bible - should not move', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = ['v0.2'];
       const bibleId = 'xx';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
       fs.copySync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1'));
@@ -321,14 +322,14 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected, 'el-x-koine/bibles/' + bibleId);
+      verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
       expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
     });
 
-    it('test with older version of ugnt in grc/bible - should be removed', () => {
+    it('test with older version of ugnt in grc/bible - should not be removed', () => {
       // given
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = ['v0.1', 'v0.2'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
@@ -339,15 +340,15 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected, 'el-x-koine/bibles/' + bibleId);
+      verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
       expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
     });
 
-    it('test with newer version of ugnt in grc/bible - newer version should not be deleted', () => {
+    it('test with newer version of ugnt in el-x-koine/bible - newer version should not be deleted', () => {
       // given
       mockOtherTnsOlversions = ['v0.1', 'v0.2'];
-      const oldHelpsExpected = false;
-      const oldBibleExpected = true;
+      const expectedHelpsVers = false;
+      const expectedBibleVers = ['v0.2', 'v0.3'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
@@ -358,9 +359,44 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      verifyResources(oldHelpsExpected, oldBibleExpected, 'el-x-koine/bibles/' + bibleId);
-      expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
+      verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
     });
+
+    it('test with two version of ugnt in el-x-koine/bible - all versions copied', () => {
+      // given
+      mockOtherTnsOlversions = [];
+      const expectedHelpsVers = false;
+      const expectedBibleVers = ['v0.2', 'v0.3'];
+      const bibleId = 'ugnt';
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+      // when
+      migrateResourcesFolder();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders).toMatchSnapshot();
+      verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
+    });
+  });
+
+  it('test with two version of ugnt in el-x-koine/bible and a recent dependency - all versions copied', () => {
+    // given
+    mockOtherTnsOlversions = ['v0.3'];
+    const expectedHelpsVers = false;
+    const expectedBibleVers = ['v0.2', 'v0.3'];
+    const bibleId = 'ugnt';
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
+    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+
+    // when
+    migrateResourcesFolder();
+
+    // then
+    const folders = getResourceFolders();
+    expect(folders).toMatchSnapshot();
+    verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
   });
 });
 
@@ -376,27 +412,24 @@ function toLinuxPath(filePath) {
 /**
  * check for presence of resource
  * @param {String} resource - subpath for resource
- * @param {Boolean} expected - if true then resource expected, else should not be present
+ * @param {Array} expectedVers - expected versions
  */
-function verifyResourceExpected(resource, expected) {
+function verifyResourceExpected(resource, expectedVers) {
   const resourceFolder = path.join(USER_RESOURCES_PATH, resource);
-  let present = fs.existsSync(resourceFolder);
+  const versions = getFoldersInResourceFolder(resourceFolder).sort();
+  expectedVers = Array.isArray(expectedVers) ? expectedVers : [];
 
-  if (present) {
-    const versions = getFoldersInResourceFolder(resourceFolder);
-    present = versions.length > 0;
-  }
-
-  if (present !== expected) {
-    const presentText = (expected ? '' : 'not ') + ' to be present';
-    console.log(`Expect ${resourceFolder} ${presentText}`);
-    expect(present).toEqual(expected);
+  if (!isEqual(versions, expectedVers.sort())) {
+    const expectedArray = expectedVers.sort().toString();
+    const foundArray = versions.toString();
+    console.log(`Expected '${resource}' versions: [${expectedArray}], but found: [${foundArray}]`);
+    expect(versions).toEqual(expectedVers.sort());
   }
 }
 
-function verifyResources(oldHelpsExpected, oldBibleExpected, bibleId = 'en/bibles/t4t') {
-  verifyResourceExpected('x-test/translationHelps/translationWords', oldHelpsExpected);
-  verifyResourceExpected(bibleId, oldBibleExpected);
+function verifyResources(expectedHelpsVers, expectedBibleVers, bibleId = 'en/bibles/t4t') {
+  verifyResourceExpected('x-test/translationHelps/translationWords', expectedHelpsVers);
+  verifyResourceExpected(bibleId, expectedBibleVers);
 }
 
 function modifyManifest(resourcePath, key, newValue) {

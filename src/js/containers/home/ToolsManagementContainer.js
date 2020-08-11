@@ -14,7 +14,9 @@ import {
   getSourceContentUpdateCount,
 } from '../../selectors';
 // actions
-import { openAlertDialog } from '../../actions/AlertModalActions';
+import {
+  closeAlertDialog, openAlertDialog, openOptionDialog,
+} from '../../actions/AlertModalActions';
 import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
@@ -61,7 +63,6 @@ class ToolsManagementContainer extends Component {
           projectSaveLocation,
           toolsCategories,
         },
-        invalidatedReducer,
       },
       translate,
       originalLanguageBookManifest,
@@ -82,7 +83,7 @@ class ToolsManagementContainer extends Component {
             {
               actions: translate('actions'),
               check_for_content_updates: translate('updates.check_for_content_updates'),
-            }
+            },
           )}
         </p>
       </div>
@@ -100,13 +101,11 @@ class ToolsManagementContainer extends Component {
             toolsCategories={toolsCategories}
             manifest={manifest}
             translate={translate}
-            bookName={name}
             loggedInUser={loggedInUser}
             toggleHomeView={toggleHomeView}
             actions={{ ...this.props.actions }}
             onMissingResource={onMissingResource}
             originalLanguageBookManifest={originalLanguageBookManifest}
-            invalidatedReducer={invalidatedReducer}
             projectSaveLocation={projectSaveLocation}
             sourceContentUpdateCount={sourceContentUpdateCount}
           />
@@ -125,7 +124,6 @@ const mapStateToProps = (state) => ({
     homeScreenReducer: state.homeScreenReducer,
     projectDetailsReducer: state.projectDetailsReducer,
     loginReducer: state.loginReducer,
-    invalidatedReducer: state.invalidatedReducer,
   },
 });
 
@@ -135,6 +133,8 @@ const mapDispatchToProps = (dispatch) => ({
   onMissingResource: (resourceDetails) => dispatch(promptUserAboutMissingResource(resourceDetails)),
   toggleHomeView: (value) => dispatch(BodyUIActions.toggleHomeView(value)),
   actions: {
+    openOptionDialog: (...args) => dispatch(openOptionDialog(...args)),
+    closeAlertDialog: () => dispatch(closeAlertDialog()),
     loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
       dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
     },
@@ -164,7 +164,6 @@ ToolsManagementContainer.propTypes = {
   reducers: PropTypes.shape({
     projectDetailsReducer: PropTypes.object.isRequired,
     loginReducer: PropTypes.shape({ loggedInUser: PropTypes.bool }).isRequired,
-    invalidatedReducer: PropTypes.object.isRequired,
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
@@ -176,5 +175,5 @@ ToolsManagementContainer.propTypes = {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ToolsManagementContainer);

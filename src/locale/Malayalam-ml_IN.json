@@ -64,6 +64,7 @@
   "email_address_optional": "ഇമെയിൽ വിലാസം (optional):",
   "invalid_email": "അസാധുവായ ഇമെയിൽ വിലാസം",
   "include_app_logs": "അപ്ലിക്കേഷൻ ലോഗുകൾ ഉൾപ്പെടുത്തുക",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "നിങ്ങളുടെ വാചകം ഉപയോഗിച്ച് വിന്യാസ ഡാറ്റ എക്‌സ്‌പോർട്ടുചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?",
   "include_alignment_check": "വിന്യാസ ഡാറ്റ ഉൾപ്പെടുത്തുക",
   "loading_verse_edits": "എഡിറ്റു ചെയ്ത വാക്യം ലോഡുചെയ്യുന്നു",
@@ -73,6 +74,7 @@
   "sending_feedback": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നു",
   "sending_feedback_failed": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു",
   "critical_error_warning": "മുന്നറിയിപ്പ്: ഗുരുതരമായൊരു തെറ്റു് സംഭവിച്ചു!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "സോഫ്റ്റ്വെയർ അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "check_for_content_updates": "ഉള്ളടക്ക അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
@@ -133,7 +135,13 @@
     "cc_by_sa": "ക്രിയേറ്റീവ് കോമൺസ് ആട്രിബ്യൂഷൻ-ഷെയർഅലൈക്ക് 4.0 അന്താരാഷ്ട്ര ലൈസൻസ്."
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "സിപ്പ് ഫയലുകൾ",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "ക്ഷമിക്കണം! നിങ്ങളുടെ പ്രോജക്റ്റ് ലോഡുചെയ്യുന്നതിനായി സജ്ജീകരിക്കുന്നതിൽ ഞങ്ങൾക്ക് ഒരു പ്രശ്നം നേരിട്ടു. സഹായത്തിനായി ഹെൽപ്പ് ഡെസ്കുമായി(${email}) ബന്ധപ്പെടുക.\n for assistance.",
     "error_loading": "ക്ഷമിക്കണം! നിങ്ങളുടെ പ്രോജക്റ്റ് ലോഡുചെയ്യുന്നതിൽ ഞങ്ങൾക്ക് ഒരു പ്രശ്നം നേരിട്ടു. സഹായത്തിനായി ഹെൽപ്പ് ഡെസ്കുമായി (${email}) ബന്ധപ്പെടുക.",
     "no_project": "ഒരു പ്രോജക്റ്റും തിരഞ്ഞെടുത്തിട്ടില്ല",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "${door43} ശേഖരത്തിന്‍റെ പേരുമാറ്റിയില്ല.<br/><br/> ${door43} ശേഖരത്തിന്‍ പേരുമാറ്റുന്നത് വീണ്ടും ശ്രമിക്കണോ അതോ പേരുമാറ്റാതെ തുടരണമോ?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "ഈ പേരിനൊപ്പം ഒരു ശേഖരം ഇതിനകം തന്നെ ഉള്ളതിനാൽ പേരുമാറ്റുന്നത് പരാജയപ്പെട്ടു. <br/> <br/> നിങ്ങളുടെ പ്രോജക്റ്റ് ${door43} ലേക്ക് അപ്‌ലോഡുചെയ്യാൻ, നിങ്ങളുടെ പ്രാദേശിക പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ അല്ലെങ്കിൽ ${door43} പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ ചെയ്യേണ്ടതുണ്ട്.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "ഭാഷയുടെ പേര് കോഡിന് സാധുതയുള്ളതല്ല\n",
@@ -233,6 +243,7 @@
     "publicly_available": "സംഭാവകരോ ചെക്കറുകളോ ആയി ലിസ്റ്റുചെയ്‌തവരെ പൊതുവായി ലഭ്യമാക്കും.\n",
     "field_required": "ഈ ഫീൽഡ് പൂരിപ്പിക്കേണ്ടതുണ്ട്\n",
     "language_direction": "ഭാഷാ ദിശ",
+    "project_font": "Project Font",
     "ltr": "ഇടത്തുനിന്ന് വലത്തേക്ക്\n",
     "rtl": "വലത്തുനിന്ന് ഇടത്തോട്ട്\n",
     "invalid_language_name": "ഭാഷയുടെ പേര് സാധുവല്ല\n",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "ഉപകരണ ഡാറ്റ ലോഡുചെയ്യുന്നു.\n",
     "resource_missing_for_tool": "നിലവിലെ ഉപകരണത്തിന് യു‌ജി‌എൻ‌ടിയുടെ മറ്റൊരു പതിപ്പ് ആവശ്യമാണ്. ഈ ഉറവിടം വീണ്ടെടുക്കുന്നതിന് ഡൗൺലോഡ് ക്ലിക്കുചെയ്യുക.\n",
     "no_checks_selected": "ഈ ഉപകരണം സമാരംഭിക്കുന്നതിന് നിങ്ങൾ ഒരു വിഭാഗം തിരഞ്ഞെടുക്കണം\n",

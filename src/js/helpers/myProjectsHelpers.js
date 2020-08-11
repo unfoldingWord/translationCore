@@ -1,14 +1,15 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import env from 'tc-electron-env';
+
 // helpers
 import { tc_LAST_OPENED_KEY } from '../common/constants';
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
 import { getProjectSettings } from './ProjectSettingsHelpers';
 // constants
-const DEFAULT_SAVE = path.join(ospath.home(), 'translationCore', 'projects');
-const OLD_DEFAULT_SAVE = path.join(ospath.home(), 'translationCore');
+const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
+const OLD_DEFAULT_SAVE = path.join(env.home(), 'translationCore');
 
 /**
  * @description - Will get the directories inside of a directory and return them

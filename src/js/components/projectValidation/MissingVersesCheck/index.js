@@ -21,7 +21,7 @@ class MissingVersesCheck extends Component {
         verseCards.push(
           <div style={{ fontSize:18, margin:'5px 0px' }} key={`${chapterIndex}_${chapterObject[verseNumber]}`}>
             {BookNameLocalized} {chapterIndex}:{chapterObject[verseNumber]}
-          </div>
+          </div>,
         );
       });
     });

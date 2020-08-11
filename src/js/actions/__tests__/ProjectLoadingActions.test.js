@@ -13,7 +13,7 @@ import {
   tc_LAST_OPENED_KEY,
   PROJECTS_PATH,
 } from '../../common/constants';
-import ActionTypes from '../../actions/ActionTypes';
+import ActionTypes from '../ActionTypes';
 jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -53,7 +53,7 @@ jest.mock('../../selectors', () => ({
 describe('ProjectLoadingActions.migrateValidateLoadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
-  const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
+  const sourcePath = path.join('src', '__tests__','fixtures','project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
 
   beforeEach(() => {
@@ -252,7 +252,7 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
 describe('loadProject', () => {
   let initialState = {};
   const projectName = 'en_tit';
-  const sourcePath = path.join(__dirname, '../../../../__tests__/fixtures/project');
+  const sourcePath = path.join('src', '__tests__','fixtures','project');
   const projectPath = path.join(PROJECTS_PATH, projectName);
 
   beforeEach(() => {

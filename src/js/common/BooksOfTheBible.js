@@ -148,6 +148,11 @@ export const BIBLES_ABBRV_INDEX = {
   'rev': '67',
 };
 
+export const ALL_BIBLE_BOOKS = {
+  ...BIBLE_BOOKS.oldTestament,
+  ...BIBLE_BOOKS.newTestament,
+};
+
 export function getAllBibleBooks(translate=k=>k) {
   const bibleBooks = {};
 

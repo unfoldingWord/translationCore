@@ -14,4 +14,4 @@ class ThirdPartyAttributions extends React.Component {
   }
 }
 
-module.exports = ThirdPartyAttributions;
+export default ThirdPartyAttributions;

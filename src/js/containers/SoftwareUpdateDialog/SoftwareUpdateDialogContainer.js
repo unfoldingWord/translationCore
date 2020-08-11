@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import semver from 'semver';
 import { connect } from 'react-redux';
-import appPackage from '../../../../package';
+// import appPackage from '../../../../package';
 import { confirmOnlineAction } from '../../actions/OnlineModeConfirmActions';
 import SoftwareUpdateDialog, {
   STATUS_ERROR, STATUS_OK, STATUS_LOADING, STATUS_UPDATE,
 } from '../../components/dialogComponents/SoftwareUpdateDialog';
+import { APP_VERSION } from '../../common/constants';
 
 /**
  * Returns the correct update asset for this operating system.
@@ -135,7 +136,7 @@ class SoftwareUpdateDialogContainer extends React.Component {
     });
 
     this.request = axios(request).then(response => {
-      const update = getUpdateAsset(response.data, appPackage.version, os.arch(), os.platform());
+      const update = getUpdateAsset(response.data, APP_VERSION, os.arch(), os.platform());
 
       if (update) {
         this.setState({

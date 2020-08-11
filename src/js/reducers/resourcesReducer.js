@@ -148,5 +148,5 @@ export const getBibles = state => state.bibles;
  */
 export const getSourceBookManifest = state => {
   const sourceBible = getSourceBook(state);
-  return sourceBible.manifest;
+  return sourceBible && sourceBible.manifest;
 };

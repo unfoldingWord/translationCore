@@ -1,10 +1,15 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
+import env from 'tc-electron-env';
 import ResourceAPI from './ResourceAPI';
 // constants
-const USER_RESOURCES_PATH = path.join(ospath.home(), 'translationCore', 'resources');
+const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
 
+/**
+ * get Lexicon Data
+ * @param {string} lexiconId
+ * @param {string} entryId
+ */
 export function getLexiconData(lexiconId, entryId) {
   try {
     const languageId = 'en'; // TODO: need to add other language support

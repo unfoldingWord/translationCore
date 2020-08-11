@@ -1,9 +1,9 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import ospath from 'ospath';
 import zipFolder from 'zip-folder';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electronite';
 import { getQuoteAsString } from 'checking-tool-wrapper';
+import env from 'tc-electron-env';
 import { getTranslate } from '../selectors';
 // actions
 import * as MergeConflictActions from '../actions/MergeConflictActions';
@@ -77,8 +77,8 @@ export const exportToCSV = (projectPath) => ((dispatch, getState) => {
  */
 export const getDefaultPath = (csvSaveLocation, projectName) => {
   let defaultPath;
-  const OSX_DOCUMENTS_PATH = path.join(ospath.home(), 'Documents');
-  const WIN_DOCUMENTS_PATH = path.join(ospath.home(), 'My Documents');
+  const OSX_DOCUMENTS_PATH = path.join(env.home(), 'Documents');
+  const WIN_DOCUMENTS_PATH = path.join(env.home(), 'My Documents');
 
   if (csvSaveLocation) {
     defaultPath = path.join(csvSaveLocation, projectName + '.zip');
@@ -87,7 +87,7 @@ export const getDefaultPath = (csvSaveLocation, projectName) => {
   } else if (fs.existsSync(WIN_DOCUMENTS_PATH)) {
     defaultPath = path.join(WIN_DOCUMENTS_PATH, projectName + '.zip');
   } else {
-    defaultPath = path.join(ospath.home(), projectName + '.zip');
+    defaultPath = path.join(env.home(), projectName + '.zip');
   }
   return defaultPath;
 };
@@ -217,12 +217,16 @@ export const loadGroupsData = (toolName, projectPath) => new Promise((resolve) =
  */
 export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => new Promise((resolve, reject) => {
   let dataArray = [];
+  let groupID_ = null;
+  let groupItemIndex = null;
 
   try {
     const groupIds = Object.keys(obj);
 
     groupIds.forEach(groupId => {
-      obj[groupId].forEach(groupData => {
+      groupID_ = groupId;
+      obj[groupId].forEach((groupData, index) => {
+        groupItemIndex = index;
         const contextId = groupData.contextId;
         const data = {
           priority: (groupData.priority?groupData.priority:1),
@@ -243,6 +247,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => new Pr
         reject(err);
       });
   } catch (e) {
+    console.error(`saveGroupsToCSV() - error for ${toolName} - '${groupID_}' index ${groupItemIndex}`, e);
     reject(e);
   }
 });
@@ -283,7 +288,10 @@ export const saveVerseEditsToCSV = (projectPath, translate) => new Promise((reso
         resolve(true);
       });
     })
-    .catch(reject);
+    .catch(e => {
+      console.error(`saveVerseEditsToCSV() - error: `, e);
+      reject(e);
+    });
 });
 
 /**
@@ -291,7 +299,7 @@ export const saveVerseEditsToCSV = (projectPath, translate) => new Promise((reso
  * @param {String} projectPath - path of the project
  * @param {function} translate - translation function
  */
-export const saveCommentsToCSV = (projectPath, translate) => new Promise((resolve) => {
+export const saveCommentsToCSV = (projectPath, translate) => new Promise((resolve, reject) => {
   loadProjectDataByType(projectPath, 'comments')
     .then((array) => {
       const objectArray = array.map(data => {
@@ -309,6 +317,9 @@ export const saveCommentsToCSV = (projectPath, translate) => new Promise((resolv
 
       csvHelpers.generateCSVFile(objectArray, filePath)
         .then(resolve);
+    }).catch(e => {
+      console.error(`saveCommentsToCSV() - error: `, e);
+      reject(e);
     });
 });
 
@@ -359,7 +370,10 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
         resolve(true);
       });
     })
-    .catch(reject);
+    .catch(e => {
+      console.error(`saveSelectionsToCSV() - error: `, e);
+      reject(e);
+    });
 });
 
 /**
@@ -391,7 +405,10 @@ export const saveRemindersToCSV = (projectPath, translate) => new Promise((resol
         resolve(true);
       });
     })
-    .catch(reject);
+    .catch(e => {
+      console.error(`saveRemindersToCSV() - error: `, e);
+      reject(e);
+    });
 });
 
 /**
@@ -433,7 +450,8 @@ export const loadProjectDataByType = (projectPath, type) => new Promise((resolve
 
           try {
             const data = fs.readJsonSync(dataPath);
-            data.userName = data.userName || 'Anonymous';
+            // TRICKY: some checks use a camel case username and others do not.
+            data.userName = data.userName || data.username || 'Anonymous';
             checkDataArray.push(data);
           } catch (err) {
             console.log('loadProjectDataByType(projectPath, type) ', projectPath, type);
@@ -453,10 +471,14 @@ export const loadProjectDataByType = (projectPath, type) => new Promise((resolve
  * @return {string}
  */
 function getContextHash(check) {
-  const id = check.contextId;
-  const quoteString = getQuoteAsString(id.quote);
-  const hash = `${id.reference.chapter}:${id.reference.verse}-${id.groupId}-${quoteString}-${id.occurrence}`;
-  return hash;
+  const id = check && check.contextId;
+
+  if (id) {
+    const quoteString = getQuoteAsString(id.quote);
+    const hash = `${id.reference.chapter}:${id.reference.verse}-${id.groupId}-${quoteString}-${id.occurrence}`;
+    return hash;
+  }
+  return null;
 }
 
 /**
@@ -467,7 +489,13 @@ function getLatestForChecks(checks) {
   const latestChecks = {};
 
   for (let check of checks) {
-    latestChecks[getContextHash(check)] = check;
+    const hash = getContextHash(check);
+
+    if (hash) {
+      latestChecks[hash] = check;
+    } else {
+      console.warn(`getLatestForChecks() - cannot get context hash for: ${JSON.stringify(check)}`);
+    }
   }
 
   const keys = Object.keys(latestChecks);

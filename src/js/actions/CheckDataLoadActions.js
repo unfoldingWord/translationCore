@@ -1,44 +1,28 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
-// helpers
-import * as gatewayLanguageHelpers from '../helpers/gatewayLanguageHelpers';
-import consts from './ActionTypes';
-// consts declaration
-const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
+import { PROJECT_CHECKDATA_DIRECTORY } from '../common/constants';
 
 /**
  * Generates the output directory.
- * @param {object} projectDetailsReducer
- * @param {object} contextIdReducer
+ * @param {object} projectSaveLocation
+ * @param {object} contextId
  * @param {String} checkDataName - checkDate folder name where data will be saved.
  *  @example 'comments', 'reminders', 'selections', 'verseEdits' etc.
  * @return {String} save path
  */
-export function generateLoadPath(projectDetailsReducer, contextIdReducer, checkDataName) {
-  /**
-  * @description output directory
-  *  /translationCore/ar_eph_text_ulb/.apps/translationCore/checkData/comments/eph/1/3
-  * @example PROJECT_SAVE_LOCATION - /translationCore/ar_eph_text_ulb
-  * @example CHECKDATA_DIRECTORY - /.apps/translationCore/checkData
-  * @example bookAbbreviation - /eph
-  * @example checkDataName - /comments
-  * @example chapter - /1
-  * @example verse - /3
-  */
-  const PROJECT_SAVE_LOCATION = projectDetailsReducer.projectSaveLocation;
-
-  if (PROJECT_SAVE_LOCATION) {
-    let bookAbbreviation = contextIdReducer.contextId.reference.bookId;
-    let chapter = contextIdReducer.contextId.reference.chapter.toString();
-    let verse = contextIdReducer.contextId.reference.verse.toString();
+export function generateLoadPath(projectSaveLocation, contextId, checkDataName) {
+  if (projectSaveLocation) {
+    let bookAbbreviation = contextId.reference.bookId;
+    let chapter = contextId.reference.chapter.toString();
+    let verse = contextId.reference.verse.toString();
     let loadPath = path.join(
-      PROJECT_SAVE_LOCATION,
-      CHECKDATA_DIRECTORY,
+      projectSaveLocation,
+      PROJECT_CHECKDATA_DIRECTORY,
       checkDataName,
       bookAbbreviation,
       chapter,
-      verse
+      verse,
     );
     return loadPath;
   }
@@ -57,7 +41,7 @@ export function loadCheckData(loadPath, contextId) {
     let files = fs.readdirSync(loadPath);
 
     files = files.filter(file => // filter the filenames to only use .json
-      path.extname(file) === '.json'
+      path.extname(file) === '.json',
     );
 
     let sorted = files.sort().reverse(); // sort the files to put latest first
@@ -89,138 +73,4 @@ export function loadCheckData(loadPath, contextId) {
   * to initialized the reducer.
   */
   return checkDataObject;
-}
-/**
- * Loads the latest comment file from the file system for the specify contextID.
- * @param {Object} state - store state object.
- * @return {Object} Dispatches an action that loads the commentsReducer with data.
- */
-export function loadComments(state) {
-  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'comments');
-  let commentsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-
-  if (commentsObject) {
-    return {
-      type: consts.ADD_COMMENT,
-      modifiedTimestamp: commentsObject.modifiedTimestamp,
-      text: commentsObject.text,
-      userName: commentsObject.userName,
-    };
-  } else {
-    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-    return {
-      type: consts.ADD_COMMENT,
-      modifiedTimestamp: '',
-      text: '',
-      userName: '',
-    };
-  }
-}
-/**
- * Loads the latest invalidated file from the file system for the specify contextID.
- * @param {Object} state - store state object.
- * @return {Object} Dispatches an action that loads the invalidatedReducer with data.
- */
-export function loadInvalidated(state) {
-  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'invalidated');
-  let invalidatedObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-  const {
-    gatewayLanguageCode,
-    gatewayLanguageQuote,
-  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
-
-  if (invalidatedObject) {
-    return {
-      type: consts.SET_INVALIDATED,
-      enabled: invalidatedObject.enabled,
-      userName: invalidatedObject.userName,
-      modifiedTimestamp: invalidatedObject.modifiedTimestamp,
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-    };
-  } else {
-    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-    return {
-      type: consts.SET_INVALIDATED,
-      enabled: false,
-      modifiedTimestamp: '',
-      userName: '',
-      gatewayLanguageCode: null,
-      gatewayLanguageQuote: null,
-    };
-  }
-}
-/**
- * Loads the latest reminders file from the file system for the specify contextID.
- * @param {Object} state - store state object.
- * @return {Object} Dispatches an action that loads the remindersReducer with data.
- */
-export function loadReminders(state) {
-  let loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'reminders');
-  let remindersObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-  const {
-    gatewayLanguageCode,
-    gatewayLanguageQuote,
-  } = gatewayLanguageHelpers.getGatewayLanguageCodeAndQuote(state);
-
-  if (remindersObject) {
-    return {
-      type: consts.SET_REMINDER,
-      enabled: remindersObject.enabled,
-      userName: remindersObject.userName,
-      modifiedTimestamp: remindersObject.modifiedTimestamp,
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-    };
-  } else {
-    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-    return {
-      type: consts.SET_REMINDER,
-      enabled: false,
-      modifiedTimestamp: '',
-      userName: '',
-      gatewayLanguageCode: null,
-      gatewayLanguageQuote: null,
-    };
-  }
-}
-/**
- * Loads the latest selections file from the file system for the specific contextID.
- * @param {Object} state - store state object.
- * @return {Object} Dispatches an action that loads the selectionsReducer with data.
- */
-export function loadSelections(state) {
-  const loadPath = generateLoadPath(state.projectDetailsReducer, state.contextIdReducer, 'selections');
-  const selectionsObject = loadCheckData(loadPath, state.contextIdReducer.contextId);
-
-  if (selectionsObject) {
-    let {
-      selections,
-      modifiedTimestamp,
-      nothingToSelect,
-      username,
-      userName, // for old project data
-      gatewayLanguageCode,
-      gatewayLanguageQuote,
-    } = selectionsObject;
-    username = username || userName;
-
-    return {
-      type: consts.CHANGE_SELECTIONS,
-      selections: selections,
-      nothingToSelect: nothingToSelect,
-      username,
-      modifiedTimestamp: modifiedTimestamp,
-      gatewayLanguageCode: gatewayLanguageCode,
-      gatewayLanguageQuote: gatewayLanguageQuote,
-    };
-  } else {
-    // The object is undefined because the file wasn't found in the directory thus we init the reducer to a default value.
-    return {
-      type: consts.CHANGE_SELECTIONS,
-      modifiedTimestamp: null,
-      selections: [],
-      username: null,
-    };
-  }
 }

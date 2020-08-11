@@ -1,0 +1,728 @@
+
+:root {
+  --accent-color: #2196F3;
+  --accent-color-light: #44C6FF;
+  --accent-color-dark: #19579E;
+
+  --reverse-color: #FFFFFF;
+
+  --completed-color: #58C17A;
+  --warning-color: #F44336;
+  --danger-color: #a21309;
+  --highlight-color: #FDD910;
+
+  --text-color: #333333;
+  --text-color-light: #747474;
+  --text-color-dark: #000000;
+
+  --background-color: #747474;
+  --background-color-light: #EEEEEE;
+  --background-color-dark: #333333;
+
+  --border-color: #CCCCCC;
+}
+
+@font-face {
+  font-family: Noto Sans;
+  src: url(./fonts/NotoSans-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: Noto Sans;
+  font-style: italic;
+  src: url(./fonts/NotoSans-Italic.ttf);
+}
+@font-face {
+  font-family: Noto Sans;
+  font-weight: bold;
+  src: url(./fonts/NotoSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: Noto Sans;
+  font-style: italic;
+  font-weight: bold;
+  src: url(./fonts/NotoSans-BoldItalic.ttf);
+}
+
+/*
+special font for Hebrew
+*/
+@font-face {
+  font-family: Ezra;
+  src: url(./fonts/SILEOTSR.ttf);
+  font-weight: normal;
+  unicode-range: U+0590-05FF;
+}
+
+/*
+  use Ezra for Hebrew characters and then Noto Sans for other characters
+*/
+ * {
+  font-family: Ezra, Noto Sans;
+}
+
+#scrollableSection {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  bottom: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: calc(100vw - 250px);
+}
+
+/*
+** Fills the screen, so that the ScrollableSection in
+** RootStyles.js works. Every ancestor of the ScrollableSection
+** must have the fill-height class
+*/
+body, html, #content, .fill-height {
+  margin: 0;
+  overflow: hidden;
+  height:100%;
+}
+
+body {
+  background-color: var(--reverse-color);
+}
+
+.main-view h1,
+.main-view h2,
+.main-view h3,
+.main-view h4,
+.main-view h5,
+.main-view h6,
+.main-view center,
+.main-view div,
+.main-view p {
+  color: #1f273b;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 8px var(--reverse-color);
+    border-radius: 12px;
+    background: var(--text-color-light);
+}
+
+.text-primary-highlighted {
+  background-color: var(--highlight-color);
+  font-weight: bold;
+}
+
+/*
+The following .nav-tabs and .nav-pills classes handle the styling for the tabs in the
+main modal. They basically override bootstrap styling for these components
+*/
+
+.nav-tabs {
+  border-bottom: 1px solid var(--accent-color-dark);
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+  color: var(--reverse-color);
+  background-color: var(--accent-color-dark);
+  width: 150px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+  color: var(--accent-color-dark);
+  background-color: var(--reverse-color);
+  cursor: default;
+  font-weight: bold;
+}
+
+.nav-pills {
+  border: none;
+}
+
+.nav-pills>li>a, .nav-pills>li>a:focus, .nav-pills>li>a:hover {
+  color: var(--reverse-color);
+  background-color: var(--accent-color);
+  width: 225px;
+  height: 40px;
+  outline: none;
+  border-radius: 0;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: var(--accent-color);
+  background-color: var(--reverse-color);
+  cursor: default;
+  font-weight: bold;
+}
+
+#recentProjects td:nth-child(n+3):nth-child(-n+5) {
+  font-style: italic;
+  width: 100px;
+}
+#recentProjects td:nth-child(2) {
+    font-weight: bold;
+    width: 100px;
+}
+
+#recentProjects>tbody>tr>td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#recentProjects td:nth-child(n+1):nth-child(-n+5) {
+  padding-top: 15px;
+}
+#recentProjects th {
+  font-weight: normal;
+}
+
+#recentProjects>tbody>tr {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.btn-prime {
+    background-color: var(--accent-color-dark);
+    background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 2px;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-prime:enabled:hover, .btn-prime:focus {
+    background-color: var(--accent-color-dark);
+    background-image: linear-gradient(to bottom, var(--accent-color-dark), var(--accent-color-dark));
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px var(--text-color-light);
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-prime:disabled, .btn-prime:disabled:hover {
+    color: var(--reverse-color);
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+.btn-prime-reverse, .btn-prime-reverse:hover, .btn-prime-reverse:focus {
+    background-color: var(--accent-color-dark);
+    opacity: 0.6;
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-second {
+    background-color: var(--reverse-color);
+    color: var(--accent-color-dark);
+    height: 35px;
+    width: 190px;
+    border-radius: 2px;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-second:enabled:hover, .btn-second:focus {
+    background-color: var(--reverse-color);
+    color: var(--accent-color-dark);
+    height: 35px;
+    width: 190px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px var(--text-color-light);
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--accent-color-dark);
+    outline: none;
+}
+
+.btn-second:disabled, .btn-second:disabled:hover {
+    color: var(--accent-color-dark);
+    cursor: not-allowed;
+    opacity: .6;
+}
+
+.btn-second-reverse, .btn-second-reverse:hover, .btn-second-reverse:focus {
+    background-color: var(--accent-color-dark);
+    opacity: 0.6;
+    color: var(--reverse-color);
+    height: 35px;
+    width: 190px;
+    border-radius: 0;
+    margin: 10px;
+    padding: 0;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--reverse-color);
+    outline: none;
+}
+
+.btn-link {
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  height: 35px;
+  width: 190px;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.btn-link:enabled:hover, .btn-link:focus {
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  height: 35px;
+  width: 190px;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.btn-link:disabled, .btn-link:disabled:hover {
+  color: var(--accent-color-dark);
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.btn-link-reverse, .btn-link-reverse:hover, .btn-link-reverse:focus {
+  background-color: var(--accent-color-dark);
+  opacity: 0.6;
+  color: var(--reverse-color);
+  height: 35px;
+  width: 190px;
+  border-radius: 0;
+  margin-top: 10px;
+  margin-right: 50px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  outline: none;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 5s linear;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.wraptip {
+  width: 96px;
+  position: relative;
+  display: inline-block;
+}
+.wraptip .wraptip-text {
+  visibility: hidden;
+  width: 180px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 50%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.wraptip .wraptip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 70%;
+  margin-left: -80px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.wraptip:hover .wraptip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popover-root {
+  background: transparent;
+  overflow: visible;
+  box-shadow: none;
+  left: -31415px;
+}
+
+.popover-root > div:nth-child(1) { /* removes unhelpfull scrollbar from popover-roots child auto set by material-ui */
+  overflow-y: hidden !important;
+}
+
+.menu-text-root {
+  background: transparent;
+  overflow: visible;
+  box-shadow: none;
+  left: -31415px;
+}
+
+.my-tooltip-class > .tooltip-inner {
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.my-tooltip-class > .tooltip-arrow {
+  border-bottom: 5px solid lightgrey !important;
+}
+
+#groups-menu-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+#groups-menu-container .group .group-item .status-badge {
+  position: relative;
+  margin: 0 10px 0 20px;
+}
+
+#groups-menu-container .group .group-item .status-badge .glyphicon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#groups-menu-container .group .group-item .status-badge .glyphicon svg {
+  width: 16px !important;
+  height: 16px !important;
+  fill: var(--reverse-color) !important;
+}
+
+#groups-menu-container .group .group-item .status-badge .badge {
+  position: absolute;
+  top: -4px;
+  right: -5px;
+  font-size: 6px;
+  color: var(--background-color); /* to give the text a transparent look */
+  border: solid 1px var(--background-color); /* to give the text a transparent look */
+  background-color: var(--reverse-color);
+  padding: 2px 3px;
+  margin: 0;
+}
+
+#groups-menu-container .group .group-item.active .status-badge .badge {
+  color: var(--accent-color);
+  border: solid 1px var(--accent-color);
+}
+
+#groups-menu-container .group .group-item .status-tooltip {
+  padding: 8px 0 8px 8px !important;
+}
+
+#groups-menu-container .group .group-item .status-tooltip .glyphicon {
+  padding: 0 !important;
+  padding-right: 8px !important;
+  color: var(--text-color-dark) !important;
+  font-size: 16px;
+}
+
+#groups-menu-container .group .group-item .status-tooltip .glyphicon svg {
+  fill: var(--text-color-dark) !important;
+}
+
+#groups-menu-container .group .group-item .status-tooltip .glyphicon-invalidated svg {
+  height: 18px !important;
+  width: 18px !important;
+  margin-bottom: 5px;
+}
+
+#groups-menu-container .group .group-item .status-tooltip {
+  background-color: var(--background-color-light);
+}
+
+#groups-menu-container .group .group-item .status-tooltip.place-right:after {
+  border-right-color: var(--background-color-light);
+}
+
+#groups-menu-container .group .group-item .status-tooltip.place-bottom:after {
+  border-bottom-color: var(--background-color-light);
+}
+
+#groups-menu-container #groups-menu-top {
+  color: var(--reverse-color);
+  background-color: var(--accent-color-dark);
+  width: calc(100% - 12px);
+  padding: 5px 0;
+  z-index: 10;
+}
+
+#groups-menu-container #groups-menu-header {
+  background-color: var(--accent-color-dark);
+  margin: 3px;
+  padding: 0 5px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#groups-menu-container #groups-menu-title {
+  padding-left: 10px;
+}
+
+#groups-menu-top .filter-toggle {
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+#groups-menu-header .filter-icon {
+  padding: 6px;
+}
+
+#groups-menu-header .filter-icon.expanded {
+  background-color: var(--reverse-color);
+  color: var(--accent-color-dark);
+  border-radius: 50%;
+}
+
+#groups-menu-header .filter-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #933;
+  padding: 2px 4px;
+  margin: 0;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+
+#groups-menu-filter {
+  margin: 0 15px;
+  font-size: 14px;
+  border-top: 1px solid var(--reverse-color);
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+#groups-menu-filter .option.disabled {
+  color: var(--text-color-light);
+}
+
+#groups-menu-filter .option span {
+  margin: 0 5px;
+}
+
+#groups-menu-filter .option .option-icon svg {
+  margin: 0 5px 5px 5px;
+}
+
+#groups-menu-container #groups {
+  overflow-y: scroll;
+}
+
+#groups-menu-container #groups .no-results {
+  font-style: italic;
+  font-size: 16px;
+  padding: 15px;
+  color: var(--reverse-color);
+}
+
+#groups-menu-filter.bubbles-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+#groups-menu-filter .filter-bubble {
+  color: var(--accent-color-dark);
+  background-color: var(--reverse-color);
+  margin: 2px;
+  display: inline-block;
+  border-radius: 15px;
+  padding: 2px 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+#groups-menu-filter .filter-bubble .filter-remove {
+  cursor: pointer;
+}
+
+#groups-menu-filter .filter-bubble .filter-remove:before {
+  padding-right: 3px;
+}
+
+#groups-menu-filter .filter-bubble .filter-text {
+  vertical-align: text-bottom;
+}
+
+.project-info-text-field-area label {
+  margin: 0 !important;
+}
+
+.project-info-text-field-area .project-info-text-field {
+  height: auto !important;
+  font-weight: normal !important;
+  display: block !important;
+}
+
+.project-info-text-field-area .project-info-text-field hr {
+  position: initial !important;
+}
+
+.project-details-table {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1290px) {
+  .project-details-table .project-details-column {
+    margin: 7px 15px !important;
+  }
+}
+
+@media (max-width: 1199px) {
+  .project-details-table .project-details-column {
+    width: 100% !important;
+    margin: 7px !important;
+  }
+
+  .project-details-table .project-details-item {
+    float: none !important;
+    width: 256px !important;
+    margin: 0 auto !important;
+  }
+}
+
+.project-details-table .project-details-column {
+  flex: 1 1 45%;
+  margin: 7px 10px;
+  width: 45%;
+}
+
+.project-details-table .project-details-item {
+  min-width: 256px;
+}
+
+.project-details-table .contributor-area,
+.project-details-table .checkers-area {
+  margin-top: 10px;
+}
+
+.project-details-table .project-details-left-column .project-details-item {
+  display: block !important;
+  float: right;
+}
+
+.project-details-table .project-details-right-column .project-details-item {
+  display: block !important;
+  float: left;
+}
+
+.project-details-table .project-details-item label {
+  display: block;
+  margin: 0 0 10px 0 !important;
+}
+
+.project-details-table .language-name-textbox {
+  display: block;
+}
+
+.project-details-table .language-id-textbox {
+  display: block;
+}
+
+.project-details-table .text-prompt > div {
+  display: block !important;
+}
+
+.project-details-table .required {
+  color: #cd0033;
+}
+
+.project-details-table .required:after {
+  content: '*';
+  color: #cd0033;
+}
+
+.project-details-table .select-field {
+  margin-top: 20px;
+}
+
+.project-details-table .select-field input {
+  height: auto !important;
+}
+
+.project-details-table .select-field hr {
+  bottom: inherit !important;
+}
+
+.project-details-table .select-field div {
+  height: auto !important;
+  line-height: 16px !important;
+}
+
+.project-details-table .select-field > div,
+.project-details-table .select-field > div > div {
+  height: 16px !important;
+}
+
+.project-details-table .select-field button {
+  padding: 0 !important;
+  height: auto !important;
+  top: -5px !important;
+}

@@ -77,9 +77,9 @@ describe('GogsApiHelpers.renameRepo', () => {
   it('should not fail in renaming repo with a valid name', function () {
     jest.setTimeout(30000);
     expect.assertions(1);
-    return expect(GogsApiHelpers.renameRepo(newRepoName, project_path, user)).
-      resolves.
-      toEqual();
+    return expect(GogsApiHelpers.renameRepo(newRepoName, project_path, user))
+      .resolves
+      .toEqual();
   });
 });
 

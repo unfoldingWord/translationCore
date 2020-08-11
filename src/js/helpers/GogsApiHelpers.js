@@ -31,7 +31,7 @@ export function login(userObj) {
       //
       }
       return user;
-    })
+    }),
   );
 }
 
@@ -143,8 +143,7 @@ export const renameRepo = async (newName, projectPath, user) => {
     console.log(`renameRepo() - pushing data to repo`);
     await repo.push();
   } catch (e) {
-    console.error('renameRepo() - error:');
-    console.error(e);
+    console.error('renameRepo() - error:', e);
     throw e;
   }
 };
@@ -170,8 +169,7 @@ export const createNewRepo = async (newName, projectPath, user) => {
     console.log(`createNewRepo() - pushing data to repo`);
     await repo.push();
   } catch (e) {
-    console.error('createNewRepo() - error:');
-    console.error(e);
+    console.error('createNewRepo() - error:', e);
     throw e;
   }
 };

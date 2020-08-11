@@ -4,7 +4,6 @@ import fs from 'fs-extra';
 import usfmjs from 'usfm-js';
 import path from 'path-extra';
 // constants
-import { TARGET_LANGUAGE } from '../../common/constants';
 const IMPORTED_SOURCE_PATH = '.apps/translationCore/importedSource';
 
 /**
@@ -30,8 +29,6 @@ export function saveTargetBible(projectPath, manifest, bookData, headers) {
     fs.outputJsonSync(path.join(targetBiblePath, fileName), bookData[chapter], { spaces: 2 });
   }
   saveHeaders(targetBiblePath, headers);
-  // generating and saving manifest file for target language bible.
-  generateTartgetLanguageManifest(manifest, targetBiblePath);
   // Move bible source files from project's root folder to '.apps/translationCore/importedSource'
   archiveSourceFiles(projectPath, bookAbbreviation);
 }
@@ -52,25 +49,6 @@ function saveHeaders(targetBiblePath, headers) {
       fs.outputJsonSync(path.join(targetBiblePath, 'headers.json'), headers, { spaces: 2 });
     }
   }
-}
-
-/**
- * @description helper function to generate a manifest file for a target language bible.
- * @param {object} projectManifest - projects manifest file.
- * @param {string} targetBiblePath - path where the target language bible is saved in the file system.
- */
-function generateTartgetLanguageManifest(projectManifest, targetBiblePath) {
-  let bibleManifest = {};
-  bibleManifest.language_id = projectManifest.target_language.id;
-  bibleManifest.language_name = projectManifest.target_language.name;
-  bibleManifest.direction = projectManifest.target_language.direction;
-  bibleManifest.subject = 'Bible';
-  bibleManifest.resource_id = TARGET_LANGUAGE;
-  bibleManifest.resource_title = '';
-  bibleManifest.description = 'Target Language';
-  // savings target language bible manifest file in project target language bible path.
-  let fileName = 'manifest.json';
-  fs.outputJsonSync(path.join(targetBiblePath, fileName), bibleManifest, { spaces: 2 });
 }
 
 /**

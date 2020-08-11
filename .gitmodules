@@ -1,9 +1,9 @@
-[submodule "tC_apps/translationWords"]
-	path = tC_apps/translationWords
+[submodule "src/tC_apps/translationWords"]
+	path = src/tC_apps/translationWords
 	url = https://github.com/unfoldingWord/translationWords.git
-[submodule "tC_apps/wordAlignment"]
-	path = tC_apps/wordAlignment
+[submodule "src/tC_apps/wordAlignment"]
+	path = src/tC_apps/wordAlignment
 	url = https://github.com/unfoldingWord/wordAlignment.git
-[submodule "tC_apps/translationNotes"]
-	path = tC_apps/translationNotes
+[submodule "src/tC_apps/translationNotes"]
+	path = src/tC_apps/translationNotes
 	url = https://github.com/unfoldingWord/translationNotes.git

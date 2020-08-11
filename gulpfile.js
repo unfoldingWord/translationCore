@@ -1,20 +1,20 @@
+const path = require('path');
 const gulp = require('gulp');
 const mkdirp = require('mkdirp');
 const argv = require('yargs').argv;
 const fs = require('fs-extra');
-const request = require('./scripts/request');
-const packager = require('electron-packager');
+const packager = require('electronite-packager');
 const change = require('gulp-change');
-const path = require('path');
 const rimraf = require('rimraf');
-const CrowdinApi = require('./scripts/CrowdinApi');
 const ncp = require('ncp').ncp;
+const request = require('./scripts/request');
+const CrowdinApi = require('./scripts/CrowdinApi');
 
 function copy(src, dest) {
   return new Promise((resolve, reject) => {
     console.log(`copying ${src} to ${dest}`);
     ncp(src, dest, (err) => {
-      if(err) {
+      if (err) {
         console.log(`failed copying ${src}`);
         reject(err);
       } else {
@@ -25,7 +25,7 @@ function copy(src, dest) {
   });
 }
 
-const BUILD_DIR = './out/';
+const BUILD_DIR = './dist/';
 const RELEASE_DIR = './release/';
 
 const getBranchType = () => {
@@ -43,10 +43,8 @@ const getBranchType = () => {
 
 gulp.task('crowdin', () => {
   if (process.env.CROWDIN_API_KEY && process.env.CROWDIN_PROJECT) {
-    const api = new CrowdinApi({apiKey: process.env.CROWDIN_API_KEY});
-    const files = {
-      'English-en_US.json': './src/locale/English-en_US.json'
-    };
+    const api = new CrowdinApi({ apiKey: process.env.CROWDIN_API_KEY });
+    const files = { 'English-en_US.json': './src/locale/English-en_US.json' };
     return api.updateFile(process.env.CROWDIN_PROJECT, files)
       .then(function (result) {
         if (result.success) {
@@ -71,6 +69,7 @@ gulp.task('crowdin', () => {
  */
 gulp.task('set_mode', () => {
   let p = require('./package');
+
   if (!process.env.TRAVIS) {
     console.log('Skipping build mode. On non-travis environment');
     return Promise.resolve();
@@ -78,9 +77,11 @@ gulp.task('set_mode', () => {
 
   if (process.env.TRAVIS_TAG) {
     console.log('Tag mode');
+
     if (!process.env.TRAVIS_TAG.startsWith('v')) {
       return Promise.reject(`The tag must be prefixed with a "v".`);
     }
+
     if (process.env.TRAVIS_TAG !== `v${p.version}`) {
       return Promise.reject(
         `The package version does not match the tag name. Expected ${process.env.TRAVIS_TAG} but found ${p.version}`);
@@ -89,10 +90,12 @@ gulp.task('set_mode', () => {
     process.env.TRAVIS_BRANCH.startsWith('release-')) {
     console.log('Release mode');
     let branchVersion = process.env.TRAVIS_BRANCH.replace(/^release-/, '');
+
     if (!branchVersion.startsWith('v')) {
       return Promise.reject(
         `The release branch version must be prefixed with a "v".`);
     }
+
     if (branchVersion !== `v${p.version}`) {
       return Promise.reject(
         `The package version does not match the release branch version. Expected ${branchVersion} but found ${p.version}`);
@@ -101,6 +104,7 @@ gulp.task('set_mode', () => {
   } else {
     console.log('Develop mode');
     p.developer_mode = true;
+
     if (process.env.TRAVIS_COMMIT) {
       p.version = p.version + '-' + process.env.TRAVIS_COMMIT.substring(0, 7);
     } else {
@@ -109,9 +113,7 @@ gulp.task('set_mode', () => {
 
     // write modifications to package
     return gulp.src(['package.json'])
-      .pipe(change(() => {
-        return JSON.stringify(p);
-      }))
+      .pipe(change(() => JSON.stringify(p)))
       .pipe(gulp.dest('./'));
   }
 });
@@ -126,11 +128,25 @@ gulp.task('clean', done => {
 gulp.task('build_binaries', done => {
   let platforms = [];
 
-  if (argv.win) platforms.push('win32');
-  if (argv.osx) platforms.push('darwin'); // legacy
-  if (argv.macos) platforms.push('darwin');
-  if (argv.linux) platforms.push('linux');
-  if (!platforms.length) platforms.push('win32', 'darwin', 'linux');
+  if (argv.win) {
+    platforms.push('win32');
+  }
+
+  if (argv.osx) {
+    platforms.push('darwin');
+  } // legacy
+
+  if (argv.macos) {
+    platforms.push('darwin');
+  }
+
+  if (argv.linux) {
+    platforms.push('linux');
+  }
+
+  if (!platforms.length) {
+    platforms.push('win32', 'darwin', 'linux');
+  }
 
   let p = require('./package');
 
@@ -144,10 +160,8 @@ gulp.task('build_binaries', done => {
     BUILD_DIR,
     RELEASE_DIR,
     'scripts',
-    '\\.(?!env|compilerc|babelrc)' // TRICKY: exclude hidden files except for .env files
-  ]).map(name => {
-    return new RegExp('(^/' + name + '|' + '^/node_modules/' + name + ')');
-  });
+    '\\.(?!env|compilerc|babelrc)', // TRICKY: exclude hidden files except for .env files
+  ]).map(name => new RegExp('(^/' + name + '|' + '^/node_modules/' + name + ')'));
 
   packager({
     'asar': true,
@@ -167,9 +181,9 @@ gulp.task('build_binaries', done => {
     },
     'out': BUILD_DIR,
     'app-version': p.version,
-    'icon': './src/images/icon'
+    'icon': './src/images/icon',
   }, (err) => {
-    if(err) {
+    if (err) {
       throw new Error(err);
     }
     console.log('Done building...');
@@ -186,12 +200,14 @@ gulp.task('release-linux', () => {
   const archiver = require('archiver');
 
   const outPath = argv.out;
+
   if (!outPath || typeof outPath !== 'string') {
     throw new Error('The --out argument is required.');
   }
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-linux-x64/';
+
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
@@ -199,6 +215,7 @@ gulp.task('release-linux', () => {
   return new Promise((resolve, reject) => {
     const dest = path.normalize(outPath);
     mkdirp.sync(path.dirname(dest));
+
     try {
       let output = fs.createWriteStream(dest);
       output.on('close', resolve);
@@ -221,12 +238,14 @@ gulp.task('release-linux-deb', () => {
   const p = require('./package');
 
   const outPath = argv.out;
+
   if (!outPath || typeof outPath !== 'string') {
     throw new Error('The --out argument is required.');
   }
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-linux-x64/';
+
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
@@ -237,22 +256,20 @@ gulp.task('release-linux-deb', () => {
   mkdirp.sync(tmp);
 
   return copy('./scripts/deb', tmp)
-    .then(() => {
-      return copy(buildPath, optDir);
-    }).then(() => {
+    .then(() => copy(buildPath, optDir)).then(() => {
       // update desktop file with latest version
-      const desktopPath = path.join(optDir, "unfoldingword-translationcore.desktop");
+      const desktopPath = path.join(optDir, 'unfoldingword-translationcore.desktop');
       let desktop = fs.readFileSync(desktopPath, 'utf8');
-      desktop = desktop.replace("Version=1.0", "Version=" + p.version);
+      desktop = desktop.replace('Version=1.0', 'Version=' + p.version);
       fs.writeFileSync(desktopPath, desktop, 'utf8');
-      console.log("\n\nDEB Desktop Config:\n" + desktop + "\n");
+      console.log('\n\nDEB Desktop Config:\n' + desktop + '\n');
 
       // update control file with latest version
       const controlPath = path.join(tmp, 'DEBIAN/control');
       let control = fs.readFileSync(controlPath, 'utf8');
-      control = control.replace("Version: 1.0.0", "Version: " + p.version);
+      control = control.replace('Version: 1.0.0', 'Version: ' + p.version);
       fs.writeFileSync(controlPath, control, 'utf8');
-      console.log("\n\nDEB control:\n" + control + "\n");
+      console.log('\n\nDEB control:\n' + control + '\n');
 
       // compile
       console.log('compiling DEB...');
@@ -261,7 +278,8 @@ gulp.task('release-linux-deb', () => {
         const dest = path.normalize(outPath);
         mkdirp.sync(path.dirname(dest));
         let cmd = `dpkg-deb --build ${tmp} ${dest}`;
-        exec(cmd, function(err) {
+
+        exec(cmd, function (err) {
           if (err) {
             reject(err);
           } else {
@@ -284,6 +302,7 @@ gulp.task('release-macos', () => {
   const isMacOS = /^darwin/.test(process.platform);
 
   const outPath = argv.out;
+
   if (!outPath || typeof outPath !== 'string') {
     throw new Error('The --out argument is required.');
   }
@@ -294,6 +313,7 @@ gulp.task('release-macos', () => {
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-darwin-x64/';
+
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
@@ -320,11 +340,13 @@ gulp.task('release-win64', () => {
   const p = require('./package');
 
   const outPath = argv.out;
+
   if (!outPath || typeof outPath !== 'string') {
     throw new Error('The --out argument is required.');
   }
 
   const buildPath = BUILD_DIR + p.name + '-win32-x64/';
+
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
@@ -339,11 +361,13 @@ gulp.task('release-win32', () => {
   const p = require('./package');
 
   const outPath = argv.out;
+
   if (!outPath || typeof outPath !== 'string') {
     throw new Error('The --out argument is required.');
   }
 
   const buildPath = BUILD_DIR + p.name + '-win32-ia32/';
+
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
@@ -368,10 +392,16 @@ const releaseWindows = (arch, src, dest) => {
 
   // locate Inno Setup
   let isccPath;
+
   if (isLinux) {
     isccPath = './scripts/innosetup/iscc';
   } else if (isWindows) {
-    isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 5/ISCC.exe"`;
+    isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 6/ISCC.exe"`;
+
+    // try falling back to version 5
+    if (!fs.existsSync(isccPath.replace(/"/g, ''))) {
+      isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 5/ISCC.exe"`;
+    }
   } else {
     return Promise.reject(
       'Windows builds can only be released on linux and windows');
@@ -393,19 +423,17 @@ const releaseWindows = (arch, src, dest) => {
     ? 'x64'
     : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
 
-  return downloadWinGit(gitVersion, arch).then(() => {
-    return new Promise(function (resolve, reject) {
-      console.log(`Generating ${arch} bit windows installer`);
-      console.log(`executing: \n${cmd}\n`);
-      exec(cmd, function (err) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve();
-        }
-      });
+  return downloadWinGit(gitVersion, arch).then(() => new Promise(function (resolve, reject) {
+    console.log(`Generating ${arch} bit windows installer`);
+    console.log(`executing: \n${cmd}\n`);
+    exec(cmd, function (err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
     });
-  });
+  }));
 };
 
 /**
@@ -419,6 +447,7 @@ const downloadWinGit = function (version, arch) {
   let dir = './vendor';
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   mkdirp.sync(dir);
+
   if (!fs.existsSync(dest)) {
     console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
     return request.download(url, dest);
@@ -439,13 +468,33 @@ gulp.task('release', done => {
   let platforms = [];
   const gitVersion = '2.9.2';
 
-  if (argv.win) platforms.push('win32', 'win64');
-  if (argv.win32) platforms.push('win32');
-  if (argv.win64) platforms.push('win64');
-  if (argv.osx) platforms.push('darwin'); // legacy
-  if (argv.macos) platforms.push('darwin');
-  if (argv.linux) platforms.push('linux');
-  if (!platforms.length) platforms.push('win32', 'win64', 'darwin', 'linux');
+  if (argv.win) {
+    platforms.push('win32', 'win64');
+  }
+
+  if (argv.win32) {
+    platforms.push('win32');
+  }
+
+  if (argv.win64) {
+    platforms.push('win64');
+  }
+
+  if (argv.osx) {
+    platforms.push('darwin');
+  } // legacy
+
+  if (argv.macos) {
+    platforms.push('darwin');
+  }
+
+  if (argv.linux) {
+    platforms.push('linux');
+  }
+
+  if (!platforms.length) {
+    platforms.push('win32', 'win64', 'darwin', 'linux');
+  }
 
   /**
    *
@@ -458,6 +507,7 @@ gulp.task('release', done => {
     let dir = './vendor';
     let dest = dir + `/Git-${version}-${arch}-bit.exe`;
     mkdirp.sync(dir);
+
     if (!fs.existsSync(dest)) {
       console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
       return request.download(url, dest);
@@ -477,6 +527,7 @@ gulp.task('release', done => {
    */
   const releaseWin = function (arch, os) {
     let isccPath;
+
     if (isLinux) {
       isccPath = './scripts/innosetup/iscc';
     } else if (/^win/.test(process.platform)) {
@@ -509,14 +560,14 @@ gulp.task('release', done => {
           resolve({
             os: os,
             status: 'error',
-            path: null
+            path: null,
           });
         } else {
           resolve({
             os: 'win' + arch,
             status: 'ok',
             path: destDir + file + '.exe',
-            link: `http://win${arch}.tc-${getBranchType()}.unfoldingword.surge.sh/${file}.exe`
+            link: `http://win${arch}.tc-${getBranchType()}.unfoldingword.surge.sh/${file}.exe`,
           });
         }
       });
@@ -526,116 +577,124 @@ gulp.task('release', done => {
   mkdirp('release', function () {
     for (let os of platforms) {
       switch (os) {
-        case 'win32':
-          if (fs.existsSync(BUILD_DIR + p.name + '-win32-ia32/')) {
-            promises.push(downloadGit(gitVersion, '32')
-              .then(releaseWin.bind(undefined, '32', os)));
-          } else {
-            promises.push(Promise.resolve({
-              os: os,
-              status: 'missing',
-              path: null
-            }));
-          }
-          break;
-        case 'win64':
-          if (fs.existsSync(BUILD_DIR + p.name + '-win32-x64/')) {
-            promises.push(downloadGit(gitVersion, '64')
-              .then(releaseWin.bind(undefined, '64', os)));
-          } else {
-            promises.push(Promise.resolve({
-              os: os,
-              status: 'missing',
-              path: null
-            }));
-          }
-          break;
-        case 'darwin':
-          if ((isLinux || isMacOS) &&
+      case 'win32':
+        if (fs.existsSync(BUILD_DIR + p.name + '-win32-ia32/')) {
+          promises.push(downloadGit(gitVersion, '32')
+            .then(releaseWin.bind(undefined, '32', os)));
+        } else {
+          promises.push(Promise.resolve({
+            os: os,
+            status: 'missing',
+            path: null,
+          }));
+        }
+        break;
+      case 'win64':
+        if (fs.existsSync(BUILD_DIR + p.name + '-win32-x64/')) {
+          promises.push(downloadGit(gitVersion, '64')
+            .then(releaseWin.bind(undefined, '64', os)));
+        } else {
+          promises.push(Promise.resolve({
+            os: os,
+            status: 'missing',
+            path: null,
+          }));
+        }
+        break;
+      case 'darwin':
+        if ((isLinux || isMacOS) &&
             fs.existsSync(BUILD_DIR + p.name + '-darwin-x64/')) {
-            promises.push(new Promise(function (os, resolve, reject) {
-              let src = `out/${p.name}-darwin-x64`;
-              let name = `translationCore-macos-x64-${p.version}.dmg`;
-              let dest = `${RELEASE_DIR}macos-x64/${name}`;
-              mkdirp(path.dirname(dest));
-              let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
-              console.log(cmd);
-              exec(cmd, function (err, stdout, stderr) {
-                if (err) {
-                  console.log(err);
-                  resolve({
-                    os: os,
-                    status: 'error',
-                    path: null
-                  });
-                } else {
-                  resolve({
-                    os: os,
-                    status: 'ok',
-                    path: dest,
-                    link: `http://macos.tc-${getBranchType()}.unfoldingword.surge.sh/${name}`
-                  });
-                }
-              });
-            }.bind(undefined, os)));
-          } else {
-            if (!isLinux && !isMacOS) console.log(
-              'You must be on linux or macOS to create macOS releases');
-            promises.push(Promise.resolve({
-              os: os,
-              status: 'missing',
-              path: null
-            }));
-          }
-          break;
-        case 'linux':
-          if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
-            promises.push(new Promise(function (os, resolve, reject) {
-              let name = `translationCore-linux-x64-${p.version}.zip`;
-              let dest = `${RELEASE_DIR}linux-x64/${name}`;
-              mkdirp.sync(path.dirname(dest));
-              try {
-                let output = fs.createWriteStream(dest);
-                output.on('close', function () {
-                  resolve({
-                    os: os,
-                    status: 'ok',
-                    path: dest,
-                    link: `http://linux.tc-${getBranchType()}.unfoldingword.surge.sh/${name}`
-                  });
-                });
-                let archive = archiver.create('zip');
-                archive.on('error', reject);
-                archive.pipe(output);
-                archive.directory(BUILD_DIR + p.name + '-linux-x64/', p.name);
-                archive.finalize();
-              } catch (e) {
-                console.error(e);
+          promises.push(new Promise(function (os, resolve, reject) {
+            let src = `out/${p.name}-darwin-x64`;
+            let name = `translationCore-macos-x64-${p.version}.dmg`;
+            let dest = `${RELEASE_DIR}macos-x64/${name}`;
+            mkdirp(path.dirname(dest));
+            let cmd = `scripts/osx/makedmg.sh "${p.name}" ${src} ${dest}`;
+            console.log(cmd);
+            exec(cmd, function (err, stdout, stderr) {
+              if (err) {
+                console.log(err);
                 resolve({
                   os: os,
                   status: 'error',
-                  path: null
+                  path: null,
+                });
+              } else {
+                resolve({
+                  os: os,
+                  status: 'ok',
+                  path: dest,
+                  link: `http://macos.tc-${getBranchType()}.unfoldingword.surge.sh/${name}`,
                 });
               }
-            }.bind(undefined, os)));
-          } else {
-            if (!isLinux) console.log(
-              'You must be on linux to create linux releases');
-            promises.push(Promise.resolve({
-              os: os,
-              status: 'missing',
-              path: null
-            }));
+            });
+          }.bind(undefined, os)));
+        } else {
+          if (!isLinux && !isMacOS) {
+            console.log(
+              'You must be on linux or macOS to create macOS releases');
           }
-          break;
-        default:
-          console.warn('No release procedure has been defined for ' + os);
+          promises.push(Promise.resolve({
+            os: os,
+            status: 'missing',
+            path: null,
+          }));
+        }
+        break;
+      case 'linux':
+        if (isLinux && fs.existsSync(BUILD_DIR + p.name + '-linux-x64/')) {
+          promises.push(new Promise(function (os, resolve, reject) {
+            let name = `translationCore-linux-x64-${p.version}.zip`;
+            let dest = `${RELEASE_DIR}linux-x64/${name}`;
+            mkdirp.sync(path.dirname(dest));
+
+            try {
+              let output = fs.createWriteStream(dest);
+
+              output.on('close', function () {
+                resolve({
+                  os: os,
+                  status: 'ok',
+                  path: dest,
+                  link: `http://linux.tc-${getBranchType()}.unfoldingword.surge.sh/${name}`,
+                });
+              });
+
+              let archive = archiver.create('zip');
+              archive.on('error', reject);
+              archive.pipe(output);
+              archive.directory(BUILD_DIR + p.name + '-linux-x64/', p.name);
+              archive.finalize();
+            } catch (e) {
+              console.error(e);
+              resolve({
+                os: os,
+                status: 'error',
+                path: null,
+              });
+            }
+          }.bind(undefined, os)));
+        } else {
+          if (!isLinux) {
+            console.log(
+              'You must be on linux to create linux releases');
+          }
+          promises.push(Promise.resolve({
+            os: os,
+            status: 'missing',
+            path: null,
+          }));
+        }
+        break;
+      default:
+        console.warn('No release procedure has been defined for ' + os);
       }
     }
     return Promise.all(promises).then(function (values) {
       mkdirp(RELEASE_DIR + 'overview');
       var releaseNotes = fs.createWriteStream(RELEASE_DIR +
         'overview/index.html');
+
       releaseNotes.on('error', function (e) {
         console.error(e);
       });
@@ -646,18 +705,21 @@ gulp.task('release', done => {
         .pipe(fs.createWriteStream('release/overview/build.css'));
       releaseNotes.write(
         `<h1>${p.name} <span id="build-num">${p.version}</span></h1><ul>`);
+
       if (process.env.TRAVIS_COMMIT) {
         var branch = process.env.TRAVIS_BRANCH;
         var commit = process.env.TRAVIS_COMMIT;
         var buildNumber = process.env.TRAVIS_BUILD_NUMBER;
         var buildId = process.env.TRAVIS_BUILD_ID;
         var repoSlug = process.env.TRAVIS_REPO_SLUG;
+
         releaseNotes.write(
           `<h2><a href="https://github.com/${repoSlug}/commit/${commit}" target="_blank">Commit ${commit.substring(
             0, 7)} on ${branch}</a></h2>`);
         releaseNotes.write(
           `<h2><a href="https://travis-ci.org/${repoSlug}/builds/${buildId}" target="_blank">Travis build #${buildNumber}</a></h2>`);
       }
+
       for (var release of values) {
         if (release.status === 'ok') {
           release.path = release.path.substring(release.path.indexOf('/') + 1);

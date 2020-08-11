@@ -116,11 +116,11 @@ export default class ProjectAPI {
                 'selections',
                 bookId,
                 chapter.toString(),
-                verse.toString()
+                verse.toString(),
               );
 
-              const { selections } = loadCheckData(loadPath, groupDataItem.contextId);
-              groupDataItem.selections = selections || false;
+              const checkData = loadCheckData(loadPath, groupDataItem.contextId);
+              groupDataItem.selections = (checkData && checkData.selections) || false;
               return groupDataItem;
             }
             return groupDataItem;
@@ -156,8 +156,13 @@ export default class ProjectAPI {
    * @return {boolean}
    */
   isMatchingCheckInstance(contextId1, contextId2) {
-    return (isEqual(contextId1.reference, contextId2.reference) ||
-      (contextId1.occurrence === contextId2.occurrence));
+    return (isEqual(contextId1.reference, contextId2.reference) &&
+      (contextId1.occurrence === contextId2.occurrence) &&
+      (
+        (contextId1.quoteString && contextId2.quoteString ? (contextId1.quoteString === contextId2.quoteString) : // compare quoteString if present
+          isEqual(contextId1.quote, contextId2.quote)) // else compare quote array
+      )
+    );
   }
 
   /**
@@ -171,13 +176,14 @@ export default class ProjectAPI {
 
     try {
       const newData = fs.readJsonSync(srceFile);
-      const currentData = fs.readJsonSync(destFile);
-      const currentDataLen = currentData && currentData.length || 0;
+      const currentData = fs.readJsonSync(destFile) || [];
+      const currentDataLen = currentData.length;
 
       for (let i = 0, l = newData.length; i < l; i++) {
         const newObject = newData[i];
         let index = -1;
 
+        // find matching entry in old data
         if ((i >= currentDataLen) || !this.isMatchingCheckInstance(currentData[i].contextId, newObject.contextId)) {
           for (let j = 0; j < currentDataLen; j++) { // since lists are not identical, do search for match
             if (this.isMatchingCheckInstance(currentData[j].contextId, newObject.contextId)) {
@@ -189,13 +195,13 @@ export default class ProjectAPI {
           index = i;
         }
 
-        if (index >= 0) {
-          currentData[index].contextId = newObject.contextId;
-        } else {
-          console.log('updateCategoryGroupData() - no match found for ', newObject.contextId);
+        if (index >= 0) { // found match, preserve old selections, etc.
+          const oldData = currentData[index];
+          oldData.contextId = newObject.contextId; // use latest contextId
+          newData[i] = oldData;
         }
       }
-      fs.outputJsonSync(destFile, currentData);
+      fs.outputJsonSync(destFile, newData); // save new check data
       copied = true;
     } catch (e) {
       console.error('updateCategoryGroupData() - could not preserve data from: ' + destFile, e);
@@ -836,5 +842,44 @@ export default class ProjectAPI {
   deleteDataFileSync(filePath) {
     const fullPath = path.join(this._dataPath, filePath);
     fs.removeSync(fullPath);
+  }
+
+  /**
+   * Reads the current context Id from the current project's filesystem.
+   * @param {string} toolName - tool name.
+   */
+  readCurrentContextIdSync(toolName) {
+    try {
+      if (!toolName) {
+        return null;
+      }
+
+      const groupsPath = this.getCategoriesDir(toolName);
+      const contextIdPath = path.join(groupsPath, 'currentContextId', 'contextId.json');
+
+      if (fs.existsSync(contextIdPath)) {
+        try {
+          const currentContextId = fs.readJSONSync(contextIdPath);
+
+          if (currentContextId) {
+            return currentContextId;
+          }
+        } catch (error) {
+          console.error(`readCurrentContextIdSync() - error reading ${contextIdPath}`, error);
+        }
+      }
+
+      console.warn(`readCurrentContextIdSync() - contextIdPath, ${contextIdPath} doesn't exist or is invalid`);
+      const groupsData = this.getGroupsData(toolName);
+      const groupsDataKeys = Object.keys(groupsData);
+      const firstKey = groupsDataKeys[0];
+      console.warn(`The project doesn't have a currentContextId, thus getting the first item on the groupsData list`);
+      const groupData = groupsData[firstKey][0];
+      const { contextId } = groupData || { contextId: null };
+      return contextId;
+    } catch (error) {
+      console.error(`readCurrentContextIdSync() - failure getting first item`, error);
+      return null;
+    }
   }
 }

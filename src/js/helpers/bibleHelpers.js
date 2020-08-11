@@ -2,7 +2,6 @@
 import Path from 'path-extra';
 import fs from 'fs-extra';
 import * as Bible from '../common/BooksOfTheBible';
-import BooksOfBible from '../../../tcResources/books';
 import ResourceAPI from './ResourceAPI';
 
 /**
@@ -13,7 +12,7 @@ export function convertToFullBookName(bookAbbr) {
   if (!bookAbbr) {
     return;
   }
-  return BooksOfBible[bookAbbr.toString().toLowerCase()];
+  return Bible.ALL_BIBLE_BOOKS[bookAbbr.toString().toLowerCase()];
 }
 
 /**
@@ -104,7 +103,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
 
       try {
         let currentChapterObject = fs.readJSONSync(
-          Path.join(projectDir, bookId, currentChapterFile)
+          Path.join(projectDir, bookId, currentChapterFile),
         );
 
         for (let verseIndex in currentChapterObject) {
@@ -127,7 +126,7 @@ export const isProjectMissingVerses = (projectDir, bookId, resourceDir) => {
     );
   } catch (e) {
     console.warn(
-      'ult index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder'
+      'ult index file not found missing verse detection is invalid. Please delete ~/translationCore/resources folder',
     );
     return false;
   }

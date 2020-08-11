@@ -64,6 +64,7 @@
   "email_address_optional": "Endereço de e-mail (opcional):",
   "invalid_email": "Endereço de email inválido",
   "include_app_logs": "Incluir Logs da aplicação",
+  "resetting_alignments": "Redefinindo o alinhamento para",
   "alignment_prompt": "Gostaria de exportar os dados de alinhamento com o seu texto?",
   "include_alignment_check": "Incluir dados de alinhamento",
   "loading_verse_edits": "Carregando Edições de Versículos",
@@ -73,6 +74,7 @@
   "sending_feedback": "Enviando comentário",
   "sending_feedback_failed": "Falha ao enviar comentário",
   "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
+  "unknown_networking_error": "${app_name} encontrou um erro de comunicação desconhecido. Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
   "updates": {
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
@@ -133,7 +135,13 @@
     "cc_by_sa": "Licença \"Atribuição-CompartilhaIgual 4.0 Internacional (CC BY-SA 4.0)\". "
   },
   "projects": {
+    "archived": "O projeto (${project_name}) não pode ser carregado porque foi arquivado em ${door43}.<br/><br/>Para carregar esse projeto, por gentileza, primeiramente desarquive-o em ${door43} ou renomei-o em ${app_name}.",
     "zip_files": "Arquivos compactados em ZIP",
+    "archive": "Arquivar",
+    "archive_project": "Arquivar Projeto",
+    "archive_failed": "Não foi possível arquivar o projeto.",
+    "archive_complete": "O projeto foi arquivado com sucesso.",
+    "confirm_archive": "Arquivando este projeto, o mesmo será removido da lista de projetos, mas ele continuará armazenando em seu computador. Se deseja continuar, clique no link <strong>Arquivar Projeto</strong> abaixo.",
     "error_setting_up_project": "Opa! Surgiu um problema ao configurar seu projeto para ser carregado. Entre em contato com o Suporte (${email}) para obter assistência.",
     "error_loading": "Opa! Surgiu um problema ao configurar seu projeto para ser carregado. Favor contactar Suporte (${email}) para obter assistência.",
     "no_project": "Nenhum projeto foi selecionado",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "O repositório ${door43} não foi renomeado.<br/><br/>Você deseja tentar renomear novamente o repositório ${door43} ou continuar sem renomear?",
     "dcs_create_new_failed": "O repositório ${door43} não pôde ser criado.<br/><br/>Você deseja tentar novamente criar o repositório ${door43} ou continuar sem a renomeação?",
     "dcs_rename_conflict": "Renomeação falhou porque um repositório com este noem já existe.<br/><br/>Para poder atualizar seu projeto para o ${door43}, você precisa ou de renomear seu projeto local ou renomear o seu projeto ${door43}.",
-    "dcs_create_new_conflict": "Criação de novo repositório falhou porque um repositório com este nome já existe.<br/><br/>Para ser permitido o upload do seu projeto para a ${door43}, você precisa ou renomear seu projeto local ou renomear seu Projeto ${door43}."
+    "dcs_create_new_conflict": "Criação de novo repositório falhou porque um repositório com este nome já existe.<br/><br/>Para ser permitido o upload do seu projeto para a ${door43}, você precisa ou renomear seu projeto local ou renomear seu Projeto ${door43}.",
+    "unknown_download_networking_error": "${app_name} encontrou um erro de comunicação desconhecido tentando baixar o projeto de \"${project_url}\".<br/><br/>Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
+    "known_download_networking_error": "O download do projeto ${project_url} falhou. ${error_message}\n"
   },
   "project_validation": {
     "language_mismatch": "O Nome de Idioma não é válido para esse Código",
@@ -233,6 +243,7 @@
     "publicly_available": "A lista de colaboradores e verificadores será disponibilizada ao público.",
     "field_required": "Este campo é obrigatório",
     "language_direction": "Direção da leitura",
+    "project_font": "Fonte do Projeto",
     "ltr": "Da esquerda para a direita",
     "rtl": "Da direita para a esquerda",
     "invalid_language_name": "O nome do idioma não é válido",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Abrir um projeto em translationNotes pode invalidar algum trabalho previamente concluído dentro dele. Você tem certeza de que deseja continuar?<br/><br/>A Língua Portal que você escolheu para usar com o translationNotes usa uma versão anterior do texto na língua original (Hebraico ou Grego). Inicializando-o agora pode redefinir algumas das verificações previamente concluídas no translationWords e/ou invalidar alguns alinhamentos. As verificações e alinhamentos que são redefinidas serão marcados como incompletos após a inicialização desta ferramenta.",
     "loading_tool_data": "Carregando dados da ferramenta.",
     "resource_missing_for_tool": "A ferramenta atual requer um versão diferente da UGNT. Por favor, clique em Download para recuperar este recurso.",
     "no_checks_selected": "É preciso selecionar uma categoria para abrir esta ferramenta",

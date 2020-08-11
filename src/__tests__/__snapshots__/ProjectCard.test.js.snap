@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test ProjectCard component Comparing ProjectCard Component render should match snapshot 1`] = `ShallowWrapper {}`;
+
+exports[`Test ProjectCard component Truncate long items. 1`] = `
+<div
+  className="wraptip"
+>
+   
+  (en-ult) now is the time f...
+  <span
+    className="wraptip-text"
+  >
+    (en-ult) now is the time for all good men
+  </span>
+</div>
+`;

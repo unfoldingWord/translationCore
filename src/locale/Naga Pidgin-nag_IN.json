@@ -64,6 +64,7 @@
   "email_address_optional": "Email address (itcha thakile):",
   "invalid_email": "Oboidho email address",
   "include_app_logs": "Application logs bi milabi",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "Aapni laga lekha logote milai diya laga data pathabole itcha ashe naki?",
   "include_alignment_check": "Milai diya data bi antarbhuk kuribi ",
   "loading_verse_edits": "verse sudhar load hoi ashe",
@@ -73,6 +74,7 @@
   "sending_feedback": "Pratikriya pathai ashe",
   "sending_feedback_failed": "Pratikriya pathabole byartha hoise",
   "critical_error_warning": "Chetawni: ekta mahatwapurna golti ulaise!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
@@ -133,7 +135,13 @@
     "cc_by_sa": "Creative Commons Attribution-ShareAlike 4.0 International Licence."
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "Zip File khan",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "Oops! Aapni laga kaam tu load kuribole amikhan sthapankaran te samasya hoise. Morom pora modot lobo karne Help Desk (${email}) te samparka kuribi.",
     "error_loading": "Oops! Aapni laga kaam tu load kuribole amikhan samasya hoise. Morom pora modot lobo karne Help Desk (${email}) te samparka kuribi.",
     "no_project": "Ekubi kaam chuniya huwa nai",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "${door43} bhandar ke nautun naam diya huwa nai.<br/><br> aapni arubi ${door43} bhandar laga nautun naam dibole itcha kore nohoile nautun naam nadikena ene chari dibo?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "Nautun naam diya tu asafal hoise. Kilemane itu naam logote aage pora bhandar ashe. <br/><br/> tu aapni laga project ${door43} te upload kuribole paribo, aapni laga sthaniya project nohoile ${door43} laga naamtu bodli kuribo lagibo.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Code karne bhasha laga naam namile",
@@ -233,6 +243,7 @@
     "publicly_available": "Jun yogdan kora bektikhan talika te ashe taikhan ke sarwajanik te uplabdh hobo.",
     "field_required": "Itu field tu jaruri ashe",
     "language_direction": "Bhasa laga disha",
+    "project_font": "Project Font",
     "ltr": "Baya pora dayna te",
     "rtl": "Dayna pora baya te",
     "invalid_language_name": "Bahasa laga naam tu omanya ashe",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "Data load hoi ashe.",
     "resource_missing_for_tool": "Etya laga oshtro karne UGNT dusra anubaad lage. Itu sampad tu bachabole karne morom pora Download te click kuribi.",
     "no_checks_selected": "Itu oshtro tu cholabole karne aapni jeneka hoilebi ekta shreni chunibole lage",

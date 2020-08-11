@@ -1,0 +1,662 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "format": "text/usfm3",
+    "identifier": "irv",
+    "title": "Indian Revised Version - Punjabi",
+    "subject": "Aligned Bible",
+    "description": "",
+    "language": {
+      "identifier": "pa",
+      "title": "ਪੰਜਾਬੀ, پنجابی (Punjabi)‎",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "Holy Bible in Punjabi",
+        "language": "pa",
+        "version": "1945"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Acsah Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellappan",
+      "Dr. Joseph Jekab",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Shojo John",
+      "Sibaji Digal",
+      "Vipin Bhadran"
+    ],
+    "relation": [
+      "pa/obs",
+      "pa/ta",
+      "pa/tn",
+      "pa/tw",
+      "pa/tq"
+    ],
+    "publisher": "Door43",
+    "issued": "2020-01-21",
+    "modified": "2020-01-21",
+    "version": "3"
+  },
+  "checking": {
+    "checking_entity": [
+      "Dr. Bobby Chellappan",
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "ਮੱਤੀ ਦੀ ਇੰਜੀਲ",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./41-MAT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਮਰਕੁਸ ਦੀ ਇੰਜੀਲ",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਲੂਕਾ ਦੀ ਇੰਜੀਲ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯੂਹੰਨਾ ਦੀ ਇੰਜੀਲ",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਰਸੂਲਾਂ ਦੇ ਕਰਤੱਬ",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਰੋਮੀਆਂ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./46-ROM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਕੁਰਿੰਥੀਆਂ ਨੂੰ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਕੁਰਿੰਥੀਆਂ ਨੂੰ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਗਲਾਤਿਯਾ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਅਫ਼ਸੀਆਂ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਫਿਲਿੱਪੀਆਂ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਕੁਲੁੱਸੀਆਂ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਥੱਸਲੁਨੀਕੀਆ ਨੂੰ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਥੱਸਲੁਨੀਕੀਆ ਨੂੰ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਤਿਮੋਥਿਉਸ ਨੂੰ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਤਿਮੋਥਿਉਸ ਨੂੰ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਤੀਤੁਸ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਫਿਲੇਮੋਨ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਇਬਰਾਨੀਆਂ ਨੂੰ",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./59-HEB.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯਾਕੂਬ ਦੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਪਤਰਸ ਦੀ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਪਤਰਸ ਦੀ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯੂਹੰਨਾ ਦੀ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯੂਹੰਨਾ ਦੀ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯੂਹੰਨਾ ਦੀ ਤੀਸਰੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯਹੂਦਾਹ ਦੀ ਪੱਤ੍ਰੀ",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ਯੂਹੰਨਾ ਦੇ ਪਰਕਾਸ਼ ਦੀ ਪੋਥੀ",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./67-REV.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "format": "text/usfm3",
+      "identifier": "irv",
+      "title": "Indian Revised Version - Punjabi",
+      "subject": "Aligned Bible",
+      "description": "",
+      "language": {
+        "identifier": "pa",
+        "title": "ਪੰਜਾਬੀ, پنجابی (Punjabi)‎",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "Holy Bible in Punjabi",
+          "language": "pa",
+          "version": "1945"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Acsah Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Dr. Bobby Chellappan",
+        "Dr. Joseph Jekab",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Shojo John",
+        "Sibaji Digal",
+        "Vipin Bhadran"
+      ],
+      "relation": [
+        "pa/obs",
+        "pa/ta",
+        "pa/tn",
+        "pa/tw",
+        "pa/tq"
+      ],
+      "publisher": "Door43",
+      "issued": "2020-01-21",
+      "modified": "2020-01-21",
+      "version": "3"
+    },
+    "checking": {
+      "checking_entity": [
+        "Dr. Bobby Chellappan",
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "ਮੱਤੀ ਦੀ ਇੰਜੀਲ",
+        "versification": "ufw",
+        "identifier": "mat",
+        "sort": 40,
+        "path": "./41-MAT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਮਰਕੁਸ ਦੀ ਇੰਜੀਲ",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਲੂਕਾ ਦੀ ਇੰਜੀਲ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯੂਹੰਨਾ ਦੀ ਇੰਜੀਲ",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਰਸੂਲਾਂ ਦੇ ਕਰਤੱਬ",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਰੋਮੀਆਂ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "rom",
+        "sort": 45,
+        "path": "./46-ROM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਕੁਰਿੰਥੀਆਂ ਨੂੰ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਕੁਰਿੰਥੀਆਂ ਨੂੰ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 47,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਗਲਾਤਿਯਾ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 48,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਅਫ਼ਸੀਆਂ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਫਿਲਿੱਪੀਆਂ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਕੁਲੁੱਸੀਆਂ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਥੱਸਲੁਨੀਕੀਆ ਨੂੰ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਥੱਸਲੁਨੀਕੀਆ ਨੂੰ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਤਿਮੋਥਿਉਸ ਨੂੰ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਤਿਮੋਥਿਉਸ ਨੂੰ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਤੀਤੁਸ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਫਿਲੇਮੋਨ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਇਬਰਾਨੀਆਂ ਨੂੰ",
+        "versification": "ufw",
+        "identifier": "heb",
+        "sort": 58,
+        "path": "./59-HEB.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯਾਕੂਬ ਦੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਪਤਰਸ ਦੀ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਪਤਰਸ ਦੀ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯੂਹੰਨਾ ਦੀ ਪਹਿਲੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯੂਹੰਨਾ ਦੀ ਦੂਜੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯੂਹੰਨਾ ਦੀ ਤੀਸਰੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯਹੂਦਾਹ ਦੀ ਪੱਤ੍ਰੀ",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ਯੂਹੰਨਾ ਦੇ ਪਰਕਾਸ਼ ਦੀ ਪੋਥੀ",
+        "versification": "ufw",
+        "identifier": "rev",
+        "sort": 66,
+        "path": "./67-REV.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "pa",
+  "language_name": "ਪੰਜਾਬੀ, پنجابی (Punjabi)‎",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "irv",
+  "resource_title": "Indian Revised Version - Punjabi",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2020-01-31T15:21:53+00:00"
+}

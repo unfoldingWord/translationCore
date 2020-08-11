@@ -12,6 +12,7 @@ import {
   getToolCategories,
   getToolsByKey,
   getToolsSelectedGLs,
+  getProjectBookId,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -37,6 +38,7 @@ import {
   TRANSLATION_NOTES,
 } from '../common/constants';
 import consts from './ActionTypes';
+import { connectToolApi } from './MyProjects/ProjectLoadingActions';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
@@ -132,15 +134,35 @@ export const setSaveLocation = pathLocation => ({
 
 export const resetProjectDetail = () => ({ type: consts.RESET_PROJECT_DETAIL });
 
+/**
+ * updates tool properties
+ * @param {string} toolName
+ * @return {Promise}
+ */
+export const updateToolProperties = (toolName) => (dispatch, getState) => {
+  console.log(`updateToolProperties(${toolName})`);
+  const state = getState();
+  const projectSaveLocation = getProjectSaveLocation(state);
+  const bookId = getProjectBookId(state);
+  const toolApi = getToolsByKey(state);
+  const currentToolApi = toolApi[toolName];
+
+  if (currentToolApi) {
+    dispatch(connectToolApi(projectSaveLocation, bookId, currentToolApi));
+  }
+};
+
 export function setProjectToolGL(toolName, selectedGL) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
+    const state = getState();
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
-    const toolsGLs = getToolsSelectedGLs(getState());
+    const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
+    const ifGlChanged = selectedGL !== previousGLForTool;
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
@@ -148,15 +170,16 @@ export function setProjectToolGL(toolName, selectedGL) {
       selectedGL,
     });
 
-    if (toolName === TRANSLATION_NOTES && (selectedGL !== previousGLForTool)) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+    if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
       dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
       await dispatch(prepareToolForLoading(toolName));
       dispatch(batchActions([
-        { type: consts.CLEAR_PREVIOUS_GROUPS_DATA },
-        { type: consts.CLEAR_PREVIOUS_GROUPS_INDEX },
-        { type: consts.CLEAR_CONTEXT_ID },
         { type: consts.OPEN_TOOL, name: null },
       ]));
+    }
+
+    if (ifGlChanged) { // if GL has been changed
+      dispatch(updateToolProperties(toolName));
     }
   };
 }
@@ -213,7 +236,7 @@ export function setProjectManifest(manifest) {
 }
 
 /**
- * @description adds a new key name to the manifest object
+ * Adds a new key name to the manifest object
  * @param {String} propertyName - key string name.
  * ex.
  * manifest {
@@ -346,8 +369,8 @@ export function renameProject(projectSaveLocation, newProjectName) {
             resolve();
           },
           continueText,
-          cancelText
-        )
+          cancelText,
+        ),
       );
     }
   });
@@ -370,7 +393,7 @@ export function showRenamedDialog() {
           dispatch(AlertModalActions.closeAlertDialog());
           resolve();
         },
-        translate('buttons.ok_button')
+        translate('buttons.ok_button'),
       ));
     });
   });
@@ -488,8 +511,8 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
           }
         },
         cancelText,
-        confirmText
-      )
+        confirmText,
+      ),
     );
   });
 }
@@ -556,7 +579,8 @@ export function doDcsRenamePrompting() {
       const projectName = path.basename(projectSaveLocation);
 
       dispatch(
-        AlertModalActions.openOptionDialog(translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
+        AlertModalActions.openOptionDialog(
+          translate('projects.dcs_rename_project', { project:projectName, door43: translate('_.door43') }),
           async (result) => {
             const createNew = (result === createNewText);
             dispatch(AlertModalActions.closeAlertDialog());
@@ -573,8 +597,11 @@ export function doDcsRenamePrompting() {
             }
           },
           renameText,
-          createNewText
-        )
+          createNewText,
+          null,
+          null,
+          true,// making the alert not closeable
+        ),
       );
     });
   });
@@ -690,7 +717,7 @@ export function handleDcsOperation(createNew) {
       () => {
         console.log('cancelled');
         resolve();
-      } // on cancel
+      }, // on cancel
     ));
   }));
 }
@@ -812,7 +839,7 @@ function handleDcsRenameCollisionPromise(createNew, doLocalProjectRenamePromptin
 
     dispatch(
       AlertModalActions.openOptionDialog(translate(createNew ? 'projects.dcs_create_new_conflict' : 'projects.dcs_rename_conflict',
-        { project: projectName, door43: translate('_.door43') }
+        { project: projectName, door43: translate('_.door43') },
       ),
       (result) => {
         dispatch(AlertModalActions.closeAlertDialog());
@@ -838,8 +865,8 @@ function handleDcsRenameCollisionPromise(createNew, doLocalProjectRenamePromptin
       },
       renameText,
       continueText,
-      contactHelpDeskText
-      )
+      contactHelpDeskText,
+      ),
     );
   }));
 }

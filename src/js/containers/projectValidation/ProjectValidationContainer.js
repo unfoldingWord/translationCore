@@ -94,9 +94,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   actions: {
-    goToProjectValidationStep: (val) => {
-      dispatch(ProjectImportStepperActions.goToProjectValidationStep(val));
-    },
     cancel:() => {
       dispatch(ProjectImportStepperActions.confirmContinueOrCancelImportValidation());
     },
@@ -105,9 +102,6 @@ const mapDispatchToProps = (dispatch) => ({
     },
     toggleNextDisabled: (isDisabled) => {
       dispatch(ProjectImportStepperActions.toggleNextButton(isDisabled));
-    },
-    updateStepData:(stepIndex, data) => {
-      dispatch(ProjectImportStepperActions.updateStepData(stepIndex, data));
     },
     loadProjectLicenseMarkdownFile: (licenseId) => {
       dispatch(CopyrightCheckActions.loadProjectLicenseMarkdownFile(licenseId));
@@ -170,6 +164,9 @@ const mapDispatchToProps = (dispatch) => ({
     getDuplicateProjectWarning: (resourceId, languageId, bookId, projectSaveLocation) => ProjectInformationCheckHelpers.getDuplicateProjectWarning(resourceId, languageId, bookId, projectSaveLocation),
     displayOverwriteButton: (enable) => {
       dispatch(ProjectValidationActions.displayOverwriteButton(enable));
+    },
+    updateProjectFont: (projectFont) => {
+      dispatch(ProjectInformationCheckActions.setProjectFontInProjectInformationReducer(projectFont));
     },
   },
 });

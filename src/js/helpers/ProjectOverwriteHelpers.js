@@ -183,7 +183,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
       },
     };
     const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
-    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId, name);
+    const groupsDataForVerse = getGroupDataForVerse(groupsData, contextId);
     let filtered = null;
     let selectionsChanged = false;
 
@@ -206,11 +206,11 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
               chapter,
               verse,
               projectSaveLocation,
-              checkingOccurrence.contextId.quote
+              checkingOccurrence.contextId.quote,
             );
 
             if (selectionsObject) {
-              console.log(`validateSelectionsForTool() - invalidated selections for ${chapter}:${verse} '${checkingOccurrence.contextId.quote}' in '${toolName}'`);
+              console.log(`validateSelectionsForTool() - invalidated selections for ${chapter}:${verse} '${JSON.stringify(checkingOccurrence.contextId)}' in '${toolName}'`);
               //If selections are changed, they need to be cleared
               selectionsChanged = true;
               const invalidatedCheckPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'checkData', 'invalidated', bookId, chapter.toString(), verse.toString());
@@ -315,13 +315,13 @@ export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, pr
       verse,
     },
   };
-  const selectionsPath = generateLoadPath({ projectSaveLocation }, { contextId }, 'selections');
+  const selectionsPath = generateLoadPath(projectSaveLocation, contextId, 'selections');
 
   if (fs.existsSync(selectionsPath)) {
     let files = fs.readdirSync(selectionsPath);
 
     files = files.filter(file => // filter the filenames to only use .json
-      path.extname(file) === '.json'
+      path.extname(file) === '.json',
     );
 
     let sorted = files.sort().reverse(); // sort the files to use latest

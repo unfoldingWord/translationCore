@@ -5,7 +5,7 @@ export const shiftGroupIndex = (_shift, contextId, groupsIndex, groupsData=[], f
   let shiftedIndex = currentIndex + _shift;
 
   // Loop around until we get back to the current group or we find a visible group
-  while (shiftedIndex != currentIndex) {
+  while (shiftedIndex !== currentIndex) {
     let newGroupData = groupsData[groupsIndex[shiftedIndex].id];
 
     if (filters && groupsData && (! newGroupData || ! groupIsVisible(newGroupData, filters))) {

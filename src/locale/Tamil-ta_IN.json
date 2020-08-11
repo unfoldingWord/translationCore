@@ -64,6 +64,7 @@
   "email_address_optional": "மின்னஞ்சல் முகவரி (விருப்ப):",
   "invalid_email": "தவறான மின்னஞ்சல் முகவரி",
   "include_app_logs": " பயன்பாடு பதிவுகள் சேர்க்கவும்",
+  "resetting_alignments": "Resetting alignment for",
   "alignment_prompt": "உங்கள் உரையுடன் சீரமைப்பு தரவை ஏற்றுமதி செய்ய விரும்புகிறீர்களா?\n",
   "include_alignment_check": " சீரமைப்பு தரவு சேர்க்கவும்",
   "loading_verse_edits": "வசன திருத்தங்களை ஏற்றுகிறது\n",
@@ -73,6 +74,7 @@
   "sending_feedback": "கருத்து அனுப்புதல்\n",
   "sending_feedback_failed": "கருத்து அனுப்புவதில் தோல்வி\n",
   "critical_error_warning": "எச்சரிக்கை: ஒரு விமர்சன பிழை ஏற்பட்டது!",
+  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
     "check_for_newer_app": "மென்பொருள் புதுப்பிப்புகளைப் பார்க்கவும்\n",
     "check_for_content_updates": "உள்ளடக்க புதுப்பிப்புகளைச் சரிபார்க்கவும்\n",
@@ -133,7 +135,13 @@
     "cc_by_sa": "கிரியேட்டிவ் காமன்ஸ் பண்புக்கூறு-ஷேர்அலைக் 4.0 சர்வதேச உரிமம்.\n"
   },
   "projects": {
+    "archived": "The project (${project_name}) cannot be uploaded because it has been archived on ${door43}.<br/><br/>To Upload this project, kindly unarchive the project on ${door43} first or rename the project in ${app_name}.",
     "zip_files": "ஜிப் கோப்புகள்\n",
+    "archive": "Archive",
+    "archive_project": "Archive Project",
+    "archive_failed": "The project could not be archived.",
+    "archive_complete": "The project was successfully archived.",
+    "confirm_archive": "Archiving this project will remove the project from the project list, but it will continue to store the project on your computer. If you wish to continue, click <strong>Archive Project</strong> below.",
     "error_setting_up_project": "அச்சச்சோ! உங்கள் திட்டத்தை ஏற்றுவதற்கு அமைப்பதில் சிக்கலை எதிர்கொண்டோம். உதவிக்கு உதவி மையத்தை (${email}) தொடர்பு கொள்ளவும்.\n",
     "error_loading": "அச்சச்சோ! உங்கள் திட்டத்தை ஏற்றுவதில் சிக்கலை எதிர்கொண்டோம். உதவிக்கு உதவி மையத்தை ($ {email}) தொடர்பு கொள்ளவும்.\n",
     "no_project": "எந்த திட்டமும் தேர்ந்தெடுக்கப்படவில்லை\n",
@@ -214,7 +222,9 @@
     "dcs_rename_failed": "இந்த ${door43} களஞ்சியத்தின் மறுபெயரிடப்படவில்லை.<br/><br/>Do you want to களஞ்சியத்தின் மறுபெயரிடுவதற்கு மீண்டும் முயற்சிக்க விரும்புகிறீர்களா? ${door43} அல்லது மறுபெயரிடாமல் தொடர விரும்புகிறீர்களா?",
     "dcs_create_new_failed": "The ${door43} repository could not be created.<br/><br/>Do you want to retry creating the ${door43} repository or continue without renaming?",
     "dcs_rename_conflict": "மறுபெயரிடுதல் தோல்வியுற்றது, ஏனெனில் இந்த பெயருடன் ஒரு களஞ்சியம் ஏற்கனவே உள்ளது.<br/><br/>உங்கள் திட்டத்தை பதிவேற்றுவதற்கு உங்கள் உள்ளூர் திட்டத்தின் மறுபெயரிட வேண்டும் ${door43}, அல்லது உங்கள் திட்டத்திக்கு மறுபெயரிட வேண்டும். ${door43}.",
-    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project."
+    "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
+    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "மொழி பெயர் குறியீட்டிற்கு செல்லுபடியாகாது\n",
@@ -233,6 +243,7 @@
     "publicly_available": "பங்களிப்பாளர்கள் அல்லது செக்கர்கள் என பட்டியலிடப்பட்டவர்கள் பொதுவில் கிடைக்கும்.\n",
     "field_required": "இந்த புலம் தேவை\n",
     "language_direction": "மொழி இயக்கம்\n",
+    "project_font": "Project Font",
     "ltr": "இடமிருந்து வலம்\n",
     "rtl": "வலமிருந்து இடமாக\n",
     "invalid_language_name": "மொழி பெயர் செல்லுபடியாகாது\n",
@@ -329,6 +340,7 @@
     }
   },
   "tools": {
+    "tN_version_warning": "Opening a project in translationNotes could invalidate some work previously completed on it. Are you sure you want to continue?<br/><br/>The Gateway Language you have chosen to use for translationNotes uses a previous version of the original (Hebrew or Greek) language text. Launching it now may reset some of the checks previously completed in translationWords and/or invalidate some alignments. The checks and alignments that are reset will be marked as incomplete after launching this tool.",
     "loading_tool_data": "கருவி தரவை ஏற்றுகிறது.\n",
     "resource_missing_for_tool": "தற்போதைய கருவிக்கு UGNT இன் வேறு பதிப்பு தேவை. இந்த ஆதாரத்தை மீட்டெடுக்க பதிவிறக்கத்தைக் கிளிக் செய்க.\n",
     "no_checks_selected": "இந்த கருவியைத் தொடங்க நீங்கள் ஒரு வகையைத் தேர்ந்தெடுக்க வேண்டும்\n",

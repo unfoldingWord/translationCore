@@ -1,9 +1,4 @@
-/**
- * These actions are used for controlling localization within the application.
- * @see js/components/Locale
- * @module LocaleActions
- */
-
+/* eslint-disable import/order */
 import path from 'path';
 import fs from 'fs-extra';
 import moment from 'moment';
@@ -46,7 +41,7 @@ const explodeLocaleName = (fileName) => {
  * that should not otherwise be translated. e.g. legal entities
  * @param {object} translation localized strings
  * @param {string} fileName the name of the locale file including the file extension.
- * @param {list} nonTranslatableStrings a list of non-translatable strings to inject
+ * @param {array} nonTranslatableStrings a list of non-translatable strings to inject
  * @return {object} the enhanced translation
  */
 const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) => {
@@ -65,11 +60,30 @@ const enhanceTranslation = (translation, fileName, nonTranslatableStrings = []) 
 };
 
 /**
+ * Returns the translation file for a given language.
+ * @param {string} languageCode - language Code.
+ * @param {string} localeDir - locale directory.
+ */
+const getTranslation = (languageCode, localeDir) => {
+  const files = fs.readdirSync(localeDir);
+  const file = files.find(file => file.includes(languageCode));
+  const localeFile = path.join(localeDir, file);
+  const translation = JSON.parse(fs.readFileSync(localeFile));
+  return enhanceTranslation(translation, file, nonTranslatable);
+};
+
+/**
  * Sets the currently active language
- * @param languageCode
+ * @param {string} languageCode
+ * @param {function} setActiveLanguage
+ * @param {function} addTranslationForLanguage
+ * @param {string} localeDir
  * @return {function(*)}
  */
-export const setLanguage = (languageCode, setActiveLanguage) => (dispatch) => {
+export const setLanguage = (languageCode, setActiveLanguage, addTranslationForLanguage, localeDir) => (dispatch) => {
+  const translation = getTranslation(languageCode, localeDir);
+  addTranslationForLanguage(translation, languageCode);
+
   // save user setting
   dispatch(setSetting(APP_LOCALE_SETTING, languageCode));
   // enable the locale
@@ -88,10 +102,12 @@ export const setLocaleLoaded = () => ({ type: types.LOCALE_LOADED });
  * and initializes the localization library.
  *
  * The default language is english.
- * TODO: for now we are loading all translations up-front. However we could instead load one at a time as needed in `setLanguage` for better performance.
  *
  * @param {string} localeDir directory containing locale files
  * @param {string} appLanguage the language code that will be enabled by default
+ * @param {function} initialize
+ * @param {function} addTranslationForLanguage
+ * @param {function} setActiveLanguage
  * @return {function(*)}
  */
 export const loadLocalization = (localeDir, appLanguage = null, initialize, addTranslationForLanguage, setActiveLanguage) => (dispatch) => {
@@ -153,11 +169,19 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       },
     });
 
-    for (const languageCode in translations) {
-      if (translations.hasOwnProperty(languageCode)) {
-        addTranslationForLanguage(translations[languageCode], languageCode);
-      }
+    let languageCode = appLanguage;
+
+    if (!translations[languageCode] && languageCode) {
+      const shortLocale = languageCode.split('_')[0];
+      const equivalentLocale = translations[shortLocale]['_']['locale'];
+      languageCode = equivalentLocale;
     }
+
+    if (languageCode) {
+      // Only loading translation for current app language
+      addTranslationForLanguage(translations[languageCode], languageCode);
+    }
+
     return { languages, translations };
   }).then(({ languages, translations }) => {
     if (appLanguage === DEFAULT_LOCALE) {
@@ -168,13 +192,13 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       // set selected locale
       console.log(`Saved locale: ${appLanguage}`);
 
-      if (!setActiveLanguageSafely(dispatch, appLanguage, languages, translations, setActiveLanguage)) {
+      if (!setActiveLanguageSafely(dispatch, appLanguage, languages, translations, setActiveLanguage, addTranslationForLanguage)) {
         // fall back to system locale
-        return setSystemLocale(dispatch, languages, translations, setActiveLanguage);
+        return setSystemLocale(dispatch, languages, translations, setActiveLanguage, addTranslationForLanguage);
       }
     } else {
       // select system language
-      return setSystemLocale(dispatch, languages, translations, setActiveLanguage);
+      return setSystemLocale(dispatch, languages, translations, setActiveLanguage, addTranslationForLanguage);
     }
   }).then(() => {
     dispatch(setLocaleLoaded());
@@ -185,39 +209,43 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
 
 /**
  * Sets the active locale from the system locale
- * @param dispatch
- * @param languages
- * @param translations
+ * @param {function} dispatch
+ * @param {array} languages
+ * @param {array} translations
+ * @param {function} setActiveLanguage
  * @return {Promise}
  */
-const setSystemLocale = (dispatch, languages, translations, setActiveLanguage) => osLocale().then(locale => {
+const setSystemLocale = (dispatch, languages, translations, setActiveLanguage, addTranslationForLanguage) => osLocale().then(locale => {
   console.log(`System Locale: ${locale}`);
-  setActiveLanguageSafely(dispatch, locale, languages, translations, setActiveLanguage);
+  setActiveLanguageSafely(dispatch, locale, languages, translations, setActiveLanguage, addTranslationForLanguage);
 });
 
 /**
  * Safely sets the active language by falling back to an equivalent locale if
  * needed.
  *
- * @param dispatch
+ * @param {function} dispatch
  * @param {string} locale the locale to set
- * @param {list} languages a list of loaded languages
+ * @param {array} languages a list of loaded languages
  * @param {object} translations a dictionary of loaded translations
- * @return {bool} returns true of the language was successfully set.
+ * @param {function} setActiveLanguage
+ * @return {boolean} returns true of the language was successfully set.
  */
-const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage) => {
+const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage, addTranslationForLanguage) => {
   const shortLocale = locale.split('_')[0];
 
   if (_.indexOf(languages, locale) >= 0) {
     // matched locale
     dispatch(setActiveLanguage(locale));
     moment.locale(locale); // set locale of moment
+    addTranslationForLanguage(translations[locale], locale);
   } else if (_.indexOf(languages, shortLocale) >= 0) {
     // equivalent locale
     let equivalentLocale = translations[shortLocale]['_']['locale'];
     console.warn(`Using equivalent locale: ${equivalentLocale}`);
     dispatch(setActiveLanguage(equivalentLocale));
     moment.locale(equivalentLocale); // set locale of moment
+    addTranslationForLanguage(translations[equivalentLocale], equivalentLocale);
   } else {
     console.error(`No translations found for locale: ${locale}`);
     return false;
