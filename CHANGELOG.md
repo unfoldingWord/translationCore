@@ -1,5 +1,15 @@
 # Changelog
 
+## [v3.0.1](https://github.com/unfoldingWord/translationCore/tree/v3.0.1) (2020-09-12)
+
+**Implemented enhancements:**
+
+- Check manifest for default aligned text for GL Quote [\#7102](https://github.com/unfoldingWord/translationCore/issues/7102)
+
+**Fixed bugs:**
+
+- Check for software updates incorrectly reports running latest version [\#7103](https://github.com/unfoldingWord/translationCore/issues/7103)
+
 ## [v3.0.0](https://github.com/unfoldingWord/translationCore/tree/v3.0.0) (2020-07-21)
 
 [Full Changelog](https://github.com/unfoldingWord/translationCore/compare/v2.1.2...v3.0.0)

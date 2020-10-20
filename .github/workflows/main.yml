@@ -270,7 +270,7 @@ jobs:
           echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
 
       - name: Set artifact name
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-mac-x64-$APP_VERSION-$HASH.dmg")"
+        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")"
 
       - name: Bundle environment variables
         run: |
