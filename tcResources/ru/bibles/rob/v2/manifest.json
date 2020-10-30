@@ -1,0 +1,196 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "RSB originally published in 1876",
+    "format": "text/usfm3",
+    "identifier": "rob",
+    "title": "Russian Open Bible",
+    "subject": "Aligned Bible",
+    "description": "Russian Open Bible aligned to unfoldingWord® Greek New Testament",
+    "language": {
+      "identifier": "ru",
+      "title": "Русский",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "rsb",
+        "language": "ru",
+        "version": "1876"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+      "Anna Savitskaya",
+      "Artur Musayelyan",
+      "Ashot Muradyan",
+      "Bakhtiyor Shodiev",
+      "Door43 World Missions Community",
+      "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+      "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+      "Samuel Kim",
+      "serg.ignashin",
+      "Serhii Yarosh",
+      "Vladimir Shamrai",
+      "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+      "zakbaku"
+    ],
+    "relation": [
+      "ru/tw",
+      "el-x-koine/ugnt",
+      "ru/ulb",
+      "ru/rsb",
+      "ru/rlb",
+      "ru/rlob",
+      "ru/rsob"
+    ],
+    "publisher": "Door43, Russian Open Bible",
+    "issued": "2020-10-20",
+    "modified": "2020-10-20",
+    "version": "2"
+  },
+  "checking": {
+    "checking_entity": [
+      "GeCraft",
+      "Russian Open Bible Committee"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Послание Титу",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание к Филимону",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2-е Иоанна",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "RSB originally published in 1876",
+      "format": "text/usfm3",
+      "identifier": "rob",
+      "title": "Russian Open Bible",
+      "subject": "Aligned Bible",
+      "description": "Russian Open Bible aligned to unfoldingWord® Greek New Testament",
+      "language": {
+        "identifier": "ru",
+        "title": "Русский",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "rsb",
+          "language": "ru",
+          "version": "1876"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+        "Anna Savitskaya",
+        "Artur Musayelyan",
+        "Ashot Muradyan",
+        "Bakhtiyor Shodiev",
+        "Door43 World Missions Community",
+        "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+        "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+        "Samuel Kim",
+        "serg.ignashin",
+        "Serhii Yarosh",
+        "Vladimir Shamrai",
+        "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+        "zakbaku"
+      ],
+      "relation": [
+        "ru/tw",
+        "el-x-koine/ugnt",
+        "ru/ulb",
+        "ru/rsb",
+        "ru/rlb",
+        "ru/rlob",
+        "ru/rsob"
+      ],
+      "publisher": "Door43, Russian Open Bible",
+      "issued": "2020-10-20",
+      "modified": "2020-10-20",
+      "version": "2"
+    },
+    "checking": {
+      "checking_entity": [
+        "GeCraft",
+        "Russian Open Bible Committee"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Послание Титу",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание к Филимону",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2-е Иоанна",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ru",
+  "language_name": "Русский",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "rob",
+  "resource_title": "Russian Open Bible",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2020-10-20T20:07:07+00:00"
+}
