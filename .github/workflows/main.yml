@@ -170,14 +170,10 @@ jobs:
 #        with:
 #          submodules: recursive
 
-      - name: Read commit sha
+      - name: Read version and commit sha
         shell: bash
         run:
           echo "HASH=$(node -p -e "'${{ github.sha }}'.substring(0, 7)")" >> $GITHUB_ENV
-
-      - name: Read version
-        shell: bash
-        run:
           echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
       - name: Bundle environment variables
