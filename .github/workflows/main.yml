@@ -172,7 +172,7 @@ jobs:
 
       - name: Read version and commit sha
         shell: bash
-        run:
+        run: |
           echo "HASH=$(node -p -e "'${{ github.sha }}'.substring(0, 7)")" >> $GITHUB_ENV
           echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
