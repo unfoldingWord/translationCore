@@ -196,6 +196,11 @@ jobs:
         run: |
           echo "ARTIFACT_X64=hello" >> $GITHUB_ENV
 
+      - name: Dump GitHub context
+        env:
+          LOCAL_ENV: ${{ toJson(env) }}
+        run: echo "LOCAL_ENV"
+
       - name: Testing things2
         run: |
           echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
