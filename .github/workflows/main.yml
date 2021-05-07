@@ -201,7 +201,7 @@ jobs:
 
       - name: bundle x64 windows
         run: |
-          echo "Generating executable ../artifacts/x64/${{ $ARTIFACT_X64 }}"
+          echo "Generating executable ../artifacts/x64/$ARTIFACT_X64"
           ./node_modules/.bin/gulp release-win64 --out=../artifacts/x64/${{ env.ARTIFACT_X64 }}
 
 #      - name: list directories
