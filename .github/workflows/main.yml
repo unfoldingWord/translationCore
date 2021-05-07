@@ -199,7 +199,7 @@ jobs:
       - name: Dump GitHub context
         env:
           LOCAL_ENV: ${{ toJson(env) }}
-        run: echo "LOCAL_ENV"
+        run: echo "$LOCAL_ENV"
 
       - name: Testing things2
         run: |
