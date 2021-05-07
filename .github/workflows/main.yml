@@ -195,11 +195,10 @@ jobs:
       - name: Testing things
         run: |
           echo "ARTIFACT_X64=hello" >> $GITHUB_ENV
+        shell: bash
 
       - name: Dump GitHub context
-        run: |
-          echo "$ARTIFACT_X64"
-        shell: bash
+        run: echo "${{env.ARTIFACT_X64}}"
 
       - name: Testing things2
         run: |
