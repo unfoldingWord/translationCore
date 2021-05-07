@@ -196,7 +196,7 @@ jobs:
         run: echo "ARTIFACT_X64=hello" >> $GITHUB_ENV
 
       - name: Testing things2
-        run: echo "Generating executable ../artifacts/x64/$env:ARTIFACT_X64"
+        run: echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
 
 
       - name: build windows
