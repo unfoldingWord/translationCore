@@ -138,7 +138,7 @@ jobs:
 
   build-windows:
     name: Build Windows
-    needs: test
+#    needs: test
     runs-on: windows-latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
