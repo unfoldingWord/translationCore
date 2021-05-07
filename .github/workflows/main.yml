@@ -180,8 +180,8 @@ jobs:
           echo "TC_HELP_DESK_EMAIL=${{ env.TC_HELP_DESK_EMAIL }}" >> .env
           echo "BUILD=${{ env.HASH }}" >> .env
 
-      - name: npm install
-        run: npm ci
+#      - name: npm install
+#        run: npm ci
 
 #      - name: Download latest language names
 #        if: env.UPDATE_RESOURCES
@@ -194,6 +194,10 @@ jobs:
       # this is just for testing
       - name: Testing things
         run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+
+      - name: Testing things2
+        run: echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
+
 
       - name: build windows
         run: |
