@@ -191,6 +191,10 @@ jobs:
 #        if: env.UPDATE_RESOURCES
 #        run: npm run update-resources
 
+      # this is just for testing
+      - name: Testing things
+        run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+
       - name: build windows
         run: |
           echo "Building $APP_VERSION-$HASH"
