@@ -199,6 +199,7 @@ jobs:
       - name: Dump GitHub context
         run: |
           echo "$ARTIFACT_X64"
+        shell: bash
 
       - name: Testing things2
         run: |
