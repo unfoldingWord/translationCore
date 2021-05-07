@@ -173,6 +173,7 @@ jobs:
         run: |
           echo "HASH=$(node -p -e "'${{ github.sha }}'.substring(0, 7)")" >> $GITHUB_ENV
           echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
+        shell: bash
 
       - name: Bundle environment variables
         run: |
@@ -192,17 +193,17 @@ jobs:
 #        run: npm run update-resources
 
       # this is just for testing
-      - name: Testing things
-        run: |
-          echo "ARTIFACT_X64=hello" >> $GITHUB_ENV
-        shell: bash
-
-      - name: Dump GitHub context
-        run: echo "${{env.ARTIFACT_X64}}"
-
-      - name: Testing things2
-        run: |
-          echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
+#      - name: Testing things
+#        run: |
+#          echo "ARTIFACT_X64=hello" >> $GITHUB_ENV
+#        shell: bash
+#
+#      - name: Dump GitHub context
+#        run: echo "${{env.ARTIFACT_X64}}"
+#
+#      - name: Testing things2
+#        run: |
+#          echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
 
 
       - name: build windows
@@ -212,6 +213,7 @@ jobs:
 #     x64
       - name: Set x64 artifact name
         run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
 
       - name: bundle x64 windows
         run: |
@@ -232,6 +234,7 @@ jobs:
 #     x32
       - name: Set x32 artifact name
         run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
 
       - name: bundle x32 windows
         run: |
