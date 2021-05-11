@@ -1,6 +1,7 @@
 const {
   app, dialog, ipcMain, BrowserWindow, Menu,
 } = require('electronite');
+require('@electron/remote/main').initialize();
 const dotenv = require('dotenv');
 const path = require('path-extra');
 const { download } = require('@neutrinog/electron-dl');

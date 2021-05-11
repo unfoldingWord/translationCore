@@ -1,4 +1,4 @@
-import { remote } from 'electronite';
+import { app } from '@electron/remote';
 
 /**
  * The console.log levels that will be intercepted.
@@ -55,7 +55,7 @@ export const registerLogHandler = (handler) => {
  * @returns {Function}
  */
 export const createElectronHandler = eventName => (level, ...args) => {
-  remote.app.emit(eventName, {
+  app.emit(eventName, {
     level,
     args,
   });
