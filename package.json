@@ -77,8 +77,8 @@
     "copy-webpack-plugin": "5.1.1",
     "cross-env": "7.0.2",
     "css-loader": "3.4.2",
-    "electron-devtools-installer": "3.0.0",
-    "electronite": "7.2.1-graphite",
+    "electron-devtools-installer": "^3.2.0",
+    "electronite": "^12.0.5-graphite",
     "electronite-packager": "15.0.0",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
@@ -113,6 +113,7 @@
   },
   "dependencies": {
     "@craco/craco": "5.6.4",
+    "@electron/remote": "^1.1.0",
     "@material-ui/core": "4.10.2",
     "@material-ui/icons": "3.0.2",
     "@neutrinog/electron-dl": "1.11.1",

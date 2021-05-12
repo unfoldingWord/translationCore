@@ -1,10 +1,7 @@
-import { remote } from 'electronite';
+import { BrowserWindow } from '@electron/remote';
 
 // actions
 import * as OnlineModeConfirmActions from './OnlineModeConfirmActions';
-
-// consts
-const { BrowserWindow } = remote;
 
 /**
  * @description - Intercepts on clicks and checks for http methods
