@@ -23,7 +23,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-#    container: neutrinog/concourse-tasks:latest
+    container: neutrinog/concourse-tasks:latest
     env:
       CI: true
 
@@ -69,7 +69,7 @@ jobs:
     name: Build Linux
     needs: test
     runs-on: ubuntu-latest
-#    container: neutrinog/concourse-tasks:latest
+    container: neutrinog/concourse-tasks:latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
