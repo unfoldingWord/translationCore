@@ -596,8 +596,6 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
       if (fs.existsSync(contentZipPath)) {
         fs.removeSync(contentZipPath);
       }
-    } else {
-      console.info(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
   }
 };
@@ -1152,13 +1150,15 @@ export function getMissingResources() {
         } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
           copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
         } else { // compare resources manifest modified time
-          const userResourceVersionPath = ResourceAPI.getLatestVersion(userResourcePath);
           const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+          const version = path.basename(staticResourceVersionPath);
+          const userResourceVersionPath = path.join(userResourcePath, version);
+          const userResourceExists = fs.existsSync(userResourceVersionPath);
           let isOldResource = false;
           const filename = 'manifest.json';
           const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
 
-          if (userResourceVersionPath) {
+          if (userResourceExists) {
             const userResourceManifestPath = path.join(userResourceVersionPath, filename);
 
             if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
