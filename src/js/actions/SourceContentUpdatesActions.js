@@ -17,6 +17,7 @@ import {
   openAlertDialog, closeAlertDialog, openOptionDialog,
 } from './AlertModalActions';
 import consts from './ActionTypes';
+import { confirmOnlineAction } from './OnlineModeConfirmActions';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
@@ -151,24 +152,26 @@ export const downloadMissingResource = (resourceDetails) => (async (dispatch, ge
   const translate = getTranslate(getState());
 
   if (navigator.onLine) {
-    dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
-    await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
-      .then(async () => {
-        updateSourceContentUpdaterManifest();
-        dispatch(updateSourceContentUpdatesReducer());
-        const successMessage = translate('updates.source_content_updates_successful_download');
-        dispatch(openAlertDialog(successMessage));
-      })
-      .catch((err) => {
-        console.error(err);
-        dispatch(
-          failedAlertAndRetry(
-            () => dispatch(closeAlertDialog()),
-            () => downloadMissingResource(resourceDetails),
-            'updates.source_content_updates_unsuccessful_download',
-          ),
-        );
-      });
+    dispatch(confirmOnlineAction(async () => {
+      dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
+      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
+        .then(async () => {
+          updateSourceContentUpdaterManifest();
+          dispatch(updateSourceContentUpdatesReducer());
+          const successMessage = translate('updates.source_content_updates_successful_download');
+          dispatch(openAlertDialog(successMessage));
+        })
+        .catch((err) => {
+          console.error(err);
+          dispatch(
+            failedAlertAndRetry(
+              () => dispatch(closeAlertDialog()),
+              () => downloadMissingResource(resourceDetails),
+              'updates.source_content_updates_unsuccessful_download',
+            ),
+          );
+        });
+    }));
   } else {
     dispatch(openAlertDialog(translate('no_internet')));
   }
