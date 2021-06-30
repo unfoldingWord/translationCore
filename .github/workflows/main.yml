@@ -326,7 +326,7 @@ jobs:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
-          CHANNEL: SOFTWARE/github
+          CHANNEL: SOFTWARE - UR/github
           SUBJECT: tC builds
           PR_NUMBER: ${{ github.event.number }}
           PR_TITLE: ${{ github.event.pull_request.title }}
@@ -349,7 +349,7 @@ jobs:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
-          CHANNEL: SOFTWARE/github
+          CHANNEL: SOFTWARE - UR/github
           SUBJECT: tC builds
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
