@@ -1,0 +1,1448 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acsah Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellappan",
+      "Dr. Joseph Jekab",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Shojo John",
+      "Vipin Bhadran"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "",
+    "format": "text/usfm3",
+    "identifier": "irv",
+    "issued": "2020-11-09",
+    "language": {
+      "direction": "ltr",
+      "identifier": "bn",
+      "title": "বাংলা (Bangali, Bangla)"
+    },
+    "modified": "2020-11-09",
+    "publisher": "BCS",
+    "relation": [
+      "bn/tn",
+      "bn/tq",
+      "bn/tw",
+      "bn/ulb"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "Holy Bible in Bengali",
+        "language": "bn",
+        "version": "1909"
+      },
+      {
+        "identifier": "ulb",
+        "language": "en",
+        "version": "2017"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Indian Revised Version - Bengali",
+    "type": "bundle",
+    "version": "5"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS",
+      "Dr. Bobby Chellappan"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "আদিপুস্তক",
+      "versification": "ufw",
+      "identifier": "gen",
+      "sort": 1,
+      "path": "./01-GEN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যাত্রাপুস্তক",
+      "versification": "ufw",
+      "identifier": "exo",
+      "sort": 2,
+      "path": "./02-EXO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "লেবীয়",
+      "versification": "ufw",
+      "identifier": "lev",
+      "sort": 3,
+      "path": "./03-LEV.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "গণনা",
+      "versification": "ufw",
+      "identifier": "num",
+      "sort": 4,
+      "path": "./04-NUM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "দ্বিতীয় বিবরণ",
+      "versification": "ufw",
+      "identifier": "deu",
+      "sort": 5,
+      "path": "./05-DEU.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যিহোশূয়",
+      "versification": "ufw",
+      "identifier": "jos",
+      "sort": 6,
+      "path": "./06-JOS.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "বিচারকর্ত্তৃগণ",
+      "versification": "ufw",
+      "identifier": "jdg",
+      "sort": 7,
+      "path": "./07-JDG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "রূত",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 শমূয়েল ",
+      "versification": "ufw",
+      "identifier": "1sa",
+      "sort": 9,
+      "path": "./09-1SA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 শমূয়েল",
+      "versification": "ufw",
+      "identifier": "2sa",
+      "sort": 10,
+      "path": "./10-2SA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 রাজাবলি ",
+      "versification": "ufw",
+      "identifier": "1ki",
+      "sort": 11,
+      "path": "./11-1KI.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 রাজাবলি",
+      "versification": "ufw",
+      "identifier": "2ki",
+      "sort": 12,
+      "path": "./12-2KI.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 বংশাবলি ",
+      "versification": "ufw",
+      "identifier": "1ch",
+      "sort": 13,
+      "path": "./13-1CH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 বংশাবলি",
+      "versification": "ufw",
+      "identifier": "2ch",
+      "sort": 14,
+      "path": "./14-2CH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ইষ্রা",
+      "versification": "ufw",
+      "identifier": "ezr",
+      "sort": 15,
+      "path": "./15-EZR.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "নহিমিয় ",
+      "versification": "ufw",
+      "identifier": "neh",
+      "sort": 16,
+      "path": "./16-NEH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ইষ্টের ",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./17-EST.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ইয়োব ",
+      "versification": "ufw",
+      "identifier": "job",
+      "sort": 18,
+      "path": "./18-JOB.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "গীতসংহিতা ",
+      "versification": "ufw",
+      "identifier": "psa",
+      "sort": 19,
+      "path": "./19-PSA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "হিতোপদেশ ",
+      "versification": "ufw",
+      "identifier": "pro",
+      "sort": 20,
+      "path": "./20-PRO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "উপদেশক",
+      "versification": "ufw",
+      "identifier": "ecc",
+      "sort": 21,
+      "path": "./21-ECC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "পরমগীত ",
+      "versification": "ufw",
+      "identifier": "sng",
+      "sort": 22,
+      "path": "./22-SNG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যিশাইয় ",
+      "versification": "ufw",
+      "identifier": "isa",
+      "sort": 23,
+      "path": "./23-ISA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যিরমিয়",
+      "versification": "ufw",
+      "identifier": "jer",
+      "sort": 24,
+      "path": "./24-JER.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "বিলাপ ",
+      "versification": "ufw",
+      "identifier": "lam",
+      "sort": 25,
+      "path": "./25-LAM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যিহিস্কেল ",
+      "versification": "ufw",
+      "identifier": "ezk",
+      "sort": 26,
+      "path": "./26-EZK.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "দানিয়েল",
+      "versification": "ufw",
+      "identifier": "dan",
+      "sort": 27,
+      "path": "./27-DAN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "হোশেয় ",
+      "versification": "ufw",
+      "identifier": "hos",
+      "sort": 28,
+      "path": "./28-HOS.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যোয়েল ",
+      "versification": "ufw",
+      "identifier": "jol",
+      "sort": 29,
+      "path": "./29-JOL.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "আমোষ ",
+      "versification": "ufw",
+      "identifier": "amo",
+      "sort": 30,
+      "path": "./30-AMO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ওবদিয় ",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "যোনা ",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "মীখা ",
+      "versification": "ufw",
+      "identifier": "mic",
+      "sort": 33,
+      "path": "./33-MIC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "নহূম ",
+      "versification": "ufw",
+      "identifier": "nam",
+      "sort": 34,
+      "path": "./34-NAM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "হবককূক ",
+      "versification": "ufw",
+      "identifier": "hab",
+      "sort": 35,
+      "path": "./35-HAB.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "সফনিয় ",
+      "versification": "ufw",
+      "identifier": "zep",
+      "sort": 36,
+      "path": "./36-ZEP.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "হগয় ",
+      "versification": "ufw",
+      "identifier": "hag",
+      "sort": 37,
+      "path": "./37-HAG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "সখরিয়",
+      "versification": "ufw",
+      "identifier": "zec",
+      "sort": 38,
+      "path": "./38-ZEC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "মালাখি ",
+      "versification": "ufw",
+      "identifier": "mal",
+      "sort": 39,
+      "path": "./39-MAL.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "মথি লিখিত সুসমাচার। ",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./41-MAT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "মার্ক লিখিত সুসমাচার। ",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "লুক লিখিত সুসমাচার ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "যোহন লিখিত সুসমাচার। ",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "প্রেরিতদের কার্য্য-বিবরণ ",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "রোমীয় ",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./46-ROM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 করিন্থীয়",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "করিন্থীয়দের জন্য প্রেরিত পৌলের দ্বিতীয় পত্র ",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "গালাতীয়দের প্রতি প্রেরিত পৌলের চিঠি ",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ইফিষীয়",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ফিলিপীয়দের প্রতি প্রেরিত পৌলের পত্র। ",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "কলসীয়",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "থিষলনীকীয়দের প্রতি প্রেরিত পৌলের প্রথম পত্র ",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "থিষলনীকীয়দের প্রতি প্রেরিত পৌলের দ্বিতীয় পত্র ",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "তীমথিয়ের প্রতি প্রেরিত পৌলের প্রথম পত্র। ",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "তীমথিয়ের প্রতি প্রেরিত পৌলের দ্বিতীয় পত্র।",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "তীত",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ফিলীমন",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ইব্রীয়দের প্রতি পত্র।",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./59-HEB.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "যাকোবের পত্র",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 পিতর",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 পিতর",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 যোহন",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 যোহন ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 যোহন ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "যিহূদা",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "যোহনের নিকটে প্রকাশিত বাক্য।",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./67-REV.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acsah Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Dr. Bobby Chellappan",
+        "Dr. Joseph Jekab",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Shojo John",
+        "Vipin Bhadran"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "",
+      "format": "text/usfm3",
+      "identifier": "irv",
+      "issued": "2020-11-09",
+      "language": {
+        "direction": "ltr",
+        "identifier": "bn",
+        "title": "বাংলা (Bangali, Bangla)"
+      },
+      "modified": "2020-11-09",
+      "publisher": "BCS",
+      "relation": [
+        "bn/tn",
+        "bn/tq",
+        "bn/tw",
+        "bn/ulb"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "Holy Bible in Bengali",
+          "language": "bn",
+          "version": "1909"
+        },
+        {
+          "identifier": "ulb",
+          "language": "en",
+          "version": "2017"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Indian Revised Version - Bengali",
+      "type": "bundle",
+      "version": "5"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS",
+        "Dr. Bobby Chellappan"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "আদিপুস্তক",
+        "versification": "ufw",
+        "identifier": "gen",
+        "sort": 1,
+        "path": "./01-GEN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যাত্রাপুস্তক",
+        "versification": "ufw",
+        "identifier": "exo",
+        "sort": 2,
+        "path": "./02-EXO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "লেবীয়",
+        "versification": "ufw",
+        "identifier": "lev",
+        "sort": 3,
+        "path": "./03-LEV.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "গণনা",
+        "versification": "ufw",
+        "identifier": "num",
+        "sort": 4,
+        "path": "./04-NUM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "দ্বিতীয় বিবরণ",
+        "versification": "ufw",
+        "identifier": "deu",
+        "sort": 5,
+        "path": "./05-DEU.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যিহোশূয়",
+        "versification": "ufw",
+        "identifier": "jos",
+        "sort": 6,
+        "path": "./06-JOS.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "বিচারকর্ত্তৃগণ",
+        "versification": "ufw",
+        "identifier": "jdg",
+        "sort": 7,
+        "path": "./07-JDG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "রূত",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 শমূয়েল ",
+        "versification": "ufw",
+        "identifier": "1sa",
+        "sort": 9,
+        "path": "./09-1SA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 শমূয়েল",
+        "versification": "ufw",
+        "identifier": "2sa",
+        "sort": 10,
+        "path": "./10-2SA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 রাজাবলি ",
+        "versification": "ufw",
+        "identifier": "1ki",
+        "sort": 11,
+        "path": "./11-1KI.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 রাজাবলি",
+        "versification": "ufw",
+        "identifier": "2ki",
+        "sort": 12,
+        "path": "./12-2KI.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 বংশাবলি ",
+        "versification": "ufw",
+        "identifier": "1ch",
+        "sort": 13,
+        "path": "./13-1CH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 বংশাবলি",
+        "versification": "ufw",
+        "identifier": "2ch",
+        "sort": 14,
+        "path": "./14-2CH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ইষ্রা",
+        "versification": "ufw",
+        "identifier": "ezr",
+        "sort": 15,
+        "path": "./15-EZR.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "নহিমিয় ",
+        "versification": "ufw",
+        "identifier": "neh",
+        "sort": 16,
+        "path": "./16-NEH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ইষ্টের ",
+        "versification": "ufw",
+        "identifier": "est",
+        "sort": 17,
+        "path": "./17-EST.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ইয়োব ",
+        "versification": "ufw",
+        "identifier": "job",
+        "sort": 18,
+        "path": "./18-JOB.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "গীতসংহিতা ",
+        "versification": "ufw",
+        "identifier": "psa",
+        "sort": 19,
+        "path": "./19-PSA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "হিতোপদেশ ",
+        "versification": "ufw",
+        "identifier": "pro",
+        "sort": 20,
+        "path": "./20-PRO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "উপদেশক",
+        "versification": "ufw",
+        "identifier": "ecc",
+        "sort": 21,
+        "path": "./21-ECC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "পরমগীত ",
+        "versification": "ufw",
+        "identifier": "sng",
+        "sort": 22,
+        "path": "./22-SNG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যিশাইয় ",
+        "versification": "ufw",
+        "identifier": "isa",
+        "sort": 23,
+        "path": "./23-ISA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যিরমিয়",
+        "versification": "ufw",
+        "identifier": "jer",
+        "sort": 24,
+        "path": "./24-JER.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "বিলাপ ",
+        "versification": "ufw",
+        "identifier": "lam",
+        "sort": 25,
+        "path": "./25-LAM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যিহিস্কেল ",
+        "versification": "ufw",
+        "identifier": "ezk",
+        "sort": 26,
+        "path": "./26-EZK.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "দানিয়েল",
+        "versification": "ufw",
+        "identifier": "dan",
+        "sort": 27,
+        "path": "./27-DAN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "হোশেয় ",
+        "versification": "ufw",
+        "identifier": "hos",
+        "sort": 28,
+        "path": "./28-HOS.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যোয়েল ",
+        "versification": "ufw",
+        "identifier": "jol",
+        "sort": 29,
+        "path": "./29-JOL.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "আমোষ ",
+        "versification": "ufw",
+        "identifier": "amo",
+        "sort": 30,
+        "path": "./30-AMO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ওবদিয় ",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "যোনা ",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "মীখা ",
+        "versification": "ufw",
+        "identifier": "mic",
+        "sort": 33,
+        "path": "./33-MIC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "নহূম ",
+        "versification": "ufw",
+        "identifier": "nam",
+        "sort": 34,
+        "path": "./34-NAM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "হবককূক ",
+        "versification": "ufw",
+        "identifier": "hab",
+        "sort": 35,
+        "path": "./35-HAB.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "সফনিয় ",
+        "versification": "ufw",
+        "identifier": "zep",
+        "sort": 36,
+        "path": "./36-ZEP.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "হগয় ",
+        "versification": "ufw",
+        "identifier": "hag",
+        "sort": 37,
+        "path": "./37-HAG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "সখরিয়",
+        "versification": "ufw",
+        "identifier": "zec",
+        "sort": 38,
+        "path": "./38-ZEC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "মালাখি ",
+        "versification": "ufw",
+        "identifier": "mal",
+        "sort": 39,
+        "path": "./39-MAL.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "মথি লিখিত সুসমাচার। ",
+        "versification": "ufw",
+        "identifier": "mat",
+        "sort": 40,
+        "path": "./41-MAT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "মার্ক লিখিত সুসমাচার। ",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "লুক লিখিত সুসমাচার ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "যোহন লিখিত সুসমাচার। ",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "প্রেরিতদের কার্য্য-বিবরণ ",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "রোমীয় ",
+        "versification": "ufw",
+        "identifier": "rom",
+        "sort": 45,
+        "path": "./46-ROM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 করিন্থীয়",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "করিন্থীয়দের জন্য প্রেরিত পৌলের দ্বিতীয় পত্র ",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 47,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "গালাতীয়দের প্রতি প্রেরিত পৌলের চিঠি ",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 48,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ইফিষীয়",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ফিলিপীয়দের প্রতি প্রেরিত পৌলের পত্র। ",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "কলসীয়",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "থিষলনীকীয়দের প্রতি প্রেরিত পৌলের প্রথম পত্র ",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "থিষলনীকীয়দের প্রতি প্রেরিত পৌলের দ্বিতীয় পত্র ",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "তীমথিয়ের প্রতি প্রেরিত পৌলের প্রথম পত্র। ",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "তীমথিয়ের প্রতি প্রেরিত পৌলের দ্বিতীয় পত্র।",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "তীত",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ফিলীমন",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ইব্রীয়দের প্রতি পত্র।",
+        "versification": "ufw",
+        "identifier": "heb",
+        "sort": 58,
+        "path": "./59-HEB.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "যাকোবের পত্র",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 পিতর",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 পিতর",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 যোহন",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 যোহন ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 যোহন ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "যিহূদা",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "যোহনের নিকটে প্রকাশিত বাক্য।",
+        "versification": "ufw",
+        "identifier": "rev",
+        "sort": 66,
+        "path": "./67-REV.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "bn",
+  "language_name": "বাংলা (Bangali, Bangla)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "irv",
+  "resource_title": "Indian Revised Version - Bengali",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2020-11-09T23:00:43+00:00"
+}

@@ -1,0 +1,506 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "RSB originally published in 1876",
+    "format": "text/usfm3",
+    "identifier": "rob",
+    "title": "Russian Open Bible",
+    "subject": "Aligned Bible",
+    "description": "Russian Open Bible aligned to unfoldingWord® Greek New Testament",
+    "language": {
+      "identifier": "ru",
+      "title": "Русский",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "rsb",
+        "language": "ru",
+        "version": "1876"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "A.Kurbanov",
+      "Aleksey Ignashin",
+      "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+      "Anna Savitskaya",
+      "Annushka",
+      "Artur Musayelyan",
+      "Ashot Muradyan",
+      "Bakhtiyor Shodiev",
+      "Dmitrii Druzhinin",
+      "Einfallena",
+      "Elenaz",
+      "G.Davityan",
+      "Galina Han",
+      "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+      "K.Ivanova",
+      "Katya Savitskiy",
+      "L.Musayelyan",
+      "Levitangel",
+      "Ludig",
+      "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+      "Mark Young",
+      "Maxtj",
+      "N.Rahmanov",
+      "Natalya Tkachenko",
+      "Ophelia ",
+      "Parviz",
+      "S.Yarosh",
+      "Samuel Kim",
+      "Serg Ignashin",
+      "Sergey Sheidt",
+      "Serhii Yarosh",
+      "Signashin",
+      "Snejok",
+      "T.Savitskaya",
+      "Val.Protsko",
+      "Valery",
+      "Vladimir Shamrai",
+      "Volodymyr Dubovenko",
+      "Volter",
+      "Voviksan",
+      "Yaroslav Ten",
+      "Yu.Ignashina",
+      "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+      "Zakbaku",
+      "Артём Булатов",
+      "Елена Булатова"
+    ],
+    "relation": [
+      "ru/ult",
+      "ru/ust",
+      "el-x-koine/ugnt?v=0.15",
+      "hbo/uhb?v=2.1.15",
+      "ru/tw",
+      "ru/tn",
+      "ru/tq",
+      "ru/obs",
+      "ru/obs-tn",
+      "ru/obs-tq",
+      "ru/rlb",
+      "ru/rsb",
+      "ru/rlob",
+      "ru/rsob",
+      "ru/ulb"
+    ],
+    "publisher": "Russian Open Bible Committee",
+    "issued": "2021-05-30",
+    "modified": "2021-05-30",
+    "version": "7"
+  },
+  "checking": {
+    "checking_entity": [
+      "Elman",
+      "GeCraft",
+      "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+      "Pro",
+      "Russian Open Bible Committee",
+      "Samuel Kim",
+      "Yuri Tamurkin, BTh,  St.Petersburg Christian University"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Бытие",
+      "versification": "ufw",
+      "identifier": "gen",
+      "sort": 1,
+      "path": "./01-GEN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Книга Руфи",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Есфири",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./17-EST.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Книга пророка Авдия",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Книга пророка Ионы",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "От Луки",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Деяния Апостолов",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание к Ефесянам",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Тимофею",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Тимофею",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание Титу",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание к Филимону",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2-е Иоанна",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Третье послание Иоанна",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "RSB originally published in 1876",
+      "format": "text/usfm3",
+      "identifier": "rob",
+      "title": "Russian Open Bible",
+      "subject": "Aligned Bible",
+      "description": "Russian Open Bible aligned to unfoldingWord® Greek New Testament",
+      "language": {
+        "identifier": "ru",
+        "title": "Русский",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "rsb",
+          "language": "ru",
+          "version": "1876"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "A.Kurbanov",
+        "Aleksey Ignashin",
+        "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+        "Anna Savitskaya",
+        "Annushka",
+        "Artur Musayelyan",
+        "Ashot Muradyan",
+        "Bakhtiyor Shodiev",
+        "Dmitrii Druzhinin",
+        "Einfallena",
+        "Elenaz",
+        "G.Davityan",
+        "Galina Han",
+        "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+        "K.Ivanova",
+        "Katya Savitskiy",
+        "L.Musayelyan",
+        "Levitangel",
+        "Ludig",
+        "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+        "Mark Young",
+        "Maxtj",
+        "N.Rahmanov",
+        "Natalya Tkachenko",
+        "Ophelia ",
+        "Parviz",
+        "S.Yarosh",
+        "Samuel Kim",
+        "Serg Ignashin",
+        "Sergey Sheidt",
+        "Serhii Yarosh",
+        "Signashin",
+        "Snejok",
+        "T.Savitskaya",
+        "Val.Protsko",
+        "Valery",
+        "Vladimir Shamrai",
+        "Volodymyr Dubovenko",
+        "Volter",
+        "Voviksan",
+        "Yaroslav Ten",
+        "Yu.Ignashina",
+        "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+        "Zakbaku",
+        "Артём Булатов",
+        "Елена Булатова"
+      ],
+      "relation": [
+        "ru/ult",
+        "ru/ust",
+        "el-x-koine/ugnt?v=0.15",
+        "hbo/uhb?v=2.1.15",
+        "ru/tw",
+        "ru/tn",
+        "ru/tq",
+        "ru/obs",
+        "ru/obs-tn",
+        "ru/obs-tq",
+        "ru/rlb",
+        "ru/rsb",
+        "ru/rlob",
+        "ru/rsob",
+        "ru/ulb"
+      ],
+      "publisher": "Russian Open Bible Committee",
+      "issued": "2021-05-30",
+      "modified": "2021-05-30",
+      "version": "7"
+    },
+    "checking": {
+      "checking_entity": [
+        "Elman",
+        "GeCraft",
+        "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+        "Pro",
+        "Russian Open Bible Committee",
+        "Samuel Kim",
+        "Yuri Tamurkin, BTh,  St.Petersburg Christian University"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Бытие",
+        "versification": "ufw",
+        "identifier": "gen",
+        "sort": 1,
+        "path": "./01-GEN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Книга Руфи",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Есфири",
+        "versification": "ufw",
+        "identifier": "est",
+        "sort": 17,
+        "path": "./17-EST.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Книга пророка Авдия",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Книга пророка Ионы",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "От Луки",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Деяния Апостолов",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание к Ефесянам",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Тимофею",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Тимофею",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание Титу",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание к Филимону",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2-е Иоанна",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Третье послание Иоанна",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ru",
+  "language_name": "Русский",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "rob",
+  "resource_title": "Russian Open Bible",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-06-02T18:08:57+00:00"
+}
