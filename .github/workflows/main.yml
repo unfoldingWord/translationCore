@@ -79,7 +79,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.4.0'
+          node-version: '16.4.2'
       - name: Node version
         run: |
           node --version
@@ -149,7 +149,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.4.0'
+          node-version: '16.4.2'
 
       - name: Node version
         run: |
@@ -246,7 +246,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.4.0'
+          node-version: '16.4.2'
 
       - name: Node version
         run: |
