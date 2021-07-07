@@ -12,22 +12,27 @@ const dotenv = require('dotenv');
  * Safely loads the .env file
  * @returns {{}}
  */
-function loadEnv() {
-  if (fs.existsSync(ENV_PATH)) {
+function loadEnv(envPath) {
+  if (fs.existsSync(envPath)) {
     try {
-      const env = dotenv.parse(fs.readFileSync(ENV_PATH));
-      console.log(`read ${ENV_PATH}, length ${JSON.stringify(Object.keys(env))}`);
+      const env = dotenv.parse(fs.readFileSync(envPath));
+      console.log(`read ${envPath}, length ${JSON.stringify(Object.keys(env))}`);
       return env;
     } catch (e) {
-      console.warn(`Could not parse ${ENV_PATH}`, e);
+      console.warn(`Could not parse ${envPath}`, e);
     }
   } else {
-    console.log(`File not found ${ENV_PATH}`);
+    console.log(`File not found ${envPath}`);
   }
   return {};
 }
 
-const config = loadEnv();
+let config = loadEnv(ENV_PATH);
+
+if (Object.keys(config).length === 0) {
+  config = loadEnv(ENV_PATH + '.tmp');
+}
+
 config['BROWSER'] = 'none';
 config['BUILD'] = commit.slice(0, 7);
 console.log(`config now length ${JSON.stringify(Object.keys(config))}`);
@@ -38,14 +43,7 @@ for (let key of Object.keys(config)) {
   data += `${key}=${config[key]}\n`;
 }
 
-try {
-  console.log(`Current directory: ${process.cwd()}`);
-  fs.writeFileSync(ENV_PATH, data.trim());
-} catch (e) {
-  console.error(`Could not write updated data file`, e);
-  const tempFile = ENV_PATH + '.tmp';
-  console.log(`try saving to a temp file: ${tempFile}`);
-  fs.writeFileSync(tempFile, data.trim());
-  console.log(`succeeded: ${tempFile}`);
-  console.log(`temp file exists: ${fs.existsSync(tempFile)}`);
-}
+console.log(`Current directory: ${process.cwd()}`);
+fs.writeFileSync(ENV_PATH, data.trim());
+
+console.log(`temp file exists: ${fs.existsSync(ENV_PATH)}`);

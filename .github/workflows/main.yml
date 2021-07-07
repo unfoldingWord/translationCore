@@ -109,10 +109,10 @@ jobs:
       - name: Bundle environment variables
         run: |
           pwd
-          touch .env
-          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
-          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
-          echo "BUILD=$HASH" >> .env
+          touch .env.tmp
+          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env.tmp
+          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env.tmp
+          echo "BUILD=$HASH" >> .env.tmp
           ls -als .
 
       - name: npm install
