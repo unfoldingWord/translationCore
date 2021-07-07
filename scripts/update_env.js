@@ -43,7 +43,9 @@ try {
   fs.writeFileSync(ENV_PATH, data.trim());
 } catch (e) {
   console.error(`Could not write updated data file`, e);
-  const tempFIle = ENV_PATH + '.tmp';
-  console.log(`try saving to a temp file: ${tempFIle}`);
-  fs.writeFileSync(tempFIle, data.trim());
+  const tempFile = ENV_PATH + '.tmp';
+  console.log(`try saving to a temp file: ${tempFile}`);
+  fs.writeFileSync(tempFile, data.trim());
+  console.log(`succeeded: ${tempFile}`);
+  console.log(`temp file exists: ${fs.existsSync(tempFile)}`);
 }
