@@ -16,10 +16,10 @@ function loadEnv() {
   if (fs.existsSync(ENV_PATH)) {
     try {
       const env = dotenv.parse(fs.readFileSync(ENV_PATH));
-      console.log(`read ${ENV_PATH}, length ${env.length}`);
+      console.log(`read ${ENV_PATH}, length ${JSON.stringify(Object.keys(env))}`);
       return env;
     } catch (e) {
-      console.warn(`Could not parse ${ENV_PATH}`, e.getMessage());
+      console.warn(`Could not parse ${ENV_PATH}`, e);
     }
   } else {
     console.log(`File not found ${ENV_PATH}`);
@@ -30,7 +30,7 @@ function loadEnv() {
 const config = loadEnv();
 config['BROWSER'] = 'none';
 config['BUILD'] = commit.slice(0, 7);
-console.log(`config now length ${config.length}`);
+console.log(`config now length ${JSON.stringify(Object.keys(config))}`);
 
 let data = '';
 
@@ -39,10 +39,10 @@ for (let key of Object.keys(config)) {
 }
 
 try {
+  console.log(`Current directory: ${process.cwd()}`);
   fs.writeFileSync(ENV_PATH, data.trim());
 } catch (e) {
-  console.error(`Could not write updated data file`, e.getMessage());
-  console.log(`Current directory: ${process.cwd()}`);
+  console.error(`Could not write updated data file`, e);
   const tempFIle = ENV_PATH + '.tmp';
   console.log(`try saving to a temp file: ${tempFIle}`);
   fs.writeFileSync(tempFIle, data.trim());
