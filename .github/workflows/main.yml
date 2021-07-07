@@ -108,6 +108,7 @@ jobs:
 
       - name: Bundle environment variables
         run: |
+          pwd
           touch .env
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
