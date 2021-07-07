@@ -43,5 +43,7 @@ try {
 } catch (e) {
   console.error(`Could not write updated data file`, e.getMessage());
   console.log(`Current directory: ${process.cwd()}`);
-  throw e;
+  const tempFIle = ENV_PATH + '.tmp';
+  console.log(`try saving to a temp file: ${tempFIle}`);
+  fs.writeFileSync(tempFIle, data.trim());
 }

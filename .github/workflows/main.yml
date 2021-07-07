@@ -113,6 +113,7 @@ jobs:
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
           echo "BUILD=$HASH" >> .env
+          ls -als .
 
       - name: npm install
         run: npm ci
