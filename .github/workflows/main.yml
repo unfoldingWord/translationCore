@@ -108,12 +108,11 @@ jobs:
 
       - name: Bundle environment variables
         run: |
-          pwd
+          # work around for linux permissions restrictions: save to .env.tmp and tC build script (update_env.js) will look for that file if .env is not defined
           touch .env.tmp
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env.tmp
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env.tmp
           echo "BUILD=$HASH" >> .env.tmp
-          ls -als .
 
       - name: npm install
         run: npm ci

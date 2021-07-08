@@ -29,6 +29,7 @@ function loadEnv(envPath) {
 
 let config = loadEnv(ENV_PATH);
 
+// if the .env file did not exist, then check for presence of .env.tmp (work-around for linux build environment restrictions)
 if (Object.keys(config).length === 0) {
   config = loadEnv(ENV_PATH + '.tmp');
 }
@@ -43,7 +44,7 @@ for (let key of Object.keys(config)) {
   data += `${key}=${config[key]}\n`;
 }
 
-console.log(`Current directory: ${process.cwd()}`);
 fs.writeFileSync(ENV_PATH, data.trim());
 
-console.log(`temp file exists: ${fs.existsSync(ENV_PATH)}`);
+// if we reach here, we were able to write/update the .env file
+console.log(`environment file exists: ${fs.existsSync(ENV_PATH)}`);
