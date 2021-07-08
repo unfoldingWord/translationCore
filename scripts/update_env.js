@@ -16,7 +16,7 @@ function loadEnv(envPath) {
   if (fs.existsSync(envPath)) {
     try {
       const env = dotenv.parse(fs.readFileSync(envPath));
-      console.log(`read ${envPath}, length ${JSON.stringify(Object.keys(env))}`);
+      console.log(`read ${envPath}, keys: ${JSON.stringify(Object.keys(env))}`);
       return env;
     } catch (e) {
       console.warn(`Could not parse ${envPath}`, e);
@@ -36,7 +36,7 @@ if (Object.keys(config).length === 0) {
 
 config['BROWSER'] = 'none';
 config['BUILD'] = commit.slice(0, 7);
-console.log(`config now length ${JSON.stringify(Object.keys(config))}`);
+console.log(`config updated keys: ${JSON.stringify(Object.keys(config))}`);
 
 let data = '';
 
