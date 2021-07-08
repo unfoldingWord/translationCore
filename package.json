@@ -1,8 +1,8 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.0.1",
-  "minCompatibleVersion": "3.0.0",
+  "version": "3.0.2",
+  "minCompatibleVersion": "3.0.2",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
   "main": "main.js",
@@ -113,7 +113,7 @@
   },
   "dependencies": {
     "@craco/craco": "5.6.4",
-    "@electron/remote": "^1.1.0",
+    "@electron/remote": "1.2.0",
     "@material-ui/core": "4.10.2",
     "@material-ui/icons": "3.0.2",
     "@neutrinog/electron-dl": "1.11.1",
@@ -123,7 +123,7 @@
     "archiver": "3.0.0",
     "axios": "0.19.1",
     "babel-polyfill": "6.26.0",
-    "checking-tool-wrapper": "5.3.0",
+    "checking-tool-wrapper": "6.0.1",
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "deep-equal": "1.0.1",
@@ -180,7 +180,7 @@
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "5.3.3",
     "truncate-utf8-bytes": "1.0.2",
-    "tsv-groupdata-parser": "0.9.17",
+    "tsv-groupdata-parser": "0.9.21",
     "usfm-js": "2.1.0",
     "uuid": "3.2.1",
     "word-aligner": "1.0.0",
@@ -191,7 +191,7 @@
     "zip-folder": "1.0.0"
   },
   "engines": {
-    "node": ">=12.16.3",
-    "npm": ">=6.14.4"
+    "node": ">=16.4.0",
+    "npm": ">=7.18.1"
   }
 }

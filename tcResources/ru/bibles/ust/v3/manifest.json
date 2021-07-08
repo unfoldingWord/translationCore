@@ -1,0 +1,224 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "format": "text/usfm3",
+    "identifier": "ust",
+    "title": "Russian Simplified Open Bible",
+    "subject": "Aligned Bible",
+    "description": "Russian RSOB aligned to unfoldingWord® Greek New Testament",
+    "language": {
+      "identifier": "ru",
+      "title": "Русский",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.15"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.14"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+      "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+      "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+      "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+      "Anna Savitskaya",
+      "Samuel Kim",
+      "Door43 World Missions Community"
+    ],
+    "relation": [
+      "ru/ult",
+      "ru/ust",
+      "el-x-koine/ugnt?v=0.15",
+      "hbo/uhb?v=2.1.15",
+      "ru/tw",
+      "ru/tn",
+      "ru/tq",
+      "ru/obs",
+      "ru/obs-tn",
+      "ru/obs-tq",
+      "ru/rlb",
+      "ru/rlob",
+      "ru/rob",
+      "ru/rsb",
+      "ru/ulb"
+    ],
+    "publisher": "Door43, Russian Open Bible",
+    "issued": "2021-01-21",
+    "modified": "2021-01-21",
+    "version": "3"
+  },
+  "checking": {
+    "checking_entity": [
+      "Door43, Russian Open Bible"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Книга Руфи",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Книга пророка Ионы",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Послание к Титу",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 Иоанна",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "format": "text/usfm3",
+      "identifier": "ust",
+      "title": "Russian Simplified Open Bible",
+      "subject": "Aligned Bible",
+      "description": "Russian RSOB aligned to unfoldingWord® Greek New Testament",
+      "language": {
+        "identifier": "ru",
+        "title": "Русский",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.15"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.14"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+        "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+        "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+        "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+        "Anna Savitskaya",
+        "Samuel Kim",
+        "Door43 World Missions Community"
+      ],
+      "relation": [
+        "ru/ult",
+        "ru/ust",
+        "el-x-koine/ugnt?v=0.15",
+        "hbo/uhb?v=2.1.15",
+        "ru/tw",
+        "ru/tn",
+        "ru/tq",
+        "ru/obs",
+        "ru/obs-tn",
+        "ru/obs-tq",
+        "ru/rlb",
+        "ru/rlob",
+        "ru/rob",
+        "ru/rsb",
+        "ru/ulb"
+      ],
+      "publisher": "Door43, Russian Open Bible",
+      "issued": "2021-01-21",
+      "modified": "2021-01-21",
+      "version": "3"
+    },
+    "checking": {
+      "checking_entity": [
+        "Door43, Russian Open Bible"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Книга Руфи",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Книга пророка Ионы",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Послание к Титу",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 Иоанна",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ru",
+  "language_name": "Русский",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "ust",
+  "resource_title": "Russian Simplified Open Bible",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-01-21T20:16:03+00:00"
+}

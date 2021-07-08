@@ -34,7 +34,7 @@ jobs:
 #       run: echo "$GITHUB_CONTEXT"
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.16.3'
+        node-version: '16.4.0'
     - name: Node version
       run: |
         node --version
@@ -79,7 +79,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.16.3'
+          node-version: '16.4.2'
       - name: Node version
         run: |
           node --version
@@ -108,9 +108,11 @@ jobs:
 
       - name: Bundle environment variables
         run: |
-          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
-          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
-          echo "BUILD=$HASH" >> .env
+          # work around for linux permissions restrictions: save to .env.tmp and tC build script (update_env.js) will look for that file if .env is not defined
+          touch .env.tmp
+          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env.tmp
+          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env.tmp
+          echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
         run: npm ci
@@ -149,7 +151,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.16.3'
+          node-version: '16.4.2'
 
       - name: Node version
         run: |
@@ -177,6 +179,7 @@ jobs:
 
       - name: Bundle environment variables
         run: |
+          touch .env
           echo "TC_HELP_DESK_TOKEN=${{ env.TC_HELP_DESK_TOKEN }}" >> .env
           echo "TC_HELP_DESK_EMAIL=${{ env.TC_HELP_DESK_EMAIL }}" >> .env
           echo "BUILD=${{ env.HASH }}" >> .env
@@ -246,7 +249,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.16.3'
+          node-version: '16.4.2'
 
       - name: Node version
         run: |
@@ -276,6 +279,7 @@ jobs:
 
       - name: Bundle environment variables
         run: |
+          touch .env
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
           echo "BUILD=$HASH" >> .env
@@ -326,7 +330,7 @@ jobs:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
-          CHANNEL: SOFTWARE/github
+          CHANNEL: SOFTWARE - UR/github
           SUBJECT: tC builds
           PR_NUMBER: ${{ github.event.number }}
           PR_TITLE: ${{ github.event.pull_request.title }}
@@ -349,7 +353,7 @@ jobs:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
-          CHANNEL: SOFTWARE/github
+          CHANNEL: SOFTWARE - UR/github
           SUBJECT: tC builds
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \

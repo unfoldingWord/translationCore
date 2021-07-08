@@ -1,0 +1,148 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "format": "text/usfm3",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Harka KHadka",
+      "Hum Lamtari"
+    ],
+    "description": "An open-licensed translation, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+    "issued": "2020-07-20",
+    "modified": "2020-07-20",
+    "identifier": "gst",
+    "language": {
+      "identifier": "ne",
+      "title": "नेपाली",
+      "direction": "ltr"
+    },
+    "relation": [
+      "ne/tn",
+      "ne/tq",
+      "ne/tw",
+      "ne/obs",
+      "ne/udb",
+      "ne/ulb"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "publisher": "Door43",
+    "source": [
+      {
+        "identifier": "unspecified",
+        "language": "ne",
+        "version": "1"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Nepali GST - Greek Aligned",
+    "type": "bundle",
+    "version": "1.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "Prof. Paul Rana, Theological seminary lecturer",
+      "Prof. Rameshwor Yadav,Theological seminary lecturer"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "मर्कूसले लेखेको सुसमाचार",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीतसलाई पावलको पत्र",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "format": "text/usfm3",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Harka KHadka",
+        "Hum Lamtari"
+      ],
+      "description": "An open-licensed translation, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+      "issued": "2020-07-20",
+      "modified": "2020-07-20",
+      "identifier": "gst",
+      "language": {
+        "identifier": "ne",
+        "title": "नेपाली",
+        "direction": "ltr"
+      },
+      "relation": [
+        "ne/tn",
+        "ne/tq",
+        "ne/tw",
+        "ne/obs",
+        "ne/udb",
+        "ne/ulb"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "publisher": "Door43",
+      "source": [
+        {
+          "identifier": "unspecified",
+          "language": "ne",
+          "version": "1"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Nepali GST - Greek Aligned",
+      "type": "bundle",
+      "version": "1.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "Prof. Paul Rana, Theological seminary lecturer",
+        "Prof. Rameshwor Yadav,Theological seminary lecturer"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "मर्कूसले लेखेको सुसमाचार",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "तीतसलाई पावलको पत्र",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ne",
+  "language_name": "नेपाली",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "Nepali GST - Greek Aligned",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2020-10-02T00:51:15+00:00"
+}
