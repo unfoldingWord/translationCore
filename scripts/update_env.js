@@ -12,20 +12,31 @@ const dotenv = require('dotenv');
  * Safely loads the .env file
  * @returns {{}}
  */
-function loadEnv() {
-  if (fs.existsSync(ENV_PATH)) {
+function loadEnv(envPath) {
+  if (fs.existsSync(envPath)) {
     try {
-      return dotenv.parse(fs.readFileSync(ENV_PATH));
+      const env = dotenv.parse(fs.readFileSync(envPath));
+      console.log(`read ${envPath}, keys: ${JSON.stringify(Object.keys(env))}`);
+      return env;
     } catch (e) {
-      console.warn(`Could not parse ${ENV_PATH}`, e.getMessage());
+      console.warn(`Could not parse ${envPath}`, e);
     }
+  } else {
+    console.log(`File not found ${envPath}`);
   }
   return {};
 }
 
-const config = loadEnv();
+let config = loadEnv(ENV_PATH);
+
+// if the .env file did not exist, then check for presence of .env.tmp (work-around for linux build environment restrictions)
+if (Object.keys(config).length === 0) {
+  config = loadEnv(ENV_PATH + '.tmp');
+}
+
 config['BROWSER'] = 'none';
 config['BUILD'] = commit.slice(0, 7);
+console.log(`config updated keys: ${JSON.stringify(Object.keys(config))}`);
 
 let data = '';
 
@@ -34,3 +45,6 @@ for (let key of Object.keys(config)) {
 }
 
 fs.writeFileSync(ENV_PATH, data.trim());
+
+// if we reach here, we were able to write/update the .env file
+console.log(`environment file exists: ${fs.existsSync(ENV_PATH)}`);

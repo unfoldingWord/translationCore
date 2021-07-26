@@ -1,0 +1,266 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "format": "text/usfm3",
+    "identifier": "gst",
+    "title": "Hindi GST - Greek Aligned",
+    "subject": "Aligned Bible",
+    "description": "An open-licensed translation, aligned to the original Greek",
+    "language": {
+      "identifier": "hi",
+      "title": "हिन्दी (Hindi)",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "2020"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Acsah Jacob",
+      "Dr. Bobby Chellapan",
+      "Jinu Jacob",
+      "M.V Sunny",
+      "Vipin Bhadran",
+      "Zipson George"
+    ],
+    "relation": [
+      "hi/glt",
+      "hi/udb",
+      "hi/ulb",
+      "hi/iev",
+      "hi/irv",
+      "hi/ta",
+      "hi/tn",
+      "hi/tq",
+      "hi/tw",
+      "hi/obs",
+      "hi/obs-tn"
+    ],
+    "publisher": "BCS",
+    "issued": "2021-04-26",
+    "modified": "2021-04-26",
+    "version": "3"
+  },
+  "checking": {
+    "checking_entity": [
+      "Dr. Bobby Chellapan",
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "रूत",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "एस्तेर",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./17-EST.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "योना",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "इफिसियों",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 तीमुथियुस",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीतुस",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 यूहन्ना",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "format": "text/usfm3",
+      "identifier": "gst",
+      "title": "Hindi GST - Greek Aligned",
+      "subject": "Aligned Bible",
+      "description": "An open-licensed translation, aligned to the original Greek",
+      "language": {
+        "identifier": "hi",
+        "title": "हिन्दी (Hindi)",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "2020"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Acsah Jacob",
+        "Dr. Bobby Chellapan",
+        "Jinu Jacob",
+        "M.V Sunny",
+        "Vipin Bhadran",
+        "Zipson George"
+      ],
+      "relation": [
+        "hi/glt",
+        "hi/udb",
+        "hi/ulb",
+        "hi/iev",
+        "hi/irv",
+        "hi/ta",
+        "hi/tn",
+        "hi/tq",
+        "hi/tw",
+        "hi/obs",
+        "hi/obs-tn"
+      ],
+      "publisher": "BCS",
+      "issued": "2021-04-26",
+      "modified": "2021-04-26",
+      "version": "3"
+    },
+    "checking": {
+      "checking_entity": [
+        "Dr. Bobby Chellapan",
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "रूत",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "एस्तेर",
+        "versification": "ufw",
+        "identifier": "est",
+        "sort": 17,
+        "path": "./17-EST.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "योना",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "इफिसियों",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 तीमुथियुस",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "तीतुस",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 यूहन्ना",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "hi",
+  "language_name": "हिन्दी (Hindi)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "Hindi GST - Greek Aligned",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-04-27T22:19:53+00:00"
+}

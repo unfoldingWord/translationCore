@@ -227,7 +227,7 @@ describe('csv export actions', () => {
 
           // verify that gatewayLanguageQuote might exist if test files were created correctly
           let csvData = fs.readFileSync(filePath, 'utf8' );
-          expect(csvData).toContain('adopted",adoption,en,N/A,N/A,eph'); // quote is between instance and bookid in csv data
+          expect(csvData).toContain('adopted",adoption,en,N/A,N/A,,eph'); // quote is between instance and bookid in csv data
           expect(fs.existsSync(filePath)).toEqual(true);
           csvHelpers.cleanupTmpPath(checksPerformedPath);
         })
