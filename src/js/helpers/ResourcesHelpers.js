@@ -250,7 +250,8 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
-    const data = generateChapterGroupData(project.getBookId(), toolName);
+    const bookDataDir = project.getBookDataDir();
+    const data = generateChapterGroupData(project.getBookId(), toolName, bookDataDir);
 
     data.forEach(groupData => {
       const groupId = groupData[0].contextId.groupId;
