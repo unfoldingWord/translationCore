@@ -155,7 +155,6 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
       Object.keys(newChapterVerses).forEach(verse => {
         let verseBefore = oldChapterVerses[verse];
         let verseAfter = newChapterVerses[verse];
-        verse = parseInt(verse);
 
         if (verseBefore !== verseAfter) {
           //An external edit happened
@@ -179,7 +178,7 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
       reference: {
         bookId,
         chapter: parseInt(chapter),
-        verse: parseInt(verse),
+        verse,
       },
     };
     const groupsData = loadProjectGroupData(toolName, projectSaveLocation);
