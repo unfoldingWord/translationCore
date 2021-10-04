@@ -37,6 +37,7 @@ jobs:
         node-version: '16.4.2'
     - name: Node version
       run: |
+        npm install -g npm@7.24.1
         node --version
         npm --version
 
@@ -54,10 +55,7 @@ jobs:
         submodules: recursive
 
     - name: npm install
-      run: |
-        # fix for npm install error dealing with npm cache
-        sudo chown -R 1001:121 "/github/home/.npm"
-        npm ci --legacy-peer-deps
+      run: npm ci --legacy-peer-deps
 
     - name: npm test
       run: npm run ci-test
