@@ -54,7 +54,7 @@ jobs:
         submodules: recursive
 
     - name: npm install
-      run: npm ci
+      run: npm ci --legacy-peer-deps
 
     - name: npm test
       run: npm run ci-test
