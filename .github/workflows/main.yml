@@ -115,12 +115,16 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: npm ci
+        run: |
+          ls ./node_modules
+          # fix for build error dealing with cache
+          npm cache clean --force
+          npm ci
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
         run: |
-          # TODO: fix certs on uw website and remove this hack for curl crash on invalid certs by adding --insecure
+          # TODO: fix certs on uw website and remove this hack for curl crash on invalid certs by removing --insecure param
           curl --insecure https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
