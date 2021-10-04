@@ -55,8 +55,8 @@ jobs:
 
     - name: npm install
       run: |
-        # fix for build error dealing with cache
-        npm cache clean --force
+        # fix for npm install error dealing with npm cache
+        sudo chown -R 1001:121 "/github/home/.npm"
         npm ci --legacy-peer-deps
 
     - name: npm test
