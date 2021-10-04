@@ -83,6 +83,7 @@ jobs:
           node-version: '16.4.2'
       - name: Node version
         run: |
+          npm install -g npm@7.24.1
           node --version
           npm --version
 
@@ -116,7 +117,7 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
