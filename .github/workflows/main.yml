@@ -54,7 +54,11 @@ jobs:
         submodules: recursive
 
     - name: npm install
-      run: npm ci --legacy-peer-deps
+      run: |
+        ls ./node_modules
+        # fix for build error dealing with cache
+        npm cache clean --force
+        npm ci --legacy-peer-deps
 
     - name: npm test
       run: npm run ci-test
@@ -115,11 +119,7 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: |
-          ls ./node_modules
-          # fix for build error dealing with cache
-          npm cache clean --force
-          npm ci
+        run: npm ci
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
