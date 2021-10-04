@@ -55,7 +55,6 @@ jobs:
 
     - name: npm install
       run: |
-        ls ./node_modules
         # fix for build error dealing with cache
         npm cache clean --force
         npm ci --legacy-peer-deps
