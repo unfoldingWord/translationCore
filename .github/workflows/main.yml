@@ -119,7 +119,8 @@ jobs:
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
-        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+        # TODO: fix certs on uw website and remove this hack for curl crash on invalid certs by adding --insecure
+        run: curl --insecure https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Update resources
         if: env.UPDATE_RESOURCES
