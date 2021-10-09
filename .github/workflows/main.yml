@@ -55,7 +55,11 @@ jobs:
         submodules: recursive
 
     - name: npm install
-      run: npm ci --legacy-peer-deps
+      run: |
+        # fix in case of cached files, move cache to new temp directory
+        TMPDIR=$(mktemp -d)
+        echo "$TMPDIR"
+        npm ci --legacy-peer-deps  --cache="$TMPDIR"
 
     - name: npm test
       run: npm run ci-test
@@ -117,7 +121,11 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: npm ci --legacy-peer-deps
+        run: |
+          # fix in case of cached files, move cache to new temp directory
+          TMPDIR=$(mktemp -d)
+          echo "$TMPDIR"
+          npm ci --legacy-peer-deps  --cache="$TMPDIR"
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
