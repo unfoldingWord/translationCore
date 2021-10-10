@@ -55,10 +55,10 @@ jobs:
 
     - name: npm install
       run: |
-        # fix in case of cached files, move npm cache to new temp directory
+        # Fix: in case of cached files, move npm cache to new temp directory
         TMPDIR=$(mktemp -d)
         echo "$TMPDIR"
-        npm ci --legacy-peer-deps  --cache="$TMPDIR"
+        npm ci --cache="$TMPDIR"
 
     - name: npm test
       run: npm run ci-test
@@ -120,10 +120,10 @@ jobs:
 
       - name: npm install
         run: |
-          # fix in case of cached files, move npm cache to new temp directory
+          # Fix: in case of cached files, move npm cache to new temp directory
           TMPDIR=$(mktemp -d)
           echo "$TMPDIR"
-          npm ci --legacy-peer-deps  --cache="$TMPDIR"
+          npm ci --cache="$TMPDIR"
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
