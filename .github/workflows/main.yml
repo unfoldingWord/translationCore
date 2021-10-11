@@ -323,19 +323,19 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
-    - name: Before Update resources
-      run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+      - name: Before Update resources
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
 
-    - name: Update resources
-      if: env.UPDATE_RESOURCES
-      # add automatic retry
-      uses: nick-invision/retry@v2
-      with:
-        timeout_minutes: 15
-        max_attempts: 3
-        retry_on: error
-        command: npm run update-resources
-        on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
+      - name: Update resources
+        if: env.UPDATE_RESOURCES
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          command: npm run update-resources
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build macOS
         id: build
