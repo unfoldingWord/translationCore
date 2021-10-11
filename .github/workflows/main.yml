@@ -202,6 +202,7 @@ jobs:
 
       - name: npm install
         run: npm ci
+        shell: bash
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
