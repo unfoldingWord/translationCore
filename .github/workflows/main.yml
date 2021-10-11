@@ -201,7 +201,11 @@ jobs:
           echo "BUILD=${{ env.HASH }}" >> .env
 
       - name: npm install
-        run: npm ci
+        run: |
+          # Fix for problem of cached files from older npm versions, move npm cache to temp directory
+          TMPDIR=$(mktemp -d)
+          echo "$TMPDIR"
+          npm ci --cache="$TMPDIR"
         shell: bash
 
       - name: Download latest language names
