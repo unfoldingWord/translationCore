@@ -34,6 +34,7 @@
     "locale-key-comparison": "node ./scripts/locale_key_comparison.js",
     "npm-clean-up": "rm -rf node_modules/ && rm -rf src/tC_apps/*/node_modules && rm package-lock.json && npm i",
     "release-content-update": "node scripts/releaseContentUpdate",
+    "clean-up-apps": "rm -rf src/tC_apps/*/node_modules",
     "load-apps": "git submodule update --init --recursive",
     "overwrite-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/el-x-koine tcResources/hi && npm run update-resources",
     "update-apps": "git submodule foreach --recursive git checkout develop && git submodule foreach --recursive git pull",
