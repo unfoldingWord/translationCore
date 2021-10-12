@@ -131,7 +131,7 @@ jobs:
           # TODO: remove this fix for expired certs on uw website - hack for curl crash on invalid certs, added --insecure param
           curl --insecure https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
-      - name: Before Update resources
+      - name: Before Update resources - save original manifest
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
 
       - name: Update resources
@@ -143,6 +143,7 @@ jobs:
           max_attempts: 3
           retry_on: error
           command: npm run update-resources
+          # restore manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build linux
@@ -211,7 +212,7 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
-      - name: Before Update resources
+      - name: Before Update resources - save original manifest
         shell: bash
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
 
@@ -225,6 +226,7 @@ jobs:
           retry_on: error
           shell: bash
           command: npm run update-resources
+          # restore manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build windows
@@ -323,7 +325,7 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
-      - name: Before Update resources
+      - name: Before Update resources - save original manifest
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
 
       - name: Update resources
@@ -335,6 +337,7 @@ jobs:
           max_attempts: 3
           retry_on: error
           command: npm run update-resources
+          # restore manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build macOS
