@@ -124,7 +124,7 @@
     "archiver": "3.0.0",
     "axios": "0.19.1",
     "babel-polyfill": "6.26.0",
-    "checking-tool-wrapper": "7.0.0-alpha.2",
+    "checking-tool-wrapper": "v7.0.0-alpha.3",
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "deep-equal": "1.0.1",
