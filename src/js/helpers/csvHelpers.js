@@ -110,6 +110,7 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
   gatewayLanguageQuote = gatewayLanguageQuote || getGLQuoteFromAlignedBible(contextId, gatewayLanguageCode) || 'N/A';
   // if no occurrenceNote in contextId, 'N/A'
   const occurrenceNote = contextId.occurrenceNote || 'N/A';
+  const verse_ = contextId.verseSpan || contextId.reference.verse; // use verse span if given
   return {
     tool: contextId.tool,
     type: groupCategoryTranslated(contextId, gatewayLanguageCode, translate),
@@ -123,7 +124,7 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
     checkId: contextId.checkId || '',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
-    verse: contextId.reference.verse,
+    verse: verse_,
   };
 };
 
