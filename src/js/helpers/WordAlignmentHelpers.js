@@ -236,7 +236,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
           if (e && e.type && e.type === 'InvalidatedAlignments') {
             //This is an expected error for invalidated alignments
             return reject({
-              error: e, verse: parseInt(verseNumber), chapter: chapterNumber,
+              error: e, verse: verseNumber, chapter: chapterNumber,
             });
           }
         }

@@ -5,19 +5,34 @@ import { STATIC_RESOURCES_PATH } from '../common/constants';
 import { getTranslation } from './localizationHelpers';
 import ResourceAPI from './ResourceAPI';
 
+function createGroupItem(bookId, chapter, verse, toolName) {
+  return {
+    'contextId': {
+      'reference': {
+        'bookId': bookId,
+        'chapter': chapter,
+        'verse': verse,
+      },
+      'tool': toolName,
+      'groupId': 'chapter_' + chapter,
+    },
+  };
+}
+
 /**
  * TODO: should this use the user's resources in the home dir instead of the static resources?
  * @description - Auto generate the chapter group data since more projects will use it
  * @param {String} bookId - id of the current book
  * @param {String} toolName - id of the current tool
+ * @param {String} bookDataDir - if given, use chapter data to identify verse spans
  */
-export const generateChapterGroupData = (bookId, toolName) => {
+export const generateChapterGroupData = (bookId, toolName, bookDataDir) => {
   let groupsData = [];
   let ultPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ult');
   let versionPath = ResourceAPI.getLatestVersion(ultPath) || ultPath;
   const ultIndexPath = path.join(versionPath, 'index.json');
 
-  if (fs.existsSync(ultIndexPath)) { // make sure it doens't crash if the path doesn't exist
+  if (fs.existsSync(ultIndexPath)) { // make sure it doesn't crash if the path doesn't exist
     const ultIndex = fs.readJsonSync(ultIndexPath); // the index of book/chapter/verses
     const bookData = ultIndex[bookId]; // get the data in the index for the current book
 
@@ -26,19 +41,45 @@ export const generateChapterGroupData = (bookId, toolName) => {
       const verses = bookData[chapter]; // get the number of verses in the chapter
       return Array(verses).fill().map((_, i) => { // turn number of verses into array
         const verse = i + 1; // index is 0 based, so add one for verse number
-        return {
-          'contextId': {
-            'reference': {
-              'bookId': bookId,
-              'chapter': chapter,
-              'verse': verse,
-            },
-            'tool': toolName,
-            'groupId': 'chapter_' + chapter,
-          },
-        };
+        return createGroupItem(bookId, chapter, verse, toolName);
       });
     });
+
+    if (bookDataDir) {
+      // look for verse spans in book data
+      for (let chapter = 1; chapter < bookData.chapters; chapter++) {
+        const chapterJson = fs.readJsonSync(path.join(bookDataDir, `${chapter}.json`));
+
+        if (chapterJson) {
+          const chapterData = groupsData[chapter-1];
+          const verses = Object.keys(chapterJson);
+
+          for (let verse of verses) {
+            if (verse.includes('-')) {
+              // found verse span
+              let [low, high] = verse.split('-');
+              low = parseInt(low);
+              high = parseInt(high);
+
+              for (let i = low; i <= high; i++) {
+                const idx = chapterData.findIndex(item => (item.contextId.reference.verse === i));
+
+                if (idx >= 0) {
+                  if (i === low) {
+                    // replace with verse span
+                    chapterData[idx] = createGroupItem(bookId, chapter, verse, toolName);
+                  } else {
+                    // remove
+                    chapterData.splice(idx, 1);
+                  }
+                }
+              }
+              groupsData[chapter-1] = chapterData;
+            }
+          }
+        }
+      }
+    }
   }
   return groupsData;
 };

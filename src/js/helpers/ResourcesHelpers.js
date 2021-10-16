@@ -250,19 +250,45 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
-    const data = generateChapterGroupData(project.getBookId(), toolName);
+    const bookDataDir = project.getBookDataDir();
+    const data = generateChapterGroupData(project.getBookId(), toolName, bookDataDir);
 
     data.forEach(groupData => {
       const groupId = groupData[0].contextId.groupId;
-      const dataPath = path.join(groupsDataDirectory, groupId + '.json');
-
-      if (!fs.existsSync(dataPath)) {
-        fs.outputJsonSync(dataPath, groupData, {
-          spaces: 2,
-          replace: null,
-        });
-      }
+      const fileName = groupId + '.json';
+      ensureFileContentsJson(groupsDataDirectory, fileName, groupData);
     });
+  }
+}
+
+/**
+ * make sure file contents have the latest data
+ * @param {String} folder
+ * @param {String} filename
+ * @param {object} data
+ */
+export function ensureFileContentsJson(folder, filename, data) {
+  const filePath = path.join(folder, filename);
+
+  try {
+    fs.ensureDirSync(folder);
+    let valid = fs.existsSync(filePath);
+
+    if (valid) {
+      try {
+        const fileData = fs.readJsonSync(filePath);
+        valid = isEqual(data, fileData);
+      } catch (e) {
+        console.error(`ensureFileContentsJson() - error reading ${filePath}`, e);
+        valid = false;
+      }
+    }
+
+    if (!valid) {
+      fs.outputJsonSync(filePath, data, { spaces: 2 });
+    }
+  } catch (e) {
+    console.error(`ensureFileContentsJson() - error updating ${filePath}`, e);
   }
 }
 
