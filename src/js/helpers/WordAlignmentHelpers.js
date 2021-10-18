@@ -15,22 +15,34 @@ import * as BibleHelpers from './bibleHelpers';
 
 /**
  * Helper method to retrieve the original language chapter according to manifest
+ * @param manifest
+ * @param basePath
+ * @param chapter
+ * @return {null}
+ */
+export function getOriginalChapterFromManifest(manifest, basePath, chapter) {
+  const { project } = manifest;
+  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(project.id);
+  const origLangChapterPath = ResourceAPI.getLatestVersion(path.join(basePath, languageId, 'bibles', bibleId));
+  const origLangChapterPathWithBook = path.join(origLangChapterPath, project.id, chapter + '.json');
+  let chapterData = null;
+
+  if (fs.existsSync(origLangChapterPathWithBook)) {
+    chapterData = fs.readJSONSync(origLangChapterPathWithBook);
+  }
+  return chapterData;
+}
+
+/**
+ * Helper method to retrieve the original language chapter according to manifest in project folder
  * @param {string} projectPath
  * @param {number} chapter - Current chapter
  * @param {string} basePath - base path for resources
  * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
  */
 export function getOriginalChapterFromResources(projectPath, chapter, basePath = STATIC_RESOURCES_PATH) {
-  const { project } = manifestHelpers.getProjectManifest(projectPath);
-  const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(project.id);
-  const origLangChapterPath = ResourceAPI.getLatestVersion(path.join(basePath, languageId, 'bibles', bibleId));
-  const origLangChapterPathWithBook = path.join(origLangChapterPath, project.id, chapter + '.json');
-  let chapterData = null;
-
-  //greek path from tcResources
-  if (fs.existsSync(origLangChapterPathWithBook)) {
-    chapterData = fs.readJSONSync(origLangChapterPathWithBook);
-  }
+  let manifest = manifestHelpers.getProjectManifest(projectPath);
+  let chapterData = getOriginalChapterFromManifest(manifest, chapter, basePath);
   return chapterData;
 }
 
@@ -145,12 +157,12 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
 
 /**
  * search through verseAlignments for word and get occurrences
- * @param {array} verseAlignments
+ * @param {object} verseAlignments
  * @param {string|number} matchVerse
  * @param {string} word
  * @return {number}
  */
-function getWordCountInVerse(verseAlignments, matchVerse, word) {
+export function getWordCountInVerse(verseAlignments, matchVerse, word) {
   let matchedAlignment = null;
 
   for (let alignment of verseAlignments[matchVerse]) {
@@ -175,7 +187,7 @@ function getWordCountInVerse(verseAlignments, matchVerse, word) {
  * @param {array} verseSpanAlignments
  * @return {*[]}
  */
-function getVerseAlignments(verseSpanAlignments) {
+export function getVerseAlignments(verseSpanAlignments) {
   let alignments = [];
 
   if (verseSpanAlignments) {
@@ -193,6 +205,22 @@ function getVerseAlignments(verseSpanAlignments) {
   return alignments;
 }
 
+export function getRawAlignmentsForVerse(verseSpan, origLangChapterJson, verseAlignments) {
+  const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseSpan);
+
+  // generate raw alignment data for each verse in range
+  for (let verse = low; verse <= hi; verse++) {
+    const originalVerse = origLangChapterJson[verse];
+
+    if (originalVerse) {
+      const blankAlignments = wordaligner.generateBlankAlignments(originalVerse);
+      verseAlignments[verse] = blankAlignments;
+    }
+  }
+
+  return { low, hi };
+}
+
 /**
  * goes back to verse spans and for each alignment determines the original language verse it references, adds reference, and updates occurrence(s)
  * @param {array} verseSpans
@@ -206,17 +234,7 @@ function cleanUpVerseSpans(verseSpans, projectPath, chapterNumber, chapterAlignm
     const origLangChapterJson = getOriginalChapterFromResources(projectPath, chapterNumber, USER_RESOURCES_PATH);
 
     for (let verseSpan of verseSpans) {
-      const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseSpan);
-
-      // generate raw alignment data for each verse in range
-      for (let verse = low; verse <= hi; verse++) {
-        const originalVerse = origLangChapterJson[verse];
-
-        if (originalVerse) {
-          const blankAlignments = wordaligner.generateBlankAlignments(originalVerse);
-          verseAlignments[verse] = blankAlignments;
-        }
-      }
+      let { low, hi } = getRawAlignmentsForVerse(verseSpan, origLangChapterJson, verseAlignments);
 
       const verseSpanData = chapterAlignments && chapterAlignments[verseSpans];
       const verseSpanAlignments = verseSpanData && verseSpanData.verseObjects;

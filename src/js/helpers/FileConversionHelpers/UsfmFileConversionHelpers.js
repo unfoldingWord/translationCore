@@ -13,6 +13,12 @@ import * as BibleHelpers from '../bibleHelpers';
 import * as ResourcesActions from '../../actions/ResourcesActions';
 // constants
 import { IMPORTS_PATH } from '../../common/constants';
+import {
+  getRawAlignmentsForVerse,
+  getVerseAlignments,
+  getWordCountInVerse,
+  isVerseSpan,
+} from '../WordAlignmentHelpers';
 
 export const convertToProjectFormat = async (sourceProjectPath, selectedProjectFilename) => {
   const usfmData = await verifyIsValidUsfmFile(sourceProjectPath);
@@ -150,7 +156,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
       }
 
       verses.forEach((verse) => {
-        const verseParts = chaptersObject[chapter][verse];
+        let verseParts = chaptersObject[chapter][verse];
         let verseText;
 
         if (alignmentData) {
@@ -161,7 +167,45 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         bibleChapter[verse] = trimNewLine(verseText);
 
         if (alignmentData && bibleData && bibleData[chapter]) {
-          const bibleVerse = bibleData[chapter][verse];
+          let chapterData = bibleData[chapter];
+          let bibleVerse = chapterData[verse];
+          const isVerseSpan_ = isVerseSpan(verse);
+
+          if (isVerseSpan_) {
+            const verseAlignments = {};
+            const { low, hi } = getRawAlignmentsForVerse(verse, chapterData, verseAlignments);
+            let verseSpanData = [];
+
+            for (let verse_ = low; verse_ <= hi; verse_++) {
+              const verseData = chapterData[verse_];
+              verseSpanData = verseSpanData.concat(verseData && verseData.verseObjects || []);
+            }
+
+            bibleVerse = { verseObjects: verseSpanData };
+            const alignments = getVerseAlignments(verseParts.verseObjects);
+
+            for (let alignment of alignments) {
+              const ref = alignment.ref || '';
+              const refParts = ref.split(':');
+              const verseRef = refParts.length > 1 ? parseInt(refParts[1]) : 0;
+              const word = alignment.content;
+              let occurrence = alignment.occurrence;
+              let occurrences = 0;
+
+              for (let verse = low; verse <= hi; verse++) {
+                const wordCount = getWordCountInVerse(verseAlignments, verse, word);
+                occurrences += wordCount;
+
+                if (verse < verseRef) {
+                  occurrence += wordCount; // add word counts for lower verses to occurrence
+                }
+              }
+              delete alignment.ref;
+              alignment.occurrences = occurrences;
+              alignment.occurrence = occurrence;
+            }
+          }
+
           const object = wordaligner.unmerge(verseParts, bibleVerse);
 
           chapterAlignments[verse] = {
