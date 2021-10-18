@@ -2,8 +2,9 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import usfmjs from 'usfm-js';
 import wordaligner, { VerseObjectUtils } from 'word-aligner';
+import { verseHelpers } from 'tc-ui-toolkit';
 //helpers
-import { STATIC_RESOURCES_PATH } from '../common/constants';
+import { STATIC_RESOURCES_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
@@ -13,22 +14,36 @@ import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
 
 /**
- * Helper method to retrieve the greek chapter object according to specified book/chapter
- * @param projectSaveLocation
- * @param {number} chapter - Current chapter from the contextId
- * @param verse
+ * Helper method to retrieve the original language chapter according to manifest
+ * @param {string} projectPath
+ * @param {number} chapter - Current chapter
+ * @param {string} basePath - base path for resources
  * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
  */
-export const getOriginalVerseFromResources = (projectSaveLocation, chapter, verse) => {
-  const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
+export function getOriginalChapterFromResources(projectPath, chapter, basePath = STATIC_RESOURCES_PATH) {
+  const { project } = manifestHelpers.getProjectManifest(projectPath);
   const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(project.id);
-  const origLangChapterPath = ResourceAPI.getLatestVersion(path.join(STATIC_RESOURCES_PATH, languageId, 'bibles', bibleId));
+  const origLangChapterPath = ResourceAPI.getLatestVersion(path.join(basePath, languageId, 'bibles', bibleId));
   const origLangChapterPathWithBook = path.join(origLangChapterPath, project.id, chapter + '.json');
+  let chapterData = null;
 
   //greek path from tcResources
   if (fs.existsSync(origLangChapterPathWithBook)) {
-    return fs.readJSONSync(origLangChapterPathWithBook)[verse];
+    chapterData = fs.readJSONSync(origLangChapterPathWithBook);
   }
+  return chapterData;
+}
+
+/**
+ * Helper method to retrieve the greek verse according to specified manifest
+ * @param {string} projectPath
+ * @param {number} chapter - Current chapter
+ * @param {string} verse - current verse
+ * @returns {{ verseNumber: {verseObjects: Array} }} - Verses in the chapter object
+ */
+export const getOriginalVerseFromResources = (projectPath, chapter, verse) => {
+  const chapterData = getOriginalChapterFromResources(projectPath, chapter);
+  return chapterData && chapterData[verse];
 };
 
 /**
@@ -129,17 +144,126 @@ function saveUsfmVerse(usfmToJSONObject, targetLanguageChapter, chapter, verse) 
 }
 
 /**
+ * search through verseAlignments for word and get occurrences
+ * @param {array} verseAlignments
+ * @param {string|number} matchVerse
+ * @param {string} word
+ * @return {number}
+ */
+function getWordCountInVerse(verseAlignments, matchVerse, word) {
+  let matchedAlignment = null;
+
+  for (let alignment of verseAlignments[matchVerse]) {
+    for (let topWord of alignment.topWords) {
+      if (topWord.word === word) {
+        matchedAlignment = topWord;
+        break;
+      }
+    }
+
+    if (matchedAlignment) {
+      break;
+    }
+  }
+
+  const wordCount = matchedAlignment && matchedAlignment.occurrences;
+  return wordCount || 0;
+}
+
+/**
+ * get all the alignments for verse from nested array (finds zaln objects)
+ * @param {array} verseSpanAlignments
+ * @return {*[]}
+ */
+function getVerseAlignments(verseSpanAlignments) {
+  let alignments = [];
+
+  if (verseSpanAlignments) {
+    for (let alignment of verseSpanAlignments) {
+      if (alignment.tag === 'zaln') {
+        alignments.push(alignment);
+      }
+
+      if (alignment.children) {
+        const subAlignments = getVerseAlignments(alignment.children);
+        alignments = alignments.concat(subAlignments);
+      }
+    }
+  }
+  return alignments;
+}
+
+/**
+ * goes back to verse spans and for each alignment determines the original language verse it references, adds reference, and updates occurrence(s)
+ * @param {array} verseSpans
+ * @param {string} projectPath
+ * @param {number} chapterNumber
+ * @param {object} chapterAlignments - contains alignment data for chapter
+ */
+function cleanUpVerseSpans(verseSpans, projectPath, chapterNumber, chapterAlignments) {
+  if (verseSpans.length) {
+    const verseAlignments = {};
+    const origLangChapterJson = getOriginalChapterFromResources(projectPath, chapterNumber, USER_RESOURCES_PATH);
+
+    for (let verseSpan of verseSpans) {
+      const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseSpan);
+
+      // generate raw alignment data for each verse in range
+      for (let verse = low; verse <= hi; verse++) {
+        const originalVerse = origLangChapterJson[verse];
+
+        if (originalVerse) {
+          const blankAlignments = wordaligner.generateBlankAlignments(originalVerse);
+          verseAlignments[verse] = blankAlignments;
+        }
+      }
+
+      const verseSpanData = chapterAlignments && chapterAlignments[verseSpans];
+      const verseSpanAlignments = verseSpanData && verseSpanData.verseObjects;
+      const alignments = getVerseAlignments(verseSpanAlignments);
+
+      for (let alignment of alignments) {
+        const word = alignment.content;
+        let occurrence = alignment.occurrence;
+
+        for (let verse = low; verse <= hi; verse++) {
+          const wordCount = getWordCountInVerse(verseAlignments, verse, word);
+
+          if (occurrence <= wordCount) { // if inside this verse, add reference
+            alignment.ref = `${chapterNumber}:${verse}`;
+            alignment.occurrences = wordCount;
+            alignment.occurrence = occurrence;
+            break;
+          } else {
+            occurrence -= wordCount; // subtract counts for this verse
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * test to see if verse is a verseSpan
+ * @param {string|number} verse
+ * @return {boolean}
+ */
+export function isVerseSpan(verse) {
+  return verse.toString().includes('-');
+}
+
+/**
  * Method to retrieve project alignment data and perform conversion in usfm 3
  * TODO: this will eventually become deprecated in favor of a separate conversion tool either imported dirrectly or accessed through the tool api.
  * @param {string} wordAlignmentDataPath
  * @param {string} projectTargetLanguagePath
  * @param {array} chapters aligned
- * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @param {string} projectPath - Full path to the users project to be exported
  * @param {string} projectID
  * @returns {Promise} USFM data for book
  */
 export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetLanguagePath,
-  chapters, projectSaveLocation, projectID) => {
+  chapters, projectPath, projectID) => {
   if (!chapters) {
     chapters = [];
   }
@@ -201,15 +325,34 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, frontMatter);
       }
 
-      for (let verseNum in targetLanguageChapterJSON) { // look for extra verses in target translation not in OL
-        if (!parseInt(verseNum)) {
+      for (let targetVerse in targetLanguageChapterJSON) { // look for extra verses in target translation not in OL
+        const verseNum = parseInt(targetVerse);
+
+        if (!verseNum) {
           continue;
         } // only look at numbered verses
 
-        if (!chapterAlignmentJSON[verseNum]) { // if this is an extra verse
-          saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, verseNum); // add verse to output
+        let isExtraVerse = !chapterAlignmentJSON[targetVerse];
+
+        if (isExtraVerse) { // double check to make sure it is not in verse span
+          for (let verse_ in chapterAlignmentJSON) {
+            if (isVerseSpan(verse_)) {
+              const { low, hi } = verseHelpers.getVerseRangeFromSpan(verse_);
+
+              if ((verseNum >= low) && (verseNum <= hi)) {
+                isExtraVerse = false;
+                break;
+              }
+            }
+          }
+        }
+
+        if (isExtraVerse) { // if this is an extra verse
+          saveUsfmVerse(usfmToJSONObject, targetLanguageChapterJSON, chapterNumber, targetVerse); // add verse to output
         }
       }
+
+      const verseSpans = [];
 
       //Iterate through verses of chapter alignment data,
       //and retrieve relevant information for conversion
@@ -223,6 +366,10 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
 
         if (targetVerse === undefined) {
           continue; // skip if no target verse
+        }
+
+        if (isVerseSpan(verseNumber)) {
+          verseSpans.push(verseNumber); // keep track of verse spans for later cleanup of occurrence(s), ref
         }
 
         const verseString = UsfmFileConversionHelpers.cleanAlignmentMarkersFromString(targetVerse);
@@ -242,8 +389,10 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         }
         setVerseObjectsInAlignmentJSON(usfmToJSONObject, chapterNumber, verseNumber, verseObjects);
       }
+      cleanUpVerseSpans(verseSpans, projectPath, chapterNumber, usfmToJSONObject && usfmToJSONObject.chapters && usfmToJSONObject.chapters[chapterNumber]);
     }
-    usfmToJSONObject.headers = exportHelpers.getHeaderTags(projectSaveLocation);
+
+    usfmToJSONObject.headers = exportHelpers.getHeaderTags(projectPath);
     //Have iterated through all chapters and verses and stored verse objects from alignment data
     //converting from verseObjects to usfm and returning string
     resolve(usfmjs.toUSFM(usfmToJSONObject, { forcedNewLines: true }));
