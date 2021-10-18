@@ -60,16 +60,16 @@ export const getOriginalVerseFromResources = (projectPath, chapter, verse) => {
 
 /**
  * Returns paths to the alignment data if it exits.
- * @param {string} projectSaveLocation - Full path to the users project to be exported
+ * @param {string} projectPath - Full path to the users project to be exported
  */
-export const getAlignmentPathsFromProject = (projectSaveLocation) => {
+export const getAlignmentPathsFromProject = (projectPath) => {
   let chapters = [];
   //Retrieve project manifest, and paths for reading
-  const { project } = manifestHelpers.getProjectManifest(projectSaveLocation);
+  const { project } = manifestHelpers.getProjectManifest(projectPath);
 
   if (project && project.id) {
-    const wordAlignmentDataPath = path.join(projectSaveLocation, '.apps', 'translationCore', 'alignmentData', project.id);
-    const projectTargetLanguagePath = path.join(projectSaveLocation, project.id);
+    const wordAlignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData', project.id);
+    const projectTargetLanguagePath = path.join(projectPath, project.id);
 
     if (fs.existsSync(wordAlignmentDataPath) && fs.existsSync(projectTargetLanguagePath)) {
       chapters = fs.readdirSync(wordAlignmentDataPath);
