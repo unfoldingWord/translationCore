@@ -156,7 +156,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
       }
 
       verses.forEach((verse) => {
-        let verseParts = chaptersObject[chapter][verse];
+        const verseParts = chaptersObject[chapter][verse];
         let verseText;
 
         if (alignmentData) {
@@ -167,7 +167,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         bibleChapter[verse] = trimNewLine(verseText);
 
         if (alignmentData && bibleData && bibleData[chapter]) {
-          let chapterData = bibleData[chapter];
+          const chapterData = bibleData[chapter];
           let bibleVerse = chapterData[verse];
           const isVerseSpan_ = isVerseSpan(verse);
 

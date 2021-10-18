@@ -20,7 +20,7 @@ import * as BibleHelpers from './bibleHelpers';
  * @param chapter
  * @return {null}
  */
-export function getOriginalChapterFromManifest(manifest, basePath, chapter) {
+export function getOriginalChapterFromManifest(manifest, chapter, basePath) {
   const { project } = manifest;
   const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(project.id);
   const origLangChapterPath = ResourceAPI.getLatestVersion(path.join(basePath, languageId, 'bibles', bibleId));
@@ -205,6 +205,13 @@ export function getVerseAlignments(verseSpanAlignments) {
   return alignments;
 }
 
+/**
+ * generate blank alignments for all the verses in a verse span
+ * @param {string} verseSpan
+ * @param {object} origLangChapterJson
+ * @param {object} verseAlignments - object to return verse alignments
+ * @return {{hi, low}}
+ */
 export function getRawAlignmentsForVerse(verseSpan, origLangChapterJson, verseAlignments) {
   const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseSpan);
 
