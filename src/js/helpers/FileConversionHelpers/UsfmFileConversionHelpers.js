@@ -14,7 +14,7 @@ import * as ResourcesActions from '../../actions/ResourcesActions';
 // constants
 import { IMPORTS_PATH } from '../../common/constants';
 import {
-  getRawAlignmentsForVerse,
+  getRawAlignmentsForVerseSpan,
   getVerseAlignments,
   getWordCountInVerse,
   isVerseSpan,
@@ -115,6 +115,49 @@ const trimNewLine = function (text) {
 };
 
 /**
+ * convert aligned datat frommapped to verse to mapped to verse span
+ * @param {string} verseSpan
+ * @param {object} originalChapterData
+ * @param {object} targetChapterData
+ * @return {{verseObjects: *[]}} returns original language verses in verse span merged together
+ */
+function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, targetChapterData) {
+  const verseAlignments = {};
+  const { low, hi } = getRawAlignmentsForVerseSpan(verseSpan, originalChapterData, verseAlignments);
+  let verseSpanData = [];
+
+  for (let verse_ = low; verse_ <= hi; verse_++) {
+    const verseData = originalChapterData[verse_];
+    verseSpanData = verseSpanData.concat(verseData && verseData.verseObjects || []);
+  }
+
+  const bibleVerse = { verseObjects: verseSpanData };
+  const alignments = getVerseAlignments(targetChapterData.verseObjects);
+
+  for (let alignment of alignments) {
+    const ref = alignment.ref || '';
+    const refParts = ref.split(':');
+    const verseRef = refParts.length > 1 ? parseInt(refParts[1]) : 0;
+    const word = alignment.content;
+    let occurrence = alignment.occurrence;
+    let occurrences = 0;
+
+    for (let verse = low; verse <= hi; verse++) {
+      const wordCount = getWordCountInVerse(verseAlignments, verse, word);
+      occurrences += wordCount;
+
+      if (verse < verseRef) {
+        occurrence += wordCount; // add word counts for lower verses to occurrence
+      }
+    }
+    delete alignment.ref;
+    alignment.occurrences = occurrences;
+    alignment.occurrence = occurrence;
+  }
+  return bibleVerse;
+}
+
+/**
  * generate the target language bible from parsed USFM and manifest data
  * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
  * @param {Object} manifest
@@ -124,7 +167,7 @@ const trimNewLine = function (text) {
 export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, selectedProjectFilename) => {
   try {
     const chaptersObject = parsedUsfm.chapters;
-    const bibleDataFolderName = manifest.project.id || selectedProjectFilename;
+    const bookID = manifest.project.id || selectedProjectFilename;
     let verseFound = false;
 
     let fsQueue = [];
@@ -152,7 +195,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
       let bibleData;
 
       if (alignmentData) {
-        bibleData = getOriginalLanguageChapterResources(bibleDataFolderName, chapter, bibleData);
+        bibleData = getOriginalLanguageChapterResources(bookID, chapter);
       }
 
       verses.forEach((verse) => {
@@ -172,38 +215,7 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
           const isVerseSpan_ = isVerseSpan(verse);
 
           if (isVerseSpan_) {
-            const verseAlignments = {};
-            const { low, hi } = getRawAlignmentsForVerse(verse, chapterData, verseAlignments);
-            let verseSpanData = [];
-
-            for (let verse_ = low; verse_ <= hi; verse_++) {
-              const verseData = chapterData[verse_];
-              verseSpanData = verseSpanData.concat(verseData && verseData.verseObjects || []);
-            }
-
-            bibleVerse = { verseObjects: verseSpanData };
-            const alignments = getVerseAlignments(verseParts.verseObjects);
-
-            for (let alignment of alignments) {
-              const ref = alignment.ref || '';
-              const refParts = ref.split(':');
-              const verseRef = refParts.length > 1 ? parseInt(refParts[1]) : 0;
-              const word = alignment.content;
-              let occurrence = alignment.occurrence;
-              let occurrences = 0;
-
-              for (let verse = low; verse <= hi; verse++) {
-                const wordCount = getWordCountInVerse(verseAlignments, verse, word);
-                occurrences += wordCount;
-
-                if (verse < verseRef) {
-                  occurrence += wordCount; // add word counts for lower verses to occurrence
-                }
-              }
-              delete alignment.ref;
-              alignment.occurrences = occurrences;
-              alignment.occurrence = occurrence;
-            }
+            bibleVerse = convertAlignmentFromVerseToVerseSpan(verse, chapterData, verseParts);
           }
 
           const object = wordaligner.unmerge(verseParts, bibleVerse);
@@ -217,16 +229,16 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
       });
 
       const filename = parseInt(chapter, 10) + '.json';
-      const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, filename);
+      const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bookID, filename);
       fsQueue.push(fs.outputJson(projectBibleDataPath, bibleChapter, { spaces: 2 }));
 
       if (alignmentData) {
-        const alignmentDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bibleDataFolderName, filename);
+        const alignmentDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bookID, filename);
         alignQueue.push(fs.outputJson(alignmentDataPath, chapterAlignments, { spaces: 2 }));
       }
     });
 
-    const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bibleDataFolderName, 'headers.json');
+    const projectBibleDataPath = path.join(IMPORTS_PATH, selectedProjectFilename, bookID, 'headers.json');
     fsQueue.push(fs.outputJson(projectBibleDataPath, parsedUsfm.headers, { spaces: 2 }));
 
     if (alignQueue.length) {
