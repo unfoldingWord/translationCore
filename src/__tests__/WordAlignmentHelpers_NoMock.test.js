@@ -8,7 +8,6 @@ const TEST_DATA_FOLDER = './src/__tests__/fixtures/pivotAlignmentVerseObjects';
 jest.unmock('fs-extra');
 
 describe('WordAlignmentHelpers.convertAlignmentsFromVerseSpansToVerseSub', () => {
-
   it('should succeed with gal 1:1-2', () => {
     //given
     const testDataFile = 'gal1-1_2-verseSpan.json';
