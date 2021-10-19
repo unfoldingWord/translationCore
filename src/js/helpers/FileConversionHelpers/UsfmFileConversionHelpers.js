@@ -119,13 +119,15 @@ const trimNewLine = function (text) {
  * @param {string} verseSpan
  * @param {object} originalChapterData
  * @param {object} targetChapterData
+ * @param {string|number} chapter
  * @return {{verseObjects: *[]}} returns original language verses in verse span merged together
  */
-function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, targetChapterData) {
+function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, targetChapterData, chapter) {
   const verseAlignments = {};
   const { low, hi } = getRawAlignmentsForVerseSpan(verseSpan, originalChapterData, verseAlignments);
   let verseSpanData = [];
 
+  // combine all original language verses into a verse span
   for (let verse_ = low; verse_ <= hi; verse_++) {
     const verseData = originalChapterData[verse_];
     verseSpanData = verseSpanData.concat(verseData && verseData.verseObjects || []);
@@ -138,10 +140,18 @@ function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, ta
     const ref = alignment.ref || '';
     const refParts = ref.split(':');
     const verseRef = refParts.length > 1 ? parseInt(refParts[1]) : 0;
+    const chapterRef = refParts[0];
+
+    if (chapterRef !== chapter.toString()) {
+      console.warn(`convertAlignmentFromVerseToVerseSpan() - chapter in ref ${ref} does not match current chapter ${chapter} - skipping`);
+      continue;
+    }
+
     const word = alignment.content;
     let occurrence = alignment.occurrence;
     let occurrences = 0;
 
+    // transform occurrence(s) from verse based to verse span
     for (let verse = low; verse <= hi; verse++) {
       const wordCount = getWordCountInVerse(verseAlignments, verse, word);
       occurrences += wordCount;
@@ -150,6 +160,7 @@ function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, ta
         occurrence += wordCount; // add word counts for lower verses to occurrence
       }
     }
+
     delete alignment.ref;
     alignment.occurrences = occurrences;
     alignment.occurrence = occurrence;
@@ -212,10 +223,9 @@ export const generateTargetLanguageBibleFromUsfm = async (parsedUsfm, manifest, 
         if (alignmentData && bibleData && bibleData[chapter]) {
           const chapterData = bibleData[chapter];
           let bibleVerse = chapterData[verse];
-          const isVerseSpan_ = isVerseSpan(verse);
 
-          if (isVerseSpan_) {
-            bibleVerse = convertAlignmentFromVerseToVerseSpan(verse, chapterData, verseParts);
+          if (isVerseSpan(verse)) {
+            bibleVerse = convertAlignmentFromVerseToVerseSpan(verse, chapterData, verseParts, chapter);
           }
 
           const object = wordaligner.unmerge(verseParts, bibleVerse);
