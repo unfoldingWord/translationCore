@@ -115,34 +115,34 @@ const trimNewLine = function (text) {
 };
 
 /**
- * convert aligned datat frommapped to verse to mapped to verse span
- * @param {string} verseSpan
- * @param {object} originalChapterData
- * @param {object} targetChapterData
- * @param {string|number} chapter
- * @return {{verseObjects: *[]}} returns original language verses in verse span merged together
+ * business logic for convertAlignmentFromVerseToVerseSpan:
+ *     convert aligned data from mapped to verse to mapped to verse span
+ * @param {object} originalVerseSpanData - original bible merged to verse span
+ * @param {object} alignedVerseObjects - aligned verse objects for current verse
+ * @param {number|string} chapter
+ * @param {number} low - low verse number of span
+ * @param {number} hi - high verse number of span
+ * @param blankVerseAlignments - raw verse alignments for extracting word counts for each verse
+ * @return {{verseObjects}}
  */
-function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, targetChapterData, chapter) {
-  const verseAlignments = {};
-  const { low, hi } = getRawAlignmentsForVerseSpan(verseSpan, originalChapterData, verseAlignments);
-  let verseSpanData = [];
-
-  // combine all original language verses into a verse span
-  for (let verse_ = low; verse_ <= hi; verse_++) {
-    const verseData = originalChapterData[verse_];
-    verseSpanData = verseSpanData.concat(verseData && verseData.verseObjects || []);
-  }
-
-  const bibleVerse = { verseObjects: verseSpanData };
-  const alignments = getVerseAlignments(targetChapterData.verseObjects);
+export function convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, alignedVerseObjects, chapter, low, hi, blankVerseAlignments) {
+  const bibleVerse = { verseObjects: originalVerseSpanData };
+  const alignments = getVerseAlignments(alignedVerseObjects.verseObjects);
 
   for (let alignment of alignments) {
     const ref = alignment.ref || '';
     const refParts = ref.split(':');
-    const verseRef = refParts.length > 1 ? parseInt(refParts[1]) : 0;
-    const chapterRef = refParts[0];
+    let verseRef;
+    let chapterRef = chapter; // default to chapter
 
-    if (chapterRef !== chapter.toString()) {
+    if (refParts.length > 1) { // if both chapter and verse
+      verseRef = parseInt(refParts[1]);
+      chapterRef = refParts[0];
+    } else { // verse only
+      verseRef = parseInt(refParts[0]);
+    }
+
+    if (chapterRef.toString() !== chapter.toString()) {
       console.warn(`convertAlignmentFromVerseToVerseSpan() - chapter in ref ${ref} does not match current chapter ${chapter} - skipping`);
       continue;
     }
@@ -153,7 +153,7 @@ function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, ta
 
     // transform occurrence(s) from verse based to verse span
     for (let verse = low; verse <= hi; verse++) {
-      const wordCount = getWordCountInVerse(verseAlignments, verse, word);
+      const wordCount = getWordCountInVerse(blankVerseAlignments, verse, word);
       occurrences += wordCount;
 
       if (verse < verseRef) {
@@ -165,6 +165,29 @@ function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, ta
     alignment.occurrences = occurrences;
     alignment.occurrence = occurrence;
   }
+  return bibleVerse;
+}
+
+/**
+ * convert aligned data from mapped to verse to mapped to verse span
+ * @param {string} verseSpan - current verse
+ * @param {object} originalChapterData
+ * @param {object} alignedVerseObjects - aligned verse objects for current verse
+ * @param {string|number} chapter - current data
+ * @return {{verseObjects: *[]}} returns original language verses in verse span merged together
+ */
+function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, alignedVerseObjects, chapter) {
+  const blankVerseAlignments = {};
+  const { low, hi } = getRawAlignmentsForVerseSpan(verseSpan, originalChapterData, blankVerseAlignments);
+  let originalVerseSpanData = [];
+
+  // combine all original language verses into a verse span
+  for (let verse_ = low; verse_ <= hi; verse_++) {
+    const verseData = originalChapterData[verse_];
+    originalVerseSpanData = originalVerseSpanData.concat(verseData && verseData.verseObjects || []);
+  }
+
+  const bibleVerse = convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, alignedVerseObjects, chapter, low, hi, blankVerseAlignments);
   return bibleVerse;
 }
 

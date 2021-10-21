@@ -2,25 +2,34 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 //helpers
+import * as UsfmFileConversionHelpers from '../js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
 import * as WordAlignmentHelpers from '../js/helpers/WordAlignmentHelpers';
 //consts
 const TEST_DATA_FOLDER = './src/__tests__/fixtures/pivotAlignmentVerseObjects';
 jest.unmock('fs-extra');
 
-describe('WordAlignmentHelpers.convertAlignmentsFromVerseSpansToVerseSub', () => {
+describe('UsfmFileConversionHelpers.convertAlignmentFromVerseToVerseSpanSub', () => {
   it('should succeed with gal 1:1-2', () => {
     //given
     const testDataFile = 'gal1-1_2-span.json';
     const testData = getTestData(testDataFile);
     const chapterNumber = 1;
     const verseSpan = `1-2`;
-    const verseSpanData = testData.verseSpanData_TargetVerseSpan;
     let blankVerseAlignments = {};
     const { low, hi } = WordAlignmentHelpers.getRawAlignmentsForVerseSpan(verseSpan, testData.origLangChapterJson, blankVerseAlignments);
-    const expectedFinal = testData.verseSpanData_TargetVerse;
+    const verseSpanData = testData.verseSpanData_TargetVerse;
+    const expectedFinal = testData.verseSpanData_TargetVerseSpan;
+
+    // combine all original language verses into a verse span
+    let originalVerseSpanData = [];
+
+    for (let verse_ = low; verse_ <= hi; verse_++) {
+      const verseData = testData.origLangChapterJson[verse_];
+      originalVerseSpanData = originalVerseSpanData.concat(verseData && verseData.verseObjects || []);
+    }
 
     //when
-    WordAlignmentHelpers.convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi, blankVerseAlignments, chapterNumber);
+    UsfmFileConversionHelpers.convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, verseSpanData, chapterNumber, low, hi, blankVerseAlignments);
 
     //then
     expect(verseSpanData).toEqual(expectedFinal);

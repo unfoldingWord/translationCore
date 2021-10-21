@@ -212,10 +212,10 @@ export function getVerseAlignments(verseSpanAlignments) {
  * generate blank alignments for all the verses in a verse span
  * @param {string} verseSpan
  * @param {object} origLangChapterJson
- * @param {object} verseAlignments - object to return verse alignments
+ * @param {object} blankVerseAlignments - object to return verse alignments
  * @return {{low, hi}} get range of verses in verse span
  */
-export function getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, verseAlignments) {
+export function getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, blankVerseAlignments) {
   const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseSpan);
 
   // generate raw alignment data for each verse in range
@@ -224,7 +224,7 @@ export function getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, ver
 
     if (originalVerse) {
       const blankAlignments = wordaligner.generateBlankAlignments(originalVerse);
-      verseAlignments[verse] = blankAlignments;
+      blankVerseAlignments[verse] = blankAlignments;
     }
   }
 
@@ -237,10 +237,10 @@ export function getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, ver
  * @param {object} verseSpanData - aligned output data - will be modified with verse span fixes
  * @param {number} low - low verse number of span
  * @param {number} hi - high verse number of span
- * @param {object} verseAlignments - raw verse alignments for extracting word counts for each verse
+ * @param {object} blankVerseAlignments - raw verse alignments for extracting word counts for each verse
  * @param {number} chapterNumber
  */
-export function convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi, verseAlignments, chapterNumber) {
+export function convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi, blankVerseAlignments, chapterNumber) {
   const verseSpanAlignments = verseSpanData && verseSpanData.verseObjects;
   const alignments = getVerseAlignments(verseSpanAlignments);
 
@@ -250,7 +250,7 @@ export function convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi
 
     // transform occurrence(s) from verse span based to verse reference
     for (let verse = low; verse <= hi; verse++) {
-      const wordCount = getWordCountInVerse(verseAlignments, verse, word);
+      const wordCount = getWordCountInVerse(blankVerseAlignments, verse, word);
 
       if (occurrence <= wordCount) { // if inside this verse, add reference
         alignment.ref = `${chapterNumber}:${verse}`;
@@ -273,13 +273,13 @@ export function convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi
  */
 export function convertAlignmentsFromVerseSpansToVerse(verseSpans, projectPath, chapterNumber, chapterAlignments) {
   if (verseSpans.length) {
-    const verseAlignments = {};
+    const blankVerseAlignments = {};
     const origLangChapterJson = getOriginalChapterFromResources(projectPath, chapterNumber, USER_RESOURCES_PATH);
 
     for (let verseSpan of verseSpans) {
-      const { low, hi } = getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, verseAlignments);
+      const { low, hi } = getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, blankVerseAlignments);
       const verseSpanData = chapterAlignments && chapterAlignments[verseSpans];
-      convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi, verseAlignments, chapterNumber);
+      convertAlignmentsFromVerseSpansToVerseSub(verseSpanData, low, hi, blankVerseAlignments, chapterNumber);
     }
   }
 }
