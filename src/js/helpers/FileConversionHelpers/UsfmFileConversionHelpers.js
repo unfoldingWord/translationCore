@@ -115,6 +115,17 @@ const trimNewLine = function (text) {
 };
 
 /**
+ * called in case of invalid alignment that is not valid for the verse span, Sets alignment occurrence to high value
+ *    so that alignment will be invalidated and has to be reviewed.
+ * @param alignment
+ */
+export function invalidateAlignment(alignment) {
+  delete alignment.ref;
+  alignment.occurrences = 100000;
+  alignment.occurrence = 100000;
+}
+
+/**
  * business logic for convertAlignmentFromVerseToVerseSpan:
  *     convert aligned data from mapped to verse to mapped to verse span
  * @param {object} originalVerseSpanData - original bible merged to verse span
@@ -133,7 +144,10 @@ export function convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, a
     const ref = alignment.ref || '';
     const refParts = ref.split(':');
     let verseRef;
-    let chapterRef = chapter; // default to chapter
+    let chapterRef = chapter; // default to current chapter
+    const word = alignment.content;
+    let occurrence = alignment.occurrence;
+    let occurrences = 0;
 
     if (refParts.length > 1) { // if both chapter and verse
       verseRef = parseInt(refParts[1]);
@@ -143,13 +157,22 @@ export function convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, a
     }
 
     if (chapterRef.toString() !== chapter.toString()) {
-      console.warn(`convertAlignmentFromVerseToVerseSpan() - chapter in ref ${ref} does not match current chapter ${chapter} - skipping`);
+      console.warn(`convertAlignmentFromVerseToVerseSpan() - alignment of word "${word}:${occurrence}" - chapter in ref "${ref}" does not match current chapter ${chapter} for verse span "${low}-${hi}" - skipping`);
+      invalidateAlignment(alignment);
       continue;
     }
 
-    const word = alignment.content;
-    let occurrence = alignment.occurrence;
-    let occurrences = 0;
+    if (!(occurrence > 0)) {
+      console.warn(`convertAlignmentFromVerseToVerseSpan() - alignment of word "${word}:${occurrence}" - invalid occurrence in current verse span "${low}-${hi}" - skipping`);
+      invalidateAlignment(alignment);
+      continue;
+    }
+
+    if (!((verseRef >= low) || (verseRef <= hi))) {
+      console.warn(`convertAlignmentFromVerseToVerseSpan() - alignment of word "${word}:${occurrence}" - verse in ref ${ref} is not within current verse span "${low}-${hi}" - skipping`);
+      invalidateAlignment(alignment);
+      continue;
+    }
 
     // transform occurrence(s) from verse based to verse span
     for (let verse = low; verse <= hi; verse++) {
@@ -161,9 +184,14 @@ export function convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, a
       }
     }
 
-    delete alignment.ref;
-    alignment.occurrences = occurrences;
-    alignment.occurrence = occurrence;
+    if ((occurrence > occurrences)) {
+      console.warn(`convertAlignmentFromVerseToVerseSpan() - alignment of word "${word}:${occurrence}" - beyond ocurrences ${occurrences} in current verse span "${low}-${hi}" - skipping`);
+      invalidateAlignment(alignment);
+    } else {
+      delete alignment.ref;
+      alignment.occurrences = occurrences;
+      alignment.occurrence = occurrence;
+    }
   }
   return bibleVerse;
 }
