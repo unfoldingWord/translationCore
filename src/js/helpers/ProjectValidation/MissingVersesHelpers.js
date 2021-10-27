@@ -28,11 +28,30 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
         chapterJSONObject = {};
       }
 
+      const verses = Object.keys(chapterJSONObject);
+
       for (let verseIndex = 1; verseIndex <= expectedVerses[chapterIndex]; verseIndex++) {
         let verse = chapterJSONObject[verseIndex];
 
         if (!verse) {
-          currentMissingVerses.push(verseIndex);
+          // Is there a verse span?
+          const verseSpanFound = verses.find((verseText) => {
+            let result = '';
+
+            if (typeof verseText == 'string') {
+              let pattern = /^[0-9]+(-[0-9]+)+$/gm;
+              let results = verseText.match(pattern);
+              const result = results ? results[0] : null;
+
+              return typeof result == 'string' && result.includes(verseIndex);
+            }
+
+            return result;
+          });
+
+          if (!verseSpanFound) {
+            currentMissingVerses.push(verseIndex);
+          }
         }
       }
 
