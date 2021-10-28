@@ -42,8 +42,17 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
               let pattern = /^[0-9]+(-[0-9]+)+$/gm;
               let results = verseText.match(pattern);
               const result = results ? results[0] : null;
+              let isBetween = false;
 
-              return typeof result == 'string' && result.includes(verseIndex);
+              if (result) {
+                // Verses between starting and ending verses of verse span
+                const numbers = result.split('-');
+                const number1 = parseInt(numbers[0]);
+                const number2 = parseInt(numbers[1]);
+                isBetween = number1 < verseIndex && number2 > verseIndex;
+              }
+
+              return typeof result == 'string' && (result.includes(verseIndex) || isBetween);
             }
 
             return result;
