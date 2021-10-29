@@ -45,7 +45,7 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
               let isBetween = false;
 
               if (result) {
-                // Verses between starting and ending verses of verse span
+                // Verses between starting and ending numbers of verse span
                 const numbers = result.split('-');
                 const number1 = parseInt(numbers[0]);
                 const number2 = parseInt(numbers[1]);
