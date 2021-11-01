@@ -49,7 +49,7 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
                 const numbers = result.split('-');
                 const number1 = parseInt(numbers[0]);
                 const number2 = parseInt(numbers[1]);
-                isBetween = number1 <= verseIndex && number2 >= verseIndex ;
+                isBetween = number1 <= verseIndex && number2 >= verseIndex;
               }
 
               return typeof result == 'string' && isBetween;
