@@ -34,7 +34,7 @@ jobs:
 #       run: echo "$GITHUB_CONTEXT"
     - uses: actions/setup-node@v1
       with:
-        node-version: '16.4.0'
+        node-version: '16.4.2'
     - name: Node version
       run: |
         node --version
@@ -54,7 +54,11 @@ jobs:
         submodules: recursive
 
     - name: npm install
-      run: npm ci
+      run: |
+        # Fix for problem of cached files from older npm versions, move npm cache to temp directory
+        TMPDIR=$(mktemp -d)
+        echo "$TMPDIR"
+        npm ci --cache="$TMPDIR"
 
     - name: npm test
       run: npm run ci-test
@@ -115,15 +119,30 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: npm ci
+        run: |
+          # Fix for problem of cached files from older npm versions, move npm cache to temp directory
+          TMPDIR=$(mktemp -d)
+          echo "$TMPDIR"
+          npm ci --cache="$TMPDIR"
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
+      - name: Before Update resources - save original manifest
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
-        run: npm run update-resources
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          command: npm run update-resources
+          # restore original manifest before retry
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build linux
         id: build
@@ -191,9 +210,22 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
+      - name: Before Update resources - save original manifest
+        shell: bash
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
-        run: npm run update-resources
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          shell: bash
+          command: npm run update-resources
+          # restore original manifest before retry
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build windows
         run: |
@@ -291,9 +323,20 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
+      - name: Before Update resources - save original manifest
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
-        run: npm run update-resources
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          command: npm run update-resources
+          # restore original manifest before retry
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build macOS
         id: build
