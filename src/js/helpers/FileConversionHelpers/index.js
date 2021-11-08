@@ -79,6 +79,22 @@ export const getSafeErrorMessage = (error, defaultErrorMessage) => {
 };
 
 /**
+ * get the details from the error string
+ * @param {string} errorType - error type that prefixes the error string
+ * @param {string} errorStr - full error string
+ * @return {string}
+ */
+function getErrorDetails(errorType, errorStr) {
+  const parts = errorStr.split(errorType);
+  let details = parts.length > 1 ? parts[1] : errorStr;
+
+  if (details[0] === ':') {
+    details = details.substr(1).trim();
+  }
+  return details;
+}
+
+/**
  * convert git error message to localized message and determine if known or unknown
  * @param {String|Object} error
  * @param {Function} translate
@@ -111,17 +127,16 @@ export function getLocalizedErrorMessage(error, translate, projectName) {
       errorStr.includes(REPO.NETWORK_ERROR_REMOTE_HUNG_UP)) {
       message = translate('no_internet');
       isUnknown = false;
+    } else if (errorStr.includes(REPO.GIT_ERROR_PROJECT_NOT_FOUND)) {
+      const project_url = getErrorDetails(REPO.GIT_ERROR_PROJECT_NOT_FOUND, errorStr);
+      message = translate('projects.not_project_url_error',{ project_url });
+      isUnknown = false;
     } else if (errorStr.includes(REPO.GIT_ERROR_PUSH_NOT_FF)) {
       message = translate('projects.upload_modified_error',
         { project_name: projectName, door43: translate('_.door43') });
       isUnknown = false;
     } else if (errorStr.includes(REPO.GIT_ERROR_UNKNOWN_PROBLEM)) {
-      const parts = errorStr.split(REPO.GIT_ERROR_UNKNOWN_PROBLEM);
-      let details = parts.length > 1 ? parts[1] : errorStr;
-
-      if (details[0] === ':') {
-        details = details.substr(1).trim();
-      }
+      const details = getErrorDetails(REPO.GIT_ERROR_UNKNOWN_PROBLEM, errorStr);
       console.error(`Unknown GIT error: ${details}`);
     } else if (error.hasOwnProperty('message')) {
       console.error(`Unknown error: ${error.message}`);
