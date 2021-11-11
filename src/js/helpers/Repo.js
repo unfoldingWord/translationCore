@@ -447,6 +447,10 @@ export function convertGitErrorMessage(err, link) {
     errMessage = GIT_ERROR_UNABLE_TO_CONNECT;
   } else if (err.includes('fatal: repository') && err.includes('not found')) {
     errMessage = GIT_ERROR_PROJECT_NOT_FOUND + ': \'' + link + '\'';
+  } else if (err.includes('Cloning into') && err.includes('fatal: could not read Username for') && err.includes('Device not configured')) {
+    // TRICKY: get above error on MacOS if user is not in git configuration and project is not found.
+    //    For some reason it prompts for username even though this is an unauthenticated clone.
+    errMessage = GIT_ERROR_PROJECT_NOT_FOUND + ': \'' + link + '\'';
   } else if (err.includes('error: failed to push some refs')) {
     errMessage = GIT_ERROR_PUSH_NOT_FF;
   }
