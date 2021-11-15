@@ -4,6 +4,7 @@ import path from 'path-extra';
 import { renderToString } from 'react-dom/server';
 // helpers
 import * as REPO from '../../helpers/Repo.js';
+import { GIT_INDEX_LOCK } from '../../actions/ProjectUploadActions';
 import * as UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
 import * as ZipFileConversionHelpers from './ZipFileConversionHelpers';
 
@@ -138,6 +139,10 @@ export function getLocalizedErrorMessage(error, translate, projectName) {
     } else if (errorStr.includes(REPO.GIT_ERROR_UNKNOWN_PROBLEM)) {
       const details = getErrorDetails(REPO.GIT_ERROR_UNKNOWN_PROBLEM, errorStr);
       console.error(`Unknown GIT error: ${details}`);
+    } else if (errorStr.includes(GIT_INDEX_LOCK)) {
+      const file_path = getErrorDetails(GIT_INDEX_LOCK, errorStr);
+      message = translate('projects.project_locked', { file_path });
+      isUnknown = false;
     } else if (error.hasOwnProperty('message')) {
       console.error(`Unknown error: ${error.message}`);
     } else if (error.hasOwnProperty('data') && error.data) {
