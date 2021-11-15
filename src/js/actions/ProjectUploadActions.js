@@ -22,10 +22,10 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 export const GIT_INDEX_LOCK = 'Could not remove git index.lock from repo';
 
 /**
- * makes sure that repo does not have a git index.lock.  If so it tries to remove it.  Throws exception if cannot be removed.
+ * makes sure that project does not have a git index.lock.  If so it tries to remove it.  Throws exception if cannot be removed.
  * @param {string} projectPath
  */
-function makeSureRepoUnlocked(projectPath) {
+function makeSureProjectUnlocked(projectPath) {
   // check for git index.lock file
   const lockPath = path.join(projectPath, '.git/index.lock');
   let lockExists = false;
@@ -61,7 +61,7 @@ function makeSureRepoUnlocked(projectPath) {
  */
 export async function prepareProjectRepo(user, projectName, projectPath) {
   let repo;
-  makeSureRepoUnlocked(projectPath);
+  makeSureProjectUnlocked(projectPath);
 
   try {
     console.info('uploadProject: Creating Repo');
