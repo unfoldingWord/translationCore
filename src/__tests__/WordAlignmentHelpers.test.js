@@ -196,7 +196,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     fs.__loadFilesIntoMockFs(['manifest.json'], testFilesPath, targetLanguageDataPath);
 
     const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
-    const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
+    const foundMatch = usfm.includes('\\zaln-s |x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
     expect(foundMatch).toBeTruthy();
   });
 
@@ -226,7 +226,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
     fs.__loadFilesIntoMockFs(['manifest.json'], testFilesPath, targetLanguageDataPath);
 
     const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(wordAlignmentDataPath, targetLanguageDataPath, chapterFiles, targetLanguageDataPath);
-    const foundMatch = usfm.includes('\\zaln-s | x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
+    const foundMatch = usfm.includes('\\zaln-s |x-strong="G25960" x-lemma="κατά" x-morph="Gr,P,,,,,A,,," x-occurrence="1" x-occurrences="1" x-content="κατ’"');
     expect(foundMatch).toBeTruthy();
     let parts = usfm.split('\\c 1\n');
     parts = parts[1].split('\n\\v 1 ');
@@ -255,7 +255,7 @@ describe('WordAlignmentHelpers.convertAlignmentDataToUSFM', () => {
       if (v === 41) {
         expect(verse.indexOf('When he had said this, he dismissed the assembly.')).toEqual(0);
       } else {
-        expect(verse.indexOf('\\zaln-s | x-strong=')).toBeGreaterThanOrEqual(0);
+        expect(verse.indexOf('\\zaln-s |x-strong=')).toBeGreaterThanOrEqual(0);
       }
     }
     // const foundFrontMatter = parts[0].trim();
