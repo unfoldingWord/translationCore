@@ -66,13 +66,12 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
         if (data.contextId.groupId === resource.contextId.groupId &&
           isEqual(data.contextId.reference, resource.contextId.reference) &&
           data.contextId.occurrence === resource.contextId.occurrence) {
-          matchFound = true;
 
-          // for now, all we have to update is the quote
-          if (!isEqual(data.contextId.quote, resource.contextId.quote)) {
-            data.contextId.quote = resource.contextId.quote;
-            dataModified = true;
-            break;
+          if (!resource.contextId.checkId || (data.contextId.checkId === resource.contextId.checkId)) {
+            if (isEqual(data.contextId.quote, resource.contextId.quote)) {
+              matchFound = true;
+              break;
+            }
           }
         }
       }
@@ -146,7 +145,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
 
             for (let verse of verses) {
               const versePath = path.join(chapterPath, verse);
-              const files = getFilesInResourcePath(versePath, '.json');
+              const files = getFilesInResourcePath(versePath, '.json').sort();
 
               for (let file of files) {
                 const filePath = path.join(versePath, file);
