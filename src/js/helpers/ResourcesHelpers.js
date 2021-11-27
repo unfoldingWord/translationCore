@@ -67,12 +67,40 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
           isEqual(data.contextId.reference, resource.contextId.reference) &&
           data.contextId.occurrence === resource.contextId.occurrence) {
 
-          if (!resource.contextId.checkId || (data.contextId.checkId === resource.contextId.checkId)) {
-            if (isEqual(data.contextId.quote, resource.contextId.quote)) {
+          if (!isEqual(data.contextId.quote, resource.contextId.quote)) {
+            if (data.contextId.checkId && (data.contextId.checkId === resource.contextId.checkId)) {
               matchFound = true;
-              break;
+            } else if (!data.contextId.checkId) {
+              //TODO: if only one item for this verse, update, otherwise not match
+            }
+
+            if (matchFound) {
+              data.contextId.quote = resource.contextId.quote;
+
+              if (resource.contextId.checkId) {
+                data.contextId.checkId = resource.contextId.checkId;
+              }
+              dataModified = true;
+            }
+          } else { // quote matches, check if checkId needs to be added
+            if (!data.contextId.checkId && resource.contextId.checkId) {
+              matchFound = true;
+              data.contextId.checkId = resource.contextId.checkId; // save checkId
+              dataModified = true;
             }
           }
+
+          if (matchFound) {
+            break;
+          }
+
+          // if (!resource.contextId.checkId || (data.contextId.checkId === resource.contextId.checkId)) {
+          //   if (isEqual(data.contextId.quote, resource.contextId.quote)) {
+          //     matchFound = true;
+          //     break;
+          //   }
+          // }
+
         }
       }
 
@@ -145,7 +173,7 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
 
             for (let verse of verses) {
               const versePath = path.join(chapterPath, verse);
-              const files = getFilesInResourcePath(versePath, '.json').sort();
+              const files = getFilesInResourcePath(versePath, '.json');
 
               for (let file of files) {
                 const filePath = path.join(versePath, file);
