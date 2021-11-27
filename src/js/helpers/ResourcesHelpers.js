@@ -46,6 +46,23 @@ import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 
 /**
+ * array of checks for groupId
+ * @param {Array} resourceData
+ * @param {object} matchRef
+ * @return {number}
+ */
+function getReferenceCount(resourceData, matchRef) {
+  let count = 0;
+
+  for (let resource of resourceData) {
+    if (isEqual(resource.contextId.reference, matchRef)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/**
  * update old resource data
  * @param {String} resourcesPath - base path to find resource index
  * @param {String} bookId
@@ -71,20 +88,27 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
             if (data.contextId.checkId && (data.contextId.checkId === resource.contextId.checkId)) {
               matchFound = true;
             } else if (!data.contextId.checkId) {
-              //TODO: if only one item for this verse, update, otherwise not match
+              // if only one check for this verse, then we update. Otherwise we cannot be certain of a match
+              const count = getReferenceCount(resourceData, resource.contextId.reference);
+
+              if (count === 1) {
+                matchFound = true;
+              }
             }
 
             if (matchFound) {
               data.contextId.quote = resource.contextId.quote;
 
-              if (resource.contextId.checkId) {
+              if (!data.contextId.checkId && resource.contextId.checkId) {
                 data.contextId.checkId = resource.contextId.checkId;
               }
               dataModified = true;
             }
-          } else { // quote matches, check if checkId needs to be added
+          } else { // quote matches
+            matchFound = true;
+
+            // see if checkId needs to be added
             if (!data.contextId.checkId && resource.contextId.checkId) {
-              matchFound = true;
               data.contextId.checkId = resource.contextId.checkId; // save checkId
               dataModified = true;
             }
@@ -93,14 +117,6 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
           if (matchFound) {
             break;
           }
-
-          // if (!resource.contextId.checkId || (data.contextId.checkId === resource.contextId.checkId)) {
-          //   if (isEqual(data.contextId.quote, resource.contextId.quote)) {
-          //     matchFound = true;
-          //     break;
-          //   }
-          // }
-
         }
       }
 
