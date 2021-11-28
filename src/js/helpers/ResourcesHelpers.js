@@ -81,36 +81,41 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
 
       for (let resource of resourceData) {
         if (data.contextId.groupId === resource.contextId.groupId &&
-          isEqual(data.contextId.reference, resource.contextId.reference) &&
-          data.contextId.occurrence === resource.contextId.occurrence) {
-
-          if (!isEqual(data.contextId.quote, resource.contextId.quote)) {
-            if (data.contextId.checkId && (data.contextId.checkId === resource.contextId.checkId)) {
-              matchFound = true;
-            } else if (!data.contextId.checkId) {
-              // if only one check for this verse, then we update. Otherwise we cannot be certain of a match
-              const count = getReferenceCount(resourceData, resource.contextId.reference);
-
-              if (count === 1) {
+              isEqual(data.contextId.reference, resource.contextId.reference) &&
+              data.contextId.occurrence === resource.contextId.occurrence) {
+          if (!isEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
+            if (data.contextId.checkId) {
+              if (data.contextId.checkId === resource.contextId.checkId) {
                 matchFound = true;
               }
+            } else { // there is not a check ID in this check, so we try empirical methods
+              // if only one check for this verse, then we update presuming that this is just and original language change.
+              // If more than one check in this groupID for this verse, we skip since it would be too easy to change the quote in the wrong check
+              const count = getReferenceCount(resourceData, resource.contextId.reference);
+              matchFound = (count === 1);
             }
 
             if (matchFound) {
-              data.contextId.quote = resource.contextId.quote;
+              data.contextId.quote = resource.contextId.quote; // update quote
 
               if (!data.contextId.checkId && resource.contextId.checkId) {
-                data.contextId.checkId = resource.contextId.checkId;
+                data.contextId.checkId = resource.contextId.checkId; // add check ID
               }
               dataModified = true;
             }
-          } else { // quote matches
-            matchFound = true;
+          } else { // quotes match
+            if (data.contextId.checkId) {
+              if (data.contextId.checkId === resource.contextId.checkId) {
+                matchFound = true;
+              }
+            } else { // no check id in current check, and quotes are identical
+              matchFound = true;
 
-            // see if checkId needs to be added
-            if (!data.contextId.checkId && resource.contextId.checkId) {
-              data.contextId.checkId = resource.contextId.checkId; // save checkId
-              dataModified = true;
+              // see if there is a checkId to be added
+              if (resource.contextId.checkId) {
+                data.contextId.checkId = resource.contextId.checkId; // save checkId
+                dataModified = true;
+              }
             }
           }
 
