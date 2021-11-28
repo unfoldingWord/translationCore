@@ -1,0 +1,278 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acsah Jacob",
+      "Dr. Bobby Chellapan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Vipin Bhadran"
+    ],
+    "format": "text/usfm3",
+    "identifier": "gst",
+    "title": "GST - Marathi",
+    "description": "",
+    "language": {
+      "identifier": "mr",
+      "title": "मराठी (Marathi)",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "2021"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "relation": [
+      "mr/glt",
+      "mr/irv",
+      "mr/ulb",
+      "mr/udb",
+      "mr/obs",
+      "mr/ta",
+      "mr/tn",
+      "mr/tw",
+      "mr/tq"
+    ],
+    "publisher": "BCS",
+    "issued": "2021-11-12",
+    "modified": "2021-11-12",
+    "subject": "Aligned Bible",
+    "version": "2"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Ruth",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Jonah",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Ephesians",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Timothy",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Timothy",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीतास पत्र",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 John",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "योहानाचे तिसरे पत्र",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acsah Jacob",
+        "Dr. Bobby Chellapan",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Vipin Bhadran"
+      ],
+      "format": "text/usfm3",
+      "identifier": "gst",
+      "title": "GST - Marathi",
+      "description": "",
+      "language": {
+        "identifier": "mr",
+        "title": "मराठी (Marathi)",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "2021"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "relation": [
+        "mr/glt",
+        "mr/irv",
+        "mr/ulb",
+        "mr/udb",
+        "mr/obs",
+        "mr/ta",
+        "mr/tn",
+        "mr/tw",
+        "mr/tq"
+      ],
+      "publisher": "BCS",
+      "issued": "2021-11-12",
+      "modified": "2021-11-12",
+      "subject": "Aligned Bible",
+      "version": "2"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Ruth",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Jonah",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Ephesians",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Timothy",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Timothy",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "तीतास पत्र",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 John",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "योहानाचे तिसरे पत्र",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "mr",
+  "language_name": "मराठी (Marathi)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "GST - Marathi",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-11-16T21:24:39+00:00"
+}

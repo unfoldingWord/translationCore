@@ -1,0 +1,1548 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "RSB originally published in 1876",
+    "format": "text/usfm3",
+    "identifier": "rob",
+    "title": "Russian Open Bible",
+    "subject": "Aligned Bible",
+    "description": "Russian Open Bible aligned to unfoldingWord® Greek New Testament",
+    "language": {
+      "identifier": "ru",
+      "title": "Русский",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "rsb",
+        "language": "ru",
+        "version": "1876"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "A.Kurbanov",
+      "Aleksey Ignashin",
+      "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+      "Anna Savitskaya",
+      "Annushka",
+      "Artur Musayelyan",
+      "Ashot Muradyan",
+      "Bakhtiyor Shodiev",
+      "Dmitrii Druzhinin",
+      "Einfallena",
+      "Elenaz",
+      "G.Davityan",
+      "Galina Han",
+      "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+      "K.Ivanova",
+      "Katya Savitskiy",
+      "L.Musayelyan",
+      "Levitangel",
+      "Ludig",
+      "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+      "Mark Young",
+      "Maxtj",
+      "N.Rahmanov",
+      "Natalya Tkachenko",
+      "Ophelia ",
+      "Parviz",
+      "S.Yarosh",
+      "Samuel Kim",
+      "Serg Ignashin",
+      "Sergey Sheidt",
+      "Serhii Yarosh",
+      "Signashin",
+      "Snejok",
+      "T.Savitskaya",
+      "Val.Protsko",
+      "Valery",
+      "Vladimir Shamrai",
+      "Volodymyr Dubovenko",
+      "Volter",
+      "Voviksan",
+      "Yaroslav Ten",
+      "Yu.Ignashina",
+      "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+      "Zakbaku",
+      "Артём Булатов",
+      "Елена Булатова"
+    ],
+    "relation": [
+      "ru/ult",
+      "ru/rlob",
+      "el-x-koine/ugnt?v=0.19",
+      "hbo/uhb?v=2.1.19",
+      "ru/ust",
+      "ru/rsob",
+      "ru/obs",
+      "ru/obs-tn",
+      "ru/obs-tq",
+      "ru/rlb",
+      "ru/rsb",
+      "ru/ta",
+      "ru/tn",
+      "ru/tq",
+      "ru/tw",
+      "ru/ulb"
+    ],
+    "publisher": "Russian Open Bible Committee",
+    "issued": "2021-06-23",
+    "modified": "2021-06-23",
+    "version": "8"
+  },
+  "checking": {
+    "checking_entity": [
+      "Elman",
+      "GeCraft",
+      "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+      "Pro",
+      "Russian Open Bible Committee",
+      "Samuel Kim",
+      "Yuri Tamurkin, BTh,  St.Petersburg Christian University"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Бытие",
+      "versification": "ufw",
+      "identifier": "gen",
+      "sort": 1,
+      "path": "./01-GEN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Исход",
+      "versification": "ufw",
+      "identifier": "exo",
+      "sort": 2,
+      "path": "./02-EXO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Левит",
+      "versification": "ufw",
+      "identifier": "lev",
+      "sort": 3,
+      "path": "./03-LEV.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Числа",
+      "versification": "ufw",
+      "identifier": "num",
+      "sort": 4,
+      "path": "./04-NUM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Второзаконие",
+      "versification": "ufw",
+      "identifier": "deu",
+      "sort": 5,
+      "path": "./05-DEU.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Иисуса Навина",
+      "versification": "ufw",
+      "identifier": "jos",
+      "sort": 6,
+      "path": "./06-JOS.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Судей",
+      "versification": "ufw",
+      "identifier": "jdg",
+      "sort": 7,
+      "path": "./07-JDG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Руфь",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 Царств",
+      "versification": "ufw",
+      "identifier": "1sa",
+      "sort": 9,
+      "path": "./09-1SA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 Царств",
+      "versification": "ufw",
+      "identifier": "2sa",
+      "sort": 10,
+      "path": "./10-2SA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "3 Царств",
+      "versification": "ufw",
+      "identifier": "1ki",
+      "sort": 11,
+      "path": "./11-1KI.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "4 Царств",
+      "versification": "ufw",
+      "identifier": "2ki",
+      "sort": 12,
+      "path": "./12-2KI.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 Паралипоменон",
+      "versification": "ufw",
+      "identifier": "1ch",
+      "sort": 13,
+      "path": "./13-1CH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 Паралипоменон",
+      "versification": "ufw",
+      "identifier": "2ch",
+      "sort": 14,
+      "path": "./14-2CH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Ездры",
+      "versification": "ufw",
+      "identifier": "ezr",
+      "sort": 15,
+      "path": "./15-EZR.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Неемии",
+      "versification": "ufw",
+      "identifier": "neh",
+      "sort": 16,
+      "path": "./16-NEH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Есфирь",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./17-EST.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Иов",
+      "versification": "ufw",
+      "identifier": "job",
+      "sort": 18,
+      "path": "./18-JOB.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Псалмы",
+      "versification": "ufw",
+      "identifier": "psa",
+      "sort": 19,
+      "path": "./19-PSA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Притчи",
+      "versification": "ufw",
+      "identifier": "pro",
+      "sort": 20,
+      "path": "./20-PRO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Еклезиаст",
+      "versification": "ufw",
+      "identifier": "ecc",
+      "sort": 21,
+      "path": "./21-ECC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Песнь песней",
+      "versification": "ufw",
+      "identifier": "sng",
+      "sort": 22,
+      "path": "./22-SNG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Исаия",
+      "versification": "ufw",
+      "identifier": "isa",
+      "sort": 23,
+      "path": "./23-ISA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Иеремия",
+      "versification": "ufw",
+      "identifier": "jer",
+      "sort": 24,
+      "path": "./24-JER.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Плач",
+      "versification": "ufw",
+      "identifier": "lam",
+      "sort": 25,
+      "path": "./25-LAM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Иезекииль",
+      "versification": "ufw",
+      "identifier": "ezk",
+      "sort": 26,
+      "path": "./26-EZK.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Даниил",
+      "versification": "ufw",
+      "identifier": "dan",
+      "sort": 27,
+      "path": "./27-DAN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Осия",
+      "versification": "ufw",
+      "identifier": "hos",
+      "sort": 28,
+      "path": "./28-HOS.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Иоиль",
+      "versification": "ufw",
+      "identifier": "jol",
+      "sort": 29,
+      "path": "./29-JOL.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Амос",
+      "versification": "ufw",
+      "identifier": "amo",
+      "sort": 30,
+      "path": "./30-AMO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Авдий",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Иона",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Михей",
+      "versification": "ufw",
+      "identifier": "mic",
+      "sort": 33,
+      "path": "./33-MIC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Наум",
+      "versification": "ufw",
+      "identifier": "nam",
+      "sort": 34,
+      "path": "./34-NAM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Аваккум",
+      "versification": "ufw",
+      "identifier": "hab",
+      "sort": 35,
+      "path": "./35-HAB.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Софония",
+      "versification": "ufw",
+      "identifier": "zep",
+      "sort": 36,
+      "path": "./36-ZEP.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Аггей",
+      "versification": "ufw",
+      "identifier": "hag",
+      "sort": 37,
+      "path": "./37-HAG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Захария",
+      "versification": "ufw",
+      "identifier": "zec",
+      "sort": 38,
+      "path": "./38-ZEC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Малахия",
+      "versification": "ufw",
+      "identifier": "mal",
+      "sort": 39,
+      "path": "./39-MAL.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Матфей",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./41-MAT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Марк",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Лука",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Иоанн",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Деяния",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Римлянам",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./46-ROM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Коринфянам",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Коринфянам",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Галатам",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Ефесянам",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Филипийцам",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Колосянам",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Фесалоникийцам",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Фесалоникийцам",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Тимофею",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Тимофею",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Титу",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Филимону",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Евреям",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./59-HEB.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Иакова",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Петра",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Петра",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Иоанна",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Иоанна",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 Иоанна",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Иуды",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Откровение",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./67-REV.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "RSB originally published in 1876",
+      "format": "text/usfm3",
+      "identifier": "rob",
+      "title": "Russian Open Bible",
+      "subject": "Aligned Bible",
+      "description": "Russian Open Bible aligned to unfoldingWord® Greek New Testament",
+      "language": {
+        "identifier": "ru",
+        "title": "Русский",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "rsb",
+          "language": "ru",
+          "version": "1876"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "A.Kurbanov",
+        "Aleksey Ignashin",
+        "Aleksey Voskresenskiy, MTh in New Testament, University of Cardiff, Wales",
+        "Anna Savitskaya",
+        "Annushka",
+        "Artur Musayelyan",
+        "Ashot Muradyan",
+        "Bakhtiyor Shodiev",
+        "Dmitrii Druzhinin",
+        "Einfallena",
+        "Elenaz",
+        "G.Davityan",
+        "Galina Han",
+        "Ivan Pavlii, PhD in World Literature, Baku Slavic University",
+        "K.Ivanova",
+        "Katya Savitskiy",
+        "L.Musayelyan",
+        "Levitangel",
+        "Ludig",
+        "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+        "Mark Young",
+        "Maxtj",
+        "N.Rahmanov",
+        "Natalya Tkachenko",
+        "Ophelia ",
+        "Parviz",
+        "S.Yarosh",
+        "Samuel Kim",
+        "Serg Ignashin",
+        "Sergey Sheidt",
+        "Serhii Yarosh",
+        "Signashin",
+        "Snejok",
+        "T.Savitskaya",
+        "Val.Protsko",
+        "Valery",
+        "Vladimir Shamrai",
+        "Volodymyr Dubovenko",
+        "Volter",
+        "Voviksan",
+        "Yaroslav Ten",
+        "Yu.Ignashina",
+        "Yuri Tamurkin, BTh,  St.Petersburg Christian University",
+        "Zakbaku",
+        "Артём Булатов",
+        "Елена Булатова"
+      ],
+      "relation": [
+        "ru/ult",
+        "ru/rlob",
+        "el-x-koine/ugnt?v=0.19",
+        "hbo/uhb?v=2.1.19",
+        "ru/ust",
+        "ru/rsob",
+        "ru/obs",
+        "ru/obs-tn",
+        "ru/obs-tq",
+        "ru/rlb",
+        "ru/rsb",
+        "ru/ta",
+        "ru/tn",
+        "ru/tq",
+        "ru/tw",
+        "ru/ulb"
+      ],
+      "publisher": "Russian Open Bible Committee",
+      "issued": "2021-06-23",
+      "modified": "2021-06-23",
+      "version": "8"
+    },
+    "checking": {
+      "checking_entity": [
+        "Elman",
+        "GeCraft",
+        "Maria Karyakina, PhD, University of Pretoria, MTh in New Testament, University of South Africa",
+        "Pro",
+        "Russian Open Bible Committee",
+        "Samuel Kim",
+        "Yuri Tamurkin, BTh,  St.Petersburg Christian University"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Бытие",
+        "versification": "ufw",
+        "identifier": "gen",
+        "sort": 1,
+        "path": "./01-GEN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Исход",
+        "versification": "ufw",
+        "identifier": "exo",
+        "sort": 2,
+        "path": "./02-EXO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Левит",
+        "versification": "ufw",
+        "identifier": "lev",
+        "sort": 3,
+        "path": "./03-LEV.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Числа",
+        "versification": "ufw",
+        "identifier": "num",
+        "sort": 4,
+        "path": "./04-NUM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Второзаконие",
+        "versification": "ufw",
+        "identifier": "deu",
+        "sort": 5,
+        "path": "./05-DEU.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Иисуса Навина",
+        "versification": "ufw",
+        "identifier": "jos",
+        "sort": 6,
+        "path": "./06-JOS.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Судей",
+        "versification": "ufw",
+        "identifier": "jdg",
+        "sort": 7,
+        "path": "./07-JDG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Руфь",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 Царств",
+        "versification": "ufw",
+        "identifier": "1sa",
+        "sort": 9,
+        "path": "./09-1SA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 Царств",
+        "versification": "ufw",
+        "identifier": "2sa",
+        "sort": 10,
+        "path": "./10-2SA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "3 Царств",
+        "versification": "ufw",
+        "identifier": "1ki",
+        "sort": 11,
+        "path": "./11-1KI.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "4 Царств",
+        "versification": "ufw",
+        "identifier": "2ki",
+        "sort": 12,
+        "path": "./12-2KI.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 Паралипоменон",
+        "versification": "ufw",
+        "identifier": "1ch",
+        "sort": 13,
+        "path": "./13-1CH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 Паралипоменон",
+        "versification": "ufw",
+        "identifier": "2ch",
+        "sort": 14,
+        "path": "./14-2CH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Ездры",
+        "versification": "ufw",
+        "identifier": "ezr",
+        "sort": 15,
+        "path": "./15-EZR.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Неемии",
+        "versification": "ufw",
+        "identifier": "neh",
+        "sort": 16,
+        "path": "./16-NEH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Есфирь",
+        "versification": "ufw",
+        "identifier": "est",
+        "sort": 17,
+        "path": "./17-EST.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Иов",
+        "versification": "ufw",
+        "identifier": "job",
+        "sort": 18,
+        "path": "./18-JOB.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Псалмы",
+        "versification": "ufw",
+        "identifier": "psa",
+        "sort": 19,
+        "path": "./19-PSA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Притчи",
+        "versification": "ufw",
+        "identifier": "pro",
+        "sort": 20,
+        "path": "./20-PRO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Еклезиаст",
+        "versification": "ufw",
+        "identifier": "ecc",
+        "sort": 21,
+        "path": "./21-ECC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Песнь песней",
+        "versification": "ufw",
+        "identifier": "sng",
+        "sort": 22,
+        "path": "./22-SNG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Исаия",
+        "versification": "ufw",
+        "identifier": "isa",
+        "sort": 23,
+        "path": "./23-ISA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Иеремия",
+        "versification": "ufw",
+        "identifier": "jer",
+        "sort": 24,
+        "path": "./24-JER.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Плач",
+        "versification": "ufw",
+        "identifier": "lam",
+        "sort": 25,
+        "path": "./25-LAM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Иезекииль",
+        "versification": "ufw",
+        "identifier": "ezk",
+        "sort": 26,
+        "path": "./26-EZK.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Даниил",
+        "versification": "ufw",
+        "identifier": "dan",
+        "sort": 27,
+        "path": "./27-DAN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Осия",
+        "versification": "ufw",
+        "identifier": "hos",
+        "sort": 28,
+        "path": "./28-HOS.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Иоиль",
+        "versification": "ufw",
+        "identifier": "jol",
+        "sort": 29,
+        "path": "./29-JOL.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Амос",
+        "versification": "ufw",
+        "identifier": "amo",
+        "sort": 30,
+        "path": "./30-AMO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Авдий",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Иона",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Михей",
+        "versification": "ufw",
+        "identifier": "mic",
+        "sort": 33,
+        "path": "./33-MIC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Наум",
+        "versification": "ufw",
+        "identifier": "nam",
+        "sort": 34,
+        "path": "./34-NAM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Аваккум",
+        "versification": "ufw",
+        "identifier": "hab",
+        "sort": 35,
+        "path": "./35-HAB.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Софония",
+        "versification": "ufw",
+        "identifier": "zep",
+        "sort": 36,
+        "path": "./36-ZEP.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Аггей",
+        "versification": "ufw",
+        "identifier": "hag",
+        "sort": 37,
+        "path": "./37-HAG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Захария",
+        "versification": "ufw",
+        "identifier": "zec",
+        "sort": 38,
+        "path": "./38-ZEC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Малахия",
+        "versification": "ufw",
+        "identifier": "mal",
+        "sort": 39,
+        "path": "./39-MAL.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Матфей",
+        "versification": "ufw",
+        "identifier": "mat",
+        "sort": 40,
+        "path": "./41-MAT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Марк",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Лука",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Иоанн",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Деяния",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Римлянам",
+        "versification": "ufw",
+        "identifier": "rom",
+        "sort": 45,
+        "path": "./46-ROM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Коринфянам",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Коринфянам",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 47,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Галатам",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 48,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Ефесянам",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Филипийцам",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Колосянам",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Фесалоникийцам",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Фесалоникийцам",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Тимофею",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Тимофею",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Титу",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Филимону",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Евреям",
+        "versification": "ufw",
+        "identifier": "heb",
+        "sort": 58,
+        "path": "./59-HEB.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Иакова",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Петра",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Петра",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Иоанна",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Иоанна",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 Иоанна",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Иуды",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Откровение",
+        "versification": "ufw",
+        "identifier": "rev",
+        "sort": 66,
+        "path": "./67-REV.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ru",
+  "language_name": "Русский",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "rob",
+  "resource_title": "Russian Open Bible",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-11-04T20:47:31+00:00"
+}

@@ -1,0 +1,308 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acash Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellappan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Shojo John",
+      "Vipin Bhadran"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "",
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "issued": "2021-11-12",
+    "language": {
+      "direction": "ltr",
+      "identifier": "kn",
+      "title": "ಕನ್ನಡ (Kannada)"
+    },
+    "modified": "2021-11-12",
+    "publisher": "BCS",
+    "relation": [
+      "kn/irv",
+      "kn/iev",
+      "kn/gst",
+      "kn/obs",
+      "kn/ta",
+      "kn/tn",
+      "kn/tq",
+      "kn/tw",
+      "kn/ulb",
+      "kn/obs-tn",
+      "kn/obs-tq"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "hbk",
+        "language": "kn",
+        "version": "1951"
+      },
+      {
+        "identifier": "irv",
+        "language": "kn",
+        "version": "2020"
+      },
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "2021"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Gateway Literal Text - Kannada",
+    "type": "bundle",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "ರೂತ",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ಯೋನ",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ಎಫೆಸದವರಿಗೆ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ತಿಮೊಥೆಯನಿಗೆ",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ತಿಮೊ",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ತೀತನಿಗೆ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ಯೋಹಾ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 John",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acash Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Dr. Bobby Chellappan",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Shojo John",
+        "Vipin Bhadran"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "",
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "issued": "2021-11-12",
+      "language": {
+        "direction": "ltr",
+        "identifier": "kn",
+        "title": "ಕನ್ನಡ (Kannada)"
+      },
+      "modified": "2021-11-12",
+      "publisher": "BCS",
+      "relation": [
+        "kn/irv",
+        "kn/iev",
+        "kn/gst",
+        "kn/obs",
+        "kn/ta",
+        "kn/tn",
+        "kn/tq",
+        "kn/tw",
+        "kn/ulb",
+        "kn/obs-tn",
+        "kn/obs-tq"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "hbk",
+          "language": "kn",
+          "version": "1951"
+        },
+        {
+          "identifier": "irv",
+          "language": "kn",
+          "version": "2020"
+        },
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "2021"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Gateway Literal Text - Kannada",
+      "type": "bundle",
+      "version": "4"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "ರೂತ",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ಯೋನ",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ಎಫೆಸದವರಿಗೆ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ತಿಮೊಥೆಯನಿಗೆ",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ತಿಮೊ",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ತೀತನಿಗೆ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ಯೋಹಾ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 John",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "kn",
+  "language_name": "ಕನ್ನಡ (Kannada)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "Gateway Literal Text - Kannada",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-11-16T21:46:45+00:00"
+}
