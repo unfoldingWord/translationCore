@@ -1,0 +1,318 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "title": "Gateway Literal Text - Hindi",
+    "subject": "Aligned Bible",
+    "description": "",
+    "language": {
+      "identifier": "hi",
+      "title": "हिन्दी (Hindi)",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "hbh",
+        "language": "hi",
+        "version": "1950"
+      },
+      {
+        "identifier": "irv",
+        "language": "hi",
+        "version": "2020"
+      },
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "2020"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Acsah Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Christopher",
+      "Dr. Bobby Chellapan",
+      "Dr. Chander Sekhar",
+      "Dr. Ghir",
+      "Dr. Joseph Jekab",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Jobby Prasannan",
+      "M.V. Sunny",
+      "Merlyn Easa",
+      "Prabodh Kumar Singh",
+      "Rinu John",
+      "Shojo John",
+      "Vipin Bhadran"
+    ],
+    "relation": [
+      "hi/gst",
+      "hi/udb",
+      "hi/ulb",
+      "hi/iev",
+      "hi/irv",
+      "hi/ta",
+      "hi/tn",
+      "hi/tq",
+      "hi/tw",
+      "hi/obs",
+      "hi/obs-tn"
+    ],
+    "publisher": "BCS",
+    "issued": "2021-04-26",
+    "modified": "2021-04-26",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "Antoney Raj",
+      "Cdr Thomas Mathew",
+      "Dr. Bobby Chellapan",
+      "Hind Prakash",
+      "Jobby Prasannan",
+      "Shojo John",
+      "Vipin Bhadran"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "रूत",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "एस्तेर",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./17-EST.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "योना",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "इफिसियों",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 तीमुथियुस",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीतुस के नाम प्रेरित पौलुस की पत्री",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "यूहन्ना की तीसरी पत्री",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "title": "Gateway Literal Text - Hindi",
+      "subject": "Aligned Bible",
+      "description": "",
+      "language": {
+        "identifier": "hi",
+        "title": "हिन्दी (Hindi)",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "hbh",
+          "language": "hi",
+          "version": "1950"
+        },
+        {
+          "identifier": "irv",
+          "language": "hi",
+          "version": "2020"
+        },
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "2020"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Acsah Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Christopher",
+        "Dr. Bobby Chellapan",
+        "Dr. Chander Sekhar",
+        "Dr. Ghir",
+        "Dr. Joseph Jekab",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Jobby Prasannan",
+        "M.V. Sunny",
+        "Merlyn Easa",
+        "Prabodh Kumar Singh",
+        "Rinu John",
+        "Shojo John",
+        "Vipin Bhadran"
+      ],
+      "relation": [
+        "hi/gst",
+        "hi/udb",
+        "hi/ulb",
+        "hi/iev",
+        "hi/irv",
+        "hi/ta",
+        "hi/tn",
+        "hi/tq",
+        "hi/tw",
+        "hi/obs",
+        "hi/obs-tn"
+      ],
+      "publisher": "BCS",
+      "issued": "2021-04-26",
+      "modified": "2021-04-26",
+      "version": "4"
+    },
+    "checking": {
+      "checking_entity": [
+        "Antoney Raj",
+        "Cdr Thomas Mathew",
+        "Dr. Bobby Chellapan",
+        "Hind Prakash",
+        "Jobby Prasannan",
+        "Shojo John",
+        "Vipin Bhadran"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "रूत",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "एस्तेर",
+        "versification": "ufw",
+        "identifier": "est",
+        "sort": 17,
+        "path": "./17-EST.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "योना",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "इफिसियों",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 तीमुथियुस",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "तीतुस के नाम प्रेरित पौलुस की पत्री",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "यूहन्ना की तीसरी पत्री",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "hi",
+  "language_name": "हिन्दी (Hindi)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "Gateway Literal Text - Hindi",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-04-27T22:13:33+00:00"
+}
