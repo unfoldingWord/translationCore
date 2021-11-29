@@ -69,7 +69,7 @@ function getReferenceCount(resourceData, matchRef) {
  * @param {Object} data - resource data to update
  * @return {boolean} true if resource data was modified
  */
-function updateCheckingResourceData(resourcesPath, bookId, data) {
+export function updateCheckingResourceData(resourcesPath, bookId, data) {
   let dataModified = false;
   const resourcePath = path.join(resourcesPath, bookId, data.contextId.groupId + '.json');
 
@@ -86,10 +86,10 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
           if (!isEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
             if (data.contextId.checkId) {
               if (data.contextId.checkId === resource.contextId.checkId) {
-                matchFound = true;
+                matchFound = true; // found match, but don't need to update anything
               }
             } else { // there is not a check ID in this check, so we try empirical methods
-              // if only one check for this verse, then we update presuming that this is just and original language change.
+              // if only one check for this verse, then we update presuming that this is just an original language change.
               // If more than one check in this groupID for this verse, we skip since it would be too easy to change the quote in the wrong check
               const count = getReferenceCount(resourceData, resource.contextId.reference);
               matchFound = (count === 1);

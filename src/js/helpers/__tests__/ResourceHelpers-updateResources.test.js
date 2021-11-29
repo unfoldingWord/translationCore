@@ -1,12 +1,14 @@
 import path from 'path';
 import fs from 'fs-extra';
 import isEqual from 'deep-equal';
+import _ from 'lodash';
 // helpers
 import {
   getFilesInResourcePath,
   getFoldersInResourceFolder,
   migrateOldCheckingResourceData,
   removeOldThelps,
+  updateCheckingResourceData,
 } from '../ResourcesHelpers';
 // constants
 import {
@@ -117,9 +119,97 @@ describe('migrate project resources', () => {
   });
 });
 
+// const test = _.cloneDeep(en_tw_resource_path);
+const resourceFolder = '/Resources';
+const bookId = '2jn';
+const resourceID = 'en_tn';
+const resourceVersion = 'v54';
+const updateTestFiles = path.join('src/__tests__/fixtures/checkData/update');
+const checkResource = 'en_2jn';
+
+describe('updateCheckingResourceData', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+  });
+
+  describe('with resource checkIDs', () => {
+    const useResourceCheckIds = true;
+
+    it('no checkID in check, not exact match, and two possibilies, then do not update', () => {
+      // given
+      const expect_dataModified = false;
+      const sourceCheckFile = path.join('noCheckID', '2021-05-24T08_01_00.619Z.json');
+      const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+      const check = _.cloneDeep(checkInitial);
+      loadResources(useResourceCheckIds, resourceID, resourceVersion);
+
+      // when
+      const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+      // then
+      expect(dataModified).toEqual(expect_dataModified);
+      expect(check).toEqual(checkInitial);
+    });
+  });
+
+  describe('with no resource checkIDs', () => {
+    const useResourceCheckIds = false;
+
+    it('no checkID in check, not exact match, and two possibilies, then do not update', () => {
+      // given
+      const expect_dataModified = false;
+      const sourceCheckFile = path.join('noCheckID', '2021-05-24T08_01_00.619Z.json');
+      const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+      const check = _.cloneDeep(checkInitial);
+      loadResources(useResourceCheckIds, resourceID, resourceVersion);
+
+      // when
+      const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+      // then
+      expect(dataModified).toEqual(expect_dataModified);
+      expect(check).toEqual(checkInitial);
+    });
+  });
+});
+
 //
 // Helpers
 //
+
+/**
+ * read file data from actual file system
+ * @param {string} checkResource
+ * @param {string} sourceCheckFile
+ * @return {*}
+ */
+function readChecksFromTestFixture(checkResource, sourceCheckFile) {
+  const sourceFilePath = path.join(updateTestFiles, 'checks', checkResource, sourceCheckFile);
+  const check = fs.__actual.readJsonSync(sourceFilePath);
+  return check;
+}
+
+/**
+ * load resources into mock file system
+ * @param {boolean} useCheckIds
+ * @param {string} resourceID
+ * @param {string} resourceVersion
+ */
+function loadResources(useCheckIds, resourceID, resourceVersion) {
+  const checkIdFolder = useCheckIds ? 'checkID' : 'noCheckId';
+  const subPath = path.join(updateTestFiles, '/resources', checkIdFolder, resourceID, resourceVersion);
+  fs.__loadFilesIntoMockFs([bookId], subPath, path.join(resourceFolder));
+  const resourceSubPath = path.join(resourceFolder, bookId);
+  const files = fs.readdirSync(resourceSubPath);
+  const firstFile = files.length ? path.join(resourceSubPath, files[0]) : null;
+  const firstFileData = firstFile ? fs.readJsonSync(firstFile) : null;
+  return {
+    resourceSubPath,
+    firstFile,
+    firstFileData,
+  };
+}
+
 
 /**
  * returns true if path is a directory
@@ -226,4 +316,3 @@ function validateMigration(projectDir, toolsFolder, checkPath, isContext = false
   }
   expect(Array.isArray(data.contextId.quote)).toBeTruthy();
 }
-
