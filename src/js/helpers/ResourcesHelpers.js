@@ -86,7 +86,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
           if (!isEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
             if (data.contextId.checkId) {
               if (data.contextId.checkId === resource.contextId.checkId) {
-                matchFound = true; // found match, but don't need to update anything
+                matchFound = true; // found match
               }
             } else { // there is not a check ID in this check, so we try empirical methods
               // if only one check for this verse, then we update presuming that this is just an original language change.
