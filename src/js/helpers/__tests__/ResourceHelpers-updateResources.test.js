@@ -125,6 +125,8 @@ const resourceID = 'en_tn';
 const resourceVersion = 'v54';
 const updateTestFiles = path.join('src/__tests__/fixtures/checkData/update');
 const checkResource = 'en_2jn';
+const firstCheckFile = '2021-05-24T08_01_00.619Z.json';
+const secondCheckFile = '2021-05-24T08_01_10.625Z.json';
 
 describe('updateCheckingResourceData', () => {
   beforeEach(() => {
@@ -141,11 +143,12 @@ describe('updateCheckingResourceData', () => {
       it('not exact quote match, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
-        const checkExpected = _.cloneDeep(checkInitial);
         loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -158,7 +161,7 @@ describe('updateCheckingResourceData', () => {
       it('not exact quote match, and one possibility, then update', () => {
         // given
         const expect_dataModified = true;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
         const checkExpected = _.cloneDeep(checkInitial);
@@ -180,11 +183,11 @@ describe('updateCheckingResourceData', () => {
       it('exact quote match, and two possibilities, then update', () => {
         // given
         const expect_dataModified = true;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
         const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
-        const resource = firstFileData[2];
+        const resource = firstFileData[3];
         check.contextId.quote = resource.contextId.quote; // set check to have same quote
         const checkExpected = _.cloneDeep(check);
         checkExpected.contextId.checkId = resource.contextId.checkId; // expect checkID to be updated
@@ -205,13 +208,35 @@ describe('updateCheckingResourceData', () => {
       it('not exact quote match, same checkID, and two possibilities, then update', () => {
         // given
         const expect_dataModified = true;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
-        const checkExpected = _.cloneDeep(checkInitial);
         const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
-        const resource = firstFileData[2];
+        const resource = firstFileData[3];
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
+        checkExpected.contextId.checkId = resource.contextId.checkId;
         checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('not exact quote match, different checkID, and two possibilities, then don\'t update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[3];
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.checkId = 'abcd';
+        const checkExpected = _.cloneDeep(check);
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -224,13 +249,13 @@ describe('updateCheckingResourceData', () => {
       it('exact quote match, same checkID, and two possibilities, then don\'t need to update', () => {
         // given
         const expect_dataModified = false;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
-        const checkExpected = _.cloneDeep(checkInitial);
         const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
-        const resource = firstFileData[2];
+        const resource = firstFileData[3];
         check.contextId.quote = resource.contextId.quote; // use same quote
+        const checkExpected = _.cloneDeep(check);
         checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
 
         // when
@@ -253,11 +278,34 @@ describe('updateCheckingResourceData', () => {
       it('not exact quote match, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
-        const checkExpected = _.cloneDeep(checkInitial);
         loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('not exact quote match, and one possibility, then update', () => {
+        // given
+        const expect_dataModified = true;
+        const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFilePath, firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[2];
+        firstFileData.splice(3, 1); // remove second possibility
+        fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
+        checkExpected.contextId.quote = resource.contextId.quote; // quote will be updated
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -275,11 +323,12 @@ describe('updateCheckingResourceData', () => {
       it('not exact quote match, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
-        const checkExpected = _.cloneDeep(checkInitial);
         loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -292,11 +341,11 @@ describe('updateCheckingResourceData', () => {
       it('exact quote match, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
         const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
-        const resource = firstFileData[2];
+        const resource = firstFileData[3];
         check.contextId.quote = resource.contextId.quote; // use same quote
         const checkExpected = _.cloneDeep(check);
 
@@ -311,7 +360,7 @@ describe('updateCheckingResourceData', () => {
       it('not exact quote match, and one possibility, then do not update', () => {
         // given
         const expect_dataModified = false;
-        const sourceCheckFile = path.join(whichCheckFolder, '2021-05-24T08_01_00.619Z.json');
+        const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
         const checkExpected = _.cloneDeep(checkInitial);
