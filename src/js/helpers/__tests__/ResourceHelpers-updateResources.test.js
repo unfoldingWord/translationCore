@@ -127,18 +127,26 @@ const updateTestFiles = path.join('src/__tests__/fixtures/checkData/update');
 const checkResource = 'en_2jn';
 const firstCheckFile = '2021-05-24T08_01_00.619Z.json';
 const secondCheckFile = '2021-05-24T08_01_10.625Z.json';
+let useResourceCheckIds = true;
+let useCheckIdFolder = false;
+let whichCheckFolder;
 
 describe('updateCheckingResourceData', () => {
   beforeEach(() => {
     fs.__resetMockFS();
+    fs.ensureDirSync(resourceFolder);
   });
 
   describe('with resource checkIDs', () => {
-    const useResourceCheckIds = true;
+    beforeEach(() => {
+      useResourceCheckIds = true;
+    });
 
     describe('no checkID in check', () => {
-      const useCheckIdFolder = false;
-      const whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      beforeEach(() => {
+        useCheckIdFolder = false;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
 
       it('not exact quote match, and two possibilities, then do not update', () => {
         // given
@@ -202,8 +210,10 @@ describe('updateCheckingResourceData', () => {
     });
 
     describe('has checkID in check', () => {
-      const useCheckIdFolder = true;
-      const whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      beforeEach(() => {
+        useCheckIdFolder = true;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
 
       it('not exact quote match, same checkID, and two possibilities, then update', () => {
         // given
@@ -268,11 +278,15 @@ describe('updateCheckingResourceData', () => {
   });
 
   describe('with no resource checkIDs', () => {
-    const useResourceCheckIds = false;
+    beforeEach(() => {
+      useResourceCheckIds = false;
+    });
 
     describe('no checkID in check', () => {
-      const useCheckIdFolder = false;
-      const whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      beforeEach(() => {
+        useCheckIdFolder = false;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
 
       it('not exact quote match, and two possibilities, then do not update', () => {
         // given
@@ -316,8 +330,10 @@ describe('updateCheckingResourceData', () => {
     });
 
     describe('checkID in check', () => {
-      const useCheckIdFolder = true;
-      const whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      beforeEach(() => {
+        useCheckIdFolder = true;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
 
       it('not exact quote match, and two possibilities, then do not update', () => {
         // given
