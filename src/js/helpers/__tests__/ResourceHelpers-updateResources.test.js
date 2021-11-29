@@ -232,8 +232,7 @@ describe('updateCheckingResourceData', () => {
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
         const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
         const check = _.cloneDeep(checkInitial);
-        const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
-        const resource = firstFileData[3];
+        loadResources(useResourceCheckIds, resourceID, resourceVersion);
         check.contextId.quote.splice(0,1); // modify so not exact match
         check.contextId.checkId = 'abcd';
         const checkExpected = _.cloneDeep(check);
