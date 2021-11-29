@@ -422,7 +422,12 @@ function loadResources(useCheckIds, resourceID, resourceVersion) {
   fs.__loadFilesIntoMockFs([bookId], subPath, path.join(resourceFolder));
   const resourceSubPath = path.join(resourceFolder, bookId);
   const files = fs.readdirSync(resourceSubPath);
-  const firstFilePath = files.length ? path.join(resourceSubPath, files[0]) : null;
+
+  if (!files || !files.length) {
+    console.log(`loadResources() - no files in ${resourceSubPath}, from ${subPath}`);
+  }
+
+  const firstFilePath = files && files.length ? path.join(resourceSubPath, files[0]) : null;
   const firstFileData = firstFilePath ? fs.readJsonSync(firstFilePath) : null;
   return {
     resourceSubPath,
