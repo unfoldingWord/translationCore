@@ -417,7 +417,7 @@ function readChecksFromTestFixture(checkResource, sourceCheckFile) {
  * @param {string} resourceVersion
  */
 function loadResources(useCheckIds, resourceID, resourceVersion) {
-  const checkIdFolder = useCheckIds ? 'checkID' : 'noCheckId';
+  const checkIdFolder = useCheckIds ? 'checkID' : 'noCheckID';
   const subPath = path.join(updateTestFiles, '/resources', checkIdFolder, resourceID, resourceVersion);
   fs.__loadFilesIntoMockFs([bookId], subPath, path.join(resourceFolder));
   const resourceSubPath = path.join(resourceFolder, bookId);
