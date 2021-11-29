@@ -425,6 +425,8 @@ function loadResources(useCheckIds, resourceID, resourceVersion) {
 
   if (!files || !files.length) {
     console.log(`loadResources() - no files in ${resourceSubPath}, from ${subPath}`);
+    const sourceFiles = fs.__actual.readdirSync(subPath);
+    console.log(`loadResources() - filesfrom ${subPath} count is ${sourceFiles && sourceFiles.length}`);
   }
 
   const firstFilePath = files && files.length ? path.join(resourceSubPath, files[0]) : null;
