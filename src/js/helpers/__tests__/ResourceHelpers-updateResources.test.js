@@ -4,9 +4,11 @@ import isEqual from 'deep-equal';
 import _ from 'lodash';
 // helpers
 import {
+  areQuotesEqual,
   getFilesInResourcePath,
   getFoldersInResourceFolder,
   migrateOldCheckingResourceData,
+  QUOTE_MARK,
   removeOldThelps,
   updateCheckingResourceData,
 } from '../ResourcesHelpers';
@@ -130,6 +132,85 @@ const secondCheckFile = '2021-05-24T08_01_10.625Z.json';
 let useResourceCheckIds = true;
 let useCheckIdFolder = false;
 let whichCheckFolder;
+
+describe('areQuotesEqual', () => {
+  beforeEach(() => {
+    whichCheckFolder = 'noCheckID';
+  });
+
+  it('exact quote match should return true', () => {
+    // given
+    const expected = true;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('migrated quote match should return true', () => {
+    // given
+    const expected = true;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+    resourceQuote.splice(2,1);
+    resourceQuote[1].word += QUOTE_MARK;
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('string compared to array should return false', () => {
+    // given
+    const expected = false;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = 'nuts';
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('same strings should return true', () => {
+    // given
+    const expected = true;
+    const projectCheckQuote = 'nuts';
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('different strings should return false', () => {
+    // given
+    const expected = false;
+    const projectCheckQuote = 'nuts';
+    const resourceQuote = 'fruits';
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+});
 
 describe('updateCheckingResourceData', () => {
   beforeEach(() => {

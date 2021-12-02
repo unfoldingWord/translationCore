@@ -45,6 +45,8 @@ import { generateTimestamp } from './TimestampGenerator';
 import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 
+export const QUOTE_MARK = '\u2019';
+
 /**
  * array of checks for groupId
  * @param {Array} resourceData
@@ -60,6 +62,38 @@ function getReferenceCount(resourceData, matchRef) {
     }
   }
   return count;
+}
+
+export function areQuotesEqual(projectCheckQuote, resourceQuote) {
+  let same = isEqual(projectCheckQuote, resourceQuote);
+
+  if (!same) { // if not exactly the same, check for old quote handling in project quote
+    // a quick sanity check, the old quote would be longer if the quote mark is split out
+    if (Array.isArray(projectCheckQuote) && Array.isArray(resourceQuote) && projectCheckQuote.length > resourceQuote.length) {
+      let index = projectCheckQuote.findIndex(item => (item.word === QUOTE_MARK)); // look for quote mark
+      const quoteMarkFound = index > 1;
+
+      if (quoteMarkFound) { // if quote mark split out, migrate to new format
+        const newQuote = _.cloneDeep(projectCheckQuote);
+        let done = false;
+
+        while (!done) {
+          if (index > 1) {
+            // move quote mark to previous word
+            const previousItem = newQuote[index - 1];
+            previousItem.word += QUOTE_MARK;
+            newQuote.splice(index, 1);
+            index = newQuote.findIndex(item => (item.word === QUOTE_MARK));
+          } else {
+            done = true;
+          }
+        }
+
+        same = isEqual(newQuote, resourceQuote);
+      }
+    }
+  }
+  return same;
 }
 
 /**
@@ -83,7 +117,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
         if (data.contextId.groupId === resource.contextId.groupId &&
               isEqual(data.contextId.reference, resource.contextId.reference) &&
               data.contextId.occurrence === resource.contextId.occurrence) {
-          if (!isEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
+          if (!areQuotesEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
             if (data.contextId.checkId) {
               if (data.contextId.checkId === resource.contextId.checkId) {
                 matchFound = true; // found match
@@ -108,7 +142,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
               if (data.contextId.checkId === resource.contextId.checkId) {
                 matchFound = true;
               }
-            } else { // no check id in current check, and quotes are identical
+            } else { // no check id in current check, and quotes are similar
               matchFound = true;
 
               // see if there is a checkId to be added
@@ -116,6 +150,12 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
                 data.contextId.checkId = resource.contextId.checkId; // save checkId
                 dataModified = true;
               }
+            }
+
+            if (matchFound && !isEqual(data.contextId.quote, resource.contextId.quote)) {
+              // if quotes not exactly the same, update
+              data.contextId.quote = resource.contextId.quote;
+              dataModified = true;
             }
           }
 
