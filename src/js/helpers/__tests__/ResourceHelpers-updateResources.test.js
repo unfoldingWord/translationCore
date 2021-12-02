@@ -137,12 +137,14 @@ describe('updateCheckingResourceData', () => {
     fs.ensureDirSync(resourceFolder);
   });
 
-  describe('with resource checkIDs', () => {
+  // tests migration with newer resources processed in 3.0.2 or newer
+  describe('resources have checkIDs', () => {
     beforeEach(() => {
       useResourceCheckIds = true;
     });
 
-    describe('no checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.2 or older, only update if quotes match or only one possibility
+    describe('no checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = false;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
@@ -166,7 +168,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('not exact quote match, and one possibility, then update', () => {
+      it('not exact quote match, and one possibility, then update quote and checkId', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
@@ -188,7 +190,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('exact quote match, and two possibilities, then update', () => {
+      it('exact quote match, and two possibilities, then update checkId', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -209,13 +211,14 @@ describe('updateCheckingResourceData', () => {
       });
     });
 
-    describe('has checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.3 or newer
+    describe('has checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = true;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
       });
 
-      it('not exact quote match, same checkID, and two possibilities, then update', () => {
+      it('not exact quote match, same checkID, and two possibilities, then update quote', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -225,7 +228,6 @@ describe('updateCheckingResourceData', () => {
         const resource = firstFileData[3];
         check.contextId.quote.splice(0,1); // modify so not exact match
         const checkExpected = _.cloneDeep(check);
-        checkExpected.contextId.checkId = resource.contextId.checkId;
         checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
 
         // when
@@ -236,7 +238,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('not exact quote match, different checkID, and two possibilities, then don\'t update', () => {
+      it('not exact quote match, different checkID, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -255,7 +257,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('exact quote match, same checkID, and two possibilities, then don\'t need to update', () => {
+      it('exact quote match, same checkID, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -277,12 +279,14 @@ describe('updateCheckingResourceData', () => {
     });
   });
 
-  describe('with no resource checkIDs', () => {
+  // tests migration with older resources processed in 3.0.1 or older
+  describe('resource without checkIDs', () => {
     beforeEach(() => {
       useResourceCheckIds = false;
     });
 
-    describe('no checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.2 or older, only update when there is one possibility
+    describe('no checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = false;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
@@ -306,7 +310,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('not exact quote match, and one possibility, then update', () => {
+      it('not exact quote match, and one possibility, then update quote', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
@@ -329,7 +333,8 @@ describe('updateCheckingResourceData', () => {
       });
     });
 
-    describe('checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.3 or newer, only updates when ref and checkid match
+    describe('checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = true;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
