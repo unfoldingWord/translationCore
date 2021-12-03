@@ -64,6 +64,12 @@ function getReferenceCount(resourceData, matchRef) {
   return count;
 }
 
+/**
+ * compares quotes, with fallback to old handling of quote marks
+ * @param projectCheckQuote
+ * @param resourceQuote
+ * @return {*|boolean}
+ */
 export function areQuotesEqual(projectCheckQuote, resourceQuote) {
   let same = isEqual(projectCheckQuote, resourceQuote);
 
