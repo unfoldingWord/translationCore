@@ -262,6 +262,7 @@ describe('updateCheckingResourceData', () => {
         fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
         checkExpected.contextId.checkId = resource.contextId.checkId; // expect checkID to be updated
         checkExpected.contextId.quote = resource.contextId.quote; // set check to have updated quote
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // set check to have updated quoteString
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -308,8 +309,10 @@ describe('updateCheckingResourceData', () => {
         const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
         const resource = firstFileData[3];
         check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.quoteString = check.contextId.quote.map(i => i.word).join(' ');
         const checkExpected = _.cloneDeep(check);
         checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // expect check to be updated from resource
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -402,8 +405,10 @@ describe('updateCheckingResourceData', () => {
         firstFileData.splice(3, 1); // remove second possibility
         fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
         check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.quoteString = check.contextId.quote.map(i => i.word).join(' ');
         const checkExpected = _.cloneDeep(check);
         checkExpected.contextId.quote = resource.contextId.quote; // quote will be updated
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // quoteString will be updated
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);

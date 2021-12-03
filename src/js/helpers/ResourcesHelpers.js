@@ -137,6 +137,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
 
             if (matchFound) {
               data.contextId.quote = resource.contextId.quote; // update quote
+              data.contextId.quoteString = resource.contextId.quoteString; // update quoteString
 
               if (!data.contextId.checkId && resource.contextId.checkId) {
                 data.contextId.checkId = resource.contextId.checkId; // add check ID
@@ -161,6 +162,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
             if (matchFound && !isEqual(data.contextId.quote, resource.contextId.quote)) {
               // if quotes not exactly the same, update
               data.contextId.quote = resource.contextId.quote;
+              data.contextId.quoteString = resource.contextId.quoteString;
               dataModified = true;
             }
           }
