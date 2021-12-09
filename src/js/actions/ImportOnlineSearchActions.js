@@ -18,8 +18,8 @@ export function searchReposByQuery(query) {
         // search by user and languageId
         dispatch(searchReposByUser(query.user, query.languageId));
       } else if (query.bookId && query.languageId) {
-        // search by languageId and bookId
-        const searchQuery = `${query.languageId}_${query.bookId}`;
+        // search by languageId and bookId, search in both old name format and new name format
+        const searchQuery = `${query.languageId}%5C_${query.bookId},${query.languageId}%5C_%25%5C_${query.bookId}%5C_`;
         dispatch(searchByQuery(searchQuery));
       } else if (query.bookId) {
         // search only by bookId
