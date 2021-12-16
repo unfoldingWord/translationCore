@@ -1,6 +1,6 @@
 # Changelog
 
-## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-11-24)
+## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-12-16)
 
 **Fixed bugs:**
 
