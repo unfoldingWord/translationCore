@@ -1,5 +1,20 @@
 # Changelog
 
+## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-12-16)
+
+**Fixed bugs:**
+
+- TN checks get swapped when resources updated [\#7198](https://github.com/unfoldingWord/translationCore/issues/7198)
+- Unable to import online project [\#7162](https://github.com/unfoldingWord/translationCore/issues/7162)
+- \p should not have any trailing spaces before the newline [\#7164](https://github.com/unfoldingWord/translationCore/issues/7164)
+- the pipe character | within the \w and \zalns has a space after it on export [\#7165](https://github.com/unfoldingWord/translationCore/issues/7165)
+- TNs with an OrigL quote that ends in a single quote mark fail [\#7156](https://github.com/unfoldingWord/translationCore/issues/7156)
+- Allow multiple tN's for the same verse with the same original language text [\#7096](https://github.com/unfoldingWord/translationCore/issues/7096)
+- tC needs to allow more than 2 versions of the original languages to be on the system simultaneously [\#7121](https://github.com/unfoldingWord/translationCore/issues/7121)
+- tC appears to not always force the download of the original language version used during the initial work in tN [\#7140](https://github.com/unfoldingWord/translationCore/issues/7140)
+- The 'You are about to transmit data over the Internet' warning is not displayed before downloading a previous version of the original language for tN checks [\#7120](https://github.com/unfoldingWord/translationCore/issues/7120)
+- Include new TN categories when parent category is checked. [\#7133](https://github.com/unfoldingWord/translationCore/issues/7133)
+
 ## [v3.0.1](https://github.com/unfoldingWord/translationCore/tree/v3.0.1) (2020-09-12)
 
 **Implemented enhancements:**

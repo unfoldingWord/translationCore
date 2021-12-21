@@ -1,0 +1,113 @@
+{
+  "contextId": {
+    "checkId": "gad9",
+    "occurrenceNote": "If it would be clearer in your language, you could express the idea behind the abstract nouns **grace**, **mercy**, and **peace** with verbal phrases, with **God the Father** and **Jesus Christ** as the subject. Alternate translation: “May God the Father and Jesus Christ show us kindness, be merciful to us, and give us peace” (See: [Abstract Nouns](rc://en/ta/man/translate/figs-abstractnouns))",
+    "reference": {
+      "bookId": "2jn",
+      "chapter": 1,
+      "verse": 3
+    },
+    "tool": "translationNotes",
+    "groupId": "figs-abstractnouns",
+    "quote": [
+      {
+        "word": "ἔσται",
+        "occurrence": 1
+      },
+      {
+        "word": "μεθ",
+        "occurrence": 1
+      },
+      {
+        "word": "’",
+        "occurrence": 1
+      },
+      {
+        "word": "ἡμῶν",
+        "occurrence": 1
+      },
+      {
+        "word": "χάρις",
+        "occurrence": 1
+      },
+      {
+        "word": ",",
+        "occurrence": 1
+      },
+      {
+        "word": "ἔλεος",
+        "occurrence": 1
+      },
+      {
+        "word": ",",
+        "occurrence": 2
+      },
+      {
+        "word": "εἰρήνη",
+        "occurrence": 1
+      },
+      {
+        "word": ",",
+        "occurrence": 3
+      },
+      {
+        "word": "παρὰ",
+        "occurrence": 1
+      },
+      {
+        "word": "Θεοῦ",
+        "occurrence": 1
+      },
+      {
+        "word": "Πατρός",
+        "occurrence": 1
+      },
+      {
+        "word": "καὶ",
+        "occurrence": 1
+      },
+      {
+        "word": "παρὰ",
+        "occurrence": 2
+      },
+      {
+        "word": "Ἰησοῦ",
+        "occurrence": 1
+      },
+      {
+        "word": "Χριστοῦ",
+        "occurrence": 1
+      }
+    ],
+    "quoteString": "ἔσται μεθ’ ἡμῶν χάρις, ἔλεος, εἰρήνη, παρὰ Θεοῦ Πατρός καὶ παρὰ Ἰησοῦ Χριστοῦ",
+    "glQuote": "Grace, mercy, and peace will be with us from God the Father and from Jesus Christ",
+    "occurrence": 1
+  },
+  "modifiedTimestamp": "2021-05-24T08:01:00.619Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "Grace, mercy, and peace will be … us from God the Father and from Jesus Christ",
+  "selections": [
+    {
+      "text": "ತಂದೆಯಾದ ದೇವರಿಂದಲೂ ಮತ್ತು",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "ಯೇಸು ಕ್ರಿಸ್ತನಿಂದಲೂ ಕೃಪೆಯು, ಕರುಣೆಯು, ಮತ್ತು ಶಾಂತಿಯು,",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "ನಮ್ಮ",
+      "occurrence": 1,
+      "occurrences": 1
+    },
+    {
+      "text": "ಇರಲಿ",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "nothingToSelect": false,
+  "username": "test"
+}

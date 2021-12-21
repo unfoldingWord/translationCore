@@ -276,7 +276,19 @@ function __loadFilesIntoMockFs(copyFiles, sourceFolder, mockDestinationFolder) {
   for (let copyFile of copyFiles) {
     const filePath2 = path.join(sourceFolder_, __correctSeparatorsFromLinux(copyFile));
     let fileData = null;
-    const isDir = fsActual.statSync(filePath2).isDirectory();
+    let isDir = false;
+
+    try {
+      if (fsActual.existsSync(filePath2)) {
+        isDir = fsActual.statSync(filePath2).isDirectory();
+      } else {
+        console.log(`__loadFilesIntoMockFs() - does not exist: ${filePath2}`);
+        continue;
+      }
+    } catch (e) {
+      console.error(`__loadFilesIntoMockFs() - could not test: ${filePath2}`);
+      continue;
+    }
 
     if (!isDir) {
       fileData = fsActual.readFileSync(filePath2).toString();
