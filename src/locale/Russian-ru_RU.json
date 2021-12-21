@@ -224,6 +224,7 @@
     "dcs_rename_conflict": "Не удалось переименовать, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
     "dcs_create_new_conflict": "Не удалось создать новое хранилище, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
     "unknown_download_networking_error": "${app_name} столкнулся с неизвестной ошибкой при попытке загрузить проект из \"${project_url}\".<br/><br/>Если эта проблема продолжается, пожалуйста, отправьте \"${user_feedback}\", который является опцией на кнопке \"${actions}\".",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "Загрузка проекта ${project_url} не удалась. ${error_message}"
   },
   "project_validation": {
