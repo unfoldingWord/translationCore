@@ -1,9 +1,10 @@
 # Changelog
 
-## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-11-24)
+## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-12-16)
 
 **Fixed bugs:**
 
+- TN checks get swapped when resources updated [\#7198](https://github.com/unfoldingWord/translationCore/issues/7198)
 - Unable to import online project [\#7162](https://github.com/unfoldingWord/translationCore/issues/7162)
 - \p should not have any trailing spaces before the newline [\#7164](https://github.com/unfoldingWord/translationCore/issues/7164)
 - the pipe character | within the \w and \zalns has a space after it on export [\#7165](https://github.com/unfoldingWord/translationCore/issues/7165)
