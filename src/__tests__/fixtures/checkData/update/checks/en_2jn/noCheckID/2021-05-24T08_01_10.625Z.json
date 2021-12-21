@@ -1,0 +1,45 @@
+{
+  "contextId": {
+    "occurrenceNote": "The abstract nouns **truth** and **love** describe qualities of God the Father and Jesus Christ. If it would be clearer in your language, you could express the ideas behind these abstract nouns with adjectives. Alternative translation: “who are truthful and loving” (See: [Abstract Nouns](rc://en/ta/man/translate/figs-abstractnouns))",
+    "reference": {
+      "bookId": "2jn",
+      "chapter": 1,
+      "verse": 3
+    },
+    "tool": "translationNotes",
+    "groupId": "figs-abstractnouns",
+    "quote": [
+      {
+        "word": "ἐν",
+        "occurrence": 1
+      },
+      {
+        "word": "ἀληθείᾳ",
+        "occurrence": 1
+      },
+      {
+        "word": "καὶ",
+        "occurrence": 2
+      },
+      {
+        "word": "ἀγάπῃ",
+        "occurrence": 1
+      }
+    ],
+    "quoteString": "ἐν ἀληθείᾳ καὶ ἀγάπῃ",
+    "glQuote": "in truth and love",
+    "occurrence": 1
+  },
+  "modifiedTimestamp": "2021-05-24T08:01:10.625Z",
+  "gatewayLanguageCode": "en",
+  "gatewayLanguageQuote": "in truth and love",
+  "selections": [
+    {
+      "text": "ಸತ್ಯ ಮತ್ತು ಪ್ರೀತಿಯಲ್ಲಿ",
+      "occurrence": 1,
+      "occurrences": 1
+    }
+  ],
+  "nothingToSelect": false,
+  "username": "test"
+}

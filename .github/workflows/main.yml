@@ -134,6 +134,9 @@ jobs:
       - name: Before Update resources - save original manifest
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
 
+      - name: Before Update resources - save original manifest
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
         # add automatic retry

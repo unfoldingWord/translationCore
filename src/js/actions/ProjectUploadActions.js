@@ -2,6 +2,7 @@
 /* eslint-disable require-await */
 import React from 'react';
 import path from 'path-extra';
+import fs from 'fs-extra';
 import open from 'open';
 // actions
 import { getTranslate } from '../selectors';
@@ -18,6 +19,39 @@ import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 
+export const GIT_INDEX_LOCK = 'Could not remove git index.lock from repo';
+
+/**
+ * makes sure that project does not have a git index.lock.  If so it tries to remove it.  Throws exception if cannot be removed.
+ * @param {string} projectPath
+ */
+function makeSureProjectUnlocked(projectPath) {
+  // check for git index.lock file
+  const lockPath = path.join(projectPath, '.git/index.lock');
+  let lockExists = false;
+
+  if (fs.existsSync(lockPath)) {
+    lockExists = true;
+    console.info(`uploadProject: Repo lock file exists: ${lockPath}`);
+
+    try {
+      fs.removeSync(lockPath);
+
+      if (!fs.existsSync(lockPath)) { // make sure removed
+        lockExists = false;
+      }
+    } catch (e) {
+      console.error(`uploadProject: Error removing lock file: ${lockPath}`, e);
+    }
+  }
+
+  if (lockExists) {
+    console.error(`uploadProject: could not remove lock file: ${lockPath}`);
+    // eslint-disable-next-line no-throw-literal
+    throw `${GIT_INDEX_LOCK}: ${lockPath}`;
+  }
+}
+
 /**
  * prepare project for upload. Initialize git if necessary and then commit changes to git
  * @param {String} user
@@ -27,6 +61,7 @@ import * as MyProjectsActions from './MyProjects/MyProjectsActions';
  */
 export async function prepareProjectRepo(user, projectName, projectPath) {
   let repo;
+  makeSureProjectUnlocked(projectPath);
 
   try {
     console.info('uploadProject: Creating Repo');
