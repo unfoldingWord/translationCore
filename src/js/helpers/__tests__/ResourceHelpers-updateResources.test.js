@@ -1,12 +1,16 @@
 import path from 'path';
 import fs from 'fs-extra';
 import isEqual from 'deep-equal';
+import _ from 'lodash';
 // helpers
 import {
+  areQuotesEqual,
   getFilesInResourcePath,
   getFoldersInResourceFolder,
   migrateOldCheckingResourceData,
+  QUOTE_MARK,
   removeOldThelps,
+  updateCheckingResourceData,
 } from '../ResourcesHelpers';
 // constants
 import {
@@ -117,9 +121,414 @@ describe('migrate project resources', () => {
   });
 });
 
+const resourceFolder = '/Resources';
+const bookId = '2jn';
+const resourceID = 'en_tn';
+const resourceVersion = 'v54';
+const updateTestFiles = path.join('src/__tests__/fixtures/checkData/update');
+const checkResource = 'en_2jn';
+const firstCheckFile = '2021-05-24T08_01_00.619Z.json';
+const secondCheckFile = '2021-05-24T08_01_10.625Z.json';
+let useResourceCheckIds = true;
+let useCheckIdFolder = false;
+let whichCheckFolder;
+
+describe('areQuotesEqual', () => {
+  beforeEach(() => {
+    whichCheckFolder = 'noCheckID';
+  });
+
+  it('exact quote match should return true', () => {
+    // given
+    const expected = true;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('migrated quote match should return true', () => {
+    // given
+    const expected = true;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+    resourceQuote.splice(2,1);
+    resourceQuote[1].word += QUOTE_MARK;
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('string compared to array should return false', () => {
+    // given
+    const expected = false;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = 'nuts';
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('same strings should return true', () => {
+    // given
+    const expected = true;
+    const projectCheckQuote = 'nuts';
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('different strings should return false', () => {
+    // given
+    const expected = false;
+    const projectCheckQuote = 'nuts';
+    const resourceQuote = 'fruits';
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+});
+
+describe('updateCheckingResourceData', () => {
+  beforeEach(() => {
+    fs.__resetMockFS();
+    fs.ensureDirSync(resourceFolder);
+  });
+
+  // tests migration with newer resources processed in 3.0.2 or newer
+  describe('resources have checkIDs', () => {
+    beforeEach(() => {
+      useResourceCheckIds = true;
+    });
+
+    // tests migration of project that was last opened in 3.0.2 or older, only update if quotes match or only one possibility
+    describe('no checkID in project data', () => {
+      beforeEach(() => {
+        useCheckIdFolder = false;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
+
+      it('not exact quote match, and two possibilities, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('not exact quote match, and one possibility, then update quote and checkId', () => {
+        // given
+        const expect_dataModified = true;
+        const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const checkExpected = _.cloneDeep(checkInitial);
+        const { firstFilePath, firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[2];
+        firstFileData.splice(3, 1); // remove second possibility
+        fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
+        checkExpected.contextId.checkId = resource.contextId.checkId; // expect checkID to be updated
+        checkExpected.contextId.quote = resource.contextId.quote; // set check to have updated quote
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // set check to have updated quoteString
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('exact quote match, and two possibilities, then update checkId', () => {
+        // given
+        const expect_dataModified = true;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[3];
+        check.contextId.quote = resource.contextId.quote; // set check to have same quote
+        const checkExpected = _.cloneDeep(check);
+        checkExpected.contextId.checkId = resource.contextId.checkId; // expect checkID to be updated
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+    });
+
+    // tests migration of project that was last opened in 3.0.3 or newer
+    describe('has checkID in project data', () => {
+      beforeEach(() => {
+        useCheckIdFolder = true;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
+
+      it('not exact quote match, same checkID, and two possibilities, then update quote', () => {
+        // given
+        const expect_dataModified = true;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[3];
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.quoteString = check.contextId.quote.map(i => i.word).join(' ');
+        const checkExpected = _.cloneDeep(check);
+        checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // expect check to be updated from resource
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('not exact quote match, different checkID, and two possibilities, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.checkId = 'abcd';
+        const checkExpected = _.cloneDeep(check);
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('exact quote match, same checkID, and two possibilities, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[3];
+        check.contextId.quote = resource.contextId.quote; // use same quote
+        const checkExpected = _.cloneDeep(check);
+        checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+    });
+  });
+
+  // tests migration with older resources processed in 3.0.1 or older
+  describe('resource without checkIDs', () => {
+    beforeEach(() => {
+      useResourceCheckIds = false;
+    });
+
+    // tests migration of project that was last opened in 3.0.2 or older, only update when there is one possibility
+    describe('no checkID in project data', () => {
+      beforeEach(() => {
+        useCheckIdFolder = false;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
+
+      it('not exact quote match, and two possibilities, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('not exact quote match, and one possibility, then update quote', () => {
+        // given
+        const expect_dataModified = true;
+        const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFilePath, firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[2];
+        firstFileData.splice(3, 1); // remove second possibility
+        fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.quoteString = check.contextId.quote.map(i => i.word).join(' ');
+        const checkExpected = _.cloneDeep(check);
+        checkExpected.contextId.quote = resource.contextId.quote; // quote will be updated
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // quoteString will be updated
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+    });
+
+    // tests migration of project that was last opened in 3.0.3 or newer, only updates when ref and checkid match
+    describe('checkID in project data', () => {
+      beforeEach(() => {
+        useCheckIdFolder = true;
+        whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
+      });
+
+      it('not exact quote match, and two possibilities, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        check.contextId.quote.splice(0,1); // modify so not exact match
+        const checkExpected = _.cloneDeep(check);
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('exact quote match, and two possibilities, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        const resource = firstFileData[3];
+        check.contextId.quote = resource.contextId.quote; // use same quote
+        const checkExpected = _.cloneDeep(check);
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+
+      it('not exact quote match, and one possibility, then do not update', () => {
+        // given
+        const expect_dataModified = false;
+        const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+        const checkInitial = readChecksFromTestFixture(checkResource, sourceCheckFile);
+        const check = _.cloneDeep(checkInitial);
+        const checkExpected = _.cloneDeep(checkInitial);
+        const { firstFilePath, firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
+        firstFileData.splice(3, 1); // remove second possibility
+        fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
+
+        // when
+        const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
+
+        // then
+        expect(dataModified).toEqual(expect_dataModified);
+        expect(check).toEqual(checkExpected);
+      });
+    });
+  });
+});
+
 //
 // Helpers
 //
+
+/**
+ * read file data from actual file system
+ * @param {string} checkResource
+ * @param {string} sourceCheckFile
+ * @return {*}
+ */
+function readChecksFromTestFixture(checkResource, sourceCheckFile) {
+  const sourceFilePath = path.join(updateTestFiles, 'checks', checkResource, sourceCheckFile);
+  const check = fs.__actual.readJsonSync(sourceFilePath);
+  return check;
+}
+
+/**
+ * load resources into mock file system
+ * @param {boolean} useCheckIds
+ * @param {string} resourceID
+ * @param {string} resourceVersion
+ */
+function loadResources(useCheckIds, resourceID, resourceVersion) {
+  const checkIdFolder = useCheckIds ? 'checkID' : 'noCheckID';
+  const subPath = path.join(updateTestFiles, '/resources', checkIdFolder, resourceID, resourceVersion);
+  fs.__loadFilesIntoMockFs([bookId], subPath, path.join(resourceFolder));
+  const resourceSubPath = path.join(resourceFolder, bookId);
+  const files = fs.readdirSync(resourceSubPath);
+
+  if (!files || !files.length) {
+    console.log(`loadResources() - no files in ${resourceSubPath}, from ${subPath}`);
+    const sourceFiles = fs.__actual.readdirSync(subPath);
+    console.log(`loadResources() - filesfrom ${subPath} count is ${sourceFiles && sourceFiles.length}`);
+  }
+
+  const firstFilePath = files && files.length ? path.join(resourceSubPath, files[0]) : null;
+  const firstFileData = firstFilePath ? fs.readJsonSync(firstFilePath) : null;
+  return {
+    resourceSubPath,
+    firstFilePath,
+    firstFileData,
+  };
+}
+
 
 /**
  * returns true if path is a directory
@@ -226,4 +635,3 @@ function validateMigration(projectDir, toolsFolder, checkPath, isContext = false
   }
   expect(Array.isArray(data.contextId.quote)).toBeTruthy();
 }
-

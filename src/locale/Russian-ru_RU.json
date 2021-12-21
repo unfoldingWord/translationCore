@@ -74,7 +74,7 @@
   "sending_feedback": "Отправка отзыва",
   "sending_feedback_failed": "Не удалось отправить отзыв",
   "critical_error_warning": "Внимание: Произошла критическая ошибка!",
-  "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "unknown_networking_error": "${app_name} столкнулся с неизвестной ошибкой. Если эта проблема продолжается, пожалуйста, отправьте \"${user_feedback}\", который является опцией на кнопке \"${actions}\".",
   "updates": {
     "check_for_newer_app": "Проверить обновления программного обеспечения",
     "check_for_content_updates": "Проверить обновления содержимого",
@@ -223,8 +223,8 @@
     "dcs_create_new_failed": "Хранилище ${door43} не может быть создано.<br/><br/>Вы хотите повторить попытку создания хранилища ${door43} или продолжить без переименования?",
     "dcs_rename_conflict": "Не удалось переименовать, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
     "dcs_create_new_conflict": "Не удалось создать новое хранилище, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
-    "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "unknown_download_networking_error": "${app_name} столкнулся с неизвестной ошибкой при попытке загрузить проект из \"${project_url}\".<br/><br/>Если эта проблема продолжается, пожалуйста, отправьте \"${user_feedback}\", который является опцией на кнопке \"${actions}\".",
+    "known_download_networking_error": "Загрузка проекта ${project_url} не удалась. ${error_message}"
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
@@ -243,7 +243,7 @@
     "publicly_available": "Перечисленные в качестве участников или проверяющих будут обнародованы.",
     "field_required": "Поле обязательное для заполнения",
     "language_direction": "Направление языка",
-    "project_font": "Project Font",
+    "project_font": "Шрифт проекта",
     "ltr": "Слева направо",
     "rtl": "Справа налево",
     "invalid_language_name": "Название языка не допустимо",

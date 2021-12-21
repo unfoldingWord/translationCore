@@ -120,6 +120,7 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
     gatewayLanguageCode: gatewayLanguageCode,
     gatewayLanguageQuote: gatewayLanguageQuote,
     occurrenceNote: occurrenceNote,
+    checkId: contextId.checkId || '',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
     verse: contextId.reference.verse,

@@ -1,0 +1,368 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acsah Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellappan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Dr. Joseph Jekab",
+      "MV Sunny",
+      "Shojo John",
+      "Vipin Bhadran",
+      "Zipson George"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "Open-licensed exegetical notes that provide historical, cultural, and linguistic information for translators. It provides translators and checkers with pertinent, just-in-time information to help them make the best possible translation decisions.",
+    "format": "text/tsv",
+    "identifier": "tn",
+    "issued": "2021-06-16",
+    "language": {
+      "identifier": "hi",
+      "title": "हिन्दी, हिंदी  (Hindi)",
+      "direction": "ltr"
+    },
+    "modified": "2021-06-16",
+    "publisher": "Door43",
+    "relation": [
+      "hi/glt",
+      "hi/irv",
+      "hi/gst",
+      "hi/iev",
+      "hi/udb",
+      "hi/ulb",
+      "hi/ta",
+      "hi/tq",
+      "hi/tw",
+      "hi/obs",
+      "hi/obs-tn",
+      "hbo/uhb?v=2.1.19",
+      "el-x-koine/ugnt?v=0.8"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "tn",
+        "language": "en",
+        "version": "33"
+      }
+    ],
+    "subject": "TSV Translation Notes",
+    "title": "translationNotes",
+    "type": "help",
+    "version": "33.2"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS",
+      "Dr. Bobby Chellappan",
+      "Jobby Prasannan"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Ruth",
+      "versification": "",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./hi_tn_08-RUT.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Esther",
+      "versification": "",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./hi_tn_17-EST.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Jonah",
+      "versification": "",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./hi_tn_32-JON.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Matthew",
+      "versification": "",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./hi_tn_41-MAT.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Mark",
+      "versification": "",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./hi_tn_42-MRK.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Luke",
+      "versification": "",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./hi_tn_43-LUK.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "John",
+      "versification": "",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./hi_tn_44-JHN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Acts",
+      "versification": "",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./hi_tn_45-ACT.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Romans",
+      "versification": "",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./hi_tn_46-ROM.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Corinthians",
+      "versification": "",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./hi_tn_47-1CO.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Corinthians",
+      "versification": "",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./hi_tn_48-2CO.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Galatians",
+      "versification": "",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./hi_tn_49-GAL.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Ephesians",
+      "versification": "",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./hi_tn_50-EPH.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Philippians",
+      "versification": "",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./hi_tn_51-PHP.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Colossians",
+      "versification": "",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./hi_tn_52-COL.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Thessalonians",
+      "versification": "",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./hi_tn_53-1TH.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Thessalonians",
+      "versification": "",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./hi_tn_54-2TH.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Timothy",
+      "versification": "",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./hi_tn_55-1TI.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Timothy",
+      "versification": "",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./hi_tn_56-2TI.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Titus",
+      "versification": "",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./hi_tn_57-TIT.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Philemon",
+      "versification": "",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./hi_tn_58-PHM.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Hebrews",
+      "versification": "",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./hi_tn_59-HEB.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "James",
+      "versification": "",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./hi_tn_60-JAS.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Peter",
+      "versification": "",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./hi_tn_61-1PE.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Peter",
+      "versification": "",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./hi_tn_62-2PE.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 John",
+      "versification": "",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./hi_tn_63-1JN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 John",
+      "versification": "",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./hi_tn_64-2JN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 John",
+      "versification": "",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./hi_tn_65-3JN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Jude",
+      "versification": "",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./hi_tn_66-JUD.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Revelation",
+      "versification": "",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./hi_tn_67-REV.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "catalog_modified_time": "2021-06-17T23:33:17+00:00"
+}

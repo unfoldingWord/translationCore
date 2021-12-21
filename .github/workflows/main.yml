@@ -3,7 +3,6 @@ name: Node CI
 env:
   UPDATE_RESOURCES: true
   REPOSITORY: ${{ github.repository }}
-  SHA: ${{ github.event.after }}
   REF: ${{ github.ref }}
 
 on:
@@ -35,7 +34,7 @@ jobs:
 #       run: echo "$GITHUB_CONTEXT"
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.16.3'
+        node-version: '16.4.2'
     - name: Node version
       run: |
         node --version
@@ -55,7 +54,11 @@ jobs:
         submodules: recursive
 
     - name: npm install
-      run: npm ci
+      run: |
+        # Fix for problem of cached files from older npm versions, move npm cache to temp directory
+        TMPDIR=$(mktemp -d)
+        echo "$TMPDIR"
+        npm ci --cache="$TMPDIR"
 
     - name: npm test
       run: npm run ci-test
@@ -80,7 +83,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.16.3'
+          node-version: '16.4.2'
       - name: Node version
         run: |
           node --version
@@ -101,28 +104,45 @@ jobs:
 
       - name: Read version and commit sha
         run: |
-          echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
-          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+          echo "HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+          echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
       - name: Set artifact name
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb")"
+        run: echo "ARTIFACT_NAME=$(echo "$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb")" >> $GITHUB_ENV
 
       - name: Bundle environment variables
         run: |
-          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
-          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
-          echo "BUILD=$HASH" >> .env
+          # work around for linux permissions restrictions: save to .env.tmp and tC build script (update_env.js) will look for that file if .env is not defined
+          touch .env.tmp
+          echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env.tmp
+          echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env.tmp
+          echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: npm ci
+        run: |
+          # Fix for problem of cached files from older npm versions, move npm cache to temp directory
+          TMPDIR=$(mktemp -d)
+          echo "$TMPDIR"
+          npm ci --cache="$TMPDIR"
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
+      - name: Before Update resources - save original manifest
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
-        run: npm run update-resources
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          command: npm run update-resources
+          # restore original manifest before retry
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build linux
         id: build
@@ -150,7 +170,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.16.3'
+          node-version: '16.4.2'
 
       - name: Node version
         run: |
@@ -171,12 +191,14 @@ jobs:
 #          submodules: recursive
 
       - name: Read version and commit sha
-        run:
-          echo "::set-env name=HASH::$(node -p -e "'${{ github.sha }}'.substring(0, 7)")"
-          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+        run: |
+          echo "HASH=$(node -p -e "'${{ github.sha }}'.substring(0, 7)")" >> $GITHUB_ENV
+          echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
+        shell: bash
 
       - name: Bundle environment variables
         run: |
+          touch .env
           echo "TC_HELP_DESK_TOKEN=${{ env.TC_HELP_DESK_TOKEN }}" >> .env
           echo "TC_HELP_DESK_EMAIL=${{ env.TC_HELP_DESK_EMAIL }}" >> .env
           echo "BUILD=${{ env.HASH }}" >> .env
@@ -188,9 +210,22 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
+      - name: Before Update resources - save original manifest
+        shell: bash
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
-        run: npm run update-resources
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          shell: bash
+          command: npm run update-resources
+          # restore original manifest before retry
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build windows
         run: |
@@ -198,7 +233,8 @@ jobs:
           npm run build-win
 #     x64
       - name: Set x64 artifact name
-        run: echo "::set-env name=ARTIFACT_X64::$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
+        run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
 
       - name: bundle x64 windows
         run: |
@@ -218,7 +254,8 @@ jobs:
           path: ../artifacts/x64/
 #     x32
       - name: Set x32 artifact name
-        run: echo "::set-env name=ARTIFACT_X32::$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")"
+        run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
 
       - name: bundle x32 windows
         run: |
@@ -244,7 +281,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.16.3'
+          node-version: '16.4.2'
 
       - name: Node version
         run: |
@@ -266,14 +303,15 @@ jobs:
 
       - name: Read version and commit sha
         run: |
-          echo "::set-env name=HASH::$(echo $GITHUB_SHA | cut -c1-7)"
-          echo "::set-env name=APP_VERSION::$(node -p -e "require('./package.json').version")"
+          echo "HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+          echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
       - name: Set artifact name
-        run: echo "::set-env name=ARTIFACT_NAME::$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")"
+        run: echo "ARTIFACT_NAME=$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: Bundle environment variables
         run: |
+          touch .env
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
           echo "BUILD=$HASH" >> .env
@@ -285,9 +323,20 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
+      - name: Before Update resources - save original manifest
+        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+
       - name: Update resources
         if: env.UPDATE_RESOURCES
-        run: npm run update-resources
+        # add automatic retry
+        uses: nick-invision/retry@v2
+        with:
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_on: error
+          command: npm run update-resources
+          # restore original manifest before retry
+          on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
 
       - name: build macOS
         id: build
@@ -311,7 +360,7 @@ jobs:
     steps:
       - name: Get short hash
         run: |
-          echo "::set-env name=SHORT_SHA::$(echo $SHA | cut -c1-7)"
+          echo "SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
 
 #      - name: Dump GitHub context
 #        env:
@@ -324,7 +373,7 @@ jobs:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
-          CHANNEL: SOFTWARE/github
+          CHANNEL: SOFTWARE - UR/github
           SUBJECT: tC builds
           PR_NUMBER: ${{ github.event.number }}
           PR_TITLE: ${{ github.event.pull_request.title }}
@@ -334,12 +383,12 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=Pull request [$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$SHA).
-                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$SHA) tab."
+            -d "content=Pull request [$PR_TITLE #$PR_NUMBER](https://github.com/$REPOSITORY/pull/$PR_NUMBER) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/pull/$PR_NUMBER/commits/$GITHUB_SHA).
+                        You can view logs and download artifacts from the [Checks](https://github.com/$REPOSITORY/pull/$PR_NUMBER/checks?sha=$GITHUB_SHA) tab."
 
       - name: Get branch name
         if: github.event_name == 'push'
-        run: echo "::set-env name=BRANCH::$(node -p -e "'$REF'.substr(11)")" # strips off "refs/heads/"
+        run: echo "BRANCH=$(node -p -e "'$REF'.substr(11)")" >> $GITHUB_ENV # strips off "refs/heads/"
 
       - name: Notify Zulip of push
         if: github.event_name == 'push'
@@ -347,7 +396,7 @@ jobs:
           TOKEN: ${{ secrets.ZULIP_TOKEN }}
           USER: github-bot@unfoldingword.zulipchat.com
           ORG: unfoldingword
-          CHANNEL: SOFTWARE/github
+          CHANNEL: SOFTWARE - UR/github
           SUBJECT: tC builds
         run: |
           curl -o /dev/null -s -X POST https://$ORG.zulipchat.com/api/v1/messages \
@@ -355,5 +404,5 @@ jobs:
             -d "type=stream" \
             -d "to=$CHANNEL" \
             -d "subject=$SUBJECT" \
-            -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$BRANCH) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$SHA).
-                        You can view logs and download artifacts from the [Actions](https://github.com/$REPOSITORY/commit/$SHA/checks) tab."
+            -d "content=Branch [$BRANCH](https://github.com/$REPOSITORY/tree/$BRANCH) has new builds based on [$SHORT_SHA](https://github.com/$REPOSITORY/commit/$GITHUB_SHA).
+                        You can view logs and download artifacts from the [Actions](https://github.com/$REPOSITORY/commit/$GITHUB_SHA/checks) tab."

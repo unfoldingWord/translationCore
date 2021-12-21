@@ -1,6 +1,7 @@
 const {
   app, dialog, ipcMain, BrowserWindow, Menu,
 } = require('electronite');
+require('@electron/remote/main').initialize();
 const dotenv = require('dotenv');
 const path = require('path-extra');
 const { download } = require('@neutrinog/electron-dl');
@@ -51,7 +52,11 @@ function createMainWindow() {
     minHeight: 689,
     show: false,
     center: true,
-    webPreferences: { nodeIntegration: true },
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
   };
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
@@ -105,7 +110,11 @@ function createSplashWindow() {
     height: 600,
     resizable: false,
     autoHideMenuBar: true,
-    webPreferences: { nodeIntegration: true },
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+      enableRemoteModule: true
+    },
     frame: false,
     show: true,
     center: true,

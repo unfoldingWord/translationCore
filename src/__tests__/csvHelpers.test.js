@@ -136,6 +136,7 @@ describe('csvHelpers.flattenContextId', () => {
     const contextId = tWKTApostleContextId;
     const gatewayLanguageCode = 'en';
     const _flatContextId = {
+      checkId: '',
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
       verse: contextId.reference.verse,
@@ -158,6 +159,7 @@ describe('csvHelpers.flattenContextId', () => {
     const contextId = tWKTJesusContextId;
     const gatewayLanguageCode = 'en';
     const _flatContextId = {
+      checkId: '',
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
       verse: contextId.reference.verse,
@@ -180,6 +182,7 @@ describe('csvHelpers.flattenContextId', () => {
     const contextId = tWOtherCourageContextId;
     const gatewayLanguageCode = 'en';
     const _flatContextId = {
+      checkId: '',
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
       verse: contextId.reference.verse,
@@ -202,6 +205,7 @@ describe('csvHelpers.flattenContextId', () => {
     const contextId = tNMetaphorRevealContextId;
     const gatewayLanguageCode = 'en';
     const _flatContextId = {
+      checkId: '',
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
       verse: contextId.reference.verse,
@@ -224,6 +228,7 @@ describe('csvHelpers.flattenContextId', () => {
     const contextId = tNMetaphorHoldContextId;
     const gatewayLanguageCode = 'en';
     const _flatContextId = {
+      checkId: '',
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
       verse: contextId.reference.verse,
@@ -271,6 +276,7 @@ describe('csvHelpers.combineData', () => {
     const contextId = tWKTApostleContextId;
     const _combinedData = {
       enabled: true,
+      checkId: '',
       bookId: contextId.reference.bookId,
       chapter: contextId.reference.chapter,
       verse: contextId.reference.verse,

@@ -1,8 +1,8 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.0.1",
-  "minCompatibleVersion": "3.0.0",
+  "version": "3.0.2",
+  "minCompatibleVersion": "3.0.2",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
   "main": "main.js",
@@ -77,8 +77,8 @@
     "copy-webpack-plugin": "5.1.1",
     "cross-env": "7.0.2",
     "css-loader": "3.4.2",
-    "electron-devtools-installer": "3.0.0",
-    "electronite": "7.2.1-graphite",
+    "electron-devtools-installer": "^3.2.0",
+    "electronite": "^12.0.5-graphite",
     "electronite-packager": "15.0.0",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
@@ -113,6 +113,7 @@
   },
   "dependencies": {
     "@craco/craco": "5.6.4",
+    "@electron/remote": "1.2.0",
     "@material-ui/core": "4.10.2",
     "@material-ui/icons": "3.0.2",
     "@neutrinog/electron-dl": "1.11.1",
@@ -122,7 +123,7 @@
     "archiver": "3.0.0",
     "axios": "0.19.1",
     "babel-polyfill": "6.26.0",
-    "checking-tool-wrapper": "5.3.0",
+    "checking-tool-wrapper": "6.0.1",
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
     "deep-equal": "1.0.1",
@@ -171,16 +172,16 @@
     "selections": "0.1.7",
     "semver": "5.5.0",
     "simple-git": "1.43.0",
-    "string-punctuation-tokenizer": "2.0.0",
+    "string-punctuation-tokenizer": "^2.2.0",
     "sudo-prompt": "6.2.1",
     "tc-electron-env": "0.9.0",
-    "tc-source-content-updater": "0.8.1",
+    "tc-source-content-updater": "^0.9.0",
     "tc-strings": "0.1.7",
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "5.3.3",
     "truncate-utf8-bytes": "1.0.2",
-    "tsv-groupdata-parser": "0.9.17",
-    "usfm-js": "2.1.0",
+    "tsv-groupdata-parser": "^0.10.0",
+    "usfm-js": "3.3.1",
     "uuid": "3.2.1",
     "word-aligner": "1.0.0",
     "wordmap": "0.8.2",
@@ -190,7 +191,7 @@
     "zip-folder": "1.0.0"
   },
   "engines": {
-    "node": ">=12.16.3",
-    "npm": ">=6.14.4"
+    "node": ">=16.4.0",
+    "npm": ">=7.18.1"
   }
 }

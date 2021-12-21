@@ -176,7 +176,13 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
       dispatch(AlertModalActions.closeAlertDialog());
       resolve();
     } catch (error) { // Catch all errors in nested functions above
-      console.log('onlineImport() - import error:', error);
+      console.log('onlineImport() - import error:');
+
+      try { // tricky - sometimes see an exception on production build
+        console.log(error);
+        // eslint-disable-next-line no-empty
+      } catch {}
+
       const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.online_import_error', { project_url: link, toPath: importProjectPath }));
       dispatch(recoverFailedOnlineImport(errorMessage));
       reject(errorMessage);

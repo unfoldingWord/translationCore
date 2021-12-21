@@ -1,0 +1,154 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acsah Jacob",
+      "Dr. Bobby Chellapan",
+      "Jinu Jacob",
+      "Vipin Bhadran"
+    ],
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "title": "GLT - Oriya",
+    "description": "",
+    "language": {
+      "identifier": "or",
+      "title": "ଓଡ଼ିଆ (Oriya)",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "2020"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "relation": [
+      "or/gst",
+      "or/ulb",
+      "or/udb",
+      "or/obs",
+      "or/ta",
+      "or/tn",
+      "or/tq",
+      "or/tw"
+    ],
+    "publisher": "BCS",
+    "issued": "2021-03-30",
+    "modified": "2021-03-30",
+    "subject": "Aligned Bible",
+    "version": "2"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "ତୀତସଙ୍କ ନିକଟକୁ ପ୍ରେରିତ ପାଉଲଙ୍କ ପତ୍ର",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯୋହନଙ୍କ ତୃତୀୟ ପତ୍ର",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acsah Jacob",
+        "Dr. Bobby Chellapan",
+        "Jinu Jacob",
+        "Vipin Bhadran"
+      ],
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "title": "GLT - Oriya",
+      "description": "",
+      "language": {
+        "identifier": "or",
+        "title": "ଓଡ଼ିଆ (Oriya)",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "2020"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "relation": [
+        "or/gst",
+        "or/ulb",
+        "or/udb",
+        "or/obs",
+        "or/ta",
+        "or/tn",
+        "or/tq",
+        "or/tw"
+      ],
+      "publisher": "BCS",
+      "issued": "2021-03-30",
+      "modified": "2021-03-30",
+      "subject": "Aligned Bible",
+      "version": "2"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "ତୀତସଙ୍କ ନିକଟକୁ ପ୍ରେରିତ ପାଉଲଙ୍କ ପତ୍ର",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯୋହନଙ୍କ ତୃତୀୟ ପତ୍ର",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "or",
+  "language_name": "ଓଡ଼ିଆ (Oriya)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "GLT - Oriya",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2021-03-30T19:13:32+00:00"
+}

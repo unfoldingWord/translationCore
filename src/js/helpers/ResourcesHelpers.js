@@ -45,6 +45,63 @@ import { generateTimestamp } from './TimestampGenerator';
 import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 
+export const QUOTE_MARK = '\u2019';
+
+/**
+ * array of checks for groupId
+ * @param {Array} resourceData
+ * @param {object} matchRef
+ * @return {number}
+ */
+function getReferenceCount(resourceData, matchRef) {
+  let count = 0;
+
+  for (let resource of resourceData) {
+    if (isEqual(resource.contextId.reference, matchRef)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+/**
+ * compares quotes, with fallback to old handling of quote marks
+ * @param projectCheckQuote
+ * @param resourceQuote
+ * @return {*|boolean}
+ */
+export function areQuotesEqual(projectCheckQuote, resourceQuote) {
+  let same = isEqual(projectCheckQuote, resourceQuote);
+
+  if (!same) { // if not exactly the same, check for old quote handling in project quote
+    // a quick sanity check, the old quote would be longer if the quote mark is split out
+    if (Array.isArray(projectCheckQuote) && Array.isArray(resourceQuote) && projectCheckQuote.length > resourceQuote.length) {
+      let index = projectCheckQuote.findIndex(item => (item.word === QUOTE_MARK)); // look for quote mark
+      const quoteMarkFound = index > 1;
+
+      if (quoteMarkFound) { // if quote mark split out, migrate to new format
+        const newQuote = _.cloneDeep(projectCheckQuote);
+        let done = false;
+
+        while (!done) {
+          if (index > 1) {
+            // move quote mark to previous word
+            const previousItem = newQuote[index - 1];
+            previousItem.word += QUOTE_MARK;
+            newQuote.splice(index, 1);
+            index = newQuote.findIndex(item => (item.word === QUOTE_MARK));
+          } else {
+            done = true;
+          }
+        }
+
+        same = isEqual(newQuote, resourceQuote);
+      }
+    }
+  }
+  return same;
+}
+
 /**
  * update old resource data
  * @param {String} resourcesPath - base path to find resource index
@@ -52,7 +109,7 @@ import { getContextIdPathFromIndex } from './contextIdHelpers';
  * @param {Object} data - resource data to update
  * @return {boolean} true if resource data was modified
  */
-function updateCheckingResourceData(resourcesPath, bookId, data) {
+export function updateCheckingResourceData(resourcesPath, bookId, data) {
   let dataModified = false;
   const resourcePath = path.join(resourcesPath, bookId, data.contextId.groupId + '.json');
 
@@ -64,14 +121,53 @@ function updateCheckingResourceData(resourcesPath, bookId, data) {
 
       for (let resource of resourceData) {
         if (data.contextId.groupId === resource.contextId.groupId &&
-          isEqual(data.contextId.reference, resource.contextId.reference) &&
-          data.contextId.occurrence === resource.contextId.occurrence) {
-          matchFound = true;
+              isEqual(data.contextId.reference, resource.contextId.reference) &&
+              data.contextId.occurrence === resource.contextId.occurrence) {
+          if (!areQuotesEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
+            if (data.contextId.checkId) {
+              if (data.contextId.checkId === resource.contextId.checkId) {
+                matchFound = true; // found match
+              }
+            } else { // there is not a check ID in this check, so we try empirical methods
+              // if only one check for this verse, then we update presuming that this is just an original language change.
+              // If more than one check in this groupID for this verse, we skip since it would be too easy to change the quote in the wrong check
+              const count = getReferenceCount(resourceData, resource.contextId.reference);
+              matchFound = (count === 1);
+            }
 
-          // for now, all we have to update is the quote
-          if (!isEqual(data.contextId.quote, resource.contextId.quote)) {
-            data.contextId.quote = resource.contextId.quote;
-            dataModified = true;
+            if (matchFound) {
+              data.contextId.quote = resource.contextId.quote; // update quote
+              data.contextId.quoteString = resource.contextId.quoteString; // update quoteString
+
+              if (!data.contextId.checkId && resource.contextId.checkId) {
+                data.contextId.checkId = resource.contextId.checkId; // add check ID
+              }
+              dataModified = true;
+            }
+          } else { // quotes match
+            if (data.contextId.checkId) {
+              if (data.contextId.checkId === resource.contextId.checkId) {
+                matchFound = true;
+              }
+            } else { // no check id in current check, and quotes are similar
+              matchFound = true;
+
+              // see if there is a checkId to be added
+              if (resource.contextId.checkId) {
+                data.contextId.checkId = resource.contextId.checkId; // save checkId
+                dataModified = true;
+              }
+            }
+
+            if (matchFound && !isEqual(data.contextId.quote, resource.contextId.quote)) {
+              // if quotes not exactly the same, update
+              data.contextId.quote = resource.contextId.quote;
+              data.contextId.quoteString = resource.contextId.quoteString;
+              dataModified = true;
+            }
+          }
+
+          if (matchFound) {
             break;
           }
         }
@@ -596,8 +692,6 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
       if (fs.existsSync(contentZipPath)) {
         fs.removeSync(contentZipPath);
       }
-    } else {
-      console.info(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
   }
 };
@@ -1097,7 +1191,7 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourcePath, resourceId).sort((a, b) =>
+    const requiredVersions = getOtherTnsOLVersions(USER_RESOURCES_PATH, resourceId).sort((a, b) =>
       -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
@@ -1152,13 +1246,15 @@ export function getMissingResources() {
         } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
           copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
         } else { // compare resources manifest modified time
-          const userResourceVersionPath = ResourceAPI.getLatestVersion(userResourcePath);
           const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+          const version = path.basename(staticResourceVersionPath);
+          const userResourceVersionPath = path.join(userResourcePath, version);
+          const userResourceExists = fs.existsSync(userResourceVersionPath);
           let isOldResource = false;
           const filename = 'manifest.json';
           const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
 
-          if (userResourceVersionPath) {
+          if (userResourceExists) {
             const userResourceManifestPath = path.join(userResourceVersionPath, filename);
 
             if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
