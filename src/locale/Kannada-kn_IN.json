@@ -224,6 +224,7 @@
     "dcs_rename_conflict": "ಬದಲಾಯಿಸಿದ ಹೆಸರು ವಿಫಲವಾಗಿದೆ ಯಾಕಂದರೆ ಈ ಹೆಸರಿನ ಭಂಡಾರವು ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ.<br/><br/>${door43} ಕ್ಕೆ ನಿಮ್ಮ ಯೋಜನೆಯನ್ನು ಏರಿಸಬೇಕೆಂದರೆ ನೀವು ನಿಮ್ಮ ಸ್ಥಳೀಯ ಯೋಜನೆಗೆ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಬೇಕು ಅಥವಾ ನಿಮ್ಮ ${door43} ಯೋಜನೆಗೆ ಹೆಸರನ್ನು ಬದಲಾಯಿಸಬೇಕು.",
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
