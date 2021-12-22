@@ -45,6 +45,8 @@ import { generateTimestamp } from './TimestampGenerator';
 import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 
+export const QUOTE_MARK = '\u2019';
+
 /**
  * array of checks for groupId
  * @param {Array} resourceData
@@ -60,6 +62,44 @@ function getReferenceCount(resourceData, matchRef) {
     }
   }
   return count;
+}
+
+/**
+ * compares quotes, with fallback to old handling of quote marks
+ * @param projectCheckQuote
+ * @param resourceQuote
+ * @return {*|boolean}
+ */
+export function areQuotesEqual(projectCheckQuote, resourceQuote) {
+  let same = isEqual(projectCheckQuote, resourceQuote);
+
+  if (!same) { // if not exactly the same, check for old quote handling in project quote
+    // a quick sanity check, the old quote would be longer if the quote mark is split out
+    if (Array.isArray(projectCheckQuote) && Array.isArray(resourceQuote) && projectCheckQuote.length > resourceQuote.length) {
+      let index = projectCheckQuote.findIndex(item => (item.word === QUOTE_MARK)); // look for quote mark
+      const quoteMarkFound = index > 1;
+
+      if (quoteMarkFound) { // if quote mark split out, migrate to new format
+        const newQuote = _.cloneDeep(projectCheckQuote);
+        let done = false;
+
+        while (!done) {
+          if (index > 1) {
+            // move quote mark to previous word
+            const previousItem = newQuote[index - 1];
+            previousItem.word += QUOTE_MARK;
+            newQuote.splice(index, 1);
+            index = newQuote.findIndex(item => (item.word === QUOTE_MARK));
+          } else {
+            done = true;
+          }
+        }
+
+        same = isEqual(newQuote, resourceQuote);
+      }
+    }
+  }
+  return same;
 }
 
 /**
@@ -83,7 +123,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
         if (data.contextId.groupId === resource.contextId.groupId &&
               isEqual(data.contextId.reference, resource.contextId.reference) &&
               data.contextId.occurrence === resource.contextId.occurrence) {
-          if (!isEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
+          if (!areQuotesEqual(data.contextId.quote, resource.contextId.quote)) { // quotes are  not the same
             if (data.contextId.checkId) {
               if (data.contextId.checkId === resource.contextId.checkId) {
                 matchFound = true; // found match
@@ -97,6 +137,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
 
             if (matchFound) {
               data.contextId.quote = resource.contextId.quote; // update quote
+              data.contextId.quoteString = resource.contextId.quoteString; // update quoteString
 
               if (!data.contextId.checkId && resource.contextId.checkId) {
                 data.contextId.checkId = resource.contextId.checkId; // add check ID
@@ -108,7 +149,7 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
               if (data.contextId.checkId === resource.contextId.checkId) {
                 matchFound = true;
               }
-            } else { // no check id in current check, and quotes are identical
+            } else { // no check id in current check, and quotes are similar
               matchFound = true;
 
               // see if there is a checkId to be added
@@ -116,6 +157,13 @@ export function updateCheckingResourceData(resourcesPath, bookId, data) {
                 data.contextId.checkId = resource.contextId.checkId; // save checkId
                 dataModified = true;
               }
+            }
+
+            if (matchFound && !isEqual(data.contextId.quote, resource.contextId.quote)) {
+              // if quotes not exactly the same, update
+              data.contextId.quote = resource.contextId.quote;
+              data.contextId.quoteString = resource.contextId.quoteString;
+              dataModified = true;
             }
           }
 
@@ -298,19 +346,45 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
-    const data = generateChapterGroupData(project.getBookId(), toolName);
+    const bookDataDir = project.getBookDataDir();
+    const data = generateChapterGroupData(project.getBookId(), toolName, bookDataDir);
 
     data.forEach(groupData => {
       const groupId = groupData[0].contextId.groupId;
-      const dataPath = path.join(groupsDataDirectory, groupId + '.json');
-
-      if (!fs.existsSync(dataPath)) {
-        fs.outputJsonSync(dataPath, groupData, {
-          spaces: 2,
-          replace: null,
-        });
-      }
+      const fileName = groupId + '.json';
+      ensureFileContentsJson(groupsDataDirectory, fileName, groupData);
     });
+  }
+}
+
+/**
+ * make sure file contents have the latest data
+ * @param {String} folder
+ * @param {String} filename
+ * @param {object} data
+ */
+export function ensureFileContentsJson(folder, filename, data) {
+  const filePath = path.join(folder, filename);
+
+  try {
+    fs.ensureDirSync(folder);
+    let valid = fs.existsSync(filePath);
+
+    if (valid) {
+      try {
+        const fileData = fs.readJsonSync(filePath);
+        valid = isEqual(data, fileData);
+      } catch (e) {
+        console.error(`ensureFileContentsJson() - error reading ${filePath}`, e);
+        valid = false;
+      }
+    }
+
+    if (!valid) {
+      fs.outputJsonSync(filePath, data, { spaces: 2 });
+    }
+  } catch (e) {
+    console.error(`ensureFileContentsJson() - error updating ${filePath}`, e);
   }
 }
 

@@ -4,9 +4,11 @@ import isEqual from 'deep-equal';
 import _ from 'lodash';
 // helpers
 import {
+  areQuotesEqual,
   getFilesInResourcePath,
   getFoldersInResourceFolder,
   migrateOldCheckingResourceData,
+  QUOTE_MARK,
   removeOldThelps,
   updateCheckingResourceData,
 } from '../ResourcesHelpers';
@@ -131,18 +133,99 @@ let useResourceCheckIds = true;
 let useCheckIdFolder = false;
 let whichCheckFolder;
 
+describe('areQuotesEqual', () => {
+  beforeEach(() => {
+    whichCheckFolder = 'noCheckID';
+  });
+
+  it('exact quote match should return true', () => {
+    // given
+    const expected = true;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('migrated quote match should return true', () => {
+    // given
+    const expected = true;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+    resourceQuote.splice(2,1);
+    resourceQuote[1].word += QUOTE_MARK;
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('string compared to array should return false', () => {
+    // given
+    const expected = false;
+    const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
+    const sourceCheck = readChecksFromTestFixture(checkResource, sourceCheckFile);
+    const projectCheckQuote = sourceCheck.contextId.quote;
+    const resourceQuote = 'nuts';
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('same strings should return true', () => {
+    // given
+    const expected = true;
+    const projectCheckQuote = 'nuts';
+    const resourceQuote = _.cloneDeep(projectCheckQuote);
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+
+  it('different strings should return false', () => {
+    // given
+    const expected = false;
+    const projectCheckQuote = 'nuts';
+    const resourceQuote = 'fruits';
+
+    // when
+    const results = areQuotesEqual(projectCheckQuote, resourceQuote);
+
+    //then
+    expect(results).toEqual(expected);
+  });
+});
+
 describe('updateCheckingResourceData', () => {
   beforeEach(() => {
     fs.__resetMockFS();
     fs.ensureDirSync(resourceFolder);
   });
 
-  describe('with resource checkIDs', () => {
+  // tests migration with newer resources processed in 3.0.2 or newer
+  describe('resources have checkIDs', () => {
     beforeEach(() => {
       useResourceCheckIds = true;
     });
 
-    describe('no checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.2 or older, only update if quotes match or only one possibility
+    describe('no checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = false;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
@@ -166,7 +249,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('not exact quote match, and one possibility, then update', () => {
+      it('not exact quote match, and one possibility, then update quote and checkId', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
@@ -179,6 +262,7 @@ describe('updateCheckingResourceData', () => {
         fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
         checkExpected.contextId.checkId = resource.contextId.checkId; // expect checkID to be updated
         checkExpected.contextId.quote = resource.contextId.quote; // set check to have updated quote
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // set check to have updated quoteString
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -188,7 +272,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('exact quote match, and two possibilities, then update', () => {
+      it('exact quote match, and two possibilities, then update checkId', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -209,13 +293,14 @@ describe('updateCheckingResourceData', () => {
       });
     });
 
-    describe('has checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.3 or newer
+    describe('has checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = true;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
       });
 
-      it('not exact quote match, same checkID, and two possibilities, then update', () => {
+      it('not exact quote match, same checkID, and two possibilities, then update quote', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -224,9 +309,10 @@ describe('updateCheckingResourceData', () => {
         const { firstFileData } = loadResources(useResourceCheckIds, resourceID, resourceVersion);
         const resource = firstFileData[3];
         check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.quoteString = check.contextId.quote.map(i => i.word).join(' ');
         const checkExpected = _.cloneDeep(check);
-        checkExpected.contextId.checkId = resource.contextId.checkId;
         checkExpected.contextId.quote = resource.contextId.quote; // expect check to be updated from resource
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // expect check to be updated from resource
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -236,7 +322,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('not exact quote match, different checkID, and two possibilities, then don\'t update', () => {
+      it('not exact quote match, different checkID, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -255,7 +341,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('exact quote match, same checkID, and two possibilities, then don\'t need to update', () => {
+      it('exact quote match, same checkID, and two possibilities, then do not update', () => {
         // given
         const expect_dataModified = false;
         const sourceCheckFile = path.join(whichCheckFolder, secondCheckFile);
@@ -277,12 +363,14 @@ describe('updateCheckingResourceData', () => {
     });
   });
 
-  describe('with no resource checkIDs', () => {
+  // tests migration with older resources processed in 3.0.1 or older
+  describe('resource without checkIDs', () => {
     beforeEach(() => {
       useResourceCheckIds = false;
     });
 
-    describe('no checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.2 or older, only update when there is one possibility
+    describe('no checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = false;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
@@ -306,7 +394,7 @@ describe('updateCheckingResourceData', () => {
         expect(check).toEqual(checkExpected);
       });
 
-      it('not exact quote match, and one possibility, then update', () => {
+      it('not exact quote match, and one possibility, then update quote', () => {
         // given
         const expect_dataModified = true;
         const sourceCheckFile = path.join(whichCheckFolder, firstCheckFile);
@@ -317,8 +405,10 @@ describe('updateCheckingResourceData', () => {
         firstFileData.splice(3, 1); // remove second possibility
         fs.outputJsonSync(firstFilePath, firstFileData); // save modified resources
         check.contextId.quote.splice(0,1); // modify so not exact match
+        check.contextId.quoteString = check.contextId.quote.map(i => i.word).join(' ');
         const checkExpected = _.cloneDeep(check);
         checkExpected.contextId.quote = resource.contextId.quote; // quote will be updated
+        checkExpected.contextId.quoteString = resource.contextId.quoteString; // quoteString will be updated
 
         // when
         const dataModified = updateCheckingResourceData(resourceFolder, bookId, check);
@@ -329,7 +419,8 @@ describe('updateCheckingResourceData', () => {
       });
     });
 
-    describe('checkID in check', () => {
+    // tests migration of project that was last opened in 3.0.3 or newer, only updates when ref and checkid match
+    describe('checkID in project data', () => {
       beforeEach(() => {
         useCheckIdFolder = true;
         whichCheckFolder = useCheckIdFolder ? 'checkID' : 'noCheckID';
