@@ -5,7 +5,10 @@
 require('babel-polyfill'); // required for async/await
 const path = require('path-extra');
 const fs = require('fs-extra');
-const SourceContentUpdater = require('tc-source-content-updater').default;
+const {
+  default: SourceContentUpdater,
+  apiHelpers,
+} = require('tc-source-content-updater');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
@@ -24,7 +27,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
   const sourceContentUpdater = new SourceContentUpdater();
 
   try {
-    const localResourceList = UpdateResourcesHelpers.getLocalResourceList(resourcesPath);
+    const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
 
     await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner)
       .then(async () => {
