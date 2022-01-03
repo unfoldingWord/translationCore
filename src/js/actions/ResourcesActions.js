@@ -155,9 +155,7 @@ const migrateChapterToVerseObjects = chapterData => {
  * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
  * @returns {string|null} the latest version found
  */
-export const getLatestVersion = (versions, ownerStr) => {
-  return resourcesHelpers.getLatestVersionFromList(versions, ownerStr);
-};
+export const getLatestVersion = (versions, ownerStr) => resourcesHelpers.getLatestVersionFromList(versions, ownerStr);
 
 /**
  * Loads a bible book resource.
