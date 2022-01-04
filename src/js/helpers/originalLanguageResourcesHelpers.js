@@ -1,5 +1,6 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
+import { resourcesHelpers } from 'tc-source-content-updater';
 import { getLatestVersion } from '../actions/ResourcesActions';
 import {
   getProjectBookId,
@@ -73,8 +74,8 @@ export function getOrigLangVersionInfoForTn(state) {
   if (fs.existsSync(bibleFolderPath)) {
     latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath);
 
-    if (latestOlVersion) {
-      latestOlVersion = latestOlVersion.replace('v',''); // strip off leading 'v'
+    if (latestOlVersion && (latestOlVersion[0] === 'v')) {
+      latestOlVersion = latestOlVersion.substr(1); // strip off leading 'v'
     }
   }
 
@@ -127,7 +128,8 @@ export const isToolUsingCurrentOriginalLanguage = (state, toolName) => {
   if (projectSaveLocation) { // only check if project is selected
     if (toolName === TRANSLATION_NOTES) {
       const { latestOlVersion, tsvOLVersion } = getOrigLangVersionInfoForTn(state);
-      isCurrent = (latestOlVersion === tsvOLVersion);
+      const latestOlVersion_ = resourcesHelpers.splitVersionAndOwner(latestOlVersion).version;
+      isCurrent = (latestOlVersion_ === tsvOLVersion);
     } else if (toolName) { // any other tool always uses current
       isCurrent = true;
     }
