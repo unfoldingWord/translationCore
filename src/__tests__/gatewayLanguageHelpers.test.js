@@ -146,7 +146,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Genesis (OT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1_Door43-Catalog', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gen');
@@ -154,7 +154,7 @@ describe('Test getGatewayLanguageList() for TW',()=>{
     });
 
     test('should return an empty list for Luke (NT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1_Door43-Catalog', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('luk', toolName);
@@ -288,7 +288,7 @@ describe('Test getGatewayLanguageList() for TN',()=>{
     });
 
     test('should return an empty list for Genesis (OT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
+      const copyFiles = ['en/bibles/ult/v12.1_Door43-Catalog', 'en/translationHelps/translationWords', 'hbo/bibles/uhb'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('gen');
@@ -296,7 +296,7 @@ describe('Test getGatewayLanguageList() for TN',()=>{
     });
 
     test('should return an empty list for Luke (NT, no ULT)', () => {
-      const copyFiles = ['en/bibles/ult/v12.1', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
+      const copyFiles = ['en/bibles/ult/v12.1_Door43-Catalog', 'en/translationHelps/translationWords', 'el-x-koine/bibles/ugnt'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
 
       const languages = gatewayLanguageHelpers.getGatewayLanguageList('luk', toolName);
