@@ -224,6 +224,7 @@
     "dcs_rename_conflict": "Renomeação falhou porque um repositório com este noem já existe.<br/><br/>Para poder atualizar seu projeto para o ${door43}, você precisa ou de renomear seu projeto local ou renomear o seu projeto ${door43}.",
     "dcs_create_new_conflict": "Criação de novo repositório falhou porque um repositório com este nome já existe.<br/><br/>Para ser permitido o upload do seu projeto para a ${door43}, você precisa ou renomear seu projeto local ou renomear seu Projeto ${door43}.",
     "unknown_download_networking_error": "${app_name} encontrou um erro de comunicação desconhecido tentando baixar o projeto de \"${project_url}\".<br/><br/>Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
+    "project_locked": "O projeto está travado em:<br/>'${file_path}'. Por favor, reinicie o computador e tente novamente.",
     "known_download_networking_error": "O download do projeto ${project_url} falhou. ${error_message}\n"
   },
   "project_validation": {
