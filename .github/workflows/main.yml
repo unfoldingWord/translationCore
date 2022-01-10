@@ -127,7 +127,9 @@ jobs:
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
-        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+        run: |
+          # TODO: remove this fix for expired certs on uw website - hack for curl crash on invalid certs, added --insecure param
+          curl --insecure https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Before Update resources - save original manifest
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
@@ -184,11 +186,6 @@ jobs:
           auth_header="$(git config --local --get http.https://github.com/.extraheader)"
           git submodule sync --recursive
           git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
-
-#      - name: Checkout codebase
-#        uses: actions/checkout@v1
-#        with:
-#          submodules: recursive
 
       - name: Read version and commit sha
         run: |

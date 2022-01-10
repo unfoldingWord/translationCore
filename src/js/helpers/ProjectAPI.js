@@ -47,6 +47,7 @@ export default class ProjectAPI {
     this.isCategoryLoaded = this.isCategoryLoaded.bind(this);
     this.setCategoryLoaded = this.setCategoryLoaded.bind(this);
     this.getGroupsData = this.getGroupsData.bind(this);
+    this.getBookDataDir = this.getBookDataDir.bind(this);
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
     this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
@@ -81,6 +82,16 @@ export default class ProjectAPI {
     // TODO: the book id is redundant to have in the project directory.
     const bookId = this.getBookId();
     return path.join(this._dataPath, 'index', toolName, bookId);
+  }
+
+  /**
+   * Returns the path to the book data directory.
+   * @return {string}
+   */
+  getBookDataDir() {
+    // TODO: the book id is redundant to have in the project directory.
+    const bookId = this.getBookId();
+    return path.join(this._projectPath, bookId);
   }
 
   /**
