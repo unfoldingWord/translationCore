@@ -1208,16 +1208,17 @@ export function moveResourcesFromOldGrcFolder() {
 /**
  * find out which Original Language Bible versions are needed by installed tNs.  Only keep the needed versions.
  *    The other versions are deleted.
- * @param languageId
- * @param resourceId
- * @param resourcePath
+ * @param {string} languageId
+ * @param {string} resourceId
+ * @param {string} resourcePath - path for versions of current resource
+ * @param {string} resourcesPath - base path for all resources
  * @return {boolean} - returns true if all old resources can be deleted
  */
-export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath) {
+export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath, resourcesPath) {
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourcePath, resourceId).sort((a, b) =>
+    const requiredVersions = getOtherTnsOLVersions(resourcesPath, resourceId).sort((a, b) =>
       -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
@@ -1310,7 +1311,7 @@ export function getMissingResources() {
             isOldResource = true;
           }
 
-          const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath);
+          const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath, USER_RESOURCES_PATH);
 
           if (isOldResource) {
             console.log(`getMissingResources() - checking ${languageId} ${resourceId} - old resource found`);
