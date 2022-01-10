@@ -326,10 +326,10 @@ describe('migrate tCore resources', () => {
       expect(fs.existsSync(path.join(USER_RESOURCES_PATH, 'grc'))).toBeFalsy(); // should remove folder
     });
 
-    it('test with older version of ugnt in grc/bible - should be removed', () => {
+    it('test with older version of ugnt in grc/bible - should not be removed', () => {
       // given
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.2'];
+      const expectedBibleVers = ['v0.1', 'v0.2'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();

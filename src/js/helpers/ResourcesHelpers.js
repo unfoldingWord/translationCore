@@ -692,6 +692,8 @@ export const extractZippedResourceContent = (resourceDestinationPath, isBible) =
       if (fs.existsSync(contentZipPath)) {
         fs.removeSync(contentZipPath);
       }
+    } else {
+      console.info(`extractZippedResourceContent: ${contentZipPath}, Path Does not exist`);
     }
   }
 };
@@ -1191,7 +1193,7 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(USER_RESOURCES_PATH, resourceId).sort((a, b) =>
+    const requiredVersions = getOtherTnsOLVersions(resourcePath, resourceId).sort((a, b) =>
       -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
@@ -1246,15 +1248,13 @@ export function getMissingResources() {
         } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
           copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
         } else { // compare resources manifest modified time
+          const userResourceVersionPath = ResourceAPI.getLatestVersion(userResourcePath);
           const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
-          const version = path.basename(staticResourceVersionPath);
-          const userResourceVersionPath = path.join(userResourcePath, version);
-          const userResourceExists = fs.existsSync(userResourceVersionPath);
           let isOldResource = false;
           const filename = 'manifest.json';
           const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
 
-          if (userResourceExists) {
+          if (userResourceVersionPath) {
             const userResourceManifestPath = path.join(userResourceVersionPath, filename);
 
             if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
