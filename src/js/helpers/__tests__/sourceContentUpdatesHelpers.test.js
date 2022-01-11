@@ -21,7 +21,7 @@ describe('migrate resources', () => {
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 
     // when
-    const resources = apiHelpers.getLocalResourceList();
+    const resources = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
 
     // then
     expect(resources).toMatchSnapshot();
