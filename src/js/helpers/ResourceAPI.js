@@ -2,7 +2,9 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import semver from 'semver';
 import env from 'tc-electron-env';
+import { resourcesHelpers } from 'tc-source-content-updater';
 import { TRANSLATION_HELPS } from '../common/constants';
+
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
  */
@@ -57,16 +59,11 @@ class ResourceAPI {
    * Returns the versioned folder within the directory with the highest value.
    * e.g. `v10` is greater than `v9`
    * @param {string} dir - the directory to read
+   * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
    * @returns {string} the full path to the latest version directory.
    */
-  static getLatestVersion(dir) {
-    const versions = ResourceAPI.listVersions(dir);
-
-    if (versions.length > 0) {
-      return path.join(dir, versions[0]);
-    } else {
-      return null;
-    }
+  static getLatestVersion(dir, ownerStr) {
+    return resourcesHelpers.getLatestVersionInPath(dir, ownerStr);
   }
 
   /**

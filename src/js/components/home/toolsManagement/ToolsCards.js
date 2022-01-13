@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import { Card, CardText } from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 // components
 // helpers
 import { getTsvOLVersion } from '../../../helpers/originalLanguageResourcesHelpers';
@@ -74,7 +75,13 @@ const ToolsCards = ({
                 resource_id: resourceId,
               } = originalLanguageBookManifest;
               const { tsv_relation } = manifest;
-              const tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
+              let tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
+              const { owner } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
+
+              if (!owner) { // make sure we have an owner for resource
+                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + apiHelpers.DOOR43_CATALOG;
+              }
+
               const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
 
               if (neededOLPath) {
