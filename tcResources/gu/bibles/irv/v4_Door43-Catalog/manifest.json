@@ -1,0 +1,661 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellappan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Joseph Jekab",
+      "Shojo John",
+      "Vipin Bhadran"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "",
+    "format": "text/usfm3",
+    "identifier": "irv",
+    "issued": "2020-12-16",
+    "language": {
+      "direction": "ltr",
+      "identifier": "gu",
+      "title": "ગુજરાતી"
+    },
+    "modified": "2020-12-16",
+    "publisher": "BCS",
+    "relation": [
+      "gu/ta",
+      "gu/tn",
+      "gu/tq",
+      "gu/tw",
+      "gu/udb",
+      "gu/ulb"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "ulb",
+        "language": "en",
+        "version": "2017"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Indian Revised Version - Gujarati",
+    "type": "bundle",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS",
+      "Hind Prakash"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "માથ્થી",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./41-MAT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "માર્ક",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "લૂક",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "યોહાનની લખેલી સુવાર્તા",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "પ્રેરિતોનાં ક્રત્યો",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "રોમનોને પાઉલ પ્રેરીતનો પત્ર",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./46-ROM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "કરિંથીઓને પાઉલ પ્રેરીતનો પહેલો પત્ર",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "કરિંથીઓને પાઉલ પ્રેરીતનો બીજો પત્ર",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ગલાતીઓને પાઉલ પ્રેરીતનો પત્ર",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "એફેસીઓને પત્ર",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ફિલિપ્પીઓને પાઉલ પ્રેરીતનો પત્ર",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ક્લોસ્સીઓને પાઉલ પ્રેરીતનો પત્ર",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 થેસ્સલોનિકીઓને",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 થેસ્સલોનિકીઓને",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 તિમોથીને",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 તિમોથીને",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "તિતસને પાઉલ પ્રેરિતનો પત્ર",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ફિલેમોનને પાઉલ પ્રેરિતનો પત્ર",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "હિબ્રૂઓને પત્ર",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./59-HEB.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "યાકૂબનો પત્ર",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "પિતરનો પહેલો પત્ર",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "પિતરનો બીજો પત્ર",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "યોહાનનો પહેલો પત્ર",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "યોહાનનો બીજો પત્ર",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "યોહાનનો ત્રીજો પત્ર ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "યહૂદાનો પત્ર",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "પ્રકટીકરણ",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./67-REV.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Dr. Bobby Chellappan",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Joseph Jekab",
+        "Shojo John",
+        "Vipin Bhadran"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "",
+      "format": "text/usfm3",
+      "identifier": "irv",
+      "issued": "2020-12-16",
+      "language": {
+        "direction": "ltr",
+        "identifier": "gu",
+        "title": "ગુજરાતી"
+      },
+      "modified": "2020-12-16",
+      "publisher": "BCS",
+      "relation": [
+        "gu/ta",
+        "gu/tn",
+        "gu/tq",
+        "gu/tw",
+        "gu/udb",
+        "gu/ulb"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "ulb",
+          "language": "en",
+          "version": "2017"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Indian Revised Version - Gujarati",
+      "type": "bundle",
+      "version": "4"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS",
+        "Hind Prakash"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "માથ્થી",
+        "versification": "ufw",
+        "identifier": "mat",
+        "sort": 40,
+        "path": "./41-MAT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "માર્ક",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "લૂક",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "યોહાનની લખેલી સુવાર્તા",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "પ્રેરિતોનાં ક્રત્યો",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "રોમનોને પાઉલ પ્રેરીતનો પત્ર",
+        "versification": "ufw",
+        "identifier": "rom",
+        "sort": 45,
+        "path": "./46-ROM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "કરિંથીઓને પાઉલ પ્રેરીતનો પહેલો પત્ર",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "કરિંથીઓને પાઉલ પ્રેરીતનો બીજો પત્ર",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 47,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ગલાતીઓને પાઉલ પ્રેરીતનો પત્ર",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 48,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "એફેસીઓને પત્ર",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ફિલિપ્પીઓને પાઉલ પ્રેરીતનો પત્ર",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ક્લોસ્સીઓને પાઉલ પ્રેરીતનો પત્ર",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 થેસ્સલોનિકીઓને",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 થેસ્સલોનિકીઓને",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 તિમોથીને",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 તિમોથીને",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "તિતસને પાઉલ પ્રેરિતનો પત્ર",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ફિલેમોનને પાઉલ પ્રેરિતનો પત્ર",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "હિબ્રૂઓને પત્ર",
+        "versification": "ufw",
+        "identifier": "heb",
+        "sort": 58,
+        "path": "./59-HEB.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "યાકૂબનો પત્ર",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "પિતરનો પહેલો પત્ર",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "પિતરનો બીજો પત્ર",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "યોહાનનો પહેલો પત્ર",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "યોહાનનો બીજો પત્ર",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "યોહાનનો ત્રીજો પત્ર ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "યહૂદાનો પત્ર",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "પ્રકટીકરણ",
+        "versification": "ufw",
+        "identifier": "rev",
+        "sort": 66,
+        "path": "./67-REV.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "gu",
+  "language_name": "ગુજરાતી",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "irv",
+  "resource_title": "Indian Revised Version - Gujarati",
+  "remoteModifiedTime": "2020-12-16T00:00:00Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2020-12-16T00:00:00Z"
+}

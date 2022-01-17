@@ -2,6 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import thunk from "redux-thunk";
+import { resourcesHelpers } from 'tc-source-content-updater';
 import configureMockStore from "redux-mock-store";
 import * as OL_Actions from '../OriginalLanguageResourcesActions';
 import { USER_RESOURCES_PATH } from '../../common/constants';
@@ -18,9 +19,9 @@ describe('updateProjectResourcesForTn()', () => {
 
   it('if original language versions same then do nothing', () => {
     // given
-    const currentOlVersion = "0.10";
-    const toolOlVersion = "0.10";
-    const latestTnOlVersion = "0.10";
+    const currentOlVersion = "0.10_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
+    const latestTnOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion, latestTnOlVersion);
     const store = mockStore(state);
     const expectedActions = [];
@@ -34,9 +35,9 @@ describe('updateProjectResourcesForTn()', () => {
 
   it('if original language versions different then update', () => {
     // given
-    const currentOlVersion = "0.10";
-    const toolOlVersion = "0.10";
-    const latestTnOlVersion = "0.11";
+    const currentOlVersion = "0.10_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
+    const latestTnOlVersion = "0.11_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion, latestTnOlVersion);
     const store = mockStore(state);
     const expectedActions = [
@@ -56,7 +57,7 @@ describe('updateProjectResourcesForTn()', () => {
 //
 
 function generateTsvRelation(toolOlVersion) {
-  const tnDependency = "el-x-koine/ugnt?v=" + toolOlVersion;
+  const tnDependency = "el-x-koine/ugnt?v=" + resourcesHelpers.splitVersionAndOwner(toolOlVersion).version;
   const tsvRelation = [
     "en/ult",
     tnDependency,
@@ -65,7 +66,7 @@ function generateTsvRelation(toolOlVersion) {
   return tsvRelation;
 }
 
-function initState(latestOlVersion, toolOlVersion, latestTnOlVersion, latestTnVersion = 'v10') {
+function initState(latestOlVersion, toolOlVersion, latestTnOlVersion, latestTnVersion = 'v10_Door43-Catalog') {
   const origLangId = "el-x-koine";
   const origLangBible = "ugnt";
   const translationNotesGl = "en";
@@ -78,7 +79,7 @@ function initState(latestOlVersion, toolOlVersion, latestTnOlVersion, latestTnVe
               language_id: origLangId,
               resource_id: origLangBible,
               dublin_core: {
-                version: latestOlVersion // e.g. "0.9"
+                version: resourcesHelpers.splitVersionAndOwner(latestOlVersion).version // e.g. "0.9"
               }
             }
           }

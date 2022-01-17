@@ -28,22 +28,22 @@ describe('ResourceAPI', () => {
       const r = new ResourceAPI('/root');
 
       fs.pathExistsSync.mockReturnValueOnce(true);
-      fs.readdirSync.mockReturnValueOnce(['v1', 'v2', 'v10', 'v9']);
+      fs.readdirSync.mockReturnValueOnce(['v1_Door43-Catalog', 'v2_Door43-Catalog', 'v10_Door43-Catalog', 'v9_Door43-Catalog']);
       fs.lstatSync.mockReturnValue({ isDirectory: () => true });
 
       const result = r.getLatestTranslationHelp('lang', 'tw');
-      expect(result).toContain(path.join('root', 'lang', TRANSLATION_HELPS, 'tw', 'v10'));
+      expect(result).toContain(path.join('root', 'lang', TRANSLATION_HELPS, 'tw', 'v10_Door43-Catalog'));
     });
 
     it('has latest with floats', () => {
       const r = new ResourceAPI('/root');
 
       fs.pathExistsSync.mockReturnValueOnce(true);
-      fs.readdirSync.mockReturnValueOnce(['v1.1', 'v2.1', 'v10.10', 'v10.2', 'v9.1']);
+      fs.readdirSync.mockReturnValueOnce(['v1.1_Door43-Catalog', 'v2.1_Door43-Catalog', 'v10.10_Door43-Catalog', 'v10.2_Door43-Catalog', 'v9.1_Door43-Catalog']);
       fs.lstatSync.mockReturnValue({ isDirectory: () => true });
 
       const result = r.getLatestTranslationHelp('lang', 'tw');
-      expect(result).toContain(path.join('root', 'lang', TRANSLATION_HELPS, 'tw', 'v10.10'));
+      expect(result).toContain(path.join('root', 'lang', TRANSLATION_HELPS, 'tw', 'v10.10_Door43-Catalog'));
     });
 
     it('does not have any', () => {

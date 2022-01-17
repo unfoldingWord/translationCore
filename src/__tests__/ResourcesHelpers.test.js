@@ -72,9 +72,9 @@ describe('ResourcesHelpers.', () => {
     it('Test multiple fixture resource directories that latest version is returned', () => {
       const resourcesDir = path.join(__dirname, 'fixtures/resources');
       const resourcePathsExpectedVersions = {
-        [path.join('en', 'bibles', 'ust')]: 'v10',
-        [path.join('en', 'bibles', 'ult')]: 'v12.1',
-        [path.join('el-x-koine', 'bibles', 'ugnt')]: 'v0.2',
+        [path.join('en', 'bibles', 'ust')]: 'v10_Door43-Catalog',
+        [path.join('en', 'bibles', 'ult')]: 'v12.1_Door43-Catalog',
+        [path.join('el-x-koine', 'bibles', 'ugnt')]: 'v0.2_Door43-Catalog',
       };
 
       for (let property in resourcePathsExpectedVersions) {
@@ -87,7 +87,7 @@ describe('ResourcesHelpers.', () => {
     });
     it('Test getLatestVersionInPath with a directory multiple subdirectories and files', () => {
       const versionPath = ResourceAPI.getLatestVersion(latestVersionTestDir);
-      const expectedResult = path.join(latestVersionTestDir, 'v100.2a');
+      const expectedResult = path.join(latestVersionTestDir, 'v100.2a_Door43-Catalog');
       expect(versionPath).toEqual(expectedResult);
     });
 
@@ -101,9 +101,9 @@ describe('ResourcesHelpers.', () => {
   describe('getVersionsInPath() tests', () => {
     it('Test multiple fixture resource directories return a proper array of versions', () => {
       const resourcePathsExpectedVersions = {
-        [path.join('en', 'bibles', 'ust')]: ['v10'],
-        [path.join('en', 'bibles', 'ult')]: ['v11', 'v12.1'],
-        [path.join('el-x-koine', 'bibles', 'ugnt')]: ['v0.2'],
+        [path.join('en', 'bibles', 'ust')]: ['v10_Door43-Catalog'],
+        [path.join('en', 'bibles', 'ult')]: ['v11_Door43-Catalog', 'v12.1_Door43-Catalog'],
+        [path.join('el-x-koine', 'bibles', 'ugnt')]: ['v0.2_Door43-Catalog'],
       };
 
       for (let property in resourcePathsExpectedVersions) {
@@ -118,14 +118,14 @@ describe('ResourcesHelpers.', () => {
     it('Test getLatestVersionsInPath with a directory multiple subdirectories and files', () => {
       const testPath = path.join('src', '__tests__', 'fixtures', 'latestVersionTest');
       const versions = ResourcesHelpers.getVersionsInPath(testPath);
-      const expectedResult = ['v0', 'v0.0', 'v1.1', 'v10', 'v100', 'v100.1', 'v100.2a', 'v80'];
+      const expectedResult = ['v0_Door43-Catalog', 'v0.1_Door43-Catalog', 'v1.1_Door43-Catalog', 'v10_Door43-Catalog', 'v80_Door43-Catalog', 'v100_Door43-Catalog', 'v100.1_Door43-Catalog', 'v100.2a_Door43-Catalog'];
       expect(versions).toEqual(expectedResult);
     });
 
     it('Test various paths', () => {
       expect(ResourcesHelpers.getVersionsInPath(null)).toEqual(null); // invalid dir
       expect(ResourcesHelpers.getVersionsInPath(path.join('path', 'does', 'not', 'exist'))).toEqual(null); // invalid directory
-      expect(ResourcesHelpers.getVersionsInPath(path.join('src', '__tests__', 'fixtures', 'latestVersionTest', 'v0'))).toEqual([]); // directory with no versions
+      expect(ResourcesHelpers.getVersionsInPath(path.join('src', '__tests__', 'fixtures', 'latestVersionTest', 'v0_Door43-Catalog'))).toEqual([]); // directory with no versions
     });
   });
 
@@ -224,10 +224,10 @@ describe('ResourcesHelpers.preserveNeededOrigLangVersions()', () =>{
     // given
     const deleteOldResourceExpected = false;
     const bibleId = 'ugnt';
-    const neededUgntVersion = 'v0.1';
-    const unneededUgntVersion = 'v0.0.1';
+    const neededUgntVersion = 'v0.1_Door43-Catalog';
+    const unneededUgntVersion = 'v0.0.1_Door43-Catalog';
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, neededUgntVersion));
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, neededUgntVersion));
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en'), path.join(USER_RESOURCES_PATH, 'en'));
     const ugntPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt');
     mockOtherTnsOlversions = [neededUgntVersion];

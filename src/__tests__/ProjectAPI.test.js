@@ -15,7 +15,7 @@ describe('importCategoryGroupData()', () => {
   const bookId = 'gal';
   const tnIndexPath = path.join(projectDir, '.apps', 'translationCore', 'index', TRANSLATION_NOTES, bookId);
   const manifest = { 'project':{ 'id': bookId } };
-  const galIndexPath = 'en/translationHelps/translationNotes/v15/culture/groups/gal';
+  const galIndexPath = 'en/translationHelps/translationNotes/v15_Door43-Catalog/culture/groups/gal';
 
   beforeAll(() => {
     jest.restoreAllMocks(); // remove all mocks

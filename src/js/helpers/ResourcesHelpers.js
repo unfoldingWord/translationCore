@@ -5,7 +5,7 @@ import path from 'path-extra';
 import AdmZip from 'adm-zip';
 import isEqual from 'deep-equal';
 import _ from 'lodash';
-import { getOtherTnsOLVersions } from 'tc-source-content-updater';
+import { getOtherTnsOLVersions, resourcesHelpers } from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
@@ -782,15 +782,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
  * @return {Array} - array of versions, e.g. ['v1', 'v10', 'v1.1']
  */
 export function getVersionsInPath(resourcePath) {
-  if (!resourcePath || !fs.pathExistsSync(resourcePath)) {
-    return null;
-  }
-
-  const isVersionDirectory = name => {
-    const fullPath = path.join(resourcePath, name);
-    return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
-  };
-  return fs.readdirSync(resourcePath).filter(isVersionDirectory);
+  return resourcesHelpers.getVersionsInPath(resourcePath);
 }
 
 /**

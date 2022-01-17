@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import env from 'tc-electron-env';
+import { resourcesHelpers } from 'tc-source-content-updater';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles,
@@ -16,7 +17,6 @@ import {
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import * as SettingsHelpers from '../helpers/SettingsHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
-import ResourceAPI from '../helpers/ResourceAPI';
 import * as Bible from '../common/BooksOfTheBible';
 import {
   ORIGINAL_LANGUAGE,
@@ -152,18 +152,10 @@ const migrateChapterToVerseObjects = chapterData => {
  * Returns the versioned folder within the directory with the highest value.
  * e.g. `v10` is greater than `v9`
  * @param {Array} versions - list of versions found
+ * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
  * @returns {string|null} the latest version found
  */
-export const getLatestVersion = (versions) => {
-  if (versions && (versions.length > 0)) {
-    const sortedVersions = versions.sort((a, b) =>
-      -ResourceAPI.compareVersions(a, b), // do inverted sort
-    );
-    return sortedVersions[0]; // most recent version will be first
-  } else {
-    return null;
-  }
-};
+export const getLatestVersion = (versions, ownerStr) => resourcesHelpers.getLatestVersionFromList(versions, ownerStr);
 
 /**
  * Loads a bible book resource.
