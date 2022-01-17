@@ -97,7 +97,8 @@ class ContentUpdatesDialogContainer extends React.Component {
     if (resources.length > 0) {
       return (
         <div>
-          <SourceContentUpdateDialog open={open}
+          <SourceContentUpdateDialog
+            open={open}
             onDownload={this._handleDownload}
             onClose={this._handleClose}
             selectedItems={this.state.selectedItems}
