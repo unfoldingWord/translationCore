@@ -94,6 +94,8 @@ class ContentUpdatesDialogContainer extends React.Component {
       open, translate, resources,
     } = this.props;
 
+    console.log({ resources });
+
     if (resources.length > 0) {
       return (
         <div>
