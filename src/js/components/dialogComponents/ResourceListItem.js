@@ -77,8 +77,6 @@ function ResourceListItem({
     ? languageCodeDetails.code
     : languageResources.languageId;
 
-  console.log({ languageName, indeterminate });
-
   if (languageName) {
     return (
       <>
@@ -154,10 +152,6 @@ function Subitems({
         {items.length > 0 &&
           items.map((item, i) => {
             const checked = !!_.find(selectedSubitems, item);
-
-            console.log({
-              checked, selectedSubitems, item,
-            });
 
             return (
               <tr key={i} style={styles.tr}>

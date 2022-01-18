@@ -68,25 +68,25 @@ class ContentUpdateDialog extends React.Component {
       resources,
       translate,
       onDownload,
-      selectedItems,
+      handleSelectAll,
       onSubitemSelection,
       handleListItemSelection,
       selectedLanguageResources,
-      handleAllListItemsSelection,
     } = this.props;
 
     const availableLanguageIds = resources.map(
       (resource) => resource.languageId,
     );
+    const languagesSelectedList = Object.keys(selectedLanguageResources);
     const allChecked =
-      JSON.stringify(availableLanguageIds) === JSON.stringify(selectedItems);
+      JSON.stringify(availableLanguageIds) === JSON.stringify(languagesSelectedList);
 
     return (
       <BaseDialog
         open={open}
         primaryLabel={translate('updates.download')}
         secondaryLabel={translate('buttons.cancel_button')}
-        primaryActionEnabled={selectedItems.length > 0}
+        primaryActionEnabled={languagesSelectedList.length > 0}
         onSubmit={onDownload}
         onClose={onClose}
         title={translate('updates.update_gateway_language_content')}
@@ -105,7 +105,7 @@ class ContentUpdateDialog extends React.Component {
               <Checkbox
                 label={translate('select_all')}
                 checked={allChecked}
-                onCheck={handleAllListItemsSelection}
+                onCheck={handleSelectAll}
                 style={styles.checkbox}
                 iconStyle={styles.checkboxIconStyle}
                 labelStyle={styles.boldCheckboxLabelStyle}
@@ -129,17 +129,9 @@ class ContentUpdateDialog extends React.Component {
                   <th></th>
                 </tr>
                 {resources.map((languageResources) => {
-                  const languagesSelectedList = Object.keys(selectedLanguageResources);
                   const resourcesSelectedForLanguage = selectedLanguageResources[languageResources.languageId];
                   const checked = languagesSelectedList.includes(languageResources.languageId) && resourcesSelectedForLanguage.length === languageResources.resources.length;
                   const indeterminate = resourcesSelectedForLanguage?.length < languageResources?.resources.length;
-
-                  console.log('resourcesSelectedForLanguage?.length', resourcesSelectedForLanguage?.length);
-                  console.log('languageResources?.resources.length', languageResources?.resources.length);
-                  console.log({
-                    languageId: languageResources.languageId,
-                    indeterminate, resourcesSelectedForLanguage, selectedLanguageResources,
-                  });
 
                   return (
                     <ResourceListItem
@@ -169,9 +161,9 @@ ContentUpdateDialog.propTypes = {
   translate: PropTypes.func.isRequired,
   resources: PropTypes.array.isRequired,
   selectedItems: PropTypes.array.isRequired,
+  handleSelectAll: PropTypes.func.isRequired,
   onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
-  handleAllListItemsSelection: PropTypes.func.isRequired,
   selectedLanguageResources: PropTypes.object.isRequired,
 };
 

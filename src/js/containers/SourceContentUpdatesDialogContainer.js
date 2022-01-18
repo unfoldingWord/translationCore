@@ -9,6 +9,8 @@ import { confirmOnlineAction } from '../actions/OnlineModeConfirmActions';
 import { getListOfSourceContentToUpdate, downloadSourceContentUpdates } from '../actions/SourceContentUpdatesActions';
 // components
 import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
+// helpers
+import { languageResourcesObjectToFlattenArray, createLanguagesObjectFromResources } from '../helpers/combineResources';
 
 /**
  * Renders a dialog displaying a list of new content updates.
@@ -22,11 +24,11 @@ import SourceContentUpdateDialog from '../components/dialogComponents/SourceCont
 class ContentUpdatesDialogContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedItems: [], languages: {} };
+    this.state = { languages: {} };
     this._handleClose = this._handleClose.bind(this);
     this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
     this._handleDownload = this._handleDownload.bind(this);
-    this._handleAllListItemsSelection = this._handleAllListItemsSelection.bind(this);
+    this.handleSelectAll = this.handleSelectAll.bind(this);
     this._handleListItemSelection = this._handleListItemSelection.bind(this);
     this.onSubitemSelection = this.onSubitemSelection.bind(this);
   }
@@ -51,24 +53,23 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _handleClose() {
     const { onClose } = this.props;
-    this.setState({ selectedItems: [] });
+    this.setState({ languages: {} });
     onClose();
   }
 
-  _handleAllListItemsSelection() {
+  handleSelectAll() {
     const { resources } = this.props;
-    const availableLanguageIds = resources.map(resource => resource.languageId);
-    const allChecked = JSON.stringify(availableLanguageIds) === JSON.stringify(this.state.selectedItems);
+    const allResourcesByLanguage = createLanguagesObjectFromResources(resources);
+    const allChecked = JSON.stringify(allResourcesByLanguage) === JSON.stringify(this.state.languages);
 
     if (allChecked) {
-      this.setState({ selectedItems: [] });
+      this.setState({ languages: {} });
     } else {
-      this.setState({ selectedItems: availableLanguageIds });
+      this.setState({ languages: allResourcesByLanguage });
     }
   }
 
   _handleListItemSelection({ languageId, resources }) {
-    console.log({ languageId, resources }); // TODO:
     const _languages = { ...this.state.languages };
     const languageKeys = Object.keys(_languages);
 
@@ -83,24 +84,22 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   onSubitemSelection(subitem, languageId) {
     const _languages = Object.assign({}, this.state.languages);
-    console.log('_languages', _languages);
-    console.log('languageId', languageId);
     const languageResources = _languages[languageId] ? Array.from(_languages[languageId]) : [];
     const found = _.find(languageResources, subitem);
-    console.log({ languageResources });
 
     if (found) {
       const _languageResources = _.filter(languageResources, (o) => !_.isEqual(o, subitem));
-      _languages[languageId] = _languageResources;
-      console.log({ _languageResources });
+
+      if (_languageResources.length > 0) {
+        _languages[languageId] = _languageResources;
+      } else {
+        delete _languages[languageId];
+      }
+
       this.setState({ languages: _languages });
     } else {
-      console.log({
-        languageResources, languageId, array: typeof languageResources,
-      });
-      _languages[languageId] = languageResources.push(subitem);
-      console.log({ ff: _languages[languageId] });
-
+      languageResources.push(subitem);
+      _languages[languageId] = languageResources;
       this.setState({ languages: _languages });
     }
   }
@@ -112,17 +111,16 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _handleDownload() {
     const { downloadSourceContentUpdates, onClose } = this.props;
-    this.setState({ selectedItems: [] });
+    this.setState({ languages: {} });
+    const combinedResources = languageResourcesObjectToFlattenArray(this.state.languages);
     onClose();
-    downloadSourceContentUpdates(this.state.selectedItems);
+    downloadSourceContentUpdates(combinedResources);
   }
 
   render() {
     const {
       open, translate, resources,
     } = this.props;
-
-    console.log({ resources, s: this.state.languages });
 
     if (resources.length > 0) {
       return (
@@ -133,11 +131,10 @@ class ContentUpdatesDialogContainer extends React.Component {
             resources={resources}
             onClose={this._handleClose}
             onDownload={this._handleDownload}
-            selectedItems={this.state.selectedItems}
+            handleSelectAll={this.handleSelectAll}
             onSubitemSelection={this.onSubitemSelection}
             selectedLanguageResources={this.state.languages}
             handleListItemSelection={this._handleListItemSelection}
-            handleAllListItemsSelection={this._handleAllListItemsSelection}
           />
         </div>
       );

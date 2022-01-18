@@ -94,6 +94,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
  * @param {array} languageIdListToDownload - list of language Ids selected to be downloaded.
  */
 export const downloadSourceContentUpdates = (languageIdListToDownload, refreshUpdates = false) => (async (dispatch, getState) => {
+  // TODO:
   const translate = getTranslate(getState());
   const toolName = getCurrentToolName(getState());
 
