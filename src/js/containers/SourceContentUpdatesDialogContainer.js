@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import _ from 'lodash';
 // selectors
 import { getListOfOutdatedSourceContent } from '../selectors/index';
 // actions
@@ -21,12 +22,13 @@ import SourceContentUpdateDialog from '../components/dialogComponents/SourceCont
 class ContentUpdatesDialogContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { selectedItems: [] };
+    this.state = { selectedItems: [], languages: {} };
     this._handleClose = this._handleClose.bind(this);
     this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
     this._handleDownload = this._handleDownload.bind(this);
     this._handleAllListItemsSelection = this._handleAllListItemsSelection.bind(this);
     this._handleListItemSelection = this._handleListItemSelection.bind(this);
+    this.onSubitemSelection = this.onSubitemSelection.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
@@ -65,15 +67,41 @@ class ContentUpdatesDialogContainer extends React.Component {
     }
   }
 
-  _handleListItemSelection(languageName) {
-    const newSelectedItems = Array.from(this.state.selectedItems);
+  _handleListItemSelection({ languageId, resources }) {
+    console.log({ languageId, resources }); // TODO:
+    const _languages = { ...this.state.languages };
+    const languageKeys = Object.keys(_languages);
 
-    if (newSelectedItems.includes(languageName)) {
-      const selectedItems = newSelectedItems.filter((selectedItem) => selectedItem !== languageName);
-      this.setState({ selectedItems });
+    if (languageKeys.includes(languageId)) {
+      delete _languages[languageId];
+      this.setState({ languages: _languages });
     } else {
-      newSelectedItems.push(languageName);
-      this.setState({ selectedItems: newSelectedItems });
+      _languages[languageId] = resources;
+      this.setState({ languages: _languages });
+    }
+  }
+
+  onSubitemSelection(subitem, languageId) {
+    const _languages = Object.assign({}, this.state.languages);
+    console.log('_languages', _languages);
+    console.log('languageId', languageId);
+    const languageResources = _languages[languageId] ? Array.from(_languages[languageId]) : [];
+    const found = _.find(languageResources, subitem);
+    console.log({ languageResources });
+
+    if (found) {
+      const _languageResources = _.filter(languageResources, (o) => !_.isEqual(o, subitem));
+      _languages[languageId] = _languageResources;
+      console.log({ _languageResources });
+      this.setState({ languages: _languages });
+    } else {
+      console.log({
+        languageResources, languageId, array: typeof languageResources,
+      });
+      _languages[languageId] = languageResources.push(subitem);
+      console.log({ ff: _languages[languageId] });
+
+      this.setState({ languages: _languages });
     }
   }
 
@@ -94,20 +122,23 @@ class ContentUpdatesDialogContainer extends React.Component {
       open, translate, resources,
     } = this.props;
 
-    console.log({ resources });
+    console.log({ resources, s: this.state.languages });
 
     if (resources.length > 0) {
       return (
         <div>
           <SourceContentUpdateDialog
             open={open}
-            onDownload={this._handleDownload}
+            translate={translate}
+            resources={resources}
             onClose={this._handleClose}
+            onDownload={this._handleDownload}
             selectedItems={this.state.selectedItems}
+            onSubitemSelection={this.onSubitemSelection}
+            selectedLanguageResources={this.state.languages}
             handleListItemSelection={this._handleListItemSelection}
             handleAllListItemsSelection={this._handleAllListItemsSelection}
-            translate={translate}
-            resources={resources} />
+          />
         </div>
       );
     } else {

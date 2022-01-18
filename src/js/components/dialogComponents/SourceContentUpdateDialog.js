@@ -63,13 +63,15 @@ const styles = {
 class ContentUpdateDialog extends React.Component {
   render() {
     const {
-      translate,
       open,
-      onDownload,
       onClose,
       resources,
+      translate,
+      onDownload,
       selectedItems,
+      onSubitemSelection,
       handleListItemSelection,
+      selectedLanguageResources,
       handleAllListItemsSelection,
     } = this.props;
 
@@ -126,14 +128,31 @@ class ContentUpdateDialog extends React.Component {
                   </th>
                   <th></th>
                 </tr>
-                {resources.map((resource) => (
-                  <ResourceListItem
-                    key={resource.languageId}
-                    resource={resource}
-                    checked={selectedItems.includes(resource.languageId)}
-                    handleItemOnCheck={handleListItemSelection}
-                  />
-                ))}
+                {resources.map((languageResources) => {
+                  const languagesSelectedList = Object.keys(selectedLanguageResources);
+                  const resourcesSelectedForLanguage = selectedLanguageResources[languageResources.languageId];
+                  const checked = languagesSelectedList.includes(languageResources.languageId) && resourcesSelectedForLanguage.length === languageResources.resources.length;
+                  const indeterminate = resourcesSelectedForLanguage?.length < languageResources?.resources.length;
+
+                  console.log('resourcesSelectedForLanguage?.length', resourcesSelectedForLanguage?.length);
+                  console.log('languageResources?.resources.length', languageResources?.resources.length);
+                  console.log({
+                    languageId: languageResources.languageId,
+                    indeterminate, resourcesSelectedForLanguage, selectedLanguageResources,
+                  });
+
+                  return (
+                    <ResourceListItem
+                      checked={checked}
+                      indeterminate={indeterminate}
+                      key={languageResources.languageId}
+                      languageResources={languageResources}
+                      onSubitemSelection={onSubitemSelection}
+                      onLanguageSelection={handleListItemSelection}
+                      selectedSubitems={resourcesSelectedForLanguage}
+                    />
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -144,14 +163,16 @@ class ContentUpdateDialog extends React.Component {
 }
 
 ContentUpdateDialog.propTypes = {
-  translate: PropTypes.func.isRequired,
   open: PropTypes.bool,
-  onDownload: PropTypes.func,
   onClose: PropTypes.func,
+  onDownload: PropTypes.func,
+  translate: PropTypes.func.isRequired,
   resources: PropTypes.array.isRequired,
   selectedItems: PropTypes.array.isRequired,
+  onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
   handleAllListItemsSelection: PropTypes.func.isRequired,
+  selectedLanguageResources: PropTypes.object.isRequired,
 };
 
 export default ContentUpdateDialog;

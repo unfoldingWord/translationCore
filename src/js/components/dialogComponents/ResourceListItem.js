@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
-import Checkbox from 'material-ui/Checkbox';
+import Checkbox from '@material-ui/core/Checkbox';
+import { withStyles } from '@material-ui/core/styles';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import CheckBoxIcon from '@material-ui/icons/CheckBox';
+import CheckBoxOutlineIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
+import _ from 'lodash';
 // helpers
 import { getLanguageByCode } from '../../helpers/LanguageHelpers';
 
@@ -20,13 +26,6 @@ const styles = {
     padding: '0px 0px 10px',
     margin: '25px 0px',
   },
-  checkbox: {},
-  checkboxIconStyle: { fill: 'var(--accent-color-dark)' },
-  checkboxLabelStyle: {
-    width: '100%',
-    fontWeight: 'normal',
-  },
-  boldCheckboxLabelStyle: { width: '100%' },
   resourcesList: {},
   resourcesListItem: {
     display: 'flex',
@@ -47,42 +46,68 @@ const styles = {
     width: '20px',
     textAlign: 'right',
   },
+  label: {
+    fontSize: '16px',
+    color: 'rgba(0, 0, 0, 0.6)',
+    fontFamily: 'Ezra, Noto Sans',
+  },
+  root: {
+    'color': 'var(--accent-color-dark)',
+    '&$checked': { color: 'var(--accent-color-dark)' },
+    'padding': '0px',
+  },
+  checked: {},
 };
 
-export default function ResourceListItem({
-  resource, checked, handleItemOnCheck,
+function ResourceListItem({
+  classes,
+  checked,
+  indeterminate,
+  selectedSubitems,
+  languageResources,
+  onSubitemSelection,
+  onLanguageSelection,
 }) {
   const [expanded, setExpanded] = useState(false);
-  const languageCodeDetails = getLanguageByCode(resource.languageId);
+  const languageCodeDetails = getLanguageByCode(languageResources.languageId);
   const languageName = languageCodeDetails
     ? languageCodeDetails.name
-    : resource.languageId;
+    : languageResources.languageId;
   const languageId = languageCodeDetails
     ? languageCodeDetails.code
-    : resource.languageId;
+    : languageResources.languageId;
+
+  console.log({ languageName, indeterminate });
 
   if (languageName) {
     return (
       <>
         <tr style={styles.tr}>
           <td style={styles.firstTd}>
-            <Checkbox
-              checked={checked}
-              onCheck={(event) => {
-                event.preventDefault();
-                handleItemOnCheck(resource.languageId);
-              }}
+            <FormControlLabel
+              classes={{ label: classes.label }}
+              control={
+                <Checkbox
+                  checked={checked}
+                  indeterminate={indeterminate}
+                  classes={{
+                    root: classes.root,
+                    checked: classes.checked,
+                  }}
+                  onChange={() => onLanguageSelection(languageResources)}
+                  icon={<CheckBoxOutlineIcon style={{ fontSize: '24px' }} />}
+                  checkedIcon={<CheckBoxIcon style={{ fontSize: '24px' }} />}
+                  indeterminateIcon={<IndeterminateCheckBoxIcon style={{ fontSize: '24px' }} />}
+                />
+              }
               label={`${languageName} (${languageId})`}
-              style={styles.checkbox}
-              iconStyle={styles.checkboxIconStyle}
-              labelStyle={styles.checkboxLabelStyle}
             />
           </td>
           <td style={styles.td}>
-            {`${resource.localModifiedTime.substring(0, 10)}`}
+            {`${languageResources.localModifiedTime.substring(0, 10)}`}
           </td>
           <td style={styles.td}>
-            {`${resource.remoteModifiedTime.substring(0, 10)}`}
+            {`${languageResources.remoteModifiedTime.substring(0, 10)}`}
           </td>
           <td>
             <Glyphicon
@@ -92,7 +117,14 @@ export default function ResourceListItem({
             />
           </td>
         </tr>
-        <SubItem items={['f', 'g']} expanded={expanded}/>
+        <Subitems
+          classes={classes}
+          expanded={expanded}
+          items={languageResources.resources}
+          selectedSubitems={selectedSubitems}
+          onSubitemSelection={onSubitemSelection}
+          languageId={languageResources.languageId}
+        />
       </>
     );
   } else {
@@ -102,42 +134,73 @@ export default function ResourceListItem({
 };
 
 ResourceListItem.propTypes = {
-  resource: PropTypes.object.isRequired,
   checked: PropTypes.bool.isRequired,
+  resource: PropTypes.object.isRequired,
+  indeterminate: PropTypes.bool.isRequired,
   handleItemOnCheck: PropTypes.func.isRequired,
 };
 
-function SubItem({ items, expanded }) {
-  return (
-    <>
-      {expanded && items.length > 0 &&
-      items.map((item, i) => (
-        <tr key={i} style={styles.tr}>
-          <td style={styles.firstSubTd}>
-            <Checkbox
-              checked={false}
-              onCheck={(event) => {
-              }}
-              label={`Resource Id`}
-              style={styles.checkbox}
-              iconStyle={styles.checkboxIconStyle}
-              labelStyle={styles.checkboxLabelStyle}
-            />
-          </td>
-          <td style={styles.td}>
-            {`localModifiedTime`}
-          </td>
-          <td style={styles.td}>
-            {`remoteModifiedTime`}
-          </td>
-        </tr>
-      ))
-      }
-    </>
-  );
+function Subitems({
+  items,
+  classes,
+  expanded,
+  languageId,
+  selectedSubitems,
+  onSubitemSelection,
+}) {
+  if (expanded) {
+    return (
+      <>
+        {items.length > 0 &&
+          items.map((item, i) => {
+            const checked = !!_.find(selectedSubitems, item);
+
+            console.log({
+              checked, selectedSubitems, item,
+            });
+
+            return (
+              <tr key={i} style={styles.tr}>
+                <td style={styles.firstSubTd}>
+                  <FormControlLabel
+                    classes={{ label: classes.label }}
+                    control={
+                      <Checkbox
+                        checked={checked}
+                        classes={{
+                          root: classes.root,
+                          checked: classes.checked,
+                        }}
+                        onChange={() => onSubitemSelection(item, languageId)}
+                        icon={<CheckBoxOutlineIcon style={{ fontSize: '24px' }} />}
+                        checkedIcon={<CheckBoxIcon style={{ fontSize: '24px' }} />}
+                      />
+                    }
+                    label={`${item.resourceId.toUpperCase()} (${item.subject})`}
+                  />
+                </td>
+                <td>
+                </td>
+                <td style={styles.td}>
+                  {item.remoteModifiedTime.substring(0, 10)}
+                </td>
+              </tr>
+            );
+          })
+        }
+      </>
+    );
+  } else {
+    return null;
+  }
 }
 
-SubItem.propTypes = {
+Subitems.propTypes = {
   items: PropTypes.array,
   expanded: PropTypes.bool,
+  languageId: PropTypes.string,
+  selectedSubitems: PropTypes.array,
+  onSubitemSelection: PropTypes.func.isRequired,
 };
+
+export default withStyles(styles)(ResourceListItem);
