@@ -10,7 +10,11 @@ import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import { getTsvOLVersion } from '../../../helpers/originalLanguageResourcesHelpers';
 import { getAvailableCategories } from '../../../helpers/ResourcesHelpers';
 // constants
-import { USER_RESOURCES_PATH, TRANSLATION_NOTES } from '../../../common/constants';
+import {
+  USER_RESOURCES_PATH,
+  TRANSLATION_NOTES,
+  DEFAULT_OWNER,
+} from '../../../common/constants';
 import ToolCard from './ToolCard';
 
 const ToolsCards = ({
@@ -79,7 +83,7 @@ const ToolsCards = ({
               const { owner } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
 
               if (!owner) { // make sure we have an owner for resource
-                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + apiHelpers.DOOR43_CATALOG;
+                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + DEFAULT_OWNER;
               }
 
               const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);

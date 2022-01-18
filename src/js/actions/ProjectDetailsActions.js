@@ -34,6 +34,7 @@ import Repo from '../helpers/Repo.js';
 import ProjectAPI from '../helpers/ProjectAPI';
 // constants
 import {
+  DEFAULT_OWNER,
   PROJECTS_PATH,
   TRANSLATION_NOTES,
 } from '../common/constants';
@@ -51,10 +52,11 @@ const RESHOW_DCS_CHOICE = 'RESHOW_DCS_CHOICE';
  * @param {String} projectSaveLocation - The project location to load from
  *                      i.e. ~/translationCore/projects/en_tit_reg
  * @param {String} currentGatewayLanguage
+ * @param {String} owner
  */
-export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => (dispatch) => {
+export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en', owner = DEFAULT_OWNER) => (dispatch) => {
   const project = new ProjectAPI(projectSaveLocation);
-  const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation);
+  const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation, {}, owner);
   let availableCheckCategories = [];
 
   Object.keys(availableCheckCategoriesObject)

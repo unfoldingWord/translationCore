@@ -5,7 +5,11 @@ import path from 'path-extra';
 import AdmZip from 'adm-zip';
 import isEqual from 'deep-equal';
 import _ from 'lodash';
-import { getOtherTnsOLVersions, resourcesHelpers } from 'tc-source-content-updater';
+import {
+  apiHelpers,
+  getOtherTnsOLVersions,
+  resourcesHelpers,
+} from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
@@ -16,20 +20,21 @@ import {
 } from '../selectors';
 import * as Bible from '../common/BooksOfTheBible';
 import {
-  DEFAULT_GATEWAY_LANGUAGE ,
   APP_VERSION,
-  TC_VERSION,
-  SOURCE_CONTENT_UPDATER_MANIFEST,
-  USER_RESOURCES_PATH,
-  toolCardCategories,
-  STATIC_RESOURCES_PATH,
+  DEFAULT_GATEWAY_LANGUAGE,
+  DEFAULT_OWNER,
   ORIGINAL_LANGUAGE,
+  SOURCE_CONTENT_UPDATER_MANIFEST,
+  STATIC_RESOURCES_PATH,
   TARGET_LANGUAGE,
   TARGET_BIBLE,
+  TC_VERSION,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
   TRANSLATION_HELPS,
   TRANSLATION_ACADEMY,
+  USER_RESOURCES_PATH,
+  toolCardCategories,
 } from '../common/constants';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
@@ -395,8 +400,9 @@ export function ensureFileContentsJson(folder, filename, data) {
  * @param {String} projectDir
  * @param {object} options = { withCategoryName: true } will return an
  * array of objects instead, which include the category id & name.
+ * @param {string} owner
  */
-export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir, options = {}) {
+export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir, options = {}, owner = DEFAULT_OWNER) {
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
@@ -408,7 +414,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
     gatewayLanguage = languageId;
   }
 
-  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  const helpDir = resources.getLatestTranslationHelp(language, toolName, owner);
   // list help categories
 
   if (helpDir) {
