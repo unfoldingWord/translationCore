@@ -39,8 +39,13 @@ const styles = {
   firstTd: { padding: '10px 5px 10px 0px' },
   firstSubTd: { padding: '10px 5px 10px 30px' },
   td: {
-    minWidth: '200px',
+    minWidth: '100px',
     padding: '10px 5px',
+  },
+  lastTd: {
+    minWidth: '100px',
+    padding: '10px 5px',
+    textAlign: 'center',
   },
   glyphicon: {
     fontSize: '18px',
@@ -123,7 +128,7 @@ class ContentUpdateDialog extends React.Component {
                   <th style={styles.td}>
                     {translate('updates.local_timestamp')}
                   </th>
-                  <th style={styles.td}>
+                  <th style={styles.lastTd}>
                     {translate('updates.online_timestamp')}
                   </th>
                   <th></th>
@@ -136,6 +141,7 @@ class ContentUpdateDialog extends React.Component {
                   return (
                     <ResourceListItem
                       checked={checked}
+                      translate={translate}
                       indeterminate={indeterminate}
                       key={languageResources.languageId}
                       languageResources={languageResources}

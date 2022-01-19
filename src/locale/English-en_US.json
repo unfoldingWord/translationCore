@@ -76,6 +76,7 @@
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
     "check_for_newer_app": "Check for software updates",
     "check_for_content_updates": "Check for content updates",
     "update_gateway_language_content": "Update Gateway Language Content",

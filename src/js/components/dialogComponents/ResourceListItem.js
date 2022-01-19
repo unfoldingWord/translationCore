@@ -34,11 +34,24 @@ const styles = {
   },
   table: { width: '100%' },
   tr: { borderBottom: '1px solid rgb(224, 224, 224)' },
-  firstTd: { padding: '10px 5px 10px 0px' },
-  firstSubTd: { padding: '10px 5px 10px 30px' },
+  firstTd: {
+    width: '80%',
+    padding: '10px 5px 10px 0px',
+  },
+  firstSubTd: {
+    width: '80%',
+    padding: '10px 0px 10px 20px',
+  },
   td: {
-    minWidth: '200px',
-    padding: '10px 5px',
+    width: '100%',
+    minWidth: '300px',
+    padding: '10px 0px 10px',
+  },
+  onlineTd: {
+    textAlign: 'center',
+    width: '100%',
+    minWidth: '100px',
+    padding: '10px 0px 10px',
   },
   glyphicon: {
     fontSize: '18px',
@@ -62,6 +75,7 @@ const styles = {
 function ResourceListItem({
   classes,
   checked,
+  translate,
   indeterminate,
   selectedSubitems,
   languageResources,
@@ -104,7 +118,7 @@ function ResourceListItem({
           <td style={styles.td}>
             {`${languageResources.localModifiedTime.substring(0, 10)}`}
           </td>
-          <td style={styles.td}>
+          <td style={styles.onlineTd}>
             {`${languageResources.remoteModifiedTime.substring(0, 10)}`}
           </td>
           <td>
@@ -118,6 +132,7 @@ function ResourceListItem({
         <Subitems
           classes={classes}
           expanded={expanded}
+          translate={translate}
           items={languageResources.resources}
           selectedSubitems={selectedSubitems}
           onSubitemSelection={onSubitemSelection}
@@ -135,6 +150,7 @@ ResourceListItem.propTypes = {
   selectedSubitems: PropTypes.array,
   checked: PropTypes.bool.isRequired,
   classes: PropTypes.object.isRequired,
+  translate: PropTypes.func.isRequired,
   indeterminate: PropTypes.bool.isRequired,
   onSubitemSelection: PropTypes.func.isRequired,
   languageResources: PropTypes.object.isRequired,
@@ -145,6 +161,7 @@ function Subitems({
   items,
   classes,
   expanded,
+  translate,
   languageId,
   selectedSubitems,
   onSubitemSelection,
@@ -154,6 +171,7 @@ function Subitems({
       <>
         {items.length > 0 &&
           items.map((item, i) => {
+            console.log({ item });
             const checked = !!_.find(selectedSubitems, item);
 
             return (
@@ -173,12 +191,13 @@ function Subitems({
                         checkedIcon={<CheckBoxIcon style={{ fontSize: '24px' }} />}
                       />
                     }
-                    label={`${item.resourceId.toUpperCase()} (${item.subject})`}
+                    label={`${item.resourceId.toUpperCase()} - ${item.subject}`}
                   />
                 </td>
-                <td>
-                </td>
                 <td style={styles.td}>
+                  <b>{translate('updates.organization')}:</b>{item.owner}
+                </td>
+                <td style={styles.onlineTd}>
                   {item.remoteModifiedTime.substring(0, 10)}
                 </td>
               </tr>
@@ -197,6 +216,7 @@ Subitems.propTypes = {
   expanded: PropTypes.bool,
   languageId: PropTypes.string,
   selectedSubitems: PropTypes.array,
+  translate: PropTypes.func.isRequired,
   onSubitemSelection: PropTypes.func.isRequired,
 };
 
