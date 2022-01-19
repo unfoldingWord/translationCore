@@ -1,4 +1,9 @@
-export const languageResourcesObjectToFlattenArray = (languages) => {
+/**
+ * Extract resources from languages.
+ * @param {object} languages - Resources organized by languages.
+ * @returns {array} - Array of the available resources organized by languages
+ */
+export const languagesObjectToResourcesArray = (languages) => {
   let result = [];
 
   Object.keys(languages).forEach((key) => {
@@ -9,6 +14,11 @@ export const languageResourcesObjectToFlattenArray = (languages) => {
   return result;
 };
 
+/**
+ * Extract resources from each language and combine them into an array.
+ * @param {array} resources - List of languages with their respective resources.
+ * @returns {array} array of all the resources from the languages.
+ */
 export const extractAllResources = (resources) => {
   let allAvailableResources = [];
 
@@ -20,9 +30,9 @@ export const extractAllResources = (resources) => {
 };
 
 /**
- * Creates an object where the resources for a language are organized.
- * @param {array} resources - List of languages data containing the resources for that language.
- * @returns An object where the resources for a language are organized.
+ * Store resources in an object by languages
+ * @param {array} resources - List of languages with their respective resources.
+ * @returns {object} - An object where the resources for a language are organized.
  */
 export const createLanguagesObjectFromResources = (resources) => {
   const result = {};

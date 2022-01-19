@@ -132,10 +132,13 @@ function ResourceListItem({
 };
 
 ResourceListItem.propTypes = {
+  selectedSubitems: PropTypes.array,
   checked: PropTypes.bool.isRequired,
-  resource: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
   indeterminate: PropTypes.bool.isRequired,
-  handleItemOnCheck: PropTypes.func.isRequired,
+  onSubitemSelection: PropTypes.func.isRequired,
+  languageResources: PropTypes.object.isRequired,
+  onLanguageSelection: PropTypes.func.isRequired,
 };
 
 function Subitems({

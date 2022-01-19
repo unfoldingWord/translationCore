@@ -10,7 +10,7 @@ import { getListOfSourceContentToUpdate, downloadSourceContentUpdates } from '..
 // components
 import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
 // helpers
-import { languageResourcesObjectToFlattenArray, createLanguagesObjectFromResources } from '../helpers/combineResources';
+import { languagesObjectToResourcesArray, createLanguagesObjectFromResources } from '../helpers/combineResources';
 
 /**
  * Renders a dialog displaying a list of new content updates.
@@ -112,9 +112,9 @@ class ContentUpdatesDialogContainer extends React.Component {
   _handleDownload() {
     const { downloadSourceContentUpdates, onClose } = this.props;
     this.setState({ languages: {} });
-    const combinedResources = languageResourcesObjectToFlattenArray(this.state.languages);
+    const resourcesToDownload = languagesObjectToResourcesArray(this.state.languages);
     onClose();
-    downloadSourceContentUpdates(combinedResources);
+    downloadSourceContentUpdates(resourcesToDownload);
   }
 
   render() {

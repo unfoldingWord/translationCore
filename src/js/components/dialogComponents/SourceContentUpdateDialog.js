@@ -160,7 +160,6 @@ ContentUpdateDialog.propTypes = {
   onDownload: PropTypes.func,
   translate: PropTypes.func.isRequired,
   resources: PropTypes.array.isRequired,
-  selectedItems: PropTypes.array.isRequired,
   handleSelectAll: PropTypes.func.isRequired,
   onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
