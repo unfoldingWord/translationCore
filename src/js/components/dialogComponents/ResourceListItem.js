@@ -195,7 +195,7 @@ function Subitems({
                   />
                 </td>
                 <td style={styles.td}>
-                  <b>{translate('updates.organization')}:</b>{item.owner}
+                  <b>{translate('updates.organization')}:</b> {item.owner}
                 </td>
                 <td style={styles.onlineTd}>
                   {item.remoteModifiedTime.substring(0, 10)}
