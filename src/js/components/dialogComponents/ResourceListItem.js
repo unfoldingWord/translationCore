@@ -171,7 +171,6 @@ function Subitems({
       <>
         {items.length > 0 &&
           items.map((item, i) => {
-            console.log({ item });
             const checked = !!_.find(selectedSubitems, item);
 
             return (
