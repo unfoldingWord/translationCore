@@ -169,7 +169,20 @@ function Subitems({
   if (expanded) {
     return (
       <>
-        {items.length > 0 &&
+        {items.length > 0 && (
+          <tr key='header-row-0' style={styles.tr}>
+            <td style={styles.firstSubTd}>
+              <b>{translate('updates.resource')}:</b>
+            </td>
+            <td style={styles.td}>
+              <b>{translate('updates.organization')}:</b>
+            </td>
+            <td style={styles.onlineTd}>
+            </td>
+          </tr>
+        )}
+        {
+          items.length > 0 &&
           items.map((item, i) => {
             const checked = !!_.find(selectedSubitems, item);
 
@@ -194,7 +207,7 @@ function Subitems({
                   />
                 </td>
                 <td style={styles.td}>
-                  <b>{translate('updates.organization')}:</b> {item.owner}
+                  {item.owner}
                 </td>
                 <td style={styles.onlineTd}>
                   {item.remoteModifiedTime.substring(0, 10)}
