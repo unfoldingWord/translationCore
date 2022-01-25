@@ -76,6 +76,8 @@
   "critical_error_warning": "ಎಚ್ಚರಿಕೆ: ತೀವ್ರವಾದ ತಪ್ಪು ಸಂಭವಿಸಿದೆ!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "ತಂತ್ರಾಂಶ ನವಿಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ",
     "check_for_content_updates": "ವಿಷಯದ ಕುರಿತಾದ ನವೀಕರಣಗಳಿಗಾಗಿ ಪರಿಶೀಲಿಸಿ",
     "update_gateway_language_content": "ಮಾಹಿತಿ ದ್ವಾರ ಭಾಷಾ ವಿಷಯದ ಕುರಿತಾಗಿ ನವೀಕರಿಸಿ",
