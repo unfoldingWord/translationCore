@@ -76,6 +76,8 @@
   "critical_error_warning": "Chetawni: ekta mahatwapurna golti ulaise!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
     "update_gateway_language_content": "Gateway Language ke unnati kuribole",
