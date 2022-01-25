@@ -76,6 +76,8 @@
   "critical_error_warning": "चेतावनी: एक गंभीर त्रुटि हुई है!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अपडेट्स के लिए जाँच करें",
     "update_gateway_language_content": "गेटवे भाषा सामग्री अपडेट करें",
