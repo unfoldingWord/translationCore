@@ -76,6 +76,8 @@
   "critical_error_warning": "Внимание: Произошла критическая ошибка!",
   "unknown_networking_error": "${app_name} столкнулся с неизвестной ошибкой. Если эта проблема продолжается, пожалуйста, отправьте \"${user_feedback}\", который является опцией на кнопке \"${actions}\".",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "Проверить обновления программного обеспечения",
     "check_for_content_updates": "Проверить обновления содержимого",
     "update_gateway_language_content": "Обновить содержимое базового языка",
