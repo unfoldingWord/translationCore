@@ -1,5 +1,6 @@
 import consts from '../actions/ActionTypes';
 import * as Bible from '../common/BooksOfTheBible';
+import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 
 const initialState = {
   bibles: {},
@@ -10,12 +11,14 @@ const initialState = {
 const resourcesReducer = (state = initialState, action) => {
   switch (action.type) {
   case consts.ADD_NEW_BIBLE_TO_RESOURCES:
+    // eslint-disable-next-line no-case-declarations
+    const languageAndOwner = action.owner ? `${action.languageId}${OWNER_SEPARATOR}${action.owner}` : action.languageId;
     return {
       ...state,
       bibles: {
         ...state.bibles,
-        [action.languageId]: {
-          ...state.bibles[action.languageId],
+        [languageAndOwner]: {
+          ...state.bibles[languageAndOwner],
           [action.bibleId]: action.bibleData,
         },
       },

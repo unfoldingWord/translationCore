@@ -19,12 +19,14 @@ import * as SettingsHelpers from '../helpers/SettingsHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import {
+  DEFAULT_OWNER,
   ORIGINAL_LANGUAGE,
   TARGET_BIBLE,
   TARGET_LANGUAGE,
 } from '../common/constants';
 import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
+import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 
 // constants
 const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
@@ -35,8 +37,9 @@ const bookCache = new SimpleCache();
  * @param {String} languageId - language id: en, hi, el-x-koine, he.
  * @param {String} bibleId - name/label for bible: ult, udt, ust, ugnt.
  * @param {object} bibleData - data being saved in the bible property.
+ * @param {string} owner
  */
-export function addNewBible(languageId, bibleId, bibleData) {
+export function addNewBible(languageId, bibleId, bibleData, owner) {
   return ((dispatch) => {
     if (BibleHelpers.isOriginalLanguage(languageId)) {
       languageId = ORIGINAL_LANGUAGE;
@@ -46,6 +49,7 @@ export function addNewBible(languageId, bibleId, bibleData) {
       languageId: languageId,
       bibleId: bibleId,
       bibleData,
+      owner,
     });
   });
 }
@@ -163,15 +167,16 @@ export const getLatestVersion = (versions, ownerStr) => resourcesHelpers.getLate
  * @param bookId
  * @param languageId
  * @param version
+ * @param {string} owner
  * @return {object}
  */
-export const loadBookResource = (bibleId, bookId, languageId, version = null) => {
+export const loadBookResource = (bibleId, bookId, languageId, version = null, owner = DEFAULT_OWNER) => {
   try {
     const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bibleId); // ex. user/NAME/translationCore/resources/en/bibles/ult
 
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-      const versionNumber = version || getLatestVersion(versionNumbers);
+      const versionNumber = version || getLatestVersion(versionNumbers, owner);
       const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
       const cacheKey = 'book:' + bookPath;
@@ -220,34 +225,37 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null) =>
  * @param bookId
  * @param languageId
  * @param version
+ * @param {string} owner
  * @return {Function}
  */
-export const loadBibleBook = (bibleId, bookId, languageId, version = null) => (dispatch) => {
-  const bibleData = loadBookResource(bibleId, bookId, languageId, version);
+export const loadBibleBook = (bibleId, bookId, languageId, version = null, owner = DEFAULT_OWNER) => (dispatch) => {
+  const bibleData = loadBookResource(bibleId, bookId, languageId, version, owner);
 
   if (bibleData) {
-    dispatch(addNewBible(languageId, bibleId, bibleData));
+    dispatch(addNewBible(languageId, bibleId, bibleData, owner));
   }
 };
 
 /**
  * Load all found books for a given language Id.
  * @param languageId
+ * @param {string} owner
  * @return {Function}
  */
-export const loadBiblesByLanguageId = (languageId) => (dispatch, getState) => {
+export const loadBiblesByLanguageId = (languageId, owner = DEFAULT_OWNER) => (dispatch, getState) => {
   const bibleFolderPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles'); // ex. user/NAME/translationCore/resources/en/bibles/
   const bookId = getProjectBookId(getState());
   const bibles = getBibles(getState());
-  // check if the languae id is already included in the bibles object.
-  const isIncluded = Object.keys(bibles).includes(languageId);
+  // check if the bible for language and owner is already included in the bibles object.
+  const match = `${languageId}${OWNER_SEPARATOR}${owner}`;
+  const isIncluded = Object.keys(bibles).includes(match);
 
   if (fs.existsSync(bibleFolderPath) && bookId) {
     const bibleIds = fs.readdirSync(bibleFolderPath).filter(file => file !== '.DS_Store');
 
     bibleIds.forEach(bibleId => {
-      if (!isIncluded || !bibles[languageId][bibleId]) { //TRICKY: just because we have a bible in the language loaded does not mean we have all the bibles loaded
-        dispatch(loadBibleBook(bibleId, bookId, languageId));
+      if (!isIncluded || !bibles[match][bibleId]) { //TRICKY: just because we have a bible in the language loaded does not mean we have all the bibles loaded
+        dispatch(loadBibleBook(bibleId, bookId, languageId, owner));
       }
     });
   }
@@ -384,7 +392,7 @@ export function loadTargetLanguageBook() {
         }
       }
 
-      dispatch(addNewBible(TARGET_LANGUAGE, TARGET_BIBLE, bookData));
+      dispatch(addNewBible(TARGET_LANGUAGE, TARGET_BIBLE, bookData, null));
     } else {
       console.warn(`Target book was not found at ${bookPath}`);
     }

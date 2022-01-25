@@ -52,6 +52,7 @@ import * as Bible from '../../common/BooksOfTheBible';
 // constants
 import {
   APP_VERSION,
+  DEFAULT_OWNER,
   MIN_COMPATIBLE_VERSION,
   PROJECTS_PATH,
   tc_MIN_COMPATIBLE_VERSION_KEY,
@@ -60,6 +61,7 @@ import {
   tc_LAST_OPENED_KEY,
   TRANSLATION_WORDS,
 } from '../../common/constants';
+import { getSelectedOwnerForTool } from '../ProjectDetailsActions';
 
 /**
  * show Invalid Version Error
@@ -180,6 +182,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
       await dispatch(loadSourceBookTranslations(bookId, t.name));
       const gatewayLanguage = getToolGatewayLanguage(getState(), t.name);
+      const glOwner = getSelectedOwnerForTool(getState(), t.name) || DEFAULT_OWNER;
 
       // copy group data
       // TRICKY: group data must be tied to the original language for tW and GL for tN
@@ -190,7 +193,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
         const olForBook = BibleHelpers.getOrigLangforBook(bookId);
         copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
       }
-      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch);
+      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch, glOwner);
 
       // select default categories
       setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);

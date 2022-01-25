@@ -277,11 +277,12 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
  * @param {string} projectDir - path to the project directory
  * @param {function} dispatch - dispatch function
  * @param {boolean} glChange - defaults to false, set to true if the GL has changed
+ * @param {string} glOwner
  */
-export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch, glChange = false) {
+export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch, glChange = false, glOwner = DEFAULT_OWNER) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, glOwner);
 
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
@@ -505,8 +506,9 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
  * make sure that the group index data and contextId are up to date on GL change.  Currently only tN depends on GL
  * @param {string} toolName
  * @param {string} selectedGL
+ * @param {string} owner
  */
-export function updateGroupIndexForGl(toolName, selectedGL) {
+export function updateGroupIndexForGl(toolName, selectedGL, owner) {
   return ((dispatch, getState) => {
     console.log(`updateGroupIndexForGl(${toolName}, ${selectedGL})`);
     const state = getState();
@@ -525,7 +527,7 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
         }
       }
       console.log('updateGroupIndexForGl() - calling copyGroupDataToProject() to get latest from tN helps');
-      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
+      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true, owner); // copy group data for GL
       let groupId = null;
       let contextId = null;
       const bookId = getProjectBookId(state);
@@ -752,8 +754,9 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} languageId
  * @param {string} bibleId - bible name. ex. bhp, uhb, udt, ult.
  * @param {string} bibleVersion - optional release version, if null then get latest
+ * @param {string} owner
  */
-export function getBibleIndex(languageId, bibleId, bibleVersion) {
+export function getBibleIndex(languageId, bibleId, bibleVersion, owner) {
   const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languageId, 'bibles');
   const fileName = 'index.json';
   let bibleIndexPath;
@@ -763,12 +766,12 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
       bibleVersion, fileName);
   } else {
     const versionPath = ResourceAPI.getLatestVersion(
-      path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
+      path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId), owner);
 
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
     } else {
-      console.error(`versionPath is undefined, versionPath:${versionPath}`);
+      console.error(`versionPath is undefined`);
     }
   }
 
@@ -1076,6 +1079,7 @@ function getFilteredSubFolders(folderPath) {
  * copies missing subfolders from source to destination
  * @param {String} source
  * @param {String} destination
+ * @param {String} languageId
  */
 function copyMissingSubfolders(source, destination, languageId) {
   const sourceSubFolders = getFilteredSubFolders(source);
@@ -1085,7 +1089,7 @@ function copyMissingSubfolders(source, destination, languageId) {
     let lexiconMissing = !destinationSubFolders.includes(lexicon);
 
     if (!lexiconMissing) { // if we have lexicon, make sure we have the latest version installed
-      const latestVersion = ResourceAPI.getLatestVersion(path.join(source, lexicon));
+      const latestVersion = ResourceAPI.getLatestVersion(path.join(source, lexicon), DEFAULT_OWNER);
 
       if (latestVersion) {
         const destinationVersionPath = path.join(destination, lexicon, path.basename(latestVersion));

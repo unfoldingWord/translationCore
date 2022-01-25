@@ -417,8 +417,12 @@ export const getProjectToolProgress = (state, toolName) =>
 export const getToolsSelectedGLs = (state) =>
   fromProjectDetailsReducer.getToolsSelectedGLs(state.projectDetailsReducer);
 
+export const getToolsSelectedOwners = (state) =>
+  fromProjectDetailsReducer.getToolsSelectedOwners(state.projectDetailsReducer);
+
+
 // export const getGroupsIndex = (state) =>
-//   fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
+//   fromGroupsIndex.getGroupsIndex(state.groupsIndexReducer);
 
 // export const getGroupsData = (state) =>
 //   fromGroupsData.getGroupsData(state.groupsDataReducer);

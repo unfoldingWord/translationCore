@@ -87,10 +87,11 @@ function loadToolGroupIndex(langCode, toolName) {
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
  * @param {function} translate - the translation function
+ * @param {string} glOwner
  * @return {object}
  */
-export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate) {
-  const flatContextId = flattenContextId(contextId, gatewayLanguageCode, gatewayLanguageQuote, translate);
+export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate, glOwner) {
+  const flatContextId = flattenContextId(contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
 }
@@ -101,13 +102,14 @@ export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguag
  * @param {string} gatewayLanguageCode - language code, if empty, will use 'en' and find the GL Quote by it
  * @param {string} gatewayLanguageQuote - language quote, can be empty
  * @param {function} translate - translation function
+ * @param {string} glOwner
  * @return {object}
  */
-export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate) => {
+export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner) => {
   // if GL code not given, use 'en'
   gatewayLanguageCode = gatewayLanguageCode || 'en';
   // if GL quote not given, get it from the aligned 'ult' Bible of that language, otherwise 'N/A'
-  gatewayLanguageQuote = gatewayLanguageQuote || getGLQuoteFromAlignedBible(contextId, gatewayLanguageCode) || 'N/A';
+  gatewayLanguageQuote = gatewayLanguageQuote || getGLQuoteFromAlignedBible(contextId, gatewayLanguageCode, glOwner) || 'N/A';
   // if no occurrenceNote in contextId, 'N/A'
   const occurrenceNote = contextId.occurrenceNote || 'N/A';
   const verse_ = contextId.verseSpan || contextId.reference.verse; // use verse span if given
@@ -132,12 +134,13 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
  * Gets the GL Quote information to add to the contextId
  * @param {object} contextId
  * @param {string} langCode - language code which to get the quote from the aligned Bible
+ * @param {string} owner
  * @return {object}
  */
-export const getGLQuoteFromAlignedBible = (contextId, langCode) => {
+export const getGLQuoteFromAlignedBible = (contextId, langCode, owner) => {
   const glBibleId = 'ult'; // TODO: Dynamically get all Bibles for the glCode to find GL Quote from aligned Bible
   const bookId = contextId.reference.bookId;
-  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode); // this is cached in the called function
+  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode, owner); // this is cached in the called function
   return gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
 };
 

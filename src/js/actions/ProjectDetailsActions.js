@@ -40,6 +40,7 @@ import {
 } from '../common/constants';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
+import { getToolsSelectedOwners } from '../reducers/projectDetailsReducer';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';
@@ -154,26 +155,48 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
   }
 };
 
-export function setProjectToolGL(toolName, selectedGL) {
+/**
+ * get owner for current GL for tool
+ * @param {object} state
+ * @param toolName
+ * @return {*}
+ */
+export function getSelectedOwnerForTool(state, toolName) {
+  const toolsOwners = getToolsSelectedOwners(state);
+  const previousOwnerForTool = toolsOwners[toolName];
+  return previousOwnerForTool;
+}
+
+/**
+ * change GL for tool
+ * @param {string} toolName
+ * @param {string} selectedGL
+ * @param {string} owner
+ * @return {(function(*, *): Promise<undefined>)|*}
+ */
+export function setProjectToolGL(toolName, selectedGL, owner= DEFAULT_OWNER) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
     const state = getState();
-    dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
+    dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL, owner));
     const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
-    const ifGlChanged = selectedGL !== previousGLForTool;
+    const previousOwnerForTool = getSelectedOwnerForTool(state, toolName);
+    const ifGlChanged = (selectedGL !== previousGLForTool) &&
+                        (owner !== previousOwnerForTool);
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
       toolName,
       selectedGL,
+      selectedOwner: owner,
     });
 
     if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
-      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
+      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL, owner));
       await dispatch(prepareToolForLoading(toolName));
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },

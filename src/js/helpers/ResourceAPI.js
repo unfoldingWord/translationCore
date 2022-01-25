@@ -51,7 +51,7 @@ class ResourceAPI {
    * @param {string} owner
    * @returns {string|null} the file path or null if no directory was found
    */
-  getLatestTranslationHelp(gatewayLanguage, helpName, owner= DEFAULT_OWNER) {
+  getLatestTranslationHelp(gatewayLanguage, helpName, owner = DEFAULT_OWNER) {
     const helpDir = path.join(this._resourcesDir, gatewayLanguage, TRANSLATION_HELPS, helpName);
     return ResourceAPI.getLatestVersion(helpDir, owner);
   }

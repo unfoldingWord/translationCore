@@ -219,6 +219,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => new Pr
   let dataArray = [];
   let groupID_ = null;
   let groupItemIndex = null;
+  const glOwner = DEFAULT_OWNER; // TODO: get actual GL owner for project
 
   try {
     const groupIds = Object.keys(obj);
@@ -230,7 +231,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => new Pr
         const contextId = groupData.contextId;
         const data = {
           priority: (groupData.priority?groupData.priority:1),
-          ...csvHelpers.flattenContextId(contextId, '', '', translate),
+          ...csvHelpers.flattenContextId(contextId, '', '', translate, glOwner),
         };
         dataArray.push(data);
       });
@@ -279,7 +280,7 @@ export const saveVerseEditsToCSV = (projectPath, translate) => new Promise((reso
           contextId.occurrence = 'N/A';
           contextId.quote = 'N/A';
         }
-        return csvHelpers.combineData(_data, contextId, gatewayLanguageCode, gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+        return csvHelpers.combineData(_data, contextId, gatewayLanguageCode, gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
@@ -310,7 +311,7 @@ export const saveCommentsToCSV = (projectPath, translate) => new Promise((resolv
           activeVerse: data.activeVerse,
         };
         const contextId = data.contextId;
-        return csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+        return csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Comments.csv');
@@ -345,7 +346,7 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
               'No selection needed': '',
             };
             const contextId = data.contextId;
-            const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+            const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
             objectArray.push(newObject);
           });
         } else if (data.nothingToSelect) {
@@ -358,7 +359,7 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
             'No selection needed': nothingToSelect.toString(),
           };
           const contextId = data.contextId;
-          const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+          const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
           objectArray.push(newObject);
         }
       });
@@ -393,7 +394,7 @@ export const saveRemindersToCSV = (projectPath, translate) => new Promise((resol
         if (enabled) {
           const _data = { enabled };
           const contextId = data.contextId;
-          const reminder = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
+          const reminder = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
           objectArray.push(reminder);
         }
       });

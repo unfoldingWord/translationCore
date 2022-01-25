@@ -4,7 +4,11 @@ import usfmjs from 'usfm-js';
 import wordaligner, { VerseObjectUtils } from 'word-aligner';
 import { verseHelpers } from 'tc-ui-toolkit';
 //helpers
-import { STATIC_RESOURCES_PATH, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  DEFAULT_OWNER,
+  STATIC_RESOURCES_PATH,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
 import * as manifestHelpers from './manifestHelpers';
 import * as exportHelpers from './exportHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
@@ -314,7 +318,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
     let expectedChapters = 0;
 
     // get the bibleIndex to get the list of expected chapters
-    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ult');
+    const bibleIndex = ResourcesHelpers.getBibleIndex('en', 'ult', DEFAULT_OWNER);
 
     if (bibleIndex && bibleIndex[projectID]) {
       expectedChapters = bibleIndex[projectID].chapters;

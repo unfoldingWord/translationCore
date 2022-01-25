@@ -64,6 +64,10 @@ const projectDetailsReducer = (state = initialState, action) => {
           ...state.manifest.toolsSelectedGLs,
           [action.toolName]: action.selectedGL,
         },
+        toolsSelectedOwners: {
+          ...(state.manifest.toolsSelectedOwners || []),
+          [action.toolName]: action.selectedOwner,
+        },
       },
     };
   case consts.ADD_MANIFEST_PROPERTY:
@@ -267,3 +271,6 @@ export const getToolCategories = (state, toolName) => {
 
 export const getToolsSelectedGLs = (state) =>
   state.manifest ? state.manifest.toolsSelectedGLs : {};
+
+export const getToolsSelectedOwners = (state) =>
+  state.manifest ? state.manifest.toolsSelectedOwners : {};
