@@ -5,11 +5,7 @@ import path from 'path-extra';
 import AdmZip from 'adm-zip';
 import isEqual from 'deep-equal';
 import _ from 'lodash';
-import {
-  apiHelpers,
-  getOtherTnsOLVersions,
-  resourcesHelpers,
-} from 'tc-source-content-updater';
+import { getOtherTnsOLVersions, resourcesHelpers } from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
@@ -299,7 +295,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
     }
 
-    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir, {}, glOwner);
     // In some older projects the category was saved in the .categories file instead of the subcategories.
     project.setCurrentCategories(toolName, categories);
 
@@ -415,7 +411,7 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
     gatewayLanguage = languageId;
   }
 
-  const helpDir = resources.getLatestTranslationHelp(language, toolName, owner);
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, owner);
   // list help categories
 
   if (helpDir) {
@@ -508,7 +504,7 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
  * @param {string} selectedGL
  * @param {string} owner
  */
-export function updateGroupIndexForGl(toolName, selectedGL, owner) {
+export function updateGroupIndexForGl(toolName, selectedGL, owner = 'unfoldingWord') {
   return ((dispatch, getState) => {
     console.log(`updateGroupIndexForGl(${toolName}, ${selectedGL})`);
     const state = getState();

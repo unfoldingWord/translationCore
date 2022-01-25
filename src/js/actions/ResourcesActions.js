@@ -5,6 +5,7 @@ import path from 'path-extra';
 import _ from 'lodash';
 import env from 'tc-electron-env';
 import { resourcesHelpers } from 'tc-source-content-updater';
+import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles,
@@ -26,7 +27,6 @@ import {
 } from '../common/constants';
 import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
-import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 
 // constants
 const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');

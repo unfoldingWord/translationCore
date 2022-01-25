@@ -61,7 +61,7 @@ import {
   tc_LAST_OPENED_KEY,
   TRANSLATION_WORDS,
 } from '../../common/constants';
-import { getSelectedOwnerForTool } from '../ProjectDetailsActions';
+import {getSelectedOwnerForTool} from "../ProjectDetailsActions";
 
 /**
  * show Invalid Version Error
@@ -182,7 +182,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
       await dispatch(loadSourceBookTranslations(bookId, t.name));
       const gatewayLanguage = getToolGatewayLanguage(getState(), t.name);
-      const glOwner = getSelectedOwnerForTool(getState(), t.name) || DEFAULT_OWNER;
+      const glOwner = ProjectDetailsActions.getSelectedOwnerForTool(getState(), t.name) || DEFAULT_OWNER;
 
       // copy group data
       // TRICKY: group data must be tied to the original language for tW and GL for tN
@@ -193,7 +193,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
         const olForBook = BibleHelpers.getOrigLangforBook(bookId);
         copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
       }
-      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch, glOwner);
+      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch, false, glOwner);
 
       // select default categories
       setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
@@ -241,9 +241,10 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
   const { code } = getActiveLocaleLanguage(state);
-  const sourceBook = getSourceBook(state);
+  const sourceBook = getSourceBook(state, DEFAULT_OWNER);
   const targetBook = getTargetBook(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
+  const gatewayLanguageOwner = getSelectedOwnerForTool(state, toolName);
 
   return {
     //resource api
@@ -278,6 +279,7 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
     bookId,
     toolName,
     gatewayLanguageCode,
+    gatewayLanguageOwner,
 
     contextId: {
       reference: {

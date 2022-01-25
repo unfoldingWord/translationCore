@@ -18,6 +18,7 @@ import * as fromSourceContentUpdatesReducer from '../reducers/sourceContentUpdat
 import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
 import * as fromSoftwareUpdateReducer from '../reducers/softwareUpdateReducer';
+import { DEFAULT_OWNER } from '../common/constants';
 
 /**
  * checks if the software update dialog is open
@@ -364,10 +365,11 @@ export const getTargetBook = state =>
 /**
  * Returns the source language bible
  * @param state
+ * @param owner
  * @return {*}
  */
-export const getSourceBook = state =>
-  fromResourcesReducer.getSourceBook(state.resourcesReducer);
+export const getSourceBook = (state, owner = DEFAULT_OWNER) =>
+  fromResourcesReducer.getSourceBook(state.resourcesReducer, owner);
 
 /**
  * Checks if the home screen is visible

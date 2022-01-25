@@ -1,6 +1,6 @@
+import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 import consts from '../actions/ActionTypes';
 import * as Bible from '../common/BooksOfTheBible';
-import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 
 const initialState = {
   bibles: {},
@@ -104,10 +104,11 @@ export const getTargetBook = state => state.bibles.targetLanguage && state.bible
 /**
  * Returns the source language book
  * @param state
+ * @param owner
  * @returns {object}
  */
-export const getSourceBook = state => state.bibles.originalLanguage && (state.bibles.originalLanguage[Bible.NT_ORIG_LANG_BIBLE] ||
-    state.bibles.originalLanguage[Bible.OT_ORIG_LANG_BIBLE]);
+export const getSourceBook = (state, owner) => state.bibles.originalLanguage && (state.bibles.originalLanguage[`${Bible.NT_ORIG_LANG_BIBLE}${OWNER_SEPARATOR}${owner}`] ||
+    state.bibles.originalLanguage[`${Bible.OT_ORIG_LANG_BIBLE}${OWNER_SEPARATOR}${owner}`]);
 
 /**
  * Returns a verse in the original language bible

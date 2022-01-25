@@ -8,10 +8,11 @@ import { getQuoteAsString } from 'checking-tool-wrapper';
 import * as ResourcesActions from '../actions/ResourcesActions';
 // constants
 import {
-  TRANSLATION_WORDS,
-  TRANSLATION_NOTES,
-  USER_RESOURCES_PATH,
+  DEFAULT_OWNER,
   TRANSLATION_HELPS,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
 } from '../common/constants';
 import ResourceAPI from './ResourceAPI';
 import * as localizationHelpers from './localizationHelpers';
@@ -90,7 +91,7 @@ function loadToolGroupIndex(langCode, toolName) {
  * @param {string} glOwner
  * @return {object}
  */
-export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate, glOwner) {
+export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate, glOwner = DEFAULT_OWNER) {
   const flatContextId = flattenContextId(contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
@@ -105,7 +106,7 @@ export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguag
  * @param {string} glOwner
  * @return {object}
  */
-export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner) => {
+export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner = DEFAULT_OWNER) => {
   // if GL code not given, use 'en'
   gatewayLanguageCode = gatewayLanguageCode || 'en';
   // if GL quote not given, get it from the aligned 'ult' Bible of that language, otherwise 'N/A'

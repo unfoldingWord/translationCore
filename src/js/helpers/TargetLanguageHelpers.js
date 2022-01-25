@@ -2,12 +2,12 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 
 // helpers
+import { DEFAULT_OWNER } from '../common/constants';
 import * as USFMHelpers from './usfmHelpers';
 import { getBibleIndex } from './ResourcesHelpers';
 import * as UsfmFileConversionHelpers from './FileConversionHelpers/UsfmFileConversionHelpers';
 import { saveTargetBible } from './Import/importHelpers';
 import { processChapter } from './Import/tStudioHelpers';
-import { DEFAULT_OWNER } from '../common/constants';
 
 
 /**

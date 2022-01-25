@@ -32,6 +32,7 @@ import { delay } from '../common/utils';
 //reducers
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from '../helpers/ProjectAPI';
+import { getToolsSelectedOwners } from '../reducers/projectDetailsReducer';
 // constants
 import {
   DEFAULT_OWNER,
@@ -40,7 +41,6 @@ import {
 } from '../common/constants';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
-import { getToolsSelectedOwners } from '../reducers/projectDetailsReducer';
 const CONTINUE = 'CONTINUE';
 const RETRY = 'RETRY';
 const RESHOW_ERROR = 'RESHOW_ERROR';

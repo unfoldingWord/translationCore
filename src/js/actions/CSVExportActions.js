@@ -12,7 +12,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
-import { WORD_ALIGNMENT } from '../common/constants';
+import { DEFAULT_OWNER, WORD_ALIGNMENT } from '../common/constants';
 import * as BodyUIActions from './BodyUIActions';
 import * as AlertModalActions from './AlertModalActions';
 import consts from './ActionTypes';
@@ -280,7 +280,7 @@ export const saveVerseEditsToCSV = (projectPath, translate) => new Promise((reso
           contextId.occurrence = 'N/A';
           contextId.quote = 'N/A';
         }
-        return csvHelpers.combineData(_data, contextId, gatewayLanguageCode, gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
+        return csvHelpers.combineData(_data, contextId, gatewayLanguageCode, gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'VerseEdits.csv');
@@ -311,7 +311,7 @@ export const saveCommentsToCSV = (projectPath, translate) => new Promise((resolv
           activeVerse: data.activeVerse,
         };
         const contextId = data.contextId;
-        return csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
+        return csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
       });
       const dataPath = csvHelpers.dataPath(projectPath);
       const filePath = path.join(dataPath, 'output', 'Comments.csv');
@@ -346,7 +346,7 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
               'No selection needed': '',
             };
             const contextId = data.contextId;
-            const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
+            const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
             objectArray.push(newObject);
           });
         } else if (data.nothingToSelect) {
@@ -359,7 +359,7 @@ export const saveSelectionsToCSV = (projectPath, translate) => new Promise((reso
             'No selection needed': nothingToSelect.toString(),
           };
           const contextId = data.contextId;
-          const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
+          const newObject = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
           objectArray.push(newObject);
         }
       });
@@ -394,7 +394,7 @@ export const saveRemindersToCSV = (projectPath, translate) => new Promise((resol
         if (enabled) {
           const _data = { enabled };
           const contextId = data.contextId;
-          const reminder = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate, glOwner);
+          const reminder = csvHelpers.combineData(_data, contextId, data.gatewayLanguageCode, data.gatewayLanguageQuote, data.userName, data.modifiedTimestamp, translate);
           objectArray.push(reminder);
         }
       });

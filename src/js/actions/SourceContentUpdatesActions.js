@@ -17,7 +17,6 @@ import {
 } from './AlertModalActions';
 import consts from './ActionTypes';
 import { confirmOnlineAction } from './OnlineModeConfirmActions';
-import { getSelectedOwnerForTool } from './ProjectDetailsActions';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
