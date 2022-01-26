@@ -435,7 +435,8 @@ export const getBibles = (state) =>
 /**
  * Returns the manifest for the source language book.
  * @param state
+ * @param owner
  * @returns {object}
  */
-export const getSourceBookManifest = state =>
-  fromResourcesReducer.getSourceBookManifest(state.resourcesReducer);
+export const getSourceBookManifest = (state, owner) =>
+  fromResourcesReducer.getSourceBookManifest(state.resourcesReducer, owner);

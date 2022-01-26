@@ -1,6 +1,6 @@
-import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 import consts from '../actions/ActionTypes';
 import * as Bible from '../common/BooksOfTheBible';
+import { addOwner } from '../helpers/ResourcesHelpers';
 
 const initialState = {
   bibles: {},
@@ -12,7 +12,7 @@ const resourcesReducer = (state = initialState, action) => {
   switch (action.type) {
   case consts.ADD_NEW_BIBLE_TO_RESOURCES:
     // eslint-disable-next-line no-case-declarations
-    const languageAndOwner = action.owner ? `${action.languageId}${OWNER_SEPARATOR}${action.owner}` : action.languageId;
+    const languageAndOwner = action.owner ? addOwner(action.languageId, action.owner) : action.languageId;
     return {
       ...state,
       bibles: {
@@ -107,8 +107,11 @@ export const getTargetBook = state => state.bibles.targetLanguage && state.bible
  * @param owner
  * @returns {object}
  */
-export const getSourceBook = (state, owner) => state.bibles.originalLanguage && (state.bibles.originalLanguage[`${Bible.NT_ORIG_LANG_BIBLE}${OWNER_SEPARATOR}${owner}`] ||
-    state.bibles.originalLanguage[`${Bible.OT_ORIG_LANG_BIBLE}${OWNER_SEPARATOR}${owner}`]);
+export const getSourceBook = (state, owner) => {
+  const origLangOwner = addOwner('originalLanguage', owner);
+  const origLangBibles = state.bibles[origLangOwner];
+  return origLangBibles && (origLangBibles[Bible.NT_ORIG_LANG_BIBLE] || origLangBibles[Bible.OT_ORIG_LANG_BIBLE]);
+};
 
 /**
  * Returns a verse in the original language bible
@@ -148,9 +151,10 @@ export const getBibles = state => state.bibles;
 /**
  * Returns the manifest for the source language book.
  * @param state
+ * @param owner
  * @returns {object}
  */
-export const getSourceBookManifest = state => {
-  const sourceBible = getSourceBook(state);
+export const getSourceBookManifest = (state, owner) => {
+  const sourceBible = getSourceBook(state, owner);
   return sourceBible && sourceBible.manifest;
 };

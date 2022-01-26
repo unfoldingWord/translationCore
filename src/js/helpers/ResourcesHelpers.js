@@ -5,7 +5,11 @@ import path from 'path-extra';
 import AdmZip from 'adm-zip';
 import isEqual from 'deep-equal';
 import _ from 'lodash';
-import { getOtherTnsOLVersions, resourcesHelpers } from 'tc-source-content-updater';
+import {
+  apiHelpers,
+  getOtherTnsOLVersions,
+  resourcesHelpers,
+} from 'tc-source-content-updater';
 // actions
 import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
@@ -47,6 +51,17 @@ import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 
 export const QUOTE_MARK = '\u2019';
+
+/**
+ * append owner to key
+ * @param key
+ * @param owner
+ * @return {string}
+ */
+export function addOwner(key, owner) {
+  const result = `${key}${apiHelpers.OWNER_SEPARATOR}${owner}`;
+  return result;
+}
 
 /**
  * array of checks for groupId

@@ -5,7 +5,6 @@ import path from 'path-extra';
 import _ from 'lodash';
 import env from 'tc-electron-env';
 import { resourcesHelpers } from 'tc-source-content-updater';
-import { OWNER_SEPARATOR } from 'tc-source-content-updater/lib/helpers/apiHelpers';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles,
@@ -247,7 +246,7 @@ export const loadBiblesByLanguageId = (languageId, owner = DEFAULT_OWNER) => (di
   const bookId = getProjectBookId(getState());
   const bibles = getBibles(getState());
   // check if the bible for language and owner is already included in the bibles object.
-  const match = `${languageId}${OWNER_SEPARATOR}${owner}`;
+  const match = ResourcesHelpers.addOwner(languageId, owner);
   const isIncluded = Object.keys(bibles).includes(match);
 
   if (fs.existsSync(bibleFolderPath) && bookId) {

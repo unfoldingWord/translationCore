@@ -61,7 +61,6 @@ import {
   tc_LAST_OPENED_KEY,
   TRANSLATION_WORDS,
 } from '../../common/constants';
-import {getSelectedOwnerForTool} from "../ProjectDetailsActions";
 
 /**
  * show Invalid Version Error
@@ -244,7 +243,7 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const sourceBook = getSourceBook(state, DEFAULT_OWNER);
   const targetBook = getTargetBook(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
-  const gatewayLanguageOwner = getSelectedOwnerForTool(state, toolName);
+  const gatewayLanguageOwner = ProjectDetailsActions.getSelectedOwnerForTool(state, toolName);
 
   return {
     //resource api
