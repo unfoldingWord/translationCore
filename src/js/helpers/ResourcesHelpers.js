@@ -420,10 +420,12 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
   const resources = ResourceAPI.default();
 
   if (toolName === TRANSLATION_WORDS){
-    const manifest = project.getManifest();
-    const bookId = manifest && manifest.project && manifest.project.id;
-    const { languageId } = BibleHelpers.getOrigLangforBook(bookId);
-    gatewayLanguage = languageId;
+    if (owner === apiHelpers.DOOR43_CATALOG) { // for tW we use OrigLang if owner is D43 Catalog
+      const manifest = project.getManifest();
+      const bookId = manifest && manifest.project && manifest.project.id;
+      const { languageId } = BibleHelpers.getOrigLangforBook(bookId);
+      gatewayLanguage = languageId;
+    }
   }
 
   const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, owner);

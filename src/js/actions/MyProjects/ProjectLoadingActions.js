@@ -2,6 +2,7 @@
 /* eslint-disable no-await-in-loop */
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
+import { apiHelpers } from 'tc-source-content-updater';
 import consts from '../ActionTypes';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
@@ -188,9 +189,11 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       console.log('openProject() - copy group data');
       let copyLang = gatewayLanguage;
 
-      if (t.name === TRANSLATION_WORDS) { // for tW we use OrigLang
-        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
-        copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+      if (t.name === TRANSLATION_WORDS) {
+        if (glOwner === apiHelpers.DOOR43_CATALOG) { // for tW we use OrigLang if owner is D43 Catalog
+          const olForBook = BibleHelpers.getOrigLangforBook(bookId);
+          copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+        }
       }
       copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch, false, glOwner);
 
