@@ -163,7 +163,7 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
  */
 export function getSelectedOwnerForTool(state, toolName) {
   const toolsOwners = getToolsSelectedOwners(state);
-  const previousOwnerForTool = toolsOwners[toolName];
+  const previousOwnerForTool = toolsOwners && toolsOwners[toolName];
   return previousOwnerForTool;
 }
 

@@ -29,6 +29,7 @@ jest.mock('../js/helpers/toolHelper', () => ({
 
 // verifyGroupDataMatchesWithFs: () => ({ type: 'VERIFY_GROUPS_DATA' })
 jest.mock('../js/helpers/ResourcesHelpers', () => ({
+  ...require.requireActual('../js/helpers/ResourcesHelpers'),
   loadProjectGroupData: () => ({
     'figs-abstractnouns': [{
       comments: false,
