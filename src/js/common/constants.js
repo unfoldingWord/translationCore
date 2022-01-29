@@ -1,6 +1,5 @@
 import path from 'path-extra';
 import env from 'tc-electron-env';
-import { apiHelpers } from 'tc-source-content-updater';
 import packagefile from '../../../package.json';
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -44,7 +43,7 @@ export const WORD_ALIGNMENT = 'wordAlignment';
 export const LEXICONS = 'lexicons';
 export const UGL_LEXICON = 'ugl';
 export const UHL_LEXICON = 'uhl';
-export const DEFAULT_OWNER = apiHelpers.DOOR43_CATALOG;
+export const DEFAULT_OWNER = `Door43-Catalog`;
 // categories
 export const toolCardCategories = {
   'kt': 'Key Terms',

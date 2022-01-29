@@ -521,7 +521,7 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
  * @param {string} selectedGL
  * @param {string} owner
  */
-export function updateGroupIndexForGl(toolName, selectedGL, owner = 'unfoldingWord') {
+export function updateGroupIndexForGl(toolName, selectedGL, owner) {
   return ((dispatch, getState) => {
     console.log(`updateGroupIndexForGl(${toolName}, ${selectedGL})`);
     const state = getState();
