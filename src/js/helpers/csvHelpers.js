@@ -141,7 +141,7 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
 export const getGLQuoteFromAlignedBible = (contextId, langCode, owner) => {
   const glBibleId = 'ult'; // TODO: Dynamically get all Bibles for the glCode to find GL Quote from aligned Bible
   const bookId = contextId.reference.bookId;
-  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode, owner); // this is cached in the called function
+  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode, null, owner); // this is cached in the called function
   return gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
 };
 

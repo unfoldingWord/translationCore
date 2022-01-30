@@ -57,7 +57,7 @@ export function generateTargetBibleFromUSFMPath(usfmFilePath, projectPath, manif
 export function generateTargetBibleFromTstudioProjectPath(projectPath, manifest) {
   let bookData = {};
   // get the bibleIndex to get the list of expected chapters
-  const bibleIndex = getBibleIndex('en', 'ult', DEFAULT_OWNER);
+  const bibleIndex = getBibleIndex('en', 'ult', null, DEFAULT_OWNER);
 
   if (!bibleIndex[manifest.project.id]) {
     console.warn(`Invalid book key ${manifest.project.id}. Expected a book of the Bible.`);

@@ -71,7 +71,7 @@ describe('Tool Actions.openTool', () => {
     },
     resourcesReducer: {
       bibles: {
-        originalLanguage: {
+        'originalLanguage_Door43-Catalog': {
           [NT_ORIG_LANG_BIBLE]: {
             manifest: {
               language_id: NT_ORIG_LANG,

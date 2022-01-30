@@ -393,6 +393,7 @@ export function closeProject() {
  * @description loads and set the projects details into the projectDetailsReducer.
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
+ * @param {object} settings - project settings object
  */
 export function loadProjectDetails(projectPath, manifest, settings) {
   return (dispatch) => {
