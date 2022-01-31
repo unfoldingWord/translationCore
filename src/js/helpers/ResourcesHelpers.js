@@ -11,7 +11,10 @@ import {
   resourcesHelpers,
 } from 'tc-source-content-updater';
 // actions
-import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
+import {
+  addObjectPropertyToManifest,
+  loadCurrentCheckCategories,
+} from '../actions/ProjectDetailsActions';
 import {
   getToolGatewayLanguage,
   getBibles,
@@ -865,18 +868,23 @@ export function addLanguage(languageIds, languageID) {
  * @param {Array} resources
  * @param {String} languageId
  * @param {String} bibleId
+ * @param {String} owner
  */
-export function addResource(resources, languageId, bibleId) {
+export function addResource(resources, languageId, bibleId, owner = DEFAULT_OWNER) {
   if (!languageId) {
     throw new Error('Error when adding resource. languageId is not valid.');
   }
 
   const pos = resources.findIndex(resource =>
-    ((resource.languageId === languageId) && (resource.bibleId === bibleId)),
+    ((resource.languageId === languageId) && (resource.bibleId === bibleId) && (resource.owner === owner)),
   );
 
   if (pos < 0) { // if we don't have resource
-    resources.push({ bibleId, languageId });
+    resources.push({
+      bibleId,
+      languageId,
+      owner,
+    });
   }
 }
 
@@ -976,7 +984,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
 
   // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
   // not found throws an error. Should be addressed later by 4858.
-  addResource(resources, 'en', 'ult');
+  addResource(resources, 'en', 'ult', DEFAULT_OWNER);
 
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
@@ -987,18 +995,18 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId);
+        addResource(resources, olLanguageID, setting.bibleId, apiHelpers.DOOR43_CATALOG);
         break; // skip invalid language codes
 
       default:
-        addResource(resources, languageId, setting.bibleId);
+        addResource(resources, languageId, setting.bibleId, setting.owner);
         break;
       }
     }
   } else {
     console.warn('No Scripture Pane Configuration');
   }
-  addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
+  addResource(resources, olLanguageID, olBibleId, apiHelpers.DOOR43_CATALOG); // make sure loaded even if not in pane settings
   const gatewayLangId = getToolGatewayLanguage(state, toolName);
   const biblesLoaded = getBibles(state);
   const validBibles = getValidGatewayBiblesForTool(
@@ -1010,7 +1018,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
 
   if (Array.isArray(validBibles)) {
     for (let bible of validBibles) {
-      addResource(resources, gatewayLangId, bible);
+      addResource(resources, gatewayLangId, bible, apiHelpers.DOOR43_CATALOG); // TODO: add actual owner once support is added
     }
   }
   return resources;

@@ -11,14 +11,17 @@ Array [
   Object {
     "bibleId": "ult",
     "languageId": "en",
+    "owner": "Door43-Catalog",
   },
   Object {
     "bibleId": "ugnt",
     "languageId": "el-x-koine",
+    "owner": "Door43-Catalog",
   },
   Object {
     "bibleId": "ust",
     "languageId": "en",
+    "owner": "Door43-Catalog",
   },
 ]
 `;
