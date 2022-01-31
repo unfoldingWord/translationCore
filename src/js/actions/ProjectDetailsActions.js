@@ -13,6 +13,7 @@ import {
   getToolsByKey,
   getToolsSelectedGLs,
   getProjectBookId,
+  getToolGlOwner,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -32,7 +33,6 @@ import { delay } from '../common/utils';
 //reducers
 import Repo from '../helpers/Repo.js';
 import ProjectAPI from '../helpers/ProjectAPI';
-import { getToolsSelectedOwners } from '../reducers/projectDetailsReducer';
 // constants
 import {
   DEFAULT_OWNER,
@@ -156,25 +156,13 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
 };
 
 /**
- * get owner for current GL for tool
- * @param {object} state
- * @param toolName
- * @return {*}
- */
-export function getSelectedOwnerForTool(state, toolName) {
-  const toolsOwners = getToolsSelectedOwners(state);
-  const previousOwnerForTool = toolsOwners && toolsOwners[toolName];
-  return previousOwnerForTool;
-}
-
-/**
  * change GL for tool
  * @param {string} toolName
  * @param {string} selectedGL
  * @param {string} owner
  * @return {(function(*, *): Promise<undefined>)|*}
  */
-export function setProjectToolGL(toolName, selectedGL, owner= DEFAULT_OWNER) {
+export function setProjectToolGL(toolName, selectedGL, owner = null) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
@@ -184,8 +172,13 @@ export function setProjectToolGL(toolName, selectedGL, owner= DEFAULT_OWNER) {
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL, owner));
     const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
-    const previousOwnerForTool = getSelectedOwnerForTool(state, toolName);
-    const ifGlChanged = (selectedGL !== previousGLForTool) &&
+    const previousOwnerForTool = getToolGlOwner(state, toolName) || DEFAULT_OWNER;
+
+    if (!owner) {
+      owner = previousOwnerForTool;
+    }
+
+    const ifGlChanged = (selectedGL !== previousGLForTool) ||
                         (owner !== previousOwnerForTool);
 
     dispatch({

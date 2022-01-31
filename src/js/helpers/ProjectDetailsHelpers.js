@@ -205,7 +205,7 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     let availableCheckCategories = [];
     let languageId = 'en';
 
-    if (toolName === TRANSLATION_WORDS){
+    if (toolName === TRANSLATION_WORDS) {
       const { languageId: origLang } = BibleHelpers.getOrigLangforBook(bookAbbreviation);
       //Note: translationWords only uses checks that are also available in the original language
       languageId = origLang;

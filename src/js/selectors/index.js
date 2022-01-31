@@ -229,6 +229,15 @@ export const getToolGatewayLanguage = (state, toolName) =>
   fromProjectDetailsReducer.getToolGatewayLanguage(state.projectDetailsReducer, toolName);
 
 /**
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool
+ * @returns {*}
+ */
+export const getToolGlOwner = (state, toolName) =>
+  fromProjectDetailsReducer.getToolGlOwner(state.projectDetailsReducer, toolName);
+
+/**
  * Returns the save location of the project
  * @param {object} state
  * @return {string}
@@ -418,10 +427,6 @@ export const getProjectToolProgress = (state, toolName) =>
 
 export const getToolsSelectedGLs = (state) =>
   fromProjectDetailsReducer.getToolsSelectedGLs(state.projectDetailsReducer);
-
-export const getToolsSelectedOwners = (state) =>
-  fromProjectDetailsReducer.getToolsSelectedOwners(state.projectDetailsReducer);
-
 
 // export const getGroupsIndex = (state) =>
 //   fromGroupsIndex.getGroupsIndex(state.groupsIndexReducer);

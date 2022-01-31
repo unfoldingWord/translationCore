@@ -36,6 +36,7 @@ export const ORIGINAL_LANGUAGE = 'originalLanguage';
 export const TARGET_LANGUAGE = 'targetLanguage';
 export const TARGET_BIBLE = 'targetBible';
 export const TRANSLATION_WORDS = 'translationWords';
+export const TRANSLATION_WORDS_LINKS = 'translationWordsLinks';
 export const TRANSLATION_NOTES = 'translationNotes';
 export const TRANSLATION_ACADEMY = 'translationAcademy';
 export const TRANSLATION_HELPS = 'translationHelps';
