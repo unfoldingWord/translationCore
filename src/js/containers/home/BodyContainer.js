@@ -9,7 +9,7 @@ import {
 import ToolContainer from '../ToolContainer';
 import SoftwareUpdatesDialog from '../SoftwareUpdateDialog';
 // helpers
-import { withLocale } from '../Locale';
+import { withLocale } from '../../helpers/localeHelpers';
 // actions
 import { closeSoftwareUpdate } from '../../actions/SoftwareUpdateActions';
 import { toggleHomeView, resetReducers } from '../../actions/BodyUIActions';

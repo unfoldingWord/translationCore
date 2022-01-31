@@ -162,10 +162,10 @@ export const getLatestVersion = (versions, ownerStr) => resourcesHelpers.getLate
 
 /**
  * Loads a bible book resource.
- * @param bibleId
- * @param bookId
- * @param languageId
- * @param version
+ * @param {string} bibleId
+ * @param {string} bookId
+ * @param {string} languageId
+ * @param {string} version
  * @param {string} owner
  * @return {object}
  */
@@ -175,7 +175,7 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null, ow
 
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-      const versionNumber = version || getLatestVersion(versionNumbers, owner);
+      const versionNumber = version ? resourcesHelpers.addOwnerToKey(version, owner) : getLatestVersion(versionNumbers, owner);
       const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
       const bookPath = path.join(bibleVersionPath, bookId);
       const cacheKey = 'book:' + bookPath;
@@ -220,10 +220,10 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null, ow
 
 /**
  * load a book of the bible into resources
- * @param bibleId
- * @param bookId
- * @param languageId
- * @param version
+ * @param {string} bibleId
+ * @param {string} bookId
+ * @param {string} languageId
+ * @param {string} version
  * @param {string} owner
  * @return {Function}
  */
@@ -237,7 +237,7 @@ export const loadBibleBook = (bibleId, bookId, languageId, version = null, owner
 
 /**
  * Load all found books for a given language Id.
- * @param languageId
+ * @param {string} languageId
  * @param {string} owner
  * @return {Function}
  */
