@@ -300,7 +300,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
 
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
-    const groupDataUpdated = glChange || project.hasNewGroupsData(toolName);
+    const groupDataUpdated = glChange || project.hasNewGroupsData(toolName, glOwner);
     const isTN = toolName === TRANSLATION_NOTES;
 
     if (groupDataUpdated) {
@@ -362,6 +362,19 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
 
     if (groupDataUpdated) {
       migrateOldCheckingResourceData(projectDir, toolName);
+      // update catagories owner
+      const categoriesPath = project.getCategoriesPath(toolName);
+
+      if (fs.pathExistsSync(categoriesPath)) {
+        try {
+          let rawData = fs.readJsonSync(categoriesPath);
+          rawData.owner = glOwner;
+          fs.writeJsonSync(categoriesPath, rawData);
+        } catch (e) {
+          console.warn(
+            `copyGroupDataToProject() - Failed to update tool categories index at ${categoriesPath}.`, e);
+        }
+      }
     }
   } else {
     // generate chapter-based group data
