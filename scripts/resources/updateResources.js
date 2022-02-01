@@ -14,7 +14,7 @@ const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 // TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
 // set to null to remove restriction, or you can add other permitted owners to list
-const filterByOwner = null; //['Door43-Catalog'];
+const filterByOwner = ['Door43-Catalog'];
 
 /**
  * find resources to update
