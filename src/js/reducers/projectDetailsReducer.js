@@ -1,5 +1,6 @@
 import path from 'path-extra';
 import consts from '../actions/ActionTypes';
+import { DEFAULT_OWNER } from '../common/constants';
 
 const initialState = {
   projectSaveLocation: '',
@@ -61,6 +62,10 @@ const projectDetailsReducer = (state = initialState, action) => {
         toolsSelectedGLs: {
           ...state.manifest.toolsSelectedGLs,
           [action.toolName]: action.selectedGL,
+        },
+        toolsSelectedOwners: {
+          ...(state.manifest.toolsSelectedOwners || []),
+          [action.toolName]: action.selectedOwner,
         },
       },
     };
@@ -172,6 +177,23 @@ export const getToolGatewayLanguage = (state, toolName) => {
     }
   }
   return 'en';
+};
+
+/**
+ * Returns the gateway language owner for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool to look up
+ * @returns {string} - the gateway language owner
+ */
+export const getToolGlOwner = (state, toolName) => {
+  if (state) {
+    const owners = state.manifest.toolsSelectedOwners;
+
+    if (owners && owners.hasOwnProperty(toolName) && owners[toolName]) {
+      return owners[toolName];
+    }
+  }
+  return DEFAULT_OWNER;
 };
 
 /**

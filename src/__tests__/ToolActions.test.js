@@ -29,6 +29,7 @@ jest.mock('../js/helpers/toolHelper', () => ({
 
 // verifyGroupDataMatchesWithFs: () => ({ type: 'VERIFY_GROUPS_DATA' })
 jest.mock('../js/helpers/ResourcesHelpers', () => ({
+  ...require.requireActual('../js/helpers/ResourcesHelpers'),
   loadProjectGroupData: () => ({
     'figs-abstractnouns': [{
       comments: false,
@@ -70,7 +71,7 @@ describe('Tool Actions.openTool', () => {
     },
     resourcesReducer: {
       bibles: {
-        originalLanguage: {
+        'originalLanguage_Door43-Catalog': {
           [NT_ORIG_LANG_BIBLE]: {
             manifest: {
               language_id: NT_ORIG_LANG,

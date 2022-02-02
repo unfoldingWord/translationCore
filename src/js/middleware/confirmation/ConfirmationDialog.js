@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withLocale } from '../../containers/Locale';
+import { withLocale } from '../../helpers/localeHelpers';
 import IgnorableAlert from '../../components/dialogComponents/IgnorableAlert';
 import {
   approveConfirmation, getNextConfirmation, rejectConfirmation,
