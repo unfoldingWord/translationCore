@@ -773,7 +773,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
     manifest = fs.readJsonSync(bibleManifestPath);
   } else {
     console.error(
-      `Could not find manifest for ${bibleID} at ${bibleManifestPath}`);
+      `getBibleManifest() - Could not find manifest for ${bibleID} at ${bibleManifestPath}`);
   }
   return manifest;
 }
@@ -800,7 +800,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion, owner) {
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
     } else {
-      console.error(`versionPath is undefined`);
+      console.error(`getBibleIndex() - versionPath is undefined`);
     }
   }
 

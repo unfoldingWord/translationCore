@@ -188,7 +188,7 @@ export function getJsonFilesInPath(folderPath) {
 }
 
 /**
- * Gets a tool's progress
+ * DEPRECATED: Gets a tool's progress
  * @param {string} pathToProjectGroupsDataFiles
  * @param toolName
  * @param userSelectedCategories
