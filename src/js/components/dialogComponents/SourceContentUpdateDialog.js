@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
-// helpers
-import { getLanguageByCode } from '../../helpers/LanguageHelpers';
+
 import BaseDialog from './BaseDialog';
+import ResourceListItem from './ResourceListItem';
 
 const styles = {
   content: {
@@ -37,47 +37,22 @@ const styles = {
   table: { width: '100%' },
   tr: { borderBottom: '1px solid rgb(224, 224, 224)' },
   firstTd: { padding: '10px 5px 10px 0px' },
+  firstSubTd: { padding: '10px 5px 10px 30px' },
   td: {
-    minWidth: '200px',
+    minWidth: '100px',
     padding: '10px 5px',
   },
-};
-
-const ResourceListItem = ({
-  resource, checked, handleItemOnCheck,
-}) => {
-  const languageCodeDetails = getLanguageByCode(resource.languageId);
-  const languageName = languageCodeDetails ? languageCodeDetails.name : resource.languageId;
-  const languageId = languageCodeDetails ? languageCodeDetails.code : resource.languageId;
-
-  if ( languageName ) {
-    return (
-      <tr style={styles.tr}>
-        <td style={styles.firstTd}>
-          <Checkbox checked={checked}
-            onCheck={(event) => {
-              event.preventDefault();
-              handleItemOnCheck(resource.languageId);
-            }}
-            label={`${languageName} (${languageId})`}
-            style={styles.checkbox}
-            iconStyle={styles.checkboxIconStyle}
-            labelStyle={styles.checkboxLabelStyle} />
-        </td>
-        <td style={styles.td}>{`${resource.localModifiedTime.substring(0, 10)}`}</td>
-        <td style={styles.td}>{`${resource.remoteModifiedTime.substring(0, 10)}`}</td>
-      </tr>
-    );
-  } else {
-    // no details for this language so it is unsupported
-    return null;
-  }
-};
-
-ResourceListItem.propTypes = {
-  resource: PropTypes.object.isRequired,
-  checked: PropTypes.bool.isRequired,
-  handleItemOnCheck: PropTypes.func.isRequired,
+  lastTd: {
+    minWidth: '100px',
+    padding: '10px 5px',
+    textAlign: 'center',
+  },
+  glyphicon: {
+    fontSize: '18px',
+    margin: '0 12px 0 0',
+    width: '20px',
+    textAlign: 'right',
+  },
 };
 
 /**
@@ -93,38 +68,49 @@ ResourceListItem.propTypes = {
 class ContentUpdateDialog extends React.Component {
   render() {
     const {
-      translate,
       open,
-      onDownload,
       onClose,
       resources,
-      selectedItems,
+      translate,
+      onDownload,
+      handleSelectAll,
+      onSubitemSelection,
       handleListItemSelection,
-      handleAllListItemsSelection,
+      selectedLanguageResources,
     } = this.props;
 
-    const availableLanguageIds = resources.map(resource => resource.languageId);
-    const allChecked = JSON.stringify(availableLanguageIds) === JSON.stringify(selectedItems);
+    const availableLanguageIds = resources.map(
+      (resource) => resource.languageId,
+    );
+    const languagesSelectedList = Object.keys(selectedLanguageResources);
+    const allChecked =
+      JSON.stringify(availableLanguageIds) === JSON.stringify(languagesSelectedList);
 
     return (
-      <BaseDialog open={open}
+      <BaseDialog
+        open={open}
         primaryLabel={translate('updates.download')}
         secondaryLabel={translate('buttons.cancel_button')}
-        primaryActionEnabled={selectedItems.length > 0}
+        primaryActionEnabled={languagesSelectedList.length > 0}
         onSubmit={onDownload}
         onClose={onClose}
         title={translate('updates.update_gateway_language_content')}
         modal={false}
         scrollableContent={true}
-        titleStyle={{ marginBottom: '0px' }}>
+        titleStyle={{ marginBottom: '0px' }}
+      >
         <div style={styles.content}>
           <div>
-            <h4 style={styles.header}>{translate('updates.select_the_gateway_language_content_to_download')}</h4>
+            <h4 style={styles.header}>
+              {translate(
+                'updates.select_the_gateway_language_content_to_download',
+              )}
+            </h4>
             <div style={styles.checkboxContainer}>
               <Checkbox
                 label={translate('select_all')}
                 checked={allChecked}
-                onCheck={handleAllListItemsSelection}
+                onCheck={handleSelectAll}
                 style={styles.checkbox}
                 iconStyle={styles.checkboxIconStyle}
                 labelStyle={styles.boldCheckboxLabelStyle}
@@ -136,16 +122,35 @@ class ContentUpdateDialog extends React.Component {
             <table style={styles.table}>
               <tbody>
                 <tr style={styles.tr}>
-                  <th style={styles.firstTd}>{translate('updates.source_label')}</th>
-                  <th style={styles.td}>{translate('updates.local_timestamp')}</th>
-                  <th style={styles.td}>{translate('updates.online_timestamp')}</th>
+                  <th style={styles.firstTd}>
+                    {translate('updates.source_label')}
+                  </th>
+                  <th style={styles.td}>
+                    {translate('updates.local_timestamp')}
+                  </th>
+                  <th style={styles.lastTd}>
+                    {translate('updates.online_timestamp')}
+                  </th>
+                  <th></th>
                 </tr>
-                {resources.map(resource =>
-                  <ResourceListItem key={resource.languageId}
-                    resource={resource}
-                    checked={selectedItems.includes(resource.languageId)}
-                    handleItemOnCheck={handleListItemSelection}/>,
-                )}
+                {resources.map((languageResources) => {
+                  const resourcesSelectedForLanguage = selectedLanguageResources[languageResources.languageId];
+                  const checked = languagesSelectedList.includes(languageResources.languageId) && resourcesSelectedForLanguage.length === languageResources.resources.length;
+                  const indeterminate = resourcesSelectedForLanguage?.length < languageResources?.resources.length;
+
+                  return (
+                    <ResourceListItem
+                      checked={checked}
+                      translate={translate}
+                      indeterminate={indeterminate}
+                      key={languageResources.languageId}
+                      languageResources={languageResources}
+                      onSubitemSelection={onSubitemSelection}
+                      onLanguageSelection={handleListItemSelection}
+                      selectedSubitems={resourcesSelectedForLanguage}
+                    />
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -156,14 +161,15 @@ class ContentUpdateDialog extends React.Component {
 }
 
 ContentUpdateDialog.propTypes = {
-  translate: PropTypes.func.isRequired,
   open: PropTypes.bool,
-  onDownload: PropTypes.func,
   onClose: PropTypes.func,
+  onDownload: PropTypes.func,
+  translate: PropTypes.func.isRequired,
   resources: PropTypes.array.isRequired,
-  selectedItems: PropTypes.array.isRequired,
+  handleSelectAll: PropTypes.func.isRequired,
+  onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
-  handleAllListItemsSelection: PropTypes.func.isRequired,
+  selectedLanguageResources: PropTypes.object.isRequired,
 };
 
 export default ContentUpdateDialog;

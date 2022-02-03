@@ -34,7 +34,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
       'target_language': {
         'id': 'en',
         'name': 'English',
-        'diretion': 'ltr',
+        'direction': 'ltr',
       },
     };
     helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
@@ -53,7 +53,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
       'target_language': {
         'id': 'en',
         'name': 'English',
-        'diretion': 'ltr',
+        'direction': 'ltr',
       },
     };
     helpers.generateTargetBibleFromUSFMPath(usfmPath, projectPath, manifest);
