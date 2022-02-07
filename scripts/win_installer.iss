@@ -134,7 +134,7 @@ var
       if not ShellExec('open', 'https://github.com/git-for-windows/git/releases/download/v{#GitVersion}.windows.1/Git-{#GitVersion}-{#OSBITS}-bit.exe', '', '', SW_SHOWNORMAL, ewNoWait, ErrorCode) then
         MsgBox(ErrorMsg + SysErrorMessage(ErrorCode), mbError, MB_OK);
     end else
-        MsgBOX('You have chosen not to install Git. ' +
+        MsgBox('You have chosen not to install Git. ' +
                'Installation aborted.', mbInformation, MB_OK);
   end;
 }

@@ -397,10 +397,17 @@ const releaseWindows = (arch, src, dest) => {
     isccPath = './scripts/innosetup/iscc';
   } else if (isWindows) {
     isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 6/ISCC.exe"`;
+    const progsPath = `${process.env['ProgramFiles(x86)']}`;
+    console.log(`programs folder`, progsPath);
+
+    const files = fs.readdirSync(progsPath);
+    console.log(`programs folder contents`, JSON.stringify(files));
 
     // try falling back to version 5
     if (!fs.existsSync(isccPath.replace(/"/g, ''))) {
+      console.log(`iscc 6 not found:`, isccPath);
       isccPath = `"${process.env['ProgramFiles(x86)']}/Inno Setup 5/ISCC.exe"`;
+      console.log(`now trying`, isccPath);
     }
   } else {
     return Promise.reject(
@@ -409,11 +416,12 @@ const releaseWindows = (arch, src, dest) => {
 
   // on windows you can manually install Inno Setup
   // on linux you can execute ./scripts/innosetup/setup.sh
+  console.log(`isccPath:`, isccPath);
+
   if (!fs.existsSync(isccPath.replace(/"/g, ''))) {
     return Promise.reject(
       'Inno Setup is not installed. Please install Inno Setup and try again.');
   }
-
 
   const destDir = path.dirname(dest);
   mkdirp.sync(destDir);
