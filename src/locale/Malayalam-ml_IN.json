@@ -76,6 +76,8 @@
   "critical_error_warning": "മുന്നറിയിപ്പ്: ഗുരുതരമായൊരു തെറ്റു് സംഭവിച്ചു!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "സോഫ്റ്റ്വെയർ അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "check_for_content_updates": "ഉള്ളടക്ക അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "update_gateway_language_content": "ഗേറ്റ്‌വേ ഭാഷാ ഉള്ളടക്കം അപ്‌ഡേറ്റുചെയ്യുക",

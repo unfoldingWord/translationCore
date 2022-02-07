@@ -76,6 +76,8 @@
   "critical_error_warning": "সাবধানবাণী: একটি গুরুত্বপূর্ণ ত্রুটি ঘটেছে!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "সফটওয়্যারের আপডেটগুলো যাচাই করুন ",
     "check_for_content_updates": "বিষয়বস্তুর আপডেটগুলো যাচাই করুন ",
     "update_gateway_language_content": "আপডেট গেটওয়ে ভাষার বিষয়বস্তু ",

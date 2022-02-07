@@ -76,6 +76,8 @@
   "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
   "unknown_networking_error": "${app_name} encontrou um erro de comunicação desconhecido. Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
     "update_gateway_language_content": "Atualizar o conteúdo das Línguas Ponte (GL)",

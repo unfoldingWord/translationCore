@@ -76,6 +76,8 @@
   "critical_error_warning": "\"ସତର୍କ: ସମାଲୋଚନାମୂଳକ ତ୍ରୁଟିଘଟିଅଛି!\"",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "ସଫ୍ଟୱେର୍ ଅଦ୍ୟତନକୁ ଯାଞ୍ଚ କରନ୍ତୁ",
     "check_for_content_updates": "\"ଅଧିସୂଚନା ଅଦ୍ୟତନକୁ ଯାଞ୍ଚ କରନ୍ତୁ\"",
     "update_gateway_language_content": "\" ମୁଖ୍ୟ ଆଞ୍ଚଳିକ ଭାଷା ଅଧିସୂଚନାକୁ ଅଦ୍ୟତନ କରନ୍ତୁ\"",

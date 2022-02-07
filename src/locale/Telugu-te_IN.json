@@ -76,6 +76,8 @@
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "మీ సాఫ్ట్ వేర్ నవీకరణలు సరిచూడండి",
     "check_for_content_updates": "సమాచార నవీకరణల తనిఖీ",
     "update_gateway_language_content": "గేట్ వే భాష సమాహారం నవీకరణ చెయ్యండి",
