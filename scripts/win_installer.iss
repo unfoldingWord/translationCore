@@ -63,10 +63,10 @@ Compression=lzma
 SolidCompression=yes
 LicenseFile={#MyLicenseFile}
 #if Arch == "x86"
-ArchitecturesAllowed=x86  arm64
+ArchitecturesAllowed=x86
   #define   OSBITS 32
 #else
-ArchitecturesAllowed=x64  arm64
+ArchitecturesAllowed=x64
   #define OSBITS 64
 #endif
 
