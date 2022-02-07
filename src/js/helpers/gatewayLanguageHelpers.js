@@ -5,6 +5,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import { getAlignedText } from 'tc-ui-toolkit';
+import { resourcesHelpers } from 'tc-source-content-updater';
 import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
   TRANSLATION_ACADEMY,
@@ -382,37 +383,45 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
   let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
 
   bibles = bibles.filter(bibleId => !(biblesLoaded[langCode] && biblesLoaded[langCode][bibleId]));
+  const validBibles = [];
 
-  const validBibles = bibles.filter(bible => {
-    if (!fs.lstatSync(path.join(biblesPath, bible)).isDirectory()) { // verify it's a valid directory
+  bibles.forEach(bibleId => {
+    if (!fs.lstatSync(path.join(biblesPath, bibleId)).isDirectory()) { // verify it's a valid directory
       return false;
     }
 
-    let isBibleValidSource = false;
-    let biblePath = getValidResourcePath(biblesPath, bible);
+    const owners = ResourceAPI.getLatestVersionsAndOwners(path.join(biblesPath, bibleId));
 
-    if (biblePath) {
-      isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId);
+    for (const owner of Object.keys(owners)) {
+      let isBibleValidSource = false;
+      let biblePath = getValidResourcePath(biblesPath, bibleId);
 
-      if (isBibleValidSource) {
-        if (bookId) { // if filtering by book
-          const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
-          isBibleValidSource = isBibleValidSource && isValidOrig;
+      if (biblePath) {
+        isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId);
 
-          if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
-            const olBook = BibleHelpers.getOrigLangforBook(bookId);
-            const olPath = path.join(USER_RESOURCES_PATH, olBook.languageId);
-            isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId);
+        if (isBibleValidSource) {
+          if (bookId) { // if filtering by book
+            const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
+            isBibleValidSource = isBibleValidSource && isValidOrig;
+
+            if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
+              const olBook = BibleHelpers.getOrigLangforBook(bookId);
+              const olPath = path.join(USER_RESOURCES_PATH, olBook.languageId);
+              isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId);
+            }
+
+            // make sure resource for book is present and has the right checking level
+            const isValidUlt = biblePath && isValidResource(biblePath, bookId,
+              glRequirements.gl.minimumCheckingLevel, glRequirements.gl.alignedBookRequired);
+            isBibleValidSource = isBibleValidSource && isValidUlt;
           }
-
-          // make sure resource for book is present and has the right checking level
-          const isValidUlt = biblePath && isValidResource(biblePath, bookId,
-            glRequirements.gl.minimumCheckingLevel, glRequirements.gl.alignedBookRequired);
-          isBibleValidSource = isBibleValidSource && isValidUlt;
         }
       }
+
+      if (isBibleValidSource) {
+        validBibles.push(resourcesHelpers.addOwnerToKey(bibleId, owner));
+      }
     }
-    return isBibleValidSource;
   });
   return validBibles;
 }

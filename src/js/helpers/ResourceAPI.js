@@ -67,6 +67,15 @@ class ResourceAPI {
   }
 
   /**
+   * Gets latest versions by owner
+   * @param {string} dir - the directory to read
+   * @return {object} latest by owner
+   */
+  static getLatestVersionsAndOwners(dir) {
+    return resourcesHelpers.getLatestVersionsAndOwners(dir);
+  }
+
+  /**
    * Returns an array of paths found in the directory filtered and sorted by version
    * @param {string} dir
    * @returns {string[]}
