@@ -254,7 +254,7 @@ export const loadBiblesByLanguageId = (languageId, owner = DEFAULT_OWNER) => (di
 
     bibleIds.forEach(bibleId => {
       if (!isIncluded || !bibles[match][bibleId]) { //TRICKY: just because we have a bible in the language loaded does not mean we have all the bibles loaded
-        dispatch(loadBibleBook(bibleId, bookId, languageId, owner));
+        dispatch(loadBibleBook(bibleId, bookId, languageId, null, owner));
       }
     });
   }
