@@ -2,8 +2,13 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import semver from 'semver';
 import env from 'tc-electron-env';
-import { resourcesHelpers } from 'tc-source-content-updater';
-import { TRANSLATION_HELPS } from '../common/constants';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
+import {
+  DEFAULT_OWNER,
+  TRANSLATION_HELPS,
+  TRANSLATION_WORDS,
+  TRANSLATION_WORDS_LINKS,
+} from '../common/constants';
 
 /**
  * Provides an interface by which you can interact with the resources in the user's home directory.
@@ -48,11 +53,16 @@ class ResourceAPI {
    * Returns the path to the latest version of the translation help
    * @param {string} gatewayLanguage - the gateway language code
    * @param {string} helpName - this is synonymous with toolName
+   * @param {string} owner
    * @returns {string|null} the file path or null if no directory was found
    */
-  getLatestTranslationHelp(gatewayLanguage, helpName) {
+  getLatestTranslationHelp(gatewayLanguage, helpName, owner = DEFAULT_OWNER) {
+    if ((helpName === TRANSLATION_WORDS) && (owner !== apiHelpers.DOOR43_CATALOG)) { // support twls if not from Door43 catalog
+      helpName = TRANSLATION_WORDS_LINKS;
+    }
+
     const helpDir = path.join(this._resourcesDir, gatewayLanguage, TRANSLATION_HELPS, helpName);
-    return ResourceAPI.getLatestVersion(helpDir);
+    return ResourceAPI.getLatestVersion(helpDir, owner);
   }
 
   /**

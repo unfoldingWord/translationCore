@@ -23,7 +23,7 @@ import * as SettingsMigrationActions from '../actions/SettingsMigrationActions';
 import { loadLocalization, APP_LOCALE_SETTING } from '../actions/LocaleActions';
 import { getLocaleLoaded, getSetting } from '../selectors';
 import { loadTools } from '../actions/ToolActions';
-import { withLocale } from '../containers/Locale';
+import { withLocale } from '../helpers/localeHelpers';
 import { injectFileLogging } from '../helpers/logger';
 // helpers
 import { getOsInfoStr } from '../helpers/FeedbackHelpers';

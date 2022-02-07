@@ -13,6 +13,7 @@ import {
   getToolsByKey,
   getToolsSelectedGLs,
   getProjectBookId,
+  getToolGlOwner,
 } from '../selectors';
 import * as HomeScreenActions from '../actions/HomeScreenActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
@@ -34,6 +35,7 @@ import Repo from '../helpers/Repo.js';
 import ProjectAPI from '../helpers/ProjectAPI';
 // constants
 import {
+  DEFAULT_OWNER,
   PROJECTS_PATH,
   TRANSLATION_NOTES,
 } from '../common/constants';
@@ -51,10 +53,11 @@ const RESHOW_DCS_CHOICE = 'RESHOW_DCS_CHOICE';
  * @param {String} projectSaveLocation - The project location to load from
  *                      i.e. ~/translationCore/projects/en_tit_reg
  * @param {String} currentGatewayLanguage
+ * @param {String} owner
  */
-export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en') => (dispatch) => {
+export const loadCurrentCheckCategories = (toolName, projectSaveLocation, currentGatewayLanguage = 'en', owner = DEFAULT_OWNER) => (dispatch) => {
   const project = new ProjectAPI(projectSaveLocation);
-  const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation);
+  const availableCheckCategoriesObject = ResourcesHelpers.getAvailableCategories(currentGatewayLanguage, toolName, projectSaveLocation, {}, owner);
   let availableCheckCategories = [];
 
   Object.keys(availableCheckCategoriesObject)
@@ -152,26 +155,41 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
   }
 };
 
-export function setProjectToolGL(toolName, selectedGL) {
+/**
+ * change GL for tool
+ * @param {string} toolName
+ * @param {string} selectedGL
+ * @param {string} owner
+ * @return {(function(*, *): Promise<undefined>)|*}
+ */
+export function setProjectToolGL(toolName, selectedGL, owner = null) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
     }
 
     const state = getState();
-    dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL));
+    dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL, owner));
     const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
-    const ifGlChanged = selectedGL !== previousGLForTool;
+    const previousOwnerForTool = getToolGlOwner(state, toolName) || DEFAULT_OWNER;
+
+    if (!owner) {
+      owner = previousOwnerForTool;
+    }
+
+    const ifGlChanged = (selectedGL !== previousGLForTool) ||
+                        (owner !== previousOwnerForTool);
 
     dispatch({
       type: consts.SET_GL_FOR_TOOL,
       toolName,
       selectedGL,
+      selectedOwner: owner,
     });
 
     if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
-      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL));
+      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL, owner));
       await dispatch(prepareToolForLoading(toolName));
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },

@@ -346,16 +346,17 @@ describe('ProjectAPI', () => {
 
     it('same date does not need updating', () => {
       // given
+      const owner = 'uW';
       const expectHasNewGroupsData = false;
       const p = new ProjectAPI('/root');
       p.getBookId = jest.fn(() => ('tit'));
       const manifest = { ...manifest_ };
-      const categories = { ...categories_ };
+      const categories = { ...categories_, owner };
       fs.pathExistsSync.mockReturnValueOnce(true);
       fs.readJsonSync.mockReturnValueOnce(categories).mockReturnValueOnce(manifest);
 
       // when
-      const results = p.hasNewGroupsData('tool');
+      const results = p.hasNewGroupsData('tool', owner);
 
       // then
       expect(results).toEqual(expectHasNewGroupsData);

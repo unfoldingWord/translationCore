@@ -1,5 +1,7 @@
+import { apiHelpers } from 'tc-source-content-updater';
 import consts from '../actions/ActionTypes';
 import * as Bible from '../common/BooksOfTheBible';
+import { addOwner } from '../helpers/ResourcesHelpers';
 
 const initialState = {
   bibles: {},
@@ -10,16 +12,27 @@ const initialState = {
 const resourcesReducer = (state = initialState, action) => {
   switch (action.type) {
   case consts.ADD_NEW_BIBLE_TO_RESOURCES:
-    return {
+  {
+    const languageAndOwner = action.owner ? addOwner(action.languageId, action.owner) : action.languageId;
+    const newState = {
       ...state,
       bibles: {
         ...state.bibles,
-        [action.languageId]: {
-          ...state.bibles[action.languageId],
+        [languageAndOwner]: {
+          ...state.bibles[languageAndOwner],
           [action.bibleId]: action.bibleData,
         },
       },
     };
+
+    if (action.owner === apiHelpers.DOOR43_CATALOG) { // for backward compatibility, save as default
+      newState.bibles[action.languageId] = {
+        ...state.bibles[action.languageId],
+        [action.bibleId]: action.bibleData,
+      };
+    }
+    return newState;
+  }
   case consts.UPDATE_TARGET_VERSE:
     return {
       ...state,
@@ -101,10 +114,14 @@ export const getTargetBook = state => state.bibles.targetLanguage && state.bible
 /**
  * Returns the source language book
  * @param state
+ * @param owner
  * @returns {object}
  */
-export const getSourceBook = state => state.bibles.originalLanguage && (state.bibles.originalLanguage[Bible.NT_ORIG_LANG_BIBLE] ||
-    state.bibles.originalLanguage[Bible.OT_ORIG_LANG_BIBLE]);
+export const getSourceBook = (state, owner) => {
+  const origLangOwner = addOwner('originalLanguage', owner);
+  const origLangBibles = state.bibles[origLangOwner];
+  return origLangBibles && (origLangBibles[Bible.NT_ORIG_LANG_BIBLE] || origLangBibles[Bible.OT_ORIG_LANG_BIBLE]);
+};
 
 /**
  * Returns a verse in the original language bible
@@ -144,9 +161,10 @@ export const getBibles = state => state.bibles;
 /**
  * Returns the manifest for the source language book.
  * @param state
+ * @param owner
  * @returns {object}
  */
-export const getSourceBookManifest = state => {
-  const sourceBible = getSourceBook(state);
+export const getSourceBookManifest = (state, owner) => {
+  const sourceBible = getSourceBook(state, owner);
   return sourceBible && sourceBible.manifest;
 };
