@@ -3,7 +3,7 @@
 # docker tag <user>/<image> <dockerhub-user>/<image>:<version>
 # docker push <user>/<image>:<version>
 
-FROM node:16.4.2
+FROM node:10.18.0
 
 ARG DEBIAN_FRONTEND=noninteractive
 
