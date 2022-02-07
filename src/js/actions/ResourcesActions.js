@@ -431,13 +431,14 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
   const filteredResources = resources.filter(resource => {
     const isOriginalLanguage = BibleHelpers.isOriginalLanguageBible(resource.languageId, resource.bibleId);
     const languageId = isOriginalLanguage ? ORIGINAL_LANGUAGE : resource.languageId; // TRICKY: the original language can have many bibles, but only one we can use as reference
-    const biblesForLanguage = bibles[languageId];
-    return !(biblesForLanguage && biblesForLanguage[resource.bibleId]);
+    const key = resourcesHelpers.addOwnerToKey(languageId, resource.owner);
+    const biblesForLanguageOwner = bibles[key];
+    return !(biblesForLanguageOwner && biblesForLanguageOwner[resource.bibleId]);
   });
 
   for (let i = 0, len = filteredResources.length; i < len; i++) {
     const resource = filteredResources[i];
-    dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId));
+    dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId, null, resource.owner));
   }
 };
 

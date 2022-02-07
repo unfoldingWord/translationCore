@@ -5,6 +5,7 @@ import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { resourcesHelpers } from 'tc-source-content-updater';
 // helpers
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
@@ -18,7 +19,10 @@ import {
   getCurrentToolName,
 } from '../../../selectors';
 import {
-  WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+  DEFAULT_OWNER,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  WORD_ALIGNMENT,
 } from '../../../common/constants';
 import ToolCardBoxes from './ToolCardBoxes';
 import ToolCardProgress from './ToolCardProgress';
@@ -106,7 +110,8 @@ class ToolCard extends Component {
 
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
-      this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
+      const { owner, version: gl } = resourcesHelpers.splitVersionAndOwner(selectedGL.trim());
+      this.props.actions.setProjectToolGL(this.props.tool.name, gl, owner || DEFAULT_OWNER);
       this.setState({ selectedGL });
       this.loadProgress();
     }

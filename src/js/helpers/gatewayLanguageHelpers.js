@@ -5,18 +5,19 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import { getAlignedText } from 'tc-ui-toolkit';
-import { resourcesHelpers } from 'tc-source-content-updater';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
+  LEXICONS,
   TRANSLATION_ACADEMY,
   TRANSLATION_HELPS,
   TRANSLATION_NOTES,
   TRANSLATION_WORDS,
-  USER_RESOURCES_PATH,
-  WORD_ALIGNMENT,
-  LEXICONS,
+  TRANSLATION_WORDS_LINKS,
   UGL_LEXICON,
   UHL_LEXICON,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
 } from '../common/constants';
 import { getLanguageByCodeSelection, sortByNamesCaseInsensitive } from './LanguageHelpers';
 import * as ResourcesHelpers from './ResourcesHelpers';
@@ -118,15 +119,18 @@ export function getGlRequirementsForTool(toolName) {
 export function getGatewayLanguageList(bookId = null, toolName = null) {
   const glRequirements = getGlRequirementsForTool(toolName);
   const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, toolName);
-  const supportedLanguageCodes = Object.keys(languageBookData);
-  const supportedLanguages = supportedLanguageCodes.map(code => {
+  const supportedLanguageOwner = Object.keys(languageBookData);
+  const supportedLanguages = supportedLanguageOwner.map(langAndOwner => {
+    const { owner, version: code } = resourcesHelpers.splitVersionAndOwner(langAndOwner);
+
     let lang = getLanguageByCodeSelection(code);
 
     if (lang) {
       lang = _.cloneDeep(lang); // make duplicate before modifying
-      const bookData = languageBookData[code];
+      const bookData = languageBookData[langAndOwner];
       lang.default_literal = bookData.default_literal;
       lang.bibles = bookData.bibles;
+      lang.owner = owner;
       lang.lc = lang.code; // UI expects language code in lc
     }
     return lang;
@@ -289,18 +293,32 @@ function isDirectory(folderPath) {
  * @param {Array.<Object>} helpsChecks - list of helps to check
  * @param {String} languagePath
  * @param {String} bookID
+ * @param {String} owner
  * @return {boolean}
  */
-function hasValidHelps(helpsChecks, languagePath, bookID = '') {
+function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
   let isBibleValidSource = true;
   const checkingHelps = helpsChecks && helpsChecks.length;
 
-  if (checkingHelps) { // if no resource checking given, we add empty check
+  if (checkingHelps) { // if no resource checking given, we skip checking
     isBibleValidSource = true;
+    const helpsChecks_ = [...helpsChecks];
 
-    for (let helpsCheck of helpsChecks) {
+    if (owner !== apiHelpers.DOOR43_CATALOG) { // check if need twls
+      const tWHelpsPath = path.join(TRANSLATION_HELPS, TRANSLATION_WORDS);
+      const hasTwDependency = helpsChecks.find(check => (check.path === tWHelpsPath));
+
+      if (hasTwDependency) {
+        helpsChecks_.push({
+          path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS_LINKS),
+          subpath: path.join('groups', '${bookID}'),
+        });
+      }
+    }
+
+    for (let helpsCheck of helpsChecks_) {
       let helpValid = false;
-      const latestVersionPath = ResourceAPI.getLatestVersion(path.join(languagePath, helpsCheck.path));
+      const latestVersionPath = ResourceAPI.getLatestVersion(path.join(languagePath, helpsCheck.path), owner);
 
       if (latestVersionPath) {
         const subFolders = ResourcesHelpers.getFoldersInResourceFolder(latestVersionPath);
@@ -381,11 +399,10 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
   const languagePath = path.join(USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
   let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
-
-  bibles = bibles.filter(bibleId => !(biblesLoaded[langCode] && biblesLoaded[langCode][bibleId]));
+  console.log(`initial bibles:`, JSON.stringify(bibles));
   const validBibles = [];
 
-  bibles.forEach(bibleId => {
+  for (const bibleId of bibles) {
     if (!fs.lstatSync(path.join(biblesPath, bibleId)).isDirectory()) { // verify it's a valid directory
       return false;
     }
@@ -394,10 +411,10 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
 
     for (const owner of Object.keys(owners)) {
       let isBibleValidSource = false;
-      let biblePath = getValidResourcePath(biblesPath, bibleId);
+      let biblePath = owners[owner];
 
       if (biblePath) {
-        isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId);
+        isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId, owner);
 
         if (isBibleValidSource) {
           if (bookId) { // if filtering by book
@@ -407,7 +424,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
             if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
               const olBook = BibleHelpers.getOrigLangforBook(bookId);
               const olPath = path.join(USER_RESOURCES_PATH, olBook.languageId);
-              isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId);
+              isBibleValidSource = isBibleValidSource && hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId, apiHelpers.DOOR43_CATALOG);
             }
 
             // make sure resource for book is present and has the right checking level
@@ -419,10 +436,15 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
       }
 
       if (isBibleValidSource) {
-        validBibles.push(resourcesHelpers.addOwnerToKey(bibleId, owner));
+        const key = resourcesHelpers.addOwnerToKey(langCode, owner);
+        const alreadyLoaded = biblesLoaded[key] && biblesLoaded[key][bibleId];
+
+        if (!alreadyLoaded) {
+          validBibles.push(resourcesHelpers.addOwnerToKey(bibleId, owner));
+        }
       }
     }
-  });
+  }
   return validBibles;
 }
 
@@ -444,20 +466,31 @@ export function getSupportedGatewayLanguageResourcesList(bookId = null, glRequir
   for (let language of allLanguages) {
     const validBibles = getValidGatewayBibles(language, bookId, glRequirements);
 
-    if (validBibles && validBibles.length) {
-      const default_literal = validBibles[0];
+    if (validBibles) {
+      for (const validBible of validBibles) {
+        const { owner } = resourcesHelpers.splitVersionAndOwner(validBible);
+        const key = resourcesHelpers.addOwnerToKey(language, owner);
 
-      filteredLanguages[language] = {
-        default_literal,
-        bibles: validBibles,
-      };
+        if (!filteredLanguages[key]) {
+          filteredLanguages[key] = {
+            default_literal: validBible,
+            bibles: [validBible],
+          };
+        } else {
+          filteredLanguages[key].bibles.push(validBible);
+        }
+      }
     }
   }
 
-  if (!filteredLanguages['en'] && toolName === WORD_ALIGNMENT && !Object.keys(filteredLanguages).length) { // TODO: this is a temporary fix to be removed later
-    filteredLanguages['en'] = {
-      default_literal: 'ult',
-      bibles: ['ult'],
+  const enDefault = resourcesHelpers.addOwnerToKey('en', apiHelpers.DOOR43_CATALOG);
+
+  if (!filteredLanguages[enDefault] && toolName === WORD_ALIGNMENT && !Object.keys(filteredLanguages).length) { // TODO: this is a temporary fix to be removed later
+    const ultDefault = resourcesHelpers.addOwnerToKey('ult', apiHelpers.DOOR43_CATALOG);
+
+    filteredLanguages[enDefault] = {
+      default_literal: ultDefault,
+      bibles: [ultDefault],
     };
   }
   return filteredLanguages;
