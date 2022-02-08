@@ -49,15 +49,19 @@ class ToolCard extends Component {
   }
 
   componentWillMount() {
-    let { glSelected: selectedGL } = this.props;
+    let {
+      glSelected,
+      glOwnerSelected,
+    } = this.props;
     const gatewayLanguageList = this.updateGlList();
+    let glAndOwner = resourcesHelpers.addOwnerToKey(glSelected, glOwnerSelected);
 
     // if there is only one gateway Language then select it as the GL for the tool card.
     if (gatewayLanguageList.length === 1) {
-      selectedGL = gatewayLanguageList[0].code;
+      glAndOwner = gatewayLanguageList[0].code;
     }
-    this.selectionChange(selectedGL);
-    this.setState({ selectedGL });
+    this.selectionChange(glAndOwner);
+    this.setState({ selectedGL: glAndOwner });
   }
 
   componentDidMount() {
@@ -65,7 +69,8 @@ class ToolCard extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const glSelectedChanged = prevProps.glSelected !== this.props.glSelected;
+    const glSelectedChanged = prevProps.glSelected !== this.props.glSelected ||
+      prevProps.glOwnerSelected !== this.props.glOwnerSelected;
 
     if (glSelectedChanged) {
       this.setState({ glSelectedChanged });
@@ -362,6 +367,7 @@ ToolCard.propTypes = {
   ]).isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
+  glOwnerSelected: PropTypes.string.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
   isToolUsingCurrentOriginalLanguage: PropTypes.func.isRequired,
 };
