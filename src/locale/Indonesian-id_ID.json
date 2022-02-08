@@ -76,6 +76,8 @@
   "critical_error_warning": "Peringatan: Telah terjadi kesalahan kritis!",
   "unknown_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal. Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" merupakan opsi pada tombol \"${actions}\".",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "Periksa pembaruan perangkat lunak",
     "check_for_content_updates": "Periksa pembaruan konten",
     "update_gateway_language_content": "Perbarui Konten Bahasa Gateway",
