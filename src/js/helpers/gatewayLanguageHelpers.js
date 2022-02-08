@@ -304,11 +304,11 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
     isBibleValidSource = true;
     const helpsChecks_ = [...helpsChecks];
 
-    if (owner !== apiHelpers.DOOR43_CATALOG) { // check if need twls
+    if (owner !== apiHelpers.DOOR43_CATALOG) { // if other owner we check if need twls
       const tWHelpsPath = path.join(TRANSLATION_HELPS, TRANSLATION_WORDS);
       const hasTwDependency = helpsChecks.find(check => (check.path === tWHelpsPath));
 
-      if (hasTwDependency) {
+      if (hasTwDependency) { // if TW is a dependency, add TWL also as a dependency
         helpsChecks_.push({
           path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS_LINKS),
           subpath: path.join('groups', '${bookID}'),
@@ -399,7 +399,6 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
   const languagePath = path.join(USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
   let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
-  console.log(`initial bibles:`, JSON.stringify(bibles));
   const validBibles = [];
 
   for (const bibleId of bibles) {
