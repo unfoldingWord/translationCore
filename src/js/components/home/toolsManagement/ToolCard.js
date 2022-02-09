@@ -84,11 +84,12 @@ class ToolCard extends Component {
       glOwnerSelected,
     } = this.props;
     const gatewayLanguageList = this.updateGlList();
-    let glAndOwner = resourcesHelpers.addOwnerToKey(glSelected, glOwnerSelected);
+    let glAndOwner = glSelected ? resourcesHelpers.addOwnerToKey(glSelected, glOwnerSelected) : glSelected;
 
     // if there is only one gateway Language then select it as the GL for the tool card.
     if (gatewayLanguageList.length === 1) {
-      glAndOwner = gatewayLanguageList[0].code;
+      const firstItem = gatewayLanguageList[0];
+      glAndOwner = addOwner(firstItem.lc, firstItem.owner);
     }
     this.selectionChange(glAndOwner);
     this.setState({ selectedGL: glAndOwner });
