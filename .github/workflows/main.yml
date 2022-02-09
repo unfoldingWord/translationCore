@@ -162,7 +162,7 @@ jobs:
   build-windows:
     name: Build Windows
     needs: test
-    runs-on: windows-latest
+    runs-on: windows-2019
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
