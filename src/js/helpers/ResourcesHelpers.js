@@ -51,8 +51,8 @@ import {
 } from './groupDataHelpers';
 import { generateTimestamp } from './TimestampGenerator';
 import { getContextIdPathFromIndex } from './contextIdHelpers';
-// constants
 
+// constants
 export const QUOTE_MARK = '\u2019';
 
 /**
@@ -1031,7 +1031,8 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
 
   if (Array.isArray(validBibles)) {
     for (let bible of validBibles) {
-      addResource(resources, gatewayLangId, bible, apiHelpers.DOOR43_CATALOG); // TODO: add actual owner once support is added
+      const { owner, version: bibleId } = resourcesHelpers.splitVersionAndOwner(bible);
+      addResource(resources, gatewayLangId, bibleId, owner || apiHelpers.DOOR43_CATALOG);
     }
   }
   return resources;

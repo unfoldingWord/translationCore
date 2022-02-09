@@ -142,8 +142,8 @@ const mapDispatchToProps = (dispatch) => ({
     getProjectProgressForTools: (toolName, results) => {
       dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, results));
     },
-    setProjectToolGL: (toolName, selectedGL) => {
-      dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL));
+    setProjectToolGL: (toolName, selectedGL, owner) => {
+      dispatch(ProjectDetailsActions.setProjectToolGL(toolName, selectedGL, owner));
     },
     updateCategorySelection: (toolName, isChecked, subcategories) => {
       dispatch(ProjectDetailsActions.updateCategorySelection(toolName, isChecked, subcategories));

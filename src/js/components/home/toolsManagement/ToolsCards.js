@@ -68,7 +68,8 @@ const ToolsCards = ({
       }}>
         {
           tools.map((tool, i) => {
-            const glSelected = manifest.toolsSelectedGLs[tool.name];
+            const glSelected = resourcesHelpers.splitVersionAndOwner(manifest.toolsSelectedGLs?.[tool.name] || '').version;
+            const glOwnerSelected = manifest.toolsSelectedOwners?.[tool.name] || DEFAULT_OWNER;
             const availableCategories = getAvailableCategories(glSelected, tool.name, projectSaveLocation, { withCategoryName: true });
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
@@ -120,6 +121,7 @@ const ToolsCards = ({
                 isOLBookVersionMissing={!!isOLBookVersionMissing}
                 onMissingResource={() => onMissingResource(missingOLResource)}
                 glSelected={glSelected || ''}
+                glOwnerSelected={glOwnerSelected}
                 sourceContentUpdateCount={sourceContentUpdateCount}
               />
             );

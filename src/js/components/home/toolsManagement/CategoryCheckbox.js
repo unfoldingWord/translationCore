@@ -18,6 +18,22 @@ const styles = {
   checked: {},
 };
 
+/**
+ * determine if category is checked (everything selected) or indeterminate (some selected)
+ * @param availableSubcategories
+ * @param selectedCategories
+ * @param toolName
+ * @return {{isChecked: (*|boolean), isIndeterminate: boolean}}
+ */
+export function getCheckStateForCategory(availableSubcategories, selectedCategories, toolName) {
+  const currentSubcategoriesSelected = availableSubcategories.filter((subcat) => subcat && selectedCategories.includes(subcat.id));
+  const allSubcategoriesSelected = isEqual(availableSubcategories, currentSubcategoriesSelected);
+  const allSubcategoriesUnselected = currentSubcategoriesSelected.length === 0;
+  const isChecked = allSubcategoriesSelected;
+  const isIndeterminate = !allSubcategoriesUnselected && currentSubcategoriesSelected.length > 0 && !allSubcategoriesSelected && toolName !== TRANSLATION_WORDS;
+  return { isChecked, isIndeterminate };
+}
+
 const CategoryCheckbox = ({
   classes,
   toolName,
@@ -25,11 +41,7 @@ const CategoryCheckbox = ({
   selectedCategories,
   availableSubcategories = [],
 }) => {
-  const currentSubcategoriesSelected = availableSubcategories.filter((subcat) => subcat && selectedCategories.includes(subcat.id));
-  const allSubcategoriesSelected = isEqual(availableSubcategories, currentSubcategoriesSelected);
-  const allSubcategoriesUnselected = currentSubcategoriesSelected.length === 0;
-  const isChecked = allSubcategoriesSelected;
-  const isIndeterminate = !allSubcategoriesUnselected && currentSubcategoriesSelected.length > 0 && !allSubcategoriesSelected && toolName !== TRANSLATION_WORDS;
+  const { isChecked, isIndeterminate } = getCheckStateForCategory(availableSubcategories, selectedCategories, toolName);
 
   return (
     <Checkbox
