@@ -32,7 +32,9 @@ const SubcategoryCheckbox = ({
       }}
       icon={<CheckBoxOutlineIcon style={{ fontSize: '24px' }} />}
       checkedIcon={<CheckBoxIcon style={{ fontSize: '24px' }} />}
-      onChange={(e) => onSubcategoryChecked(subcategory, toolName, e.target.checked)}
+      onChange={(e) =>
+        onSubcategoryChecked(subcategory, toolName, e.target.checked)
+      }
     />
   );
 };

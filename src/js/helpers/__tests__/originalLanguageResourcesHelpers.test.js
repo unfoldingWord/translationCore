@@ -1,6 +1,7 @@
 /* eslint-disable import/named,quotes,comma-dangle,object-curly-newline */
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { resourcesHelpers } from 'tc-source-content-updater';
 import * as OL_Helpers from '../originalLanguageResourcesHelpers';
 import { TRANSLATION_NOTES, TRANSLATION_WORDS, USER_RESOURCES_PATH, WORD_ALIGNMENT } from '../../common/constants';
 
@@ -12,8 +13,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in tN, expect same same versions to be current OL', () => {
     // given
-    const currentOlVersion = "0.10";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.10_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     const expectedIsCurrentOL = true;
 
@@ -26,8 +27,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in tN, expect different versions not to be current OL', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     const expectedIsCurrentOL = false;
 
@@ -40,8 +41,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in tN expect not to crash if original language not loaded', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     state.resourcesReducer.bibles = {};
     const expectedIsCurrentOL = false;
@@ -55,8 +56,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in tN expect not to crash if tsv_relations missing', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     delete state.projectDetailsReducer.manifest.tsv_relation;
     const expectedIsCurrentOL = false;
@@ -70,8 +71,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in tN, expect not to crash if tsv_relations does not have the tN dependency', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     state.projectDetailsReducer.manifest.tsv_relation = [];
     const expectedIsCurrentOL = false;
@@ -85,8 +86,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('expect not to crash if project details not loaded', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     state.projectDetailsReducer.projectSaveLocation = "";
     const expectedIsCurrentOL = false;
@@ -100,8 +101,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in WA, expect always current OL', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     const expectedIsCurrentOL = true;
 
@@ -114,8 +115,8 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 
   it('in tW, expect always current OL', () => {
     // given
-    const currentOlVersion = "0.9";
-    const toolOlVersion = "0.10";
+    const currentOlVersion = "0.9_Door43-Catalog";
+    const toolOlVersion = "0.10_Door43-Catalog";
     const state = initState(currentOlVersion, toolOlVersion);
     const expectedIsCurrentOL = true;
 
@@ -132,7 +133,7 @@ describe('isToolUsingCurrentOriginalLanguage()', () => {
 //
 
 function initState(LatestOlVersion, toolOlVersion) {
-  const tnDependency = "el-x-koine/ugnt?v=" + toolOlVersion;
+  const tnDependency = "el-x-koine/ugnt?v=" + resourcesHelpers.splitVersionAndOwner(toolOlVersion).version;
   const origLangId = "el-x-koine";
   const origLangBible = "ugnt";
   const state = {
@@ -144,7 +145,7 @@ function initState(LatestOlVersion, toolOlVersion) {
               language_id: origLangId,
               resource_id: origLangBible,
               dublin_core: {
-                version: LatestOlVersion // e.g. "0.9"
+                version: resourcesHelpers.splitVersionAndOwner(LatestOlVersion).version // e.g. "0.9"
               }
             }
           }

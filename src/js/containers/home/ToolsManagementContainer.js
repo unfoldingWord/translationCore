@@ -21,6 +21,7 @@ import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import { warnOnInvalidations, openTool } from '../../actions/ToolActions';
+import { DEFAULT_OWNER } from '../../common/constants';
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -118,7 +119,7 @@ class ToolsManagementContainer extends Component {
 const mapStateToProps = (state) => ({
   isUserLoggedIn: getIsUserLoggedIn(state),
   tools: getTools(state),
-  originalLanguageBookManifest: getSourceBookManifest(state),
+  originalLanguageBookManifest: getSourceBookManifest(state, DEFAULT_OWNER),
   sourceContentUpdateCount: getSourceContentUpdateCount(state),
   reducers: {
     homeScreenReducer: state.homeScreenReducer,

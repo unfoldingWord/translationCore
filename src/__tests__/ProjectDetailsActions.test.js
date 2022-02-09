@@ -239,7 +239,10 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     const store = mockStore(initialState);
     const expectedActions = [
       {
-        selectedGL: 'hi', toolName: WORD_ALIGNMENT, type: 'SET_GL_FOR_TOOL',
+        selectedGL: 'hi',
+        toolName: WORD_ALIGNMENT,
+        type: 'SET_GL_FOR_TOOL',
+        selectedOwner: 'Door43-Catalog',
       },
     ];
     await store.dispatch(actions.setProjectToolGL(WORD_ALIGNMENT, 'hi'));
@@ -269,7 +272,10 @@ describe('setProjectToolGL() should create an action to get the project GL for t
     const store = mockStore(initialState);
     const expectedActions = [
       {
-        'selectedGL': 'hi', 'toolName': 'translationNotes', 'type': 'SET_GL_FOR_TOOL',
+        'selectedGL': 'hi',
+        'toolName': 'translationNotes',
+        'type': 'SET_GL_FOR_TOOL',
+        'selectedOwner': 'Door43-Catalog',
       },
       {
         'meta': {

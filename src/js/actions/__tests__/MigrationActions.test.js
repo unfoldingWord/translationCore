@@ -26,7 +26,7 @@ describe('migrate tCore resources', () => {
     // simulate static resources path
     fs.__loadFilesIntoMockFs(['resources'], path.join('src', '__tests__', 'fixtures'), path.join(STATIC_RESOURCES_PATH, '..'));
     fs.moveSync(path.join(STATIC_RESOURCES_PATH, '../resources'), STATIC_RESOURCES_PATH);
-    fs.removeSync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult/v11')); // remove old version
+    fs.removeSync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult/v11_Door43-Catalog')); // remove old version
     fs.__loadFilesIntoMockFs(['source-content-updater-manifest.json'], STATIC_RESOURCES_PATH, STATIC_RESOURCES_PATH);
     setModifiedTimeForResources(STATIC_RESOURCES_PATH, STATIC_RESOURCE_MODIFIED_TIME);
   });
@@ -50,7 +50,7 @@ describe('migrate tCore resources', () => {
     it('test with t4t - should not delete', () => {
       // given
       const expectedHelpsVers = [];
-      const expectedBibleVers = ['v12.1'];
+      const expectedBibleVers = ['v12.1_Door43-Catalog'];
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
@@ -74,7 +74,7 @@ describe('migrate tCore resources', () => {
       fs.outputJsonSync(manifestPath, manifest);
       const ultPath = path.join(USER_RESOURCES_PATH, 'en/bibles/ult');
       const currentVersion = getFoldersInResourceFolder(ultPath)[0];
-      const oldResourcePath = path.join(ultPath, 'v0.0.1');
+      const oldResourcePath = path.join(ultPath, 'v0.0.1_Door43-Catalog');
       fs.moveSync(path.join(ultPath, currentVersion), oldResourcePath);
       setModifiedTimeForResource(oldResourcePath, '1900');
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
@@ -90,8 +90,8 @@ describe('migrate tCore resources', () => {
 
     it('test with t4t, old tHelps resources and up to date resources - should not delete anything', () => {
       // given
-      const expectedHelpsVers = ['v8.1'];
-      const expectedBibleVers = ['v12.1'];
+      const expectedHelpsVers = ['v8.1_Door43-Catalog'];
+      const expectedBibleVers = ['v12.1_Door43-Catalog'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -113,7 +113,7 @@ describe('migrate tCore resources', () => {
     it('test with t4t, old tHelps resources, up to date resources and different app version - should remove old helps and keep old bibles', () => {
       // given
       const expectedHelpsVers = [];
-      const expectedBibleVers = ['v12.1'];
+      const expectedBibleVers = ['v12.1_Door43-Catalog'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -135,7 +135,7 @@ describe('migrate tCore resources', () => {
     it('test with t4t, old tHelps resources and not up to date resources - should remove old helps and keep old bibles', () => {
       // given
       const expectedHelpsVers = [];
-      const expectedBibleVers = ['v12.1'];
+      const expectedBibleVers = ['v12.1_Door43-Catalog'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -157,8 +157,8 @@ describe('migrate tCore resources', () => {
 
     it('test with t4t, old tHelps resources and up to date resources - should not delete anything', () => {
       // given
-      const expectedHelpsVers = ['v8.1'];
-      const expectedBibleVers = ['v12.1'];
+      const expectedHelpsVers = ['v8.1_Door43-Catalog'];
+      const expectedBibleVers = ['v12.1_Door43-Catalog'];
       fs.copySync(STATIC_RESOURCES_PATH, USER_RESOURCES_PATH);
       const manifestPath = path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json');
       const manifest = fs.readJsonSync(manifestPath);
@@ -247,7 +247,7 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'v0'));
+      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'v0_Door43-Catalog'));
       expect(uhbVersionExists).toBeTruthy();
     });
 
@@ -263,7 +263,7 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'uhb/v0'));
+      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'uhb/v0_Door43-Catalog'));
       expect(uhbVersionExists).toBeTruthy();
     });
 
@@ -279,7 +279,7 @@ describe('migrate tCore resources', () => {
       // then
       const folders = getResourceFolders();
       expect(folders).toMatchSnapshot();
-      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'bibles/uhb/v0'));
+      const uhbVersionExists = fs.existsSync(path.join(uhbFolder, 'bibles/uhb/v0_Door43-Catalog'));
       expect(uhbVersionExists).toBeTruthy();
     });
   });
@@ -292,7 +292,7 @@ describe('migrate tCore resources', () => {
     it('test with xx in grc/bible - should migrate to el-x-koine', () => {
       // given
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.2'];
+      const expectedBibleVers = ['v0.2_Door43-Catalog'];
       const bibleId = 'xx';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
@@ -310,10 +310,10 @@ describe('migrate tCore resources', () => {
     it('test with older version of xx in grc/bible - should not move', () => {
       // given
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.2'];
+      const expectedBibleVers = ['v0.2_Door43-Catalog'];
       const bibleId = 'xx';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
-      fs.copySync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1'));
+      fs.copySync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1_Door43-Catalog'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
       // when
@@ -329,9 +329,9 @@ describe('migrate tCore resources', () => {
     it('test with older version of ugnt in grc/bible - should not be removed', () => {
       // given
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.1', 'v0.2'];
+      const expectedBibleVers = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
       const bibleId = 'ugnt';
-      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1'));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1_Door43-Catalog'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
       // when
@@ -346,11 +346,11 @@ describe('migrate tCore resources', () => {
 
     it('test with newer version of ugnt in el-x-koine/bible - newer version should not be deleted', () => {
       // given
-      mockOtherTnsOlversions = ['v0.1', 'v0.2'];
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.2', 'v0.3'];
+      const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
       const bibleId = 'ugnt';
-      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
       // when
@@ -366,9 +366,9 @@ describe('migrate tCore resources', () => {
       // given
       mockOtherTnsOlversions = [];
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.2', 'v0.3'];
+      const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
       const bibleId = 'ugnt';
-      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
       // when
@@ -383,11 +383,11 @@ describe('migrate tCore resources', () => {
 
   it('test with two version of ugnt in el-x-koine/bible and a recent dependency - all versions copied', () => {
     // given
-    mockOtherTnsOlversions = ['v0.3'];
+    mockOtherTnsOlversions = ['v0.3_Door43-Catalog'];
     const expectedHelpsVers = false;
-    const expectedBibleVers = ['v0.2', 'v0.3'];
+    const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
     const bibleId = 'ugnt';
-    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3'));
+    fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
     const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
 
     // when

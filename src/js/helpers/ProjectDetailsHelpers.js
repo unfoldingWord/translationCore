@@ -188,7 +188,7 @@ export function getJsonFilesInPath(folderPath) {
 }
 
 /**
- * Gets a tool's progress
+ * DEPRECATED: Gets a tool's progress
  * @param {string} pathToProjectGroupsDataFiles
  * @param toolName
  * @param userSelectedCategories
@@ -205,12 +205,12 @@ export function getToolProgress(pathToProjectGroupsDataFiles, toolName, userSele
     let availableCheckCategories = [];
     let languageId = 'en';
 
-    if (toolName === TRANSLATION_WORDS){
+    if (toolName === TRANSLATION_WORDS) {
       const { languageId: origLang } = BibleHelpers.getOrigLangforBook(bookAbbreviation);
+      //Note: translationWords only uses checks that are also available in the original language
       languageId = origLang;
     }
 
-    //Note: translationWords only uses checks that are also available in the greek (OL)
     const toolResourcePath = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS, toolName);
     const versionPath = ResourceAPI.getLatestVersion(toolResourcePath) || toolResourcePath;
     const parentCategories = getFoldersInResourceFolder(versionPath);

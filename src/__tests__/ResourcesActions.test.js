@@ -32,8 +32,8 @@ describe('ResourcesActions', () => {
   describe('getLatestVersion()', () => {
     it('should get highest version with unordered  list', () => {
       // given
-      const versionNumbers = ['v8.0.10','v8.0.9','v8.0.8'];
-      const expectedLatestVersion = 'v8.0.10';
+      const versionNumbers = ['v8.0.10_Door43-Catalog','v8.0.9_Door43-Catalog','v8.0.8_Door43-Catalog'];
+      const expectedLatestVersion = 'v8.0.10_Door43-Catalog';
 
       // when
       const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
@@ -44,8 +44,8 @@ describe('ResourcesActions', () => {
 
     it('should get highest version with ordered  list', () => {
       // given
-      const versionNumbers = ['v8.0.8','v8.0.9','v8.0.10'];
-      const expectedLatestVersion = 'v8.0.10';
+      const versionNumbers = ['v8.0.8_Door43-Catalog','v8.0.9_Door43-Catalog','v8.0.10_Door43-Catalog'];
+      const expectedLatestVersion = 'v8.0.10_Door43-Catalog';
 
       // when
       const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
@@ -56,8 +56,8 @@ describe('ResourcesActions', () => {
 
     it('should work with single item list', () => {
       // given
-      const versionNumbers = ['v8'];
-      const expectedLatestVersion = 'v8';
+      const versionNumbers = ['v8_Door43-Catalog'];
+      const expectedLatestVersion = 'v8_Door43-Catalog';
 
       // when
       const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);

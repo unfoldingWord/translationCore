@@ -76,6 +76,8 @@
   "critical_error_warning": "Chetawni: ekta mahatwapurna golti ulaise!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "Software unnoti karne check kuribi",
     "check_for_content_updates": "Talika unnati karne check kuribi",
     "update_gateway_language_content": "Gateway Language ke unnati kuribole",
@@ -224,6 +226,7 @@
     "dcs_rename_conflict": "Nautun naam diya tu asafal hoise. Kilemane itu naam logote aage pora bhandar ashe. <br/><br/> tu aapni laga project ${door43} te upload kuribole paribo, aapni laga sthaniya project nohoile ${door43} laga naamtu bodli kuribo lagibo.",
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {

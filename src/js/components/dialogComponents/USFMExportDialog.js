@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Checkbox } from 'material-ui';
 import { connect } from 'react-redux';
-import { withLocale } from '../../containers/Locale';
+import { withLocale } from '../../helpers/localeHelpers';
 
 const USFMExportDialog = ({
   translate, selected, onSelect,

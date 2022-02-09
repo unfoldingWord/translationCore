@@ -1,13 +1,12 @@
 /* eslint-disable require-await */
 /* eslint-disable require-await */
 import path from 'path-extra';
-import sourceContentUpdater from 'tc-source-content-updater';
+import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import env from 'tc-electron-env';
 import {
   getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';
 // helpers
-import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
 import { copyGroupDataToProject, updateSourceContentUpdaterManifest } from '../helpers/ResourcesHelpers';
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
@@ -58,7 +57,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 
   if (navigator.onLine) {
     dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
-    const localResourceList = getLocalResourceList();
+    const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
 
     await SourceContentUpdater.getLatestResources(localResourceList)
       .then(resources => {
@@ -92,9 +91,9 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 
 /**
  * Downloads source content updates using the tc-source-content-updater.
- * @param {array} languageIdListToDownload - list of language Ids selected to be downloaded.
+ * @param {array} resourcesToDownload - list of resources to be downloaded.
  */
-export const downloadSourceContentUpdates = (languageIdListToDownload) => (async (dispatch, getState) => {
+export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates = false) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const toolName = getCurrentToolName(getState());
 
@@ -103,7 +102,12 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
   if (navigator.onLine) {
     dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
 
-    await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
+    if (refreshUpdates) {
+      const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+      await SourceContentUpdater.getLatestResources(localResourceList);
+    }
+
+    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload)
       .then(async () => {
         updateSourceContentUpdaterManifest();
         dispatch(updateSourceContentUpdatesReducer());
@@ -129,7 +133,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
         dispatch(
           failedAlertAndRetry(
             () => dispatch(closeAlertDialog()),
-            () => downloadSourceContentUpdates(languageIdListToDownload),
+            () => downloadSourceContentUpdates(resourcesToDownload, true),
             'updates.source_content_updates_unsuccessful_download',
           ),
         );

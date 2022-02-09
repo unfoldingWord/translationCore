@@ -4,12 +4,17 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import { Card, CardText } from 'material-ui';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 // components
 // helpers
 import { getTsvOLVersion } from '../../../helpers/originalLanguageResourcesHelpers';
 import { getAvailableCategories } from '../../../helpers/ResourcesHelpers';
 // constants
-import { USER_RESOURCES_PATH, TRANSLATION_NOTES } from '../../../common/constants';
+import {
+  USER_RESOURCES_PATH,
+  TRANSLATION_NOTES,
+  DEFAULT_OWNER,
+} from '../../../common/constants';
 import ToolCard from './ToolCard';
 
 const ToolsCards = ({
@@ -74,7 +79,13 @@ const ToolsCards = ({
                 resource_id: resourceId,
               } = originalLanguageBookManifest;
               const { tsv_relation } = manifest;
-              const tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
+              let tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
+              const { owner } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
+
+              if (!owner) { // make sure we have an owner for resource
+                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + DEFAULT_OWNER;
+              }
+
               const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
 
               if (neededOLPath) {

@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-// helpers
-import * as sourceContentUpdatesHelpers from '../sourceContentUpdatesHelpers';
+import { apiHelpers } from 'tc-source-content-updater';
 // constants
 import { USER_RESOURCES_PATH } from '../../common/constants';
 
@@ -22,7 +21,7 @@ describe('migrate resources', () => {
     fs.__loadFilesIntoMockFs(copyResourceFiles, sourceResourcesPath, resourcesPath);
 
     // when
-    const resources = sourceContentUpdatesHelpers.getLocalResourceList();
+    const resources = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
 
     // then
     expect(resources).toMatchSnapshot();

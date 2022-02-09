@@ -212,7 +212,7 @@ describe('UsfmFileConversionHelpers', () => {
         project: { id: 'act' },
         target_language: { id: 'en' },
       };
-      const copyFiles = ['el-x-koine/bibles/ugnt/v0.2/act'];
+      const copyFiles = ['el-x-koine/bibles/ugnt/v0.2_Door43-Catalog/act'];
       fs.__loadFilesIntoMockFs(copyFiles, testResourcePath, USER_RESOURCES_PATH);
       const newUsfmProjectImportsPath = path.join(IMPORTS_PATH, 'project_folder_name', 'act');
       const testDataPath = path.join('src', '__tests__', 'fixtures', 'project', 'alignmentUsfmImport', 'acts_1_milestone.usfm');

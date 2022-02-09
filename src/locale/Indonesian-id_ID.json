@@ -76,6 +76,8 @@
   "critical_error_warning": "Peringatan: Telah terjadi kesalahan kritis!",
   "unknown_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal. Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" merupakan opsi pada tombol \"${actions}\".",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "Periksa pembaruan perangkat lunak",
     "check_for_content_updates": "Periksa pembaruan konten",
     "update_gateway_language_content": "Perbarui Konten Bahasa Gateway",
@@ -224,6 +226,7 @@
     "dcs_rename_conflict": "Mengubah nama gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda harus mengganti nama proyek lokal atau mengganti nama Proyek ${door43} Anda.",
     "dcs_create_new_conflict": "Membuat tempat penyimpanan baru gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda perlu mengganti nama proyek lokal atau mengganti nama proyek ${door43} Anda .",
     "unknown_download_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal, yang mencoba untuk mendownload proyek dari \"${project_url}\". <br/> <br/> Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" yang merupakan opsi pada Tombol ${actions}",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "Download proyek ${project_url} gagal. ${error_message}"
   },
   "project_validation": {

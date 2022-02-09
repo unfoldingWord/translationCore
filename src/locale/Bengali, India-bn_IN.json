@@ -76,6 +76,8 @@
   "critical_error_warning": "সাবধানবাণী: একটি গুরুত্বপূর্ণ ত্রুটি ঘটেছে!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "সফটওয়্যারের আপডেটগুলো যাচাই করুন ",
     "check_for_content_updates": "বিষয়বস্তুর আপডেটগুলো যাচাই করুন ",
     "update_gateway_language_content": "আপডেট গেটওয়ে ভাষার বিষয়বস্তু ",
@@ -224,6 +226,7 @@
     "dcs_rename_conflict": "নতুন নামকরণ করা ব্যর্থ হয়েছে কারণ এই নামের সাথে একটি সংগ্রহস্থল আগে থেকেই রয়েছে I<br/><br/> আপনার প্রকল্পটিকে ${door43} তে আপলোড করতে সক্ষম হতে, হয় আপনার স্থানীয় প্রকল্পের নতুন নামকরণ করার দরকার হবে অথবা আপনার ${door43} প্রকল্পের নতুন নামকরণ করতে হবে I   ",
     "dcs_create_new_conflict": "নতুন সংগ্রহস্থল সৃষ্টি করা ব্যর্থ হয়েছে কারণ এই নামের একটি সংগ্রহস্থল ইতিমধ্যেই বিদ্যমান রয়েছে I <br/><br/>আপনার প্রকল্পকে ${door43} তে আপলোড করতে সক্ষম হওয়ার জন্য, হয় আপনার স্থানীয় প্রকল্পটির নবনামাঙ্কন করার প্রয়োজন হবে নয়তো ${door43} প্রকল্পটির নতুন নামকরণ করতে হবে I ",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {

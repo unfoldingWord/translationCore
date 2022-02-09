@@ -23,7 +23,6 @@ beforeAll(() => {
   configure({ adapter: new Adapter() });
 });
 
-
 // Tests for ProjectFAB React Component
 describe('Test StatusBarContainer component',()=>{
   let store;

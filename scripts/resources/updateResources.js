@@ -5,9 +5,16 @@
 require('babel-polyfill'); // required for async/await
 const path = require('path-extra');
 const fs = require('fs-extra');
-const SourceContentUpdater = require('tc-source-content-updater').default;
+const {
+  default: SourceContentUpdater,
+  apiHelpers,
+} = require('tc-source-content-updater');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
+
+// TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
+// set to null to remove restriction, or you can add other permitted owners to list
+const filterByOwner = ['Door43-Catalog'];
 
 /**
  * find resources to update
@@ -20,9 +27,9 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
   const sourceContentUpdater = new SourceContentUpdater();
 
   try {
-    const localResourceList = UpdateResourcesHelpers.getLocalResourceList(resourcesPath);
+    const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
 
-    await sourceContentUpdater.getLatestResources(localResourceList)
+    await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner)
       .then(async () => {
         await sourceContentUpdater.downloadResources(languages, resourcesPath,
           sourceContentUpdater.updatedCatalogResources, // list of static resources that are newer in catalog

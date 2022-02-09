@@ -76,6 +76,8 @@
   "critical_error_warning": "चेतावनी: एक गंभीर त्रुटि हुई है!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "सॉफ्टवेयर अपडेट की जांच करें",
     "check_for_content_updates": "सामग्री अपडेट्स के लिए जाँच करें",
     "update_gateway_language_content": "गेटवे भाषा सामग्री अपडेट करें",
@@ -224,6 +226,7 @@
     "dcs_rename_conflict": "नाम बदलें विफल रहा क्योंकि इस नाम के साथ एक रिपोजिटरी पहले से मौजूद है।<br/><br/>अपने प्रोजेक्ट को ${door43} पर अपलोड करने में सक्षम होने के लिए, आपको या तो अपनी स्थानीय प्रोजेक्ट का नाम बदलने या अपने ${door43} प्रोजेक्ट का नाम बदलने की आवश्यकता है।",
     "dcs_create_new_conflict": "बनाने के लिए नए भंडार में विफल रहा है क्योंकि एक रिपोजिटरी इस नाम के साथ पहले से ही मौजूद है ।<br/><br/>करने के लिए सक्षम होना करने के लिए अपलोड करने के लिए अपनी परियोजना ${door43}, आप की जरूरत करने के लिए का नाम बदलें या तो अपने स्थानीय परियोजना का नाम बदलें या अपने ${door43} परियोजना है ।",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {
