@@ -362,7 +362,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
 
     if (groupDataUpdated) {
       migrateOldCheckingResourceData(projectDir, toolName);
-      // update catagories owner
+      // update categories owner
       const categoriesPath = project.getCategoriesPath(toolName);
 
       if (fs.pathExistsSync(categoriesPath)) {
