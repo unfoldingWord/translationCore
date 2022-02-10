@@ -136,12 +136,12 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
 
         if (errors && errors.length) {
           for (const error of errors) {
-            let errorType = error.parseError ? 'parse error' : 'download error';
+            let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_parse';
 
             if (error.parseError && error.errorMessage.indexOf(' - cannot find ')) {
-              errorType = 'missing dependency';
+              errorType = 'updates.update_error_reason_missing_dependency';
             }
-            errorStr += `${error.downloadUrl} - ${errorType}\n`;
+            errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
           }
         }
 
