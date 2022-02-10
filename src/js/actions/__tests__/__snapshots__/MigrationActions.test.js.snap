@@ -19,8 +19,9 @@ Array [
 ]
 `;
 
-exports[`migrate tCore resources Test grc resource migration test with older version of ugnt in grc/bible - should be removed 1`] = `
+exports[`migrate tCore resources Test grc resource migration test with older version of ugnt in grc/bible - should not be removed 1`] = `
 Array [
+  "/Users/jest/mock/path/translationCore/resources/el-x-koine/bibles/ugnt/v0.1_Door43-Catalog",
   "/Users/jest/mock/path/translationCore/resources/el-x-koine/bibles/ugnt/v0.2_Door43-Catalog",
   "/Users/jest/mock/path/translationCore/resources/el-x-koine/translationHelps/translationWords/v8_Door43-Catalog",
   "/Users/jest/mock/path/translationCore/resources/en/bibles/ult/v12.1_Door43-Catalog",

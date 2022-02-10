@@ -1,5 +1,16 @@
 # Changelog
 
+## [v3.1.0](https://github.com/unfoldingWord/translationCore/tree/v3.1.0) (2022-1-15)
+
+**Implemented enhancements:**
+
+- Epic for Editing and Aligning Verse Ranges [\#7167](https://github.com/unfoldingWord/translationCore/issues/7167)
+
+**Fixed bugs:**
+
+- tCore 3.0.2 is deleting newer resources on startup and replacing with resources bundled [\#7210](https://github.com/unfoldingWord/translationCore/issues/7210)
+- Empty occurrence notes crashes parsing of books when downloading latest tNs [\#7198](https://github.com/unfoldingWord/translationCore/issues/7198)
+
 ## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-12-16)
 
 **Fixed bugs:**
