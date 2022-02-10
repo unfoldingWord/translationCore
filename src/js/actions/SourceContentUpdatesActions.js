@@ -6,6 +6,7 @@ import env from 'tc-electron-env';
 import {
   getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
 } from '../selectors';
+import { getResourceDownloadsAlertMessage } from '../containers/SourceContentUpdatesDialogContainer';
 // helpers
 import { copyGroupDataToProject, updateSourceContentUpdaterManifest } from '../helpers/ResourcesHelpers';
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
@@ -28,12 +29,12 @@ export const resetSourceContentUpdatesReducer = () => ({ type: consts.RESET_LIST
 
 export const updateSourceContentUpdatesReducer = () => ({ type: consts.INCREMENT_SOURCE_CONTENT_UPDATE_COUNT });
 
-const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage) => ((dispatch, getState) => {
+const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage, failAlertString = null) => ((dispatch, getState) => {
   const translate = getTranslate(getState());
 
   dispatch(
     openOptionDialog(
-      translate(failAlertMessage),
+      failAlertString || translate(failAlertMessage),
       () => dispatch(retryCallback()),
       translate('buttons.retry'),
       translate('buttons.cancel_button'),
@@ -129,12 +130,29 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
         dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
       })
       .catch((err) => {
-        console.error(err);
+        console.error('downloadSourceContentUpdates() - error:', err);
+        const errors = SourceContentUpdater.downloadErrors;
+        let errorStr = '';
+
+        if (errors && errors.length) {
+          for (const error of errors) {
+            let errorType = error.parseError ? 'parse error' : 'download error';
+
+            if (error.parseError && error.errorMessage.indexOf(' - cannot find ')) {
+              errorType = 'missing dependency';
+            }
+            errorStr += `${error.downloadUrl} - ${errorType}\n`;
+          }
+        }
+
+        const alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
+
         dispatch(
           failedAlertAndRetry(
             () => dispatch(closeAlertDialog()),
             () => downloadSourceContentUpdates(resourcesToDownload, true),
-            'updates.source_content_updates_unsuccessful_download',
+            null,
+            alertMessage,
           ),
         );
       });
