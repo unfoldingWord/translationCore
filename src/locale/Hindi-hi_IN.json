@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "स्रोत सामग्री अपडेट की जाँच समाप्त करने में असमर्थ।",
     "downloading_source_content_updates": "स्रोत सामग्री अपडेट डाउनलोड कर रहा है...",
     "source_content_updates_successful_download": "स्रोत सामग्री अपडेट सफलतापूर्वक डाउनलोड किया गया!",
-    "source_content_updates_unsuccessful_download": "स्रोत सामग्री अपडेट डाउनलोड करने में विफल।",
+    "source_content_updates_unsuccessful_download": "Failed to download source content updates:",
     "source_content_up_to_date": "सभी स्रोत सामग्री अप टू डेट है।",
     "select_the_gateway_language_content_to_download": "गेटवे भाषा सामग्री का चयन करें जिसे आप डाउनलोड करना और अपडेट करना चाहते हैं।",
     "unable_to_check": "अपडेट की जांच करने में असमर्थ",
@@ -98,7 +98,10 @@
     "download_error": "अपडेट डाउनलोड करने में असमर्थ",
     "source_label": "स्रोत:",
     "local_timestamp": "स्थानीय:",
-    "online_timestamp": "ऑनलाइन:"
+    "online_timestamp": "ऑनलाइन:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "वर्ग:",
