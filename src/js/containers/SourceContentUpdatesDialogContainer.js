@@ -13,6 +13,26 @@ import SourceContentUpdateDialog from '../components/dialogComponents/SourceCont
 import { languagesObjectToResourcesArray, createLanguagesObjectFromResources } from '../helpers/combineResources';
 
 /**
+ * format a localized error message
+ * @param {function} translate
+ * @param {string} errorStr
+ * @return {JSX.Element}
+ */
+export function getResourceDownloadsAlertMessage(translate, errorStr= '') {
+  const parts = errorStr.split('\n').map(line => (
+    <>
+      {line}
+      <br/>
+    </>
+  ));
+  return <>
+    {translate('updates.source_content_updates_unsuccessful_download')}
+    <br/><br/>
+    {parts}
+  </>;
+}
+
+/**
  * Renders a dialog displaying a list of new content updates.
  *
  * @class
