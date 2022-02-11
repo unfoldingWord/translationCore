@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "మూలాధార సమాచార నవీకరణల తనిఖీ ముగించలేకపోతుంది",
     "downloading_source_content_updates": "మూలాధార సమాచార నవీకరణలు బదిలీ అవుతున్నాయి",
     "source_content_updates_successful_download": "మూలాధార సమాచార నవీకరణలు విజయవంతంగా బదిలీ అయ్యాయి!",
-    "source_content_updates_unsuccessful_download": "మూలాధార సమాచార నవీకరణలు బదిలీ వైఫల్యం అయ్యింది",
+    "source_content_updates_unsuccessful_download": "Failed to download source content updates:",
     "source_content_up_to_date": "మూలాధార సమాచారం అంతా సిద్ధంగా ఉంది",
     "select_the_gateway_language_content_to_download": "మీరు బదిలీ చెయ్యడానికీ, నవీకరించడానికీ కోరుతున్న గేట్ వే భాష సారాంశాన్ని ఎంపిక చెయ్యండి",
     "unable_to_check": "నవీకరణల తనిఖీ చెయ్యలేకపోతుంది",
@@ -98,7 +98,10 @@
     "download_error": "నవీకరణ దిగుమతి కాలేకపోతుంది",
     "source_label": "మూలాధారం:",
     "local_timestamp": "స్థానికం:",
-    "online_timestamp": "ఆన్ లైన్:"
+    "online_timestamp": "ఆన్ లైన్:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "విభాగం:",
