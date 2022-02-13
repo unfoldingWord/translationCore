@@ -445,7 +445,7 @@ const releaseWindows = (arch, src, dest) => {
  * @return {*}
  */
 const downloadWinGit = function (version, arch, patch = '') {
-  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}-${arch}-bit.exe`;
+  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}${patch}-${arch}-bit.exe`;
   let dir = './vendor';
   let dest = dir + `/Git-${version}${patch}-${arch}-bit.exe`;
   mkdirp.sync(dir);
