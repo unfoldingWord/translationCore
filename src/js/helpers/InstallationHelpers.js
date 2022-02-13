@@ -7,17 +7,20 @@ const open = require('opn');
 const rimraf = require('rimraf');
 const download = require('./DownloadHelpers').download;
 
-const GIT_VERSION = '2.9.2';
+const GIT_VERSION = '2.35.1';
+const GIT_PATCH = '.2';
 module.exports.GIT_VERSION = GIT_VERSION;
+module.exports.GIT_PATCH = GIT_PATCH;
 
 /***
  * Downloads a git installer for windows
  * @param version the desired version of git
  * @param arch the windows architecture e.g. 64 or 32
+ * @param patch - optional patch level such as `.2`
  * @return {Promise.<string>} the path to the downloaded file
  */
-const downloadWinGit = (version, arch) => {
-  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
+const downloadWinGit = (version, arch, patch = '') => {
+  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}-${arch}-bit.exe`;
   let dir = path.join(env.home(), 'translationCore', '.temp');
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   console.log('Downloading Git to ' + dest);

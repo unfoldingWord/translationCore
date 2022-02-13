@@ -386,7 +386,8 @@ const releaseWindows = (arch, src, dest) => {
   const p = require('./package');
   const exec = require('child_process').exec;
 
-  const gitVersion = '2.9.2';
+  const gitVersion = '2.35.1';
+  const gitPatch = '.2';
   const isLinux = /^linux/.test(process.platform);
   const isWindows = /^win/.test(process.platform);
 
@@ -423,7 +424,7 @@ const releaseWindows = (arch, src, dest) => {
     ? 'x64'
     : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
 
-  return downloadWinGit(gitVersion, arch).then(() => new Promise(function (resolve, reject) {
+  return downloadWinGit(gitVersion, arch, gitPatch).then(() => new Promise(function (resolve, reject) {
     console.log(`Generating ${arch} bit windows installer`);
     console.log(`executing: \n${cmd}\n`);
     exec(cmd, function (err) {
@@ -440,10 +441,11 @@ const releaseWindows = (arch, src, dest) => {
  * Downloads git for windows
  * @param version
  * @param arch
+ * @param patch - optional patch level such as `.2`
  * @return {*}
  */
-const downloadWinGit = function (version, arch) {
-  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
+const downloadWinGit = function (version, arch, patch = '') {
+  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}-${arch}-bit.exe`;
   let dir = './vendor';
   let dest = dir + `/Git-${version}-${arch}-bit.exe`;
   mkdirp.sync(dir);
@@ -466,7 +468,8 @@ gulp.task('release', done => {
 
   let promises = [];
   let platforms = [];
-  const gitVersion = '2.9.2';
+  const gitVersion = '2.35.1';
+  const gitPatch = '.2';
 
   if (argv.win) {
     platforms.push('win32', 'win64');
@@ -498,12 +501,13 @@ gulp.task('release', done => {
 
   /**
    *
-   * @param version 2.9.2
+   * @param version 2.35.1
    * @param arch 64|32
+   * @param patch - optional patch level such as `.2`
    * @returns {Promise}
    */
-  const downloadGit = function (version, arch) {
-    let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
+  const downloadGit = function (version, arch, patch = '') {
+    let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}${patch}-${arch}-bit.exe`;
     let dir = './vendor';
     let dest = dir + `/Git-${version}-${arch}-bit.exe`;
     mkdirp.sync(dir);
@@ -579,7 +583,7 @@ gulp.task('release', done => {
       switch (os) {
       case 'win32':
         if (fs.existsSync(BUILD_DIR + p.name + '-win32-ia32/')) {
-          promises.push(downloadGit(gitVersion, '32')
+          promises.push(downloadGit(gitVersion, '32', gitPatch)
             .then(releaseWin.bind(undefined, '32', os)));
         } else {
           promises.push(Promise.resolve({
@@ -591,7 +595,7 @@ gulp.task('release', done => {
         break;
       case 'win64':
         if (fs.existsSync(BUILD_DIR + p.name + '-win32-x64/')) {
-          promises.push(downloadGit(gitVersion, '64')
+          promises.push(downloadGit(gitVersion, '64', gitPatch)
             .then(releaseWin.bind(undefined, '64', os)));
         } else {
           promises.push(Promise.resolve({
