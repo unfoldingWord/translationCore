@@ -422,7 +422,7 @@ const releaseWindows = (arch, src, dest) => {
   const file = path.basename(dest, '.exe');
   let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64'
     ? 'x64'
-    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
+    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion}${gitPatch} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
 
   return downloadWinGit(gitVersion, arch, gitPatch).then(() => new Promise(function (resolve, reject) {
     console.log(`Generating ${arch} bit windows installer`);
@@ -447,7 +447,7 @@ const releaseWindows = (arch, src, dest) => {
 const downloadWinGit = function (version, arch, patch = '') {
   let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}-${arch}-bit.exe`;
   let dir = './vendor';
-  let dest = dir + `/Git-${version}-${arch}-bit.exe`;
+  let dest = dir + `/Git-${version}${patch}-${arch}-bit.exe`;
   mkdirp.sync(dir);
 
   if (!fs.existsSync(dest)) {
@@ -509,11 +509,11 @@ gulp.task('release', done => {
   const downloadGit = function (version, arch, patch = '') {
     let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}${patch}-${arch}-bit.exe`;
     let dir = './vendor';
-    let dest = dir + `/Git-${version}-${arch}-bit.exe`;
+    let dest = dir + `/Git-${version}${patch}-${arch}-bit.exe`;
     mkdirp.sync(dir);
 
     if (!fs.existsSync(dest)) {
-      console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
+      console.log(`Downloading git ${version}${patch} for ${arch} bit from ${url}`);
       return request.download(url, dest);
     } else {
       console.log('Using cached git installer');
