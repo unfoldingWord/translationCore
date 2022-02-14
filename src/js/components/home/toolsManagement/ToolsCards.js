@@ -81,7 +81,7 @@ const ToolsCards = ({
               } = originalLanguageBookManifest;
               const { tsv_relation } = manifest;
               let tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
-              const { owner } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
+              const { owner, version } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
 
               if (!owner) { // make sure we have an owner for resource
                 tsvOLVersion += apiHelpers.OWNER_SEPARATOR + DEFAULT_OWNER;
@@ -95,7 +95,7 @@ const ToolsCards = ({
               missingOLResource = {
                 languageId,
                 resourceId,
-                version: tsvOLVersion,
+                version,
               };
             }
 
