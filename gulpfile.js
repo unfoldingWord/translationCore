@@ -375,6 +375,9 @@ gulp.task('release-win32', () => {
   return releaseWindows('32', buildPath, path.normalize(outPath));
 });
 
+const GIT_VERSION = '2.35.1';
+const GIT_PATCH_LEVEL = '.2';
+
 /**
  * Releases a windows build
  * @param {string} arch - the os architecture (e.g. 64 or 32)
@@ -386,8 +389,8 @@ const releaseWindows = (arch, src, dest) => {
   const p = require('./package');
   const exec = require('child_process').exec;
 
-  const gitVersion = '2.35.1';
-  const gitPatch = '.2';
+  const gitVersion = GIT_VERSION;
+  const gitPatch = GIT_PATCH_LEVEL;
   const isLinux = /^linux/.test(process.platform);
   const isWindows = /^win/.test(process.platform);
 
@@ -441,7 +444,7 @@ const releaseWindows = (arch, src, dest) => {
  * Downloads git for windows
  * @param version
  * @param arch
- * @param patch - optional patch level such as `.2`
+ * @param patch - optional patch level such as `.1`
  * @return {*}
  */
 const downloadWinGit = function (version, arch, patch = '') {
@@ -468,8 +471,8 @@ gulp.task('release', done => {
 
   let promises = [];
   let platforms = [];
-  const gitVersion = '2.35.1';
-  const gitPatch = '.2';
+  const gitVersion = GIT_VERSION;
+  const gitPatch = GIT_PATCH_LEVEL;
 
   if (argv.win) {
     platforms.push('win32', 'win64');
@@ -503,7 +506,7 @@ gulp.task('release', done => {
    *
    * @param version 2.35.1
    * @param arch 64|32
-   * @param patch - optional patch level such as `.2`
+   * @param patch - optional patch level such as `.1`
    * @returns {Promise}
    */
   const downloadGit = function (version, arch, patch = '') {
