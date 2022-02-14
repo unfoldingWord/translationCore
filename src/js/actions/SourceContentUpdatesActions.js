@@ -105,6 +105,18 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
 
     if (refreshUpdates) {
       const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+      const resourcesNotDownloaded = resourcesToDownload.filter(resourceToDownload => {
+        const downloadVersion = 'v' + resourceToDownload.version;
+        const matchedResource = localResourceList.find(existingResource => {
+          const match = (existingResource.version === downloadVersion) &&
+            (existingResource.languageId === resourceToDownload.languageId) &&
+            (existingResource.resourceId === resourceToDownload.resourceId) &&
+            (existingResource.owner === resourceToDownload.owner);
+          return match;
+        });
+        return !matchedResource;
+      });
+      resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
       await SourceContentUpdater.getLatestResources(localResourceList);
     }
 

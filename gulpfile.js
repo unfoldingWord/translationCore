@@ -375,6 +375,9 @@ gulp.task('release-win32', () => {
   return releaseWindows('32', buildPath, path.normalize(outPath));
 });
 
+const GIT_VERSION = '2.35.1';
+const GIT_PATCH_LEVEL = '.2';
+
 /**
  * Releases a windows build
  * @param {string} arch - the os architecture (e.g. 64 or 32)
@@ -386,7 +389,8 @@ const releaseWindows = (arch, src, dest) => {
   const p = require('./package');
   const exec = require('child_process').exec;
 
-  const gitVersion = '2.9.2';
+  const gitVersion = GIT_VERSION;
+  const gitPatch = GIT_PATCH_LEVEL;
   const isLinux = /^linux/.test(process.platform);
   const isWindows = /^win/.test(process.platform);
 
@@ -421,9 +425,9 @@ const releaseWindows = (arch, src, dest) => {
   const file = path.basename(dest, '.exe');
   let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64'
     ? 'x64'
-    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
+    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion}${gitPatch} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
 
-  return downloadWinGit(gitVersion, arch).then(() => new Promise(function (resolve, reject) {
+  return downloadWinGit(gitVersion, arch, gitPatch).then(() => new Promise(function (resolve, reject) {
     console.log(`Generating ${arch} bit windows installer`);
     console.log(`executing: \n${cmd}\n`);
     exec(cmd, function (err) {
@@ -438,14 +442,15 @@ const releaseWindows = (arch, src, dest) => {
 
 /**
  * Downloads git for windows
- * @param version
+ * @param version - such as 2.35.1
  * @param arch
+ * @param patch - optional patch level such as `.1`
  * @return {*}
  */
-const downloadWinGit = function (version, arch) {
-  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
+const downloadWinGit = function (version, arch, patch = '') {
+  let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}${patch}-${arch}-bit.exe`;
   let dir = './vendor';
-  let dest = dir + `/Git-${version}-${arch}-bit.exe`;
+  let dest = dir + `/Git-${version}${patch}-${arch}-bit.exe`;
   mkdirp.sync(dir);
 
   if (!fs.existsSync(dest)) {
@@ -466,7 +471,8 @@ gulp.task('release', done => {
 
   let promises = [];
   let platforms = [];
-  const gitVersion = '2.9.2';
+  const gitVersion = GIT_VERSION;
+  const gitPatch = GIT_PATCH_LEVEL;
 
   if (argv.win) {
     platforms.push('win32', 'win64');
@@ -498,18 +504,19 @@ gulp.task('release', done => {
 
   /**
    *
-   * @param version 2.9.2
+   * @param version - such as 2.35.1
    * @param arch 64|32
+   * @param patch - optional patch level such as `.1`
    * @returns {Promise}
    */
-  const downloadGit = function (version, arch) {
-    let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows.1/Git-${version}-${arch}-bit.exe`;
+  const downloadGit = function (version, arch, patch = '') {
+    let url = `https://github.com/git-for-windows/git/releases/download/v${version}.windows${patch}/Git-${version}${patch}-${arch}-bit.exe`;
     let dir = './vendor';
-    let dest = dir + `/Git-${version}-${arch}-bit.exe`;
+    let dest = dir + `/Git-${version}${patch}-${arch}-bit.exe`;
     mkdirp.sync(dir);
 
     if (!fs.existsSync(dest)) {
-      console.log(`Downloading git ${version} for ${arch} bit from ${url}`);
+      console.log(`Downloading git ${version}${patch} for ${arch} bit from ${url}`);
       return request.download(url, dest);
     } else {
       console.log('Using cached git installer');
@@ -579,7 +586,7 @@ gulp.task('release', done => {
       switch (os) {
       case 'win32':
         if (fs.existsSync(BUILD_DIR + p.name + '-win32-ia32/')) {
-          promises.push(downloadGit(gitVersion, '32')
+          promises.push(downloadGit(gitVersion, '32', gitPatch)
             .then(releaseWin.bind(undefined, '32', os)));
         } else {
           promises.push(Promise.resolve({
@@ -591,7 +598,7 @@ gulp.task('release', done => {
         break;
       case 'win64':
         if (fs.existsSync(BUILD_DIR + p.name + '-win32-x64/')) {
-          promises.push(downloadGit(gitVersion, '64')
+          promises.push(downloadGit(gitVersion, '64', gitPatch)
             .then(releaseWin.bind(undefined, '64', os)));
         } else {
           promises.push(Promise.resolve({
