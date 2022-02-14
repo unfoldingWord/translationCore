@@ -442,7 +442,7 @@ const releaseWindows = (arch, src, dest) => {
 
 /**
  * Downloads git for windows
- * @param version
+ * @param version - such as 2.35.1
  * @param arch
  * @param patch - optional patch level such as `.1`
  * @return {*}
@@ -504,7 +504,7 @@ gulp.task('release', done => {
 
   /**
    *
-   * @param version 2.35.1
+   * @param version - such as 2.35.1
    * @param arch 64|32
    * @param patch - optional patch level such as `.1`
    * @returns {Promise}
