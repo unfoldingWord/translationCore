@@ -4,6 +4,8 @@ exports[`ProjectLoadingActions.migrateValidateLoadProject should just open proje
 Array [
   Object {
     "alertMessage": "projects.loading_project_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -275,6 +277,8 @@ exports[`ProjectLoadingActions.migrateValidateLoadProject should open to details
 Array [
   Object {
     "alertMessage": "projects.loading_project_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },

@@ -88,7 +88,11 @@ describe('Tool Actions.openTool', () => {
     const expectedActions = [
       { 'type': 'SHOW_MODAL_CONTAINER', 'val': false },
       {
-        'type': 'OPEN_ALERT_DIALOG', 'alertMessage': 'tools.loading_tool_data', 'loading': true,
+        'type': 'OPEN_ALERT_DIALOG',
+        'alertMessage': 'tools.loading_tool_data',
+        'loading': true,
+        'buttonText': null,
+        'callback': null,
       },
       { 'name': TRANSLATION_NOTES, 'type': 'OPEN_TOOL' },
       {

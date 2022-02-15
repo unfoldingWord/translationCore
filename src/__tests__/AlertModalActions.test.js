@@ -10,6 +10,8 @@ describe('AlertModalActions.openAlertDialog', () => {
       type: consts.OPEN_ALERT_DIALOG,
       alertMessage: alertMessage,
       loading: null,
+      buttonText: null,
+      callback: null,
     };
     expect(AlertModalActions.openAlertDialog(alertMessage, null)).toEqual(expectedAction);
   });
@@ -20,6 +22,8 @@ describe('AlertModalActions.openAlertDialog', () => {
       type: consts.OPEN_ALERT_DIALOG,
       alertMessage: alertMessage,
       loading: false,
+      buttonText: null,
+      callback: null,
     };
     expect(AlertModalActions.openAlertDialog(alertMessage, false)).toEqual(expectedAction);
   });
@@ -30,6 +34,8 @@ describe('AlertModalActions.openAlertDialog', () => {
       type: consts.OPEN_ALERT_DIALOG,
       alertMessage: alertMessage,
       loading: true,
+      buttonText: null,
+      callback: null,
     };
     expect(AlertModalActions.openAlertDialog(alertMessage, true)).toEqual(expectedAction);
   });
