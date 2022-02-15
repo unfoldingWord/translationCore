@@ -96,6 +96,7 @@
     "downloading": "अद्यतन स्थिति डाउनलोड हो रही है",
     "downloading_version": "संस्करण ${version} डाउनलोड कर रहा है",
     "download_error": "अपडेट डाउनलोड करने में असमर्थ",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "स्रोत:",
     "local_timestamp": "स्थानीय:",
     "online_timestamp": "ऑनलाइन:",
