@@ -71,6 +71,8 @@ describe('LocalImportWorkflowActions', () => {
         type: 'OPEN_ALERT_DIALOG',
         alertMessage: 'projects.importing_local_alert',
         loading: true,
+        buttonText: null,
+        callback: null,
       },
       {
         type: 'UPDATE_SOURCE_PROJECT_PATH',

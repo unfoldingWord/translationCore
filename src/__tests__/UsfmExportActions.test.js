@@ -206,6 +206,8 @@ describe('USFMExportActions.displayUSFMExportFinishedDialog', () => {
       type: 'OPEN_ALERT_DIALOG',
       alertMessage: 'projects.exported_alert',
       loading: false,
+      buttonText: null,
+      callback: null,
     }];
     const initialState = {};
     const store = mockStore(initialState);
@@ -350,14 +352,22 @@ describe('USFMExportActions.exportToUSFM', () => {
       { 'type': 'OPEN_OPTION_DIALOG' },
       { 'type': 'CLOSE_ALERT_DIALOG' },
       {
-        'alertMessage': 'projects.exporting_file_alert', 'loading': true, 'type': 'OPEN_ALERT_DIALOG',
+        'alertMessage': 'projects.exporting_file_alert',
+        'loading': true,
+        'type': 'OPEN_ALERT_DIALOG',
+        'buttonText': null,
+        'callback': null,
       },
       { 'type': 'CLOSE_ALERT_DIALOG' },
       { 'bool': true, 'type': 'SHOW_DIMMED_SCREEN' },
       { 'bool': false, 'type': 'SHOW_DIMMED_SCREEN' },
       { 'type': 'SET_USFM_SAVE_LOCATION', 'usfmSaveLocation': '/' },
       {
-        'alertMessage': 'projects.exported_alert', 'loading': false, 'type': 'OPEN_ALERT_DIALOG',
+        'alertMessage': 'projects.exported_alert',
+        'loading': false,
+        'type': 'OPEN_ALERT_DIALOG',
+        'buttonText': null,
+        'callback': null,
       },
       { 'bool': false, 'type': 'SHOW_DIMMED_SCREEN' }];
     const projectSaveLocation = path.join(PROJECTS_PATH, projectName);
