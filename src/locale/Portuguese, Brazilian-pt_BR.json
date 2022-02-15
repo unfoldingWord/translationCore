@@ -96,6 +96,7 @@
     "downloading": "Baixando a atualização",
     "downloading_version": "Baixando a versão ${version}",
     "download_error": "Não foi possível baixar a atualização.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "Fonte:",
     "local_timestamp": "Local:",
     "online_timestamp": "Online:",
