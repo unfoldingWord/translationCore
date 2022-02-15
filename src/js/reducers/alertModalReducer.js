@@ -20,10 +20,10 @@ const alertModalReducer = (state = initialState, action) => {
       alertDialogVisibility: true,
       alertDialogLoading: action.loading,
       alertText: action.alertMessage,
-      button1: null,
+      button1: action.buttonText,
       button2: null,
       buttonLink: null,
-      callback: null,
+      callback: action.callback,
     };
   case consts.OPEN_OPTION_DIALOG:
     return {

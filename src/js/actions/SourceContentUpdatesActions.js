@@ -97,11 +97,19 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates = false) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const toolName = getCurrentToolName(getState());
+  let cancelled = false;
 
   dispatch(resetSourceContentUpdatesReducer());
 
   if (navigator.onLine) {
-    dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
+    dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'),
+      true,
+      translate('buttons.cancel_button'),
+      () => { // cancel actions
+        cancelled = true;
+        SourceContentUpdater.cancelDownload();
+        dispatch(closeAlertDialog());
+      }));
 
     if (refreshUpdates) {
       const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
@@ -139,10 +147,21 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           // Tool is opened so we need to update existing group data
           copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch);
         }
-        dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+
+        if (cancelled) {
+          console.error('downloadSourceContentUpdates() - download cancelled, no errors');
+        }
+
+        const message = cancelled ? 'updates.downloads_canceled' : 'updates.source_content_updates_successful_download';
+        dispatch(openAlertDialog(translate(message)));
       })
       .catch((err) => {
-        console.error('downloadSourceContentUpdates() - error:', err);
+        if (cancelled) {
+          console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
+        } else {
+          console.error('downloadSourceContentUpdates() - error:', err);
+        }
+
         const errors = SourceContentUpdater.downloadErrors;
         let errorStr = '';
 
