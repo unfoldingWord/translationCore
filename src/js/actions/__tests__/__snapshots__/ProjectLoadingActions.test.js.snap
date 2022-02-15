@@ -716,6 +716,8 @@ exports[`loadProject displays the details screen of an invalid project name 1`] 
 Array [
   Object {
     "alertMessage": "projects.loading_project_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -1150,6 +1152,8 @@ Array [
   },
   Object {
     "alertMessage": "Cannot read property 'projects' of undefined",
+    "buttonText": null,
+    "callback": null,
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -1224,6 +1228,8 @@ exports[`loadProject opens a valid project 1`] = `
 Array [
   Object {
     "alertMessage": "projects.loading_project_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -1492,6 +1498,8 @@ Array [
   },
   Object {
     "alertMessage": "Cannot read property 'projects' of undefined",
+    "buttonText": null,
+    "callback": null,
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },
