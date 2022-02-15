@@ -108,7 +108,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
       () => { // cancel actions
         cancelled = true;
         SourceContentUpdater.cancelDownload();
-        dispatch(closeAlertDialog());
+        dispatch(openAlertDialog(translate('updates.downloads_canceled')));
       }));
 
     if (refreshUpdates) {
@@ -150,42 +150,40 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
 
         if (cancelled) {
           console.error('downloadSourceContentUpdates() - download cancelled, no errors');
+        } else {
+          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         }
-
-        const message = cancelled ? 'updates.downloads_canceled' : 'updates.source_content_updates_successful_download';
-        dispatch(openAlertDialog(translate(message)));
       })
       .catch((err) => {
         if (cancelled) {
           console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
         } else {
           console.error('downloadSourceContentUpdates() - error:', err);
-        }
+          const errors = SourceContentUpdater.downloadErrors;
+          let errorStr = '';
 
-        const errors = SourceContentUpdater.downloadErrors;
-        let errorStr = '';
+          if (errors && errors.length) {
+            for (const error of errors) {
+              let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_parse';
 
-        if (errors && errors.length) {
-          for (const error of errors) {
-            let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_parse';
-
-            if (error.parseError && error.errorMessage.indexOf(' - cannot find ')) {
-              errorType = 'updates.update_error_reason_missing_dependency';
+              if (error.parseError && error.errorMessage.indexOf(' - cannot find ')) {
+                errorType = 'updates.update_error_reason_missing_dependency';
+              }
+              errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
             }
-            errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
           }
+
+          const alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
+
+          dispatch(
+            failedAlertAndRetry(
+              () => dispatch(closeAlertDialog()),
+              () => downloadSourceContentUpdates(resourcesToDownload, true),
+              null,
+              alertMessage,
+            ),
+          );
         }
-
-        const alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
-
-        dispatch(
-          failedAlertAndRetry(
-            () => dispatch(closeAlertDialog()),
-            () => downloadSourceContentUpdates(resourcesToDownload, true),
-            null,
-            alertMessage,
-          ),
-        );
       });
   } else {
     dispatch(openAlertDialog(translate('no_internet')));
