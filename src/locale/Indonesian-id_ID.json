@@ -96,6 +96,7 @@
     "downloading": "Pembaruan Unduhan",
     "downloading_version": "Mengunduh Versi ${version}",
     "download_error": "Tidak dapat mengunduh pembaruan.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "Sumber:",
     "local_timestamp": "Lokal:",
     "online_timestamp": "Online:",
