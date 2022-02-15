@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "Unable to finish checking for source content updates.",
     "downloading_source_content_updates": "Downloading source content updates...",
     "source_content_updates_successful_download": "Source content updates downloaded successfully!",
-    "source_content_updates_unsuccessful_download": "Failed to download source content updates:",
+    "source_content_updates_unsuccessful_download": "Failed to download source content updates.",
     "source_content_up_to_date": "All source content is up to date.",
     "select_the_gateway_language_content_to_download": "Select the Gateway Language content you would like to download and update.",
     "unable_to_check": "Unable to check for updates",

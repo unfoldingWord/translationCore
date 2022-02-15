@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "No se puede terminar de verificar las actualizaciones de contenido fuente.",
     "downloading_source_content_updates": "Descargando las actualizaciones del contenido fuente...",
     "source_content_updates_successful_download": "Actualizaciones de contenido fuente descargadas exitosamente!",
-    "source_content_updates_unsuccessful_download": "Failed to download source content updates:",
+    "source_content_updates_unsuccessful_download": "Error al descargar las actualizaciones del contenido original.",
     "source_content_up_to_date": "Todo el contenido fuente ya se actualizó.",
     "select_the_gateway_language_content_to_download": "Seleccione el contenido del Idioma de estrada que se desea descargar y actualizar.",
     "unable_to_check": "No se puede comprobar si hay actualizaciones",
