@@ -96,6 +96,7 @@
     "downloading": "Загрузка обновления",
     "downloading_version": "Скачивание версии ${version}",
     "download_error": "Не удается загрузить обновление.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "Источник:",
     "local_timestamp": "Локально:",
     "online_timestamp": "Онлайн:",
