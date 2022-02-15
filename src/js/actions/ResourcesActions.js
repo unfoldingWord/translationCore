@@ -4,7 +4,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import env from 'tc-electron-env';
-import { resourcesHelpers } from 'tc-source-content-updater';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles,
@@ -264,11 +264,14 @@ export const loadBiblesByLanguageId = (languageId, owner = DEFAULT_OWNER) => (di
  * remove bible from resources
  * @param {Array} resources
  * @param {String} bibleId
- * @param {String} languageId
+ * @param {String} key
  */
-function removeBibleFromList(resources, bibleId, languageId) {
+function removeBibleFromList(resources, bibleId, key) {
+  const { owner, version: langId } = resourcesHelpers.splitVersionAndOwner(key);
   let pos = resources.findIndex(paneSetting =>
-    ((paneSetting.bibleId === bibleId) && (paneSetting.languageId === languageId)));
+    ((paneSetting.bibleId === bibleId) &&
+      (paneSetting.languageId === langId) &&
+      (paneSetting.owner === owner)));
 
   if (pos >= 0) {
     resources.splice(pos, 1); // remove entry already loaded
@@ -329,9 +332,10 @@ export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) =
     for (let languageId of Object.keys(bibles)) {
       if (bibles[languageId]) {
         for (let bibleId of Object.keys(bibles[languageId])) {
-          const lang = (languageId === ORIGINAL_LANGUAGE) ?
-            BibleHelpers.isOldTestament(bookId) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG : languageId;
-          removeBibleFromList(resources, bibleId, lang);
+          const key = (languageId === ORIGINAL_LANGUAGE) ?
+            resourcesHelpers.addOwnerToKey(BibleHelpers.isOldTestament(bookId) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG, apiHelpers.DOOR43_CATALOG)
+            : languageId;
+          removeBibleFromList(resources, bibleId, key);
         }
       }
     }

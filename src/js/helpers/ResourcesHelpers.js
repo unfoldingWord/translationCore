@@ -937,38 +937,43 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
-            const bibleLatestVersion = ResourceAPI.getLatestVersion(bibleIdPath);
+            const owners = ResourceAPI.getLatestVersionsAndOwners(bibleIdPath);
 
-            if (bibleLatestVersion) {
-              const pathToBibleManifestFile = path.join(bibleLatestVersion,
-                'manifest.json');
+            for (const owner of Object.keys(owners)) {
+              let bibleLatestVersion = owners[owner];
 
-              try {
-                const manifestExists = fs.existsSync(pathToBibleManifestFile);
-                const bookExists = fs.existsSync(
-                  path.join(bibleLatestVersion, bookId, '1.json'));
+              if (bibleLatestVersion) {
+                const pathToBibleManifestFile = path.join(bibleLatestVersion,
+                  'manifest.json');
 
-                if (manifestExists && bookExists) {
-                  let languageId_ = languageId;
+                try {
+                  const manifestExists = fs.existsSync(pathToBibleManifestFile);
+                  const bookExists = fs.existsSync(
+                    path.join(bibleLatestVersion, bookId, '1.json'));
 
-                  if (BibleHelpers.isOriginalLanguage(languageId)) {
-                    languageId_ = ORIGINAL_LANGUAGE;
+                  if (manifestExists && bookExists) {
+                    let languageId_ = languageId;
+
+                    if (BibleHelpers.isOriginalLanguage(languageId)) {
+                      languageId_ = ORIGINAL_LANGUAGE;
+                    }
+
+                    const manifest = fs.readJsonSync(pathToBibleManifestFile);
+
+                    if (Object.keys(manifest).length) {
+                      const resource = {
+                        bookId,
+                        bibleId,
+                        languageId: languageId_,
+                        manifest,
+                        owner,
+                      };
+                      resourceList.push(resource);
+                    }
                   }
-
-                  const manifest = fs.readJsonSync(pathToBibleManifestFile);
-
-                  if (Object.keys(manifest).length) {
-                    const resource = {
-                      bookId,
-                      bibleId,
-                      languageId: languageId_,
-                      manifest,
-                    };
-                    resourceList.push(resource);
-                  }
+                } catch (e) {
+                  console.warn('Invalid bible: ' + bibleLatestVersion, e);
                 }
-              } catch (e) {
-                console.warn('Invalid bible: ' + bibleLatestVersion, e);
               }
             }
           });
