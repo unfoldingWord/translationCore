@@ -76,8 +76,8 @@
   "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
   "unknown_networking_error": "${app_name} encontrou um erro de comunicação desconhecido. Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
   "updates": {
-    "organization": "Organization",
-    "resource": "Resource",
+    "organization": "Organização",
+    "resource": "Recurso",
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
     "update_gateway_language_content": "Atualizar o conteúdo das Línguas Ponte (GL)",
@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "Não é possível concluir a verificação de atualizações de conteúdo FONTE.",
     "downloading_source_content_updates": "Baixar atualizações de conteúdo FONTE...",
     "source_content_updates_successful_download": "Atualizações de conteúdo Fonte baixado com êxito!",
-    "source_content_updates_unsuccessful_download": "Falha ao baixar as atualizações de conteúdo FONTE.",
+    "source_content_updates_unsuccessful_download": "Falha ao baixar as atualizações do conteúdo-fonte.",
     "source_content_up_to_date": "Todo o conteúdo FONTE está atualizado.",
     "select_the_gateway_language_content_to_download": "Selecione o conteúdo de LÍNGUA PORTÃO que você gostaria de baixar e atualizar.",
     "unable_to_check": "Não foi possível verificar se há atualizações.",
@@ -96,13 +96,13 @@
     "downloading": "Baixando a atualização",
     "downloading_version": "Baixando a versão ${version}",
     "download_error": "Não foi possível baixar a atualização.",
-    "downloads_canceled": "Downloading source contents cancelled!",
+    "downloads_canceled": "O download dos conteúdos-fonte foi cancelado!",
     "source_label": "Fonte:",
     "local_timestamp": "Local:",
     "online_timestamp": "Online:",
-    "update_error_reason_parse": "parse error",
-    "update_error_reason_download": "download error",
-    "update_error_reason_missing_dependency": "missing dependency"
+    "update_error_reason_parse": "erro de análise",
+    "update_error_reason_download": "erro no download",
+    "update_error_reason_missing_dependency": "dependência em falta"
   },
   "users": {
     "category": "Categoria:",
