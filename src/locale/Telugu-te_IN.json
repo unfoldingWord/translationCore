@@ -96,9 +96,13 @@
     "downloading": "నవీకరణను దిగుమతి చేస్తుంది",
     "downloading_version": "${version} ప్రచురణ దిగుమతి అవుతుంది",
     "download_error": "నవీకరణ దిగుమతి కాలేకపోతుంది",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "మూలాధారం:",
     "local_timestamp": "స్థానికం:",
-    "online_timestamp": "ఆన్ లైన్:"
+    "online_timestamp": "ఆన్ లైన్:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "విభాగం:",

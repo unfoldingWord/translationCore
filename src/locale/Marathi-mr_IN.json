@@ -96,9 +96,13 @@
     "downloading": "अद्यतन डाउनलोड करत आहे",
     "downloading_version": "आवृत्ती डाउनलोड करत आहे ${version}",
     "download_error": "अद्यतन डाउनलोड करण्यात अक्षम.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "स्रोत:",
     "local_timestamp": "स्थानिक:",
-    "online_timestamp": "ऑनलाइन:"
+    "online_timestamp": "ऑनलाइन:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "वर्ग:",

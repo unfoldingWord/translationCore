@@ -96,9 +96,13 @@
     "downloading": "ನವೀಕರಣವನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ",
     "downloading_version": "ಆವೃತ್ತಿಯನ್ನು ${version} ಡೌನ್ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ",
     "download_error": "ನವೀಕರಣವನ್ನು ಡೌನ್ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "ಮೂಲ:",
     "local_timestamp": "ಸ್ಥಳೀಯ:",
-    "online_timestamp": "ಮಿನ್ಕಾಣ್ಕೆ:"
+    "online_timestamp": "ಮಿನ್ಕಾಣ್ಕೆ:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "ವರ್ಗಗಳು:",

@@ -96,9 +96,13 @@
     "downloading": "અપડેટ ડાઉનલોડ કરી રહ્યું છે",
     "downloading_version": "સંસ્કરણ ${version} ડાઉનલોડ કરી રહ્યું છે",
     "download_error": "અપડેટ ડાઉનલોડ કરવા અસમર્થ.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "સ્રોત:",
     "local_timestamp": "સ્થાનિક:",
-    "online_timestamp": "ઓનલાઈન:"
+    "online_timestamp": "ઓનલાઈન:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "શ્રેણી:",
