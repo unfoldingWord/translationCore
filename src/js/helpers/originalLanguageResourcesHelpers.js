@@ -7,7 +7,11 @@ import {
   getProjectManifest,
   getProjectSaveLocation,
 } from '../selectors';
-import { TRANSLATION_NOTES, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  DEFAULT_OWNER,
+  TRANSLATION_NOTES,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
 import * as BibleHelpers from './bibleHelpers';
 
 /**
@@ -37,11 +41,12 @@ export function getTsvOLVersion(tsvRelations, resourceId) {
 /**
  * Search folder for most recent version
  * @param {string} bibleFolderPath
+ * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
  * @return {string} latest version found
  */
-function getMostRecentVersionInFolder(bibleFolderPath) {
+function getMostRecentVersionInFolder(bibleFolderPath, ownerStr = null) {
   const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-  const latestVersion = getLatestVersion(versionNumbers);
+  const latestVersion = getLatestVersion(versionNumbers, ownerStr);
   return latestVersion;
 }
 
@@ -94,14 +99,15 @@ export function getLatestResourcesForTn(state) {
   const manifest = getProjectManifest(state);
   const bookId = getProjectBookId(state);
   const { bibleId: origLangBibleId } = BibleHelpers.getOrigLangforBook(bookId);
-  const gl = manifest && manifest.toolsSelectedGLs && manifest.toolsSelectedGLs && manifest.toolsSelectedGLs.translationNotes;
+  const gl = manifest?.toolsSelectedGLs?.translationNotes;
+  const glOwner = manifest?.toolsSelectedOwners?.translationNotes || DEFAULT_OWNER;
   let glVersion = null, origLangVersion = null, tsv_relation = null;
 
   if (gl) {
     const resourcesPath = path.join(USER_RESOURCES_PATH, gl, 'translationHelps/translationNotes');
 
     if (fs.existsSync(resourcesPath)) {
-      glVersion = getMostRecentVersionInFolder(resourcesPath);
+      glVersion = getMostRecentVersionInFolder(resourcesPath, glOwner);
       const resourceManifestPath = path.join(resourcesPath, glVersion, 'manifest.json');
 
       if (fs.existsSync(resourceManifestPath)) {

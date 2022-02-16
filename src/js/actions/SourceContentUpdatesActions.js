@@ -161,6 +161,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           console.error('downloadSourceContentUpdates() - error:', err);
           const errors = SourceContentUpdater.downloadErrors;
           let errorStr = '';
+          let alertMessage = err.toString(); // default error message
 
           if (errors && errors.length) {
             for (const error of errors) {
@@ -171,9 +172,8 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
               }
               errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
             }
+            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
           }
-
-          const alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
 
           dispatch(
             failedAlertAndRetry(
