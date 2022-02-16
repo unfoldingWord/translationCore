@@ -1,13 +1,17 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
-import { resourcesHelpers } from 'tc-source-content-updater';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import { getLatestVersion } from '../actions/ResourcesActions';
 import {
   getProjectBookId,
   getProjectManifest,
   getProjectSaveLocation,
 } from '../selectors';
-import { TRANSLATION_NOTES, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  DEFAULT_OWNER,
+  TRANSLATION_NOTES,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
 import * as BibleHelpers from './bibleHelpers';
 
 /**
@@ -37,12 +41,17 @@ export function getTsvOLVersion(tsvRelations, resourceId) {
 /**
  * Search folder for most recent version
  * @param {string} bibleFolderPath
+ * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
  * @return {string} latest version found
  */
-function getMostRecentVersionInFolder(bibleFolderPath) {
+function getMostRecentVersionInFolder(bibleFolderPath, ownerStr = apiHelpers.DOOR43_CATALOG) {
   const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-  const latestVersion = getLatestVersion(versionNumbers);
-  return latestVersion;
+
+  if (versionNumbers && versionNumbers.length) {
+    const latestVersion = getLatestVersion(versionNumbers, ownerStr);
+    return latestVersion;
+  }
+  return null;
 }
 
 /**
@@ -72,7 +81,7 @@ export function getOrigLangVersionInfoForTn(state) {
   let latestOlVersion = null;
 
   if (fs.existsSync(bibleFolderPath)) {
-    latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath);
+    latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, apiHelpers.DOOR43_CATALOG);
 
     if (latestOlVersion && (latestOlVersion[0] === 'v')) {
       latestOlVersion = latestOlVersion.substr(1); // strip off leading 'v'
@@ -94,14 +103,15 @@ export function getLatestResourcesForTn(state) {
   const manifest = getProjectManifest(state);
   const bookId = getProjectBookId(state);
   const { bibleId: origLangBibleId } = BibleHelpers.getOrigLangforBook(bookId);
-  const gl = manifest && manifest.toolsSelectedGLs && manifest.toolsSelectedGLs && manifest.toolsSelectedGLs.translationNotes;
+  const gl = manifest?.toolsSelectedGLs?.translationNotes;
+  const glOwner = manifest?.toolsSelectedOwners?.translationNotes || DEFAULT_OWNER;
   let glVersion = null, origLangVersion = null, tsv_relation = null;
 
   if (gl) {
     const resourcesPath = path.join(USER_RESOURCES_PATH, gl, 'translationHelps/translationNotes');
 
     if (fs.existsSync(resourcesPath)) {
-      glVersion = getMostRecentVersionInFolder(resourcesPath);
+      glVersion = getMostRecentVersionInFolder(resourcesPath, glOwner) || '';
       const resourceManifestPath = path.join(resourcesPath, glVersion, 'manifest.json');
 
       if (fs.existsSync(resourceManifestPath)) {

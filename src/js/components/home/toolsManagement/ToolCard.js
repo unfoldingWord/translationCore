@@ -74,7 +74,6 @@ class ToolCard extends Component {
       selectedGL: '',
       gatewayLanguageList: null,
       sourceContentUpdateCount: -1,
-      haveValidSelections: false,
     };
   }
 
@@ -108,9 +107,7 @@ class ToolCard extends Component {
     }
 
     if (!_.isEqual(prevProps.selectedCategories, this.props.selectedCategories)) {
-      const haveValidSelections = checkForValidCategorySelections(this.props.selectedCategories, this.props.availableCategories, this.props.tool.name);
-
-      this.setState({ selectedCategoriesChanged: true, haveValidSelections });
+      this.setState({ selectedCategoriesChanged: true });
       this.loadProgress();
     }
 
@@ -173,7 +170,7 @@ class ToolCard extends Component {
     }
 
     if (!launchDisableMessage && (toolsWithCategories.includes(toolName))) {
-      const { haveValidSelections } = this.state;
+      const haveValidSelections = checkForValidCategorySelections(this.props.selectedCategories, this.props.availableCategories, toolName);
 
       if (!haveValidSelections) {
         launchDisableMessage = translate('tools.no_checks_selected');
