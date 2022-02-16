@@ -1,6 +1,6 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
-import { resourcesHelpers } from 'tc-source-content-updater';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import { getLatestVersion } from '../actions/ResourcesActions';
 import {
   getProjectBookId,
@@ -44,10 +44,14 @@ export function getTsvOLVersion(tsvRelations, resourceId) {
  * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
  * @return {string} latest version found
  */
-function getMostRecentVersionInFolder(bibleFolderPath, ownerStr = null) {
+function getMostRecentVersionInFolder(bibleFolderPath, ownerStr = apiHelpers.DOOR43_CATALOG) {
   const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
-  const latestVersion = getLatestVersion(versionNumbers, ownerStr);
-  return latestVersion;
+
+  if (versionNumbers && versionNumbers.length) {
+    const latestVersion = getLatestVersion(versionNumbers, ownerStr);
+    return latestVersion;
+  }
+  return null;
 }
 
 /**
@@ -77,7 +81,7 @@ export function getOrigLangVersionInfoForTn(state) {
   let latestOlVersion = null;
 
   if (fs.existsSync(bibleFolderPath)) {
-    latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath);
+    latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, apiHelpers.DOOR43_CATALOG);
 
     if (latestOlVersion && (latestOlVersion[0] === 'v')) {
       latestOlVersion = latestOlVersion.substr(1); // strip off leading 'v'
@@ -107,7 +111,7 @@ export function getLatestResourcesForTn(state) {
     const resourcesPath = path.join(USER_RESOURCES_PATH, gl, 'translationHelps/translationNotes');
 
     if (fs.existsSync(resourcesPath)) {
-      glVersion = getMostRecentVersionInFolder(resourcesPath, glOwner);
+      glVersion = getMostRecentVersionInFolder(resourcesPath, glOwner) || '';
       const resourceManifestPath = path.join(resourcesPath, glVersion, 'manifest.json');
 
       if (fs.existsSync(resourceManifestPath)) {
