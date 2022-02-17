@@ -101,7 +101,7 @@ describe('ResourcesActions', () => {
 
     const ugnt = require('./fixtures/project/en_gal/bibleData.json');
 
-    const store = mockStore({
+    const mockStoreInit = {
       actions: {},
       toolsReducer: { selectedTool: WORD_ALIGNMENT },
       resourcesReducer: {
@@ -130,7 +130,10 @@ describe('ResourcesActions', () => {
           },
         },
       },
-    });
+    };
+    // add owner support
+    mockStoreInit.resourcesReducer.bibles['originalLanguage_Door43-Catalog'] = mockStoreInit.resourcesReducer.bibles.originalLanguage;
+    const store = mockStore(mockStoreInit);
     const contextId = {
       reference: {
         bookId: bookId,
@@ -264,6 +267,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
+    'en/lexicons',
     'el-x-koine/bibles/ugnt',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',
