@@ -344,7 +344,7 @@ export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) =
   // load resources not in resources reducer
   if (Array.isArray(resources)) {
     removeBibleFromList(resources, TARGET_BIBLE, TARGET_LANGUAGE);
-    resources.forEach(paneSetting => dispatch(loadBibleBook(paneSetting.bibleId, bookId, paneSetting.languageId)));
+    resources.forEach(paneSetting => dispatch(loadBibleBook(paneSetting.bibleId, bookId, paneSetting.languageId, paneSetting.owner)));
   }
 };
 
