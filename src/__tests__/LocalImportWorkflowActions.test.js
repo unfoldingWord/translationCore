@@ -12,7 +12,7 @@ const importProjectName = 'project';
 const importProjectPath = path.join(IMPORTS_PATH, importProjectName);
 
 jest.mock('fs-extra');
-jest.mock('electronite', () => ({
+jest.mock('electron', () => ({
   ipcRenderer: {
     sendSync: jest.fn()
       .mockImplementationOnce(() => ['a/working/project'])

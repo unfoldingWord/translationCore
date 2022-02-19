@@ -1,7 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import { ipcRenderer } from 'electronite';
+import { ipcRenderer } from 'electron';
 import env from 'tc-electron-env';
 import { BIBLES_ABBRV_INDEX } from '../common/BooksOfTheBible';
 import { delay } from '../common/utils';
