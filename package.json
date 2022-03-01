@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.1.0",
+  "version": "3.1.1-alpha",
   "minCompatibleVersion": "3.1.0",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
