@@ -53,3 +53,19 @@ export function openOptionDialog(alertMessage, callback, button1Text, button2Tex
 export function closeAlertDialog() {
   return { type: consts.CLOSE_ALERT_DIALOG };
 }
+
+/**
+ * @description temporarily hide the alert dialog.
+ * @return {object} action content.
+ */
+export function hideAlertDialog() {
+  return { type: consts.HIDE_ALERT_DIALOG };
+}
+
+/**
+ * @description redisplay a hidden the alert dialog.
+ * @return {object} action content.
+ */
+export function unhideAlertDialog() {
+  return { type: consts.UNHIDE_ALERT_DIALOG };
+}

@@ -51,13 +51,14 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext,
 /**
  * display feedback dialog for resource update error
  * @param {String} errorMessage
+ * @param {function} closeCallback - optional callback for when dialog closes
  * @return {Function}
  */
-export const sendUpdateResourceErrorFeedback = (errorMessage) => (dispatch) => {
+export const sendUpdateResourceErrorFeedback = (errorMessage, closeCallback = null) => (dispatch) => {
   console.log('sendUpdateResourceErrorFeedback(): ' + errorMessage);
   dispatch(HomeScreenActions.setErrorFeedbackCategory(FeedbackDialog.CONTENT_AND_RESOURCES_FEEDBACK_KEY));
   dispatch(HomeScreenActions.setErrorFeedbackMessage('There was a problem updating content:' + errorMessage)); // put up feedback dialog
-  dispatch(HomeScreenActions.setFeedbackCloseCallback(null));
+  dispatch(HomeScreenActions.setFeedbackCloseCallback(closeCallback));
 };
 
 export const getOsInfoStr = () => {

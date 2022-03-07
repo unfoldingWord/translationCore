@@ -16,7 +16,11 @@ import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
-  openAlertDialog, closeAlertDialog, openOptionDialog,
+  openAlertDialog,
+  closeAlertDialog,
+  hideAlertDialog,
+  openOptionDialog,
+  unhideAlertDialog,
 } from './AlertModalActions';
 import consts from './ActionTypes';
 import { confirmOnlineAction } from './OnlineModeConfirmActions';
@@ -175,8 +179,10 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
               errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
             }
             alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
-              dispatch(closeAlertDialog());
-              dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr));
+              dispatch(hideAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
+              dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
+                dispatch(unhideAlertDialog()); // reshow alert dialog
+              }));
             });
           }
 

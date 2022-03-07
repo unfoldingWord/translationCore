@@ -32,11 +32,14 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
     <br/><br/>
     {parts}
     {feedbackCallback && // only show feedback button if we have an action
-      <>
+      <div style={ {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+      } }>
         <button
           label={feebackLabel}
           className='btn-prime'
-          style={ { 'marginLeft': '180px' } }
           onClick={() => {
             feedbackCallback && feedbackCallback();
           }}
@@ -45,7 +48,7 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
         </button>
         <br/>
         <br/>
-      </>
+      </div>
     }
   </>;
 }
