@@ -11,6 +11,8 @@ import { getResourceDownloadsAlertMessage } from '../containers/SourceContentUpd
 import { copyGroupDataToProject, updateSourceContentUpdaterManifest } from '../helpers/ResourcesHelpers';
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
+import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
+// actions
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
@@ -172,7 +174,10 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
               }
               errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
             }
-            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
+            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
+              dispatch(closeAlertDialog());
+              dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr));
+            });
           }
 
           dispatch(
