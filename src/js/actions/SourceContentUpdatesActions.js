@@ -4,7 +4,10 @@ import path from 'path-extra';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import env from 'tc-electron-env';
 import {
-  getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
+  getTranslate,
+  getCurrentToolName,
+  getProjectSaveLocation,
+  getProjectBookId,
 } from '../selectors';
 import { getResourceDownloadsAlertMessage } from '../containers/SourceContentUpdatesDialogContainer';
 // helpers
@@ -18,9 +21,7 @@ import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
   openAlertDialog,
   closeAlertDialog,
-  hideAlertDialog,
   openOptionDialog,
-  unhideAlertDialog,
 } from './AlertModalActions';
 import consts from './ActionTypes';
 import { confirmOnlineAction } from './OnlineModeConfirmActions';
@@ -165,6 +166,18 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
         } else {
           console.error('downloadSourceContentUpdates() - error:', err);
+
+          const showDownloadErrorAlert = (alertMessage) => {
+            dispatch(
+              failedAlertAndRetry(
+                () => dispatch(closeAlertDialog()),
+                () => downloadSourceContentUpdates(resourcesToDownload, true),
+                null,
+                alertMessage,
+              ),
+            );
+          };
+
           const errors = SourceContentUpdater.downloadErrors;
           let errorStr = '';
           let alertMessage = err.toString(); // default error message
@@ -179,21 +192,13 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
               errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
             }
             alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
-              dispatch(hideAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
+              dispatch(closeAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
               dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
-                dispatch(unhideAlertDialog()); // reshow alert dialog
+                showDownloadErrorAlert(alertMessage); // reshow alert dialog
               }));
             });
           }
-
-          dispatch(
-            failedAlertAndRetry(
-              () => dispatch(closeAlertDialog()),
-              () => downloadSourceContentUpdates(resourcesToDownload, true),
-              null,
-              alertMessage,
-            ),
-          );
+          showDownloadErrorAlert(alertMessage);
         }
       });
   } else {

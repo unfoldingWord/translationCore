@@ -38,16 +38,6 @@ const alertModalReducer = (state = initialState, action) => {
       callback2: action.callback2,
       notCloseableAlert: action.notCloseableAlert,
     };
-  case consts.UNHIDE_ALERT_DIALOG:
-    return {
-      ...state,
-      alertDialogVisibility: true,
-    };
-  case consts.HIDE_ALERT_DIALOG:
-    return {
-      ...state,
-      alertDialogVisibility: false,
-    };
   case consts.CLOSE_ALERT_DIALOG:
     return initialState;
   default:
