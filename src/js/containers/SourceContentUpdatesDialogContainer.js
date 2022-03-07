@@ -28,25 +28,40 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
   ));
   const feebackLabel = translate('buttons.feedback_button');
   return <>
-    {translate('updates.source_content_updates_unsuccessful_download')}
-    <br/><br/>
-    {parts}
+    <div style={{ minHeight: '120px' }}>
+      {translate('updates.source_content_updates_unsuccessful_download')}
+      <br/>
+      <br/>
+      {parts}
+    </div>
     {feedbackCallback && // only show feedback button if we have an action
       <div style={ {
-        width: '100%',
         display: 'flex',
-        justifyContent: 'center',
+        width: '100%',
+        flexDirection: 'row',
+        marginTop: '0px',
+        marginBottom: '-20px',
       } }>
-        <button
-          label={feebackLabel}
-          className='btn-prime'
-          onClick={() => {
-            feedbackCallback && feedbackCallback();
-          }}
-        >
-          {feebackLabel}
-        </button>
-        <br/>
+        <div style={{
+          display: 'flex',
+          flexGrow: '1',
+          justifyContent: 'center',
+        }}>
+          <button
+            label={feebackLabel}
+            className='btn-second'
+            onClick={() => {
+              feedbackCallback && feedbackCallback();
+            }}
+          >
+            {feebackLabel}
+          </button>
+        </div>
+        <div style={{
+          display: 'flex',
+          width: '165px',
+          height: '44px',
+        }}/>
         <br/>
       </div>
     }
