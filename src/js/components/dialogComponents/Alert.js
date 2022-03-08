@@ -117,7 +117,7 @@ class Alert extends Component {
             <table>
               <tbody>
                 <tr>
-                  <td>
+                  <td style={{ verticalAlign: 'top' }}>
                     <img className={alertDialogLoading ? 'App-logo' : ''}
                       src={`data:image/png;base64,${logoData}`}
                       height="100px"
