@@ -28,7 +28,7 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
   ));
   const feebackLabel = translate('buttons.feedback_button');
   return <>
-    <div style={{ minHeight: '120px' }}>
+    <div>
       {translate('updates.source_content_updates_unsuccessful_download')}
       <br/>
       <br/>
@@ -40,7 +40,7 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
         width: '100%',
         flexDirection: 'row',
         marginTop: '0px',
-        marginBottom: '-20px',
+        marginBottom: '0px',
       } }>
         <div style={{
           display: 'flex',
