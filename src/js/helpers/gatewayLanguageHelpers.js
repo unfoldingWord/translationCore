@@ -406,7 +406,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
       return false;
     }
 
-    const owners = ResourceAPI.getLatestVersionsAndOwners(path.join(biblesPath, bibleId));
+    const owners = ResourceAPI.getLatestVersionsAndOwners(path.join(biblesPath, bibleId)) || {};
 
     for (const owner of Object.keys(owners)) {
       let isBibleValidSource = false;
