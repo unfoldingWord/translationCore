@@ -176,38 +176,43 @@ export const loadBookResource = (bibleId, bookId, languageId, version = null, ow
     if (fs.existsSync(bibleFolderPath)) {
       const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
       const versionNumber = version ? resourcesHelpers.addOwnerToKey(version, owner) : getLatestVersion(versionNumbers, owner);
-      const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
-      const bookPath = path.join(bibleVersionPath, bookId);
-      const cacheKey = 'book:' + bookPath;
 
-      if (fs.existsSync(bookPath)) {
-        let bibleData = bookCache.get(cacheKey);
+      if (versionNumber) {
+        const bibleVersionPath = path.join(bibleFolderPath, versionNumber);
+        const bookPath = path.join(bibleVersionPath, bookId);
+        const cacheKey = 'book:' + bookPath;
 
-        if (!bibleData) {
-          // load bible
-          bibleData = {};
-          const files = fs.readdirSync(bookPath);
+        if (fs.existsSync(bookPath)) {
+          let bibleData = bookCache.get(cacheKey);
 
-          for (let i = 0, len = files.length; i < len; i++) {
-            const file = files[i];
-            const chapterNumber = path.basename(file, '.json');
+          if (!bibleData) {
+            // load bible
+            bibleData = {};
+            const files = fs.readdirSync(bookPath);
 
-            if (!isNaN(chapterNumber)) {
-              // load chapter
-              const chapterData = fs.readJsonSync(path.join(bookPath, file));
-              bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
+            for (let i = 0, len = files.length; i < len; i++) {
+              const file = files[i];
+              const chapterNumber = path.basename(file, '.json');
+
+              if (!isNaN(chapterNumber)) {
+                // load chapter
+                const chapterData = fs.readJsonSync(path.join(bookPath, file));
+                bibleData[chapterNumber] = migrateChapterToVerseObjects(chapterData);
+              }
             }
+            bibleData['manifest'] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
+
+            // cache it
+            bookCache.set(cacheKey, bibleData);
           }
-          bibleData['manifest'] = ResourcesHelpers.getBibleManifest(bibleVersionPath, bibleId);
 
-          // cache it
-          bookCache.set(cacheKey, bibleData);
+          console.log(`loadBookResource() - Loaded ${bibleId}, ${bookId}, ${languageId}, ${versionNumber}`);
+          return bibleData;
+        } else {
+          console.warn(`loadBookResource() - Bible path not found: ${bookPath}`);
         }
-
-        console.log(`loadBookResource() - Loaded ${bibleId}, ${bookId}, ${languageId}, ${versionNumber}`);
-        return bibleData;
       } else {
-        console.warn(`loadBookResource() - Bible path not found: ${bookPath}`);
+        console.log(`loadBookResource() - no bible versions found at: ${bibleFolderPath}`);
       }
     } else {
       console.log('loadBookResource() - Directory not found, ' + bibleFolderPath);

@@ -728,7 +728,7 @@ export const areResourcesNewer = () => {
   const newer = bundledModified > userModified;
 
   console.log(
-    `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', newer - updating all' : ''),
+    `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', NEWER - updating all' : ', NOT NEWER!'),
     'color: #00539C',
   );
   return newer;
@@ -937,7 +937,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
-            const owners = ResourceAPI.getLatestVersionsAndOwners(bibleIdPath);
+            const owners = ResourceAPI.getLatestVersionsAndOwners(bibleIdPath) || {};
 
             for (const owner of Object.keys(owners)) {
               let bibleLatestVersion = owners[owner];
@@ -1260,9 +1260,16 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(resourcesPath, resourceId).sort((a, b) =>
+    let requiredVersions = getOtherTnsOLVersions(resourcesPath, resourceId).sort((a, b) =>
       -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
+
+    requiredVersions = requiredVersions.map((version) => { // make sure we have owner
+      if (!version.includes(apiHelpers.OWNER_SEPARATOR)) {
+        version = resourcesHelpers.addOwnerToKey(version, apiHelpers.DOOR43_CATALOG);
+      }
+      return version;
+    });
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
     // see if we need to keep old versions of original language
