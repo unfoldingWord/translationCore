@@ -192,6 +192,7 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
   let validResource = manifestExists && hasBook;
   let missingAlignments = false;
   let missingBook = true;
+  let sufficientCheckingLevel = true;
 
   if (validResource) {
     let files = ResourcesHelpers.getFilesInResourcePath(bookPath, '.json');
@@ -200,8 +201,9 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
 
     if (validResource && minCheckingLevel) { // should we validate checking level
       const manifest = ResourcesHelpers.getBibleManifest(resourcePath, bookId);
-      validResource = manifest && manifest.checking && manifest.checking.checking_level;
-      validResource = validResource && (manifest.checking.checking_level >= minCheckingLevel);
+      const checkingLevel = manifest && manifest.checking && manifest.checking.checking_level;
+      sufficientCheckingLevel = checkingLevel >= minCheckingLevel;
+      validResource = validResource && sufficientCheckingLevel;
     }
 
     if (validResource && needsAlignmentData) { // should we validate alignment data
@@ -209,13 +211,16 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
       missingAlignments = !hasAlignments;
       validResource = hasAlignments;
     }
-  } else {
-    console.log(`isValidResource() - ${resourcePath}, ${bookId} - invalid, manifest missing = ${!manifestExists}, book missing = ${!hasBook}`);
+  }
+
+  if (!validResource) {
+    console.log(`isValidResource() - ${resourcePath}, ${bookId} - invalid, manifest missing = ${!manifestExists}, book missing = ${!hasBook}, insufficient checking level = ${!sufficientCheckingLevel}`);
   }
   return {
     validResource,
     missingAlignments,
     missingBook,
+    sufficientCheckingLevel,
   };
 }
 
@@ -494,12 +499,14 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
               missingBook,
             } = isValidResource(biblePath, bookId,
               glRequirements.gl.minimumCheckingLevel, glRequirements.gl.alignedBookRequired);
-            const isValidUlt = biblePath && validResource;
+            const isValidAlignedBible = biblePath && validResource;
 
-            if (!isValidUlt) {
-              console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - is not valid ult/glt for ${toolName}, missingBook = ${missingBook}, missingAlignments = ${missingAlignments}`);
+            if (!isValidAlignedBible) {
+              console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - is NOT a VALID aligned bible for ${toolName}, missingBook = ${missingBook}, missingAlignments = ${missingAlignments}`);
+            } else {
+              console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - is VALID aligned bible for ${toolName}`);
             }
-            isBibleValidSource = isBibleValidSource && isValidUlt;
+            isBibleValidSource = isBibleValidSource && isValidAlignedBible;
           }
         }
       }
