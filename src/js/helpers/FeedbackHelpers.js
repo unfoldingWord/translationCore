@@ -25,7 +25,7 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext,
   const data = `\n\nTool: "${contextId.tool}"\nGroupId: "${contextId.groupId}"\nReference: "${reference}"\nGateway Language: "${selectedGL}"\nQuote: "${quoteString}"\nOccurrence: "${contextId.occurrence}"\n\n`;
   const report = data.replace(/\n/g,'<br>'); // use html line formatting
   const message = translate('tools.invalid_check_found', { report });
-  console.log('promptForInvalidCheckFeedback(): ' + message);
+  console.log('promptForInvalidCheckFeedback(): invalid check: ' + data);
   const onSelection = () => {
     if (moveToNext) {
       changeToNextContextId();
