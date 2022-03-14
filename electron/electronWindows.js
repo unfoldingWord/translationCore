@@ -1,5 +1,6 @@
 const path = require('path');
 const { BrowserWindow } = require('electron');
+const remoteMain = require('@electron/remote/main');
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -67,6 +68,10 @@ function defineWindow(windowId, options = {}) {
     },
   };
   const window = new BrowserWindow(windowOptions);
+
+  // enable remote
+  remoteMain.enable(window.webContents);
+  console.log('window',window);
 
   window.on('closed', () => {
     windows[windowId] = null;
