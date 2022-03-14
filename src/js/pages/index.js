@@ -1,7 +1,9 @@
 const path = require('path');
 const dotenv = require('dotenv');
-dotenv.config({ path: path.join(__dirname, '../../../.env') });
-console.log('config', dotenv.config()?.parsed);
+const dotnetEnvPath = path.join(__dirname, '../../../.env');
+dotenv.config({ path: dotnetEnvPath });
+const STARTUP_CONFIG = dotenv.config()?.parsed;
+console.log('config', STARTUP_CONFIG);
 
 (function () {
   const ReactDOM = require('react-dom');

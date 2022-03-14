@@ -37,6 +37,9 @@ import {
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
 if (process.env.NODE_ENV !== 'test') {
+  console.log('folder', __dirname);
+  const files = fs.readdirSync(__dirname);
+  console.log('files', files);
   const { makeSureEnvInit } = require('../helpers/envHelpers');
   makeSureEnvInit('app');
 }
