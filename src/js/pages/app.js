@@ -1,4 +1,3 @@
-import { app } from '@electron/remote';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fs from 'fs-extra';
@@ -56,12 +55,6 @@ class Main extends Component {
       migrateResourcesFolder,
       addTranslationForLanguage,
     } = this.props;
-
-    env.initialize(); // make sure initialized
-    const pe = process.env;
-    console.log(pe);
-    console.log(app);
-    console.log(app.getPath('home'));
     const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
 
