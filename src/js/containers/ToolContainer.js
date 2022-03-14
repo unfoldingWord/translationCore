@@ -22,6 +22,7 @@ import {
   getToolGatewayLanguage,
   getCurrentToolName,
   getProjectBookId,
+  getToolGlOwner,
 } from '../selectors';
 import ProjectAPI from '../helpers/ProjectAPI';
 import CoreAPI from '../helpers/CoreAPI';
@@ -82,6 +83,7 @@ class ToolContainer extends Component {
       targetBook,
       currentToolName,
       gatewayLanguageCode,
+      gatewayLanguageOwner,
       currentLanguage: { code },
     } = nextProps;
 
@@ -111,6 +113,7 @@ class ToolContainer extends Component {
       projects,
       username,
       gatewayLanguageCode,
+      gatewayLanguageOwner,
 
       // project data
       bookId,
@@ -191,11 +194,13 @@ const mapStateToProps = state => {
   const currentToolName = getCurrentToolName(state);
   const bookId = getProjectBookId(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, currentToolName);
+  const gatewayLanguageOwner = getToolGlOwner(state, currentToolName);
 
   return {
     bookId,
     currentToolName,
     gatewayLanguageCode,
+    gatewayLanguageOwner,
     projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
     Tool: getSelectedToolContainer(state),

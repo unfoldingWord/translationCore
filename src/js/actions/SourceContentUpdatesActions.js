@@ -4,17 +4,24 @@ import path from 'path-extra';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import env from 'tc-electron-env';
 import {
-  getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
+  getTranslate,
+  getCurrentToolName,
+  getProjectSaveLocation,
+  getProjectBookId,
 } from '../selectors';
 import { getResourceDownloadsAlertMessage } from '../containers/SourceContentUpdatesDialogContainer';
 // helpers
 import { copyGroupDataToProject, updateSourceContentUpdaterManifest } from '../helpers/ResourcesHelpers';
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
+import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
+// actions
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
-  openAlertDialog, closeAlertDialog, openOptionDialog,
+  openAlertDialog,
+  closeAlertDialog,
+  openOptionDialog,
 } from './AlertModalActions';
 import consts from './ActionTypes';
 import { confirmOnlineAction } from './OnlineModeConfirmActions';
@@ -159,30 +166,39 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
         } else {
           console.error('downloadSourceContentUpdates() - error:', err);
+
+          const showDownloadErrorAlert = (alertMessage) => {
+            dispatch(
+              failedAlertAndRetry(
+                () => dispatch(closeAlertDialog()),
+                () => downloadSourceContentUpdates(resourcesToDownload, true),
+                null,
+                alertMessage,
+              ),
+            );
+          };
+
           const errors = SourceContentUpdater.downloadErrors;
           let errorStr = '';
           let alertMessage = err.toString(); // default error message
 
           if (errors && errors.length) {
             for (const error of errors) {
-              let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_parse';
+              let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_download';
 
               if (error.parseError && error.errorMessage.indexOf(' - cannot find ')) {
                 errorType = 'updates.update_error_reason_missing_dependency';
               }
               errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
             }
-            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr);
+            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
+              dispatch(closeAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
+              dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
+                showDownloadErrorAlert(alertMessage); // reshow alert dialog
+              }));
+            });
           }
-
-          dispatch(
-            failedAlertAndRetry(
-              () => dispatch(closeAlertDialog()),
-              () => downloadSourceContentUpdates(resourcesToDownload, true),
-              null,
-              alertMessage,
-            ),
-          );
+          showDownloadErrorAlert(alertMessage);
         }
       });
   } else {
