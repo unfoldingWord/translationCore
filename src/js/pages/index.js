@@ -1,7 +1,18 @@
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../../../.env') });
+const dotenv = require('dotenv');
+dotenv.config({ path: path.join(__dirname, '../../../.env') });
+console.log('config', dotenv.config()?.parsed);
+
 (function () {
   const ReactDOM = require('react-dom');
+
+  const config = dotenv.config()?.parsed;
+
+  if (!config) {
+    console.log(`second attempt to init dotenv`);
+    dotenv.config({ path: path.join(__dirname, '../../../.env') });
+    console.log('config', dotenv.config()?.parsed);
+  }
 
   window.App = {
     init: function () {

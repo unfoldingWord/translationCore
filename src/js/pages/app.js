@@ -35,6 +35,9 @@ import {
   TOOLS_DIR,
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
+import { makeSureEnvInit } from '../helpers/envHelpers';
+
+makeSureEnvInit('app');
 
 if (process.env.NODE_ENV === 'production') {
   const version = `v${APP_VERSION} (${getBuild()})`;
@@ -55,6 +58,8 @@ class Main extends Component {
       migrateResourcesFolder,
       addTranslationForLanguage,
     } = this.props;
+
+    makeSureEnvInit('Main');
     const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
 

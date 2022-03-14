@@ -1,10 +1,9 @@
 import path from 'path-extra';
 import env from 'tc-electron-env';
-import dotenv from 'dotenv';
-import _ from 'lodash';
+import { makeSureEnvInit } from '../helpers/envHelpers';
 import packagefile from '../../../package.json';
 
-makeSureEnvInit();
+makeSureEnvInit('constants');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
@@ -71,38 +70,3 @@ export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
 // url strings
 export const DCS_BASE_URL = 'https://git.door43.org'; //TODO: also defined in public/main.js, need to move definition to common place
 
-/**
- * Make sure environment is initialized if running as client.
- * work-around for electron 14+ to get access to runtime environment variables
- */
-function makeSureEnvInit() {
-  if (!env.isElectronEnv) { // if initialization failed
-    const dotenvConfig = dotenv.config()?.parsed;
-
-    if (!dotenvConfig) {
-      console.log(`Main - config variables missing, running in test mode`);
-    } else {
-      console.log('Initializing environment');
-      const { app } = require('@electron/remote');
-      const pe = process.env;
-      const newEnv = _.cloneDeep({
-        ...pe,
-        ...dotenvConfig,
-      });
-      env.setEnv(newEnv);
-      env.setApp(app);
-      env.setElectronEnv(true);
-      const home = env.home();
-
-      if (!home) {
-        console.error(`Main - cannot find home folder`);
-      }
-
-      const build = env.getEnv()?.BUILD;
-
-      if (!build) {
-        console.error(`Main - cannot find build number`);
-      }
-    }
-  }
-}
