@@ -80,7 +80,7 @@ function makeSureEnvInit() {
     const dotenvConfig = dotenv.config()?.parsed;
 
     if (!dotenvConfig) {
-      console.error(`Main - config variables missing`);
+      console.log(`Main - config variables missing, running in test mode`);
     } else {
       console.log('Initializing environment');
       const { app } = require('@electron/remote');
