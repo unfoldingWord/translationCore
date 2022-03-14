@@ -35,9 +35,11 @@ import {
   TOOLS_DIR,
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
-import { makeSureEnvInit } from '../helpers/envHelpers';
 
-makeSureEnvInit('app');
+if (process.env.NODE_ENV !== 'test') {
+  const { makeSureEnvInit } = require('../helpers/envHelpers');
+  makeSureEnvInit('app');
+}
 
 if (process.env.NODE_ENV === 'production') {
   const version = `v${APP_VERSION} (${getBuild()})`;
@@ -59,7 +61,11 @@ class Main extends Component {
       addTranslationForLanguage,
     } = this.props;
 
-    makeSureEnvInit('Main');
+    if (process.env.NODE_ENV !== 'test') {
+      const { makeSureEnvInit } = require('../helpers/envHelpers');
+      makeSureEnvInit('Main');
+    }
+
     const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);
 
