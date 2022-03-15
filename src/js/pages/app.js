@@ -39,17 +39,17 @@ import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 if (process.env.NODE_ENV !== 'test') {
   console.log('folder', __dirname);
 
-  try {
-    const files = fs.readdirSync('.');
-    console.log('files .', files);
-    // eslint-disable-next-line no-empty
-  } catch { }
+  const folders = ['.', __dirname, path.join(__dirname, 'static'), path.join(__dirname, 'static/js')];
 
-  try {
-    const files = fs.readdirSync('__dirname');
-    console.log('files __dirname', files);
-    // eslint-disable-next-line no-empty
-  } catch { }
+  for (const folder of folders) {
+    try {
+      const files = fs.readdirSync(folder);
+      console.log(`files ${folder}`, files);
+      // eslint-disable-next-line no-empty
+    } catch (e) {
+      console.warn(`could not read files from ${folder}`, e);
+    }
+  }
 
   const { makeSureEnvInit } = require('../helpers/envHelpers');
   makeSureEnvInit('app');

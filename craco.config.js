@@ -12,14 +12,12 @@ module.exports = (mode) => {
     { from: './package.json', to: 'package.json' },
   ];
 
+  copyPatterns.push({ from: './.env', to: 'cfg.txt' });
+  copyPatterns.push({ from: './.env', to: 'static/cfg.txt' });
+  copyPatterns.push({ from: './.env', to: 'static/js/cfg.txt' });
+
   if (isProduction) {
     copyPatterns.push({ from: './.env', to: '.env' });
-    copyPatterns.push({ from: './.env', to: 'env.js' });
-    copyPatterns.push({ from: './.env', to: 'env.json' });
-    copyPatterns.push({ from: './.env', to: 'env.txt' });
-    copyPatterns.push({ from: './.env', to: 'cfg.js' });
-    copyPatterns.push({ from: './.env', to: 'cfg.json' });
-    copyPatterns.push({ from: './.env', to: 'cfg.txt' });
   }
 
   return {
