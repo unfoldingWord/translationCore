@@ -38,8 +38,19 @@ import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
 if (process.env.NODE_ENV !== 'test') {
   console.log('folder', __dirname);
-  const files = fs.readdirSync('.');
-  console.log('files', files);
+
+  try {
+    const files = fs.readdirSync('.');
+    console.log('files .', files);
+    // eslint-disable-next-line no-empty
+  } catch { }
+
+  try {
+    const files = fs.readdirSync('__dirname');
+    console.log('files __dirname', files);
+    // eslint-disable-next-line no-empty
+  } catch { }
+
   const { makeSureEnvInit } = require('../helpers/envHelpers');
   makeSureEnvInit('app');
 }

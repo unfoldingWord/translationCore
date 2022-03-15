@@ -13,7 +13,7 @@ module.exports = (mode) => {
   ];
 
   if (isProduction) {
-    copyPatterns.push({ from: './.env', to: '.env' });
+    copyPatterns.push({ from: './.env', to: 'static/.env' });
   }
 
   return {
