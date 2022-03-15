@@ -25,13 +25,13 @@ import './../../css/styles.css';
 function initDotEnv2() {
   const dotenv = require('dotenv');
   const env = dotenv.config()?.parsed;
-  console.log(`initDotEnv2: previous dotenv:`, env);
+  console.log(`initDotEnv2: previous dotenv:`, JSON.stringify(env));
+  console.log(`initDotEnv2: previous __dirname: ${__dirname}`, env);
   const dotnetEnvPaths = [path.join(__dirname, 'cfg.txt'), path.join(__dirname, '../../../.env')];
 
   for (const envPath of dotnetEnvPaths) {
     try {
-      dotenv.config({ path: envPath });
-      const env = dotenv.config()?.parsed;
+      const env = dotenv.config({ path: envPath });
 
       if (env && Object.keys(env).length) {
         console.log(`found env at ${envPath}`, env);

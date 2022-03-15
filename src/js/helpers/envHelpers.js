@@ -1,13 +1,37 @@
 import env from 'tc-electron-env';
-import dotenv from 'dotenv';
 import _ from 'lodash';
+import path from 'path-extra';
 
 let count = 0;
 
+/**
+ * save discovered configuration
+ * @param dotenvConfig
+ * @param app
+ */
+function setDotEnv(dotenvConfig, app) {
+  const pe = process.env;
+  const newEnv = _.cloneDeep({
+    ...pe,
+    ...dotenvConfig,
+  });
+  env.setEnv(newEnv);
+  env.setApp(app);
+  env.setElectron(true);
+}
+
+/**
+ * make sure configuration is initialized
+ * @param msg
+ */
 export function initEnv(msg) {
   console.log(`initEnv - initial is electron: ${env.isElectron()}`);
   const { app } = require('@electron/remote');
-  const dotenvConfig = dotenv.config()?.parsed;
+  const dotenv = require('dotenv');
+  let failed = true;
+  const configPath = path.join(__dirname, 'cfg.txt');
+  console.log(`initEnv - config path: ${configPath}`);
+  const dotenvConfig = dotenv.config({ path: configPath });
 
   if (!dotenvConfig) {
     if (app) {
@@ -17,15 +41,12 @@ export function initEnv(msg) {
       console.log(`initEnv - config variables missing, running in test mode`);
     }
   } else {
-    console.log('initEnv - Initializing environment');
-    const pe = process.env;
-    const newEnv = _.cloneDeep({
-      ...pe,
-      ...dotenvConfig,
-    });
-    env.setEnv(newEnv);
-    env.setApp(app);
-    env.setElectron(true);
+    console.log(`initEnv - Initializing environment to ${JSON.stringify(dotenvConfig)}`);
+    setDotEnv(dotenvConfig, app);
+    failed = false;
+  }
+
+  if (!failed) {
     const home = env.home();
 
     if (!home) {
