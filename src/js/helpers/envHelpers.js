@@ -30,7 +30,6 @@ export function initEnv(msg) {
   const dotenv = require('dotenv');
   let failed = true;
   const configPath = path.join(__dirname, 'cfg.txt');
-  console.log(`initEnv - config path: ${configPath}`);
   const dotenvConfig = dotenv.config({ path: configPath })?.parsed;
 
   if (!dotenvConfig) {
