@@ -41,7 +41,7 @@ export function initEnv(msg) {
       console.log(`initEnv - config variables missing, running in test mode`);
     }
   } else {
-    console.log(`initEnv - Initializing environment to ${JSON.stringify(dotenvConfig)}`);
+    console.log(`initEnv - Initializing environment`);
     setDotEnv(dotenvConfig, app);
     failed = false;
   }
