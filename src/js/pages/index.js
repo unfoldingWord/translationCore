@@ -4,21 +4,25 @@ const dotenv = require('dotenv');
 /**
  * try different configs until one works (different paths for prod and dev)
  */
-function initEnv() {
+function initDotEnv() {
   const dotnetEnvPaths = [path.join(__dirname, 'cfg.txt'), path.join(__dirname, '../../../.env')];
 
   for (const envPath of dotnetEnvPaths) {
-    dotenv.config({ path: envPath });
-    const env = dotenv.config()?.parsed;
+    try {
+      dotenv.config({ path: envPath });
+      const env = dotenv.config()?.parsed;
 
-    if (env && Object.keys(env).length) {
-      console.log(`found env at ${envPath}`, env);
-      break;
+      if (env && Object.keys(env).length) {
+        console.log(`found env at ${envPath}`, env);
+        break;
+      }
+    } catch (e) {
+      console.log(`initDotEnv: failed to parse: ${envPath}`, e);
     }
   }
 }
 
-initEnv();
+initDotEnv();
 
 (function () {
   const ReactDOM = require('react-dom');
