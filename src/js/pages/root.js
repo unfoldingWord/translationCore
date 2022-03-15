@@ -1,4 +1,3 @@
-import path from 'path';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { LocalizeProvider } from 'react-localize-redux';
@@ -18,32 +17,6 @@ import './../../fonts/glyphicons-halflings-regular.woff2';
 import './../../fonts/glyphicons-halflings-regular.eot';
 import './../../fonts/glyphicons-halflings-regular.svg';
 import './../../css/styles.css';
-
-/**
- * try different configs until one works (different paths for prod and dev)
- */
-function initDotEnv2() {
-  const dotenv = require('dotenv');
-  const env = dotenv.config()?.parsed;
-  console.log(`initDotEnv2: previous dotenv:`, JSON.stringify(env));
-  console.log(`initDotEnv2: previous __dirname: ${__dirname}`, env);
-  const dotnetEnvPaths = [path.join(__dirname, 'cfg.txt'), path.join(__dirname, '../../../.env')];
-
-  for (const envPath of dotnetEnvPaths) {
-    try {
-      const env = dotenv.config({ path: envPath });
-
-      if (env && Object.keys(env).length) {
-        console.log(`found env at ${envPath}`, env);
-        break;
-      }
-    } catch (e) {
-      console.log(`initDotEnv2: failed to parse: ${envPath}`, e);
-    }
-  }
-}
-
-initDotEnv2();
 
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();

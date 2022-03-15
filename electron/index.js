@@ -55,9 +55,10 @@ function createMainWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      enableRemoteModule: true
+      enableRemoteModule: true,
     },
   };
+
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
   if (process.env.DEVELOPER_MODE === 'true' || process.env.developer_mode === 'true') {
@@ -112,13 +113,15 @@ function createSplashWindow() {
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,
-      enableRemoteModule: true
+      contextIsolation: true,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, 'preloadSplash.js'),
     },
     frame: false,
     show: true,
     center: true,
   };
+
   splashScreen = defineWindow('splash', windowOptions);
 
   if (IS_DEVELOPMENT) {

@@ -17,8 +17,10 @@
   (function () {
     console.log('showing splash screen...');
     var versiondiv = document.getElementById('version');
-    var version = process.env.tcVersion;
-    versiondiv.innerHTML = "Version " + version + ' (' + process.env.BUILD + ')';
+    var envVars = window?.envVars;
+    var version = envVars.tcVersion;
+    var build = envVars.BUILD;
+    versiondiv.innerHTML = "Version " + version + ' (' + build + ')';
   })();
 </script>
 </body>

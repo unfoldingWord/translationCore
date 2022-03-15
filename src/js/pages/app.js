@@ -42,23 +42,6 @@ if (NOT_TEST) {
   const version = `v${APP_VERSION} (${getBuild()})`;
   injectFileLogging(LOG_FILES_PATH, version);
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
-
-  console.log('folder', __dirname);
-
-  const folders = ['.', __dirname, path.join(__dirname, 'static'), path.join(__dirname, 'static/js')];
-
-  for (const folder of folders) {
-    try {
-      const files = fs.readdirSync(folder);
-      console.log(`files ${folder}`, files);
-      // eslint-disable-next-line no-empty
-    } catch (e) {
-      console.warn(`could not read files from ${folder}`, e);
-    }
-  }
-
-  const { makeSureEnvInit } = require('../helpers/envHelpers');
-  makeSureEnvInit('app');
 }
 
 class Main extends Component {
