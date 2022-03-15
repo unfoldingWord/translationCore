@@ -13,8 +13,6 @@ module.exports = (mode) => {
   ];
 
   copyPatterns.push({ from: './.env', to: 'cfg.txt' });
-  copyPatterns.push({ from: './.env', to: 'static/cfg.txt' });
-  copyPatterns.push({ from: './.env', to: 'static/js/cfg.txt' });
 
   if (isProduction) {
     copyPatterns.push({ from: './.env', to: '.env' });

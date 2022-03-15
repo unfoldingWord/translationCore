@@ -1,3 +1,5 @@
+import path from 'path';
+import dotenv from 'dotenv';
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { LocalizeProvider } from 'react-localize-redux';
@@ -17,6 +19,25 @@ import './../../fonts/glyphicons-halflings-regular.woff2';
 import './../../fonts/glyphicons-halflings-regular.eot';
 import './../../fonts/glyphicons-halflings-regular.svg';
 import './../../css/styles.css';
+
+/**
+ * try different configs until one works (different paths for prod and dev)
+ */
+function initEnv() {
+  const dotnetEnvPaths = [path.join(__dirname, 'cfg.txt'), path.join(__dirname, '../../../.env')];
+
+  for (const envPath of dotnetEnvPaths) {
+    dotenv.config({ path: envPath });
+    const env = dotenv.config()?.parsed;
+
+    if (env && Object.keys(env).length) {
+      console.log(`found env at ${envPath}`, env);
+      break;
+    }
+  }
+}
+
+initEnv();
 
 //loading persistedState from filesystem using loadState()
 const persistedState = loadState();

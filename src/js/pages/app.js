@@ -36,7 +36,13 @@ import {
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
-if (process.env.NODE_ENV !== 'test') {
+const NOT_TEST = process.env.NODE_ENV !== 'test';
+
+if (NOT_TEST) {
+  const version = `v${APP_VERSION} (${getBuild()})`;
+  injectFileLogging(LOG_FILES_PATH, version);
+  console.log('SYSTEM INFO:\n' + getOsInfoStr());
+
   console.log('folder', __dirname);
 
   const folders = ['.', __dirname, path.join(__dirname, 'static'), path.join(__dirname, 'static/js')];
@@ -55,12 +61,6 @@ if (process.env.NODE_ENV !== 'test') {
   makeSureEnvInit('app');
 }
 
-if (process.env.NODE_ENV === 'production') {
-  const version = `v${APP_VERSION} (${getBuild()})`;
-  injectFileLogging(LOG_FILES_PATH, version);
-  console.log('SYSTEM INFO:\n' + getOsInfoStr());
-}
-
 class Main extends Component {
   componentDidMount() {
     const {
@@ -75,7 +75,7 @@ class Main extends Component {
       addTranslationForLanguage,
     } = this.props;
 
-    if (process.env.NODE_ENV !== 'test') {
+    if (NOT_TEST) {
       const { makeSureEnvInit } = require('../helpers/envHelpers');
       makeSureEnvInit('Main');
     }
