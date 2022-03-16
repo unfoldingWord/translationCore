@@ -28,9 +28,9 @@ export function initEnv(msg) {
   console.log(`initEnv - initial is electron: ${env.isElectron()}`);
   const { app } = require('@electron/remote');
   const dotenv = require('dotenv');
-  const fs = require('fs-extra');
   let failed = true;
 
+  // const fs = require('fs-extra');
   // console.log('folder', __dirname);
   //
   // const folders = [__dirname, path.join(__dirname, 'static'), path.join(__dirname, '..')];
