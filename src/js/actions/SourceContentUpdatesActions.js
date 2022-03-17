@@ -173,7 +173,8 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
       await SourceContentUpdater.getLatestResources(localResourceList);
     }
 
-    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload)
+    cancelled = false;
+    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload, 20)
       .then(async () => {
         updateSourceContentUpdaterManifest();
         dispatch(updateSourceContentUpdatesReducer());
@@ -195,6 +196,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
 
         if (cancelled) {
           console.error('downloadSourceContentUpdates() - download cancelled, no errors');
+          dispatch(closeAlertDialog());
         } else {
           dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
         }
