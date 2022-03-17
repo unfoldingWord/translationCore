@@ -99,7 +99,9 @@ class Alert extends Component {
         <Dialog
           style={{ padding: '0px', zIndex: 2501 }}
           contentStyle={{ opacity: '1' }}
+          bodyStyle={{ overflowY: 'auto' }}
           actions={buttonActions}
+          scroll={'body'}
           modal={false}
           open={alertDialogVisibility}
         >
