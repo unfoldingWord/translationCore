@@ -92,7 +92,7 @@ class SoftwareUpdateDialogContainer extends React.Component {
     this.state = { ...this.initialState };
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     const openChanged = newProps.open !== this.props.open;
 
     if (openChanged && newProps.open) {

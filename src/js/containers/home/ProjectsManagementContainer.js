@@ -28,7 +28,7 @@ class ProjectsManagementContainer extends Component {
     this.handleProjectSelected = this.handleProjectSelected.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.props.actions.getMyProjects();
   }
 
