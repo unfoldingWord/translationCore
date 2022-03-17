@@ -14,14 +14,41 @@
   <h4>Loading...</h4>
 </div>
 <script>
-  (function () {
+  let init = false;
+  function updateDisplay() {
     console.log('showing splash screen...');
     var versiondiv = document.getElementById('version');
     var envVars = window?.envVars;
-    var version = envVars.tcVersion;
-    var build = envVars.BUILD;
-    versiondiv.innerHTML = "Version " + version + ' (' + build + ')';
-  })();
+    if (envVars) {
+      var version = envVars?.tcVersion;
+      var build = envVars?.BUILD;
+      if (version) {
+        versiondiv.innerHTML = "Version " + version + ' (' + build + ')';
+        return true;
+      } else {
+        console.log('build not defined')
+      }
+    } else {
+      console.log('envars not defined')
+    }
+    return false;
+  }
+
+  function initSplashWithRetry(delay, maxTimes) {
+    if (!init && (maxTimes > 1)) {
+      console.log('splash init try ' + maxTimes);
+      const success = updateDisplay();
+      if (success) {
+        console.log(`splash init success`);
+        init = true;
+      } else {
+        console.log(`splash init failed`);
+        setTimeout(() => (initSplashWithRetry(delay, maxTimes - 1)), delay)
+      }
+    }
+  }
+
+  initSplashWithRetry(1000, 10);
 </script>
 </body>
 </html>
