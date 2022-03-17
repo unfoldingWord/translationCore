@@ -44,7 +44,7 @@ class ToolContainer extends Component {
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { toolApi, supportingToolApis } = nextProps;
 
     // update api props
