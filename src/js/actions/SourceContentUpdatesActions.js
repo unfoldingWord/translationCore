@@ -98,6 +98,44 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 });
 
 /**
+ * create error string from array of errors
+ * @param {array} errors
+ * @param {function} translate
+ * @return {String}
+ */
+function getDownloadErrorList(errors, translate) {
+  let errorStr = '';
+
+  for (const error of errors) {
+    let errorSuffix = '';
+    let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_download';
+
+    if (error.parseError) {
+      const matches = [
+        { start: ' - cannot find \'', end: '\'' },
+        { start: 'Failed to process resource: ', end: ':' },
+      ];
+
+      for (const match of matches) {
+        if (error.errorMessage.indexOf(match.start) >= 0) {
+          const [, suffix] = error.errorMessage.split(match.start);
+          errorSuffix = suffix.split(match.end)[0];
+          errorType = 'updates.update_error_reason_missing_dependency';
+          break;
+        }
+      }
+    }
+    errorSuffix = errorSuffix || '';
+
+    if (errorSuffix) {
+      errorSuffix = ': ' + errorSuffix;
+    }
+    errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}${errorSuffix}\n`;
+  }
+  return errorStr;
+}
+
+/**
  * Downloads source content updates using the tc-source-content-updater.
  * @param {array} resourcesToDownload - list of resources to be downloaded.
  */
@@ -185,14 +223,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           let alertMessage = err.toString(); // default error message
 
           if (errors && errors.length) {
-            for (const error of errors) {
-              let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_download';
-
-              if (error.parseError && error.errorMessage.indexOf(' - cannot find ')) {
-                errorType = 'updates.update_error_reason_missing_dependency';
-              }
-              errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}\n`;
-            }
+            errorStr = getDownloadErrorList(errors, translate);
             alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
               dispatch(closeAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
               dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
