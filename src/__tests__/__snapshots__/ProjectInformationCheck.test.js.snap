@@ -140,7 +140,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
               }
             }
           >
-            *
+            * 
             required
           </span>
         </div>
@@ -298,7 +298,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         }
                       />
                     </div>
-
+                    
                   </div>
                   <div
                     style={
@@ -615,7 +615,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                         }
                       />
                     </div>
-
+                    
                   </div>
                   <div
                     style={
@@ -820,7 +820,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-
+                     
                   </div>
                   <div
                     id="language-direction-SelectField"
@@ -1102,7 +1102,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-
+                     
                   </div>
                   <div
                     id="book-dropdown-menu-selectField"
@@ -1392,7 +1392,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                       }
                     }
                   >
-
+                     
                   </div>
                   <div
                     id="project-font-SelectField"
@@ -1461,7 +1461,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         }
                       >
-
+                        
                       </div>
                       <button
                         disabled={false}
@@ -1775,7 +1775,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
@@ -1882,7 +1882,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
@@ -2058,7 +2058,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
@@ -2165,7 +2165,7 @@ exports[`ProjectInformationCheck ProjectInformationCheck component should match 
                           }
                         />
                       </div>
-
+                      
                     </div>
                     <span
                       className="glyphicon glyphicon-trash"
