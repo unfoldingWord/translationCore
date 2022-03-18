@@ -18,10 +18,10 @@
   function updateDisplay() {
     console.log('showing splash screen...');
     var versiondiv = document.getElementById('version');
-    var envVars = window?.envVars;
+    var envVars = window && window.envVars;
     if (envVars) {
-      var version = envVars?.tcVersion;
-      var build = envVars?.BUILD;
+      var version = envVars && envVars.tcVersion;
+      var build = envVars && envVars.BUILD;
       if (version) {
         versiondiv.innerHTML = "Version " + version + ' (' + build + ')';
         return true;
