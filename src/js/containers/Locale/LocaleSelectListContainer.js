@@ -17,7 +17,7 @@ class LocaleSelectListContainer extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // TRICKY: update the selection if the language is changed elsewhere
     if (nextProps.currentLanguage !== this.props.currentLanguage) {
       this.setState({ selectedLocale: nextProps.currentLanguage });

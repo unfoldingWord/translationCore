@@ -13,7 +13,7 @@ export default class SearchOptions extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let { username } = this.props;
     this.setState({ userBoxValue: username ? username : '' });
     this.props.actions.searchReposByUser(username);

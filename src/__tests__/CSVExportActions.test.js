@@ -7,8 +7,7 @@ import path from 'path-extra';
 import reducers from '../js/reducers';
 // actions
 import * as csvExportActions from '../js/actions/CSVExportActions';
-import * as ProjectImportStepperActions
-  from '../js/actions/ProjectImportStepperActions';
+import * as ProjectImportStepperActions from '../js/actions/ProjectImportStepperActions';
 import * as AlertModalActions from '../js/actions/AlertModalActions';
 // helpers
 import * as csvHelpers from '../js/helpers/csvHelpers';

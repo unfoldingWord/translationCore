@@ -280,3 +280,4 @@ coverage/
 .mr.developer.cfg
 
 find-duplicate-dependencies.log
+/electron/build.json

@@ -89,7 +89,7 @@ class ContentUpdatesDialogContainer extends React.Component {
     this.onSubitemSelection = this.onSubitemSelection.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     const openChanged = newProps.open !== this.props.open;
 
     if (openChanged && newProps.open) {

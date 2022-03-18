@@ -8,8 +8,7 @@ import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
-import * as fromProjectValidationReducer
-  from '../reducers/projectValidationReducer';
+import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';

@@ -48,7 +48,7 @@ class ToolCardBoxes extends React.Component {
     this.showExpanded = this.showExpanded.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.loadArticles();
   }
 

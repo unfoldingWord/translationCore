@@ -19,5 +19,5 @@ const envValues = {
 
 contextBridge.exposeInMainWorld('envVars', envValues);
 
-console.log(`finished preloadSplash`);
+console.log(`finished preloadSplash: BUILD=${BUILD}`);
 
