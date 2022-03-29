@@ -46,6 +46,7 @@ import ProjectAPI from '../../helpers/ProjectAPI';
 import CoreAPI from '../../helpers/CoreAPI';
 import {
   copyGroupDataToProject,
+  getOriginalLangOwner,
   setDefaultProjectCategories,
 } from '../../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../../helpers/bibleHelpers';
@@ -54,6 +55,7 @@ import * as Bible from '../../common/BooksOfTheBible';
 // constants
 import {
   APP_VERSION,
+  DEFAULT_ORIG_LANG_OWNER,
   DEFAULT_OWNER,
   MIN_COMPATIBLE_VERSION,
   PROJECTS_PATH,
@@ -199,7 +201,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch, false, glOwner);
 
       // select default categories
-      setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
+      setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir, glOwner);
 
       dispatch(connectToolApi(validProjectDir, bookId, t));
     }
@@ -244,10 +246,10 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
   const { code } = getActiveLocaleLanguage(state);
-  const sourceBook = getSourceBook(state, DEFAULT_OWNER);
+  const gatewayLanguageOwner = getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
+  const sourceBook = getSourceBook(state, getOriginalLangOwner(gatewayLanguageOwner));
   const targetBook = getTargetBook(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
-  const gatewayLanguageOwner = getToolGlOwner(state, toolName) || DEFAULT_OWNER;
 
   return {
     //resource api

@@ -4,12 +4,13 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import env from 'tc-electron-env';
-import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
+import { resourcesHelpers } from 'tc-source-content-updater';
 import SimpleCache from '../helpers/SimpleCache';
 import {
   getBibles,
   getCurrentToolName,
   getProjectBookId,
+  getToolGlOwner,
   getTranslate,
 } from '../selectors';
 // actions
@@ -19,6 +20,7 @@ import * as SettingsHelpers from '../helpers/SettingsHelpers';
 import * as BibleHelpers from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import {
+  DEFAULT_ORIG_LANG_OWNER,
   DEFAULT_OWNER,
   ORIGINAL_LANGUAGE,
   TARGET_BIBLE,
@@ -326,6 +328,7 @@ export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) =
   console.log('makeSureBiblesLoadedForTool(): contextId', contextId);
   const state = getState();
   const toolName = getCurrentToolName(state);
+  const glOwner = getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
   const { bibles } = state.resourcesReducer;
   const bookId = contextId && contextId.reference.bookId || getProjectBookId(state);
 
@@ -337,8 +340,9 @@ export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) =
     for (let languageId of Object.keys(bibles)) {
       if (bibles[languageId]) {
         for (let bibleId of Object.keys(bibles[languageId])) {
+          const origLangOwner = ResourcesHelpers.getOriginalLangOwner(glOwner);
           const key = (languageId === ORIGINAL_LANGUAGE) ?
-            resourcesHelpers.addOwnerToKey(BibleHelpers.isOldTestament(bookId) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG, apiHelpers.DOOR43_CATALOG)
+            resourcesHelpers.addOwnerToKey(BibleHelpers.isOldTestament(bookId) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG, origLangOwner)
             : languageId;
           removeBibleFromList(resources, bibleId, key);
         }

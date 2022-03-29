@@ -207,7 +207,7 @@ const mapStateToProps = state => {
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getSelectedToolApi(state),
     targetBook: getTargetBook(state),
-    sourceBook: getSourceBook(state),
+    sourceBook: getSourceBook(state, gatewayLanguageOwner),
     projectSaveLocation: projectPath,
     username: getUsername(state),
     loginReducer: state.loginReducer,
