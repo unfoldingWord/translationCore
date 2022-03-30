@@ -4,6 +4,7 @@ import { batchActions } from 'redux-batched-actions';
 import {
   getSourceBook,
   getToolGatewayLanguage,
+  getToolGlOwner,
   getTranslate,
 } from '../selectors';
 import {
@@ -13,12 +14,13 @@ import {
 } from '../helpers/toolHelper';
 import ResourceAPI from '../helpers/ResourceAPI';
 import {
-  WORD_ALIGNMENT,
   ALERT_SELECTIONS_INVALIDATED_ID,
   ALERT_SELECTIONS_INVALIDATED_MSG,
   ALERT_ALIGNMENTS_RESET_ID,
   ALERT_ALIGNMENTS_RESET_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+  DEFAULT_ORIG_LANG_OWNER,
+  WORD_ALIGNMENT,
 } from '../common/constants';
 import types from './ActionTypes';
 // actions
@@ -63,13 +65,14 @@ export const loadTools = (toolsDir) => (dispatch) => {
  */
 export function saveResourcesUsed(toolName, gl) {
   return (dispatch, getState) => {
-    const sourceBook = getSourceBook(getState());
+    const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
+    const sourceBook = getSourceBook(getState(), glOwner);
     const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
     dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
 
     if (toolName !== WORD_ALIGNMENT) {
       const resources = ResourceAPI.default();
-      const helpDir = resources.getLatestTranslationHelp(gl, toolName);
+      const helpDir = resources.getLatestTranslationHelp(gl, toolName, glOwner);
       const glVersion = (helpDir && path.basename(helpDir)) || 'unknown';
       dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_' + gl + '_check_version_' + toolName, glVersion));
     }

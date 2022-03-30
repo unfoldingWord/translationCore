@@ -26,7 +26,7 @@ const ToolsCards = ({
   projectSaveLocation,
   manifest,
   toolsCategories,
-  originalLanguageBookManifest,
+  originalLanguageBookManifests,
   onMissingResource,
   toggleHomeView,
   sourceContentUpdateCount,
@@ -70,6 +70,7 @@ const ToolsCards = ({
           tools.map((tool, i) => {
             const glSelected = resourcesHelpers.splitVersionAndOwner(manifest.toolsSelectedGLs?.[tool.name] || '').version;
             const glOwnerSelected = manifest.toolsSelectedOwners?.[tool.name] || DEFAULT_OWNER;
+            const originalLanguageBookManifest = originalLanguageBookManifests[tool.name] || {};
             const availableCategories = getAvailableCategories(glSelected, tool.name, projectSaveLocation, { withCategoryName: true }, glOwnerSelected);
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
@@ -141,7 +142,7 @@ ToolsCards.propTypes = {
   projectSaveLocation: PropTypes.string.isRequired,
   manifest: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
-  originalLanguageBookManifest: PropTypes.object.isRequired,
+  originalLanguageBookManifests: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,

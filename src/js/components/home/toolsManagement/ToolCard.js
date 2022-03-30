@@ -11,7 +11,7 @@ import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
 import { getGatewayLanguageList, hasValidOL } from '../../../helpers/gatewayLanguageHelpers';
 import { isToolUsingCurrentOriginalLanguage } from '../../../helpers/originalLanguageResourcesHelpers';
-import { addOwner } from '../../../helpers/ResourcesHelpers';
+import { addOwner, getOriginalLangOwner } from '../../../helpers/ResourcesHelpers';
 // components
 import Hint from '../../Hint';
 import {
@@ -154,10 +154,13 @@ class ToolCard extends Component {
 
   getLaunchDisableMessage(id, developerMode, translate, toolName, selectedCategories) {
     const toolsWithCategories = [TRANSLATION_WORDS , TRANSLATION_NOTES];
-    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
+    const selectedGL = this.state.selectedGL;
+    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(selectedGL, id, developerMode, translate);
 
     if (!launchDisableMessage) { // if no errors, make sure we have original language
-      const olBookPath = hasValidOL(id);
+      const { owner } = resourcesHelpers.splitVersionAndOwner(selectedGL.trim());
+      const origLangOwner = getOriginalLangOwner(owner);
+      const olBookPath = hasValidOL(id, origLangOwner);
 
       if (!olBookPath) {
         launchDisableMessage = translate('tools.book_not_supported');

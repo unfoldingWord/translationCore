@@ -29,6 +29,7 @@ import CoreAPI from '../helpers/CoreAPI';
 import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
 import complexScriptFonts from '../common/complexScriptFonts';
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
 
 const styles = {
   container: {
@@ -195,6 +196,7 @@ const mapStateToProps = state => {
   const bookId = getProjectBookId(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, currentToolName);
   const gatewayLanguageOwner = getToolGlOwner(state, currentToolName);
+  const originalLanguageOwner = getOriginalLangOwner(gatewayLanguageOwner);
 
   return {
     bookId,
@@ -207,7 +209,7 @@ const mapStateToProps = state => {
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getSelectedToolApi(state),
     targetBook: getTargetBook(state),
-    sourceBook: getSourceBook(state),
+    sourceBook: getSourceBook(state, originalLanguageOwner),
     projectSaveLocation: projectPath,
     username: getUsername(state),
     loginReducer: state.loginReducer,
