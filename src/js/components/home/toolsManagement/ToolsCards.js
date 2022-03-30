@@ -144,7 +144,7 @@ ToolsCards.propTypes = {
   projectSaveLocation: PropTypes.string.isRequired,
   manifest: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
-  originalLanguageBookManifests: PropTypes.object.isRequired,
+  originalLanguageBookManifests: PropTypes.array.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
