@@ -1285,15 +1285,23 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
     // see if we need to keep old versions of original language
     if (requiredVersions && requiredVersions.length) {
       deleteOldResources = false;
-      const highestRequired = requiredVersions[0];
+      const latestVersions = ResourceAPI.getLatestVersionsAndOwners(resourcePath);
       const versions = ResourceAPI.listVersions(resourcePath);
       console.log('preserveNeededOrigLangVersions: versions', versions);
 
       for (let version of versions) {
         if (!requiredVersions.includes(version)) {
-          const newerResource = ResourceAPI.compareVersions(version, highestRequired) > 0;
+          const { owner } = resourcesHelpers.splitVersionAndOwner(version);
+          let highestRequired = latestVersions[owner];
 
-          if (!newerResource) { // don't delete if newer version
+          if (!highestRequired) {
+            continue;
+          }
+
+          highestRequired = path.basename(highestRequired);
+          const newerResource = ResourceAPI.compareVersions(version, highestRequired) >= 0;
+
+          if (!newerResource) { // don't delete if newer/newest version
             const oldPath = path.join(resourcePath, version);
             console.log('preserveNeededOrigLangVersions: removing old version', oldPath);
             fs.removeSync(oldPath);

@@ -319,10 +319,9 @@ function isDirectory(folderPath) {
  * @param {String} languagePath
  * @param {String} bookID
  * @param {String} owner
- * @param {Boolean} checkingOrigLang
  * @return {boolean}
  */
-function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null, checkingOrigLang =false) {
+function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
   let isBibleValidSource = true;
   const checkingHelps = helpsChecks && helpsChecks.length;
 
@@ -330,14 +329,12 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null, che
     isBibleValidSource = true;
     const helpsChecks_ = [...helpsChecks];
 
-    if (!checkingOrigLang && (owner !== apiHelpers.DOOR43_CATALOG)) { // if other owner check if we need twls
+    if (owner !== apiHelpers.DOOR43_CATALOG) { // if other owner check if we need twls
       const tWHelpsPath = path.join(TRANSLATION_HELPS, TRANSLATION_WORDS);
       const hasTwDependency = helpsChecks.find(check => (check.path === tWHelpsPath));
 
       if (hasTwDependency) {
-        // if TW is a dependency, modify TW check
-        hasTwDependency.subpath = 'articles';
-        // also add TWL also as a dependency
+        // if TW is a dependency, add TWL also as a dependency
         helpsChecks_.push({
           path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS_LINKS),
           subpath: path.join('groups', '${bookID}'),
@@ -471,7 +468,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
         if (validHelpsCache.hasOwnProperty(owner)) {
           isBibleValidSource = validHelpsCache[owner];
         } else {
-          isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId, owner, false);
+          isBibleValidSource = hasValidHelps(glRequirements.gl.helpsChecks, languagePath, bookId, owner);
           validHelpsCache[owner] = isBibleValidSource;
 
           if (!isBibleValidSource) {
@@ -488,11 +485,12 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
               console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - valid original is not found for ${toolName}`);
             }
             isBibleValidSource = isBibleValidSource && isValidOrig;
+            const isOrigLangInD43 = (origLangOwner === apiHelpers.DOOR43_CATALOG);
 
-            if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
+            if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length && isOrigLangInD43) {
               const olBook = BibleHelpers.getOrigLangforBook(bookId);
               const olPath = path.join(USER_RESOURCES_PATH, olBook.languageId);
-              const hasValidOriginalHelps = hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId, origLangOwner, true);
+              const hasValidOriginalHelps = hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId, origLangOwner);
 
               if (!hasValidOriginalHelps) {
                 console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - valid ORIGINAL helps not found for ${toolName}`);

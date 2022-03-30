@@ -126,7 +126,11 @@ const getManifests = (state) => {
   for (const tool of tools || []) {
     const toolName = tool.name;
     const glOwner = getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
-    const manifest = getSourceBookManifest(state, getOriginalLangOwner(glOwner));
+    let manifest = getSourceBookManifest(state, getOriginalLangOwner(glOwner));
+
+    if (!manifest) {
+      manifest = getSourceBookManifest(state, DEFAULT_ORIG_LANG_OWNER);
+    }
     manifests[toolName] = manifest;
   }
 
