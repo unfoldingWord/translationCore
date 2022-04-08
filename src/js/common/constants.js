@@ -49,7 +49,11 @@ export const WORD_ALIGNMENT = 'wordAlignment';
 export const LEXICONS = 'lexicons';
 export const UGL_LEXICON = 'ugl';
 export const UHL_LEXICON = 'uhl';
-export const DEFAULT_OWNER = `Door43-Catalog`;
+const DOOR43_CATALOG = `Door43-Catalog`;
+const UNFOLDING_WORD = `unfoldingWord`;
+export const DEFAULT_ORIG_LANG_OWNER = DOOR43_CATALOG;
+export const CN_ORIG_LANG_OWNER = UNFOLDING_WORD; // default for catalog next resources
+export const DEFAULT_OWNER = DOOR43_CATALOG;
 // categories
 export const toolCardCategories = {
   'kt': 'Key Terms',

@@ -4,10 +4,11 @@ import path from 'path-extra';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import env from 'tc-electron-env';
 import {
-  getTranslate,
   getCurrentToolName,
   getProjectSaveLocation,
   getProjectBookId,
+  getToolGlOwner,
+  getTranslate,
 } from '../selectors';
 import { getResourceDownloadsAlertMessage } from '../containers/SourceContentUpdatesDialogContainer';
 // helpers
@@ -16,6 +17,7 @@ import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 // actions
+import { DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
@@ -184,6 +186,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           const projectSaveLocation = getProjectSaveLocation(getState());
           const bookId = getProjectBookId(getState());
           const olForBook = getOrigLangforBook(bookId);
+          const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
           let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
           await dispatch(loadBookTranslations(bookId));
 
@@ -191,7 +194,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
           dispatch(updateResourcesForOpenTool(toolName));
 
           // Tool is opened so we need to update existing group data
-          copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch);
+          copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch, false, glOwner);
         }
 
         if (cancelled) {

@@ -8,7 +8,7 @@ import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 // components
 // helpers
 import { getTsvOLVersion } from '../../../helpers/originalLanguageResourcesHelpers';
-import { getAvailableCategories } from '../../../helpers/ResourcesHelpers';
+import { getOriginalLangOwner, getAvailableCategories } from '../../../helpers/ResourcesHelpers';
 // constants
 import {
   USER_RESOURCES_PATH,
@@ -26,7 +26,7 @@ const ToolsCards = ({
   projectSaveLocation,
   manifest,
   toolsCategories,
-  originalLanguageBookManifest,
+  originalLanguageBookManifests,
   onMissingResource,
   toggleHomeView,
   sourceContentUpdateCount,
@@ -70,6 +70,8 @@ const ToolsCards = ({
           tools.map((tool, i) => {
             const glSelected = resourcesHelpers.splitVersionAndOwner(manifest.toolsSelectedGLs?.[tool.name] || '').version;
             const glOwnerSelected = manifest.toolsSelectedOwners?.[tool.name] || DEFAULT_OWNER;
+            const origLangOwner = getOriginalLangOwner(glOwnerSelected);
+            const originalLanguageBookManifest = originalLanguageBookManifests[tool.name] || {};
             const availableCategories = getAvailableCategories(glSelected, tool.name, projectSaveLocation, { withCategoryName: true }, glOwnerSelected);
             let isOLBookVersionMissing = false;
             let missingOLResource = {};
@@ -84,7 +86,7 @@ const ToolsCards = ({
               const { owner, version } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
 
               if (!owner) { // make sure we have an owner for resource
-                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + DEFAULT_OWNER;
+                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + origLangOwner;
               }
 
               const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
@@ -96,6 +98,7 @@ const ToolsCards = ({
                 languageId,
                 resourceId,
                 version,
+                owner: origLangOwner,
               };
             }
 
@@ -141,7 +144,7 @@ ToolsCards.propTypes = {
   projectSaveLocation: PropTypes.string.isRequired,
   manifest: PropTypes.object.isRequired,
   toolsCategories: PropTypes.object.isRequired,
-  originalLanguageBookManifest: PropTypes.object.isRequired,
+  originalLanguageBookManifests: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,

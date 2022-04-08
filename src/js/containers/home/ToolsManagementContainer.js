@@ -12,6 +12,7 @@ import {
   getToolGatewayLanguage,
   getSourceBookManifest,
   getSourceContentUpdateCount,
+  getToolGlOwner,
 } from '../../selectors';
 // actions
 import {
@@ -21,7 +22,8 @@ import * as ProjectDetailsActions from '../../actions/ProjectDetailsActions';
 import { promptUserAboutMissingResource } from '../../actions/SourceContentUpdatesActions';
 import * as BodyUIActions from '../../actions/BodyUIActions';
 import { warnOnInvalidations, openTool } from '../../actions/ToolActions';
-import { DEFAULT_OWNER } from '../../common/constants';
+import { DEFAULT_ORIG_LANG_OWNER } from '../../common/constants';
+import { getOriginalLangOwner } from '../../helpers/ResourcesHelpers';
 
 class ToolsManagementContainer extends Component {
   constructor(props) {
@@ -37,7 +39,8 @@ class ToolsManagementContainer extends Component {
     if (projectSaveLocation && bookId) {
       tools.forEach(({ name:toolName }) => {
         const currentGatewayLanguage = getToolGatewayLanguage(reducers, toolName);
-        this.props.actions.loadCurrentCheckCategories(toolName, projectSaveLocation, currentGatewayLanguage);
+        const owner = getToolGlOwner(reducers, toolName) || DEFAULT_ORIG_LANG_OWNER;
+        this.props.actions.loadCurrentCheckCategories(toolName, projectSaveLocation, currentGatewayLanguage, owner);
       });
     }
   }
@@ -66,7 +69,7 @@ class ToolsManagementContainer extends Component {
         },
       },
       translate,
-      originalLanguageBookManifest,
+      originalLanguageBookManifests,
       onMissingResource,
       toggleHomeView,
       sourceContentUpdateCount,
@@ -106,7 +109,7 @@ class ToolsManagementContainer extends Component {
             toggleHomeView={toggleHomeView}
             actions={{ ...this.props.actions }}
             onMissingResource={onMissingResource}
-            originalLanguageBookManifest={originalLanguageBookManifest}
+            originalLanguageBookManifests={originalLanguageBookManifests}
             projectSaveLocation={projectSaveLocation}
             sourceContentUpdateCount={sourceContentUpdateCount}
           />
@@ -116,10 +119,28 @@ class ToolsManagementContainer extends Component {
   }
 }
 
+const getManifests = (state) => {
+  const tools = getTools(state);
+  const manifests = {};
+
+  for (const tool of tools || []) {
+    const toolName = tool.name;
+    const glOwner = getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
+    let manifest = getSourceBookManifest(state, getOriginalLangOwner(glOwner));
+
+    if (!manifest) {
+      manifest = getSourceBookManifest(state, DEFAULT_ORIG_LANG_OWNER);
+    }
+    manifests[toolName] = manifest;
+  }
+
+  return manifests;
+};
+
 const mapStateToProps = (state) => ({
   isUserLoggedIn: getIsUserLoggedIn(state),
   tools: getTools(state),
-  originalLanguageBookManifest: getSourceBookManifest(state, DEFAULT_OWNER),
+  originalLanguageBookManifests: getManifests(state),
   sourceContentUpdateCount: getSourceContentUpdateCount(state),
   reducers: {
     homeScreenReducer: state.homeScreenReducer,
@@ -136,8 +157,8 @@ const mapDispatchToProps = (dispatch) => ({
   actions: {
     openOptionDialog: (...args) => dispatch(openOptionDialog(...args)),
     closeAlertDialog: () => dispatch(closeAlertDialog()),
-    loadCurrentCheckCategories: (toolName, projectSaveLocation) => {
-      dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation));
+    loadCurrentCheckCategories: (toolName, projectSaveLocation, currentGatewayLanguage, owner) => {
+      dispatch(ProjectDetailsActions.loadCurrentCheckCategories(toolName, projectSaveLocation, currentGatewayLanguage, owner));
     },
     getProjectProgressForTools: (toolName, results) => {
       dispatch(ProjectDetailsActions.getProjectProgressForTools(toolName, results));
@@ -168,7 +189,7 @@ ToolsManagementContainer.propTypes = {
   }).isRequired,
   actions: PropTypes.object.isRequired,
   translate: PropTypes.func.isRequired,
-  originalLanguageBookManifest: PropTypes.object.isRequired,
+  originalLanguageBookManifests: PropTypes.object.isRequired,
   onMissingResource: PropTypes.func.isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,

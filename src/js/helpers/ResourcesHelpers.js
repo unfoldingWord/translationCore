@@ -16,16 +16,19 @@ import {
   loadCurrentCheckCategories,
 } from '../actions/ProjectDetailsActions';
 import {
-  getToolGatewayLanguage,
   getBibles,
   getProjectSaveLocation,
   getProjectBookId,
+  getToolGatewayLanguage,
+  getToolGlOwner,
 } from '../selectors';
 import * as Bible from '../common/BooksOfTheBible';
 import {
   APP_VERSION,
+  CN_ORIG_LANG_OWNER,
   DEFAULT_GATEWAY_LANGUAGE,
   DEFAULT_OWNER,
+  DEFAULT_ORIG_LANG_OWNER,
   ORIGINAL_LANGUAGE,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   STATIC_RESOURCES_PATH,
@@ -510,11 +513,12 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which selections will be made
  * @param {string} projectDir - path to the project directory
+ * @param {string} owner
  */
-export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDir) {
+export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDir, owner) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, owner);
   let categories = [];
 
   if (helpDir && project.getSelectedCategories(toolName).length === 0) {
@@ -588,7 +592,7 @@ export function updateGroupIndexForGl(toolName, selectedGL, owner) {
         }
       }
       console.log('updateGroupIndexForGl() - calling loadCurrentCheckCategories()');
-      dispatch(loadCurrentCheckCategories(toolName, projectDir, selectedGL));
+      dispatch(loadCurrentCheckCategories(toolName, projectDir, selectedGL, owner));
     } catch (e) {
       console.error(`updateGroupIndexForGl(${toolName} - error updating current context`, e);
     }
@@ -998,6 +1002,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
 export function getResourcesNeededByTool(state, bookId, toolName) {
   const resources = [];
   const { languageId: olLanguageID, bibleId: olBibleId } = BibleHelpers.getOrigLangforBook(bookId);
+  const glOwner= getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
 
   // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
@@ -1013,7 +1018,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId, apiHelpers.DOOR43_CATALOG);
+        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(glOwner));
         break; // skip invalid language codes
 
       default:
@@ -1024,7 +1029,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
   } else {
     console.warn('No Scripture Pane Configuration');
   }
-  addResource(resources, olLanguageID, olBibleId, apiHelpers.DOOR43_CATALOG); // make sure loaded even if not in pane settings
+  addResource(resources, olLanguageID, olBibleId, getOriginalLangOwner(glOwner)); // make sure loaded even if not in pane settings
   const gatewayLangId = getToolGatewayLanguage(state, toolName);
   const biblesLoaded = getBibles(state);
   const validBibles = getValidGatewayBiblesForTool(
@@ -1264,26 +1269,39 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
       -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
 
-    requiredVersions = requiredVersions.map((version) => { // make sure we have owner
+    const requiredVersions_ = [];
+
+    requiredVersions.forEach((version) => { // make sure we have owner
       if (!version.includes(apiHelpers.OWNER_SEPARATOR)) {
-        version = resourcesHelpers.addOwnerToKey(version, apiHelpers.DOOR43_CATALOG);
+        requiredVersions_.push(resourcesHelpers.addOwnerToKey(version, DEFAULT_ORIG_LANG_OWNER));
+        requiredVersions_.push(resourcesHelpers.addOwnerToKey(version, CN_ORIG_LANG_OWNER));
+      } else {
+        requiredVersions_.push(version);
       }
-      return version;
     });
+    requiredVersions = requiredVersions_;
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
     // see if we need to keep old versions of original language
     if (requiredVersions && requiredVersions.length) {
       deleteOldResources = false;
-      const highestRequired = requiredVersions[0];
+      const latestVersions = ResourceAPI.getLatestVersionsAndOwners(resourcePath);
       const versions = ResourceAPI.listVersions(resourcePath);
       console.log('preserveNeededOrigLangVersions: versions', versions);
 
       for (let version of versions) {
         if (!requiredVersions.includes(version)) {
-          const newerResource = ResourceAPI.compareVersions(version, highestRequired) > 0;
+          const { owner } = resourcesHelpers.splitVersionAndOwner(version);
+          let highestRequired = latestVersions[owner];
 
-          if (!newerResource) { // don't delete if newer version
+          if (!highestRequired) {
+            continue;
+          }
+
+          highestRequired = path.basename(highestRequired);
+          const newerResource = ResourceAPI.compareVersions(version, highestRequired) >= 0;
+
+          if (!newerResource) { // don't delete if newer/newest version
             const oldPath = path.join(resourcePath, version);
             console.log('preserveNeededOrigLangVersions: removing old version', oldPath);
             fs.removeSync(oldPath);
@@ -1505,3 +1523,13 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   }
   return null;
 };
+
+/**
+ * determine the owner to use for original language based on if owner is in door43-catalog or CN owner.
+ * @param owner
+ * @return {*|string}
+ */
+export function getOriginalLangOwner(owner) {
+  const origLanOwner = (owner === DEFAULT_ORIG_LANG_OWNER) ? owner : CN_ORIG_LANG_OWNER;
+  return origLanOwner;
+}

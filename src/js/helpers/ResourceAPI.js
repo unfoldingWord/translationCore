@@ -4,7 +4,6 @@ import semver from 'semver';
 import env from 'tc-electron-env';
 import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import {
-  DEFAULT_OWNER,
   TRANSLATION_HELPS,
   TRANSLATION_WORDS,
   TRANSLATION_WORDS_LINKS,
@@ -56,7 +55,7 @@ class ResourceAPI {
    * @param {string} owner
    * @returns {string|null} the file path or null if no directory was found
    */
-  getLatestTranslationHelp(gatewayLanguage, helpName, owner = DEFAULT_OWNER) {
+  getLatestTranslationHelp(gatewayLanguage, helpName, owner) {
     if ((helpName === TRANSLATION_WORDS) && (owner !== apiHelpers.DOOR43_CATALOG)) { // support twls if not from Door43 catalog
       helpName = TRANSLATION_WORDS_LINKS;
     }

@@ -230,10 +230,11 @@ function isValidResource(resourcePath, bookId, minCheckingLevel, needsAlignmentD
  *
  * @param {String} langPath
  * @param {String} subpath
+ * @param {string} ownerStr
  * @return {String} resource version path
  */
-function getValidResourcePath(langPath, subpath) {
-  const validPath = ResourceAPI.getLatestVersion(path.join(langPath, subpath));
+function getValidResourcePath(langPath, subpath, ownerStr) {
+  const validPath = ResourceAPI.getLatestVersion(path.join(langPath, subpath), ownerStr);
 
   if (validPath) {
     const subFolders = ResourcesHelpers.getFoldersInResourceFolder(validPath);
@@ -248,23 +249,25 @@ function getValidResourcePath(langPath, subpath) {
 /**
  * get path for OL of book
  * @param {String} bookId - book to look up
+ * @param {string} ownerStr
  * @return {String}
  */
-export function getOlBookPath(bookId) {
+export function getOlBookPath(bookId, ownerStr) {
   const { languageId, bibleId } = BibleHelpers.getOrigLangforBook(bookId);
   const originalSubPath = `${languageId}/bibles/${bibleId}`;
-  const origPath = getValidResourcePath(USER_RESOURCES_PATH, originalSubPath);
+  const origPath = getValidResourcePath(USER_RESOURCES_PATH, originalSubPath, ownerStr);
   return origPath;
 }
 
 /**
  * test to make sure book has valid OL
  * @param {String} bookId - book to look up
+ * @param {string} ownerStr
  * @param {Number} minimumCheckingLevel
  * @return {Boolean}
  */
-export function hasValidOL(bookId, minimumCheckingLevel = 0) {
-  const origPath = getOlBookPath(bookId);
+export function hasValidOL(bookId, ownerStr, minimumCheckingLevel = 0) {
+  const origPath = getOlBookPath(bookId, ownerStr);
 
   if (origPath) {
     const { validResource } = isValidResource(origPath, bookId, minimumCheckingLevel);
@@ -326,11 +329,12 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
     isBibleValidSource = true;
     const helpsChecks_ = [...helpsChecks];
 
-    if (owner !== apiHelpers.DOOR43_CATALOG) { // if other owner we check if need twls
+    if (owner !== apiHelpers.DOOR43_CATALOG) { // if other owner check if we need twls
       const tWHelpsPath = path.join(TRANSLATION_HELPS, TRANSLATION_WORDS);
       const hasTwDependency = helpsChecks.find(check => (check.path === tWHelpsPath));
 
-      if (hasTwDependency) { // if TW is a dependency, add TWL also as a dependency
+      if (hasTwDependency) {
+        // if TW is a dependency, add TWL also as a dependency
         helpsChecks_.push({
           path: path.join(TRANSLATION_HELPS, TRANSLATION_WORDS_LINKS),
           subpath: path.join('groups', '${bookID}'),
@@ -474,20 +478,22 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
 
         if (isBibleValidSource) {
           if (bookId) { // if filtering by book
-            const isValidOrig = hasValidOL(bookId, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
+            const origLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
+            const isValidOrig = hasValidOL(bookId, origLangOwner, glRequirements.ol.minimumCheckingLevel); // make sure we have an OL for the book
 
             if (!isValidOrig) {
               console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - valid original is not found for ${toolName}`);
             }
             isBibleValidSource = isBibleValidSource && isValidOrig;
+            const isOrigLangInD43 = (origLangOwner === apiHelpers.DOOR43_CATALOG);
 
-            if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length) {
+            if (glRequirements.ol.helpsChecks && glRequirements.ol.helpsChecks.length && isOrigLangInD43) {
               const olBook = BibleHelpers.getOrigLangforBook(bookId);
               const olPath = path.join(USER_RESOURCES_PATH, olBook.languageId);
-              const hasValidOriginalHelps = hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId, apiHelpers.DOOR43_CATALOG);
+              const hasValidOriginalHelps = hasValidHelps(glRequirements.ol.helpsChecks, olPath, bookId, origLangOwner);
 
               if (!hasValidOriginalHelps) {
-                console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - valid original helps not found for ${toolName}`);
+                console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - valid ORIGINAL helps not found for ${toolName}`);
               }
               isBibleValidSource = isBibleValidSource && hasValidOriginalHelps;
             }
@@ -501,8 +507,8 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
               glRequirements.gl.minimumCheckingLevel, glRequirements.gl.alignedBookRequired);
             const isValidAlignedBible = biblePath && validResource;
 
-            if (!isValidAlignedBible) {
-              console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - is NOT a VALID aligned bible for ${toolName}, missingBook = ${missingBook}, missingAlignments = ${missingAlignments}`);
+            if (!isValidAlignedBible || !isBibleValidSource) {
+              console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - is NOT a VALID aligned bible for ${toolName}, isBibleValidSource = ${isBibleValidSource}, missingBook = ${missingBook}, missingAlignments = ${missingAlignments}`);
             } else {
               console.log(`getValidGatewayBibles() - For owner ${owner}, ${bibleId}, ${langCode}, ${bookId} - is VALID aligned bible for ${toolName}`);
             }

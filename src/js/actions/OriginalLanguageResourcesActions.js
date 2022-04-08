@@ -1,13 +1,14 @@
 // actions
 // selectors
-import { getProjectBookId } from '../selectors';
+import { getProjectBookId, getToolGlOwner } from '../selectors';
 // helpers
 import {
   getCurrentOrigLangVersionForTn,
   getLatestResourcesForTn,
   getOrigLangVersionInfoForTn,
 } from '../helpers/originalLanguageResourcesHelpers';
-import { TRANSLATION_NOTES } from '../common/constants';
+import { DEFAULT_OWNER, TRANSLATION_NOTES } from '../common/constants';
+import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
 import { loadBibleBook } from './ResourcesActions';
 import { addObjectPropertyToManifest } from './ProjectDetailsActions';
 
@@ -16,20 +17,22 @@ import { addObjectPropertyToManifest } from './ProjectDetailsActions';
  * language resource based on the tool & project combo.
  * @param {string} toolName
  */
-export const loadOlderOriginalLanguageResource = (toolName) => (dispatch, getData) => {
+export const loadOlderOriginalLanguageResource = (toolName) => (dispatch, getState) => {
   const {
     origLangId, origLangBibleId, latestOlVersion, tsvOLVersion,
-  } = getOrigLangVersionInfoForTn(getData());
-  const bookId = getProjectBookId(getData());
+  } = getOrigLangVersionInfoForTn(getState());
+  const bookId = getProjectBookId(getState());
+  const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_OWNER;
+  const origLangOwner = getOriginalLangOwner(glOwner);
 
   // if version of current original language resource if not the one needed by the tn groupdata
   if (tsvOLVersion && (tsvOLVersion !== latestOlVersion) && toolName === TRANSLATION_NOTES) {
     // load original language resource that matches version number for tn groupdata
     console.log(`translationNotes requires original lang ${tsvOLVersion}`);
-    dispatch(loadBibleBook(origLangBibleId, bookId, origLangId, 'v' + tsvOLVersion));
+    dispatch(loadBibleBook(origLangBibleId, bookId, origLangId, 'v' + tsvOLVersion, origLangOwner));
   } else {
     // load latest version of original language resource
-    dispatch(loadBibleBook(origLangBibleId, bookId, origLangId));
+    dispatch(loadBibleBook(origLangBibleId, bookId, origLangId, null, origLangOwner));
   }
 };
 
