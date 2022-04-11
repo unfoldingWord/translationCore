@@ -11,7 +11,7 @@ module.exports = (mode) => {
     { from: './src/assets/projectLicenses', to: 'static/projectLicenses' },
     { from: './package.json', to: 'package.json' },
     { from: './.env', to: 'cfg.txt' },
-    { from: './electron/preloadSplash.js', to: 'preloadSplash.js' },
+    { from: './electronite/preloadSplash.js', to: 'preloadSplash.js' },
   ];
 
   return {
