@@ -2,7 +2,7 @@
 
 console.log(`started preloadSplash`);
 
-const { contextBridge } = require('electron');
+const { contextBridge } = require('electronite');
 
 console.log(`require finished`);
 

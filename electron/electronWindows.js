@@ -1,5 +1,5 @@
 const path = require('path');
-const { BrowserWindow } = require('electron');
+const { BrowserWindow } = require('electronite');
 const remoteMain = require('@electron/remote/main');
 
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';

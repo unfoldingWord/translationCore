@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ipcRenderer } from 'electron';
+import { ipcRenderer } from 'electronite';
 import DownloadDialog from '../../components/dialogComponents/DownloadDialog';
 import { getTranslate } from '../../selectors/index';
 
