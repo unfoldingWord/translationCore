@@ -8,13 +8,14 @@ let count = 0;
  * save discovered configuration
  * @param dotenvConfig
  * @param app
+ * @param pe
  */
-function setDotEnv(dotenvConfig, app) {
-  const pe = process.env;
-  const newEnv = _.cloneDeep({
+function setDotEnv(dotenvConfig, app, pe) {
+  const env_ = {
     ...pe,
     ...dotenvConfig,
-  });
+  };
+  const newEnv = _.cloneDeep(env_);
   env.setEnv(newEnv);
   env.setApp(app);
   env.setElectron(true);
@@ -26,26 +27,14 @@ function setDotEnv(dotenvConfig, app) {
  */
 export function initEnv(msg) {
   console.log(`initEnv - initial is electron: ${env.isElectron()}`);
-  const { app } = require('@electron/remote');
+  const remote = require('@electron/remote');
+  const { app } = remote;
   let failed = true;
   let dotenvConfig;
-  const pe = process.env;
+  const pe = remote.process.env;
   const build = pe.BUILD;
 
   console.log('folder', __dirname);
-
-  const folders = [__dirname, path.join(__dirname, 'static'), path.join(__dirname, '..')];
-  const fs = require('fs-extra');
-
-  for (const folder of folders) {
-    try {
-      const files = fs.readdirSync(folder);
-      console.log(`files ${folder}`, files);
-      // eslint-disable-next-line no-empty
-    } catch (e) {
-      console.warn(`could not read files from ${folder}`, e);
-    }
-  }
 
   if (build) {
     dotenvConfig = {}; // if environment is set, don't need additional env variables
@@ -64,7 +53,7 @@ export function initEnv(msg) {
     }
   } else {
     console.log(`initEnv - Initializing environment`);
-    setDotEnv(dotenvConfig, app);
+    setDotEnv(dotenvConfig, app, pe);
     failed = false;
   }
 

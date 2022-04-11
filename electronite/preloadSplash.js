@@ -2,22 +2,28 @@
 
 console.log(`started preloadSplash`);
 
-const { contextBridge } = require('electronite');
+process.once('loaded', () => {
+  console.log(`preloadSplash loaded`);
+  const {
+    BUILD,
+    tcVersion,
+  } = process.env;
 
-console.log(`require finished`);
+  // values to share with client
+  const envValues = {
+    BUILD,
+    tcVersion,
+  };
 
-const {
-  BUILD,
-  tcVersion,
-} = process.env;
+  try {
+    const { contextBridge } = require('electron');
 
-// values to share with client
-const envValues = {
-  BUILD,
-  tcVersion,
-};
+    console.log(`require electron finished`);
 
-contextBridge.exposeInMainWorld('envVars', envValues);
+    contextBridge.exposeInMainWorld('envVars', envValues);
 
-console.log(`finished preloadSplash: BUILD=${BUILD}`);
-
+    console.log(`finished preloadSplash: BUILD=${BUILD}`);
+  } catch (e) {
+    console.log(`require electron failed`);
+  }
+});
