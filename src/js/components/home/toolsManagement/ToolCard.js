@@ -77,7 +77,7 @@ class ToolCard extends Component {
     };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     let {
       glSelected,
       glOwnerSelected,

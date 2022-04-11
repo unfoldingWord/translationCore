@@ -16,7 +16,7 @@ class KonamiContainer extends React.Component {
     this.toggleDeveloperMode = this.toggleDeveloperMode.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
     // This is used to enable or disable developer mode
     this.kc = new Konami(this.toggleDeveloperMode);

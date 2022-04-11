@@ -36,7 +36,9 @@ import {
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
 
-if (process.env.NODE_ENV === 'production') {
+const NOT_TEST = process.env.NODE_ENV !== 'test';
+
+if (NOT_TEST) {
   const version = `v${APP_VERSION} (${getBuild()})`;
   injectFileLogging(LOG_FILES_PATH, version);
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
@@ -55,6 +57,11 @@ class Main extends Component {
       migrateResourcesFolder,
       addTranslationForLanguage,
     } = this.props;
+
+    if (NOT_TEST) {
+      const { makeSureEnvInit } = require('../helpers/envHelpers');
+      makeSureEnvInit('Main');
+    }
 
     const tCDir = path.join(env.home(), 'translationCore', 'projects');
     fs.ensureDirSync(tCDir);

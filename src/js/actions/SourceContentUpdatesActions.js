@@ -176,7 +176,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
     }
 
     cancelled = false;
-    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload, 20)
+    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload)
       .then(async () => {
         updateSourceContentUpdaterManifest();
         dispatch(updateSourceContentUpdatesReducer());
