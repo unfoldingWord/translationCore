@@ -1340,11 +1340,15 @@ export function getMissingResources() {
         } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
           copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
         } else { // compare resources manifest modified time
-          const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+          const owners = ResourceAPI.getLatestVersionsAndOwners(staticResourcePath) || {};
+          const ownersKeys = Object.keys(owners);
 
-          if (!staticResourceVersionPath) {
+          if (!ownersKeys || !ownersKeys.length) {
             console.warn(`getMissingResources() - Could not find latest for ${staticResourcePath}`);
-          } else {
+          }
+
+          for (const owner of ownersKeys) {
+            const staticResourceVersionPath = owners[owner];
             const version = path.basename(staticResourceVersionPath);
             const userResourceVersionPath = path.join(userResourcePath, version);
             const userResourceExists = fs.existsSync(userResourceVersionPath);
@@ -1384,24 +1388,24 @@ export function getMissingResources() {
               isOldResource = true;
             }
 
-            const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath, USER_RESOURCES_PATH);
+            preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath, USER_RESOURCES_PATH);
 
             if (isOldResource) {
-              console.log(`getMissingResources() - checking ${languageId} ${resourceId} - old resource found`);
+              console.log(`getMissingResources() - checking ${languageId} ${resourceId} ${owner} - no resource found`);
 
-              if (deleteOldResources) {
-                console.log('getMissingResources() - deleting old resources folder: ' + userResourcePath);
-                fs.removeSync(userResourcePath);
-              }
+              // if (deleteOldResources) {
+              //   console.log('getMissingResources() - deleting old resources folder: ' + userResourcePath);
+              //   fs.removeSync(userResourcePath);
+              // }
               console.log('getMissingResources() - unzipping static resources');
-              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
             } else { // if folder empty, then copy over current resource
-              const versions = ResourceAPI.listVersions(userResourcePath);
+              const versions = ResourceAPI.listVersions(userResourcePath, owner);
               const emptyResourceFolder = !versions.length;
               let installResource = emptyResourceFolder;
 
               if (!emptyResourceFolder) { // make sure bundled version is installed
-                const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
+                const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath, owner);
                 const bundledVersion = path.basename(staticResourceVersionPath);
                 const destinationPath = path.join(userResourcePath, bundledVersion);
                 installResource = !fs.existsSync(destinationPath);
@@ -1409,7 +1413,7 @@ export function getMissingResources() {
 
               if (installResource) {
                 console.log('getMissingResources() - unzipping missing static resources');
-                copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+                copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
               }
             }
           }
@@ -1419,12 +1423,26 @@ export function getMissingResources() {
   }
 }
 
-function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
-  fs.copySync(staticResourcePath, userResourcePath);
-  console.log(
-    `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-    'color: #00aced',
-  );
+function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner = null) {
+  if (!owner) {
+    fs.copySync(staticResourcePath, userResourcePath);
+    console.log(
+      `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
+      'color: #00aced',
+    );
+  } else {
+    const versions = ResourceAPI.listVersions(staticResourcePath, owner);
+
+    for (const version of versions) {
+      const sourcePath = path.join(staticResourcePath, version);
+      const destPath = path.join(userResourcePath, version);
+      fs.copySync(sourcePath, destPath);
+      console.log(
+        `%c    Copied ${languageId}-${resourceId}-${version} from static ${resourceType} to user resources path.`,
+        'color: #00aced',
+      );
+    }
+  }
   // extract zipped contents
   extractZippedResourceContent(userResourcePath, resourceType === 'bibles');
 }

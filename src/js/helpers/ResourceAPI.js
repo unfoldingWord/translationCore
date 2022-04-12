@@ -85,14 +85,25 @@ class ResourceAPI {
   }
 
   /**
-   * Returns an array of paths found in the directory filtered and sorted by version
+   * Returns an array of paths found in the directory filtered and sorted by version, and optionally filtered by owner
    * @param {string} dir
+   * @param {string} owner
    * @returns {string[]}
    */
-  static listVersions(dir) {
+  static listVersions(dir, owner = null) {
     if (fs.pathExistsSync(dir)) {
-      const versionedDirs = fs.readdirSync(dir).filter(file => fs.lstatSync(path.join(dir, file)).isDirectory() &&
-          file.match(/^v\d/i));
+      const versionedDirs = fs.readdirSync(dir).filter(file => {
+        let valid = fs.lstatSync(path.join(dir, file)).isDirectory() && file.match(/^v\d/i);
+
+        if (valid && owner) { // make sure matches owner
+          const { owner: owner_ } = resourcesHelpers.splitVersionAndOwner(file);
+
+          if (owner_ !== owner) {
+            return false;
+          }
+        }
+        return valid;
+      });
       return versionedDirs.sort((a, b) =>
         -this.compareVersions(a, b), // do inverted sort
       );
