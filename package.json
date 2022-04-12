@@ -11,7 +11,7 @@
     "update-env": "node ./scripts/update_env.js",
     "prebuild": "npm run update-env && npm run remove-build-folders && npm run react-build && npm run build-main",
     "build": "npm run electronite-build",
-    "build-macos": "npm run electronite-build-macos",
+    "build-macos": "npm run prebuild && npm run electronite-build-macos",
     "build-win": "npm run prebuild && npm run electronite-build-win",
     "debug-help": "echo 'open chrome to url \"chrome://inspect/#devices\"'",
     "electronite-debug": "npm run debug-help && electronite . --inspect-brk=5656",
