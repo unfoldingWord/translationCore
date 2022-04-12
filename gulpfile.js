@@ -292,7 +292,7 @@ gulp.task('release-linux-deb', () => {
 });
 
 /**
- * Releases a macOS x64 build
+ * Releases a macOS build
  * @param out - the path to which the release will be saved.
  */
 gulp.task('release-macos', () => {
@@ -313,48 +313,6 @@ gulp.task('release-macos', () => {
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-darwin-x64/';
-
-  if (!fs.existsSync(buildPath)) {
-    throw new Error(`The build path "${buildPath}" does not exist`);
-  }
-
-  return new Promise((resolve, reject) => {
-    const dest = path.normalize(outPath);
-    mkdirp.sync(path.dirname(dest));
-    let cmd = `scripts/osx/makedmg.sh "${p.name}" ${buildPath} ${dest}`;
-    console.log(cmd);
-    exec(cmd, function (err) {
-      if (err) {
-        reject(err);
-      } else {
-        resolve();
-      }
-    });
-  });
-});
-
-/**
- * Releases a macOS build
- * @param out - the path to which the release will be saved.
- */
-gulp.task('release-macos-arm64', () => {
-  const p = require('./package');
-  const exec = require('child_process').exec;
-  const isLinux = /^linux/.test(process.platform);
-  const isMacOS = /^darwin/.test(process.platform);
-
-  const outPath = argv.out;
-
-  if (!outPath || typeof outPath !== 'string') {
-    throw new Error('The --out argument is required.');
-  }
-
-  if (!isLinux && !isMacOS) {
-    throw new Error('You must be on Linux or macOS to create macOS releases');
-  }
-
-  mkdirp.sync('release');
-  const buildPath = BUILD_DIR + p.name + '-darwin-arm64/';
 
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
