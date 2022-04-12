@@ -38,7 +38,6 @@ if (Object.keys(config).length === 0) {
 config['BROWSER'] = 'none';
 const BUILD = commit.slice(0, 7);
 config['BUILD'] = BUILD;
-// console.log(`build: ${config['BUILD']}`);
 console.log(`config updated keys: ${JSON.stringify(Object.keys(config))}`);
 
 let data = '';
