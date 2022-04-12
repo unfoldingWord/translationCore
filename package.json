@@ -85,7 +85,7 @@
     "css-loader": "3.4.2",
     "electron-devtools-installer": "^3.2.0",
     "electronite": "file:electronite-17.3.1-graphite.tgz",
-    "electronite-packager": "file:electronite-packager-15.4.0-graphite-beta.tgz",
+    "electronite-packager": "file:electronite-packager-15.4.0.tgz",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
     "enzyme-to-json": "3.3.5",
