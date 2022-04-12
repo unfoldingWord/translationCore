@@ -303,9 +303,6 @@ jobs:
           echo "HASH=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
           echo "APP_VERSION=$(node -p -e "require('./package.json').version")" >> $GITHUB_ENV
 
-      - name: Set artifact name
-        run: echo "ARTIFACT_NAME=$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")" >> $GITHUB_ENV
-
       - name: Bundle environment variables
         run: |
           touch .env
@@ -341,14 +338,31 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           npm run build
 
-      - name: bundle macOS
-        run: ./node_modules/.bin/gulp release-macos --out=../artifacts/$ARTIFACT_NAME
+      #     arm64
+      - name: Set arm64 artifact name
+        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-$HASH.dmg")" >> $GITHUB_ENV
+
+      - name: bundle arm64 macOS
+        run: ./node_modules/.bin/gulp release-macos-arm64 --out=../artifacts/ARTIFACT_ARM64
 
       - uses: actions/upload-artifact@v1
-        name: Upload artifacts
+        name: Upload arm64 artifacts
         with:
-          name: ${{ env.ARTIFACT_NAME }}
-          path: ../artifacts/
+          name: ${{ env.ARTIFACT_ARM64 }}
+          path: ../artifacts/arm64/
+
+      #     x64
+      - name: Set x64 artifact name
+        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")" >> $GITHUB_ENV
+
+      - name: bundle x64 macOS
+        run: ./node_modules/.bin/gulp release-macos --out=../artifacts/ARTIFACT_X64
+
+      - uses: actions/upload-artifact@v1
+        name: Upload x64 artifacts
+        with:
+          name: ${{ env.ARTIFACT_X64 }}
+          path: ../artifacts/x64/
 
   notify:
     name: Notify
