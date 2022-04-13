@@ -127,18 +127,17 @@ gulp.task('clean', done => {
 
 gulp.task('build_binaries', done => {
   let platforms = [];
+  let arch = argv.win ? 'all' : 'x64';
+  const mac_arch = 'x64,arm64';
 
   if (argv.win) {
     platforms.push('win32');
   }
 
-  if (argv.osx) {
+  if (argv.macos || argv.osx) {
     platforms.push('darwin');
+    arch = mac_arch;
   } // legacy
-
-  if (argv.macos) {
-    platforms.push('darwin');
-  }
 
   if (argv.linux) {
     platforms.push('linux');
@@ -147,6 +146,9 @@ gulp.task('build_binaries', done => {
   if (!platforms.length) {
     platforms.push('win32', 'darwin', 'linux');
   }
+
+  console.log('fetching platforms: ' + JSON.stringify(platforms));
+  console.log('arch: ' + arch);
 
   let p = require('./package');
 
@@ -166,7 +168,7 @@ gulp.task('build_binaries', done => {
   packager({
     'asar': true,
     'quiet': true,
-    'arch': argv.win ? 'all' : 'x64',
+    'arch': arch,
     'platform': platforms,
     'dir': '.',
     'ignore': function (name) {
