@@ -147,7 +147,7 @@ jobs:
         id: build
         run: |
           echo "Building $APP_VERSION-$HASH"
-          npm run build
+          npm run build-linux
 
       #     arm64
       - name: Set arm64 artifact name
