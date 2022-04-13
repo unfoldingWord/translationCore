@@ -194,7 +194,7 @@ gulp.task('build_binaries', done => {
 });
 
 /**
- * Releases a linux build x64
+ * Releases a linux build
  * @param out - the path to which the release will be saved
  */
 gulp.task('release-linux', () => {
@@ -233,46 +233,7 @@ gulp.task('release-linux', () => {
 });
 
 /**
- * Releases a linux build arm64
- * @param out - the path to which the release will be saved
- */
-gulp.task('release-linux-arm64', () => {
-  const p = require('./package');
-  const archiver = require('archiver');
-
-  const outPath = argv.out;
-
-  if (!outPath || typeof outPath !== 'string') {
-    throw new Error('The --out argument is required.');
-  }
-
-  mkdirp.sync('release');
-  const buildPath = BUILD_DIR + p.name + '-linux-arm64/';
-
-  if (!fs.existsSync(buildPath)) {
-    throw new Error(`The build path "${buildPath}" does not exist`);
-  }
-
-  return new Promise((resolve, reject) => {
-    const dest = path.normalize(outPath);
-    mkdirp.sync(path.dirname(dest));
-
-    try {
-      let output = fs.createWriteStream(dest);
-      output.on('close', resolve);
-      let archive = archiver.create('zip');
-      archive.on('error', reject);
-      archive.pipe(output);
-      archive.directory(buildPath, p.name);
-      archive.finalize();
-    } catch (e) {
-      reject(e);
-    }
-  });
-});
-
-/**
- * Compiles a .deb package
+ * Compiles a .deb package for x64
  * @param out - the path to which the release will be saved
  */
 gulp.task('release-linux-deb', () => {
@@ -286,6 +247,67 @@ gulp.task('release-linux-deb', () => {
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-linux-x64/';
+
+  if (!fs.existsSync(buildPath)) {
+    throw new Error(`The build path "${buildPath}" does not exist`);
+  }
+
+  // build .deb
+  const tmp = buildPath.replace(/\/+$/, '') + '.deb.stage';
+  const optDir = path.join(tmp, 'opt/translationcore');
+  mkdirp.sync(tmp);
+
+  return copy('./scripts/deb', tmp)
+    .then(() => copy(buildPath, optDir)).then(() => {
+      // update desktop file with latest version
+      const desktopPath = path.join(optDir, 'unfoldingword-translationcore.desktop');
+      let desktop = fs.readFileSync(desktopPath, 'utf8');
+      desktop = desktop.replace('Version=1.0', 'Version=' + p.version);
+      fs.writeFileSync(desktopPath, desktop, 'utf8');
+      console.log('\n\nDEB Desktop Config:\n' + desktop + '\n');
+
+      // update control file with latest version
+      const controlPath = path.join(tmp, 'DEBIAN/control');
+      let control = fs.readFileSync(controlPath, 'utf8');
+      control = control.replace('Version: 1.0.0', 'Version: ' + p.version);
+      fs.writeFileSync(controlPath, control, 'utf8');
+      console.log('\n\nDEB control:\n' + control + '\n');
+
+      // compile
+      console.log('compiling DEB...');
+      return new Promise((resolve, reject) => {
+        const exec = require('child_process').exec;
+        const dest = path.normalize(outPath);
+        mkdirp.sync(path.dirname(dest));
+        let cmd = `dpkg-deb --build ${tmp} ${dest}`;
+
+        exec(cmd, function (err) {
+          if (err) {
+            reject(err);
+          } else {
+            console.log('DEB output to: ' + dest);
+            resolve();
+          }
+        });
+      });
+    });
+});
+
+/**
+ * Compiles a .deb package for arm
+ * @param out - the path to which the release will be saved
+ */
+gulp.task('release-linux-deb-arm64', () => {
+  const p = require('./package');
+
+  const outPath = argv.out;
+
+  if (!outPath || typeof outPath !== 'string') {
+    throw new Error('The --out argument is required.');
+  }
+
+  mkdirp.sync('release');
+  const buildPath = BUILD_DIR + p.name + '-linux-arm64/';
 
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);

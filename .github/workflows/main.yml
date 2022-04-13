@@ -154,7 +154,7 @@ jobs:
         run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-linux-arm64-$APP_VERSION-$HASH.deb")" >> $GITHUB_ENV
 
       - name: bundle arm64 linux
-        run: ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/arm64/$ARTIFACT_ARM64
+        run: ./node_modules/.bin/gulp release-linux-deb-arm64 --out=../artifacts/arm64/$ARTIFACT_ARM64
 
       - uses: actions/upload-artifact@v1
         name: Upload arm64 artifacts
