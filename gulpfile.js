@@ -194,7 +194,7 @@ gulp.task('build_binaries', done => {
 });
 
 /**
- * Releases a linux build
+ * Releases a linux build x64
  * @param out - the path to which the release will be saved
  */
 gulp.task('release-linux', () => {
@@ -209,6 +209,45 @@ gulp.task('release-linux', () => {
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-linux-x64/';
+
+  if (!fs.existsSync(buildPath)) {
+    throw new Error(`The build path "${buildPath}" does not exist`);
+  }
+
+  return new Promise((resolve, reject) => {
+    const dest = path.normalize(outPath);
+    mkdirp.sync(path.dirname(dest));
+
+    try {
+      let output = fs.createWriteStream(dest);
+      output.on('close', resolve);
+      let archive = archiver.create('zip');
+      archive.on('error', reject);
+      archive.pipe(output);
+      archive.directory(buildPath, p.name);
+      archive.finalize();
+    } catch (e) {
+      reject(e);
+    }
+  });
+});
+
+/**
+ * Releases a linux build arm64
+ * @param out - the path to which the release will be saved
+ */
+gulp.task('release-linux-arm64', () => {
+  const p = require('./package');
+  const archiver = require('archiver');
+
+  const outPath = argv.out;
+
+  if (!outPath || typeof outPath !== 'string') {
+    throw new Error('The --out argument is required.');
+  }
+
+  mkdirp.sync('release');
+  const buildPath = BUILD_DIR + p.name + '-linux-arm64/';
 
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
