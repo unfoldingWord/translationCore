@@ -77,6 +77,10 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked; OnlyBelowVersion: 0,6.1
 
+[InstallDelete]
+; make sure old versions of resources are removed first
+Type: filesandordirs; Name: "{app}\resources"
+
 [Files]
 Source: "{#RootPath}vendor\{#GitExecutable}"; DestDir: "{app}\vendor"; Components: git; Flags: ignoreversion recursesubdirs deleteafterinstall
 Source: "{#RootPath}scripts\git\{#GitInstaller}"; DestDir: "{app}\vendor"; Components: git; Flags: ignoreversion recursesubdirs deleteafterinstall
