@@ -127,18 +127,17 @@ gulp.task('clean', done => {
 
 gulp.task('build_binaries', done => {
   let platforms = [];
+  let arch = argv.win ? 'all' : 'x64';
+  const mac_arch = 'x64,arm64';
 
   if (argv.win) {
     platforms.push('win32');
   }
 
-  if (argv.osx) {
+  if (argv.macos || argv.osx) {
     platforms.push('darwin');
+    arch = mac_arch;
   } // legacy
-
-  if (argv.macos) {
-    platforms.push('darwin');
-  }
 
   if (argv.linux) {
     platforms.push('linux');
@@ -147,6 +146,9 @@ gulp.task('build_binaries', done => {
   if (!platforms.length) {
     platforms.push('win32', 'darwin', 'linux');
   }
+
+  console.log('fetching platforms: ' + JSON.stringify(platforms));
+  console.log('arch: ' + arch);
 
   let p = require('./package');
 
@@ -166,7 +168,7 @@ gulp.task('build_binaries', done => {
   packager({
     'asar': true,
     'quiet': true,
-    'arch': argv.win ? 'all' : 'x64',
+    'arch': arch,
     'platform': platforms,
     'dir': '.',
     'ignore': function (name) {
@@ -231,7 +233,7 @@ gulp.task('release-linux', () => {
 });
 
 /**
- * Compiles a .deb package
+ * Compiles a .deb package for x64
  * @param out - the path to which the release will be saved
  */
 gulp.task('release-linux-deb', () => {
@@ -292,7 +294,68 @@ gulp.task('release-linux-deb', () => {
 });
 
 /**
- * Releases a macOS build
+ * Compiles a .deb package for arm
+ * @param out - the path to which the release will be saved
+ */
+gulp.task('release-linux-deb-arm64', () => {
+  const p = require('./package');
+
+  const outPath = argv.out;
+
+  if (!outPath || typeof outPath !== 'string') {
+    throw new Error('The --out argument is required.');
+  }
+
+  mkdirp.sync('release');
+  const buildPath = BUILD_DIR + p.name + '-linux-arm64/';
+
+  if (!fs.existsSync(buildPath)) {
+    throw new Error(`The build path "${buildPath}" does not exist`);
+  }
+
+  // build .deb
+  const tmp = buildPath.replace(/\/+$/, '') + '.deb.stage';
+  const optDir = path.join(tmp, 'opt/translationcore');
+  mkdirp.sync(tmp);
+
+  return copy('./scripts/deb', tmp)
+    .then(() => copy(buildPath, optDir)).then(() => {
+      // update desktop file with latest version
+      const desktopPath = path.join(optDir, 'unfoldingword-translationcore.desktop');
+      let desktop = fs.readFileSync(desktopPath, 'utf8');
+      desktop = desktop.replace('Version=1.0', 'Version=' + p.version);
+      fs.writeFileSync(desktopPath, desktop, 'utf8');
+      console.log('\n\nDEB Desktop Config:\n' + desktop + '\n');
+
+      // update control file with latest version
+      const controlPath = path.join(tmp, 'DEBIAN/control');
+      let control = fs.readFileSync(controlPath, 'utf8');
+      control = control.replace('Version: 1.0.0', 'Version: ' + p.version);
+      fs.writeFileSync(controlPath, control, 'utf8');
+      console.log('\n\nDEB control:\n' + control + '\n');
+
+      // compile
+      console.log('compiling DEB...');
+      return new Promise((resolve, reject) => {
+        const exec = require('child_process').exec;
+        const dest = path.normalize(outPath);
+        mkdirp.sync(path.dirname(dest));
+        let cmd = `dpkg-deb --build ${tmp} ${dest}`;
+
+        exec(cmd, function (err) {
+          if (err) {
+            reject(err);
+          } else {
+            console.log('DEB output to: ' + dest);
+            resolve();
+          }
+        });
+      });
+    });
+});
+
+/**
+ * Releases a macOS x64 build
  * @param out - the path to which the release will be saved.
  */
 gulp.task('release-macos', () => {
@@ -313,6 +376,48 @@ gulp.task('release-macos', () => {
 
   mkdirp.sync('release');
   const buildPath = BUILD_DIR + p.name + '-darwin-x64/';
+
+  if (!fs.existsSync(buildPath)) {
+    throw new Error(`The build path "${buildPath}" does not exist`);
+  }
+
+  return new Promise((resolve, reject) => {
+    const dest = path.normalize(outPath);
+    mkdirp.sync(path.dirname(dest));
+    let cmd = `scripts/osx/makedmg.sh "${p.name}" ${buildPath} ${dest}`;
+    console.log(cmd);
+    exec(cmd, function (err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve();
+      }
+    });
+  });
+});
+
+/**
+ * Releases a macOS build
+ * @param out - the path to which the release will be saved.
+ */
+gulp.task('release-macos-arm64', () => {
+  const p = require('./package');
+  const exec = require('child_process').exec;
+  const isLinux = /^linux/.test(process.platform);
+  const isMacOS = /^darwin/.test(process.platform);
+
+  const outPath = argv.out;
+
+  if (!outPath || typeof outPath !== 'string') {
+    throw new Error('The --out argument is required.');
+  }
+
+  if (!isLinux && !isMacOS) {
+    throw new Error('You must be on Linux or macOS to create macOS releases');
+  }
+
+  mkdirp.sync('release');
+  const buildPath = BUILD_DIR + p.name + '-darwin-arm64/';
 
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);

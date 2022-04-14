@@ -144,7 +144,7 @@ class FeedbackDialog extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const {
       includeLogs, message, email,
     } = nextProps;
