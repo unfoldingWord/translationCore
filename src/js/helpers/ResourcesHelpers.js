@@ -1348,6 +1348,11 @@ export function getMissingResources() {
           }
 
           for (const owner of ownersKeys) {
+            if (!owner) {
+              console.error(`getMissingResources() - skipping empty owner for ${staticResourcePath}`);
+              continue;
+            }
+
             const staticResourceVersionPath = owners[owner];
             const version = path.basename(staticResourceVersionPath);
             const userResourceVersionPath = path.join(userResourcePath, version);
