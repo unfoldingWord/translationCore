@@ -30,7 +30,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
 
   try {
     const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
-    const filterByOwner_ = [filterByOwner];
+    const filterByOwner_ = [...filterByOwner];
 
     if (uWoriginalLanguage) {
       filterByOwner_.push(UNFOLDING_WORD);
