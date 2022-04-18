@@ -49,7 +49,7 @@ class ResourceAPI {
   }
 
   /**
-   * Returns the path to the latest version of the translation help
+   * Returns the path to the latest version of the translation help (this is for the helps index)
    * @param {string} gatewayLanguage - the gateway language code
    * @param {string} helpName - this is synonymous with toolName
    * @param {string} owner
