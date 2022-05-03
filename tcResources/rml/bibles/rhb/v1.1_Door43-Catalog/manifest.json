@@ -1,0 +1,173 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "RusskaRoma Holy Bible",
+    "format": "text/usfm3",
+    "identifier": "rhb",
+    "title": "RusskaRoma Holy Bible",
+    "subject": "Aligned Bible",
+    "description": "RusskaRoma Holy Bible aligned to unfoldingWord® Bible",
+    "language": {
+      "identifier": "rml",
+      "title": "Baltic Romani",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "rlob",
+        "language": "ru",
+        "version": "1"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "DevleskoR",
+      "DevleskoM",
+      "DevleskoY",
+      "DevleskoL",
+      "Door43 World Missions Community"
+    ],
+    "relation": [
+      "ru/rlob",
+      "rml/obs",
+      "hbo/uhb?v=2.1.21",
+      "el-x-koine/ugnt?v=0.20"
+    ],
+    "publisher": "Devlesko Drom Church",
+    "issued": "2022-01-06",
+    "modified": "2022-01-06",
+    "version": "1.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "Samuel_Kim",
+      "DevleskoR"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Руфь",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Титоскэ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 Иоаностыр",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "RusskaRoma Holy Bible",
+      "format": "text/usfm3",
+      "identifier": "rhb",
+      "title": "RusskaRoma Holy Bible",
+      "subject": "Aligned Bible",
+      "description": "RusskaRoma Holy Bible aligned to unfoldingWord® Bible",
+      "language": {
+        "identifier": "rml",
+        "title": "Baltic Romani",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "rlob",
+          "language": "ru",
+          "version": "1"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "DevleskoR",
+        "DevleskoM",
+        "DevleskoY",
+        "DevleskoL",
+        "Door43 World Missions Community"
+      ],
+      "relation": [
+        "ru/rlob",
+        "rml/obs",
+        "hbo/uhb?v=2.1.21",
+        "el-x-koine/ugnt?v=0.20"
+      ],
+      "publisher": "Devlesko Drom Church",
+      "issued": "2022-01-06",
+      "modified": "2022-01-06",
+      "version": "1.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "Samuel_Kim",
+        "DevleskoR"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Руфь",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Титоскэ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 Иоаностыр",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "rml",
+  "language_name": "Baltic Romani",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "rhb",
+  "resource_title": "RusskaRoma Holy Bible",
+  "remoteModifiedTime": "2022-04-22T00:17:12Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2022-04-22T00:17:12Z"
+}
