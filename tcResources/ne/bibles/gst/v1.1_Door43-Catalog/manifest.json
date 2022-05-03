@@ -5,32 +5,39 @@
     "creator": "Door43 World Missions Community",
     "contributor": [
       "Harka KHadka",
-      "Hum Lamtari"
+      "Hum Lamtari",
+      "Paul Rana",
+      "Tilak Basnet"
     ],
     "description": "An open-licensed translation, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
-    "issued": "2020-07-20",
-    "modified": "2020-07-20",
+    "issued": "2022-02-10",
+    "modified": "2022-02-10",
     "identifier": "gst",
     "language": {
       "identifier": "ne",
-      "title": "नेपाली",
+      "title": "नेपाली (Nepali)",
       "direction": "ltr"
     },
     "relation": [
+      "ne/glt",
       "ne/tn",
       "ne/tq",
       "ne/tw",
-      "ne/obs",
+      "ne/ta",
+      "ne/obs-tn",
+      "ne/obs-tq",
+      "ne/ulb",
       "ne/udb",
-      "ne/ulb"
+      "hbo/uhb?v=2.1.23",
+      "el-x-koine/ugnt?v=0.22"
     ],
     "rights": "CC BY-SA 4.0",
-    "publisher": "Door43",
+    "publisher": "HTS",
     "source": [
       {
-        "identifier": "unspecified",
-        "language": "ne",
-        "version": "1"
+        "identifier": "ust",
+        "language": "en",
+        "version": "30"
       }
     ],
     "subject": "Aligned Bible",
@@ -41,7 +48,8 @@
   "checking": {
     "checking_entity": [
       "Prof. Paul Rana, Theological seminary lecturer",
-      "Prof. Rameshwor Yadav,Theological seminary lecturer"
+      "Prof. Rameshwor Yadav,Theological seminary lecturer",
+      "HTS"
     ],
     "checking_level": "3"
   },
@@ -74,32 +82,39 @@
       "creator": "Door43 World Missions Community",
       "contributor": [
         "Harka KHadka",
-        "Hum Lamtari"
+        "Hum Lamtari",
+        "Paul Rana",
+        "Tilak Basnet"
       ],
       "description": "An open-licensed translation, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
-      "issued": "2020-07-20",
-      "modified": "2020-07-20",
+      "issued": "2022-02-10",
+      "modified": "2022-02-10",
       "identifier": "gst",
       "language": {
         "identifier": "ne",
-        "title": "नेपाली",
+        "title": "नेपाली (Nepali)",
         "direction": "ltr"
       },
       "relation": [
+        "ne/glt",
         "ne/tn",
         "ne/tq",
         "ne/tw",
-        "ne/obs",
+        "ne/ta",
+        "ne/obs-tn",
+        "ne/obs-tq",
+        "ne/ulb",
         "ne/udb",
-        "ne/ulb"
+        "hbo/uhb?v=2.1.23",
+        "el-x-koine/ugnt?v=0.22"
       ],
       "rights": "CC BY-SA 4.0",
-      "publisher": "Door43",
+      "publisher": "HTS",
       "source": [
         {
-          "identifier": "unspecified",
-          "language": "ne",
-          "version": "1"
+          "identifier": "ust",
+          "language": "en",
+          "version": "30"
         }
       ],
       "subject": "Aligned Bible",
@@ -110,7 +125,8 @@
     "checking": {
       "checking_entity": [
         "Prof. Paul Rana, Theological seminary lecturer",
-        "Prof. Rameshwor Yadav,Theological seminary lecturer"
+        "Prof. Rameshwor Yadav,Theological seminary lecturer",
+        "HTS"
       ],
       "checking_level": "3"
     },
@@ -138,12 +154,12 @@
     ]
   },
   "language_id": "ne",
-  "language_name": "नेपाली",
+  "language_name": "नेपाली (Nepali)",
   "direction": "ltr",
   "subject": "Aligned Bible",
   "resource_id": "gst",
   "resource_title": "Nepali GST - Greek Aligned",
-  "remoteModifiedTime": "2020-07-20T00:00:00Z",
+  "remoteModifiedTime": "2022-04-22T00:16:44Z",
   "description": "Gateway Language",
-  "catalog_modified_time": "2020-07-20T00:00:00Z"
+  "catalog_modified_time": "2022-04-22T00:16:44Z"
 }

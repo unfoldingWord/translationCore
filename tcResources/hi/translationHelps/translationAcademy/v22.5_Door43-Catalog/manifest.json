@@ -1,0 +1,103 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acash Jacob",
+      "Cdr.Thomas Mathew",
+      "Dr.Bobby Chellappan",
+      "Dr. Joseph Jekab",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Shojo John",
+      "Sunny",
+      "Vipin Bhadran"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "A modular handbook that provides a condensed explanation of Bible translation and checking principles that the global Church has implicitly affirmed define trustworthy translations. It enables translators to learn how to create trustworthy translations of the Bible in their own language.",
+    "format": "text/markdown",
+    "identifier": "ta",
+    "issued": "2021-12-02",
+    "language": {
+      "identifier": "hi",
+      "title": "हिन्दी, हिंदी (Hindi)",
+      "direction": "ltr"
+    },
+    "modified": "2021-12-02",
+    "publisher": "BCS",
+    "relation": [
+      "hi/glt",
+      "hi/irv",
+      "hi/iev",
+      "hi/gst",
+      "hi/ulb",
+      "hi/udb",
+      "hi/tn",
+      "hi/tq",
+      "hi/tw",
+      "hi/obs",
+      "hi/obs-tn"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "ta",
+        "language": "en",
+        "version": "22"
+      }
+    ],
+    "subject": "Translation Academy",
+    "title": "translationAcademy",
+    "type": "man",
+    "version": "22.5"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS",
+      "Dr.Bobby Chellappan"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "intro",
+      "path": "./intro",
+      "sort": 0,
+      "title": "Introduction to Translation Academy",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "process",
+      "path": "./process",
+      "sort": 1,
+      "title": "Process Manual",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "translate",
+      "path": "./translate",
+      "sort": 2,
+      "title": "Translation Manual",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "checking",
+      "path": "./checking",
+      "sort": 3,
+      "title": "Checking Manual",
+      "versification": null
+    }
+  ],
+  "catalog_modified_time": "2022-04-21T18:40:29Z"
+}
