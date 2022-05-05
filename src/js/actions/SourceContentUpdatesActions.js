@@ -57,6 +57,40 @@ const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertM
 });
 
 /**
+ * consolidate any twl and tw downloads
+ * @param languageResources
+ * @returns {*}
+ */
+function consolidateTwls(languageResources) {
+  for (let i = 0; i < languageResources.length; i++) {
+    const languageResource = languageResources[i];
+    const resources = languageResource?.resources;
+
+    if (languageResource?.languageId) {
+      const resources_ = [];
+
+      for (const resource of resources) {
+        if (resource.resourceId === 'twl') {
+          const matchingTW = resources.find(res => (
+            (res.resourceId === 'tw') &&
+            (res.owner === resource.owner) &&
+            (res.languageId === resource.languageId)
+          ));
+
+          if (matchingTW) {
+            continue; // skip over this, since it will be downloaded automatically with TW
+          }
+        }
+
+        resources_.push(resource);
+      }
+      languageResource.resources = resources_;
+    }
+  }
+  return languageResources;
+}
+
+/**
  * Gets the list of source content that needs or can be updated.
  * @param {function} closeSourceContentDialog - Hacky workaround to close the
  * source content dialog in the AppMenu state.
@@ -74,6 +108,8 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
         dispatch(closeAlertDialog());
 
         if (resources.length > 0) {
+          resources = consolidateTwls(resources);
+
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
             resources,
