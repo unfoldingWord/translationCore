@@ -371,7 +371,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
         }
 
         if (!helpValid) {
-          console.log(`hasValidHelps() - For owner ${owner}, ${latestVersionPath} - does not have valid content for book ${bookID}`);
+          console.log(`hasValidHelps() - In ${languagePath} owner ${owner}, ${latestVersionPath} - does not have valid content for book ${bookID}`);
         }
 
         if (helpsCheck.minimumCheckingLevel) {
@@ -386,7 +386,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
           const passedCheckingLevel = (checkingLevel >= helpsCheck.minimumCheckingLevel);
 
           if (!passedCheckingLevel) {
-            console.log(`hasValidHelps() - For owner ${owner}, ${bookID}, ${manifestPath} - checking level ${checkingLevel} is not greater than minimum ${helpsCheck.minimumCheckingLevel}`);
+            console.log(`hasValidHelps() - In ${languagePath} owner ${owner}, ${bookID}, ${manifestPath} - checking level ${checkingLevel} is not greater than minimum ${helpsCheck.minimumCheckingLevel}`);
           }
           helpValid = helpValid && passedCheckingLevel;
         }
@@ -414,7 +414,7 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
       }
 
       if (!helpValid) {
-        console.log(`hasValidHelps() - For owner ${owner}, ${bookID} failed check ${JSON.stringify(helpsCheck)}`);
+        console.log(`hasValidHelps() - In ${languagePath} owner ${owner}, ${bookID} failed check ${JSON.stringify(helpsCheck)}`);
       }
       isBibleValidSource = isBibleValidSource && helpValid;
     }
@@ -448,14 +448,14 @@ function hasValidHelps(helpsChecks, languagePath, bookID = '', owner = null) {
 export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, biblesLoaded = {}, toolName = '') {
   const languagePath = path.join(USER_RESOURCES_PATH, langCode);
   const biblesPath = path.join(languagePath, 'bibles');
-  let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath) : [];
+  let bibles = fs.existsSync(biblesPath) ? fs.readdirSync(biblesPath).filter(folder => folder !== '.DS_Store') : [];
   const validBibles = [];
   const validHelpsCache = [];
   let foundBible = false;
 
   for (const bibleId of bibles) {
     if (!fs.lstatSync(path.join(biblesPath, bibleId)).isDirectory()) { // verify it's a valid directory
-      return false;
+      continue;
     }
 
     const owners = ResourceAPI.getLatestVersionsAndOwners(path.join(biblesPath, bibleId)) || {};
