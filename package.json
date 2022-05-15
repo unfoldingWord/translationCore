@@ -86,7 +86,7 @@
     "cross-env": "7.0.2",
     "css-loader": "3.4.2",
     "electron-devtools-installer": "^3.2.0",
-    "electronite": "github:unfoldingWord-dev/electronite#v18.2.1-graphite-beta",
+    "electronite": "18.2.1-graphite-beta",
     "electronite-packager": "15.4.0-graphite",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
