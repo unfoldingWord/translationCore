@@ -326,8 +326,8 @@ export const generateCSVString = (objectArray, callback) => {
     csv.stringify(data, function (err, data){
       callback(err, data);
     });
-  } else { // there is no data, give back enough data to create an empty file.
-    const data = [['No data']];
+  } else { // there is no data
+    const data = 'No data';
     callback(null, data);
   }
 };
