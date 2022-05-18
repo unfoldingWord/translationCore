@@ -221,6 +221,7 @@ jobs:
         run: |
           npm ci
           npm run update-env
+        shell: bash
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
