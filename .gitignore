@@ -281,3 +281,4 @@ coverage/
 
 find-duplicate-dependencies.log
 /electronite/build.json
+/electronite/cfg.json

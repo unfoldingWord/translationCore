@@ -8,6 +8,7 @@ const p = require('../package.json');
 const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
 const DownloadManager = require('../src/js/DownloadManager');
 const { BUILD } = require('./build.json');
+const { config } = require('./cfg.json');
 const {
   createWindow,
   defineWindow,
@@ -18,7 +19,9 @@ const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in c
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
 process.env.tcVersion = p.version;
-process.env.BUILD = BUILD;
+process.env.BUILD = BUILD || config.BUILD;
+process.env.TC_HELP_DESK_TOKEN = config.TC_HELP_DESK_TOKEN;
+process.env.TC_HELP_DESK_EMAIL = config.TC_HELP_DESK_EMAIL;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.

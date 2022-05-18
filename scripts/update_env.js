@@ -48,6 +48,7 @@ for (let key of Object.keys(config)) {
 
 const dataTrimmed = data.trim();
 fs.writeFileSync(ENV_PATH, dataTrimmed);
+fs.outputJsonSync(path.join('.', 'electronite/cfg.json'), { config });
 fs.outputJsonSync(path.join('.', 'electronite/build.json'), { BUILD });
 
 // if we reach here, we were able to write/update the .env file
