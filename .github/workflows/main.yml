@@ -114,7 +114,6 @@ jobs:
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env.tmp
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env.tmp
           echo "BUILD=$HASH" >> .env.tmp
-          npm run update-env
 
       - name: npm install
         run: |
@@ -122,6 +121,7 @@ jobs:
           TMPDIR=$(mktemp -d)
           echo "$TMPDIR"
           npm ci --cache="$TMPDIR"
+          npm run update-env
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
@@ -216,10 +216,11 @@ jobs:
           echo "TC_HELP_DESK_TOKEN=${{ env.TC_HELP_DESK_TOKEN }}" >> .env
           echo "TC_HELP_DESK_EMAIL=${{ env.TC_HELP_DESK_EMAIL }}" >> .env
           echo "BUILD=${{ env.HASH }}" >> .env
-          npm run update-env
 
       - name: npm install
-        run: npm ci
+        run: |
+          npm ci
+          npm run update-env
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
@@ -327,10 +328,11 @@ jobs:
           echo "TC_HELP_DESK_TOKEN=$TC_HELP_DESK_TOKEN" >> .env
           echo "TC_HELP_DESK_EMAIL=$TC_HELP_DESK_EMAIL" >> .env
           echo "BUILD=$HASH" >> .env
-          npm run update-env
 
       - name: npm install
-        run: npm ci
+        run: |
+          npm ci
+          npm run update-env
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
