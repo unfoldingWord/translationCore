@@ -12,7 +12,7 @@ import * as ResourcesActions from '../actions/ResourcesActions';
 // helpers
 import * as csvHelpers from '../helpers/csvHelpers';
 import * as LoadHelpers from '../helpers/LoadHelpers';
-import { WORD_ALIGNMENT } from '../common/constants';
+import { DEFAULT_ORIG_LANG_OWNER, WORD_ALIGNMENT } from '../common/constants';
 import * as BodyUIActions from './BodyUIActions';
 import * as AlertModalActions from './AlertModalActions';
 import consts from './ActionTypes';
@@ -219,6 +219,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => new Pr
   let dataArray = [];
   let groupID_ = null;
   let groupItemIndex = null;
+  const glOwner = DEFAULT_ORIG_LANG_OWNER; // TODO: get actual GL owner for project
 
   try {
     const groupIds = Object.keys(obj);
@@ -230,7 +231,7 @@ export const saveGroupsToCSV = (obj, toolName, projectPath, translate) => new Pr
         const contextId = groupData.contextId;
         const data = {
           priority: (groupData.priority?groupData.priority:1),
-          ...csvHelpers.flattenContextId(contextId, '', '', translate),
+          ...csvHelpers.flattenContextId(contextId, '', '', translate, glOwner),
         };
         dataArray.push(data);
       });

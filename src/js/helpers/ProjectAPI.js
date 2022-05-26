@@ -5,11 +5,12 @@ import isEqual from 'deep-equal';
 // actions
 import { loadCheckData } from '../actions/CheckDataLoadActions';
 import {
-  USER_RESOURCES_PATH,
+  DEFAULT_OWNER,
   PROJECT_DOT_APPS_PATH,
   PROJECT_CHECKDATA_DIRECTORY,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
 } from '../common/constants';
 import { generateTimestamp } from './TimestampGenerator';
 import { getOrigLangforBook } from './bibleHelpers';
@@ -47,6 +48,7 @@ export default class ProjectAPI {
     this.isCategoryLoaded = this.isCategoryLoaded.bind(this);
     this.setCategoryLoaded = this.setCategoryLoaded.bind(this);
     this.getGroupsData = this.getGroupsData.bind(this);
+    this.getBookDataDir = this.getBookDataDir.bind(this);
     this.getGroupData = this.getGroupData.bind(this);
     this.setCategoryGroupIds = this.setCategoryGroupIds.bind(this);
     this.getAllCategoryMapping = this.getAllCategoryMapping.bind(this);
@@ -81,6 +83,16 @@ export default class ProjectAPI {
     // TODO: the book id is redundant to have in the project directory.
     const bookId = this.getBookId();
     return path.join(this._dataPath, 'index', toolName, bookId);
+  }
+
+  /**
+   * Returns the path to the book data directory.
+   * @return {string}
+   */
+  getBookDataDir() {
+    // TODO: the book id is redundant to have in the project directory.
+    const bookId = this.getBookId();
+    return path.join(this._projectPath, bookId);
   }
 
   /**
@@ -338,9 +350,10 @@ export default class ProjectAPI {
    * Method to check if project groups data is out of date in relation
    * to the last source content update
    * @param {string} toolName - the tool name. This is synonymous with translationHelp name
+   * @param {string} owner
    * @returns {Boolean} returns true if group data needs to be updated
    */
-  hasNewGroupsData(toolName) {
+  hasNewGroupsData(toolName, owner = DEFAULT_OWNER) {
     const categoriesPath = this.getCategoriesPath(toolName);
 
     if (fs.pathExistsSync(categoriesPath)) {
@@ -348,7 +361,7 @@ export default class ProjectAPI {
         let rawData = fs.readJsonSync(categoriesPath);
         const lastTimeDataUpdated = rawData.timestamp;
 
-        if (!lastTimeDataUpdated) {
+        if (!lastTimeDataUpdated || (owner !== rawData.owner)) {
           return true;
         }
 
@@ -357,7 +370,7 @@ export default class ProjectAPI {
         return new Date(lastTimeDataDownloaded).getTime() !== new Date(lastTimeDataUpdated).getTime();
       } catch (e) {
         console.warn(
-          `Failed to parse tool categories index at ${categoriesPath}.`, e);
+          `hasNewGroupsData() -Failed to parse tool categories index at ${categoriesPath}.`, e);
       }
     }
     return true;

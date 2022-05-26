@@ -76,6 +76,8 @@
   "critical_error_warning": "മുന്നറിയിപ്പ്: ഗുരുതരമായൊരു തെറ്റു് സംഭവിച്ചു!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "സോഫ്റ്റ്വെയർ അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "check_for_content_updates": "ഉള്ളടക്ക അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുക",
     "update_gateway_language_content": "ഗേറ്റ്‌വേ ഭാഷാ ഉള്ളടക്കം അപ്‌ഡേറ്റുചെയ്യുക",
@@ -94,9 +96,13 @@
     "downloading": "അപ്‌ഡേറ്റ് ഡൗൺലോഡുചെയ്യുന്നു",
     "downloading_version": "പതിപ്പ് ഡൗൺലോഡുചെയ്യുന്നു ${version}",
     "download_error": "അപ്‌ഡേറ്റ് ഡൗൺലോഡുചെയ്യാനായില്ല.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "ഉറവിടം:",
     "local_timestamp": "പ്രാദേശികം:",
-    "online_timestamp": "ഓൺലൈൻ"
+    "online_timestamp": "ഓൺലൈൻ",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "വിഭാഗം:\n",
@@ -224,6 +230,7 @@
     "dcs_rename_conflict": "ഈ പേരിനൊപ്പം ഒരു ശേഖരം ഇതിനകം തന്നെ ഉള്ളതിനാൽ പേരുമാറ്റുന്നത് പരാജയപ്പെട്ടു. <br/> <br/> നിങ്ങളുടെ പ്രോജക്റ്റ് ${door43} ലേക്ക് അപ്‌ലോഡുചെയ്യാൻ, നിങ്ങളുടെ പ്രാദേശിക പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ അല്ലെങ്കിൽ ${door43} പ്രോജക്റ്റിന്‍റെ പേരുമാറ്റുകയോ ചെയ്യേണ്ടതുണ്ട്.",
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {

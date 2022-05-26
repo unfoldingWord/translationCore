@@ -22,12 +22,15 @@ import {
   getToolGatewayLanguage,
   getCurrentToolName,
   getProjectBookId,
+  getToolGlOwner,
 } from '../selectors';
 import ProjectAPI from '../helpers/ProjectAPI';
 import CoreAPI from '../helpers/CoreAPI';
 import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
 import complexScriptFonts from '../common/complexScriptFonts';
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
+import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
+import { DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
 
 const styles = {
   container: {
@@ -43,7 +46,7 @@ class ToolContainer extends Component {
     this.legacyToolsReducer = this.legacyToolsReducer.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     const { toolApi, supportingToolApis } = nextProps;
 
     // update api props
@@ -82,6 +85,7 @@ class ToolContainer extends Component {
       targetBook,
       currentToolName,
       gatewayLanguageCode,
+      gatewayLanguageOwner,
       currentLanguage: { code },
     } = nextProps;
 
@@ -111,6 +115,7 @@ class ToolContainer extends Component {
       projects,
       username,
       gatewayLanguageCode,
+      gatewayLanguageOwner,
 
       // project data
       bookId,
@@ -191,18 +196,26 @@ const mapStateToProps = state => {
   const currentToolName = getCurrentToolName(state);
   const bookId = getProjectBookId(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, currentToolName);
+  const gatewayLanguageOwner = getToolGlOwner(state, currentToolName);
+  const originalLanguageOwner = getOriginalLangOwner(gatewayLanguageOwner);
+  let sourceBook = getSourceBook(state, originalLanguageOwner);
+
+  if (!sourceBook) {
+    sourceBook = getSourceBook(state, DEFAULT_ORIG_LANG_OWNER);
+  }
 
   return {
     bookId,
     currentToolName,
     gatewayLanguageCode,
+    gatewayLanguageOwner,
     projects: getProjects(state).map(p => new ProjectAPI(p.projectSaveLocation)),
     projectApi: new ProjectAPI(projectPath),
     Tool: getSelectedToolContainer(state),
     supportingToolApis: getSupportingToolApis(state),
     toolApi: getSelectedToolApi(state),
     targetBook: getTargetBook(state),
-    sourceBook: getSourceBook(state),
+    sourceBook,
     projectSaveLocation: projectPath,
     username: getUsername(state),
     loginReducer: state.loginReducer,

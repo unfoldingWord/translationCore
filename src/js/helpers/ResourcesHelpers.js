@@ -5,31 +5,42 @@ import path from 'path-extra';
 import AdmZip from 'adm-zip';
 import isEqual from 'deep-equal';
 import _ from 'lodash';
-import { getOtherTnsOLVersions } from 'tc-source-content-updater';
-// actions
-import { addObjectPropertyToManifest, loadCurrentCheckCategories } from '../actions/ProjectDetailsActions';
 import {
-  getToolGatewayLanguage,
+  apiHelpers,
+  getOtherTnsOLVersions,
+  resourcesHelpers,
+} from 'tc-source-content-updater';
+// actions
+import {
+  addObjectPropertyToManifest,
+  loadCurrentCheckCategories,
+} from '../actions/ProjectDetailsActions';
+import {
   getBibles,
   getProjectSaveLocation,
   getProjectBookId,
+  getToolGatewayLanguage,
+  getToolGlOwner,
 } from '../selectors';
 import * as Bible from '../common/BooksOfTheBible';
 import {
-  DEFAULT_GATEWAY_LANGUAGE ,
   APP_VERSION,
-  TC_VERSION,
-  SOURCE_CONTENT_UPDATER_MANIFEST,
-  USER_RESOURCES_PATH,
-  toolCardCategories,
-  STATIC_RESOURCES_PATH,
+  CN_ORIG_LANG_OWNER,
+  DEFAULT_GATEWAY_LANGUAGE,
+  DEFAULT_OWNER,
+  DEFAULT_ORIG_LANG_OWNER,
   ORIGINAL_LANGUAGE,
+  SOURCE_CONTENT_UPDATER_MANIFEST,
+  STATIC_RESOURCES_PATH,
   TARGET_LANGUAGE,
   TARGET_BIBLE,
+  TC_VERSION,
   TRANSLATION_WORDS,
   TRANSLATION_NOTES,
   TRANSLATION_HELPS,
   TRANSLATION_ACADEMY,
+  USER_RESOURCES_PATH,
+  toolCardCategories,
 } from '../common/constants';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
@@ -43,9 +54,20 @@ import {
 } from './groupDataHelpers';
 import { generateTimestamp } from './TimestampGenerator';
 import { getContextIdPathFromIndex } from './contextIdHelpers';
-// constants
 
+// constants
 export const QUOTE_MARK = '\u2019';
+
+/**
+ * append owner to key
+ * @param key
+ * @param owner
+ * @return {string}
+ */
+export function addOwner(key, owner) {
+  const result = `${key}${apiHelpers.OWNER_SEPARATOR}${owner}`;
+  return result;
+}
 
 /**
  * array of checks for groupId
@@ -272,15 +294,16 @@ export function migrateOldCheckingResourceData(projectDir, toolName) {
  * @param {string} projectDir - path to the project directory
  * @param {function} dispatch - dispatch function
  * @param {boolean} glChange - defaults to false, set to true if the GL has changed
+ * @param {string} glOwner
  */
-export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch, glChange = false) {
+export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, dispatch, glChange = false, glOwner = DEFAULT_OWNER) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, glOwner);
 
   if (helpDir) {
     project.resetCategoryGroupIds(toolName);
-    const groupDataUpdated = glChange || project.hasNewGroupsData(toolName);
+    const groupDataUpdated = glChange || project.hasNewGroupsData(toolName, glOwner);
     const isTN = toolName === TRANSLATION_NOTES;
 
     if (groupDataUpdated) {
@@ -293,7 +316,7 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
       }
     }
 
-    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir);
+    const categories = getAvailableCategories(gatewayLanguage, toolName, projectDir, {}, glOwner);
     // In some older projects the category was saved in the .categories file instead of the subcategories.
     project.setCurrentCategories(toolName, categories);
 
@@ -342,23 +365,62 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
 
     if (groupDataUpdated) {
       migrateOldCheckingResourceData(projectDir, toolName);
+      // update categories owner
+      const categoriesPath = project.getCategoriesPath(toolName);
+
+      if (fs.pathExistsSync(categoriesPath)) {
+        try {
+          let rawData = fs.readJsonSync(categoriesPath);
+          rawData.owner = glOwner;
+          fs.writeJsonSync(categoriesPath, rawData);
+        } catch (e) {
+          console.warn(
+            `copyGroupDataToProject() - Failed to update tool categories index at ${categoriesPath}.`, e);
+        }
+      }
     }
   } else {
     // generate chapter-based group data
     const groupsDataDirectory = project.getCategoriesDir(toolName);
-    const data = generateChapterGroupData(project.getBookId(), toolName);
+    const bookDataDir = project.getBookDataDir();
+    const data = generateChapterGroupData(project.getBookId(), toolName, bookDataDir);
 
     data.forEach(groupData => {
       const groupId = groupData[0].contextId.groupId;
-      const dataPath = path.join(groupsDataDirectory, groupId + '.json');
-
-      if (!fs.existsSync(dataPath)) {
-        fs.outputJsonSync(dataPath, groupData, {
-          spaces: 2,
-          replace: null,
-        });
-      }
+      const fileName = groupId + '.json';
+      ensureFileContentsJson(groupsDataDirectory, fileName, groupData);
     });
+  }
+}
+
+/**
+ * make sure file contents have the latest data
+ * @param {String} folder
+ * @param {String} filename
+ * @param {object} data
+ */
+export function ensureFileContentsJson(folder, filename, data) {
+  const filePath = path.join(folder, filename);
+
+  try {
+    fs.ensureDirSync(folder);
+    let valid = fs.existsSync(filePath);
+
+    if (valid) {
+      try {
+        const fileData = fs.readJsonSync(filePath);
+        valid = isEqual(data, fileData);
+      } catch (e) {
+        console.error(`ensureFileContentsJson() - error reading ${filePath}`, e);
+        valid = false;
+      }
+    }
+
+    if (!valid) {
+      fs.outputJsonSync(filePath, data, { spaces: 2 });
+    }
+  } catch (e) {
+    console.error(`ensureFileContentsJson() - error updating ${filePath}`, e);
   }
 }
 
@@ -369,20 +431,23 @@ export function copyGroupDataToProject(gatewayLanguage, toolName, projectDir, di
  * @param {String} projectDir
  * @param {object} options = { withCategoryName: true } will return an
  * array of objects instead, which include the category id & name.
+ * @param {string} owner
  */
-export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir, options = {}) {
+export function getAvailableCategories(gatewayLanguage = 'en', toolName, projectDir, options = {}, owner = DEFAULT_OWNER) {
   const categoriesObj = {};
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
 
   if (toolName === TRANSLATION_WORDS){
-    const manifest = project.getManifest();
-    const bookId = manifest && manifest.project && manifest.project.id;
-    const { languageId } = BibleHelpers.getOrigLangforBook(bookId);
-    gatewayLanguage = languageId;
+    if (owner === apiHelpers.DOOR43_CATALOG) { // for tW we use OrigLang if owner is D43 Catalog
+      const manifest = project.getManifest();
+      const bookId = manifest && manifest.project && manifest.project.id;
+      const { languageId } = BibleHelpers.getOrigLangforBook(bookId);
+      gatewayLanguage = languageId;
+    }
   }
 
-  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, owner);
   // list help categories
 
   if (helpDir) {
@@ -448,11 +513,12 @@ export function getAvailableCategories(gatewayLanguage = 'en', toolName, project
  * @param {string} gatewayLanguage - the gateway language code
  * @param {string} toolName - the name of the tool for which selections will be made
  * @param {string} projectDir - path to the project directory
+ * @param {string} owner
  */
-export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDir) {
+export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDir, owner) {
   const project = new ProjectAPI(projectDir);
   const resources = ResourceAPI.default();
-  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName);
+  const helpDir = resources.getLatestTranslationHelp(gatewayLanguage, toolName, owner);
   let categories = [];
 
   if (helpDir && project.getSelectedCategories(toolName).length === 0) {
@@ -473,8 +539,9 @@ export function setDefaultProjectCategories(gatewayLanguage, toolName, projectDi
  * make sure that the group index data and contextId are up to date on GL change.  Currently only tN depends on GL
  * @param {string} toolName
  * @param {string} selectedGL
+ * @param {string} owner
  */
-export function updateGroupIndexForGl(toolName, selectedGL) {
+export function updateGroupIndexForGl(toolName, selectedGL, owner) {
   return ((dispatch, getState) => {
     console.log(`updateGroupIndexForGl(${toolName}, ${selectedGL})`);
     const state = getState();
@@ -493,7 +560,7 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
         }
       }
       console.log('updateGroupIndexForGl() - calling copyGroupDataToProject() to get latest from tN helps');
-      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true); // copy group data for GL
+      copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true, owner); // copy group data for GL
       let groupId = null;
       let contextId = null;
       const bookId = getProjectBookId(state);
@@ -525,7 +592,7 @@ export function updateGroupIndexForGl(toolName, selectedGL) {
         }
       }
       console.log('updateGroupIndexForGl() - calling loadCurrentCheckCategories()');
-      dispatch(loadCurrentCheckCategories(toolName, projectDir, selectedGL));
+      dispatch(loadCurrentCheckCategories(toolName, projectDir, selectedGL, owner));
     } catch (e) {
       console.error(`updateGroupIndexForGl(${toolName} - error updating current context`, e);
     }
@@ -568,7 +635,7 @@ export function loadProjectGroupIndex(
     for (const categoryName in categories) {
       const categoryIndex = path.join(helpDir, categoryName, 'index.json');
 
-      if (fs.lstatSync(categoryIndex).isFile()) {
+      if (fs.existsSync(categoryIndex)) {
         try {
           const selectedSubcategories = categories[categoryName];
           // For categories with subcategories need to filter out not selected items.
@@ -665,7 +732,7 @@ export const areResourcesNewer = () => {
   const newer = bundledModified > userModified;
 
   console.log(
-    `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', newer - updating all' : ''),
+    `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', NEWER - updating all' : ', NOT NEWER!'),
     'color: #00539C',
   );
   return newer;
@@ -710,7 +777,7 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
     manifest = fs.readJsonSync(bibleManifestPath);
   } else {
     console.error(
-      `Could not find manifest for ${bibleID} at ${bibleManifestPath}`);
+      `getBibleManifest() - Could not find manifest for ${bibleID} at ${bibleManifestPath}`);
   }
   return manifest;
 }
@@ -720,8 +787,9 @@ export function getBibleManifest(bibleVersionPath, bibleID) {
  * @param {string} languageId
  * @param {string} bibleId - bible name. ex. bhp, uhb, udt, ult.
  * @param {string} bibleVersion - optional release version, if null then get latest
+ * @param {string} owner
  */
-export function getBibleIndex(languageId, bibleId, bibleVersion) {
+export function getBibleIndex(languageId, bibleId, bibleVersion, owner) {
   const STATIC_RESOURCES_BIBLES_PATH = path.join(STATIC_RESOURCES_PATH, languageId, 'bibles');
   const fileName = 'index.json';
   let bibleIndexPath;
@@ -731,12 +799,12 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
       bibleVersion, fileName);
   } else {
     const versionPath = ResourceAPI.getLatestVersion(
-      path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId));
+      path.join(STATIC_RESOURCES_BIBLES_PATH, bibleId), owner);
 
     if (versionPath) {
       bibleIndexPath = path.join(versionPath, fileName);
     } else {
-      console.error(`versionPath is undefined, versionPath:${versionPath}`);
+      console.error(`getBibleIndex() - versionPath is undefined`);
     }
   }
 
@@ -756,15 +824,7 @@ export function getBibleIndex(languageId, bibleId, bibleVersion) {
  * @return {Array} - array of versions, e.g. ['v1', 'v10', 'v1.1']
  */
 export function getVersionsInPath(resourcePath) {
-  if (!resourcePath || !fs.pathExistsSync(resourcePath)) {
-    return null;
-  }
-
-  const isVersionDirectory = name => {
-    const fullPath = path.join(resourcePath, name);
-    return fs.lstatSync(fullPath).isDirectory() && name.match(/^v\d/i);
-  };
-  return fs.readdirSync(resourcePath).filter(isVersionDirectory);
+  return resourcesHelpers.getVersionsInPath(resourcePath);
 }
 
 /**
@@ -825,18 +885,23 @@ export function addLanguage(languageIds, languageID) {
  * @param {Array} resources
  * @param {String} languageId
  * @param {String} bibleId
+ * @param {String} owner
  */
-export function addResource(resources, languageId, bibleId) {
+export function addResource(resources, languageId, bibleId, owner = DEFAULT_OWNER) {
   if (!languageId) {
     throw new Error('Error when adding resource. languageId is not valid.');
   }
 
   const pos = resources.findIndex(resource =>
-    ((resource.languageId === languageId) && (resource.bibleId === bibleId)),
+    ((resource.languageId === languageId) && (resource.bibleId === bibleId) && (resource.owner === owner)),
   );
 
   if (pos < 0) { // if we don't have resource
-    resources.push({ bibleId, languageId });
+    resources.push({
+      bibleId,
+      languageId,
+      owner,
+    });
   }
 }
 
@@ -876,38 +941,43 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
-            const bibleLatestVersion = ResourceAPI.getLatestVersion(bibleIdPath);
+            const owners = ResourceAPI.getLatestVersionsAndOwners(bibleIdPath) || {};
 
-            if (bibleLatestVersion) {
-              const pathToBibleManifestFile = path.join(bibleLatestVersion,
-                'manifest.json');
+            for (const owner of Object.keys(owners)) {
+              let bibleLatestVersion = owners[owner];
 
-              try {
-                const manifestExists = fs.existsSync(pathToBibleManifestFile);
-                const bookExists = fs.existsSync(
-                  path.join(bibleLatestVersion, bookId, '1.json'));
+              if (bibleLatestVersion) {
+                const pathToBibleManifestFile = path.join(bibleLatestVersion,
+                  'manifest.json');
 
-                if (manifestExists && bookExists) {
-                  let languageId_ = languageId;
+                try {
+                  const manifestExists = fs.existsSync(pathToBibleManifestFile);
+                  const bookExists = fs.existsSync(
+                    path.join(bibleLatestVersion, bookId, '1.json'));
 
-                  if (BibleHelpers.isOriginalLanguage(languageId)) {
-                    languageId_ = ORIGINAL_LANGUAGE;
+                  if (manifestExists && bookExists) {
+                    let languageId_ = languageId;
+
+                    if (BibleHelpers.isOriginalLanguage(languageId)) {
+                      languageId_ = ORIGINAL_LANGUAGE;
+                    }
+
+                    const manifest = fs.readJsonSync(pathToBibleManifestFile);
+
+                    if (Object.keys(manifest).length) {
+                      const resource = {
+                        bookId,
+                        bibleId,
+                        languageId: languageId_,
+                        manifest,
+                        owner,
+                      };
+                      resourceList.push(resource);
+                    }
                   }
-
-                  const manifest = fs.readJsonSync(pathToBibleManifestFile);
-
-                  if (Object.keys(manifest).length) {
-                    const resource = {
-                      bookId,
-                      bibleId,
-                      languageId: languageId_,
-                      manifest,
-                    };
-                    resourceList.push(resource);
-                  }
+                } catch (e) {
+                  console.warn('Invalid bible: ' + bibleLatestVersion, e);
                 }
-              } catch (e) {
-                console.warn('Invalid bible: ' + bibleLatestVersion, e);
               }
             }
           });
@@ -932,11 +1002,12 @@ export function getAvailableScripturePaneSelections(resourceList) {
 export function getResourcesNeededByTool(state, bookId, toolName) {
   const resources = [];
   const { languageId: olLanguageID, bibleId: olBibleId } = BibleHelpers.getOrigLangforBook(bookId);
+  const glOwner= getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
 
   // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
   // not found throws an error. Should be addressed later by 4858.
-  addResource(resources, 'en', 'ult');
+  addResource(resources, 'en', 'ult', DEFAULT_OWNER);
 
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
@@ -947,18 +1018,18 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId);
+        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(glOwner));
         break; // skip invalid language codes
 
       default:
-        addResource(resources, languageId, setting.bibleId);
+        addResource(resources, languageId, setting.bibleId, setting.owner);
         break;
       }
     }
   } else {
     console.warn('No Scripture Pane Configuration');
   }
-  addResource(resources, olLanguageID, olBibleId); // make sure loaded even if not in pane settings
+  addResource(resources, olLanguageID, olBibleId, getOriginalLangOwner(glOwner)); // make sure loaded even if not in pane settings
   const gatewayLangId = getToolGatewayLanguage(state, toolName);
   const biblesLoaded = getBibles(state);
   const validBibles = getValidGatewayBiblesForTool(
@@ -970,7 +1041,8 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
 
   if (Array.isArray(validBibles)) {
     for (let bible of validBibles) {
-      addResource(resources, gatewayLangId, bible);
+      const { owner, version: bibleId } = resourcesHelpers.splitVersionAndOwner(bible);
+      addResource(resources, gatewayLangId, bibleId, owner || apiHelpers.DOOR43_CATALOG);
     }
   }
   return resources;
@@ -1052,6 +1124,7 @@ function getFilteredSubFolders(folderPath) {
  * copies missing subfolders from source to destination
  * @param {String} source
  * @param {String} destination
+ * @param {String} languageId
  */
 function copyMissingSubfolders(source, destination, languageId) {
   const sourceSubFolders = getFilteredSubFolders(source);
@@ -1061,7 +1134,7 @@ function copyMissingSubfolders(source, destination, languageId) {
     let lexiconMissing = !destinationSubFolders.includes(lexicon);
 
     if (!lexiconMissing) { // if we have lexicon, make sure we have the latest version installed
-      const latestVersion = ResourceAPI.getLatestVersion(path.join(source, lexicon));
+      const latestVersion = ResourceAPI.getLatestVersion(path.join(source, lexicon), DEFAULT_OWNER);
 
       if (latestVersion) {
         const destinationVersionPath = path.join(destination, lexicon, path.basename(latestVersion));
@@ -1182,32 +1255,53 @@ export function moveResourcesFromOldGrcFolder() {
 /**
  * find out which Original Language Bible versions are needed by installed tNs.  Only keep the needed versions.
  *    The other versions are deleted.
- * @param languageId
- * @param resourceId
- * @param resourcePath
+ * @param {string} languageId
+ * @param {string} resourceId
+ * @param {string} resourcePath - path for versions of current resource
+ * @param {string} resourcesPath - base path for all resources
  * @return {boolean} - returns true if all old resources can be deleted
  */
-export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath) {
+export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath, resourcesPath) {
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
-    const requiredVersions = getOtherTnsOLVersions(USER_RESOURCES_PATH, resourceId).sort((a, b) =>
+    let requiredVersions = getOtherTnsOLVersions(resourcesPath, resourceId).sort((a, b) =>
       -ResourceAPI.compareVersions(a, b), // do inverted sort
     );
+
+    const requiredVersions_ = [];
+
+    requiredVersions.forEach((version) => { // make sure we have owner
+      if (!version.includes(apiHelpers.OWNER_SEPARATOR)) {
+        requiredVersions_.push(resourcesHelpers.addOwnerToKey(version, DEFAULT_ORIG_LANG_OWNER));
+        requiredVersions_.push(resourcesHelpers.addOwnerToKey(version, CN_ORIG_LANG_OWNER));
+      } else {
+        requiredVersions_.push(version);
+      }
+    });
+    requiredVersions = requiredVersions_;
     console.log('preserveNeededOrigLangVersions: requiredVersions', requiredVersions);
 
     // see if we need to keep old versions of original language
     if (requiredVersions && requiredVersions.length) {
       deleteOldResources = false;
-      const highestRequired = requiredVersions[0];
+      const latestVersions = ResourceAPI.getLatestVersionsAndOwners(resourcePath);
       const versions = ResourceAPI.listVersions(resourcePath);
       console.log('preserveNeededOrigLangVersions: versions', versions);
 
       for (let version of versions) {
         if (!requiredVersions.includes(version)) {
-          const newerResource = ResourceAPI.compareVersions(version, highestRequired) > 0;
+          const { owner } = resourcesHelpers.splitVersionAndOwner(version);
+          let highestRequired = latestVersions[owner];
 
-          if (!newerResource) { // don't delete if newer version
+          if (!highestRequired) {
+            continue;
+          }
+
+          highestRequired = path.basename(highestRequired);
+          const newerResource = ResourceAPI.compareVersions(version, highestRequired) >= 0;
+
+          if (!newerResource) { // don't delete if newer/newest version
             const oldPath = path.join(resourcePath, version);
             console.log('preserveNeededOrigLangVersions: removing old version', oldPath);
             fs.removeSync(oldPath);
@@ -1246,72 +1340,86 @@ export function getMissingResources() {
         } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
           copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
         } else { // compare resources manifest modified time
-          const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
-          const version = path.basename(staticResourceVersionPath);
-          const userResourceVersionPath = path.join(userResourcePath, version);
-          const userResourceExists = fs.existsSync(userResourceVersionPath);
-          let isOldResource = false;
-          const filename = 'manifest.json';
-          const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
+          const owners = ResourceAPI.getLatestVersionsAndOwners(staticResourcePath) || {};
+          const ownersKeys = Object.keys(owners);
 
-          if (userResourceExists) {
-            const userResourceManifestPath = path.join(userResourceVersionPath, filename);
-
-            if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
-              const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
-              const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
-              isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
-
-              if (isOldResource) {
-                console.log('getMissingResources() - userModifiedTime: ' + userModifiedTime);
-                console.log('getMissingResources() - staticModifiedTime: ' + staticModifiedTime);
-              }
-            } else if (!fs.existsSync(userResourceManifestPath)) {
-              if (fs.existsSync(staticResourceManifestPath)) {
-                console.log('getMissingResources() - missing user manifest: ' + userResourceManifestPath);
-                console.log('getMissingResources() - but found static manifest: ' + staticResourceManifestPath);
-                isOldResource = true;
-              } else { // if no manifest.json, fall back to checking versions
-                const userVersion = path.basename(userResourceVersionPath);
-                const staticVersion = path.basename(staticResourceVersionPath);
-                isOldResource = ResourceAPI.compareVersions(userVersion, staticVersion) < 0;
-
-                if (isOldResource) {
-                  console.log('getMissingResources() - userVersion: ' + userVersion);
-                  console.log('getMissingResources() - staticVersion: ' + staticVersion);
-                }
-              }
-            }
-          } else { // resource folder was empty
-            isOldResource = true;
+          if (!ownersKeys || !ownersKeys.length) {
+            console.warn(`getMissingResources() - Could not find latest for ${staticResourcePath}`);
           }
 
-          const deleteOldResources = preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath);
-
-          if (isOldResource) {
-            console.log(`getMissingResources() - checking ${languageId} ${resourceId} - old resource found`);
-
-            if (deleteOldResources) {
-              console.log('getMissingResources() - deleting old resources folder: ' + userResourcePath);
-              fs.removeSync(userResourcePath);
-            }
-            console.log('getMissingResources() - unzipping static resources');
-            copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
-          } else { // if folder empty, then copy over current resource
-            const versions = ResourceAPI.listVersions(userResourcePath);
-            const emptyResourceFolder = !versions.length;
-            let installResource = emptyResourceFolder;
-
-            if (!emptyResourceFolder) { // make sure bundled version is installed
-              const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath);
-              const bundledVersion = path.basename(staticResourceVersionPath);
-              const destinationPath = path.join(userResourcePath, bundledVersion);
-              installResource = !fs.existsSync(destinationPath);
+          for (const owner of ownersKeys) {
+            if (!owner) {
+              console.error(`getMissingResources() - skipping empty owner for ${staticResourcePath}`);
+              continue;
             }
 
-            if (installResource) {
-              console.log('getMissingResources() - unzipping missing static resources');
-              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+            const staticResourceVersionPath = owners[owner];
+            const version = path.basename(staticResourceVersionPath);
+            const userResourceVersionPath = path.join(userResourcePath, version);
+            const userResourceExists = fs.existsSync(userResourceVersionPath);
+            let isOldResource = false;
+            const filename = 'manifest.json';
+            const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
+
+            if (userResourceExists) {
+              const userResourceManifestPath = path.join(userResourceVersionPath, filename);
+
+              if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
+                const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
+                const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
+                isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
+
+                if (isOldResource) {
+                  console.log('getMissingResources() - userModifiedTime: ' + userModifiedTime);
+                  console.log('getMissingResources() - staticModifiedTime: ' + staticModifiedTime);
+                }
+              } else if (!fs.existsSync(userResourceManifestPath)) {
+                if (fs.existsSync(staticResourceManifestPath)) {
+                  console.log('getMissingResources() - missing user manifest: ' + userResourceManifestPath);
+                  console.log('getMissingResources() - but found static manifest: ' + staticResourceManifestPath);
+                  isOldResource = true;
+                } else { // if no manifest.json, fall back to checking versions
+                  const userVersion = path.basename(userResourceVersionPath);
+                  const staticVersion = path.basename(staticResourceVersionPath);
+                  isOldResource = ResourceAPI.compareVersions(userVersion, staticVersion) < 0;
+
+                  if (isOldResource) {
+                    console.log('getMissingResources() - userVersion: ' + userVersion);
+                    console.log('getMissingResources() - staticVersion: ' + staticVersion);
+                  }
+                }
+              }
+            } else { // resource folder was empty
+              isOldResource = true;
+            }
+
+            preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath, USER_RESOURCES_PATH);
+
+            if (isOldResource) {
+              console.log(`getMissingResources() - checking ${languageId} ${resourceId} ${owner} - no resource found`);
+
+              // if (deleteOldResources) {
+              //   console.log('getMissingResources() - deleting old resources folder: ' + userResourcePath);
+              //   fs.removeSync(userResourcePath);
+              // }
+              console.log('getMissingResources() - unzipping static resources');
+              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
+            } else { // if folder empty, then copy over current resource
+              const versions = ResourceAPI.listVersions(userResourcePath, owner);
+              const emptyResourceFolder = !versions.length;
+              let installResource = emptyResourceFolder;
+
+              if (!emptyResourceFolder) { // make sure bundled version is installed
+                const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath, owner);
+                const bundledVersion = path.basename(staticResourceVersionPath);
+                const destinationPath = path.join(userResourcePath, bundledVersion);
+                installResource = !fs.existsSync(destinationPath);
+              }
+
+              if (installResource) {
+                console.log('getMissingResources() - unzipping missing static resources');
+                copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
+              }
             }
           }
         }
@@ -1320,12 +1428,26 @@ export function getMissingResources() {
   }
 }
 
-function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType) {
-  fs.copySync(staticResourcePath, userResourcePath);
-  console.log(
-    `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-    'color: #00aced',
-  );
+function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner = null) {
+  if (!owner) {
+    fs.copySync(staticResourcePath, userResourcePath);
+    console.log(
+      `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
+      'color: #00aced',
+    );
+  } else {
+    const versions = ResourceAPI.listVersions(staticResourcePath, owner);
+
+    for (const version of versions) {
+      const sourcePath = path.join(staticResourcePath, version);
+      const destPath = path.join(userResourcePath, version);
+      fs.copySync(sourcePath, destPath);
+      console.log(
+        `%c    Copied ${languageId}-${resourceId}-${version} from static ${resourceType} to user resources path.`,
+        'color: #00aced',
+      );
+    }
+  }
   // extract zipped contents
   extractZippedResourceContent(userResourcePath, resourceType === 'bibles');
 }
@@ -1424,3 +1546,13 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   }
   return null;
 };
+
+/**
+ * determine the owner to use for original language based on if owner is in door43-catalog or CN owner.
+ * @param owner
+ * @return {*|string}
+ */
+export function getOriginalLangOwner(owner) {
+  const origLanOwner = (owner === DEFAULT_ORIG_LANG_OWNER) ? owner : CN_ORIG_LANG_OWNER;
+  return origLanOwner;
+}

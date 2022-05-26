@@ -7,6 +7,8 @@ Array [
   },
   Object {
     "alertMessage": "import failed",
+    "buttonText": null,
+    "callback": null,
     "loading": undefined,
     "type": "OPEN_ALERT_DIALOG",
   },

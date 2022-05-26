@@ -2,12 +2,13 @@ const {
   app, dialog, ipcMain, BrowserWindow, Menu,
 } = require('electronite');
 require('@electron/remote/main').initialize();
-const dotenv = require('dotenv');
 const path = require('path-extra');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
 const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
 const DownloadManager = require('../src/js/DownloadManager');
+const { BUILD } = require('./build.json');
+const { config } = require('./cfg.json');
 const {
   createWindow,
   defineWindow,
@@ -18,6 +19,9 @@ const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in c
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
 process.env.tcVersion = p.version;
+process.env.BUILD = BUILD || config.BUILD;
+process.env.TC_HELP_DESK_TOKEN = config.TC_HELP_DESK_TOKEN;
+process.env.TC_HELP_DESK_EMAIL = config.TC_HELP_DESK_EMAIL;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -25,16 +29,6 @@ process.env.tcVersion = p.version;
 let mainWindow;
 let helperWindow;
 let splashScreen;
-
-let results = dotenv.config(); // first try default path
-
-if (results.error) {
-  results = dotenv.config({ path: path.resolve(__dirname, '.env') }); // try production path
-}
-
-if (results.error) {
-  console.log(`dotenv failed`);
-}
 
 const downloadManager = new DownloadManager();
 
@@ -55,9 +49,10 @@ function createMainWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
-      enableRemoteModule: true
+      enableRemoteModule: true,
     },
   };
+
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
 
   if (process.env.DEVELOPER_MODE === 'true' || process.env.developer_mode === 'true') {
@@ -105,6 +100,7 @@ function createMainWindow() {
  * @returns {Electron.BrowserWindow}
  */
 function createSplashWindow() {
+  console.log(`process.env.BUILD=${process.env.BUILD}`);
   const windowOptions = {
     width: 600,
     height: 600,
@@ -112,13 +108,15 @@ function createSplashWindow() {
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false,
-      enableRemoteModule: true
+      contextIsolation: true,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, 'preloadSplash.js'),
     },
     frame: false,
     show: true,
     center: true,
   };
+
   splashScreen = defineWindow('splash', windowOptions);
 
   if (IS_DEVELOPMENT) {

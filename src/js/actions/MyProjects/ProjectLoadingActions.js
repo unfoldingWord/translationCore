@@ -2,6 +2,7 @@
 /* eslint-disable no-await-in-loop */
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
+import { apiHelpers } from 'tc-source-content-updater';
 import consts from '../ActionTypes';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
@@ -30,6 +31,7 @@ import {
   getSupportingToolApis,
   getTargetBook,
   getToolGatewayLanguage,
+  getToolGlOwner,
   getTools,
   getTranslate,
   getUsername,
@@ -44,6 +46,7 @@ import ProjectAPI from '../../helpers/ProjectAPI';
 import CoreAPI from '../../helpers/CoreAPI';
 import {
   copyGroupDataToProject,
+  getOriginalLangOwner,
   setDefaultProjectCategories,
 } from '../../helpers/ResourcesHelpers';
 import * as BibleHelpers from '../../helpers/bibleHelpers';
@@ -52,6 +55,8 @@ import * as Bible from '../../common/BooksOfTheBible';
 // constants
 import {
   APP_VERSION,
+  DEFAULT_ORIG_LANG_OWNER,
+  DEFAULT_OWNER,
   MIN_COMPATIBLE_VERSION,
   PROJECTS_PATH,
   tc_MIN_COMPATIBLE_VERSION_KEY,
@@ -180,20 +185,23 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       console.log(`openProject() - loading source book ${bookId} into ${t.name}`);
       await dispatch(loadSourceBookTranslations(bookId, t.name));
       const gatewayLanguage = getToolGatewayLanguage(getState(), t.name);
+      const glOwner = getToolGlOwner(getState(), t.name) || DEFAULT_OWNER;
 
       // copy group data
       // TRICKY: group data must be tied to the original language for tW and GL for tN
       console.log('openProject() - copy group data');
       let copyLang = gatewayLanguage;
 
-      if (t.name === TRANSLATION_WORDS) { // for tW we use OrigLang
-        const olForBook = BibleHelpers.getOrigLangforBook(bookId);
-        copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+      if (t.name === TRANSLATION_WORDS) {
+        if (glOwner === apiHelpers.DOOR43_CATALOG) { // for tW we use OrigLang if owner is D43 Catalog
+          const olForBook = BibleHelpers.getOrigLangforBook(bookId);
+          copyLang = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+        }
       }
-      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch);
+      copyGroupDataToProject(copyLang, t.name, validProjectDir, dispatch, false, glOwner);
 
       // select default categories
-      setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir);
+      setDefaultProjectCategories(gatewayLanguage, t.name, validProjectDir, glOwner);
 
       dispatch(connectToolApi(validProjectDir, bookId, t));
     }
@@ -238,7 +246,8 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const coreApi = new CoreAPI(dispatch);
   const resourceApi = ResourceAPI;
   const { code } = getActiveLocaleLanguage(state);
-  const sourceBook = getSourceBook(state);
+  const gatewayLanguageOwner = getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
+  const sourceBook = getSourceBook(state, getOriginalLangOwner(gatewayLanguageOwner));
   const targetBook = getTargetBook(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
 
@@ -275,6 +284,7 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
     bookId,
     toolName,
     gatewayLanguageCode,
+    gatewayLanguageOwner,
 
     contextId: {
       reference: {
@@ -386,6 +396,7 @@ export function closeProject() {
  * @description loads and set the projects details into the projectDetailsReducer.
  * @param {string} projectPath - path location in the filesystem for the project.
  * @param {object} manifest - project manifest.
+ * @param {object} settings - project settings object
  */
 export function loadProjectDetails(projectPath, manifest, settings) {
   return (dispatch) => {

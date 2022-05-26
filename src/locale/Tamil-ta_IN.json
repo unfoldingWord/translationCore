@@ -76,6 +76,8 @@
   "critical_error_warning": "எச்சரிக்கை: ஒரு விமர்சன பிழை ஏற்பட்டது!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "மென்பொருள் புதுப்பிப்புகளைப் பார்க்கவும்\n",
     "check_for_content_updates": "உள்ளடக்க புதுப்பிப்புகளைச் சரிபார்க்கவும்\n",
     "update_gateway_language_content": "நுழைவாயில் மொழி உள்ளடக்கத்தைப் புதுப்பிக்கவும்",
@@ -94,9 +96,13 @@
     "downloading": "புதுப்பிப்பைப் பதிவிறக்குகிறது\n",
     "downloading_version": "பதிப்பைப் பதிவிறக்குகிறது {{பதிப்பு}\n",
     "download_error": "புதுப்பிப்பைப் பதிவிறக்க முடியவில்லை.\n",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "மூலம்:",
     "local_timestamp": "உள்ளூர்:",
-    "online_timestamp": "ஆன்லைன்"
+    "online_timestamp": "ஆன்லைன்",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "வகை",
@@ -224,6 +230,7 @@
     "dcs_rename_conflict": "மறுபெயரிடுதல் தோல்வியுற்றது, ஏனெனில் இந்த பெயருடன் ஒரு களஞ்சியம் ஏற்கனவே உள்ளது.<br/><br/>உங்கள் திட்டத்தை பதிவேற்றுவதற்கு உங்கள் உள்ளூர் திட்டத்தின் மறுபெயரிட வேண்டும் ${door43}, அல்லது உங்கள் திட்டத்திக்கு மறுபெயரிட வேண்டும். ${door43}.",
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {

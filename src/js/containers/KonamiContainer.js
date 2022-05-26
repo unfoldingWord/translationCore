@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { setSetting } from '../actions/SettingsActions';
 import { openAlertDialog } from '../actions/AlertModalActions';
 import { getSetting } from '../selectors';
-import { withLocale } from './Locale';
+import { withLocale } from '../helpers/localeHelpers';
 
 const developerModeSettingKey = 'developerMode';
 
@@ -16,7 +16,7 @@ class KonamiContainer extends React.Component {
     this.toggleDeveloperMode = this.toggleDeveloperMode.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     // Konami Code ( << Up, Up, Down, Down, Left, Right, Left, Right, B, A >> )
     // This is used to enable or disable developer mode
     this.kc = new Konami(this.toggleDeveloperMode);

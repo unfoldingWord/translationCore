@@ -2,6 +2,11 @@ import path from 'path-extra';
 import env from 'tc-electron-env';
 import packagefile from '../../../package.json';
 
+if (process.env.NODE_ENV !== 'test') {
+  const { makeSureEnvInit } = require('../helpers/envHelpers');
+  makeSureEnvInit('constants');
+}
+
 const isProduction = process.env.NODE_ENV === 'production';
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
@@ -36,6 +41,7 @@ export const ORIGINAL_LANGUAGE = 'originalLanguage';
 export const TARGET_LANGUAGE = 'targetLanguage';
 export const TARGET_BIBLE = 'targetBible';
 export const TRANSLATION_WORDS = 'translationWords';
+export const TRANSLATION_WORDS_LINKS = 'translationWordsLinks';
 export const TRANSLATION_NOTES = 'translationNotes';
 export const TRANSLATION_ACADEMY = 'translationAcademy';
 export const TRANSLATION_HELPS = 'translationHelps';
@@ -43,6 +49,11 @@ export const WORD_ALIGNMENT = 'wordAlignment';
 export const LEXICONS = 'lexicons';
 export const UGL_LEXICON = 'ugl';
 export const UHL_LEXICON = 'uhl';
+const DOOR43_CATALOG = `Door43-Catalog`;
+const UNFOLDING_WORD = `unfoldingWord`;
+export const DEFAULT_ORIG_LANG_OWNER = DOOR43_CATALOG;
+export const CN_ORIG_LANG_OWNER = UNFOLDING_WORD; // default for catalog next resources
+export const DEFAULT_OWNER = DOOR43_CATALOG;
 // categories
 export const toolCardCategories = {
   'kt': 'Key Terms',

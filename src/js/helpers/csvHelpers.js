@@ -8,10 +8,11 @@ import { getQuoteAsString } from 'checking-tool-wrapper';
 import * as ResourcesActions from '../actions/ResourcesActions';
 // constants
 import {
-  TRANSLATION_WORDS,
-  TRANSLATION_NOTES,
-  USER_RESOURCES_PATH,
+  DEFAULT_OWNER,
   TRANSLATION_HELPS,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
 } from '../common/constants';
 import ResourceAPI from './ResourceAPI';
 import * as localizationHelpers from './localizationHelpers';
@@ -87,10 +88,11 @@ function loadToolGroupIndex(langCode, toolName) {
  * @param {string} username
  * @param {timestamp} timestamp to be converted into date and time
  * @param {function} translate - the translation function
+ * @param {string} glOwner
  * @return {object}
  */
-export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate) {
-  const flatContextId = flattenContextId(contextId, gatewayLanguageCode, gatewayLanguageQuote, translate);
+export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguageQuote, username, timestamp, translate, glOwner = DEFAULT_OWNER) {
+  const flatContextId = flattenContextId(contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner);
   const userTimestamp = userTimestampObject(username, timestamp);
   return Object.assign({}, data, flatContextId, userTimestamp);
 }
@@ -101,15 +103,17 @@ export function combineData(data, contextId, gatewayLanguageCode, gatewayLanguag
  * @param {string} gatewayLanguageCode - language code, if empty, will use 'en' and find the GL Quote by it
  * @param {string} gatewayLanguageQuote - language quote, can be empty
  * @param {function} translate - translation function
+ * @param {string} glOwner
  * @return {object}
  */
-export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate) => {
+export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguageQuote, translate, glOwner = DEFAULT_OWNER) => {
   // if GL code not given, use 'en'
   gatewayLanguageCode = gatewayLanguageCode || 'en';
   // if GL quote not given, get it from the aligned 'ult' Bible of that language, otherwise 'N/A'
-  gatewayLanguageQuote = gatewayLanguageQuote || getGLQuoteFromAlignedBible(contextId, gatewayLanguageCode) || 'N/A';
+  gatewayLanguageQuote = gatewayLanguageQuote || getGLQuoteFromAlignedBible(contextId, gatewayLanguageCode, glOwner) || 'N/A';
   // if no occurrenceNote in contextId, 'N/A'
   const occurrenceNote = contextId.occurrenceNote || 'N/A';
+  const verse_ = contextId.verseSpan || contextId.reference.verse; // use verse span if given
   return {
     tool: contextId.tool,
     type: groupCategoryTranslated(contextId, gatewayLanguageCode, translate),
@@ -123,7 +127,7 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
     checkId: contextId.checkId || '',
     bookId: contextId.reference.bookId,
     chapter: contextId.reference.chapter,
-    verse: contextId.reference.verse,
+    verse: verse_,
   };
 };
 
@@ -131,12 +135,13 @@ export const flattenContextId = (contextId, gatewayLanguageCode, gatewayLanguage
  * Gets the GL Quote information to add to the contextId
  * @param {object} contextId
  * @param {string} langCode - language code which to get the quote from the aligned Bible
+ * @param {string} owner
  * @return {object}
  */
-export const getGLQuoteFromAlignedBible = (contextId, langCode) => {
+export const getGLQuoteFromAlignedBible = (contextId, langCode, owner) => {
   const glBibleId = 'ult'; // TODO: Dynamically get all Bibles for the glCode to find GL Quote from aligned Bible
   const bookId = contextId.reference.bookId;
-  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode); // this is cached in the called function
+  const bible = ResourcesActions.loadBookResource(glBibleId, bookId, langCode, null, owner); // this is cached in the called function
   return gatewayLanguageHelpers.getAlignedTextFromBible(contextId, bible);
 };
 
@@ -321,8 +326,8 @@ export const generateCSVString = (objectArray, callback) => {
     csv.stringify(data, function (err, data){
       callback(err, data);
     });
-  } else { // there is no data, give back enough data to create an empty file.
-    const data = [['No data']];
+  } else { // there is no data
+    const data = 'No data';
     callback(null, data);
   }
 };

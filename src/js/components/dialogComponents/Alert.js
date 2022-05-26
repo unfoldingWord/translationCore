@@ -27,18 +27,18 @@ class Alert extends Component {
         key={1}
         label={translate('buttons.cancel_button')}
         className="btn-prime"
-        disabled={alertDialogLoading}
+        disabled={alertDialogLoading && !button1}
         autoFocus
         onClick={callback
           ? () => {
             callback(button1 || translate('buttons.ok_button'));
           }
           : closeAlertDialog}
-      > {this.props.alertModalReducer.button1 || translate('buttons.ok_button')}
+      > {button1 || translate('buttons.ok_button')}
       </button>,
     ];
 
-    if (this.props.alertModalReducer.button1 && button2) {
+    if (button1 && button2) {
       const callback_ = callback2 || callback;
 
       buttonActions.unshift(
@@ -49,12 +49,12 @@ class Alert extends Component {
           onClick={callback_ ? () => {
             callback_(button2);
           } : closeAlertDialog}
-        > {this.props.alertModalReducer.button2}
+        > {button2}
         </button>,
       );
     }
 
-    if (this.props.alertModalReducer.button1 && buttonLink) {
+    if (button1 && buttonLink) {
       buttonActions.unshift(
         <button
           label={translate('buttons.cancel_button')}
@@ -63,7 +63,7 @@ class Alert extends Component {
           onClick={callback ? () => {
             callback(buttonLink);
           } : closeAlertDialog}
-        > {this.props.alertModalReducer.buttonLink}
+        > {buttonLink}
         </button>,
       );
     }
@@ -99,7 +99,9 @@ class Alert extends Component {
         <Dialog
           style={{ padding: '0px', zIndex: 2501 }}
           contentStyle={{ opacity: '1' }}
+          bodyStyle={{ overflowY: 'auto' }}
           actions={buttonActions}
+          scroll={'body'}
           modal={false}
           open={alertDialogVisibility}
         >
@@ -117,7 +119,7 @@ class Alert extends Component {
             <table>
               <tbody>
                 <tr>
-                  <td>
+                  <td style={{ verticalAlign: 'top' }}>
                     <img className={alertDialogLoading ? 'App-logo' : ''}
                       src={`data:image/png;base64,${logoData}`}
                       height="100px"

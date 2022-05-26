@@ -11,7 +11,7 @@ describe('LexiconHelpers', () => {
 
   test('LexiconHelpers.getLexiconData loads lexicon data for a specific lexiconIda and entryId', () => {
     const languageId = 'en';
-    const resourceVersion = 'v0';
+    const resourceVersion = 'v0_Door43-Catalog';
     const lexiconId = 'ugl';
     const entryId = '1';
     const lexiconFilePath = path.join(env.home(), 'translationCore', 'resources', languageId, 'lexicons', lexiconId, resourceVersion, 'content', '1.json');
@@ -26,7 +26,7 @@ describe('LexiconHelpers', () => {
 
   test('LexiconHelpers.getLexiconData loads lexicon data for v0.1 resource', () => {
     const languageId = 'en';
-    const resourceVersion = 'v0.1';
+    const resourceVersion = 'v0.1_Door43-Catalog';
     const lexiconId = 'uhl';
     const entryId = '1';
     const lexiconFilePath = path.join(env.home(), 'translationCore', 'resources', languageId, 'lexicons', lexiconId, resourceVersion, 'content', '1.json');

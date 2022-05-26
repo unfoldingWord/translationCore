@@ -17,7 +17,7 @@ class ToolCard extends Component {
     this.content = this.content.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     const { store } = this.context;
     const currentToolName = getCurrentToolName(store.getState());
 

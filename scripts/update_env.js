@@ -1,10 +1,11 @@
 // Writes some updated keys to the .env file.
 // Non-conflicting values in .env will be preserved.
-const ENV_PATH = './.env';
-const fs = require('fs');
 const commit = require('child_process')
   .execSync('git rev-parse HEAD')
   .toString().trim();
+const fs = require('fs-extra');
+const path = require('path-extra');
+const ENV_PATH = path.join('./.env');
 
 const dotenv = require('dotenv');
 
@@ -35,7 +36,8 @@ if (Object.keys(config).length === 0) {
 }
 
 config['BROWSER'] = 'none';
-config['BUILD'] = commit.slice(0, 7);
+const BUILD = commit.slice(0, 7);
+config['BUILD'] = BUILD;
 console.log(`config updated keys: ${JSON.stringify(Object.keys(config))}`);
 
 let data = '';
@@ -44,7 +46,10 @@ for (let key of Object.keys(config)) {
   data += `${key}=${config[key]}\n`;
 }
 
-fs.writeFileSync(ENV_PATH, data.trim());
+const dataTrimmed = data.trim();
+fs.writeFileSync(ENV_PATH, dataTrimmed);
+fs.outputJsonSync(path.join('.', 'electronite/cfg.json'), { config });
+fs.outputJsonSync(path.join('.', 'electronite/build.json'), { BUILD });
 
 // if we reach here, we were able to write/update the .env file
 console.log(`environment file exists: ${fs.existsSync(ENV_PATH)}`);

@@ -81,7 +81,7 @@ describe('load group index', () => {
     global.console = { error: jest.fn(), warn: jest.fn() };
     mockGetLatestTranslationHelp.mockReturnValueOnce('/help/dir');
     mockGetSelectedCategories.mockReturnValueOnce(['hello']);
-    fs.lstatSync.mockReturnValue({ isFile: () => true });
+    fs.existsSync.mockReturnValue(true);
     fs.readJsonSync.mockReturnValueOnce([{ id: 'hello', name: 'World' }]);
     const result = loadProjectGroupIndex('lang', 'tool', 'dir/', translate);
 
@@ -98,7 +98,7 @@ describe('load group index', () => {
     global.console = { error: jest.fn(), warn: jest.fn() };
     mockGetLatestTranslationHelp.mockReturnValueOnce('/help/dir');
     mockGetSelectedCategories.mockReturnValueOnce(['category']);
-    fs.lstatSync.mockReturnValue({ isFile: () => true });
+    fs.existsSync.mockReturnValue(true);
     fs.readJsonSync.mockImplementation(() => {
       throw new Error();
     }); // index is corrupt
@@ -132,7 +132,7 @@ describe('load group index', () => {
     global.console = { error: jest.fn(), warn: jest.fn() };
     mockGetLatestTranslationHelp.mockReturnValueOnce('/help/dir');
     mockGetSelectedCategories.mockReturnValueOnce(['category']);
-    fs.lstatSync.mockReturnValue({ isFile: () => false });// category index does not exist
+    fs.existsSync.mockReturnValue(false);// category index does not exist
 
     expect(loadProjectGroupIndex('lang', 'tool', 'dir/', translate)).toEqual(expectedResult);
     expect(generateChapterGroupIndex).not.toBeCalled();

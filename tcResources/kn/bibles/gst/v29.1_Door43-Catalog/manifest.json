@@ -1,0 +1,373 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acsah Jacob",
+      "Dr. Bobby Chellappan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Vipin Bhadran"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "Kannada GST",
+    "format": "text/usfm3",
+    "identifier": "gst",
+    "issued": "2022-04-06",
+    "language": {
+      "identifier": "kn",
+      "title": "ಕನ್ನಡ (Kannada)",
+      "direction": "ltr"
+    },
+    "modified": "2022-04-06",
+    "publisher": "BCS",
+    "relation": [
+      "kn/irv",
+      "kn/glt",
+      "kn/iev",
+      "kn/ta",
+      "kn/tn",
+      "kn/tq",
+      "kn/tw",
+      "kn/ulb",
+      "kn/obs",
+      "kn/obs-tn",
+      "kn/obs-tq"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "hbk",
+        "language": "kn",
+        "version": "1951"
+      },
+      {
+        "identifier": "irv",
+        "language": "kn",
+        "version": "2020"
+      },
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "29"
+      },
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "29"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Gateway Simplified Text - Kannada",
+    "type": "bundle",
+    "version": "29.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Ruth",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ಯೋನ",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ಲೂಕ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಎಫೆಸದವರಿಗೆ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Timothy",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Timothy",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ತೀತನಿಗೆ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಯಾಕೋಬನು",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಮೊದಲನೇಯ ಯೋಹಾನ",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ಯೋಹಾ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಯೋಹಾನನ ಮೂರನೇಯ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acsah Jacob",
+        "Dr. Bobby Chellappan",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Vipin Bhadran"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "Kannada GST",
+      "format": "text/usfm3",
+      "identifier": "gst",
+      "issued": "2022-04-06",
+      "language": {
+        "identifier": "kn",
+        "title": "ಕನ್ನಡ (Kannada)",
+        "direction": "ltr"
+      },
+      "modified": "2022-04-06",
+      "publisher": "BCS",
+      "relation": [
+        "kn/irv",
+        "kn/glt",
+        "kn/iev",
+        "kn/ta",
+        "kn/tn",
+        "kn/tq",
+        "kn/tw",
+        "kn/ulb",
+        "kn/obs",
+        "kn/obs-tn",
+        "kn/obs-tq"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "hbk",
+          "language": "kn",
+          "version": "1951"
+        },
+        {
+          "identifier": "irv",
+          "language": "kn",
+          "version": "2020"
+        },
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "29"
+        },
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "29"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Gateway Simplified Text - Kannada",
+      "type": "bundle",
+      "version": "29.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Ruth",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ಯೋನ",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ಲೂಕ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಎಫೆಸದವರಿಗೆ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Timothy",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Timothy",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ತೀತನಿಗೆ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಯಾಕೋಬನು",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಮೊದಲನೇಯ ಯೋಹಾನ",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ಯೋಹಾ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಯೋಹಾನನ ಮೂರನೇಯ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "kn",
+  "language_name": "ಕನ್ನಡ (Kannada)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "Gateway Simplified Text - Kannada",
+  "remoteModifiedTime": "2022-04-22T00:16:11Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2022-04-22T00:16:11Z"
+}

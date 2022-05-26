@@ -32,8 +32,8 @@ describe('ResourcesActions', () => {
   describe('getLatestVersion()', () => {
     it('should get highest version with unordered  list', () => {
       // given
-      const versionNumbers = ['v8.0.10','v8.0.9','v8.0.8'];
-      const expectedLatestVersion = 'v8.0.10';
+      const versionNumbers = ['v8.0.10_Door43-Catalog','v8.0.9_Door43-Catalog','v8.0.8_Door43-Catalog'];
+      const expectedLatestVersion = 'v8.0.10_Door43-Catalog';
 
       // when
       const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
@@ -44,8 +44,8 @@ describe('ResourcesActions', () => {
 
     it('should get highest version with ordered  list', () => {
       // given
-      const versionNumbers = ['v8.0.8','v8.0.9','v8.0.10'];
-      const expectedLatestVersion = 'v8.0.10';
+      const versionNumbers = ['v8.0.8_Door43-Catalog','v8.0.9_Door43-Catalog','v8.0.10_Door43-Catalog'];
+      const expectedLatestVersion = 'v8.0.10_Door43-Catalog';
 
       // when
       const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
@@ -56,8 +56,8 @@ describe('ResourcesActions', () => {
 
     it('should work with single item list', () => {
       // given
-      const versionNumbers = ['v8'];
-      const expectedLatestVersion = 'v8';
+      const versionNumbers = ['v8_Door43-Catalog'];
+      const expectedLatestVersion = 'v8_Door43-Catalog';
 
       // when
       const versionNumber = ResourcesActions.getLatestVersion(versionNumbers);
@@ -101,7 +101,7 @@ describe('ResourcesActions', () => {
 
     const ugnt = require('./fixtures/project/en_gal/bibleData.json');
 
-    const store = mockStore({
+    const mockStoreInit = {
       actions: {},
       toolsReducer: { selectedTool: WORD_ALIGNMENT },
       resourcesReducer: {
@@ -130,7 +130,10 @@ describe('ResourcesActions', () => {
           },
         },
       },
-    });
+    };
+    // add owner support
+    mockStoreInit.resourcesReducer.bibles['originalLanguage_Door43-Catalog'] = mockStoreInit.resourcesReducer.bibles.originalLanguage;
+    const store = mockStore(mockStoreInit);
     const contextId = {
       reference: {
         bookId: bookId,
@@ -264,6 +267,7 @@ function loadMockFsWithProjectAndResources() {
   const copyResourceFiles = [
     'en/bibles/ult',
     'en/bibles/ust',
+    'en/lexicons',
     'el-x-koine/bibles/ugnt',
     'en/translationHelps/translationWords',
     'en/translationHelps/translationAcademy',

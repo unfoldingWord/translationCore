@@ -78,6 +78,8 @@ Array [
   },
   Object {
     "alertMessage": "projects.renaming_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -91,6 +93,8 @@ Array [
   },
   Object {
     "alertMessage": "projects.uploading_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },
@@ -107,6 +111,8 @@ Array [
   },
   Object {
     "alertMessage": "projects.renaming_alert",
+    "buttonText": null,
+    "callback": null,
     "loading": true,
     "type": "OPEN_ALERT_DIALOG",
   },

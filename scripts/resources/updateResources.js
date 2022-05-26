@@ -5,27 +5,60 @@
 require('babel-polyfill'); // required for async/await
 const path = require('path-extra');
 const fs = require('fs-extra');
-const SourceContentUpdater = require('tc-source-content-updater').default;
+const {
+  default: SourceContentUpdater,
+  apiHelpers,
+} = require('tc-source-content-updater');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
+
+// TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
+// set to null to remove restriction, or you can add other permitted owners to list
+const filterByOwner = ['Door43-Catalog'];
 
 /**
  * find resources to update
  * @param {String} languages - languages to update resources
  * @param {String} resourcesPath
  * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
+ * @param {Boolean} uWoriginalLanguage - if true then we also want uW original languages updated
  * @return {Promise<String>}
  */
-const updateResources = async (languages, resourcesPath, allAlignedBibles) => {
+const updateResources = async (languages, resourcesPath, allAlignedBibles, uWoriginalLanguage) => {
+  const UNFOLDING_WORD = 'unfoldingWord';
   const sourceContentUpdater = new SourceContentUpdater();
 
   try {
-    const localResourceList = UpdateResourcesHelpers.getLocalResourceList(resourcesPath);
+    const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
+    const filterByOwner_ = [...filterByOwner];
 
-    await sourceContentUpdater.getLatestResources(localResourceList)
+    if (uWoriginalLanguage) {
+      filterByOwner_.push(UNFOLDING_WORD);
+    }
+
+    await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner_)
       .then(async () => {
+        let updateList = [];
+
+        if (uWoriginalLanguage) {
+          for (const item of sourceContentUpdater.updatedCatalogResources) {
+            if (item.owner === UNFOLDING_WORD) {
+              const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
+                (item.languageId === 'hbo' && item.resourceId === 'uhb');
+
+              if (!isOriginal) { // skip over any uw repos that are not original langs
+                continue;
+              }
+            }
+
+            updateList.push(item);
+          }
+        } else {
+          updateList = sourceContentUpdater.updatedCatalogResources;
+        }
+
         await sourceContentUpdater.downloadResources(languages, resourcesPath,
-          sourceContentUpdater.updatedCatalogResources, // list of static resources that are newer in catalog
+          updateList, // list of static resources that are newer in catalog
           allAlignedBibles)
           .then(resources => {
             resources.forEach(resource => {
@@ -114,9 +147,10 @@ const areResourcesRecent = (resourcesPath) => {
  * @param {String} languages - languages to update resources
  * @param {String} resourcesPath
  * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
+ * @param {Boolean} uWoriginalLanguage - if true then we also want uW original languages updated
  * @return {Promise<number>}
  */
-const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles) => {
+const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles, uWoriginalLanguage) => {
   let errors = false;
 
   if (areResourcesRecent(resourcesPath)) {
@@ -130,7 +164,7 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
       fs.removeSync(tempPath);
     }
 
-    errors = await updateResources(languages, resourcesPath, allAlignedBibles);
+    errors = await updateResources(languages, resourcesPath, allAlignedBibles, uWoriginalLanguage);
 
     if (errors) {
       console.log('Errors on downloading updated resources!!');
@@ -200,6 +234,7 @@ if (require.main === module) {
   const resourcesPath = otherParameters[0];
   const languages = otherParameters.slice(1);
   const allAlignedBibles = findFlag(flags, '--allAlignedBibles');
+  const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage');
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
@@ -207,7 +242,7 @@ if (require.main === module) {
     return;
   }
 
-  executeResourcesUpdate(languages, resourcesPath, allAlignedBibles).then(code => {
+  executeResourcesUpdate(languages, resourcesPath, allAlignedBibles, uWoriginalLanguage).then(code => {
     process.exitCode = code; // set exit code, 0 = no error
   });
 }

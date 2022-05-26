@@ -5,11 +5,13 @@ import { Card, CardHeader } from 'material-ui';
 import { Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { resourcesHelpers } from 'tc-source-content-updater';
 // helpers
 import * as ToolCardHelpers from '../../../helpers/ToolCardHelpers';
 import { getTranslation } from '../../../helpers/localizationHelpers';
 import { getGatewayLanguageList, hasValidOL } from '../../../helpers/gatewayLanguageHelpers';
 import { isToolUsingCurrentOriginalLanguage } from '../../../helpers/originalLanguageResourcesHelpers';
+import { addOwner, getOriginalLangOwner } from '../../../helpers/ResourcesHelpers';
 // components
 import Hint from '../../Hint';
 import {
@@ -18,12 +20,43 @@ import {
   getCurrentToolName,
 } from '../../../selectors';
 import {
-  WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+  DEFAULT_OWNER,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  WORD_ALIGNMENT,
 } from '../../../common/constants';
 import ToolCardBoxes from './ToolCardBoxes';
 import ToolCardProgress from './ToolCardProgress';
 import GlDropDownList from './GlDropDownList';
 import ToolCardNotificationBadges from './ToolCardNotificationBadges';
+import { getCheckStateForCategory } from './CategoryCheckbox';
+
+/**
+ * checks to see if there are any selections, and if so checks if there are any valid selections
+ * @param selectedCategories
+ * @param availableCategories
+ * @param toolName
+ * @return {boolean}
+ */
+function checkForValidCategorySelections(selectedCategories, availableCategories, toolName) {
+  let haveSelections = (selectedCategories.length !== 0);
+
+  if (haveSelections) { // make sure we actually have valid selections, GL and owner changes can cause troubles particularly with tW
+    haveSelections = false;
+
+    for (const parentCategory of Object.keys(availableCategories)) {
+      const availableSubcategories = availableCategories[parentCategory];
+      const selectedSubCategories = selectedCategories || [];
+      const { isChecked, isIndeterminate } = getCheckStateForCategory(availableSubcategories, selectedSubCategories, toolName);
+
+      if (isChecked || isIndeterminate) {
+        haveSelections = true;
+        break;
+      }
+    }
+  }
+  return haveSelections;
+}
 
 class ToolCard extends Component {
   constructor(props) {
@@ -44,16 +77,21 @@ class ToolCard extends Component {
     };
   }
 
-  componentWillMount() {
-    let { glSelected: selectedGL } = this.props;
+  UNSAFE_componentWillMount() {
+    let {
+      glSelected,
+      glOwnerSelected,
+    } = this.props;
     const gatewayLanguageList = this.updateGlList();
+    let glAndOwner = glSelected ? resourcesHelpers.addOwnerToKey(glSelected, glOwnerSelected) : glSelected;
 
     // if there is only one gateway Language then select it as the GL for the tool card.
     if (gatewayLanguageList.length === 1) {
-      selectedGL = gatewayLanguageList[0].code;
+      const firstItem = gatewayLanguageList[0];
+      glAndOwner = addOwner(firstItem.lc, firstItem.owner);
     }
-    this.selectionChange(selectedGL);
-    this.setState({ selectedGL });
+    this.selectionChange(glAndOwner);
+    this.setState({ selectedGL: glAndOwner });
   }
 
   componentDidMount() {
@@ -61,7 +99,8 @@ class ToolCard extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const glSelectedChanged = prevProps.glSelected !== this.props.glSelected;
+    const glSelectedChanged = prevProps.glSelected !== this.props.glSelected ||
+      prevProps.glOwnerSelected !== this.props.glOwnerSelected;
 
     if (glSelectedChanged) {
       this.setState({ glSelectedChanged });
@@ -106,18 +145,22 @@ class ToolCard extends Component {
 
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
-      this.props.actions.setProjectToolGL(this.props.tool.name, selectedGL);
+      const { owner, version: gl } = resourcesHelpers.splitVersionAndOwner(selectedGL.trim());
+      this.props.actions.setProjectToolGL(this.props.tool.name, gl, owner || DEFAULT_OWNER);
       this.setState({ selectedGL });
       this.loadProgress();
     }
   }
 
-  getLaunchDisableMessage(id, developerMode, translate, name, selectedCategories) {
+  getLaunchDisableMessage(id, developerMode, translate, toolName, selectedCategories) {
     const toolsWithCategories = [TRANSLATION_WORDS , TRANSLATION_NOTES];
-    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(this.state.selectedGL, id, developerMode, translate);
+    const selectedGL = this.state.selectedGL;
+    let launchDisableMessage = ToolCardHelpers.getToolCardLaunchStatus(selectedGL, id, developerMode, translate);
 
     if (!launchDisableMessage) { // if no errors, make sure we have original language
-      const olBookPath = hasValidOL(id);
+      const { owner } = resourcesHelpers.splitVersionAndOwner(selectedGL.trim());
+      const origLangOwner = getOriginalLangOwner(owner);
+      const olBookPath = hasValidOL(id, origLangOwner);
 
       if (!olBookPath) {
         launchDisableMessage = translate('tools.book_not_supported');
@@ -129,8 +172,21 @@ class ToolCard extends Component {
       launchDisableMessage = (gatewayLanguageList && gatewayLanguageList.length) ? null : translate('tools.book_not_supported');
     }
 
-    if (!launchDisableMessage && (toolsWithCategories.includes(name) && selectedCategories.length === 0)) {
-      launchDisableMessage = translate('tools.no_checks_selected');
+    if (!launchDisableMessage && (toolsWithCategories.includes(toolName))) {
+      const haveValidSelections = checkForValidCategorySelections(this.props.selectedCategories, this.props.availableCategories, toolName);
+
+      if (!haveValidSelections) {
+        launchDisableMessage = translate('tools.no_checks_selected');
+      }
+    }
+
+    if (!launchDisableMessage) {
+      const { gatewayLanguageList, selectedGL } = this.state;
+
+      // make sure we have a GL selected and it is valid
+      if (!selectedGL || !gatewayLanguageList || !gatewayLanguageList.find(item => (addOwner(item.lc, item.owner) === selectedGL))) {
+        launchDisableMessage = translate('tools.select_gateway_language');
+      }
     }
 
     return launchDisableMessage;
@@ -357,6 +413,7 @@ ToolCard.propTypes = {
   ]).isRequired,
   toggleHomeView: PropTypes.func.isRequired,
   glSelected: PropTypes.string.isRequired,
+  glOwnerSelected: PropTypes.string.isRequired,
   sourceContentUpdateCount: PropTypes.number.isRequired,
   isToolUsingCurrentOriginalLanguage: PropTypes.func.isRequired,
 };

@@ -1,20 +1,29 @@
 /* eslint-disable require-await */
 /* eslint-disable require-await */
 import path from 'path-extra';
-import sourceContentUpdater from 'tc-source-content-updater';
+import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import env from 'tc-electron-env';
 import {
-  getTranslate, getCurrentToolName, getProjectSaveLocation, getProjectBookId,
+  getCurrentToolName,
+  getProjectSaveLocation,
+  getProjectBookId,
+  getToolGlOwner,
+  getTranslate,
 } from '../selectors';
+import { getResourceDownloadsAlertMessage } from '../containers/SourceContentUpdatesDialogContainer';
 // helpers
-import { getLocalResourceList } from '../helpers/sourceContentUpdatesHelpers';
 import { copyGroupDataToProject, updateSourceContentUpdaterManifest } from '../helpers/ResourcesHelpers';
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
+import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
+// actions
+import { DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
-  openAlertDialog, closeAlertDialog, openOptionDialog,
+  openAlertDialog,
+  closeAlertDialog,
+  openOptionDialog,
 } from './AlertModalActions';
 import consts from './ActionTypes';
 import { confirmOnlineAction } from './OnlineModeConfirmActions';
@@ -29,12 +38,12 @@ export const resetSourceContentUpdatesReducer = () => ({ type: consts.RESET_LIST
 
 export const updateSourceContentUpdatesReducer = () => ({ type: consts.INCREMENT_SOURCE_CONTENT_UPDATE_COUNT });
 
-const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage) => ((dispatch, getState) => {
+const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertMessage, failAlertString = null) => ((dispatch, getState) => {
   const translate = getTranslate(getState());
 
   dispatch(
     openOptionDialog(
-      translate(failAlertMessage),
+      failAlertString || translate(failAlertMessage),
       () => dispatch(retryCallback()),
       translate('buttons.retry'),
       translate('buttons.cancel_button'),
@@ -48,6 +57,40 @@ const failedAlertAndRetry = (closeSourceContentDialog, retryCallback, failAlertM
 });
 
 /**
+ * consolidate any twl and tw downloads
+ * @param languageResources
+ * @returns {*}
+ */
+function consolidateTwls(languageResources) {
+  for (let i = 0; i < languageResources.length; i++) {
+    const languageResource = languageResources[i];
+    const resources = languageResource?.resources;
+
+    if (languageResource?.languageId) {
+      const resources_ = [];
+
+      for (const resource of resources) {
+        if (resource.resourceId === 'twl') {
+          const matchingTW = resources.find(res => (
+            (res.resourceId === 'tw') &&
+            (res.owner === resource.owner) &&
+            (res.languageId === resource.languageId)
+          ));
+
+          if (matchingTW) {
+            continue; // skip over this, since it will be downloaded automatically with TW
+          }
+        }
+
+        resources_.push(resource);
+      }
+      languageResource.resources = resources_;
+    }
+  }
+  return languageResources;
+}
+
+/**
  * Gets the list of source content that needs or can be updated.
  * @param {function} closeSourceContentDialog - Hacky workaround to close the
  * source content dialog in the AppMenu state.
@@ -58,13 +101,15 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 
   if (navigator.onLine) {
     dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
-    const localResourceList = getLocalResourceList();
+    const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
 
     await SourceContentUpdater.getLatestResources(localResourceList)
       .then(resources => {
         dispatch(closeAlertDialog());
 
         if (resources.length > 0) {
+          resources = consolidateTwls(resources);
+
           dispatch({
             type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
             resources,
@@ -91,19 +136,83 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
 });
 
 /**
- * Downloads source content updates using the tc-source-content-updater.
- * @param {array} languageIdListToDownload - list of language Ids selected to be downloaded.
+ * create error string from array of errors
+ * @param {array} errors
+ * @param {function} translate
+ * @return {String}
  */
-export const downloadSourceContentUpdates = (languageIdListToDownload) => (async (dispatch, getState) => {
+function getDownloadErrorList(errors, translate) {
+  let errorStr = '';
+
+  for (const error of errors) {
+    let errorSuffix = '';
+    let errorType = error.parseError ? 'updates.update_error_reason_parse' : 'updates.update_error_reason_download';
+
+    if (error.parseError) {
+      const matches = [
+        { start: ' - cannot find \'', end: '\'' },
+        { start: 'Failed to process resource: ', end: ':' },
+      ];
+
+      for (const match of matches) {
+        if (error.errorMessage.indexOf(match.start) >= 0) {
+          const [, suffix] = error.errorMessage.split(match.start);
+          errorSuffix = suffix.split(match.end)[0];
+          errorType = 'updates.update_error_reason_missing_dependency';
+          break;
+        }
+      }
+    }
+    errorSuffix = errorSuffix || '';
+
+    if (errorSuffix) {
+      errorSuffix = ': ' + errorSuffix;
+    }
+    errorStr += `${error.downloadUrl} ⬅︎ ${translate(errorType)}${errorSuffix}\n`;
+  }
+  return errorStr;
+}
+
+/**
+ * Downloads source content updates using the tc-source-content-updater.
+ * @param {array} resourcesToDownload - list of resources to be downloaded.
+ */
+export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates = false) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const toolName = getCurrentToolName(getState());
+  let cancelled = false;
 
   dispatch(resetSourceContentUpdatesReducer());
 
   if (navigator.onLine) {
-    dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
+    dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'),
+      true,
+      translate('buttons.cancel_button'),
+      () => { // cancel actions
+        cancelled = true;
+        SourceContentUpdater.cancelDownload();
+        dispatch(openAlertDialog(translate('updates.downloads_canceled')));
+      }));
 
-    await SourceContentUpdater.downloadResources(languageIdListToDownload, USER_RESOURCES_PATH)
+    if (refreshUpdates) {
+      const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+      const resourcesNotDownloaded = resourcesToDownload.filter(resourceToDownload => {
+        const downloadVersion = 'v' + resourceToDownload.version;
+        const matchedResource = localResourceList.find(existingResource => {
+          const match = (existingResource.version === downloadVersion) &&
+            (existingResource.languageId === resourceToDownload.languageId) &&
+            (existingResource.resourceId === resourceToDownload.resourceId) &&
+            (existingResource.owner === resourceToDownload.owner);
+          return match;
+        });
+        return !matchedResource;
+      });
+      resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
+      await SourceContentUpdater.getLatestResources(localResourceList);
+    }
+
+    cancelled = false;
+    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload)
       .then(async () => {
         updateSourceContentUpdaterManifest();
         dispatch(updateSourceContentUpdatesReducer());
@@ -113,6 +222,7 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
           const projectSaveLocation = getProjectSaveLocation(getState());
           const bookId = getProjectBookId(getState());
           const olForBook = getOrigLangforBook(bookId);
+          const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
           let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
           await dispatch(loadBookTranslations(bookId));
 
@@ -120,19 +230,48 @@ export const downloadSourceContentUpdates = (languageIdListToDownload) => (async
           dispatch(updateResourcesForOpenTool(toolName));
 
           // Tool is opened so we need to update existing group data
-          copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch);
+          copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch, false, glOwner);
         }
-        dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+
+        if (cancelled) {
+          console.error('downloadSourceContentUpdates() - download cancelled, no errors');
+          dispatch(closeAlertDialog());
+        } else {
+          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+        }
       })
       .catch((err) => {
-        console.error(err);
-        dispatch(
-          failedAlertAndRetry(
-            () => dispatch(closeAlertDialog()),
-            () => downloadSourceContentUpdates(languageIdListToDownload),
-            'updates.source_content_updates_unsuccessful_download',
-          ),
-        );
+        if (cancelled) {
+          console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
+        } else {
+          console.error('downloadSourceContentUpdates() - error:', err);
+
+          const showDownloadErrorAlert = (alertMessage) => {
+            dispatch(
+              failedAlertAndRetry(
+                () => dispatch(closeAlertDialog()),
+                () => downloadSourceContentUpdates(resourcesToDownload, true),
+                null,
+                alertMessage,
+              ),
+            );
+          };
+
+          const errors = SourceContentUpdater.downloadErrors;
+          let errorStr = '';
+          let alertMessage = err.toString(); // default error message
+
+          if (errors && errors.length) {
+            errorStr = getDownloadErrorList(errors, translate);
+            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
+              dispatch(closeAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
+              dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
+                showDownloadErrorAlert(alertMessage); // reshow alert dialog
+              }));
+            });
+          }
+          showDownloadErrorAlert(alertMessage);
+        }
       });
   } else {
     dispatch(openAlertDialog(translate('no_internet')));

@@ -448,7 +448,7 @@ describe('findArticleFilePath()', () => {
   it('findArticleFilePath for abel in en', () => {
     loadMockFsWithProjectAndResources();
     const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abel', 'en');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abel.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10_Door43-Catalog', 'names', 'articles', 'abel.md');
     expect(filePath).toEqual(expectedPath);
   });
 
@@ -461,21 +461,21 @@ describe('findArticleFilePath()', () => {
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
     const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abomination', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v8.1', 'kt', 'articles', 'abomination.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'hi', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v8.1_Door43-Catalog', 'kt', 'articles', 'abomination.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for abraham which is not in Hindi, but search hindi first', () => {
     loadMockFsWithProjectAndResources();
     const filePath = findArticleFilePath(TRANSLATION_WORDS, 'abraham', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10', 'names', 'articles', 'abraham.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_WORDS, 'v10_Door43-Catalog', 'names', 'articles', 'abraham.md');
     expect(filePath).toEqual(expectedPath);
   });
 
   it('findArticleFilePath for tA translate-names which is not in Hindi so should return English', () => {
     loadMockFsWithProjectAndResources();
     const filePath = findArticleFilePath(TRANSLATION_ACADEMY, 'translate-names', 'hi');
-    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_ACADEMY, 'v9', 'translate', 'translate-names.md');
+    const expectedPath = path.join(USER_RESOURCES_PATH, 'en', TRANSLATION_HELPS, TRANSLATION_ACADEMY, 'v9_Door43-Catalog', 'translate', 'translate-names.md');
     expect(filePath).toEqual(expectedPath);
   });
 

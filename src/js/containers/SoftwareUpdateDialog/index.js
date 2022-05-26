@@ -23,7 +23,7 @@ class SoftwareUpdateContainer extends React.Component {
     this.state = { ...this.initialState };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     // reset the state when the dialog opens/closes
     if (nextProps.open !== this.props.open) {
       this.setState({ ...this.initialState });

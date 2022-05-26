@@ -29,9 +29,10 @@ const zipResourcesContent = async (resourcesRootPath, languageId) => {
           const contentType = resourceType === 'bibles' ? 'books' : 'contents';
 
           if (fs.existsSync(path.join(resourcesContentPath, contentType + '.zip'))) {
-            console.log(`Resource was not updated, skipping: ${languageId} ${resourceId}`);
+            console.log(`Resource was not updated, skipping: ${languageId} ${resourceId} ${version}`);
             return;
           }
+          console.log(`Resource was updated, zipping: ${languageId} ${resourceId} ${version}`);
 
           const excludedItems = ['index.json', 'manifest.json', 'books', 'books.zip', 'contents.zip', '.DS_Store'];
           const resources = fs.readdirSync(resourcesContentPath)

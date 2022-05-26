@@ -20,6 +20,7 @@ class ErrorDialog extends React.Component {
     return (
       <BaseDialog open={open}
         primaryLabel={translate('buttons.ok_button')}
+        bodyStyle={{ overflowY: 'auto' }}
         onSubmit={onClose}
         title={translate('error')}
         modal={false}>

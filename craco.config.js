@@ -10,11 +10,9 @@ module.exports = (mode) => {
     { from: './src/locale', to: 'static/locale' },
     { from: './src/assets/projectLicenses', to: 'static/projectLicenses' },
     { from: './package.json', to: 'package.json' },
+    { from: './electronite/cfg.json', to: 'cfg.json' },
+    { from: './electronite/preloadSplash.js', to: 'preloadSplash.js' },
   ];
-
-  if (isProduction) {
-    copyPatterns.push({ from: '.env', to: './' });
-  }
 
   return {
     webpack: {

@@ -75,7 +75,11 @@ describe('ImportOnlineSearchActions async actions', () => {
 
     const expectedActions = [
       {
-        'type': consts.OPEN_ALERT_DIALOG, 'alertMessage': 'projects.searching_alert', 'loading': true,
+        type: consts.OPEN_ALERT_DIALOG,
+        alertMessage: 'projects.searching_alert',
+        loading: true,
+        buttonText: null,
+        callback: null,
       },
       { type: consts.SET_REPOS_DATA, repos: repos },
       { type: consts.CLOSE_ALERT_DIALOG },
@@ -93,7 +97,11 @@ describe('ImportOnlineSearchActions async actions', () => {
 
     const expectedActions = [
       {
-        'type': consts.OPEN_ALERT_DIALOG, 'alertMessage': 'projects.searching_alert', 'loading': true,
+        type: consts.OPEN_ALERT_DIALOG,
+        alertMessage: 'projects.searching_alert',
+        loading: true,
+        buttonText: null,
+        callback: null,
       },
       {
         type: consts.SET_REPOS_DATA, repos: [
@@ -130,7 +138,11 @@ describe('ImportOnlineSearchActions async actions', () => {
 
     const expectedActions = [
       {
-        'type': consts.OPEN_ALERT_DIALOG, 'alertMessage': 'projects.searching_alert', 'loading': true,
+        type: consts.OPEN_ALERT_DIALOG,
+        alertMessage: 'projects.searching_alert',
+        loading: true,
+        buttonText: null,
+        callback: null,
       },
       {
         type: consts.SET_REPOS_DATA, repos: [
@@ -187,7 +199,11 @@ describe('ImportOnlineSearchActions async actions', () => {
 
     const expectedActions = [
       {
-        'type': consts.OPEN_ALERT_DIALOG, 'alertMessage': 'projects.searching_alert', 'loading': true,
+        type: consts.OPEN_ALERT_DIALOG,
+        alertMessage: 'projects.searching_alert',
+        loading: true,
+        buttonText: null,
+        callback: null,
       },
       {
         type: consts.SET_REPOS_DATA, repos: [
@@ -225,6 +241,8 @@ describe('ImportOnlineSearchActions async actions', () => {
         alertMessage: 'no_internet',
         loading: undefined,
         type: 'OPEN_ALERT_DIALOG',
+        buttonText: null,
+        callback: null,
       },
     ];
 
@@ -241,6 +259,8 @@ describe('ImportOnlineSearchActions async actions', () => {
         alertMessage: 'no_internet',
         loading: undefined,
         type: 'OPEN_ALERT_DIALOG',
+        buttonText: null,
+        callback: null,
       },
     ];
 

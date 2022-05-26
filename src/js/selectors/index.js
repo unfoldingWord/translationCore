@@ -8,8 +8,7 @@ import * as fromLocaleSettings from '../reducers/localeSettings';
 import * as fromHomeScreenReducer from '../reducers/homeScreenReducer';
 import * as fromLoginReducer from '../reducers/loginReducer';
 import * as fromProjectDetailsReducer from '../reducers/projectDetailsReducer';
-import * as fromProjectValidationReducer
-  from '../reducers/projectValidationReducer';
+import * as fromProjectValidationReducer from '../reducers/projectValidationReducer';
 import * as fromToolsReducer from '../reducers/toolsReducer';
 import * as fromResourcesReducer from '../reducers/resourcesReducer';
 import * as fromAlertModalReducer from '../reducers/alertModalReducer';
@@ -18,6 +17,7 @@ import * as fromSourceContentUpdatesReducer from '../reducers/sourceContentUpdat
 import * as fromMyProjectsReducer from '../reducers/myProjectsReducer';
 import * as fromAlert from '../reducers/alerts';
 import * as fromSoftwareUpdateReducer from '../reducers/softwareUpdateReducer';
+import { DEFAULT_OWNER } from '../common/constants';
 
 /**
  * checks if the software update dialog is open
@@ -228,6 +228,15 @@ export const getToolGatewayLanguage = (state, toolName) =>
   fromProjectDetailsReducer.getToolGatewayLanguage(state.projectDetailsReducer, toolName);
 
 /**
+ * Returns the gateway language selected for the given tool.
+ * @param state
+ * @param {string} toolName - the name of the tool
+ * @returns {*}
+ */
+export const getToolGlOwner = (state, toolName) =>
+  fromProjectDetailsReducer.getToolGlOwner(state.projectDetailsReducer, toolName);
+
+/**
  * Returns the save location of the project
  * @param {object} state
  * @return {string}
@@ -364,10 +373,11 @@ export const getTargetBook = state =>
 /**
  * Returns the source language bible
  * @param state
+ * @param owner
  * @return {*}
  */
-export const getSourceBook = state =>
-  fromResourcesReducer.getSourceBook(state.resourcesReducer);
+export const getSourceBook = (state, owner = DEFAULT_OWNER) =>
+  fromResourcesReducer.getSourceBook(state.resourcesReducer, owner);
 
 /**
  * Checks if the home screen is visible
@@ -418,7 +428,7 @@ export const getToolsSelectedGLs = (state) =>
   fromProjectDetailsReducer.getToolsSelectedGLs(state.projectDetailsReducer);
 
 // export const getGroupsIndex = (state) =>
-//   fromGrouspIndex.getGroupsIndex(state.groupsIndexReducer);
+//   fromGroupsIndex.getGroupsIndex(state.groupsIndexReducer);
 
 // export const getGroupsData = (state) =>
 //   fromGroupsData.getGroupsData(state.groupsDataReducer);
@@ -429,7 +439,8 @@ export const getBibles = (state) =>
 /**
  * Returns the manifest for the source language book.
  * @param state
+ * @param owner
  * @returns {object}
  */
-export const getSourceBookManifest = state =>
-  fromResourcesReducer.getSourceBookManifest(state.resourcesReducer);
+export const getSourceBookManifest = (state, owner) =>
+  fromResourcesReducer.getSourceBookManifest(state.resourcesReducer, owner);

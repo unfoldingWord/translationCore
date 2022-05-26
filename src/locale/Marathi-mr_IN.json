@@ -76,6 +76,8 @@
   "critical_error_warning": "चेतावणी: एक गंभीर त्रुटी आली आहे!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "updates": {
+    "organization": "Organization",
+    "resource": "Resource",
     "check_for_newer_app": "सॉफ्टवेअर अद्यतने तपासा",
     "check_for_content_updates": "सामग्री अद्यतनांसाठी तपासा",
     "update_gateway_language_content": "गेटवे भाषा सामग्री अद्यतनित करा",
@@ -94,9 +96,13 @@
     "downloading": "अद्यतन डाउनलोड करत आहे",
     "downloading_version": "आवृत्ती डाउनलोड करत आहे ${version}",
     "download_error": "अद्यतन डाउनलोड करण्यात अक्षम.",
+    "downloads_canceled": "Downloading source contents cancelled!",
     "source_label": "स्रोत:",
     "local_timestamp": "स्थानिक:",
-    "online_timestamp": "ऑनलाइन:"
+    "online_timestamp": "ऑनलाइन:",
+    "update_error_reason_parse": "parse error",
+    "update_error_reason_download": "download error",
+    "update_error_reason_missing_dependency": "missing dependency"
   },
   "users": {
     "category": "वर्ग:",
@@ -224,6 +230,7 @@
     "dcs_rename_conflict": "पुनर्नामित करणे अयशस्वी झाले कारण या नावाचे भांडार आधीपासून विद्यमान आहे. <br/> <br/> आपला प्रकल्प ${door43} वर अपलोड करण्यात सक्षम होण्यासाठी तुम्हाला एकतर तुमच्या स्थानिक प्रकल्पाचे नाव बदलणे किंवा तुमच्या ${door43} प्रकल्पाचे नाव बदलणे आवश्यक आहे.",
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
     "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
   },
   "project_validation": {

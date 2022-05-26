@@ -156,6 +156,8 @@ describe('ProjectUploadActions', () => {
       alertMessage: 'no_internet',
       loading: undefined,
       type: 'OPEN_ALERT_DIALOG',
+      buttonText: null,
+      callback: null,
     };
     const store = mockStore({
       toolsReducer: {
@@ -185,6 +187,8 @@ describe('ProjectUploadActions', () => {
       alertMessage: message,
       loading: undefined,
       type: 'OPEN_ALERT_DIALOG',
+      buttonText: null,
+      callback: null,
     };
     const store = mockStore({
       toolsReducer: {

@@ -12,7 +12,10 @@ import {
   sortSubcategories,
 } from '../../../helpers/toolCardBoxesHelpers';
 // constants
-import { TRANSLATION_WORDS, TRANSLATION_ACADEMY } from '../../../common/constants';
+import {
+  TRANSLATION_WORDS,
+  TRANSLATION_ACADEMY,
+} from '../../../common/constants';
 import SubcategoryCheckbox from './SubcategoryCheckbox';
 import CategoryCheckbox from './CategoryCheckbox';
 
@@ -45,14 +48,14 @@ class ToolCardBoxes extends React.Component {
     this.showExpanded = this.showExpanded.bind(this);
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.loadArticles();
   }
 
   /**
    * Load first 600 characters of tA articles for available categories in this project
    */
-  loadArticles(){
+  loadArticles() {
     let fullText = '';
     let articles = {};
     const { availableCategories, selectedGL } = this.props;
@@ -104,43 +107,68 @@ class ToolCardBoxes extends React.Component {
 
     return (
       <div style={{ margin: '0 2% 0 6%' }}>
-        {
-          Object.keys(availableCategories).map((parentCategory, index) => {
-            const subcategories = availableCategories[parentCategory];
-            // use other_terms as parentCategory for the category 'other' for translationWords tool
-            parentCategory = parentCategory === 'other' && toolName === TRANSLATION_WORDS ? 'other_terms' : parentCategory;
+        {Object.keys(availableCategories).map((parentCategory, index) => {
+          const subcategories = availableCategories[parentCategory];
 
-            if (hasAllNeededData(toolName, parentCategory, subcategories, lookupNames)) {
-              return (
-                <div key={index} style={styles.categoriesDiv}>
-                  <div style={{ display: 'flex', width: '92%' }}>
-                    <div style={{ width: '38px' }}>
-                      <CategoryCheckbox
-                        toolName={toolName}
-                        onCategoryChecked={onCategoryChecked}
-                        selectedCategories={selectedCategories}
-                        availableSubcategories={subcategories}
+          // use other_terms as parentCategory for the category 'other' for translationWords tool
+          parentCategory =
+            parentCategory === 'other' && toolName === TRANSLATION_WORDS
+              ? 'other_terms'
+              : parentCategory;
+
+          if (
+            hasAllNeededData(
+              toolName,
+              parentCategory,
+              subcategories,
+              lookupNames,
+            )
+          ) {
+            return (
+              <div key={index} style={styles.categoriesDiv}>
+                <div style={{ display: 'flex', width: '92%' }}>
+                  <div style={{ width: '38px' }}>
+                    <CategoryCheckbox
+                      toolName={toolName}
+                      onCategoryChecked={onCategoryChecked}
+                      selectedCategories={selectedCategories}
+                      availableSubcategories={subcategories}
+                    />
+                  </div>
+                  <div>
+                    {/* category label */ translate(
+                      lookupNames[parentCategory],
+                    )}
+                  </div>
+                </div>
+                <React.Fragment>
+                  {toolName !== TRANSLATION_WORDS && (
+                    <div style={{ alignSelf: 'flex-end' }}>
+                      <Glyphicon
+                        style={styles.glyphicon}
+                        glyph={
+                          this.state.expanded[parentCategory]
+                            ? 'chevron-up'
+                            : 'chevron-down'
+                        }
+                        onClick={() => this.showExpanded(parentCategory)}
                       />
                     </div>
-                    <div>
-                      {/* category label */translate(lookupNames[parentCategory])}
-                    </div>
-                  </div>
-                  <React.Fragment>
-                    {toolName !== TRANSLATION_WORDS &&
-                      <div style={{ alignSelf: 'flex-end' }}>
-                        <Glyphicon
-                          style={styles.glyphicon}
-                          glyph={this.state.expanded[parentCategory] ? 'chevron-up' : 'chevron-down'}
-                          onClick={() => this.showExpanded(parentCategory)}
-                        />
-                      </div>
-                    }
-                    {this.state.expanded[parentCategory] && (
-                      <div key={index} style={styles.subcategoriesDiv}>
-                        {sortSubcategories(subcategories).map((subcategory, index) => (
-                          <div key={index} style={{ display: 'flex', width: '48%' }}>
-                            <div style={{ marginLeft: '36px', marginRight: '10px' }}>
+                  )}
+                  {this.state.expanded[parentCategory] && (
+                    <div key={index} style={styles.subcategoriesDiv}>
+                      {sortSubcategories(subcategories).map(
+                        (subcategory, index) => (
+                          <div
+                            key={index}
+                            style={{ display: 'flex', width: '48%' }}
+                          >
+                            <div
+                              style={{
+                                marginLeft: '36px',
+                                marginRight: '10px',
+                              }}
+                            >
                               <SubcategoryCheckbox
                                 subcategory={subcategory}
                                 toolName={toolName}
@@ -148,24 +176,29 @@ class ToolCardBoxes extends React.Component {
                                 selectedCategories={selectedCategories}
                               />
                             </div>
-                            <Hint position={((index % 2) === 1) ? 'top-left' : 'top-right'} label={this.getArticleText(subcategory.id)} size={'large'}>
-                              <div style={{ cursor: 'pointer' }} >
+                            <Hint
+                              position={
+                                index % 2 === 1 ? 'top-left' : 'top-right'
+                              }
+                              label={this.getArticleText(subcategory.id)}
+                              size={'large'}
+                            >
+                              <div style={{ cursor: 'pointer' }}>
                                 {subcategory.name}
                               </div>
                             </Hint>
                           </div>
-                        ))
-                        }
-                      </div>
-                    )}
-                  </React.Fragment>
-                </div>
-              );
-            } else {
-              return null;
-            }
-          })
-        }
+                        ),
+                      )}
+                    </div>
+                  )}
+                </React.Fragment>
+              </div>
+            );
+          } else {
+            return null;
+          }
+        })}
       </div>
     );
   }

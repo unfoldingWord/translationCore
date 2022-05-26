@@ -1,5 +1,34 @@
 # Changelog
 
+## [v3.2.0](https://github.com/unfoldingWord/translationCore/tree/v3.2.0) (2022-5-15)
+
+**Implemented enhancements:**
+
+- Added CatalogNext Support [\#7193](https://github.com/unfoldingWord/translationCore/issues/7193)
+- Updated Electronite to use latest Electron Version 17.3.1 [\#7203](https://github.com/unfoldingWord/translationCore/issues/7203) to fix UI issues with Windows 11 [\#7230](https://github.com/unfoldingWord/translationCore/issues/7230)
+- Added send feedback button to Update resource error dialog [\#7246](https://github.com/unfoldingWord/translationCore/issues/7246)
+- Fix update of tA resources to gracefully handle missing title.md files [\#7250](https://github.com/unfoldingWord/translationCore/issues/7250)
+- Add Ability to cancel download of resources when downloads are taking too long [\#7222](https://github.com/unfoldingWord/translationCore/issues/7222)
+- update git version in Windows installer [\#7166](https://github.com/unfoldingWord/translationCore/issues/7166)
+- Add quick toggle to expanded scripture pane to show raw USFM [\#7226](https://github.com/unfoldingWord/translationCore/issues/7226)
+- On resource download failure, show list of repos that failed to download. [\#7225](https://github.com/unfoldingWord/translationCore/issues/7225)
+- Fix to gracefully handle Empty occurrence notes crashes parsing of books when downloading latest tNs [\#7213](https://github.com/unfoldingWord/translationCore/issues/7213)
+
+**Fixed bugs:**
+
+- Fix for -1 Occurrence  [\#7291](https://github.com/unfoldingWord/translationCore/issues/7291) and [\#7292](https://github.com/unfoldingWord/translationCore/issues/7292)
+
+## [v3.1.0](https://github.com/unfoldingWord/translationCore/tree/v3.1.0) (2022-1-15)
+
+**Implemented enhancements:**
+
+- Epic for Editing and Aligning Verse Ranges [\#7167](https://github.com/unfoldingWord/translationCore/issues/7167)
+
+**Fixed bugs:**
+
+- tCore 3.0.2 is deleting newer resources on startup and replacing with resources bundled [\#7210](https://github.com/unfoldingWord/translationCore/issues/7210)
+- Empty occurrence notes crashes parsing of books when downloading latest tNs [\#7198](https://github.com/unfoldingWord/translationCore/issues/7198)
+
 ## [v3.0.2](https://github.com/unfoldingWord/translationCore/tree/v3.0.2) (2021-12-16)
 
 **Fixed bugs:**

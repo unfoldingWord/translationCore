@@ -25,7 +25,7 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext,
   const data = `\n\nTool: "${contextId.tool}"\nGroupId: "${contextId.groupId}"\nReference: "${reference}"\nGateway Language: "${selectedGL}"\nQuote: "${quoteString}"\nOccurrence: "${contextId.occurrence}"\n\n`;
   const report = data.replace(/\n/g,'<br>'); // use html line formatting
   const message = translate('tools.invalid_check_found', { report });
-  console.log('promptForInvalidCheckFeedback(): ' + message);
+  console.log('promptForInvalidCheckFeedback(): invalid check: ' + data);
   const onSelection = () => {
     if (moveToNext) {
       changeToNextContextId();
@@ -46,6 +46,19 @@ export const promptForInvalidCheckFeedback = (contextId, selectedGL, moveToNext,
       onSelection();
     },
   }));
+};
+
+/**
+ * display feedback dialog for resource update error
+ * @param {String} errorMessage
+ * @param {function} closeCallback - optional callback for when dialog closes
+ * @return {Function}
+ */
+export const sendUpdateResourceErrorFeedback = (errorMessage, closeCallback = null) => (dispatch) => {
+  console.log('sendUpdateResourceErrorFeedback(): ' + errorMessage);
+  dispatch(HomeScreenActions.setErrorFeedbackCategory(FeedbackDialog.CONTENT_AND_RESOURCES_FEEDBACK_KEY));
+  dispatch(HomeScreenActions.setErrorFeedbackMessage('There was a problem updating content:' + errorMessage)); // put up feedback dialog
+  dispatch(HomeScreenActions.setFeedbackCloseCallback(closeCallback));
 };
 
 export const getOsInfoStr = () => {
@@ -83,6 +96,15 @@ export const submitFeedback = ({
   category, message, name, email, state,
 }) => {
   const processEnv = getEnv();
+
+  if (!processEnv.TC_HELP_DESK_EMAIL) {
+    console.log('submitFeedback() - missing help desk email');
+  }
+
+  if (!processEnv.TC_HELP_DESK_TOKEN) {
+    console.log('submitFeedback() - missing help desk login');
+  }
+
   let fromContact = {
     email: processEnv.TC_HELP_DESK_EMAIL,
     name: 'Help Desk',
