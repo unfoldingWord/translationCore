@@ -96,6 +96,15 @@ export const submitFeedback = ({
   category, message, name, email, state,
 }) => {
   const processEnv = getEnv();
+
+  if (!processEnv.TC_HELP_DESK_EMAIL) {
+    console.log('submitFeedback() - missing help desk email');
+  }
+
+  if (!processEnv.TC_HELP_DESK_TOKEN) {
+    console.log('submitFeedback() - missing help desk login');
+  }
+
   let fromContact = {
     email: processEnv.TC_HELP_DESK_EMAIL,
     name: 'Help Desk',
