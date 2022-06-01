@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "minCompatibleVersion": "3.2.0",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
@@ -188,7 +188,7 @@
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "6.0.6",
     "truncate-utf8-bytes": "1.0.2",
-    "tsv-groupdata-parser": "0.10.3",
+    "tsv-groupdata-parser": "0.10.4-alpha.6",
     "usfm-js": "3.3.1",
     "uuid": "3.2.1",
     "word-aligner": "1.0.0",
