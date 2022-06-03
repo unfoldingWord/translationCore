@@ -554,7 +554,10 @@ export function updateGroupIndexForGl(toolName, selectedGL, owner) {
       if (fs.existsSync(categoriesPath)) {
         const categories = fs.readJsonSync(categoriesPath);
 
-        if (categories && categories.languageId === selectedGL) {
+        const glUnchanged = (categories?.languageId === selectedGL) &&
+          (categories?.owner === owner);
+
+        if (glUnchanged) {
           console.log('updateGroupIndexForGl() - language unchanged, skipping');
           return; // we don't need to do anything since language hasn't changed
         }
