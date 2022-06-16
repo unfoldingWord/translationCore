@@ -558,7 +558,7 @@ export function updateGroupIndexForGl(toolName, selectedGL, owner) {
           (categories?.owner === owner);
 
         if (glUnchanged) {
-          console.log('updateGroupIndexForGl() - language unchanged, skipping');
+          console.log('updateGroupIndexForGl() - language/owner unchanged, skipping');
           return; // we don't need to do anything since language hasn't changed
         }
       }
