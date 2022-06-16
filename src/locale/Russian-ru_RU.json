@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "Не удается завершить проверку обновлений исходного контента.",
     "downloading_source_content_updates": "Загрузка исходного содержимого обновлений...",
     "source_content_updates_successful_download": "Обновления исходного контента успешно загружены!",
-    "source_content_updates_unsuccessful_download": "Не удалось загрузить обновления исходного контента.",
+    "source_content_updates_unsuccessful_download": "Failed to complete source content updates:",
     "source_content_up_to_date": "Всё исходное содержимое обновлено.",
     "select_the_gateway_language_content_to_download": "Выберите содержимое базового языка, которое вы хотите загрузить и обновить.",
     "unable_to_check": "Не удалось проверить обновления",

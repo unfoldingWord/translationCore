@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "Tidak dapat menyelesaikan pemeriksaan pembaruan konten sumber.",
     "downloading_source_content_updates": "Mengunduh pembaruan konten sumber...",
     "source_content_updates_successful_download": "Pembaruan konten sumber berhasil diunduh!",
-    "source_content_updates_unsuccessful_download": "Gagal mengunduh pembaruan konten sumber.",
+    "source_content_updates_unsuccessful_download": "Failed to complete source content updates:",
     "source_content_up_to_date": "Semua konten sumber sudah terbaharui.",
     "select_the_gateway_language_content_to_download": "Pilih konten Bahasa Gateway yang ingin Anda unduh dan perbarui.",
     "unable_to_check": "Tidak dapat memeriksa pembaruan",
