@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "Não é possível concluir a verificação de atualizações de conteúdo FONTE.",
     "downloading_source_content_updates": "Baixar atualizações de conteúdo FONTE...",
     "source_content_updates_successful_download": "Atualizações de conteúdo Fonte baixado com êxito!",
-    "source_content_updates_unsuccessful_download": "Failed to complete source content updates:",
+    "source_content_updates_unsuccessful_download": "Falha ao baixar as atualizações de conteúdo FONTE.",
     "source_content_up_to_date": "Todo o conteúdo FONTE está atualizado.",
     "select_the_gateway_language_content_to_download": "Selecione o conteúdo de LÍNGUA PORTÃO que você gostaria de baixar e atualizar.",
     "unable_to_check": "Não foi possível verificar se há atualizações.",
