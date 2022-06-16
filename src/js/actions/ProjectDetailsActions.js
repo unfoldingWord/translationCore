@@ -38,6 +38,7 @@ import {
   DEFAULT_OWNER,
   PROJECTS_PATH,
   TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
 } from '../common/constants';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
@@ -169,6 +170,7 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
     }
 
     const state = getState();
+    dispatch(ResourcesActions.makeSureBiblesLoadedForTool(null, toolName, selectedGL, owner));
     dispatch(ResourcesActions.loadBiblesByLanguageId(selectedGL, owner));
     const toolsGLs = getToolsSelectedGLs(state);
     const previousGLForTool = toolsGLs[toolName];
@@ -188,12 +190,21 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
       selectedOwner: owner,
     });
 
-    if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
-      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL, owner));
-      await dispatch(prepareToolForLoading(toolName));
-      dispatch(batchActions([
-        { type: consts.OPEN_TOOL, name: null },
-      ]));
+    if (ifGlChanged) {
+      if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+        dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL, owner));
+        await dispatch(prepareToolForLoading(toolName));
+        dispatch(batchActions([
+          { type: consts.OPEN_TOOL, name: null },
+        ]));
+      } else if (toolName === TRANSLATION_WORDS) {
+        const projectDir = getProjectSaveLocation(state);
+        ResourcesHelpers.copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true, owner); // copy group data for GL
+        await dispatch(prepareToolForLoading(toolName));
+        dispatch(batchActions([
+          { type: consts.OPEN_TOOL, name: null },
+        ]));
+      }
     }
 
     if (ifGlChanged) { // if GL has been changed

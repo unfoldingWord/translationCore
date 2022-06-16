@@ -323,31 +323,43 @@ export const updateOrigLangPaneSettings = (bookId) => (dispatch, getState) => {
 /**
  * Make sure required bible books for current tool are loaded into resources.
  * @param {object} contextId - context id.
+ * @param {string} toolName_ - optional toolName, otherwise will use current tool
+ * @param {string} selectedGL - optional GL to load
+ * @param {string} glOwner_ - optional GL owner, otherwise will get from current tool
  */
-export const makeSureBiblesLoadedForTool = (contextId) => (dispatch, getState) => {
+export const makeSureBiblesLoadedForTool = (contextId, toolName_, selectedGL, glOwner_) => (dispatch, getState) => {
   console.log('makeSureBiblesLoadedForTool(): contextId', contextId);
   const state = getState();
-  const toolName = getCurrentToolName(state);
-  const glOwner = getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
+  const toolName = toolName_ || getCurrentToolName(state);
+  const glOwner = glOwner_ || getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
   const { bibles } = state.resourcesReducer;
   const bookId = contextId && contextId.reference.bookId || getProjectBookId(state);
 
   dispatch(updateOrigLangPaneSettings(bookId));
-  const resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName);
+  let resources = ResourcesHelpers.getResourcesNeededByTool(state, bookId, toolName, selectedGL, glOwner);
 
   // remove bibles from resources list that are already loaded into resources reducer
   if (bookId && bibles && Array.isArray(resources)) {
-    for (let languageId of Object.keys(bibles)) {
-      if (bibles[languageId]) {
-        for (let bibleId of Object.keys(bibles[languageId])) {
-          const origLangOwner = ResourcesHelpers.getOriginalLangOwner(glOwner);
-          const key = (languageId === ORIGINAL_LANGUAGE) ?
-            resourcesHelpers.addOwnerToKey(BibleHelpers.isOldTestament(bookId) ? Bible.OT_ORIG_LANG : Bible.NT_ORIG_LANG, origLangOwner)
-            : languageId;
-          removeBibleFromList(resources, bibleId, key);
-        }
+    for (let i = 0, l = resources.length; i < l; i++) {
+      const resource = resources[i];
+      let resourceLangId = resource.languageId;
+      let resourceBibleId = resource.bibleId;
+      let owner = glOwner;
+
+      if (BibleHelpers.isOriginalLanguage(resourceLangId)) {
+        resourceLangId = ORIGINAL_LANGUAGE;
+        owner = ResourcesHelpers.getOriginalLangOwner(glOwner);
+      }
+
+      const key = resourcesHelpers.addOwnerToKey(resourceLangId, owner);
+      const bibleFound = bibles[key]?.[resourceBibleId];
+
+      if (bibleFound) { // remove if already loaded
+        resources[i] = null;
       }
     }
+
+    resources = resources.filter(resource => resource); // removed null elements
   }
 
   // load resources not in resources reducer
