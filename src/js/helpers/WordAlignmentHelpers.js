@@ -220,10 +220,10 @@ export function getVerseAlignments(verseSpanAlignments) {
  * @return {{low, hi}} get range of verses in verse span
  */
 export function getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, blankVerseAlignments) {
-  const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseSpan);
+  const { low, high } = verseHelpers.getVerseSpanRange(verseSpan);
 
   // generate raw alignment data for each verse in range
-  for (let verse = low; verse <= hi; verse++) {
+  for (let verse = low; verse <= high; verse++) {
     const originalVerse = origLangChapterJson[verse];
 
     if (originalVerse) {
@@ -232,7 +232,7 @@ export function getRawAlignmentsForVerseSpan(verseSpan, origLangChapterJson, bla
     }
   }
 
-  return { low, hi };
+  return { low, hi: high };
 }
 
 /**

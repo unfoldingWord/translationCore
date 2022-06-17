@@ -558,7 +558,7 @@ export function updateGroupIndexForGl(toolName, selectedGL, owner) {
           (categories?.owner === owner);
 
         if (glUnchanged) {
-          console.log('updateGroupIndexForGl() - language unchanged, skipping');
+          console.log('updateGroupIndexForGl() - language/owner unchanged, skipping');
           return; // we don't need to do anything since language hasn't changed
         }
       }
@@ -1000,17 +1000,19 @@ export function getAvailableScripturePaneSelections(resourceList) {
  * @param {Object} state
  * @param {String} bookId
  * @param {string} toolName - the name of the tool for which resources will be found.
+ * @param {string} selectedGL - optional GL language to load
+ * @param {string} glOwner_ - optional GL owner, otherwise will get from current tool
  * @return {Array} array of resource in scripture panel
  */
-export function getResourcesNeededByTool(state, bookId, toolName) {
+export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, glOwner_) {
   const resources = [];
   const { languageId: olLanguageID, bibleId: olBibleId } = BibleHelpers.getOrigLangforBook(bookId);
-  const glOwner= getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
+  const glOwner= glOwner_ || getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
 
   // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
   // not found throws an error. Should be addressed later by 4858.
-  addResource(resources, 'en', 'ult', DEFAULT_OWNER);
+  addResource(resources, 'en', 'ult', glOwner_ || DEFAULT_OWNER);
 
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
@@ -1033,7 +1035,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
     console.warn('No Scripture Pane Configuration');
   }
   addResource(resources, olLanguageID, olBibleId, getOriginalLangOwner(glOwner)); // make sure loaded even if not in pane settings
-  const gatewayLangId = getToolGatewayLanguage(state, toolName);
+  const gatewayLangId = selectedGL || getToolGatewayLanguage(state, toolName);
   const biblesLoaded = getBibles(state);
   const validBibles = getValidGatewayBiblesForTool(
     toolName,
