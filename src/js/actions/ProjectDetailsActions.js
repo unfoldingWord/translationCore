@@ -190,21 +190,19 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
       selectedOwner: owner,
     });
 
-    if (ifGlChanged) {
-      if (toolName === TRANSLATION_NOTES) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
-        dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL, owner));
-        await dispatch(prepareToolForLoading(toolName));
-        dispatch(batchActions([
-          { type: consts.OPEN_TOOL, name: null },
-        ]));
-      } else if (toolName === TRANSLATION_WORDS) {
-        const projectDir = getProjectSaveLocation(state);
-        ResourcesHelpers.copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true, owner); // copy group data for GL
-        await dispatch(prepareToolForLoading(toolName));
-        dispatch(batchActions([
-          { type: consts.OPEN_TOOL, name: null },
-        ]));
-      }
+    if (toolName === TRANSLATION_NOTES && ifGlChanged) { // checks on tN are based on GL, but tW is based on OrigLang so don't need to be updated on GL change
+      dispatch(ResourcesHelpers.updateGroupIndexForGl(toolName, selectedGL, owner));
+      await dispatch(prepareToolForLoading(toolName));
+      dispatch(batchActions([
+        { type: consts.OPEN_TOOL, name: null },
+      ]));
+    } else if (toolName === TRANSLATION_WORDS && (owner !== previousOwnerForTool)) {
+      const projectDir = getProjectSaveLocation(state);
+      ResourcesHelpers.copyGroupDataToProject(selectedGL, toolName, projectDir, dispatch, true, owner); // copy group data for GL
+      await dispatch(prepareToolForLoading(toolName));
+      dispatch(batchActions([
+        { type: consts.OPEN_TOOL, name: null },
+      ]));
     }
 
     if (ifGlChanged) { // if GL has been changed
