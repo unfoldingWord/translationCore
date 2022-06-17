@@ -20,7 +20,6 @@ import {
   TRANSLATION_WORDS,
   TRANSLATION_HELPS,
   TRANSLATION_NOTES,
-  DOOR43_CATALOG,
 } from '../js/common/constants';
 import { NT_ORIG_LANG, NT_ORIG_LANG_BIBLE } from '../js/common/BooksOfTheBible';
 const middlewares = [thunk];
