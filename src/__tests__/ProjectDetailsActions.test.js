@@ -18,7 +18,9 @@ import {
   USER_RESOURCES_PATH,
   WORD_ALIGNMENT,
   TRANSLATION_WORDS,
-  TRANSLATION_HELPS, TRANSLATION_NOTES,
+  TRANSLATION_HELPS,
+  TRANSLATION_NOTES,
+  DOOR43_CATALOG,
 } from '../js/common/constants';
 import { NT_ORIG_LANG, NT_ORIG_LANG_BIBLE } from '../js/common/BooksOfTheBible';
 const middlewares = [thunk];
@@ -50,6 +52,7 @@ jest.mock('../js/actions/MyProjects/ProjectLoadingActions', () => ({
 }));
 jest.mock('../js/selectors', () => ({
   ...require.requireActual('../js/selectors'),
+  getToolGlOwner: jest.fn(() => DOOR43_CATALOG),
   getToolsByKey: jest.fn(() => ({
     'translationNotes': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
     'wordAlignment': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
