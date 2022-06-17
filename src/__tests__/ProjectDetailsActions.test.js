@@ -52,6 +52,8 @@ jest.mock('../js/actions/MyProjects/ProjectLoadingActions', () => ({
 jest.mock('../js/selectors', () => ({
   ...require.requireActual('../js/selectors'),
   getToolGlOwner: jest.fn(() => `Door43-Catalog`),
+  getProjectBookId: jest.fn(() => `tit`),
+  getBibles: jest.fn(() => {}),
   getToolsByKey: jest.fn(() => ({
     'translationNotes': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
     'wordAlignment': { api: { trigger: (funcName) => funcName === 'getProgress' ? 0 : null } },
