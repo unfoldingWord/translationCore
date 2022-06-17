@@ -370,13 +370,13 @@
     "description": "Open-licensed exegetical notes that provide historical, cultural, and linguistic information for translators. It provides translators and checkers with pertinent, just-in-time information to help them make the best possible translation decisions.",
     "format": "text/tsv",
     "identifier": "tn",
-    "issued": "2022-06-06",
+    "issued": "2022-06-07",
     "language": {
       "direction": "ltr",
       "identifier": "en",
       "title": "English"
     },
-    "modified": "2022-06-06",
+    "modified": "2022-06-07",
     "publisher": "unfoldingWord",
     "relation": [
       "en/ult?v=36",
@@ -1068,5 +1068,5 @@
       ]
     }
   ],
-  "catalog_modified_time": "2022-06-07T05:24:41Z"
+  "catalog_modified_time": "2022-06-07T15:55:01Z"
 }
