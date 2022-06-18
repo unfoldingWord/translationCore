@@ -11,10 +11,12 @@ const {
 } = require('tc-source-content-updater');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
+const packagefile = require('../../package.json');
 
 // TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
 // set to null to remove restriction, or you can add other permitted owners to list
 const filterByOwner = ['Door43-Catalog'];
+const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'] || '3.4.0';
 
 /**
  * find resources to update
@@ -36,7 +38,8 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
-    await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner_)
+    const latestManifestKey = { Bible: { usfmjs: USFMJS_VERSION } };
+    await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner_, latestManifestKey)
       .then(async () => {
         let updateList = [];
 

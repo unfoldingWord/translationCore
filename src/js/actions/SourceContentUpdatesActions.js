@@ -17,7 +17,7 @@ import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 // actions
-import { DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
+import { DEFAULT_ORIG_LANG_OWNER, USFMJS_VERSION } from '../common/constants';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
@@ -102,8 +102,9 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
   if (navigator.onLine) {
     dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
     const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+    const latestManifestKey = { Bible: { usfmjs: USFMJS_VERSION } };
 
-    await SourceContentUpdater.getLatestResources(localResourceList)
+    await SourceContentUpdater.getLatestResources(localResourceList, null, latestManifestKey)
       .then(resources => {
         dispatch(closeAlertDialog());
 
@@ -208,7 +209,8 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
         return !matchedResource;
       });
       resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
-      await SourceContentUpdater.getLatestResources(localResourceList);
+      const latestManifestKey = { Bible: { usfmjs: USFMJS_VERSION } };
+      await SourceContentUpdater.getLatestResources(localResourceList, null, latestManifestKey);
     }
 
     cancelled = false;
