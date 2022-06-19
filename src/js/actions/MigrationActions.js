@@ -1,9 +1,11 @@
 // helpers
 import {
+  areResourcesNewer,
   copySourceContentUpdaterManifest,
   getMissingResources,
-  areResourcesNewer,
-  removeOldThelps, moveResourcesFromOldGrcFolder,
+  moveResourcesFromOldGrcFolder,
+  removeOldThelps,
+  removeOutDatedResources,
 } from '../helpers/ResourcesHelpers';
 
 /**
@@ -14,6 +16,7 @@ import {
 export function migrateResourcesFolder() {
   return (() => {
     console.log('migrateResourcesFolder');
+    removeOutDatedResources();
 
     if (areResourcesNewer()) {
       console.log('migrateResourcesFolder: copying newer resources');

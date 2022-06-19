@@ -38,7 +38,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
-    const latestManifestKey = { Bible: { usfmjs: USFMJS_VERSION } };
+    const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
     await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner_, latestManifestKey)
       .then(async () => {
         let updateList = [];

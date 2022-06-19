@@ -102,7 +102,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
   if (navigator.onLine) {
     dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
     const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
-    const latestManifestKey = { Bible: { usfmjs: USFMJS_VERSION } };
+    const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
 
     await SourceContentUpdater.getLatestResources(localResourceList, null, latestManifestKey)
       .then(resources => {
@@ -209,7 +209,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
         return !matchedResource;
       });
       resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
-      const latestManifestKey = { Bible: { usfmjs: USFMJS_VERSION } };
+      const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
       await SourceContentUpdater.getLatestResources(localResourceList, null, latestManifestKey);
     }
 
