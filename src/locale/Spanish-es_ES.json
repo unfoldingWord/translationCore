@@ -76,8 +76,8 @@
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
   "unknown_networking_error": "${app_name} ha encontrado un error de comunicación desconocido. Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
   "updates": {
-    "organization": "Organization",
-    "resource": "Resource",
+    "organization": "Organización",
+    "resource": "Recurso",
     "check_for_newer_app": "Revisa si hay actualizaciones de software",
     "check_for_content_updates": "Revisa si hay actualizaciones de contenido",
     "update_gateway_language_content": "Actualizar contenido del Idioma de entrada",
@@ -85,7 +85,7 @@
     "failed_checking_for_source_content_updates": "No se puede terminar de verificar las actualizaciones de contenido fuente.",
     "downloading_source_content_updates": "Descargando las actualizaciones del contenido fuente...",
     "source_content_updates_successful_download": "Actualizaciones de contenido fuente descargadas exitosamente!",
-    "source_content_updates_unsuccessful_download": "Error al descargar las actualizaciones del contenido original.",
+    "source_content_updates_unsuccessful_download": "No se ha podido completar la actualización del contenido fuente:",
     "source_content_up_to_date": "Todo el contenido fuente ya se actualizó.",
     "select_the_gateway_language_content_to_download": "Seleccione el contenido del Idioma de estrada que se desea descargar y actualizar.",
     "unable_to_check": "No se puede comprobar si hay actualizaciones",
@@ -96,13 +96,13 @@
     "downloading": "Descargando la actualización",
     "downloading_version": "Descargando la versión ${version}",
     "download_error": "No se puede descargar la actualización.",
-    "downloads_canceled": "Downloading source contents cancelled!",
+    "downloads_canceled": "¡Se ha cancelado la descarga del contenido fuente!",
     "source_label": "Origen:",
     "local_timestamp": "Local:",
     "online_timestamp": "En línea:",
-    "update_error_reason_parse": "parse error",
-    "update_error_reason_download": "download error",
-    "update_error_reason_missing_dependency": "missing dependency"
+    "update_error_reason_parse": "error de análisis",
+    "update_error_reason_download": "error de descarga",
+    "update_error_reason_missing_dependency": "falta dependencia"
   },
   "users": {
     "category": "Categoría:",
@@ -230,7 +230,7 @@
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a ${door43}, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto ${door43}.",
     "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} .",
     "unknown_download_networking_error": "${app_name} ha encontrado un error de comunicación desconocido al intentar descargar el proyecto desde \"${project_url}\".<br/><br/>Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
-    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
+    "project_locked": "El proyecto está bloqueado en:<br/>'${file_path}'. Por favor, reinicie su computadora e inténtelo de nuevo.",
     "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}"
   },
   "project_validation": {
