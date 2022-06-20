@@ -129,7 +129,7 @@ export function areQuotesEqual(projectCheckQuote, resourceQuote) {
  * removes user resources that are outdated
  */
 export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) {
-  const manifestKey = 'usfm-js';
+  const bibleResManifestKey = 'usfm-js';
   const resourcesLanguages = getFilteredSubFolders(resourcesFolder);
 
   for ( const languageId of resourcesLanguages) {
@@ -148,11 +148,11 @@ export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) 
         if (fs.existsSync(manifestPath)) {
           try {
             const manifest = fs.readJsonSync(manifestPath);
-            const localResourceKey = manifest?.[manifestKey];
+            const localResourceKey = manifest?.[bibleResManifestKey];
             const minimumManifestKey = USFMJS_VERSION;
 
             if (!localResourceKey || (ResourceAPI.compareVersions(localResourceKey, minimumManifestKey) < 0)) { // if local manifest key is less than minimum
-              console.log(`removeOutDatedResources() - removing old local resource ${versionPath}, manifest key: ${manifestKey}=${localResourceKey}`);
+              console.log(`removeOutDatedResources() - removing old local resource ${versionPath}, manifest key: ${bibleResManifestKey}=${localResourceKey}`);
               fs.removeSync(versionPath);
             }
           } catch (e) {
