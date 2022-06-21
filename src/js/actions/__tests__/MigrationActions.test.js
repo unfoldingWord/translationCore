@@ -6,7 +6,11 @@ import isEqual from 'deep-equal';
 import * as MigrationActions from '../MigrationActions';
 import { getFoldersInResourceFolder, removeOutDatedResources } from '../../helpers/ResourcesHelpers';
 import {
-  APP_VERSION, STATIC_RESOURCES_PATH, TC_VERSION, USER_RESOURCES_PATH, USFMJS_VERSION
+  APP_VERSION,
+  STATIC_RESOURCES_PATH,
+  TC_VERSION,
+  USER_RESOURCES_PATH,
+  USFMJS_VERSION,
 } from '../../common/constants';
 
 // mocks
@@ -400,7 +404,7 @@ describe('migrate tCore resources', () => {
     verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
   });
 
-  describe('migrate tCore resources', () => {
+  describe('test removeOutDatedResources', () => {
     it('should delete bibles with no usfm-js in manifest', () => {
       // given
       mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
