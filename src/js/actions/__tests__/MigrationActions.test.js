@@ -4,9 +4,9 @@ import fs from 'fs-extra';
 import isEqual from 'deep-equal';
 // helpers
 import * as MigrationActions from '../MigrationActions';
-import { getFoldersInResourceFolder } from '../../helpers/ResourcesHelpers';
+import { getFoldersInResourceFolder, removeOutDatedResources } from '../../helpers/ResourcesHelpers';
 import {
-  APP_VERSION, STATIC_RESOURCES_PATH, TC_VERSION, USER_RESOURCES_PATH,
+  APP_VERSION, STATIC_RESOURCES_PATH, TC_VERSION, USER_RESOURCES_PATH, USFMJS_VERSION
 } from '../../common/constants';
 
 // mocks
@@ -398,6 +398,82 @@ describe('migrate tCore resources', () => {
     const folders = getResourceFolders();
     expect(folders).toMatchSnapshot();
     verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
+  });
+
+  describe('migrate tCore resources', () => {
+    it('should delete bibles with no usfm-js in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(0);
+    });
+
+    it('should delete bibles with older usfm-js version in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+      const destinationManifestPath = path.join(destinationPath, 'manifest.json');
+      const manifest = fs.readJsonSync(destinationManifestPath);
+      manifest['usfm-js'] = '1.0.0';
+      fs.outputJsonSync(destinationManifestPath, manifest);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(0);
+    });
+
+    it('should not delete old bibles with current version usfm-js in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+      const destinationManifestPath = path.join(destinationPath, 'manifest.json');
+      const manifest = fs.readJsonSync(destinationManifestPath);
+      manifest['usfm-js'] = USFMJS_VERSION;
+      fs.outputJsonSync(destinationManifestPath, manifest);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(1);
+    });
+
+    it('should delete bibles with newer usfm-js version in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+      const destinationManifestPath = path.join(destinationPath, 'manifest.json');
+      const manifest = fs.readJsonSync(destinationManifestPath);
+      const versionParts = USFMJS_VERSION.split('.');
+      versionParts[2] = '1' + versionParts[2];
+      manifest['usfm-js'] = versionParts.join('.');
+      fs.outputJsonSync(destinationManifestPath, manifest);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(0);
+    });
   });
 });
 

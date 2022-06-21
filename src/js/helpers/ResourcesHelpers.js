@@ -149,10 +149,10 @@ export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) 
           try {
             const manifest = fs.readJsonSync(manifestPath);
             const localResourceKey = manifest?.[bibleResManifestKey];
-            const minimumManifestKey = USFMJS_VERSION;
+            const neededManifestVersion = USFMJS_VERSION;
 
-            if (!localResourceKey || (ResourceAPI.compareVersions(localResourceKey, minimumManifestKey) < 0)) { // if local manifest key is less than minimum
-              console.log(`removeOutDatedResources() - removing old local resource ${versionPath}, manifest key: ${bibleResManifestKey}=${localResourceKey}`);
+            if (localResourceKey !== neededManifestVersion) { // if local manifest key does not match required
+              console.log(`removeOutDatedResources() - removing incompatible local resource ${versionPath}, manifest key: ${bibleResManifestKey}=${localResourceKey}, needed version is ${neededManifestVersion}`);
               fs.removeSync(versionPath);
             }
           } catch (e) {
