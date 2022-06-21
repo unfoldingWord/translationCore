@@ -9,14 +9,14 @@ const {
   default: SourceContentUpdater,
   apiHelpers,
 } = require('tc-source-content-updater');
+const packagefile = require('../../package.json');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
-const packagefile = require('../../package.json');
 
 // TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
 // set to null to remove restriction, or you can add other permitted owners to list
 const filterByOwner = ['Door43-Catalog'];
-const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'] || '3.4.0';
+const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 
 /**
  * find resources to update
@@ -151,10 +151,15 @@ const areResourcesRecent = (resourcesPath) => {
  * @param {String} resourcesPath
  * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
  * @param {Boolean} uWoriginalLanguage - if true then we also want uW original languages updated
- * @return {Promise<number>}
+ * @return {Promise<number>} return 0 if no error
  */
 const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles, uWoriginalLanguage) => {
   let errors = false;
+
+  if (!USFMJS_VERSION) {
+    console.error(`executeResourcesUpdate() - could not read USFMJS_VERSION`);
+    return 1;
+  }
 
   if (areResourcesRecent(resourcesPath)) {
     console.log('Resources recently updated, so nothing to do');
