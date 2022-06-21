@@ -127,8 +127,15 @@ export function areQuotesEqual(projectCheckQuote, resourceQuote) {
 
 /**
  * removes user resources that are outdated
+ * param {string} resourcesFolder - path to user resources
  */
 export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) {
+  const neededManifestVersion = USFMJS_VERSION;
+
+  if (!neededManifestVersion) {
+    console.error(`removeOutDatedResources() - could not read usfm-js version`);
+  }
+
   const bibleResManifestKey = 'usfm-js';
   const resourcesLanguages = getFilteredSubFolders(resourcesFolder);
 
@@ -149,7 +156,6 @@ export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) 
           try {
             const manifest = fs.readJsonSync(manifestPath);
             const localResourceKey = manifest?.[bibleResManifestKey];
-            const neededManifestVersion = USFMJS_VERSION;
 
             if (localResourceKey !== neededManifestVersion) { // if local manifest key does not match required
               console.log(`removeOutDatedResources() - removing incompatible local resource ${versionPath}, manifest key: ${bibleResManifestKey}=${localResourceKey}, needed version is ${neededManifestVersion}`);

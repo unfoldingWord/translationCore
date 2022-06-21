@@ -157,12 +157,12 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
   let errors = false;
 
   if (!USFMJS_VERSION) {
-    console.error(`executeResourcesUpdate() - could not read USFMJS_VERSION`);
+    console.error(`executeResourcesUpdate() - could not read usfm-js version`);
     return 1;
   }
 
   if (areResourcesRecent(resourcesPath)) {
-    console.log('Resources recently updated, so nothing to do');
+    console.log('executeResourcesUpdate() - Resources recently updated, so nothing to do');
   } else {
     const importsPath = path.join(resourcesPath, 'imports');// Remove old imports folder
 
@@ -175,9 +175,9 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
     errors = await updateResources(languages, resourcesPath, allAlignedBibles, uWoriginalLanguage);
 
     if (errors) {
-      console.log('Errors on downloading updated resources!!');
+      console.log('executeResourcesUpdate() - Errors on downloading updated resources!!');
     }
-    console.log('Zipping up updated resources');
+    console.log('executeResourcesUpdate() - Zipping up updated resources');
 
     languages.forEach(async (languageId) => {
       try {
@@ -192,10 +192,10 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
   }
 
   if (errors) {
-    console.log('Errors on downloading updated resources:\n' + errors);
+    console.error('executeResourcesUpdate() - Errors on downloading updated resources:\n' + errors);
     return 1; // error
   }
-  console.log('Updating Succeeded!!!');
+  console.log('executeResourcesUpdate() - Updating Succeeded!!!');
   return 0; // no error
 };
 

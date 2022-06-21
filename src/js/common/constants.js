@@ -11,7 +11,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
-export const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'] || '3.4.0';
+export const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 // Paths
 export const PROJECTS_PATH = path.join(env.home(), 'translationCore', 'projects');
 export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
