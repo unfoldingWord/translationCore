@@ -32,6 +32,7 @@ import {
   ORIGINAL_LANGUAGE,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   STATIC_RESOURCES_PATH,
+  toolCardCategories,
   TARGET_LANGUAGE,
   TARGET_BIBLE,
   TC_VERSION,
@@ -40,7 +41,7 @@ import {
   TRANSLATION_HELPS,
   TRANSLATION_ACADEMY,
   USER_RESOURCES_PATH,
-  toolCardCategories,
+  USFMJS_VERSION,
 } from '../common/constants';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
@@ -122,6 +123,51 @@ export function areQuotesEqual(projectCheckQuote, resourceQuote) {
     }
   }
   return same;
+}
+
+/**
+ * removes user resources that are outdated
+ * param {string} resourcesFolder - path to user resources
+ */
+export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) {
+  const neededManifestVersion = USFMJS_VERSION;
+
+  if (!neededManifestVersion) {
+    console.error(`removeOutDatedResources() - could not read usfm-js version`);
+  }
+
+  const bibleResManifestKey = 'usfm-js';
+  const resourcesLanguages = getFilteredSubFolders(resourcesFolder);
+
+  for ( const languageId of resourcesLanguages) {
+    const userLanguageResource = path.join(resourcesFolder, languageId);
+    const biblesPath = path.join(userLanguageResource, 'bibles');
+    const bibles = getFilteredSubFolders(biblesPath);
+
+    for (const bible of bibles) {
+      const versionsPath = path.join(biblesPath, bible);
+      const versions = getFilteredSubFolders(versionsPath);
+
+      for (const version of versions) {
+        const versionPath = path.join(versionsPath, version);
+        const manifestPath = path.join(versionPath, 'manifest.json');
+
+        if (fs.existsSync(manifestPath)) {
+          try {
+            const manifest = fs.readJsonSync(manifestPath);
+            const localResourceKey = manifest?.[bibleResManifestKey];
+
+            if (localResourceKey !== neededManifestVersion) { // if local manifest key does not match required
+              console.log(`removeOutDatedResources() - removing incompatible local resource ${versionPath}, manifest key: ${bibleResManifestKey}=${localResourceKey}, needed version is ${neededManifestVersion}`);
+              fs.removeSync(versionPath);
+            }
+          } catch (e) {
+            console.warn(`removeOutDatedResources() - could not remove resource from ${versionPath}`);
+          }
+        }
+      }
+    }
+  }
 }
 
 /**

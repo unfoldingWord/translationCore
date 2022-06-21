@@ -1,19 +1,26 @@
 // helpers
 import {
+  areResourcesNewer,
   copySourceContentUpdaterManifest,
   getMissingResources,
-  areResourcesNewer,
-  removeOldThelps, moveResourcesFromOldGrcFolder,
+  moveResourcesFromOldGrcFolder,
+  removeOldThelps,
+  removeOutDatedResources,
 } from '../helpers/ResourcesHelpers';
 
 /**
  * Run migrations on the user tc resources folder. If it is determined the resources folder was
  * created before the source content updater then it will be deleted and a new resources folder
- * will be copied from tc to the users folder.
+ * will be copied from tc to the user's folder.
+ * param {boolean} removeOutDated - if true then will remove outdated resources
  */
-export function migrateResourcesFolder() {
+export function migrateResourcesFolder(removeOutDated = true) {
   return (() => {
     console.log('migrateResourcesFolder');
+
+    if (removeOutDated) {
+      removeOutDatedResources();
+    }
 
     if (areResourcesNewer()) {
       console.log('migrateResourcesFolder: copying newer resources');
