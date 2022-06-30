@@ -188,7 +188,7 @@
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "6.1.2",
     "truncate-utf8-bytes": "1.0.2",
-    "tsv-groupdata-parser": "0.12.1",
+    "tsv-groupdata-parser": "github:unfoldingWord/tsv-groupdata-parser#feature-mcleanb-7294-ampersandSupport",
     "usfm-js": "3.4.0",
     "uuid": "3.2.1",
     "word-aligner": "1.0.0",
