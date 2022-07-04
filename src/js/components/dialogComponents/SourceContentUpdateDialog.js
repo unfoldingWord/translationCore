@@ -106,16 +106,6 @@ class ContentUpdateDialog extends React.Component {
                 'updates.select_the_gateway_language_content_to_download',
               )}
             </h4>
-            <div style={styles.checkboxContainer}>
-              <Checkbox
-                label={translate('select_all')}
-                checked={allChecked}
-                onCheck={handleSelectAll}
-                style={styles.checkbox}
-                iconStyle={styles.checkboxIconStyle}
-                labelStyle={styles.boldCheckboxLabelStyle}
-              />
-            </div>
             <Divider />
           </div>
           <div style={styles.resourcesList}>
@@ -154,6 +144,40 @@ class ContentUpdateDialog extends React.Component {
               </tbody>
             </table>
           </div>
+        </div>
+        <Divider />
+        <div style={styles.content}>
+          <div>
+            <h4 style={styles.header}>
+              {'Admin Options:\n'}
+            </h4>
+          </div>
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={'Select All - Warning: this can take a long time, and use a lot of disk space!'}
+            checked={allChecked}
+            onCheck={handleSelectAll}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={'Include Pre-Release Resources'}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={'Delete Downloaded Resources'}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
         </div>
       </BaseDialog>
     );
