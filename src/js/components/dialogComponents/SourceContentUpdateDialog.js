@@ -149,13 +149,13 @@ class ContentUpdateDialog extends React.Component {
         <div style={styles.content}>
           <div>
             <h4 style={styles.header}>
-              {'Admin Options:\n'}
+              {translate('admin_options')}
             </h4>
           </div>
         </div>
         <div style={styles.checkboxContainer}>
           <Checkbox
-            label={'Select All - Warning: this can take a long time, and use a lot of disk space!'}
+            label={translate('select_all_resources')}
             checked={allChecked}
             onCheck={handleSelectAll}
             style={styles.checkbox}
@@ -165,15 +165,7 @@ class ContentUpdateDialog extends React.Component {
         </div>
         <div style={styles.checkboxContainer}>
           <Checkbox
-            label={'Include Pre-Release Resources'}
-            style={styles.checkbox}
-            iconStyle={styles.checkboxIconStyle}
-            labelStyle={styles.boldCheckboxLabelStyle}
-          />
-        </div>
-        <div style={styles.checkboxContainer}>
-          <Checkbox
-            label={'Delete Downloaded Resources'}
+            label={translate('include_prerelease')}
             style={styles.checkbox}
             iconStyle={styles.checkboxIconStyle}
             labelStyle={styles.boldCheckboxLabelStyle}
