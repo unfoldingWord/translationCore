@@ -77,6 +77,8 @@ class ContentUpdateDialog extends React.Component {
       onSubitemSelection,
       handleListItemSelection,
       selectedLanguageResources,
+      preRelease,
+      togglePreRelease,
     } = this.props;
 
     const availableLanguageIds = resources.map(
@@ -166,6 +168,8 @@ class ContentUpdateDialog extends React.Component {
         <div style={styles.checkboxContainer}>
           <Checkbox
             label={translate('include_prerelease')}
+            checked={preRelease}
+            onCheck={togglePreRelease}
             style={styles.checkbox}
             iconStyle={styles.checkboxIconStyle}
             labelStyle={styles.boldCheckboxLabelStyle}
@@ -186,6 +190,8 @@ ContentUpdateDialog.propTypes = {
   onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
   selectedLanguageResources: PropTypes.object.isRequired,
+  preRelease: PropTypes.bool.isRequired,
+  togglePreRelease: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;
