@@ -167,7 +167,7 @@ class ContentUpdateDialog extends React.Component {
         </div>
         <div style={styles.checkboxContainer}>
           <Checkbox
-            label={translate('include_prerelease')}
+            label={translate('show_prerelease_resources')}
             checked={preRelease}
             onCheck={togglePreRelease}
             style={styles.checkbox}
