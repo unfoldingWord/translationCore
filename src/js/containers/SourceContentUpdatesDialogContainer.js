@@ -80,13 +80,14 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
 class ContentUpdatesDialogContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { languages: {} };
+    this.state = { languages: {}, preRelease: false };
     this._handleClose = this._handleClose.bind(this);
     this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
     this._handleDownload = this._handleDownload.bind(this);
     this.handleSelectAll = this.handleSelectAll.bind(this);
     this._handleListItemSelection = this._handleListItemSelection.bind(this);
     this.onSubitemSelection = this.onSubitemSelection.bind(this);
+    this.togglePreRelease = this.togglePreRelease.bind(this);
   }
 
   UNSAFE_componentWillReceiveProps(newProps) {
@@ -111,6 +112,13 @@ class ContentUpdatesDialogContainer extends React.Component {
     const { onClose } = this.props;
     this.setState({ languages: {} });
     onClose();
+  }
+
+  togglePreRelease() {
+    const { getListOfSourceContentToUpdate, onClose } = this.props;
+    const preRelease = !this.state.preRelease;
+    getListOfSourceContentToUpdate(onClose, preRelease);
+    this.setState({ preRelease });
   }
 
   handleSelectAll() {
@@ -162,7 +170,7 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _startContentUpdateCheck() {
     const { getListOfSourceContentToUpdate, onClose } = this.props;
-    getListOfSourceContentToUpdate(onClose);
+    getListOfSourceContentToUpdate(onClose, this.state.preRelease);
   }
 
   _handleDownload() {
@@ -170,7 +178,7 @@ class ContentUpdatesDialogContainer extends React.Component {
     this.setState({ languages: {} });
     const resourcesToDownload = languagesObjectToResourcesArray(this.state.languages);
     onClose();
-    downloadSourceContentUpdates(resourcesToDownload);
+    downloadSourceContentUpdates(resourcesToDownload, false, this.state.preRelease);
   }
 
   render() {
@@ -191,6 +199,8 @@ class ContentUpdatesDialogContainer extends React.Component {
             onSubitemSelection={this.onSubitemSelection}
             selectedLanguageResources={this.state.languages}
             handleListItemSelection={this._handleListItemSelection}
+            preRelease={this.state.preRelease}
+            togglePreRelease={this.togglePreRelease}
           />
         </div>
       );

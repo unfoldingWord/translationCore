@@ -94,16 +94,21 @@ function consolidateTwls(languageResources) {
  * Gets the list of source content that needs or can be updated.
  * @param {function} closeSourceContentDialog - Hacky workaround to close the
  * source content dialog in the AppMenu state.
+ * @param {boolean} preRelease - if true include pre-release content
  */
-export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) => (async (dispatch, getState) => {
+export const getListOfSourceContentToUpdate = async (closeSourceContentDialog, preRelease = false) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
   dispatch(resetSourceContentUpdatesReducer());
 
   if (navigator.onLine) {
     dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
     const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+    const config = {
+      filterByOwner: null,
+      stage: preRelease ? 'preprod' : null,
+    };
 
-    await SourceContentUpdater.getLatestResources(localResourceList)
+    await SourceContentUpdater.getLatestResources(localResourceList, config)
       .then(resources => {
         dispatch(closeAlertDialog());
 
@@ -124,7 +129,7 @@ export const getListOfSourceContentToUpdate = async (closeSourceContentDialog) =
         dispatch(
           failedAlertAndRetry(
             closeSourceContentDialog,
-            () => getListOfSourceContentToUpdate(closeSourceContentDialog),
+            () => getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease),
             'updates.failed_checking_for_source_content_updates',
           ),
         );
@@ -176,8 +181,10 @@ function getDownloadErrorList(errors, translate) {
 /**
  * Downloads source content updates using the tc-source-content-updater.
  * @param {array} resourcesToDownload - list of resources to be downloaded.
+ * @param {boolean} refreshUpdates
+ * @param {boolean} preRelease
  */
-export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates = false) => (async (dispatch, getState) => {
+export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates = false, preRelease = false) => (async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const toolName = getCurrentToolName(getState());
   let cancelled = false;
@@ -208,7 +215,12 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
         return !matchedResource;
       });
       resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
-      await SourceContentUpdater.getLatestResources(localResourceList);
+      const config = {
+        filterByOwner: null,
+        stage: preRelease ? 'preprod' : null,
+      };
+
+      await SourceContentUpdater.getLatestResources(localResourceList, config);
     }
 
     cancelled = false;
@@ -250,7 +262,7 @@ export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates
             dispatch(
               failedAlertAndRetry(
                 () => dispatch(closeAlertDialog()),
-                () => downloadSourceContentUpdates(resourcesToDownload, true),
+                () => downloadSourceContentUpdates(resourcesToDownload, true, preRelease),
                 null,
                 alertMessage,
               ),

@@ -77,6 +77,8 @@ class ContentUpdateDialog extends React.Component {
       onSubitemSelection,
       handleListItemSelection,
       selectedLanguageResources,
+      preRelease,
+      togglePreRelease,
     } = this.props;
 
     const availableLanguageIds = resources.map(
@@ -106,16 +108,6 @@ class ContentUpdateDialog extends React.Component {
                 'updates.select_the_gateway_language_content_to_download',
               )}
             </h4>
-            <div style={styles.checkboxContainer}>
-              <Checkbox
-                label={translate('select_all')}
-                checked={allChecked}
-                onCheck={handleSelectAll}
-                style={styles.checkbox}
-                iconStyle={styles.checkboxIconStyle}
-                labelStyle={styles.boldCheckboxLabelStyle}
-              />
-            </div>
             <Divider />
           </div>
           <div style={styles.resourcesList}>
@@ -155,6 +147,34 @@ class ContentUpdateDialog extends React.Component {
             </table>
           </div>
         </div>
+        <Divider />
+        <div style={styles.content}>
+          <div>
+            <h4 style={styles.header}>
+              {translate('admin_options')}
+            </h4>
+          </div>
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={translate('select_all_resources')}
+            checked={allChecked}
+            onCheck={handleSelectAll}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={translate('show_prerelease_resources')}
+            checked={preRelease}
+            onCheck={togglePreRelease}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
+        </div>
       </BaseDialog>
     );
   }
@@ -170,6 +190,8 @@ ContentUpdateDialog.propTypes = {
   onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
   selectedLanguageResources: PropTypes.object.isRequired,
+  preRelease: PropTypes.bool.isRequired,
+  togglePreRelease: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;
