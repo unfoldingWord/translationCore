@@ -46,7 +46,7 @@
     "overwrite-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/el-x-koine tcResources/hi && npm run update-resources",
     "update-apps": "git submodule foreach --recursive git checkout develop && git submodule foreach --recursive git pull",
     "update-attributions": "node scripts/attributions/generateAttributionData.js src/js/components/home/license/attributionData.json",
-    "update-resources": "node --inspect-brk scripts/resources/updateResources.js tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage",
+    "update-resources": "node scripts/resources/updateResources.js tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage",
     "update-version": "node ./scripts/versionScript.js"
   },
   "repository": {
