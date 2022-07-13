@@ -36,7 +36,11 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
-    await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner_)
+    const config = {
+      filterByOwner: filterByOwner_,
+    };
+
+    await sourceContentUpdater.getLatestResources(localResourceList, config)
       .then(async () => {
         let updateList = [];
 
@@ -148,13 +152,13 @@ const areResourcesRecent = (resourcesPath) => {
  * @param {String} resourcesPath
  * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
  * @param {Boolean} uWoriginalLanguage - if true then we also want uW original languages updated
- * @return {Promise<number>}
+ * @return {Promise<number>} return 0 if no error
  */
 const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles, uWoriginalLanguage) => {
   let errors = false;
 
   if (areResourcesRecent(resourcesPath)) {
-    console.log('Resources recently updated, so nothing to do');
+    console.log('executeResourcesUpdate() - Resources recently updated, so nothing to do');
   } else {
     const importsPath = path.join(resourcesPath, 'imports');// Remove old imports folder
 
@@ -167,9 +171,9 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
     errors = await updateResources(languages, resourcesPath, allAlignedBibles, uWoriginalLanguage);
 
     if (errors) {
-      console.log('Errors on downloading updated resources!!');
+      console.log('executeResourcesUpdate() - Errors on downloading updated resources!!');
     }
-    console.log('Zipping up updated resources');
+    console.log('executeResourcesUpdate() - Zipping up updated resources');
 
     languages.forEach(async (languageId) => {
       try {
@@ -184,10 +188,10 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
   }
 
   if (errors) {
-    console.log('Errors on downloading updated resources:\n' + errors);
+    console.error('executeResourcesUpdate() - Errors on downloading updated resources:\n' + errors);
     return 1; // error
   }
-  console.log('Updating Succeeded!!!');
+  console.log('executeResourcesUpdate() - Updating Succeeded!!!');
   return 0; // no error
 };
 
