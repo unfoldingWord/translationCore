@@ -6,7 +6,11 @@ import _ from 'lodash';
 import { getListOfOutdatedSourceContent } from '../selectors/index';
 // actions
 import { confirmOnlineAction } from '../actions/OnlineModeConfirmActions';
-import { getListOfSourceContentToUpdate, downloadSourceContentUpdates } from '../actions/SourceContentUpdatesActions';
+import {
+  downloadSourceContentUpdates,
+  getListOfSourceContentToUpdate,
+  resetSourceContentUpdatesReducer,
+} from '../actions/SourceContentUpdatesActions';
 // components
 import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
 // helpers
@@ -110,6 +114,7 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _handleClose() {
     const { onClose } = this.props;
+    resetSourceContentUpdatesReducer();
     this.setState({ languages: {} });
     onClose();
   }
@@ -224,8 +229,9 @@ const mapStateToProps = (state) => ({ resources: getListOfOutdatedSourceContent(
 
 const mapDispatchToProps = {
   confirmOnlineAction,
-  getListOfSourceContentToUpdate,
   downloadSourceContentUpdates,
+  getListOfSourceContentToUpdate,
+  resetSourceContentUpdatesReducer,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentUpdatesDialogContainer);
