@@ -1,5 +1,5 @@
 {
-  "welcome_to_tc": "Bienvenue à translationCore",
+  "welcome_to_tc": "Bienvenue à ${app}!",
   "get_started": "Commençons !",
   "version": "Version ${version}",
   "instructions": "Mode d'emploi",
@@ -11,7 +11,7 @@
   "success": "Effectué",
   "supported_file_types": "Formats pris en charge",
   "select_project": "Sélectionner un projet",
-  "select_tool": "Outil Sélection",
+  "select_tool": "Sélectionner un outil",
   "select_all": "Tout sélectionner",
   "unselect_all": "Tout désélectionner",
   "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
