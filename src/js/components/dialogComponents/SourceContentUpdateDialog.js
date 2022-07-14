@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
 
+import { USER_RESOURCES_PATH } from '../../common/constants';
+import { deletePreReleaseResources } from '../../actions/SourceContentUpdatesActions';
+import { openAlert } from '../../actions/AlertActions';
 import BaseDialog from './BaseDialog';
 import ResourceListItem from './ResourceListItem';
 
@@ -14,6 +18,13 @@ const styles = {
   checkboxContainer: {
     display: 'flex',
     marginBottom: '20px',
+  },
+  deleteButton: {
+    display: 'flex',
+    width: 'fit-content',
+    height: 'fit-content',
+    padding: '10px',
+    margin: 'auto',
   },
   header: {
     color: '#000000',
@@ -55,6 +66,23 @@ const styles = {
   },
 };
 
+function deletePreReleasePrompt(translate) {
+  return ((dispatch) => {
+    function onOK() {
+      deletePreReleaseResources(USER_RESOURCES_PATH);
+    }
+
+    dispatch(openAlert('delete_pre_release', translate('delete_pre_releases_warning'), {
+      confirmText: translate('buttons.ok'),
+      cancelText: translate('buttons.cancel'),
+      onConfirm: () => {
+        console.log('deletePreReleasePrompt(): User clicked delete preRelease');
+        onOK();
+      },
+    }));
+  });
+}
+
 /**
  * Renders a success dialog
  *
@@ -66,6 +94,15 @@ const styles = {
  * @property {array} resources - array of resources
  */
 class ContentUpdateDialog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handlePreReleasePrompt = this.handlePreReleasePrompt.bind(this);
+  }
+
+  handlePreReleasePrompt() {
+    this.props.deletePreReleasePrompt(this.props.translate);
+  }
+
   render() {
     const {
       open,
@@ -175,6 +212,9 @@ class ContentUpdateDialog extends React.Component {
             labelStyle={styles.boldCheckboxLabelStyle}
           />
         </div>
+        <button className='btn-prime' style={styles.deleteButton} onClick={this.handlePreReleasePrompt} >
+          {translate('delete_pre_releases')}
+        </button>
       </BaseDialog>
     );
   }
@@ -192,6 +232,11 @@ ContentUpdateDialog.propTypes = {
   selectedLanguageResources: PropTypes.object.isRequired,
   preRelease: PropTypes.bool.isRequired,
   togglePreRelease: PropTypes.func.isRequired,
+  deletePreReleasePrompt: PropTypes.func.isRequired,
 };
 
-export default ContentUpdateDialog;
+const mapStateToProps = (state) => ({ });
+
+const mapDispatchToProps = { deletePreReleasePrompt };
+
+export default connect(mapStateToProps, mapDispatchToProps)(ContentUpdateDialog);

@@ -9,6 +9,8 @@
   "save_changes": "மாற்றங்களை சேமியுங்கள்\n",
   "saving_changes": "Saving Changes",
   "success": "வெற்றி",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "ஆதரிக்கப்படும் கோப்பு வகைகள்",
   "select_project": "ஒரு திட்ட தேர்வு",
   "select_tool": "தேர்வு ஒரு கருவி",

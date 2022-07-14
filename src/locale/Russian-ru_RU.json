@@ -9,6 +9,8 @@
   "save_changes": "Сохранить изменения",
   "saving_changes": "Сохранение изменений",
   "success": "Успешно",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "Поддерживаемые типы файлов",
   "select_project": "Выберите проект",
   "select_tool": "Выберите инструмент",

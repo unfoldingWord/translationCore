@@ -9,6 +9,8 @@
   "save_changes": "ફેરફારોને સાચવો",
   "saving_changes": "ફેરફારોને સાચવવામાં આવી રહ્યા છે",
   "success": "સફળતા",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "આધારભૂત ફાઇલના પ્રકારો",
   "select_project": "કોઈએક પ્રોજેક્ટની પસંદગી કરો",
   "select_tool": "કોઈએક સાધનની પસંદગી કરો",
