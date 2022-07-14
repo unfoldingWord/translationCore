@@ -9,6 +9,8 @@
   "save_changes": "Simpan Perubahan",
   "saving_changes": "Simpan Perubahan",
   "success": "Berhasil",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "Tipe File Yang Didukung",
   "select_project": "Pilih sebuah Proyek",
   "select_tool": "Pilih sebuah Alat",

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
-
 import BaseDialog from './BaseDialog';
 import ResourceListItem from './ResourceListItem';
 
@@ -14,6 +13,13 @@ const styles = {
   checkboxContainer: {
     display: 'flex',
     marginBottom: '20px',
+  },
+  deleteButton: {
+    display: 'flex',
+    width: 'fit-content',
+    height: 'fit-content',
+    padding: '10px',
+    margin: 'auto',
   },
   header: {
     color: '#000000',
@@ -79,6 +85,7 @@ class ContentUpdateDialog extends React.Component {
       selectedLanguageResources,
       preRelease,
       togglePreRelease,
+      deletePreReleasePrompt,
     } = this.props;
 
     const availableLanguageIds = resources.map(
@@ -175,6 +182,9 @@ class ContentUpdateDialog extends React.Component {
             labelStyle={styles.boldCheckboxLabelStyle}
           />
         </div>
+        <button className='btn-prime' style={styles.deleteButton} onClick={deletePreReleasePrompt} >
+          {translate('delete_pre_releases')}
+        </button>
       </BaseDialog>
     );
   }
@@ -192,6 +202,7 @@ ContentUpdateDialog.propTypes = {
   selectedLanguageResources: PropTypes.object.isRequired,
   preRelease: PropTypes.bool.isRequired,
   togglePreRelease: PropTypes.func.isRequired,
+  deletePreReleasePrompt: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;

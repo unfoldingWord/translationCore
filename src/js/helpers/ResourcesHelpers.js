@@ -8,6 +8,7 @@ import _ from 'lodash';
 import {
   apiHelpers,
   getOtherTnsOLVersions,
+  resourcesDownloadHelpers,
   resourcesHelpers,
 } from 'tc-source-content-updater';
 // actions
@@ -712,14 +713,17 @@ export function loadProjectGroupIndex(
  * @param dateStr - optional date string to use, if not given with use current
  */
 export const updateSourceContentUpdaterManifest = (dateStr = null) => {
-  const manifest = {
+  const manifestPath = path.join(USER_RESOURCES_PATH,
+    SOURCE_CONTENT_UPDATER_MANIFEST);
+  const oldManifest = fs.readJsonSync(manifestPath);
+  const newManifest = {
+    ...oldManifest,
     modified: generateTimestamp(dateStr),
     [TC_VERSION]: APP_VERSION,
   };
-  const destinationPath = path.join(USER_RESOURCES_PATH,
-    SOURCE_CONTENT_UPDATER_MANIFEST);
   fs.ensureDirSync(USER_RESOURCES_PATH);
-  fs.outputJsonSync(destinationPath, manifest, { spaces: 2 });
+  console.log(`updateSourceContentUpdaterManifest() - updated ${manifestPath} to `, newManifest);
+  fs.outputJsonSync(manifestPath, newManifest, { spaces: 2 });
 };
 
 /**
@@ -732,10 +736,16 @@ export const copySourceContentUpdaterManifest = () => {
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
     const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
     bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
-    const destinationPath = path.join(USER_RESOURCES_PATH,
+    const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    fs.outputJsonSync(destinationPath, bundledManifest, { spaces: 2 });
+    const userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
+    const newManifest = {
+      ...userManifest,
+      ...bundledManifest,
+    };
+    console.log(`copySourceContentUpdaterManifest() - updated ${userSourceContentUpdaterManifestPath} to `, newManifest);
+    fs.outputJsonSync(userSourceContentUpdaterManifestPath, newManifest, { spaces: 2 });
   }
 };
 
@@ -1313,6 +1323,12 @@ export function moveResourcesFromOldGrcFolder() {
  * @return {boolean} - returns true if all old resources can be deleted
  */
 export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath, resourcesPath) {
+  const havePreRelease = resourcesDownloadHelpers.doResourcesContainPreReleaseData(resourcesPath);
+
+  if (havePreRelease) {
+    return false;
+  }
+
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
