@@ -14,6 +14,7 @@ const updateSourceContentUpdaterManifest = resourcesPath => {
   }
   fs.ensureDirSync(resourcesPath);
   manifest.modified = (new Date()).toJSON();
+  console.log(`updateSourceContentUpdaterManifest() - updated ${sourceContentManifestPath} to `, manifest);
   fs.outputJsonSync(sourceContentManifestPath, manifest, { spaces: 2 });
 };
 
