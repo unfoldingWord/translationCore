@@ -715,7 +715,12 @@ export function loadProjectGroupIndex(
 export const updateSourceContentUpdaterManifest = (dateStr = null) => {
   const manifestPath = path.join(USER_RESOURCES_PATH,
     SOURCE_CONTENT_UPDATER_MANIFEST);
-  const oldManifest = fs.readJsonSync(manifestPath);
+  let oldManifest = {};
+
+  if (fs.existsSync(manifestPath)) {
+    oldManifest = fs.readJSONSync(manifestPath);
+  }
+
   const newManifest = {
     ...oldManifest,
     modified: generateTimestamp(dateStr),
@@ -739,7 +744,12 @@ export const copySourceContentUpdaterManifest = () => {
     const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    const userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
+    let userManifest = {};
+
+    if (fs.existsSync(userSourceContentUpdaterManifestPath)) {
+      userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
+    }
+
     const newManifest = {
       ...userManifest,
       ...bundledManifest,
