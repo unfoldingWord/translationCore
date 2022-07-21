@@ -43,7 +43,12 @@ const GlDropDownList = ({
       maxHeight={150}
       value={selectedGL}
       disabled={disabled}
-      floatingLabelStyle={{ color: '#000000' }}
+      floatingLabelStyle={{
+        color: '#000000',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        overflow: 'hidden',
+      }}
       floatingLabelText={floatingLabelText}
       underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
       onChange={(event, index, value) => selectionChange(value)}
