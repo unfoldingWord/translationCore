@@ -715,12 +715,7 @@ export function loadProjectGroupIndex(
 export const updateSourceContentUpdaterManifest = (dateStr = null) => {
   const manifestPath = path.join(USER_RESOURCES_PATH,
     SOURCE_CONTENT_UPDATER_MANIFEST);
-  let oldManifest = {};
-
-  if (fs.existsSync(manifestPath)) {
-    oldManifest = fs.readJSONSync(manifestPath);
-  }
-
+  const oldManifest = readJsonFile(manifestPath) || {};
   const newManifest = {
     ...oldManifest,
     modified: generateTimestamp(dateStr),
@@ -732,6 +727,21 @@ export const updateSourceContentUpdaterManifest = (dateStr = null) => {
 };
 
 /**
+ * read json file with error recovery, returns null on error
+ * @param filePath
+ * @return {*}
+ */
+function readJsonFile(filePath) {
+  try {
+    const data = fs.readJSONSync(filePath);
+    return data;
+  } catch (e) {
+    console.warn(`readJsonFile() - error reading ${filePath}`);
+  }
+  return null;
+}
+
+/**
  * copies the source-content-updater-manifest.json from tc to the users folder
  */
 export const copySourceContentUpdaterManifest = () => {
@@ -739,17 +749,12 @@ export const copySourceContentUpdaterManifest = () => {
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
-    const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+    const bundledManifest = readJsonFile(sourceContentUpdaterManifestPath) || {};
     bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
     const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    let userManifest = {};
-
-    if (fs.existsSync(userSourceContentUpdaterManifestPath)) {
-      userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
-    }
-
+    const userManifest = readJsonFile(userSourceContentUpdaterManifestPath) || {};
     const newManifest = {
       ...userManifest,
       ...bundledManifest,
