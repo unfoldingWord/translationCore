@@ -233,7 +233,7 @@ describe('ResourcesHelpers.preserveNeededOrigLangVersions()', () =>{
     mockOtherTnsOlversions = [neededUgntVersion];
 
     // when
-    const deleteOldResource = ResourcesHelpers.preserveNeededOrigLangVersions('el-x-koine', 'ugnt', ugntPath);
+    const deleteOldResource = ResourcesHelpers.preserveNeededOrigLangVersions('el-x-koine', 'ugnt', ugntPath, USER_RESOURCES_PATH);
 
     // then
     expect(deleteOldResource).toEqual(deleteOldResourceExpected);
