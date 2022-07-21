@@ -9,6 +9,8 @@
   "save_changes": "পরিবর্তনগুলি সংরক্ষণ করুন",
   "saving_changes": "পরিবর্তনগুলি সংরক্ষণ করা ",
   "success": "সাফল্য",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "সমর্থিত ফাইলের ধরণগুলো ",
   "select_project": "একটি প্রকল্প নির্বাচন করুন ",
   "select_tool": "একটি টুল নির্বাচন করুন",

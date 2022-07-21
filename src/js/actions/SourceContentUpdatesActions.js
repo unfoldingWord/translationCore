@@ -1,6 +1,7 @@
 /* eslint-disable require-await */
 /* eslint-disable require-await */
 import path from 'path-extra';
+import fs from 'fs-extra';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import env from 'tc-electron-env';
 import {
@@ -355,3 +356,102 @@ export const promptUserAboutMissingResource = (resourceDetails) => (async (dispa
     ),
   );
 });
+
+/**
+ * gets all the sub folders of folder
+ * @param {string} folder
+ * @returns {*[]}
+ */
+function readSubDirs(folder) {
+  const alignmentFolders = [];
+
+  if (fs.existsSync(folder) && fs.statSync(folder).isDirectory()) {
+    fs.readdirSync(folder).forEach(subFolder => {
+      const subFolderPath = path.join(folder, subFolder);
+
+      if (fs.statSync(subFolderPath).isDirectory() && (folder !== '.DS_Store')) {
+        alignmentFolders.push(subFolderPath);
+      }
+    });
+  }
+  return alignmentFolders;
+}
+
+/**
+ * gets all the sub folders of all the folders
+ * @param {array} folders
+ * @returns {[]}
+ */
+function readSubDirsOfArray(folders) {
+  let subFolders = [];
+
+  for (const folder of folders) {
+    const subFolders_ = readSubDirs(folder);
+    subFolders = subFolders.concat(subFolders_);
+  }
+
+  return subFolders;
+}
+
+/**
+ * gets all the paths to the versions of all resources in resourcesFolder
+ * @param {string} resourcesFolder
+ * @returns {*[]}
+ */
+function getAllResourceVersions(resourcesFolder) {
+  const languages = readSubDirs(resourcesFolder);
+  const resourceTypes = readSubDirsOfArray(languages);
+  const subResourceTypes = readSubDirsOfArray(resourceTypes);
+  const versions = readSubDirsOfArray(subResourceTypes);
+  return versions;
+}
+
+/**
+ * get a list of all resources in resourcesFolder
+ * @param {string} resourcesFolder
+ * @returns {[]}
+ */
+export function getAllResourceManifests(resourcesFolder) {
+  let manifests = [];
+  const versions = getAllResourceVersions(resourcesFolder);
+
+  for (const versionPath of versions) {
+    const manifestPath = path.join(versionPath, 'manifest.json');
+
+    if (fs.existsSync(manifestPath)) {
+      try {
+        const manifest = fs.readJsonSync(manifestPath);
+
+        if (manifest) {
+          manifests.push({
+            manifest,
+            manifestPath,
+            resourcePath: versionPath,
+          });
+        }
+        // eslint-disable-next-line no-empty
+      } catch (e) { }
+    }
+  }
+
+  return manifests;
+}
+
+/**
+ * delete prerelease resources in resourcesFolder
+ * @param {string} resourcesFolder
+ */
+export function deletePreReleaseResources(resourcesFolder) {
+  const resources = getAllResourceManifests(resourcesFolder);
+  const preReleases = resources.filter(resource => (resource.manifest && resource.manifest.stage === 'preprod'));
+
+  for (const preRelease of preReleases) {
+    console.log(`deletePreReleaseResources() - deleting ${preRelease.resourcePath}`);
+
+    try {
+      fs.removeSync(preRelease.resourcePath);
+    } catch (e) {
+      console.error(`deletePreReleaseResources() - could not delete ${preRelease.resourcePath}`, e);
+    }
+  }
+}

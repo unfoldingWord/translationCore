@@ -9,6 +9,8 @@
   "save_changes": "Guardar Cambios",
   "saving_changes": "Guardando cambios",
   "success": "Éxito",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "Tipos de Archivos Compatibles",
   "select_project": "Seleccione un Proyecto",
   "select_tool": "Seleccione una herramienta",

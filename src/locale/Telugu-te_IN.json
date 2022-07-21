@@ -9,6 +9,8 @@
   "save_changes": "మార్పులను భద్రపరచండి",
   "saving_changes": "Saving Changes",
   "success": "విజయం",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "సహకరించే ఫైళ్ళ రకాలు",
   "select_project": "ఒక పథకాన్ని ఎంపిక చెయ్యండి",
   "select_tool": "ఒక పరికరాన్ని ఎంపిక చెయ్యండి",
