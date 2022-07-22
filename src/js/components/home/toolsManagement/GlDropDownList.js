@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // helpers
 import { getLanguageTranslation } from '../../../helpers/localizationHelpers';
 import * as ResourcesHelpers from '../../../helpers/ResourcesHelpers';
+import Hint from '../../Hint';
 
 /**
  * With the `maxHeight` property set, the Select Field will be scrollable
@@ -38,23 +39,30 @@ const GlDropDownList = ({
   const floatingLabelText = selectedGL ? translate('tools.gateway_language') : translate('tools.select_gateway_language');
 
   return (
-    <SelectField
-      id='glddl'
-      maxHeight={150}
-      value={selectedGL}
-      disabled={disabled}
-      floatingLabelStyle={{
-        color: '#000000',
-        textOverflow: 'ellipsis',
-        whiteSpace: 'nowrap',
-        overflow: 'hidden',
-      }}
-      floatingLabelText={floatingLabelText}
-      underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
-      onChange={(event, index, value) => selectionChange(value)}
+    <Hint
+      position={'bottom'}
+      label={floatingLabelText}
+      enabled={!selectedGL}
+      hintLength={28}
     >
-      {GLs}
-    </SelectField>
+      <SelectField
+        id='glddl'
+        maxHeight={150}
+        value={selectedGL}
+        disabled={disabled}
+        floatingLabelStyle={{
+          color: '#000000',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+        }}
+        floatingLabelText={floatingLabelText}
+        underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+        onChange={(event, index, value) => selectionChange(value)}
+      >
+        {GLs}
+      </SelectField>
+    </Hint>
   );
 };
 
