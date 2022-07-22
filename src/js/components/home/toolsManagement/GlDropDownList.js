@@ -41,9 +41,9 @@ const GlDropDownList = ({
   return (
     <Hint
       position={'bottom'}
-      size='medium'
       label={floatingLabelText}
       enabled={!selectedGL}
+      hintLength={28}
     >
       <SelectField
         id='glddl'

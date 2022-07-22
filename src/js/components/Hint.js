@@ -13,6 +13,14 @@ class Hint extends Component {
       enable = this.props.enabled;
     }
 
+    if (enable && this.props.hasOwnProperty('hintLength') ) {
+      const hintLength = this.props.hintLength;
+
+      if (hintLength && label) {
+        enable = label.length > hintLength;
+      }
+    }
+
     if (enable===true) {
       return (
         <span
@@ -37,6 +45,7 @@ Hint.propTypes = {
   position: PropTypes.any,
   label: PropTypes.any,
   enabled: PropTypes.any,
+  hintLength: PropTypes.any, // only show hint if string length is greater then this length
 };
 
 export default Hint;
