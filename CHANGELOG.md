@@ -4,6 +4,7 @@
 
 **Implemented enhancements:**
 
+- Add support for BOM marker on USFM import [\#7353](https://github.com/unfoldingWord/translationCore/issues/7353)
 - Added CatalogNext Support [\#7193](https://github.com/unfoldingWord/translationCore/issues/7193)
 - Updated Electronite to use latest Electron Version 17.3.1 [\#7203](https://github.com/unfoldingWord/translationCore/issues/7203) to fix UI issues with Windows 11 [\#7230](https://github.com/unfoldingWord/translationCore/issues/7230)
 - Added send feedback button to Update resource error dialog [\#7246](https://github.com/unfoldingWord/translationCore/issues/7246)
