@@ -248,7 +248,7 @@ export default class ProjectAPI {
         try {
           fs.copySync(dataPath, destFile);
         } catch (e) {
-          console.warn(`ProjectApi.importCategoryGroupData() = ${dataPath} is missing`, e);
+          console.warn(`ProjectApi.importCategoryGroupData() = ${dataPath} copy failed`, e);
         }
       }
       return true;
