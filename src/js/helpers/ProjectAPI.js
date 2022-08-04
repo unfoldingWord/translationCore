@@ -245,7 +245,11 @@ export default class ProjectAPI {
       }
 
       if (!copied) {
-        fs.copySync(dataPath, destFile);
+        try {
+          fs.copySync(dataPath, destFile);
+        } catch (e) {
+          console.warn(`ProjectApi.importCategoryGroupData() = ${dataPath} is missing`, e);
+        }
       }
       return true;
     }
