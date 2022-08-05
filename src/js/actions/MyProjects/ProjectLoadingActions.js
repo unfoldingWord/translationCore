@@ -68,6 +68,7 @@ import {
   tc_MIN_VERSION_ERROR,
   tc_LAST_OPENED_KEY,
   TRANSLATION_WORDS,
+  VIEW_DATA_PATH,
 } from '../../common/constants';
 import { getUSFMDetails } from '../../helpers/usfmHelpers';
 
@@ -80,38 +81,44 @@ import { getUSFMDetails } from '../../helpers/usfmHelpers';
 const loadViewUrl = (viewUrl, bookId, projectName) => (dispatch) => {
   if (viewUrl) {
     try {
-      const folder = IMPORTS_PATH;
-      const viewUrlPath = path.join(folder, 'viewUrl.usfm');
+      const importspath = IMPORTS_PATH;
+      const viewUrlPath = path.join(importspath, 'viewUrl.usfm');
+      const viewPath = VIEW_DATA_PATH;
+      const viewJsonPath = path.join(viewPath, `${projectName}.json`);
 
-      if (fs.existsSync(folder)) {
-        fs.removeSync(folder);
-      }
-      fs.ensureDirSync(folder);
-      downloadHelpers.download(viewUrl, viewUrlPath).then(results => {
-        if (results.status === 200) {
-          const usfm = fs.readFileSync(viewUrlPath, 'utf8');
+      if (fs.existsSync(viewJsonPath)) {
+        const bibleData = fs.readJsonSync(viewJsonPath);
+        dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
+      } else {
+        fs.ensureDirSync(importspath);
+        downloadHelpers.download(viewUrl, viewUrlPath).then(results => {
+          if (results.status === 200) {
+            const usfm = fs.readFileSync(viewUrlPath, 'utf8');
 
-          if (usfm) {
-            const usfmObject = usfmjs.toJSON(usfm);
-            console.log('json', usfmObject);
-            const details = getUSFMDetails(usfmObject);
-            console.log('details', details);
+            if (usfm) {
+              const usfmObject = usfmjs.toJSON(usfm);
+              console.log('json', usfmObject);
+              const details = getUSFMDetails(usfmObject);
+              console.log('details', details);
 
-            if (bookId === details?.book?.id) {
-              console.log('SUCCESS LOADING, details', details);
-              const bibleData = {
-                ...usfmObject.chapters,
-                manifest: { viewUrl },
-              };
-              dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
-            } else {
-              console.log(`openProject() - wrong book in ${viewUrl}, found '${details?.book?.id}', but needed ${bookId}`);
+              if (bookId === details?.book?.id) {
+                console.log('SUCCESS LOADING, details', details);
+                const bibleData = {
+                  ...usfmObject.chapters,
+                  manifest: { viewUrl },
+                };
+                fs.ensureDirSync(viewPath);
+                fs.writeJsonSync(viewJsonPath, bibleData);
+                dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
+              } else {
+                console.log(`openProject() - wrong book in ${viewUrl}, found '${details?.book?.id}', but needed ${bookId}`);
+              }
             }
+          } else {
+            console.log(`openProject() - failed to load ${viewUrl}, results`, results);
           }
-        } else {
-          console.log(`openProject() - failed to load ${viewUrl}, results`, results);
-        }
-      });
+        });
+      }
     } catch (e) {
       console.log(`openProject() - failed to load ${viewUrl}`, e);
     }
