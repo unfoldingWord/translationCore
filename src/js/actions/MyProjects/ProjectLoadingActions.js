@@ -1,8 +1,10 @@
 /* eslint-disable require-await */
 /* eslint-disable no-await-in-loop */
 import path from 'path-extra';
+import fs from 'fs-extra';
+import usfmjs from 'usfm-js';
 import { batchActions } from 'redux-batched-actions';
-import { apiHelpers } from 'tc-source-content-updater';
+import { apiHelpers, downloadHelpers } from 'tc-source-content-updater';
 import consts from '../ActionTypes';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
@@ -39,6 +41,7 @@ import {
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
+  addNewBible,
   loadSourceBookTranslations,
   loadTargetLanguageBook,
 } from '../ResourcesActions';
@@ -57,6 +60,7 @@ import {
   APP_VERSION,
   DEFAULT_ORIG_LANG_OWNER,
   DEFAULT_OWNER,
+  IMPORTS_PATH,
   MIN_COMPATIBLE_VERSION,
   PROJECTS_PATH,
   tc_MIN_COMPATIBLE_VERSION_KEY,
@@ -65,6 +69,54 @@ import {
   tc_LAST_OPENED_KEY,
   TRANSLATION_WORDS,
 } from '../../common/constants';
+import { getUSFMDetails } from '../../helpers/usfmHelpers';
+
+/**
+ * load USFM file from URL and add to reducer
+ * @param {string} viewUrl
+ * @param {string} bookId
+ * @param {string} projectName
+ */
+const loadViewUrl = (viewUrl, bookId, projectName) => (dispatch) => {
+  if (viewUrl) {
+    try {
+      const folder = IMPORTS_PATH;
+      const viewUrlPath = path.join(folder, 'viewUrl.usfm');
+
+      if (fs.existsSync(folder)) {
+        fs.removeSync(folder);
+      }
+      fs.ensureDirSync(folder);
+      downloadHelpers.download(viewUrl, viewUrlPath).then(results => {
+        if (results.status === 200) {
+          const usfm = fs.readFileSync(viewUrlPath, 'utf8');
+
+          if (usfm) {
+            const usfmObject = usfmjs.toJSON(usfm);
+            console.log('json', usfmObject);
+            const details = getUSFMDetails(usfmObject);
+            console.log('details', details);
+
+            if (bookId === details?.book?.id) {
+              console.log('SUCCESS LOADING, details', details);
+              const bibleData = {
+                ...usfmObject.chapters,
+                manifest: { viewUrl },
+              };
+              dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
+            } else {
+              console.log(`openProject() - wrong book in ${viewUrl}, found '${details?.book?.id}', but needed ${bookId}`);
+            }
+          }
+        } else {
+          console.log(`openProject() - failed to load ${viewUrl}, results`, results);
+        }
+      });
+    } catch (e) {
+      console.log(`openProject() - failed to load ${viewUrl}`, e);
+    }
+  }
+};
 
 /**
  * show Invalid Version Error
@@ -179,6 +231,8 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     const manifest = getProjectManifest(getState());
     const tools = getTools(getState());
     const bookId = (manifest && manifest.project && manifest.project.id) || '';
+    const viewUrl = manifest?.view_url;
+    dispatch(loadViewUrl(viewUrl, bookId, name));
 
     for (const t of tools) {
       // load source book translations
