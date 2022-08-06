@@ -1,7 +1,7 @@
 import { DEFAULT_OWNER } from '../common/constants';
 
 /**
- * gets the list of books in scripture pane
+ * gets the list of bibles in scripture pane
  * @param {Object} state
  * @return {Array}
  */

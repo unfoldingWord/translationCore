@@ -106,7 +106,7 @@ const loadViewUrl = (viewUrl, bookId, projectName) => (dispatch) => {
                 const bibleData = {
                   ...usfmObject.chapters,
                   manifest: {
-                    viewUrl,
+                    view_url: viewUrl,
                     description: viewUrl,
                     direction: details?.language?.direction,
                     language_id: details?.language?.id,
