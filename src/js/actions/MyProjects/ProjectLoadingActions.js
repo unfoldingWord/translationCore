@@ -105,7 +105,14 @@ const loadViewUrl = (viewUrl, bookId, projectName) => (dispatch) => {
                 console.log('SUCCESS LOADING, details', details);
                 const bibleData = {
                   ...usfmObject.chapters,
-                  manifest: { viewUrl },
+                  manifest: {
+                    viewUrl,
+                    description: viewUrl,
+                    direction: details?.language?.direction,
+                    language_id: details?.language?.id,
+                    language_name: details?.language?.name,
+                    resource_id: details?.repo,
+                  },
                 };
                 fs.ensureDirSync(viewPath);
                 fs.writeJsonSync(viewJsonPath, bibleData);
