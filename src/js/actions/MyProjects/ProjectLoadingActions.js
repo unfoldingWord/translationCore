@@ -179,9 +179,8 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName, onFinished)
               fs.writeJsonSync(viewJsonPath, bibleData);
               dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
             } else {
-              const message = `wrong book in ${viewUrl}, found '${details?.book?.id}', but needed ${bookId}`;
-              console.log(`downloadAndLoadViewUrl() - ${message}`);
-              onFinished && onFinished(null, message);
+              console.log(`downloadAndLoadViewUrl() - wrong book in ${viewUrl}, found '${details?.book?.id}', but need '${bookId}'`);
+              onFinished && onFinished(null, ` Wrong book, found '${details?.book?.id}', but need '${bookId}'`);
               return;
             }
           }
