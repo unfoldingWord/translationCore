@@ -1,8 +1,9 @@
-/* eslint-disable require-await */
 /* eslint-disable no-await-in-loop */
+import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
 import usfmjs from 'usfm-js';
+import { TextField } from 'material-ui';
 import { batchActions } from 'redux-batched-actions';
 import { apiHelpers, downloadHelpers } from 'tc-source-content-updater';
 import consts from '../ActionTypes';
@@ -24,9 +25,9 @@ import * as manifestHelpers from '../../helpers/manifestHelpers';
 import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
-  getToolsSelectedGLs,
   getActiveLocaleLanguage,
   getProjectManifest,
+  getProjects,
   getProjectSaveLocation,
   getSelectedToolApi,
   getSourceBook,
@@ -35,9 +36,9 @@ import {
   getToolGatewayLanguage,
   getToolGlOwner,
   getTools,
+  getToolsSelectedGLs,
   getTranslate,
   getUsername,
-  getProjects,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
@@ -63,14 +64,134 @@ import {
   IMPORTS_PATH,
   MIN_COMPATIBLE_VERSION,
   PROJECTS_PATH,
-  tc_MIN_COMPATIBLE_VERSION_KEY,
   tc_EDIT_VERSION_KEY,
-  tc_MIN_VERSION_ERROR,
   tc_LAST_OPENED_KEY,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  tc_MIN_VERSION_ERROR,
   TRANSLATION_WORDS,
   VIEW_DATA_PATH,
 } from '../../common/constants';
 import { getUSFMDetails } from '../../helpers/usfmHelpers';
+
+export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, getState) => {
+  const manifestPath = path.join(projectSaveLocation, 'manifest.json');
+  const manifest = fs.readJsonSync(manifestPath);
+  let projectName = path.basename(projectSaveLocation);
+  let bookId = manifest?.project?.id;
+  const viewUrl = manifest?.view_url;
+  let newUrl = viewUrl || '';
+  const importText = translate('buttons.import_button');
+  const cancelText = translate('buttons.cancel_button');
+
+  function setUrl(newValue) {
+    newUrl = newValue;
+  }
+
+  function callback(buttonPressed) {
+    if (newUrl && (buttonPressed === importText)) {
+      dispatch(downloadAndLoadViewUrl(newUrl, bookId, projectName, (ugnt, error) => {
+        console.log('ugnt', ugnt);
+
+        if (!ugnt) {
+          const message = translate('projects.load_view_url_error',
+            {
+              error_message: error,
+              project_url: newUrl,
+            });
+          dispatch(openAlertDialog(message));
+        }
+      }));
+    }
+    dispatch(closeAlertDialog());
+  }
+
+  dispatch(
+    openOptionDialog(
+      <div>
+        <TextField
+          value={viewUrl}
+          id="view-url-input"
+          className="ViewUrl"
+          fullWidth={true}
+          floatingLabelText={translate('projects.enter_url')}
+          underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+          floatingLabelStyle={{
+            color: 'var(--text-color-dark)',
+            opacity: '0.3',
+            fontWeight: '500',
+          }}
+          onChange={e => setUrl(e.target.value)}
+          autoFocus={true}
+        />
+      </div>, callback, importText, cancelText));
+};
+
+/**
+ * load USFM file from URL and add to reducer
+ * @param {string} viewUrl
+ * @param {string} bookId
+ * @param {string} projectName
+ * @param {function}  onFinished - callback when finished
+ */
+export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName, onFinished) => (dispatch) => {
+  if (viewUrl) {
+    try {
+      const importspath = IMPORTS_PATH;
+      const viewUrlPath = path.join(importspath, 'viewUrl.usfm');
+      const viewPath = VIEW_DATA_PATH;
+      const viewJsonPath = path.join(viewPath, `${projectName}.json`);
+      fs.ensureDirSync(importspath);
+
+      if (fs.existsSync(viewUrlPath)) {
+        fs.removeSync(viewUrlPath);
+      }
+      downloadHelpers.download(viewUrl, viewUrlPath).then(results => { // download to file
+        let usfm;
+
+        if (results.status === 200) {
+          usfm = fs.readFileSync(viewUrlPath, 'utf8');
+
+          if (usfm) {
+            const usfmObject = usfmjs.toJSON(usfm);
+            const details = getUSFMDetails(usfmObject);
+
+            if (bookId === details?.book?.id) {
+              const bibleData = {
+                ...usfmObject.chapters,
+                manifest: {
+                  view_url: viewUrl,
+                  description: viewUrl,
+                  direction: details?.language?.direction,
+                  language_id: details?.language?.id,
+                  language_name: details?.language?.name,
+                  resource_id: details?.repo,
+                },
+              };
+              fs.ensureDirSync(viewPath);
+              fs.writeJsonSync(viewJsonPath, bibleData);
+              dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
+            } else {
+              const message = `wrong book in ${viewUrl}, found '${details?.book?.id}', but needed ${bookId}`;
+              console.log(`downloadAndLoadViewUrl() - ${message}`);
+              onFinished && onFinished(null, message);
+              return;
+            }
+          }
+        } else {
+          usfm = null;
+          console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}, results`, results);
+        }
+        onFinished && onFinished(usfm);
+      }).catch(error => {
+        console.log(`downloadAndLoadViewUrl() - error tyring to load ${viewUrl}`, error);
+        onFinished && onFinished(null, error);
+      });
+    } catch (e) {
+      console.log(`openProject() - failed to load ${viewUrl}`, e);
+      onFinished && onFinished();
+    }
+  }
+};
 
 /**
  * load USFM file from URL and add to reducer
@@ -81,53 +202,14 @@ import { getUSFMDetails } from '../../helpers/usfmHelpers';
 const loadViewUrl = (viewUrl, bookId, projectName) => (dispatch) => {
   if (viewUrl) {
     try {
-      const importspath = IMPORTS_PATH;
-      const viewUrlPath = path.join(importspath, 'viewUrl.usfm');
-      const viewPath = VIEW_DATA_PATH;
-      const viewJsonPath = path.join(viewPath, `${projectName}.json`);
+      const viewJsonPath = path.join(VIEW_DATA_PATH, `${projectName}.json`);
 
       if (fs.existsSync(viewJsonPath)) {
         const bibleData = fs.readJsonSync(viewJsonPath);
         dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
-      } else {
-        fs.ensureDirSync(importspath);
-        downloadHelpers.download(viewUrl, viewUrlPath).then(results => {
-          if (results.status === 200) {
-            const usfm = fs.readFileSync(viewUrlPath, 'utf8');
-
-            if (usfm) {
-              const usfmObject = usfmjs.toJSON(usfm);
-              console.log('json', usfmObject);
-              const details = getUSFMDetails(usfmObject);
-              console.log('details', details);
-
-              if (bookId === details?.book?.id) {
-                console.log('SUCCESS LOADING, details', details);
-                const bibleData = {
-                  ...usfmObject.chapters,
-                  manifest: {
-                    view_url: viewUrl,
-                    description: viewUrl,
-                    direction: details?.language?.direction,
-                    language_id: details?.language?.id,
-                    language_name: details?.language?.name,
-                    resource_id: details?.repo,
-                  },
-                };
-                fs.ensureDirSync(viewPath);
-                fs.writeJsonSync(viewJsonPath, bibleData);
-                dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
-              } else {
-                console.log(`openProject() - wrong book in ${viewUrl}, found '${details?.book?.id}', but needed ${bookId}`);
-              }
-            }
-          } else {
-            console.log(`openProject() - failed to load ${viewUrl}, results`, results);
-          }
-        });
       }
     } catch (e) {
-      console.log(`openProject() - failed to load ${viewUrl}`, e);
+      console.log(`loadViewUrl() - failed to load ${viewUrl}`, e);
     }
   }
 };
@@ -155,7 +237,7 @@ export const showInvalidVersionError = () => (dispatch, getState) => {
  * make sure that the edit versions and minimum compatible versions are up to date in manifest
  * @return {Function}
  */
-export const updateProjectVersion = () => async (dispatch, getState) => {
+export const updateProjectVersion = () => (dispatch, getState) => {
   const manifest = getProjectManifest(getState());
   const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
   const editVersion = manifest[tc_EDIT_VERSION_KEY];
@@ -170,7 +252,7 @@ export const updateProjectVersion = () => async (dispatch, getState) => {
  * updates the time the project was last opened in the project's settings.json file
  * @return {Function}
  */
-export const updateProjectLastOpened = () => async (dispatch) => {
+export const updateProjectLastOpened = () => (dispatch) => {
   dispatch(ProjectDetailsActions.addObjectPropertyToSettings(tc_LAST_OPENED_KEY, new Date()));
 };
 
