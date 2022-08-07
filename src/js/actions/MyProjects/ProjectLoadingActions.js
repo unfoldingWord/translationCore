@@ -72,71 +72,74 @@ import {
   VIEW_DATA_PATH,
 } from '../../common/constants';
 import { getUSFMDetails } from '../../helpers/usfmHelpers';
+import { confirmOnlineAction } from '../OnlineModeConfirmActions';
 
 export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, getState) => {
-  const manifestPath = path.join(projectSaveLocation, 'manifest.json');
-  const manifest = fs.readJsonSync(manifestPath);
-  let projectName = path.basename(projectSaveLocation);
-  let bookId = manifest?.project?.id;
-  const viewUrl = manifest?.view_url;
-  let newUrl = viewUrl || '';
-  const importText = translate('buttons.import_button');
-  const cancelText = translate('buttons.cancel_button');
+  dispatch(confirmOnlineAction(() => {
+    const manifestPath = path.join(projectSaveLocation, 'manifest.json');
+    const manifest = fs.readJsonSync(manifestPath);
+    let projectName = path.basename(projectSaveLocation);
+    let bookId = manifest?.project?.id;
+    const viewUrl = manifest?.view_url;
+    let newUrl = viewUrl || '';
+    const importText = translate('buttons.import_button');
+    const cancelText = translate('buttons.cancel_button');
 
-  function setUrl(newValue) {
-    newUrl = newValue;
-  }
-
-  async function callback(buttonPressed) {
-    if (newUrl && (buttonPressed === importText)) {
-      dispatch(openAlertDialog(<> {newUrl} <br/> {translate('projects.loading_ellipsis')} </>, true));
-      await delay(250);
-      dispatch(downloadAndLoadViewUrl(newUrl, bookId, projectName)).then(results => {
-        let { usfm, error } = results;
-
-        if (!usfm || error) {
-          const message = translate('projects.load_view_url_error',
-            {
-              error_message: error,
-              project_url: newUrl,
-            });
-          dispatch(closeAlertDialog());
-          dispatch(openAlertDialog(message));
-          return;
-        } else {
-          console.log('usfm loaded!');
-          manifest.view_url = newUrl;
-          fs.writeJsonSync(manifestPath, manifest);
-          dispatch(closeAlertDialog());
-        }
-      });
-    } else {
-      dispatch(closeAlertDialog());
+    function setUrl(newValue) {
+      newUrl = newValue;
     }
-  }
 
-  dispatch(
-    openOptionDialog(
-      <div>
-        {projectName}
-        <TextField
-          defaultValue={viewUrl}
-          multiLine
-          rowsMax={4}
-          id="view-url-input"
-          className="ViewUrl"
-          floatingLabelText={translate('projects.enter_url')}
-          // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
-          floatingLabelStyle={{
-            color: 'var(--text-color-dark)',
-            opacity: '0.3',
-            fontWeight: '500',
-          }}
-          onChange={e => setUrl(e.target.value)}
-          autoFocus={true}
-          style={{ width: '500px' }}
-        />
-      </div>, callback, importText, cancelText));
+    async function callback(buttonPressed) {
+      if (newUrl && (buttonPressed === importText)) {
+        dispatch(openAlertDialog(<> {newUrl} <br/> {translate('projects.loading_ellipsis')} </>, true));
+        await delay(250);
+        dispatch(downloadAndLoadViewUrl(newUrl, bookId, projectName)).then(results => {
+          let { usfm, error } = results;
+
+          if (!usfm || error) {
+            const message = translate('projects.load_view_url_error',
+              {
+                error_message: error,
+                project_url: newUrl,
+              });
+            dispatch(closeAlertDialog());
+            dispatch(openAlertDialog(message));
+            return;
+          } else {
+            console.log('usfm loaded!');
+            manifest.view_url = newUrl;
+            fs.writeJsonSync(manifestPath, manifest);
+            dispatch(closeAlertDialog());
+          }
+        });
+      } else {
+        dispatch(closeAlertDialog());
+      }
+    }
+
+    dispatch(
+      openOptionDialog(
+        <div>
+          {projectName}
+          <TextField
+            defaultValue={viewUrl}
+            multiLine
+            rowsMax={4}
+            id="view-url-input"
+            className="ViewUrl"
+            floatingLabelText={translate('projects.enter_url')}
+            // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+            floatingLabelStyle={{
+              color: 'var(--text-color-dark)',
+              opacity: '0.3',
+              fontWeight: '500',
+            }}
+            onChange={e => setUrl(e.target.value)}
+            autoFocus={true}
+            style={{ width: '500px' }}
+          />
+        </div>, callback, importText, cancelText));
+  }));
 };
 
 /**
