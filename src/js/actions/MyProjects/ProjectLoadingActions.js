@@ -98,7 +98,12 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
               error_message: error,
               project_url: newUrl,
             });
+          dispatch(closeAlertDialog());
           dispatch(openAlertDialog(message));
+          return;
+        } else {
+          manifest.view_url = newUrl;
+          fs.writeJsonSync(manifestPath, manifest);
         }
       }));
     }
@@ -109,12 +114,14 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
     openOptionDialog(
       <div>
         <TextField
-          value={viewUrl}
+          defaultValue={viewUrl}
+          multiline
+          rowsMin={2}
+          rowsMax={4}
           id="view-url-input"
           className="ViewUrl"
-          fullWidth={true}
           floatingLabelText={translate('projects.enter_url')}
-          underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+          // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
           floatingLabelStyle={{
             color: 'var(--text-color-dark)',
             opacity: '0.3',
@@ -122,6 +129,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
           }}
           onChange={e => setUrl(e.target.value)}
           autoFocus={true}
+          style={{ width: '500px' }}
         />
       </div>, callback, importText, cancelText));
 };
@@ -145,7 +153,7 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName, onFinished)
       if (fs.existsSync(viewUrlPath)) {
         fs.removeSync(viewUrlPath);
       }
-      downloadHelpers.download(viewUrl, viewUrlPath).then(results => { // download to file
+      downloadHelpers.download(viewUrl, viewUrlPath, null, 1).then(results => { // download to file
         let usfm;
 
         if (results.status === 200) {
