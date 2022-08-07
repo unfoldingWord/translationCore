@@ -87,12 +87,14 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
     newUrl = newValue;
   }
 
-  function callback(buttonPressed) {
+  async function callback(buttonPressed) {
     if (newUrl && (buttonPressed === importText)) {
-      dispatch(downloadAndLoadViewUrl(newUrl, bookId, projectName, (ugnt, error) => {
-        console.log('ugnt', ugnt);
+      dispatch(openAlertDialog(<> {newUrl} <br/> {translate('projects.loading_ellipsis')} </>, true));
+      await delay(250);
+      dispatch(downloadAndLoadViewUrl(newUrl, bookId, projectName)).then(results => {
+        let { usfm, error } = results;
 
-        if (!ugnt) {
+        if (!usfm || error) {
           const message = translate('projects.load_view_url_error',
             {
               error_message: error,
@@ -102,21 +104,24 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
           dispatch(openAlertDialog(message));
           return;
         } else {
+          console.log('usfm loaded!');
           manifest.view_url = newUrl;
           fs.writeJsonSync(manifestPath, manifest);
+          dispatch(closeAlertDialog());
         }
-      }));
+      });
+    } else {
+      dispatch(closeAlertDialog());
     }
-    dispatch(closeAlertDialog());
   }
 
   dispatch(
     openOptionDialog(
       <div>
+        {projectName}
         <TextField
           defaultValue={viewUrl}
-          multiline
-          rowsMin={2}
+          multiLine
           rowsMax={4}
           id="view-url-input"
           className="ViewUrl"
@@ -135,13 +140,34 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
 };
 
 /**
+ * load file from URL and save to destination
+ * @param {string} url
+ * @param {string} destination
+ */
+export const downloadFromUrl = (url, destination) => (dispatch) => new Promise(function (resolve) {
+  if (url) {
+    downloadHelpers.download(url, destination, null, 1).then(results => { // download to file
+      if (results.status === 200) {
+        resolve({});
+      } else {
+        resolve({ error: `returned invalid status ${results.status}` });
+      }
+    }).catch(error => {
+      console.log(`downloadFromUrl() - download from ${url} failed)`, error);
+      resolve({ error } );
+    });
+  } else {
+    resolve({ error: `no URL` });
+  }
+});
+
+/**
  * load USFM file from URL and add to reducer
  * @param {string} viewUrl
  * @param {string} bookId
  * @param {string} projectName
- * @param {function}  onFinished - callback when finished
  */
-export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName, onFinished) => (dispatch) => {
+export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (dispatch) => {
   if (viewUrl) {
     try {
       const importspath = IMPORTS_PATH;
@@ -153,11 +179,12 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName, onFinished)
       if (fs.existsSync(viewUrlPath)) {
         fs.removeSync(viewUrlPath);
       }
-      downloadHelpers.download(viewUrl, viewUrlPath, null, 1).then(results => { // download to file
-        let usfm;
 
-        if (results.status === 200) {
-          usfm = fs.readFileSync(viewUrlPath, 'utf8');
+      const results = await dispatch(downloadFromUrl(viewUrl, viewUrlPath));
+
+      if (!results.error) {
+        try {
+          let usfm = fs.readFileSync(viewUrlPath, 'utf8');
 
           if (usfm) {
             const usfmObject = usfmjs.toJSON(usfm);
@@ -179,23 +206,27 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName, onFinished)
               fs.writeJsonSync(viewJsonPath, bibleData);
               dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
             } else {
-              console.log(`downloadAndLoadViewUrl() - wrong book in ${viewUrl}, found '${details?.book?.id}', but need '${bookId}'`);
-              onFinished && onFinished(null, ` Wrong book, found '${details?.book?.id}', but need '${bookId}'`);
-              return;
+              if (details?.book?.id) {
+                console.log(`downloadAndLoadViewUrl() - wrong book in ${viewUrl}, found '${details?.book?.id}', but need '${bookId}'`);
+                return { error: ` Wrong book, found '${details?.book?.id}', but need '${bookId}'` };
+              } else {
+                console.log(`downloadAndLoadViewUrl() - Invalid USFM: ${usfm.substring(0, 30)}`);
+                return { error: ` Invalid USFM` };
+              }
             }
+            return { usfm, usfmObject };
           }
-        } else {
-          usfm = null;
-          console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}, results`, results);
+        } catch (error) {
+          console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
+          return { error };
         }
-        onFinished && onFinished(usfm);
-      }).catch(error => {
-        console.log(`downloadAndLoadViewUrl() - error tyring to load ${viewUrl}`, error);
-        onFinished && onFinished(null, error);
-      });
-    } catch (e) {
-      console.log(`openProject() - failed to load ${viewUrl}`, e);
-      onFinished && onFinished();
+      } else {
+        console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, results?.error);
+        return { error: results?.error };
+      }
+    } catch (error) {
+      console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
+      return { error };
     }
   }
 };
