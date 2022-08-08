@@ -107,8 +107,11 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
             return;
           } else {
             console.log('usfm loaded!');
+            dispatch(closeProject()); // make sure closed before updating manifest
+            const manifest = fs.readJsonSync(manifestPath);
             manifest.view_url = newUrl;
             fs.writeJsonSync(manifestPath, manifest);
+            dispatch(openProject(projectName));
             dispatch(closeAlertDialog());
           }
         });
