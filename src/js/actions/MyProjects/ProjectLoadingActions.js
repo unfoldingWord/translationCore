@@ -6,6 +6,7 @@ import usfmjs from 'usfm-js';
 import { TextField } from 'material-ui';
 import { batchActions } from 'redux-batched-actions';
 import { apiHelpers, downloadHelpers } from 'tc-source-content-updater';
+import * as YAML from 'yamljs';
 import consts from '../ActionTypes';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
@@ -93,10 +94,15 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
       if (newUrl && (buttonPressed === importText)) {
         dispatch(openAlertDialog(<> {newUrl} <br/> {translate('projects.loading_ellipsis')} </>, true));
         await delay(250);
-        dispatch(downloadAndLoadViewUrl(newUrl, bookId, projectName)).then(results => {
-          let { usfm, error } = results;
+        dispatch(downloadAndLoadViewUrlWithFallback(newUrl, bookId, projectName)).then(results => {
+          let {
+            usfm,
+            error,
+            viewUrl: viewUrl_,
+          } = results;
 
           if (!usfm || error) {
+            console.log(`promptForViewUrl() - download response: ${results}`);
             const message = translate('projects.load_view_url_error',
               {
                 error_message: error,
@@ -104,12 +110,11 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
               });
             dispatch(closeAlertDialog());
             dispatch(openAlertDialog(message));
-            return;
           } else {
-            console.log('usfm loaded!');
+            console.log(`promptForViewUrl() - usfm loaded: ${viewUrl_}`);
             dispatch(closeProject()); // make sure closed before updating manifest
             const manifest = fs.readJsonSync(manifestPath);
-            manifest.view_url = newUrl;
+            manifest.view_url = viewUrl_;
             fs.writeJsonSync(manifestPath, manifest);
             dispatch(openProject(projectName));
             dispatch(closeAlertDialog());
@@ -173,6 +178,81 @@ export const downloadFromUrl = (url, destination) => (dispatch) => new Promise(f
  * @param {string} bookId
  * @param {string} projectName
  */
+export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName) => async (dispatch) => {
+  if (viewUrl) {
+    try {
+      let foundUrl = viewUrl;
+      let results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+
+      if (!results.usfm || results.error) {
+        // get URL parts
+        const urlParts = viewUrl.split('/');
+        console.log(`urlParts`, urlParts);
+
+        if (urlParts.length > 5) {
+          if (urlParts[5].toLowerCase() === 'src') { // try switching to raw
+            const urlParts_ = [...urlParts];
+            urlParts_[5] = 'raw';
+            foundUrl = urlParts_.join('/');
+            results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+          }
+        }
+
+        if (!results.usfm || results.error) {
+          // https://git.door43.org/unfoldingWord/en_ust/src/branch/master/64-2JN.usfm
+          // (9) ['https:', '', 'git.door43.org', 'unfoldingWord', 'en_ust', 'raw', 'branch', 'master', '64-2JN.usfm']
+          if (urlParts.length > 4) {
+            let [protocol, , host, owner, repo, , tagType, tag] = urlParts;
+            let format = 'raw';
+
+            if (!tag) {
+              tagType = 'branch';
+              tag = 'master';
+            }
+
+            const baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            const importspath = IMPORTS_PATH;
+            const manifestPath = path.join(importspath, 'manifest.yaml');
+            fs.ensureDirSync(importspath);
+            results = await dispatch(downloadFromUrl(baseUrl + 'manifest.yaml', manifestPath));
+
+            if (!results.error) {
+              const manifestYaml = fs.readFileSync(manifestPath, 'utf8');
+              const manifest = manifestYaml && YAML.parse(manifestYaml);
+              const projects = manifest?.projects;
+
+              if (projects) {
+                const found = projects.find(project => (project?.identifier === bookId));
+                let foundPath = found?.path;
+
+                if (foundPath) {
+                  // path: './01-GEN.usfm'
+                  if (foundPath.substring(0, 2) === './') {
+                    foundPath = foundPath.substring(2);
+                  }
+                  foundUrl = baseUrl + foundPath;
+                  results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return { ...results, viewUrl: foundUrl };
+    } catch (error) {
+      console.log(`downloadAndLoadViewUrlWithFallback() - failed to load ${viewUrl}`, error);
+      return { error };
+    }
+  }
+};
+
+/**
+ * load USFM file from URL and add to reducer
+ * @param {string} viewUrl
+ * @param {string} bookId
+ * @param {string} projectName
+ */
 export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (dispatch) => {
   if (viewUrl) {
     try {
@@ -214,10 +294,10 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (d
             } else {
               if (details?.book?.id) {
                 console.log(`downloadAndLoadViewUrl() - wrong book in ${viewUrl}, found '${details?.book?.id}', but need '${bookId}'`);
-                return { error: ` Wrong book, found '${details?.book?.id}', but need '${bookId}'` };
+                return { usfm, error: ` Wrong book, found '${details?.book?.id}', but need '${bookId}'` };
               } else {
                 console.log(`downloadAndLoadViewUrl() - Invalid USFM: ${usfm.substring(0, 30)}`);
-                return { error: ` Invalid USFM` };
+                return { usfm, error: ` Invalid USFM` };
               }
             }
             return { usfm, usfmObject };
