@@ -210,11 +210,27 @@ export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName)
               tag = 'master';
             }
 
-            const baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            let baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            const testUrls = [baseUrl];
+            tagType = 'branch'; tag = 'master';
+            baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            testUrls.push(baseUrl);
+            tagType = 'branch'; tag = 'main';
+            baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            testUrls.push(baseUrl);
             const importspath = IMPORTS_PATH;
             const manifestPath = path.join(importspath, 'manifest.yaml');
             fs.ensureDirSync(importspath);
-            results = await dispatch(downloadFromUrl(baseUrl + 'manifest.yaml', manifestPath));
+
+            for (baseUrl of testUrls) {
+              const url = baseUrl + 'manifest.yaml';
+              console.log(`downloadAndLoadViewUrlWithFallback() - trying ${url}`);
+              results = await dispatch(downloadFromUrl(url, manifestPath));
+
+              if (!results.error) {
+                break;
+              }
+            }
 
             if (!results.error) {
               const manifestYaml = fs.readFileSync(manifestPath, 'utf8');
