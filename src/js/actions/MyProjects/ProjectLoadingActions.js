@@ -90,6 +90,20 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
       newUrl = newValue;
     }
 
+    function deleteViewUrl() {
+      console.log('remove viewUrl');
+      updateViewUrl(null);
+    }
+
+    function updateViewUrl(viewUrl_) {
+      dispatch(closeProject()); // make sure closed before updating manifest
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest.view_url = viewUrl_;
+      fs.writeJsonSync(manifestPath, manifest);
+      dispatch(openProject(projectName));
+      dispatch(closeAlertDialog());
+    }
+
     async function callback(buttonPressed) {
       if (newUrl && (buttonPressed === importText)) {
         dispatch(openAlertDialog(<> {newUrl} <br/> {translate('projects.loading_ellipsis')} </>, true));
@@ -112,12 +126,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
             dispatch(openAlertDialog(message));
           } else {
             console.log(`promptForViewUrl() - usfm loaded: ${viewUrl_}`);
-            dispatch(closeProject()); // make sure closed before updating manifest
-            const manifest = fs.readJsonSync(manifestPath);
-            manifest.view_url = viewUrl_;
-            fs.writeJsonSync(manifestPath, manifest);
-            dispatch(openProject(projectName));
-            dispatch(closeAlertDialog());
+            updateViewUrl(viewUrl_);
           }
         });
       } else {
@@ -129,23 +138,33 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
       openOptionDialog(
         <div>
           {projectName}
-          <TextField
-            defaultValue={viewUrl}
-            multiLine
-            rowsMax={4}
-            id="view-url-input"
-            className="ViewUrl"
-            floatingLabelText={translate('projects.enter_url')}
-            // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
-            floatingLabelStyle={{
-              color: 'var(--text-color-dark)',
-              opacity: '0.3',
-              fontWeight: '500',
-            }}
-            onChange={e => setUrl(e.target.value)}
-            autoFocus={true}
-            style={{ width: '500px' }}
-          />
+          <div style={{
+            width: '500px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+            <TextField
+              defaultValue={viewUrl}
+              multiLine
+              rowsMax={4}
+              id="view-url-input"
+              className="ViewUrl"
+              floatingLabelText={translate('projects.enter_url')}
+              // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+              floatingLabelStyle={{
+                color: 'var(--text-color-dark)',
+                opacity: '0.3',
+                fontWeight: '500',
+              }}
+              onChange={e => setUrl(e.target.value)}
+              autoFocus={true}
+              style={{ width: '100%' }}
+            />
+            {viewUrl && <button className='btn-prime' onClick={deleteViewUrl} >
+              {translate('buttons.delete')}
+            </button>}
+          </div>
         </div>, callback, importText, cancelText));
   }));
 };

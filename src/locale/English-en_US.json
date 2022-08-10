@@ -457,7 +457,8 @@
     "retry": "Retry",
     "update": "Update to latest version",
     "ignore_button": "Ignore",
-    "feedback_button": "Send Feedback"
+    "feedback_button": "Send Feedback",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Key Terms",
