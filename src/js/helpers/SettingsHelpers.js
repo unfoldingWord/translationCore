@@ -24,4 +24,3 @@ export function getCurrentPaneSetting(state) {
   }
   return currentPaneSettings;
 }
-

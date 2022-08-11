@@ -1121,6 +1121,7 @@ export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, gl
       addResource(resources, gatewayLangId, bibleId, owner || apiHelpers.DOOR43_CATALOG);
     }
   }
+
   return resources;
 }
 
