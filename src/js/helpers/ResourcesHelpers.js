@@ -1011,7 +1011,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
         if (fs.existsSync(biblesPath)) {
           const biblesFolders = fs.readdirSync(biblesPath)
-            .filter(folder => folder !== '.DS_Store');
+            .filter(folder => folder !== '.DS_Store') || [];
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
