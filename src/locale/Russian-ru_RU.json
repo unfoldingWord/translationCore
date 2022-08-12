@@ -236,7 +236,11 @@
     "dcs_create_new_conflict": "Не удалось создать новое хранилище, поскольку хранилище с таким именем уже существует.<br/><br/>Чтобы загрузить свой проект в ${door43}, необходимо переименовать Ваш локальный проект или переименовать свой проект в ${door43}.",
     "unknown_download_networking_error": "${app_name} столкнулся с неизвестной ошибкой при попытке загрузить проект из \"${project_url}\".<br/><br/>Если эта проблема продолжается, пожалуйста, отправьте \"${user_feedback}\", который является опцией на кнопке \"${actions}\".",
     "project_locked": "Проект заблокирован в:<br/>'${file_path}'. Перезапустите компьютер и повторите попытку.",
-    "known_download_networking_error": "Загрузка проекта ${project_url} не удалась. ${error_message}"
+    "known_download_networking_error": "Загрузка проекта ${project_url} не удалась. ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM ${project_url} failed. ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
