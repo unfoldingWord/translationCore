@@ -127,7 +127,7 @@ class Menu extends React.Component {
               }}
             >
               <Glyphicon glyph='cloud-download' style={glyphStyle}/>
-              <div>{translate('projects.load_view_url')}</div>
+              <div>{translate('projects.load_view_usfm_url')}</div>
             </div>
           </div>
         </Popover>

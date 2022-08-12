@@ -106,7 +106,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
 
     async function callback(buttonPressed) {
       if (newUrl && (buttonPressed === importText)) {
-        dispatch(openAlertDialog(<> {newUrl} <br/> {translate('projects.loading_ellipsis')} </>, true));
+        dispatch(openAlertDialog(translate('projects.loading_usfm_url', { usfm_url: newUrl }), true));
         await delay(250);
         dispatch(downloadAndLoadViewUrlWithFallback(newUrl, bookId, projectName)).then(results => {
           let {
@@ -117,7 +117,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
 
           if (!usfm || error) {
             console.log(`promptForViewUrl() - download response: ${results}`);
-            const message = translate('projects.load_view_url_error',
+            const message = translate('projects.load_view_usfm_url_error',
               {
                 error_message: error,
                 project_url: newUrl,
@@ -150,7 +150,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
               rowsMax={4}
               id="view-url-input"
               className="ViewUrl"
-              floatingLabelText={translate('projects.enter_url')}
+              floatingLabelText={translate('projects.enter_resource_url')}
               // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
               floatingLabelStyle={{
                 color: 'var(--text-color-dark)',
@@ -429,7 +429,7 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
   }));
 
   if (prompted) { // reshow the alert dialog
-    dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+    dispatch(openAlertDialog(translate('projects.loading_usfm_url'), true));
     await delay(300); // for UI to update
   }
 };
