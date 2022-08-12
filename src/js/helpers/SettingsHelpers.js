@@ -1,7 +1,7 @@
 import { DEFAULT_OWNER } from '../common/constants';
 
 /**
- * gets the list of books in scripture pane
+ * gets the list of bibles in scripture pane
  * @param {Object} state
  * @return {Array}
  */
@@ -12,6 +12,10 @@ export function getCurrentPaneSetting(state) {
 
   if (currentPaneSettings) {
     return currentPaneSettings.map(paneSetting => {
+      if (paneSetting.bibleId === 'viewURL') { // strip out old view URLs
+        return null;
+      }
+
       if (!paneSetting.owner) { // if not set, use default
         const owner = DEFAULT_OWNER;
         return {
@@ -20,7 +24,7 @@ export function getCurrentPaneSetting(state) {
         };
       }
       return paneSetting;
-    });
+    }).filter(paneSetting => (!!paneSetting));
   }
   return currentPaneSettings;
 }

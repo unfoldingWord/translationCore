@@ -236,7 +236,11 @@
     "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} .",
     "unknown_download_networking_error": "${app_name} ha encontrado un error de comunicación desconocido al intentar descargar el proyecto desde \"${project_url}\".<br/><br/>Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
     "project_locked": "El proyecto está bloqueado en:<br/>'${file_path}'. Por favor, reinicie su computadora e inténtelo de nuevo.",
-    "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}"
+    "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM ${project_url} failed. ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",
