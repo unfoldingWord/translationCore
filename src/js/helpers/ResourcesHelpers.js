@@ -1094,7 +1094,7 @@ export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, gl
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(glOwner));
+        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(setting.owner || glOwner));
         break; // skip invalid language codes
 
       default:
