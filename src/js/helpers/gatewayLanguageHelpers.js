@@ -132,10 +132,9 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
     let lang = getLanguageByCodeSelection(code);
 
     if (lang) {
-      if (havePreReleaseData) {
+      if (havePreReleaseData) { // TODO blm: need to add checking for pre-release GL
         // const preResources = {};
         // const latestVersionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId));
-        // TODO blm: need to add checking for pre-release GL
         // if wA, check the default GL; if tW check the tWL, if tn check the tN
         // const latestVersionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId));
         // getLatestVersion(dir, ownerStr)
