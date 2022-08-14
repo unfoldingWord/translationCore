@@ -96,7 +96,7 @@ export function prepareToolForLoading(toolName) {
     const language = getToolGatewayLanguage(getState(), toolName);
     dispatch(saveResourcesUsed(toolName, language));
 
-    const currentPaneSettings = getCurrentPaneSetting(getState());
+    const currentPaneSettings = getCurrentPaneSetting(getState()) || [];
     const bibles = getBibles(getState());
     let newPaneSettings = null;
     let preReleaseStr = null;
