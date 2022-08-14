@@ -80,6 +80,7 @@
   "sending_feedback_failed": "Failed to Send Feedback",
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",

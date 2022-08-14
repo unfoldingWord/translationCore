@@ -1011,7 +1011,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
         if (fs.existsSync(biblesPath)) {
           const biblesFolders = fs.readdirSync(biblesPath)
-            .filter(folder => folder !== '.DS_Store');
+            .filter(folder => folder !== '.DS_Store') || [];
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
@@ -1094,7 +1094,7 @@ export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, gl
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(glOwner));
+        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(setting.owner || glOwner));
         break; // skip invalid language codes
 
       default:
@@ -1121,6 +1121,7 @@ export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, gl
       addResource(resources, gatewayLangId, bibleId, owner || apiHelpers.DOOR43_CATALOG);
     }
   }
+
   return resources;
 }
 

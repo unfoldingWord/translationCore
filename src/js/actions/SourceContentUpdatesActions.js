@@ -19,6 +19,7 @@ import * as Bible from '../common/BooksOfTheBible';
 import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 // actions
 import { DEFAULT_ORIG_LANG_OWNER, USFMJS_VERSION } from '../common/constants';
+import { getCurrentPaneSetting } from '../helpers/SettingsHelpers';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
 import {
@@ -28,6 +29,7 @@ import {
 } from './AlertModalActions';
 import consts from './ActionTypes';
 import { confirmOnlineAction } from './OnlineModeConfirmActions';
+import * as SettingsActions from './SettingsActions';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
 const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
@@ -441,7 +443,7 @@ export function getAllResourceManifests(resourcesFolder) {
  * delete prerelease resources in resourcesFolder
  * @param {string} resourcesFolder
  */
-export function deletePreReleaseResources(resourcesFolder) {
+export const deletePreReleaseResources = (resourcesFolder) => ((dispatch, getState) => {
   const resources = getAllResourceManifests(resourcesFolder);
   const preReleases = resources.filter(resource => (resource.manifest && resource.manifest.stage === 'preprod'));
 
@@ -454,4 +456,20 @@ export function deletePreReleaseResources(resourcesFolder) {
       console.error(`deletePreReleaseResources() - could not delete ${preRelease.resourcePath}`, e);
     }
   }
-}
+
+  const currentPaneSettings = getCurrentPaneSetting(getState()) || [];
+  let changed = false;
+
+  for (let i = 0; i < currentPaneSettings.length; i++) {
+    const pane = currentPaneSettings[i];
+
+    if (pane.isPreRelease) {
+      delete pane.isPreRelease;
+      changed = true;
+    }
+  }
+
+  if (changed) {
+    dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', currentPaneSettings));
+  }
+});

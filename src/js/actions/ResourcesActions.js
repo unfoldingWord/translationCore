@@ -344,7 +344,7 @@ export const makeSureBiblesLoadedForTool = (contextId, toolName_, selectedGL, gl
       const resource = resources[i];
       let resourceLangId = resource.languageId;
       let resourceBibleId = resource.bibleId;
-      let owner = glOwner;
+      let owner = resource.owner || glOwner;
 
       if (BibleHelpers.isOriginalLanguage(resourceLangId)) {
         resourceLangId = ORIGINAL_LANGUAGE;
