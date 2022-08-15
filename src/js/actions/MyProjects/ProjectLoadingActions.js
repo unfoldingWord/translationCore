@@ -116,7 +116,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
           } = results;
 
           if (!usfm || error) {
-            console.warn(`promptForViewUrl() - download response: ${results}`);
+            console.warn(`promptForViewUrl() - download response: ${JSON.stringify(results)}`);
             const error_message = error ? error.toString() : 'Invalid USFM';
             const message = translate('projects.load_view_usfm_url_error',
               {
