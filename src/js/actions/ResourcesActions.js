@@ -474,10 +474,11 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
  * @param {String} languageId = the id of the resource language
  * @param {String} category = The category of this tW or tA, e.g. kt, other, translate. Can be blank
  * @param {Boolean} async - if true then do an async file read which does not block UI updates
+ * @param {String} ownerStr
  */
-export const loadResourceArticle = (resourceType, articleId, languageId, category = '', async = false) => ((dispatch) => {
+export const loadResourceArticle = (resourceType, articleId, languageId, category = '', async = false, ownerStr = DEFAULT_OWNER) => ((dispatch) => {
   if (async) {
-    ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category).then((articleData) => {
+    ResourcesHelpers.loadArticleDataAsync(resourceType, articleId, languageId, category, ownerStr).then((articleData) => {
       // populate reducer with markdown data
       dispatch({
         type: consts.ADD_TRANSLATIONHELPS_ARTICLE,
@@ -488,7 +489,7 @@ export const loadResourceArticle = (resourceType, articleId, languageId, categor
       });
     });
   } else {
-    const articleData = ResourcesHelpers.loadArticleData(resourceType, articleId, languageId, category);
+    const articleData = ResourcesHelpers.loadArticleData(resourceType, articleId, languageId, category, ownerStr);
 
     // populate reducer with markdown data
     dispatch({
