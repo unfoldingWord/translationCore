@@ -238,7 +238,7 @@
     "project_locked": "El proyecto está bloqueado en:<br/>'${file_path}'. Por favor, reinicie su computadora e inténtelo de nuevo.",
     "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}",
     "load_view_usfm_url": "Load Bible Resource (USFM)",
-    "load_view_usfm_url_error": "The download of USFM ${project_url} failed. ${error_message}",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
     "enter_resource_url": "Enter Resource URL",
     "loading_usfm_url": "Loading : ${usfm_url}"
   },
