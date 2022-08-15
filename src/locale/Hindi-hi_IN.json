@@ -236,9 +236,9 @@
     "dcs_create_new_conflict": "बनाने के लिए नए भंडार में विफल रहा है क्योंकि एक रिपोजिटरी इस नाम के साथ पहले से ही मौजूद है ।<br/><br/>करने के लिए सक्षम होना करने के लिए अपलोड करने के लिए अपनी परियोजना ${door43}, आप की जरूरत करने के लिए का नाम बदलें या तो अपने स्थानीय परियोजना का नाम बदलें या अपने ${door43} परियोजना है ।",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}",
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
     "load_view_usfm_url": "Load Bible Resource (USFM)",
-    "load_view_usfm_url_error": "The download of USFM ${project_url} failed. ${error_message}",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
     "enter_resource_url": "Enter Resource URL",
     "loading_usfm_url": "Loading : ${usfm_url}"
   },
