@@ -39,6 +39,7 @@ class Menu extends React.Component {
       onExportUSFM,
       onUpload,
       onEdit,
+      onLoadUrl,
       user,
     } = this.props;
     const menuItemStyle = {
@@ -117,6 +118,17 @@ class Menu extends React.Component {
               <Glyphicon glyph='folder-close' style={glyphStyle}/>
               <div>{translate('projects.archive')}</div>
             </div>
+            <hr style={{ margin: '4px 0 0 0' }}/>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                onLoadUrl(projectSaveLocation);
+              }}
+            >
+              <Glyphicon glyph='cloud-download' style={glyphStyle}/>
+              <div>{translate('projects.load_view_usfm_url')}</div>
+            </div>
           </div>
         </Popover>
       </div>
@@ -133,6 +145,7 @@ Menu.propTypes = {
   onUpload: PropTypes.func.isRequired,
   onExportCSV: PropTypes.func.isRequired,
   onExportUSFM: PropTypes.func.isRequired,
+  onLoadUrl: PropTypes.func.isRequired,
 };
 
 export default Menu;

@@ -1,8 +1,12 @@
-/* eslint-disable require-await */
 /* eslint-disable no-await-in-loop */
+import React from 'react';
 import path from 'path-extra';
+import fs from 'fs-extra';
+import usfmjs from 'usfm-js';
+import { TextField } from 'material-ui';
 import { batchActions } from 'redux-batched-actions';
-import { apiHelpers } from 'tc-source-content-updater';
+import { apiHelpers, downloadHelpers } from 'tc-source-content-updater';
+import * as YAML from 'yamljs';
 import consts from '../ActionTypes';
 // actions
 import migrateProject from '../../helpers/ProjectMigration';
@@ -22,9 +26,9 @@ import * as manifestHelpers from '../../helpers/manifestHelpers';
 import ResourceAPI from '../../helpers/ResourceAPI';
 
 import {
-  getToolsSelectedGLs,
   getActiveLocaleLanguage,
   getProjectManifest,
+  getProjects,
   getProjectSaveLocation,
   getSelectedToolApi,
   getSourceBook,
@@ -33,12 +37,13 @@ import {
   getToolGatewayLanguage,
   getToolGlOwner,
   getTools,
+  getToolsSelectedGLs,
   getTranslate,
   getUsername,
-  getProjects,
 } from '../../selectors';
 import { isProjectSupported } from '../../helpers/ProjectValidation/ProjectStructureValidationHelpers';
 import {
+  addNewBible,
   loadSourceBookTranslations,
   loadTargetLanguageBook,
 } from '../ResourcesActions';
@@ -57,14 +62,316 @@ import {
   APP_VERSION,
   DEFAULT_ORIG_LANG_OWNER,
   DEFAULT_OWNER,
+  IMPORTS_PATH,
   MIN_COMPATIBLE_VERSION,
   PROJECTS_PATH,
-  tc_MIN_COMPATIBLE_VERSION_KEY,
   tc_EDIT_VERSION_KEY,
-  tc_MIN_VERSION_ERROR,
   tc_LAST_OPENED_KEY,
+  tc_MIN_COMPATIBLE_VERSION_KEY,
+  tc_MIN_VERSION_ERROR,
   TRANSLATION_WORDS,
+  VIEW_DATA_PATH,
 } from '../../common/constants';
+import { getUSFMDetails } from '../../helpers/usfmHelpers';
+import { confirmOnlineAction } from '../OnlineModeConfirmActions';
+
+export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, getState) => {
+  dispatch(confirmOnlineAction(() => {
+    const manifestPath = path.join(projectSaveLocation, 'manifest.json');
+    const manifest = fs.readJsonSync(manifestPath);
+    let projectName = path.basename(projectSaveLocation);
+    let bookId = manifest?.project?.id;
+    const viewUrl = manifest?.view_url;
+    let newUrl = viewUrl || '';
+    const importText = translate('buttons.import_button');
+    const cancelText = translate('buttons.cancel_button');
+
+    function setUrl(newValue) {
+      newUrl = newValue;
+    }
+
+    function deleteViewUrl() {
+      console.log('remove viewUrl');
+      updateViewUrl(null);
+    }
+
+    function updateViewUrl(viewUrl_) {
+      dispatch(closeProject()); // make sure closed before updating manifest
+      const manifest = fs.readJsonSync(manifestPath);
+      manifest.view_url = viewUrl_;
+      fs.writeJsonSync(manifestPath, manifest);
+      dispatch(openProject(projectName));
+      dispatch(closeAlertDialog());
+    }
+
+    async function callback(buttonPressed) {
+      if (newUrl && (buttonPressed === importText)) {
+        dispatch(openAlertDialog(translate('projects.loading_usfm_url', { usfm_url: newUrl }), true));
+        await delay(250);
+        dispatch(downloadAndLoadViewUrlWithFallback(newUrl, bookId, projectName)).then(results => {
+          let {
+            usfm,
+            error,
+            viewUrl: viewUrl_,
+          } = results;
+
+          if (!usfm || error) {
+            console.log(`promptForViewUrl() - download response: ${results}`);
+            const message = translate('projects.load_view_usfm_url_error',
+              {
+                error_message: error,
+                project_url: newUrl,
+              });
+            dispatch(closeAlertDialog());
+            dispatch(openAlertDialog(message));
+          } else {
+            console.log(`promptForViewUrl() - usfm loaded: ${viewUrl_}`);
+            updateViewUrl(viewUrl_);
+          }
+        });
+      } else {
+        dispatch(closeAlertDialog());
+      }
+    }
+
+    dispatch(
+      openOptionDialog(
+        <div>
+          {projectName}
+          <div style={{
+            width: '500px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+            <TextField
+              defaultValue={viewUrl}
+              multiLine
+              rowsMax={4}
+              id="view-url-input"
+              className="ViewUrl"
+              floatingLabelText={translate('projects.enter_resource_url')}
+              // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+              floatingLabelStyle={{
+                color: 'var(--text-color-dark)',
+                opacity: '0.3',
+                fontWeight: '500',
+              }}
+              onChange={e => setUrl(e.target.value)}
+              autoFocus={true}
+              style={{ width: '100%' }}
+            />
+            {viewUrl && <button className='btn-prime' onClick={deleteViewUrl} >
+              {translate('buttons.delete')}
+            </button>}
+          </div>
+        </div>, callback, importText, cancelText));
+  }));
+};
+
+/**
+ * load file from URL and save to destination
+ * @param {string} url
+ * @param {string} destination
+ */
+export const downloadFromUrl = (url, destination) => (dispatch) => new Promise(function (resolve) {
+  if (url) {
+    downloadHelpers.download(url, destination, null, 1).then(results => { // download to file
+      if (results.status === 200) {
+        resolve({});
+      } else {
+        resolve({ error: `returned invalid status ${results.status}` });
+      }
+    }).catch(error => {
+      console.log(`downloadFromUrl() - download from ${url} failed)`, error);
+      resolve({ error } );
+    });
+  } else {
+    resolve({ error: `no URL` });
+  }
+});
+
+/**
+ * load USFM file from URL and add to reducer
+ * @param {string} viewUrl
+ * @param {string} bookId
+ * @param {string} projectName
+ */
+export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName) => async (dispatch) => {
+  if (viewUrl) {
+    try {
+      let foundUrl = viewUrl;
+      let results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+
+      if (!results.usfm || results.error) {
+        // get URL parts
+        const urlParts = viewUrl.split('/');
+        console.log(`urlParts`, urlParts);
+
+        if (urlParts.length > 5) {
+          if (urlParts[5].toLowerCase() === 'src') { // try switching to raw
+            const urlParts_ = [...urlParts];
+            urlParts_[5] = 'raw';
+            foundUrl = urlParts_.join('/');
+            results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+          }
+        }
+
+        if (!results.usfm || results.error) {
+          // https://git.door43.org/unfoldingWord/en_ust/src/branch/master/64-2JN.usfm
+          // (9) ['https:', '', 'git.door43.org', 'unfoldingWord', 'en_ust', 'raw', 'branch', 'master', '64-2JN.usfm']
+          if (urlParts.length > 4) {
+            let [protocol, , host, owner, repo, , tagType, tag] = urlParts;
+            let format = 'raw';
+
+            if (!tag) {
+              tagType = 'branch';
+              tag = 'master';
+            }
+
+            let baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            const testUrls = [baseUrl];
+            tagType = 'branch'; tag = 'master';
+            baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            testUrls.push(baseUrl);
+            tagType = 'branch'; tag = 'main';
+            baseUrl = `${protocol}//${host}/${owner}/${repo}/${format}/${tagType}/${tag}/`;
+            testUrls.push(baseUrl);
+            const importspath = IMPORTS_PATH;
+            const manifestPath = path.join(importspath, 'manifest.yaml');
+            fs.ensureDirSync(importspath);
+
+            for (baseUrl of testUrls) {
+              const url = baseUrl + 'manifest.yaml';
+              console.log(`downloadAndLoadViewUrlWithFallback() - trying ${url}`);
+              results = await dispatch(downloadFromUrl(url, manifestPath));
+
+              if (!results.error) {
+                break;
+              }
+            }
+
+            if (!results.error) {
+              const manifestYaml = fs.readFileSync(manifestPath, 'utf8');
+              const manifest = manifestYaml && YAML.parse(manifestYaml);
+              const projects = manifest?.projects;
+
+              if (projects) {
+                const found = projects.find(project => (project?.identifier === bookId));
+                let foundPath = found?.path;
+
+                if (foundPath) {
+                  // path: './01-GEN.usfm'
+                  if (foundPath.substring(0, 2) === './') {
+                    foundPath = foundPath.substring(2);
+                  }
+                  foundUrl = baseUrl + foundPath;
+                  results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return { ...results, viewUrl: foundUrl };
+    } catch (error) {
+      console.log(`downloadAndLoadViewUrlWithFallback() - failed to load ${viewUrl}`, error);
+      return { error };
+    }
+  }
+};
+
+/**
+ * load USFM file from URL and add to reducer
+ * @param {string} viewUrl
+ * @param {string} bookId
+ * @param {string} projectName
+ */
+export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (dispatch) => {
+  if (viewUrl) {
+    try {
+      const importspath = IMPORTS_PATH;
+      const viewUrlPath = path.join(importspath, 'viewUrl.usfm');
+      const viewPath = VIEW_DATA_PATH;
+      const viewJsonPath = path.join(viewPath, `${projectName}.json`);
+      fs.ensureDirSync(importspath);
+
+      if (fs.existsSync(viewUrlPath)) {
+        fs.removeSync(viewUrlPath);
+      }
+
+      const results = await dispatch(downloadFromUrl(viewUrl, viewUrlPath));
+
+      if (!results.error) {
+        try {
+          let usfm = fs.readFileSync(viewUrlPath, 'utf8');
+
+          if (usfm) {
+            const usfmObject = usfmjs.toJSON(usfm);
+            const details = getUSFMDetails(usfmObject);
+
+            if (bookId === details?.book?.id) {
+              const bibleData = {
+                ...usfmObject.chapters,
+                manifest: {
+                  view_url: viewUrl,
+                  description: viewUrl,
+                  direction: details?.language?.direction,
+                  language_id: details?.language?.id,
+                  language_name: details?.language?.name,
+                  resource_id: details?.repo,
+                },
+              };
+              fs.ensureDirSync(viewPath);
+              fs.writeJsonSync(viewJsonPath, bibleData);
+              dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
+            } else {
+              if (details?.book?.id) {
+                console.log(`downloadAndLoadViewUrl() - wrong book in ${viewUrl}, found '${details?.book?.id}', but need '${bookId}'`);
+                return { usfm, error: ` Wrong book, found '${details?.book?.id}', but need '${bookId}'` };
+              } else {
+                console.log(`downloadAndLoadViewUrl() - Invalid USFM: ${usfm.substring(0, 30)}`);
+                return { usfm, error: ` Invalid USFM` };
+              }
+            }
+            return { usfm, usfmObject };
+          }
+        } catch (error) {
+          console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
+          return { error };
+        }
+      } else {
+        console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, results?.error);
+        return { error: results?.error };
+      }
+    } catch (error) {
+      console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
+      return { error };
+    }
+  }
+};
+
+/**
+ * load USFM file from URL and add to reducer
+ * @param {string} viewUrl
+ * @param {string} bookId
+ * @param {string} projectName
+ */
+const loadViewUrl = (viewUrl, bookId, projectName) => (dispatch) => {
+  if (viewUrl) {
+    try {
+      const viewJsonPath = path.join(VIEW_DATA_PATH, `${projectName}.json`);
+
+      if (fs.existsSync(viewJsonPath)) {
+        const bibleData = fs.readJsonSync(viewJsonPath);
+        dispatch(addNewBible('url', 'viewURL', bibleData, projectName));
+      }
+    } catch (e) {
+      console.log(`loadViewUrl() - failed to load ${viewUrl}`, e);
+    }
+  }
+};
 
 /**
  * show Invalid Version Error
@@ -89,7 +396,7 @@ export const showInvalidVersionError = () => (dispatch, getState) => {
  * make sure that the edit versions and minimum compatible versions are up to date in manifest
  * @return {Function}
  */
-export const updateProjectVersion = () => async (dispatch, getState) => {
+export const updateProjectVersion = () => (dispatch, getState) => {
   const manifest = getProjectManifest(getState());
   const minVersion = manifest[tc_MIN_COMPATIBLE_VERSION_KEY];
   const editVersion = manifest[tc_EDIT_VERSION_KEY];
@@ -104,7 +411,7 @@ export const updateProjectVersion = () => async (dispatch, getState) => {
  * updates the time the project was last opened in the project's settings.json file
  * @return {Function}
  */
-export const updateProjectLastOpened = () => async (dispatch) => {
+export const updateProjectLastOpened = () => (dispatch) => {
   dispatch(ProjectDetailsActions.addObjectPropertyToSettings(tc_LAST_OPENED_KEY, new Date()));
 };
 
@@ -122,7 +429,7 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
   }));
 
   if (prompted) { // reshow the alert dialog
-    dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
+    dispatch(openAlertDialog(translate('projects.loading_usfm_url'), true));
     await delay(300); // for UI to update
   }
 };
@@ -179,6 +486,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     const manifest = getProjectManifest(getState());
     const tools = getTools(getState());
     const bookId = (manifest && manifest.project && manifest.project.id) || '';
+    dispatch(loadViewUrl(manifest?.view_url, bookId, name));
 
     for (const t of tools) {
       // load source book translations

@@ -16,6 +16,7 @@ export const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 export const PROJECTS_PATH = path.join(env.home(), 'translationCore', 'projects');
 export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
 export const IMPORTS_PATH = path.join(env.home(), 'translationCore', 'imports');
+export const VIEW_DATA_PATH = path.join(env.home(), 'translationCore', 'viewUrl');
 export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 export const TEMP_IMPORT_PATH = path.join(env.home(), 'translationCore', 'imports', 'temp');
 export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');

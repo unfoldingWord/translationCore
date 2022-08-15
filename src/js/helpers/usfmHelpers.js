@@ -153,6 +153,8 @@ export function getUSFMDetails(usfmObject) {
     let tcField = headerIDArray[headerIDArray.length - 1] || '';
 
     if (tcField.trim() === 'tc') {
+      details.repo = headerIDArray[1];
+
       // Checking for tC field to parse with more information than standard usfm.
       for (let index in headerIDArray) {
         let languageCodeArray = headerIDArray[index].trim().split('_');

@@ -24,7 +24,7 @@ function deletePreReleasePrompt(translate, onClose) {
   return ((dispatch) => {
     function onOK() {
       let resourcesFolder = USER_RESOURCES_PATH;
-      deletePreReleaseResources(resourcesFolder);
+      dispatch(deletePreReleaseResources(resourcesFolder));
       resourcesDownloadHelpers.setResourcesContainPreReleaseData(resourcesFolder, false);
       onClose && onClose();
     }
