@@ -233,8 +233,8 @@ const mapDispatchToProps = (dispatch) => ({
   makeSureBiblesLoadedForTool: (contextId) => {
     dispatch(makeSureBiblesLoadedForTool(contextId));
   },
-  loadResourceArticle(resourceType, articleId, languageId, category, async) {
-    dispatch(loadResourceArticle(resourceType, articleId, languageId, category, async));
+  loadResourceArticle(resourceType, articleId, languageId, category, async, ownerStr) {
+    dispatch(loadResourceArticle(resourceType, articleId, languageId, category, async, ownerStr));
   },
   updateTargetVerse(chapter, verse, text) {
     dispatch(updateTargetVerse(chapter, verse, text));
