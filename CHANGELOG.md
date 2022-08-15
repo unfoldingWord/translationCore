@@ -4,6 +4,8 @@
 
 **Implemented enhancements:**
 
+- Add ability to Load Bibles by URL to tCore Scripture pane.  [\#7375](https://github.com/unfoldingWord/translationCore/issues/7375)
+- Add support for BOM marker on USFM import [\#7353](https://github.com/unfoldingWord/translationCore/issues/7353)
 - Add French Locale [\#7364](https://github.com/unfoldingWord/translationCore/issues/7364)
 - Add Button to delete pre-release downloaded resources [\#7363](https://github.com/unfoldingWord/translationCore/issues/7363)
 - support Pre-release testing in Catalog Next [\#7343](https://github.com/unfoldingWord/translationCore/issues/7343)
