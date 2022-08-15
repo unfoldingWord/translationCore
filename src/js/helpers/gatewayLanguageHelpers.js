@@ -5,7 +5,11 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
 import { getAlignedText, verseHelpers } from 'tc-ui-toolkit';
-import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
+import {
+  apiHelpers,
+  resourcesHelpers,
+  resourcesDownloadHelpers,
+} from 'tc-source-content-updater';
 import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
   LEXICONS,
@@ -121,12 +125,21 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
   const glRequirements = getGlRequirementsForTool(toolName);
   const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, toolName);
   const supportedLanguageOwner = Object.keys(languageBookData);
+  const havePreReleaseData = resourcesDownloadHelpers.doResourcesContainPreReleaseData(USER_RESOURCES_PATH);
   const supportedLanguages = supportedLanguageOwner.map(langAndOwner => {
     const { owner, version: code } = resourcesHelpers.splitVersionAndOwner(langAndOwner);
 
     let lang = getLanguageByCodeSelection(code);
 
     if (lang) {
+      if (havePreReleaseData) { // TODO blm: need to add checking for pre-release GL
+        // const preResources = {};
+        // const latestVersionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId));
+        // if wA, check the default GL; if tW check the tWL, if tn check the tN
+        // const latestVersionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId));
+        // getLatestVersion(dir, ownerStr)
+      }
+
       lang = _.cloneDeep(lang); // make duplicate before modifying
       const bookData = languageBookData[langAndOwner];
       lang.default_literal = bookData.default_literal;

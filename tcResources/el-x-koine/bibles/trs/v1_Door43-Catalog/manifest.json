@@ -640,7 +640,8 @@
   "remoteModifiedTime": "2022-04-21T18:39:55Z",
   "description": "Gateway Language",
   "catalog_modified_time": "2022-04-21T18:39:55Z",
-  "usfm-js": "3.4.0",
+  "usfm-js": "3.4.1",
   "version": "1",
-  "modifiedTime": "2022-04-21T18:39:55Z"
+  "modifiedTime": "2022-04-21T18:39:55Z",
+  "stage": "prod"
 }

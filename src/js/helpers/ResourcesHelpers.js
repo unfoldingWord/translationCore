@@ -715,12 +715,7 @@ export function loadProjectGroupIndex(
 export const updateSourceContentUpdaterManifest = (dateStr = null) => {
   const manifestPath = path.join(USER_RESOURCES_PATH,
     SOURCE_CONTENT_UPDATER_MANIFEST);
-  let oldManifest = {};
-
-  if (fs.existsSync(manifestPath)) {
-    oldManifest = fs.readJSONSync(manifestPath);
-  }
-
+  const oldManifest = readJsonFile(manifestPath) || {};
   const newManifest = {
     ...oldManifest,
     modified: generateTimestamp(dateStr),
@@ -732,6 +727,21 @@ export const updateSourceContentUpdaterManifest = (dateStr = null) => {
 };
 
 /**
+ * read json file with error recovery, returns null on error
+ * @param filePath
+ * @return {*}
+ */
+function readJsonFile(filePath) {
+  try {
+    const data = fs.readJSONSync(filePath);
+    return data;
+  } catch (e) {
+    console.warn(`readJsonFile() - error reading ${filePath}`);
+  }
+  return null;
+}
+
+/**
  * copies the source-content-updater-manifest.json from tc to the users folder
  */
 export const copySourceContentUpdaterManifest = () => {
@@ -739,17 +749,12 @@ export const copySourceContentUpdaterManifest = () => {
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
-    const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+    const bundledManifest = readJsonFile(sourceContentUpdaterManifestPath) || {};
     bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
     const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    let userManifest = {};
-
-    if (fs.existsSync(userSourceContentUpdaterManifestPath)) {
-      userManifest = fs.readJSONSync(userSourceContentUpdaterManifestPath);
-    }
-
+    const userManifest = readJsonFile(userSourceContentUpdaterManifestPath) || {};
     const newManifest = {
       ...userManifest,
       ...bundledManifest,
@@ -1006,7 +1011,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
         if (fs.existsSync(biblesPath)) {
           const biblesFolders = fs.readdirSync(biblesPath)
-            .filter(folder => folder !== '.DS_Store');
+            .filter(folder => folder !== '.DS_Store') || [];
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
@@ -1089,7 +1094,7 @@ export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, gl
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(glOwner));
+        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(setting.owner || glOwner));
         break; // skip invalid language codes
 
       default:
@@ -1116,6 +1121,7 @@ export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, gl
       addResource(resources, gatewayLangId, bibleId, owner || apiHelpers.DOOR43_CATALOG);
     }
   }
+
   return resources;
 }
 

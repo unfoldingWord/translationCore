@@ -130,7 +130,7 @@ class ContentUpdateDialog extends React.Component {
                   <th style={styles.lastTd}>
                     {translate('updates.online_timestamp')}
                   </th>
-                  <th></th>
+                  <th/>
                 </tr>
                 {resources.map((languageResources) => {
                   const resourcesSelectedForLanguage = selectedLanguageResources[languageResources.languageId];

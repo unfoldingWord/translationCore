@@ -11,6 +11,7 @@ import {
   deletePreReleaseResources,
   downloadSourceContentUpdates,
   getListOfSourceContentToUpdate,
+  resetSourceContentUpdatesReducer,
 } from '../actions/SourceContentUpdatesActions';
 // components
 import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
@@ -23,7 +24,7 @@ function deletePreReleasePrompt(translate, onClose) {
   return ((dispatch) => {
     function onOK() {
       let resourcesFolder = USER_RESOURCES_PATH;
-      deletePreReleaseResources(resourcesFolder);
+      dispatch(deletePreReleaseResources(resourcesFolder));
       resourcesDownloadHelpers.setResourcesContainPreReleaseData(resourcesFolder, false);
       onClose && onClose();
     }
@@ -141,6 +142,7 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _handleClose() {
     const { onClose } = this.props;
+    resetSourceContentUpdatesReducer();
     this.setState({ languages: {} });
     onClose();
   }
@@ -264,6 +266,7 @@ const mapDispatchToProps = {
   deletePreReleasePrompt,
   downloadSourceContentUpdates,
   getListOfSourceContentToUpdate,
+  resetSourceContentUpdatesReducer,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentUpdatesDialogContainer);

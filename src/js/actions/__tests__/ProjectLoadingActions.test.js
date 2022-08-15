@@ -160,7 +160,7 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     };
   });
 
-  it('when edit version and minimum missing, then update', async () => {
+  it('when edit version and minimum missing, then update', () => {
     // given
     const expectUpdate = true;
     const initialState = {
@@ -175,13 +175,13 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     const store = mockStore(initialState);
 
     // when
-    await store.dispatch(ProjectLoadingActions.updateProjectVersion());
+    store.dispatch(ProjectLoadingActions.updateProjectVersion());
 
     //then
     validateVersions(store, expectUpdate);
   });
 
-  it('when edit version different, then update', async () => {
+  it('when edit version different, then update', () => {
     // given
     const expectUpdate = true;
     manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = APP_VERSION;
@@ -198,13 +198,13 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     const store = mockStore(initialState);
 
     // when
-    await store.dispatch(ProjectLoadingActions.updateProjectVersion());
+    store.dispatch(ProjectLoadingActions.updateProjectVersion());
 
     //then
     validateVersions(store, expectUpdate);
   });
 
-  it('when minimum version different, then update', async () => {
+  it('when minimum version different, then update', () => {
     // given
     const expectUpdate = true;
     manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = '0.10.0';
@@ -221,13 +221,13 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     const store = mockStore(initialState);
 
     // when
-    await store.dispatch(ProjectLoadingActions.updateProjectVersion());
+    store.dispatch(ProjectLoadingActions.updateProjectVersion());
 
     //then
     validateVersions(store, expectUpdate);
   });
 
-  it('when edit version and minimum are the same, no update', async () => {
+  it('when edit version and minimum are the same, no update', () => {
     // given
     const expectUpdate = false;
     manifest[tc_MIN_COMPATIBLE_VERSION_KEY] = MIN_COMPATIBLE_VERSION;
@@ -244,7 +244,7 @@ describe('ProjectLoadingActions.updateProjectVersion', () => {
     const store = mockStore(initialState);
 
     // when
-    await store.dispatch(ProjectLoadingActions.updateProjectVersion());
+    store.dispatch(ProjectLoadingActions.updateProjectVersion());
 
     //then
     validateVersions(store, expectUpdate);
