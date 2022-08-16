@@ -437,7 +437,7 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
   }));
 
   if (prompted) { // reshow the alert dialog
-    dispatch(openAlertDialog(translate('projects.loading_usfm_url'), true));
+    dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
     await delay(300); // for UI to update
   }
 };
