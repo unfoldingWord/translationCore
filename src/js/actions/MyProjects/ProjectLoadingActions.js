@@ -87,7 +87,7 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
     const cancelText = translate('buttons.cancel_button');
 
     function setUrl(newValue) {
-      newUrl = newValue;
+      newUrl = (newValue || '').trim();
     }
 
     function deleteViewUrl() {
@@ -116,14 +116,15 @@ export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, g
           } = results;
 
           if (!usfm || error) {
-            console.log(`promptForViewUrl() - download response: ${results}`);
+            console.warn(`promptForViewUrl() - download response: ${JSON.stringify(results)}`);
+            const error_message = error ? error.toString() : 'Invalid USFM';
             const message = translate('projects.load_view_usfm_url_error',
               {
-                error_message: error,
+                error_message,
                 project_url: newUrl,
               });
             dispatch(closeAlertDialog());
-            dispatch(openAlertDialog(message));
+            delay(250).then(() => dispatch(openAlertDialog(message)));
           } else {
             console.log(`promptForViewUrl() - usfm loaded: ${viewUrl_}`);
             updateViewUrl(viewUrl_);
@@ -218,8 +219,6 @@ export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName)
         }
 
         if (!results.usfm || results.error) {
-          // https://git.door43.org/unfoldingWord/en_ust/src/branch/master/64-2JN.usfm
-          // (9) ['https:', '', 'git.door43.org', 'unfoldingWord', 'en_ust', 'raw', 'branch', 'master', '64-2JN.usfm']
           if (urlParts.length > 4) {
             let [protocol, , host, owner, repo, , tagType, tag] = urlParts;
             let format = 'raw';
@@ -246,7 +245,10 @@ export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName)
               console.log(`downloadAndLoadViewUrlWithFallback() - trying ${url}`);
               results = await dispatch(downloadFromUrl(url, manifestPath));
 
-              if (!results.error) {
+              if (results.error) {
+                console.warn(`downloadAndLoadViewUrlWithFallback() - error reading ${url}`, results.error);
+              } else {
+                console.log(`downloadAndLoadViewUrlWithFallback() - success reading ${url}`);
                 break;
               }
             }
@@ -267,7 +269,13 @@ export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName)
                   }
                   foundUrl = baseUrl + foundPath;
                   results = await dispatch(downloadAndLoadViewUrl(foundUrl, bookId, projectName));
+                } else {
+                  console.warn(`downloadAndLoadViewUrlWithFallback() - manifest did not have book with ID = ${bookId}`);
+                  results.error = `manifest did not have book with ID = ${bookId}`;
                 }
+              } else {
+                console.warn(`downloadAndLoadViewUrlWithFallback() - manifest did not have projects ${JSON.stringify(manifest)}`);
+                results.error = 'manifest did not have projects';
               }
             }
           }
@@ -276,7 +284,7 @@ export const downloadAndLoadViewUrlWithFallback = (viewUrl, bookId, projectName)
 
       return { ...results, viewUrl: foundUrl };
     } catch (error) {
-      console.log(`downloadAndLoadViewUrlWithFallback() - failed to load ${viewUrl}`, error);
+      console.warn(`downloadAndLoadViewUrlWithFallback() - failed to load ${viewUrl}`, error);
       return { error };
     }
   }
@@ -331,22 +339,22 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (d
                 console.log(`downloadAndLoadViewUrl() - wrong book in ${viewUrl}, found '${details?.book?.id}', but need '${bookId}'`);
                 return { usfm, error: ` Wrong book, found '${details?.book?.id}', but need '${bookId}'` };
               } else {
-                console.log(`downloadAndLoadViewUrl() - Invalid USFM: ${usfm.substring(0, 30)}`);
+                console.warn(`downloadAndLoadViewUrl() - Invalid USFM: ${usfm.substring(0, 30)}`);
                 return { usfm, error: ` Invalid USFM` };
               }
             }
             return { usfm, usfmObject };
           }
         } catch (error) {
-          console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
+          console.warn(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
           return { error };
         }
       } else {
-        console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, results?.error);
+        console.warn(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, results?.error);
         return { error: results?.error };
       }
     } catch (error) {
-      console.log(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
+      console.warn(`downloadAndLoadViewUrl() - failed to load ${viewUrl}`, error);
       return { error };
     }
   }
@@ -429,7 +437,7 @@ const doValidationAndPrompting = (projectDir, translate) => async (dispatch) => 
   }));
 
   if (prompted) { // reshow the alert dialog
-    dispatch(openAlertDialog(translate('projects.loading_usfm_url'), true));
+    dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
     await delay(300); // for UI to update
   }
 };
