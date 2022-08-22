@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import path from 'path-extra';
 import { TextField } from 'material-ui';
 // selectors
 // actions
 // components
 // helpers
 import { getProjectManifest } from '../selectors';
-import Konami from "konami-code-js";
-
+import { loadAlignments } from '../helpers/searchHelper';
+import { getOrigLangforBook } from '../helpers/bibleHelpers';
+import { ALIGNMENT_DATA_PATH } from '../common/constants';
 
 /**
  * Renders a dialog displaying search options.
@@ -23,24 +25,43 @@ class AlignmentSearchDialogContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { alignmentData: null, searchStr: '' };
-    this._handleClose = this._handleClose.bind(this);
+    this.setSearchStr = this.setSearchStr.bind(this);
   }
 
-  UNSAFE_componentWillMount() {
-    if (this.props.manifest) {
-      if (!this.state.alignmentData) {
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.open && !this.state.alignmentData) {
+      const bookId = this.props?.manifest?.project?.id;
+      const resourceId = this.props?.manifest?.resource?.id;
+      const targetLanguageId = this.props?.manifest?.target_language?.id;
+
+      if (bookId && resourceId&& targetLanguageId) {
+        this.loadAlignmentData(bookId, targetLanguageId, resourceId);
+      } else {
+        console.warn(`no current project manifest`);
       }
-    } else {
-      console.warn(`no current project manifest`);
     }
   }
 
-  _handleDownload() {
-    this.setState({ languages: {} });
+  loadAlignmentData(bookId, targetLanguageId, resourceId) {
+    const originalLangId = getOrigLangforBook(bookId)?.languageId;
+    const fileName = `${targetLanguageId}_${resourceId}_${originalLangId}`;
+    const jsonPath = path.join(ALIGNMENT_DATA_PATH, `${fileName}.json`);
+    const alignmentData = loadAlignments(jsonPath);
+
+    if (alignmentData) {
+      console.log('AlignmentSearchDialogContainer - loaded alignment data');
+      this.setState({ alignmentData });
+    } else {
+      console.log('AlignmentSearchDialogContainer - FAILED to load alignment data');
+    }
+  }
+
+  setSearchStr(search) {
+    this.setState({ searchStr: search });
   }
 
   render() {
-    const { open, translate } = this.props;
+    const { open } = this.props;
 
     if (open && this.state.alignmentData) {
       return (
@@ -50,15 +71,15 @@ class AlignmentSearchDialogContainer extends React.Component {
             multiLine
             rowsMax={4}
             id="search-input"
-            className="ViewUrl"
-            floatingLabelText={translate('projects.enter_resource_url')}
+            className="Search"
+            floatingLabelText={'Enter Search String'}
             // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
             floatingLabelStyle={{
               color: 'var(--text-color-dark)',
               opacity: '0.3',
               fontWeight: '500',
             }}
-            onChange={e => setUrl(e.target.value)}
+            onChange={e => this.setSearchStr(e.target.value)}
             autoFocus={true}
             style={{ width: '100%' }}
           />

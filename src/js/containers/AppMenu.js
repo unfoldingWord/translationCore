@@ -11,6 +11,7 @@ import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
 import SourceContentUpdatesDialogContainer from './SourceContentUpdatesDialogContainer';
+import AlignmentSearchDialogContainer from './AlignmentSearchDialogContainer';
 
 const APP_UPDATE = 'app_update';
 const CONTENT_UPDATE = 'content_update';
@@ -134,7 +135,7 @@ class AppMenu extends React.Component {
           translate={translate}
           onClose={this.closeDialog(CONTENT_UPDATE)}/>
 
-        <SourceContentUpdatesDialogContainer open={this.isDialogOpen(APP_SEARCH)}
+        <AlignmentSearchDialogContainer open={this.isDialogOpen(APP_SEARCH)}
           translate={translate}
           onClose={this.closeDialog(APP_SEARCH)}/>
       </div>

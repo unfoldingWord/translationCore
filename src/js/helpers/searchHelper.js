@@ -109,30 +109,35 @@ export function buildSearchRegex(search, fullWord, caseInsensitive) {
 }
 
 export function loadAlignments(jsonPath) {
-  const alignments = fs.readJsonSync(jsonPath);
-  const baseName = path.parse(jsonPath).name;
-  const [targetLang, descriptor, origLang] = baseName.split('_');
+  try {
+    const alignments = fs.readJsonSync(jsonPath);
+    const baseName = path.parse(jsonPath).name;
+    const [targetLang, descriptor, origLang] = baseName.split('_');
 
-  const {
-    lemmaAlignments,
-    targetAlignments,
-    sourceAlignments,
-  } = indexAlignments(alignments);
-  const lemmaKeys = getSortedKeys(lemmaAlignments, origLang);
-  const sourceKeys = getSortedKeys(sourceAlignments, origLang);
-  const targetKeys = getSortedKeys(targetAlignments, targetLang);
-  const target = { keys: targetKeys, alignments: targetAlignments };
-  const source = { keys: sourceKeys, alignments: sourceAlignments };
-  const lemma = { keys: lemmaKeys, alignments: lemmaAlignments };
-  return {
-    alignments,
-    targetLang,
-    descriptor,
-    origLang,
-    target,
-    lemma,
-    source,
-  };
+    const {
+      lemmaAlignments,
+      targetAlignments,
+      sourceAlignments,
+    } = indexAlignments(alignments);
+    const lemmaKeys = getSortedKeys(lemmaAlignments, origLang);
+    const sourceKeys = getSortedKeys(sourceAlignments, origLang);
+    const targetKeys = getSortedKeys(targetAlignments, targetLang);
+    const target = { keys: targetKeys, alignments: targetAlignments };
+    const source = { keys: sourceKeys, alignments: sourceAlignments };
+    const lemma = { keys: lemmaKeys, alignments: lemmaAlignments };
+    return {
+      alignments,
+      targetLang,
+      descriptor,
+      origLang,
+      target,
+      lemma,
+      source,
+    };
+  } catch (e) {
+    console.warn(`loadAlignments() - could not read ${jsonPath}`);
+  }
+  return null;
 }
 
 export function searchAlignmentsSub(search, flags, keys, alignments) {
