@@ -16,6 +16,7 @@ const APP_UPDATE = 'app_update';
 const CONTENT_UPDATE = 'content_update';
 const FEEDBACK = 'feedback';
 const APP_LOCALE = 'app_locale';
+const APP_SEARCH = 'app_search';
 
 /**
  * This component renders the global application menu.
@@ -112,6 +113,9 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
             primaryText={translate('change_locale')}
             leftIcon={<TranslateIcon/>}/>
+          <MenuItem onClick={this.openDialog(APP_SEARCH)}
+            primaryText={'Search'}
+            leftIcon={<TranslateIcon/>}/>
         </PopoverMenu>
 
         <FeedbackDialogContainer open={this.isDialogOpen(FEEDBACK)}
@@ -129,6 +133,10 @@ class AppMenu extends React.Component {
         <SourceContentUpdatesDialogContainer open={this.isDialogOpen(CONTENT_UPDATE)}
           translate={translate}
           onClose={this.closeDialog(CONTENT_UPDATE)}/>
+
+        <SourceContentUpdatesDialogContainer open={this.isDialogOpen(APP_SEARCH)}
+          translate={translate}
+          onClose={this.closeDialog(APP_SEARCH)}/>
       </div>
 
     );
