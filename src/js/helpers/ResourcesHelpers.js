@@ -1541,11 +1541,12 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
  * @param {String} articleId
  * @param {String} languageId
  * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @param {String} ownerStr
  * @returns {String} - the content of the article
  */
-export const loadArticleData = (resourceType, articleId, languageId, category='') => {
+export const loadArticleData = (resourceType, articleId, languageId, category='', ownerStr = DEFAULT_OWNER) => {
   let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category, ownerStr);
 
   if (articleFilePath) {
     articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
@@ -1559,11 +1560,12 @@ export const loadArticleData = (resourceType, articleId, languageId, category=''
  * @param {String} articleId
  * @param {String} languageId
  * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @param {String} ownerStr
  * @returns {String} - the content of the article
  */
-export const loadArticleDataAsync = async (resourceType, articleId, languageId, category='') => {
+export const loadArticleDataAsync = async (resourceType, articleId, languageId, category='', ownerStr = DEFAULT_OWNER) => {
   let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category, ownerStr);
 
   if (articleFilePath) {
     articleData = await fs.readFile(articleFilePath, 'utf8'); // get file from fs
@@ -1572,15 +1574,16 @@ export const loadArticleDataAsync = async (resourceType, articleId, languageId, 
 };
 
 /**
- * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
+ * Finds the article file within a resource type's path, looking at both the given language and default language in all possible category dirs
  * @param {String} resourceType - e.g. translationWords, translationNotes
  * @param {String} articleId
  * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
- * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @param {String} category - the article's category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @param {String} ownerStr
  * @returns {String} - the path to the file, null if doesn't exist
  * Note: resourceType is coming from a tool name
  */
-export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
+export const findArticleFilePath = (resourceType, articleId, languageId, category='', ownerStr = DEFAULT_OWNER) => {
   const languageDirs = [];
 
   if (languageId) {
@@ -1611,7 +1614,7 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   for (let i = 0, len = languageDirs.length; i < len; ++i) {
     let languageDir = languageDirs[i];
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, TRANSLATION_HELPS, resourceType);
-    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
+    let versionPath = ResourceAPI.getLatestVersion(typePath, ownerStr) || typePath;
 
     for (let j = 0, jLen = categories.length; j < jLen; ++j) {
       let categoryDir = categories[j];

@@ -236,9 +236,9 @@
     "dcs_create_new_conflict": "Membuat tempat penyimpanan baru gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda perlu mengganti nama proyek lokal atau mengganti nama proyek ${door43} Anda .",
     "unknown_download_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal, yang mencoba untuk mendownload proyek dari \"${project_url}\". <br/> <br/> Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" yang merupakan opsi pada Tombol ${actions}",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "Download proyek ${project_url} gagal. ${error_message}",
+    "known_download_networking_error": "Download proyek ${project_url} gagal: ${error_message}",
     "load_view_usfm_url": "Load Bible Resource (USFM)",
-    "load_view_usfm_url_error": "The download of USFM ${project_url} failed. ${error_message}",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
     "enter_resource_url": "Enter Resource URL",
     "loading_usfm_url": "Loading : ${usfm_url}"
   },
