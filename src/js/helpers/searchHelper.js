@@ -31,6 +31,7 @@ export function indexAlignments(alignments) {
   const lemmaAlignments = {};
   const targetAlignments = {};
   const sourceAlignments = {};
+  const strongAlignments = {};
   const sourceKeys = Object.keys(alignments);
 
   for (const sourceKey of sourceKeys) {
@@ -49,6 +50,12 @@ export function indexAlignments(alignments) {
         lemmaAlignments[sourceLemma] = [];
       }
       lemmaAlignments[sourceLemma].push(targetAlignment);
+      const strong = targetAlignment.strong;
+
+      if (!strongAlignments[strong]) {
+        strongAlignments[strong] = [];
+      }
+      strongAlignments[strong].push(targetAlignment);
       const targetText = targetAlignment.targetText;
 
       if (!targetAlignments[targetText]) {
@@ -63,6 +70,7 @@ export function indexAlignments(alignments) {
     lemmaAlignments,
     targetAlignments,
     sourceAlignments,
+    strongAlignments,
   };
 }
 
@@ -118,13 +126,16 @@ export function loadAlignments(jsonPath) {
       lemmaAlignments,
       targetAlignments,
       sourceAlignments,
+      strongAlignments,
     } = indexAlignments(alignments);
+    const strongKeys = getSortedKeys(strongAlignments, 'en');
     const lemmaKeys = getSortedKeys(lemmaAlignments, origLang);
     const sourceKeys = getSortedKeys(sourceAlignments, origLang);
     const targetKeys = getSortedKeys(targetAlignments, targetLang);
     const target = { keys: targetKeys, alignments: targetAlignments };
     const source = { keys: sourceKeys, alignments: sourceAlignments };
     const lemma = { keys: lemmaKeys, alignments: lemmaAlignments };
+    const strong = { keys: strongKeys, alignments: strongAlignments };
     return {
       alignments,
       targetLang,
@@ -133,6 +144,7 @@ export function loadAlignments(jsonPath) {
       target,
       lemma,
       source,
+      strong,
     };
   } catch (e) {
     console.warn(`loadAlignments() - could not read ${jsonPath}`);
@@ -178,6 +190,10 @@ export function multiSearchAlignments(alignmentData, search_, config) {
 
   if (config.searchTarget) {
     searchAlignmentsAndAppend(search, flags, config, alignmentData.target, found);
+  }
+
+  if (config.searchStrong) {
+    searchAlignmentsAndAppend(search, flags, config, alignmentData.strong, found);
   }
 
   if (config.searchLemma) {

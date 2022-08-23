@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import path from 'path-extra';
-import { TextField } from 'material-ui';
+import { Checkbox, TextField } from 'material-ui';
 import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -20,6 +20,8 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
 // selectors
 import { getProjectManifest } from '../selectors';
 // actions
@@ -50,6 +52,23 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
 
+const SEARCH_ALL = 'search_all';
+const SEARCH_SOURCE = 'search_source';
+const SEARCH_LEMMA = 'search_lemma';
+const SEARCH_TARGET = 'search_target';
+const SEARCH_STRONG = 'search_strong';
+const searchOptions = [
+  { value: SEARCH_ALL, text: 'Search All' },
+  { value: SEARCH_SOURCE, text: 'Search Source Words' },
+  { value: SEARCH_LEMMA, text: 'Search Lemma Words' },
+  { value: SEARCH_TARGET, text: 'Search Target Words' },
+  { value: SEARCH_STRONG, text: 'Search Strongs Numbers' },
+];
+
+const styles = {
+  checkboxIconStyle: { fill: 'var(--accent-color-dark)' },
+};
+
 /**
  * Renders a dialog displaying search options.
  *
@@ -65,11 +84,17 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.state = {
       alignmentData: null,
       searchStr: '',
+      searchType: SEARCH_ALL,
+      caseSensitive: false,
+      matchWholeWord: false,
       found: null,
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
     this.showResults = this.showResults.bind(this);
+    this.setSearchType = this.setSearchType.bind(this);
+    this.setMatchWholeWord = this.setMatchWholeWord.bind(this);
+    this.setCaseSensitive = this.setCaseSensitive.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -119,7 +144,8 @@ class AlignmentSearchDialogContainer extends React.Component {
       return (
         <>
           <br/>
-          {'Need to Select Project!'}
+          <br/>
+          <b>{'Need to Select Project!'}</b>
         </>
       );
     } else if (this.state.found) {
@@ -137,11 +163,19 @@ class AlignmentSearchDialogContainer extends React.Component {
             fontFamily: 'Ezra, Noto Sans',
           },
         };
+        const originalLang = this.state.alignmentData?.origLang;
+        const originalStyles = {
+          cellStyle: {
+            fontSize: (originalLang === 'hbo') ? '27px' : '19px',
+            fontFamily: 'Ezra, Noto Sans',
+          },
+        };
         return (
           <MaterialTable
             columns={[
-              { title: 'Source Text', field: 'sourceText', ...columnStyles },
-              { title: 'Source Lemma', field: 'sourceLemma', ...columnStyles },
+              { title: 'Source Text', field: 'sourceText', ...originalStyles },
+              { title: 'Source Lemma', field: 'sourceLemma', ...originalStyles },
+              { title: 'Source Strong', field: 'strong', ...columnStyles },
               { title: 'Target Text', field: 'targetText', ...columnStyles },
               { title: 'Refs', field: 'refStr', ...columnStyles },
             ]}
@@ -164,7 +198,8 @@ class AlignmentSearchDialogContainer extends React.Component {
         return (
           <>
             <br/>
-            {'No results found!'}
+            <br/>
+            <b>{'No results found!'}</b>
           </>
         );
       }
@@ -172,7 +207,8 @@ class AlignmentSearchDialogContainer extends React.Component {
       return (
         <>
           <br/>
-          {'Need to Start Search!'}
+          <br/>
+          <b>{'Need to Start Search!'}</b>
         </>
       );
     }
@@ -182,18 +218,32 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ searchStr: search });
   }
 
+  setMatchWholeWord(value) {
+    this.setState({ matchWholeWord: !!value });
+  }
+
+  setCaseSensitive(value) {
+    this.setState({ caseSensitive: !!value });
+  }
+
+  setSearchType(value) {
+    this.setState({ searchType: value });
+  }
+
   startSearch() {
     console.log('AlignmentSearchDialogContainer - start search');
+    const state = this.state;
     const config = {
-      fullWord: true,
-      caseInsensitive: true,
-      searchLemma: true,
-      searchSource: true,
-      searchTarget: true,
+      fullWord: state.matchWholeWord,
+      caseInsensitive: !state.caseSensitive,
+      searchLemma: (state.searchType === SEARCH_LEMMA) || (state.searchType === SEARCH_ALL),
+      searchSource: (state.searchType === SEARCH_SOURCE) || (state.searchType === SEARCH_ALL),
+      searchTarget: (state.searchType === SEARCH_TARGET) || (state.searchType === SEARCH_ALL),
+      searchStrong: (state.searchType === SEARCH_STRONG) || (state.searchType === SEARCH_ALL),
     };
 
     // when
-    const found = multiSearchAlignments(this.state.alignmentData, this.state.searchStr, config) || [];
+    const found = multiSearchAlignments(state.alignmentData, state.searchStr, config) || [];
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     this.setState({ found });
   }
@@ -204,6 +254,10 @@ class AlignmentSearchDialogContainer extends React.Component {
       translate,
       onClose,
     } = this.props;
+
+    const fullScreen = { maxWidth: '100%', width: '100%' };
+    const partialScreen = { maxWidth: '768px', width: '75%' };
+    const contentStyle = this.state.found?.length ? fullScreen : partialScreen;
 
     return (
       <BaseDialog
@@ -217,26 +271,81 @@ class AlignmentSearchDialogContainer extends React.Component {
         modal={false}
         scrollableContent={true}
         titleStyle={{ marginBottom: '0px' }}
+        contentStyle={contentStyle}
       >
         <div>
           {this.state.alignmentData &&
-            <TextField
-              defaultValue={this.state.searchStr}
-              multiLine
-              rowsMax={4}
-              id="search-input"
-              className="Search"
-              floatingLabelText={'Enter Search String'}
-              // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
-              floatingLabelStyle={{
-                color: 'var(--text-color-dark)',
-                opacity: '0.3',
-                fontWeight: '500',
-              }}
-              onChange={e => this.setSearchStr(e.target.value)}
-              autoFocus={true}
-              style={{ width: '100%' }}
-            />
+            <>
+              <TextField
+                defaultValue={this.state.searchStr}
+                multiLine
+                rowsMax={4}
+                id="search-input"
+                className="Search"
+                floatingLabelText={'Enter Search String'}
+                // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+                floatingLabelStyle={{
+                  color: 'var(--text-color-dark)',
+                  opacity: '0.3',
+                  fontWeight: '500',
+                }}
+                onChange={e => this.setSearchStr(e.target.value)}
+                autoFocus={true}
+                style={{ width: '100%' }}
+              />
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex' }}>
+                  <Checkbox
+                    style={{ width: '0px', marginRight: -10 }}
+                    checked={this.state.caseSensitive}
+                    labelStyle={{
+                      color: 'var(--reverse-color)',
+                      opacity: '0.7',
+                      fontWeight: '500',
+                    }}
+                    iconStyle={styles.checkboxIconStyle}
+                    onCheck={(e) => {
+                      this.setCaseSensitive(e.target.checked);
+                    }}
+                  />
+                  {'Case Sensitive Search'}
+                </div>
+                <div style={{ display: 'flex' }}>
+                  <Checkbox
+                    style={{ width: '0px', marginRight: -10 }}
+                    checked={this.state.matchWholeWord}
+                    labelStyle={{
+                      color: 'var(--reverse-color)',
+                      opacity: '0.7',
+                      fontWeight: '500',
+                    }}
+                    iconStyle={styles.checkboxIconStyle}
+                    onCheck={(e) => {
+                      this.setMatchWholeWord(e.target.checked);
+                    }}
+                  />
+                  {'Match Whole Word'}
+                </div>
+                <SelectField
+                  id={'select_search_type'}
+                  maxHeight={150}
+                  value={this.state.searchType}
+                  floatingLabelStyle={{
+                    color: '#000000',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                  }}
+                  floatingLabelText={'Select Fields to search'}
+                  underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+                  onChange={(event, index, value) => this.setSearchType(value)}
+                >
+                  {
+                    searchOptions.map(item => (<MenuItem value={item.value} key={item.value} primaryText={item.text}/>))
+                  }
+                </SelectField>
+              </div>
+            </>
           }
           { this.showResults()}
         </div>
