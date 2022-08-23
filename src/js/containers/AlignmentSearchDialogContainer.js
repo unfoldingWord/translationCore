@@ -78,13 +78,15 @@ class AlignmentSearchDialogContainer extends React.Component {
       const bookId = this.props?.manifest?.project?.id;
       const resourceId = this.props?.manifest?.resource?.id;
       const targetLanguageId = this.props?.manifest?.target_language?.id;
+      const originalLangId = getOrigLangforBook(bookId)?.languageId;
       const alignmentData = this.state?.alignmentData;
 
       if (!alignmentData) {
         update = true;
       } else {
         update = (resourceId !== alignmentData?.descriptor) ||
-          (targetLanguageId !== alignmentData?.targetLang);
+          (targetLanguageId !== alignmentData?.targetLang) ||
+          (originalLangId !== alignmentData?.origLang);
       }
 
       if (update) {
@@ -113,7 +115,14 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   showResults() {
-    if (this.state.found) {
+    if (!this.state.alignmentData) {
+      return (
+        <>
+          <br/>
+          {'Need to Select Project!'}
+        </>
+      );
+    } else if (this.state.found) {
       if (this.state.found?.length) {
         const data = this.state.found.map(item => {
           const newItem = {
@@ -201,7 +210,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         open={open}
         primaryLabel={'Search'}
         secondaryLabel={translate('buttons.cancel_button')}
-        primaryActionEnabled={this.state.alignmentData && this.state.searchStr}
+        primaryActionEnabled={!!(this.state.alignmentData && this.state.searchStr)}
         onSubmit={this.startSearch}
         onClose={onClose}
         title={'Search Alignments'}
@@ -209,8 +218,8 @@ class AlignmentSearchDialogContainer extends React.Component {
         scrollableContent={true}
         titleStyle={{ marginBottom: '0px' }}
       >
-        {this.state.alignmentData &&
-          <div>
+        <div>
+          {this.state.alignmentData &&
             <TextField
               defaultValue={this.state.searchStr}
               multiLine
@@ -228,9 +237,9 @@ class AlignmentSearchDialogContainer extends React.Component {
               autoFocus={true}
               style={{ width: '100%' }}
             />
-            { this.showResults()}
-          </div>
-        }
+          }
+          { this.showResults()}
+        </div>
       </BaseDialog>
     );
   }

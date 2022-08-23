@@ -5,6 +5,7 @@ import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import UpdateIcon from 'material-ui/svg-icons/action/update';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
+import SearchIcon from '@material-ui/icons/Search';
 import MenuItem from 'material-ui/MenuItem';
 import PopoverMenu from '../components/PopoverMenu';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
@@ -116,7 +117,7 @@ class AppMenu extends React.Component {
             leftIcon={<TranslateIcon/>}/>
           <MenuItem onClick={this.openDialog(APP_SEARCH)}
             primaryText={'Search'}
-            leftIcon={<TranslateIcon/>}/>
+            leftIcon={<SearchIcon/>}/>
         </PopoverMenu>
 
         <FeedbackDialogContainer open={this.isDialogOpen(FEEDBACK)}
