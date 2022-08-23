@@ -1,4 +1,4 @@
-/* eslint-disable react/display-name */
+/* eslint-disable react/display-name,object-curly-newline */
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -122,17 +122,33 @@ class AlignmentSearchDialogContainer extends React.Component {
           };
           return newItem;
         });
+        const columnStyles = {
+          cellStyle: {
+            fontSize: '16px',
+            fontFamily: 'Ezra, Noto Sans',
+          },
+        };
         return (
           <MaterialTable
             columns={[
-              { title: 'Source Text', field: 'sourceText' },
-              { title: 'Source Lemma', field: 'sourceLemma' },
-              { title: 'Target Text', field: 'targetText' },
-              { title: 'Refs', field: 'refStr' },
+              { title: 'Source Text', field: 'sourceText', ...columnStyles },
+              { title: 'Source Lemma', field: 'sourceLemma', ...columnStyles },
+              { title: 'Target Text', field: 'targetText', ...columnStyles },
+              { title: 'Refs', field: 'refStr', ...columnStyles },
             ]}
             data={data}
             title={'Search Results:'}
             icons={tableIcons}
+            style={{ fontSize: '16px' }}
+            options={{
+              actionsCellStyle: { fontSize: '16px' },
+              filterCellStyle: { fontSize: '16px' },
+              headerStyle: {
+                fontSize: '16px',
+                fontWeight: 'bold',
+              },
+              searchFieldStyle: { fontSize: '16px' },
+            }}
           />
         );
       } else {
