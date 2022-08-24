@@ -110,6 +110,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setMatchWholeWord = this.setMatchWholeWord.bind(this);
     this.setCaseSensitive = this.setCaseSensitive.bind(this);
     this.isSearchItemSelected = this.isSearchItemSelected.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -185,6 +186,13 @@ class AlignmentSearchDialogContainer extends React.Component {
             fontFamily: 'Ezra, Noto Sans',
           },
         };
+        const localization = {
+          toolbar: {
+            searchTooltip: 'Filter',
+            searchPlaceholder: 'Filter',
+          },
+        };
+
         return (
           <MaterialTable
             columns={[
@@ -205,8 +213,11 @@ class AlignmentSearchDialogContainer extends React.Component {
                 fontSize: '16px',
                 fontWeight: 'bold',
               },
+              rowStyle: { fontSize: '16px' },
               searchFieldStyle: { fontSize: '16px' },
+              paging: false,
             }}
+            localization={localization}
           />
         );
       } else {
@@ -245,6 +256,12 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ searchType: values });
   }
 
+  handleClose() {
+    this.setState({ alignmentData: null }); // clear data
+    const onClose = this.props.onClose;
+    onClose && onClose();
+  }
+
   startSearch() {
     console.log('AlignmentSearchDialogContainer - start search');
     const state = this.state;
@@ -272,7 +289,6 @@ class AlignmentSearchDialogContainer extends React.Component {
     const {
       open,
       translate,
-      onClose,
     } = this.props;
 
     const fullScreen = { maxWidth: '100%', width: '100%' };
@@ -286,7 +302,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         secondaryLabel={translate('buttons.cancel_button')}
         primaryActionEnabled={!!(this.state.alignmentData && this.state.searchStr)}
         onSubmit={this.startSearch}
-        onClose={onClose}
+        onClose={this.handleClose}
         title={'Search Alignments'}
         modal={false}
         scrollableContent={true}
@@ -301,8 +317,8 @@ class AlignmentSearchDialogContainer extends React.Component {
                 multiLine
                 rowsMax={4}
                 id="search-input"
-                className="Search"
-                floatingLabelText={'Enter Search String'}
+                className="Filter Results"
+                floatingLabelText={'Enter Search String (can use * and ?)'}
                 // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
                 floatingLabelStyle={{
                   color: 'var(--text-color-dark)',
@@ -351,7 +367,7 @@ class AlignmentSearchDialogContainer extends React.Component {
                   hintText="Select fields to search"
                   value={this.state.searchType}
                   multiple
-                  style={{ width: '250px' }}
+                  style={{ width: '300px' }}
                   onChange={this.setSearchType}
                 >
                   {
