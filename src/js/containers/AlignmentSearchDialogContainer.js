@@ -188,8 +188,8 @@ class AlignmentSearchDialogContainer extends React.Component {
         };
         const localization = {
           toolbar: {
-            searchTooltip: 'Filter',
-            searchPlaceholder: 'Filter',
+            searchTooltip: 'Filter Results',
+            searchPlaceholder: 'Filter Results',
           },
         };
 
@@ -200,7 +200,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               { title: 'Source Lemma', field: 'sourceLemma', ...originalStyles },
               { title: 'Source Strong', field: 'strong', ...columnStyles },
               { title: 'Target Text', field: 'targetText', ...columnStyles },
-              { title: 'Refs', field: 'refStr', ...columnStyles },
+              { title: 'References', field: 'refStr', ...columnStyles },
             ]}
             data={data}
             title={'Search Results:'}
