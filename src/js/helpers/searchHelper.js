@@ -163,6 +163,28 @@ export function searchAlignmentsSub(search, flags, keys, alignments) {
   return foundAlignments;
 }
 
+export function searchRefs(search, flags, keys, alignments) {
+  const refsAlignments = {};
+
+  // create refs allignments object
+  for (const key of keys) {
+    const alignments_ = alignments[key];
+
+    for (const alignment of alignments_) {
+      const refs = alignment.refs || [];
+      const refsStr = refs.join(' ');
+
+      if (!refsAlignments[refsStr]) {
+        refsAlignments[refsStr] = [];
+      }
+      refsAlignments[refsStr].push(alignment);
+    }
+  }
+
+  const foundAlignments = searchAlignmentsSub(search, flags, Object.keys(refsAlignments), refsAlignments);
+  return foundAlignments;
+}
+
 export function searchAlignments(search_, fullWord, caseInsensitive, keys, alignments) {
   const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
   const foundAlignments = searchAlignmentsSub(search, flags, keys, alignments);
@@ -171,6 +193,20 @@ export function searchAlignments(search_, fullWord, caseInsensitive, keys, align
 
 export function searchAlignmentsAndAppend(search, flags, config, searchData, found) {
   const found_ = searchAlignmentsSub(search, flags, searchData.keys, searchData.alignments);
+
+  if (found_.length) {
+    for (const item of found_) {
+      const duplicate = found.includes(item); // ignore duplicates
+
+      if (!duplicate) {
+        found.push(item);
+      }
+    }
+  }
+}
+
+export function searchRefsAndAppend(search, flags, config, searchData, found) {
+  const found_ = searchRefs(search, flags, searchData.keys, searchData.alignments);
 
   if (found_.length) {
     for (const item of found_) {
@@ -202,6 +238,10 @@ export function multiSearchAlignments(alignmentData, search_, config) {
 
   if (config.searchSource) {
     searchAlignmentsAndAppend(search, flags, config, alignmentData.source, found);
+  }
+
+  if (config.searchRefs) {
+    searchRefsAndAppend(search, flags, config, alignmentData.source, found);
   }
   return found;
 }

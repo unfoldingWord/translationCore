@@ -3,7 +3,12 @@ import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import path from 'path-extra';
-import { Checkbox, TextField } from 'material-ui';
+import {
+  TextField,
+  SelectField,
+  Checkbox,
+  MenuItem,
+} from 'material-ui';
 import MaterialTable from 'material-table';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
@@ -20,8 +25,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
+
 // selectors
 import { getProjectManifest } from '../selectors';
 // actions
@@ -52,18 +56,25 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
 
-const SEARCH_ALL = 'search_all';
 const SEARCH_SOURCE = 'search_source';
 const SEARCH_LEMMA = 'search_lemma';
 const SEARCH_TARGET = 'search_target';
 const SEARCH_STRONG = 'search_strong';
+const SEARCH_REFS = 'search_refs';
 const searchOptions = [
-  { value: SEARCH_ALL, text: 'Search All' },
-  { value: SEARCH_SOURCE, text: 'Search Source Words' },
-  { value: SEARCH_LEMMA, text: 'Search Lemma Words' },
-  { value: SEARCH_TARGET, text: 'Search Target Words' },
-  { value: SEARCH_STRONG, text: 'Search Strongs Numbers' },
+  SEARCH_SOURCE,
+  SEARCH_LEMMA,
+  SEARCH_TARGET,
+  SEARCH_STRONG,
+  SEARCH_REFS,
 ];
+const searchLabels = {
+  [SEARCH_SOURCE]: 'Search Source Words',
+  [SEARCH_LEMMA]: 'Search Lemma Words',
+  [SEARCH_TARGET]: 'Search Target Words',
+  [SEARCH_STRONG]: 'Search Strongs Numbers',
+  [SEARCH_REFS]: 'Search References',
+};
 
 const styles = {
   checkboxIconStyle: { fill: 'var(--accent-color-dark)' },
@@ -84,7 +95,10 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.state = {
       alignmentData: null,
       searchStr: '',
-      searchType: SEARCH_ALL,
+      searchType: [
+        SEARCH_SOURCE,
+        SEARCH_TARGET,
+      ],
       caseSensitive: false,
       matchWholeWord: false,
       found: null,
@@ -95,6 +109,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setSearchType = this.setSearchType.bind(this);
     this.setMatchWholeWord = this.setMatchWholeWord.bind(this);
     this.setCaseSensitive = this.setCaseSensitive.bind(this);
+    this.isSearchItemSelected = this.isSearchItemSelected.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -226,8 +241,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ caseSensitive: !!value });
   }
 
-  setSearchType(value) {
-    this.setState({ searchType: value });
+  setSearchType(event, index, values) {
+    this.setState({ searchType: values });
   }
 
   startSearch() {
@@ -236,16 +251,21 @@ class AlignmentSearchDialogContainer extends React.Component {
     const config = {
       fullWord: state.matchWholeWord,
       caseInsensitive: !state.caseSensitive,
-      searchLemma: (state.searchType === SEARCH_LEMMA) || (state.searchType === SEARCH_ALL),
-      searchSource: (state.searchType === SEARCH_SOURCE) || (state.searchType === SEARCH_ALL),
-      searchTarget: (state.searchType === SEARCH_TARGET) || (state.searchType === SEARCH_ALL),
-      searchStrong: (state.searchType === SEARCH_STRONG) || (state.searchType === SEARCH_ALL),
+      searchLemma: this.isSearchItemSelected(SEARCH_LEMMA),
+      searchSource: this.isSearchItemSelected(SEARCH_SOURCE),
+      searchTarget: this.isSearchItemSelected(SEARCH_TARGET),
+      searchStrong: this.isSearchItemSelected(SEARCH_STRONG),
+      searchRefs: this.isSearchItemSelected(SEARCH_REFS),
     };
 
     // when
     const found = multiSearchAlignments(state.alignmentData, state.searchStr, config) || [];
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     this.setState({ found });
+  }
+
+  isSearchItemSelected(item) {
+    return this.state.searchType && this.state.searchType.indexOf(item) >= 0;
   }
 
   render() {
@@ -328,20 +348,22 @@ class AlignmentSearchDialogContainer extends React.Component {
                 </div>
                 <SelectField
                   id={'select_search_type'}
-                  maxHeight={150}
+                  hintText="Select fields to search"
                   value={this.state.searchType}
-                  floatingLabelStyle={{
-                    color: '#000000',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                  }}
-                  floatingLabelText={'Select Fields to search'}
-                  underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
-                  onChange={(event, index, value) => this.setSearchType(value)}
+                  multiple
+                  style={{ width: '250px' }}
+                  onChange={this.setSearchType}
                 >
                   {
-                    searchOptions.map(item => (<MenuItem value={item.value} key={item.value} primaryText={item.text}/>))
+                    searchOptions.map(item => (
+                      <MenuItem
+                        key={item}
+                        insetChildren={true}
+                        checked={this.isSearchItemSelected(item)}
+                        value={item}
+                        primaryText={searchLabels[item]}
+                      />
+                    ))
                   }
                 </SelectField>
               </div>
