@@ -80,6 +80,7 @@
   "sending_feedback_failed": "ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ ",
   "critical_error_warning": "ಎಚ್ಚರಿಕೆ: ತೀವ್ರವಾದ ತಪ್ಪು ಸಂಭವಿಸಿದೆ!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
     "update": "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಗೆ ನವೀಕರಿಸಿ",
     "ignore_button": "ಬಿಟ್ಟುಬಿಡಿ",
-    "feedback_button": "ಹಿನ್ನುಣಿಕೆಯನ್ನು ಕಳುಹಿಸಿರಿ"
+    "feedback_button": "ಹಿನ್ನುಣಿಕೆಯನ್ನು ಕಳುಹಿಸಿರಿ",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "ಪ್ರಮುಖ ಪದಗಳು",
