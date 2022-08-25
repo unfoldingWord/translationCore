@@ -6,7 +6,6 @@ import path from 'path-extra';
 import {
   TextField,
   SelectField,
-  Checkbox,
   MenuItem,
 } from 'material-ui';
 import MaterialTable from 'material-table';
@@ -61,14 +60,14 @@ const SEARCH_LEMMA = 'search_lemma';
 const SEARCH_TARGET = 'search_target';
 const SEARCH_STRONG = 'search_strong';
 const SEARCH_REFS = 'search_refs';
-const searchOptions = [
+const searchFieldOptions = [
   SEARCH_SOURCE,
   SEARCH_LEMMA,
   SEARCH_TARGET,
   SEARCH_STRONG,
   SEARCH_REFS,
 ];
-const searchLabels = {
+const searchFieldLabels = {
   [SEARCH_SOURCE]: 'Search Source Words',
   [SEARCH_LEMMA]: 'Search Lemma Words',
   [SEARCH_TARGET]: 'Search Target Words',
@@ -76,9 +75,21 @@ const searchLabels = {
   [SEARCH_REFS]: 'Search References',
 };
 
-const styles = {
-  checkboxIconStyle: { fill: 'var(--accent-color-dark)' },
-};
+const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
+const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
+
+const searchOptions = [
+  {
+    key: SEARCH_CASE_SENSITIVE,
+    label: 'Case Sensitive',
+    stateKey: 'caseSensitive',
+  },
+  {
+    key: SEARCH_MATCH_WHOLE_WORD,
+    label: 'Match Whole Word',
+    stateKey: 'matchWholeWord',
+  },
+];
 
 /**
  * Renders a dialog displaying search options.
@@ -106,11 +117,13 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
     this.showResults = this.showResults.bind(this);
-    this.setSearchType = this.setSearchType.bind(this);
+    this.setSearchFields = this.setSearchFields.bind(this);
     this.setMatchWholeWord = this.setMatchWholeWord.bind(this);
     this.setCaseSensitive = this.setCaseSensitive.bind(this);
-    this.isSearchItemSelected = this.isSearchItemSelected.bind(this);
+    this.isSearchFieldSelected = this.isSearchFieldSelected.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.setSearchTypes = this.setSearchTypes.bind(this);
+    this.getSelectedOptions = this.getSelectedOptions.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -252,10 +265,25 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ caseSensitive: !!value });
   }
 
-  setSearchType(event, index, values) {
+  setSearchFields(event, index, values) {
     this.setState({ searchType: values });
   }
 
+  findSearchItem(key) {
+    const found = searchOptions.find(item => item.key === key);
+    return found;
+  }
+
+  setSearchTypes(event, index, values) {
+    const fullWordItem = this.findSearchItem(SEARCH_MATCH_WHOLE_WORD);
+    const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
+    const types = {
+      [fullWordItem.stateKey]: this.isItemSelected(values, SEARCH_MATCH_WHOLE_WORD),
+      [caseSensitiveItem.stateKey]: this.isItemSelected(values, SEARCH_CASE_SENSITIVE),
+    };
+
+    this.setState(types);
+  }
   handleClose() {
     this.setState({ alignmentData: null }); // clear data
     const onClose = this.props.onClose;
@@ -268,11 +296,11 @@ class AlignmentSearchDialogContainer extends React.Component {
     const config = {
       fullWord: state.matchWholeWord,
       caseInsensitive: !state.caseSensitive,
-      searchLemma: this.isSearchItemSelected(SEARCH_LEMMA),
-      searchSource: this.isSearchItemSelected(SEARCH_SOURCE),
-      searchTarget: this.isSearchItemSelected(SEARCH_TARGET),
-      searchStrong: this.isSearchItemSelected(SEARCH_STRONG),
-      searchRefs: this.isSearchItemSelected(SEARCH_REFS),
+      searchLemma: this.isSearchFieldSelected(SEARCH_LEMMA),
+      searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
+      searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
+      searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
+      searchRefs: this.isSearchFieldSelected(SEARCH_REFS),
     };
 
     // when
@@ -281,8 +309,20 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ found });
   }
 
-  isSearchItemSelected(item) {
-    return this.state.searchType && this.state.searchType.indexOf(item) >= 0;
+  isSearchFieldSelected(key) {
+    const searchType = this.state.searchType;
+    return this.isItemSelected(searchType, key);
+  }
+
+  isItemSelected(array, key) {
+    return array && array.indexOf(key) >= 0;
+  }
+
+
+  getSelectedOptions(options) {
+    let selections = options.map(item => !!this.state[item.stateKey] && item.key);
+    selections = selections.filter(item => item);
+    return selections;
   }
 
   render() {
@@ -331,36 +371,29 @@ class AlignmentSearchDialogContainer extends React.Component {
               />
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
                 <div style={{ display: 'flex' }}>
-                  <Checkbox
-                    style={{ width: '0px', marginRight: -10 }}
-                    checked={this.state.caseSensitive}
-                    labelStyle={{
-                      color: 'var(--reverse-color)',
-                      opacity: '0.7',
-                      fontWeight: '500',
-                    }}
-                    iconStyle={styles.checkboxIconStyle}
-                    onCheck={(e) => {
-                      this.setCaseSensitive(e.target.checked);
-                    }}
-                  />
-                  {'Case Sensitive Search'}
+                  {'Search Source'}
                 </div>
                 <div style={{ display: 'flex' }}>
-                  <Checkbox
-                    style={{ width: '0px', marginRight: -10 }}
-                    checked={this.state.matchWholeWord}
-                    labelStyle={{
-                      color: 'var(--reverse-color)',
-                      opacity: '0.7',
-                      fontWeight: '500',
-                    }}
-                    iconStyle={styles.checkboxIconStyle}
-                    onCheck={(e) => {
-                      this.setMatchWholeWord(e.target.checked);
-                    }}
-                  />
-                  {'Match Whole Word'}
+                  <SelectField
+                    id={'select_search_type'}
+                    hintText="Select search types"
+                    value={this.getSelectedOptions(searchOptions)}
+                    multiple
+                    style={{ width: '200px' }}
+                    onChange={this.setSearchTypes}
+                  >
+                    {
+                      searchOptions.map(item => (
+                        <MenuItem
+                          key={item.key}
+                          insetChildren={true}
+                          checked={this.state[item.stateKey]}
+                          value={item.key}
+                          primaryText={item.label}
+                        />
+                      ))
+                    }
+                  </SelectField>
                 </div>
                 <SelectField
                   id={'select_search_type'}
@@ -368,16 +401,16 @@ class AlignmentSearchDialogContainer extends React.Component {
                   value={this.state.searchType}
                   multiple
                   style={{ width: '300px' }}
-                  onChange={this.setSearchType}
+                  onChange={this.setSearchFields}
                 >
                   {
-                    searchOptions.map(item => (
+                    searchFieldOptions.map(item => (
                       <MenuItem
                         key={item}
                         insetChildren={true}
-                        checked={this.isSearchItemSelected(item)}
+                        checked={this.isSearchFieldSelected(item)}
                         value={item}
-                        primaryText={searchLabels[item]}
+                        primaryText={searchFieldLabels[item]}
                       />
                     ))
                   }
