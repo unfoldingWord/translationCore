@@ -80,6 +80,7 @@
   "sending_feedback_failed": "প্রতিক্রিয়া প্রেরণ করতে ব্যর্থ ",
   "critical_error_warning": "সাবধানবাণী: একটি গুরুত্বপূর্ণ ত্রুটি ঘটেছে!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "পুনরায় চেষ্টা করুন ",
     "update": "সর্বশেষ সংস্করণটির আপডেট করুন ",
     "ignore_button": "অগ্রাহ্য করুন ",
-    "feedback_button": "প্রতিক্রিয়া প্রেরণ করুন "
+    "feedback_button": "প্রতিক্রিয়া প্রেরণ করুন ",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "মুখ্য পরিভাষাগুলো ",
