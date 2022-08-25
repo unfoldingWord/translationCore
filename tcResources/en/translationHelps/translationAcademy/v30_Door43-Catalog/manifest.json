@@ -1,0 +1,104 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Jesse Griffin, BA in Biblical Studies, MA in Biblical Languages",
+      "Perry Oakes, PhD in Old Testament, MA in Linguistics, MA in Theology, BA in Biblical Studies",
+      "Susan Quigley, MA in Linguistics",
+      "Henry Whitney, BA in Linguistics",
+      "James N. Pohlig, M.Div., MA in Linguistics, D. Litt. in Biblical Languages",
+      "Ben Jore, BA Biblical Studies, M.Div.",
+      "Joel D. Ruark, PhD in Old Testament, MA in Theology",
+      "Todd L. Price, PhD in New Testament/Linguistics",
+      "Bev Staley",
+      "Carol Brinneman",
+      "Jody Garcia",
+      "Kara Anderson",
+      "Kim Puterbaugh",
+      "Lizz Carlton",
+      "Door43 World Missions Community"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "A modular handbook that provides a condensed explanation of Bible translation and checking principles that the global Church has implicitly affirmed define trustworthy translations. It enables translators to learn how to create trustworthy translations of the Bible in their own language.",
+    "format": "text/markdown",
+    "identifier": "ta",
+    "issued": "2022-07-11",
+    "language": {
+      "identifier": "en",
+      "title": "English",
+      "direction": "ltr"
+    },
+    "modified": "2022-07-11",
+    "publisher": "unfoldingWord®",
+    "relation": [
+      "en/ult?v=37",
+      "en/ust?v=36",
+      "en/tn?v=62",
+      "en/tw?v=32"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "ta",
+        "language": "en",
+        "version": "28"
+      }
+    ],
+    "subject": "Translation Academy",
+    "title": "unfoldingWord® Translation Academy",
+    "type": "man",
+    "version": "30"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord®"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "intro",
+      "path": "./intro",
+      "sort": 0,
+      "title": "Introduction to unfoldingWord® Translation Academy",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "process",
+      "path": "./process",
+      "sort": 1,
+      "title": "Process Manual",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "translate",
+      "path": "./translate",
+      "sort": 2,
+      "title": "Translation Manual",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "checking",
+      "path": "./checking",
+      "sort": 3,
+      "title": "Checking Manual",
+      "versification": null
+    }
+  ],
+  "version": "30",
+  "catalog_modified_time": "2022-07-12T17:22:47Z",
+  "modifiedTime": "2022-07-12T17:22:47Z",
+  "stage": "latest"
+}
