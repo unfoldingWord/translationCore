@@ -80,6 +80,7 @@
   "sending_feedback_failed": "Pratikriya pathabole byartha hoise",
   "critical_error_warning": "Chetawni: ekta mahatwapurna golti ulaise!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "Arubi koshis kuribi",
     "update": "Adhunik anubaad te napare",
     "ignore_button": "Charibi",
-    "feedback_button": "Pratikriya pathabi"
+    "feedback_button": "Pratikriya pathabi",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Asol sabda khan",

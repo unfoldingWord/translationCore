@@ -80,6 +80,7 @@
   "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "తిరిగి ప్రయత్నించండి",
     "update": "ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి",
     "ignore_button": "లక్ష్యం చెయ్యకండి",
-    "feedback_button": "సమాచారాన్ని పంపించండి"
+    "feedback_button": "సమాచారాన్ని పంపించండి",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "కీలక పదాలు",

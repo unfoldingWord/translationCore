@@ -80,6 +80,7 @@
   "sending_feedback_failed": "Error al Enviar el Comentario",
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
   "unknown_networking_error": "${app_name} ha encontrado un error de comunicación desconocido. Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organización",
     "resource": "Recurso",
@@ -459,7 +460,8 @@
     "retry": "Intente de nuevo",
     "update": "Actualice a la última versión",
     "ignore_button": "Ignorar",
-    "feedback_button": "Enviar comentarios"
+    "feedback_button": "Enviar comentarios",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Términos Claves",
