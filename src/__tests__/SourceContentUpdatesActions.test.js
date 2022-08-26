@@ -3,6 +3,7 @@ import React from 'react';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { normalizer } from 'string-punctuation-tokenizer';
 import {
   getUsfmForVerseContent,
   trimNewLine,
@@ -31,6 +32,7 @@ test('get alignments', async () => {
 
   try {
     for (let testamemnt = 0; testamemnt <= 1; testamemnt++) {
+      const alignments = [];
       const origLang = testamemnt ? NT_ORIG_LANG : OT_ORIG_LANG;
       const books = testamemnt ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
 
@@ -58,11 +60,14 @@ test('get alignments', async () => {
           const selectedProjectFilename = bookId;
           const alignmentsPath = path.join(destinationPath, 'alignments');
           // eslint-disable-next-line no-await-in-loop
-          await getALignmentsFromJson(parsedUsfm, manifest, selectedProjectFilename, alignmentsPath);
-          console.log('more');
+          const bookAlignments = await getALignmentsFromJson(parsedUsfm, manifest, selectedProjectFilename, alignmentsPath);
+          Array.prototype.push.apply(alignments, bookAlignments);
         }
       }
+      console.log(`getALignmentsFromJson() for ${origLang}, ${alignments.length} alignments`);
+      // TODO: index and save
     }
+
     console.log('done');
   } catch (e) {
     console.warn('download failed');
@@ -126,10 +131,7 @@ export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjec
   try {
     const chaptersObject = parsedUsfm.chapters;
     const bookID = manifest?.project?.id || selectedProjectFilename;
-    let verseFound = false;
-
-    let fsQueue = [];
-    const alignQueue = [];
+    const bookAlignments = [];
 
     Object.keys(chaptersObject).forEach((chapter) => {
       let chapterAlignments = {};
@@ -165,45 +167,40 @@ export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjec
         if (alignmentData) {
           const object = wordaligner.unmerge(verseParts);
 
-          chapterAlignments[verse] = {
-            alignments: object.alignment,
-            wordBank: object.wordBank,
-            verseRef,
-          };
+          for (const alignment of object.alignment) {
+            const strongs = [];
+            const lemmas = [];
+            const targets = [];
+            const sources = [];
+
+            for (const originalWord of alignment.topWords) {
+              const {
+                strong,
+                lemma,
+                word,
+              } = originalWord;
+              strongs.push(strong);
+              lemmas.push(lemma);
+              sources.push(word);
+            }
+
+            for (const targetWord of alignment.bottomWords) {
+              targets.push(targetWord.word);
+            }
+            bookAlignments.push({
+              sourceText: normalizer(sources.join(' ')),
+              sourceLemma: normalizer(lemmas.join(' ')),
+              strong: strongs.join(' '),
+              targetText: normalizer(targets.join(' ')),
+              ref: verseRef,
+            });
+          }
         }
-        verseFound = true;
       });
-
-      const filename = parseInt(chapter, 10) + '.json';
-      const projectBibleDataPath = path.join(destinationPath, selectedProjectFilename, bookID, filename);
-      fsQueue.push(fs.outputJson(projectBibleDataPath, bibleChapter, { spaces: 2 }));
-
-      if (alignmentData) {
-        const alignmentDataPath = path.join(destinationPath, selectedProjectFilename, '.apps', 'translationCore', 'alignmentData', bookID, filename);
-        alignQueue.push(fs.outputJson(alignmentDataPath, chapterAlignments, { spaces: 2 }));
-      }
     });
 
-    const projectBibleDataPath = path.join(destinationPath, selectedProjectFilename, bookID, 'headers.json');
-    fsQueue.push(fs.outputJson(projectBibleDataPath, parsedUsfm.headers, { spaces: 2 }));
-
-    if (alignQueue.length) {
-      fsQueue.push.apply(fsQueue, alignQueue); // fast concat
-    }
-
-    if (!verseFound) {
-      throw (
-        <div>
-          {
-            selectedProjectFilename ?
-              `No chapter & verse found in project (${selectedProjectFilename}).`
-              :
-              `No chapter & verse found in your project.`
-          }
-        </div>
-      );
-    }
-    await Promise.all(fsQueue);
+    console.log(`getALignmentsFromJson() for book ${bookID}, ${bookAlignments.length} alignments`);
+    return bookAlignments;
   } catch (error) {
     console.log('getALignmentsFromJson() error:', error);
     throw (error);
