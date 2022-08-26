@@ -1,17 +1,13 @@
+import wordaligner from 'word-aligner';
+import React from 'react';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import {
-  convertAlignmentFromVerseToVerseSpan,
-  convertVerseDataToUSFM,
-  generateTargetLanguageBibleFromUsfm,
-  getOriginalLanguageChapterResources, getUsfmForVerseContent, trimNewLine
-} from "../js/helpers/FileConversionHelpers/UsfmFileConversionHelpers";
-import BIBLE_BOOKS, {NT_ORIG_LANG, OT_ORIG_LANG} from "../js/common/BooksOfTheBible";
-import {IMPORTS_PATH} from "../js/common/constants";
-import {isVerseSpan} from "../js/helpers/WordAlignmentHelpers";
-import wordaligner from "word-aligner";
-import React from "react";
+  getUsfmForVerseContent,
+  trimNewLine,
+} from '../js/helpers/FileConversionHelpers/UsfmFileConversionHelpers';
+import BIBLE_BOOKS, { NT_ORIG_LANG, OT_ORIG_LANG } from '../js/common/BooksOfTheBible';
 
 jest.unmock('fs-extra');
 jest.unmock('adm-zip');
@@ -26,7 +22,6 @@ const translationCoreFolder = path.join('/Users/blm/translationCore');
 const alignmentsFolder = path.join(translationCoreFolder, 'alignmentData');
 
 test('get alignments', async () => {
-  const SourceContentUpdater = new sourceContentUpdater();
   const resource = {
     ...resource_,
   };
@@ -124,6 +119,7 @@ test('get latest resource', async () => {
  * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
  * @param {Object} manifest
  * @param {String} selectedProjectFilename
+ * @param {String} destinationPath
  * @return {Promise<any>}
  */
 export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjectFilename, destinationPath) => {
@@ -139,6 +135,7 @@ export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjec
       let chapterAlignments = {};
       const bibleChapter = {};
       const verses = Object.keys(chaptersObject[chapter]);
+      const chapterRef = `${bookID} ${chapter}:`;
 
       // check if chapter has alignment data
       const alignmentIndex = verses.findIndex(verse => {
@@ -160,9 +157,9 @@ export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjec
       }
 
       verses.forEach((verse) => {
+        const verseRef = `${chapterRef}${verse}`;
         const verseParts = chaptersObject[chapter][verse];
-        let verseText;
-        verseText = getUsfmForVerseContent(verseParts);
+        let verseText = getUsfmForVerseContent(verseParts);
         bibleChapter[verse] = trimNewLine(verseText);
 
         if (alignmentData) {
@@ -171,6 +168,7 @@ export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjec
           chapterAlignments[verse] = {
             alignments: object.alignment,
             wordBank: object.wordBank,
+            verseRef,
           };
         }
         verseFound = true;
@@ -207,7 +205,7 @@ export const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjec
     }
     await Promise.all(fsQueue);
   } catch (error) {
-    console.log('generateTargetLanguageBibleFromUsfm() error:', error);
+    console.log('getALignmentsFromJson() error:', error);
     throw (error);
   }
 };
