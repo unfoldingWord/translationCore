@@ -35,17 +35,91 @@ test.skip('download alignments', async () => {
 
 test('index aligned Bibles', () => {
   const resourceDir = path.join(translationCoreFolder, 'resources');
-  const alignments = getAlignedBibles(resourceDir);
-  console.log('alignments', alignments);
+  const downloadedAlignedBibles = getAlignedBibles(resourceDir);
+  const indexedResources = getAlignmentIndices(path.join(translationCoreFolder, 'alignmentData'));
+  console.log('alignments', downloadedAlignedBibles);
+
+  // filter selections
+  const filtered = filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources);
+  console.log('filtered', filtered);
 });
 
-test('get latest resource', async () => {
+test('get alignments from latest resource', async () => {
   const resource = { ...resource_ };
+  const resourceFolder = path.join(translationCoreFolder, 'resources');
 
-  await getAlignmentsFromVerseObjects(resource);
+  await getAlignmentsFromVerseObjects(resourceFolder, resource);
 }, 50000);
 
 // helpers
+
+function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources) {
+  const filtered = [];
+
+  for (const downloadedBible of downloadedAlignedBibles) {
+    for (let testament = 0; testament <= 1; testament++) {
+      const origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
+      const found = indexedResources.find(item => (
+        item.languageId === downloadedBible.languageId &&
+        item.resourceId === downloadedBible.bibleId &&
+        item.owner === downloadedBible.owner &&
+        item.origLang === origLang &&
+        item.version === downloadedBible.version
+      ));
+
+      if (found) {
+        if (found.alignmentCount) {
+          filtered.push(found);
+        }
+      } else {
+        const newResource = {
+          ...downloadedBible,
+          origLang,
+          resourceId: downloadedBible.bibleId
+        };
+
+        filtered.push(newResource);
+      }
+    }
+  }
+  return filtered;
+}
+
+function getAlignmentIndices(alignmentDataDir) {
+  const resources = [];
+  const resourcesIndexed = readDirectory(alignmentDataDir, false, true, '.json');
+
+  for (const fileName of resourcesIndexed) {
+    // const fileFolder = path.join(resourcesIndexed, fileName);
+    // ~/translationCore/alignmentData/en_ult_unfoldingWord_hbo_testament_v0_275433.json
+    const name = path.parse(fileName).name;
+    const parts = (name || '').split('_');
+    let [
+      languageId,
+      resourceId,
+      owner,
+      origLang,
+      type,
+      version,
+      alignmentCount,
+    ] = parts;
+
+    if (type !== 'testament') {
+      continue;
+    }
+
+    alignmentCount = parseInt(alignmentCount, 10);
+    resources.push({
+      languageId,
+      resourceId,
+      owner,
+      origLang,
+      version,
+      alignmentCount,
+    });
+  }
+  return resources;
+}
 
 function getAlignedBibles(resourceDir) {
   const alignments = [];
@@ -77,7 +151,7 @@ function getAlignedBibles(resourceDir) {
             bibleId,
             owner,
             version,
-            biblePath
+            biblePath,
           });
         }
       }
@@ -107,7 +181,8 @@ function readDirectory(dirPath, foldersOnly = true, sort = true, extension = nul
       }
 
       if (extension) {
-        return path.parse(item).ext === extension;
+        const ext = path.parse(item).ext;
+        return ext === extension;
       }
       return true;
     });
@@ -157,9 +232,18 @@ async function downloadBibles(resource) {
   fs.moveSync(biblePath, destinationBiblePath);
 }
 
-async function getAlignmentsFromVerseObjects(resource) {
-  const destinationPath = path.join(alignmentsFolder, `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
-  const destinationBiblePath = path.join(destinationPath, 'bible');
+async function getAlignmentsFromVerseObjects(resourceFolder, resource) {
+  // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
+  const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
+  const bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
+  const latestVersionPath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, resource.owner);
+
+  if (!latestVersionPath) {
+    console.warn(`getAlignmentsFromVerseObjects() - no bibles found for ${resource.owner} in ${bibleVersionsPath}`);
+    return;
+  }
+  const version = resourcesHelpers.splitVersionAndOwner(path.parse(latestVersionPath).name || '').version;
+  resource.version = version;
 
   try {
     for (let testament = 0; testament <= 1; testament++) {
@@ -169,7 +253,7 @@ async function getAlignmentsFromVerseObjects(resource) {
       const books = testament ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
 
       for (const bookId of books) {
-        const bookPath = path.join(destinationBiblePath, bookId);
+        const bookPath = path.join(latestVersionPath, bookId);
 
         if (fs.existsSync(bookPath)) {
           const chapters = {};
@@ -190,14 +274,13 @@ async function getAlignmentsFromVerseObjects(resource) {
 
           const manifest = { };
           const selectedProjectFilename = bookId;
-          const alignmentsPath = path.join(destinationPath, 'alignments');
           // eslint-disable-next-line no-await-in-loop
-          const bookAlignments = await getALignmentsFromJson(parsedUsfm, manifest, selectedProjectFilename, alignmentsPath);
+          const bookAlignments = await getALignmentsFromJson(parsedUsfm, manifest, selectedProjectFilename);
           Array.prototype.push.apply(alignments, bookAlignments);
         }
       }
       console.log(`getAlignmentsFromVerseObjects() for ${origLang}, ${alignments.length} alignments, indexing`);
-      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${resource.owner}_${origLang}_whole.json`);
+      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${resource.owner}_${origLang}_testament_${resource.version}_${alignments.length}.json`);
       const lemmaAlignments = {alignments: {}};
       const targetAlignments = {alignments: {}};
       const sourceAlignments = {alignments: {}};
@@ -227,14 +310,14 @@ async function getAlignmentsFromVerseObjects(resource) {
         lemmaAlignments,
         targetAlignments,
         sourceAlignments,
-        strongAlignments
+        strongAlignments,
       };
       fs.outputJsonSync(outputFile, alignmentData);
     }
 
     console.log('done');
   } catch (e) {
-    console.warn('download failed');
+    console.warn('download failed', e);
   }
 }
 
@@ -250,10 +333,9 @@ function appendToALignmentIndex(alignments, sourceText, alignment) {
  * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
  * @param {Object} manifest
  * @param {String} selectedProjectFilename
- * @param {String} destinationPath
  * @return {Promise<any>}
  */
-const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjectFilename, destinationPath) => {
+const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjectFilename) => {
   try {
     const chaptersObject = parsedUsfm.chapters;
     const bookID = manifest?.project?.id || selectedProjectFilename;
