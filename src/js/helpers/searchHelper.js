@@ -366,6 +366,7 @@ function isDirectory(dirPath) {
     if (fs.existsSync(dirPath)) {
       return fs.statSync(dirPath).isDirectory();
     }
+    // eslint-disable-next-line no-empty
   } catch (e) { }
   return false;
 }
@@ -433,7 +434,7 @@ function readDirectory(dirPath, foldersOnly = true, sort = true, extension = nul
 //   fs.moveSync(biblePath, destinationBiblePath);
 // }
 
-export async function getAlignmentsFromDownloadedBible(resourceFolder, resource) {
+export function getAlignmentsFromDownloadedBible(resourceFolder, resource) {
   // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
   const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
   const bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
@@ -476,7 +477,7 @@ export async function getAlignmentsFromDownloadedBible(resourceFolder, resource)
 
           const manifest = { };
           // eslint-disable-next-line no-await-in-loop
-          const bookAlignments = await getALignmentsFromJson(parsedUsfm, manifest, bookId);
+          const bookAlignments = getALignmentsFromJson(parsedUsfm, manifest, bookId);
           Array.prototype.push.apply(alignments, bookAlignments);
         }
       }
@@ -536,7 +537,7 @@ function appendToALignmentIndex(alignments, sourceText, alignment) {
  * @param {String} selectedProjectFilename
  * @return {Promise<any>}
  */
-const getALignmentsFromJson = async (parsedUsfm, manifest, selectedProjectFilename) => {
+const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) => {
   try {
     const chaptersObject = parsedUsfm.chapters;
     const bookID = manifest?.project?.id || selectedProjectFilename;

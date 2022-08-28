@@ -28,11 +28,11 @@ test('index aligned Bibles', () => {
   console.log('filtered', filtered);
 });
 
-test('get alignments from latest resource', async () => {
+test('get alignments from latest resource', () => {
   const resource = { ...resource_ };
   const resourceFolder = path.join(translationCoreFolder, 'resources');
 
-  await getAlignmentsFromDownloadedBible(resourceFolder, resource);
+  getAlignmentsFromDownloadedBible(resourceFolder, resource);
 }, 50000);
 
 // helpers

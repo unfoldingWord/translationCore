@@ -9,6 +9,7 @@ import {
   MenuItem,
 } from 'material-ui';
 import MaterialTable from 'material-table';
+import env from 'tc-electron-env';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -31,9 +32,14 @@ import { getProjectManifest } from '../selectors';
 // components
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
-import { loadAlignments, multiSearchAlignments } from '../helpers/searchHelper';
+import {
+  getSearchableAlignments,
+  loadAlignments,
+  multiSearchAlignments,
+} from '../helpers/searchHelper';
 import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import { ALIGNMENT_DATA_PATH } from '../common/constants';
+import { delay } from '../common/utils';
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -113,6 +119,8 @@ class AlignmentSearchDialogContainer extends React.Component {
       caseSensitive: false,
       matchWholeWord: false,
       found: null,
+      alignedBibles: [],
+      alignedBible: null,
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
@@ -124,31 +132,24 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.setSearchTypes = this.setSearchTypes.bind(this);
     this.getSelectedOptions = this.getSelectedOptions.bind(this);
+    this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.open) {
-      let update = false;
-      const bookId = this.props?.manifest?.project?.id;
-      const resourceId = this.props?.manifest?.resource?.id;
-      const targetLanguageId = this.props?.manifest?.target_language?.id;
-      const originalLangId = getOrigLangforBook(bookId)?.languageId;
-      const alignmentData = this.state?.alignmentData;
+      if (!prevProps.open) {
+        delay(100).then(() => {
+          const tCorePath = path.join(env.home(), 'translationCore');
+          const alignedBibles = getSearchableAlignments(tCorePath);
 
-      if (!alignmentData) {
-        update = true;
-      } else {
-        update = (resourceId !== alignmentData?.descriptor) ||
-          (targetLanguageId !== alignmentData?.targetLang) ||
-          (originalLangId !== alignmentData?.origLang);
-      }
-
-      if (update) {
-        if (bookId && resourceId && targetLanguageId) {
-          this.loadAlignmentData(bookId, targetLanguageId, resourceId);
-        } else {
-          console.warn(`no current project manifest`);
-        }
+          for (const bible of alignedBibles) {
+            const key = `${bible.languageId}_${bible.resourceId}_${bible.owner}_${bible.origLang}_testament_${bible.version}`;
+            const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
+            bible.key = key;
+            bible.label = label;
+          }
+          this.setState({ alignedBibles });
+        });
       }
     }
   }
@@ -169,15 +170,7 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   showResults() {
-    if (!this.state.alignmentData) {
-      return (
-        <>
-          <br/>
-          <br/>
-          <b>{'Need to Select Project!'}</b>
-        </>
-      );
-    } else if (this.state.found) {
+    if (this.state.found) {
       if (this.state.found?.length) {
         const data = this.state.found.map(item => {
           const newItem = {
@@ -257,6 +250,10 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ searchStr: search });
   }
 
+  setSearchAlignedBible(event, index, value) {
+    this.setState({ alignedBible: value });
+  }
+
   setMatchWholeWord(value) {
     this.setState({ matchWholeWord: !!value });
   }
@@ -332,8 +329,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     } = this.props;
 
     const fullScreen = { maxWidth: '100%', width: '100%' };
-    const partialScreen = { maxWidth: '768px', width: '75%' };
-    const contentStyle = this.state.found?.length ? fullScreen : partialScreen;
+    // const partialScreen = { maxWidth: '768px', width: '75%' };
+    const contentStyle = fullScreen;
 
     return (
       <BaseDialog
@@ -350,75 +347,88 @@ class AlignmentSearchDialogContainer extends React.Component {
         contentStyle={contentStyle}
       >
         <div>
-          {this.state.alignmentData &&
-            <>
-              <TextField
-                defaultValue={this.state.searchStr}
-                multiLine
-                rowsMax={4}
-                id="search-input"
-                className="Filter Results"
-                floatingLabelText={'Enter Search String (can use * and ?)'}
-                // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
-                floatingLabelStyle={{
-                  color: 'var(--text-color-dark)',
-                  opacity: '0.3',
-                  fontWeight: '500',
-                }}
-                onChange={e => this.setSearchStr(e.target.value)}
-                autoFocus={true}
-                style={{ width: '100%' }}
-              />
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-                <div style={{ display: 'flex' }}>
-                  {'Search Source'}
-                </div>
-                <div style={{ display: 'flex' }}>
-                  <SelectField
-                    id={'select_search_type'}
-                    hintText="Select search types"
-                    value={this.getSelectedOptions(searchOptions)}
-                    multiple
-                    style={{ width: '200px' }}
-                    onChange={this.setSearchTypes}
-                  >
-                    {
-                      searchOptions.map(item => (
-                        <MenuItem
-                          key={item.key}
-                          insetChildren={true}
-                          checked={this.state[item.stateKey]}
-                          value={item.key}
-                          primaryText={item.label}
-                        />
-                      ))
-                    }
-                  </SelectField>
-                </div>
-                <SelectField
-                  id={'select_search_type'}
-                  hintText="Select fields to search"
-                  value={this.state.searchType}
-                  multiple
-                  style={{ width: '300px' }}
-                  onChange={this.setSearchFields}
-                >
-                  {
-                    searchFieldOptions.map(item => (
-                      <MenuItem
-                        key={item}
-                        insetChildren={true}
-                        checked={this.isSearchFieldSelected(item)}
-                        value={item}
-                        primaryText={searchFieldLabels[item]}
-                      />
-                    ))
-                  }
-                </SelectField>
-              </div>
-            </>
-          }
-          { this.showResults()}
+          <TextField
+            defaultValue={this.state.searchStr}
+            multiLine
+            rowsMax={4}
+            id="search-input"
+            className="Filter Results"
+            floatingLabelText={'Enter Search String (can use * and ?)'}
+            // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+            floatingLabelStyle={{
+              color: 'var(--text-color-dark)',
+              opacity: '0.3',
+              fontWeight: '500',
+            }}
+            onChange={e => this.setSearchStr(e.target.value)}
+            autoFocus={true}
+            style={{ width: '100%' }}
+          />
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex' }}>
+              <SelectField
+                id={'select_search_type'}
+                hintText="Select Bible to Search"
+                value={this.state.alignedBible}
+                style={{ width: '400px' }}
+                onChange={this.setSearchAlignedBible}
+              >
+                {
+                  this.state.alignedBibles?.map(item => (
+                    <MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  ))
+                }
+              </SelectField>
+            </div>
+            <div style={{ display: 'flex' }}>
+              <SelectField
+                id={'select_search_type'}
+                hintText="Select search types"
+                value={this.getSelectedOptions(searchOptions)}
+                multiple
+                style={{ width: '200px', marginLeft: '20px', marginRight: '20px' }}
+                onChange={this.setSearchTypes}
+              >
+                {
+                  searchOptions.map(item => (
+                    <MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      checked={this.state[item.stateKey]}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  ))
+                }
+              </SelectField>
+            </div>
+            <SelectField
+              id={'select_search_type'}
+              hintText="Select fields to search"
+              value={this.state.searchType}
+              multiple
+              style={{ width: '300px' }}
+              onChange={this.setSearchFields}
+            >
+              {
+                searchFieldOptions.map(item => (
+                  <MenuItem
+                    key={item}
+                    insetChildren={true}
+                    checked={this.isSearchFieldSelected(item)}
+                    value={item}
+                    primaryText={searchFieldLabels[item]}
+                  />
+                ))
+              }
+            </SelectField>
+          </div>
+          { this.showResults() }
         </div>
       </BaseDialog>
     );
