@@ -1,7 +1,5 @@
-import React from 'react';
 import path from 'path-extra';
 import {
-  downloadBibles,
   getAlignmentsFromDownloadedBible,
   getSearchableAlignments,
 } from '../js/helpers/searchHelper';
@@ -17,11 +15,11 @@ const resource_ = {
 
 const translationCoreFolder = path.join('/Users/blm/translationCore');
 
-test.skip('download alignments', async () => {
-  const resource = { ...resource_ };
-
-  await downloadBibles(resource);
-}, 50000);
+// test.skip('download alignments', async () => {
+//   const resource = { ...resource_ };
+//
+//   await downloadBibles(resource);
+// }, 50000);
 
 test('index aligned Bibles', () => {
   const filtered = getSearchableAlignments(translationCoreFolder);
