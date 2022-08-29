@@ -11,7 +11,7 @@ import {
 jest.unmock('fs-extra');
 
 describe('test greek alignments', () => {
-  const fileName = 'en_test_el-x-koine';
+  const fileName = 'es-419_glt_Es-419%5Fgl_el-x-koine_testament_v39%2E1_501';
   const jsonPath = path.join(__dirname, `fixtures/alignmentData/${fileName}.json`);
   const alignmentData = loadAlignments(jsonPath);
   const {
@@ -23,23 +23,25 @@ describe('test greek alignments', () => {
 
   it('verify Greek alignment search data', () => {
     // given
+    const expectedCount = 501;
 
     // when
 
     // then
     expect(alignments).toBeTruthy();
-    expect(Object.keys(alignments).length).toEqual(418);
+    expect(Object.keys(alignments).length).toEqual(expectedCount);
     const sourceAlignmentsCount = getCount(source.alignments);
     const targetAlignmentsCount = getCount(target.alignments);
     const lemmaAlignmentsCount = getCount(lemma.alignments);
-    expect(sourceAlignmentsCount).toEqual(targetAlignmentsCount);
-    expect(lemmaAlignmentsCount).toEqual(targetAlignmentsCount);
+    expect(targetAlignmentsCount).toEqual(expectedCount);
+    expect(sourceAlignmentsCount).toEqual(expectedCount);
+    expect(lemmaAlignmentsCount).toEqual(expectedCount);
   });
 
   describe('test multiSearchAlignments', () => {
-    it('search partial Pau ', () => {
+    it('search partial Pab', () => { // Pablo
       // given
-      const search = 'Pau';
+      const search = 'Pab';
       const config = {
         fullWord: false,
         caseInsensitive: false,
@@ -70,7 +72,7 @@ describe('test greek alignments', () => {
       const found = multiSearchAlignments(alignmentData, search, config);
 
       // then
-      expect(found.length).toEqual(5);
+      expect(found.length).toEqual(4);
     });
 
     it('search full κατά', () => {
@@ -88,7 +90,7 @@ describe('test greek alignments', () => {
       const found = multiSearchAlignments(alignmentData, search, config);
 
       // then
-      expect(found.length).toEqual(8);
+      expect(found.length).toEqual(7);
     });
 
     it('search lemma full κατ*', () => {
@@ -106,7 +108,7 @@ describe('test greek alignments', () => {
       const found = multiSearchAlignments(alignmentData, search, config);
 
       // then
-      expect(found.length).toEqual(10);
+      expect(found.length).toEqual(9);
     });
 
     it('search source full κατ*', () => {
@@ -124,7 +126,7 @@ describe('test greek alignments', () => {
       const found = multiSearchAlignments(alignmentData, search, config);
 
       // then
-      expect(found.length).toEqual(11);
+      expect(found.length).toEqual(10);
     });
 
     it('search all full κατ*', () => {
@@ -142,14 +144,14 @@ describe('test greek alignments', () => {
       const found = multiSearchAlignments(alignmentData, search, config);
 
       // then
-      expect(found.length).toEqual(11);
+      expect(found.length).toEqual(10);
     });
   });
 
   describe('test searchAlignments', () => {
-    it('search text', () => {
+    it('search text Pab', () => {
       // given
-      const search = 'Pau';
+      const search = 'Pab';
       const fullWord = false;
       const caseInsensitive = false;
 
@@ -160,9 +162,9 @@ describe('test greek alignments', () => {
       expect(foundAlignments.length).toEqual(1);
     });
 
-    it('search regex partial Pau false', () => {
+    it('search regex partial Pab false', () => {
       // given
-      const search = 'Pau';
+      const search = 'Pab';
       const fullWord = true;
       const caseInsensitive = false;
 
@@ -173,9 +175,9 @@ describe('test greek alignments', () => {
       expect(foundAlignments.length).toEqual(0);
     });
 
-    it('search regex partial word Pau true', () => {
+    it('search regex partial word Pab true', () => {
       // given
-      const search = 'Pau';
+      const search = 'Pab';
       const fullWord = false;
       const caseInsensitive = false;
 
@@ -186,9 +188,9 @@ describe('test greek alignments', () => {
       expect(foundAlignments.length).toEqual(1);
     });
 
-    it('search regex full word Paul true', () => {
+    it('search regex full word Pablo true', () => {
       // given
-      const search = 'Paul';
+      const search = 'Pablo';
       const fullWord = true;
       const caseInsensitive = false;
 
@@ -199,9 +201,9 @@ describe('test greek alignments', () => {
       expect(foundAlignments.length).toEqual(1);
     });
 
-    it('search regex full word paul case insensitive true', () => {
+    it('search regex full word pablo case insensitive true', () => {
       // given
-      const search = 'paul';
+      const search = 'pablo';
       const fullWord = true;
       const caseInsensitive = true;
 
@@ -212,9 +214,9 @@ describe('test greek alignments', () => {
       expect(foundAlignments.length).toEqual(1);
     });
 
-    it('search regex full word p?ul case insensitive true', () => {
+    it('search regex full word p?blo case insensitive true', () => {
       // given
-      const search = 'p?ul';
+      const search = 'p?blo';
       const fullWord = true;
       const caseInsensitive = true;
 
@@ -225,9 +227,9 @@ describe('test greek alignments', () => {
       expect(foundAlignments.length).toEqual(1);
     });
 
-    it('search regex full word p*l case insensitive true', () => {
+    it('search regex full word pa*o case insensitive true', () => {
       // given
-      const search = 'p*l';
+      const search = 'pa*o';
       const fullWord = true;
       const caseInsensitive = true;
 
@@ -248,7 +250,7 @@ describe('test greek alignments', () => {
       const foundAlignments = searchAlignments(search, fullWord, caseInsensitive, target.keys, target.alignments);
 
       // then
-      expect(foundAlignments.length).toEqual(2);
+      expect(foundAlignments.length).toEqual(3);
     });
 
     it('search regex partial word κατ case insensitive true', () => {
@@ -261,7 +263,7 @@ describe('test greek alignments', () => {
       const foundAlignments = searchAlignments(search, fullWord, caseInsensitive, source.keys, source.alignments);
 
       // then
-      expect(foundAlignments.length).toEqual(13);
+      expect(foundAlignments.length).toEqual(12);
     });
 
     it('search regex full word κατὰ case insensitive true', () => {
@@ -274,14 +276,14 @@ describe('test greek alignments', () => {
       const foundAlignments = searchAlignments(search, fullWord, caseInsensitive, source.keys, source.alignments);
 
       // then
-      expect(foundAlignments.length).toEqual(5);
+      expect(foundAlignments.length).toEqual(4);
     });
   });
 
   describe('test regexSearch', () => {
-    it('search text', () => {
+    it('search text Pab', () => {
       // given
-      const search = 'Pau';
+      const search = 'Pab';
 
       // when
       const found = regexSearch(target.keys, search);
@@ -301,9 +303,9 @@ describe('test greek alignments', () => {
       expect(found.length).toEqual(7);
     });
 
-    it('search regex partial Pau false', () => {
+    it('search regex partial Pab false', () => {
       // given
-      const search_ = 'Pau';
+      const search_ = 'Pab';
       const fullWord = true;
       const caseInsensitive = false;
       const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
@@ -315,9 +317,9 @@ describe('test greek alignments', () => {
       expect(found.length).toEqual(0);
     });
 
-    it('search regex partial word Pau true', () => {
+    it('search regex partial word Pab true', () => {
       // given
-      const search_ = 'Pau';
+      const search_ = 'Pab';
       const fullWord = false;
       const caseInsensitive = false;
       const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
@@ -329,9 +331,9 @@ describe('test greek alignments', () => {
       expect(found.length).toEqual(1);
     });
 
-    it('search regex full word Paul true', () => {
+    it('search regex full word Pablo true', () => {
       // given
-      const search_ = 'Paul';
+      const search_ = 'Pablo';
       const fullWord = true;
       const caseInsensitive = false;
       const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
@@ -343,9 +345,9 @@ describe('test greek alignments', () => {
       expect(found.length).toEqual(1);
     });
 
-    it('search regex full word paul case insensitive true', () => {
+    it('search regex full word pablo case insensitive true', () => {
       // given
-      const search_ = 'paul';
+      const search_ = 'pablo';
       const fullWord = true;
       const caseInsensitive = true;
       const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
@@ -357,9 +359,9 @@ describe('test greek alignments', () => {
       expect(found.length).toEqual(1);
     });
 
-    it('search regex full word p?ul case insensitive true', () => {
+    it('search regex full word p?blo case insensitive true', () => {
       // given
-      const search_ = 'p?ul';
+      const search_ = 'p?blo';
       const fullWord = true;
       const caseInsensitive = true;
       const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
@@ -371,9 +373,9 @@ describe('test greek alignments', () => {
       expect(found.length).toEqual(1);
     });
 
-    it('search regex full word p*l case insensitive true', () => {
+    it('search regex full word pa*o case insensitive true', () => {
       // given
-      const search_ = 'p*l';
+      const search_ = 'pa*o';
       const fullWord = true;
       const caseInsensitive = true;
       const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
@@ -396,7 +398,7 @@ describe('test greek alignments', () => {
       const found = regexSearch(target.keys, search, flags);
 
       // then
-      expect(found.length).toEqual(2);
+      expect(found.length).toEqual(3);
     });
   });
 });
