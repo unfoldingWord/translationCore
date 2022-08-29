@@ -80,6 +80,7 @@
   "sending_feedback_failed": "Échec de l’envoi du commentaire",
   "critical_error_warning": "AVERTISSEMENT : Une erreur critique s'est produite !",
   "unknown_networking_error": "${app_name} a rencontré une erreur de communication inconnue. Si ce problème persiste, veuillez envoyer \"${user_feedback}\" qui est une option sur le bouton \"${actions}\".",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organisation",
     "resource": "Ressource",
@@ -236,7 +237,7 @@
     "dcs_create_new_conflict": "La création d'un nouveau répertoire a échoué car un répertoire portant ce nom existe déjà.<br/><br/>Pour pouvoir téléverser votre projet sur ${door43}, vous devez soit renommer votre projet local, soit renommer votre projet ${door43}.",
     "unknown_download_networking_error": "${app_name} a rencontré une erreur de communication inconnue pendant le téléchargement du projet depuis ${project_url}.<br/><br/>Si ce problème persiste, veuillez envoyer \"${user_feedback}\" qui est une option sur le bouton \"${actions}\".",
     "project_locked": "Le projet est verrouillé à :<br/>'${file_path}'. Veuillez redémarrer votre ordinateur et réessayer.",
-    "known_download_networking_error": "Le téléchargement du projet ${project_url} a échoué: ${error_message}",
+    "known_download_networking_error": "Le téléchargement du projet \"${project_url}\" a échoué: ${error_message}",
     "load_view_usfm_url": "Load Bible Resource (USFM)",
     "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
     "enter_resource_url": "Enter Resource URL",
@@ -459,7 +460,8 @@
     "retry": "Réessayer",
     "update": "Mettre à jour vers la dernière version.",
     "ignore_button": "Ignorer",
-    "feedback_button": "Envoyer des commentaires"
+    "feedback_button": "Envoyer des commentaires",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Termes clés",

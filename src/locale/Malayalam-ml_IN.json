@@ -80,6 +80,7 @@
   "sending_feedback_failed": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുന്നതിൽ പരാജയപ്പെട്ടു",
   "critical_error_warning": "മുന്നറിയിപ്പ്: ഗുരുതരമായൊരു തെറ്റു് സംഭവിച്ചു!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "വീണ്ടും ശ്രമിക്കുക",
     "update": "ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റുചെയ്യുക",
     "ignore_button": "അവഗണിക്കുക",
-    "feedback_button": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുക"
+    "feedback_button": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുക",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "പ്രധാന നിബന്ധനകൾ",

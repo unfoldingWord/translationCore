@@ -80,6 +80,7 @@
   "sending_feedback_failed": "ମତାମତ ପଠାଇବା ପାଇଁ ବିଫଳ ହେଲା",
   "critical_error_warning": "\"ସତର୍କ: ସମାଲୋଚନାମୂଳକ ତ୍ରୁଟିଘଟିଅଛି!\"",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "\"ପୁନଃ ଚେଷ୍ଟା କରନ୍ତୁ\"",
     "update": "\"ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ\"",
     "ignore_button": "\"ଛାଡନ୍ତୁ\"",
-    "feedback_button": "\"ମତାମତ ପଠାନ୍ତୁ\""
+    "feedback_button": "\"ମତାମତ ପଠାନ୍ତୁ\"",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "\"ମୁଖ୍ୟ ଶବ୍ଦସମୁହ\"",

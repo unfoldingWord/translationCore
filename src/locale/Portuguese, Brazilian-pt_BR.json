@@ -80,6 +80,7 @@
   "sending_feedback_failed": "Falha ao enviar comentário",
   "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
   "unknown_networking_error": "${app_name} encontrou um erro de comunicação desconhecido. Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organização",
     "resource": "Recurso",
@@ -237,10 +238,10 @@
     "unknown_download_networking_error": "${app_name} encontrou um erro de comunicação desconhecido tentando baixar o projeto de \"${project_url}\".<br/><br/>Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
     "project_locked": "O projeto está travado em:<br/>'${file_path}'. Por favor, reinicie o computador e tente novamente.",
     "known_download_networking_error": "O download do projeto ${project_url} falhou: ${error_message}",
-    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url": "Carregar Recurso Bíblico",
     "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
-    "enter_resource_url": "Enter Resource URL",
-    "loading_usfm_url": "Loading : ${usfm_url}"
+    "enter_resource_url": "Entre com a URL do recurso",
+    "loading_usfm_url": "Carregando : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "O Nome de Idioma não é válido para esse Código",
@@ -459,7 +460,8 @@
     "retry": "Tentar novamente",
     "update": "Atualize para a versão mais recente",
     "ignore_button": "Ignorar",
-    "feedback_button": "Enviar comentário"
+    "feedback_button": "Enviar comentário",
+    "delete": "Excluir"
   },
   "tool_card_categories": {
     "kt": "Termos-Chave",

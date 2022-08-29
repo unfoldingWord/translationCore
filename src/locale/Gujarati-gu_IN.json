@@ -80,6 +80,7 @@
   "sending_feedback_failed": "પ્રતિસાદ મોકલવામાં નિષ્ફળ ગયું",
   "critical_error_warning": "ચેતવણી: એક મહત્વપૂર્ણ ભૂલ આવી છે!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "ફરી પ્રયાસ કરો",
     "update": "આધુનિક સંસ્કરણ સાથે અપડેટ કરો",
     "ignore_button": "ટાળો",
-    "feedback_button": "પ્રતિસાદ મોકલો"
+    "feedback_button": "પ્રતિસાદ મોકલો",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "ચાવીરૂપ શરતો",
