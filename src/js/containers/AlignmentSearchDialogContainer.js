@@ -33,13 +33,16 @@ import { getProjectManifest } from '../selectors';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
 import {
+  encodeParam,
+  getAlignmentsFromResource,
   getSearchableAlignments,
   loadAlignments,
   multiSearchAlignments,
+  readDirectory,
 } from '../helpers/searchHelper';
-import { getOrigLangforBook } from '../helpers/bibleHelpers';
-import { ALIGNMENT_DATA_PATH } from '../common/constants';
+import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
+import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -138,33 +141,86 @@ class AlignmentSearchDialogContainer extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.open) {
       if (!prevProps.open) {
-        delay(100).then(() => {
-          const tCorePath = path.join(env.home(), 'translationCore');
-          const alignedBibles = getSearchableAlignments(tCorePath);
-
-          for (const bible of alignedBibles) {
-            const key = `${bible.languageId}_${bible.resourceId}_${bible.owner}_${bible.origLang}_testament_${bible.version}`;
-            const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
-            bible.key = key;
-            bible.label = label;
-          }
-          this.setState({ alignedBibles });
-        });
+        this.loadAlignmentSuggestions();
       }
     }
   }
 
-  loadAlignmentData(bookId, targetLanguageId, resourceId) {
-    const originalLangId = getOrigLangforBook(bookId)?.languageId;
-    const fileName = `${targetLanguageId}_${resourceId}_${originalLangId}`;
-    const jsonPath = path.join(ALIGNMENT_DATA_PATH, `${fileName}.json`);
-    const alignmentData = loadAlignments(jsonPath);
+  loadAlignmentSuggestions() {
+    this.props.openAlertDialog('Loading Available Aligned Bibles', true);
+    delay(100).then(() => {
+      const tCorePath = path.join(env.home(), 'translationCore');
+      const alignedBibles = getSearchableAlignments(tCorePath);
+
+      for (const bible of alignedBibles) {
+        const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+        const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
+        bible.key = key;
+        bible.label = label;
+      }
+      this.setState({ alignedBibles });
+      this.props.closeAlertDialog();
+      this.loadAlignmentData(this.state.alignedBible);
+    });
+  }
+
+  loadAlignmentData(alignedBible) {
+    if (alignedBible) {
+      this.props.openAlertDialog('Doing one-time indexing of Bible for Search', true);
+      delay(100).then(() => {
+        const resource = this.getResourceForBible(alignedBible);
+        let gotResource = resource;
+
+        if (resource) {
+          if (!resource.alignmentCount) {
+            const alignmentData = getAlignmentsFromResource(USER_RESOURCES_PATH, resource);
+
+            if (alignmentData?.alignments?.length) {
+              resource.alignmentCount = alignmentData?.alignments?.length;
+              this.setState({ alignedBibles: this.state.alignedBibles });
+              gotResource = true;
+            } else {
+              this.props.openAlertDialog(`No Alignments found in ${resource.label}`);
+              console.error('no alignments');
+            }
+          }
+
+          if (gotResource) {
+            this.props.closeAlertDialog();
+            this.loadAlignmentDataFromIndex(resource);
+          }
+        } else {
+          this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
+          console.log(`loadAlignmentData() no aligned bible match found for ${alignedBible}`);
+        }
+      });
+    } else {
+      console.log('loadAlignmentData() no aligned bible');
+    }
+  }
+
+  getResourceForBible(alignedBible) {
+    const resource = this.state.alignedBibles?.find(item => item.key === alignedBible);
+    return resource;
+  }
+
+  loadAlignmentDataFromIndex(resource) {
+    const resourcesIndexed = readDirectory(ALIGNMENT_DATA_PATH, false, true, '.json');
+    let alignmentData;
+    const foundIndexPath = resourcesIndexed?.find((file) => file.indexOf(resource.key) === 0 );
+
+    if (foundIndexPath) {
+      alignmentData = loadAlignments(path.join(ALIGNMENT_DATA_PATH, foundIndexPath));
+    } else {
+      console.log('loadAlignmentDataFromIndex() - did not find index');
+    }
 
     if (alignmentData) {
-      console.log('AlignmentSearchDialogContainer - loaded alignment data');
+      console.log('loadAlignmentDataFromIndex() - loaded alignment data');
       this.setState({ alignmentData, found: null });
     } else {
-      console.log('AlignmentSearchDialogContainer - FAILED to load alignment data');
+      this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
+      console.log('loadAlignmentDataFromIndex() - FAILED to load alignment data');
       this.setState({ alignmentData: null, found: null });
     }
   }
@@ -251,6 +307,7 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   setSearchAlignedBible(event, index, value) {
+    this.loadAlignmentData(value);
     this.setState({ alignedBible: value });
   }
 
@@ -301,7 +358,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     };
 
     // when
-    const found = multiSearchAlignments(state.alignmentData, state.searchStr, config) || [];
+    let found = multiSearchAlignments(state.alignmentData, state.searchStr, config) || [];
+    found = found?.map(index => state.alignmentData.alignments[index]);
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     this.setState({ found });
   }
@@ -440,10 +498,15 @@ AlignmentSearchDialogContainer.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   manifest: PropTypes.object.isRequired,
+  openAlertDialog: PropTypes.func.isRequired,
+  closeAlertDialog: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({ manifest: getProjectManifest(state) });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  openAlertDialog: (alertMessage, loading, buttonText = null, callback = null) => openAlertDialog(alertMessage, loading, buttonText, callback),
+  closeAlertDialog: () => closeAlertDialog(),
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlignmentSearchDialogContainer);

@@ -130,29 +130,15 @@ export function loadAlignments(jsonPath) {
     const baseName = path.parse(jsonPath).name;
     const [targetLang, descriptor, origLang] = baseName.split('_');
 
-    const {
-      lemmaAlignments,
-      targetAlignments,
-      sourceAlignments,
-      strongAlignments,
-    } = indexAlignments(alignments);
-    const strongKeys = getSortedKeys(strongAlignments, 'en');
-    const lemmaKeys = getSortedKeys(lemmaAlignments, origLang);
-    const sourceKeys = getSortedKeys(sourceAlignments, origLang);
-    const targetKeys = getSortedKeys(targetAlignments, targetLang);
-    const target = { keys: targetKeys, alignments: targetAlignments };
-    const source = { keys: sourceKeys, alignments: sourceAlignments };
-    const lemma = { keys: lemmaKeys, alignments: lemmaAlignments };
-    const strong = { keys: strongKeys, alignments: strongAlignments };
     return {
-      alignments,
+      alignments: alignments.alignments,
       targetLang,
       descriptor,
       origLang,
-      target,
-      lemma,
-      source,
-      strong,
+      target: alignments.targetAlignments,
+      lemma: alignments.lemmaAlignments,
+      source: alignments.sourceAlignments,
+      strong: alignments.strongAlignments,
     };
   } catch (e) {
     console.warn(`loadAlignments() - could not read ${jsonPath}`);
@@ -304,6 +290,8 @@ export function getAlignmentIndices(alignmentDataDir) {
       version,
       alignmentCount,
     ] = parts;
+    owner = decodeURIComponent(owner);
+    version = decodeURIComponent(version);
 
     if (type !== 'testament') {
       continue;
@@ -371,7 +359,7 @@ function isDirectory(dirPath) {
   return false;
 }
 
-function readDirectory(dirPath, foldersOnly = true, sort = true, extension = null) {
+export function readDirectory(dirPath, foldersOnly = true, sort = true, extension = null) {
   if (isDirectory(dirPath)) {
     let content = fs.readdirSync(dirPath).filter(item => {
       if (item === '.DS_Store') {
@@ -434,26 +422,29 @@ function readDirectory(dirPath, foldersOnly = true, sort = true, extension = nul
 //   fs.moveSync(biblePath, destinationBiblePath);
 // }
 
-export function getAlignmentsFromDownloadedBible(resourceFolder, resource) {
-  // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
-  const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
-  const bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
-  const latestVersionPath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, resource.owner);
+export function encodeParam(param) {
+  let encoded = encodeURIComponent(param);
+  encoded = encoded.replaceAll('_', '%5F');
+  encoded = encoded.replaceAll('.', '%2E');
+  return encoded;
+}
 
-  if (!latestVersionPath) {
-    console.warn(`getAlignmentsFromVerseObjects() - no bibles found for ${resource.owner} in ${bibleVersionsPath}`);
-    return;
-  }
-
-  const version = resourcesHelpers.splitVersionAndOwner(path.parse(latestVersionPath).name || '').version;
-  resource.version = version;
-
+export function getAlignmentsFromResource(resourceFolder, resource) {
   try {
-    for (let testament = 0; testament <= 1; testament++) {
-      const alignments = [];
-      const origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
-      console.log(`getAlignmentsFromVerseObjects() - get alignments for ${origLang}`);
-      const books = testament ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
+    // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
+    const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
+    const bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
+    const latestVersionPath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, resource.owner);
+
+    if (!latestVersionPath) {
+      console.warn(`getAlignmentsFromResource() - no bibles found for ${resource.owner} in ${bibleVersionsPath}`);
+    } else {
+      const version = resourcesHelpers.splitVersionAndOwner(path.parse(latestVersionPath).base || '').version;
+      resource.version = version;
+
+      let alignments = [];
+      console.log(`getAlignmentsFromResource() - get alignments for ${resource.origLang}`);
+      const books = resource.origLang === NT_ORIG_LANG ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
 
       for (const bookId of books) {
         const bookPath = path.join(latestVersionPath, bookId);
@@ -475,14 +466,47 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource) {
             chapters[c] = chapterJson;
           }
 
-          const manifest = { };
+          const manifest = {};
           // eslint-disable-next-line no-await-in-loop
           const bookAlignments = getALignmentsFromJson(parsedUsfm, manifest, bookId);
           Array.prototype.push.apply(alignments, bookAlignments);
         }
       }
-      console.log(`getAlignmentsFromVerseObjects() for ${origLang}, ${alignments.length} alignments, indexing`);
-      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${resource.owner}_${origLang}_testament_${resource.version}_${alignments.length}.json`);
+
+      // merge alignments
+      const alignments_ = {};
+      const uniqueAlignments = [];
+
+      for (const alignment of alignments) {
+        const {
+          sourceText,
+          targetText,
+          ref,
+        } = alignment;
+
+        if (!alignments_[sourceText]) {
+          alignments_[sourceText] = {};
+        }
+
+        const sourceALignment = alignments_[sourceText];
+
+        if (!sourceALignment[targetText]) {
+          alignment.refs = [ref];
+          delete alignment.ref;
+          const index = uniqueAlignments.length;
+          uniqueAlignments.push(alignment);
+          sourceALignment[targetText] = [index];
+        } else {
+          const index = sourceALignment[targetText];
+          const matchedAlignment = uniqueAlignments[index];
+          matchedAlignment.refs.push(ref);
+        }
+      }
+
+      alignments = uniqueAlignments;
+
+      console.log(`getAlignmentsFromResource() for ${resource.origLang}, ${alignments.length} alignments, indexing`);
+      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${(encodeParam(resource.owner))}_${resource.origLang}_testament_${encodeParam(resource.version)}_${alignments.length}.json`);
       const lemmaAlignments = { alignments: {} };
       const targetAlignments = { alignments: {} };
       const sourceAlignments = { alignments: {} };
@@ -502,10 +526,10 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource) {
         appendToALignmentIndex(targetAlignments.alignments, targetText, i);
       }
 
-      console.log(`getAlignmentsFromVerseObjects() for ${origLang}, getting keys`);
+      console.log(`getAlignmentsFromResource() for ${resource.origLang}, getting keys`);
       strongAlignments.keys = getSortedKeys(strongAlignments.alignments, 'en');
-      lemmaAlignments.keys = getSortedKeys(lemmaAlignments.alignments, origLang);
-      sourceAlignments.keys = getSortedKeys(sourceAlignments.alignments, origLang);
+      lemmaAlignments.keys = getSortedKeys(lemmaAlignments.alignments, resource.origLang);
+      sourceAlignments.keys = getSortedKeys(sourceAlignments.alignments, resource.origLang);
       targetAlignments.keys = getSortedKeys(targetAlignments.alignments, resource.languageId);
       const alignmentData = {
         alignments,
@@ -515,12 +539,24 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource) {
         strongAlignments,
       };
       fs.outputJsonSync(outputFile, alignmentData);
+      return alignmentData;
     }
-
-    console.log('done');
   } catch (e) {
-    console.warn('getAlignmentsFromVerseObjects() - download failed', e);
+    console.warn('getAlignmentsFromResource() - parsing alignments failed', e);
   }
+}
+
+export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
+  for (let testament = 0; testament <= 1; testament++) {
+    const origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
+    const resource = {
+      ...resource_,
+      origLang,
+    };
+    getAlignmentsFromResource(resourceFolder, resource);
+  }
+
+  console.log('done');
 }
 
 function appendToALignmentIndex(alignments, sourceText, alignment) {
