@@ -101,7 +101,7 @@ const searchOptions = [
 ];
 
 /**
- * Renders a dialog displaying search options.
+ * Renders a dialog for user to do alignment search.
  *
  * @class
  *
@@ -129,8 +129,6 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.startSearch = this.startSearch.bind(this);
     this.showResults = this.showResults.bind(this);
     this.setSearchFields = this.setSearchFields.bind(this);
-    this.setMatchWholeWord = this.setMatchWholeWord.bind(this);
-    this.setCaseSensitive = this.setCaseSensitive.bind(this);
     this.isSearchFieldSelected = this.isSearchFieldSelected.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.setSearchTypes = this.setSearchTypes.bind(this);
@@ -140,12 +138,15 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.props.open) {
-      if (!prevProps.open) {
+      if (!prevProps.open) { // when dialog is opened
         this.loadAlignmentSuggestions();
       }
     }
   }
 
+  /**
+   * index downloaded bible resources to get available aligned bibles
+   */
   loadAlignmentSuggestions() {
     this.props.openAlertDialog('Loading Available Aligned Bibles', true);
     delay(100).then(() => {
@@ -159,52 +160,69 @@ class AlignmentSearchDialogContainer extends React.Component {
         bible.label = label;
       }
       this.setState({ alignedBibles });
-      this.props.closeAlertDialog();
       this.loadAlignmentData(this.state.alignedBible);
     });
   }
 
-  loadAlignmentData(alignedBible) {
-    if (alignedBible) {
-      this.props.openAlertDialog('Doing one-time indexing of Bible for Search', true);
+  /**
+   * checks if selected bible has an index saved.  If not then an index is first created and saved.  Then the index is
+   *    loaded for searching
+   * @param {string} selectedBibleKey
+   */
+  loadAlignmentData(selectedBibleKey) {
+    if (selectedBibleKey) {
+      this.props.openAlertDialog('Loading index of Bible alignments for Search', true);
       delay(100).then(() => {
-        const resource = this.getResourceForBible(alignedBible);
-        let gotResource = resource;
+        const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
           if (!resource.alignmentCount) {
-            const alignmentData = getAlignmentsFromResource(USER_RESOURCES_PATH, resource);
+            this.props.openAlertDialog('Doing one-time indexing of Bible for Search', true);
+            delay(100).then(() => {
+              const alignmentData = getAlignmentsFromResource(USER_RESOURCES_PATH, resource);
 
-            if (alignmentData?.alignments?.length) {
-              resource.alignmentCount = alignmentData?.alignments?.length;
-              this.setState({ alignedBibles: this.state.alignedBibles });
-              gotResource = true;
-            } else {
-              this.props.openAlertDialog(`No Alignments found in ${resource.label}`);
-              console.error('no alignments');
-            }
-          }
-
-          if (gotResource) {
+              if (alignmentData?.alignments?.length) {
+                resource.alignmentCount = alignmentData?.alignments?.length;
+                this.setState({ alignedBibles: this.state.alignedBibles });
+                this.props.openAlertDialog('Doing one-time indexing of Bible for Search', true);
+                this.loadIndexedAlignmentData(resource);
+                this.props.closeAlertDialog();
+              } else {
+                this.props.openAlertDialog(`No Alignments found in ${resource.label}`);
+                console.error('no alignments');
+              }
+            });
+          } else {
+            this.loadIndexedAlignmentData(resource);
             this.props.closeAlertDialog();
-            this.loadAlignmentDataFromIndex(resource);
           }
         } else {
           this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
-          console.log(`loadAlignmentData() no aligned bible match found for ${alignedBible}`);
+          console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
         }
       });
     } else {
       console.log('loadAlignmentData() no aligned bible');
+      this.props.closeAlertDialog();
     }
   }
 
-  getResourceForBible(alignedBible) {
-    const resource = this.state.alignedBibles?.find(item => item.key === alignedBible);
+  /**
+   * searches aligned Bibles list for selected bible and returns resource data.
+   * @param {string} selectedBibleKey
+   * @returns {object|null} resource
+   */
+  getResourceForBible(selectedBibleKey) {
+    const resource = this.state.alignedBibles?.find(item => item.key === selectedBibleKey);
     return resource;
   }
 
-  loadAlignmentDataFromIndex(resource) {
+  /**
+   * loads the indexed alignment data for resource and saves in state
+   * @param {object} resource
+   */
+  loadIndexedAlignmentData(resource) {
+    // check alignment data folder for indexed search data
     const resourcesIndexed = readDirectory(ALIGNMENT_DATA_PATH, false, true, '.json');
     let alignmentData;
     const foundIndexPath = resourcesIndexed?.find((file) => file.indexOf(resource.key) === 0 );
@@ -225,9 +243,13 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
   }
 
+  /**
+   * show search results in table
+   * @returns {JSX.Element}
+   */
   showResults() {
-    if (this.state.found) {
-      if (this.state.found?.length) {
+    if (this.state.found) { // if we have search results
+      if (this.state.found?.length) { // if search results are not empty, create table to show results
         const data = this.state.found.map(item => {
           const newItem = {
             ...item,
@@ -282,7 +304,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             localization={localization}
           />
         );
-      } else {
+      } else { // if search results are empty, show message
         return (
           <>
             <br/>
@@ -291,7 +313,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           </>
         );
       }
-    } else {
+    } else { // if we don't have search results yet, prompt user that they need to do search
       return (
         <>
           <br/>
@@ -302,32 +324,51 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
   }
 
+  /**
+   * when user enters search string, save in state
+   * @param {string} search - new search string
+   */
   setSearchStr(search) {
     this.setState({ searchStr: search });
   }
 
+  /**
+   * when user selects bible to search, save in state
+   * @param {object} event - unused
+   * @param index - unused
+   * @param {string} value - new selection
+   */
   setSearchAlignedBible(event, index, value) {
     this.loadAlignmentData(value);
     this.setState({ alignedBible: value });
   }
 
-  setMatchWholeWord(value) {
-    this.setState({ matchWholeWord: !!value });
-  }
-
-  setCaseSensitive(value) {
-    this.setState({ caseSensitive: !!value });
-  }
-
+  /**
+   * when user updates fields to search, then save in state
+   * @param {object} event - unused
+   * @param {number} index - unused
+   * @param {string[]} values
+   */
   setSearchFields(event, index, values) {
     this.setState({ searchType: values });
   }
 
+  /**
+   * iterate through search options to find a match for key
+   * @param {string} key
+   * @returns {{label: string, key: string, stateKey: string} | {label: string, key: string, stateKey: string}}
+   */
   findSearchItem(key) {
     const found = searchOptions.find(item => item.key === key);
     return found;
   }
 
+  /**
+   * when user updates search options (such as whole word or case insensitive), save in state
+   * @param event
+   * @param index
+   * @param values
+   */
   setSearchTypes(event, index, values) {
     const fullWordItem = this.findSearchItem(SEARCH_MATCH_WHOLE_WORD);
     const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
@@ -338,12 +379,19 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     this.setState(types);
   }
+
+  /**
+   * when user clicks close, clear search results and call onClose
+   */
   handleClose() {
     this.setState({ alignmentData: null }); // clear data
     const onClose = this.props.onClose;
     onClose && onClose();
   }
 
+  /**
+   * when user clicks search button, do search of indexed data
+   */
   startSearch() {
     console.log('AlignmentSearchDialogContainer - start search');
     const state = this.state;
@@ -364,16 +412,31 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ found });
   }
 
+  /**
+   * check state data to see if search option is selected
+   * @param {string} key
+   * @returns {boolean}
+   */
   isSearchFieldSelected(key) {
     const searchType = this.state.searchType;
     return this.isItemSelected(searchType, key);
   }
 
+  /**
+   * search array to see if it contains key
+   * @param {string[]} array - to search
+   * @param {string} key
+   * @returns {boolean}
+   */
   isItemSelected(array, key) {
     return array && array.indexOf(key) >= 0;
   }
 
-
+  /**
+   * generate list of currently selected search options
+   * @param {string} options
+   * @returns {string[]}
+   */
   getSelectedOptions(options) {
     let selections = options.map(item => !!this.state[item.stateKey] && item.key);
     selections = selections.filter(item => item);

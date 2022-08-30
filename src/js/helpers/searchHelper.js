@@ -14,6 +14,12 @@ import { getUsfmForVerseContent, trimNewLine } from './FileConversionHelpers/Usf
 const startWordRegex = '(?<=[\\s,.:;"\']|^)';
 const endWordRegex = '(?=[\\s,.:;"\']|$)';
 
+/**
+ * get keys for alignments and do sort by locale
+ * @param {object} alignments
+ * @param {string} langID - language to use for sorting
+ * @returns {string[]}
+ */
 export function getSortedKeys(alignments, langID) {
   let keys = Object.keys(alignments);
 
@@ -24,6 +30,11 @@ export function getSortedKeys(alignments, langID) {
   return keys;
 }
 
+/**
+ * count total alignments in alignments object
+ * @param {object} alignments
+ * @returns {number} - total
+ */
 export function getCount(alignments) {
   const keys = Object.keys(alignments);
   let count = 0;
@@ -35,6 +46,15 @@ export function getCount(alignments) {
   return count;
 }
 
+/**
+ * generate multiple indices for alignments:
+ *    by lemma
+ *    by target
+ *    by source
+ *    by strong's number
+ * @param {object} alignments
+ * @returns {{strongAlignments: {}, lemmaAlignments: {}, targetAlignments: {}, sourceAlignments: {}}}
+ */
 export function indexAlignments(alignments) {
   const lemmaAlignments = {};
   const targetAlignments = {};
@@ -82,9 +102,16 @@ export function indexAlignments(alignments) {
   };
 }
 
-export function regexSearch(keys, search, flags) {
+/**
+ * do regex search of keys for search string
+ * @param {string[]} keys
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags for searching
+ * @returns {*[]}
+ */
+export function regexSearch(keys, searchStr, flags) {
   const found = [];
-  const regex = xre(search, flags);
+  const regex = xre(searchStr, flags);
 
   for (const key of keys) {
     const results = regex.test(key);
@@ -98,10 +125,10 @@ export function regexSearch(keys, search, flags) {
 }
 
 /**
- * build regex search string
- * @param {string} search
- * @param {boolean} fullWord
- * @param caseInsensitive
+ * build regex search string based on flags
+ * @param {string} search - string to search
+ * @param {boolean} fullWord - if true do full word matching
+ * @param {boolean} caseInsensitive -if true do cse insensitive matching
  * @returns {boolean} {{search: string, flags: string}}
  */
 export function buildSearchRegex(search, fullWord, caseInsensitive) {
@@ -124,10 +151,15 @@ export function buildSearchRegex(search, fullWord, caseInsensitive) {
   return { search, flags };
 }
 
-export function loadAlignments(jsonPath) {
+/**
+ * load alignments from alignments json
+ * @param {string} alignmentsPath
+ * @returns {null|{targetLang: string, strong: ({}|{alignments: {}}|*), alignments, lemma: ({}|{alignments: {}}|*), origLang: string, descriptor: string, source: ({}|{alignments: {}}|*), target: ({}|{alignments: {}}|*)}}
+ */
+export function loadAlignments(alignmentsPath) {
   try {
-    const alignments = fs.readJsonSync(jsonPath);
-    const baseName = path.parse(jsonPath).name;
+    const alignments = fs.readJsonSync(alignmentsPath);
+    const baseName = path.parse(alignmentsPath).name;
     const [targetLang, descriptor, origLang] = baseName.split('_');
 
     return {
@@ -141,13 +173,21 @@ export function loadAlignments(jsonPath) {
       strong: alignments.strongAlignments,
     };
   } catch (e) {
-    console.warn(`loadAlignments() - could not read ${jsonPath}`);
+    console.warn(`loadAlignments() - could not read ${alignmentsPath}`);
   }
   return null;
 }
 
-export function searchAlignmentsSub(search, flags, keys, alignments) {
-  const foundKeys = regexSearch(keys, search, flags);
+/**
+ * search object keys for matches with search string, when match is found get matching alignment from alignments
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {string[]} objectKeys - keys for alignments object
+ * @param {object} alignments - index alignments
+ * @returns {*[]}
+ */
+export function searchAlignmentsSub(searchStr, flags, objectKeys, alignments) {
+  const foundKeys = regexSearch(objectKeys, searchStr, flags);
   const foundAlignments = [];
 
   for (const key of foundKeys) {
@@ -157,36 +197,62 @@ export function searchAlignmentsSub(search, flags, keys, alignments) {
   return foundAlignments;
 }
 
-export function searchRefs(search, flags, keys, alignments) {
+/**
+ * first convert alignment refs to refsStr and then search object keys for matches with search string, when match is found get matching alignment from alignments
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {string[]} objectKeys - keys for alignments object
+ * @param {object} alignments - index alignments
+ * @param {object[]} alignmentsArray - list of alignment data that has been indexed
+ * @returns {*[]}
+ */
+export function searchRefs(searchStr, flags, objectKeys, alignments, alignmentsArray) {
   const refsAlignments = {};
 
-  // create refs allignments object
-  for (const key of keys) {
+  // create refs alignments object
+  for (const key of objectKeys) {
     const alignments_ = alignments[key];
 
-    for (const alignment of alignments_) {
-      const refs = alignment.refs || [];
+    for (const index of alignments_) {
+      const alignment = alignmentsArray[index];
+      const refs = alignment?.refs || [];
       const refsStr = refs.join(' ');
 
       if (!refsAlignments[refsStr]) {
         refsAlignments[refsStr] = [];
       }
-      refsAlignments[refsStr].push(alignment);
+      refsAlignments[refsStr].push(index);
     }
   }
 
-  const foundAlignments = searchAlignmentsSub(search, flags, Object.keys(refsAlignments), refsAlignments);
+  const foundAlignments = searchAlignmentsSub(searchStr, flags, Object.keys(refsAlignments), refsAlignments);
   return foundAlignments;
 }
 
-export function searchAlignments(search_, fullWord, caseInsensitive, keys, alignments) {
-  const { search, flags } = buildSearchRegex(search_, fullWord, caseInsensitive);
-  const foundAlignments = searchAlignmentsSub(search, flags, keys, alignments);
+/**
+ * search object keys for matches with search string, when match is found get matching alignment from alignments
+ * @param {string} searchStr - string to match
+ * @param {boolean} fullWord - if true do full word matching
+ * @param {boolean} caseInsensitive -if true do cse insensitive matching
+ * @param {string[]} objectKeys - keys for alignments object
+ * @param {object} alignments - index alignments
+ * @returns {*[]}
+ */
+export function searchAlignments(searchStr, fullWord, caseInsensitive, objectKeys, alignments) {
+  const { search, flags } = buildSearchRegex(searchStr, fullWord, caseInsensitive);
+  const foundAlignments = searchAlignmentsSub(search, flags, objectKeys, alignments);
   return foundAlignments;
 }
 
-export function searchAlignmentsAndAppend(search, flags, config, searchData, found) {
-  const found_ = searchAlignmentsSub(search, flags, searchData.keys, searchData.alignments);
+/**
+ * search searchData for matches with search string, merge found alignments into found
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {object} searchData - data to search
+ * @param {object[]} found - array to accumulate found alignments into if not duplicated
+ */
+export function searchAlignmentsAndAppend(searchStr, flags, searchData, found) {
+  const found_ = searchAlignmentsSub(searchStr, flags, searchData.keys, searchData.alignments);
 
   if (found_.length) {
     for (const item of found_) {
@@ -199,8 +265,16 @@ export function searchAlignmentsAndAppend(search, flags, config, searchData, fou
   }
 }
 
-export function searchRefsAndAppend(search, flags, config, searchData, found) {
-  const found_ = searchRefs(search, flags, searchData.keys, searchData.alignments);
+/**
+ * search references in search data and merge found alignments into found
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {object} searchData - data to search
+ * @param {object[]} found - array to accumulate found alignments into if not duplicated
+ * @param {object[]} alignmentsArray - list of alignment data that has been indexed
+ */
+export function searchRefsAndAppend(searchStr, flags, searchData, found, alignmentsArray) {
+  const found_ = searchRefs(searchStr, flags, searchData.keys, searchData.alignments, alignmentsArray);
 
   if (found_.length) {
     for (const item of found_) {
@@ -213,33 +287,46 @@ export function searchRefsAndAppend(search, flags, config, searchData, found) {
   }
 }
 
-export function multiSearchAlignments(alignmentData, search_, config) {
-  const { search, flags } = buildSearchRegex(search_, config.fullWord, config.caseInsensitive);
+/**
+ * search one or more fields for searchStr and merge the match alignments together
+ * @param {object} alignmentData - object that contains raw alignments and indices for search
+ * @param {string} searchStr - string to match
+ * @param {object} config - search configuration including search types and fields to search
+ * @returns {*[]} - array of found alignments
+ */
+export function multiSearchAlignments(alignmentData, searchStr, config) {
+  const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
 
   const found = [];
 
   if (config.searchTarget) {
-    searchAlignmentsAndAppend(search, flags, config, alignmentData.target, found);
+    searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
   }
 
   if (config.searchStrong) {
-    searchAlignmentsAndAppend(search, flags, config, alignmentData.strong, found);
+    searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
   }
 
   if (config.searchLemma) {
-    searchAlignmentsAndAppend(search, flags, config, alignmentData.lemma, found);
+    searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
   }
 
   if (config.searchSource) {
-    searchAlignmentsAndAppend(search, flags, config, alignmentData.source, found);
+    searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
   }
 
   if (config.searchRefs) {
-    searchRefsAndAppend(search, flags, config, alignmentData.source, found);
+    searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
   }
   return found;
 }
 
+/**
+ * filter downloaded aligned bibles and remove those that did not actually have alignments in them (by checking alignment count in index)
+ * @param {object[]} downloadedAlignedBibles - aligned bibles found in user resources
+ * @param {object[]} indexedResources - indexed aligned bibles found in alignmentData folder
+ * @returns {*[]}
+ */
 export function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources) {
   const filtered = [];
 
@@ -272,6 +359,11 @@ export function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedRes
   return filtered;
 }
 
+/**
+ * return list of indexed aligned bibles found in alignmentData folder
+ * @param {string} alignmentDataDir - folder to search
+ * @returns {*[]}
+ */
 export function getAlignmentIndices(alignmentDataDir) {
   const resources = [];
   const resourcesIndexed = readDirectory(alignmentDataDir, false, true, '.json');
@@ -310,6 +402,11 @@ export function getAlignmentIndices(alignmentDataDir) {
   return resources;
 }
 
+/**
+ * aligned bibles found in user resources
+ * @param {string} resourceDir - path to user resources
+ * @returns {*[]}
+ */
 export function getAlignedBibles(resourceDir) {
   const alignments = [];
   const languages = readDirectory(resourceDir, true, true, null);
@@ -349,6 +446,11 @@ export function getAlignedBibles(resourceDir) {
   return alignments;
 }
 
+/**
+ * test if dirPath is actually a folder
+ * @param {string} dirPath
+ * @returns {boolean|*} true if folder
+ */
 function isDirectory(dirPath) {
   try {
     if (fs.existsSync(dirPath)) {
@@ -359,6 +461,14 @@ function isDirectory(dirPath) {
   return false;
 }
 
+/**
+ * read the directory and filter by folders or file extensions
+ * @param {string} dirPath - path to folder to read
+ * @param {boolean} foldersOnly - if true then only return folders
+ * @param {boolean} sort - if true then sort the results
+ * @param {string} extension - optional file extension to match
+ * @returns {*[]|*}
+ */
 export function readDirectory(dirPath, foldersOnly = true, sort = true, extension = null) {
   if (isDirectory(dirPath)) {
     let content = fs.readdirSync(dirPath).filter(item => {
@@ -422,6 +532,11 @@ export function readDirectory(dirPath, foldersOnly = true, sort = true, extensio
 //   fs.moveSync(biblePath, destinationBiblePath);
 // }
 
+/**
+ * URI encode param and replace _ or . with URI codes to prevent problems parsing as key or filename
+ * @param {string} param
+ * @returns {string}
+ */
 export function encodeParam(param) {
   let encoded = encodeURIComponent(param);
   encoded = encoded.replaceAll('_', '%5F');
@@ -429,6 +544,12 @@ export function encodeParam(param) {
   return encoded;
 }
 
+/**
+ * open Bible json data and extract alignment data for specific testament
+ * @param {string} resourceFolder
+ * @param {object} resource
+ * @returns {{strongAlignments: {alignments: {}}, alignments: *[], lemmaAlignments: {alignments: {}}, targetAlignments: {alignments: {}}, sourceAlignments: {alignments: {}}}}
+ */
 export function getAlignmentsFromResource(resourceFolder, resource) {
   try {
     // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
@@ -546,6 +667,11 @@ export function getAlignmentsFromResource(resourceFolder, resource) {
   }
 }
 
+/**
+ * open Bible json data and extract alignment data for both testaments
+ * @param {string} resourceFolder
+ * @param {object} resource_
+ */
 export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
   for (let testament = 0; testament <= 1; testament++) {
     const origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
@@ -559,6 +685,12 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
   console.log('done');
 }
 
+/**
+ * append an alignment to alignments
+ * @param alignments
+ * @param sourceText
+ * @param alignment
+ */
 function appendToALignmentIndex(alignments, sourceText, alignment) {
   if (!alignments[sourceText]) {
     alignments[sourceText] = [];
@@ -652,6 +784,11 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
   }
 };
 
+/**
+ * get list of searchable bibles loaded in resources
+ * @param translationCoreFolder
+ * @returns {*[]}
+ */
 export function getSearchableAlignments(translationCoreFolder) {
   const resourceDir = path.join(translationCoreFolder, 'resources');
   const downloadedAlignedBibles = getAlignedBibles(resourceDir);
