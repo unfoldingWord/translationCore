@@ -177,9 +177,13 @@ class AlignmentSearchDialogContainer extends React.Component {
 
         if (resource) {
           if (!resource.alignmentCount) {
-            this.props.openAlertDialog('Doing one-time indexing of Bible for Search', true);
-            delay(100).then(() => {
-              const alignmentData = getAlignmentsFromResource(USER_RESOURCES_PATH, resource);
+            const indexingMsg = 'Doing one-time indexing of Bible for Search:';
+            this.props.openAlertDialog(indexingMsg, true);
+            delay(100).then(async () => {
+              const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
+                this.props.openAlertDialog(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
+                await delay(100);
+              });
 
               if (alignmentData?.alignments?.length) {
                 resource.alignmentCount = alignmentData?.alignments?.length;

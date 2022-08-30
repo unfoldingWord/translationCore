@@ -544,13 +544,19 @@ export function encodeParam(param) {
   return encoded;
 }
 
+async function doCallback(callback, percent) {
+  if (callback) {
+    await callback(Math.round(percent));
+  }
+}
+
 /**
  * open Bible json data and extract alignment data for specific testament
  * @param {string} resourceFolder
  * @param {object} resource
  * @returns {{strongAlignments: {alignments: {}}, alignments: *[], lemmaAlignments: {alignments: {}}, targetAlignments: {alignments: {}}, sourceAlignments: {alignments: {}}}}
  */
-export function getAlignmentsFromResource(resourceFolder, resource) {
+export async function getAlignmentsFromResource(resourceFolder, resource, callback = null) {
   try {
     // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
     const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
@@ -567,7 +573,13 @@ export function getAlignmentsFromResource(resourceFolder, resource) {
       console.log(`getAlignmentsFromResource() - get alignments for ${resource.origLang}`);
       const books = resource.origLang === NT_ORIG_LANG ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
 
+      const total = books.length;
+      let count = -1;
+
       for (const bookId of books) {
+        const percent = ++count * 25 / total;
+        // eslint-disable-next-line no-await-in-loop
+        await doCallback(callback, percent);
         const bookPath = path.join(latestVersionPath, bookId);
 
         if (fs.existsSync(bookPath)) {
@@ -597,8 +609,17 @@ export function getAlignmentsFromResource(resourceFolder, resource) {
       // merge alignments
       const alignments_ = {};
       const uniqueAlignments = [];
+      let l = alignments.length;
+      let stepSize = Math.round(l / 5);
 
-      for (const alignment of alignments) {
+      for (let i = 0; i < l; i++) {
+        if (i % stepSize === 0) {
+          const percent = 25 + 25 * i / l;
+          // eslint-disable-next-line no-await-in-loop
+          await doCallback(callback, percent);
+        }
+
+        const alignment = alignments[i];
         const {
           sourceText,
           targetText,
@@ -632,8 +653,16 @@ export function getAlignmentsFromResource(resourceFolder, resource) {
       const targetAlignments = { alignments: {} };
       const sourceAlignments = { alignments: {} };
       const strongAlignments = { alignments: {} };
+      l = alignments.length;
+      stepSize = Math.round(l / 5);
 
-      for (let i = 0, l = alignments.length; i < l; i++) {
+      for (let i = 0; i < l; i++) {
+        if (i % stepSize === 0) {
+          const percent = 50 + 25 * i / l;
+          // eslint-disable-next-line no-await-in-loop
+          await doCallback(callback, percent);
+        }
+
         const alignment = alignments[i];
         const {
           sourceText,
@@ -648,10 +677,15 @@ export function getAlignmentsFromResource(resourceFolder, resource) {
       }
 
       console.log(`getAlignmentsFromResource() for ${resource.origLang}, getting keys`);
+      await doCallback(callback, 80);
       strongAlignments.keys = getSortedKeys(strongAlignments.alignments, 'en');
+      await doCallback(callback, 82);
       lemmaAlignments.keys = getSortedKeys(lemmaAlignments.alignments, resource.origLang);
+      await doCallback(callback, 84);
       sourceAlignments.keys = getSortedKeys(sourceAlignments.alignments, resource.origLang);
+      await doCallback(callback, 90);
       targetAlignments.keys = getSortedKeys(targetAlignments.alignments, resource.languageId);
+      await doCallback(callback, 95);
       const alignmentData = {
         alignments,
         lemmaAlignments,
