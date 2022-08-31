@@ -10,6 +10,7 @@ import {
 } from 'material-ui';
 import MaterialTable from 'material-table';
 import env from 'tc-electron-env';
+import _ from 'lodash';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 import Check from '@material-ui/icons/Check';
@@ -27,7 +28,7 @@ import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
 
 // selectors
-import { getProjectManifest } from '../selectors';
+import { getProjectManifest, getSetting } from '../selectors';
 // actions
 // components
 import BaseDialog from '../components/dialogComponents/BaseDialog';
@@ -43,6 +44,7 @@ import {
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
 import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
+import { setSetting } from '../actions/SettingsActions';
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -100,6 +102,8 @@ const searchOptions = [
   },
 ];
 
+const SEARCH_SETTINGS_KEY = 'searchSettingsKey';
+
 /**
  * Renders a dialog for user to do alignment search.
  *
@@ -140,7 +144,19 @@ class AlignmentSearchDialogContainer extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.open) {
       if (!prevProps.open) { // when dialog is opened
-        this.loadAlignmentSuggestions();
+        delay(100).then(() => {
+          const savedState = this.props.savedSettings;
+
+          if (savedState && Object.keys(savedState).length) {
+            this.setState(_.cloneDeep(savedState));
+          }
+
+          this.loadAlignmentSuggestions();
+        });
+      }
+    } else {
+      if (prevProps.open) { // if dialog closed
+        this.props.saveSettings(_.cloneDeep(this.state));
       }
     }
   }
@@ -292,7 +308,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
         return (
           <>
-            <div style={{ fontWeight: 'bold', color: 'black' }}> {`Found ${this.state?.found.length || 0} matches:`} </div>
+            <div style={{ fontWeight: 'bold', color: 'black' }}> {`Found ${this.state?.found.length || 0} matches`} </div>
             <MaterialTable
               columns={[
                 { title: 'Source Text', field: 'sourceText', ...originalStyles },
@@ -580,13 +596,19 @@ AlignmentSearchDialogContainer.propTypes = {
   manifest: PropTypes.object.isRequired,
   openAlertDialog: PropTypes.func.isRequired,
   closeAlertDialog: PropTypes.func.isRequired,
+  saveSettings: PropTypes.func.isRequired,
+  savedSettings: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({ manifest: getProjectManifest(state) });
+const mapStateToProps = (state) => ({
+  manifest: getProjectManifest(state),
+  savedSettings: getSetting(state, SEARCH_SETTINGS_KEY),
+});
 
 const mapDispatchToProps = {
   openAlertDialog: (alertMessage, loading, buttonText = null, callback = null) => openAlertDialog(alertMessage, loading, buttonText, callback),
   closeAlertDialog: () => closeAlertDialog(),
+  saveSettings: (value) => setSetting(SEARCH_SETTINGS_KEY, value),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlignmentSearchDialogContainer);
