@@ -48,5 +48,5 @@ Debugging App Startup Code
 - Under remote target `electron/js2c/browser_init` click on `inspect` link.
 - You will need to add the folder that contains the translationCore source files to the workspace.  Then you can use control-P or command-P to search for and open source files and set breakpoints.
   - the electronite app initialization code is in `electronite/index.js`
-  - the app UI startup code is in `pages/app.js`
+  - the app UI startup code is in `pages/app.js` but cannot debug with this method, but will have to use debugger in the app and do a reload.
 
