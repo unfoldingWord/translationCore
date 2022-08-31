@@ -134,6 +134,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setSearchTypes = this.setSearchTypes.bind(this);
     this.getSelectedOptions = this.getSelectedOptions.bind(this);
     this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
+    this.showMessage = this.showMessage.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -145,11 +146,21 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * update message and delay for screen to update
+   * @param message
+   * @param loading
+   * @returns {Promise<void>}
+   */
+  async showMessage(message, loading) {
+    this.props.openAlertDialog(message, loading);
+    await delay(100);
+  }
+
+  /**
    * index downloaded bible resources to get available aligned bibles
    */
   loadAlignmentSuggestions() {
-    this.props.openAlertDialog('Loading Available Aligned Bibles', true);
-    delay(100).then(() => {
+    this.showMessage('Loading Available Aligned Bibles', true).then(() => {
       const tCorePath = path.join(env.home(), 'translationCore');
       const alignedBibles = getSearchableAlignments(tCorePath);
 
@@ -171,31 +182,28 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   loadAlignmentData(selectedBibleKey) {
     if (selectedBibleKey) {
-      this.props.openAlertDialog('Loading index of Bible alignments for Search', true);
-      delay(100).then(() => {
+      this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
           if (!resource.alignmentCount) {
             const indexingMsg = 'Doing one-time indexing of Bible for Search:';
-            this.props.openAlertDialog(indexingMsg, true);
-            delay(100).then(async () => {
-              const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
-                this.props.openAlertDialog(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
-                await delay(100);
-              });
 
-              if (alignmentData?.alignments?.length) {
-                resource.alignmentCount = alignmentData?.alignments?.length;
-                this.setState({ alignedBibles: this.state.alignedBibles });
-                this.props.openAlertDialog('Doing one-time indexing of Bible for Search', true);
-                this.loadIndexedAlignmentData(resource);
-                this.props.closeAlertDialog();
-              } else {
-                this.props.openAlertDialog(`No Alignments found in ${resource.label}`);
-                console.error('no alignments');
-              }
+            await this.showMessage(indexingMsg, true);
+            const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
+              await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
             });
+
+            if (alignmentData?.alignments?.length) {
+              resource.alignmentCount = alignmentData?.alignments?.length;
+              this.setState({ alignedBibles: this.state.alignedBibles });
+              await this.showMessage('Doing one-time indexing of Bible for Search', true);
+              this.loadIndexedAlignmentData(resource);
+              this.props.closeAlertDialog();
+            } else {
+              await this.showMessage(`No Alignments found in ${resource.label}`);
+              console.error('no alignments');
+            }
           } else {
             this.loadIndexedAlignmentData(resource);
             this.props.closeAlertDialog();
@@ -258,6 +266,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           const newItem = {
             ...item,
             refStr: item.refs.join('; '),
+            count: item.refs?.length,
           };
           return newItem;
         });
@@ -282,31 +291,35 @@ class AlignmentSearchDialogContainer extends React.Component {
         };
 
         return (
-          <MaterialTable
-            columns={[
-              { title: 'Source Text', field: 'sourceText', ...originalStyles },
-              { title: 'Source Lemma', field: 'sourceLemma', ...originalStyles },
-              { title: 'Source Strong', field: 'strong', ...columnStyles },
-              { title: 'Target Text', field: 'targetText', ...columnStyles },
-              { title: 'References', field: 'refStr', ...columnStyles },
-            ]}
-            data={data}
-            title={'Search Results:'}
-            icons={tableIcons}
-            style={{ fontSize: '16px' }}
-            options={{
-              actionsCellStyle: { fontSize: '16px' },
-              filterCellStyle: { fontSize: '16px' },
-              headerStyle: {
-                fontSize: '16px',
-                fontWeight: 'bold',
-              },
-              rowStyle: { fontSize: '16px' },
-              searchFieldStyle: { fontSize: '16px' },
-              paging: false,
-            }}
-            localization={localization}
-          />
+          <>
+            <div style={{ fontWeight: 'bold', color: 'black' }}> {`Found ${this.state?.found.length || 0} matches:`} </div>
+            <MaterialTable
+              columns={[
+                { title: 'Source Text', field: 'sourceText', ...originalStyles },
+                { title: 'Source Lemma', field: 'sourceLemma', ...originalStyles },
+                { title: 'Source Strong', field: 'strong', ...columnStyles },
+                { title: 'Target Text', field: 'targetText', ...columnStyles },
+                { title: 'Match Count', field: 'count', ...columnStyles },
+                { title: 'References', field: 'refStr', ...columnStyles },
+              ]}
+              data={data}
+              title={'Search Results:'}
+              icons={tableIcons}
+              style={{ fontSize: '16px' }}
+              options={{
+                actionsCellStyle: { fontSize: '16px' },
+                filterCellStyle: { fontSize: '16px' },
+                headerStyle: {
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                },
+                rowStyle: { fontSize: '16px' },
+                searchFieldStyle: { fontSize: '16px' },
+                paging: false,
+              }}
+              localization={localization}
+            />
+          </>
         );
       } else { // if search results are empty, show message
         return (
@@ -516,7 +529,7 @@ class AlignmentSearchDialogContainer extends React.Component {
                 hintText="Select search types"
                 value={this.getSelectedOptions(searchOptions)}
                 multiple
-                style={{ width: '200px', marginLeft: '20px', marginRight: '20px' }}
+                style={{ width: '250px', marginLeft: '20px', marginRight: '20px' }}
                 onChange={this.setSearchTypes}
               >
                 {
