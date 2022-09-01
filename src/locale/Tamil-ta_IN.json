@@ -80,6 +80,7 @@
   "sending_feedback_failed": "கருத்து அனுப்புவதில் தோல்வி\n",
   "critical_error_warning": "எச்சரிக்கை: ஒரு விமர்சன பிழை ஏற்பட்டது!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "மீண்டும் முயற்சிக்கவும்",
     "update": "சமீபத்திய பதிப்பிற்கு புதுப்பிக்கவும்\n",
     "ignore_button": "புறக்கணி",
-    "feedback_button": "கருத்தினை அனுப்பவும்\n"
+    "feedback_button": "கருத்தினை அனுப்பவும்\n",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "முக்கிய விதிமுறைகள்\n",

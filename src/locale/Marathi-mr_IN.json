@@ -80,6 +80,7 @@
   "sending_feedback_failed": "अभिप्राय पाठवण्यात अयशस्वी",
   "critical_error_warning": "चेतावणी: एक गंभीर त्रुटी आली आहे!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "पुन्हा प्रयत्न करा",
     "update": "नवीनतम आवृत्तीवर अद्यतनित करा",
     "ignore_button": "दुर्लक्षित",
-    "feedback_button": "अभिप्राय पाठवा"
+    "feedback_button": "अभिप्राय पाठवा",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "मुख्य अटी",

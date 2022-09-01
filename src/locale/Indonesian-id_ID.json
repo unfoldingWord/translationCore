@@ -80,6 +80,7 @@
   "sending_feedback_failed": "Gagal untuk mengirimkan Tanggapan",
   "critical_error_warning": "Peringatan: Telah terjadi kesalahan kritis!",
   "unknown_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal. Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" merupakan opsi pada tombol \"${actions}\".",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -459,7 +460,8 @@
     "retry": "Coba Lagi",
     "update": "perbarui ke versi terbaru",
     "ignore_button": "Abaikan",
-    "feedback_button": "Kirim Tanggapan"
+    "feedback_button": "Kirim Tanggapan",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Istilah Kunci",
