@@ -144,13 +144,13 @@ class AlignmentSearchDialogContainer extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (this.props.open) {
       if (!prevProps.open) { // when dialog is opened
+        const savedState = this.props.savedSettings;
+
+        if (savedState && Object.keys(savedState).length) {
+          this.setState(_.cloneDeep(savedState));
+        }
+
         delay(100).then(() => {
-          const savedState = this.props.savedSettings;
-
-          if (savedState && Object.keys(savedState).length) {
-            this.setState(_.cloneDeep(savedState));
-          }
-
           this.loadAlignmentSuggestions();
         });
       }
