@@ -409,39 +409,48 @@ export function getAlignmentIndices(alignmentDataDir) {
  */
 export function getAlignedBibles(resourceDir) {
   const alignments = [];
-  const languages = readDirectory(resourceDir, true, true, null);
 
-  for (const languageId of languages) {
-    const biblesFolder = path.join(resourceDir, languageId, 'bibles');
-    const bibles = readDirectory(biblesFolder, true, true, null);
+  try {
+    const languages = readDirectory(resourceDir, true, true, null);
 
-    for (const bibleId of bibles) {
-      const biblePath = path.join(biblesFolder, bibleId);
-      const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath);
+    for (const languageId of languages) {
+      const biblesFolder = path.join(resourceDir, languageId, 'bibles');
+      const bibles = readDirectory(biblesFolder, true, true, null);
 
-      for (const owner of Object.keys(owners)) {
-        const biblePath = owners[owner];
-        let manifest = null;
-        const manifestPath = path.join(biblePath, 'manifest.json');
+      for (const bibleId of bibles) {
+        const biblePath = path.join(biblesFolder, bibleId);
+        const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath) || {};
 
-        if (fs.pathExistsSync(manifestPath)) {
-          manifest = fs.readJsonSync(manifestPath);
-        }
+        for (const owner of Object.keys(owners)) {
+          try {
+            const biblePath = owners[owner];
+            let manifest = null;
+            const manifestPath = path.join(biblePath, 'manifest.json');
 
-        const isAligned = manifest?.subject === 'Aligned Bible';
-        const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
+            if (fs.pathExistsSync(manifestPath)) {
+              manifest = fs.readJsonSync(manifestPath);
+            }
 
-        if (isAligned) {
-          alignments.push({
-            languageId,
-            bibleId,
-            owner,
-            version,
-            biblePath,
-          });
+            const isAligned = manifest?.subject === 'Aligned Bible';
+            const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
+
+            if (isAligned) {
+              alignments.push({
+                languageId,
+                bibleId,
+                owner,
+                version,
+                biblePath,
+              });
+            }
+          } catch (e) {
+            console.error(`getAlignedBibles() - could not load ${biblePath} for ${owner}`, e);
+          }
         }
       }
     }
+  } catch (e) {
+    console.error(`getAlignedBibles() - error getting bibles`, e);
   }
   return alignments;
 }
@@ -824,12 +833,19 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
  * @returns {*[]}
  */
 export function getSearchableAlignments(translationCoreFolder) {
-  const resourceDir = path.join(translationCoreFolder, 'resources');
-  const downloadedAlignedBibles = getAlignedBibles(resourceDir);
-  const indexedResources = getAlignmentIndices(path.join(translationCoreFolder, 'alignmentData'));
+  try {
+    console.log('getSearchableAlignments() - getting aligned bibles');
+    const resourceDir = path.join(translationCoreFolder, 'resources');
+    const downloadedAlignedBibles = getAlignedBibles(resourceDir);
+    console.log('getSearchableAlignments() - getting alignment indexes for bibles');
+    const indexedResources = getAlignmentIndices(path.join(translationCoreFolder, 'alignmentData'));
 
-  // filter selections
-  const filtered = filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources);
-  return filtered;
+    // filter selections
+    console.log('getSearchableAlignments() - filtering aligned bibles');
+    const filtered = filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources);
+    return filtered;
+  } catch (e) {
+    console.error('getSearchableAlignments() - could not load available bibles');
+  }
 }
 
