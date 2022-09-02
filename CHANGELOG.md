@@ -1,10 +1,43 @@
 # Changelog
 
+## [v3.3.1](https://github.com/unfoldingWord/translationCore/tree/v3.3.1) (2022-9-2)
+
+**Implemented enhancements:**
+
+**Fixed bugs:**
+
+- Problem with adding scripture panes after upgrade [\#7414](https://github.com/unfoldingWord/translationCore/issues/7414)
+
+
+## [v3.3.0](https://github.com/unfoldingWord/translationCore/tree/v3.3.0) (2022-7-19)
+
+**Implemented enhancements:**
+
+- Add ability to Load Bibles by URL to tCore Scripture pane.  [\#7375](https://github.com/unfoldingWord/translationCore/issues/7375)
+- Add support for BOM marker on USFM import [\#7353](https://github.com/unfoldingWord/translationCore/issues/7353)
+- Add French Locale [\#7364](https://github.com/unfoldingWord/translationCore/issues/7364)
+- Add Button to delete pre-release downloaded resources [\#7363](https://github.com/unfoldingWord/translationCore/issues/7363)
+- support Pre-release testing in Catalog Next [\#7343](https://github.com/unfoldingWord/translationCore/issues/7343)
+- show org for Bible in scripture pane [\#7270](https://github.com/unfoldingWord/translationCore/issues/7270)
+- On tC startup remove bibles processed with different usfm-js version [\#7319](https://github.com/unfoldingWord/translationCore/issues/7319)
+- Support 7 Column TSV in tN [\#7188](https://github.com/unfoldingWord/translationCore/issues/7188)
+- In tn and tw, add support for displaying verse ranges in format 2:1,4 [\#7322](https://github.com/unfoldingWord/translationCore/issues/7322)
+
+**Fixed bugs:**
+
+- fix for 500 errors downloading resources [\#7355](https://github.com/unfoldingWord/translationCore/issues/7355)
+- fix checks with zero-width-spaces and no-break-spaces [\#7333](https://github.com/unfoldingWord/translationCore/issues/7333)
+- changing GW orgs does not trigger changing checks if language stays the same [\#7316](https://github.com/unfoldingWord/translationCore/issues/7316)
+- tCore still shows options even after they have been downloaded [\#7331](https://github.com/unfoldingWord/translationCore/issues/7331)
+- Fix Space before *paseq* isn't showing in scripture pane [\#7286](https://github.com/unfoldingWord/translationCore/issues/7286)
+- Fix Failure to send feedback [\#7311](https://github.com/unfoldingWord/translationCore/issues/7311)
+- Fix Export to CSV failing with a crash [\#7307](https://github.com/unfoldingWord/translationCore/issues/7307)
+
+
 ## [v3.2.0](https://github.com/unfoldingWord/translationCore/tree/v3.2.0) (2022-5-15)
 
 **Implemented enhancements:**
 
-- Add support for BOM marker on USFM import [\#7353](https://github.com/unfoldingWord/translationCore/issues/7353)
 - Added CatalogNext Support [\#7193](https://github.com/unfoldingWord/translationCore/issues/7193)
 - Updated Electronite to use latest Electron Version 17.3.1 [\#7203](https://github.com/unfoldingWord/translationCore/issues/7203) to fix UI issues with Windows 11 [\#7230](https://github.com/unfoldingWord/translationCore/issues/7230)
 - Added send feedback button to Update resource error dialog [\#7246](https://github.com/unfoldingWord/translationCore/issues/7246)
