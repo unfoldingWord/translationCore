@@ -158,7 +158,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         }
 
         delay(100).then(() => {
-          this.loadAlignmentSuggestions();
+          this.loadAlignmentSearchOptions();
         });
       }
     } else {
@@ -182,10 +182,12 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * index downloaded bible resources to get available aligned bibles
    */
-  loadAlignmentSuggestions() {
+  loadAlignmentSearchOptions() {
+    console.log('loadAlignmentSearchOptions() - starting');
     this.showMessage('Loading Available Aligned Bibles', true).then(() => {
       const tCorePath = path.join(env.home(), 'translationCore');
       const alignedBibles = getSearchableAlignments(tCorePath);
+      console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
 
       for (const bible of alignedBibles) {
         const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
@@ -195,6 +197,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       }
       this.setState({ alignedBibles });
       this.loadAlignmentData(this.state.alignedBible);
+      console.log('loadAlignmentSearchOptions() - finished');
     });
   }
 
