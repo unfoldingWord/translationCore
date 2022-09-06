@@ -403,60 +403,6 @@ export function getAlignmentIndices(alignmentDataDir) {
 }
 
 /**
- * aligned bibles found in user resources
- * @param {string} resourceDir - path to user resources
- * @returns {*[]}
- */
-export function getAlignedBibles(resourceDir) {
-  const alignments = [];
-
-  try {
-    const languages = readDirectory(resourceDir, true, true, null);
-
-    // rats
-    for (const languageId of languages) {
-      const biblesFolder = path.join(resourceDir, languageId, 'bibles');
-      const bibles = readDirectory(biblesFolder, true, true, null);
-
-      for (const bibleId of bibles) {
-        const biblePath = path.join(biblesFolder, bibleId);
-        const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath) || {};
-
-        for (const owner of Object.keys(owners)) {
-          try {
-            const biblePath = owners[owner];
-            let manifest = null;
-            const manifestPath = path.join(biblePath, 'manifest.json');
-
-            if (fs.pathExistsSync(manifestPath)) {
-              manifest = fs.readJsonSync(manifestPath);
-            }
-
-            const isAligned = manifest?.subject === 'Aligned Bible';
-            const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
-
-            if (isAligned) {
-              alignments.push({
-                languageId,
-                bibleId,
-                owner,
-                version,
-                biblePath,
-              });
-            }
-          } catch (e) {
-            console.error(`getAlignedBibles() - could not load ${biblePath} for ${owner}`, e);
-          }
-        }
-      }
-    }
-  } catch (e) {
-    console.error(`getAlignedBibles() - error getting bibles`, e);
-  }
-  return alignments;
-}
-
-/**
  * test if dirPath is actually a folder
  * @param {string} dirPath
  * @returns {boolean|*} true if folder
@@ -848,5 +794,59 @@ export function getSearchableAlignments(translationCoreFolder) {
   } catch (e) {
     console.error('getSearchableAlignments() - could not load available bibles');
   }
+}
+
+/**
+ * aligned bibles found in user resources
+ * @param {string} resourceDir - path to user resources
+ * @returns {*[]}
+ */
+export function getAlignedBibles(resourceDir) {
+  const alignments = [];
+
+  try {
+    const languages = readDirectory(resourceDir, true, true, null);
+
+    // rats
+    for (const languageId of languages) {
+      const biblesFolder = path.join(resourceDir, languageId, 'bibles');
+      const bibles = readDirectory(biblesFolder, true, true, null);
+
+      for (const bibleId of bibles) {
+        const biblePath = path.join(biblesFolder, bibleId);
+        const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath) || {};
+
+        for (const owner of Object.keys(owners)) {
+          try {
+            const biblePath = owners[owner];
+            let manifest = null;
+            const manifestPath = path.join(biblePath, 'manifest.json');
+
+            if (fs.pathExistsSync(manifestPath)) {
+              manifest = fs.readJsonSync(manifestPath);
+            }
+
+            const isAligned = manifest?.subject === 'Aligned Bible';
+            const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
+
+            if (isAligned) {
+              alignments.push({
+                languageId,
+                bibleId,
+                owner,
+                version,
+                biblePath,
+              });
+            }
+          } catch (e) {
+            console.error(`getAlignedBibles() - could not load ${biblePath} for ${owner}`, e);
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.error(`getAlignedBibles() - error getting bibles`, e);
+  }
+  return alignments;
 }
 

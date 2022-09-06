@@ -41,7 +41,7 @@ import {
   loadAlignments,
   multiSearchAlignments,
   readDirectory,
-} from '../helpers/searchHelper';
+} from '../helpers/searchHelper2';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
 import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
