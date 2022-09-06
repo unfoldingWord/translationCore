@@ -1,5 +1,14 @@
 # Changelog
 
+## [v3.3.1](https://github.com/unfoldingWord/translationCore/tree/v3.3.1) (2022-9-2)
+
+**Implemented enhancements:**
+
+**Fixed bugs:**
+
+- Problem with adding scripture panes after upgrade [\#7414](https://github.com/unfoldingWord/translationCore/issues/7414)
+
+
 ## [v3.3.0](https://github.com/unfoldingWord/translationCore/tree/v3.3.0) (2022-7-19)
 
 **Implemented enhancements:**
