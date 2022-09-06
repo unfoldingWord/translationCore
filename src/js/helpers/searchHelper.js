@@ -413,6 +413,7 @@ export function getAlignedBibles(resourceDir) {
   try {
     const languages = readDirectory(resourceDir, true, true, null);
 
+    // rats
     for (const languageId of languages) {
       const biblesFolder = path.join(resourceDir, languageId, 'bibles');
       const bibles = readDirectory(biblesFolder, true, true, null);
