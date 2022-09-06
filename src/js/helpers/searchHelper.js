@@ -417,7 +417,7 @@ export function getAlignedBibles(resourceDir) {
 
     for (const bibleId of bibles) {
       const biblePath = path.join(biblesFolder, bibleId);
-      const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath);
+      const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath) || {};
 
       for (const owner of Object.keys(owners)) {
         const biblePath = owners[owner];

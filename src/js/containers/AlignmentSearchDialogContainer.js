@@ -7,6 +7,7 @@ import {
   TextField,
   SelectField,
   MenuItem,
+  Menu,
 } from 'material-ui';
 import MaterialTable from 'material-table';
 import env from 'tc-electron-env';
@@ -88,6 +89,7 @@ const searchFieldLabels = {
 
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
+const SEARCH_HIDE_COLUMNS = 'search_hide_columns';
 
 const searchOptions = [
   {
@@ -99,6 +101,10 @@ const searchOptions = [
     key: SEARCH_MATCH_WHOLE_WORD,
     label: 'Match Whole Word',
     stateKey: 'matchWholeWord',
+  },
+  {
+    key: SEARCH_HIDE_COLUMNS,
+    label: 'Hide Columns',
   },
 ];
 
@@ -139,6 +145,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.getSelectedOptions = this.getSelectedOptions.bind(this);
     this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
     this.showMessage = this.showMessage.bind(this);
+    this.selectColumnHides = this.selectColumnHides.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -233,6 +240,17 @@ class AlignmentSearchDialogContainer extends React.Component {
       console.log('loadAlignmentData() no aligned bible');
       this.props.closeAlertDialog();
     }
+  }
+
+  selectColumnHides() {
+    this.props.openAlertDialog(
+      <Menu>
+        <MenuItem primaryText="Refresh" />
+        <MenuItem primaryText="Help &amp; feedback" />
+        <MenuItem primaryText="Settings" />
+        <MenuItem primaryText="Sign out" />
+      </Menu>
+      , false);
   }
 
   /**
@@ -405,6 +423,12 @@ class AlignmentSearchDialogContainer extends React.Component {
   setSearchTypes(event, index, values) {
     const fullWordItem = this.findSearchItem(SEARCH_MATCH_WHOLE_WORD);
     const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
+
+    if (this.isItemSelected(values, SEARCH_HIDE_COLUMNS)) {
+      this.selectColumnHides();
+      return;
+    }
+
     const types = {
       [fullWordItem.stateKey]: this.isItemSelected(values, SEARCH_MATCH_WHOLE_WORD),
       [caseSensitiveItem.stateKey]: this.isItemSelected(values, SEARCH_CASE_SENSITIVE),
@@ -541,7 +565,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             </div>
             <div style={{ display: 'flex' }}>
               <SelectField
-                id={'select_search_type'}
+                id={'select_search_option'}
                 hintText="Select search types"
                 value={this.getSelectedOptions(searchOptions)}
                 multiple
@@ -562,7 +586,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               </SelectField>
             </div>
             <SelectField
-              id={'select_search_type'}
+              id={'select_search_fields'}
               hintText="Select fields to search"
               value={this.state.searchType}
               multiple
