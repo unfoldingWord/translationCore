@@ -41,7 +41,7 @@ import {
   loadAlignments,
   multiSearchAlignments,
   readDirectory,
-} from '../helpers/searchHelper2';
+} from '../helpers/alignmentSearchHelpers';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
 import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
@@ -87,6 +87,21 @@ const searchFieldLabels = {
   [SEARCH_REFS]: 'Search References',
 };
 
+// Results column options
+const SHOW_SOURCE_TEXT = 'sourceText';
+const SHOW_SOURCE_LEMMA = 'sourceLemma';
+const SHOW_STRONGS = 'strong';
+const SHOW_TARGET_TEXT = 'targetText';
+const SHOW_MATCH_COUNT = 'count';
+const SHOW_REFERENCES = 'refStr';
+
+const SOURCE_TEXT_LABEL = 'Source Text';
+const SOURCE_LEMMA_LABEL = 'Source Lemma';
+const STRONGS_LABEL = 'Source Strong';
+const TARGET_TEXT_LABEL = 'Target Text';
+const MATCH_COUNT_LABEL = 'Match Count';
+const REFERENCES_LABEL = 'References';
+
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_COLUMNS = 'search_hide_columns';
@@ -104,7 +119,7 @@ const searchOptions = [
   },
   {
     key: SEARCH_HIDE_COLUMNS,
-    label: 'Hide Columns',
+    label: 'Show/Hide Columns',
   },
 ];
 
@@ -134,6 +149,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       found: null,
       alignedBibles: [],
       alignedBible: null,
+      hide: {},
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
@@ -145,6 +161,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.getSelectedOptions = this.getSelectedOptions.bind(this);
     this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
     this.showMessage = this.showMessage.bind(this);
+    this.showColumnHidesMenu = this.showColumnHidesMenu.bind(this);
     this.selectColumnHides = this.selectColumnHides.bind(this);
   }
 
@@ -154,7 +171,12 @@ class AlignmentSearchDialogContainer extends React.Component {
         const savedState = this.props.savedSettings;
 
         if (savedState && Object.keys(savedState).length) {
-          this.setState(_.cloneDeep(savedState));
+          const newState = _.cloneDeep(savedState);
+
+          if (!newState.hide) {
+            newState.hide = {};
+          }
+          this.setState(newState);
         }
 
         delay(100).then(() => {
@@ -245,14 +267,61 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
   }
 
-  selectColumnHides() {
+  selectColumnHides(key) {
+    const newHide = {
+      ...(this.state?.hide || {}),
+    };
+    let currentState = newHide[key];
+    newHide[key] = !currentState;
+    this.setState({ hide: newHide });
+  }
+
+  showColumnHidesMenu() {
+    const hide = this.state?.hide || {};
+    const hideMenuItems = [
+      {
+        key: SHOW_SOURCE_TEXT,
+        label: SOURCE_TEXT_LABEL,
+      },
+      {
+        key: SHOW_SOURCE_LEMMA,
+        label: SOURCE_LEMMA_LABEL,
+      },
+      {
+        key: SHOW_STRONGS,
+        label: STRONGS_LABEL,
+      },
+      {
+        key: SHOW_TARGET_TEXT,
+        label: TARGET_TEXT_LABEL,
+      },
+      {
+        key: SHOW_MATCH_COUNT,
+        label: MATCH_COUNT_LABEL,
+      },
+      {
+        key: SHOW_REFERENCES,
+        label: REFERENCES_LABEL,
+      },
+    ];
+
     this.props.openAlertDialog(
-      <Menu>
-        <MenuItem primaryText="Refresh" />
-        <MenuItem primaryText="Help &amp; feedback" />
-        <MenuItem primaryText="Settings" />
-        <MenuItem primaryText="Sign out" />
-      </Menu>
+      <>
+        <div> {'Enable Columns'} </div>
+        <Menu>
+          {hideMenuItems.map(item => {
+            const enabled = !hide[item.key];
+            return (
+              <MenuItem
+                primaryText={item.label}
+                key={item.key}
+                onClick={() => this.selectColumnHides(item.key)}
+                checked={enabled}
+              />
+            );
+          })}
+        </Menu>
+      </>
       , false);
   }
 
@@ -326,19 +395,20 @@ class AlignmentSearchDialogContainer extends React.Component {
             searchPlaceholder: 'Filter Results',
           },
         };
-
+        const hide = this.state?.hide || {};
+        const searchColumns = [
+          hide[SHOW_SOURCE_TEXT] && { title: SOURCE_TEXT_LABEL, field: SHOW_SOURCE_TEXT, ...originalStyles },
+          hide[SHOW_SOURCE_LEMMA] && { title: SOURCE_LEMMA_LABEL, field: SHOW_SOURCE_LEMMA, ...originalStyles },
+          hide[SHOW_STRONGS] && { title: STRONGS_LABEL, field: SHOW_STRONGS, ...columnStyles },
+          hide[SHOW_TARGET_TEXT] && { title: TARGET_TEXT_LABEL, field: SHOW_TARGET_TEXT, ...columnStyles },
+          hide[SHOW_MATCH_COUNT] && { title: MATCH_COUNT_LABEL, field: SHOW_MATCH_COUNT, ...columnStyles },
+          hide[SHOW_REFERENCES] && { title: REFERENCES_LABEL, field: SHOW_REFERENCES, ...columnStyles },
+        ];
         return (
           <>
             <div style={{ fontWeight: 'bold', color: 'black' }}> {`Found ${this.state?.found.length || 0} matches`} </div>
             <MaterialTable
-              columns={[
-                { title: 'Source Text', field: 'sourceText', ...originalStyles },
-                { title: 'Source Lemma', field: 'sourceLemma', ...originalStyles },
-                { title: 'Source Strong', field: 'strong', ...columnStyles },
-                { title: 'Target Text', field: 'targetText', ...columnStyles },
-                { title: 'Match Count', field: 'count', ...columnStyles },
-                { title: 'References', field: 'refStr', ...columnStyles },
-              ]}
+              columns={searchColumns.filter(item => item)}
               data={data}
               title={'Search Results:'}
               icons={tableIcons}
@@ -428,7 +498,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
 
     if (this.isItemSelected(values, SEARCH_HIDE_COLUMNS)) {
-      this.selectColumnHides();
+      this.showColumnHidesMenu();
       return;
     }
 
