@@ -4,10 +4,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import path from 'path-extra';
 import {
-  TextField,
-  SelectField,
-  MenuItem,
+  Divider,
   Menu,
+  MenuItem,
+  SelectField,
+  TextField,
 } from 'material-ui';
 import MaterialTable from 'material-table';
 import env from 'tc-electron-env';
@@ -83,7 +84,7 @@ const searchFieldLabels = {
   [SEARCH_SOURCE]: 'Search Source Words',
   [SEARCH_LEMMA]: 'Search Lemma Words',
   [SEARCH_TARGET]: 'Search Target Words',
-  [SEARCH_STRONG]: 'Search Strongs Numbers',
+  [SEARCH_STRONG]: 'Search Strong\'s Numbers',
   [SEARCH_REFS]: 'Search References',
 };
 
@@ -95,35 +96,66 @@ const SHOW_TARGET_TEXT = 'targetText';
 const SHOW_MATCH_COUNT = 'count';
 const SHOW_REFERENCES = 'refStr';
 
-const SOURCE_TEXT_LABEL = 'Source Text';
-const SOURCE_LEMMA_LABEL = 'Source Lemma';
-const STRONGS_LABEL = 'Source Strong';
-const TARGET_TEXT_LABEL = 'Target Text';
-const MATCH_COUNT_LABEL = 'Match Count';
-const REFERENCES_LABEL = 'References';
+const SOURCE_TEXT_LABEL = 'Source Text Column';
+const SOURCE_LEMMA_LABEL = 'Source Lemma Column';
+const STRONGS_LABEL = 'Source Strong\'s Column';
+const TARGET_TEXT_LABEL = 'Target Text Column';
+const MATCH_COUNT_LABEL = 'Match Count Column';
+const REFERENCES_LABEL = 'References Column';
 
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_COLUMNS = 'search_hide_columns';
 
+const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
+const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
+const SEARCH_SHOW_COLUMNS_LABEL = 'Show Columns';
 const searchOptions = [
   {
     key: SEARCH_CASE_SENSITIVE,
-    label: 'Case Sensitive',
+    label: SEARCH_CASE_SENSITIVE_LABEL,
     stateKey: 'caseSensitive',
   },
   {
     key: SEARCH_MATCH_WHOLE_WORD,
-    label: 'Match Whole Word',
+    label: SEARCH_MATCH_WHOLE_WORD_LABEL,
     stateKey: 'matchWholeWord',
   },
   {
     key: SEARCH_HIDE_COLUMNS,
-    label: 'Show/Hide Columns',
+    label: SEARCH_SHOW_COLUMNS_LABEL,
   },
 ];
 
 const SEARCH_SETTINGS_KEY = 'searchSettingsKey';
+
+const getShowTitle = label => `Show ${label}`;
+const showMenuItems = [
+  {
+    key: SHOW_SOURCE_TEXT,
+    label: getShowTitle(SOURCE_TEXT_LABEL),
+  },
+  {
+    key: SHOW_SOURCE_LEMMA,
+    label: getShowTitle(SOURCE_LEMMA_LABEL),
+  },
+  {
+    key: SHOW_STRONGS,
+    label: getShowTitle(STRONGS_LABEL),
+  },
+  {
+    key: SHOW_TARGET_TEXT,
+    label: getShowTitle(TARGET_TEXT_LABEL),
+  },
+  {
+    key: SHOW_MATCH_COUNT,
+    label: getShowTitle(MATCH_COUNT_LABEL),
+  },
+  {
+    key: SHOW_REFERENCES,
+    label: getShowTitle(REFERENCES_LABEL),
+  },
+];
 
 /**
  * Renders a dialog for user to do alignment search.
@@ -278,38 +310,12 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   showColumnHidesMenu() {
     const hide = this.state?.hide || {};
-    const hideMenuItems = [
-      {
-        key: SHOW_SOURCE_TEXT,
-        label: SOURCE_TEXT_LABEL,
-      },
-      {
-        key: SHOW_SOURCE_LEMMA,
-        label: SOURCE_LEMMA_LABEL,
-      },
-      {
-        key: SHOW_STRONGS,
-        label: STRONGS_LABEL,
-      },
-      {
-        key: SHOW_TARGET_TEXT,
-        label: TARGET_TEXT_LABEL,
-      },
-      {
-        key: SHOW_MATCH_COUNT,
-        label: MATCH_COUNT_LABEL,
-      },
-      {
-        key: SHOW_REFERENCES,
-        label: REFERENCES_LABEL,
-      },
-    ];
 
     this.props.openAlertDialog(
       <>
         <div> {'Enable Columns'} </div>
         <Menu>
-          {hideMenuItems.map(item => {
+          {showMenuItems.map(item => {
             const enabled = !hide[item.key];
             return (
               <MenuItem
@@ -397,12 +403,12 @@ class AlignmentSearchDialogContainer extends React.Component {
         };
         const hide = this.state?.hide || {};
         const searchColumns = [
-          hide[SHOW_SOURCE_TEXT] && { title: SOURCE_TEXT_LABEL, field: SHOW_SOURCE_TEXT, ...originalStyles },
-          hide[SHOW_SOURCE_LEMMA] && { title: SOURCE_LEMMA_LABEL, field: SHOW_SOURCE_LEMMA, ...originalStyles },
-          hide[SHOW_STRONGS] && { title: STRONGS_LABEL, field: SHOW_STRONGS, ...columnStyles },
-          hide[SHOW_TARGET_TEXT] && { title: TARGET_TEXT_LABEL, field: SHOW_TARGET_TEXT, ...columnStyles },
-          hide[SHOW_MATCH_COUNT] && { title: MATCH_COUNT_LABEL, field: SHOW_MATCH_COUNT, ...columnStyles },
-          hide[SHOW_REFERENCES] && { title: REFERENCES_LABEL, field: SHOW_REFERENCES, ...columnStyles },
+          !hide[SHOW_SOURCE_TEXT] && { title: (SOURCE_TEXT_LABEL), field: SHOW_SOURCE_TEXT, ...originalStyles },
+          !hide[SHOW_SOURCE_LEMMA] && { title: (SOURCE_LEMMA_LABEL), field: SHOW_SOURCE_LEMMA, ...originalStyles },
+          !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
+          !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
+          !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
+          !hide[SHOW_REFERENCES] && { title: (REFERENCES_LABEL), field: SHOW_REFERENCES, ...columnStyles },
         ];
         return (
           <>
@@ -496,15 +502,28 @@ class AlignmentSearchDialogContainer extends React.Component {
   setSearchTypes(event, index, values) {
     const fullWordItem = this.findSearchItem(SEARCH_MATCH_WHOLE_WORD);
     const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
+    const hide = {};
+    const searchType = [];
+    // hide = this.state?.hide || {};
 
-    if (this.isItemSelected(values, SEARCH_HIDE_COLUMNS)) {
-      this.showColumnHidesMenu();
-      return;
+    for (const item of showMenuItems) {
+      const selected = this.isItemSelected(values, item.key);
+      hide[item.key] = !selected;
+    }
+
+    for (const item of searchFieldOptions) {
+      const selected = this.isItemSelected(values, item);
+
+      if (selected) {
+        searchType.push(item);
+      }
     }
 
     const types = {
       [fullWordItem.stateKey]: this.isItemSelected(values, SEARCH_MATCH_WHOLE_WORD),
       [caseSensitiveItem.stateKey]: this.isItemSelected(values, SEARCH_CASE_SENSITIVE),
+      hide,
+      searchType,
     };
 
     this.setState(types);
@@ -568,8 +587,16 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @returns {string[]}
    */
   getSelectedOptions(options) {
+    const hide = this.state?.hide || {};
     let selections = options.map(item => !!this.state[item.stateKey] && item.key);
     selections = selections.filter(item => item);
+    let selections2 = showMenuItems.map(item => !hide[item.key] && item.key);
+    selections2 = selections2.filter(item => item);
+    const searchType = this.state?.searchType || [];
+    let selections3 = searchFieldOptions.map(item => searchType.includes(item) && item);
+    selections3 = selections3.filter(item => item);
+    selections = selections.concat(selections2);
+    selections = selections.concat(selections3);
     return selections;
   }
 
@@ -587,7 +614,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       <BaseDialog
         open={open}
         primaryLabel={'Search'}
-        secondaryLabel={translate('buttons.cancel_button')}
+        secondaryLabel={translate('buttons.close_button')}
         primaryActionEnabled={!!(this.state.alignmentData && this.state.searchStr)}
         onSubmit={this.startSearch}
         onClose={this.handleClose}
@@ -639,45 +666,55 @@ class AlignmentSearchDialogContainer extends React.Component {
             <div style={{ display: 'flex' }}>
               <SelectField
                 id={'select_search_option'}
-                hintText="Select search types"
+                hintText="Select search options"
                 value={this.getSelectedOptions(searchOptions)}
                 multiple
-                style={{ width: '250px', marginLeft: '20px', marginRight: '20px' }}
+                style={{ width: '350px', marginLeft: '20px', marginRight: '20px' }}
                 onChange={this.setSearchTypes}
               >
-                {
-                  searchOptions.map(item => (
+                <MenuItem
+                  key={SEARCH_CASE_SENSITIVE}
+                  insetChildren={true}
+                  checked={this.state.caseSensitive}
+                  value={SEARCH_CASE_SENSITIVE}
+                  primaryText={SEARCH_CASE_SENSITIVE_LABEL}
+                />
+                <MenuItem
+                  key={SEARCH_MATCH_WHOLE_WORD}
+                  insetChildren={true}
+                  checked={this.state.matchWholeWord}
+                  value={SEARCH_MATCH_WHOLE_WORD}
+                  primaryText={SEARCH_MATCH_WHOLE_WORD_LABEL}
+                />
+                <Divider />
+                <div style={{ marginLeft: '10px' }}>{'Select Columns to Show:'}</div>
+                {showMenuItems.map(item => {
+                  const hide = this.state?.hide || {};
+                  return (
                     <MenuItem
                       key={item.key}
                       insetChildren={true}
-                      checked={this.state[item.stateKey]}
+                      checked={!hide[item.key]}
                       value={item.key}
                       primaryText={item.label}
+                    />
+                  );
+                })}
+                <Divider />
+                <div style={{ marginLeft: '10px' }}>{'Select Fields to Search:'}</div>
+                {
+                  searchFieldOptions.map(item => (
+                    <MenuItem
+                      key={item}
+                      insetChildren={true}
+                      checked={this.isSearchFieldSelected(item)}
+                      value={item}
+                      primaryText={searchFieldLabels[item]}
                     />
                   ))
                 }
               </SelectField>
             </div>
-            <SelectField
-              id={'select_search_fields'}
-              hintText="Select fields to search"
-              value={this.state.searchType}
-              multiple
-              style={{ width: '300px' }}
-              onChange={this.setSearchFields}
-            >
-              {
-                searchFieldOptions.map(item => (
-                  <MenuItem
-                    key={item}
-                    insetChildren={true}
-                    checked={this.isSearchFieldSelected(item)}
-                    value={item}
-                    primaryText={searchFieldLabels[item]}
-                  />
-                ))
-              }
-            </SelectField>
           </div>
           { this.showResults() }
         </div>
