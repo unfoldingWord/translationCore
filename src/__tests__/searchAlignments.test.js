@@ -6,7 +6,7 @@ import {
   multiSearchAlignments,
   regexSearch,
   searchAlignments,
-} from '../js/helpers/searchHelper';
+} from '../js/helpers/alignmentSearchHelpers';
 
 jest.unmock('fs-extra');
 
