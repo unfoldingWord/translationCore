@@ -8,6 +8,7 @@ import {
   Menu,
   MenuItem,
   SelectField,
+  Subheader,
   TextField,
 } from 'material-ui';
 import MaterialTable from 'material-table';
@@ -687,7 +688,7 @@ class AlignmentSearchDialogContainer extends React.Component {
                   primaryText={SEARCH_MATCH_WHOLE_WORD_LABEL}
                 />
                 <Divider />
-                <div style={{ marginLeft: '10px' }}>{'Select Columns to Show:'}</div>
+                <Subheader inset={true}>{'Select Columns to Show:'}</Subheader>
                 {showMenuItems.map(item => {
                   const hide = this.state?.hide || {};
                   return (
@@ -701,7 +702,7 @@ class AlignmentSearchDialogContainer extends React.Component {
                   );
                 })}
                 <Divider />
-                <div style={{ marginLeft: '10px' }}>{'Select Fields to Search:'}</div>
+                <Subheader inset={true}>{'Select Fields to Search:'}</Subheader>
                 {
                   searchFieldOptions.map(item => (
                     <MenuItem
