@@ -1,0 +1,473 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LicenseModal component renders correctly LicenseModal Component render should match snapshot 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MuiThemeProvider>
+    <Dialog
+      actions={
+        Array [
+          <button
+            className="btn-prime"
+            label="buttons.close_button"
+            onClick={[MockFunction]}
+          >
+            Close
+          </button>,
+        ]
+      }
+      autoDetectWindowHeight={true}
+      autoScrollBodyContent={false}
+      contentStyle={
+        Object {
+          "height": "550px",
+          "maxWidth": "900px",
+          "minHeight": "550px",
+          "width": "900px",
+        }
+      }
+      modal={true}
+      open={false}
+      repositionOnUpdate={true}
+      style={
+        Object {
+          "padding": "0px",
+        }
+      }
+    >
+      <CardHeader
+        avatar={null}
+        style={
+          Object {
+            "backgroundColor": "var(--accent-color-dark)",
+            "color": "var(--reverse-color)",
+            "margin": "-44px -24px -24px -24px",
+            "padding": "15px",
+          }
+        }
+      >
+        <div>
+          <span>
+            translationCore 2.1.2 (undefined)
+          </span>
+          <Glyphicon
+            bsClass="glyphicon"
+            glyph="remove"
+            onClick={[MockFunction]}
+            style={
+              Object {
+                "color": "var(--reverse-color)",
+                "cursor": "pointer",
+                "float": "right",
+                "fontSize": "18px",
+              }
+            }
+          />
+        </div>
+      </CardHeader>
+      <br />
+      <Licenses
+        translate={[Function]}
+      />
+    </Dialog>
+  </MuiThemeProvider>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "actions": Array [
+        <button
+          className="btn-prime"
+          label="buttons.close_button"
+          onClick={[MockFunction]}
+        >
+          Close
+        </button>,
+      ],
+      "autoDetectWindowHeight": true,
+      "autoScrollBodyContent": false,
+      "children": Array [
+        <CardHeader
+          avatar={null}
+          style={
+            Object {
+              "backgroundColor": "var(--accent-color-dark)",
+              "color": "var(--reverse-color)",
+              "margin": "-44px -24px -24px -24px",
+              "padding": "15px",
+            }
+          }
+        >
+          <div>
+            <span>
+              translationCore 2.1.2 (undefined)
+            </span>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="remove"
+              onClick={[MockFunction]}
+              style={
+                Object {
+                  "color": "var(--reverse-color)",
+                  "cursor": "pointer",
+                  "float": "right",
+                  "fontSize": "18px",
+                }
+              }
+            />
+          </div>
+        </CardHeader>,
+        <br />,
+        <Licenses
+          translate={[Function]}
+        />,
+      ],
+      "contentStyle": Object {
+        "height": "550px",
+        "maxWidth": "900px",
+        "minHeight": "550px",
+        "width": "900px",
+      },
+      "modal": true,
+      "open": false,
+      "repositionOnUpdate": true,
+      "style": Object {
+        "padding": "0px",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "avatar": null,
+          "children": <div>
+            <span>
+              translationCore 2.1.2 (undefined)
+            </span>
+            <Glyphicon
+              bsClass="glyphicon"
+              glyph="remove"
+              onClick={[MockFunction]}
+              style={
+                Object {
+                  "color": "var(--reverse-color)",
+                  "cursor": "pointer",
+                  "float": "right",
+                  "fontSize": "18px",
+                }
+              }
+            />
+          </div>,
+          "style": Object {
+            "backgroundColor": "var(--accent-color-dark)",
+            "color": "var(--reverse-color)",
+            "margin": "-44px -24px -24px -24px",
+            "padding": "15px",
+          },
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span>
+                translationCore 2.1.2 (undefined)
+              </span>,
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="remove"
+                onClick={[MockFunction]}
+                style={
+                  Object {
+                    "color": "var(--reverse-color)",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "fontSize": "18px",
+                  }
+                }
+              />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "translationCore 2.1.2 (undefined)",
+              },
+              "ref": null,
+              "rendered": "translationCore 2.1.2 (undefined)",
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "bsClass": "glyphicon",
+                "glyph": "remove",
+                "onClick": [MockFunction],
+                "style": Object {
+                  "color": "var(--reverse-color)",
+                  "cursor": "pointer",
+                  "float": "right",
+                  "fontSize": "18px",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": "br",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "translate": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "actions": Array [
+          <button
+            className="btn-prime"
+            label="buttons.close_button"
+            onClick={[MockFunction]}
+          >
+            Close
+          </button>,
+        ],
+        "autoDetectWindowHeight": true,
+        "autoScrollBodyContent": false,
+        "children": Array [
+          <CardHeader
+            avatar={null}
+            style={
+              Object {
+                "backgroundColor": "var(--accent-color-dark)",
+                "color": "var(--reverse-color)",
+                "margin": "-44px -24px -24px -24px",
+                "padding": "15px",
+              }
+            }
+          >
+            <div>
+              <span>
+                translationCore 2.1.2 (undefined)
+              </span>
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="remove"
+                onClick={[MockFunction]}
+                style={
+                  Object {
+                    "color": "var(--reverse-color)",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "fontSize": "18px",
+                  }
+                }
+              />
+            </div>
+          </CardHeader>,
+          <br />,
+          <Licenses
+            translate={[Function]}
+          />,
+        ],
+        "contentStyle": Object {
+          "height": "550px",
+          "maxWidth": "900px",
+          "minHeight": "550px",
+          "width": "900px",
+        },
+        "modal": true,
+        "open": false,
+        "repositionOnUpdate": true,
+        "style": Object {
+          "padding": "0px",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "avatar": null,
+            "children": <div>
+              <span>
+                translationCore 2.1.2 (undefined)
+              </span>
+              <Glyphicon
+                bsClass="glyphicon"
+                glyph="remove"
+                onClick={[MockFunction]}
+                style={
+                  Object {
+                    "color": "var(--reverse-color)",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "fontSize": "18px",
+                  }
+                }
+              />
+            </div>,
+            "style": Object {
+              "backgroundColor": "var(--accent-color-dark)",
+              "color": "var(--reverse-color)",
+              "margin": "-44px -24px -24px -24px",
+              "padding": "15px",
+            },
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <span>
+                  translationCore 2.1.2 (undefined)
+                </span>,
+                <Glyphicon
+                  bsClass="glyphicon"
+                  glyph="remove"
+                  onClick={[MockFunction]}
+                  style={
+                    Object {
+                      "color": "var(--reverse-color)",
+                      "cursor": "pointer",
+                      "float": "right",
+                      "fontSize": "18px",
+                    }
+                  }
+                />,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "translationCore 2.1.2 (undefined)",
+                },
+                "ref": null,
+                "rendered": "translationCore 2.1.2 (undefined)",
+                "type": "span",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "bsClass": "glyphicon",
+                  "glyph": "remove",
+                  "onClick": [MockFunction],
+                  "style": Object {
+                    "color": "var(--reverse-color)",
+                    "cursor": "pointer",
+                    "float": "right",
+                    "fontSize": "18px",
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "translate": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
