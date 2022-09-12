@@ -99,7 +99,7 @@ const replaceEllipsisInObjectArray = (object, key, subKey, changed_) => {
 };
 
 /**
- * @description Makes sure that any verse with verseEdits are in sync with the actual text
+ * @description upgrades any checks with ellipsis to use ampersand
  * since in 1.0 they could have reimported verses that have had external edits
  *
  * @param {String} projectPath - Project where all related documentation resides
