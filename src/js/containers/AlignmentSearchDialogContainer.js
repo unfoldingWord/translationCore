@@ -48,6 +48,11 @@ import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
 import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
 import { setSetting } from '../actions/SettingsActions';
+import { BIBLE_BOOKS, NT_ORIG_LANG } from '../common/BooksOfTheBible';
+
+const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
+const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
+Menu.defaultProps.disableAutoFocus = true; // to prevent auto-scrolling
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -196,6 +201,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.showMessage = this.showMessage.bind(this);
     this.showColumnHidesMenu = this.showColumnHidesMenu.bind(this);
     this.selectColumnHides = this.selectColumnHides.bind(this);
+    this.toggleBook = this.toggleBook.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -251,7 +257,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         bible.label = label;
       }
       this.setState({ alignedBibles });
-      this.loadAlignmentData(this.state.alignedBible);
+      this.selectAlignedBookToSearch(this.state.alignedBible);
       console.log('loadAlignmentSearchOptions() - finished');
     });
   }
@@ -373,15 +379,14 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @returns {JSX.Element}
    */
   showResults() {
-    const ignore = ['tit'];
-
-    if (this.state.found) { // if we have search results
+    if (this.props.open && this.state.found) { // if we have search results
       if (this.state.found?.length) { // if search results are not empty, create table to show results
+        const ignoreBooks = this.ignoreBooksForTestament();
         const data = this.state.found.map(item => {
           let refs = item.refs;
 
-          if (ignore) {
-            const refs_ = refs.filter(item => !ignore.includes(item?.split(' ')[0]));
+          if (ignoreBooks?.length) {
+            const refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
             refs = refs_;
 
             if (!refs_.length) {
@@ -425,9 +430,15 @@ class AlignmentSearchDialogContainer extends React.Component {
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
           !hide[SHOW_REFERENCES] && { title: (REFERENCES_LABEL), field: SHOW_REFERENCES, ...columnStyles },
         ];
+        let message = `Found ${this.state?.found.length || 0} matches`;
+
+        if (ignoreBooks?.length) {
+          message += ` - ignored books: ${ignoreBooks.join(',')}`;
+        }
+
         return (
           <>
-            <div style={{ fontWeight: 'bold', color: 'black' }}> {`Found ${this.state?.found.length || 0} matches`} </div>
+            <div style={{ fontWeight: 'bold', color: 'black' }}> {message} </div>
             <MaterialTable
               columns={searchColumns.filter(item => item)}
               data={data}
@@ -470,6 +481,17 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * find any ignored books for current testament
+   * @returns {[string]}
+   */
+  ignoreBooksForTestament() {
+    const ignoreBooks_ = this.state?.ignore || [];
+    const testament = this.state?.books || [];
+    const ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
+    return ignoreBooks;
+  }
+
+  /**
    * when user enters search string, save in state
    * @param {string} search - new search string
    */
@@ -484,8 +506,34 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} value - new selection
    */
   setSearchAlignedBible(event, index, value) {
-    this.loadAlignmentData(value);
-    this.setState({ alignedBible: value });
+    this.selectAlignedBookToSearch(value);
+  }
+
+  /**
+   * select book and testament
+   * @param {string} key
+   */
+  selectAlignedBookToSearch(key) {
+    if (key) {
+      this.loadAlignmentData(key);
+
+      //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+      const [, , , origLang] = key.split('_');
+      let books = null;
+      const isNT = origLang === NT_ORIG_LANG;
+
+      if (isNT) {
+        books = NT_BOOKS;
+      } else {
+        books = OT_BOOKS;
+      }
+
+      this.setState({
+        alignedBible: key,
+        books,
+        isNT,
+      });
+    }
   }
 
   /**
@@ -522,12 +570,12 @@ class AlignmentSearchDialogContainer extends React.Component {
     // hide = this.state?.hide || {};
 
     for (const item of showMenuItems) {
-      const selected = this.isItemSelected(values, item.key);
+      const selected = this.isItemPresent(values, item.key);
       hide[item.key] = !selected;
     }
 
     for (const item of searchFieldOptions) {
-      const selected = this.isItemSelected(values, item);
+      const selected = this.isItemPresent(values, item);
 
       if (selected) {
         searchType.push(item);
@@ -535,8 +583,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
 
     const types = {
-      [fullWordItem.stateKey]: this.isItemSelected(values, SEARCH_MATCH_WHOLE_WORD),
-      [caseSensitiveItem.stateKey]: this.isItemSelected(values, SEARCH_CASE_SENSITIVE),
+      [fullWordItem.stateKey]: this.isItemPresent(values, SEARCH_MATCH_WHOLE_WORD),
+      [caseSensitiveItem.stateKey]: this.isItemPresent(values, SEARCH_CASE_SENSITIVE),
       hide,
       searchType,
     };
@@ -558,6 +606,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   startSearch() {
     console.log('AlignmentSearchDialogContainer - start search');
+    this.setState({ found: null });
     const state = this.state;
     const config = {
       fullWord: state.matchWholeWord,
@@ -573,7 +622,9 @@ class AlignmentSearchDialogContainer extends React.Component {
     let found = multiSearchAlignments(state.alignmentData, state.searchStr, config) || [];
     found = found?.map(index => state.alignmentData.alignments[index]);
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
-    this.setState({ found });
+    delay(100).then(() => {
+      this.setState({ found });
+    });
   }
 
   /**
@@ -583,7 +634,36 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   isSearchFieldSelected(key) {
     const searchType = this.state.searchType;
-    return this.isItemSelected(searchType, key);
+    return this.isItemPresent(searchType, key);
+  }
+
+  /**
+   * check state data to see if search option is selected
+   * @param {string} key
+   * @returns {boolean}
+   */
+  isBookEnabled(key) {
+    const ignoredBooks = this.state.ignore || [];
+    const found = this.isItemPresent(ignoredBooks, key);
+    return !found;
+  }
+
+  /**
+   * check state data to see if search option is selected
+   * @param {string} key
+   * @returns {boolean}
+   */
+  toggleBook(key) {
+    const ignoredBooks = this.state.ignore || [];
+    const found = this.isItemPresent(ignoredBooks, key);
+    let newIgnore = [...ignoredBooks];
+
+    if (found) {
+      newIgnore = ignoredBooks.filter(item => item !== key);
+    } else {
+      newIgnore.push(key);
+    }
+    this.setState({ ignore: newIgnore });
   }
 
   /**
@@ -592,7 +672,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} key
    * @returns {boolean}
    */
-  isItemSelected(array, key) {
+  isItemPresent(array, key) {
     return array && array.indexOf(key) >= 0;
   }
 
@@ -624,6 +704,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     const fullScreen = { maxWidth: '100%', width: '100%' };
     // const partialScreen = { maxWidth: '768px', width: '75%' };
     const contentStyle = fullScreen;
+    const testament = this.state?.books || [];
+    const bookLabels = this.state?.isNT ? BIBLE_BOOKS.newTestament : BIBLE_BOOKS.oldTestament;
 
     return (
       <BaseDialog
@@ -725,6 +807,20 @@ class AlignmentSearchDialogContainer extends React.Component {
                       checked={this.isSearchFieldSelected(item)}
                       value={item}
                       primaryText={searchFieldLabels[item]}
+                    />
+                  ))
+                }
+                <Divider />
+                <Subheader inset={true}>{'Select Books to Search:'}</Subheader>
+                {
+                  testament.map(item => (
+                    <MenuItem
+                      key={item}
+                      insetChildren={true}
+                      checked={this.isBookEnabled(item)}
+                      value={item}
+                      primaryText={bookLabels[item]}
+                      onClick={() => this.toggleBook(item)}
                     />
                   ))
                 }
