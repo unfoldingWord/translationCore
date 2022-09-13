@@ -7,6 +7,7 @@ import migrateToVersion4 from './migrateToVersion4';
 import migrateToVersion5 from './migrateToVersion5';
 import migrateToVersion6 from './migrateToVersion6';
 import migrateToVersion7 from './migrateToVersion7';
+import migrateToVersion8 from './migrateToVersion8';
 import migrateSaveChangesInOldProjects from './migrateSaveChangesInOldProjects';
 
 /**
@@ -37,6 +38,7 @@ const migrateProject = async (projectSaveLocation, link, userName) => {
   migrateToVersion5(projectSaveLocation, link);
   migrateToVersion6(projectSaveLocation);
   migrateToVersion7(projectSaveLocation, link, userName);
+  migrateToVersion8(projectSaveLocation);
 };
 
 export default migrateProject;

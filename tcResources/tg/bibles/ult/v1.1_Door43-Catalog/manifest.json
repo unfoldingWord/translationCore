@@ -127,11 +127,11 @@
   "subject": "Aligned Bible",
   "resource_id": "tlob",
   "resource_title": "Tajik Literal Open Bible",
-  "remoteModifiedTime": "2022-07-23T21:04:53Z",
+  "remoteModifiedTime": "2022-08-25T23:53:32Z",
   "description": "Gateway Language",
-  "catalog_modified_time": "2022-07-23T21:04:53Z",
+  "catalog_modified_time": "2022-08-25T23:53:32Z",
   "usfm-js": "3.4.1",
   "version": "1.1",
-  "modifiedTime": "2022-07-23T21:04:53Z",
-  "stage": "latest"
+  "modifiedTime": "2022-08-25T23:53:32Z",
+  "stage": "prod"
 }
