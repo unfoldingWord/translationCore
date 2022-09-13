@@ -418,7 +418,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
           !hide[SHOW_REFERENCES] && { title: (REFERENCES_LABEL), field: SHOW_REFERENCES, ...columnStyles },
         ];
-        let message = `Found ${this.state?.found.length || 0} matches`;
+        let message = `Found ${data?.length || 0} matches`;
 
         if (ignoreBooks?.length) {
           message += ` - ignored books: ${ignoreBooks.join(',')}`;
@@ -474,7 +474,28 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @returns {*}
    */
   formatData(ignoreBooks) {
-    let data = this.state.found.map(item => {
+    let data = this.state.found || [];
+    let hidden = this.state.hide || {};
+    hidden = Object.keys(hidden).map(key => hidden[key] && key).filter(i => i);
+
+    if (hidden?.length && data?.length) {
+      const mergedData = {};
+      const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT].filter(item => !hidden.includes(item));
+
+      for (let i = 0; i < data.length; i ++) {
+        const row = data[i];
+        const key = remainingColumns.map(key => row[key].toString()).join('&');
+
+        if (!mergedData[key]) {
+          mergedData[key] = row;
+        } else {
+          Array.prototype.push.apply(mergedData[key].refs, row.refs);
+        }
+      }
+      data = Object.keys(mergedData).map(key => mergedData[key]);
+    }
+
+    data = data.map(item => {
       let refs = item.refs;
 
       if (ignoreBooks?.length) {
@@ -494,12 +515,6 @@ class AlignmentSearchDialogContainer extends React.Component {
       };
       return newItem;
     }).filter(item => item);
-    // const hidden = this.state.hide;
-    //
-    // if (hidden?.length) {
-    //   const remainingColumns
-    // }
-
     return data;
   }
 
