@@ -13,6 +13,7 @@ import { getUsfmForVerseContent, trimNewLine } from './FileConversionHelpers/Usf
 
 const startWordRegex = '(?<=[\\s,.:;"\']|^)';
 const endWordRegex = '(?=[\\s,.:;"\']|$)';
+const KEY = 'testament2';
 
 /**
  * get keys for alignments and do sort by locale
@@ -385,7 +386,7 @@ export function getAlignmentIndices(alignmentDataDir) {
     owner = decodeURIComponent(owner);
     version = decodeURIComponent(version);
 
-    if (type !== 'testament') {
+    if (type !== KEY) {
       continue;
     }
 
@@ -604,7 +605,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
       alignments = uniqueAlignments;
 
       console.log(`getAlignmentsFromResource() for ${resource.origLang}, ${alignments.length} alignments, indexing`);
-      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${(encodeParam(resource.owner))}_${resource.origLang}_testament_${encodeParam(resource.version)}_${alignments.length}.json`);
+      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${(encodeParam(resource.owner))}_${resource.origLang}_${KEY}_${encodeParam(resource.version)}_${alignments.length}.json`);
       const lemmaAlignments = { alignments: {} };
       const targetAlignments = { alignments: {} };
       const sourceAlignments = { alignments: {} };
@@ -739,16 +740,19 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
             const lemmas = [];
             const targets = [];
             const sources = [];
+            const morphs = [];
 
             for (const originalWord of alignment.topWords) {
               const {
                 strong,
                 lemma,
                 word,
+                morph,
               } = originalWord;
               strongs.push(strong);
               lemmas.push(lemma);
               sources.push(word);
+              morphs.push(morph);
             }
 
             for (const targetWord of alignment.bottomWords) {
@@ -758,6 +762,7 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
               sourceText: normalizer(sources.join(' ')),
               sourceLemma: normalizer(lemmas.join(' ')),
               strong: strongs.join(' '),
+              morph: morphs.join(' '),
               targetText: normalizer(targets.join(' ')),
               ref: verseRef,
             });

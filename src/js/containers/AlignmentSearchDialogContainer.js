@@ -98,6 +98,7 @@ const searchFieldLabels = {
 const SHOW_SOURCE_TEXT = 'sourceText';
 const SHOW_SOURCE_LEMMA = 'sourceLemma';
 const SHOW_STRONGS = 'strong';
+const SHOW_MORPH = 'morph';
 const SHOW_TARGET_TEXT = 'targetText';
 const SHOW_MATCH_COUNT = 'count';
 const SHOW_REFERENCES = 'refStr';
@@ -105,6 +106,7 @@ const SHOW_REFERENCES = 'refStr';
 const SOURCE_TEXT_LABEL = 'Source Text Column';
 const SOURCE_LEMMA_LABEL = 'Source Lemma Column';
 const STRONGS_LABEL = 'Source Strong\'s Column';
+const SOURCE_MORPH_LABEL = 'Source Morph Column';
 const TARGET_TEXT_LABEL = 'Target Text Column';
 const MATCH_COUNT_LABEL = 'Match Count Column';
 const REFERENCES_LABEL = 'References Column';
@@ -140,6 +142,10 @@ const showMenuItems = [
   {
     key: SHOW_SOURCE_TEXT,
     label: getShowTitle(SOURCE_TEXT_LABEL),
+  },
+  {
+    key: SHOW_MORPH,
+    label: getShowTitle(SOURCE_MORPH_LABEL),
   },
   {
     key: SHOW_SOURCE_LEMMA,
@@ -382,26 +388,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     if (this.props.open && this.state.found) { // if we have search results
       if (this.state.found?.length) { // if search results are not empty, create table to show results
         const ignoreBooks = this.ignoreBooksForTestament();
-        const data = this.state.found.map(item => {
-          let refs = item.refs;
-
-          if (ignoreBooks?.length) {
-            const refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
-            refs = refs_;
-
-            if (!refs_.length) {
-              return null;
-            }
-          }
-
-          const refStr = refs.join('; ');
-          const newItem = {
-            ...item,
-            refStr,
-            count: refs?.length,
-          };
-          return newItem;
-        }).filter(item => item);
+        const data = this.formatData(ignoreBooks);
         const columnStyles = {
           cellStyle: {
             fontSize: '16px',
@@ -425,6 +412,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         const searchColumns = [
           !hide[SHOW_SOURCE_TEXT] && { title: (SOURCE_TEXT_LABEL), field: SHOW_SOURCE_TEXT, ...originalStyles },
           !hide[SHOW_SOURCE_LEMMA] && { title: (SOURCE_LEMMA_LABEL), field: SHOW_SOURCE_LEMMA, ...originalStyles },
+          !hide[SHOW_MORPH] && { title: (SOURCE_MORPH_LABEL), field: SHOW_MORPH, ...columnStyles },
           !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
           !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
@@ -478,6 +466,41 @@ class AlignmentSearchDialogContainer extends React.Component {
         </>
       );
     }
+  }
+
+  /**
+   * format data for display
+   * @param ignoreBooks
+   * @returns {*}
+   */
+  formatData(ignoreBooks) {
+    let data = this.state.found.map(item => {
+      let refs = item.refs;
+
+      if (ignoreBooks?.length) {
+        const refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
+        refs = refs_;
+
+        if (!refs_.length) {
+          return null;
+        }
+      }
+
+      const refStr = refs.join('; ');
+      const newItem = {
+        ...item,
+        refStr,
+        count: refs?.length,
+      };
+      return newItem;
+    }).filter(item => item);
+    // const hidden = this.state.hide;
+    //
+    // if (hidden?.length) {
+    //   const remainingColumns
+    // }
+
+    return data;
   }
 
   /**
