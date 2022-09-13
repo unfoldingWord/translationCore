@@ -373,16 +373,30 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @returns {JSX.Element}
    */
   showResults() {
+    const ignore = ['tit'];
+
     if (this.state.found) { // if we have search results
       if (this.state.found?.length) { // if search results are not empty, create table to show results
         const data = this.state.found.map(item => {
+          let refs = item.refs;
+
+          if (ignore) {
+            const refs_ = refs.filter(item => !ignore.includes(item?.split(' ')[0]));
+            refs = refs_;
+
+            if (!refs_.length) {
+              return null;
+            }
+          }
+
+          const refStr = refs.join('; ');
           const newItem = {
             ...item,
-            refStr: item.refs.join('; '),
-            count: item.refs?.length,
+            refStr,
+            count: refs?.length,
           };
           return newItem;
-        });
+        }).filter(item => item);
         const columnStyles = {
           cellStyle: {
             fontSize: '16px',
