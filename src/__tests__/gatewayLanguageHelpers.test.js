@@ -1388,7 +1388,7 @@ describe('gatewayLanguageHelpers.getAlignedGLText', () => {
     };
     const bibles = { en: { 'ult': { 22: { 30: { verseObjects: verseObjects } } } } };
     const currentToolName = TRANSLATION_WORDS;
-    const expectedAlignedGLText = 'judging … twelve tribes of Israel';
+    const expectedAlignedGLText = 'judging & twelve tribes of Israel';
 
     // when
     const alignedGLText = gatewayLanguageHelpers.getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToolName);

@@ -3,7 +3,7 @@
   "productName": "translationCore",
   "version": "3.4.0",
   "minCompatibleVersion": "3.4.0",
-  "manifestVersion": "7",
+  "manifestVersion": "8",
   "description": "A bridge between TS and TM",
   "main": "main.js",
   "scripts": {
