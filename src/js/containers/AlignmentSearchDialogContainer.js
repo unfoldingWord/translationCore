@@ -262,7 +262,9 @@ class AlignmentSearchDialogContainer extends React.Component {
         bible.key = key;
         bible.label = label;
       }
+      this.props.closeAlertDialog();
       this.setState({ alignedBibles });
+      console.log(`loadAlignmentSearchOptions() - current aligned bible ${this.state.alignedBible}`);
       this.selectAlignedBookToSearch(this.state.alignedBible);
       console.log('loadAlignmentSearchOptions() - finished');
     });
@@ -275,35 +277,37 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   loadAlignmentData(selectedBibleKey) {
     if (selectedBibleKey) {
+      console.log(`loadAlignmentData() - loading index for ${selectedBibleKey}`);
       this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
           if (!resource.alignmentCount) {
+            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for ${selectedBibleKey}`);
             const indexingMsg = 'Doing one-time indexing of Bible for Search:';
-
             await this.showMessage(indexingMsg, true);
             const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
               await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
             });
 
             if (alignmentData?.alignments?.length) {
+              console.error(`loadAlignmentData() - found ${alignmentData?.alignments?.length} alignments`);
               resource.alignmentCount = alignmentData?.alignments?.length;
               this.setState({ alignedBibles: this.state.alignedBibles });
               await this.showMessage('Doing one-time indexing of Bible for Search', true);
               this.loadIndexedAlignmentData(resource);
               this.props.closeAlertDialog();
             } else {
+              console.error('loadAlignmentData() - no alignments');
               await this.showMessage(`No Alignments found in ${resource.label}`);
-              console.error('no alignments');
             }
           } else {
             this.loadIndexedAlignmentData(resource);
             this.props.closeAlertDialog();
           }
         } else {
-          this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
           console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
+          this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
         }
       });
     } else {
@@ -552,6 +556,8 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} key
    */
   selectAlignedBookToSearch(key) {
+    console.log(`selectAlignedBookToSearch(${key})`);
+
     if (key) {
       this.loadAlignmentData(key);
 
@@ -566,6 +572,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         books = OT_BOOKS;
       }
 
+      console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
       this.setState({
         alignedBible: key,
         books,
