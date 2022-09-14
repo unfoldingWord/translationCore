@@ -274,8 +274,9 @@ class AlignmentSearchDialogContainer extends React.Component {
    * checks if selected bible has an index saved.  If not then an index is first created and saved.  Then the index is
    *    loaded for searching
    * @param {string} selectedBibleKey
+   * @param {function} callback - when finished
    */
-  loadAlignmentData(selectedBibleKey) {
+  loadAlignmentData(selectedBibleKey, callback = null) {
     if (selectedBibleKey) {
       console.log(`loadAlignmentData() - loading index for ${selectedBibleKey}`);
       this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
@@ -295,24 +296,25 @@ class AlignmentSearchDialogContainer extends React.Component {
               resource.alignmentCount = alignmentData?.alignments?.length;
               this.setState({ alignedBibles: this.state.alignedBibles });
               await this.showMessage('Doing one-time indexing of Bible for Search', true);
-              this.loadIndexedAlignmentData(resource);
-              this.props.closeAlertDialog();
+              const success = this.loadIndexedAlignmentData(resource);
+              callback && callback(success, `Failed loading index for ${selectedBibleKey}`);
             } else {
-              console.error('loadAlignmentData() - no alignments');
-              await this.showMessage(`No Alignments found in ${resource.label}`);
+              console.error(`loadAlignmentData() - no alignments for ${selectedBibleKey}`);
+              callback && callback(false, `No Alignments found in ${selectedBibleKey}`);
             }
           } else {
-            this.loadIndexedAlignmentData(resource);
-            this.props.closeAlertDialog();
+            console.log(`loadAlignmentData() loaded cached alignment index for ${selectedBibleKey}`);
+            const success = this.loadIndexedAlignmentData(resource);
+            callback && callback(success, `Failed loading index for ${selectedBibleKey}`);
           }
         } else {
           console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
-          this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
+          callback && callback(false, `Could not find aligned bible for ${selectedBibleKey}`);
         }
       });
     } else {
       console.log('loadAlignmentData() no aligned bible');
-      this.props.closeAlertDialog();
+      callback && callback(false, `Invalid aligned bible ID: ${selectedBibleKey}`);
     }
   }
 
@@ -361,26 +363,40 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * loads the indexed alignment data for resource and saves in state
    * @param {object} resource
+   * @return {boolean} true if success
    */
   loadIndexedAlignmentData(resource) {
-    // check alignment data folder for indexed search data
-    const resourcesIndexed = readDirectory(ALIGNMENT_DATA_PATH, false, true, '.json');
-    let alignmentData;
-    const foundIndexPath = resourcesIndexed?.find((file) => file.indexOf(resource.key) === 0 );
+    try {
+      // check alignment data folder for indexed search data
+      const resourcesIndexed = readDirectory(ALIGNMENT_DATA_PATH, false, true, '.json');
+      let alignmentData;
+      const foundIndexPath = resourcesIndexed?.find((file) => file.indexOf(resource.key) === 0);
 
-    if (foundIndexPath) {
-      alignmentData = loadAlignments(path.join(ALIGNMENT_DATA_PATH, foundIndexPath));
-    } else {
-      console.log('loadAlignmentDataFromIndex() - did not find index');
-    }
+      if (foundIndexPath) {
+        alignmentData = loadAlignments(path.join(ALIGNMENT_DATA_PATH, foundIndexPath));
+      } else {
+        console.log('loadIndexedAlignmentData() - did not find index');
+      }
 
-    if (alignmentData) {
-      console.log('loadAlignmentDataFromIndex() - loaded alignment data');
-      this.setState({ alignmentData, found: null });
-    } else {
-      this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
-      console.log('loadAlignmentDataFromIndex() - FAILED to load alignment data');
-      this.setState({ alignmentData: null, found: null });
+      if (alignmentData) {
+        console.log('loadIndexedAlignmentData() - loaded alignment data');
+        this.setState({
+          alignmentData,
+          found: null,
+        });
+        return true;
+      } else {
+        this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
+        console.log('loadIndexedAlignmentData() - FAILED to load alignment data');
+        this.setState({
+          alignmentData: null,
+          found: null,
+        });
+        return false;
+      }
+    } catch (e) {
+      console.error('loadIndexedAlignmentData() - ERROR loading alignment data', e);
+      return false;
     }
   }
 
@@ -559,24 +575,33 @@ class AlignmentSearchDialogContainer extends React.Component {
     console.log(`selectAlignedBookToSearch(${key})`);
 
     if (key) {
-      this.loadAlignmentData(key);
+      this.loadAlignmentData(key, (success, errorMessage) => {
+        if (success) {
+          //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+          const [, , , origLang] = key.split('_');
+          let books = null;
+          const isNT = origLang === NT_ORIG_LANG;
 
-      //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
-      const [, , , origLang] = key.split('_');
-      let books = null;
-      const isNT = origLang === NT_ORIG_LANG;
+          if (isNT) {
+            books = NT_BOOKS;
+          } else {
+            books = OT_BOOKS;
+          }
 
-      if (isNT) {
-        books = NT_BOOKS;
-      } else {
-        books = OT_BOOKS;
-      }
+          console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
+          this.setState({
+            alignedBible: key,
+            books,
+            isNT,
+          });
+          this.props.closeAlertDialog();
+        } else {
+          console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
 
-      console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
-      this.setState({
-        alignedBible: key,
-        books,
-        isNT,
+          if (errorMessage) {
+            this.props.openAlertDialog(errorMessage);
+          }
+        }
       });
     }
   }
