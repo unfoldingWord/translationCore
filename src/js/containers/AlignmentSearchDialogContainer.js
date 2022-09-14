@@ -278,13 +278,13 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   loadAlignmentData(selectedBibleKey, callback = null) {
     if (selectedBibleKey) {
-      console.log(`loadAlignmentData() - loading index for ${selectedBibleKey}`);
+      console.log(`loadAlignmentData() - loading index for '${selectedBibleKey}'`);
       this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
           if (!resource.alignmentCount) {
-            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for ${selectedBibleKey}`);
+            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for '${selectedBibleKey}'`);
             const indexingMsg = 'Doing one-time indexing of Bible for Search:';
             await this.showMessage(indexingMsg, true);
             const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
@@ -297,24 +297,24 @@ class AlignmentSearchDialogContainer extends React.Component {
               this.setState({ alignedBibles: this.state.alignedBibles });
               await this.showMessage('Doing one-time indexing of Bible for Search', true);
               const success = this.loadIndexedAlignmentData(resource);
-              callback && callback(success, `Failed loading index for ${selectedBibleKey}`);
+              callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
             } else {
               console.error(`loadAlignmentData() - no alignments for ${selectedBibleKey}`);
-              callback && callback(false, `No Alignments found in ${selectedBibleKey}`);
+              callback && callback(false, `No Alignments found in '${selectedBibleKey}'`);
             }
           } else {
             console.log(`loadAlignmentData() loaded cached alignment index for ${selectedBibleKey}`);
             const success = this.loadIndexedAlignmentData(resource);
-            callback && callback(success, `Failed loading index for ${selectedBibleKey}`);
+            callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
           }
         } else {
           console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
-          callback && callback(false, `Could not find aligned bible for ${selectedBibleKey}`);
+          callback && callback(false, `Could not find aligned bible for '${selectedBibleKey}'`);
         }
       });
     } else {
       console.log('loadAlignmentData() no aligned bible');
-      callback && callback(false, `Invalid aligned bible ID: ${selectedBibleKey}`);
+      callback && callback(false, `Invalid aligned bible ID: '${selectedBibleKey}'`);
     }
   }
 
