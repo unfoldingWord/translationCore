@@ -13,7 +13,7 @@ import { getUsfmForVerseContent, trimNewLine } from './FileConversionHelpers/Usf
 
 const startWordRegex = '(?<=[\\s,.:;"\']|^)';
 const endWordRegex = '(?=[\\s,.:;"\']|$)';
-const KEY = 'testament2';
+export const ALIGNMENTS_KEY = 'testament2';
 
 /**
  * get keys for alignments and do sort by locale
@@ -386,7 +386,7 @@ export function getAlignmentIndices(alignmentDataDir) {
     owner = decodeURIComponent(owner);
     version = decodeURIComponent(version);
 
-    if (type !== KEY) {
+    if (type !== ALIGNMENTS_KEY) {
       continue;
     }
 
@@ -605,7 +605,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
       alignments = uniqueAlignments;
 
       console.log(`getAlignmentsFromResource() for ${resource.origLang}, ${alignments.length} alignments, indexing`);
-      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${(encodeParam(resource.owner))}_${resource.origLang}_${KEY}_${encodeParam(resource.version)}_${alignments.length}.json`);
+      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${(encodeParam(resource.owner))}_${resource.origLang}_${ALIGNMENTS_KEY}_${encodeParam(resource.version)}_${alignments.length}.json`);
       const lemmaAlignments = { alignments: {} };
       const targetAlignments = { alignments: {} };
       const sourceAlignments = { alignments: {} };

@@ -37,6 +37,7 @@ import { getProjectManifest, getSetting } from '../selectors';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
 import {
+  ALIGNMENTS_KEY,
   encodeParam,
   getAlignmentsFromResource,
   getSearchableAlignments,
@@ -257,7 +258,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
 
       for (const bible of alignedBibles) {
-        const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+        const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_${ALIGNMENTS_KEY}_${encodeParam(bible.version)}`;
         const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
         bible.key = key;
         bible.label = label;
