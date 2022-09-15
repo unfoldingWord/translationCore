@@ -1561,8 +1561,5 @@ Array [
     ],
     "type": "GET_MY_PROJECTS",
   },
-  Object {
-    "type": "CLOSE_ALERT_DIALOG",
-  },
 ]
 `;
