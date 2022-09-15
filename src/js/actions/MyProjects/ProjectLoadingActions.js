@@ -522,6 +522,7 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
       }
     } catch (e) {
       console.warn(`checkIfWeNeedNewerOrigLangVersion() - failed to get latest version in ${bibleFolderPath}`, e);
+      latestOlVersion = null;
     }
   }
 
