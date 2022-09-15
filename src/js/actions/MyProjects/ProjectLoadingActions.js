@@ -513,7 +513,7 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
       latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
 
       if (latestOlVersion) {
-        const {version} = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
+        const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
         latestOlVersion = version;
 
         if (latestOlVersion[0] === 'v') {
