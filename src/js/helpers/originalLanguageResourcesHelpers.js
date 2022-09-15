@@ -44,7 +44,7 @@ export function getTsvOLVersion(tsvRelations, resourceId) {
  * @param {string} ownerStr - optional owner, if not given defaults to Door43-Catalog
  * @return {string} latest version found
  */
-export function getMostRecentVersionInFolder(bibleFolderPath, ownerStr = apiHelpers.DOOR43_CATALOG) {
+function getMostRecentVersionInFolder(bibleFolderPath, ownerStr = apiHelpers.DOOR43_CATALOG) {
   const versionNumbers = fs.readdirSync(bibleFolderPath).filter(folder => folder !== '.DS_Store'); // ex. v9
 
   if (versionNumbers && versionNumbers.length) {

@@ -5,11 +5,7 @@ import fs from 'fs-extra';
 import usfmjs from 'usfm-js';
 import { TextField } from 'material-ui';
 import { batchActions } from 'redux-batched-actions';
-import {
-  apiHelpers,
-  downloadHelpers,
-  resourcesHelpers,
-} from 'tc-source-content-updater';
+import { apiHelpers, downloadHelpers } from 'tc-source-content-updater';
 import * as YAML from 'yamljs';
 import consts from '../ActionTypes';
 // actions
@@ -72,16 +68,12 @@ import {
   tc_EDIT_VERSION_KEY,
   tc_LAST_OPENED_KEY,
   tc_MIN_COMPATIBLE_VERSION_KEY,
-  tc_MIN_UGNT_ERROR,
   tc_MIN_VERSION_ERROR,
   TRANSLATION_WORDS,
-  USER_RESOURCES_PATH,
   VIEW_DATA_PATH,
 } from '../../common/constants';
 import { getUSFMDetails } from '../../helpers/usfmHelpers';
 import { confirmOnlineAction } from '../OnlineModeConfirmActions';
-import { getMostRecentVersionInFolder } from '../../helpers/originalLanguageResourcesHelpers';
-import { downloadMissingResource } from '../SourceContentUpdatesActions';
 
 export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, getState) => {
   dispatch(confirmOnlineAction(() => {
@@ -409,36 +401,6 @@ export const showInvalidVersionError = () => (dispatch, getState) => {
 };
 
 /**
- * show Invalid Original Language Version Error
- * @param {object} manifest
- * @return {Function}
- */
-export const showInvalidOrigLangVersionError = (manifest) => (dispatch, getState) => {
-  const translate = getTranslate(getState());
-  const cancelText = translate('buttons.cancel_button');
-  const upgradeText = translate('buttons.update_version');
-  const bookId = manifest?.project?.id || '';
-  const { bibleId: origLangBibleId, languageId: origLangId } = BibleHelpers.getOrigLangforBook(bookId);
-  const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
-  const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
-  const missingOLResource = {
-    languageId: origLangId,
-    resourceId: origLangBibleId,
-    version: origLangEditVersionForWA,
-    owner: origLangOwnerForWA,
-  };
-
-  dispatch(openOptionDialog(translate('project_validation.newer_project_original_language'),
-    (result) => {
-      dispatch(closeAlertDialog());
-
-      if (result === upgradeText) {
-        dispatch(downloadMissingResource(missingOLResource));
-      }
-    }, cancelText, upgradeText));
-};
-
-/**
  * make sure that the edit versions and minimum compatible versions are up to date in manifest
  * @return {Function}
  */
@@ -495,38 +457,6 @@ export const connectToolApi = (projectSaveLocation, bookId, tool) => (dispatch, 
 };
 
 /**
- * make sure that we have sufficient version of original language for this project
- * @param {string} bookId
- * @param {object} manifest
- * @returns {boolean} return true if we need a newer original language version
- */
-function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
-  const { bibleId: origLangBibleId, languageId: origLangId } = BibleHelpers.getOrigLangforBook(bookId);
-  const bibleFolderPath = path.join(USER_RESOURCES_PATH, origLangId, 'bibles', origLangBibleId);
-  const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
-  const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
-  let latestOlVersion = null;
-  let needNewerOrigLang = false;
-
-  if (fs.existsSync(bibleFolderPath)) {
-    latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
-    const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
-    latestOlVersion = version;
-
-    if (latestOlVersion[0] === 'v') {
-      latestOlVersion = latestOlVersion.substring(1);
-    }
-  }
-
-  if (origLangOwnerForWA && origLangEditVersionForWA) {
-    if (latestOlVersion && ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
-      needNewerOrigLang = true;
-    }
-  }
-  return needNewerOrigLang;
-}
-
-/**
  * This thunk opens a project and prepares it for use in tools.
  * @param {string} name - the name of the project
  * @param {boolean} [skipValidation=false] - this is a deprecated hack until the import methods can be refactored
@@ -535,7 +465,6 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
   const projectDir = path.join(PROJECTS_PATH, name);
   const translate = getTranslate(getState());
   console.log('openProject() projectDir=' + projectDir);
-  let manifest = null;
 
   try {
     dispatch(openAlertDialog(translate('projects.loading_project_alert'), true));
@@ -562,14 +491,9 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     dispatch(loadTargetLanguageBook());
 
     // connect the tools
-    manifest = getProjectManifest(getState());
+    const manifest = getProjectManifest(getState());
     const tools = getTools(getState());
-    const bookId = manifest?.project?.id || '';
-
-    if (checkIfWeNeedNewerOrigLangVersion(bookId, manifest)) {
-      throw (tc_MIN_UGNT_ERROR);
-    }
-
+    const bookId = (manifest && manifest.project && manifest.project.id) || '';
     dispatch(loadViewUrl(manifest?.view_url, bookId, name));
 
     for (const t of tools) {
@@ -602,7 +526,6 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     dispatch(updateProjectVersion());
     dispatch(updateProjectLastOpened());
     console.log('openProject() - project opened');
-    dispatch(closeAlertDialog());
   } catch (e) {
     // TODO: clean this up
     if (e.type !== 'div') {
@@ -614,20 +537,14 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     // to avoid triggering autosaving.
     dispatch(closeProject());
 
-    switch (message) {
-    case tc_MIN_UGNT_ERROR:
-      dispatch(showInvalidOrigLangVersionError(manifest));
-      break;
-    case tc_MIN_VERSION_ERROR:
+    if (message === tc_MIN_VERSION_ERROR) {
       dispatch(showInvalidVersionError());
-      break;
-    default:
+    } else {
       dispatch(openAlertDialog(message));
-      break;
     }
-
     dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
   }
+  dispatch(closeAlertDialog());
 };
 
 /**
