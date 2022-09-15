@@ -282,7 +282,8 @@
       "invalid_characters": "Поддерживаются только основные латинские буквы"
     },
     "conflicting_project": "Проект с таким идентификатором уже существует для этого языка и книги",
-    "newer_project": "Этот проект был создан в более новой версии translationCore. Пожалуйста, обновите translationCore до последней версии и попробуйте снова."
+    "newer_project": "Этот проект был создан в более новой версии translationCore. Пожалуйста, обновите translationCore до последней версии и попробуйте снова.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "Связаться со службой поддержки",
     "retry": "Повторить",
     "update": "Обновление до последней версии",
+    "update_version": "Update to version",
     "ignore_button": "Игнорировать",
     "feedback_button": "Отправить отзыв",
     "delete": "Удалить"

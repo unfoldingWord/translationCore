@@ -282,7 +282,8 @@
       "invalid_characters": "केवळ मूलभूत लॅटिन अक्षरे समर्थीत आहेत"
     },
     "conflicting_project": "या अभिज्ञापकासह एक प्रकल्प आधीपासून या भाषा आणि पुस्तकासाठी विद्यमान आहे",
-    "newer_project": "हा प्रकल्प ट्रान्सलेशन कोअरच्या नवीन आवृत्तीत तयार केला होता. कृपया नवीनतम आवृत्तीवर अद्यतनित करा आणि पुन्हा प्रयत्न करा."
+    "newer_project": "हा प्रकल्प ट्रान्सलेशन कोअरच्या नवीन आवृत्तीत तयार केला होता. कृपया नवीनतम आवृत्तीवर अद्यतनित करा आणि पुन्हा प्रयत्न करा.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "हेल्पडेस्कला संपर्क साधा",
     "retry": "पुन्हा प्रयत्न करा",
     "update": "नवीनतम आवृत्तीवर अद्यतनित करा",
+    "update_version": "Update to version",
     "ignore_button": "दुर्लक्षित",
     "feedback_button": "अभिप्राय पाठवा",
     "delete": "Delete"

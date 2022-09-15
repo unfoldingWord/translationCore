@@ -282,7 +282,8 @@
       "invalid_characters": "Khali Latin laga moulik aksar khan he sahayata hoi"
     },
     "conflicting_project": "Itu bhasa aru pustak karne aage pora ekjon parisayak laga ekta project thaki ashe.",
-    "newer_project": "Itu project tu translationCore laga sabse nautun anubad te bana hoise. Morom pora sobse nautun anubad tu unnati koribi aru wapash koshis koribi."
+    "newer_project": "Itu project tu translationCore laga sabse nautun anubad te bana hoise. Morom pora sobse nautun anubad tu unnati koribi aru wapash koshis koribi.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "Helpdesk te samparka kuribi",
     "retry": "Arubi koshis kuribi",
     "update": "Adhunik anubaad te napare",
+    "update_version": "Update to version",
     "ignore_button": "Charibi",
     "feedback_button": "Pratikriya pathabi",
     "delete": "Delete"

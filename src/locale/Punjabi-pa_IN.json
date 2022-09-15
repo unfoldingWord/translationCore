@@ -282,7 +282,8 @@
       "invalid_characters": "ਸਿਰਫ ਮੂਲ ਲਾਤੀਨੀ ਅੱਖਰਾਂ ਲਈ ਸਹਾਇਕ ਹੈ"
     },
     "conflicting_project": "ਇਸ ਪਛਾਣਕਰਤਾ ਵਾਲਾ ਇੱਕ ਪ੍ਰੋਜੈਕਟ ਪਹਿਲਾਂ ਹੀ ਇਸ ਭਾਸ਼ਾ ਅਤੇ ਕਿਤਾਬ ਲਈ ਮੌਜੂਦ ਹੈ",
-    "newer_project": "ਇਹ ਪ੍ਰੋਜੈਕਟ translationCore ਦੇ ਨਵੇਂ ਵਰਜ਼ਨ ਵਿੱਚ ਬਣਾਇਆ ਗਿਆ ਸੀ. ਕਿਰਪਾ ਕਰਕੇ ਨਵੇਂ ਵਰਜ਼ਨ ਤੇ ਅਪਡੇਟ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ."
+    "newer_project": "ਇਹ ਪ੍ਰੋਜੈਕਟ translationCore ਦੇ ਨਵੇਂ ਵਰਜ਼ਨ ਵਿੱਚ ਬਣਾਇਆ ਗਿਆ ਸੀ. ਕਿਰਪਾ ਕਰਕੇ ਨਵੇਂ ਵਰਜ਼ਨ ਤੇ ਅਪਡੇਟ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "ਹੈਲਪਡੈਸਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
     "retry": "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
     "update": "ਨਵੇਂ ਵਰਜ਼ਨ ਪ੍ਰਤੀ ਅਪਡੇਟ ਕਰੋ",
+    "update_version": "Update to version",
     "ignore_button": "ਅਨਦੇਖਾ ਕਰੋ",
     "feedback_button": "ਸੁਝਾਅ ਭੇਜੋ",
     "delete": "Delete"
