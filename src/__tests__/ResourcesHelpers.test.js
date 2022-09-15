@@ -15,13 +15,6 @@ import {
   TRANSLATION_WORDS,
 } from '../js/common/constants';
 
-let mockOtherTnsOlversions = [];
-
-jest.mock('tc-source-content-updater', () => ({
-  ...require.requireActual('tc-source-content-updater'),
-  getOtherTnsOLVersions: () => mockOtherTnsOlversions,
-}));
-
 const resourcesDir = path.join(__dirname, 'fixtures', 'resources');
 const latestVersionTestDir = path.join('src', '__tests__', 'fixtures', 'latestVersionTest');
 
@@ -224,13 +217,23 @@ describe('ResourcesHelpers.preserveNeededOrigLangVersions()', () =>{
     // given
     const deleteOldResourceExpected = false;
     const bibleId = 'ugnt';
-    const neededUgntVersion = 'v0.1_Door43-Catalog';
+    const neededUgntVersion_ = '0.1';
+    const neededUgntVersion = `v${neededUgntVersion_}_Door43-Catalog`;
     const unneededUgntVersion = 'v0.0.1_Door43-Catalog';
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, neededUgntVersion));
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en'), path.join(USER_RESOURCES_PATH, 'en'));
     const ugntPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles/ugnt');
-    mockOtherTnsOlversions = [neededUgntVersion];
+    // update tN manifest to include dependency
+    const tnManifestPath = path.join(USER_RESOURCES_PATH, 'en/translationHelps/translationNotes/v15_Door43-Catalog/manifest.json');
+    let tnManifest = fs.readJsonSync(tnManifestPath);
+
+    tnManifest.dublin_core.relation = [
+      'en/ult',
+      'en/ust',
+      `el-x-koine/ugnt?v=${neededUgntVersion_}`,
+    ];
+    fs.outputJsonSync(tnManifestPath, tnManifest);
 
     // when
     const deleteOldResource = ResourcesHelpers.preserveNeededOrigLangVersions('el-x-koine', 'ugnt', ugntPath, USER_RESOURCES_PATH);

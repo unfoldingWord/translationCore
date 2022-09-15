@@ -282,7 +282,8 @@
       "invalid_characters": "\"କେବଳ ସାଧାରଣ ଲାଟିନ୍ ଅକ୍ଷରମାନ ସମର୍ଥିତ\""
     },
     "conflicting_project": "\" ଏହି ପରିଚାୟକର ସହିତ ଏକ ପ୍ରକଳ୍ପ ପୂର୍ବରୁ ହିଁ ଏହି ଭାଷା ଏବଂ ପୁସ୍ତକ ନିମନ୍ତେ ବିଦ୍ୟମାନ।\"",
-    "newer_project": "\"ଏହି ପ୍ରକଳ୍ପଟି ଟ୍ରାନ୍ସଲେସନ୍ କୋର୍‌ର ନୂତନ ସଂସ୍କରଣରେ ପ୍ରସ୍ତୁତ କରାଯାଇଛି। ଦୟାକରି ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।\""
+    "newer_project": "\"ଏହି ପ୍ରକଳ୍ପଟି ଟ୍ରାନ୍ସଲେସନ୍ କୋର୍‌ର ନୂତନ ସଂସ୍କରଣରେ ପ୍ରସ୍ତୁତ କରାଯାଇଛି। ଦୟାକରି ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।\"",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "\"ସାହାଯ୍ୟ କେନ୍ଦ୍ର ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ\"",
     "retry": "\"ପୁନଃ ଚେଷ୍ଟା କରନ୍ତୁ\"",
     "update": "\"ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ\"",
+    "update_version": "Update to version",
     "ignore_button": "\"ଛାଡନ୍ତୁ\"",
     "feedback_button": "\"ମତାମତ ପଠାନ୍ତୁ\"",
     "delete": "Delete"

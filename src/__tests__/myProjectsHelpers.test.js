@@ -8,7 +8,13 @@ jest.unmock('fs-extra');
 jest.unmock('../js/helpers/GitApi');
 
 const cleanOutput = () => {
-  fs.emptyDirSync(path.join(__dirname, 'output'));
+  const filePath = path.join(__dirname, 'output');
+
+  try {
+    fs.emptyDirSync(filePath);
+  } catch (e) {
+    console.error(`cleanOutput() - Could not remove ${filePath}`, e);
+  }
 };
 
 afterEach(() => {

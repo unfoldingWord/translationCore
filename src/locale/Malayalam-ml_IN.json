@@ -282,7 +282,8 @@
       "invalid_characters": "അടിസ്ഥാന ലാറ്റിൻ അക്ഷരങ്ങൾ മാത്രം പിന്തുണയ്ക്കുന്നു\n"
     },
     "conflicting_project": "ഈ ഐഡന്റിഫയറുള്ള ഒരു പ്രോജക്റ്റ് ഈ ഭാഷയ്ക്കും പുസ്തകത്തിനും ഇതിനകം നിലവിലുണ്ട്\n",
-    "newer_project": "വിവർത്തനകോറിന്റെ ഏറ്റവും പുതിയ പതിപ്പിലാണ് ഈ പ്രോജക്റ്റ് സൃഷ്‌ടിച്ചത്. ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്‌ത് വീണ്ടും ശ്രമിക്കുക.\n"
+    "newer_project": "വിവർത്തനകോറിന്റെ ഏറ്റവും പുതിയ പതിപ്പിലാണ് ഈ പ്രോജക്റ്റ് സൃഷ്‌ടിച്ചത്. ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റ് ചെയ്‌ത് വീണ്ടും ശ്രമിക്കുക.\n",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "ഹെൽപ്പ്ഡെസ്കുമായി ബന്ധപ്പെടുക",
     "retry": "വീണ്ടും ശ്രമിക്കുക",
     "update": "ഏറ്റവും പുതിയ പതിപ്പിലേക്ക് അപ്‌ഡേറ്റുചെയ്യുക",
+    "update_version": "Update to version",
     "ignore_button": "അവഗണിക്കുക",
     "feedback_button": "ഫീഡ്‌ബാക്ക് അയയ്‌ക്കുക",
     "delete": "Delete"

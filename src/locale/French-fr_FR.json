@@ -282,7 +282,8 @@
       "invalid_characters": "Seulement les lettres de base ( latines ) sont gérées"
     },
     "conflicting_project": "Un projet avec cet identifiant existe déjà pour cette langue et livre",
-    "newer_project": "Ce projet a été créé dans une version plus récente de translationCore. Veuillez faire une mise à jour, puis réessayez."
+    "newer_project": "Ce projet a été créé dans une version plus récente de translationCore. Veuillez faire une mise à jour, puis réessayez.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "Contacter le support technique",
     "retry": "Réessayer",
     "update": "Mettre à jour vers la dernière version.",
+    "update_version": "Update to version",
     "ignore_button": "Ignorer",
     "feedback_button": "Envoyer des commentaires",
     "delete": "Delete"

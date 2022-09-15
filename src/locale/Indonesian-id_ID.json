@@ -282,7 +282,8 @@
       "invalid_characters": "Hanya Huruf Latin dasar yang didukung"
     },
     "conflicting_project": "Sebuah proyek dengan pengidentifikasi ini sudah ada untuk bahasa dan kitab ini",
-    "newer_project": "Proyek ini dibuat dalam versi yang lebih baru dari translationCore. Harap perbarui ke versi terbaru dan coba lagi."
+    "newer_project": "Proyek ini dibuat dalam versi yang lebih baru dari translationCore. Harap perbarui ke versi terbaru dan coba lagi.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "Hubungi Helpdesk",
     "retry": "Coba Lagi",
     "update": "perbarui ke versi terbaru",
+    "update_version": "Update to version",
     "ignore_button": "Abaikan",
     "feedback_button": "Kirim Tanggapan",
     "delete": "Delete"

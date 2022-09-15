@@ -282,7 +282,8 @@
       "invalid_characters": "Sólo se admiten las letras básicas del Latín"
     },
     "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro",
-    "newer_project": "Este proyecto fue creado en una versión más reciente de translationCore. Por favor, actualice a la última versión e intente de nuevo."
+    "newer_project": "Este proyecto fue creado en una versión más reciente de translationCore. Por favor, actualice a la última versión e intente de nuevo.",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "Póngase en contacto con el Helpdesk",
     "retry": "Intente de nuevo",
     "update": "Actualice a la última versión",
+    "update_version": "Update to version",
     "ignore_button": "Ignorar",
     "feedback_button": "Enviar comentarios",
     "delete": "Delete"

@@ -282,7 +282,8 @@
       "invalid_characters": "அடிப்படை லத்தீன் கடிதங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன"
     },
     "conflicting_project": "இந்த அடையாளங்காட்டியுடன் ஒரு திட்டம் இந்த மொழி மற்றும் புத்தகத்திற்கு ஏற்கனவே உள்ளது\n",
-    "newer_project": "இந்த திட்டம் மொழிபெயர்ப்பு கோரின் புதிய பதிப்பில் உருவாக்கப்பட்டது. சமீபத்திய பதிப்பிற்கு புதுப்பித்து மீண்டும் முயற்சிக்கவும்.\n"
+    "newer_project": "இந்த திட்டம் மொழிபெயர்ப்பு கோரின் புதிய பதிப்பில் உருவாக்கப்பட்டது. சமீபத்திய பதிப்பிற்கு புதுப்பித்து மீண்டும் முயற்சிக்கவும்.\n",
+    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
   },
   "book_list": {
     "ot": {
@@ -459,6 +460,7 @@
     "contact_helpdesk": "ஹெல்ப் டெஸ்கைத் தொடர்பு கொள்ளுங்கள்\n",
     "retry": "மீண்டும் முயற்சிக்கவும்",
     "update": "சமீபத்திய பதிப்பிற்கு புதுப்பிக்கவும்\n",
+    "update_version": "Update to version",
     "ignore_button": "புறக்கணி",
     "feedback_button": "கருத்தினை அனுப்பவும்\n",
     "delete": "Delete"
