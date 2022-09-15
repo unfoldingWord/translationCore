@@ -610,6 +610,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
     }
 
     let message = e.stack ? e.message : e; // if crash dump, need to clean up message so it doesn't crash alert
+    console.warn('openProject() error message', message);
     // clear last project must be called before any other action.
     // to avoid triggering autosaving.
     dispatch(closeProject());
@@ -622,7 +623,7 @@ export const openProject = (name, skipValidation = false) => async (dispatch, ge
       dispatch(showInvalidVersionError());
       break;
     default:
-      dispatch(openAlertDialog(message));
+      dispatch(openAlertDialog(translate('projects.error_loading', { email: translate('_.help_desk_email') })));
       break;
     }
 
