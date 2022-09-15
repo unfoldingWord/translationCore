@@ -509,12 +509,20 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
   let needNewerOrigLang = false;
 
   if (fs.existsSync(bibleFolderPath)) {
-    latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
-    const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
-    latestOlVersion = version;
+    try {
+      latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
 
-    if (latestOlVersion[0] === 'v') {
-      latestOlVersion = latestOlVersion.substring(1);
+      if (latestOlVersion) {
+        const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
+        latestOlVersion = version;
+
+        if (latestOlVersion[0] === 'v') {
+          latestOlVersion = latestOlVersion.substring(1);
+        }
+      }
+    } catch (e) {
+      console.warn(`checkIfWeNeedNewerOrigLangVersion() - failed to get latest version in ${bibleFolderPath}`, e);
+      latestOlVersion = null;
     }
   }
 
