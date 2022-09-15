@@ -283,7 +283,7 @@
     },
     "conflicting_project": "ಈ ಗುರುತಿನ ವ್ಯಕ್ತಿಯು ಈ ಭಾಷೆ ಮತ್ತು ಪುಸ್ತಕ ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ",
     "newer_project": "ಟ್ರಾನ್ಸ್ಲೇಷನ್ ಕೋರ್ ಹೊಸ ಆವೃತ್ತಿಯಲ್ಲಿ ಈ ಯೋಜನೆಯನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಹೊಸ ಆವೃತ್ತಿಯನ್ನು ಪಡೆದು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.",
-    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -460,7 +460,7 @@
     "contact_helpdesk": "ಸಹಾಯ ಕೇಂದ್ರವನ್ನು ಸಂಪರ್ಕಿಸು",
     "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
     "update": "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಗೆ ನವೀಕರಿಸಿ",
-    "update_version": "Update to version",
+    "update_version": "Update Version",
     "ignore_button": "ಬಿಟ್ಟುಬಿಡಿ",
     "feedback_button": "ಹಿನ್ನುಣಿಕೆಯನ್ನು ಕಳುಹಿಸಿರಿ",
     "delete": "Delete"

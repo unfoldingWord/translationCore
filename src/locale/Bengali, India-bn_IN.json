@@ -283,7 +283,7 @@
     },
     "conflicting_project": "এই ভাষা এবং বইয়ের জন্য এই সনাক্তকারী সহ একটি প্রকল্প আগে থেকেই রয়েছে ",
     "newer_project": "এই প্রকল্পটিকে মূল অনুবাদের একটি নতুনতর সংস্করণের মধ্যে তৈরী করা হয়েছে I দয়া করে সর্বশেষ সংস্করণটিকে আপডেট করুন এবং পুনরায় চেষ্টা করুন I   ",
-    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -460,7 +460,7 @@
     "contact_helpdesk": "হেল্পডেস্কের সাথে যোগাযোগ করুন ",
     "retry": "পুনরায় চেষ্টা করুন ",
     "update": "সর্বশেষ সংস্করণটির আপডেট করুন ",
-    "update_version": "Update to version",
+    "update_version": "Update Version",
     "ignore_button": "অগ্রাহ্য করুন ",
     "feedback_button": "প্রতিক্রিয়া প্রেরণ করুন ",
     "delete": "Delete"
