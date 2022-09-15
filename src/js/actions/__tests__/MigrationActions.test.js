@@ -2,6 +2,8 @@
 import path from 'path';
 import fs from 'fs-extra';
 import isEqual from 'deep-equal';
+// eslint-disable-next-line no-unused-vars
+import sourceContentUpdater from 'tc-source-content-updater';
 // helpers
 import * as MigrationActions from '../MigrationActions';
 import { getFoldersInResourceFolder, removeOutDatedResources } from '../../helpers/ResourcesHelpers';
@@ -14,12 +16,13 @@ import {
 } from '../../common/constants';
 
 // mocks
+// eslint-disable-next-line no-unused-vars
 let mockOtherTnsOlversions = [];
 
-jest.mock('tc-source-content-updater', () => ({
-  ...require.requireActual('tc-source-content-updater'),
-  getOtherTnsOLVersions: () => mockOtherTnsOlversions,
-}));
+// jest.mock('tc-source-content-updater', () => ({
+//   ...require.requireActual('tc-source-content-updater'),
+//   getOtherTnsOLVersions: () => mockOtherTnsOlversions,
+// }));
 
 // constants
 const STATIC_RESOURCE_MODIFIED_TIME = '2019-06-19T20:09:10+00:00';
