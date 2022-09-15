@@ -519,7 +519,7 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
   }
 
   if (origLangOwnerForWA && origLangEditVersionForWA) {
-    if (latestOlVersion && ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
+    if (!latestOlVersion || ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
       needNewerOrigLang = true;
     }
   }
