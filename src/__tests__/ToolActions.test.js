@@ -17,10 +17,16 @@ import {
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 let mockInvalidCount = 0;
+let mockManifest = {};
 
 jest.mock('../js/selectors', () => ({
   ...require.requireActual('../js/selectors'),
   getTranslate: () => jest.fn((code) => code),
+  getProjectBookId: () => jest.fn((state) => 'tit'),
+  getToolGlOwner: () => jest.fn((state) => ''),
+  getProjectManifest: () => jest.fn((state) => {
+    return state;
+  }),
 }));
 jest.mock('../js/helpers/toolHelper', () => ({
   ...require.requireActual('../js/helpers/toolHelper'),
