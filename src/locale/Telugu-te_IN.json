@@ -283,7 +283,7 @@
     },
     "conflicting_project": "ఈ గుర్తించేదానితో ఒక ప్రాజెక్టు ఈ భాష, పుస్తకం కోసం ఇంతకుముందే ఉనికిలో ఉంది.",
     "newer_project": "నూతన అనువాదం కేంద్రం ప్రచురణలో ఈ ప్రాజెక్టు తయారు చెయ్యబడింది, దయచేసి ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి, మరల ప్రయత్నించండి",
-    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -460,7 +460,7 @@
     "contact_helpdesk": "హెల్ప్ డెస్క్ ను సంప్రదించండి",
     "retry": "తిరిగి ప్రయత్నించండి",
     "update": "ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి",
-    "update_version": "Update to version",
+    "update_version": "Update Version",
     "ignore_button": "లక్ష్యం చెయ్యకండి",
     "feedback_button": "సమాచారాన్ని పంపించండి",
     "delete": "Delete"

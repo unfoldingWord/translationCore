@@ -1151,7 +1151,7 @@ Array [
     "type": "BATCHING_REDUCER.BATCH",
   },
   Object {
-    "alertMessage": "Cannot read property 'projects' of undefined",
+    "alertMessage": "projects.error_loading",
     "buttonText": null,
     "callback": null,
     "loading": undefined,
@@ -1494,7 +1494,7 @@ Array [
     "type": "BATCHING_REDUCER.BATCH",
   },
   Object {
-    "alertMessage": "Cannot read property 'projects' of undefined",
+    "alertMessage": "projects.error_loading",
     "buttonText": null,
     "callback": null,
     "loading": undefined,

@@ -283,7 +283,7 @@
     },
     "conflicting_project": "इस पहचानकर्ता के साथ एक परियोजना पहले से ही इस भाषा और पुस्तक के लिए मौजूद है",
     "newer_project": "यह प्रोजेक्ट translationCore के नए संस्करण में बनाया गया था। कृपया नवीनतम संस्करण में अपडेट करें और पुनः प्रयास करें।",
-    "newer_project_original_language": "This project was aligned with a newer version of the original language. Please update the version and try again."
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -460,7 +460,7 @@
     "contact_helpdesk": "हेल्पडेस्क से संपर्क करें",
     "retry": "पुन: प्रयास करें",
     "update": "नवीनतम संस्करण में अपडेट करें",
-    "update_version": "Update to version",
+    "update_version": "Update Version",
     "ignore_button": "उपेक्षा करें",
     "feedback_button": "प्रतिक्रिया भेजें",
     "delete": "Delete"
