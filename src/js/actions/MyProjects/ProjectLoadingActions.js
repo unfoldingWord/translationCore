@@ -512,6 +512,11 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
     let latestOlVersion = null;
     let needNewerOrigLang = false;
 
+    if (!origLangEditVersionForWA) {
+      console.log(`checkIfWeNeedNewerOrigLangVersion() - has not been edited in wA, so no need to check original language version`);
+      return false;
+    }
+
     if (fs.existsSync(bibleFolderPath)) {
       try {
         latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
