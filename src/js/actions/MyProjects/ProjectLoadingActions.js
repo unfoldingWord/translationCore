@@ -503,42 +503,45 @@ export const connectToolApi = (projectSaveLocation, bookId, tool) => (dispatch, 
  * @returns {boolean} return true if we need a newer original language version
  */
 function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
-  const { bibleId: origLangBibleId, languageId: origLangId } = BibleHelpers.getOrigLangforBook(bookId);
-  const bibleFolderPath = path.join(USER_RESOURCES_PATH, origLangId, 'bibles', origLangBibleId);
-  const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
-  const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
-  console.log(`checkIfWeNeedNewerOrigLangVersion() - WA original lang: ${origLangOwnerForWA}/${origLangId}_${origLangBibleId}, version ${origLangEditVersionForWA}`);
-  let latestOlVersion = null;
-  let needNewerOrigLang = false;
+  if (bookId && manifest && Object.keys(manifest).length) {
+    const { bibleId: origLangBibleId, languageId: origLangId } = BibleHelpers.getOrigLangforBook(bookId);
+    const bibleFolderPath = path.join(USER_RESOURCES_PATH, origLangId, 'bibles', origLangBibleId);
+    const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
+    const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
+    console.log(`checkIfWeNeedNewerOrigLangVersion() - WA original lang: ${origLangOwnerForWA}/${origLangId}_${origLangBibleId}, version ${origLangEditVersionForWA}`);
+    let latestOlVersion = null;
+    let needNewerOrigLang = false;
 
-  if (fs.existsSync(bibleFolderPath)) {
-    try {
-      latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
-      console.log(`checkIfWeNeedNewerOrigLangVersion() - read latestOlVersion: ${latestOlVersion}`);
+    if (fs.existsSync(bibleFolderPath)) {
+      try {
+        latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
+        console.log(`checkIfWeNeedNewerOrigLangVersion() - read latestOlVersion: ${latestOlVersion}`);
 
-      if (latestOlVersion) {
-        const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
-        latestOlVersion = version;
+        if (latestOlVersion) {
+          const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
+          latestOlVersion = version;
 
-        if (latestOlVersion[0] === 'v') {
-          latestOlVersion = latestOlVersion.substring(1);
+          if (latestOlVersion[0] === 'v') {
+            latestOlVersion = latestOlVersion.substring(1);
+          }
         }
+      } catch (e) {
+        console.warn(`checkIfWeNeedNewerOrigLangVersion() - failed to get latest version in ${bibleFolderPath}`, e);
+        latestOlVersion = null;
       }
-    } catch (e) {
-      console.warn(`checkIfWeNeedNewerOrigLangVersion() - failed to get latest version in ${bibleFolderPath}`, e);
-      latestOlVersion = null;
     }
+
+    console.log(`checkIfWeNeedNewerOrigLangVersion() - final latestOlVersion: ${latestOlVersion}`);
+
+    if (!latestOlVersion || origLangEditVersionForWA && ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
+      console.log(`checkIfWeNeedNewerOrigLangVersion() - needs to download ${origLangEditVersionForWA}`);
+      needNewerOrigLang = true;
+    }
+
+    console.log(`checkIfWeNeedNewerOrigLangVersion() - needNewerOrigLang: ${needNewerOrigLang}`);
+    return needNewerOrigLang;
   }
-
-  console.log(`checkIfWeNeedNewerOrigLangVersion() - final latestOlVersion: ${latestOlVersion}`);
-
-  if (!latestOlVersion || origLangEditVersionForWA && ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
-    console.log(`checkIfWeNeedNewerOrigLangVersion() - needs to download ${origLangEditVersionForWA}`);
-    needNewerOrigLang = true;
-  }
-
-  console.log(`checkIfWeNeedNewerOrigLangVersion() - needNewerOrigLang: ${needNewerOrigLang}`);
-  return needNewerOrigLang;
+  return false;
 }
 
 /**
