@@ -41,6 +41,7 @@ import {
   encodeParam,
   getAlignmentsFromResource,
   getSearchableAlignments,
+  getVerseForKey,
   loadAlignments,
   multiSearchAlignments,
   readDirectory,
@@ -285,6 +286,10 @@ class AlignmentSearchDialogContainer extends React.Component {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
+          delay(500).then(() => {
+            getVerseForKey(selectedBibleKey, 'tit 1:2-3', {});
+          });
+
           if (!resource.alignmentCount) {
             console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for '${selectedBibleKey}'`);
             const indexingMsg = 'Doing one-time indexing of Bible for Search:';

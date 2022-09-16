@@ -4,12 +4,17 @@ import xre from 'xregexp';
 import { normalizer } from 'string-punctuation-tokenizer';
 import { resourcesHelpers } from 'tc-source-content-updater';
 import wordaligner from 'word-aligner';
+import { getVerses } from 'bible-reference-range';
 import {
   BIBLE_BOOKS,
   NT_ORIG_LANG,
   OT_ORIG_LANG,
 } from '../common/BooksOfTheBible';
-import { getUsfmForVerseContent, trimNewLine } from './FileConversionHelpers/UsfmFileConversionHelpers';
+import { USER_RESOURCES_PATH } from '../common/constants';
+import {
+  getUsfmForVerseContent,
+  trimNewLine,
+} from './FileConversionHelpers/UsfmFileConversionHelpers';
 
 const startWordRegex = '(?<=[\\s,.:;"\']|^)';
 const endWordRegex = '(?=[\\s,.:;"\']|$)';
@@ -361,6 +366,36 @@ export function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedRes
 }
 
 /**
+ * parse the resource key into resource object
+ * @param {string} name
+ * @returns {{owner: string, alignmentCount: string, resourceId: string, languageId: string, origLang: string, type: string, version: string}}
+ */
+export function parseResourceKey(name) {
+  const parts = (name || '').split('_');
+  let [
+    languageId,
+    resourceId,
+    owner,
+    origLang,
+    type,
+    version,
+    alignmentCount,
+  ] = parts;
+  owner = decodeURIComponent(owner);
+  version = decodeURIComponent(version);
+
+  return {
+    languageId,
+    resourceId,
+    owner,
+    origLang,
+    type,
+    version,
+    alignmentCount,
+  };
+}
+
+/**
  * return list of indexed aligned bibles found in alignmentData folder
  * @param {string} alignmentDataDir - folder to search
  * @returns {*[]}
@@ -373,8 +408,7 @@ export function getAlignmentIndices(alignmentDataDir) {
     // const fileFolder = path.join(resourcesIndexed, fileName);
     // ~/translationCore/alignmentData/en_ult_unfoldingWord_hbo_testament_v0_275433.json
     const name = path.parse(fileName).name;
-    const parts = (name || '').split('_');
-    let [
+    let {
       languageId,
       resourceId,
       owner,
@@ -382,9 +416,7 @@ export function getAlignmentIndices(alignmentDataDir) {
       type,
       version,
       alignmentCount,
-    ] = parts;
-    owner = decodeURIComponent(owner);
-    version = decodeURIComponent(version);
+    } = parseResourceKey(name);
 
     if (type !== ALIGNMENTS_KEY) {
       continue;
@@ -807,7 +839,7 @@ export function getSearchableAlignments(translationCoreFolder) {
  * @returns {*[]}
  */
 export function getAlignedBibles(resourceDir) {
-  const alignments = [];
+  const alignedBibles = [];
 
   try {
     const languages = readDirectory(resourceDir, true, true, null);
@@ -835,7 +867,7 @@ export function getAlignedBibles(resourceDir) {
             const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
 
             if (isAligned) {
-              alignments.push({
+              alignedBibles.push({
                 languageId,
                 bibleId,
                 owner,
@@ -852,6 +884,87 @@ export function getAlignedBibles(resourceDir) {
   } catch (e) {
     console.error(`getAlignedBibles() - error getting bibles`, e);
   }
-  return alignments;
+  return alignedBibles;
 }
 
+/**
+ * looks up verses for resource key and caches them
+ * @param {string} resourceKey
+ * @param {string} ref
+ * @param {object} bibles
+ */
+export function getVerseForKey(resourceKey, ref, bibles) {
+  try {
+    const {
+      languageId,
+      resourceId,
+      owner,
+      version,
+    } = parseResourceKey(resourceKey);
+    const bibleKey = resourcesHelpers.addOwnerToKey(version, owner);
+    const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleKey);
+
+    if (fs.existsSync(biblePath)) {
+      return getVerse(biblePath, ref, bibles);
+    }
+    console.warn(`getVerseForKey() - could not fetch verse for ${resourceKey} - ${ref} in path ${biblePath}`);
+  } catch (e) {
+    console.log(`getVerseForKey() - could not fetch verse for ${resourceKey} - ${ref}`);
+  }
+  return '';
+}
+
+/**
+ * looks up verses and caches them
+ * @param biblePath
+ * @param ref
+ * @param bibles
+ */
+export function getVerse(biblePath, ref, bibles) {
+  const [bookId, ref_] = (ref || '').trim().split(' ');
+
+  if ( bookId && ref_ ) {
+    const [chapter, verse] = ref_.split(':');
+
+    if (chapter && verse) {
+      if (bibles?.[bookId]?.[chapter]) {
+        const verseStr = getVerses(bibles?.[bookId], ref_);
+        return verseStr;
+      }
+
+      if (!bibles?.[bookId]) {
+        bibles[bookId] = {};
+      }
+
+      const chapterPath = path.join(biblePath, bookId, chapter + '.json');
+
+      if (fs.existsSync(chapterPath)) {
+        try {
+          const chapterData = fs.readJsonSync(chapterPath);
+
+          if (chapterData) {
+            for (const verseRef of Object.keys(chapterData)) {
+              let verseData = chapterData[verseRef];
+
+              if (typeof verseData !== 'string') {
+                verseData = getUsfmForVerseContent(verseData);
+              }
+
+              if (!bibles?.[bookId]?.[chapter]) {
+                bibles[bookId][chapter] = {};
+              }
+
+              bibles[bookId][chapter][verseRef] = verseData;
+            }
+          }
+
+          const verseStr = getVerses(bibles?.[bookId], ref_);
+          return verseStr;
+        } catch (e) {
+          console.log(`getVerse() - could not read ${chapterPath}`);
+        }
+      }
+    }
+  }
+  return '';
+}
