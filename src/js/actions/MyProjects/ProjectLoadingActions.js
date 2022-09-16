@@ -424,9 +424,11 @@ export const showInvalidOrigLangVersionError = (manifest) => (dispatch, getState
   const missingOLResource = {
     languageId: origLangId,
     resourceId: origLangBibleId,
-    version: origLangEditVersionForWA,
-    owner: origLangOwnerForWA,
+    version: origLangEditVersionForWA || 'master',
+    owner: origLangOwnerForWA || DEFAULT_ORIG_LANG_OWNER,
   };
+
+  console.log(`showInvalidOrigLangVersionError() - get missing OL resource: ${JSON.stringify(missingOLResource)}`);
 
   dispatch(openOptionDialog(translate('project_validation.newer_project_original_language'),
     (result) => {
@@ -505,12 +507,14 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
   const bibleFolderPath = path.join(USER_RESOURCES_PATH, origLangId, 'bibles', origLangBibleId);
   const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
   const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
+  console.log(`checkIfWeNeedNewerOrigLangVersion() - WA original lang: ${origLangOwnerForWA}/${origLangId}_${origLangBibleId}, version ${origLangEditVersionForWA}`);
   let latestOlVersion = null;
   let needNewerOrigLang = false;
 
   if (fs.existsSync(bibleFolderPath)) {
     try {
       latestOlVersion = getMostRecentVersionInFolder(bibleFolderPath, origLangOwnerForWA);
+      console.log(`checkIfWeNeedNewerOrigLangVersion() - read latestOlVersion: ${latestOlVersion}`);
 
       if (latestOlVersion) {
         const { version } = resourcesHelpers.splitVersionAndOwner(latestOlVersion);
@@ -526,11 +530,14 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
     }
   }
 
-  if (origLangOwnerForWA && origLangEditVersionForWA) {
-    if (!latestOlVersion || ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
-      needNewerOrigLang = true;
-    }
+  console.log(`checkIfWeNeedNewerOrigLangVersion() - final latestOlVersion: ${latestOlVersion}`);
+
+  if (!latestOlVersion || origLangEditVersionForWA && ResourceAPI.compareVersions(latestOlVersion, origLangEditVersionForWA) < 0) {
+    console.log(`checkIfWeNeedNewerOrigLangVersion() - needs to download ${origLangEditVersionForWA}`);
+    needNewerOrigLang = true;
   }
+
+  console.log(`checkIfWeNeedNewerOrigLangVersion() - needNewerOrigLang: ${needNewerOrigLang}`);
   return needNewerOrigLang;
 }
 
