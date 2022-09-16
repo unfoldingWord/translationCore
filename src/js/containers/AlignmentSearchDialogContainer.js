@@ -209,6 +209,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.showColumnHidesMenu = this.showColumnHidesMenu.bind(this);
     this.selectColumnHides = this.selectColumnHides.bind(this);
     this.toggleBook = this.toggleBook.bind(this);
+    this.setAll = this.setAll.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -738,6 +739,23 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * set all or clear all books in bible
+   * @param {boolean} enable - if true then all books are enabled, otherwise all books are cleared
+   */
+  setAll(enable) {
+    let newIgnore = [...(this.state.ignore || [])];
+
+    for (const bible of this.state.books) {
+      if (enable) {
+        newIgnore = newIgnore.filter(item => item !== bible);
+      } else if (!newIgnore.includes(bible)) {
+        newIgnore.push(bible);
+      }
+    }
+    this.setState({ ignore: newIgnore });
+  }
+
+  /**
    * search array to see if it contains key
    * @param {string[]} array - to search
    * @param {string} key
@@ -883,6 +901,18 @@ class AlignmentSearchDialogContainer extends React.Component {
                 }
                 <Divider />
                 <Subheader inset={true}>{'Select Books to Search:'}</Subheader>
+                <MenuItem
+                  key={'all'}
+                  value={'all'}
+                  primaryText='*** Select All ***'
+                  onClick={() => this.setAll(true)}
+                />
+                <MenuItem
+                  key={'none'}
+                  value={'none'}
+                  primaryText='*** Clear All ***'
+                  onClick={() => this.setAll(false)}
+                />
                 {
                   testament.map(item => (
                     <MenuItem
