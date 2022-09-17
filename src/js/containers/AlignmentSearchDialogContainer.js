@@ -51,6 +51,7 @@ import { delay } from '../common/utils';
 import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
 import { setSetting } from '../actions/SettingsActions';
 import { BIBLE_BOOKS, NT_ORIG_LANG } from '../common/BooksOfTheBible';
+import { showPopover } from '../actions/PopoverActions';
 
 const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
@@ -171,6 +172,8 @@ const showMenuItems = [
   },
 ];
 
+let bibles = {};
+
 /**
  * Renders a dialog for user to do alignment search.
  *
@@ -286,10 +289,6 @@ class AlignmentSearchDialogContainer extends React.Component {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
-          delay(500).then(() => {
-            getVerseForKey(selectedBibleKey, 'tit 1:2-3', {});
-          });
-
           if (!resource.alignmentCount) {
             console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for '${selectedBibleKey}'`);
             const indexingMsg = 'Doing one-time indexing of Bible for Search:';
@@ -443,7 +442,12 @@ class AlignmentSearchDialogContainer extends React.Component {
           !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
           !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
-          !hide[SHOW_REFERENCES] && { title: (REFERENCES_LABEL), field: SHOW_REFERENCES, ...columnStyles },
+          !hide[SHOW_REFERENCES] && {
+            title: (REFERENCES_LABEL),
+            field: SHOW_REFERENCES,
+            ...columnStyles,
+            render: rowData => <> { this.renderRefs(rowData.refs) } </>,
+          },
         ];
         let message = `Found ${data?.length || 0} matches`;
 
@@ -516,7 +520,15 @@ class AlignmentSearchDialogContainer extends React.Component {
         if (!mergedData[key]) {
           mergedData[key] = row;
         } else {
-          Array.prototype.push.apply(mergedData[key].refs, row.refs);
+          if (!mergedData[key]) {
+            mergedData[key].refs = [];
+          }
+
+          for (const ref of row.refs) {
+            if (!mergedData[key].include(ref)) {
+              mergedData[key].push(ref);
+            }
+          }
         }
       }
       data = Object.keys(mergedData).map(key => mergedData[key]);
@@ -535,16 +547,57 @@ class AlignmentSearchDialogContainer extends React.Component {
       }
 
       // eslint-disable-next-line react/jsx-key
-      const refSpans = refs.map(refStr => <span>{ refStr }</span> );
-      const refStr = refSpans.join(';&nbsp;');
+      // const refSpans = refs.map(refStr => <span>{ refStr }</span> );
+      // const refStr = <> { refSpans.join(';&nbsp;') } </>;
       const newItem = {
         ...item,
-        refStr,
+        // refStr,
         count: refs?.length,
       };
       return newItem;
     }).filter(item => item);
     return data;
+  }
+
+  /**
+   * format refs array for output
+   * @param refs
+   * @returns {JSX.Element}
+   */
+  renderRefs(refs) {
+    return <div>
+      { refs.map((ref, i) => <span
+        key={ i.toString() }
+        onClick={(e) => {
+          const fontSize = '1.2em';
+          const PopoverTitle = (
+            <strong style={{ fontSize }}>{ref}</strong>
+          );
+          let verseText = '';
+          const verseData = getVerseForKey(this.state.alignedBible, ref, bibles);
+
+          if (Array.isArray(verseData)) {
+            if (verseData.length > 1) {
+              for (const verseItem of verseData) {
+                verseText += `${verseItem.chapter}:${verseItem.verse} - ${verseItem.verseData}\n`;
+              }
+            } else {
+              verseText = verseData[0].verseData;
+            }
+          }
+
+          if (!verseText) {
+            verseText = 'Error: no data found';
+          }
+
+          const verseParts = verseText.split('\n');
+          verseText = verseParts.map(text => <> {text} <br/> </> );
+          this.props.showPopover(PopoverTitle, verseText, e.target);
+        }}
+      >
+        {ref + ';\u00A0'}
+      </span>)}
+    </div>;
   }
 
   /**
@@ -585,6 +638,8 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     if (key) {
       this.loadAlignmentData(key, (success, errorMessage) => {
+        bibles = {};
+
         if (success) {
           //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
           const [, , , origLang] = key.split('_');
@@ -951,6 +1006,7 @@ AlignmentSearchDialogContainer.propTypes = {
   closeAlertDialog: PropTypes.func.isRequired,
   saveSettings: PropTypes.func.isRequired,
   savedSettings: PropTypes.object.isRequired,
+  showPopover: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -962,6 +1018,7 @@ const mapDispatchToProps = {
   openAlertDialog: (alertMessage, loading, buttonText = null, callback = null) => openAlertDialog(alertMessage, loading, buttonText, callback),
   closeAlertDialog: () => closeAlertDialog(),
   saveSettings: (value) => setSetting(SEARCH_SETTINGS_KEY, value),
+  showPopover: (title, bodyText, positionCoord) => showPopover(title, bodyText, positionCoord),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlignmentSearchDialogContainer);

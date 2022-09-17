@@ -928,8 +928,8 @@ export function getVerse(biblePath, ref, bibles) {
 
     if (chapter && verse) {
       if (bibles?.[bookId]?.[chapter]) {
-        const verseStr = getVerses(bibles?.[bookId], ref_);
-        return verseStr;
+        const verseData = getVerses(bibles?.[bookId], ref_);
+        return verseData;
       }
 
       if (!bibles?.[bookId]) {
@@ -958,8 +958,8 @@ export function getVerse(biblePath, ref, bibles) {
             }
           }
 
-          const verseStr = getVerses(bibles?.[bookId], ref_);
-          return verseStr;
+          const verseData = getVerses(bibles?.[bookId], ref_);
+          return verseData;
         } catch (e) {
           console.log(`getVerse() - could not read ${chapterPath}`);
         }
