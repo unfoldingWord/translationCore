@@ -29,6 +29,7 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import usfm from 'usfm-js';
 
 // selectors
 import { getProjectManifest, getSetting } from '../selectors';
@@ -116,11 +117,11 @@ const REFERENCES_LABEL = 'References Column';
 
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
-const SEARCH_HIDE_COLUMNS = 'search_hide_columns';
+const SEARCH_HIDE_USFM = 'search_hide_usfm';
 
 const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
 const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
-const SEARCH_SHOW_COLUMNS_LABEL = 'Show Columns';
+const SEARCH_HIDE_USFM_LABEL = 'Hide USFM Markers';
 const searchOptions = [
   {
     key: SEARCH_CASE_SENSITIVE,
@@ -133,8 +134,9 @@ const searchOptions = [
     stateKey: 'matchWholeWord',
   },
   {
-    key: SEARCH_HIDE_COLUMNS,
-    label: SEARCH_SHOW_COLUMNS_LABEL,
+    key: SEARCH_HIDE_USFM,
+    label: SEARCH_HIDE_USFM_LABEL,
+    stateKey: 'hideUsfmMarkers',
   },
 ];
 
@@ -516,17 +518,21 @@ class AlignmentSearchDialogContainer extends React.Component {
       for (let i = 0; i < data.length; i ++) {
         const row = data[i];
         const key = remainingColumns.map(key => row[key].toString()).join('&');
+        const mergedDataItem = mergedData[key];
 
-        if (!mergedData[key]) {
+        if (!mergedDataItem) {
           mergedData[key] = row;
         } else {
-          if (!mergedData[key]) {
-            mergedData[key].refs = [];
+          let mergedRefs = mergedDataItem.refs;
+
+          if (!mergedRefs) {
+            mergedDataItem.refs = [];
+            mergedRefs = mergedDataItem.refs;
           }
 
           for (const ref of row.refs) {
-            if (!mergedData[key].include(ref)) {
-              mergedData[key].push(ref);
+            if (!mergedRefs.includes(ref)) {
+              mergedRefs.push(ref);
             }
           }
         }
@@ -588,6 +594,9 @@ class AlignmentSearchDialogContainer extends React.Component {
 
           if (!verseText) {
             verseText = 'Error: no data found';
+          } else if (this.state.hideUsfmMarkers) {
+            const filtered = usfm.removeMarker(verseText).trim();
+            verseText = filtered;
           }
 
           const verseParts = verseText.split('\n');
@@ -699,6 +708,7 @@ class AlignmentSearchDialogContainer extends React.Component {
   setSearchTypes(event, index, values) {
     const fullWordItem = this.findSearchItem(SEARCH_MATCH_WHOLE_WORD);
     const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
+    const hideUsfmMarkersItem = this.findSearchItem(SEARCH_HIDE_USFM);
     const hide = {};
     const searchType = [];
     // hide = this.state?.hide || {};
@@ -719,6 +729,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     const types = {
       [fullWordItem.stateKey]: this.isItemPresent(values, SEARCH_MATCH_WHOLE_WORD),
       [caseSensitiveItem.stateKey]: this.isItemPresent(values, SEARCH_CASE_SENSITIVE),
+      [hideUsfmMarkersItem.stateKey]: this.isItemPresent(values, SEARCH_HIDE_USFM),
       hide,
       searchType,
     };
@@ -933,6 +944,13 @@ class AlignmentSearchDialogContainer extends React.Component {
                   checked={this.state.matchWholeWord}
                   value={SEARCH_MATCH_WHOLE_WORD}
                   primaryText={SEARCH_MATCH_WHOLE_WORD_LABEL}
+                />
+                <MenuItem
+                  key={SEARCH_HIDE_USFM}
+                  insetChildren={true}
+                  checked={this.state.hideUsfmMarkers}
+                  value={SEARCH_HIDE_USFM}
+                  primaryText={SEARCH_HIDE_USFM_LABEL}
                 />
                 <Divider />
                 <Subheader inset={true}>{'Select Columns to Show:'}</Subheader>
