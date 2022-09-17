@@ -534,7 +534,9 @@ class AlignmentSearchDialogContainer extends React.Component {
         }
       }
 
-      const refStr = refs.join('; ');
+      // eslint-disable-next-line react/jsx-key
+      const refSpans = refs.map(refStr => <span>{ refStr }</span> );
+      const refStr = refSpans.join(';&nbsp;');
       const newItem = {
         ...item,
         refStr,
