@@ -744,6 +744,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({ alignmentData: null }); // clear data
     const onClose = this.props.onClose;
     onClose && onClose();
+    bibles = {};
   }
 
   /**
