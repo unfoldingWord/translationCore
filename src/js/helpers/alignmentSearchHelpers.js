@@ -889,51 +889,58 @@ export function getAlignedBibles(resourceDir) {
 
 /**
  * looks up verses for resource key and caches them
- * @param {string} resourceKey
+ * @param {string} bibleKey
  * @param {string} ref
  * @param {object} bibles
  */
-export function getVerseForKey(resourceKey, ref, bibles) {
+export function getVerseForKey(bibleKey, ref, bibles) {
   try {
     const {
       languageId,
       resourceId,
       owner,
       version,
-    } = parseResourceKey(resourceKey);
-    const bibleKey = resourcesHelpers.addOwnerToKey(version, owner);
-    const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleKey);
+    } = parseResourceKey(bibleKey);
+    const bibleVersion = resourcesHelpers.addOwnerToKey(version, owner);
+    const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
 
     if (fs.existsSync(biblePath)) {
-      return getVerse(biblePath, ref, bibles);
+      return getVerse(biblePath, ref, bibles, bibleVersion);
     }
-    console.warn(`getVerseForKey() - could not fetch verse for ${resourceKey} - ${ref} in path ${biblePath}`);
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath}`);
   } catch (e) {
-    console.log(`getVerseForKey() - could not fetch verse for ${resourceKey} - ${ref}`);
+    console.log(`getVerseForKey() - could not fetch verse for ${bibleKey} - ${ref}`);
   }
   return '';
 }
 
 /**
  * looks up verses and caches them
- * @param biblePath
- * @param ref
- * @param bibles
+ * @param {string} biblePath
+ * @param {string} ref
+ * @param {object} bibles
+ * @param {string} bibleKey
  */
-export function getVerse(biblePath, ref, bibles) {
+export function getVerse(biblePath, ref, bibles, bibleKey) {
   const [bookId, ref_] = (ref || '').trim().split(' ');
+
+  if (!bibles[bibleKey]) {
+    bibles[bibleKey] = {};
+  }
+
+  const bible = bibles[bibleKey];
 
   if ( bookId && ref_ ) {
     const [chapter, verse] = ref_.split(':');
 
     if (chapter && verse) {
-      if (bibles?.[bookId]?.[chapter]) {
-        const verseData = getVerses(bibles?.[bookId], ref_);
+      if (bible?.[bookId]?.[chapter]) {
+        const verseData = getVerses(bible?.[bookId], ref_);
         return verseData;
       }
 
-      if (!bibles?.[bookId]) {
-        bibles[bookId] = {};
+      if (!bible?.[bookId]) {
+        bible[bookId] = {};
       }
 
       const chapterPath = path.join(biblePath, bookId, chapter + '.json');
@@ -950,15 +957,15 @@ export function getVerse(biblePath, ref, bibles) {
                 verseData = getUsfmForVerseContent(verseData);
               }
 
-              if (!bibles?.[bookId]?.[chapter]) {
-                bibles[bookId][chapter] = {};
+              if (!bible?.[bookId]?.[chapter]) {
+                bible[bookId][chapter] = {};
               }
 
-              bibles[bookId][chapter][verseRef] = verseData;
+              bible[bookId][chapter][verseRef] = verseData;
             }
           }
 
-          const verseData = getVerses(bibles?.[bookId], ref_);
+          const verseData = getVerses(bible?.[bookId], ref_);
           return verseData;
         } catch (e) {
           console.log(`getVerse() - could not read ${chapterPath}`);

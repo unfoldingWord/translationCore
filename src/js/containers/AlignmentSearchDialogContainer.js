@@ -45,6 +45,7 @@ import {
   getVerseForKey,
   loadAlignments,
   multiSearchAlignments,
+  parseResourceKey,
   readDirectory,
 } from '../helpers/alignmentSearchHelpers';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
@@ -216,6 +217,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.selectColumnHides = this.selectColumnHides.bind(this);
     this.toggleBook = this.toggleBook.bind(this);
     this.setAll = this.setAll.bind(this);
+    this.getVerseContent = this.getVerseContent.bind(this);
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -266,7 +268,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       for (const bible of alignedBibles) {
         const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_${ALIGNMENTS_KEY}_${encodeParam(bible.version)}`;
-        const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
+        const label = this.getLabelForBible(bible);
         bible.key = key;
         bible.label = label;
       }
@@ -276,6 +278,16 @@ class AlignmentSearchDialogContainer extends React.Component {
       this.selectAlignedBookToSearch(this.state.alignedBible);
       console.log('loadAlignmentSearchOptions() - finished');
     });
+  }
+
+  /**
+   * get user label for bible
+   * @param {object} bible
+   * @returns {string}
+   */
+  getLabelForBible(bible) {
+    const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
+    return label;
   }
 
   /**
@@ -576,37 +588,86 @@ class AlignmentSearchDialogContainer extends React.Component {
         key={ i.toString() }
         onClick={(e) => {
           const fontSize = '1.2em';
-          const PopoverTitle = (
-            <strong style={{ fontSize }}>{ref}</strong>
-          );
-          let verseText = '';
-          const verseData = getVerseForKey(this.state.alignedBible, ref, bibles);
-
-          if (Array.isArray(verseData)) {
-            if (verseData.length > 1) {
-              for (const verseItem of verseData) {
-                verseText += `${verseItem.chapter}:${verseItem.verse} - ${verseItem.verseData}\n`;
-              }
-            } else {
-              verseText = verseData[0].verseData;
-            }
-          }
-
-          if (!verseText) {
-            verseText = 'Error: no data found';
-          } else if (this.state.hideUsfmMarkers) {
-            const filtered = usfm.removeMarker(verseText).trim();
-            verseText = filtered;
-          }
-
-          const verseParts = verseText.split('\n');
-          verseText = verseParts.map(text => <> {text} <br/> </> );
-          this.props.showPopover(PopoverTitle, verseText, e.target);
+          const bibleKeys = [this.state.alignedBible, 'en_ust_Door43-Catalog_el-x-koine_testament2_v39'];
+          const versesContent = bibleKeys.map(bibleKey => {
+            const content = this.getVerseContent(bibleKey, fontSize, ref);
+            return content;
+          });
+          const contentStyle = {
+            display: 'flex',
+            alignItems: 'left',
+            flexDirection: 'column',
+          };
+          const content = <div style={contentStyle}>
+            {/* eslint-disable-next-line arrow-body-style */}
+            {versesContent.map((item, pos) => {
+              return <>
+                {(pos > 0) &&
+                  <>
+                    <hr/>
+                    <strong style={{ fontSize: '1.4em' }}>{`${item.bibleLabel}`}</strong>
+                  </>
+                }
+                <div key={pos.toString()}> {item.verseContent} </div>
+              </>;
+            })}
+            <button onClick={() => console.log('Add Bible')}
+              className='btn-prime'
+              id='add_bible_button'
+              style={{ alignSelf: 'center', marginTop: '20px' }}
+            >
+              {'Add Bible'}
+            </button>
+          </div>;
+          this.props.showPopover(versesContent[0].Title, content, e.target);
         }}
       >
         {ref + ';\u00A0'}
       </span>)}
     </div>;
+  }
+
+  /**
+   * generate verse content to show for bible
+   * @param bibleKey
+   * @param fontSize
+   * @param ref
+   * @returns {{verseContent: unknown[], Title: JSX.Element}}
+   */
+  getVerseContent(bibleKey, fontSize, ref) {
+    const bible = parseResourceKey(bibleKey);
+    const bibleLabel = this.getLabelForBible(bible);
+    const Title = (
+      <strong style={{ fontSize }}>{`${ref} - ${bibleLabel}`}</strong>
+    );
+    let verseText = '';
+    const verseData = getVerseForKey(bibleKey, ref, bibles);
+
+    if (Array.isArray(verseData)) {
+      if (verseData.length > 1) {
+        for (const verseItem of verseData) {
+          verseText += `${verseItem.chapter}:${verseItem.verse} - ${verseItem.verseData}\n`;
+        }
+      } else {
+        verseText = verseData[0].verseData;
+      }
+    }
+
+    if (!verseText) {
+      verseText = 'Error: no data found';
+    } else if (this.state.hideUsfmMarkers) {
+      const filtered = usfm.removeMarker(verseText).trim();
+      verseText = filtered;
+    }
+
+    const verseParts = verseText.split('\n');
+    const verseContent = verseParts.map(text => <> {text} <br/> </>);
+    return {
+      Title,
+      verseContent,
+      bibleLabel,
+      bibleKey,
+    };
   }
 
   /**
