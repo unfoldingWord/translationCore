@@ -778,6 +778,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     } else {
       baseFontSize /= 1.1;
     }
+    console.log(`changeFontSize() - fontSize now ${baseFontSize}`);
     this.setState({ baseFontSize });
     this.refreshPopUp();
   }
@@ -811,6 +812,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         <IconButton aria-label="decrease-font"
           style = {{
             justifySelf: 'flex-right',
+            marginRight: '10px',
           }}
           fontSize='large'
           onClick={() => {
