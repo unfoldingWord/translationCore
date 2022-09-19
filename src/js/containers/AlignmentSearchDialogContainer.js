@@ -43,8 +43,9 @@ import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
 import {
   ALIGNMENTS_KEY,
-  encodeParam,
   getAlignmentsFromResource,
+  getAvailableBibles,
+  getKeyForBible,
   getSearchableAlignments,
   getVerseForKey,
   loadAlignments,
@@ -60,7 +61,11 @@ import {
   openOptionDialog,
 } from '../actions/AlertModalActions';
 import { setSetting } from '../actions/SettingsActions';
-import { BIBLE_BOOKS, NT_ORIG_LANG } from '../common/BooksOfTheBible';
+import {
+  BIBLE_BOOKS,
+  BIBLES_ABBRV_INDEX,
+  NT_ORIG_LANG,
+} from '../common/BooksOfTheBible';
 import { showPopover } from '../actions/PopoverActions';
 
 const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
@@ -241,6 +246,8 @@ class AlignmentSearchDialogContainer extends React.Component {
           if (!newState.hide) {
             newState.hide = {};
           }
+
+          newState.found = null;
           this.setState(newState);
         }
 
@@ -277,7 +284,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
 
       for (const bible of alignedBibles) {
-        const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_${ALIGNMENTS_KEY}_${encodeParam(bible.version)}`;
+        const key = getKeyForBible(bible, ALIGNMENTS_KEY);
         const label = this.getLabelForBible(bible);
         bible.key = key;
         bible.label = label;
@@ -299,11 +306,12 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   getLabelForBible(bible, short = false) {
     let label;
+    const bibleId = bible.resourceId || bible.bibleId;
 
     if (short) {
-      label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.version}`;
+      label = `${bible.languageId}_${bibleId}/${bible.owner} - ${bible.version}`;
     } else {
-      label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${(bible.origLang)} - ${bible.version}`;
+      label = `${bible.languageId}_${bibleId}/${bible.owner} - ${(bible.origLang)} - ${bible.version}`;
     }
     return label;
   }
@@ -552,6 +560,15 @@ class AlignmentSearchDialogContainer extends React.Component {
 
         if (!mergedDataItem) {
           mergedData[key] = row;
+          const newRefs = [];
+
+          for (const ref of row.refs) {
+            if (!newRefs.includes(ref)) {
+              newRefs.push(ref);
+            }
+          }
+
+          row.refs = newRefs;
         } else {
           let mergedRefs = mergedDataItem.refs;
 
@@ -570,15 +587,47 @@ class AlignmentSearchDialogContainer extends React.Component {
       data = Object.keys(mergedData).map(key => mergedData[key]);
     }
 
+    function zeroAdjustLength(text, len) {
+      while (text.length < len) {
+        text = '0' + text;
+      }
+      return text;
+    }
+
+    function normalizeRef(ref) {
+      let [bookId, ref_] = (ref || '').trim().split(' ');
+
+      if ( bookId && ref_ ) {
+        let [chapter, verse] = ref_.split(':');
+
+        if (chapter && verse) {
+          chapter = zeroAdjustLength(chapter, 3);
+          verse = zeroAdjustLength(verse, 3);
+          const bookNum = zeroAdjustLength(BIBLES_ABBRV_INDEX[bookId] || '', 3);
+          return `${bookNum}_${chapter}_${verse}`;
+        }
+      }
+      return null;
+    }
+
+    function bibleRefSort(a, b) {
+      const akey = normalizeRef(a);
+      const bkey = normalizeRef(b);
+      // eslint-disable-next-line no-nested-ternary
+      return akey < bkey ? -1 : akey > bkey ? 1 : 0;
+    }
+
     data = data.map(item => {
       let refs = item.refs;
 
       if (ignoreBooks?.length) {
-        const refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
-        refs = refs_;
+        let refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
+        refs_ = refs_.sort(bibleRefSort); // sort refs in canonical order
 
         if (!refs_.length) {
           return null;
+        } else {
+          refs = refs_;
         }
       }
 
@@ -587,7 +636,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       // const refStr = <> { refSpans.join(';&nbsp;') } </>;
       const newItem = {
         ...item,
-        // refStr,
+        refs,
         count: refs?.length,
       };
       return newItem;
@@ -647,10 +696,11 @@ class AlignmentSearchDialogContainer extends React.Component {
     const verseFontSize = this.getFontSize(1);
     const extraBibleKeys = this.state.extraBibleKeys || [];
     const bibleKeys = [this.state.alignedBible];
+    const bibleChoices = this.getAvailableBibles();
 
     for (const key of extraBibleKeys) {
       if (!bibleKeys.includes(key)) {
-        const found = this.state.alignedBibles && this.state.alignedBibles.find(bible => bible.key === key);
+        const found = bibleChoices?.find(bible => bible.key === key);
 
         if (found) {
           bibleKeys.push(key);
@@ -710,7 +760,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           <div> {item.verseContent} </div>
         </>;
       })}
-      <button onClick={() => this.addBible()}
+      <button onClick={() => this.addBible(bibleChoices)}
         className="btn-prime"
         id="add_bible_button"
         style={{ alignSelf: 'center', marginTop: '20px' }}
@@ -723,18 +773,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.props.showPopover(versesContent[0].Title, content, e.target, style, titleStyle);
   }
 
-  addBible() {
+  addBible(bibleChoices) {
     console.log('addBible() - Add Bible');
-    const currentBible = this.getResourceForBible(this.state.alignedBible);
-
-    const testamentChoices = this.state.alignedBibles.filter(bible => {
-      if (bible) {
-        if (bible.isNT === currentBible.isNT) {
-          return true;
-        }
-      }
-      return false;
-    }) || [];
 
     this.props.openAlertDialog(
       <>
@@ -751,7 +791,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             this.refreshPopUp();
           }}
         >
-          {testamentChoices.map(item => (
+          {bibleChoices.map(item => (
             <MenuItem
               style={{ lineHeight: '24px' }}
               primaryText={item.label}
@@ -764,6 +804,34 @@ class AlignmentSearchDialogContainer extends React.Component {
       'CANCEL',
       () => this.props.closeAlertDialog(),
     );
+  }
+
+  /**
+   * get list of available bibles for viewing content
+   * @returns {*[]}
+   */
+  getAvailableBibles() {
+    function keySort(a, b) {
+      const akey = a?.key;
+      const bkey = b?.key;
+      // eslint-disable-next-line no-nested-ternary
+      return akey < bkey ? -1 : akey > bkey ? 1 : 0;
+    }
+
+    const resourceDir = path.join(env.home(), 'translationCore', 'resources');
+    let bibleOptions = getAvailableBibles(resourceDir, false) || [];
+
+    bibleOptions = bibleOptions.map(bible => {
+      const key = getKeyForBible(bible, ALIGNMENTS_KEY);
+      const label = this.getLabelForBible(bible, true);
+
+      return {
+        ...bible,
+        key,
+        label,
+      };
+    });
+    return bibleOptions.sort(keySort);
   }
 
   /**
@@ -984,7 +1052,12 @@ class AlignmentSearchDialogContainer extends React.Component {
    * when user clicks close, clear search results and call onClose
    */
   handleClose() {
-    this.setState({ alignmentData: null, alignedBibles: null }); // clear data
+    this.setState({
+      alignmentData: null,
+      alignedBibles: null,
+      found: null,
+    }); // clear data
+
     const onClose = this.props.onClose;
     onClose && onClose();
     bibles = {};

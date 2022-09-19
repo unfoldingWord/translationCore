@@ -330,6 +330,18 @@ export function multiSearchAlignments(alignmentData, searchStr, config) {
 }
 
 /**
+ * generate a key to identify bible
+ * @param {object} bible
+ * @param {string} type
+ * @returns {string}
+ */
+export function getKeyForBible(bible, type = null) {
+  const bibleId = bible.resourceId || bible.bibleId;
+  const key = `${bible.languageId}_${bibleId}_${(encodeParam(bible.owner))}_${bible.origLang}_${type}_${encodeParam(bible.version)}`;
+  return key;
+}
+
+/**
  * filter downloaded aligned bibles and remove those that did not actually have alignments in them (by checking alignment count in index)
  * @param {object[]} downloadedAlignedBibles - aligned bibles found in user resources
  * @param {object[]} indexedResources - indexed aligned bibles found in alignmentData folder
@@ -845,9 +857,10 @@ export function getSearchableAlignments(translationCoreFolder) {
 /**
  * aligned bibles found in user resources
  * @param {string} resourceDir - path to user resources
+ * @param {boolean} alignedBiblesOnly - if true then filter for alignment
  * @returns {*[]}
  */
-export function getAlignedBibles(resourceDir) {
+export function getAvailableBibles(resourceDir, alignedBiblesOnly = true) {
   const alignedBibles = [];
 
   try {
@@ -872,20 +885,27 @@ export function getAlignedBibles(resourceDir) {
               manifest = fs.readJsonSync(manifestPath);
             }
 
+            let useBible = false;
             const subject = manifest?.subject;
-            let isAligned = (subject === 'Aligned Bible');
 
-            if (!isAligned) { // check for original bibles
-              if ((languageId === NT_ORIG_LANG) || (languageId === OT_ORIG_LANG)) {
-                if ((bibleId === NT_ORIG_LANG_BIBLE) || (bibleId === OT_ORIG_LANG_BIBLE)) {
-                  isAligned = true;
+            if (alignedBiblesOnly) {
+              let isAligned = (subject === 'Aligned Bible');
+
+              if (!isAligned) { // check for original bibles
+                if ((languageId === NT_ORIG_LANG) || (languageId === OT_ORIG_LANG)) {
+                  if ((bibleId === NT_ORIG_LANG_BIBLE) || (bibleId === OT_ORIG_LANG_BIBLE)) {
+                    isAligned = true;
+                  }
                 }
               }
+              useBible = isAligned;
+            } else {
+              useBible = !!subject;
             }
 
             const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
 
-            if (isAligned) {
+            if (useBible) {
               alignedBibles.push({
                 languageId,
                 bibleId,
@@ -904,6 +924,15 @@ export function getAlignedBibles(resourceDir) {
     console.error(`getAlignedBibles() - error getting bibles`, e);
   }
   return alignedBibles;
+}
+
+/**
+ * aligned bibles found in user resources
+ * @param {string} resourceDir - path to user resources
+ * @returns {*[]}
+ */
+export function getAlignedBibles(resourceDir) {
+  return getAvailableBibles(resourceDir, true);
 }
 
 /**
