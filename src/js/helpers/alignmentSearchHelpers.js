@@ -8,7 +8,9 @@ import { getVerses } from 'bible-reference-range';
 import {
   BIBLE_BOOKS,
   NT_ORIG_LANG,
+  NT_ORIG_LANG_BIBLE,
   OT_ORIG_LANG,
+  OT_ORIG_LANG_BIBLE,
 } from '../common/BooksOfTheBible';
 import { USER_RESOURCES_PATH } from '../common/constants';
 import {
@@ -338,7 +340,14 @@ export function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedRes
 
   for (const downloadedBible of downloadedAlignedBibles) {
     for (let testament = 0; testament <= 1; testament++) {
-      const origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
+      let origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
+
+      if ((downloadedBible.languageId === NT_ORIG_LANG) || (downloadedBible.languageId === OT_ORIG_LANG)) {
+        if (origLang !== downloadedBible.languageId) {
+          continue; // skip over incompatible testaments
+        }
+      }
+
       const found = indexedResources.find(item => (
         item.languageId === downloadedBible.languageId &&
         item.resourceId === downloadedBible.bibleId &&
@@ -863,7 +872,17 @@ export function getAlignedBibles(resourceDir) {
               manifest = fs.readJsonSync(manifestPath);
             }
 
-            const isAligned = manifest?.subject === 'Aligned Bible';
+            const subject = manifest?.subject;
+            let isAligned = (subject === 'Aligned Bible');
+
+            if (!isAligned) { // check for original bibles
+              if ((languageId === NT_ORIG_LANG) || (languageId === OT_ORIG_LANG)) {
+                if ((bibleId === NT_ORIG_LANG_BIBLE) || (bibleId === OT_ORIG_LANG_BIBLE)) {
+                  isAligned = true;
+                }
+              }
+            }
+
             const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
 
             if (isAligned) {
