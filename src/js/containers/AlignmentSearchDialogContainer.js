@@ -801,26 +801,24 @@ class AlignmentSearchDialogContainer extends React.Component {
             justifySelf: 'flex-right',
             marginLeft: 'auto',
           }}
-          fontSize='large'
           onClick={() => {
             console.log('increase font');
             this.changeFontSize(true);
           }}
         >
-          <ArrowUpward />
+          <ArrowUpward fontSize='large' />
         </IconButton>
         <IconButton aria-label="decrease-font"
           style = {{
             justifySelf: 'flex-right',
             marginRight: '10px',
           }}
-          fontSize='large'
           onClick={() => {
             console.log('decrease font');
             this.changeFontSize(false);
           }}
         >
-          <ArrowDownward />
+          <ArrowDownward fontSize='large' />
         </IconButton>
       </>
     );
