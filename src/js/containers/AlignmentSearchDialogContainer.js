@@ -50,7 +50,11 @@ import {
 } from '../helpers/alignmentSearchHelpers';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
-import { closeAlertDialog, openAlertDialog } from '../actions/AlertModalActions';
+import {
+  closeAlertDialog,
+  openAlertDialog,
+  openOptionDialog,
+} from '../actions/AlertModalActions';
 import { setSetting } from '../actions/SettingsActions';
 import { BIBLE_BOOKS, NT_ORIG_LANG } from '../common/BooksOfTheBible';
 import { showPopover } from '../actions/PopoverActions';
@@ -217,6 +221,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.selectColumnHides = this.selectColumnHides.bind(this);
     this.toggleBook = this.toggleBook.bind(this);
     this.setAll = this.setAll.bind(this);
+    this.addBible = this.addBible.bind(this);
     this.getVerseContent = this.getVerseContent.bind(this);
   }
 
@@ -271,6 +276,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         const label = this.getLabelForBible(bible);
         bible.key = key;
         bible.label = label;
+        bible.isNT = bible.origLang === NT_ORIG_LANG;
       }
       this.props.closeAlertDialog();
       this.setState({ alignedBibles });
@@ -283,10 +289,17 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * get user label for bible
    * @param {object} bible
+   * @param {boolean} short - if true, remove original language
    * @returns {string}
    */
-  getLabelForBible(bible) {
-    const label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.origLang} - ${bible.version}`;
+  getLabelForBible(bible, short = false) {
+    let label;
+
+    if (short) {
+      label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${bible.version}`;
+    } else {
+      label = `${bible.languageId}_${bible.resourceId}/${bible.owner} - ${(bible.origLang)} - ${bible.version}`;
+    }
     return label;
   }
 
@@ -587,8 +600,20 @@ class AlignmentSearchDialogContainer extends React.Component {
       { refs.map((ref, i) => <span
         key={ i.toString() }
         onClick={(e) => {
-          const fontSize = '1.2em';
-          const bibleKeys = [this.state.alignedBible, 'en_ust_Door43-Catalog_el-x-koine_testament2_v39'];
+          const fontSize = '1.1em';
+          const extraBibleKeys = this.state.extraBibleKeys || [];
+          const bibleKeys = [this.state.alignedBible];
+
+          for (const key of extraBibleKeys) {
+            if (!bibleKeys.includes(key)) {
+              const found = this.state.alignedBibles && this.state.alignedBibles.find(bible => bible.key === key);
+
+              if (found) {
+                bibleKeys.push(key);
+              }
+            }
+          }
+
           const versesContent = bibleKeys.map(bibleKey => {
             const content = this.getVerseContent(bibleKey, fontSize, ref);
             return content;
@@ -604,14 +629,43 @@ class AlignmentSearchDialogContainer extends React.Component {
               return <>
                 {(pos > 0) &&
                   <>
-                    <hr/>
-                    <strong style={{ fontSize: '1.4em' }}>{`${item.bibleLabel}`}</strong>
+                    <hr style={{
+                      border: '1px solid grey',
+                      width: '-webkit-fill-available',
+                      margin: '5px 0',
+                    }} />
+                    <span key={pos.toString()} style={{
+                      display: 'flex',
+                      width: 'auto',
+                      justifyContent: 'space-between',
+                    }}>
+                      <strong style={{ fontSize: '1.3em', marginBottom: '5px' }}>{`${item.bibleLabel}`}</strong>
+                      <button
+                        key={pos}
+                        className="btn-second"
+                        style={{
+                          margin: '0 0 5px 5px',
+                          width: 'fit-content',
+                          padding: '0 5px',
+                          alignSelf: 'center',
+                        }}
+                        onClick={() => {
+                          const key = item.bibleKey;
+                          // console.log(`remove ${key}`);
+                          let extraBibleKeys = [...(this.state.extraBibleKeys || [])];
+                          extraBibleKeys = extraBibleKeys.filter(key_ => key_ !== key);
+                          this.setState({ extraBibleKeys });
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </span>
                   </>
                 }
                 <div key={pos.toString()}> {item.verseContent} </div>
               </>;
             })}
-            <button onClick={() => console.log('Add Bible')}
+            <button onClick={() => this.addBible()}
               className='btn-prime'
               id='add_bible_button'
               style={{ alignSelf: 'center', marginTop: '20px' }}
@@ -627,6 +681,48 @@ class AlignmentSearchDialogContainer extends React.Component {
     </div>;
   }
 
+  addBible() {
+    console.log('addBible() - Add Bible');
+    const currentBible = this.getResourceForBible(this.state.alignedBible);
+
+    const testamentChoices = this.state.alignedBibles.filter(bible => {
+      if (bible) {
+        if (bible.isNT === currentBible.isNT) {
+          return true;
+        }
+      }
+      return false;
+    }) || [];
+
+    this.props.openAlertDialog(
+      <>
+        <div> {'Choose new Bible'} </div>
+        <Menu
+          onItemClick={(event, menuItem, index) => {
+            const extraBibleKeys = [...(this.state.extraBibleKeys || [])];
+
+            if (!extraBibleKeys.includes(menuItem.key)) {
+              extraBibleKeys.push(menuItem.key);
+              this.setState({ extraBibleKeys });
+            }
+            this.props.closeAlertDialog();
+          }}
+        >
+          {testamentChoices.map(item => (
+            <MenuItem
+              style={{ lineHeight: '24px' }}
+              primaryText={item.label}
+              key={item.key}
+            />
+          ))}
+        </Menu>
+      </>,
+      false,
+      'CANCEL',
+      () => this.props.closeAlertDialog(),
+    );
+  }
+
   /**
    * generate verse content to show for bible
    * @param bibleKey
@@ -636,7 +732,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   getVerseContent(bibleKey, fontSize, ref) {
     const bible = parseResourceKey(bibleKey);
-    const bibleLabel = this.getLabelForBible(bible);
+    const bibleLabel = this.getLabelForBible(bible, true);
     const Title = (
       <strong style={{ fontSize }}>{`${ref} - ${bibleLabel}`}</strong>
     );
@@ -802,7 +898,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * when user clicks close, clear search results and call onClose
    */
   handleClose() {
-    this.setState({ alignmentData: null }); // clear data
+    this.setState({ alignmentData: null, alignedBibles: null }); // clear data
     const onClose = this.props.onClose;
     onClose && onClose();
     bibles = {};
@@ -1083,6 +1179,7 @@ AlignmentSearchDialogContainer.propTypes = {
   open: PropTypes.bool.isRequired,
   manifest: PropTypes.object.isRequired,
   openAlertDialog: PropTypes.func.isRequired,
+  openOptionDialog: PropTypes.func.isRequired,
   closeAlertDialog: PropTypes.func.isRequired,
   saveSettings: PropTypes.func.isRequired,
   savedSettings: PropTypes.object.isRequired,
@@ -1096,6 +1193,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   openAlertDialog: (alertMessage, loading, buttonText = null, callback = null) => openAlertDialog(alertMessage, loading, buttonText, callback),
+  openOptionDialog: (alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null, notCloseableAlert = false) => openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText, callback2, notCloseableAlert),
   closeAlertDialog: () => closeAlertDialog(),
   saveSettings: (value) => setSetting(SEARCH_SETTINGS_KEY, value),
   showPopover: (title, bodyText, positionCoord) => showPopover(title, bodyText, positionCoord),
