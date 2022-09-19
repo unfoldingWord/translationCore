@@ -16,6 +16,9 @@ const popoverReducer = (state = initialState, action) => {
       title: action.title,
       bodyText: action.bodyText,
       positionCoord: action.positionCoord,
+      style: action.style,
+      titleStyle: action.titleStyle,
+      bodyStyle: action.bodyStyle,
     };
   case consts.CLOSE_POPOVER:
     return {

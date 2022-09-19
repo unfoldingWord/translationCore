@@ -29,6 +29,10 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import ArrowUpward from '@material-ui/icons/ArrowUpward';
+import DeleteIcon from '@material-ui/icons/Delete';
+import IconButton from '@material-ui/core/IconButton';
+
 import usfm from 'usfm-js';
 
 // selectors
@@ -180,6 +184,7 @@ const showMenuItems = [
 ];
 
 let bibles = {};
+let popupLocation = null;
 
 /**
  * Renders a dialog for user to do alignment search.
@@ -600,85 +605,122 @@ class AlignmentSearchDialogContainer extends React.Component {
       { refs.map((ref, i) => <span
         key={ i.toString() }
         onClick={(e) => {
-          const fontSize = '1.1em';
-          const extraBibleKeys = this.state.extraBibleKeys || [];
-          const bibleKeys = [this.state.alignedBible];
-
-          for (const key of extraBibleKeys) {
-            if (!bibleKeys.includes(key)) {
-              const found = this.state.alignedBibles && this.state.alignedBibles.find(bible => bible.key === key);
-
-              if (found) {
-                bibleKeys.push(key);
-              }
-            }
-          }
-
-          const versesContent = bibleKeys.map(bibleKey => {
-            const content = this.getVerseContent(bibleKey, fontSize, ref);
-            return content;
-          });
-          const contentStyle = {
-            display: 'flex',
-            alignItems: 'left',
-            flexDirection: 'column',
-          };
-          const content = <div style={contentStyle}>
-            {/* eslint-disable-next-line arrow-body-style */}
-            {versesContent.map((item, pos) => {
-              return <>
-                {(pos > 0) &&
-                  <>
-                    <hr style={{
-                      border: '1px solid grey',
-                      width: '-webkit-fill-available',
-                      margin: '5px 0',
-                    }} />
-                    <span key={pos.toString()} style={{
-                      display: 'flex',
-                      width: 'auto',
-                      justifyContent: 'space-between',
-                    }}>
-                      <strong style={{ fontSize: '1.3em', marginBottom: '5px' }}>{`${item.bibleLabel}`}</strong>
-                      <button
-                        key={pos}
-                        className="btn-second"
-                        style={{
-                          margin: '0 0 5px 5px',
-                          width: 'fit-content',
-                          padding: '0 5px',
-                          alignSelf: 'center',
-                        }}
-                        onClick={() => {
-                          const key = item.bibleKey;
-                          // console.log(`remove ${key}`);
-                          let extraBibleKeys = [...(this.state.extraBibleKeys || [])];
-                          extraBibleKeys = extraBibleKeys.filter(key_ => key_ !== key);
-                          this.setState({ extraBibleKeys });
-                        }}
-                      >
-                        Remove
-                      </button>
-                    </span>
-                  </>
-                }
-                <div key={pos.toString()}> {item.verseContent} </div>
-              </>;
-            })}
-            <button onClick={() => this.addBible()}
-              className='btn-prime'
-              id='add_bible_button'
-              style={{ alignSelf: 'center', marginTop: '20px' }}
-            >
-              {'Add Bible'}
-            </button>
-          </div>;
-          this.props.showPopover(versesContent[0].Title, content, e.target);
+          this.showPopUpVerse(ref, e);
         }}
       >
         {ref + ';\u00A0'}
       </span>)}
     </div>;
+  }
+
+  /**
+   * scale the base font size by factor
+   * @param factor
+   * @returns {string}
+   */
+  getFontSize(factor) {
+    const baseFontSize = this.state.baseFontSize || 1;
+    const scaledFont = factor * baseFontSize;
+    return `${scaledFont.toFixed(2)}em`;
+  }
+
+  /**
+   * redraw the last popup with the new settings
+   */
+  refreshPopUp() {
+    if (popupLocation) {
+      delay(100).then(() => {
+        this.showPopUpVerse(popupLocation.ref, popupLocation.e);
+      });
+    }
+  }
+
+  /**
+   * show a popup verse for at element
+   * @param {string} ref - bible reference to display
+   * @param {object} e - element to show popup for
+   */
+  showPopUpVerse(ref, e) {
+    popupLocation = { ref, e };
+    const popupTitlefontSize = this.getFontSize(1.1);
+    const subTitleFontSize = `1.3em`;
+    const verseFontSize = this.getFontSize(1);
+    const extraBibleKeys = this.state.extraBibleKeys || [];
+    const bibleKeys = [this.state.alignedBible];
+
+    for (const key of extraBibleKeys) {
+      if (!bibleKeys.includes(key)) {
+        const found = this.state.alignedBibles && this.state.alignedBibles.find(bible => bible.key === key);
+
+        if (found) {
+          bibleKeys.push(key);
+        }
+      }
+    }
+
+    const versesContent = bibleKeys.map(bibleKey => {
+      const content = this.getVerseContent(bibleKey, popupTitlefontSize, ref);
+      return content;
+    });
+    const contentStyle = {
+      display: 'flex',
+      alignItems: 'left',
+      flexDirection: 'column',
+      fontSize: verseFontSize,
+    };
+    const content = <div style={contentStyle}>
+      {/* eslint-disable-next-line arrow-body-style */}
+      {versesContent.map((item, pos) => {
+        return <>
+          {(pos > 0) &&
+            <>
+              <hr style={{
+                border: '1px solid grey',
+                width: '-webkit-fill-available',
+                margin: '5px 0',
+              }}/>
+              <span key={pos.toString()} style={{
+                display: 'flex',
+                width: 'auto',
+                justifyContent: 'space-between',
+              }}>
+                <strong style={{
+                  fontSize: subTitleFontSize,
+                  marginBottom: '5px',
+                }}>{`${item.bibleLabel}`}</strong>
+                <IconButton aria-label="delete"
+                  key={pos}
+                  style={{
+                    margin: '0 0 5px 5px',
+                    alignSelf: 'center',
+                  }}
+                  onClick={() => { // delete the bible key
+                    const key = item.bibleKey;
+                    let extraBibleKeys = [...(this.state.extraBibleKeys || [])];
+                    extraBibleKeys = extraBibleKeys.filter(key_ => key_ !== key);
+                    this.setState({ extraBibleKeys });
+                    this.refreshPopUp();
+                  }}
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </span>
+            </>
+          }
+          <div> {item.verseContent} </div>
+        </>;
+      })}
+      <button onClick={() => this.addBible()}
+        className="btn-prime"
+        id="add_bible_button"
+        style={{ alignSelf: 'center', marginTop: '20px' }}
+      >
+        {'Add Bible'}
+      </button>
+    </div>;
+    const style = { maxWidth: '600px' };
+    const titleStyle = { display: 'flex', width: '-webkit-fill-available' };
+    this.props.showPopover(versesContent[0].Title, content, e.target, style, titleStyle);
   }
 
   addBible() {
@@ -706,6 +748,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               this.setState({ extraBibleKeys });
             }
             this.props.closeAlertDialog();
+            this.refreshPopUp();
           }}
         >
           {testamentChoices.map(item => (
@@ -724,6 +767,22 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * change font size for popup text
+   * @param up
+   */
+  changeFontSize(up) {
+    let baseFontSize = this.state.baseFontSize || 1;
+
+    if (up) {
+      baseFontSize *= 1.1;
+    } else {
+      baseFontSize /= 1.1;
+    }
+    this.setState({ baseFontSize });
+    this.refreshPopUp();
+  }
+
+  /**
    * generate verse content to show for bible
    * @param bibleKey
    * @param fontSize
@@ -734,7 +793,34 @@ class AlignmentSearchDialogContainer extends React.Component {
     const bible = parseResourceKey(bibleKey);
     const bibleLabel = this.getLabelForBible(bible, true);
     const Title = (
-      <strong style={{ fontSize }}>{`${ref} - ${bibleLabel}`}</strong>
+      <>
+        <strong style={{ fontSize }}>{`${ref} - ${bibleLabel}`}</strong>
+        <IconButton aria-label="increase-font"
+          style = {{
+            justifySelf: 'flex-right',
+            marginLeft: 'auto',
+          }}
+          fontSize='large'
+          onClick={() => {
+            console.log('increase font');
+            this.changeFontSize(true);
+          }}
+        >
+          <ArrowUpward />
+        </IconButton>
+        <IconButton aria-label="decrease-font"
+          style = {{
+            justifySelf: 'flex-right',
+          }}
+          fontSize='large'
+          onClick={() => {
+            console.log('decrease font');
+            this.changeFontSize(false);
+          }}
+        >
+          <ArrowDownward />
+        </IconButton>
+      </>
     );
     let verseText = '';
     const verseData = getVerseForKey(bibleKey, ref, bibles);
@@ -1196,7 +1282,7 @@ const mapDispatchToProps = {
   openOptionDialog: (alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null, notCloseableAlert = false) => openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText, callback2, notCloseableAlert),
   closeAlertDialog: () => closeAlertDialog(),
   saveSettings: (value) => setSetting(SEARCH_SETTINGS_KEY, value),
-  showPopover: (title, bodyText, positionCoord) => showPopover(title, bodyText, positionCoord),
+  showPopover: (title, bodyText, positionCoord, style = {}, titleStyle = {}, bodyStyle = {}) => showPopover(title, bodyText, positionCoord, style, titleStyle, bodyStyle),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlignmentSearchDialogContainer);
