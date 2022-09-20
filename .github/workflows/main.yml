@@ -137,7 +137,7 @@ jobs:
         # add automatic retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 15
+          timeout_minutes: 20
           max_attempts: 3
           retry_on: error
           command: npm run update-resources
@@ -236,7 +236,7 @@ jobs:
         # add automatic retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 15
+          timeout_minutes: 20
           max_attempts: 3
           retry_on: error
           shell: bash
@@ -287,6 +287,9 @@ jobs:
 
   build-macos:
     name: Build macOS
+    strategy:
+      matrix:
+        trim: [ 0, 1 ]
     needs: test
     runs-on: macos-latest
     env:
@@ -294,11 +297,15 @@ jobs:
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
       CI: true
+      TRIM: ${{ matrix.trim }}
 
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.4.2'
+
+      - name: TRIM setting
+        run: echo "Trim value is $TRIM"
 
       - name: Node version
         run: |
@@ -347,12 +354,16 @@ jobs:
         # add automatic retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 15
+          timeout_minutes: 20
           max_attempts: 3
           retry_on: error
           command: npm run update-resources
           # restore original manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
+
+      - name: Trim resources
+        if: ${{ env.TRIM == '1' }}
+        run: npm run minimal-resources
 
       - name: build macOS
         id: build
