@@ -44,6 +44,36 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     }
 
     const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
+
+    for (const resource of localResourceList) {
+      const manifest = resource.manifest || {};
+      let typePath = null;
+      let expectedFiles = [ 'manifest.json', 'contents.zip' ];
+      const BIBLES_PATH = 'bibles';
+      const TW_PATH = 'translationHelps/translationWords';
+      const TA_PATH = 'translationHelps/translationAcademy';
+      const TN_PATH = 'translationHelps/translationNotes';
+
+      switch (resource.resourceId) {
+      case 'ta':
+        typePath = TA_PATH;
+        break;
+      case 'tn':
+        typePath = TN_PATH;
+        break;
+      case 'tw':
+        typePath = TW_PATH;
+        break;
+      default:
+        // default to bible
+        typePath = BIBLES_PATH;
+        expectedFiles = [ 'index.json', 'manifest.json', 'books.zip' ];
+        break;
+      }
+
+      // 2022-04-21T18:39:38Z
+    }
+
     const filterByOwner_ = [...filterByOwner];
 
     if (uWoriginalLanguage) {
