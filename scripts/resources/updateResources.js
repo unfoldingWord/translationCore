@@ -88,6 +88,10 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
           updateList, // list of static resources that are newer in catalog
           allAlignedBibles)
           .then(resources => {
+            if (!resources || !resources.length) {
+              console.log('Resources are already up to date');
+            }
+
             resources.forEach(resource => {
               console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
               const found = languages.find((language) => (language === resource.languageId));
