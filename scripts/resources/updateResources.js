@@ -10,6 +10,7 @@ const fs = require('fs-extra');
 const {
   default: SourceContentUpdater,
   apiHelpers,
+  resourcesHelpers,
 } = require('tc-source-content-updater');
 const packagefile = require('../../package.json');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
@@ -19,6 +20,8 @@ const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 // set to null to remove restriction, or you can add other permitted owners to list
 const filterByOwner = ['Door43-Catalog'];
 const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
+
+let prevalidationCompleted = false;
 
 /**
  * find resources to update
@@ -33,6 +36,13 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
   const sourceContentUpdater = new SourceContentUpdater();
 
   try {
+    let lexiconValid = validateLexicons(resourcesPath);
+
+    if (!lexiconValid) {
+      // eslint-disable-next-line no-throw-literal
+      throw `English Lexicons are not valid`;
+    }
+
     const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
     const filterByOwner_ = [...filterByOwner];
 
@@ -45,6 +55,8 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       filterByOwner: filterByOwner_,
       latestManifestKey,
     };
+
+    prevalidationCompleted = true;
 
     await sourceContentUpdater.getLatestResources(localResourceList, config)
       .then(async () => {
@@ -91,6 +103,89 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     return `${message}: ${e.toString()}`;
   }
 };
+
+/**
+ * make sure lexicons are present
+ * @param resourcesPath
+ * @returns {boolean}
+ */
+function validateLexicons(resourcesPath) {
+  let lexiconValid = false;
+  const lexiconPath = path.join(resourcesPath, 'en/lexicons');
+
+  if (fs.existsSync(lexiconPath)) {
+    const langs = ['ugl', 'uhl'];
+    lexiconValid = true;
+
+    for (const lang of langs) {
+      const lexiconLangPath = path.join(lexiconPath, lang);
+
+      if (fs.existsSync(lexiconLangPath)) {
+        const latest = getLatestVersionsAndOwners(lexiconLangPath);
+
+        if (latest && Object.keys(latest).length) {
+          const latestD43 = latest['Door43-Catalog'];
+
+          if (latestD43) {
+            const latestVersionContentPath = path.join(latestD43, 'contents.zip');
+
+            if (fs.existsSync(latestD43)) {
+              if (fs.existsSync(latestVersionContentPath)) {
+                continue;
+              } else {
+                console.warn(`Lexicon content missing at: ${latestVersionContentPath}`);
+              }
+            } else {
+              console.warn(`Lexicon version folder missing at: ${latestD43}`);
+            }
+          }
+        } else {
+          console.warn(`No Lexicon versions found in: ${lexiconLangPath}`);
+        }
+      } else {
+        console.warn(`Lexicon folder missing: ${lexiconLangPath}`);
+      }
+
+      console.warn(`Lexicon invalid: ${lexiconLangPath}`);
+      lexiconValid = false;
+    }
+  }
+  return lexiconValid;
+}
+
+/**
+ * Returns the versioned folder within the directory with the highest value.
+ * e.g. `v10` is greater than `v9`
+ * @param {string} dir - the directory to read
+ * @return {string} the full path to the latest version directory.
+ */
+function getLatestVersionsAndOwners(dir) {
+  const versionAndOwners = resourcesHelpers.listVersions(dir, true);
+  const orgs = {};
+
+  for (const versionAndOwner of versionAndOwners) {
+    const { owner } = resourcesHelpers.splitVersionAndOwner(versionAndOwner);
+
+    if (!orgs[owner]) {
+      orgs[owner] = [];
+    }
+    orgs[owner].push(versionAndOwner);
+  }
+
+  const orgsKeys = Object.keys(orgs);
+
+  for (const org of orgsKeys) {
+    const versions = orgs[org];
+    const latest = path.join(dir, versions[0]);
+    orgs[org] = latest;
+  }
+
+  if (orgsKeys.length > 0) {
+    return orgs;
+  } else {
+    return null;
+  }
+}
 
 /**
  * get last update resources time
@@ -182,20 +277,25 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
     errors = await updateResources(languages, resourcesPath, allAlignedBibles, uWoriginalLanguage);
 
     if (errors) {
-      console.log('executeResourcesUpdate() - Errors on downloading updated resources!!');
+      console.log('executeResourcesUpdate() - Errors on downloading updated resources!!', errors);
     }
-    console.log('executeResourcesUpdate() - Zipping up updated resources');
 
-    languages.forEach(async (languageId) => {
-      try {
-        await zipResourcesContent(resourcesPath, languageId);
-      } catch (e) {
-        errors += e.toString() + '\n';
-      }
-    });
+    if (prevalidationCompleted) {
+      console.log('executeResourcesUpdate() - Zipping up updated resources');
 
-    // update source content updater manifest, but don't clobber tCore version
-    UpdateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
+      languages.forEach(async (languageId) => {
+        try {
+          await zipResourcesContent(resourcesPath, languageId);
+        } catch (e) {
+          errors += e.toString() + '\n';
+        }
+      });
+    }
+
+    if (!errors) {
+      // update source content updater manifest, but don't clobber tCore version
+      UpdateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
+    }
   }
 
   if (errors) {
