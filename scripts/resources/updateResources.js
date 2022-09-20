@@ -140,8 +140,17 @@ function getExpectedFileForResource(resource) {
   return { expectedFiles, typePath };
 }
 
+/**
+ * validate this resource to have expected files
+ * @param resourcesPath
+ * @param resource
+ * @param typePath
+ * @param expectedFiles
+ * @param defaultReturn
+ * @returns {boolean}
+ */
 function validateResource(resourcesPath, resource, typePath, expectedFiles, defaultReturn = true) {
-  let validResource = defaultReturn; // if we cant identify the resource, skip
+  let validResource = defaultReturn; // if we can't identify the resource, skip
 
   if (typePath) {
     validResource = false;
@@ -202,9 +211,11 @@ function checkForBrokenResources(resourceList, resourcesPath) {
  * get list of files in resource path
  * @param {String} resourcePath - path
  * @param {String|null} [ext=null] - optional extension to match
+ * @param {boolean} foldersOnly - if true then only return folders
+ * @param {boolean} filesOnly - if true then only return files that are not folders
  * @return {Array}
  */
-function getFilesInResourcePath(resourcePath, ext=null, foldersOnly = false) {
+function getFilesInResourcePath(resourcePath, ext=null, foldersOnly = false, filesOnly = false) {
   if (fs.lstatSync(resourcePath).isDirectory()) {
     let files = fs.readdirSync(resourcePath).filter(file => {
       if (ext) {
@@ -216,6 +227,11 @@ function getFilesInResourcePath(resourcePath, ext=null, foldersOnly = false) {
     if (foldersOnly) {
       files = files.filter(file => {
         let valid = (fs.lstatSync(path.join(resourcePath, file)).isDirectory());
+        return valid;
+      });
+    } else if (filesOnly) {
+      files = files.filter(file => {
+        let valid = (!fs.lstatSync(path.join(resourcePath, file)).isDirectory());
         return valid;
       });
     }
@@ -235,7 +251,6 @@ function validateResources(resourcesPath) {
   let errors = '';
 
   try {
-    // load source bibles
     const languagesIds = getFilesInResourcePath(resourcesPath, null, true);
     let helpsPath, biblesPath;
 
@@ -324,6 +339,47 @@ function validateResources(resourcesPath) {
         validationFailed = true;
       }
     });
+
+    let lexiconValid = validateLexicons(resourcesPath);
+
+    if (!lexiconValid) {
+      errors += `\nLexicons are invalid`;
+    }
+
+    const validateResources = {
+      'Door43-Catalog': [
+        'el-x-koine/bibles/ugnt',
+        'el-x-koine/translationHelps/translationWords',
+        'en/bibles/ult',
+        'en/bibles/ust',
+        '/hbo/bibles/uhb',
+        'hbo/translationHelps/translationWords',
+      ],
+      'unfoldingWord': [
+        'el-x-koine/bibles/ugnt',
+        '/hbo/bibles/uhb',
+      ],
+    };
+
+    for (const owner of Object.keys(validateResources)) {
+      const resourcePaths_ = validateResources[owner];
+
+      for (const resourcePath of resourcePaths_) {
+        const fullPath = path.join(resourcesPath, resourcePath);
+        const owners = getLatestVersionsAndOwners(fullPath) || {};
+        const latestVersionPath = owners && owners[owner];
+
+        const files = latestVersionPath && getFilesInResourcePath(latestVersionPath, '.zip', false, true);
+
+        if (files && files.length > 0) {
+          // success, have at least one zip file
+        } else {
+          console.error(`validateResources() - FAILED validation of ${fullPath}`);
+          validationFailed = true;
+          errors += `\nFAILED validation of ${fullPath}`;
+        }
+      }
+    }
   } catch (e) {
     console.error('validateResources() - FAILED: ', e);
     validationFailed = true;
@@ -512,14 +568,6 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
       console.log('executeResourcesUpdate() - Errors on downloading updated resources!!', errors);
     }
 
-    const errors2 = validateResources(resourcesPath);
-
-    if (errors2) {
-      okToZip = false;
-      console.log('executeResourcesUpdate() - Errors on final validation!!', errors);
-      errors += '\n' + errors2;
-    }
-
     if (okToZip) {
       console.log('executeResourcesUpdate() - Zipping up updated resources');
 
@@ -530,6 +578,14 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
           errors += e.toString() + '\n';
         }
       });
+    }
+
+    const errors2 = validateResources(resourcesPath);
+
+    if (errors2) {
+      okToZip = false;
+      console.log('executeResourcesUpdate() - Errors on final validation!!', errors);
+      errors += '\n' + errors2;
     }
 
     if (!errors) {
