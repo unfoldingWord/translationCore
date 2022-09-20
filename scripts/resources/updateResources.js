@@ -44,36 +44,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     }
 
     const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
-
-    for (const resource of localResourceList) {
-      const manifest = resource.manifest || {};
-      let typePath = null;
-      let expectedFiles = [ 'manifest.json', 'contents.zip' ];
-      const BIBLES_PATH = 'bibles';
-      const TW_PATH = 'translationHelps/translationWords';
-      const TA_PATH = 'translationHelps/translationAcademy';
-      const TN_PATH = 'translationHelps/translationNotes';
-
-      switch (resource.resourceId) {
-      case 'ta':
-        typePath = TA_PATH;
-        break;
-      case 'tn':
-        typePath = TN_PATH;
-        break;
-      case 'tw':
-        typePath = TW_PATH;
-        break;
-      default:
-        // default to bible
-        typePath = BIBLES_PATH;
-        expectedFiles = [ 'index.json', 'manifest.json', 'books.zip' ];
-        break;
-      }
-
-      // 2022-04-21T18:39:38Z
-    }
-
+    checkForBrokenResources(localResourceList, resourcesPath);
     const filterByOwner_ = [...filterByOwner];
 
     if (uWoriginalLanguage) {
@@ -133,6 +104,81 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     return `${message}: ${e.toString()}`;
   }
 };
+
+/**
+ * check local resource list to find broken resources, and flag for replacement
+ * @param resourceList
+ * @param resourcesPath
+ */
+function checkForBrokenResources(resourceList, resourcesPath) {
+  const BIBLES_PATH = 'bibles';
+  const TW_PATH = 'translationHelps/translationWords';
+  const TA_PATH = 'translationHelps/translationAcademy';
+  const TN_PATH = 'translationHelps/translationNotes';
+
+  for (const resource of resourceList) {
+    // const manifest = resource.manifest || {};
+    let typePath = null;
+    let validResource = true;
+    let expectedFiles = ['manifest.json', 'contents.zip'];
+
+    switch (resource.resourceId) {
+    case 'ta':
+      typePath = TA_PATH;
+      break;
+    case 'tn':
+      typePath = TN_PATH;
+      break;
+    case 'tw':
+      typePath = TW_PATH;
+      break;
+    default:
+      // default to bible
+      typePath = path.join(BIBLES_PATH, resource.resourceId);
+      expectedFiles = ['index.json', 'manifest.json', 'books.zip'];
+      break;
+    }
+
+    if (typePath) {
+      validResource = false;
+      const resourceBasePath = path.join(resourcesPath, resource.languageId, typePath);
+
+      if (fs.existsSync(resourceBasePath)) {
+        validResource = true;
+        const latest = getLatestVersionsAndOwners(resourceBasePath);
+        const orgPath = latest && latest[resource.owner];
+
+        if (!orgPath) {
+          console.warn(`No current versions for ${resource.owner} in: ${resourceBasePath}`);
+          validResource = false;
+        } else {
+          const latestPath = orgPath;
+
+          for (const fileName of expectedFiles) {
+            const filePath = path.join(latestPath, fileName);
+
+            if (!fs.existsSync(filePath)) {
+              console.warn(`Resource is missing file: ${filePath}`);
+              validResource = false;
+            }
+          }
+        }
+      } else {
+        validResource = false;
+        console.warn(`Resource is not valid at: ${resourceBasePath}`);
+      }
+    } else {
+      console.warn(`Resource could not be identified: ${JSON.stringify(resource)}`);
+    }
+
+    if (!validResource) {
+      // break resource item in list, so resource will be replaced
+      console.warn(`invalidating resource: ${JSON.stringify(resource)}`);
+      resource.version = 'v0';
+      resource.languageId = 'zzzz';
+    }
+  }
+}
 
 /**
  * make sure lexicons are present
