@@ -350,6 +350,11 @@ jobs:
       - name: TRIM setting
         run: echo "Trim value is $TRIM"
 
+      - name: add Delay
+        if: ${{ env.TRIM == '1' }}
+        run: sleep 60
+        shell: bash
+
       - name: Node version
         run: |
           node --version
