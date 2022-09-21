@@ -1,6 +1,7 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import xre from 'xregexp';
+import React from 'react';
 import { normalizer } from 'string-punctuation-tokenizer';
 import { resourcesHelpers } from 'tc-source-content-updater';
 import wordaligner from 'word-aligner';
@@ -866,7 +867,6 @@ export function getAvailableBibles(resourceDir, alignedBiblesOnly = true) {
   try {
     const languages = readDirectory(resourceDir, true, true, null);
 
-    // rats
     for (const languageId of languages) {
       const biblesFolder = path.join(resourceDir, languageId, 'bibles');
       const bibles = readDirectory(biblesFolder, true, true, null);
@@ -1023,3 +1023,72 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
   }
   return '';
 }
+
+/**
+ * add highlighting to verse
+ * @param {string} verseText
+ * @param {string} targetText
+ * @returns {*[]}
+ */
+export function highlightSelectedTextInVerse(verseText, targetText) {
+  const verseParts = [];
+
+  if (targetText) {
+    // first try easy case
+    const pos = verseText.indexOf(targetText);
+
+    if (pos >= 0) {
+      verseParts.push(verseText.substring(0, pos));
+      verseParts.push(<span style={ { backgroundColor: 'var(--highlight-color)' } }> {targetText} </span>);
+      verseParts.push(verseText.substring(pos + targetText.length));
+    } else {
+      let targetParts = targetText.split(' ');
+
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        const word = targetParts.shift();
+
+        if (!word) {
+          break;
+        }
+
+        const pos = verseText.indexOf(word);
+
+        if (pos >= 0) {
+          verseParts.push(verseText.substring(0, pos));
+          verseParts.push(<span style={{ backgroundColor: 'var(--highlight-color)' }}> {word} </span>);
+          const remainder = verseText.substring(pos + word.length);
+          verseText = remainder;
+        } else {
+          break;
+        }
+      }
+
+      verseParts.push(verseText);
+    }
+  } else {
+    verseParts.push(verseText);
+  }
+
+  const output = [];
+
+  for (let versePart of verseParts) {
+    if (typeof versePart === 'string') {
+      let pos = -1;
+
+      while ((pos = versePart.indexOf('\n')) >= 0) {
+        output.push(versePart.substring(0, pos));
+        output.push(<br/>);
+        const remainder = versePart.substring(pos + 1);
+        versePart = remainder;
+      }
+      output.push(versePart);
+    } else {
+      output.push(versePart);
+    }
+  }
+
+  const verseContent = output.filter(item => item);
+  return verseContent;
+}
+

@@ -48,6 +48,7 @@ import {
   getKeyForBible,
   getSearchableAlignments,
   getVerseForKey,
+  highlightSelectedTextInVerse,
   loadAlignments,
   multiSearchAlignments,
   parseResourceKey,
@@ -486,7 +487,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             title: (REFERENCES_LABEL),
             field: SHOW_REFERENCES,
             ...columnStyles,
-            render: rowData => <> { this.renderRefs(rowData.refs) } </>,
+            render: rowData => <> { this.renderRefs(rowData.refs, rowData.targetText) } </>,
           },
         ];
         let message = `Found ${data?.length || 0} matches`;
@@ -646,15 +647,16 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   /**
    * format refs array for output
-   * @param refs
+   * @param {array} refs
+   * @param {string} targetText - aligned target text
    * @returns {JSX.Element}
    */
-  renderRefs(refs) {
+  renderRefs(refs, targetText) {
     return <div>
       { refs.map((ref, i) => <span
         key={ i.toString() }
         onClick={(e) => {
-          this.showPopUpVerse(ref, e);
+          this.showPopUpVerse(ref, e, targetText);
         }}
       >
         {ref + ';\u00A0'}
@@ -688,8 +690,9 @@ class AlignmentSearchDialogContainer extends React.Component {
    * show a popup verse for at element
    * @param {string} ref - bible reference to display
    * @param {object} e - element to show popup for
+   * @param {string} targetText - aligned target text
    */
-  showPopUpVerse(ref, e) {
+  showPopUpVerse(ref, e, targetText) {
     popupLocation = { ref, e };
     const popupTitlefontSize = this.getFontSize(1.1);
     const subTitleFontSize = `1.3em`;
@@ -708,8 +711,8 @@ class AlignmentSearchDialogContainer extends React.Component {
       }
     }
 
-    const versesContent = bibleKeys.map(bibleKey => {
-      const content = this.getVerseContent(bibleKey, popupTitlefontSize, ref);
+    const versesContent = bibleKeys.map((bibleKey, i) => {
+      const content = this.getVerseContent(bibleKey, popupTitlefontSize, ref, !i && targetText);
       return content;
     });
     const contentStyle = {
@@ -853,12 +856,13 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   /**
    * generate verse content to show for bible
-   * @param bibleKey
-   * @param fontSize
-   * @param ref
+   * @param {string} bibleKey
+   * @param {string} fontSize
+   * @param {string} ref
+   * @param {string} targetText - aligned target text
    * @returns {{verseContent: unknown[], Title: JSX.Element}}
    */
-  getVerseContent(bibleKey, fontSize, ref) {
+  getVerseContent(bibleKey, fontSize, ref, targetText) {
     const bible = parseResourceKey(bibleKey);
     const bibleLabel = this.getLabelForBible(bible, true);
     const Title = (
@@ -910,8 +914,8 @@ class AlignmentSearchDialogContainer extends React.Component {
       verseText = filtered;
     }
 
-    const verseParts = verseText.split('\n');
-    const verseContent = verseParts.map(text => <> {text} <br/> </>);
+    const verseContent = highlightSelectedTextInVerse(verseText, targetText);
+
     return {
       Title,
       verseContent,
