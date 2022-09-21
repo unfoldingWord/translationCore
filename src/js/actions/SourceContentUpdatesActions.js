@@ -94,58 +94,6 @@ function consolidateTwls(languageResources) {
 }
 
 /**
- * Gets the list of source content that needs or can be updated.
- * @param {function} closeSourceContentDialog - Hacky workaround to close the
- * source content dialog in the AppMenu state.
- * @param {boolean} preRelease - if true include pre-release content
- */
-export const getListOfSourceContentToUpdate = async (closeSourceContentDialog, preRelease = false) => (async (dispatch, getState) => {
-  const translate = getTranslate(getState());
-  dispatch(resetSourceContentUpdatesReducer());
-
-  if (navigator.onLine) {
-    dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
-    const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
-    const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
-    const config = {
-      filterByOwner: null,
-      latestManifestKey,
-      stage: preRelease ? 'preprod' : null,
-    };
-
-    await SourceContentUpdater.getLatestResources(localResourceList, config)
-      .then(resources => {
-        dispatch(closeAlertDialog());
-
-        if (resources.length > 0) {
-          resources = consolidateTwls(resources);
-
-          dispatch({
-            type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
-            resources,
-          });
-        } else {
-          closeSourceContentDialog();
-          dispatch(openAlertDialog(translate('updates.source_content_up_to_date')));
-        }
-      })
-      .catch((err) => {
-        console.error(err, 'Local Resource List:', localResourceList);
-        dispatch(
-          failedAlertAndRetry(
-            closeSourceContentDialog,
-            () => getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease),
-            'updates.failed_checking_for_source_content_updates',
-          ),
-        );
-      });
-  } else {
-    dispatch(openAlertDialog(translate('no_internet')));
-    closeSourceContentDialog();
-  }
-});
-
-/**
  * create error string from array of errors
  * @param {array} errors
  * @param {function} translate
@@ -185,117 +133,120 @@ function getDownloadErrorList(errors, translate) {
 
 /**
  * Downloads source content updates using the tc-source-content-updater.
- * @param {array} resourcesToDownload - list of resources to be downloaded.
+ * @param {array} resourcesToDownload
  * @param {boolean} refreshUpdates
  * @param {boolean} preRelease
+ * @returns {(function(*, *): Promise<void>)|*}
  */
-export const downloadSourceContentUpdates = (resourcesToDownload, refreshUpdates = false, preRelease = false) => (async (dispatch, getState) => {
-  const translate = getTranslate(getState());
-  const toolName = getCurrentToolName(getState());
-  let cancelled = false;
+export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false) {
+  return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    const toolName = getCurrentToolName(getState());
+    let cancelled = false;
 
-  dispatch(resetSourceContentUpdatesReducer());
+    dispatch(resetSourceContentUpdatesReducer());
 
-  if (navigator.onLine) {
-    dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'),
-      true,
-      translate('buttons.cancel_button'),
-      () => { // cancel actions
-        cancelled = true;
-        SourceContentUpdater.cancelDownload();
-        dispatch(openAlertDialog(translate('updates.downloads_canceled')));
-      }));
+    if (navigator.onLine) {
+      dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'),
+        true,
+        translate('buttons.cancel_button'),
+        () => { // cancel actions
+          cancelled = true;
+          SourceContentUpdater.cancelDownload();
+          dispatch(openAlertDialog(translate('updates.downloads_canceled')));
+        }));
 
-    if (refreshUpdates) {
-      const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
-      const resourcesNotDownloaded = resourcesToDownload.filter(resourceToDownload => {
-        const downloadVersion = 'v' + resourceToDownload.version;
-        const matchedResource = localResourceList.find(existingResource => {
-          const match = (existingResource.version === downloadVersion) &&
-            (existingResource.languageId === resourceToDownload.languageId) &&
-            (existingResource.resourceId === resourceToDownload.resourceId) &&
-            (existingResource.owner === resourceToDownload.owner);
-          return match;
+      if (refreshUpdates) {
+        const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+        const resourcesNotDownloaded = resourcesToDownload.filter(resourceToDownload => {
+          const downloadVersion = 'v' + resourceToDownload.version;
+          const matchedResource = localResourceList.find(existingResource => {
+            const match = (existingResource.version === downloadVersion) &&
+              (existingResource.languageId === resourceToDownload.languageId) &&
+              (existingResource.resourceId === resourceToDownload.resourceId) &&
+              (existingResource.owner === resourceToDownload.owner);
+            return match;
+          });
+          return !matchedResource;
         });
-        return !matchedResource;
-      });
-      resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
-      const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
-      const config = {
-        filterByOwner: null,
-        latestManifestKey,
-        stage: preRelease ? 'preprod' : null,
-      };
+        resourcesToDownload = resourcesNotDownloaded; // only download resources still missing
+        const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
+        const config = {
+          filterByOwner: null,
+          latestManifestKey,
+          stage: preRelease ? 'preprod' : null,
+        };
 
-      await SourceContentUpdater.getLatestResources(localResourceList, config);
-    }
+        await SourceContentUpdater.getLatestResources(localResourceList, config);
+      }
 
-    cancelled = false;
-    await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload)
-      .then(async () => {
-        updateSourceContentUpdaterManifest();
-        dispatch(updateSourceContentUpdatesReducer());
+      cancelled = false;
+      await SourceContentUpdater.downloadAllResources(USER_RESOURCES_PATH, resourcesToDownload)
+        .then(async () => {
+          updateSourceContentUpdaterManifest();
+          dispatch(updateSourceContentUpdatesReducer());
 
-        // if tool is opened then load new bible resources
-        if (toolName) {
-          const projectSaveLocation = getProjectSaveLocation(getState());
-          const bookId = getProjectBookId(getState());
-          const olForBook = getOrigLangforBook(bookId);
-          const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
-          let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
-          await dispatch(loadBookTranslations(bookId));
+          // if tool is opened then load new bible resources
+          if (toolName) {
+            const projectSaveLocation = getProjectSaveLocation(getState());
+            const bookId = getProjectBookId(getState());
+            const olForBook = getOrigLangforBook(bookId);
+            const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
+            let helpDir = (olForBook && olForBook.languageId) || Bible.NT_ORIG_LANG;
+            await dispatch(loadBookTranslations(bookId));
 
-          // update resources used by tool
-          dispatch(updateResourcesForOpenTool(toolName));
+            // update resources used by tool
+            dispatch(updateResourcesForOpenTool(toolName));
 
-          // Tool is opened so we need to update existing group data
-          copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch, false, glOwner);
-        }
-
-        if (cancelled) {
-          console.error('downloadSourceContentUpdates() - download cancelled, no errors');
-          dispatch(closeAlertDialog());
-        } else {
-          dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
-        }
-      })
-      .catch((err) => {
-        if (cancelled) {
-          console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
-        } else {
-          console.error('downloadSourceContentUpdates() - error:', err);
-
-          const showDownloadErrorAlert = (alertMessage) => {
-            dispatch(
-              failedAlertAndRetry(
-                () => dispatch(closeAlertDialog()),
-                () => downloadSourceContentUpdates(resourcesToDownload, true, preRelease),
-                null,
-                alertMessage,
-              ),
-            );
-          };
-
-          const errors = SourceContentUpdater.downloadErrors;
-          let errorStr = '';
-          let alertMessage = err.toString(); // default error message
-
-          if (errors && errors.length) {
-            errorStr = getDownloadErrorList(errors, translate);
-            alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
-              dispatch(closeAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
-              dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
-                showDownloadErrorAlert(alertMessage); // reshow alert dialog
-              }));
-            });
+            // Tool is opened so we need to update existing group data
+            copyGroupDataToProject(helpDir, toolName, projectSaveLocation, dispatch, false, glOwner);
           }
-          showDownloadErrorAlert(alertMessage);
-        }
-      });
-  } else {
-    dispatch(openAlertDialog(translate('no_internet')));
-  }
-});
+
+          if (cancelled) {
+            console.error('downloadSourceContentUpdates() - download cancelled, no errors');
+            dispatch(closeAlertDialog());
+          } else {
+            dispatch(openAlertDialog(translate('updates.source_content_updates_successful_download')));
+          }
+        })
+        .catch((err) => {
+          if (cancelled) {
+            console.error('downloadSourceContentUpdates() - download cancelled, errors:', err);
+          } else {
+            console.error('downloadSourceContentUpdates() - error:', err);
+
+            const showDownloadErrorAlert = (alertMessage) => {
+              dispatch(
+                failedAlertAndRetry(
+                  () => dispatch(closeAlertDialog()),
+                  () => downloadSourceContentUpdates(resourcesToDownload, true, preRelease),
+                  null,
+                  alertMessage,
+                ),
+              );
+            };
+
+            const errors = SourceContentUpdater.downloadErrors;
+            let errorStr = '';
+            let alertMessage = err.toString(); // default error message
+
+            if (errors && errors.length) {
+              errorStr = getDownloadErrorList(errors, translate);
+              alertMessage = getResourceDownloadsAlertMessage(translate, errorStr, () => { // on feedback button click
+                dispatch(closeAlertDialog()); // hide the alert dialog so it does not display over the feedback dialog
+                dispatch(sendUpdateResourceErrorFeedback('\nFailed to download source content updates:\n' + errorStr, () => {
+                  showDownloadErrorAlert(alertMessage); // reshow alert dialog
+                }));
+              });
+            }
+            showDownloadErrorAlert(alertMessage);
+          }
+        });
+    } else {
+      dispatch(openAlertDialog(translate('no_internet')));
+    }
+  });
+}
 
 /**
  * Downloads a given resource from the door43 catalog via
@@ -473,3 +424,57 @@ export const deletePreReleaseResources = (resourcesFolder) => ((dispatch, getSta
     dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', currentPaneSettings));
   }
 });
+
+/**
+ * Gets the list of source content that needs or can be updated.
+ * @param {function} closeSourceContentDialog - Hacky workaround to close the
+ * source content dialog in the AppMenu state.
+ * @param {boolean} preRelease - if true include pre-release content
+ */
+export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease = false) {
+  return (async (dispatch, getState) => {
+    const translate = getTranslate(getState());
+    dispatch(resetSourceContentUpdatesReducer());
+
+    if (navigator.onLine) {
+      dispatch(openAlertDialog(translate('updates.checking_for_source_content_updates'), true));
+      const localResourceList = apiHelpers.getLocalResourceList(USER_RESOURCES_PATH);
+      const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
+      const config = {
+        filterByOwner: null,
+        latestManifestKey,
+        stage: preRelease ? 'preprod' : null,
+      };
+
+      await SourceContentUpdater.getLatestResources(localResourceList, config)
+        .then(resources => {
+          dispatch(closeAlertDialog());
+
+          if (resources.length > 0) {
+            resources = consolidateTwls(resources);
+
+            dispatch({
+              type: consts.NEW_LIST_OF_SOURCE_CONTENT_TO_UPDATE,
+              resources,
+            });
+          } else {
+            closeSourceContentDialog();
+            dispatch(openAlertDialog(translate('updates.source_content_up_to_date')));
+          }
+        })
+        .catch((err) => {
+          console.error(err, 'Local Resource List:', localResourceList);
+          dispatch(
+            failedAlertAndRetry(
+              closeSourceContentDialog,
+              () => getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease),
+              'updates.failed_checking_for_source_content_updates',
+            ),
+          );
+        });
+    } else {
+      dispatch(openAlertDialog(translate('no_internet')));
+      closeSourceContentDialog();
+    }
+  });
+}
