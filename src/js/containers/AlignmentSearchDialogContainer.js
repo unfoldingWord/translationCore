@@ -681,7 +681,7 @@ class AlignmentSearchDialogContainer extends React.Component {
   refreshPopUp() {
     if (popupLocation) {
       delay(100).then(() => {
-        this.showPopUpVerse(popupLocation.ref, popupLocation.e);
+        this.showPopUpVerse(popupLocation.ref, popupLocation.e, popupLocation.targetText);
       });
     }
   }
@@ -693,7 +693,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} targetText - aligned target text
    */
   showPopUpVerse(ref, e, targetText) {
-    popupLocation = { ref, e };
+    popupLocation = { ref, e, targetText };
     const popupTitlefontSize = this.getFontSize(1.1);
     const subTitleFontSize = `1.3em`;
     const verseFontSize = this.getFontSize(1);

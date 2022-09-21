@@ -1027,6 +1027,68 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
 }
 
 /**
+ * try to find closest matches for target text in verse text
+ * @param targetText
+ * @param verseText
+ * @returns {{targetPos: *[], targetParts: *}}
+ */
+export function findBestMatchesForTargetText(targetText, verseText) {
+  let targetParts = targetText.split(' ');
+  let targetPos = [];
+  let targetSearchRegEx = [];
+  let pos_ = 0;
+  let aborted = false;
+
+  // find first position of words in verse
+  for (let i = 0; i < targetParts.length; i++) {
+    const searchWord = targetParts[i];
+
+    if (!searchWord) {
+      break;
+    }
+
+    const { search, flags } = buildSearchRegex(searchWord, true, false);
+    const regex = xre(search, flags);
+    targetSearchRegEx.push(regex);
+    const results = xre.exec(verseText, regex, pos_);
+    let newPos = results?.index;
+
+    if (newPos >= 0) {
+      targetPos.push(newPos);
+      newPos += searchWord.length;
+      pos_ = newPos;
+    } else {
+      aborted = true;
+      break;
+    }
+  }
+
+  if (!aborted && targetParts.length > 1) {
+    // nudge matched words closer to following word
+    for (let i = targetParts.length - 2; i >= 0; i--) {
+      const searchWord = targetParts[i];
+      let bestPos = targetPos[i];
+      const endPos = targetPos[i + 1] - searchWord.length;
+      const regex = targetSearchRegEx[i];
+
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        const results = xre.exec(verseText, regex, bestPos + searchWord.length);
+        let newPos = results?.index;
+
+        if ((newPos >= 0) && (newPos <= endPos)) {
+          bestPos = newPos;
+          targetPos[i] = bestPos;
+        } else {
+          break;
+        }
+      }
+    }
+  }
+  return { targetParts, targetPos };
+}
+
+/**
  * add highlighting to verse
  * @param {string} verseText
  * @param {string} targetText
@@ -1044,32 +1106,26 @@ export function highlightSelectedTextInVerse(verseText, targetText) {
       verseParts.push(<span style={ { backgroundColor: 'var(--highlight-color)' } }> {targetText} </span>);
       verseParts.push(verseText.substring(pos + targetText.length));
     } else {
-      let targetParts = targetText.split(' ');
+      const { targetParts, targetPos } = findBestMatchesForTargetText(targetText, verseText);
+      let lastPos = 0;
 
-      // eslint-disable-next-line no-constant-condition
-      while (true) {
-        const word = targetParts.shift();
-
-        if (!word) {
-          break;
-        }
-
-        const { search, flags } = buildSearchRegex(word, true, false);
-        const regex = xre(search, flags);
-        const results = regex.exec(verseText);
-        const pos = results?.index;
+      // break into parts with spans for target text
+      for (let i = 0; i < targetPos.length; i++) {
+        const searchWord = targetParts[i];
+        const pos = targetPos[i];
 
         if (pos >= 0) {
-          verseParts.push(verseText.substring(0, pos));
-          verseParts.push(<span style={{ backgroundColor: 'var(--highlight-color)' }}> {word} </span>);
-          const remainder = verseText.substring(pos + word.length);
-          verseText = remainder;
+          verseParts.push(verseText.substring(lastPos, pos));
+          verseParts.push(<span style={{ backgroundColor: 'var(--highlight-color)' }}> {searchWord} </span>);
+          lastPos = pos + searchWord.length;
         } else {
           break;
         }
       }
 
-      verseParts.push(verseText);
+      if (lastPos < verseText.length) {
+        verseParts.push(verseText.substring(lastPos));
+      }
     }
   } else {
     verseParts.push(verseText);
