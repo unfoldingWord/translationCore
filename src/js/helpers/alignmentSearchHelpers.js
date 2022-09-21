@@ -19,8 +19,10 @@ import {
   trimNewLine,
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
 
-const startWordRegex = '(?<=[\\s,.:;"\']|^)';
-const endWordRegex = '(?=[\\s,.:;"\']|$)';
+// eslint-disable-next-line no-useless-escape
+const START_WORD_REGEX = '(?<=[\\s,.:;"\'(]|^)'; // \(
+// eslint-disable-next-line no-useless-escape
+const END_WORD_REGEX = '(?=[\\s,.:;"\'!?)]|$)'; // !?)
 export const ALIGNMENTS_KEY = 'testament2';
 
 /**
@@ -150,7 +152,7 @@ export function buildSearchRegex(search, fullWord, caseInsensitive) {
   }
 
   if (fullWord) {
-    search = `${startWordRegex}${search}${endWordRegex}`;
+    search = `${START_WORD_REGEX}${search}${END_WORD_REGEX}`;
   }
 
   if (caseInsensitive) {
@@ -1052,7 +1054,10 @@ export function highlightSelectedTextInVerse(verseText, targetText) {
           break;
         }
 
-        const pos = verseText.indexOf(word);
+        const { search, flags } = buildSearchRegex(word, true, false);
+        const regex = xre(search, flags);
+        const results = regex.exec(verseText);
+        const pos = results?.index;
 
         if (pos >= 0) {
           verseParts.push(verseText.substring(0, pos));
