@@ -71,6 +71,9 @@ jobs:
 
   build-linux:
     name: Build Linux
+    strategy:
+      matrix:
+        trim: [ 0, 1 ]
     needs: test
     runs-on: ubuntu-latest
     container: neutrinog/concourse-tasks:latest
@@ -79,11 +82,16 @@ jobs:
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
       CI: true
+      TRIM: ${{ matrix.trim }}
 
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.4.2'
+
+      - name: TRIM setting
+        run: echo "Trim value is $TRIM"
+
       - name: Node version
         run: |
           node --version
@@ -137,12 +145,16 @@ jobs:
         # add automatic retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 15
+          timeout_minutes: 20
           max_attempts: 3
           retry_on: error
           command: npm run update-resources
           # restore original manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
+
+      - name: Trim resources
+        if: ${{ env.TRIM == '1' }}
+        run: npm run minimal-resources
 
       - name: build linux
         id: build
@@ -153,6 +165,10 @@ jobs:
       #     arm64
       - name: Set arm64 artifact name
         run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-linux-arm64-$APP_VERSION-$HASH.deb")" >> $GITHUB_ENV
+
+      - name: Set arm64 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-linux-arm64-$APP_VERSION-LITE-$HASH.deb")" >> $GITHUB_ENV
 
       - name: bundle arm64 linux
         run: ./node_modules/.bin/gulp release-linux-deb-arm64 --out=../artifacts/arm64/$ARTIFACT_ARM64
@@ -167,6 +183,10 @@ jobs:
       - name: Set x64 artifact name
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-linux-x64-$APP_VERSION-$HASH.deb")" >> $GITHUB_ENV
 
+      - name: Set x64 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-linux-x64-$APP_VERSION-LITE-$HASH.deb")" >> $GITHUB_ENV
+
       - name: bundle x64 linux
         run: ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/x64/$ARTIFACT_X64
 
@@ -178,6 +198,9 @@ jobs:
 
   build-windows:
     name: Build Windows
+    strategy:
+      matrix:
+        trim: [ 0, 1 ]
     needs: test
     runs-on: windows-2019
     env:
@@ -185,11 +208,16 @@ jobs:
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
       CI: true
+      TRIM: ${{ matrix.trim }}
 
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.4.2'
+
+      - name: TRIM setting
+        run: echo "Trim value is $TRIM"
+        shell: bash
 
       - name: Node version
         run: |
@@ -236,13 +264,18 @@ jobs:
         # add automatic retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 15
+          timeout_minutes: 20
           max_attempts: 3
           retry_on: error
           shell: bash
           command: npm run update-resources
           # restore original manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
+
+      - name: Trim resources
+        if: ${{ env.TRIM == '1' }}
+        run: npm run minimal-resources
+        shell: bash
 
       - name: build windows
         run: |
@@ -251,6 +284,11 @@ jobs:
 #     x64
       - name: Set x64 artifact name
         run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set x64 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-LITE-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
 
       - name: bundle x64 windows
@@ -274,6 +312,11 @@ jobs:
         run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
 
+      - name: Set x32 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-LITE-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
+
       - name: bundle x32 windows
         run: |
           echo "Generating executable ../artifacts/x32/${{ env.ARTIFACT_X32 }}"
@@ -287,6 +330,9 @@ jobs:
 
   build-macos:
     name: Build macOS
+    strategy:
+      matrix:
+        trim: [ 0, 1 ]
     needs: test
     runs-on: macos-latest
     env:
@@ -294,11 +340,20 @@ jobs:
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
       APP_NAME: tC
       CI: true
+      TRIM: ${{ matrix.trim }}
 
     steps:
       - uses: actions/setup-node@v1
         with:
           node-version: '16.4.2'
+
+      - name: TRIM setting
+        run: echo "Trim value is $TRIM"
+
+      - name: add Delay
+        if: ${{ env.TRIM == '1' }}
+        run: sleep 60
+        shell: bash
 
       - name: Node version
         run: |
@@ -347,12 +402,16 @@ jobs:
         # add automatic retry
         uses: nick-invision/retry@v2
         with:
-          timeout_minutes: 15
+          timeout_minutes: 20
           max_attempts: 3
           retry_on: error
           command: npm run update-resources
           # restore original manifest before retry
           on_retry_command: cp source-content-updater-manifest.json.orig tcResources/source-content-updater-manifest.json
+
+      - name: Trim resources
+        if: ${{ env.TRIM == '1' }}
+        run: npm run minimal-resources
 
       - name: build macOS
         id: build
@@ -363,6 +422,10 @@ jobs:
       #     arm64
       - name: Set arm64 artifact name
         run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-$HASH.dmg")" >> $GITHUB_ENV
+
+      - name: Set arm64 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: bundle arm64 macOS
         run: ./node_modules/.bin/gulp release-macos-arm64 --out=../artifacts/arm64/$ARTIFACT_ARM64
@@ -376,6 +439,10 @@ jobs:
       #     x64
       - name: Set x64 artifact name
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-$HASH.dmg")" >> $GITHUB_ENV
+
+      - name: Set x64 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: bundle x64 macOS
         run: ./node_modules/.bin/gulp release-macos --out=../artifacts/x64/$ARTIFACT_X64

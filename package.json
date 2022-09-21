@@ -43,6 +43,7 @@
     "release-content-update": "node scripts/releaseContentUpdate",
     "clean-up-apps": "rm -rf src/tC_apps/*/node_modules",
     "load-apps": "git submodule update --init --recursive",
+    "minimal-resources": "node scripts/resources/minimalResources.js tcResources en el-x-koine hbo",
     "overwrite-resources": "rm -rf tcResources/en/bibles tcResources/en/translationHelps tcResources/el-x-koine tcResources/hi && npm run update-resources",
     "update-apps": "git submodule foreach --recursive git checkout develop && git submodule foreach --recursive git pull",
     "update-attributions": "node scripts/attributions/generateAttributionData.js src/js/components/home/license/attributionData.json",
