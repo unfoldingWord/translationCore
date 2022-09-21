@@ -133,7 +133,7 @@ function getDownloadErrorList(errors, translate) {
 
 /**
  * Downloads source content updates using the tc-source-content-updater.
- * @param {array} resourcesToDownload
+ * @param {array} resourcesToDownload - list of resources to be downloaded.
  * @param {boolean} refreshUpdates
  * @param {boolean} preRelease
  * @returns {(function(*, *): Promise<void>)|*}

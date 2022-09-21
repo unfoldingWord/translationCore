@@ -6,12 +6,12 @@ import { resourcesDownloadHelpers } from 'tc-source-content-updater';
 // selectors
 import { getListOfOutdatedSourceContent } from '../selectors/index';
 // actions
+import { confirmOnlineAction } from '../actions/OnlineModeConfirmActions';
 import {
+  deletePreReleaseResources,
   downloadSourceContentUpdates,
   getListOfSourceContentToUpdate,
-  deletePreReleaseResources,
 } from '../actions/SourceContentUpdatesActions';
-import { confirmOnlineAction } from '../actions/OnlineModeConfirmActions';
 // components
 import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
 // helpers
@@ -247,23 +247,23 @@ class ContentUpdatesDialogContainer extends React.Component {
 }
 
 ContentUpdatesDialogContainer.propTypes = {
-  deletePreReleasePrompt: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   resources: PropTypes.array.isRequired,
   confirmOnlineAction: PropTypes.func.isRequired,
-  downloadSourceContentUpdates: PropTypes.func.isRequired,
   getListOfSourceContentToUpdate: PropTypes.func.isRequired,
+  downloadSourceContentUpdates: PropTypes.func.isRequired,
+  deletePreReleasePrompt: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({ resources: getListOfOutdatedSourceContent(state) });
 
 const mapDispatchToProps = {
   confirmOnlineAction,
+  deletePreReleasePrompt,
   downloadSourceContentUpdates,
   getListOfSourceContentToUpdate,
-  deletePreReleasePrompt,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentUpdatesDialogContainer);
