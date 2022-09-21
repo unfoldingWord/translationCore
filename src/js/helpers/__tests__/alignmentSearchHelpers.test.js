@@ -116,5 +116,18 @@ describe('test findBestMatchesForTargetText', () => {
     // then
     expect(targetPos).toEqual(expectedPos);
   });
+
+  it('test discontiguous with ‘ mrk 12:29', () => {
+    // given
+    const expectedPos = [ 87, 97, 100 ];
+    const targetText = 'Hear O Israel';
+    const verseText = 'Jesus answered, “The first is, ‘Hear, O Israel, the Lord our God, the Lord is one.';
+
+    // when
+    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+
+    // then
+    expect(targetPos).toEqual(expectedPos);
+  });
 });
 
