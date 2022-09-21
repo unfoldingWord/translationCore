@@ -20,9 +20,9 @@ import {
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
 
 // eslint-disable-next-line no-useless-escape
-const START_WORD_REGEX = '(?<=[\\s,.:;"\'(]|^)'; // \(
+const START_WORD_REGEX = '(?<=[\\s,.:;“"\'({]|^)'; // \(
 // eslint-disable-next-line no-useless-escape
-const END_WORD_REGEX = '(?=[\\s,.:;"\'!?)]|$)'; // !?)
+const END_WORD_REGEX = '(?=[\\s,.:;“"\'!?)}]|$)'; // !?)
 export const ALIGNMENTS_KEY = 'testament2';
 
 /**
