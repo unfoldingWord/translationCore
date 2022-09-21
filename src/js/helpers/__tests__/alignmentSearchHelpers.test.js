@@ -119,7 +119,7 @@ describe('test findBestMatchesForTargetText', () => {
 
   it('test discontiguous with ‘ mrk 12:29', () => {
     // given
-    const expectedPos = [ 87, 97, 100 ];
+    const expectedPos = [ 32, 38, 40 ];
     const targetText = 'Hear O Israel';
     const verseText = 'Jesus answered, “The first is, ‘Hear, O Israel, the Lord our God, the Lord is one.';
 
