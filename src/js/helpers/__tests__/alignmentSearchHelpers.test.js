@@ -8,10 +8,11 @@ describe('test findBestMatchesForTargetText', () => {
     const verseText = 'But his wife replied to him, “If Yahweh had desired to kill us, he would not have taken from our hand the whole burnt offering and the offering. He would not have shown us all these things, and at this time would he have not allowed us to hear about this.”';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with quotes jdg 13:23', () => {
@@ -21,10 +22,11 @@ describe('test findBestMatchesForTargetText', () => {
     const verseText = 'But his wife replied to him, “If Yahweh had desired to kill us, he would not have taken from our hand the whole burnt offering and the offering. He would not have shown us all these things, and at this time would he have not allowed us to hear about this”';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with exclamation 1sa 13:3', () => {
@@ -34,10 +36,11 @@ describe('test findBestMatchesForTargetText', () => {
     const verseText = 'And Jonathan struck down the garrison of the Philistines that was at Geba and the Philistines heard. And Saul blew with the horn in all the land, saying, “Let the Hebrews hear!”';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with {} gen 41:15', () => {
@@ -47,10 +50,11 @@ describe('test findBestMatchesForTargetText', () => {
     const verseText = 'Then Pharaoh said to Joseph, "I dreamed a dream, but no one could interpret it. But I heard about you, saying {that} you hear a dream {and are able} to interpret it.”';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with ? jdg 5:16', () => {
@@ -63,10 +67,11 @@ describe('test findBestMatchesForTargetText', () => {
       'there were great resolutions of heart.';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with period jdg 5:16', () => {
@@ -79,10 +84,11 @@ describe('test findBestMatchesForTargetText', () => {
       'there were great resolutions of heart.';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with comma jdg 5:16', () => {
@@ -95,10 +101,11 @@ describe('test findBestMatchesForTargetText', () => {
       'there were great resolutions of heart.';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with new line jdg 5:16', () => {
@@ -111,10 +118,11 @@ describe('test findBestMatchesForTargetText', () => {
       'there were great resolutions of heart.';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 
   it('test discontiguous with ‘ mrk 12:29', () => {
@@ -124,10 +132,11 @@ describe('test findBestMatchesForTargetText', () => {
     const verseText = 'Jesus answered, “The first is, ‘Hear, O Israel, the Lord our God, the Lord is one.';
 
     // when
-    const { targetPos } = findBestMatchesForTargetText(targetText, verseText);
+    const { targetPos, targetParts } = findBestMatchesForTargetText(targetText, verseText);
 
     // then
     expect(targetPos).toEqual(expectedPos);
+    expect(targetParts.join(' ')).toEqual(targetText);
   });
 });
 
