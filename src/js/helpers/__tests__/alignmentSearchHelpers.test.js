@@ -1,4 +1,9 @@
-import { findBestMatchesForTargetText } from '../alignmentSearchHelpers';
+
+import path from "path-extra";
+import env from "tc-electron-env";
+import { findBestMatchesForTargetText, indexTwords } from '../alignmentSearchHelpers';
+
+jest.unmock('fs-extra');
 
 describe('test findBestMatchesForTargetText', () => {
   it('test discontiguous jdg 13:23', () => {
@@ -140,3 +145,19 @@ describe('test findBestMatchesForTargetText', () => {
   });
 });
 
+const TCORE_RESOURCES_FOLDER = path.join('/Users/blm/translationCore', 'resources');
+
+describe('test indexTwords', () => {
+  it('test Door43', () => {
+    // given
+    const resource = {
+      languageId: 'en',
+      resourceId: 'ult',
+      owner: 'Door43-Catalog',
+      bookId: 'tit',
+    };
+
+    // when
+    indexTwords(TCORE_RESOURCES_FOLDER, resource);
+  });
+});

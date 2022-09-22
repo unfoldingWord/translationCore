@@ -13,11 +13,14 @@ import {
   OT_ORIG_LANG,
   OT_ORIG_LANG_BIBLE,
 } from '../common/BooksOfTheBible';
-import { USER_RESOURCES_PATH } from '../common/constants';
+import { DEFAULT_ORIG_LANG_OWNER, USER_RESOURCES_PATH } from '../common/constants';
 import {
   getUsfmForVerseContent,
   trimNewLine,
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
+import * as BibleHelpers from './bibleHelpers';
+import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers';
+import { getFilesInResourcePath, getFoldersInResourceFolder } from './ResourcesHelpers';
 
 // eslint-disable-next-line no-useless-escape
 const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)'; // \(
@@ -1153,3 +1156,56 @@ export function highlightSelectedTextInVerse(verseText, targetText) {
   return verseContent;
 }
 
+export function indexTwords(resourcesFolder, resource) {
+  // for D43-Catalog:
+  // /Users/blm/translationCore/resources/el-x-koine/translationHelps/translationWords/v0.29_Door43-Catalog/kt/groups/1co
+  // for other owners:
+  // /Users/blm/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
+
+  let languageId = resource.languageId;
+  let subFolder = 'translationWordsLinks';
+
+  if (resource.owner === DEFAULT_ORIG_LANG_OWNER) {
+    const olForBook = BibleHelpers.getOrigLangforBook(resource.bookId);
+    subFolder = 'translationWords';
+    languageId = olForBook.languageId;
+  }
+
+  const tWordsPath = path.join(resourcesFolder, `${languageId}/translationHelps/${subFolder}`);
+  const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource.owner);
+
+  if (latestTWordsVersion) {
+    const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
+
+    if (fs.existsSync(latestTwordsPath)) {
+      console.log(`Found ${latestTWordsVersion}`);
+      const catagories = getFoldersInResourceFolder(latestTwordsPath);
+
+      for (const catagory of catagories) {
+        const booksPath = path.join(latestTwordsPath, catagory, 'groups');
+        const books = getFoldersInResourceFolder(booksPath);
+
+        for (const bookId of books) {
+          const bookPath = path.join(booksPath, bookId);
+          const groupFiles = getFilesInResourcePath(bookPath, '.json');
+
+          for (const groupFile of groupFiles) {
+            const groupFIlePath = path.join(bookPath, groupFile);
+
+            try {
+              const data = fs.readJsonSync(groupFIlePath);
+
+              for (const item of data) {
+                console.log(`found item ${item}`);
+              }
+              console.log(data);
+            } catch (e) {
+              console.warn(`could not read ${groupFIlePath}`);
+            }
+          }
+        }
+      }
+    }
+  }
+  return null;
+}
