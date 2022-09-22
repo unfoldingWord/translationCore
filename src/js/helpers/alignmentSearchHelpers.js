@@ -1158,31 +1158,38 @@ export function highlightSelectedTextInVerse(verseText, targetText) {
   return verseContent;
 }
 
-export function indexTwords(resourcesFolder, resource) {
+export function indexTwords(resourcesFolder, resource_) {
   // for D43-Catalog:
   // /Users/blm/translationCore/resources/el-x-koine/translationHelps/translationWords/v0.29_Door43-Catalog/kt/groups/1co
   // for other owners:
   // /Users/blm/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
 
-  let languageId = resource.languageId;
+  let languageId = resource_.languageId;
   let subFolder = 'translationWordsLinks';
   let filterBooks = null;
   const checks = [];
   const bookIndex = {};
   const groupIndex = {};
 
-  if (resource.owner === DEFAULT_ORIG_LANG_OWNER) {
-    const olForBook = BibleHelpers.getOrigLangforBook(resource.bookId);
+  if (resource_.owner === DEFAULT_ORIG_LANG_OWNER) {
+    const olForBook = BibleHelpers.getOrigLangforBook(resource_.bookId);
     subFolder = 'translationWords';
     languageId = olForBook.languageId;
     filterBooks = (olForBook.languageId === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
   }
 
   const tWordsPath = path.join(resourcesFolder, `${languageId}/translationHelps/${subFolder}`);
-  const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource.owner);
+  const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource_.owner);
 
   if (latestTWordsVersion) {
     const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
+    const resource = {
+      ...resource_,
+      version: latestTWordsVersion,
+      tWordsLangID: languageId,
+      filterBooks,
+      tWordsPath: latestTwordsPath,
+    };
 
     if (fs.existsSync(latestTwordsPath)) {
       console.log(`Found ${latestTWordsVersion}`);
@@ -1253,6 +1260,7 @@ export function indexTwords(resourcesFolder, resource) {
         bookIndex,
         groupIndex,
         checks,
+        resource,
       };
     }
   }
