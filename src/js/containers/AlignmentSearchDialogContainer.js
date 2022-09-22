@@ -51,6 +51,8 @@ import {
   highlightSelectedTextInVerse,
   loadAlignments,
   multiSearchAlignments,
+  NT_BOOKS,
+  OT_BOOKS,
   parseResourceKey,
   readDirectory,
 } from '../helpers/alignmentSearchHelpers';
@@ -69,8 +71,6 @@ import {
 } from '../common/BooksOfTheBible';
 import { showPopover } from '../actions/PopoverActions';
 
-const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
-const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 Menu.defaultProps.disableAutoFocus = true; // to prevent auto-scrolling
 
 const tableIcons = {

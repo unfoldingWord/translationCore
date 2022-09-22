@@ -27,6 +27,8 @@ const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)'; // \(
 // eslint-disable-next-line no-useless-escape
 const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)'; // !?)
 export const ALIGNMENTS_KEY = 'testament2';
+export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
+export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 
 /**
  * get keys for alignments and do sort by locale
@@ -1164,11 +1166,16 @@ export function indexTwords(resourcesFolder, resource) {
 
   let languageId = resource.languageId;
   let subFolder = 'translationWordsLinks';
+  let filterBooks = null;
+  const checks = [];
+  const bookIndex = {};
+  const groupIndex = {};
 
   if (resource.owner === DEFAULT_ORIG_LANG_OWNER) {
     const olForBook = BibleHelpers.getOrigLangforBook(resource.bookId);
     subFolder = 'translationWords';
     languageId = olForBook.languageId;
+    filterBooks = (olForBook.languageId === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
   }
 
   const tWordsPath = path.join(resourcesFolder, `${languageId}/translationHelps/${subFolder}`);
@@ -1183,28 +1190,70 @@ export function indexTwords(resourcesFolder, resource) {
 
       for (const catagory of catagories) {
         const booksPath = path.join(latestTwordsPath, catagory, 'groups');
-        const books = getFoldersInResourceFolder(booksPath);
+        let books = getFoldersInResourceFolder(booksPath);
+
+        if (filterBooks) {
+          const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
+          books = filteredBooks;
+        }
 
         for (const bookId of books) {
           const bookPath = path.join(booksPath, bookId);
           const groupFiles = getFilesInResourcePath(bookPath, '.json');
 
           for (const groupFile of groupFiles) {
-            const groupFIlePath = path.join(bookPath, groupFile);
+            const groupFilePath = path.join(bookPath, groupFile);
 
             try {
-              const data = fs.readJsonSync(groupFIlePath);
+              const data = fs.readJsonSync(groupFilePath);
+              const groupId = groupFile.split('.json')[0];
+
+              if (!groupIndex[groupId]) {
+                groupIndex[groupId] = [];
+              }
+
+              const items = groupIndex[groupId];
 
               for (const item of data) {
                 console.log(`found item ${item}`);
+                const location = checks.length;
+                checks.push(item);
+
+                if (!bookIndex[bookId]) {
+                  bookIndex[bookId] = {};
+                }
+
+                const chapters = bookIndex[bookId];
+                const reference = item?.contextId?.reference;
+                const chapter = reference?.chapter;
+
+                if (!chapters[chapter]) {
+                  chapters[chapter] = {};
+                }
+
+                const verses = chapters[chapter];
+                const verse = reference?.verse;
+
+                if (!verses[verse]) {
+                  verses[verse] = [];
+                }
+
+                const tWords = verses[verse];
+                tWords.push(location);
+                items.push(location);
               }
-              console.log(data);
+              // console.log(data);
             } catch (e) {
-              console.warn(`could not read ${groupFIlePath}`);
+              console.warn(`could not read ${groupFilePath}`);
             }
           }
         }
       }
+      return {
+        bookIndex,
+        groupIndex,
+        checks,
+      };
     }
   }
   return null;

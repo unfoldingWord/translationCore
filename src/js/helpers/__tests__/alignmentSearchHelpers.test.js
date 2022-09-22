@@ -160,4 +160,17 @@ describe('test indexTwords', () => {
     // when
     indexTwords(TCORE_RESOURCES_FOLDER, resource);
   });
+
+  it('test unfoldingWord', () => {
+    // given
+    const resource = {
+      languageId: 'en',
+      resourceId: 'ult',
+      owner: 'unfoldingWord',
+      bookId: 'tit',
+    };
+
+    // when
+    indexTwords(TCORE_RESOURCES_FOLDER, resource);
+  });
 });
