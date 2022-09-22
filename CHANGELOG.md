@@ -1,12 +1,19 @@
 # Changelog
 
-## [v3.3.1](https://github.com/unfoldingWord/translationCore/tree/v3.3.1) (2022-9-2)
+## [v3.4.0](https://github.com/unfoldingWord/translationCore/tree/v3.4.0) (2022-9-22)
 
 **Implemented enhancements:**
+
+- Implemented minimal resource builds to minimize disk space usage [\#7320](https://github.com/unfoldingWord/translationCore/issues/7320)
+- Automate validation of bundled resources on each build [\#7379](https://github.com/unfoldingWord/translationCore/issues/7379)
+- Support verse ranges that span chapter boundaries [\#7338](https://github.com/unfoldingWord/translationCore/issues/7338)
+- Protect users from doing word alignment with older version of original languages [\#7417](https://github.com/unfoldingWord/translationCore/issues/7417)
+- Switch to using ampersand in place of ellipsis for discontiguous alignments [\#7294](https://github.com/unfoldingWord/translationCore/issues/7294)
 
 **Fixed bugs:**
 
 - Problem with adding scripture panes after upgrade [\#7414](https://github.com/unfoldingWord/translationCore/issues/7414)
+- Fix highlighting when there are multiple verses in a check [\#7337](https://github.com/unfoldingWord/translationCore/issues/7337)
 
 
 ## [v3.3.0](https://github.com/unfoldingWord/translationCore/tree/v3.3.0) (2022-7-19)
