@@ -283,7 +283,7 @@
     },
     "conflicting_project": "Já existe um projeto com este identificador para este idioma e livro",
     "newer_project": "Este projeto foi criado em uma versão mais nova do translationCore. Por favor, atualize para a versão mais recente e tente novamente.",
-    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
+    "newer_project_original_language": "Este projeto foi alinhado usando uma versão mais recente do idioma original. Por favor, atualize o recurso de idioma original e tente novamente."
   },
   "book_list": {
     "ot": {
@@ -460,7 +460,7 @@
     "contact_helpdesk": "Contatar Suporte",
     "retry": "Tentar novamente",
     "update": "Atualize para a versão mais recente",
-    "update_version": "Update Version",
+    "update_version": "Atualizar versão",
     "ignore_button": "Ignorar",
     "feedback_button": "Enviar comentário",
     "delete": "Excluir"
