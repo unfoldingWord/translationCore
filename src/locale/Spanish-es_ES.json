@@ -9,16 +9,16 @@
   "save_changes": "Guardar Cambios",
   "saving_changes": "Guardando cambios",
   "success": "Éxito",
-  "delete_pre_releases": "Delete All Pre-Release Resources",
-  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
+  "delete_pre_releases": "Eliminar Todos los Recursos de Pre-lanzamiento",
+  "delete_pre_releases_warning": "¿Desea eliminar todos los recursos de pre-lanzamiento que han sido descargados?",
   "supported_file_types": "Tipos de Archivos Compatibles",
   "select_project": "Seleccione un Proyecto",
   "select_tool": "Seleccione una herramienta",
   "select_all": "Seleccione todos",
   "unselect_all": "Desmarcar todo",
-  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
-  "admin_options": "Administrator Options:",
-  "show_prerelease_resources": "Show Pre-Release Resources",
+  "select_all_resources": "Seleccionar Todo - Advertencia: esto puede llevar mucho tiempo y usar mucho espacio del disco.",
+  "admin_options": "Opciones de Administrador:",
+  "show_prerelease_resources": "Mostrar recursos de Pre-lanzamiento",
   "launch": "Lanzar",
   "current_user": "Usuario Actual",
   "please_log_in": "Por favor, inicie sesión para continuar",
@@ -80,7 +80,7 @@
   "sending_feedback_failed": "Error al Enviar el Comentario",
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
   "unknown_networking_error": "${app_name} ha encontrado un error de comunicación desconocido. Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
-  "pre_release": "Pre-Release",
+  "pre_release": "Pre-lanzamiento",
   "updates": {
     "organization": "Organización",
     "resource": "Recurso",
@@ -237,11 +237,11 @@
     "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} .",
     "unknown_download_networking_error": "${app_name} ha encontrado un error de comunicación desconocido al intentar descargar el proyecto desde \"${project_url}\".<br/><br/>Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
     "project_locked": "El proyecto está bloqueado en:<br/>'${file_path}'. Por favor, reinicie su computadora e inténtelo de nuevo.",
-    "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}",
-    "load_view_usfm_url": "Load Bible Resource (USFM)",
-    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
-    "enter_resource_url": "Enter Resource URL",
-    "loading_usfm_url": "Loading : ${usfm_url}"
+    "known_download_networking_error": "La descarga del proyecto \"${project_url}\" ha fallado: ${error_message}",
+    "load_view_usfm_url": "Cargar Recurso Bíblico (USFM)",
+    "load_view_usfm_url_error": "La descarga del USFM \"${project_url}\" ha fallado: ${error_message}",
+    "enter_resource_url": "Introduzca la URL del recurso",
+    "loading_usfm_url": "Cargando: ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",
@@ -463,7 +463,7 @@
     "update_version": "Update Version",
     "ignore_button": "Ignorar",
     "feedback_button": "Enviar comentarios",
-    "delete": "Delete"
+    "delete": "Borrar"
   },
   "tool_card_categories": {
     "kt": "Términos Claves",
