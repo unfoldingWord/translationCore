@@ -572,6 +572,7 @@ async function doCallback(callback, percent) {
  * open Bible json data and extract alignment data for specific testament
  * @param {string} resourceFolder
  * @param {object} resource
+ * @param {function} callback - async callback function(percentProress:number)
  * @returns {{strongAlignments: {alignments: {}}, alignments: *[], lemmaAlignments: {alignments: {}}, targetAlignments: {alignments: {}}, sourceAlignments: {alignments: {}}}}
  */
 export async function getAlignmentsFromResource(resourceFolder, resource, callback = null) {
@@ -1158,7 +1159,14 @@ export function highlightSelectedTextInVerse(verseText, targetText) {
   return verseContent;
 }
 
-export function indexTwords(resourcesFolder, resource_) {
+/**
+ * index twords for resource
+ * @param {string} resourcesFolder
+ * @param {object} resource_
+ * @param {function} callback - async callback function(percentProress:number)
+ * @returns {{checks: *[], resource: (*&{tWordsLangID: *, tWordsPath: string, filterBooks: null, version: string}), groupIndex: {}, bookIndex: {}}|null}
+ */
+export async function indexTwords(resourcesFolder, resource_, callback = null) {
   // for D43-Catalog:
   // /Users/blm/translationCore/resources/el-x-koine/translationHelps/translationWords/v0.29_Door43-Catalog/kt/groups/1co
   // for other owners:
@@ -1182,6 +1190,7 @@ export function indexTwords(resourcesFolder, resource_) {
   const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource_.owner);
 
   if (latestTWordsVersion) {
+    await doCallback(callback, 0);
     const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
     const resource = {
       ...resource_,
@@ -1194,8 +1203,11 @@ export function indexTwords(resourcesFolder, resource_) {
     if (fs.existsSync(latestTwordsPath)) {
       console.log(`Found ${latestTWordsVersion}`);
       const catagories = getFoldersInResourceFolder(latestTwordsPath);
+      const catagoryStepSize = 100 / (catagories.length || 1);
 
-      for (const catagory of catagories) {
+      for (let i = 0; i < catagories.length; i++) {
+        const catagory = catagories[i];
+        const progressCatagory = i * catagoryStepSize;
         const booksPath = path.join(latestTwordsPath, catagory, 'groups');
         let books = getFoldersInResourceFolder(booksPath);
 
@@ -1204,7 +1216,13 @@ export function indexTwords(resourcesFolder, resource_) {
           books = filteredBooks;
         }
 
-        for (const bookId of books) {
+        const bookStepSize = catagoryStepSize / (books.length || 1);
+
+        for (let j = 0; j < books.length; j++) {
+          const bookId = books[j];
+          const bookProgress = j * bookStepSize + progressCatagory;
+          // eslint-disable-next-line no-await-in-loop
+          await doCallback(callback, bookProgress);
           const bookPath = path.join(booksPath, bookId);
           const groupFiles = getFilesInResourcePath(bookPath, '.json');
 
@@ -1222,7 +1240,7 @@ export function indexTwords(resourcesFolder, resource_) {
               const items = groupIndex[groupId];
 
               for (const item of data) {
-                console.log(`found item ${item}`);
+                // console.log(`found item ${item}`);
                 const location = checks.length;
                 checks.push(item);
 

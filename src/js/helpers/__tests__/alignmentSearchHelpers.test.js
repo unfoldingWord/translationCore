@@ -1,6 +1,6 @@
 
-import path from "path-extra";
-import env from "tc-electron-env";
+import React from 'react';
+import path from 'path-extra';
 import { findBestMatchesForTargetText, indexTwords } from '../alignmentSearchHelpers';
 
 jest.unmock('fs-extra');
@@ -147,8 +147,8 @@ describe('test findBestMatchesForTargetText', () => {
 
 const TCORE_RESOURCES_FOLDER = path.join('/Users/blm/translationCore', 'resources');
 
-describe('test indexTwords', () => {
-  it('test Door43', () => {
+describe('test indexTwords with callback', () => {
+  it('test Door43', async () => {
     // given
     const resource = {
       languageId: 'en',
@@ -158,10 +158,12 @@ describe('test indexTwords', () => {
     };
 
     // when
-    indexTwords(TCORE_RESOURCES_FOLDER, resource);
-  });
+    await indexTwords(TCORE_RESOURCES_FOLDER, resource, async (percent) => {
+      console.log( `${100 - percent}% left`);
+    });
+  }, 1000000);
 
-  it('test unfoldingWord', () => {
+  it('test unfoldingWord without callback', async () => {
     // given
     const resource = {
       languageId: 'en',
@@ -171,6 +173,6 @@ describe('test indexTwords', () => {
     };
 
     // when
-    indexTwords(TCORE_RESOURCES_FOLDER, resource);
-  });
+    await indexTwords(TCORE_RESOURCES_FOLDER, resource);
+  }, 1000000);
 });
