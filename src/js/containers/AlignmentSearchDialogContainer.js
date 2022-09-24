@@ -1145,6 +1145,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     // when
     let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+    // TODO add support for tWords
     found = found?.map(index => state.alignmentData.alignments[index]);
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     delay(100).then(() => {
