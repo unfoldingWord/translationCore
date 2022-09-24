@@ -42,19 +42,24 @@ import { getProjectManifest, getSetting } from '../selectors';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
 import {
+  addTwordsInfoToResource,
   ALIGNMENTS_KEY,
   getAlignmentsFromResource,
   getAvailableBibles,
   getKeyForBible,
   getSearchableAlignments,
+  getTwordsIndex,
+  getTwordsKey,
   getVerseForKey,
   highlightSelectedTextInVerse,
+  indexTwords,
   loadAlignments,
   multiSearchAlignments,
   NT_BOOKS,
   OT_BOOKS,
   parseResourceKey,
   readDirectory,
+  saveTwordsIndex,
 } from '../helpers/alignmentSearchHelpers';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
 import { delay } from '../common/utils';
@@ -105,6 +110,10 @@ const searchFieldOptions = [
   SEARCH_STRONG,
   SEARCH_REFS,
 ];
+const searchFieldOptionsForTwords = [
+  SEARCH_SOURCE,
+  SEARCH_TARGET,
+];
 const searchFieldLabels = {
   [SEARCH_SOURCE]: 'Search Source Words',
   [SEARCH_LEMMA]: 'Search Lemma Words',
@@ -133,10 +142,13 @@ const REFERENCES_LABEL = 'References Column';
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_USFM = 'search_hide_usfm';
+const SEARCH_TWORDS = 'search_twords';
 
 const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
 const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
 const SEARCH_HIDE_USFM_LABEL = 'Hide USFM Markers';
+const SEARCH_TWORDS_LABEL = 'Search Translation Words';
+
 const searchOptions = [
   {
     key: SEARCH_CASE_SENSITIVE,
@@ -147,6 +159,11 @@ const searchOptions = [
     key: SEARCH_MATCH_WHOLE_WORD,
     label: SEARCH_MATCH_WHOLE_WORD_LABEL,
     stateKey: 'matchWholeWord',
+  },
+  {
+    key: SEARCH_TWORDS,
+    label: SEARCH_TWORDS_LABEL,
+    stateKey: 'searchTwords',
   },
   {
     key: SEARCH_HIDE_USFM,
@@ -445,6 +462,11 @@ class AlignmentSearchDialogContainer extends React.Component {
       console.error('loadIndexedAlignmentData() - ERROR loading alignment data', e);
       return false;
     }
+  }
+
+  getSearchFieldOptions() {
+    const currentsearchFieldOptions = this.state.searchTwords ? searchFieldOptionsForTwords : searchFieldOptions;
+    return currentsearchFieldOptions;
   }
 
   /**
@@ -983,6 +1005,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             isNT,
           });
           this.props.closeAlertDialog();
+          this.loadTWordsIndex(key);
         } else {
           console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
 
@@ -991,6 +1014,35 @@ class AlignmentSearchDialogContainer extends React.Component {
           }
         }
       });
+    }
+  }
+
+  /**
+   * get twords index
+   * @param {string} alignemntsKey - alignments key
+   */
+  loadTWordsIndex(alignemntsKey) {
+    if (this.state.searchTwords) {
+      // TODO
+      const resource = parseResourceKey(alignemntsKey);
+      const res = addTwordsInfoToResource(resource, USER_RESOURCES_PATH);
+      const tWordsKey = getTwordsKey(res);
+      let tWordsIndex = getTwordsIndex(tWordsKey);
+
+      if (tWordsIndex) {
+        this.setState({ tWordsIndex });
+      } else {
+        const indexingMsg = 'Indexing translationWords:';
+
+        indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
+          await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
+        }).then(tWordsIndex => {
+          console.log('tWords index finished');
+          this.props.closeAlertDialog();
+          saveTwordsIndex(tWordsKey, tWordsIndex);
+          this.setState({ tWordsIndex });
+        });
+      }
     }
   }
 
@@ -1021,9 +1073,6 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param values
    */
   setSearchTypes(event, index, values) {
-    const fullWordItem = this.findSearchItem(SEARCH_MATCH_WHOLE_WORD);
-    const caseSensitiveItem = this.findSearchItem(SEARCH_CASE_SENSITIVE);
-    const hideUsfmMarkersItem = this.findSearchItem(SEARCH_HIDE_USFM);
     const hide = {};
     const searchType = [];
     // hide = this.state?.hide || {};
@@ -1033,7 +1082,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       hide[item.key] = !selected;
     }
 
-    for (const item of searchFieldOptions) {
+    for (const item of this.getSearchFieldOptions()) {
       const selected = this.isItemPresent(values, item);
 
       if (selected) {
@@ -1041,10 +1090,17 @@ class AlignmentSearchDialogContainer extends React.Component {
       }
     }
 
+    // basic options
+    const basicOptions = {};
+
+    searchOptions.forEach(item => {
+      const searchOption = this.findSearchItem(item.key);
+      const selected = this.isItemPresent(values, item.key);
+      basicOptions[searchOption.stateKey] = selected;
+    });
+
     const types = {
-      [fullWordItem.stateKey]: this.isItemPresent(values, SEARCH_MATCH_WHOLE_WORD),
-      [caseSensitiveItem.stateKey]: this.isItemPresent(values, SEARCH_CASE_SENSITIVE),
-      [hideUsfmMarkersItem.stateKey]: this.isItemPresent(values, SEARCH_HIDE_USFM),
+      ...basicOptions,
       hide,
       searchType,
     };
@@ -1059,6 +1115,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState({
       alignmentData: null,
       alignedBibles: null,
+      tWordsIndex: null,
       found: null,
     }); // clear data
 
@@ -1074,18 +1131,20 @@ class AlignmentSearchDialogContainer extends React.Component {
     console.log('AlignmentSearchDialogContainer - start search');
     this.setState({ found: null });
     const state = this.state;
+    const searchTwords = state.searchTwords;
     const config = {
       fullWord: state.matchWholeWord,
       caseInsensitive: !state.caseSensitive,
-      searchLemma: this.isSearchFieldSelected(SEARCH_LEMMA),
+      searchTwords,
+      searchLemma: !searchTwords && this.isSearchFieldSelected(SEARCH_LEMMA),
       searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
       searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
-      searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
-      searchRefs: this.isSearchFieldSelected(SEARCH_REFS),
+      searchStrong: !searchTwords && this.isSearchFieldSelected(SEARCH_STRONG),
+      searchRefs: !searchTwords && this.isSearchFieldSelected(SEARCH_REFS),
     };
 
     // when
-    let found = multiSearchAlignments(state.alignmentData, state.searchStr, config) || [];
+    let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
     found = found?.map(index => state.alignmentData.alignments[index]);
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     delay(100).then(() => {
@@ -1252,27 +1311,15 @@ class AlignmentSearchDialogContainer extends React.Component {
                 style={{ width: '350px', marginLeft: '20px', marginRight: '20px' }}
                 onChange={this.setSearchTypes}
               >
-                <MenuItem
-                  key={SEARCH_CASE_SENSITIVE}
-                  insetChildren={true}
-                  checked={this.state.caseSensitive}
-                  value={SEARCH_CASE_SENSITIVE}
-                  primaryText={SEARCH_CASE_SENSITIVE_LABEL}
-                />
-                <MenuItem
-                  key={SEARCH_MATCH_WHOLE_WORD}
-                  insetChildren={true}
-                  checked={this.state.matchWholeWord}
-                  value={SEARCH_MATCH_WHOLE_WORD}
-                  primaryText={SEARCH_MATCH_WHOLE_WORD_LABEL}
-                />
-                <MenuItem
-                  key={SEARCH_HIDE_USFM}
-                  insetChildren={true}
-                  checked={this.state.hideUsfmMarkers}
-                  value={SEARCH_HIDE_USFM}
-                  primaryText={SEARCH_HIDE_USFM_LABEL}
-                />
+                {searchOptions.map(item => (
+                  <MenuItem
+                    key={item.key}
+                    insetChildren={true}
+                    checked={this.state[item.stateKey]}
+                    value={item.key}
+                    primaryText={item.label}
+                  />
+                ))}
                 <Divider />
                 <Subheader inset={true}>{'Select Columns to Show:'}</Subheader>
                 {showMenuItems.map(item => {
@@ -1290,7 +1337,7 @@ class AlignmentSearchDialogContainer extends React.Component {
                 <Divider />
                 <Subheader inset={true}>{'Select Fields to Search:'}</Subheader>
                 {
-                  searchFieldOptions.map(item => (
+                  this.getSearchFieldOptions().map(item => (
                     <MenuItem
                       key={item}
                       insetChildren={true}
