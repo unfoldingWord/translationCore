@@ -112,6 +112,7 @@ const searchFieldOptions = [
 ];
 const searchFieldOptionsForTwords = [
   SEARCH_SOURCE,
+  SEARCH_STRONG,
   SEARCH_TARGET,
 ];
 const searchFieldLabels = {
@@ -1139,14 +1140,12 @@ class AlignmentSearchDialogContainer extends React.Component {
       searchLemma: !searchTwords && this.isSearchFieldSelected(SEARCH_LEMMA),
       searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
       searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
-      searchStrong: !searchTwords && this.isSearchFieldSelected(SEARCH_STRONG),
+      searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
       searchRefs: !searchTwords && this.isSearchFieldSelected(SEARCH_REFS),
     };
 
     // when
     let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
-    // TODO add support for tWords
-    found = found?.map(index => state.alignmentData.alignments[index]);
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     delay(100).then(() => {
       this.setState({ found });

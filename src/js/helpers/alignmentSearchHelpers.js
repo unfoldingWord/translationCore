@@ -318,10 +318,31 @@ export function searchRefsAndAppend(searchStr, flags, searchData, found, alignme
  */
 export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, config) {
   const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
-  const found = [];
+  let found = [];
 
   if (config.searchTwords) {
-    console.log(tWordsIndex);
+    if (config.searchSource) {
+      const keys = Object.keys(tWordsIndex.quoteIndex);
+      const alignments = tWordsIndex.quoteIndex;
+      const searchData = { keys, alignments };
+      searchAlignmentsAndAppend(search, flags, searchData, found);
+    }
+
+    if (config.searchTarget) {
+      const keys = Object.keys(tWordsIndex.groupIndex);
+      const alignments = tWordsIndex.groupIndex;
+      const searchData = { keys, alignments };
+      searchAlignmentsAndAppend(search, flags, searchData, found);
+    }
+
+    if (config.searchStrong) {
+      const keys = Object.keys(tWordsIndex.strongsIndex);
+      const alignments = tWordsIndex.strongsIndex;
+      const searchData = { keys, alignments };
+      searchAlignmentsAndAppend(search, flags, searchData, found);
+    }
+
+    found = found?.map(index => tWordsIndex.checks[index]);
   } else {
     if (config.searchTarget) {
       searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
@@ -342,6 +363,8 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
     if (config.searchRefs) {
       searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
     }
+
+    found = found?.map(index => alignmentData.alignments[index]);
   }
   return found;
 }
@@ -1275,6 +1298,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   const bibleIndex = {};
   const groupIndex = {};
   const quoteIndex = {};
+  const strongsIndex = {};
   const res = addTwordsInfoToResource(resource, resourcesFolder);
   const filterBooks = res.filterBooks;
   const latestTWordsVersion = res.latestTWordsVersion;
@@ -1339,6 +1363,14 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
                 const reference = contextId?.reference;
                 const chapter = reference?.chapter;
                 let quote = contextId?.quote;
+                let strongs = contextId?.strong || [];
+                strongs = Array.isArray(strongs) ? strongs.join(' ') : '';
+                let strongsList = strongsIndex[strongs];
+
+                if (!strongsList) {
+                  strongsList = [];
+                  strongsIndex[strongs] = strongsList;
+                }
 
                 if (Array.isArray(quote)) {
                   const quote_ = quote.map(item => item.word);
@@ -1370,6 +1402,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
                 verseList.push(location);
                 items.push(location);
                 quoteList.push(location);
+                strongsList.push(location);
               }
               // console.log(data);
             } catch (e) {
@@ -1382,6 +1415,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
         bibleIndex,
         groupIndex,
         quoteIndex,
+        strongsIndex,
         checks,
         resource: res,
       };
