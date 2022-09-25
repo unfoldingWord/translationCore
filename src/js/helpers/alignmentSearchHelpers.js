@@ -277,12 +277,21 @@ export function searchAlignmentsAndAppend(searchStr, flags, searchData, found) {
 
   if (found_.length) {
     for (const item of found_) {
-      const duplicate = found.includes(item); // ignore duplicates
-
-      if (!duplicate) {
-        found.push(item);
-      }
+      pushUnique(found, item);
     }
+  }
+}
+
+/**
+ * push item if it is not already in array
+ * @param array
+ * @param item
+ */
+function pushUnique(array, item) {
+  const duplicate = array.includes(item); // ignore duplicates
+
+  if (!duplicate) {
+    array.push(item);
   }
 }
 
@@ -299,11 +308,7 @@ export function searchRefsAndAppend(searchStr, flags, searchData, found, alignme
 
   if (found_.length) {
     for (const item of found_) {
-      const duplicate = found.includes(item); // ignore duplicates
-
-      if (!duplicate) {
-        found.push(item);
-      }
+      pushUnique(found, item);
     }
   }
 }
@@ -342,7 +347,22 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
       searchAlignmentsAndAppend(search, flags, searchData, found);
     }
 
-    found = found?.map(index => tWordsIndex.checks[index]);
+    found = found?.map(index => {
+      const check = tWordsIndex.checks[index];
+      const contextId = check?.contextId;
+      const targetText = contextId?.groupId || '';
+      const sourceText = check?.quoteString || '';
+      let strong = check.strong;
+
+      const newCheck = {
+        ...check,
+        targetText,
+        sourceText,
+        strong,
+      };
+
+      return newCheck;
+    });
   } else {
     if (config.searchTarget) {
       searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
@@ -1282,6 +1302,23 @@ export function getTwordsIndex(key) {
 }
 
 /**
+ * find item in object, if not found then add newItem
+ * @param {object} object
+ * @param {*} item
+ * @param {boolean} newItemIsArray - if true then new item is an empty array, otherwise make it an empty object
+ * @returns {*}
+ */
+function findItem(object, item, newItemIsArray = false) {
+  let verseList = object[item];
+
+  if (!verseList) {
+    verseList = newItemIsArray ? [] : {};
+    object[item] = verseList;
+  }
+  return verseList;
+}
+
+/**
  * index twords for resource
  * @param {string} resourcesFolder
  * @param {object} resource
@@ -1294,11 +1331,12 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   // for other owners:
   // ~/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
 
-  const checks = [];
+  let checks = [];
   const bibleIndex = {};
   const groupIndex = {};
   const quoteIndex = {};
   const strongsIndex = {};
+  const alignmentIndex = {};
   const res = addTwordsInfoToResource(resource, resourcesFolder);
   const filterBooks = res.filterBooks;
   const latestTWordsVersion = res.latestTWordsVersion;
@@ -1339,70 +1377,50 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
             try {
               const data = fs.readJsonSync(groupFilePath);
               const groupId = groupFile.split('.json')[0];
-              let groupList = groupIndex[groupId];
-
-              if (!groupList) {
-                groupList = [];
-                groupIndex[groupId] = groupList;
-              }
-
-              const items = groupList;
+              const groupList = findItem(groupIndex, groupId, true);
 
               for (const item of data) {
-                // console.log(`found item ${item}`);
-                const location = checks.length;
-                checks.push(item);
-                let bookIndex = bibleIndex[bookId];
-
-                if (!bookIndex) {
-                  bookIndex = {};
-                  bibleIndex[bookId] = bookIndex;
-                }
-
                 const contextId = item?.contextId;
                 const reference = contextId?.reference;
-                const chapter = reference?.chapter;
-                let quote = contextId?.quote;
-                let strongs = contextId?.strong || [];
-                strongs = Array.isArray(strongs) ? strongs.join(' ') : '';
-                let strongsList = strongsIndex[strongs];
-
-                if (!strongsList) {
-                  strongsList = [];
-                  strongsIndex[strongs] = strongsList;
-                }
+                let quote = contextId?.quote || '';
 
                 if (Array.isArray(quote)) {
                   const quote_ = quote.map(item => item.word);
                   quote = quote_.join(' ');
                 }
 
-                let quoteList = quoteIndex[quote];
+                item.quoteString = quote;
+                let location = checks.length;
+                const alignmentKey = `${groupId}_${quote}`;
+                let previousCheck = alignmentIndex[alignmentKey];
 
-                if (!quoteList) {
-                  quoteList = [];
-                  quoteIndex[quote] = quoteList;
+                if (!previousCheck) {
+                  item.refs = [reference];
+                  checks.push(item);
+                } else {
+                  location = previousCheck;
+                  const check = checks[previousCheck];
+                  check.refs.push(reference);
                 }
 
-                let chapterIndex = bookIndex[chapter];
+                const chapter = reference?.chapter;
 
-                if (!chapterIndex) {
-                  chapterIndex = {};
-                  bookIndex[chapter] = chapterIndex;
-                }
+                let strongs = contextId?.strong || [];
+                strongs = Array.isArray(strongs) ? strongs.join(' ') : '';
+                item.strong = strongs;
+                const strongsList = findItem(strongsIndex, strongs, true);
+                pushUnique(strongsList, location);
 
+                const quoteList = findItem(quoteIndex, quote, true);
+                pushUnique(quoteList, location);
+
+                const bookIndex = findItem(bibleIndex, bookId, false);
+                const chapterIndex = findItem(bookIndex, chapter, false);
                 const verse = reference?.verse;
-                let verseList = chapterIndex[verse];
+                const verseList = findItem(chapterIndex, verse, true);
 
-                if (!verseList) {
-                  verseList = [];
-                  chapterIndex[verse] = verseList;
-                }
-
-                verseList.push(location);
-                items.push(location);
-                quoteList.push(location);
-                strongsList.push(location);
+                pushUnique(verseList, location);
+                pushUnique(groupList, location);
               }
               // console.log(data);
             } catch (e) {
@@ -1411,6 +1429,15 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
           }
         }
       }
+
+      const newChecks = checks.map(item => {
+        const refs = item.refs.map(r => `${r.bookId} ${r.chapter}:${r.verse}`);
+        item.refs = refs;
+        return item;
+      });
+
+      checks = newChecks;
+
       return {
         bibleIndex,
         groupIndex,
