@@ -650,6 +650,10 @@ class AlignmentSearchDialogContainer extends React.Component {
         refs = refs_.sort(bibleRefSort); // sort refs in canonical order
       }
 
+      if (!refs || !refs.length) { // if no references left, then ignore
+        return null;
+      }
+
       // eslint-disable-next-line react/jsx-key
       // const refSpans = refs.map(refStr => <span>{ refStr }</span> );
       // const refStr = <> { refSpans.join(';&nbsp;') } </>;
