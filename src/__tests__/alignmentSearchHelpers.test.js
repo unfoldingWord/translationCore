@@ -51,7 +51,7 @@ describe('test greek alignments', () => {
       };
 
       // when
-      const found = multiSearchAlignments(alignmentData, search, config);
+      const found = multiSearchAlignments(alignmentData, null, search, config);
 
       // then
       expect(found.length).toEqual(1);
@@ -69,7 +69,7 @@ describe('test greek alignments', () => {
       };
 
       // when
-      const found = multiSearchAlignments(alignmentData, search, config);
+      const found = multiSearchAlignments(alignmentData, null, search, config);
 
       // then
       expect(found.length).toEqual(4);
@@ -87,7 +87,7 @@ describe('test greek alignments', () => {
       };
 
       // when
-      const found = multiSearchAlignments(alignmentData, search, config);
+      const found = multiSearchAlignments(alignmentData, null, search, config);
 
       // then
       expect(found.length).toEqual(7);
@@ -105,7 +105,7 @@ describe('test greek alignments', () => {
       };
 
       // when
-      const found = multiSearchAlignments(alignmentData, search, config);
+      const found = multiSearchAlignments(alignmentData, null, search, config);
 
       // then
       expect(found.length).toEqual(9);
@@ -123,7 +123,7 @@ describe('test greek alignments', () => {
       };
 
       // when
-      const found = multiSearchAlignments(alignmentData, search, config);
+      const found = multiSearchAlignments(alignmentData, null, search, config);
 
       // then
       expect(found.length).toEqual(10);
@@ -141,7 +141,7 @@ describe('test greek alignments', () => {
       };
 
       // when
-      const found = multiSearchAlignments(alignmentData, search, config);
+      const found = multiSearchAlignments(alignmentData, null, search, config);
 
       // then
       expect(found.length).toEqual(10);
