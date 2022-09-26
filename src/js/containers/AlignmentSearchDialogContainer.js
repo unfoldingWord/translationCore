@@ -1019,12 +1019,11 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   /**
    * get twords index
-   * @param {string} alignemntsKey - alignments key
+   * @param {string} alignmentsKey - alignments key
    */
-  loadTWordsIndex(alignemntsKey) {
+  loadTWordsIndex(alignmentsKey) {
     if (this.state.searchTwords) {
-      // TODO
-      const resource = parseResourceKey(alignemntsKey);
+      const resource = parseResourceKey(alignmentsKey);
       const res = addTwordsInfoToResource(resource, USER_RESOURCES_PATH);
       const tWordsKey = getTwordsKey(res);
       let tWordsIndex = getTwordsIndex(tWordsKey);
@@ -1106,6 +1105,12 @@ class AlignmentSearchDialogContainer extends React.Component {
     };
 
     this.setState(types);
+
+    if (types.searchTwords) {
+      delay(100).then(() => {
+        this.loadTWordsIndex(this.state.alignedBible);
+      });
+    }
   }
 
   /**

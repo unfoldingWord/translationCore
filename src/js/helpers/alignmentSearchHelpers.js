@@ -27,7 +27,7 @@ import { getFilesInResourcePath, getFoldersInResourceFolder } from './ResourcesH
 const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)'; // \(
 // eslint-disable-next-line no-useless-escape
 const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)'; // !?)
-export const ALIGNMENTS_KEY = 'alignmentsIndex';
+export const ALIGNMENTS_KEY = 'alignmentsIndex2';
 export const TWORDS_KEY = 'tWordsIndex';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
