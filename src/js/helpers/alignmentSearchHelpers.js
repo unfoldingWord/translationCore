@@ -357,6 +357,7 @@ function getSourceIndices(sourceText, sourceIndex) {
  * @param {object} sourceIndex - alignment indices mapped by source text
  * @param {string} sourceText
  * @param {array} alignments
+ * @param {array} sourceKeys
  * @returns {{sourceLemma: string, morph: string}}
  */
 function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
