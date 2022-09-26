@@ -147,7 +147,7 @@ describe('test findBestMatchesForTargetText', () => {
 
 const TCORE_RESOURCES_FOLDER = path.join('/Users/blm/translationCore', 'resources');
 
-describe('test indexTwords with callback', () => {
+describe.skip('test indexTwords with callback', () => {
   it('test Door43', async () => {
     // given
     const resource = {

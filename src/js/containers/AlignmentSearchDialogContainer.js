@@ -579,7 +579,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       for (let i = 0; i < data.length; i ++) {
         const row = data[i];
-        const key = remainingColumns.map(key => row[key].toString()).join('&');
+        const key = remainingColumns.map(key => (row[key] || '').toString()).join('&');
         const mergedDataItem = mergedData[key];
 
         if (!mergedDataItem) {
@@ -643,16 +643,14 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     data = data.map(item => {
       let refs = item.refs;
+      let refs_ = refs;
 
       if (ignoreBooks?.length) {
-        let refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
-        refs_ = refs_.sort(bibleRefSort); // sort refs in canonical order
+        refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
+      }
 
-        if (!refs_.length) {
-          return null;
-        } else {
-          refs = refs_;
-        }
+      if (refs_.length) {
+        refs = refs_.sort(bibleRefSort); // sort refs in canonical order
       }
 
       // eslint-disable-next-line react/jsx-key
