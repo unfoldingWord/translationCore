@@ -647,9 +647,6 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       if (ignoreBooks?.length) {
         refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
-      }
-
-      if (refs_.length) {
         refs = refs_.sort(bibleRefSort); // sort refs in canonical order
       }
 
