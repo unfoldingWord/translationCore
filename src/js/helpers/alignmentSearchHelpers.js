@@ -37,6 +37,7 @@ export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
 export const ALIGNMENT_DATA_DIR = path.join(TCORE_FOLDER, 'alignmentData');
+const MISSING_DATA_SYMBOL = '－';
 
 /**
  * get keys for alignments and do sort by locale
@@ -428,8 +429,8 @@ function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
       }
 
       if (!matchFound) {
-        morph.push('_');
-        sourceLemma.push('_');
+        morph.push(MISSING_DATA_SYMBOL);
+        sourceLemma.push(MISSING_DATA_SYMBOL);
       }
     }
   }
