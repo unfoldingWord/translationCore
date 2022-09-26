@@ -24,9 +24,13 @@ import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers
 import { getFilesInResourcePath, getFoldersInResourceFolder } from './ResourcesHelpers';
 
 // eslint-disable-next-line no-useless-escape
-const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)'; // \(
+const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)';
+const START_WORD_REGEX_WJ = '(?<=[\\s,.:;“"\'‘({\\p{Cc}]|^)'; // same as START_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-useless-escape
-const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)'; // !?)
+const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
+const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
+// eslint-disable-next-line no-unused-vars
+const WORD_JOINER = '\u2060'; // U+2060
 export const ALIGNMENTS_KEY = 'alignmentsIndex2';
 export const TWORDS_KEY = 'tWordsIndex';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
@@ -149,9 +153,10 @@ export function regexSearch(keys, searchStr, flags) {
  * @param {string} search - string to search
  * @param {boolean} fullWord - if true do full word matching
  * @param {boolean} caseInsensitive -if true do cse insensitive matching
+ * @param {boolean} wordJoiner - if true then split words at word-joiner character
  * @returns {boolean} {{search: string, flags: string}}
  */
-export function buildSearchRegex(search, fullWord, caseInsensitive) {
+export function buildSearchRegex(search, fullWord, caseInsensitive, wordJoiner = false) {
   let flags = 'u'; // enable unicode support
   search = xre.escape(normalizer(search)); // escape any special character we are trying to match
 
@@ -161,7 +166,11 @@ export function buildSearchRegex(search, fullWord, caseInsensitive) {
   }
 
   if (fullWord) {
-    search = `${START_WORD_REGEX}${search}${END_WORD_REGEX}`;
+    if (wordJoiner) {
+      search = `${START_WORD_REGEX_WJ}${search}${END_WORD_REGEX_WJ}`;
+    } else {
+      search = `${START_WORD_REGEX}${search}${END_WORD_REGEX}`;
+    }
   }
 
   if (caseInsensitive) {
@@ -362,25 +371,58 @@ function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
       sourceLemma.push(alignment_.sourceLemma);
     } else {
       let matchFound = false;
-      const { search, flags } = buildSearchRegex(index, true, false);
-      const found = searchAlignmentsSub(search, flags, sourceKeys, sourceIndex);
+      let wordJoiner = false;
 
-      if (found && found.length) {
-        const index_ = found[0];
-        const alignment_ = alignments[index_];
-        const sourceWords = alignment_.sourceText.split(' ');
+      while (!matchFound) {
+        let searchStr = index;
 
-        for (let i = 0; i < sourceWords.length; i++) {
-          const sourceWord = sourceWords[i];
+        if (wordJoiner) {
+          const parts = searchStr.split(WORD_JOINER);
+          searchStr = parts[0];
+          let pos = 0;
+          let longestLength = searchStr.length;
 
-          if (sourceWord === index) {
-            matchFound = true;
-            const morph_ = alignment_.morph.split(' ')[i];
-            const lemma_ = alignment_.sourceLemma.split(' ')[i];
-            morph.push(morph_);
-            sourceLemma.push(lemma_);
-            break;
+          for (let i = 1; i <parts.length; i++) {
+            const part = parts[i];
+            const len = part.length;
+
+            if (len > longestLength) {
+              pos = i;
+              longestLength = len;
+            }
           }
+
+          if (pos > 0) {
+            searchStr = parts[pos];
+          }
+        }
+
+        const { search, flags } = buildSearchRegex(searchStr, true, false, wordJoiner);
+        const found = searchAlignmentsSub(search, flags, sourceKeys, sourceIndex);
+
+        if (found && found.length) {
+          const index_ = found[0];
+          const alignment_ = alignments[index_];
+          const sourceWords = alignment_.sourceText.split(' ');
+
+          for (let i = 0; i < sourceWords.length; i++) {
+            const sourceWord = sourceWords[i];
+
+            if (sourceWord === index) {
+              matchFound = true;
+              const morph_ = alignment_.morph.split(' ')[i];
+              const lemma_ = alignment_.sourceLemma.split(' ')[i];
+              morph.push(morph_);
+              sourceLemma.push(lemma_);
+              break;
+            }
+          }
+        }
+
+        if (wordJoiner) {
+          break;
+        } else {
+          wordJoiner = true;
         }
       }
 
