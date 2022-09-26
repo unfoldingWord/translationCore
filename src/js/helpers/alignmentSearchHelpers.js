@@ -314,6 +314,89 @@ export function searchRefsAndAppend(searchStr, flags, searchData, found, alignme
 }
 
 /**
+ * look in source index for match to source text
+ * @param {string} sourceText
+ * @param {object} sourceIndex
+ * @returns {*[]}
+ */
+function getSourceIndices(sourceText, sourceIndex) {
+  let indices;
+  let sourceAlignments = sourceIndex[sourceText];
+
+  // try to find matches in alignment data to get lemma and morph
+  if (sourceAlignments && sourceAlignments.length) {
+    indices = [sourceAlignments[0]];
+  } else {
+    const sourceWords = sourceText.split(' ');
+    indices = [];
+
+    for (const sourceWord of sourceWords) {
+      sourceAlignments = sourceIndex[sourceWord];
+
+      if (sourceAlignments && sourceAlignments.length) {
+        indices.push(sourceAlignments[0]);
+      } else {
+        indices.push(sourceWord);
+      }
+    }
+  }
+  return indices;
+}
+
+/**
+ * find the morph (and lemma) for sourceText
+ * @param {object} sourceIndex - alignment indices mapped by source text
+ * @param {string} sourceText
+ * @param {array} alignments
+ * @returns {{sourceLemma: string, morph: string}}
+ */
+function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
+  let indices = getSourceIndices(sourceText, sourceIndex);
+  let sourceLemma = [];
+  let morph = [];
+
+  for (const index of indices) {
+    if (index >= 0) {
+      const alignment_ = alignments[index];
+      morph.push(alignment_.morph);
+      sourceLemma.push(alignment_.sourceLemma);
+    } else {
+      let matchFound = false;
+      const { search, flags } = buildSearchRegex(index, true, false);
+      const found = searchAlignmentsSub(search, flags, sourceKeys, sourceIndex);
+
+      if (found && found.length) {
+        const index_ = found[0];
+        const alignment_ = alignments[index_];
+        const sourceWords = alignment_.sourceText.split(' ');
+
+        for (let i = 0; i < sourceWords.length; i++) {
+          const sourceWord = sourceWords[i];
+
+          if (sourceWord === index) {
+            matchFound = true;
+            const morph_ = alignment_.morph.split(' ')[i];
+            const lemma_ = alignment_.sourceLemma.split(' ')[i];
+            morph.push(morph_);
+            sourceLemma.push(lemma_);
+            break;
+          }
+        }
+      }
+
+      if (!matchFound) {
+        morph.push('_');
+        sourceLemma.push('_');
+      }
+    }
+  }
+
+  sourceLemma = sourceLemma.join(' ');
+  morph = morph.join(' ');
+  return { sourceLemma, morph };
+}
+
+/**
  * search one or more fields for searchStr and merge the match alignments together
  * @param {object} alignmentData - object that contains raw alignments and indices for search
  * @param {object} tWordsIndex
@@ -347,18 +430,25 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
       searchAlignmentsAndAppend(search, flags, searchData, found);
     }
 
+    const source = alignmentData.source.alignments;
+    const alignments = alignmentData.alignments;
+    const sourceKeys = Object.keys(source);
+
     found = found?.map(index => {
       const check = tWordsIndex.checks[index];
       const contextId = check?.contextId;
       const targetText = contextId?.groupId || '';
       const sourceText = check?.quoteString || '';
-      let strong = check.strong;
+      const strong = check.strong;
+      const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
 
       const newCheck = {
         ...check,
         targetText,
         sourceText,
         strong,
+        sourceLemma,
+        morph,
       };
 
       return newCheck;
@@ -1382,7 +1472,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
               for (const item of data) {
                 const contextId = item?.contextId;
                 const reference = contextId?.reference;
-                let quote = contextId?.quote || '';
+                let quote = normalizer(contextId?.quote || '');
 
                 if (Array.isArray(quote)) {
                   const quote_ = quote.map(item => item.word);
