@@ -1,5 +1,4 @@
 
-import React from 'react';
 import path from 'path-extra';
 import { findBestMatchesForTargetText, indexTwords } from '../alignmentSearchHelpers';
 
@@ -158,6 +157,7 @@ describe.skip('test indexTwords with callback', () => {
     };
 
     // when
+    // eslint-disable-next-line require-await
     await indexTwords(TCORE_RESOURCES_FOLDER, resource, async (percent) => {
       console.log( `${100 - percent}% left`);
     });
