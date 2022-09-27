@@ -9,7 +9,18 @@ import { confirmOnlineAction } from '../../actions/OnlineModeConfirmActions';
 import SoftwareUpdateDialog, {
   STATUS_ERROR, STATUS_OK, STATUS_LOADING, STATUS_UPDATE,
 } from '../../components/dialogComponents/SoftwareUpdateDialog';
-import { APP_VERSION } from '../../common/constants';
+import { APP_VERSION, STATIC_RESOURCES_PATH } from '../../common/constants';
+import { getFoldersInResourceFolder } from '../../helpers/ResourcesHelpers';
+
+/**
+ * determine if current install is lite (minimal bundled resources)
+ * @returns {boolean}
+ */
+function isLiteInstall() {
+  const languages = getFoldersInResourceFolder(STATIC_RESOURCES_PATH);
+  const isLiteInstall = !languages || languages.length < 8;
+  return isLiteInstall;
+}
 
 /**
  * Returns the correct update asset for this operating system.
@@ -24,6 +35,8 @@ import { APP_VERSION } from '../../common/constants';
  * @return {*} the update object
  */
 export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
+  let fallbackPlatform = null;
+  let fallbackUpdate = null;
   const platformNames = {
     'aix': 'linux',
     'darwin': 'macos',
@@ -39,30 +52,59 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
     osArch = 'x32';
   }
 
+  if (osArch === 'arm64') {
+    fallbackPlatform = `${platformNames[osPlatform]}-x64`;
+  }
+
   const platform = `${platformNames[osPlatform]}-${osArch}`;
   let update = null;
+  const tagName = response.tag_name;
+  console.log(`Release tag-name `, tagName);
 
   for (const asset of response.assets) {
     if (asset.name.includes(platform)) {
       update = {
         ...asset,
-        latest_version: response.tag_name,
+        latest_version: tagName,
         installed_version: installedVersion,
       };
       break;
+    } else if (fallbackPlatform && asset.name.includes(fallbackPlatform)) {
+      fallbackUpdate = {
+        ...asset,
+        latest_version: tagName,
+        installed_version: installedVersion,
+      };
     }
   }
 
+  const isLiteRelease = tagName.toUpperCase().includes('-LITE');
+
+  if (!update) { // if we didn't find exact match, use fallback compatible match
+    console.log(`using fallback architecture:`, fallbackUpdate);
+    update = fallbackUpdate;
+  }
+
   // validate version
+  let upToDate = false;
+
   if (update) {
     const latest = semver.valid(semver.coerce(update.latest_version));
     const installed = semver.valid(semver.coerce(update.installed_version));
 
     if (!semver.gt(latest, installed)) {
-      update = null;
+      console.log(`installed version ${update.installed_version} is up to date with release version ${update.latest_version} `);
+      upToDate = true;
+    } else {
+      console.log(`installed version ${update.installed_version} is older than release version ${update.latest_version} `);
     }
   }
-  return update;
+  return {
+    update,
+    upToDate,
+    tagName,
+    isLiteRelease,
+  };
 }
 
 /**
@@ -118,33 +160,102 @@ class SoftwareUpdateDialogContainer extends React.Component {
   }
 
   /**
+   * does fetch
+   * @private
+   */
+  _fetchUrl(url) {
+    return new Promise((resolve, reject) => {
+      const CancelToken = axios.CancelToken;
+      const source = CancelToken.source();
+      const request = {
+        cancelToken: source.token,
+        method: 'GET',
+        url,
+      };
+
+      this.setState({
+        ...this.initialState,
+        cancelToken: source,
+      });
+
+      this.request = axios(request).then(response => {
+        resolve(response);
+      }).catch(error => {
+        reject(error);
+      });
+    });
+  }
+
+  /**
    * Initiates checking for software updates
    * @private
    */
   _startSoftwareCheck() {
-    const CancelToken = axios.CancelToken;
-    const source = CancelToken.source();
-    const request = {
-      cancelToken: source.token,
-      method: 'GET',
-      url: `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/latest`,
-    };
+    const latestReleaseUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/latest`;
+    const isLiteInstall_ = isLiteInstall();
+    console.log(`found lite install is ${isLiteInstall_}`);
 
-    this.setState({
-      ...this.initialState,
-      cancelToken: source,
-    });
-
-    this.request = axios(request).then(response => {
-      const update = getUpdateAsset(response.data, APP_VERSION, os.arch(), os.platform());
+    this._fetchUrl(latestReleaseUrl).then(response => {
+      const {
+        update,
+        upToDate,
+        tagName,
+        isLiteRelease,
+      } = getUpdateAsset(response.data, APP_VERSION, os.arch(), os.platform());
 
       if (update) {
-        this.setState({
-          status: STATUS_UPDATE,
-          update,
-        });
-      } else {
-        this.setState({ status: STATUS_OK });
+        if (!upToDate && (isLiteInstall_ !== isLiteRelease)) {
+          console.log(`found tagName ${tagName} which is a fallback install since isLiteRelease=${isLiteRelease}`, update);
+          const baseTagName = tagName.split('-')[0];
+          const sizeSuffix = isLiteRelease ? '-LITE' : '';
+          const rightTagName = baseTagName + sizeSuffix;
+          const tagUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/${rightTagName}`;
+          console.log(`getting release ${rightTagName}`, update);
+
+          this._fetchUrl(latestReleaseUrl).then(response => {
+            console.log(`Found data for for ${rightTagName}: ${tagUrl}, using fallback`);
+            const {
+              update,
+              upToDate,
+            } = getUpdateAsset(response.data, APP_VERSION, os.arch(), os.platform());
+
+            if (!upToDate) {
+              this.setState({
+                status: STATUS_UPDATE,
+                update,
+              });
+            } else {
+              this.setState({ status: STATUS_OK });
+            }
+          }).catch(error => {
+            if (axios.isCancel(error)) {
+              // user canceled
+              this._handleClose();
+            } else {
+              console.error(`Failed to fetch for ${rightTagName}: ${tagUrl}, using fallback`, error);
+
+              if (!upToDate) {
+                this.setState({
+                  status: STATUS_UPDATE,
+                  update,
+                });
+              } else {
+                this.setState({ status: STATUS_OK });
+              }
+            }
+          });
+        } else {
+          if (!upToDate) {
+            this.setState({
+              status: STATUS_UPDATE,
+              update,
+            });
+          } else {
+            this.setState({ status: STATUS_OK });
+          }
+        }
+      } else { // no compatible updates
+        this.setState({ status: STATUS_ERROR });
       }
     }).catch(error => {
       if (axios.isCancel(error)) {
