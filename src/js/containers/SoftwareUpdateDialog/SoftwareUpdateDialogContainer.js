@@ -209,50 +209,27 @@ class SoftwareUpdateDialogContainer extends React.Component {
           const baseTagName = tagName.split('-')[0];
           const sizeSuffix = isLiteRelease ? '-LITE' : '';
           const rightTagName = baseTagName + sizeSuffix;
-          const tagUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/${rightTagName}`;
+          const tagUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/tags/${rightTagName}`;
           console.log(`getting release ${rightTagName}`, update);
 
-          this._fetchUrl(latestReleaseUrl).then(response => {
+          this._fetchUrl(tagUrl).then(response => {
             console.log(`Found data for for ${rightTagName}: ${tagUrl}, using fallback`);
             const {
               update,
               upToDate,
             } = getUpdateAsset(response.data, APP_VERSION, os.arch(), os.platform());
-
-            if (!upToDate) {
-              this.setState({
-                status: STATUS_UPDATE,
-                update,
-              });
-            } else {
-              this.setState({ status: STATUS_OK });
-            }
+            this.applyRelease(update, upToDate);
           }).catch(error => {
             if (axios.isCancel(error)) {
               // user canceled
               this._handleClose();
             } else {
               console.error(`Failed to fetch for ${rightTagName}: ${tagUrl}, using fallback`, error);
-
-              if (!upToDate) {
-                this.setState({
-                  status: STATUS_UPDATE,
-                  update,
-                });
-              } else {
-                this.setState({ status: STATUS_OK });
-              }
+              this.applyRelease(update, upToDate);
             }
           });
         } else {
-          if (!upToDate) {
-            this.setState({
-              status: STATUS_UPDATE,
-              update,
-            });
-          } else {
-            this.setState({ status: STATUS_OK });
-          }
+          this.applyRelease(update, upToDate);
         }
       } else { // no compatible updates
         this.setState({ status: STATUS_ERROR });
@@ -266,6 +243,29 @@ class SoftwareUpdateDialogContainer extends React.Component {
         this.setState({ status: STATUS_ERROR });
       }
     });
+  }
+
+  /**
+   * set state for current release
+   * @param update
+   * @param upToDate
+   */
+  applyRelease(update, upToDate) {
+    if (update) {
+      if (!upToDate) {
+        console.log('Compatible update found');
+        this.setState({
+          status: STATUS_UPDATE,
+          update,
+        });
+      } else {
+        console.log('Already up to date');
+        this.setState({ status: STATUS_OK });
+      }
+    } else {
+      console.log('No compatible update found');
+      this.setState({ status: STATUS_ERROR });
+    }
   }
 
   /**
