@@ -12,6 +12,7 @@
 
 **Fixed bugs:**
 
+- tW articles are not opening in tN [\#7436](https://github.com/unfoldingWord/translationCore/issues/7436)
 - tNotes crashes on leading zeroes in verse links [\#7434](https://github.com/unfoldingWord/translationCore/issues/7434)
 - Problem with adding scripture panes after upgrade [\#7414](https://github.com/unfoldingWord/translationCore/issues/7414)
 - Fix highlighting when there are multiple verses in a check [\#7337](https://github.com/unfoldingWord/translationCore/issues/7337)
