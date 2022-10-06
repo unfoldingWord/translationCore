@@ -506,13 +506,14 @@ function checkIfWeNeedNewerOrigLangVersion(bookId, manifest) {
   if (bookId && manifest && Object.keys(manifest).length) {
     const { bibleId: origLangBibleId, languageId: origLangId } = BibleHelpers.getOrigLangforBook(bookId);
     const bibleFolderPath = path.join(USER_RESOURCES_PATH, origLangId, 'bibles', origLangBibleId);
-    const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
+    const glOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
+    const origLangOwnerForWA = getOriginalLangOwner(glOwnerForWA);
     const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
     console.log(`checkIfWeNeedNewerOrigLangVersion() - WA original lang: ${origLangOwnerForWA}/${origLangId}_${origLangBibleId}, version ${origLangEditVersionForWA}`);
     let latestOlVersion = null;
     let needNewerOrigLang = false;
 
-    if (!origLangEditVersionForWA) {
+    if (!origLangEditVersionForWA || (origLangEditVersionForWA === 'unknown')) {
       console.log(`checkIfWeNeedNewerOrigLangVersion() - has not been edited in wA, so no need to check original language version`);
       return false;
     }
