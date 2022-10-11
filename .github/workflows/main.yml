@@ -163,7 +163,7 @@ jobs:
           npm run build-linux
 
       #     arm64
-      - name: Set arm64 artifact name
+      - name: Set arm64 MAX artifact name
         run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-linux-arm64-$APP_VERSION-MAX-$HASH.deb")" >> $GITHUB_ENV
 
       - name: Set arm64 LITE artifact name
@@ -180,7 +180,7 @@ jobs:
           path: ../artifacts/arm64/
 
       #     x64
-      - name: Set x64 artifact name
+      - name: Set x64 MAX artifact name
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-linux-x64-$APP_VERSION-MAX-$HASH.deb")" >> $GITHUB_ENV
 
       - name: Set x64 LITE artifact name
@@ -282,7 +282,7 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           npm run build-win
 #     x64
-      - name: Set x64 artifact name
+      - name: Set x64 MAX artifact name
         run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
 
@@ -308,7 +308,7 @@ jobs:
           name: ${{ env.ARTIFACT_X64 }}
           path: ../artifacts/x64/
 #     x32
-      - name: Set x32 artifact name
+      - name: Set x32 MAX artifact name
         run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
 
@@ -420,7 +420,7 @@ jobs:
           npm run build-macos
 
       #     arm64
-      - name: Set arm64 artifact name
+      - name: Set arm64 MAX artifact name
         run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: Set arm64 LITE artifact name
@@ -437,7 +437,7 @@ jobs:
           path: ../artifacts/arm64/
 
       #     x64
-      - name: Set x64 artifact name
+      - name: Set x64 MAX artifact name
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: Set x64 LITE artifact name
