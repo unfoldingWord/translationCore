@@ -1615,8 +1615,9 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
  * @param {array} found
  * @param {string} bibleKey
  * @param {object} bibles
+ * @param {string} saveAlignmentsKey - key to save alignements in
  */
-export function getTwordALignments(found, bibleKey, bibles) {
+export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
   /**
    * get array of words in verseObjects
    * @param {array} verseObjects
@@ -1670,8 +1671,8 @@ export function getTwordALignments(found, bibleKey, bibles) {
     if (verses?.length) {
       const verseObjects = verses[0]?.verseData?.verseObjects || [];
 
-      const aligned = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
-      item.alignedText = aligned;
+      const alignedText = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
+      item[saveAlignmentsKey] = alignedText;
     }
   });
 }

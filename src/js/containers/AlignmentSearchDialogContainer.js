@@ -132,6 +132,7 @@ const SHOW_MORPH = 'morph';
 const SHOW_TARGET_TEXT = 'targetText';
 const SHOW_MATCH_COUNT = 'count';
 const SHOW_REFERENCES = 'refStr';
+const ALIGNED_TEXT = 'alignedText';
 
 const SOURCE_TEXT_LABEL = 'Source Text Column';
 const SOURCE_LEMMA_LABEL = 'Source Lemma Column';
@@ -140,7 +141,7 @@ const SOURCE_MORPH_LABEL = 'Source Morph Column';
 const TARGET_TEXT_LABEL = 'Target Text Column';
 const MATCH_COUNT_LABEL = 'Match Count Column';
 const REFERENCES_LABEL = 'References Column';
-
+const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_USFM = 'search_hide_usfm';
@@ -515,6 +516,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           !hide[SHOW_MORPH] && { title: (SOURCE_MORPH_LABEL), field: SHOW_MORPH, ...columnStyles },
           !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
           !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
+          this.state.searchTwords && { title: (ALIGNED_TEXT_LABEL), field: ALIGNED_TEXT, ...columnStyles },
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
           !hide[SHOW_REFERENCES] && {
             title: (REFERENCES_LABEL),
@@ -583,7 +585,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     let hidden = this.state.hide || {};
     hidden = Object.keys(hidden).map(key => hidden[key] && key).filter(i => i);
 
-    if (hidden?.length && data?.length) {
+    if (this.state.searchTwords || (hidden?.length && data?.length)) {
       const mergedData = {};
       const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT].filter(item => !hidden.includes(item));
 
@@ -655,7 +657,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       let refs = item.refs;
       let refs_ = refs;
 
-      if (ignoreBooks?.length) {
+      if (ignoreBooks?.length || this.state.searchTwords) {
         refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
         refs = refs_.sort(bibleRefSort); // sort refs in canonical order
       }
@@ -1170,7 +1172,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
 
     if (config.searchTwords) {
-      getTwordALignments(found, state.alignedBible, bibles);
+      getTwordALignments(found, state.alignedBible, bibles, 'alignedText');
     }
 
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
