@@ -1177,31 +1177,34 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   startSearch() {
     console.log('AlignmentSearchDialogContainer - start search');
-    this.setState({ found: null });
-    const state = this.state;
-    const searchTwords = state.searchTwords;
-    const config = {
-      fullWord: state.matchWholeWord,
-      caseInsensitive: !state.caseSensitive,
-      searchTwords,
-      searchLemma: !searchTwords && this.isSearchFieldSelected(SEARCH_LEMMA),
-      searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
-      searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
-      searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
-      searchRefs: !searchTwords && this.isSearchFieldSelected(SEARCH_REFS),
-    };
+    this.showMessage('Doing Search', true).then(() => {
+      this.setState({ found: null });
+      const state = this.state;
+      const searchTwords = state.searchTwords;
+      const config = {
+        fullWord: state.matchWholeWord,
+        caseInsensitive: !state.caseSensitive,
+        searchTwords,
+        searchLemma: !searchTwords && this.isSearchFieldSelected(SEARCH_LEMMA),
+        searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
+        searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
+        searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
+        searchRefs: !searchTwords && this.isSearchFieldSelected(SEARCH_REFS),
+      };
 
-    // when
-    let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+      // when
+      let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
 
-    if (config.searchTwords) {
-      getTwordALignments(found, state.alignedBible, bibles, ALIGNED_TEXT);
-      getTwordALignments(found, state.alignedBible2, bibles, ALIGNED_TEXT2);
-    }
+      if (config.searchTwords) {
+        getTwordALignments(found, state.alignedBible, bibles, ALIGNED_TEXT);
+        getTwordALignments(found, state.alignedBible2, bibles, ALIGNED_TEXT2);
+      }
 
-    console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
-    delay(100).then(() => {
-      this.setState({ found });
+      console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
+      delay(100).then(() => {
+        this.setState({ found });
+        this.props.closeAlertDialog();
+      });
     });
   }
 
