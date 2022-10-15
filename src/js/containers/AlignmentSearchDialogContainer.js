@@ -48,6 +48,7 @@ import {
   getAvailableBibles,
   getKeyForBible,
   getSearchableAlignments,
+  getTwordALignments,
   getTwordsIndex,
   getTwordsKey,
   getVerseForKey,
@@ -131,6 +132,8 @@ const SHOW_MORPH = 'morph';
 const SHOW_TARGET_TEXT = 'targetText';
 const SHOW_MATCH_COUNT = 'count';
 const SHOW_REFERENCES = 'refStr';
+const ALIGNED_TEXT = 'alignedText';
+const ALIGNED_TEXT2 = 'alignedText2';
 
 const SOURCE_TEXT_LABEL = 'Source Text Column';
 const SOURCE_LEMMA_LABEL = 'Source Lemma Column';
@@ -139,7 +142,7 @@ const SOURCE_MORPH_LABEL = 'Source Morph Column';
 const TARGET_TEXT_LABEL = 'Target Text Column';
 const MATCH_COUNT_LABEL = 'Match Count Column';
 const REFERENCES_LABEL = 'References Column';
-
+// const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_USFM = 'search_hide_usfm';
@@ -245,6 +248,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setSearchTypes = this.setSearchTypes.bind(this);
     this.getSelectedOptions = this.getSelectedOptions.bind(this);
     this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
+    this.setSearchAlignedBible2 = this.setSearchAlignedBible2.bind(this);
     this.showMessage = this.showMessage.bind(this);
     this.showColumnHidesMenu = this.showColumnHidesMenu.bind(this);
     this.selectColumnHides = this.selectColumnHides.bind(this);
@@ -299,16 +303,25 @@ class AlignmentSearchDialogContainer extends React.Component {
     console.log('loadAlignmentSearchOptions() - starting');
     this.showMessage('Loading Available Aligned Bibles', true).then(() => {
       const tCorePath = path.join(env.home(), 'translationCore');
-      const alignedBibles = getSearchableAlignments(tCorePath);
+      let alignedBibles = getSearchableAlignments(tCorePath);
       console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
 
-      for (const bible of alignedBibles) {
+      const alignedBibles_ = alignedBibles.map(bible => {
+        if (this.state.searchTwords) {
+          if (bible.owner !== 'Door43-Catalog') { // for now only door43 supported
+            return null;
+          }
+        }
+
         const key = getKeyForBible(bible, ALIGNMENTS_KEY);
         const label = this.getLabelForBible(bible);
         bible.key = key;
         bible.label = label;
         bible.isNT = bible.origLang === NT_ORIG_LANG;
-      }
+        return bible;
+      });
+
+      alignedBibles = alignedBibles_.filter(bible => bible);
       this.props.closeAlertDialog();
       this.setState({ alignedBibles });
       console.log(`loadAlignmentSearchOptions() - current aligned bible ${this.state.alignedBible}`);
@@ -499,12 +512,16 @@ class AlignmentSearchDialogContainer extends React.Component {
           },
         };
         const hide = this.state?.hide || {};
+        const alignedColumn = this.getColumnTitle(this.state.alignedBible);
+        const alignedColumn2 = this.state.alignedBible2 ? this.getColumnTitle(this.state.alignedBible2) : '';
         const searchColumns = [
           !hide[SHOW_SOURCE_TEXT] && { title: (SOURCE_TEXT_LABEL), field: SHOW_SOURCE_TEXT, ...originalStyles },
           !hide[SHOW_SOURCE_LEMMA] && { title: (SOURCE_LEMMA_LABEL), field: SHOW_SOURCE_LEMMA, ...originalStyles },
           !hide[SHOW_MORPH] && { title: (SOURCE_MORPH_LABEL), field: SHOW_MORPH, ...columnStyles },
           !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
           !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
+          this.state.searchTwords && { title: (alignedColumn), field: ALIGNED_TEXT, ...columnStyles },
+          this.state.searchTwords && alignedColumn2 && { title: (alignedColumn2), field: ALIGNED_TEXT2, ...columnStyles },
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
           !hide[SHOW_REFERENCES] && {
             title: (REFERENCES_LABEL),
@@ -564,6 +581,18 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * get title from bible key
+   * @param bibleKey
+   * @returns {string}
+   */
+  getColumnTitle(bibleKey) {
+    const bible_ = bibleKey?.split('_') || [];
+    const alignedBible = bible_.length > 1 ? bible_.slice(0, 2).join('_') : bible_[0];
+    const alignedColumn = `Aligned ${alignedBible} Column`;
+    return alignedColumn;
+  }
+
+  /**
    * format data for display
    * @param ignoreBooks
    * @returns {*}
@@ -573,7 +602,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     let hidden = this.state.hide || {};
     hidden = Object.keys(hidden).map(key => hidden[key] && key).filter(i => i);
 
-    if (hidden?.length && data?.length) {
+    if (this.state.searchTwords || (hidden?.length && data?.length)) {
       const mergedData = {};
       const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT].filter(item => !hidden.includes(item));
 
@@ -643,12 +672,8 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     data = data.map(item => {
       let refs = item.refs;
-      let refs_ = refs;
-
-      if (ignoreBooks?.length) {
-        refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
-        refs = refs_.sort(bibleRefSort); // sort refs in canonical order
-      }
+      let refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
+      refs = refs_.sort(bibleRefSort); // sort refs in canonical order
 
       if (!refs || !refs.length) { // if no references left, then ignore
         return null;
@@ -976,6 +1001,16 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * when user selects bible to search, save in state
+   * @param {object} event - unused
+   * @param index - unused
+   * @param {string} value - new selection
+   */
+  setSearchAlignedBible2(event, index, value) {
+    this.setState( { alignedBible2: value });
+  }
+
+  /**
    * select book and testament
    * @param {string} key
    */
@@ -1025,6 +1060,13 @@ class AlignmentSearchDialogContainer extends React.Component {
     if (this.state.searchTwords) {
       const resource = parseResourceKey(alignmentsKey);
       const res = addTwordsInfoToResource(resource, USER_RESOURCES_PATH);
+
+      if (!res) { // resource no longer present
+        this.setState({ alignedBible: null });
+        this.loadAlignmentSearchOptions();
+        return;
+      }
+
       const tWordsKey = getTwordsKey(res);
       let tWordsIndex = getTwordsIndex(tWordsKey);
 
@@ -1106,8 +1148,9 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     this.setState(types);
 
-    if (types.searchTwords) {
+    if (types.searchTwords !== this.state.searchTwords) { // if changed, reload
       delay(100).then(() => {
+        this.loadAlignmentSearchOptions();
         this.loadTWordsIndex(this.state.alignedBible);
       });
     }
@@ -1150,6 +1193,12 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     // when
     let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+
+    if (config.searchTwords) {
+      getTwordALignments(found, state.alignedBible, bibles, ALIGNED_TEXT);
+      getTwordALignments(found, state.alignedBible2, bibles, ALIGNED_TEXT2);
+    }
+
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     delay(100).then(() => {
       this.setState({ found });
@@ -1239,6 +1288,19 @@ class AlignmentSearchDialogContainer extends React.Component {
     selections = selections.concat(selections2);
     selections = selections.concat(selections3);
     return selections;
+  }
+
+  // get list of bibles for second aligned bible
+  getAlignedBibles2() {
+    let alignedBibles = [{
+      key: '',
+      label: '',
+    }];
+
+    if (this.state.alignedBibles?.length) {
+      alignedBibles = alignedBibles.concat(this.state.alignedBibles);
+    }
+    return alignedBibles;
   }
 
   render() {
@@ -1380,6 +1442,28 @@ class AlignmentSearchDialogContainer extends React.Component {
               </SelectField>
             </div>
           </div>
+          {this.state.searchTwords &&
+            <div style={{ display: 'flex' }}>
+              <SelectField
+                id={'select_search_type'}
+                hintText="Select Bible to Search"
+                value={this.state.alignedBible2 || ''}
+                style={{ width: '400px' }}
+                onChange={this.setSearchAlignedBible2}
+              >
+                {
+                  this.getAlignedBibles2()?.map(item => (
+                    <MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  ))
+                }
+              </SelectField>
+            </div>
+          }
           { this.showResults() }
         </div>
       </BaseDialog>

@@ -24,15 +24,20 @@ import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers
 import { getFilesInResourcePath, getFoldersInResourceFolder } from './ResourcesHelpers';
 
 // eslint-disable-next-line no-useless-escape
-const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)'; // \(
+const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)';
+const START_WORD_REGEX_WJ = '(?<=[\\s,.:;“"\'‘({\\p{Cc}]|^)'; // same as START_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-useless-escape
-const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)'; // !?)
+const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
+const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
+// eslint-disable-next-line no-unused-vars
+const WORD_JOINER = '\u2060'; // U+2060
 export const ALIGNMENTS_KEY = 'alignmentsIndex2';
 export const TWORDS_KEY = 'tWordsIndex';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
 export const ALIGNMENT_DATA_DIR = path.join(TCORE_FOLDER, 'alignmentData');
+const MISSING_DATA_SYMBOL = '－';
 
 /**
  * get keys for alignments and do sort by locale
@@ -149,9 +154,10 @@ export function regexSearch(keys, searchStr, flags) {
  * @param {string} search - string to search
  * @param {boolean} fullWord - if true do full word matching
  * @param {boolean} caseInsensitive -if true do cse insensitive matching
+ * @param {boolean} wordJoiner - if true then split words at word-joiner character
  * @returns {boolean} {{search: string, flags: string}}
  */
-export function buildSearchRegex(search, fullWord, caseInsensitive) {
+export function buildSearchRegex(search, fullWord, caseInsensitive, wordJoiner = false) {
   let flags = 'u'; // enable unicode support
   search = xre.escape(normalizer(search)); // escape any special character we are trying to match
 
@@ -161,7 +167,11 @@ export function buildSearchRegex(search, fullWord, caseInsensitive) {
   }
 
   if (fullWord) {
-    search = `${START_WORD_REGEX}${search}${END_WORD_REGEX}`;
+    if (wordJoiner) {
+      search = `${START_WORD_REGEX_WJ}${search}${END_WORD_REGEX_WJ}`;
+    } else {
+      search = `${START_WORD_REGEX}${search}${END_WORD_REGEX}`;
+    }
   }
 
   if (caseInsensitive) {
@@ -363,31 +373,64 @@ function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
       sourceLemma.push(alignment_.sourceLemma);
     } else {
       let matchFound = false;
-      const { search, flags } = buildSearchRegex(index, true, false);
-      const found = searchAlignmentsSub(search, flags, sourceKeys, sourceIndex);
+      let wordJoiner = false;
 
-      if (found && found.length) {
-        const index_ = found[0];
-        const alignment_ = alignments[index_];
-        const sourceWords = alignment_.sourceText.split(' ');
+      while (!matchFound) {
+        let searchStr = index;
 
-        for (let i = 0; i < sourceWords.length; i++) {
-          const sourceWord = sourceWords[i];
+        if (wordJoiner) {
+          const parts = searchStr.split(WORD_JOINER);
+          searchStr = parts[0];
+          let pos = 0;
+          let longestLength = searchStr.length;
 
-          if (sourceWord === index) {
-            matchFound = true;
-            const morph_ = alignment_.morph.split(' ')[i];
-            const lemma_ = alignment_.sourceLemma.split(' ')[i];
-            morph.push(morph_);
-            sourceLemma.push(lemma_);
-            break;
+          for (let i = 1; i <parts.length; i++) {
+            const part = parts[i];
+            const len = part.length;
+
+            if (len > longestLength) {
+              pos = i;
+              longestLength = len;
+            }
           }
+
+          if (pos > 0) {
+            searchStr = parts[pos];
+          }
+        }
+
+        const { search, flags } = buildSearchRegex(searchStr, true, false, wordJoiner);
+        const found = searchAlignmentsSub(search, flags, sourceKeys, sourceIndex);
+
+        if (found && found.length) {
+          const index_ = found[0];
+          const alignment_ = alignments[index_];
+          const sourceWords = alignment_.sourceText.split(' ');
+
+          for (let i = 0; i < sourceWords.length; i++) {
+            const sourceWord = sourceWords[i];
+
+            if (sourceWord === index) {
+              matchFound = true;
+              const morph_ = alignment_.morph.split(' ')[i];
+              const lemma_ = alignment_.sourceLemma.split(' ')[i];
+              morph.push(morph_);
+              sourceLemma.push(lemma_);
+              break;
+            }
+          }
+        }
+
+        if (wordJoiner) {
+          break;
+        } else {
+          wordJoiner = true;
         }
       }
 
       if (!matchFound) {
-        morph.push('_');
-        sourceLemma.push('_');
+        morph.push(MISSING_DATA_SYMBOL);
+        sourceLemma.push(MISSING_DATA_SYMBOL);
       }
     }
   }
@@ -1121,8 +1164,9 @@ export function getAlignedBibles(resourceDir) {
  * @param {string} bibleKey
  * @param {string} ref
  * @param {object} bibles
+ * @param {boolean} rawFormat - if false, convert to usfm
  */
-export function getVerseForKey(bibleKey, ref, bibles) {
+export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
   try {
     const {
       languageId,
@@ -1134,7 +1178,7 @@ export function getVerseForKey(bibleKey, ref, bibles) {
     const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
 
     if (fs.existsSync(biblePath)) {
-      return getVerse(biblePath, ref, bibles, bibleVersion);
+      return getVerse(biblePath, ref, bibles, bibleVersion, rawFormat);
     }
     console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath}`);
   } catch (e) {
@@ -1144,13 +1188,26 @@ export function getVerseForKey(bibleKey, ref, bibles) {
 }
 
 /**
+ * convert verse data in verse chunks array to USFM
+ * @param {array} verseChunks
+ */
+function convertVerseChunksToUSFM(verseChunks) {
+  verseChunks.forEach(chunk => {
+    if (typeof chunk.verseData !== 'string') {
+      chunk.verseData = getUsfmForVerseContent(chunk.verseData);
+    }
+  });
+}
+
+/**
  * looks up verses and caches them
  * @param {string} biblePath
  * @param {string} ref
  * @param {object} bibles
  * @param {string} bibleKey
+ * @param {boolean} rawFormat - if false, convert to usfm
  */
-export function getVerse(biblePath, ref, bibles, bibleKey) {
+export function getVerse(biblePath, ref, bibles, bibleKey, rawFormat = false) {
   const [bookId, ref_] = (ref || '').trim().split(' ');
 
   if (!bibles[bibleKey]) {
@@ -1164,8 +1221,13 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
 
     if (chapter && verse) {
       if (bible?.[bookId]?.[chapter]) {
-        const verseData = getVerses(bible?.[bookId], ref_);
-        return verseData;
+        let verses = getVerses(bible?.[bookId], ref_);
+
+        if (!rawFormat) {
+          convertVerseChunksToUSFM(verses);
+        }
+
+        return verses;
       }
 
       if (!bible?.[bookId]) {
@@ -1182,10 +1244,6 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
             for (const verseRef of Object.keys(chapterData)) {
               let verseData = chapterData[verseRef];
 
-              if (typeof verseData !== 'string') {
-                verseData = getUsfmForVerseContent(verseData);
-              }
-
               if (!bible?.[bookId]?.[chapter]) {
                 bible[bookId][chapter] = {};
               }
@@ -1194,8 +1252,13 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
             }
           }
 
-          const verseData = getVerses(bible?.[bookId], ref_);
-          return verseData;
+          let verses = getVerses(bible?.[bookId], ref_);
+
+          if (!rawFormat) {
+            convertVerseChunksToUSFM(verses);
+          }
+
+          return verses;
         } catch (e) {
           console.log(`getVerse() - could not read ${chapterPath}`);
         }
@@ -1349,6 +1412,11 @@ export function addTwordsInfoToResource(resource, resourcesFolder) {
   }
 
   const tWordsPath = path.join(resourcesFolder, `${tWordsLangID}/translationHelps/${subFolder}`);
+
+  if (!fs.existsSync(tWordsPath)) {
+    return null;
+  }
+
   const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource.owner);
   const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
 
@@ -1541,3 +1609,73 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   }
   return null;
 }
+
+/**
+ * look up the aligned text for the twords found
+ * @param {array} found
+ * @param {string} bibleKey
+ * @param {object} bibles
+ * @param {string} saveAlignmentsKey - key to save alignements in
+ */
+export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
+  /**
+   * get array of words in verseObjects
+   * @param {array} verseObjects
+   * @returns {*[]}
+   */
+  function findWords(verseObjects) {
+    let words = [];
+
+    if (verseObjects?.length) {
+      for (const vo of verseObjects) {
+        if (vo.type === 'word') {
+          words.push(vo.text);
+        } else if (vo.children) {
+          const words_ = findWords(vo.children);
+          words = words.concat(words_);
+        }
+      }
+    }
+    return words;
+  }
+
+  /**
+   * search through verse objects to find alignment for quote and occurrence
+   * @param verseObjects
+   * @param {string} quote
+   * @param {number} occurrence
+   * @returns {string|null|*}
+   */
+  function findMatch(verseObjects, quote, occurrence) {
+    let words = [];
+
+    for (const vo of verseObjects) {
+      if ((vo.tag === 'zaln') && (vo.content === quote) && (vo.occurrence === occurrence)) {
+        const words_ = findWords(vo.children);
+        words = words.concat(words_);
+      } else if (vo.children) {
+        const words_ = findMatch(vo.children, quote, occurrence);
+
+        if (words_.length) {
+          words = words.concat(words_);
+        }
+      }
+    }
+    return words;
+  }
+
+  found.forEach(item => {
+    const contextId = item?.contextId;
+    const reference = contextId?.reference;
+    const ref = `${reference?.bookId} ${reference?.chapter}:${reference?.verse}`;
+    const verses = getVerseForKey(bibleKey, ref, bibles, true);
+
+    if (verses?.length) {
+      const verseObjects = verses[0]?.verseData?.verseObjects || [];
+
+      const alignedText = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
+      item[saveAlignmentsKey] = alignedText.join(' ');
+    }
+  });
+}
+
