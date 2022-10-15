@@ -133,6 +133,7 @@ const SHOW_TARGET_TEXT = 'targetText';
 const SHOW_MATCH_COUNT = 'count';
 const SHOW_REFERENCES = 'refStr';
 const ALIGNED_TEXT = 'alignedText';
+const ALIGNED_TEXT2 = 'alignedText2';
 
 const SOURCE_TEXT_LABEL = 'Source Text Column';
 const SOURCE_LEMMA_LABEL = 'Source Lemma Column';
@@ -247,6 +248,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setSearchTypes = this.setSearchTypes.bind(this);
     this.getSelectedOptions = this.getSelectedOptions.bind(this);
     this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
+    this.setSearchAlignedBible2 = this.setSearchAlignedBible2.bind(this);
     this.showMessage = this.showMessage.bind(this);
     this.showColumnHidesMenu = this.showColumnHidesMenu.bind(this);
     this.selectColumnHides = this.selectColumnHides.bind(this);
@@ -510,9 +512,8 @@ class AlignmentSearchDialogContainer extends React.Component {
           },
         };
         const hide = this.state?.hide || {};
-        const bible_ = this.state.alignedBible?.split('_') || [];
-        const alignedBible = bible_.length > 1 ? bible_.slice(0, 2).join('_') : bible_[0];
-        const alignedColumn = `Aligned ${alignedBible} Column`;
+        const alignedColumn = this.getColumnTitle(this.state.alignedBible);
+        const alignedColumn2 = this.state.alignedBible2 ? this.getColumnTitle(this.state.alignedBible2) : '';
         const searchColumns = [
           !hide[SHOW_SOURCE_TEXT] && { title: (SOURCE_TEXT_LABEL), field: SHOW_SOURCE_TEXT, ...originalStyles },
           !hide[SHOW_SOURCE_LEMMA] && { title: (SOURCE_LEMMA_LABEL), field: SHOW_SOURCE_LEMMA, ...originalStyles },
@@ -520,6 +521,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
           !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
           this.state.searchTwords && { title: (alignedColumn), field: ALIGNED_TEXT, ...columnStyles },
+          this.state.searchTwords && alignedColumn2 && { title: (alignedColumn2), field: ALIGNED_TEXT2, ...columnStyles },
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
           !hide[SHOW_REFERENCES] && {
             title: (REFERENCES_LABEL),
@@ -576,6 +578,18 @@ class AlignmentSearchDialogContainer extends React.Component {
         </>
       );
     }
+  }
+
+  /**
+   * get title from bible key
+   * @param bibleKey
+   * @returns {string}
+   */
+  getColumnTitle(bibleKey) {
+    const bible_ = bibleKey?.split('_') || [];
+    const alignedBible = bible_.length > 1 ? bible_.slice(0, 2).join('_') : bible_[0];
+    const alignedColumn = `Aligned ${alignedBible} Column`;
+    return alignedColumn;
   }
 
   /**
@@ -987,6 +1001,16 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
+   * when user selects bible to search, save in state
+   * @param {object} event - unused
+   * @param index - unused
+   * @param {string} value - new selection
+   */
+  setSearchAlignedBible2(event, index, value) {
+    this.setState( { alignedBible2: value });
+  }
+
+  /**
    * select book and testament
    * @param {string} key
    */
@@ -1171,7 +1195,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
 
     if (config.searchTwords) {
-      getTwordALignments(found, state.alignedBible, bibles, 'alignedText');
+      getTwordALignments(found, state.alignedBible, bibles, ALIGNED_TEXT);
+      getTwordALignments(found, state.alignedBible2, bibles, ALIGNED_TEXT2);
     }
 
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
@@ -1263,6 +1288,19 @@ class AlignmentSearchDialogContainer extends React.Component {
     selections = selections.concat(selections2);
     selections = selections.concat(selections3);
     return selections;
+  }
+
+  // get list of bibles for second aligned bible
+  getAlignedBibles2() {
+    let alignedBibles = [{
+      key: '',
+      label: '',
+    }];
+
+    if (this.state.alignedBibles?.length) {
+      alignedBibles = alignedBibles.concat(this.state.alignedBibles);
+    }
+    return alignedBibles;
   }
 
   render() {
@@ -1404,6 +1442,28 @@ class AlignmentSearchDialogContainer extends React.Component {
               </SelectField>
             </div>
           </div>
+          {this.state.searchTwords &&
+            <div style={{ display: 'flex' }}>
+              <SelectField
+                id={'select_search_type'}
+                hintText="Select Bible to Search"
+                value={this.state.alignedBible2 || ''}
+                style={{ width: '400px' }}
+                onChange={this.setSearchAlignedBible2}
+              >
+                {
+                  this.getAlignedBibles2()?.map(item => (
+                    <MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  ))
+                }
+              </SelectField>
+            </div>
+          }
           { this.showResults() }
         </div>
       </BaseDialog>
