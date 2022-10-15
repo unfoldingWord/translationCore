@@ -141,7 +141,7 @@ const SOURCE_MORPH_LABEL = 'Source Morph Column';
 const TARGET_TEXT_LABEL = 'Target Text Column';
 const MATCH_COUNT_LABEL = 'Match Count Column';
 const REFERENCES_LABEL = 'References Column';
-const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
+// const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_USFM = 'search_hide_usfm';
@@ -510,13 +510,16 @@ class AlignmentSearchDialogContainer extends React.Component {
           },
         };
         const hide = this.state?.hide || {};
+        const bible_ = this.state.alignedBible?.split('_') || [];
+        const alignedBible = bible_.length > 1 ? bible_.slice(0, 2).join('_') : bible_[0];
+        const alignedColumn = `Aligned ${alignedBible} Column`;
         const searchColumns = [
           !hide[SHOW_SOURCE_TEXT] && { title: (SOURCE_TEXT_LABEL), field: SHOW_SOURCE_TEXT, ...originalStyles },
           !hide[SHOW_SOURCE_LEMMA] && { title: (SOURCE_LEMMA_LABEL), field: SHOW_SOURCE_LEMMA, ...originalStyles },
           !hide[SHOW_MORPH] && { title: (SOURCE_MORPH_LABEL), field: SHOW_MORPH, ...columnStyles },
           !hide[SHOW_STRONGS] && { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
           !hide[SHOW_TARGET_TEXT] && { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
-          this.state.searchTwords && { title: (ALIGNED_TEXT_LABEL), field: ALIGNED_TEXT, ...columnStyles },
+          this.state.searchTwords && { title: (alignedColumn), field: ALIGNED_TEXT, ...columnStyles },
           !hide[SHOW_MATCH_COUNT] && { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
           !hide[SHOW_REFERENCES] && {
             title: (REFERENCES_LABEL),
@@ -655,12 +658,8 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     data = data.map(item => {
       let refs = item.refs;
-      let refs_ = refs;
-
-      if (ignoreBooks?.length || this.state.searchTwords) {
-        refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
-        refs = refs_.sort(bibleRefSort); // sort refs in canonical order
-      }
+      let refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
+      refs = refs_.sort(bibleRefSort); // sort refs in canonical order
 
       if (!refs || !refs.length) { // if no references left, then ignore
         return null;

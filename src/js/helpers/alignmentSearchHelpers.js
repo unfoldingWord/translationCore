@@ -1647,19 +1647,21 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
    * @returns {string|null|*}
    */
   function findMatch(verseObjects, quote, occurrence) {
+    let words = [];
+
     for (const vo of verseObjects) {
       if ((vo.tag === 'zaln') && (vo.content === quote) && (vo.occurrence === occurrence)) {
-        const words = findWords(vo.children);
-        return words.join(' ');
+        const words_ = findWords(vo.children);
+        words = words.concat(words_);
       } else if (vo.children) {
-        const words = findMatch(vo.children, quote, occurrence);
+        const words_ = findMatch(vo.children, quote, occurrence);
 
-        if (words) {
-          return words;
+        if (words_.length) {
+          words = words.concat(words_);
         }
       }
     }
-    return null;
+    return words;
   }
 
   found.forEach(item => {
@@ -1672,7 +1674,7 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
       const verseObjects = verses[0]?.verseData?.verseObjects || [];
 
       const alignedText = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
-      item[saveAlignmentsKey] = alignedText;
+      item[saveAlignmentsKey] = alignedText.join(' ');
     }
   });
 }
