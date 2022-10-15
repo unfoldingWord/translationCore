@@ -48,6 +48,7 @@ import {
   getAvailableBibles,
   getKeyForBible,
   getSearchableAlignments,
+  getTwordALignments,
   getTwordsIndex,
   getTwordsKey,
   getVerseForKey,
@@ -1167,6 +1168,11 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     // when
     let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+
+    if (config.searchTwords) {
+      getTwordALignments(found, state.alignedBible, bibles);
+    }
+
     console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
     delay(100).then(() => {
       this.setState({ found });

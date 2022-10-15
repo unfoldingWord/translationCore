@@ -1164,8 +1164,9 @@ export function getAlignedBibles(resourceDir) {
  * @param {string} bibleKey
  * @param {string} ref
  * @param {object} bibles
+ * @param {boolean} rawFormat - if false, convert to usfm
  */
-export function getVerseForKey(bibleKey, ref, bibles) {
+export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
   try {
     const {
       languageId,
@@ -1177,7 +1178,7 @@ export function getVerseForKey(bibleKey, ref, bibles) {
     const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
 
     if (fs.existsSync(biblePath)) {
-      return getVerse(biblePath, ref, bibles, bibleVersion);
+      return getVerse(biblePath, ref, bibles, bibleVersion, rawFormat);
     }
     console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath}`);
   } catch (e) {
@@ -1187,13 +1188,26 @@ export function getVerseForKey(bibleKey, ref, bibles) {
 }
 
 /**
+ * convert verse data in verse chunks array to USFM
+ * @param {array} verseChunks
+ */
+function convertVerseChunksToUSFM(verseChunks) {
+  verseChunks.forEach(chunk => {
+    if (typeof chunk.verseData !== 'string') {
+      chunk.verseData = getUsfmForVerseContent(chunk.verseData);
+    }
+  });
+}
+
+/**
  * looks up verses and caches them
  * @param {string} biblePath
  * @param {string} ref
  * @param {object} bibles
  * @param {string} bibleKey
+ * @param {boolean} rawFormat - if false, convert to usfm
  */
-export function getVerse(biblePath, ref, bibles, bibleKey) {
+export function getVerse(biblePath, ref, bibles, bibleKey, rawFormat = false) {
   const [bookId, ref_] = (ref || '').trim().split(' ');
 
   if (!bibles[bibleKey]) {
@@ -1207,8 +1221,13 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
 
     if (chapter && verse) {
       if (bible?.[bookId]?.[chapter]) {
-        const verseData = getVerses(bible?.[bookId], ref_);
-        return verseData;
+        let verses = getVerses(bible?.[bookId], ref_);
+
+        if (!rawFormat) {
+          convertVerseChunksToUSFM(verses);
+        }
+
+        return verses;
       }
 
       if (!bible?.[bookId]) {
@@ -1225,10 +1244,6 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
             for (const verseRef of Object.keys(chapterData)) {
               let verseData = chapterData[verseRef];
 
-              if (typeof verseData !== 'string') {
-                verseData = getUsfmForVerseContent(verseData);
-              }
-
               if (!bible?.[bookId]?.[chapter]) {
                 bible[bookId][chapter] = {};
               }
@@ -1237,8 +1252,13 @@ export function getVerse(biblePath, ref, bibles, bibleKey) {
             }
           }
 
-          const verseData = getVerses(bible?.[bookId], ref_);
-          return verseData;
+          let verses = getVerses(bible?.[bookId], ref_);
+
+          if (!rawFormat) {
+            convertVerseChunksToUSFM(verses);
+          }
+
+          return verses;
         } catch (e) {
           console.log(`getVerse() - could not read ${chapterPath}`);
         }
@@ -1589,3 +1609,70 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   }
   return null;
 }
+
+/**
+ * look up the aligned text for the twords found
+ * @param {array} found
+ * @param {string} bibleKey
+ * @param {object} bibles
+ */
+export function getTwordALignments(found, bibleKey, bibles) {
+  /**
+   * get array of words in verseObjects
+   * @param {array} verseObjects
+   * @returns {*[]}
+   */
+  function findWords(verseObjects) {
+    let words = [];
+
+    if (verseObjects?.length) {
+      for (const vo of verseObjects) {
+        if (vo.type === 'word') {
+          words.push(vo.text);
+        } else if (vo.children) {
+          const words_ = findWords(vo.children);
+          words = words.concat(words_);
+        }
+      }
+    }
+    return words;
+  }
+
+  /**
+   * search through verse objects to find alignment for quote and occurrence
+   * @param verseObjects
+   * @param {string} quote
+   * @param {number} occurrence
+   * @returns {string|null|*}
+   */
+  function findMatch(verseObjects, quote, occurrence) {
+    for (const vo of verseObjects) {
+      if ((vo.tag === 'zaln') && (vo.content === quote) && (vo.occurrence === occurrence)) {
+        const words = findWords(vo.children);
+        return words.join(' ');
+      } else if (vo.children) {
+        const words = findMatch(vo.children, quote, occurrence);
+
+        if (words) {
+          return words;
+        }
+      }
+    }
+    return null;
+  }
+
+  found.forEach(item => {
+    const contextId = item?.contextId;
+    const reference = contextId?.reference;
+    const ref = `${reference?.bookId} ${reference?.chapter}:${reference?.verse}`;
+    const verses = getVerseForKey(bibleKey, ref, bibles, true);
+
+    if (verses?.length) {
+      const verseObjects = verses[0]?.verseData?.verseObjects || [];
+
+      const aligned = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
+      item.alignedText = aligned;
+    }
+  });
+}
+
