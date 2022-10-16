@@ -981,7 +981,8 @@ class AlignmentSearchDialogContainer extends React.Component {
   ignoreBooksForTestament() {
     const ignoreBooks_ = this.state?.ignore || [];
     const testament = this.state?.books || [];
-    const ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
+    let ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
+    ignoreBooks = ignoreBooks.concat(this.state?.ignoreBooks || []);
     return ignoreBooks;
   }
 
@@ -1028,18 +1029,22 @@ class AlignmentSearchDialogContainer extends React.Component {
           //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
           const [, , , origLang] = key.split('_');
           let books = null;
+          let ignoreBooks = null;
           const isNT = origLang === NT_ORIG_LANG;
 
           if (isNT) {
             books = NT_BOOKS;
+            ignoreBooks = OT_BOOKS;
           } else {
             books = OT_BOOKS;
+            ignoreBooks = NT_BOOKS;
           }
 
           console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
           this.setState({
             alignedBible: key,
             books,
+            ignoreBooks,
             isNT,
           });
           this.props.closeAlertDialog();
