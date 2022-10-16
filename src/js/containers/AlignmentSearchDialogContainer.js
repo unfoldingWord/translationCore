@@ -44,6 +44,7 @@ import BaseDialog from '../components/dialogComponents/BaseDialog';
 import {
   addTwordsInfoToResource,
   ALIGNMENTS_KEY,
+  checkForHelpsForBible,
   getAlignmentsFromResource,
   getAvailableBibles,
   getKeyForBible,
@@ -309,7 +310,9 @@ class AlignmentSearchDialogContainer extends React.Component {
       const alignedBibles_ = alignedBibles.map(bible => {
         if (this.state.searchTwords) {
           if (bible.owner !== 'Door43-Catalog') { // for now only door43 supported
-            return null;
+            if (!checkForHelpsForBible(bible)) {
+              return null;
+            }
           }
         }
 
@@ -604,7 +607,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     if (this.state.searchTwords || (hidden?.length && data?.length)) {
       const mergedData = {};
-      const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT].filter(item => !hidden.includes(item));
+      const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT, ALIGNED_TEXT, ALIGNED_TEXT2].filter(item => !hidden.includes(item));
 
       for (let i = 0; i < data.length; i ++) {
         const row = data[i];
