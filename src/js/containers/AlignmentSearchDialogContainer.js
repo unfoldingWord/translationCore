@@ -673,9 +673,12 @@ class AlignmentSearchDialogContainer extends React.Component {
       return akey < bkey ? -1 : akey > bkey ? 1 : 0;
     }
 
+    // ignore books from other testament also
+    const ignoreBooks_ = ignoreBooks.concat(this.state?.ignoreBooks || []);
+
     data = data.map(item => {
       let refs = item.refs;
-      let refs_ = refs.filter(refStr => refStr && !ignoreBooks.includes(refStr.split(' ')[0]));
+      let refs_ = refs.filter(refStr => refStr && !ignoreBooks_.includes(refStr.split(' ')[0]));
       refs = refs_.sort(bibleRefSort); // sort refs in canonical order
 
       if (!refs || !refs.length) { // if no references left, then ignore
@@ -981,8 +984,7 @@ class AlignmentSearchDialogContainer extends React.Component {
   ignoreBooksForTestament() {
     const ignoreBooks_ = this.state?.ignore || [];
     const testament = this.state?.books || [];
-    let ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
-    ignoreBooks = ignoreBooks.concat(this.state?.ignoreBooks || []);
+    const ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
     return ignoreBooks;
   }
 
