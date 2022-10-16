@@ -1160,6 +1160,21 @@ export function getAlignedBibles(resourceDir) {
 }
 
 /**
+ * check if translationWordsLink path
+ * @param bible
+ * @returns {boolean}
+ */
+export function checkForHelpsForBible(bible) {
+  const tHelpsPath = path.join(USER_RESOURCES_PATH, bible.languageId, 'translationHelps/translationWordsLinks');
+  const latestVersionPath = resourcesHelpers.getLatestVersionInPath(tHelpsPath, bible.owner);
+
+  if (latestVersionPath && fs.existsSync(path.join(latestVersionPath, 'manifest.json'))) {
+    return true;
+  }
+  return false;
+}
+
+/**
  * looks up verses for resource key and caches them
  * @param {string} bibleKey
  * @param {string} ref
@@ -1176,9 +1191,10 @@ export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
     } = parseResourceKey(bibleKey);
     const bibleVersion = resourcesHelpers.addOwnerToKey(version, owner);
     const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
+    const bibleId = `${resourceId}_${bibleVersion}`;
 
     if (fs.existsSync(biblePath)) {
-      return getVerse(biblePath, ref, bibles, bibleVersion, rawFormat);
+      return getVerse(biblePath, ref, bibles, bibleId, rawFormat);
     }
     console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath}`);
   } catch (e) {
