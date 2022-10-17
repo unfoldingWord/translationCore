@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.3.1",
+  "version": "3.3.1-search",
   "minCompatibleVersion": "3.2.0",
   "manifestVersion": "7",
   "description": "A bridge between TS and TM",
@@ -120,7 +120,7 @@
     "yargs": "10.0.3"
   },
   "dependencies": {
-    "@craco/craco": "5.6.4",
+    "@craco/craco": "5.9.0",
     "@electron/remote": "2.0.7",
     "@material-ui/core": "4.12.3",
     "@material-ui/icons": "4.11.2",
@@ -131,6 +131,7 @@
     "archiver": "3.0.0",
     "axios": "0.19.1",
     "babel-polyfill": "6.26.0",
+    "bible-reference-range": "1.0.1",
     "checking-tool-wrapper": "7.4.0-patch.3",
     "crypto-js": "3.1.8",
     "csv": "1.2.1",
@@ -143,6 +144,7 @@
     "json-stringify-safe": "5.0.1",
     "konami-code-js": "0.8.0",
     "lodash": "4.17.19",
+    "material-table": "1.54.2",
     "material-ui": "0.20.2",
     "memoize-one": "5.0.0",
     "mkdirp": "0.5.1",
