@@ -148,11 +148,15 @@ const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_HIDE_USFM = 'search_hide_usfm';
 const SEARCH_TWORDS = 'search_twords';
+const SEARCH_MASTER = 'search_master';
+const REFRESH_MASTER = 'refresh_master';
 
 const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
 const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
 const SEARCH_HIDE_USFM_LABEL = 'Hide USFM Markers';
 const SEARCH_TWORDS_LABEL = 'Search Translation Words';
+const SEARCH_MASTER_LABEL = 'Search Master Branch';
+const REFRESH_MASTER_LABEL = 'Refresh Master Branch';
 
 const searchOptions = [
   {
@@ -175,7 +179,19 @@ const searchOptions = [
     label: SEARCH_HIDE_USFM_LABEL,
     stateKey: 'hideUsfmMarkers',
   },
+  {
+    key: SEARCH_MASTER,
+    label: SEARCH_MASTER_LABEL,
+    stateKey: 'searchMaster',
+  },
 ];
+
+const searchOptionRefreshMaster = {
+  key: REFRESH_MASTER,
+  label: REFRESH_MASTER_LABEL,
+  stateKey: 'refreshMaster',
+};
+
 
 const SEARCH_SETTINGS_KEY = 'searchSettingsKey';
 
@@ -1113,7 +1129,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @returns {{label: string, key: string, stateKey: string} | {label: string, key: string, stateKey: string}}
    */
   findSearchItem(key) {
-    const found = searchOptions.find(item => item.key === key);
+    const found = this.getSearchOptions().find(item => item.key === key);
     return found;
   }
 
@@ -1149,6 +1165,20 @@ class AlignmentSearchDialogContainer extends React.Component {
       const selected = this.isItemPresent(values, item.key);
       basicOptions[searchOption.stateKey] = selected;
     });
+
+    if (values.includes(REFRESH_MASTER)) {
+      const YES = 'YES';
+
+      this.props.openOptionDialog('Do you want to go online and refresh aligned bibles currently selected?',
+        (buttonPressed) => {
+          if (buttonPressed === YES) {
+            console.log('yes');
+          }
+          this.props.closeAlertDialog();
+        },
+        YES,
+        'NO');
+    }
 
     const types = {
       ...basicOptions,
@@ -1385,12 +1415,12 @@ class AlignmentSearchDialogContainer extends React.Component {
               <SelectField
                 id={'select_search_option'}
                 hintText="Select search options"
-                value={this.getSelectedOptions(searchOptions)}
+                value={this.getSelectedOptions(this.getSearchOptions())}
                 multiple
                 style={{ width: '350px', marginLeft: '20px', marginRight: '20px' }}
                 onChange={this.setSearchTypes}
               >
-                {searchOptions.map(item => (
+                {this.getSearchOptions().map(item => (
                   <MenuItem
                     key={item.key}
                     insetChildren={true}
@@ -1481,6 +1511,15 @@ class AlignmentSearchDialogContainer extends React.Component {
         </div>
       </BaseDialog>
     );
+  }
+
+  getSearchOptions() {
+    const searchOptions_ = [...searchOptions];
+
+    if (this.state.searchMaster) {
+      searchOptions_.push(searchOptionRefreshMaster);
+    }
+    return searchOptions_;
   }
 }
 
