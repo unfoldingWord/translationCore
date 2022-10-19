@@ -4,7 +4,7 @@ import xre from 'xregexp';
 import React from 'react';
 import env from 'tc-electron-env';
 import { normalizer } from 'string-punctuation-tokenizer';
-import { resourcesHelpers } from 'tc-source-content-updater';
+import SourceContentUpdater, { resourcesHelpers, apiHelpers } from 'tc-source-content-updater';
 import wordaligner from 'word-aligner';
 import { getVerses } from 'bible-reference-range';
 import {
@@ -699,42 +699,55 @@ export function readDirectory(dirPath, foldersOnly = true, sort = true, extensio
   return [];
 }
 
-// export async function downloadBibles(resource, alignmentsFolder) {
-//   const SourceContentUpdater = new sourceContentUpdater();
-//
-//   if (!resource.version) {
-//     const owner = resource.owner;
-//     const retries = 5;
-//     const stage = resource.stage !== 'prod' ? 'preprod' : undefined;
-//     const resourceName = `${resource.languageId}_${resource.resourceId}`;
-//     const latest = await apiHelpers.getLatestRelease(owner, resourceName, retries, stage);
-//     const release = latest && latest.release;
-//     let version = release && release.tag_name;
-//
-//     if (version) {
-//       resource.version = version;
-//     }
-//   }
-//
-//   const destinationPath = path.join(alignmentsFolder, `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
-//
-//   try {
-//     console.log('downloadBibles() - downloading resource', resource);
-//     await SourceContentUpdater.downloadAndProcessResource(resource, destinationPath);
-//     console.log('downloadBibles() - download done');
-//   } catch (e) {
-//     console.warn('downloadBibles() - download failed');
-//   }
-//
-//   // /Users/blm/translationCore/alignmentData/unfoldingWord_en_ult/en/bibles/ult/v40_unfoldingWord
-//   const biblePath = path.join(destinationPath, `${resource.languageId}/bibles/${resource.resourceId}/${resource.version}_${resource.owner}`);
-//   const destinationBiblePath = path.join(destinationPath, 'bible');
-//
-//   if (fs.existsSync(destinationBiblePath)) {
-//     fs.removeSync(destinationBiblePath);
-//   }
-//   fs.moveSync(biblePath, destinationBiblePath);
-// }
+export async function downloadBible(resource, alignmentsFolder) {
+  const sourceContentUpdater = new SourceContentUpdater();
+
+  if (!resource.version) {
+    const owner = resource.owner;
+    const retries = 5;
+    const stage = resource.stage !== 'prod' ? 'preprod' : undefined;
+    const resourceName = `${resource.languageId}_${resource.resourceId}`;
+    const latest = await apiHelpers.getLatestRelease(owner, resourceName, retries, stage);
+    const release = latest && latest.release;
+    let version = release && release.tag_name;
+
+    if (version) {
+      resource.version = version;
+    }
+  }
+
+  const destinationPath = path.join(alignmentsFolder, 'downloads', `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+  let error = false;
+
+  try {
+    console.log('downloadBibles() - downloading resource', resource);
+    const resource_ = await sourceContentUpdater.downloadAndProcessResource(resource, destinationPath);
+    console.log('downloadBibles() - download done', resource_);
+  } catch (e) {
+    console.warn('downloadBibles() - download failed', e);
+    error = e;
+  }
+
+  // /Users/blm/translationCore/alignmentData/unfoldingWord_en_ult/en/bibles/ult/v40_unfoldingWord
+  const parentPath = path.join(destinationPath, `${resource.languageId}/bibles/${resource.resourceId}`);
+  const files = getFoldersInResourceFolder(parentPath);
+  const bibleName = files[0];
+  const biblePath = path.join(parentPath, bibleName || 'unknown');
+  const destinationBiblePath = path.join(destinationPath, 'bible');
+
+  if (!error) {
+    if (fs.existsSync(destinationBiblePath)) {
+      fs.removeSync(destinationBiblePath);
+    }
+
+    if (fs.existsSync(biblePath)) {
+      fs.moveSync(biblePath, destinationBiblePath);
+    } else {
+      error = `Missing ${biblePath}`;
+    }
+  }
+  return error;
+}
 
 /**
  * URI encode param and replace _ or . with URI codes to prevent problems parsing as key or filename

@@ -1,4 +1,5 @@
 /* eslint-disable react/display-name,object-curly-newline */
+/* eslint-disable no-await-in-loop */
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -42,9 +43,9 @@ import { getProjectManifest, getSetting } from '../selectors';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
 import {
-  addTwordsInfoToResource,
+  addTwordsInfoToResource, ALIGNMENT_DATA_DIR,
   ALIGNMENTS_KEY,
-  checkForHelpsForBible,
+  checkForHelpsForBible, downloadBible,
   getAlignmentsFromResource,
   getAvailableBibles,
   getKeyForBible,
@@ -77,6 +78,7 @@ import {
   NT_ORIG_LANG,
 } from '../common/BooksOfTheBible';
 import { showPopover } from '../actions/PopoverActions';
+import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
 
 Menu.defaultProps.disableAutoFocus = true; // to prevent auto-scrolling
 
@@ -1167,17 +1169,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     });
 
     if (values.includes(REFRESH_MASTER)) {
-      const YES = 'YES';
-
-      this.props.openOptionDialog('Do you want to go online and refresh aligned bibles currently selected?',
-        (buttonPressed) => {
-          if (buttonPressed === YES) {
-            console.log('yes');
-          }
-          this.props.closeAlertDialog();
-        },
-        YES,
-        'NO');
+      const message = 'Do you want to update the master branch of the aligned bibles currently selected?';
+      this.updateMaster(message);
     }
 
     const types = {
@@ -1194,6 +1187,68 @@ class AlignmentSearchDialogContainer extends React.Component {
         this.loadTWordsIndex(this.state.alignedBible);
       });
     }
+  }
+
+  /**
+   * confirm before download of resources
+   * @param message
+   */
+  updateMaster(message) {
+    const OkButton = 'OK';
+    const resources = [];
+    const bibles = [this.state.alignedBible, this.state.alignedBible2];
+
+    for (const bibleKey of bibles) {
+      const resource = bibleKey && parseResourceKey(bibleKey);
+      resource.version = 'master';
+
+      if (resource ) {
+        resource.version = 'master';
+        resource.bibleKey = bibleKey;
+        resources.push(resource);
+      }
+    }
+
+    this.props.openOptionDialog(message,
+      (buttonPressed) => {
+        if (buttonPressed === OkButton) {
+          this.props.confirmOnlineAction(
+            async () => {
+              let error;
+              const folder = path.join(ALIGNMENT_DATA_DIR);
+
+              for (const resource_ of resources) {
+                console.log('Downloading', resource_);
+                await this.showMessage('downloading', true);
+                error = await downloadBible(resource_, folder);
+
+                if (error) {
+                  console.log(`Error downloading ${resource_.bibleKey}`, error);
+                  await this.showMessage('downloading', true);
+                  break;
+                }
+              }
+
+              if (!error) {
+                this.props.closeAlertDialog();
+              } else {
+                this.props.openOptionDialog(
+                  'Download error',
+                  () => this.props.closeAlertDialog(),
+                  'OK',
+                );
+              }
+            },
+            () => { // does not want to go online
+              this.props.closeAlertDialog();
+            },
+          );
+        } else { // cancelled
+          this.props.closeAlertDialog();
+        }
+      },
+      OkButton,
+      'CANCEL');
   }
 
   /**
@@ -1534,6 +1589,7 @@ AlignmentSearchDialogContainer.propTypes = {
   saveSettings: PropTypes.func.isRequired,
   savedSettings: PropTypes.object.isRequired,
   showPopover: PropTypes.func.isRequired,
+  confirmOnlineAction: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -1547,6 +1603,7 @@ const mapDispatchToProps = {
   closeAlertDialog: () => closeAlertDialog(),
   saveSettings: (value) => setSetting(SEARCH_SETTINGS_KEY, value),
   showPopover: (title, bodyText, positionCoord, style = {}, titleStyle = {}, bodyStyle = {}) => showPopover(title, bodyText, positionCoord, style, titleStyle, bodyStyle),
+  confirmOnlineAction: (onConfirm, onCancel) => OnlineModeConfirmActions.confirmOnlineAction(onConfirm, onCancel),
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlignmentSearchDialogContainer);
