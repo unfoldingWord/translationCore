@@ -611,6 +611,18 @@ export function parseResourceKey(name) {
 }
 
 /**
+ *
+ * @param resource
+ * @returns {null|any}
+ */
+export function findResourceAlignment(resource) {
+  // /Users/blm/translationCore/alignmentData/downloads/Door43-Catalog_en_ult
+  const resourcePath = path.join(ALIGNMENT_DATA_DIR, 'downloads', `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+  const exists = fs.existsSync(resourcePath);
+  return exists;
+}
+
+/**
  * return list of indexed aligned bibles found in alignmentData folder
  * @param {string} alignmentDataDir - folder to search
  * @returns {*[]}
@@ -1446,7 +1458,7 @@ export function addTwordsInfoToResource(resource, resourcesFolder) {
     return null;
   }
 
-  const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource.owner);
+  const latestTWordsVersion = (resource.version === 'master') ? resource.version : getMostRecentVersionInFolder(tWordsPath, resource.owner);
   const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
 
   const res = {

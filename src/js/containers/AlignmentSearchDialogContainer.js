@@ -45,7 +45,9 @@ import BaseDialog from '../components/dialogComponents/BaseDialog';
 import {
   addTwordsInfoToResource, ALIGNMENT_DATA_DIR,
   ALIGNMENTS_KEY,
-  checkForHelpsForBible, downloadBible,
+  checkForHelpsForBible,
+  downloadBible,
+  findResourceAlignment,
   getAlignmentsFromResource,
   getAvailableBibles,
   getKeyForBible,
@@ -1032,6 +1034,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   setSearchAlignedBible2(event, index, value) {
     this.setState( { alignedBible2: value });
+    this.state.searchMaster && this.downloadMaster();
   }
 
   /**
@@ -1068,6 +1071,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             isNT,
           });
           this.props.closeAlertDialog();
+          this.state.searchMaster && this.downloadMaster();
           this.loadTWordsIndex(key);
         } else {
           console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
@@ -1080,11 +1084,17 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
   }
 
+  downloadMaster() {
+    const message = 'Do you want to download the master branch of the aligned bibles currently selected?';
+    this.updateMaster(message, false);
+  }
+
   /**
    * get twords index
    * @param {string} alignmentsKey - alignments key
+   * @param {boolean} force - force index generation
    */
-  loadTWordsIndex(alignmentsKey) {
+  loadTWordsIndex(alignmentsKey, force) {
     if (this.state.searchTwords) {
       const resource = parseResourceKey(alignmentsKey);
       const res = addTwordsInfoToResource(resource, USER_RESOURCES_PATH);
@@ -1098,7 +1108,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       const tWordsKey = getTwordsKey(res);
       let tWordsIndex = getTwordsIndex(tWordsKey);
 
-      if (tWordsIndex) {
+      if (tWordsIndex && !force) {
         this.setState({ tWordsIndex });
       } else {
         const indexingMsg = 'Indexing translationWords:';
@@ -1168,9 +1178,13 @@ class AlignmentSearchDialogContainer extends React.Component {
       basicOptions[searchOption.stateKey] = selected;
     });
 
+    if (values.includes(SEARCH_MASTER) && !this.state.searchMaster) { // if toggling on searching of master branch
+      this.downloadMaster();
+    }
+
     if (values.includes(REFRESH_MASTER)) {
-      const message = 'Do you want to update the master branch of the aligned bibles currently selected?';
-      this.updateMaster(message);
+      const message = 'Do you want to refresh the master branch of the aligned bibles currently selected?';
+      this.updateMaster(message, true);
     }
 
     const types = {
@@ -1183,6 +1197,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     if (types.searchTwords !== this.state.searchTwords) { // if changed, reload
       delay(100).then(() => {
+        this.state.searchMaster && this.downloadMaster();
         this.loadAlignmentSearchOptions();
         this.loadTWordsIndex(this.state.alignedBible);
       });
@@ -1192,11 +1207,16 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * confirm before download of resources
    * @param message
+   * @param download - if true, always download
    */
-  updateMaster(message) {
+  updateMaster(message, download) {
     const OkButton = 'OK';
     const resources = [];
-    const bibles = [this.state.alignedBible, this.state.alignedBible2];
+    const bibles = [this.state.alignedBible];
+
+    if (this.state.searchTwords) {
+      bibles.push(this.state.alignedBible2);
+    }
 
     for (const bibleKey of bibles) {
       const resource = bibleKey && parseResourceKey(bibleKey);
@@ -1205,8 +1225,19 @@ class AlignmentSearchDialogContainer extends React.Component {
       if (resource ) {
         resource.version = 'master';
         resource.bibleKey = bibleKey;
+
+        if (!download) {
+          if (findResourceAlignment(resource)) {
+            continue; // skip if already downloaded
+          }
+        }
+
         resources.push(resource);
       }
+    }
+
+    if (!resources.length) {
+      return;
     }
 
     this.props.openOptionDialog(message,
@@ -1219,14 +1250,17 @@ class AlignmentSearchDialogContainer extends React.Component {
 
               for (const resource_ of resources) {
                 console.log('Downloading', resource_);
-                await this.showMessage('downloading', true);
+                await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
                 error = await downloadBible(resource_, folder);
 
                 if (error) {
                   console.log(`Error downloading ${resource_.bibleKey}`, error);
-                  await this.showMessage('downloading', true);
+                  await this.showMessage(`Download Error: ${resource_.bibleKey}`);
                   break;
                 }
+
+                await this.loadTWordsIndex(resource_.bibleKey);
+                await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
               }
 
               if (!error) {
