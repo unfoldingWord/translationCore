@@ -1528,12 +1528,25 @@ export function addTwordsInfoToResource(resource, resourcesFolder) {
  * remove Index file for resource
  * @param resource
  */
-export function removeIndex(resource) {
-  const fileName = getKeyForBible(resource, ALIGNMENTS_KEY);
-  const alignmentPath = path.join(ALIGNMENT_DATA_DIR, fileName);
+export function removeIndices(resource) {
+  for (const origLang of [OT_ORIG_LANG, NT_ORIG_LANG]) {
+    const resource_ = {
+      ...resource,
+      origLang,
+    };
 
-  if (fs.existsSync(alignmentPath)) {
-    fs.removeSync(alignmentPath);
+    const key = getKeyForBible(resource_, ALIGNMENTS_KEY);
+    const indexFiles = readDirectory(ALIGNMENT_DATA_DIR, false, true, '.json');
+    const found = indexFiles.find(fileName_ => fileName_.includes(key));
+
+    if (found) {
+      const alignmentPath = path.join(ALIGNMENT_DATA_DIR, found);
+
+      if (fs.existsSync(alignmentPath)) {
+        console.log('removeIndices() - removing index: ' + alignmentPath);
+        fs.removeSync(alignmentPath);
+      }
+    }
   }
 }
 

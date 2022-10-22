@@ -65,7 +65,7 @@ import {
   OT_BOOKS,
   parseResourceKey,
   readDirectory,
-  removeIndex,
+  removeIndices,
   saveTwordsIndex,
 } from '../helpers/alignmentSearchHelpers';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
@@ -1224,28 +1224,29 @@ class AlignmentSearchDialogContainer extends React.Component {
   }
 
   /**
-   * if we dowloaded or selected master
+   * if we downloaded or selected master
    * @param bibleKey
+   * @param {boolean} isPrimarySearchBible
    * @param {boolean} removeOld
+   * @param {boolean} updateAlways - if true, update key always, otherwise only update if current key in=s not master
    */
-  updateBibleKeyToMaster(bibleKey, removeOld = false) {
+  updateBibleKeyToMaster(bibleKey, isPrimarySearchBible, removeOld = false, updateAlways = false) {
     const resource = bibleKey && parseResourceKey(bibleKey);
 
-    if (resource?.version !== 'master') {
-      resource.version = 'master';
-    }
-
-    const newBiblekey = getKeyForBible(resource, ALIGNMENTS_KEY);
-
     if (removeOld) {
-      removeIndex(resource);
+      removeIndices(resource);
     }
 
-    if (isMasterResourceDownloaded(resource)) {
-      if (bibleKey === this.state.alignedBible) {
-        this.selectAlignedBookToSearch(newBiblekey);
-      } else {
-        this.setState({ alignedBible2: newBiblekey });
+    if (updateAlways || (resource?.version !== 'master')) {
+      resource.version = 'master';
+      const newBiblekey = getKeyForBible(resource, ALIGNMENTS_KEY);
+
+      if (isMasterResourceDownloaded(resource)) {
+        if (isPrimarySearchBible) {
+          this.selectAlignedBookToSearch(newBiblekey);
+        } else {
+          this.setState({ alignedBible2: newBiblekey });
+        }
       }
     }
   }
@@ -1269,7 +1270,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       if (resource ) {
         if (bibleKey === this.state.alignedBible) {
-          resource.isSearchBible = true;
+          resource.isPrimarySearchBible = true;
         }
         resource.version = 'master';
         resource.bibleKey = getKeyForBible(resource);
@@ -1286,7 +1287,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     if (!resources.length) { // we didn't need to download, but make sure alignments selected
       for (const bibleKey of bibles) {
-        this.updateBibleKeyToMaster(bibleKey);
+        this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible));
       }
       return;
     }
@@ -1311,7 +1312,8 @@ class AlignmentSearchDialogContainer extends React.Component {
                 }
 
                 this.loadAlignmentSearchOptions(true); // update the options
-                this.updateBibleKeyToMaster(resource_.bibleKey, true);
+                await delay(100);
+                this.updateBibleKeyToMaster(resource_.bibleKey, resource_.isPrimarySearchBible, true, true);
                 await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
               }
 
