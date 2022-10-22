@@ -43,11 +43,12 @@ import { getProjectManifest, getSetting } from '../selectors';
 import BaseDialog from '../components/dialogComponents/BaseDialog';
 // helpers
 import {
-  addTwordsInfoToResource, ALIGNMENT_DATA_DIR,
+  addTwordsInfoToResource,
+  ALIGNMENT_DATA_DIR,
   ALIGNMENTS_KEY,
   checkForHelpsForBible,
   downloadBible,
-  findResourceAlignment,
+  isMasterResourceDownloaded,
   getAlignmentsFromResource,
   getAvailableBibles,
   getKeyForBible,
@@ -64,6 +65,7 @@ import {
   OT_BOOKS,
   parseResourceKey,
   readDirectory,
+  removeIndex,
   saveTwordsIndex,
 } from '../helpers/alignmentSearchHelpers';
 import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
@@ -296,7 +298,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         }
 
         delay(100).then(() => {
-          this.loadAlignmentSearchOptions();
+          this.loadAlignmentSearchOptionsWithUI();
         });
       }
     } else {
@@ -320,37 +322,50 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * index downloaded bible resources to get available aligned bibles
    */
-  loadAlignmentSearchOptions() {
+  loadAlignmentSearchOptionsWithUI() {
     console.log('loadAlignmentSearchOptions() - starting');
     this.showMessage('Loading Available Aligned Bibles', true).then(() => {
-      const tCorePath = path.join(env.home(), 'translationCore');
-      let alignedBibles = getSearchableAlignments(tCorePath);
-      console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
-
-      const alignedBibles_ = alignedBibles.map(bible => {
-        if (this.state.searchTwords) {
-          if (bible.owner !== 'Door43-Catalog') { // for now only door43 supported
-            if (!checkForHelpsForBible(bible)) {
-              return null;
-            }
-          }
-        }
-
-        const key = getKeyForBible(bible, ALIGNMENTS_KEY);
-        const label = this.getLabelForBible(bible);
-        bible.key = key;
-        bible.label = label;
-        bible.isNT = bible.origLang === NT_ORIG_LANG;
-        return bible;
-      });
-
-      alignedBibles = alignedBibles_.filter(bible => bible);
-      this.props.closeAlertDialog();
-      this.setState({ alignedBibles });
-      console.log(`loadAlignmentSearchOptions() - current aligned bible ${this.state.alignedBible}`);
+      this.loadAlignmentSearchOptions(this.state.searchMaster);
       this.selectAlignedBookToSearch(this.state.alignedBible);
       console.log('loadAlignmentSearchOptions() - finished');
     });
+  }
+
+  /**
+   * index downloaded bible resources to get available aligned bibles
+   * @param {boolean} useMaster - if true then include master branch alignments
+   */
+  loadAlignmentSearchOptions(useMaster) {
+    const tCorePath = path.join(env.home(), 'translationCore');
+    let alignedBibles = getSearchableAlignments(tCorePath, useMaster);
+    console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
+    const alignedBibles_ = alignedBibles.map(bible => {
+      if (this.state.searchTwords) {
+        if (bible.owner !== 'Door43-Catalog') { // for now only door43 supported
+          if (!checkForHelpsForBible(bible)) {
+            return null;
+          }
+        }
+      }
+
+      if (!useMaster) {
+        if (bible.version === 'master') {
+          return null;
+        }
+      }
+
+      const key = getKeyForBible(bible, ALIGNMENTS_KEY);
+      const label = this.getLabelForBible(bible);
+      bible.key = key;
+      bible.label = label;
+      bible.isNT = bible.origLang === NT_ORIG_LANG;
+      return bible;
+    });
+
+    alignedBibles = alignedBibles_.filter(bible => bible);
+    this.props.closeAlertDialog();
+    this.setState({ alignedBibles });
+    console.log(`loadAlignmentSearchOptions() - current aligned bible ${this.state.alignedBible}`);
   }
 
   /**
@@ -1034,7 +1049,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   setSearchAlignedBible2(event, index, value) {
     this.setState( { alignedBible2: value });
-    this.state.searchMaster && this.downloadMaster();
+    this.state.searchMaster && this.downloadMasterIfMissing();
   }
 
   /**
@@ -1071,7 +1086,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             isNT,
           });
           this.props.closeAlertDialog();
-          this.state.searchMaster && this.downloadMaster();
+          this.state.searchMaster && this.downloadMasterIfMissing();
           this.loadTWordsIndex(key);
         } else {
           console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
@@ -1084,7 +1099,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
   }
 
-  downloadMaster() {
+  downloadMasterIfMissing() {
     const message = 'Do you want to download the master branch of the aligned bibles currently selected?';
     this.updateMaster(message, false);
   }
@@ -1101,7 +1116,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       if (!res) { // resource no longer present
         this.setState({ alignedBible: null });
-        this.loadAlignmentSearchOptions();
+        this.loadAlignmentSearchOptionsWithUI();
         return;
       }
 
@@ -1179,7 +1194,11 @@ class AlignmentSearchDialogContainer extends React.Component {
     });
 
     if (values.includes(SEARCH_MASTER) && !this.state.searchMaster) { // if toggling on searching of master branch
-      this.downloadMaster();
+      this.loadAlignmentSearchOptions(true); // update the list first
+
+      delay(100).then(() => {
+        this.downloadMasterIfMissing();
+      });
     }
 
     if (values.includes(REFRESH_MASTER)) {
@@ -1197,10 +1216,37 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     if (types.searchTwords !== this.state.searchTwords) { // if changed, reload
       delay(100).then(() => {
-        this.state.searchMaster && this.downloadMaster();
-        this.loadAlignmentSearchOptions();
+        this.state.searchMaster && this.downloadMasterIfMissing();
+        this.loadAlignmentSearchOptionsWithUI();
         this.loadTWordsIndex(this.state.alignedBible);
       });
+    }
+  }
+
+  /**
+   * if we dowloaded or selected master
+   * @param bibleKey
+   * @param {boolean} removeOld
+   */
+  updateBibleKeyToMaster(bibleKey, removeOld = false) {
+    const resource = bibleKey && parseResourceKey(bibleKey);
+
+    if (resource?.version !== 'master') {
+      resource.version = 'master';
+    }
+
+    const newBiblekey = getKeyForBible(resource, ALIGNMENTS_KEY);
+
+    if (removeOld) {
+      removeIndex(resource);
+    }
+
+    if (isMasterResourceDownloaded(resource)) {
+      if (bibleKey === this.state.alignedBible) {
+        this.selectAlignedBookToSearch(newBiblekey);
+      } else {
+        this.setState({ alignedBible2: newBiblekey });
+      }
     }
   }
 
@@ -1220,14 +1266,16 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     for (const bibleKey of bibles) {
       const resource = bibleKey && parseResourceKey(bibleKey);
-      resource.version = 'master';
 
       if (resource ) {
+        if (bibleKey === this.state.alignedBible) {
+          resource.isSearchBible = true;
+        }
         resource.version = 'master';
-        resource.bibleKey = bibleKey;
+        resource.bibleKey = getKeyForBible(resource);
 
         if (!download) {
-          if (findResourceAlignment(resource)) {
+          if (isMasterResourceDownloaded(resource)) {
             continue; // skip if already downloaded
           }
         }
@@ -1236,7 +1284,10 @@ class AlignmentSearchDialogContainer extends React.Component {
       }
     }
 
-    if (!resources.length) {
+    if (!resources.length) { // we didn't need to download, but make sure alignments selected
+      for (const bibleKey of bibles) {
+        this.updateBibleKeyToMaster(bibleKey);
+      }
       return;
     }
 
@@ -1259,7 +1310,8 @@ class AlignmentSearchDialogContainer extends React.Component {
                   break;
                 }
 
-                await this.loadTWordsIndex(resource_.bibleKey);
+                this.loadAlignmentSearchOptions(true); // update the options
+                this.updateBibleKeyToMaster(resource_.bibleKey, true);
                 await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
               }
 
@@ -1273,11 +1325,11 @@ class AlignmentSearchDialogContainer extends React.Component {
                 );
               }
             },
-            () => { // does not want to go online
+            () => { // we do not want to go online
               this.props.closeAlertDialog();
             },
           );
-        } else { // cancelled
+        } else { // did not want to download now
           this.props.closeAlertDialog();
         }
       },

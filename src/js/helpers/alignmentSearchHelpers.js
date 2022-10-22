@@ -21,7 +21,6 @@ import {
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers';
-import { getFilesInResourcePath, getFoldersInResourceFolder } from './ResourcesHelpers';
 
 // eslint-disable-next-line no-useless-escape
 const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)';
@@ -37,6 +36,7 @@ export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
 export const ALIGNMENT_DATA_DIR = path.join(TCORE_FOLDER, 'alignmentData');
+export const MASTER_DOWNLOADS = path.join(ALIGNMENT_DATA_DIR, 'downloads');
 const MISSING_DATA_SYMBOL = '－';
 
 /**
@@ -611,13 +611,36 @@ export function parseResourceKey(name) {
 }
 
 /**
- *
- * @param resource
+ * parse the master file name for resource details
+ * @param {string} fileName
  * @returns {null|any}
  */
-export function findResourceAlignment(resource) {
-  // /Users/blm/translationCore/alignmentData/downloads/Door43-Catalog_en_ult
-  const resourcePath = path.join(ALIGNMENT_DATA_DIR, 'downloads', `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+export function parseMasterFileName(fileName) {
+  const [owner, languageId, resourceId] = fileName?.split('_') || [];
+  return {
+    owner,
+    languageId,
+    resourceId,
+  };
+}
+
+/**
+ * get path to master resource in downloads folder
+ * @param {object} resource
+ * @returns {string}
+ */
+function getMasterResourcePath(resource) {
+  const resourcePath = path.join(MASTER_DOWNLOADS, `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+  return resourcePath;
+}
+
+/**
+ * check if master resource has been downloaded
+ * @param {object} resource
+ * @returns {null|any}
+ */
+export function isMasterResourceDownloaded(resource) {
+  const resourcePath = getMasterResourcePath(resource);
   const exists = fs.existsSync(resourcePath);
   return exists;
 }
@@ -728,7 +751,7 @@ export async function downloadBible(resource, alignmentsFolder) {
     }
   }
 
-  const destinationPath = path.join(alignmentsFolder, 'downloads', `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+  const destinationPath = path.join(MASTER_DOWNLOADS, `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
   let error = false;
 
   try {
@@ -742,7 +765,7 @@ export async function downloadBible(resource, alignmentsFolder) {
 
   // /Users/blm/translationCore/alignmentData/unfoldingWord_en_ult/en/bibles/ult/v40_unfoldingWord
   const parentPath = path.join(destinationPath, `${resource.languageId}/bibles/${resource.resourceId}`);
-  const files = getFoldersInResourceFolder(parentPath);
+  const files = readDirectory(parentPath);
   const bibleName = files[0];
   const biblePath = path.join(parentPath, bibleName || 'unknown');
   const destinationBiblePath = path.join(destinationPath, 'bible');
@@ -790,17 +813,23 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
   const bibleIndex = {};
 
   try {
+    let bibleVersionsPath, latestVersionPath;
     // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
     const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
-    const bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
-    const latestVersionPath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, resource.owner);
+
+    if (resource.version === 'master') {
+      bibleVersionsPath = MASTER_DOWNLOADS;
+      latestVersionPath = path.join(getMasterResourcePath(resource), 'bible');
+    } else {
+      bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
+      latestVersionPath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, resource.owner);
+      const latestVersion = resourcesHelpers.splitVersionAndOwner(path.parse(latestVersionPath).base || '').version;
+      resource.version = latestVersion;
+    }
 
     if (!latestVersionPath) {
       console.warn(`getAlignmentsFromResource() - no bibles found for ${resource.owner} in ${bibleVersionsPath}`);
     } else {
-      const version = resourcesHelpers.splitVersionAndOwner(path.parse(latestVersionPath).base || '').version;
-      resource.version = version;
-
       let alignments = [];
       console.log(`getAlignmentsFromResource() - get alignments for ${resource.origLang}`);
       const books = resource.origLang === NT_ORIG_LANG ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
@@ -1084,14 +1113,37 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
 
 /**
  * get list of searchable bibles loaded in resources
- * @param translationCoreFolder
+ * @param {string} translationCoreFolder
+ * @param {boolean} useMaster
  * @returns {*[]}
  */
-export function getSearchableAlignments(translationCoreFolder) {
+export function getSearchableAlignments(translationCoreFolder, useMaster) {
   try {
     console.log('getSearchableAlignments() - getting aligned bibles');
     const resourceDir = path.join(translationCoreFolder, 'resources');
     const downloadedAlignedBibles = getAlignedBibles(resourceDir);
+
+    if (useMaster) {
+      const alignedMasterBibles = readDirectory(MASTER_DOWNLOADS);
+
+      for (const fileName of alignedMasterBibles) {
+        const version = 'master';
+        const {
+          owner,
+          languageId,
+          resourceId,
+        } = parseMasterFileName(fileName);
+
+        downloadedAlignedBibles.push({
+          languageId,
+          bibleId: resourceId,
+          owner,
+          version,
+          biblePath: path.join(MASTER_DOWNLOADS, fileName),
+        });
+      }
+    }
+
     console.log('getSearchableAlignments() - getting alignment indexes for bibles');
     const indexedResources = getAlignmentIndices(ALIGNMENT_DATA_DIR);
 
@@ -1472,6 +1524,19 @@ export function addTwordsInfoToResource(resource, resourcesFolder) {
   return res;
 }
 
+/**
+ * remove Index file for resource
+ * @param resource
+ */
+export function removeIndex(resource) {
+  const fileName = getKeyForBible(resource, ALIGNMENTS_KEY);
+  const alignmentPath = path.join(ALIGNMENT_DATA_DIR, fileName);
+
+  if (fs.existsSync(alignmentPath)) {
+    fs.removeSync(alignmentPath);
+  }
+}
+
 export function getTwordsKey(resource) {
   const key = `${resource.tWordsLangID}_${resource.origLang}_${resource.latestTWordsVersion}_${TWORDS_KEY}`;
   return key;
@@ -1486,6 +1551,11 @@ export function saveTwordsIndex(key, index) {
   fs.outputJsonSync(filePath, index);
 }
 
+/**
+ * get saved search index for tWords
+ * @param {string} key
+ * @returns {null|*}
+ */
 export function getTwordsIndex(key) {
   let filePath;
 
@@ -1547,14 +1617,14 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
 
     if (fs.existsSync(latestTwordsPath)) {
       console.log(`Found ${latestTWordsVersion}`);
-      const catagories = getFoldersInResourceFolder(latestTwordsPath);
+      const catagories = readDirectory(latestTwordsPath);
       const catagoryStepSize = 100 / (catagories.length || 1);
 
       for (let i = 0; i < catagories.length; i++) {
         const catagory = catagories[i];
         const progressCatagory = i * catagoryStepSize;
         const booksPath = path.join(latestTwordsPath, catagory, 'groups');
-        let books = getFoldersInResourceFolder(booksPath);
+        let books = readDirectory(booksPath);
 
         if (filterBooks) {
           const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
@@ -1569,7 +1639,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
           // eslint-disable-next-line no-await-in-loop
           await doCallback(callback, bookProgress);
           const bookPath = path.join(booksPath, bookId);
-          const groupFiles = getFilesInResourcePath(bookPath, '.json');
+          const groupFiles = readDirectory(bookPath, false, true, '.json');
 
           for (const groupFile of groupFiles) {
             const groupFilePath = path.join(bookPath, groupFile);
