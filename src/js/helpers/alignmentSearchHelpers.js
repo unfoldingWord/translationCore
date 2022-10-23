@@ -1260,14 +1260,23 @@ export function checkForHelpsForBible(bible) {
  */
 export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
   try {
+    const resource = parseResourceKey(bibleKey);
     const {
       languageId,
       resourceId,
       owner,
       version,
-    } = parseResourceKey(bibleKey);
-    const bibleVersion = resourcesHelpers.addOwnerToKey(version, owner);
-    const biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
+    } = resource;
+    let biblePath, bibleVersion;
+
+    if (version === 'master') {
+      bibleVersion = version;
+      biblePath = path.join(getMasterResourcePath(resource), 'bible');
+    } else {
+      bibleVersion = resourcesHelpers.addOwnerToKey(version, owner);
+      biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
+    }
+
     const bibleId = `${resourceId}_${bibleVersion}`;
 
     if (fs.existsSync(biblePath)) {
@@ -1510,7 +1519,7 @@ export function addTwordsInfoToResource(resource, resourcesFolder) {
     return null;
   }
 
-  const latestTWordsVersion = (resource.version === 'master') ? resource.version : getMostRecentVersionInFolder(tWordsPath, resource.owner);
+  const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource.owner);
   const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
 
   const res = {

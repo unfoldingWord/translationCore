@@ -408,7 +408,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             });
 
             if (alignmentData?.alignments?.length) {
-              console.error(`loadAlignmentData() - found ${alignmentData?.alignments?.length} alignments`);
+              console.log(`loadAlignmentData() - found ${alignmentData?.alignments?.length} alignments`);
               resource.alignmentCount = alignmentData?.alignments?.length;
               this.setState({ alignedBibles: this.state.alignedBibles });
               await this.showMessage('Doing one-time indexing of Bible for Search', true);
