@@ -1112,6 +1112,15 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
 };
 
 /**
+ * deletes the alignment search indexes as well as master branch data
+ */
+export function deleteCachedAlignmentData() {
+  if (fs.existsSync(ALIGNMENT_DATA_DIR)) {
+    fs.removeSync(ALIGNMENT_DATA_DIR);
+  }
+}
+
+/**
  * get list of searchable bibles loaded in resources
  * @param {string} translationCoreFolder
  * @param {boolean} useMaster

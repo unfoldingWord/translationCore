@@ -47,6 +47,7 @@ import {
   ALIGNMENT_DATA_DIR,
   ALIGNMENTS_KEY,
   checkForHelpsForBible,
+  deleteCachedAlignmentData,
   downloadBible,
   isMasterResourceDownloaded,
   getAlignmentsFromResource,
@@ -106,6 +107,9 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
 };
 
+const OkButton = 'OK';
+const CancelButton = 'CANCEL';
+
 const SEARCH_SOURCE = 'search_source';
 const SEARCH_LEMMA = 'search_lemma';
 const SEARCH_TARGET = 'search_target';
@@ -156,6 +160,7 @@ const SEARCH_HIDE_USFM = 'search_hide_usfm';
 const SEARCH_TWORDS = 'search_twords';
 const SEARCH_MASTER = 'search_master';
 const REFRESH_MASTER = 'refresh_master';
+const CLEAR_INDEX_DATA = 'clear_index_data';
 
 const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
 const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
@@ -163,6 +168,7 @@ const SEARCH_HIDE_USFM_LABEL = 'Hide USFM Markers';
 const SEARCH_TWORDS_LABEL = 'Search Translation Words';
 const SEARCH_MASTER_LABEL = 'Search Master Branch';
 const REFRESH_MASTER_LABEL = 'Refresh Master Branch';
+const CLEAR_INDEX_DATA_LABEL = 'Clear Index Data';
 
 const searchOptions = [
   {
@@ -198,6 +204,11 @@ const searchOptionRefreshMaster = {
   stateKey: 'refreshMaster',
 };
 
+const searchOptionClearIndexData = {
+  key: CLEAR_INDEX_DATA,
+  label: CLEAR_INDEX_DATA_LABEL,
+  stateKey: 'clearIndex',
+};
 
 const SEARCH_SETTINGS_KEY = 'searchSettingsKey';
 
@@ -363,6 +374,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     });
 
     alignedBibles = alignedBibles_.filter(bible => bible);
+    alignedBibles = alignedBibles.sort((a, b) => a.key < b.key ? -1 : 1);
     this.props.closeAlertDialog();
     this.setState({ alignedBibles });
     console.log(`loadAlignmentSearchOptions() - current aligned bible ${this.state.alignedBible}`);
@@ -1049,7 +1061,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   setSearchAlignedBible2(event, index, value) {
     this.setState( { alignedBible2: value });
-    this.state.searchMaster && this.downloadMasterIfMissing();
+    value && this.state.searchMaster && delay(100).then(() => this.downloadMasterIfMissing());
   }
 
   /**
@@ -1206,6 +1218,21 @@ class AlignmentSearchDialogContainer extends React.Component {
       this.updateMaster(message, true);
     }
 
+    if (values.includes(CLEAR_INDEX_DATA)) {
+      this.props.openOptionDialog('Do you want do delete all cached alignment search data?  This clears out all alignment search data (new as well as old) and downloaded master branch data to free up disk space.  Alignments will be recreated for bibles you select for search.',
+        (buttonPressed) => {
+          if (buttonPressed === OkButton) {
+            deleteCachedAlignmentData();
+            this.handleClose();
+            this.props.closeAlertDialog();
+          } else { // did not want to delete
+            this.props.closeAlertDialog();
+          }
+        },
+        OkButton,
+        CancelButton);
+    }
+
     const types = {
       ...basicOptions,
       hide,
@@ -1257,7 +1284,6 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param download - if true, always download
    */
   updateMaster(message, download) {
-    const OkButton = 'OK';
     const resources = [];
     const bibles = [this.state.alignedBible];
 
@@ -1336,7 +1362,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         }
       },
       OkButton,
-      'CANCEL');
+      CancelButton);
   }
 
   /**
@@ -1662,6 +1688,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     if (this.state.searchMaster) {
       searchOptions_.push(searchOptionRefreshMaster);
     }
+
+    searchOptions_.push(searchOptionClearIndexData);
     return searchOptions_;
   }
 }
