@@ -9,13 +9,17 @@ import CheckSoftwareUpdatesDialog, {
 import { getUpdateAsset } from '../js/containers/SoftwareUpdateDialog/SoftwareUpdateDialogContainer';
 
 describe('Get update asset', () => {
-  it('cannot find an update', () => {
+  it('release is older', () => {
     const response = {
       tag_name: '0.0.1',
-      assets: [{ name: 'translationCore-linux-x64-2.0.0.zip' }],
+      assets: [{ name: 'translationCore-linux-x64-0.0.1.zip' }],
     };
-    const expectedUpdate = null;
-    const update = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
+    const expectedUpdate = {
+      'installed_version': '1.0.0',
+      'latest_version': '0.0.1',
+      'name': 'translationCore-linux-x64-0.0.1.zip',
+    };
+    const { update } = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
     expect(update).toEqual(expectedUpdate);
   });
 
@@ -25,8 +29,10 @@ describe('Get update asset', () => {
       assets: [{ name: 'translationCore-linux-x64-2.0.0.zip' }],
     };
     const expectedUpdate = null;
-    const update = getUpdateAsset(response, '1.0.0', 'x64', 'darwin');
+    const expectedUpToDate = false;
+    const { update, upToDate } = getUpdateAsset(response, '1.0.0', 'x64', 'darwin');
     expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
   });
 
   it('finds an update', () => {
@@ -44,8 +50,10 @@ describe('Get update asset', () => {
       name: 'translationCore-linux-x64-2.0.0.zip',
       latest_version: '2.0.0',
     };
-    const update = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
+    const expectedUpToDate = false;
+    const { update, upToDate } = getUpdateAsset(response, '1.0.0', 'x64', 'linux');
     expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
   });
 
   it('finds an x32 update', () => {
@@ -63,8 +71,10 @@ describe('Get update asset', () => {
       name: 'translationCore-win-x32-2.0.0.exe',
       latest_version: '2.0.0',
     };
-    const update = getUpdateAsset(response, '1.0.0', 'x32', 'win32');
+    const expectedUpToDate = false;
+    const { update, upToDate } = getUpdateAsset(response, '1.0.0', 'x32', 'win32');
     expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
   });
 
   it('finds an ia32 update', () => {
@@ -82,8 +92,93 @@ describe('Get update asset', () => {
       name: 'translationCore-win-x32-2.0.0.exe',
       latest_version: '2.0.0',
     };
-    const update = getUpdateAsset(response, '1.0.0', 'ia32', 'win32');
+    const expectedUpToDate = false;
+    const { update, upToDate } = getUpdateAsset(response, '1.0.0', 'ia32', 'win32');
     expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
+  });
+
+  it('finds a MacOS arm64 fallback update', () => {
+    const response = {
+      extra_info: 'foo',
+      tag_name: '2.0.0',
+      assets: [{
+        extra_info: 'bar',
+        name: 'translationCore-macos-x64-2.0.0.exe',
+      }],
+    };
+    const expectedUpdate = {
+      extra_info: 'bar',
+      installed_version: '1.0.0',
+      name: 'translationCore-macos-x64-2.0.0.exe',
+      latest_version: '2.0.0',
+    };
+    const expectedUpToDate = false;
+    const { update, upToDate } = getUpdateAsset(response, '1.0.0', 'arm64', 'darwin');
+    expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
+  });
+
+  it('finds a MacOS arm64 update', () => {
+    const tagName = '2.0.0';
+    const response = {
+      extra_info: 'foo',
+      tag_name: tagName,
+      assets: [{
+        extra_info: 'bar',
+        name: 'translationCore-macos-arm64-2.0.0.exe',
+      }],
+    };
+    const expectedUpdate = {
+      extra_info: 'bar',
+      installed_version: '1.0.0',
+      name: 'translationCore-macos-arm64-2.0.0.exe',
+      latest_version: '2.0.0',
+    };
+    const expectedTagName = tagName;
+    const expectedIsLiteRelease = false;
+    const expectedUpToDate = false;
+    const {
+      update,
+      upToDate,
+      tagName: tagName_,
+      isLiteRelease,
+    } = getUpdateAsset(response, '1.0.0', 'arm64', 'darwin');
+    expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
+    expect(tagName_).toEqual(expectedTagName);
+    expect(isLiteRelease).toEqual(expectedIsLiteRelease);
+  });
+
+  it('detects lite release', () => {
+    const tagName = '2.0.0-Lite';
+    const response = {
+      extra_info: 'foo',
+      tag_name: tagName,
+      assets: [{
+        extra_info: 'bar',
+        name: 'translationCore-macos-arm64-2.0.0.exe',
+      }],
+    };
+    const expectedUpdate = {
+      extra_info: 'bar',
+      installed_version: '1.0.0',
+      name: 'translationCore-macos-arm64-2.0.0.exe',
+      latest_version: tagName,
+    };
+    const expectedTagName = tagName;
+    const expectedIsLiteRelease = true;
+    const expectedUpToDate = false;
+    const {
+      update,
+      upToDate,
+      tagName: tagName_,
+      isLiteRelease,
+    } = getUpdateAsset(response, '1.0.0', 'arm64', 'darwin');
+    expect(update).toEqual(expectedUpdate);
+    expect(upToDate).toEqual(expectedUpToDate);
+    expect(tagName_).toEqual(expectedTagName);
+    expect(isLiteRelease).toEqual(expectedIsLiteRelease);
   });
 });
 

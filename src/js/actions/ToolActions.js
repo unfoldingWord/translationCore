@@ -26,6 +26,7 @@ import {
   WORD_ALIGNMENT,
 } from '../common/constants';
 import { getCurrentPaneSetting } from '../helpers/SettingsHelpers';
+import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
@@ -71,7 +72,8 @@ export const loadTools = (toolsDir) => (dispatch) => {
 export function saveResourcesUsed(toolName, gl) {
   return (dispatch, getState) => {
     const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
-    const sourceBook = getSourceBook(getState(), glOwner);
+    const origLangOwner = getOriginalLangOwner(glOwner);
+    const sourceBook = getSourceBook(getState(), origLangOwner);
     const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
     dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
 
