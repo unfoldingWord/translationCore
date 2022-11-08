@@ -9,11 +9,16 @@
   "save_changes": "Save Changes",
   "saving_changes": "Saving Changes",
   "success": "Success",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "Supported File Types",
   "select_project": "Select a Project",
   "select_tool": "Select a Tool",
   "select_all": "Select all",
   "unselect_all": "Unselect all",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "Launch",
   "current_user": "Current User",
   "please_log_in": "Please log in to continue",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "Failed to Send Feedback",
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -85,7 +91,7 @@
     "failed_checking_for_source_content_updates": "Unable to finish checking for source content updates.",
     "downloading_source_content_updates": "Downloading source content updates...",
     "source_content_updates_successful_download": "Source content updates downloaded successfully!",
-    "source_content_updates_unsuccessful_download": "Failed to download source content updates:",
+    "source_content_updates_unsuccessful_download": "Failed to complete source content updates:",
     "source_content_up_to_date": "All source content is up to date.",
     "select_the_gateway_language_content_to_download": "Select the Gateway Language content you would like to download and update.",
     "unable_to_check": "Unable to check for updates",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -272,7 +282,8 @@
       "invalid_characters": "Only basic Latin Letters supported"
     },
     "conflicting_project": "A project with this identifier already exists for this language and book",
-    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again."
+    "newer_project": "This project was created in a newer version of translationCore. Please update to the latest version and try again.",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "Contact Helpdesk",
     "retry": "Retry",
     "update": "Update to latest version",
+    "update_version": "Update Version",
     "ignore_button": "Ignore",
-    "feedback_button": "Send Feedback"
+    "feedback_button": "Send Feedback",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Key Terms",

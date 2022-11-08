@@ -1471,5 +1471,9 @@
   "resource_title": "Unlocked Dynamic Bible",
   "remoteModifiedTime": "2022-04-21T18:39:57Z",
   "description": "Gateway Language",
-  "catalog_modified_time": "2022-04-21T18:39:57Z"
+  "catalog_modified_time": "2022-04-21T18:39:57Z",
+  "usfm-js": "3.4.1",
+  "version": "12",
+  "modifiedTime": "2022-04-21T18:39:57Z",
+  "stage": "prod"
 }

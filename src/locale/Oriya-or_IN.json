@@ -9,11 +9,16 @@
   "save_changes": "ପରିବର୍ତ୍ତନକୁ ସଂରକ୍ଷିତ ରଖନ୍ତୁ",
   "saving_changes": "ପରିବର୍ତ୍ତନକୁ ସଂରକ୍ଷିତ କରୁଅଛି",
   "success": "ସଫଳତା",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "ସମର୍ଥିତ ଫାଇଲ୍ ପ୍ରକାରଗୁଡିକ",
   "select_project": "ଏକ ପ୍ରକଳ୍ପକୁ ଚୟନ କରନ୍ତୁ",
   "select_tool": "ଏକ ସାଧନକୁ ଚୟନ କରନ୍ତୁ",
   "select_all": "ସମସ୍ତ ଚୟନ କରନ୍ତୁ",
   "unselect_all": "ସମସ୍ତକୁ ଚୟନ କରନ୍ତୁ ନାହିଁ",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "ଆରମ୍ଭ କରିବା",
   "current_user": "ତତ୍‌କାଳୀନ ଉପଭୋକ୍ତା",
   "please_log_in": "ଜାରି ରଖିବା ପାଇଁ ଲଗ୍ ଇନ୍ କରନ୍ତୁ",
@@ -254,7 +259,8 @@
       "invalid_characters": "\"କେବଳ ସାଧାରଣ ଲାଟିନ୍ ଅକ୍ଷରମାନ ସମର୍ଥିତ\""
     },
     "conflicting_project": "\" ଏହି ପରିଚାୟକର ସହିତ ଏକ ପ୍ରକଳ୍ପ ପୂର୍ବରୁ ହିଁ ଏହି ଭାଷା ଏବଂ ପୁସ୍ତକ ନିମନ୍ତେ ବିଦ୍ୟମାନ।\"",
-    "newer_project": "\"ଏହି ପ୍ରକଳ୍ପଟି ଟ୍ରାନ୍ସଲେସନ୍ କୋର୍‌ର ନୂତନ ସଂସ୍କରଣରେ ପ୍ରସ୍ତୁତ କରାଯାଇଛି। ଦୟାକରି ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।\""
+    "newer_project": "\"ଏହି ପ୍ରକଳ୍ପଟି ଟ୍ରାନ୍ସଲେସନ୍ କୋର୍‌ର ନୂତନ ସଂସ୍କରଣରେ ପ୍ରସ୍ତୁତ କରାଯାଇଛି। ଦୟାକରି ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।\"",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -430,6 +436,7 @@
     "contact_helpdesk": "\"ସାହାଯ୍ୟ କେନ୍ଦ୍ର ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ\"",
     "retry": "\"ପୁନଃ ଚେଷ୍ଟା କରନ୍ତୁ\"",
     "update": "\"ନୂତନ ସଂସ୍କରଣରେ ଅଦ୍ୟତନ କରନ୍ତୁ\"",
+    "update_version": "Update Version",
     "ignore_button": "\"ଛାଡନ୍ତୁ\"",
     "feedback_button": "\"ମତାମତ ପଠାନ୍ତୁ\""
   },

@@ -9,11 +9,16 @@
   "save_changes": "Simpan Perubahan",
   "saving_changes": "Simpan Perubahan",
   "success": "Berhasil",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "Tipe File Yang Didukung",
   "select_project": "Pilih sebuah Proyek",
   "select_tool": "Pilih sebuah Alat",
   "select_all": "Pilih semua",
   "unselect_all": "Tidak memilih semua",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "Luncurkan",
   "current_user": "Pengguna Saat Ini",
   "please_log_in": "Silahkan Masuk untuk melanjutkan",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "Gagal untuk mengirimkan Tanggapan",
   "critical_error_warning": "Peringatan: Telah terjadi kesalahan kritis!",
   "unknown_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal. Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" merupakan opsi pada tombol \"${actions}\".",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "Membuat tempat penyimpanan baru gagal karena tempat penyimpanan dengan nama ini sudah ada.<br/><br/>Untuk dapat mengunggah proyek Anda ke ${door43}, Anda perlu mengganti nama proyek lokal atau mengganti nama proyek ${door43} Anda .",
     "unknown_download_networking_error": "${app_name} telah mengalami kesalahan komunikasi yang tidak dikenal, yang mencoba untuk mendownload proyek dari \"${project_url}\". <br/> <br/> Jika masalah ini berlanjut, silakan kirimkan \"${user_feedback}\" yang merupakan opsi pada Tombol ${actions}",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "Download proyek ${project_url} gagal. ${error_message}"
+    "known_download_networking_error": "Download proyek ${project_url} gagal: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "Nama Bahasa tidak valid untuk Kode",
@@ -272,7 +282,8 @@
       "invalid_characters": "Hanya Huruf Latin dasar yang didukung"
     },
     "conflicting_project": "Sebuah proyek dengan pengidentifikasi ini sudah ada untuk bahasa dan kitab ini",
-    "newer_project": "Proyek ini dibuat dalam versi yang lebih baru dari translationCore. Harap perbarui ke versi terbaru dan coba lagi."
+    "newer_project": "Proyek ini dibuat dalam versi yang lebih baru dari translationCore. Harap perbarui ke versi terbaru dan coba lagi.",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "Hubungi Helpdesk",
     "retry": "Coba Lagi",
     "update": "perbarui ke versi terbaru",
+    "update_version": "Update Version",
     "ignore_button": "Abaikan",
-    "feedback_button": "Kirim Tanggapan"
+    "feedback_button": "Kirim Tanggapan",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "Istilah Kunci",

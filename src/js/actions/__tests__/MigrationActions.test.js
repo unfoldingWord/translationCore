@@ -2,20 +2,27 @@
 import path from 'path';
 import fs from 'fs-extra';
 import isEqual from 'deep-equal';
+// eslint-disable-next-line no-unused-vars
+import sourceContentUpdater from 'tc-source-content-updater';
 // helpers
 import * as MigrationActions from '../MigrationActions';
-import { getFoldersInResourceFolder } from '../../helpers/ResourcesHelpers';
+import { getFoldersInResourceFolder, removeOutDatedResources } from '../../helpers/ResourcesHelpers';
 import {
-  APP_VERSION, STATIC_RESOURCES_PATH, TC_VERSION, USER_RESOURCES_PATH,
+  APP_VERSION,
+  STATIC_RESOURCES_PATH,
+  TC_VERSION,
+  USER_RESOURCES_PATH,
+  USFMJS_VERSION,
 } from '../../common/constants';
 
 // mocks
+// eslint-disable-next-line no-unused-vars
 let mockOtherTnsOlversions = [];
 
-jest.mock('tc-source-content-updater', () => ({
-  ...require.requireActual('tc-source-content-updater'),
-  getOtherTnsOLVersions: () => mockOtherTnsOlversions,
-}));
+// jest.mock('tc-source-content-updater', () => ({
+//   ...require.requireActual('tc-source-content-updater'),
+//   getOtherTnsOLVersions: () => mockOtherTnsOlversions,
+// }));
 
 // constants
 const STATIC_RESOURCE_MODIFIED_TIME = '2019-06-19T20:09:10+00:00';
@@ -36,7 +43,7 @@ describe('migrate tCore resources', () => {
       // given
       const expectedHelpsVers = [];
       const expectedBibleVers = [];
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -52,7 +59,7 @@ describe('migrate tCore resources', () => {
       const expectedHelpsVers = [];
       const expectedBibleVers = ['v12.1_Door43-Catalog'];
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -77,7 +84,7 @@ describe('migrate tCore resources', () => {
       const oldResourcePath = path.join(ultPath, 'v0.0.1_Door43-Catalog');
       fs.moveSync(path.join(ultPath, currentVersion), oldResourcePath);
       setModifiedTimeForResource(oldResourcePath, '1900');
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -99,7 +106,7 @@ describe('migrate tCore resources', () => {
       fs.outputJsonSync(manifestPath, manifest);
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'hi/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'x-test/translationHelps/translationWords'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -121,7 +128,7 @@ describe('migrate tCore resources', () => {
       fs.outputJsonSync(manifestPath, manifest);
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'hi/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'x-test/translationHelps/translationWords'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -144,7 +151,7 @@ describe('migrate tCore resources', () => {
       fs.outputJsonSync(manifestPath, manifest);
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'hi/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'x-test/translationHelps/translationWords'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -167,7 +174,7 @@ describe('migrate tCore resources', () => {
       fs.outputJsonSync(manifestPath, manifest);
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'en/bibles/ult'), path.join(USER_RESOURCES_PATH, 'en/bibles/t4t'));
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'hi/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'x-test/translationHelps/translationWords'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -183,7 +190,7 @@ describe('migrate tCore resources', () => {
       const expectedHelpsVers = false;
       const expectedBibleVers = false;
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'hi/translationHelps/translationWords'), path.join(USER_RESOURCES_PATH, 'x-test/translationHelps/translationWords'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -203,7 +210,7 @@ describe('migrate tCore resources', () => {
       const manifest = fs.readJsonSync(manifestPath);
       manifest[TC_VERSION] = APP_VERSION; // add app version to resource
       fs.outputJsonSync(path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json'), manifest);
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -224,7 +231,7 @@ describe('migrate tCore resources', () => {
       const manifest = fs.readJsonSync(manifestPath);
       manifest[TC_VERSION] = APP_VERSION; // add app version to resource
       fs.outputJsonSync(path.join(USER_RESOURCES_PATH, 'source-content-updater-manifest.json'), manifest);
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -239,7 +246,7 @@ describe('migrate tCore resources', () => {
       // given
       const uhbFolder = path.join(USER_RESOURCES_PATH, 'hbo/bibles/uhb');
       fs.ensureDirSync(uhbFolder);
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -255,7 +262,7 @@ describe('migrate tCore resources', () => {
       // given
       const uhbFolder = path.join(USER_RESOURCES_PATH, 'hbo/bibles');
       fs.ensureDirSync(uhbFolder);
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -271,7 +278,7 @@ describe('migrate tCore resources', () => {
       // given
       const uhbFolder = path.join(USER_RESOURCES_PATH, 'hbo');
       fs.ensureDirSync(uhbFolder);
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -295,7 +302,7 @@ describe('migrate tCore resources', () => {
       const expectedBibleVers = ['v0.2_Door43-Catalog'];
       const bibleId = 'xx';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -314,7 +321,7 @@ describe('migrate tCore resources', () => {
       const bibleId = 'xx';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles/ugnt'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId));
       fs.copySync(path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1_Door43-Catalog'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -333,7 +340,7 @@ describe('migrate tCore resources', () => {
       const expectedBibleVers = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1_Door43-Catalog'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -352,7 +359,7 @@ describe('migrate tCore resources', () => {
       const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -370,7 +377,7 @@ describe('migrate tCore resources', () => {
       const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
-      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+      const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
       // when
       migrateResourcesFolder();
@@ -389,7 +396,7 @@ describe('migrate tCore resources', () => {
     const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
     const bibleId = 'ugnt';
     fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
-    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder();
+    const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
 
     // when
     migrateResourcesFolder();
@@ -398,6 +405,82 @@ describe('migrate tCore resources', () => {
     const folders = getResourceFolders();
     expect(folders).toMatchSnapshot();
     verifyResources(expectedHelpsVers, expectedBibleVers, 'el-x-koine/bibles/' + bibleId);
+  });
+
+  describe('test removeOutDatedResources', () => {
+    it('should delete bibles with no usfm-js in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(0);
+    });
+
+    it('should delete bibles with older usfm-js version in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+      const destinationManifestPath = path.join(destinationPath, 'manifest.json');
+      const manifest = fs.readJsonSync(destinationManifestPath);
+      manifest['usfm-js'] = '1.0.0';
+      fs.outputJsonSync(destinationManifestPath, manifest);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(0);
+    });
+
+    it('should not delete old bibles with current version usfm-js in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+      const destinationManifestPath = path.join(destinationPath, 'manifest.json');
+      const manifest = fs.readJsonSync(destinationManifestPath);
+      manifest['usfm-js'] = USFMJS_VERSION;
+      fs.outputJsonSync(destinationManifestPath, manifest);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(1);
+    });
+
+    it('should delete bibles with newer usfm-js version in manifest', () => {
+      // given
+      mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const bibleId = 'ugnt';
+      const destinationPath = path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog');
+      fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), destinationPath);
+      const destinationManifestPath = path.join(destinationPath, 'manifest.json');
+      const manifest = fs.readJsonSync(destinationManifestPath);
+      const versionParts = USFMJS_VERSION.split('.');
+      versionParts[2] = '1' + versionParts[2];
+      manifest['usfm-js'] = versionParts.join('.');
+      fs.outputJsonSync(destinationManifestPath, manifest);
+
+      // when
+      removeOutDatedResources();
+
+      // then
+      const folders = getResourceFolders();
+      expect(folders.length).toEqual(0);
+    });
   });
 });
 

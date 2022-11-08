@@ -2,15 +2,45 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import { resourcesDownloadHelpers } from 'tc-source-content-updater';
 // selectors
 import { getListOfOutdatedSourceContent } from '../selectors/index';
 // actions
 import { confirmOnlineAction } from '../actions/OnlineModeConfirmActions';
-import { getListOfSourceContentToUpdate, downloadSourceContentUpdates } from '../actions/SourceContentUpdatesActions';
+import {
+  deletePreReleaseResources,
+  downloadSourceContentUpdates,
+  getListOfSourceContentToUpdate,
+} from '../actions/SourceContentUpdatesActions';
 // components
 import SourceContentUpdateDialog from '../components/dialogComponents/SourceContentUpdateDialog';
 // helpers
 import { languagesObjectToResourcesArray, createLanguagesObjectFromResources } from '../helpers/combineResources';
+import { USER_RESOURCES_PATH } from '../common/constants';
+import { openAlert } from '../actions/AlertActions';
+
+function deletePreReleasePrompt(translate, onClose) {
+  return ((dispatch) => {
+    function onOK() {
+      let resourcesFolder = USER_RESOURCES_PATH;
+      dispatch(deletePreReleaseResources(resourcesFolder));
+      resourcesDownloadHelpers.setResourcesContainPreReleaseData(resourcesFolder, false);
+      onClose && onClose();
+    }
+
+    dispatch(openAlert('delete_pre_release', translate('delete_pre_releases_warning'), {
+      confirmText: translate('buttons.ok'),
+      cancelText: translate('buttons.cancel'),
+      onConfirm: () => {
+        console.log('deletePreReleasePrompt(): User clicked delete preRelease');
+        onOK();
+      },
+      onCancel: () => {
+        console.log('deletePreReleasePrompt(): User clicked cancel delete preRelease');
+      },
+    }));
+  });
+}
 
 /**
  * format a localized error message
@@ -80,13 +110,15 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
 class ContentUpdatesDialogContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { languages: {} };
+    this.state = { languages: {}, preRelease: false };
     this._handleClose = this._handleClose.bind(this);
     this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
     this._handleDownload = this._handleDownload.bind(this);
     this.handleSelectAll = this.handleSelectAll.bind(this);
     this._handleListItemSelection = this._handleListItemSelection.bind(this);
     this.onSubitemSelection = this.onSubitemSelection.bind(this);
+    this.togglePreRelease = this.togglePreRelease.bind(this);
+    this.handleDeletePreRelease = this.handleDeletePreRelease.bind(this);
   }
 
   UNSAFE_componentWillReceiveProps(newProps) {
@@ -111,6 +143,17 @@ class ContentUpdatesDialogContainer extends React.Component {
     const { onClose } = this.props;
     this.setState({ languages: {} });
     onClose();
+  }
+
+  handleDeletePreRelease() {
+    this.props.deletePreReleasePrompt(this.props.translate, this._handleClose);
+  }
+
+  togglePreRelease() {
+    const { getListOfSourceContentToUpdate, onClose } = this.props;
+    const preRelease = !this.state.preRelease;
+    getListOfSourceContentToUpdate(onClose, preRelease);
+    this.setState({ preRelease });
   }
 
   handleSelectAll() {
@@ -162,7 +205,7 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _startContentUpdateCheck() {
     const { getListOfSourceContentToUpdate, onClose } = this.props;
-    getListOfSourceContentToUpdate(onClose);
+    getListOfSourceContentToUpdate(onClose, this.state.preRelease);
   }
 
   _handleDownload() {
@@ -170,7 +213,7 @@ class ContentUpdatesDialogContainer extends React.Component {
     this.setState({ languages: {} });
     const resourcesToDownload = languagesObjectToResourcesArray(this.state.languages);
     onClose();
-    downloadSourceContentUpdates(resourcesToDownload);
+    downloadSourceContentUpdates(resourcesToDownload, false, this.state.preRelease);
   }
 
   render() {
@@ -191,6 +234,9 @@ class ContentUpdatesDialogContainer extends React.Component {
             onSubitemSelection={this.onSubitemSelection}
             selectedLanguageResources={this.state.languages}
             handleListItemSelection={this._handleListItemSelection}
+            preRelease={this.state.preRelease}
+            togglePreRelease={this.togglePreRelease}
+            deletePreReleasePrompt={this.handleDeletePreRelease}
           />
         </div>
       );
@@ -208,14 +254,16 @@ ContentUpdatesDialogContainer.propTypes = {
   confirmOnlineAction: PropTypes.func.isRequired,
   getListOfSourceContentToUpdate: PropTypes.func.isRequired,
   downloadSourceContentUpdates: PropTypes.func.isRequired,
+  deletePreReleasePrompt: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({ resources: getListOfOutdatedSourceContent(state) });
 
 const mapDispatchToProps = {
   confirmOnlineAction,
-  getListOfSourceContentToUpdate,
+  deletePreReleasePrompt,
   downloadSourceContentUpdates,
+  getListOfSourceContentToUpdate,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContentUpdatesDialogContainer);

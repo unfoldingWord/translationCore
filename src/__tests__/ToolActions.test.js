@@ -12,16 +12,15 @@ import {
   ALERT_SELECTIONS_INVALIDATED_ID,
   ALERT_SELECTIONS_INVALIDATED_MSG,
   ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG,
+  DEFAULT_OWNER,
 } from '../js/common/constants';
 // constants
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 let mockInvalidCount = 0;
+let mockOwner = DEFAULT_OWNER;
+// let mockManifest = {};
 
-jest.mock('../js/selectors', () => ({
-  ...require.requireActual('../js/selectors'),
-  getTranslate: () => jest.fn((code) => code),
-}));
 jest.mock('../js/helpers/toolHelper', () => ({
   ...require.requireActual('../js/helpers/toolHelper'),
   getInvalidCountForTool: () => (mockInvalidCount),
@@ -53,6 +52,14 @@ jest.mock('../js/helpers/ResourcesHelpers', () => ({
   loadProjectGroupIndex: () => ([
     { id: 'figs-abstractnouns', name: 'Abstract Nouns' },
   ]),
+}));
+
+jest.mock('../js/selectors', () => ({
+  ...require.requireActual('../js/selectors'),
+  getTranslate: () => jest.fn((code) => code),
+  getProjectBookId: () => null,
+  getToolGlOwner: () => mockOwner,
+  getProjectManifest: (state) => state?.projectDetailsReducer?.manifest,
 }));
 
 describe('Tool Actions.openTool', () => {

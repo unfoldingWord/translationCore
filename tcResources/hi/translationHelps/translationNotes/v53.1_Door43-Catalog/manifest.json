@@ -394,5 +394,8 @@
       ]
     }
   ],
-  "catalog_modified_time": "2022-04-21T18:40:29Z"
+  "version": "53.1",
+  "catalog_modified_time": "2022-04-21T18:40:29Z",
+  "modifiedTime": "2022-04-21T18:40:29Z",
+  "stage": "prod"
 }

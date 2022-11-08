@@ -9,11 +9,16 @@
   "save_changes": "Guardar Cambios",
   "saving_changes": "Guardando cambios",
   "success": "Éxito",
+  "delete_pre_releases": "Eliminar Todos los Recursos de Pre-lanzamiento",
+  "delete_pre_releases_warning": "¿Desea eliminar todos los recursos de pre-lanzamiento que han sido descargados?",
   "supported_file_types": "Tipos de Archivos Compatibles",
   "select_project": "Seleccione un Proyecto",
   "select_tool": "Seleccione una herramienta",
   "select_all": "Seleccione todos",
   "unselect_all": "Desmarcar todo",
+  "select_all_resources": "Seleccionar Todo - Advertencia: esto puede llevar mucho tiempo y usar mucho espacio del disco.",
+  "admin_options": "Opciones de Administrador:",
+  "show_prerelease_resources": "Mostrar recursos de Pre-lanzamiento",
   "launch": "Lanzar",
   "current_user": "Usuario Actual",
   "please_log_in": "Por favor, inicie sesión para continuar",
@@ -75,9 +80,10 @@
   "sending_feedback_failed": "Error al Enviar el Comentario",
   "critical_error_warning": "Advertencia: Ha ocurrido un error crítico!",
   "unknown_networking_error": "${app_name} ha encontrado un error de comunicación desconocido. Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
+  "pre_release": "Pre-lanzamiento",
   "updates": {
-    "organization": "Organization",
-    "resource": "Resource",
+    "organization": "Organización",
+    "resource": "Recurso",
     "check_for_newer_app": "Revisa si hay actualizaciones de software",
     "check_for_content_updates": "Revisa si hay actualizaciones de contenido",
     "update_gateway_language_content": "Actualizar contenido del Idioma de entrada",
@@ -85,7 +91,7 @@
     "failed_checking_for_source_content_updates": "No se puede terminar de verificar las actualizaciones de contenido fuente.",
     "downloading_source_content_updates": "Descargando las actualizaciones del contenido fuente...",
     "source_content_updates_successful_download": "Actualizaciones de contenido fuente descargadas exitosamente!",
-    "source_content_updates_unsuccessful_download": "Error al descargar las actualizaciones del contenido original.",
+    "source_content_updates_unsuccessful_download": "No se ha podido completar la actualización del contenido fuente:",
     "source_content_up_to_date": "Todo el contenido fuente ya se actualizó.",
     "select_the_gateway_language_content_to_download": "Seleccione el contenido del Idioma de estrada que se desea descargar y actualizar.",
     "unable_to_check": "No se puede comprobar si hay actualizaciones",
@@ -96,13 +102,13 @@
     "downloading": "Descargando la actualización",
     "downloading_version": "Descargando la versión ${version}",
     "download_error": "No se puede descargar la actualización.",
-    "downloads_canceled": "Downloading source contents cancelled!",
+    "downloads_canceled": "¡Se ha cancelado la descarga del contenido fuente!",
     "source_label": "Origen:",
     "local_timestamp": "Local:",
     "online_timestamp": "En línea:",
-    "update_error_reason_parse": "parse error",
-    "update_error_reason_download": "download error",
-    "update_error_reason_missing_dependency": "missing dependency"
+    "update_error_reason_parse": "error de análisis",
+    "update_error_reason_download": "error de descarga",
+    "update_error_reason_missing_dependency": "falta dependencia"
   },
   "users": {
     "category": "Categoría:",
@@ -230,8 +236,12 @@
     "dcs_rename_conflict": "Fallo al renombrar, porque ya existe un repositorio con este nombre. Para poder subir tu proyecto a ${door43}, necesitas ya sea renombrar tu proyecto local o renombrar tu proyecto ${door43}.",
     "dcs_create_new_conflict": "Falló al crear un nuevo repositorio debido a que ya existe un repositorio con este nombre.<br/><br/>Para poder subir su proyecto a ${door43}, debe cambiar el nombre de tu proyecto local o cambiar el nombre de tu proyecto ${door43} .",
     "unknown_download_networking_error": "${app_name} ha encontrado un error de comunicación desconocido al intentar descargar el proyecto desde \"${project_url}\".<br/><br/>Si este problema continúa, por favor envíe \"${user_feedback}\" que es una opción en el botón \"${actions}\".",
-    "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "La descarga del proyecto ${project_url} ha fallado ${error_message}"
+    "project_locked": "El proyecto está bloqueado en:<br/>'${file_path}'. Por favor, reinicie su computadora e inténtelo de nuevo.",
+    "known_download_networking_error": "La descarga del proyecto \"${project_url}\" ha fallado: ${error_message}",
+    "load_view_usfm_url": "Cargar Recurso Bíblico (USFM)",
+    "load_view_usfm_url_error": "La descarga del USFM \"${project_url}\" ha fallado: ${error_message}",
+    "enter_resource_url": "Introduzca la URL del recurso",
+    "loading_usfm_url": "Cargando: ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "Código no valido para nombre de idioma",
@@ -272,7 +282,8 @@
       "invalid_characters": "Sólo se admiten las letras básicas del Latín"
     },
     "conflicting_project": "Ya existe un proyecto con este identificador para este idioma y libro",
-    "newer_project": "Este proyecto fue creado en una versión más reciente de translationCore. Por favor, actualice a la última versión e intente de nuevo."
+    "newer_project": "Este proyecto fue creado en una versión más reciente de translationCore. Por favor, actualice a la última versión e intente de nuevo.",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "Póngase en contacto con el Helpdesk",
     "retry": "Intente de nuevo",
     "update": "Actualice a la última versión",
+    "update_version": "Update Version",
     "ignore_button": "Ignorar",
-    "feedback_button": "Enviar comentarios"
+    "feedback_button": "Enviar comentarios",
+    "delete": "Borrar"
   },
   "tool_card_categories": {
     "kt": "Términos Claves",

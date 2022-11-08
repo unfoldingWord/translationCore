@@ -333,5 +333,9 @@
   "resource_title": "GLT - Oriya",
   "remoteModifiedTime": "2022-04-22T00:16:51Z",
   "description": "Gateway Language",
-  "catalog_modified_time": "2022-04-22T00:16:51Z"
+  "catalog_modified_time": "2022-04-22T00:16:51Z",
+  "usfm-js": "3.4.1",
+  "version": "4",
+  "modifiedTime": "2022-04-22T00:16:51Z",
+  "stage": "prod"
 }

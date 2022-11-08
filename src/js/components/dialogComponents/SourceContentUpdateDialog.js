@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
-
 import BaseDialog from './BaseDialog';
 import ResourceListItem from './ResourceListItem';
 
@@ -14,6 +13,13 @@ const styles = {
   checkboxContainer: {
     display: 'flex',
     marginBottom: '20px',
+  },
+  deleteButton: {
+    display: 'flex',
+    width: 'fit-content',
+    height: 'fit-content',
+    padding: '10px',
+    margin: 'auto',
   },
   header: {
     color: '#000000',
@@ -77,6 +83,9 @@ class ContentUpdateDialog extends React.Component {
       onSubitemSelection,
       handleListItemSelection,
       selectedLanguageResources,
+      preRelease,
+      togglePreRelease,
+      deletePreReleasePrompt,
     } = this.props;
 
     const availableLanguageIds = resources.map(
@@ -106,16 +115,6 @@ class ContentUpdateDialog extends React.Component {
                 'updates.select_the_gateway_language_content_to_download',
               )}
             </h4>
-            <div style={styles.checkboxContainer}>
-              <Checkbox
-                label={translate('select_all')}
-                checked={allChecked}
-                onCheck={handleSelectAll}
-                style={styles.checkbox}
-                iconStyle={styles.checkboxIconStyle}
-                labelStyle={styles.boldCheckboxLabelStyle}
-              />
-            </div>
             <Divider />
           </div>
           <div style={styles.resourcesList}>
@@ -131,7 +130,7 @@ class ContentUpdateDialog extends React.Component {
                   <th style={styles.lastTd}>
                     {translate('updates.online_timestamp')}
                   </th>
-                  <th></th>
+                  <th/>
                 </tr>
                 {resources.map((languageResources) => {
                   const resourcesSelectedForLanguage = selectedLanguageResources[languageResources.languageId];
@@ -155,6 +154,37 @@ class ContentUpdateDialog extends React.Component {
             </table>
           </div>
         </div>
+        <Divider />
+        <div style={styles.content}>
+          <div>
+            <h4 style={styles.header}>
+              {translate('admin_options')}
+            </h4>
+          </div>
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={translate('select_all_resources')}
+            checked={allChecked}
+            onCheck={handleSelectAll}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
+        </div>
+        <div style={styles.checkboxContainer}>
+          <Checkbox
+            label={translate('show_prerelease_resources')}
+            checked={preRelease}
+            onCheck={togglePreRelease}
+            style={styles.checkbox}
+            iconStyle={styles.checkboxIconStyle}
+            labelStyle={styles.boldCheckboxLabelStyle}
+          />
+        </div>
+        <button className='btn-prime' style={styles.deleteButton} onClick={deletePreReleasePrompt} >
+          {translate('delete_pre_releases')}
+        </button>
       </BaseDialog>
     );
   }
@@ -170,6 +200,9 @@ ContentUpdateDialog.propTypes = {
   onSubitemSelection: PropTypes.func.isRequired,
   handleListItemSelection: PropTypes.func.isRequired,
   selectedLanguageResources: PropTypes.object.isRequired,
+  preRelease: PropTypes.bool.isRequired,
+  togglePreRelease: PropTypes.func.isRequired,
+  deletePreReleasePrompt: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;

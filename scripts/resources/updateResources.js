@@ -1,6 +1,8 @@
 /**
  * This script updates the resources in a given directory for the given languages
  * Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]
+ *
+ * to debug: node --inspect-brk scripts/resources/updateResources.js  tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage
  */
 require('babel-polyfill'); // required for async/await
 const path = require('path-extra');
@@ -8,13 +10,22 @@ const fs = require('fs-extra');
 const {
   default: SourceContentUpdater,
   apiHelpers,
+  resourcesHelpers,
 } = require('tc-source-content-updater');
+const packagefile = require('../../package.json');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 // TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
 // set to null to remove restriction, or you can add other permitted owners to list
 const filterByOwner = ['Door43-Catalog'];
+const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
+const BIBLES_PATH = 'bibles';
+const TW_PATH = 'translationHelps/translationWords';
+const TA_PATH = 'translationHelps/translationAcademy';
+const TN_PATH = 'translationHelps/translationNotes';
+
+let okToZip = false;
 
 /**
  * find resources to update
@@ -29,14 +40,30 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
   const sourceContentUpdater = new SourceContentUpdater();
 
   try {
+    let lexiconValid = validateLexicons(resourcesPath);
+
+    if (!lexiconValid) {
+      // eslint-disable-next-line no-throw-literal
+      throw `English Lexicons are not valid`;
+    }
+
     const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
+    checkForBrokenResources(localResourceList, resourcesPath);
     const filterByOwner_ = [...filterByOwner];
 
     if (uWoriginalLanguage) {
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
-    await sourceContentUpdater.getLatestResources(localResourceList, filterByOwner_)
+    const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
+    const config = {
+      filterByOwner: filterByOwner_,
+      latestManifestKey,
+    };
+
+    okToZip = true;
+
+    await sourceContentUpdater.getLatestResources(localResourceList, config)
       .then(async () => {
         let updateList = [];
 
@@ -61,6 +88,10 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
           updateList, // list of static resources that are newer in catalog
           allAlignedBibles)
           .then(resources => {
+            if (!resources || !resources.length) {
+              console.log('Resources are already up to date');
+            }
+
             resources.forEach(resource => {
               console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
               const found = languages.find((language) => (language === resource.languageId));
@@ -81,6 +112,371 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     return `${message}: ${e.toString()}`;
   }
 };
+
+/**
+ * get expected files and subpath for resource
+ * @param resource
+ * @returns {{typePath: *, expectedFiles: string[]}}
+ */
+function getExpectedFileForResource(resource) {
+  let expectedFiles = ['manifest.json', 'contents.zip'];
+  let typePath;
+
+  switch (resource.resourceId) {
+  case 'ta':
+  case 'translationAcademy':
+    typePath = TA_PATH;
+    break;
+  case 'tn':
+  case 'translationNotes':
+    typePath = TN_PATH;
+    break;
+  case 'tw':
+  case 'translationWords':
+    typePath = TW_PATH;
+    break;
+  default:
+    // default to bible
+    typePath = path.join(BIBLES_PATH, resource.resourceId);
+    expectedFiles = ['index.json', 'manifest.json', 'books.zip'];
+    break;
+  }
+  return { expectedFiles, typePath };
+}
+
+/**
+ * validate this resource to have expected files
+ * @param resourcesPath
+ * @param resource
+ * @param typePath
+ * @param expectedFiles
+ * @param defaultReturn
+ * @returns {boolean}
+ */
+function validateResource(resourcesPath, resource, typePath, expectedFiles, defaultReturn = true) {
+  let validResource = defaultReturn; // if we can't identify the resource, skip
+
+  if (typePath) {
+    validResource = false;
+    const resourceBasePath = path.join(resourcesPath, resource.languageId, typePath);
+
+    if (fs.existsSync(resourceBasePath)) {
+      validResource = true;
+      const latest = getLatestVersionsAndOwners(resourceBasePath);
+      const orgPath = latest && latest[resource.owner];
+
+      if (!orgPath) {
+        console.warn(`No current versions for ${resource.owner} in: ${resourceBasePath}`);
+        validResource = false;
+      } else {
+        const latestPath = orgPath;
+
+        for (const fileName of expectedFiles) {
+          const filePath = path.join(latestPath, fileName);
+
+          if (!fs.existsSync(filePath)) {
+            console.warn(`Resource is missing file: ${filePath}`);
+            validResource = false;
+          }
+        }
+      }
+    } else {
+      validResource = false;
+      console.warn(`Resource is not valid at: ${resourceBasePath}`);
+    }
+  } else {
+    console.warn(`Resource could not be identified: ${JSON.stringify(resource)}`);
+  }
+  return validResource;
+}
+
+/**
+ * check local resource list to find broken resources, and flag for replacement
+ * @param resourceList
+ * @param resourcesPath
+ */
+function checkForBrokenResources(resourceList, resourcesPath) {
+  for (const resource of resourceList) {
+    // const manifest = resource.manifest || {};
+    let validResource = true;
+    const { typePath, expectedFiles } = getExpectedFileForResource(resource);
+    validResource = validateResource(resourcesPath, resource, typePath, expectedFiles);
+
+    if (!validResource) {
+      // break resource item in list, so resource will be replaced
+      console.warn(`invalidating resource: ${JSON.stringify(resource)}`);
+      resource.version = 'v0';
+      resource.languageId = 'zzzz';
+    }
+  }
+}
+
+/**
+ * get list of files in resource path
+ * @param {String} resourcePath - path
+ * @param {String|null} [ext=null] - optional extension to match
+ * @param {boolean} foldersOnly - if true then only return folders
+ * @param {boolean} filesOnly - if true then only return files that are not folders
+ * @return {Array}
+ */
+function getFilesInResourcePath(resourcePath, ext=null, foldersOnly = false, filesOnly = false) {
+  if (fs.lstatSync(resourcePath).isDirectory()) {
+    let files = fs.readdirSync(resourcePath).filter(file => {
+      if (ext) {
+        return path.extname(file) === ext;
+      }
+      return file !== '.DS_Store';
+    }); // filter out .DS_Store
+
+    if (foldersOnly) {
+      files = files.filter(file => {
+        let valid = (fs.lstatSync(path.join(resourcePath, file)).isDirectory());
+        return valid;
+      });
+    } else if (filesOnly) {
+      files = files.filter(file => {
+        let valid = (!fs.lstatSync(path.join(resourcePath, file)).isDirectory());
+        return valid;
+      });
+    }
+
+    return files;
+  }
+  return [];
+}
+
+/**
+ * Populates resourceList with resources that can be used in scripture pane
+ * @param {string} resourcesPath - array to be populated with resources
+ */
+function validateResources(resourcesPath) {
+  console.log(`validateResources() - doing final validation of resources`);
+  let validationFailed = false;
+  let errors = '';
+
+  try {
+    const languagesIds = getFilesInResourcePath(resourcesPath, null, true);
+    let helpsPath, biblesPath;
+
+    languagesIds.forEach((languageId) => {
+      try {
+        biblesPath = path.join(resourcesPath, languageId, 'bibles');
+
+        if (fs.existsSync(biblesPath)) {
+          const biblesFolders = getFilesInResourcePath(biblesPath, null, true);
+
+          biblesFolders.forEach(bibleId => {
+            const bibleIdPath = path.join(biblesPath, bibleId);
+
+            try {
+              const owners = getLatestVersionsAndOwners(bibleIdPath) || {};
+
+              for (const owner of Object.keys(owners)) {
+                const resource = {
+                  resourceId: bibleId,
+                  owner,
+                  languageId,
+                };
+                const { typePath, expectedFiles } = getExpectedFileForResource(resource);
+                const validResource_ = validateResource(resourcesPath, resource, typePath, expectedFiles, false);
+
+                if (!validResource_) {
+                  errors += `\nValidation Failure for resource: ${JSON.stringify(resource)}`;
+                  validationFailed = true;
+                }
+              }
+            } catch (e) {
+              console.error(`validateResources() - failed to get latest version bible in ${bibleIdPath}`, e);
+              validationFailed = true;
+            }
+          });
+        } else {
+          console.warn('validateResources() - Directory not found, ' + biblesPath);
+        }
+      } catch (e) {
+        console.error('validateResources() - Failed to read list of bibles at ' + biblesPath);
+        validationFailed = true;
+      }
+
+      try {
+        helpsPath = path.join(resourcesPath, languageId, 'translationHelps');
+
+        if (fs.existsSync(helpsPath)) {
+          const helpsFolders = getFilesInResourcePath(helpsPath, null, true);
+
+          helpsFolders.forEach(helpType => {
+            const helpPath = path.join(helpsPath, helpType);
+
+            try {
+              const owners = getLatestVersionsAndOwners(helpPath) || {};
+
+              for (const owner of Object.keys(owners)) {
+                const resource = {
+                  resourceId: helpType,
+                  owner,
+                  languageId,
+                };
+                let { typePath, expectedFiles } = getExpectedFileForResource(resource);
+
+                if ((helpType === 'translationWords') && ((languageId === 'el-x-koine') || (languageId === 'hbo'))) {
+                  // special case for tWords in original languages does not have manifest.json
+                  expectedFiles = expectedFiles.filter(filename => filename !== 'manifest.json');
+                }
+
+                const validResource_ = validateResource(resourcesPath, resource, typePath, expectedFiles, false);
+
+                if (!validResource_) {
+                  errors += `\nValidation Failure for resource: ${JSON.stringify(resource)}`;
+                  validationFailed = true;
+                }
+              }
+            } catch (e) {
+              console.error(`validateResources() - failed to get latest version of helps in ${helpPath}`, e);
+              validationFailed = true;
+            }
+          });
+        } else {
+          // console.log('validateResources() - Directory not found, ' + helpsPath);
+        }
+      } catch (e) {
+        console.error('validateResources() - Failed to read list of bibles at ' + helpsPath);
+        validationFailed = true;
+      }
+    });
+
+    let lexiconValid = validateLexicons(resourcesPath);
+
+    if (!lexiconValid) {
+      errors += `\nLexicons are invalid`;
+    }
+
+    const validateResources = {
+      'Door43-Catalog': [
+        'el-x-koine/bibles/ugnt',
+        'el-x-koine/translationHelps/translationWords',
+        'en/bibles/ult',
+        'en/bibles/ust',
+        '/hbo/bibles/uhb',
+        'hbo/translationHelps/translationWords',
+      ],
+      'unfoldingWord': [
+        'el-x-koine/bibles/ugnt',
+        '/hbo/bibles/uhb',
+      ],
+    };
+
+    for (const owner of Object.keys(validateResources)) {
+      const resourcePaths_ = validateResources[owner];
+
+      for (const resourcePath of resourcePaths_) {
+        const fullPath = path.join(resourcesPath, resourcePath);
+        const owners = getLatestVersionsAndOwners(fullPath) || {};
+        const latestVersionPath = owners && owners[owner];
+
+        const files = latestVersionPath && getFilesInResourcePath(latestVersionPath, '.zip', false, true);
+
+        if (files && files.length > 0) {
+          // success, have at least one zip file
+        } else {
+          console.error(`validateResources() - FAILED validation of ${fullPath}`);
+          validationFailed = true;
+          errors += `\nFAILED validation of ${fullPath}`;
+        }
+      }
+    }
+  } catch (e) {
+    console.error('validateResources() - FAILED: ', e);
+    validationFailed = true;
+  }
+
+  if (validationFailed && !errors) {
+    errors = 'General validation failure';
+  }
+  return errors;
+}
+
+/**
+ * make sure lexicons are present
+ * @param resourcesPath
+ * @returns {boolean}
+ */
+function validateLexicons(resourcesPath) {
+  let lexiconValid = false;
+  const lexiconPath = path.join(resourcesPath, 'en/lexicons');
+
+  if (fs.existsSync(lexiconPath)) {
+    const langs = ['ugl', 'uhl'];
+    lexiconValid = true;
+
+    for (const lang of langs) {
+      const lexiconLangPath = path.join(lexiconPath, lang);
+
+      if (fs.existsSync(lexiconLangPath)) {
+        const latest = getLatestVersionsAndOwners(lexiconLangPath);
+
+        if (latest && Object.keys(latest).length) {
+          const latestD43 = latest['Door43-Catalog'];
+
+          if (latestD43) {
+            const latestVersionContentPath = path.join(latestD43, 'contents.zip');
+
+            if (fs.existsSync(latestD43)) {
+              if (fs.existsSync(latestVersionContentPath)) {
+                continue;
+              } else {
+                console.warn(`Lexicon content missing at: ${latestVersionContentPath}`);
+              }
+            } else {
+              console.warn(`Lexicon version folder missing at: ${latestD43}`);
+            }
+          }
+        } else {
+          console.warn(`No Lexicon versions found in: ${lexiconLangPath}`);
+        }
+      } else {
+        console.warn(`Lexicon folder missing: ${lexiconLangPath}`);
+      }
+
+      console.warn(`Lexicon invalid: ${lexiconLangPath}`);
+      lexiconValid = false;
+    }
+  }
+  return lexiconValid;
+}
+
+/**
+ * Returns the versioned folder within the directory with the highest value.
+ * e.g. `v10` is greater than `v9`
+ * @param {string} dir - the directory to read
+ * @return {string} the full path to the latest version directory.
+ */
+function getLatestVersionsAndOwners(dir) {
+  const versionAndOwners = resourcesHelpers.listVersions(dir, true);
+  const orgs = {};
+
+  for (const versionAndOwner of versionAndOwners) {
+    const { owner } = resourcesHelpers.splitVersionAndOwner(versionAndOwner);
+
+    if (!orgs[owner]) {
+      orgs[owner] = [];
+    }
+    orgs[owner].push(versionAndOwner);
+  }
+
+  const orgsKeys = Object.keys(orgs);
+
+  for (const org of orgsKeys) {
+    const versions = orgs[org];
+    const latest = path.join(dir, versions[0]);
+    orgs[org] = latest;
+  }
+
+  if (orgsKeys.length > 0) {
+    return orgs;
+  } else {
+    return null;
+  }
+}
 
 /**
  * get last update resources time
@@ -148,13 +544,18 @@ const areResourcesRecent = (resourcesPath) => {
  * @param {String} resourcesPath
  * @param {Boolean} allAlignedBibles - if true then all aligned bibles from all languages are updated also
  * @param {Boolean} uWoriginalLanguage - if true then we also want uW original languages updated
- * @return {Promise<number>}
+ * @return {Promise<number>} return 0 if no error
  */
 const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles, uWoriginalLanguage) => {
   let errors = false;
 
+  if (!USFMJS_VERSION) {
+    console.error(`executeResourcesUpdate() - could not read usfm-js version`);
+    return 1;
+  }
+
   if (areResourcesRecent(resourcesPath)) {
-    console.log('Resources recently updated, so nothing to do');
+    console.log('executeResourcesUpdate() - Resources recently updated, so nothing to do');
   } else {
     const importsPath = path.join(resourcesPath, 'imports');// Remove old imports folder
 
@@ -167,27 +568,41 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
     errors = await updateResources(languages, resourcesPath, allAlignedBibles, uWoriginalLanguage);
 
     if (errors) {
-      console.log('Errors on downloading updated resources!!');
+      okToZip = false;
+      console.log('executeResourcesUpdate() - Errors on downloading updated resources!!', errors);
     }
-    console.log('Zipping up updated resources');
 
-    languages.forEach(async (languageId) => {
-      try {
-        await zipResourcesContent(resourcesPath, languageId);
-      } catch (e) {
-        errors += e.toString() + '\n';
-      }
-    });
+    if (okToZip) {
+      console.log('executeResourcesUpdate() - Zipping up updated resources');
 
-    // update source content updater manifest, but don't clobber tCore version
-    UpdateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
+      languages.forEach(async (languageId) => {
+        try {
+          await zipResourcesContent(resourcesPath, languageId);
+        } catch (e) {
+          errors += e.toString() + '\n';
+        }
+      });
+    }
+
+    const errors2 = validateResources(resourcesPath);
+
+    if (errors2) {
+      okToZip = false;
+      console.log('executeResourcesUpdate() - Errors on final validation!!', errors);
+      errors += '\n' + errors2;
+    }
+
+    if (!errors) {
+      // update source content updater manifest, but don't clobber tCore version
+      UpdateResourcesHelpers.updateSourceContentUpdaterManifest(resourcesPath);
+    }
   }
 
   if (errors) {
-    console.log('Errors on downloading updated resources:\n' + errors);
+    console.error('executeResourcesUpdate() - Errors on downloading updated resources:\n' + errors);
     return 1; // error
   }
-  console.log('Updating Succeeded!!!');
+  console.log('executeResourcesUpdate() - Updating Succeeded!!!');
   return 0; // no error
 };
 

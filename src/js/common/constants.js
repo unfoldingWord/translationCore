@@ -11,10 +11,12 @@ const isProduction = process.env.NODE_ENV === 'production';
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
+export const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 // Paths
 export const PROJECTS_PATH = path.join(env.home(), 'translationCore', 'projects');
 export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
 export const IMPORTS_PATH = path.join(env.home(), 'translationCore', 'imports');
+export const VIEW_DATA_PATH = path.join(env.home(), 'translationCore', 'viewUrl');
 export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
 export const TEMP_IMPORT_PATH = path.join(env.home(), 'translationCore', 'imports', 'temp');
 export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');
@@ -34,6 +36,7 @@ export const SOURCE_CONTENT_UPDATER_MANIFEST = 'source-content-updater-manifest.
 export const tc_EDIT_VERSION_KEY = 'tc_edit_version'; // do not change this string as it will break compatibility with other versions
 export const tc_MIN_COMPATIBLE_VERSION_KEY = 'tc_min_compatible_version'; // do not change this string as it will break compatibility with other versions
 export const tc_MIN_VERSION_ERROR = 'TC_MIN_VERSION_ERROR';
+export const tc_MIN_UGNT_ERROR = 'TC_MIN_UGNT_ERROR';
 export const tc_LAST_OPENED_KEY = 'last_opened';
 // bible resources strings
 export const DEFAULT_GATEWAY_LANGUAGE = 'en';

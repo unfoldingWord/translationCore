@@ -1437,5 +1437,9 @@
   "resource_title": "Indian Revised Version - Assamese",
   "remoteModifiedTime": "2022-04-21T18:39:38Z",
   "description": "Gateway Language",
-  "catalog_modified_time": "2022-04-21T18:39:38Z"
+  "catalog_modified_time": "2022-04-21T18:39:38Z",
+  "usfm-js": "3.4.1",
+  "version": "3",
+  "modifiedTime": "2022-04-21T18:39:38Z",
+  "stage": "prod"
 }

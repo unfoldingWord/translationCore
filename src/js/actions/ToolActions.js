@@ -1,7 +1,10 @@
 /* eslint-disable no-async-promise-executor */
 import path from 'path-extra';
 import { batchActions } from 'redux-batched-actions';
+import { resourcesHelpers } from 'tc-source-content-updater';
+import _ from 'lodash';
 import {
+  getBibles,
   getSourceBook,
   getToolGatewayLanguage,
   getToolGlOwner,
@@ -22,6 +25,8 @@ import {
   DEFAULT_ORIG_LANG_OWNER,
   WORD_ALIGNMENT,
 } from '../common/constants';
+import { getCurrentPaneSetting } from '../helpers/SettingsHelpers';
+import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
 import types from './ActionTypes';
 // actions
 import * as ModalActions from './ModalActions';
@@ -30,6 +35,7 @@ import * as AlertActions from './AlertActions';
 import * as BodyUIActions from './BodyUIActions';
 import { loadOlderOriginalLanguageResource } from './OriginalLanguageResourcesActions';
 import * as ProjectDetailsActions from './ProjectDetailsActions';
+import * as SettingsActions from './SettingsActions';
 
 /**
  * Registers a tool that has been loaded from the disk.
@@ -66,7 +72,8 @@ export const loadTools = (toolsDir) => (dispatch) => {
 export function saveResourcesUsed(toolName, gl) {
   return (dispatch, getState) => {
     const glOwner = getToolGlOwner(getState(), toolName) || DEFAULT_ORIG_LANG_OWNER;
-    const sourceBook = getSourceBook(getState(), glOwner);
+    const origLangOwner = getOriginalLangOwner(glOwner);
+    const sourceBook = getSourceBook(getState(), origLangOwner);
     const sourceVersion = (sourceBook && sourceBook.manifest && sourceBook.manifest.dublin_core && sourceBook.manifest.dublin_core.version) || 'unknown';
     dispatch(ProjectDetailsActions.addObjectPropertyToManifest('tc_orig_lang_check_version_' + toolName, sourceVersion));
 
@@ -90,6 +97,42 @@ export function prepareToolForLoading(toolName) {
     dispatch(loadOlderOriginalLanguageResource(toolName));
     const language = getToolGatewayLanguage(getState(), toolName);
     dispatch(saveResourcesUsed(toolName, language));
+
+    const currentPaneSettings = getCurrentPaneSetting(getState()) || [];
+    const bibles = getBibles(getState());
+    let newPaneSettings = null;
+    let preReleaseStr = null;
+
+    for (let i = 0; i < currentPaneSettings.length; i++) {
+      const pane = currentPaneSettings[i];
+
+      if (pane.owner !== 'Door43-Catalog') {
+        const langKey = resourcesHelpers.addOwnerToKey(pane.languageId, pane.owner);
+        const langBibles = bibles[langKey];
+
+        if (langBibles) {
+          const bible = langBibles[pane.bibleId];
+
+          if (bible) {
+            const isPreRelease = bible.manifest?.stage === 'preprod';
+
+            if (isPreRelease) {
+              if (!newPaneSettings) {
+                newPaneSettings = _.clone(currentPaneSettings);
+                const translate = getTranslate(getState());
+                preReleaseStr = translate('pre_release');
+              }
+
+              newPaneSettings[i].isPreRelease = preReleaseStr;
+            }
+          }
+        }
+      }
+    }
+
+    if (newPaneSettings) {
+      dispatch(SettingsActions.setToolSettings('ScripturePane', 'currentPaneSettings', newPaneSettings));
+    }
   };
 }
 

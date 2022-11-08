@@ -9,11 +9,16 @@
   "save_changes": "Salvar alterações",
   "saving_changes": "Salvando Alterações",
   "success": "Sucesso",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "Formatos de arquivo suportados",
   "select_project": "Selecionar Projeto",
   "select_tool": "Selecionar ferramenta",
   "select_all": "Selecionar tudo",
   "unselect_all": "Desmarcar tudo",
+  "select_all_resources": "Selecionar Tudo - Aviso: isto pode levar um longo tempo e usar muito espaço em disco!",
+  "admin_options": "Opções do administrador",
+  "show_prerelease_resources": "Mostrar Recursos de Pré-Lançamento",
   "launch": "Abrir Programa",
   "current_user": "Usuário atual",
   "please_log_in": "Por favor, faça login para prosseguir",
@@ -75,9 +80,10 @@
   "sending_feedback_failed": "Falha ao enviar comentário",
   "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
   "unknown_networking_error": "${app_name} encontrou um erro de comunicação desconhecido. Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
+  "pre_release": "Pre-Release",
   "updates": {
-    "organization": "Organization",
-    "resource": "Resource",
+    "organization": "Organização",
+    "resource": "Recurso",
     "check_for_newer_app": "Verifique se há atualizações de software",
     "check_for_content_updates": "Verificar atualizações de conteúdo",
     "update_gateway_language_content": "Atualizar o conteúdo das Línguas Ponte (GL)",
@@ -96,13 +102,13 @@
     "downloading": "Baixando a atualização",
     "downloading_version": "Baixando a versão ${version}",
     "download_error": "Não foi possível baixar a atualização.",
-    "downloads_canceled": "Downloading source contents cancelled!",
+    "downloads_canceled": "O download dos conteúdos-fonte foi cancelado!",
     "source_label": "Fonte:",
     "local_timestamp": "Local:",
     "online_timestamp": "Online:",
-    "update_error_reason_parse": "parse error",
-    "update_error_reason_download": "download error",
-    "update_error_reason_missing_dependency": "missing dependency"
+    "update_error_reason_parse": "erro de análise",
+    "update_error_reason_download": "erro no download",
+    "update_error_reason_missing_dependency": "dependência em falta"
   },
   "users": {
     "category": "Categoria:",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "Criação de novo repositório falhou porque um repositório com este nome já existe.<br/><br/>Para ser permitido o upload do seu projeto para a ${door43}, você precisa ou renomear seu projeto local ou renomear seu Projeto ${door43}.",
     "unknown_download_networking_error": "${app_name} encontrou um erro de comunicação desconhecido tentando baixar o projeto de \"${project_url}\".<br/><br/>Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
     "project_locked": "O projeto está travado em:<br/>'${file_path}'. Por favor, reinicie o computador e tente novamente.",
-    "known_download_networking_error": "O download do projeto ${project_url} falhou. ${error_message}\n"
+    "known_download_networking_error": "O download do projeto ${project_url} falhou: ${error_message}",
+    "load_view_usfm_url": "Carregar Recurso Bíblico",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Entre com a URL do recurso",
+    "loading_usfm_url": "Carregando : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "O Nome de Idioma não é válido para esse Código",
@@ -272,7 +282,8 @@
       "invalid_characters": "Apenas as letras básicas do Latim são suportadas"
     },
     "conflicting_project": "Já existe um projeto com este identificador para este idioma e livro",
-    "newer_project": "Este projeto foi criado em uma versão mais nova do translationCore. Por favor, atualize para a versão mais recente e tente novamente."
+    "newer_project": "Este projeto foi criado em uma versão mais nova do translationCore. Por favor, atualize para a versão mais recente e tente novamente.",
+    "newer_project_original_language": "Este projeto foi alinhado usando uma versão mais recente do idioma original. Por favor, atualize o recurso de idioma original e tente novamente."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "Contatar Suporte",
     "retry": "Tentar novamente",
     "update": "Atualize para a versão mais recente",
+    "update_version": "Atualizar versão",
     "ignore_button": "Ignorar",
-    "feedback_button": "Enviar comentário"
+    "feedback_button": "Enviar comentário",
+    "delete": "Excluir"
   },
   "tool_card_categories": {
     "kt": "Termos-Chave",
