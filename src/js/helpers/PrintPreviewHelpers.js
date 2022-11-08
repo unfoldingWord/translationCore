@@ -43,6 +43,8 @@ export function doPrintPreview(projectPath) {
     }
 
     if (alertMessage) {
+      const CLOSE_BUTTON = translate('buttons.close_button');
+
       dispatch(AlertModalActions.openOptionDialog(
         alertMessage,
         (res) => {
@@ -54,7 +56,10 @@ export function doPrintPreview(projectPath) {
             reject();
           }
           dispatch(AlertModalActions.closeAlertDialog());
-        }, PRINT_BUTTON, translate('button.close_button')));
+        },
+        PRINT_BUTTON,
+        CLOSE_BUTTON,
+      ));
     }
   }));
 }
