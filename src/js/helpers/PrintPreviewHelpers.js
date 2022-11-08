@@ -9,30 +9,47 @@ import * as LoadHelpers from './LoadHelpers';
 
 export function doPrintPreview(projectPath) {
   return ((dispatch, getState) => new Promise((resolve, reject) => {
-    const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
-    const languageId = manifest?.target_language?.id || '';
-    const bookId = manifest?.project?.id || '';
-    const typeName = manifest?.project?.name || '';
-    const usfm = getUsfm2ExportFile(projectPath);
+    let usfm;
+    let alertMessage;
 
-    dispatch(AlertModalActions.openOptionDialog(
-      <PreviewContent
+    try {
+      const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+      const languageId = manifest?.target_language?.id || '';
+      const bookId = manifest?.project?.id || '';
+      const typeName = manifest?.project?.name || '';
+      usfm = getUsfm2ExportFile(projectPath);
+      alertMessage = <PreviewContent
         bookId={bookId}
         usfm={usfm}
         languageId={languageId}
         typeName={typeName}
-        active={true}
-        onRefresh={() => {}}
-        onAction={() => {}}
-      />,
-      (res) => {
-        if (res === 'OK') {
-          resolve();
-        } else {
-          //used to cancel the entire process
-          reject();
-        }
-        dispatch(AlertModalActions.closeAlertDialog());
-      }, 'OK', 'Cancel'));
+        printImmediately={true}
+        onRefresh={() => {
+        }}
+        onError={(errors) => {
+          console.warn(`Error rendering bible`, errors);
+          const message = `Error rendering usfm from ${projectPath}!`;
+          dispatch(AlertModalActions.openAlertDialog(message, false));
+        }}
+      />;
+    } catch (e) {
+      console.warn(`doPrintPreview(${projectPath}) - error getting usfm`, e);
+      const message = `Error getting usfm from ${projectPath}!`;
+      dispatch(AlertModalActions.openAlertDialog(message, false));
+    }
+
+    if (alertMessage) {
+      dispatch(AlertModalActions.openOptionDialog(
+        alertMessage,
+        (res) => {
+          if (res === 'OK') {
+            resolve();
+          } else {
+            //used to cancel the entire process
+            reject();
+          }
+          dispatch(AlertModalActions.closeAlertDialog());
+        }, 'Print', 'Cancel'));
+    }
   }));
 }

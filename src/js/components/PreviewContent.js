@@ -3,9 +3,6 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Pageview from '@material-ui/icons/Pageview';
-import { Tooltip, IconButton } from '@material-ui/core';
 
 import {
   useProskomma,
@@ -28,23 +25,11 @@ const i18n_default = {
   // notes: "Notes",
 };
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    'color': theme.palette.primary.main,
-    'backgroundColor': props => (props.active ? '#ffffff' : 'transparent'),
-    '&:hover': {
-      color: props => (props.active ? '#ffffff' : theme.palette.primary.main),
-      backgroundColor: props => (props.active ? '#07b811' : '#ffffff'),
-    },
-    'border': '1px solid #0089C7',
-  },
-}));
-
 function PreviewContent({
   // eslint-disable-next-line react/prop-types
-  active, bookId, onRefresh, usfm, onAction, languageId, typeName,
+  bookId, onRefresh, usfm, onError, languageId, typeName, printImmediately,
 }) {
-  const [submitPreview, setSubmitPreview] = useState(false);
+  const [submitPreview, setSubmitPreview] = useState(!!printImmediately);
   const [documents, setDocuments] = useState([]);
   const [i18n, setI18n] = useState(i18n_default);
 
@@ -100,6 +85,13 @@ function PreviewContent({
     // htmlFragment, // show full html or what's in the body
     verbose,
   });
+
+  useEffect(() => {
+    if (errors?.length) {
+      console.warn(`PreviewContent() - error rendering bible`, errors);
+      onError && onError(errors);
+    }
+  }, [errors, onError]);
 
   useEffect(() => {
     if (html && submitPreview && !running) {
@@ -166,15 +158,8 @@ function PreviewContent({
     doSubmitPreview();
   }, [ submitPreview, usfm, bookId, onRefresh, language.name, language.languageId, typeName, languageId ]);
 
-  const classes = useStyles({ active });
   return (
-    <Tooltip title={ `Preview Content` }>
-      <IconButton className={classes.iconButton}
-        onClick={() => setSubmitPreview(true)}
-        aria-label="Preview Content">
-        <Pageview />
-      </IconButton>
-    </Tooltip>
+    <div/>
   );
 }
 
