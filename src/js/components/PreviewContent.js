@@ -27,7 +27,7 @@ const i18n_default = {
 
 function PreviewContent({
   // eslint-disable-next-line react/prop-types
-  bookId, onRefresh, usfm, onError, languageId, typeName, printImmediately,
+  bookId, onRefresh, usfm, onError, onProgress, languageId, typeName, printImmediately, translate,
 }) {
   const [submitPreview, setSubmitPreview] = useState(!!printImmediately);
   const [documents, setDocuments] = useState([]);
@@ -94,13 +94,20 @@ function PreviewContent({
   }, [errors, onError]);
 
   useEffect(() => {
+    if (progress) {
+      onProgress && onProgress(progress);
+    }
+  }, [progress, onProgress]);
+
+  useEffect(() => {
     if (html && submitPreview && !running) {
+      onRefresh && onRefresh(html);
       const newPage = window.open('about:blank', '_blank', 'width=850,height=1000');
       newPage.document.write(html.replace('https://unpkg.com/pagedjs/dist', '/static/js'));
       newPage.document.close();
       setSubmitPreview(false);
     }
-  }, [html, submitPreview, running]);
+  }, [html, submitPreview, running, onRefresh]);
 
   // useEffect( () => {
   //   setSubmitPreview(false)
@@ -156,10 +163,22 @@ function PreviewContent({
     }
 
     doSubmitPreview();
-  }, [ submitPreview, usfm, bookId, onRefresh, language.name, language.languageId, typeName, languageId ]);
+  }, [ submitPreview, usfm, bookId, language.name, language.languageId, typeName, languageId ]);
+
+  let message;
+
+  if (errors?.length) {
+    message = 'Error rendering';
+  } else if (html) {
+    message = 'Rendering Complete.';
+  } else {
+    message = `Progress: ${progress}`;
+  }
 
   return (
-    <div/>
+    <div>
+      {message}
+    </div>
   );
 }
 

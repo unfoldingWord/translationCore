@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import React from 'react';
-// import { getTranslate } from '../selectors';
+import { getTranslate } from '../selectors';
 import { getUsfm2ExportFile } from '../actions/USFMExportActions';
 import PreviewContent from '../components/PreviewContent';
 import * as AlertModalActions from '../actions/AlertModalActions';
@@ -9,8 +9,10 @@ import * as LoadHelpers from './LoadHelpers';
 
 export function doPrintPreview(projectPath) {
   return ((dispatch, getState) => new Promise((resolve, reject) => {
+    const PRINT_BUTTON = 'Print';
     let usfm;
     let alertMessage;
+    const translate = getTranslate(getState());
 
     try {
       const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
@@ -24,10 +26,12 @@ export function doPrintPreview(projectPath) {
         languageId={languageId}
         typeName={typeName}
         printImmediately={true}
-        onRefresh={() => {
+        translate={translate}
+        onRefresh={(html) => {
+          console.log(`doPrintPreview() - Finished rendering to html: ${html}`); // TODO - limit text length
         }}
         onError={(errors) => {
-          console.warn(`Error rendering bible`, errors);
+          console.warn(`doPrintPreview() - Error rendering bible`, errors);
           const message = `Error rendering usfm from ${projectPath}!`;
           dispatch(AlertModalActions.openAlertDialog(message, false));
         }}
@@ -42,14 +46,15 @@ export function doPrintPreview(projectPath) {
       dispatch(AlertModalActions.openOptionDialog(
         alertMessage,
         (res) => {
-          if (res === 'OK') {
+          if (res === PRINT_BUTTON) {
+            console.log(`doPrintPreview(${projectPath}) - selected print`);
             resolve();
           } else {
-            //used to cancel the entire process
+            console.log(`doPrintPreview(${projectPath}) - close`);
             reject();
           }
           dispatch(AlertModalActions.closeAlertDialog());
-        }, 'Print', 'Cancel'));
+        }, PRINT_BUTTON, translate('button.close_button')));
     }
   }));
 }
