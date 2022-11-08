@@ -102,9 +102,6 @@ function PreviewContent({
   useEffect(() => {
     if (html && submitPreview && !running) {
       onRefresh && onRefresh(html);
-      const newPage = window.open('about:blank', '_blank', 'width=850,height=1000');
-      newPage.document.write(html.replace('https://unpkg.com/pagedjs/dist', '/static/js'));
-      newPage.document.close();
       setSubmitPreview(false);
     }
   }, [html, submitPreview, running, onRefresh]);
