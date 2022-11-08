@@ -9,11 +9,16 @@
   "save_changes": "পরিবর্তনগুলি সংরক্ষণ করুন",
   "saving_changes": "পরিবর্তনগুলি সংরক্ষণ করা ",
   "success": "সাফল্য",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "সমর্থিত ফাইলের ধরণগুলো ",
   "select_project": "একটি প্রকল্প নির্বাচন করুন ",
   "select_tool": "একটি টুল নির্বাচন করুন",
   "select_all": "সবগুলোকে নির্বাচন করুন",
   "unselect_all": "সবগুলোকে নির্বাচন থেকে সরিয়ে ফেলুন ",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "আরম্ভ করা ",
   "current_user": "বর্তমান ইউজার ",
   "please_log_in": "অবিরত চালিয়ে যেতে দয়া করে লগ ইন করুন ",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "প্রতিক্রিয়া প্রেরণ করতে ব্যর্থ ",
   "critical_error_warning": "সাবধানবাণী: একটি গুরুত্বপূর্ণ ত্রুটি ঘটেছে!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "নতুন সংগ্রহস্থল সৃষ্টি করা ব্যর্থ হয়েছে কারণ এই নামের একটি সংগ্রহস্থল ইতিমধ্যেই বিদ্যমান রয়েছে I <br/><br/>আপনার প্রকল্পকে ${door43} তে আপলোড করতে সক্ষম হওয়ার জন্য, হয় আপনার স্থানীয় প্রকল্পটির নবনামাঙ্কন করার প্রয়োজন হবে নয়তো ${door43} প্রকল্পটির নতুন নামকরণ করতে হবে I ",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "কোডের জন্য ভাষার নাম বৈধ নয় ",
@@ -272,7 +282,8 @@
       "invalid_characters": "কেবলমাত্র মূল ল্যাটিন অক্ষর সমূহ দ্বারা সমর্থিত  "
     },
     "conflicting_project": "এই ভাষা এবং বইয়ের জন্য এই সনাক্তকারী সহ একটি প্রকল্প আগে থেকেই রয়েছে ",
-    "newer_project": "এই প্রকল্পটিকে মূল অনুবাদের একটি নতুনতর সংস্করণের মধ্যে তৈরী করা হয়েছে I দয়া করে সর্বশেষ সংস্করণটিকে আপডেট করুন এবং পুনরায় চেষ্টা করুন I   "
+    "newer_project": "এই প্রকল্পটিকে মূল অনুবাদের একটি নতুনতর সংস্করণের মধ্যে তৈরী করা হয়েছে I দয়া করে সর্বশেষ সংস্করণটিকে আপডেট করুন এবং পুনরায় চেষ্টা করুন I   ",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "হেল্পডেস্কের সাথে যোগাযোগ করুন ",
     "retry": "পুনরায় চেষ্টা করুন ",
     "update": "সর্বশেষ সংস্করণটির আপডেট করুন ",
+    "update_version": "Update Version",
     "ignore_button": "অগ্রাহ্য করুন ",
-    "feedback_button": "প্রতিক্রিয়া প্রেরণ করুন "
+    "feedback_button": "প্রতিক্রিয়া প্রেরণ করুন ",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "মুখ্য পরিভাষাগুলো ",

@@ -9,11 +9,16 @@
   "save_changes": "மாற்றங்களை சேமியுங்கள்\n",
   "saving_changes": "Saving Changes",
   "success": "வெற்றி",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "ஆதரிக்கப்படும் கோப்பு வகைகள்",
   "select_project": "ஒரு திட்ட தேர்வு",
   "select_tool": "தேர்வு ஒரு கருவி",
   "select_all": "எல்லாம் தேர்ந்தெடு",
   "unselect_all": "அனைத்தையும் தேர்வுநீக்கு",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "வெளியீட்டு",
   "current_user": "தற்போதைய பயனர்",
   "please_log_in": "தொடர்வதற்கு தயவு செய்து உள்நுழையவும்.",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "கருத்து அனுப்புவதில் தோல்வி\n",
   "critical_error_warning": "எச்சரிக்கை: ஒரு விமர்சன பிழை ஏற்பட்டது!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "மொழி பெயர் குறியீட்டிற்கு செல்லுபடியாகாது\n",
@@ -272,7 +282,8 @@
       "invalid_characters": "அடிப்படை லத்தீன் கடிதங்கள் மட்டுமே ஆதரிக்கப்படுகின்றன"
     },
     "conflicting_project": "இந்த அடையாளங்காட்டியுடன் ஒரு திட்டம் இந்த மொழி மற்றும் புத்தகத்திற்கு ஏற்கனவே உள்ளது\n",
-    "newer_project": "இந்த திட்டம் மொழிபெயர்ப்பு கோரின் புதிய பதிப்பில் உருவாக்கப்பட்டது. சமீபத்திய பதிப்பிற்கு புதுப்பித்து மீண்டும் முயற்சிக்கவும்.\n"
+    "newer_project": "இந்த திட்டம் மொழிபெயர்ப்பு கோரின் புதிய பதிப்பில் உருவாக்கப்பட்டது. சமீபத்திய பதிப்பிற்கு புதுப்பித்து மீண்டும் முயற்சிக்கவும்.\n",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "ஹெல்ப் டெஸ்கைத் தொடர்பு கொள்ளுங்கள்\n",
     "retry": "மீண்டும் முயற்சிக்கவும்",
     "update": "சமீபத்திய பதிப்பிற்கு புதுப்பிக்கவும்\n",
+    "update_version": "Update Version",
     "ignore_button": "புறக்கணி",
-    "feedback_button": "கருத்தினை அனுப்பவும்\n"
+    "feedback_button": "கருத்தினை அனுப்பவும்\n",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "முக்கிய விதிமுறைகள்\n",

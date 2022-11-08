@@ -9,11 +9,16 @@
   "save_changes": "परिवर्तन सहेजें",
   "saving_changes": "परिवर्तन सहेज रहा है",
   "success": "सफलता",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "समर्थित फ़ाइल प्रकार",
   "select_project": "कोई प्रोजेक्ट चुनें",
   "select_tool": "एक उपकरण का चयन करें",
   "select_all": "सभी का चयन करें",
   "unselect_all": "सभी का चयन रद्द करें",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "प्रक्षेपण",
   "current_user": "तात्कालिक प्रयोगकर्ता",
   "please_log_in": "जारी रखने के लिए कृपया लॉग इन करें",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "प्रतिक्रिया भेजने में विफल",
   "critical_error_warning": "चेतावनी: एक गंभीर त्रुटि हुई है!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "बनाने के लिए नए भंडार में विफल रहा है क्योंकि एक रिपोजिटरी इस नाम के साथ पहले से ही मौजूद है ।<br/><br/>करने के लिए सक्षम होना करने के लिए अपलोड करने के लिए अपनी परियोजना ${door43}, आप की जरूरत करने के लिए का नाम बदलें या तो अपने स्थानीय परियोजना का नाम बदलें या अपने ${door43} परियोजना है ।",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "कोड के लिए भाषा का नाम मान्य नहीं है",
@@ -272,7 +282,8 @@
       "invalid_characters": "केवल मूल लैटिन पत्र समर्थित हैं"
     },
     "conflicting_project": "इस पहचानकर्ता के साथ एक परियोजना पहले से ही इस भाषा और पुस्तक के लिए मौजूद है",
-    "newer_project": "यह प्रोजेक्ट translationCore के नए संस्करण में बनाया गया था। कृपया नवीनतम संस्करण में अपडेट करें और पुनः प्रयास करें।"
+    "newer_project": "यह प्रोजेक्ट translationCore के नए संस्करण में बनाया गया था। कृपया नवीनतम संस्करण में अपडेट करें और पुनः प्रयास करें।",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "हेल्पडेस्क से संपर्क करें",
     "retry": "पुन: प्रयास करें",
     "update": "नवीनतम संस्करण में अपडेट करें",
+    "update_version": "Update Version",
     "ignore_button": "उपेक्षा करें",
-    "feedback_button": "प्रतिक्रिया भेजें"
+    "feedback_button": "प्रतिक्रिया भेजें",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "मुख्य शब्द",

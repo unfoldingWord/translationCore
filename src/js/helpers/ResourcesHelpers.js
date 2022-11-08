@@ -8,6 +8,7 @@ import _ from 'lodash';
 import {
   apiHelpers,
   getOtherTnsOLVersions,
+  resourcesDownloadHelpers,
   resourcesHelpers,
 } from 'tc-source-content-updater';
 // actions
@@ -32,6 +33,7 @@ import {
   ORIGINAL_LANGUAGE,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   STATIC_RESOURCES_PATH,
+  toolCardCategories,
   TARGET_LANGUAGE,
   TARGET_BIBLE,
   TC_VERSION,
@@ -40,7 +42,7 @@ import {
   TRANSLATION_HELPS,
   TRANSLATION_ACADEMY,
   USER_RESOURCES_PATH,
-  toolCardCategories,
+  USFMJS_VERSION,
 } from '../common/constants';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
@@ -122,6 +124,51 @@ export function areQuotesEqual(projectCheckQuote, resourceQuote) {
     }
   }
   return same;
+}
+
+/**
+ * removes user resources that are outdated
+ * param {string} resourcesFolder - path to user resources
+ */
+export function removeOutDatedResources(resourcesFolder = USER_RESOURCES_PATH ) {
+  const neededManifestVersion = USFMJS_VERSION;
+
+  if (!neededManifestVersion) {
+    console.error(`removeOutDatedResources() - could not read usfm-js version`);
+  }
+
+  const bibleResManifestKey = 'usfm-js';
+  const resourcesLanguages = getFilteredSubFolders(resourcesFolder);
+
+  for ( const languageId of resourcesLanguages) {
+    const userLanguageResource = path.join(resourcesFolder, languageId);
+    const biblesPath = path.join(userLanguageResource, 'bibles');
+    const bibles = getFilteredSubFolders(biblesPath);
+
+    for (const bible of bibles) {
+      const versionsPath = path.join(biblesPath, bible);
+      const versions = getFilteredSubFolders(versionsPath);
+
+      for (const version of versions) {
+        const versionPath = path.join(versionsPath, version);
+        const manifestPath = path.join(versionPath, 'manifest.json');
+
+        if (fs.existsSync(manifestPath)) {
+          try {
+            const manifest = fs.readJsonSync(manifestPath);
+            const localResourceKey = manifest?.[bibleResManifestKey];
+
+            if (localResourceKey !== neededManifestVersion) { // if local manifest key does not match required
+              console.log(`removeOutDatedResources() - removing incompatible local resource ${versionPath}, manifest key: ${bibleResManifestKey}=${localResourceKey}, needed version is ${neededManifestVersion}`);
+              fs.removeSync(versionPath);
+            }
+          } catch (e) {
+            console.warn(`removeOutDatedResources() - could not remove resource from ${versionPath}`);
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -554,8 +601,11 @@ export function updateGroupIndexForGl(toolName, selectedGL, owner) {
       if (fs.existsSync(categoriesPath)) {
         const categories = fs.readJsonSync(categoriesPath);
 
-        if (categories && categories.languageId === selectedGL) {
-          console.log('updateGroupIndexForGl() - language unchanged, skipping');
+        const glUnchanged = (categories?.languageId === selectedGL) &&
+          (categories?.owner === owner);
+
+        if (glUnchanged) {
+          console.log('updateGroupIndexForGl() - language/owner unchanged, skipping');
           return; // we don't need to do anything since language hasn't changed
         }
       }
@@ -663,15 +713,33 @@ export function loadProjectGroupIndex(
  * @param dateStr - optional date string to use, if not given with use current
  */
 export const updateSourceContentUpdaterManifest = (dateStr = null) => {
-  const manifest = {
+  const manifestPath = path.join(USER_RESOURCES_PATH,
+    SOURCE_CONTENT_UPDATER_MANIFEST);
+  const oldManifest = readJsonFile(manifestPath) || {};
+  const newManifest = {
+    ...oldManifest,
     modified: generateTimestamp(dateStr),
     [TC_VERSION]: APP_VERSION,
   };
-  const destinationPath = path.join(USER_RESOURCES_PATH,
-    SOURCE_CONTENT_UPDATER_MANIFEST);
   fs.ensureDirSync(USER_RESOURCES_PATH);
-  fs.outputJsonSync(destinationPath, manifest, { spaces: 2 });
+  console.log(`updateSourceContentUpdaterManifest() - updated ${manifestPath} to `, newManifest);
+  fs.outputJsonSync(manifestPath, newManifest, { spaces: 2 });
 };
+
+/**
+ * read json file with error recovery, returns null on error
+ * @param filePath
+ * @return {*}
+ */
+function readJsonFile(filePath) {
+  try {
+    const data = fs.readJSONSync(filePath);
+    return data;
+  } catch (e) {
+    console.warn(`readJsonFile() - error reading ${filePath}`);
+  }
+  return null;
+}
 
 /**
  * copies the source-content-updater-manifest.json from tc to the users folder
@@ -681,12 +749,18 @@ export const copySourceContentUpdaterManifest = () => {
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
   if (fs.existsSync(sourceContentUpdaterManifestPath)) {
-    const bundledManifest = fs.readJSONSync(sourceContentUpdaterManifestPath);
+    const bundledManifest = readJsonFile(sourceContentUpdaterManifestPath) || {};
     bundledManifest[TC_VERSION] = APP_VERSION; // add app version to resource
-    const destinationPath = path.join(USER_RESOURCES_PATH,
+    const userSourceContentUpdaterManifestPath = path.join(USER_RESOURCES_PATH,
       SOURCE_CONTENT_UPDATER_MANIFEST);
     fs.ensureDirSync(USER_RESOURCES_PATH);
-    fs.outputJsonSync(destinationPath, bundledManifest, { spaces: 2 });
+    const userManifest = readJsonFile(userSourceContentUpdaterManifestPath) || {};
+    const newManifest = {
+      ...userManifest,
+      ...bundledManifest,
+    };
+    console.log(`copySourceContentUpdaterManifest() - updated ${userSourceContentUpdaterManifestPath} to `, newManifest);
+    fs.outputJsonSync(userSourceContentUpdaterManifestPath, newManifest, { spaces: 2 });
   }
 };
 
@@ -937,7 +1011,7 @@ export function getAvailableScripturePaneSelections(resourceList) {
 
         if (fs.existsSync(biblesPath)) {
           const biblesFolders = fs.readdirSync(biblesPath)
-            .filter(folder => folder !== '.DS_Store');
+            .filter(folder => folder !== '.DS_Store') || [];
 
           biblesFolders.forEach(bibleId => {
             const bibleIdPath = path.join(biblesPath, bibleId);
@@ -997,17 +1071,19 @@ export function getAvailableScripturePaneSelections(resourceList) {
  * @param {Object} state
  * @param {String} bookId
  * @param {string} toolName - the name of the tool for which resources will be found.
+ * @param {string} selectedGL - optional GL language to load
+ * @param {string} glOwner_ - optional GL owner, otherwise will get from current tool
  * @return {Array} array of resource in scripture panel
  */
-export function getResourcesNeededByTool(state, bookId, toolName) {
+export function getResourcesNeededByTool(state, bookId, toolName, selectedGL, glOwner_) {
   const resources = [];
   const { languageId: olLanguageID, bibleId: olBibleId } = BibleHelpers.getOrigLangforBook(bookId);
-  const glOwner= getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
+  const glOwner= glOwner_ || getToolGlOwner(state, toolName) || DEFAULT_ORIG_LANG_OWNER;
   const currentPaneSettings = _.cloneDeep(SettingsHelpers.getCurrentPaneSetting(state));
 
   // TODO: hardcoded fixed for 1.1.0, the En ULT is used by the expanded scripture pane & if
   // not found throws an error. Should be addressed later by 4858.
-  addResource(resources, 'en', 'ult', DEFAULT_OWNER);
+  addResource(resources, 'en', 'ult', glOwner_ || DEFAULT_OWNER);
 
   if (Array.isArray(currentPaneSettings)) {
     for (let setting of currentPaneSettings) {
@@ -1018,7 +1094,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
         break;
 
       case ORIGINAL_LANGUAGE:
-        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(glOwner));
+        addResource(resources, olLanguageID, setting.bibleId, getOriginalLangOwner(setting.owner || glOwner));
         break; // skip invalid language codes
 
       default:
@@ -1030,7 +1106,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
     console.warn('No Scripture Pane Configuration');
   }
   addResource(resources, olLanguageID, olBibleId, getOriginalLangOwner(glOwner)); // make sure loaded even if not in pane settings
-  const gatewayLangId = getToolGatewayLanguage(state, toolName);
+  const gatewayLangId = selectedGL || getToolGatewayLanguage(state, toolName);
   const biblesLoaded = getBibles(state);
   const validBibles = getValidGatewayBiblesForTool(
     toolName,
@@ -1045,6 +1121,7 @@ export function getResourcesNeededByTool(state, bookId, toolName) {
       addResource(resources, gatewayLangId, bibleId, owner || apiHelpers.DOOR43_CATALOG);
     }
   }
+
   return resources;
 }
 
@@ -1262,6 +1339,12 @@ export function moveResourcesFromOldGrcFolder() {
  * @return {boolean} - returns true if all old resources can be deleted
  */
 export function preserveNeededOrigLangVersions(languageId, resourceId, resourcePath, resourcesPath) {
+  const havePreRelease = resourcesDownloadHelpers.doResourcesContainPreReleaseData(resourcesPath);
+
+  if (havePreRelease) {
+    return false;
+  }
+
   let deleteOldResources = true; // by default we do not keep old versions of resources
 
   if (BibleHelpers.isOriginalLanguageBible(languageId, resourceId)) {
@@ -1458,11 +1541,12 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
  * @param {String} articleId
  * @param {String} languageId
  * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @param {String} ownerStr
  * @returns {String} - the content of the article
  */
-export const loadArticleData = (resourceType, articleId, languageId, category='') => {
+export const loadArticleData = (resourceType, articleId, languageId, category='', ownerStr = DEFAULT_OWNER) => {
   let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category, ownerStr);
 
   if (articleFilePath) {
     articleData = fs.readFileSync(articleFilePath, 'utf8'); // get file from fs
@@ -1476,11 +1560,12 @@ export const loadArticleData = (resourceType, articleId, languageId, category=''
  * @param {String} articleId
  * @param {String} languageId
  * @param {String} category - Category of the article, e.g. kt, other, translate, etc. Can be blank.
+ * @param {String} ownerStr
  * @returns {String} - the content of the article
  */
-export const loadArticleDataAsync = async (resourceType, articleId, languageId, category='') => {
+export const loadArticleDataAsync = async (resourceType, articleId, languageId, category='', ownerStr = DEFAULT_OWNER) => {
   let articleData = '# Article Not Found: '+articleId+' #\n\nCould not find article for '+articleId;
-  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category);
+  const articleFilePath = findArticleFilePath(resourceType, articleId, languageId, category, ownerStr);
 
   if (articleFilePath) {
     articleData = await fs.readFile(articleFilePath, 'utf8'); // get file from fs
@@ -1489,15 +1574,16 @@ export const loadArticleDataAsync = async (resourceType, articleId, languageId, 
 };
 
 /**
- * Finds the article file within a resoure type's path, looking at both the given language and default language in all possible category dirs
+ * Finds the article file within a resource type's path, looking at both the given language and default language in all possible category dirs
  * @param {String} resourceType - e.g. translationWords, translationNotes
  * @param {String} articleId
  * @param {String} languageId - languageId will be first checked, and then we'll try the default GL
- * @param {String} category - the articles category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @param {String} category - the article's category, e.g. other, kt, translate. If blank we'll try to guess it.
+ * @param {String} ownerStr
  * @returns {String} - the path to the file, null if doesn't exist
  * Note: resourceType is coming from a tool name
  */
-export const findArticleFilePath = (resourceType, articleId, languageId, category='') => {
+export const findArticleFilePath = (resourceType, articleId, languageId, category='', ownerStr = DEFAULT_OWNER) => {
   const languageDirs = [];
 
   if (languageId) {
@@ -1528,7 +1614,7 @@ export const findArticleFilePath = (resourceType, articleId, languageId, categor
   for (let i = 0, len = languageDirs.length; i < len; ++i) {
     let languageDir = languageDirs[i];
     let typePath = path.join(USER_RESOURCES_PATH, languageDir, TRANSLATION_HELPS, resourceType);
-    let versionPath = ResourceAPI.getLatestVersion(typePath) || typePath;
+    let versionPath = ResourceAPI.getLatestVersion(typePath, ownerStr) || typePath;
 
     for (let j = 0, jLen = categories.length; j < jLen; ++j) {
       let categoryDir = categories[j];

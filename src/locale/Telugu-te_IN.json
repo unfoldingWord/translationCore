@@ -9,11 +9,16 @@
   "save_changes": "మార్పులను భద్రపరచండి",
   "saving_changes": "Saving Changes",
   "success": "విజయం",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "సహకరించే ఫైళ్ళ రకాలు",
   "select_project": "ఒక పథకాన్ని ఎంపిక చెయ్యండి",
   "select_tool": "ఒక పరికరాన్ని ఎంపిక చెయ్యండి",
   "select_all": "అన్నింటిని ఎంపిక చెయ్యండి",
   "unselect_all": "అన్నింటిని ఎంపిక చెయ్యకండి",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "ప్రారంభించండి",
   "current_user": "ప్రస్తుత వినియోగదారుడు",
   "please_log_in": "కొనసాగించడానికి లాగిన్ చెయ్యండి",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "సమాచారాన్ని పంపించడంలో వైఫల్యం",
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "గుర్తుకు భాష పేరు సరిపోదు",
@@ -272,7 +282,8 @@
       "invalid_characters": "కేవలం ప్రాథమిక లాటిన్ అక్షరాలు మద్దతు ఇస్తుంది"
     },
     "conflicting_project": "ఈ గుర్తించేదానితో ఒక ప్రాజెక్టు ఈ భాష, పుస్తకం కోసం ఇంతకుముందే ఉనికిలో ఉంది.",
-    "newer_project": "నూతన అనువాదం కేంద్రం ప్రచురణలో ఈ ప్రాజెక్టు తయారు చెయ్యబడింది, దయచేసి ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి, మరల ప్రయత్నించండి"
+    "newer_project": "నూతన అనువాదం కేంద్రం ప్రచురణలో ఈ ప్రాజెక్టు తయారు చెయ్యబడింది, దయచేసి ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి, మరల ప్రయత్నించండి",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "హెల్ప్ డెస్క్ ను సంప్రదించండి",
     "retry": "తిరిగి ప్రయత్నించండి",
     "update": "ఆధునిక ప్రచురణను నవీకరణ చెయ్యండి",
+    "update_version": "Update Version",
     "ignore_button": "లక్ష్యం చెయ్యకండి",
-    "feedback_button": "సమాచారాన్ని పంపించండి"
+    "feedback_button": "సమాచారాన్ని పంపించండి",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "కీలక పదాలు",

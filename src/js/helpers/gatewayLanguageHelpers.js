@@ -4,8 +4,12 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
-import { getAlignedText } from 'tc-ui-toolkit';
-import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
+import { getAlignedText, verseHelpers } from 'tc-ui-toolkit';
+import {
+  apiHelpers,
+  resourcesHelpers,
+  resourcesDownloadHelpers,
+} from 'tc-source-content-updater';
 import { getCurrentToolName, getToolGatewayLanguage } from '../selectors';
 import {
   LEXICONS,
@@ -23,6 +27,7 @@ import { getLanguageByCodeSelection, sortByNamesCaseInsensitive } from './Langua
 import * as ResourcesHelpers from './ResourcesHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import ResourceAPI from './ResourceAPI';
+import { isVerseSpan } from './WordAlignmentHelpers';
 
 /**
  *
@@ -120,12 +125,21 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
   const glRequirements = getGlRequirementsForTool(toolName);
   const languageBookData = getSupportedGatewayLanguageResourcesList(bookId, glRequirements, toolName);
   const supportedLanguageOwner = Object.keys(languageBookData);
+  const havePreReleaseData = resourcesDownloadHelpers.doResourcesContainPreReleaseData(USER_RESOURCES_PATH);
   const supportedLanguages = supportedLanguageOwner.map(langAndOwner => {
     const { owner, version: code } = resourcesHelpers.splitVersionAndOwner(langAndOwner);
 
     let lang = getLanguageByCodeSelection(code);
 
     if (lang) {
+      if (havePreReleaseData) { // TODO blm: need to add checking for pre-release GL
+        // const preResources = {};
+        // const latestVersionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId));
+        // if wA, check the default GL; if tW check the tWL, if tn check the tN
+        // const latestVersionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'lexicons', lexiconId));
+        // getLatestVersion(dir, ownerStr)
+      }
+
       lang = _.cloneDeep(lang); // make duplicate before modifying
       const bookData = languageBookData[langAndOwner];
       lang.default_literal = bookData.default_literal;
@@ -636,10 +650,29 @@ export function getAlignedGLText(toolsSelectedGLs, contextId, bibles, currentToo
  * @returns {string}
  */
 export function getAlignedTextFromBible(contextId, bible) {
-  if (bible && contextId && contextId.reference &&
-    bible[contextId.reference.chapter] && bible[contextId.reference.chapter][contextId.reference.verse] &&
-    bible[contextId.reference.chapter][contextId.reference.verse].verseObjects) {
-    const verseObjects = bible[contextId.reference.chapter][contextId.reference.verse].verseObjects;
+  if (bible && contextId?.reference) {
+    const chapterData = bible[contextId.reference.chapter];
+    const verseRef = contextId.reference.verse;
+    const verseData = chapterData?.[verseRef];
+    let verseObjects = null;
+
+    if (verseData) { // if we found verse
+      verseObjects = verseData.verseObjects;
+    } else if (isVerseSpan(verseRef)) { // if we didn't find verse, check if verse span
+      verseObjects = [];
+      // iterate through all verses in span
+      const { low, hi } = verseHelpers.getVerseRangeFromSpan(verseRef);
+
+      for (let i = low; i <= hi; i++) {
+        const verseObjects_ = chapterData?.[i]?.verseObjects;
+
+        if (!verseObjects_) { // if verse missing, abort
+          verseObjects = null;
+          break;
+        }
+        verseObjects = verseObjects.concat(verseObjects_);
+      }
+    }
     return getAlignedText(verseObjects, contextId.quote, contextId.occurrence);
   }
 }

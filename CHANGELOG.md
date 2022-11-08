@@ -1,5 +1,48 @@
 # Changelog
 
+## [v3.4.0](https://github.com/unfoldingWord/translationCore/tree/v3.4.0) (2022-9-22)
+
+**Implemented enhancements:**
+
+- Implemented minimal resource builds to minimize disk space usage [\#7320](https://github.com/unfoldingWord/translationCore/issues/7320)
+- Automate validation of bundled resources on each build [\#7379](https://github.com/unfoldingWord/translationCore/issues/7379)
+- Support verse ranges that span chapter boundaries [\#7338](https://github.com/unfoldingWord/translationCore/issues/7338)
+- Protect users from doing word alignment with older version of original languages [\#7417](https://github.com/unfoldingWord/translationCore/issues/7417)
+- Switch to using ampersand in place of ellipsis for discontiguous alignments [\#7294](https://github.com/unfoldingWord/translationCore/issues/7294)
+
+**Fixed bugs:**
+
+- tW articles are not opening in tN [\#7436](https://github.com/unfoldingWord/translationCore/issues/7436)
+- tNotes crashes on leading zeroes in verse links [\#7434](https://github.com/unfoldingWord/translationCore/issues/7434)
+- Problem with adding scripture panes after upgrade [\#7414](https://github.com/unfoldingWord/translationCore/issues/7414)
+- Fix highlighting when there are multiple verses in a check [\#7337](https://github.com/unfoldingWord/translationCore/issues/7337)
+
+
+## [v3.3.0](https://github.com/unfoldingWord/translationCore/tree/v3.3.0) (2022-7-19)
+
+**Implemented enhancements:**
+
+- Add ability to Load Bibles by URL to tCore Scripture pane.  [\#7375](https://github.com/unfoldingWord/translationCore/issues/7375)
+- Add support for BOM marker on USFM import [\#7353](https://github.com/unfoldingWord/translationCore/issues/7353)
+- Add French Locale [\#7364](https://github.com/unfoldingWord/translationCore/issues/7364)
+- Add Button to delete pre-release downloaded resources [\#7363](https://github.com/unfoldingWord/translationCore/issues/7363)
+- support Pre-release testing in Catalog Next [\#7343](https://github.com/unfoldingWord/translationCore/issues/7343)
+- show org for Bible in scripture pane [\#7270](https://github.com/unfoldingWord/translationCore/issues/7270)
+- On tC startup remove bibles processed with different usfm-js version [\#7319](https://github.com/unfoldingWord/translationCore/issues/7319)
+- Support 7 Column TSV in tN [\#7188](https://github.com/unfoldingWord/translationCore/issues/7188)
+- In tn and tw, add support for displaying verse ranges in format 2:1,4 [\#7322](https://github.com/unfoldingWord/translationCore/issues/7322)
+
+**Fixed bugs:**
+
+- fix for 500 errors downloading resources [\#7355](https://github.com/unfoldingWord/translationCore/issues/7355)
+- fix checks with zero-width-spaces and no-break-spaces [\#7333](https://github.com/unfoldingWord/translationCore/issues/7333)
+- changing GW orgs does not trigger changing checks if language stays the same [\#7316](https://github.com/unfoldingWord/translationCore/issues/7316)
+- tCore still shows options even after they have been downloaded [\#7331](https://github.com/unfoldingWord/translationCore/issues/7331)
+- Fix Space before *paseq* isn't showing in scripture pane [\#7286](https://github.com/unfoldingWord/translationCore/issues/7286)
+- Fix Failure to send feedback [\#7311](https://github.com/unfoldingWord/translationCore/issues/7311)
+- Fix Export to CSV failing with a crash [\#7307](https://github.com/unfoldingWord/translationCore/issues/7307)
+
+
 ## [v3.2.0](https://github.com/unfoldingWord/translationCore/tree/v3.2.0) (2022-5-15)
 
 **Implemented enhancements:**

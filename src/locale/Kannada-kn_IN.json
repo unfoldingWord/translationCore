@@ -9,11 +9,16 @@
   "save_changes": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಿ",
   "saving_changes": "ಬದಲಾವಣೆಗಳನ್ನು ಉಳಿಸಲಾಗುತ್ತಿದೆ",
   "success": "ಯಶಸ್ಸು",
+  "delete_pre_releases": "Delete All Pre-Release Resources",
+  "delete_pre_releases_warning": "Do you want to delete all of the pre-release resources that have been downloaded?",
   "supported_file_types": "ಬೆಂಬಲಿಸುವ ಫೈಲ್ ವಿಧಗಳು",
   "select_project": "ಒಂದು ಯೋಜನೆಯನ್ನು ಆಯ್ಕೆ ಮಾಡಿರಿ",
   "select_tool": "ಒಂದು ಉಪಕರಣವನ್ನು ಆಯ್ಕೆ ಮಾಡಿರಿ",
   "select_all": "ಎಲ್ಲವನ್ನು ಆಯ್ಕೆ ಮಾಡಿರಿ",
   "unselect_all": "ಆಯ್ಕೆ ಮಾಡಿರುವ ಎಲ್ಲವನ್ನು ರದ್ದು ಮಾಡಿರಿ",
+  "select_all_resources": "Select All - Warning: this can take a long time, and use a lot of disk space!",
+  "admin_options": "Administrator Options:",
+  "show_prerelease_resources": "Show Pre-Release Resources",
   "launch": "ಪ್ರಾರಂಭಿಸು",
   "current_user": "ಪ್ರಸ್ತುತ ಬಳಕೆದಾರ",
   "please_log_in": "ಮುಂದುವರೆಯಲು ದಯವಿಟ್ಟು ಸಂಪರ್ಕ ಪದೆಯುರ",
@@ -75,6 +80,7 @@
   "sending_feedback_failed": "ಪ್ರತಿಕ್ರಿಯೆ ಕಳುಹಿಸಲು ವಿಫಲವಾಗಿದೆ ",
   "critical_error_warning": "ಎಚ್ಚರಿಕೆ: ತೀವ್ರವಾದ ತಪ್ಪು ಸಂಭವಿಸಿದೆ!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
+  "pre_release": "Pre-Release",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",
@@ -231,7 +237,11 @@
     "dcs_create_new_conflict": "Create new repository failed because a repository with this name already exists.<br/><br/>To be able to upload your project to ${door43}, you need to either rename your local project or rename your ${door43} Project.",
     "unknown_download_networking_error": "${app_name} has encountered an unknown communications error trying to download the project from \"${project_url}\".<br/><br/>If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
     "project_locked": "The project is locked at:<br/>'${file_path}'. Please Restart your computer and try again.",
-    "known_download_networking_error": "The download of project ${project_url} failed. ${error_message}"
+    "known_download_networking_error": "The download of project \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url": "Load Bible Resource (USFM)",
+    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "enter_resource_url": "Enter Resource URL",
+    "loading_usfm_url": "Loading : ${usfm_url}"
   },
   "project_validation": {
     "language_mismatch": "ಸಂಕೇತಕ್ಕೆ ಬಾಷೆಯ ಹೆಸರು ಸರಿಯಾದದ್ದಲ್ಲ",
@@ -272,7 +282,8 @@
       "invalid_characters": "ಸಾಮಾನ್ಯ ಲ್ಯಾಟಿನ್ ಅಕ್ಷರಗಳನ್ನು ಮಾತ್ರವೇ ಬೆಂಬಲಿಸುತ್ತದೆ"
     },
     "conflicting_project": "ಈ ಗುರುತಿನ ವ್ಯಕ್ತಿಯು ಈ ಭಾಷೆ ಮತ್ತು ಪುಸ್ತಕ ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ",
-    "newer_project": "ಟ್ರಾನ್ಸ್ಲೇಷನ್ ಕೋರ್ ಹೊಸ ಆವೃತ್ತಿಯಲ್ಲಿ ಈ ಯೋಜನೆಯನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಹೊಸ ಆವೃತ್ತಿಯನ್ನು ಪಡೆದು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ."
+    "newer_project": "ಟ್ರಾನ್ಸ್ಲೇಷನ್ ಕೋರ್ ಹೊಸ ಆವೃತ್ತಿಯಲ್ಲಿ ಈ ಯೋಜನೆಯನ್ನು ಸಿದ್ಧಪಡಿಸಲಾಗಿದೆ. ದಯವಿಟ್ಟು ಹೊಸ ಆವೃತ್ತಿಯನ್ನು ಪಡೆದು ಪುನಃ ಪ್ರಯತ್ನಿಸಿ.",
+    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
   },
   "book_list": {
     "ot": {
@@ -449,8 +460,10 @@
     "contact_helpdesk": "ಸಹಾಯ ಕೇಂದ್ರವನ್ನು ಸಂಪರ್ಕಿಸು",
     "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
     "update": "ಇತ್ತೀಚಿನ ಆವೃತ್ತಿಗೆ ನವೀಕರಿಸಿ",
+    "update_version": "Update Version",
     "ignore_button": "ಬಿಟ್ಟುಬಿಡಿ",
-    "feedback_button": "ಹಿನ್ನುಣಿಕೆಯನ್ನು ಕಳುಹಿಸಿರಿ"
+    "feedback_button": "ಹಿನ್ನುಣಿಕೆಯನ್ನು ಕಳುಹಿಸಿರಿ",
+    "delete": "Delete"
   },
   "tool_card_categories": {
     "kt": "ಪ್ರಮುಖ ಪದಗಳು",

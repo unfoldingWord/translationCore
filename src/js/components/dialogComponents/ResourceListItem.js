@@ -166,6 +166,22 @@ function Subitems({
   selectedSubitems,
   onSubitemSelection,
 }) {
+  function getItemLabel(item) {
+    let label = `${item.resourceId.toUpperCase()} - ${item.subject}`;
+    const owner = item?.catalogEntry?.resource?.owner;
+    const isD43 = owner === 'Door43-Catalog';
+
+    if (!isD43) {
+      const stage = item?.catalogEntry?.resource?.stage;
+      const isProduction = stage === 'prod';
+
+      if (!isProduction) {
+        label = `[${label}] - ${translate('pre_release')}`;
+      }
+    }
+    return label;
+  }
+
   if (expanded) {
     return (
       <>
@@ -203,7 +219,7 @@ function Subitems({
                         checkedIcon={<CheckBoxIcon style={{ fontSize: '24px' }} />}
                       />
                     }
-                    label={`${item.resourceId.toUpperCase()} - ${item.subject}`}
+                    label={getItemLabel(item)}
                   />
                 </td>
                 <td style={styles.td}>
