@@ -30,20 +30,45 @@ const i18n_default = {
 
 // fix the HTML for tCore preview
 function convertPrintPreviewHtml(html) {
-  let pagedPath;
+  let publicBase;
 
   if (isProduction) {
     console.log('production');
-    pagedPath = path.join(__dirname, './js/paged.polyfill.js');
-  } else {
-    pagedPath = path.join('./public/js/paged.polyfill.js');
+    publicBase = path.join(__dirname);
+  } else { // running in development
+    publicBase = path.join(__dirname, '../../../../../../../../public');
+
+    // this WORKS using absolute path in development:
+    // pagedPath = path.join('/Users/blm/Development/Electron/translationCore/public/js/paged.polyfill.js');
+
+    // pagedPath = path.join(__dirname, './js/paged.polyfill.js');
+    // pagedPath = './js/paged.polyfill.js';
+    // pagedPath = '../static/js/paged.polyfill.js';
+    // pagedPath = './static/js/paged.polyfill.js';
+    // pagedPath = path.join('./static/js/paged.polyfill.js');
+    // pagedPath = '../public/js/paged.polyfill.js';
+    // pagedPath = './public/js/paged.polyfill.js';
+    // pagedPath = path.join(__dirname, '../public/js/paged.polyfill.js');
+    // pagedPath = path.join('../public/js/paged.polyfill.js');
+    // pagedPath = path.join('/public/js/paged.polyfill.js');
+    // pagedPath = path.join('./public/js/paged.polyfill.js');
   }
 
+  const pagedPath = path.join(publicBase, './js/paged.polyfill.js');
+
+  // console.log('publicBase', publicBase);
+  // console.log('pagedPath', pagedPath);
+  // console.log(`convertPrintPreviewHtml() - __dirname = ${__dirname}`);
+  // let dirPath = path.join('.');
+  // let files = fs.readdirSync(dirPath);
+  // console.log(`at ${dirPath}`, files);
+
   try {
-    const pagedJS = fs.readFileSync(pagedPath, 'utf8');
-    console.log('pagedJs', pagedJS);
-    const parts = html.split('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">');
-    const html_ = parts[0] + '<script>\n' + pagedJS + '\n' + parts[1];
+    const html_ = html.replace('https://unpkg.com/pagedjs/dist/paged.polyfill.js', `file://${pagedPath}`);
+    // const pagedJS = fs.readFileSync(pagedPath, 'utf8');
+    // console.log('pagedJs', pagedJS);
+    // const parts = html.split('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">');
+    // const html_ = parts[0] + '<script>\n' + pagedJS + '\n' + parts[1];
 
     // remove call to external js and inline the code
     // const html_ = html.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', '<script>\n' + pagedJS + '\n');
