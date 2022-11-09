@@ -3,16 +3,19 @@ import React, {
   useEffect,
   useMemo,
 } from 'react';
-
 import {
   useProskomma,
   useImport,
   useCatalog,
   useRenderPreview,
 } from 'proskomma-react-hooks';
+import fs from 'fs-extra';
+import path from 'path-extra';
 import { getLanguageByCode } from '../helpers/LanguageHelpers';
 import { isNewTestament } from '../helpers/bibleHelpers';
 import { ALL_BIBLE_BOOKS } from '../common/BooksOfTheBible';
+import { isProduction } from '../common/constants';
+// import { JS_DIR } from '../common/constants';
 
 const i18n_default = {
   // coverAlt: "Cover",
@@ -24,6 +27,39 @@ const i18n_default = {
   nt: 'New Testament',
   // notes: "Notes",
 };
+
+// fix the HTML for tCore preview
+function convertPrintPreviewHtml(html) {
+  let pagedPath;
+
+  if (isProduction) {
+    console.log('production');
+    pagedPath = path.join(__dirname, './js/paged.polyfill.js');
+  } else {
+    pagedPath = path.join('./public/js/paged.polyfill.js');
+  }
+
+  try {
+    const pagedJS = fs.readFileSync(pagedPath, 'utf8');
+    console.log('pagedJs', pagedJS);
+    const parts = html.split('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">');
+    const html_ = parts[0] + '<script>\n' + pagedJS + '\n' + parts[1];
+
+    // remove call to external js and inline the code
+    // const html_ = html.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', '<script>\n' + pagedJS + '\n');
+    // const html_ = html.replace('https://unpkg.com/pagedjs/dist', JS_DIR);
+    return html_;
+  } catch (e) {
+    console.log(`convertPrintPreviewHtml() - could not read ${pagedPath}`);
+    console.log(`convertPrintPreviewHtml() - __dirname = ${__dirname}`);
+    let dirPath = path.join(__dirname, '..');
+    let files = fs.readdirSync(dirPath);
+    console.log(`at ${dirPath}`, files);
+    dirPath = path.join(__dirname);
+    files = fs.readdirSync(dirPath);
+    console.log(`at ${dirPath}`, files);
+  }
+}
 
 function PreviewContent({
   // eslint-disable-next-line react/prop-types
@@ -101,7 +137,8 @@ function PreviewContent({
 
   useEffect(() => {
     if (html && submitPreview && !running) {
-      onRefresh && onRefresh(html);
+      const html_ = convertPrintPreviewHtml(html);
+      onRefresh && onRefresh(html_);
       setSubmitPreview(false);
     }
   }, [html, submitPreview, running, onRefresh]);
@@ -155,8 +192,6 @@ function PreviewContent({
         setI18n(i18n);
         setDocuments(docs);
       }
-
-      // setSubmitPreview(false)
     }
 
     doSubmitPreview();

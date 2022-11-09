@@ -7,7 +7,7 @@ if (process.env.NODE_ENV !== 'test') {
   makeSureEnvInit('constants');
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
+export const isProduction = process.env.NODE_ENV === 'production';
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;

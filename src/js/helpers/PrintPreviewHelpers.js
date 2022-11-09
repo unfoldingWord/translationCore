@@ -91,14 +91,28 @@ export function doPrintPreview(projectPath) {
 }
 
 /**
+ * create a preview window and show html
+ * @param {string} html
+ * @returns {*} window
+ */
+function createPreviewWindow(html) {
+  const win = new BrowserWindow({
+    width: 850,
+    height: 900,
+    allowRunningInsecureContent: true,
+  });
+  const loadData = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
+  win.loadURL(loadData);
+  return win;
+}
+
+/**
  * show preview window with html
  * @param html - to display
  * @param onClose
  */
 function showPreview(html, onClose) {
-  const win = new BrowserWindow({ width: 850, height: 900 });
-  const loadData = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
-  win.loadURL(loadData);
+  const win = createPreviewWindow(html);
 
   win.webContents.on('did-finish-load', () => {
     console.log('showPreview() - loaded');
@@ -160,9 +174,7 @@ function doPrint(previewWindow, html, projectName, onFinished) {
     console.log('doPrint() - using preview window');
     printWindowContents(previewWindow, projectName, DOWNLOADS_PATH, onFinished);
   } else {
-    const win = new BrowserWindow({ width: 850, height: 1000 });
-    const loadData = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);
-    win.loadURL(loadData);
+    const win = createPreviewWindow(html);
 
     win.webContents.on('did-finish-load', () => {
       console.log('doPrint() - loaded');
