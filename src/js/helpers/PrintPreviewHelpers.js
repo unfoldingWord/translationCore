@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/* eslint-disable no-console,object-curly-newline */
 
 import React from 'react';
 import fs from 'fs-extra';
@@ -99,10 +99,8 @@ function createPreviewWindow(html) {
   const win = new BrowserWindow({
     width: 850,
     height: 900,
-    // eslint-disable-next-line object-curly-newline
     webPreferences: {
       webSecurity: false, // have to do this to load local files
-      // eslint-disable-next-line
     },
   });
   const loadData = 'data:text/html;charset=utf-8,' + encodeURIComponent(html);

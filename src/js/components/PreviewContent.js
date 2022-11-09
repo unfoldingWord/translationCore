@@ -33,46 +33,22 @@ function convertPrintPreviewHtml(html) {
   let publicBase;
 
   if (isProduction) {
-    console.log('production');
     publicBase = path.join(__dirname);
   } else { // running in development
+    // --dirname is in ./node_modules/electronite/dist/Electron.app/Contents/Resources/electron.asar/renderer
     publicBase = path.join(__dirname, '../../../../../../../../public');
-
-    // this WORKS using absolute path in development:
-    // pagedPath = path.join('/Users/blm/Development/Electron/translationCore/public/js/paged.polyfill.js');
-
-    // pagedPath = path.join(__dirname, './js/paged.polyfill.js');
-    // pagedPath = './js/paged.polyfill.js';
-    // pagedPath = '../static/js/paged.polyfill.js';
-    // pagedPath = './static/js/paged.polyfill.js';
-    // pagedPath = path.join('./static/js/paged.polyfill.js');
-    // pagedPath = '../public/js/paged.polyfill.js';
-    // pagedPath = './public/js/paged.polyfill.js';
-    // pagedPath = path.join(__dirname, '../public/js/paged.polyfill.js');
-    // pagedPath = path.join('../public/js/paged.polyfill.js');
-    // pagedPath = path.join('/public/js/paged.polyfill.js');
-    // pagedPath = path.join('./public/js/paged.polyfill.js');
   }
 
   const pagedPath = path.join(publicBase, './js/paged.polyfill.js');
 
-  // console.log('publicBase', publicBase);
-  // console.log('pagedPath', pagedPath);
-  // console.log(`convertPrintPreviewHtml() - __dirname = ${__dirname}`);
-  // let dirPath = path.join('.');
-  // let files = fs.readdirSync(dirPath);
-  // console.log(`at ${dirPath}`, files);
-
   try {
-    const html_ = html.replace('https://unpkg.com/pagedjs/dist/paged.polyfill.js', `file://${pagedPath}`);
-    // const pagedJS = fs.readFileSync(pagedPath, 'utf8');
-    // console.log('pagedJs', pagedJS);
-    // const parts = html.split('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">');
-    // const html_ = parts[0] + '<script>\n' + pagedJS + '\n' + parts[1];
+    let headerPrefix = '';
+    const cssPath = path.join(publicBase, 'previewStyles.css');
+    const cssLink = `<link rel="stylesheet" href="file://${cssPath}">`;
+    headerPrefix += cssLink + '\n';
 
-    // remove call to external js and inline the code
-    // const html_ = html.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', '<script>\n' + pagedJS + '\n');
-    // const html_ = html.replace('https://unpkg.com/pagedjs/dist', JS_DIR);
+    // replace call to external js with local file load and insert path to stylesheet
+    const html_ = html.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', `${headerPrefix}\n<script src="file://${pagedPath}">`);
     return html_;
   } catch (e) {
     console.log(`convertPrintPreviewHtml() - could not read ${pagedPath}`);
