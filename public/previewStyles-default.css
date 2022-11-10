@@ -38,6 +38,6 @@ special font for Hebrew
 /*
   use Ezra for Hebrew characters and then Noto Sans for other characters
 */
- * {
+* {
   font-family: Ezra, Noto Sans;
 }

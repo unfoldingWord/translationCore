@@ -14,7 +14,7 @@ import path from 'path-extra';
 import { getLanguageByCode } from '../helpers/LanguageHelpers';
 import { isNewTestament } from '../helpers/bibleHelpers';
 import { ALL_BIBLE_BOOKS } from '../common/BooksOfTheBible';
-import { isProduction } from '../common/constants';
+import { ASSETS_PATH, isProduction } from '../common/constants';
 // import { JS_DIR } from '../common/constants';
 
 const i18n_default = {
@@ -39,7 +39,19 @@ function convertPrintPreviewHtml(html, projectFont) {
     publicBase = path.join(__dirname, '../../../../../../../../public');
   }
 
+  let html_ = html;
   const pagedPath = path.join(publicBase, './js/paged.polyfill.js');
+  const previewStyleTemplate = fs.readFileSync(path.join(ASSETS_PATH, 'previewTemplate.css'), 'utf8');
+  const startStyleStr = '<style>';
+  const startStyle = html.indexOf(startStyleStr);
+  const endStyleStr = '</style>';
+  const endStyle = html.indexOf(endStyleStr, startStyle);
+
+  if ((startStyle >= 0) && (endStyle >= 0)) {
+    const firstPart = html.substring(0, startStyle + startStyleStr.length);
+    const lastPart = html.substring(endStyle);
+    html_ = firstPart + '\n' + previewStyleTemplate + '\n' + lastPart;
+  }
 
   try {
     let headerPrefix = '';
@@ -54,7 +66,7 @@ function convertPrintPreviewHtml(html, projectFont) {
     headerPrefix += cssLink;
 
     // replace call to external js with local file load and insert path to stylesheet
-    const html_ = html.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', `${headerPrefix}\n<script src="file://${pagedPath}">`);
+    html_ = html_.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', `${headerPrefix}\n<script src="file://${pagedPath}">`);
     return html_;
   } catch (e) {
     console.log(`convertPrintPreviewHtml() - could not read ${pagedPath}`);
@@ -145,7 +157,7 @@ function PreviewContent({
       onRefresh && onRefresh(html_);
       setSubmitPreview(false);
     }
-  }, [html, submitPreview, running, onRefresh]);
+  }, [html, submitPreview, running, projectFont, onRefresh]);
 
   useEffect(() => {
     if ( !submitPreview ) {

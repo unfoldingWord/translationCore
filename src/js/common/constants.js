@@ -29,6 +29,7 @@ export const LOCALE_DIR = isProduction ? path.join(STATIC_FOLDER_PATH, 'locale')
 export const TOOLS_DIR = isProduction ? path.join(STATIC_FOLDER_PATH, 'tC_apps') : path.join('./src/tC_apps');
 export const SETTINGS_FOLDER = path.join(env.data(), 'translationCore');
 export const SETTINGS_PATH = path.join(SETTINGS_FOLDER, 'settings.json');
+export const ASSETS_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'assets') : path.join('./src/assets');
 export const PROJECT_LICENSES_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'projectLicenses') : path.join('./src/assets/projectLicenses');
 // string names
 export const TC_VERSION = 'tc_version';
