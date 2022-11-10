@@ -23,4 +23,5 @@
 */
  * {
   font-family: Scheherazade, Noto Sans;
+  font-size: 16px; /* default seems to be 13.3 */
 }
