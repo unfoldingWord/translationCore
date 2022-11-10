@@ -1,0 +1,26 @@
+/*
+ set up font support
+ */
+
+/* include default font setup */
+@import "previewStyles-default.css";
+
+/* Padauk - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(./fonts/complexScript/Padauk-Regular.woff);
+  font-weight: normal;
+}
+/* Padauk bold - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(./fonts/complexScript/Padauk-Bold.woff);
+  font-weight: bold;
+}
+
+/*
+  use Padauk and fall back to Noto Sans
+*/
+ * {
+  font-family: Padauk, Noto Sans;
+}

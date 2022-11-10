@@ -1,0 +1,19 @@
+/*
+ set up font support
+ */
+
+/* include default font setup */
+@import "previewStyles-default.css";
+
+/* Awami Nastaliq - supports a wide variety of languages of Pakistan that are written with the sloping Nastaliq style. */
+@font-face {
+  font-family: AwamiNastaliq;
+  src: url(./fonts/complexScript/AwamiNastaliq-Regular.woff);
+}
+
+/*
+  use Awami Nastaliq and fall back to Noto Sans
+*/
+ * {
+  font-family: AwamiNastaliq, Noto Sans;
+}

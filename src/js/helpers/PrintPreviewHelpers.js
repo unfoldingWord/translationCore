@@ -28,6 +28,7 @@ export function doPrintPreview(projectPath) {
       const languageId = manifest?.target_language?.id || '';
       const bookId = manifest?.project?.id || '';
       const typeName = manifest?.project?.name || '';
+      const projectFont = manifest?.projectFont || '';
       usfm = getUsfm2ExportFile(projectPath);
       alertMessage = <PreviewContent
         bookId={bookId}
@@ -35,7 +36,7 @@ export function doPrintPreview(projectPath) {
         languageId={languageId}
         typeName={typeName}
         printImmediately={true}
-        translate={translate}
+        projectFont={projectFont}
         onRefresh={(html_) => {
           console.log(`doPrintPreview() - Finished rendering to html: ${html_}`); // TODO - limit text length
           html = html_;

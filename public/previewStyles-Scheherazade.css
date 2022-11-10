@@ -1,0 +1,26 @@
+/*
+ set up font support
+ */
+
+/* include default font setup */
+@import "previewStyles-default.css";
+
+/* Scheherazade - supports a wide range of Arabic characters, and therefore will handle many languages other than Arabic itself. */
+@font-face {
+  font-family: Scheherazade;
+  src: url(./fonts/complexScript/Scheherazade-Regular.woff);
+  font-weight: normal;
+}
+/* Scheherazade bold */
+@font-face {
+  font-family: Scheherazade;
+  src: url(./fonts/complexScript/Scheherazade-Bold.woff);
+  font-weight: bold;
+}
+
+/*
+  use Scheherazade and fall back to Noto Sans
+*/
+ * {
+  font-family: Scheherazade, Noto Sans;
+}

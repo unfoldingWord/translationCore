@@ -29,13 +29,13 @@ const i18n_default = {
 };
 
 // fix the HTML for tCore preview
-function convertPrintPreviewHtml(html) {
+function convertPrintPreviewHtml(html, projectFont) {
   let publicBase;
 
   if (isProduction) {
     publicBase = path.join(__dirname);
   } else { // running in development
-    // --dirname is in ./node_modules/electronite/dist/Electron.app/Contents/Resources/electron.asar/renderer
+    // --dirname in development is in ./node_modules/electronite/dist/Electron.app/Contents/Resources/electron.asar/renderer
     publicBase = path.join(__dirname, '../../../../../../../../public');
   }
 
@@ -43,9 +43,15 @@ function convertPrintPreviewHtml(html) {
 
   try {
     let headerPrefix = '';
-    const cssPath = path.join(publicBase, 'previewStyles.css');
-    const cssLink = `<link rel="stylesheet" href="file://${cssPath}">`;
-    headerPrefix += cssLink + '\n';
+
+    if (!projectFont) {
+      projectFont = 'default';
+    }
+
+    const styleName = `previewStyles-${projectFont}.css`;
+    const cssPath = path.join(publicBase, styleName);
+    const cssLink = `<link rel="stylesheet" href="file://${cssPath}">\n`;
+    headerPrefix += cssLink;
 
     // replace call to external js with local file load and insert path to stylesheet
     const html_ = html.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', `${headerPrefix}\n<script src="file://${pagedPath}">`);
@@ -64,7 +70,7 @@ function convertPrintPreviewHtml(html) {
 
 function PreviewContent({
   // eslint-disable-next-line react/prop-types
-  bookId, onRefresh, usfm, onError, onProgress, languageId, typeName, printImmediately, translate,
+  bookId, onRefresh, usfm, onError, onProgress, languageId, typeName, printImmediately, projectFont,
 }) {
   const [submitPreview, setSubmitPreview] = useState(!!printImmediately);
   const [documents, setDocuments] = useState([]);
@@ -117,9 +123,6 @@ function PreviewContent({
     i18n,
     language: languageId,
     ready, // bool to allow render to run, don't run until true and all content is present
-    // pagedJS, // is this a link or a local file?
-    // css, //
-    // htmlFragment, // show full html or what's in the body
     verbose,
   });
 
@@ -138,16 +141,11 @@ function PreviewContent({
 
   useEffect(() => {
     if (html && submitPreview && !running) {
-      const html_ = convertPrintPreviewHtml(html);
+      const html_ = convertPrintPreviewHtml(html, projectFont);
       onRefresh && onRefresh(html_);
       setSubmitPreview(false);
     }
   }, [html, submitPreview, running, onRefresh]);
-
-  // useEffect( () => {
-  //   setSubmitPreview(false)
-  //   console.log(errors)
-  // }, [errors])
 
   useEffect(() => {
     if ( !submitPreview ) {
