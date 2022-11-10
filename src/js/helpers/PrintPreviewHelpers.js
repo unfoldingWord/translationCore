@@ -38,7 +38,7 @@ export function doPrintPreview(projectPath) {
         printImmediately={true}
         projectFont={projectFont}
         onRefresh={(html_) => {
-          console.log(`doPrintPreview() - Finished rendering to html: ${html_}`); // TODO - limit text length
+          console.log(`doPrintPreview() - Finished rendering to html: ${html_ && html_.substring(0, 200)}`); // TODO - limit text length
           html = html_;
 
           if (html) {

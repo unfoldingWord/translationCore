@@ -28,6 +28,40 @@ const i18n_default = {
   // notes: "Notes",
 };
 
+/**
+ * replace font sizes in template in format `*FS7*`
+ * @param {string} previewStyleTemplate
+ * @param {number} baseSizePx - base pixel size to use (7 will result in `%FS7%` being `7pt`)
+ * @returns {string}
+ */
+function replaceFontSizes(previewStyleTemplate, baseSizePx) {
+  let pos = 0;
+  let template = previewStyleTemplate;
+  const startStr = '*FS';
+
+  while (pos >= 0) {
+    pos = template.indexOf(startStr, pos);
+
+    if (pos >= 0) {
+      const endNum = template.indexOf('*', pos + startStr.length);
+      const size = template.substring(pos + startStr.length, endNum);
+      let fontSize = parseFloat(size);
+
+      if (fontSize <= 0) {
+        fontSize = 7;
+      }
+
+      const newSizePt = fontSize / 7 * baseSizePx;
+      const beginPart = template.substring(0, pos);
+      const endPart = template.substring(endNum + 1);
+      const newTemplate = beginPart + newSizePt.toFixed(1) + 'px' + endPart;
+      template = newTemplate;
+    }
+  }
+
+  return template;
+}
+
 // fix the HTML for tCore preview
 function convertPrintPreviewHtml(html, projectFont) {
   let publicBase;
@@ -41,7 +75,9 @@ function convertPrintPreviewHtml(html, projectFont) {
 
   let html_ = html;
   const pagedPath = path.join(publicBase, './js/paged.polyfill.js');
-  const previewStyleTemplate = fs.readFileSync(path.join(ASSETS_PATH, 'previewTemplate.css'), 'utf8');
+  const baseSizePx = 10; // use this as base font size for now, default was 7
+  let previewStyleTemplate = fs.readFileSync(path.join(ASSETS_PATH, 'previewTemplate.css'), 'utf8');
+  previewStyleTemplate = replaceFontSizes(previewStyleTemplate, baseSizePx);
   const startStyleStr = '<style>';
   const startStyle = html.indexOf(startStyleStr);
   const endStyleStr = '</style>';
@@ -201,6 +237,7 @@ function PreviewContent({
           title,
         };
         setI18n(i18n);
+        console.log(`PreviewContent() - printing direction for ${languageId} is ${textDirection}`);
         setDocuments(docs);
       }
     }
