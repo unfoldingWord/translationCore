@@ -12,6 +12,25 @@ import * as AlertModalActions from '../actions/AlertModalActions';
 import * as LoadHelpers from './LoadHelpers';
 import * as exportHelpers from './exportHelpers';
 
+/**
+ * get the project in USFM format and clean up for proskomma
+ * @param {string} projectPath
+ * @returns {*}
+ */
+function getUSfmFromProjectPath(projectPath) {
+  let usfm = getUsfm2ExportFile(projectPath);
+
+  if (usfm.indexOf('\\p') < 0) { // if missing paragraph marker
+    const pos = usfm.indexOf('\\c');
+
+    if (pos >= 0) {
+      const usfm_ = usfm.replaceAll('\\c', '\\p\n\\c');
+      usfm = usfm_;
+    }
+  }
+  return usfm;
+}
+
 export function doPrintPreview(projectPath) {
   return ((dispatch, getState) => new Promise((resolve, reject) => {
     const PRINT_BUTTON = 'Print';
@@ -29,7 +48,7 @@ export function doPrintPreview(projectPath) {
       const bookId = manifest?.project?.id || '';
       const typeName = manifest?.project?.name || '';
       const projectFont = manifest?.projectFont || '';
-      usfm = getUsfm2ExportFile(projectPath);
+      usfm = getUSfmFromProjectPath(projectPath);
       alertMessage = <PreviewContent
         bookId={bookId}
         usfm={usfm}
