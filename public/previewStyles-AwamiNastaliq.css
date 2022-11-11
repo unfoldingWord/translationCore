@@ -16,4 +16,7 @@
 */
  * {
   font-family: AwamiNastaliq, Noto Sans;
-}
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+ }

@@ -23,4 +23,7 @@
 */
  * {
   font-family: Padauk, Noto Sans;
+  -moz-font-feature-settings: "wtri" 1;
+  -webkit-font-feature-settings: "wtri" 1;
+  font-feature-settings: "wtri" 1;
 }
