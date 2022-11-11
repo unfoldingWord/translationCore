@@ -15,7 +15,7 @@ const {
   getWindow,
 } = require('./electronWindows');
 const MenuTemplate = require('./MenuTemplate').template;
-const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
+const DCS_BASE_URL = 'https://qa.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
 process.env.tcVersion = p.version;
