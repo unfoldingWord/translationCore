@@ -130,6 +130,7 @@ class Menu extends React.Component {
               <Glyphicon glyph='cloud-download' style={glyphStyle}/>
               <div>{translate('projects.load_view_usfm_url')}</div>
             </div>
+            <hr style={{ margin: '4px 0 0 0' }}/>
             <div
               style={menuItemStyle}
               onClick={() => {
