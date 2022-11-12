@@ -2,13 +2,16 @@ import path from 'path-extra';
 import env from 'tc-electron-env';
 import packagefile from '../../../package.json';
 
-if (process.env.NODE_ENV !== 'test') {
+const nodeEnv = process.env.NODE_ENV;
+const NOT_TEST_ENV = nodeEnv !== 'test';
+
+if (NOT_TEST_ENV) {
   const { makeSureEnvInit } = require('../helpers/envHelpers');
   makeSureEnvInit('constants');
 }
 
-const isProduction = process.env.NODE_ENV === 'production';
-export const USE_QA_SERVER = true;
+const isProduction = nodeEnv === 'production';
+export const USE_QA_SERVER = NOT_TEST_ENV; // TODO - is there a way to toggle QA mode at run time.
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
