@@ -8,13 +8,15 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 const isProduction = process.env.NODE_ENV === 'production';
+export const USE_QA_SERVER = true;
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
 export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 export const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 // Paths
 export const PROJECTS_PATH = path.join(env.home(), 'translationCore', 'projects');
-export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
+const resourcesFolder = !USE_QA_SERVER ? 'resources' : 'resources-QA';
+export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', resourcesFolder);
 export const IMPORTS_PATH = path.join(env.home(), 'translationCore', 'imports');
 export const VIEW_DATA_PATH = path.join(env.home(), 'translationCore', 'viewUrl');
 export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
@@ -77,4 +79,4 @@ export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_al
 export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
 export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
 // url strings
-export const DCS_BASE_URL = 'https://qa.door43.org'; //TODO: also defined in public/main.js, need to move definition to common place
+export const DCS_BASE_URL = !USE_QA_SERVER ? 'https://git.door43.org' : 'https://qa.door43.org'; //TODO: also defined in public/main.js, need to move definition to common place
