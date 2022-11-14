@@ -4,6 +4,7 @@ import semver from 'semver';
 import env from 'tc-electron-env';
 import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import {
+  TC_PATH,
   TRANSLATION_HELPS,
   TRANSLATION_WORDS,
   TRANSLATION_WORDS_LINKS,
@@ -26,7 +27,7 @@ class ResourceAPI {
    * @returns {ResourceAPI}
    */
   static default() {
-    const dir = path.join(env.home(), 'translationCore', 'resources');
+    const dir = path.join(env.home(), TC_PATH, 'resources');
     return new ResourceAPI(dir);
   }
 

@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Glyphicon } from 'react-bootstrap';
-import { USE_QA_SERVER } from '../../common/constants';
+import { DCS_BASE_URL, USE_QA_SERVER } from '../../common/constants';
+
+function getQaServerMessage() {
+  return <strong>&nbsp;&nbsp; - Using QA Server {DCS_BASE_URL}</strong>;
+}
 
 const AppVersion = ({
   actions: { openLicenseModal },
@@ -18,7 +22,7 @@ const AppVersion = ({
         openLicenseModal();
       }}
     />
-    {USE_QA_SERVER ? <strong>&nbsp;&nbsp; - Using QA Server!</strong> : null}
+    {USE_QA_SERVER ? getQaServerMessage() : null}
   </div>
 );
 

@@ -30,7 +30,7 @@ import { promptForInvalidCheckFeedback } from '../helpers/FeedbackHelpers';
 import complexScriptFonts from '../common/complexScriptFonts';
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
 import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
-import { DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
+import { DCS_BASE_URL, DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
 
 const styles = {
   container: {
@@ -116,6 +116,7 @@ class ToolContainer extends Component {
       username,
       gatewayLanguageCode,
       gatewayLanguageOwner,
+      DCS_BASE_URL,
 
       // project data
       bookId,

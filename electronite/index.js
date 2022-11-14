@@ -41,10 +41,9 @@ if (fs.existsSync(qaFilePath)) {
   console.log(`qaFilePath ${qaFilePath} exists!`);
 
   try {
-    let data = fs.readFileSync(qaFilePath, 'utf8');
+    const data = fs.readFileSync(qaFilePath, 'utf8');
     console.log(`data read = ${data}`);
-    data = data && parseInt(data);
-    QA_MODE = data;
+    QA_MODE = data && data.trim();
   } catch (e) {
     console.log(`could not read ${qaFilePath}`);
   }
@@ -56,12 +55,12 @@ console.log(`QA_MODE = ${QA_MODE}`);
  * Creates a window for the main application.
  * @returns {Window}
  */
-function createMainWindow(qaMode = false) {
+function createMainWindow(qaMode = '') {
   console.log('createMainWindow() - creating');
   const additionalArguments = [];
 
   if (qaMode) {
-    additionalArguments.push('--QA_MODE');
+    additionalArguments.push(`--QA_MODE=${qaMode}`);
   }
 
   const windowOptions = {
