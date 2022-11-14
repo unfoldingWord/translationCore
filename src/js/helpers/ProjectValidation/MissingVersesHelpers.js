@@ -1,9 +1,8 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from 'tc-electron-env';
 import ResourceAPI from '../ResourceAPI';
+import { USER_RESOURCES_PATH } from '../../common/constants';
 // constants
-const USER_RESOURCES_DIR = path.join(env.home(), 'translationCore/resources');
 
 /**
  * Determines if a project is missing verses
@@ -95,9 +94,9 @@ export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'u
   let indexLocation;
 
   if (version) {
-    indexLocation = path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName, version, 'index.json');
+    indexLocation = path.join(USER_RESOURCES_PATH, languageId, 'bibles', bookName, version, 'index.json');
   } else {
-    let versionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_DIR, languageId, 'bibles', bookName));
+    let versionPath = ResourceAPI.getLatestVersion(path.join(USER_RESOURCES_PATH, languageId, 'bibles', bookName));
 
     if (versionPath === null) { // if failed, return nothing
       return {};

@@ -6,7 +6,7 @@ const scu = require('tc-source-content-updater');
 
 function updateResources() {
   const expectedLanguageCodes = ['en', 'hi', 'gk'];
-  const resourcesFolder = path.join(ospath.home(), 'translationCore', 'resources'); 
+  const resourcesFolder = path.join(ospath.home(), 'translationCore', 'resources');
   fs.ensureDirSync(resourcesFolder);
 
   if (fs.emptyDir(resourcesFolder)) {

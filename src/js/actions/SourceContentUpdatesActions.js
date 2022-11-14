@@ -3,7 +3,6 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
-import env from 'tc-electron-env';
 import {
   getCurrentToolName,
   getProjectSaveLocation,
@@ -18,7 +17,11 @@ import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 // actions
-import { DEFAULT_ORIG_LANG_OWNER, USFMJS_VERSION } from '../common/constants';
+import {
+  DEFAULT_ORIG_LANG_OWNER,
+  USER_RESOURCES_PATH,
+  USFMJS_VERSION,
+} from '../common/constants';
 import { getCurrentPaneSetting } from '../helpers/SettingsHelpers';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
@@ -32,7 +35,6 @@ import { confirmOnlineAction } from './OnlineModeConfirmActions';
 import * as SettingsActions from './SettingsActions';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
-const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 
 /**
  * Resets the state of the source content updates reducer.

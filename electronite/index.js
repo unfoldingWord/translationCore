@@ -3,6 +3,7 @@ const {
 } = require('electronite');
 require('@electron/remote/main').initialize();
 const path = require('path-extra');
+const fs = require('fs-extra');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
 const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
@@ -32,12 +33,37 @@ let splashScreen;
 
 const downloadManager = new DownloadManager();
 
+// check if we are running in QA MODE
+const qaFilePath = path.join(process.env.HOME, 'translationCore', 'QA_MODE');
+let QA_MODE = false;
+
+if (fs.existsSync(qaFilePath)) {
+  console.log(`qaFilePath ${qaFilePath} exists!`);
+
+  try {
+    let data = fs.readFileSync(qaFilePath, 'utf8');
+    console.log(`data read = ${data}`);
+    data = data && parseInt(data);
+    QA_MODE = data;
+  } catch (e) {
+    console.log(`could not read ${qaFilePath}`);
+  }
+}
+
+console.log(`QA_MODE = ${QA_MODE}`);
+
 /**
  * Creates a window for the main application.
  * @returns {Window}
  */
-function createMainWindow() {
+function createMainWindow(qaMode = false) {
   console.log('createMainWindow() - creating');
+  const additionalArguments = [];
+
+  if (qaMode) {
+    additionalArguments.push('--QA_MODE');
+  }
+
   const windowOptions = {
     icon: './TC_Icon.png',
     title: 'translationCore',
@@ -50,6 +76,7 @@ function createMainWindow() {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
+      additionalArguments,
     },
   };
 
@@ -190,7 +217,7 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
   if (mainWindow === null) {
-    createMainWindow();
+    createMainWindow(QA_MODE);
   }
 });
 
@@ -200,7 +227,7 @@ app.on('ready', () => {
   createSplashWindow();
   setTimeout(function () {
     splashScreen.show();
-    createMainWindow();
+    createMainWindow(QA_MODE);
   }, 500);
 });
 
