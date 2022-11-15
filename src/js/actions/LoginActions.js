@@ -1,6 +1,6 @@
 import { getTranslate } from '../selectors';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
-import { LOCAL_USER } from '../common/constants';
+import { LOCAL_USER, USER } from '../common/constants';
 import types from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
@@ -48,7 +48,7 @@ export function loginUser(newUserdata, local = false) {
 export function logoutUser() {
   return ((dispatch) => {
     localStorage.removeItem(LOCAL_USER);
-    localStorage.removeItem('user');
+    localStorage.removeItem(USER);
     dispatch({ type: types.LOGOUT_USER });
     dispatch(ProjectLoadingActions.closeProject());
     dispatch(BodyUIActions.toggleHomeView(true));

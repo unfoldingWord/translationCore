@@ -1,7 +1,11 @@
 /* eslint-disable eqeqeq */
 import fs from 'fs-extra';
 import CryptoJS from 'crypto-js';
-import { LOCAL_USER, SETTINGS_PATH } from '../common/constants';
+import {
+  LOCAL_USER,
+  SETTINGS_PATH,
+  USER,
+} from '../common/constants';
 //  consts declaration
 
 export const loadSettings = () => {
@@ -35,9 +39,9 @@ export function loadUserdata() {
 
   let localUserdata = JSON.parse(localStorage.getItem(LOCAL_USER));
 
-  if (localStorage.getItem('user')) {
+  if (localStorage.getItem(USER)) {
     let phrase = 'tc-core';
-    let decrypted = CryptoJS.AES.decrypt(localStorage.getItem('user'), phrase);
+    let decrypted = CryptoJS.AES.decrypt(localStorage.getItem(USER), phrase);
     let userdata = JSON.parse(decrypted.toString(CryptoJS.enc.Utf8));
     loginReducer.userdata = userdata;
     loginReducer.loggedInUser = true;

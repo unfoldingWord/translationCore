@@ -83,6 +83,7 @@ export const DEFAULT_ORIG_LANG_OWNER = DOOR43_CATALOG;
 export const CN_ORIG_LANG_OWNER = UNFOLDING_WORD; // default for catalog next resources
 export const DEFAULT_OWNER = DOOR43_CATALOG;
 export const LOCAL_USER = !USE_QA_SERVER ? 'localUser' : `localUser-${QA_MODE}`;
+export const USER = !USE_QA_SERVER ? 'user' : `user-${QA_MODE}`;
 // categories
 export const toolCardCategories = {
   'kt': 'Key Terms',
