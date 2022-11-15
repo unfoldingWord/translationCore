@@ -243,7 +243,7 @@ function PreviewContent({
     }
 
     doSubmitPreview();
-  }, [ submitPreview, usfm, bookId, language.name, language.languageId, typeName, languageId ]);
+  }, [ submitPreview, usfm, bookId, language.name, language.languageId, typeName, languageId, textDirection ]);
 
   let message;
 
