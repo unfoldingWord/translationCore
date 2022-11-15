@@ -33,8 +33,31 @@ let splashScreen;
 
 const downloadManager = new DownloadManager();
 
+function getHome() {
+  let home =app.getPath('home');
+
+  if (home) {
+    console.log(`found home path '${home}' from 'app.getPath('home')'`);
+  } else {
+    home = process.env.HOME;
+
+    if (home) {
+      console.log(`found home path '${home}' from 'process.env.HOME'`);
+    } else if (process.env.HOMEPATH) {
+      home = `${process.env.HOMEDRIVE}${process.env.HOMEPATH}`;
+      console.log(`found home path '${home}' from 'process.env.HOMEPATH'`);
+    }
+  }
+
+  if (!home) {
+    console.log(`did not find home path`);
+  }
+
+  return home;
+}
+
 // check if we are running in QA MODE
-const qaFilePath = path.join(process.env.HOME, 'translationCore', 'QA_MODE');
+const qaFilePath = path.join(getHome() || '', 'translationCore', 'QA_MODE');
 let QA_MODE = false;
 
 if (fs.existsSync(qaFilePath)) {
