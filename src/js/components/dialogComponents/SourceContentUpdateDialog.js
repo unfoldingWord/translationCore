@@ -185,9 +185,6 @@ class ContentUpdateDialog extends React.Component {
         <button className='btn-prime' style={styles.deleteButton} onClick={deletePreReleasePrompt} >
           {translate('delete_pre_releases')}
         </button>
-        <button className='btn-prime' style={styles.deleteButton} onClick={deletePreReleasePrompt} >
-          {translate('delete_pre_releases')}
-        </button>
       </BaseDialog>
     );
   }

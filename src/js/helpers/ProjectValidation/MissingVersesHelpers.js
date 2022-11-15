@@ -87,7 +87,7 @@ export function findMissingVerses(usfmFilePath, bookAbbr) {
  * @param {string} bookAbbr
  * @param {string} languageId
  * @param {string} bookName
- * @param {string} optional version, if null then get latest
+ * @param {string} version - optional, if null then get latest
  * @return {Object} verses in book
  */
 export function getExpectedBookVerses(bookAbbr, languageId = 'en', bookName = 'ult', version = null) {

@@ -23,9 +23,7 @@ function getQaMode() {
       QA_MODE = qaParam.substring(find.length);
     }
   }
-  // QA_MODE = window?.process?.argv?.includes('--QA_MODE');
   console.log(`QA_MODE = ${QA_MODE}`);
-
   return QA_MODE;
 }
 
