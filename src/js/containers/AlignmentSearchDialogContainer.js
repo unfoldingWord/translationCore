@@ -17,10 +17,12 @@ import env from 'tc-electron-env';
 import _ from 'lodash';
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
+// import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import Check from '@material-ui/icons/Check';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
 import ChevronRight from '@material-ui/icons/ChevronRight';
 import Clear from '@material-ui/icons/Clear';
+import DeleteIcon from '@material-ui/icons/Delete';
 import DeleteOutline from '@material-ui/icons/DeleteOutline';
 import Edit from '@material-ui/icons/Edit';
 import FilterList from '@material-ui/icons/FilterList';
@@ -30,8 +32,8 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import ArrowUpward from '@material-ui/icons/ArrowUpward';
-import DeleteIcon from '@material-ui/icons/Delete';
+import ZoomInIcon from '@material-ui/icons/ZoomIn';
+import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import IconButton from '@material-ui/core/IconButton';
 
 import usfm from 'usfm-js';
@@ -978,7 +980,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             this.changeFontSize(true);
           }}
         >
-          <ArrowUpward fontSize='large' />
+          <ZoomInIcon fontSize='large' />
         </IconButton>
         <IconButton aria-label="decrease-font"
           style = {{
@@ -990,7 +992,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             this.changeFontSize(false);
           }}
         >
-          <ArrowDownward fontSize='large' />
+          <ZoomOutIcon fontSize='large' />
         </IconButton>
       </>
     );
