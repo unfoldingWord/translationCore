@@ -35,6 +35,8 @@ You can read the documented code at [docs.tc.unfoldingword.surge.sh](http://docs
 
 Debugging Main App
 ---
+- first time do: `npm run load-apps`
+- launch app by: `npm i --legacy-peer-deps && npm run start`
 - after you get to the "Get Started" Page you can launch Chromium debugger by:
   - on Mac doing Command-Option-I
   - on Windows or Linux do Control-Shift-I

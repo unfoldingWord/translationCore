@@ -40,6 +40,7 @@ class Menu extends React.Component {
       onUpload,
       onEdit,
       onLoadUrl,
+      onPrintPreview,
       user,
     } = this.props;
     const menuItemStyle = {
@@ -129,6 +130,17 @@ class Menu extends React.Component {
               <Glyphicon glyph='cloud-download' style={glyphStyle}/>
               <div>{translate('projects.load_view_usfm_url')}</div>
             </div>
+            <hr style={{ margin: '4px 0 0 0' }}/>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                onPrintPreview(projectSaveLocation);
+              }}
+            >
+              <Glyphicon glyph='print' style={glyphStyle}/>
+              <div>{'Print Preview'}</div>
+            </div>
           </div>
         </Popover>
       </div>
@@ -146,6 +158,7 @@ Menu.propTypes = {
   onExportCSV: PropTypes.func.isRequired,
   onExportUSFM: PropTypes.func.isRequired,
   onLoadUrl: PropTypes.func.isRequired,
+  onPrintPreview: PropTypes.func.isRequired,
 };
 
 export default Menu;

@@ -122,6 +122,7 @@ describe('ProjectImportStepperActions.confirmContinueOrCancelImportValidation', 
         button2Text: 'buttons.cancel_import_button',
         buttonLinkText: null,
         callback2: null,
+        notCloseableAlert: false,
       },
     ];
     const store = mockStore({ projectDetailsReducer: { projectSaveLocation: '' } });
