@@ -9,6 +9,7 @@ import { getTranslate } from '../selectors';
 import { getUsfm2ExportFile } from '../actions/USFMExportActions';
 import PreviewContent from '../components/PreviewContent';
 import * as AlertModalActions from '../actions/AlertModalActions';
+import { delay } from '../common/utils';
 import * as LoadHelpers from './LoadHelpers';
 import * as exportHelpers from './exportHelpers';
 
@@ -200,7 +201,7 @@ function doPrint(previewWindow, html, projectName, onFinished) {
 
     win.webContents.on('did-finish-load', () => {
       console.log('doPrint() - loaded');
-      printWindowContents(win, projectName, DOWNLOADS_PATH, onFinished);
+      delay(500).then(() => printWindowContents(win, projectName, DOWNLOADS_PATH, onFinished));
     });
     win.webContents.on('did-load-fail', () => {
       console.log('doPrint() - load failed');
