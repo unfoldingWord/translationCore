@@ -5,9 +5,10 @@ import env from 'tc-electron-env';
 // helpers
 import * as settingsMigrationHelpers from '../helpers/settingsMigrationHelpers';
 import * as Bible from '../common/BooksOfTheBible';
+import { TC_PATH } from '../common/constants';
 import * as SettingsActions from './SettingsActions';
 // constants
-const PARENT = path.join(env.data(), 'translationCore', 'projects');
+const PARENT = path.join(env.data(), TC_PATH, 'projects');
 const SETTINGS_DIRECTORY = path.join(PARENT, 'settings.json');
 
 /**

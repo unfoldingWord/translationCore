@@ -10,9 +10,26 @@ if (NOT_TEST_ENV) {
   makeSureEnvInit('constants');
 }
 
-console.log(`window.process.argv`, window.process.argv);
-export const USE_QA_SERVER = NOT_TEST_ENV && window?.process?.argv?.includes('--QA_MODE');
-// console.log(`QA_MODE = ${QA_MODE}`);
+// console.log(`window.process.argv`, window.process.argv);
+let QA_MODE = null;
+
+function getQaMode() {
+  if (Array.isArray(window?.process?.argv)) {
+    const find = '--QA_MODE=';
+    const qaParam = window?.process?.argv.find(item => item.indexOf(find) === 0);
+
+    if (qaParam) {
+      console.log(`Found param = ${qaParam}`);
+      QA_MODE = qaParam.substring(find.length);
+    }
+  }
+  // QA_MODE = window?.process?.argv?.includes('--QA_MODE');
+  console.log(`QA_MODE = ${QA_MODE}`);
+
+  return QA_MODE;
+}
+
+export const USE_QA_SERVER = NOT_TEST_ENV && getQaMode();
 
 const isProduction = nodeEnv === 'production';
 const STATIC_FOLDER_PATH = path.join(__dirname, 'static');// Path to static folder in webpacked code.
@@ -20,22 +37,22 @@ export const APP_VERSION = packagefile.version;
 export const MIN_COMPATIBLE_VERSION = packagefile.minCompatibleVersion;
 export const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 // Paths
-export const PROJECTS_PATH = path.join(env.home(), 'translationCore', 'projects');
-export const RESOURCES_FOLDER = !USE_QA_SERVER ? 'resources' : 'resources-QA';
-export const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', RESOURCES_FOLDER);
-export const IMPORTS_PATH = path.join(env.home(), 'translationCore', 'imports');
-export const VIEW_DATA_PATH = path.join(env.home(), 'translationCore', 'viewUrl');
-export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', 'translationCore', 'index');
-export const TEMP_IMPORT_PATH = path.join(env.home(), 'translationCore', 'imports', 'temp');
-export const PROJECT_DOT_APPS_PATH = path.join('.apps', 'translationCore');
+export const TC_PATH = !USE_QA_SERVER ? 'translationCore' : 'translationCore-QA';
+export const PROJECTS_PATH = path.join(env.home(), TC_PATH, 'projects');
+export const USER_RESOURCES_PATH = path.join(env.home(), TC_PATH, 'resources');
+export const IMPORTS_PATH = path.join(env.home(), TC_PATH, 'imports');
+export const VIEW_DATA_PATH = path.join(env.home(), TC_PATH, 'viewUrl');
+export const PROJECT_INDEX_FOLDER_PATH = path.join('.apps', TC_PATH, 'index');
+export const TEMP_IMPORT_PATH = path.join(env.home(), TC_PATH, 'imports', 'temp');
+export const PROJECT_DOT_APPS_PATH = path.join('.apps', TC_PATH);
 export const PROJECT_CHECKDATA_DIRECTORY = path.join(PROJECT_DOT_APPS_PATH, 'checkData');
 export const STATIC_RESOURCES_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'tcResources') : path.join('./tcResources');
-export const LOG_FILES_PATH = path.join(env.home(), 'translationCore', 'logs');
+export const LOG_FILES_PATH = path.join(env.home(), TC_PATH, 'logs');
 export const OSX_DOCUMENTS_PATH = path.join(env.home(), 'Documents');
 export const WIN_DOCUMENTS_PATH = path.join(env.home(), 'My Documents');
 export const LOCALE_DIR = isProduction ? path.join(STATIC_FOLDER_PATH, 'locale') : path.join('./src/locale');
 export const TOOLS_DIR = isProduction ? path.join(STATIC_FOLDER_PATH, 'tC_apps') : path.join('./src/tC_apps');
-export const SETTINGS_FOLDER = path.join(env.data(), 'translationCore');
+export const SETTINGS_FOLDER = path.join(env.data(), TC_PATH);
 export const SETTINGS_PATH = path.join(SETTINGS_FOLDER, 'settings.json');
 export const PROJECT_LICENSES_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'projectLicenses') : path.join('./src/assets/projectLicenses');
 // string names
@@ -86,4 +103,5 @@ export const ALERT_ALIGNMENTS_AND_SELECTIONS_RESET_MSG = 'tools.invalid_verse_al
 export const ALERT_SELECTIONS_INVALIDATED_MSG = 'tools.selections_invalidated';
 export const ALERT_ALIGNMENTS_RESET_MSG = 'tools.alignments_reset_wa_tool';
 // url strings
-export const DCS_BASE_URL = !USE_QA_SERVER ? 'https://git.door43.org' : 'https://qa.door43.org'; //TODO: also defined in public/main.js, need to move definition to common place
+export const DCS_BASE_URL = !USE_QA_SERVER ? 'https://git.door43.org' : QA_MODE; //TODO: also defined in public/main.js, need to move definition to common place
+console.log(`DCS_BASE_URL = ${DCS_BASE_URL}`);

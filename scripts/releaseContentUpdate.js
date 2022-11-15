@@ -1,5 +1,5 @@
-import fs from 'fs-extra';
 import path from 'path';
+import fs from 'fs-extra';
 import ospath from 'ospath';
 
 const scu = require('tc-source-content-updater');

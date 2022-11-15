@@ -18,6 +18,7 @@ import * as Bible from '../common/BooksOfTheBible';
 import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 // actions
 import {
+  DCS_BASE_URL,
   DEFAULT_ORIG_LANG_OWNER,
   USER_RESOURCES_PATH,
   USFMJS_VERSION,
@@ -265,7 +266,9 @@ export const downloadMissingResource = (resourceDetails) => (async (dispatch, ge
   if (navigator.onLine) {
     dispatch(confirmOnlineAction(async () => {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
-      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
+      const config = { DCS_BASE_URL };
+
+      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH, config)
         .then(async () => {
           updateSourceContentUpdaterManifest();
           dispatch(updateSourceContentUpdatesReducer());
@@ -446,6 +449,7 @@ export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRele
         filterByOwner: null,
         latestManifestKey,
         stage: preRelease ? 'preprod' : null,
+        DCS_BASE_URL,
       };
 
       await SourceContentUpdater.getLatestResources(localResourceList, config)
