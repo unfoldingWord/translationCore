@@ -3,13 +3,12 @@
 import React from 'react';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from 'tc-electron-env';
-import { BrowserWindow } from '@electron/remote';
 import { getTranslate } from '../selectors';
 import { getUsfm2ExportFile } from '../actions/USFMExportActions';
 import PreviewContent from '../components/PreviewContent';
 import * as AlertModalActions from '../actions/AlertModalActions';
 import { delay } from '../common/utils';
+import { USER_HOME } from '../common/constants';
 import * as LoadHelpers from './LoadHelpers';
 import * as exportHelpers from './exportHelpers';
 
@@ -34,7 +33,7 @@ function getUSfmFromProjectPath(projectPath) {
 
 export function doPrintPreview(projectPath) {
   return ((dispatch, getState) => new Promise((resolve, reject) => {
-    const PRINT_BUTTON = 'Print';
+    const PRINT_BUTTON = 'Print to PDF';
     let usfm;
     let alertMessage;
     let html;
@@ -117,6 +116,7 @@ export function doPrintPreview(projectPath) {
  * @returns {*} window
  */
 function createPreviewWindow(html) {
+  const { BrowserWindow } = require('@electron/remote');
   const win = new BrowserWindow({
     width: 850,
     height: 900,
@@ -191,7 +191,7 @@ function printWindowContents(window, projectName, DOWNLOADS_PATH, onFinished, pd
  */
 function doPrint(previewWindow, html, projectName, onFinished) {
   console.log('doPrint() - doing print');
-  const DOWNLOADS_PATH = path.join(env.home(), 'Downloads');
+  const DOWNLOADS_PATH = path.join(USER_HOME, 'Downloads');
 
   if (previewWindow) {
     console.log('doPrint() - using preview window');
