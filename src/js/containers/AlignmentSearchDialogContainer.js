@@ -16,6 +16,7 @@ import MaterialTable from 'material-table';
 import env from 'tc-electron-env';
 import _ from 'lodash';
 import AddBox from '@material-ui/icons/AddBox';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import ArrowDownward from '@material-ui/icons/ArrowDownward';
 // import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import Check from '@material-ui/icons/Check';
@@ -28,12 +29,13 @@ import Edit from '@material-ui/icons/Edit';
 import FilterList from '@material-ui/icons/FilterList';
 import FirstPage from '@material-ui/icons/FirstPage';
 import LastPage from '@material-ui/icons/LastPage';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Remove from '@material-ui/icons/Remove';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-import ZoomInIcon from '@material-ui/icons/ZoomIn';
-import ZoomOutIcon from '@material-ui/icons/ZoomOut';
 import IconButton from '@material-ui/core/IconButton';
 
 import usfm from 'usfm-js';
@@ -758,7 +760,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       { refs.map((ref, i) => <span
         key={ i.toString() }
         onClick={(e) => {
-          this.showPopUpVerse(ref, e, targetText);
+          this.showPopUpVerse(refs, i, e, targetText);
         }}
       >
         {ref + ';\u00A0'}
@@ -783,19 +785,20 @@ class AlignmentSearchDialogContainer extends React.Component {
   refreshPopUp() {
     if (popupLocation) {
       delay(100).then(() => {
-        this.showPopUpVerse(popupLocation.ref, popupLocation.e, popupLocation.targetText);
+        this.showPopUpVerse(popupLocation.refs, popupLocation.index, popupLocation.e, popupLocation.targetText);
       });
     }
   }
 
   /**
    * show a popup verse for at element
-   * @param {string} ref - bible reference to display
+   * @param {[string]} refs - bible references to display
+   * @param {number} index - current
    * @param {object} e - element to show popup for
    * @param {string} targetText - aligned target text
    */
-  showPopUpVerse(ref, e, targetText) {
-    popupLocation = { ref, e, targetText };
+  showPopUpVerse(refs, index, e, targetText) {
+    popupLocation = { refs, index, e, targetText };
     const popupTitlefontSize = this.getFontSize(1.1);
     const subTitleFontSize = `1.3em`;
     const verseFontSize = this.getFontSize(1);
@@ -814,7 +817,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     }
 
     const versesContent = bibleKeys.map((bibleKey, i) => {
-      const content = this.getVerseContent(bibleKey, popupTitlefontSize, ref, !i && targetText);
+      const content = this.getVerseContent(bibleKey, popupTitlefontSize, refs[index], !i && targetText);
       return content;
     });
     const contentStyle = {
@@ -980,7 +983,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             this.changeFontSize(true);
           }}
         >
-          <ZoomInIcon fontSize='large' />
+          <AddCircleOutlineIcon fontSize='large' />
         </IconButton>
         <IconButton aria-label="decrease-font"
           style = {{
@@ -992,7 +995,45 @@ class AlignmentSearchDialogContainer extends React.Component {
             this.changeFontSize(false);
           }}
         >
-          <ZoomOutIcon fontSize='large' />
+          <RemoveCircleOutlineIcon fontSize='large' />
+        </IconButton>
+        <IconButton aria-label="next-ref"
+          disabled={popupLocation.index <= 0}
+          style = {{
+            justifySelf: 'flex-right',
+            marginRight: '10px',
+          }}
+          onClick={() => {
+            console.log('previous ref');
+            let i = (popupLocation.index || 0) - 1;
+
+            if (i < 0) {
+              i = 0;
+            }
+            this.showPopUpVerse(popupLocation.refs, i, popupLocation.e, popupLocation.targetText);
+          }}
+        >
+          <NavigateBeforeIcon fontSize='large' />
+        </IconButton>
+
+        <IconButton aria-label="next-ref"
+          disabled={popupLocation.index >= popupLocation.refs?.length - 1}
+          style = {{
+            justifySelf: 'flex-right',
+            marginRight: '10px',
+          }}
+          onClick={() => {
+            console.log('next ref');
+            const refsCount = popupLocation.refs?.length || 0;
+            let i = (popupLocation.index || 0) + 1;
+
+            if (i >= refsCount) {
+              i = refsCount -1;
+            }
+            this.showPopUpVerse(popupLocation.refs, i, popupLocation.e, popupLocation.targetText);
+          }}
+        >
+          <NavigateNextIcon fontSize='large' />
         </IconButton>
       </>
     );
