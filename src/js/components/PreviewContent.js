@@ -198,7 +198,7 @@ function PreviewContent({
       onRefresh && onRefresh(html_);
       setSubmitPreview(false);
     }
-  }, [html, submitPreview, running, projectFont, onRefresh]);
+  }, [html, submitPreview, running, projectFont, onRefresh, fontSize]);
 
   useEffect(() => {
     if ( !submitPreview ) {
