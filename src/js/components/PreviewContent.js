@@ -11,11 +11,15 @@ import {
 } from 'proskomma-react-hooks';
 import fs from 'fs-extra';
 import path from 'path-extra';
+import { TextField } from 'material-ui';
 import { getLanguageByCode } from '../helpers/LanguageHelpers';
 import { isNewTestament } from '../helpers/bibleHelpers';
 import { ALL_BIBLE_BOOKS } from '../common/BooksOfTheBible';
 import { ASSETS_PATH, isProduction } from '../common/constants';
 // import { JS_DIR } from '../common/constants';
+
+const baseSizePx = 10; // use this as base font size for now, default was 7
+const minFontSize = 5;
 
 const i18n_default = {
   // coverAlt: "Cover",
@@ -63,7 +67,7 @@ function replaceFontSizes(previewStyleTemplate, baseSizePx) {
 }
 
 // fix the HTML for tCore preview
-function convertPrintPreviewHtml(html, projectFont) {
+function convertPrintPreviewHtml(html, projectFont, baseSizePx) {
   let publicBase;
 
   if (isProduction) {
@@ -75,7 +79,6 @@ function convertPrintPreviewHtml(html, projectFont) {
 
   let html_ = html;
   const pagedPath = path.join(publicBase, './js/paged.polyfill.js');
-  const baseSizePx = 10; // use this as base font size for now, default was 7
   let previewStyleTemplate = fs.readFileSync(path.join(ASSETS_PATH, 'previewTemplate.css'), 'utf8');
   previewStyleTemplate = replaceFontSizes(previewStyleTemplate, baseSizePx);
   const startStyleStr = '<style>';
@@ -123,6 +126,8 @@ function PreviewContent({
   const [submitPreview, setSubmitPreview] = useState(!!printImmediately);
   const [documents, setDocuments] = useState([]);
   const [i18n, setI18n] = useState(i18n_default);
+  const [fontSize, setFontSize] = useState(baseSizePx);
+  const [tempFontSize, setTempFontSize] = useState(baseSizePx);
 
   const language = useMemo(() => {
     const lang_ = getLanguageByCode(languageId);
@@ -189,11 +194,11 @@ function PreviewContent({
 
   useEffect(() => {
     if (html && submitPreview && !running) {
-      const html_ = convertPrintPreviewHtml(html, projectFont);
+      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize);
       onRefresh && onRefresh(html_);
       setSubmitPreview(false);
     }
-  }, [html, submitPreview, running, projectFont, onRefresh]);
+  }, [html, submitPreview, running, projectFont, onRefresh, fontSize]);
 
   useEffect(() => {
     if ( !submitPreview ) {
@@ -247,10 +252,42 @@ function PreviewContent({
 
   let message;
 
+  function updateFont(text) {
+    let fontSize = parseFloat(tempFontSize || '');
+
+    if (fontSize >= minFontSize) {
+      console.log(`setFont() - using size ${fontSize} from ${tempFontSize}`);
+    } else {
+      console.log(`setFont() - error size ${fontSize} from ${tempFontSize} is less than ${minFontSize}, limiting`);
+      fontSize = minFontSize;
+    }
+    setFontSize(fontSize);
+
+    if (onRefresh) {
+      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize);
+      onRefresh && onRefresh(html_);
+    }
+  }
+
   if (errors?.length) {
     message = 'Error rendering';
   } else if (html) {
-    message = 'Rendering Complete.';
+    message = <div>
+      <div>{'Change Preview Font Size: '}</div>
+      <TextField
+        id={'font_size'}
+        defaultValue={`${fontSize}`}
+        style={{
+          width: '40px',
+          marginLeft: '20px',
+          marginRight: '20px',
+        }}
+        onChange={e => setTempFontSize(e.target.value)}
+      />
+      <button className='btn-prime' onClick={updateFont} >
+        {'Update Preview'}
+      </button>
+    </div>;
   } else {
     message = `Progress: ${progress}`;
   }

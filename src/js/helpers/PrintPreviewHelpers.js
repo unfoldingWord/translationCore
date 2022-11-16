@@ -61,6 +61,11 @@ export function doPrintPreview(projectPath) {
           html = html_;
 
           if (html) {
+            if (previewWindow) {
+              console.log(`doPrintPreview() - window already open, close before recreating`);
+              previewWindow.close();
+              previewWindow = null;
+            }
             previewWindow = showPreview(html, () => {
               previewWindow = null;
             });
