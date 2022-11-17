@@ -35,6 +35,8 @@ You can read the documented code at [docs.tc.unfoldingword.surge.sh](http://docs
 
 Debugging Main App
 ---
+- first time do: `npm run load-apps`
+- launch app by: `npm i --legacy-peer-deps && npm run start`
 - after you get to the "Get Started" Page you can launch Chromium debugger by:
   - on Mac doing Command-Option-I
   - on Windows or Linux do Control-Shift-I
@@ -44,7 +46,9 @@ Debugging App Startup Code
 - first time do: `npm run load-apps`
 - launch app by: `npm i --legacy-peer-deps && npm run start-debug`
 - open chrome to url `chrome://inspect/#devices`
-- if you do not see under remote target `electron/js2c/browser_init` and an `inspect` link,
-  make sure `Discover network targets` is selected and click `Configure` button.  Make sure `localhost:5656` is added under `Target discovery settings` and click `Done`.
+- if you do not see under remote target `electron/js2c/browser_init` add an `inspect` link, make sure `Discover network targets` is selected and click `Configure` button.  Make sure `localhost:5656` is added under `Target discovery settings` and click `Done`.
 - Under remote target `electron/js2c/browser_init` click on `inspect` link.
+- You will need to add the folder that contains the translationCore source files to the workspace.  Then you can use control-P or command-P to search for and open source files and set breakpoints.
+  - the electronite app initialization code is in `electronite/index.js`
+  - the app UI startup code is in `pages/app.js` but cannot debug with this method, but will have to use debugger in the app and do a reload.
 
