@@ -181,7 +181,7 @@
     "rimraf": "2.6.3",
     "selections": "0.1.7",
     "semver": "5.5.0",
-    "simple-git": "1.43.0",
+    "simple-git": "3.5.0",
     "string-punctuation-tokenizer": "^2.2.0",
     "sudo-prompt": "6.2.1",
     "tc-electron-env": "0.10.0",
