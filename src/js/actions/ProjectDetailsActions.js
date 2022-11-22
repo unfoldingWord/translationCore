@@ -39,6 +39,7 @@ import {
   PROJECTS_PATH,
   TRANSLATION_NOTES,
   TRANSLATION_WORDS,
+  WORD_ALIGNMENT,
 } from '../common/constants';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
@@ -163,7 +164,7 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
  * @param {string} owner
  * @return {(function(*, *): Promise<undefined>)|*}
  */
-export function setProjectToolGL(toolName, selectedGL, owner = null) {
+export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = null) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
@@ -180,7 +181,7 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
       owner = previousOwnerForTool;
     }
 
-    const ifGlChanged = (selectedGL !== previousGLForTool) ||
+    let ifGlChanged = (selectedGL !== previousGLForTool) ||
                         (owner !== previousOwnerForTool);
 
     dispatch({
@@ -203,6 +204,17 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },
       ]));
+    } else if (toolName === WORD_ALIGNMENT && ifGlChanged) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
+      const previousOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(previousOwnerForTool);
+      const newOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
+
+      if (previousOrigLangOwner !== newOrigLangOwner) {
+        console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
+        ResourcesHelpers.getResourcesNeededByTool(getState(), bookId || 'mat', toolName, selectedGL, owner);
+        dispatch(batchActions([
+          { type: consts.OPEN_TOOL, name: null },
+        ]));
+      }
     }
 
     if (ifGlChanged) { // if GL has been changed
