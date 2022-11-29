@@ -129,7 +129,7 @@ div.introduction_sequence {
 hr {page-break-after: recto}
 div.bibleBookBody {
   columns: 2;
-  column-gap: 2em;
+  column-gap: %PS2%em;
   widows: 2;
 }
 
@@ -148,7 +148,7 @@ div.periphBody {
 .toc_level3 {font-size: %FS10%}
 
 .d {font-style: italic}
-.mt, .mt2, .mt3, .imt, .imt2, .imt3 {margin-bottom: 1ex}
+.mt, .mt2, .mt3, .imt, .imt2, .imt3 {margin-bottom: %PS1%ex}
 .mt, .mt2, .mt3 {text-align: center}
 .mt, .imt {font-weight: bold}
 .ms, .ms2, .ms3 {}
@@ -156,17 +156,17 @@ div.periphBody {
 .is, .s {}
 .is2, .s2 {}
 
-.ili, .ip, .m, .p, .q, .q2, .q3, .q4 {margin-bottom: 0.4em; margin-top: 0.4em; font-size: %FS10%px;}
+.ili, .ip, .m, .p, .q, .q2, .q3, .q4 {margin-bottom: %PS0.4%em; margin-top: %PS0.4%em; font-size: %FS10%px;}
 .ili, .ip, .m, .p { text-align: justify }
-.ili {padding-left: 1.5em; font-size: %FS10%px;}
+.ili {padding-left: %PS1.5%em; font-size: %FS10%px;}
 .io, .io2 {font-size: %FS10%px; font-family: sans-serif}
-.io2 {padding-left: 1.5em}
+.io2 {padding-left: %PS1.5%em}
 .ior {font-style: italic}
 .ip {font-family: sans-serif; font-size: %FS10%px;}
-.q, .q1, .pi {padding-left: 1.5em; font-size: %FS10%px;}
-.q2 {padding-left: 2.5em; font-size: %FS10%px;}
-.q3 {padding-left: 3.5em; font-size: %FS10%px;}
-.q4 {padding-left: 4.5em; font-size: %FS10%px;}
+.q, .q1, .pi {padding-left: %PS1.5%em; font-size: %FS10%px;}
+.q2 {padding-left: %PS2.5%em; font-size: %FS10%px;}
+.q3 {padding-left: %PS3.5%em; font-size: %FS10%px;}
+.q4 {padding-left: %PS4.5%em; font-size: %FS10%px;}
 
 .b {font-weight: bold}
 .bd {font-weight: bold}
@@ -184,7 +184,7 @@ div.periphBody {
 .nd {font-variant: small-caps}
 .ord {font-size: %FS7%px; vertical-align: top}
 .pn {}
-.qs {font-style: italic; float: right; padding-left: 1em}
+.qs {font-style: italic; float: right; padding-left: %PS1%em}
 .sls {font-style: italic}
 .tl {font-style: italic}
 .tr {font-size: %FS10%}
@@ -192,7 +192,7 @@ div.periphBody {
 .xt {font-weight: bold}
 
 .chapter {
-  padding-left: 0.25em;
+  padding-left: %PS0.25%em;
   float: right;
   vertical-align: top;
   margin-top:0;
