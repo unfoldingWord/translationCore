@@ -33,41 +33,106 @@ const i18n_default = {
 };
 
 /**
- * replace font sizes in template in format `*FS7*`
- * @param {string} previewStyleTemplate
- * @param {number} baseSizePx - base pixel size to use (7 will result in `%FS7%` being `7pt`)
- * @returns {string}
+ * replace variables in template marked by start and end, and scale the number there by factor
+ * @param {string} template
+ * @param {string} start - e.g. '%FS'
+ * @param {string} end - e.g. '%'
+ * @param {number} factor - value to multiply the enclosed number by
+ * @param {number} fractionDigits - number of fractional digits to output
+ * @param {string} units - optional units to append to new value
+ * @returns {*}
  */
-function replaceFontSizes(previewStyleTemplate, baseSizePx) {
+function scaleVariablesInTemplate(template, start, end, factor, fractionDigits, units ='') {
   let pos = 0;
-  let template = previewStyleTemplate;
-  const startStr = '*FS';
 
   while (pos >= 0) {
-    pos = template.indexOf(startStr, pos);
+    pos = template.indexOf(start, pos);
 
     if (pos >= 0) {
-      const endNum = template.indexOf('*', pos + startStr.length);
-      const size = template.substring(pos + startStr.length, endNum);
-      let fontSize = parseFloat(size);
+      const endNum = template.indexOf(end, pos + start.length);
+      const originalStr = template.substring(pos + start.length, endNum);
 
-      if (fontSize <= 0) {
-        fontSize = 7;
+      if (originalStr.length > 6) {
+        console.warn(`scaleVariablesInTemplate(${start}) - value too long: ${originalStr}`);
       }
 
-      const newSizePt = fontSize / 7 * baseSizePx;
+      let originalValue = parseFloat(originalStr);
+
+      if (originalValue <= 0) {
+        originalValue = 0;
+      }
+
+      const newSize = originalValue * factor;
+      const newSizeStr = newSize.toFixed(fractionDigits);
       const beginPart = template.substring(0, pos);
       const endPart = template.substring(endNum + 1);
-      const newTemplate = beginPart + newSizePt.toFixed(1) + 'px' + endPart;
+      const newTemplate = beginPart + newSizeStr + units + endPart;
       template = newTemplate;
     }
   }
+  return template;
+}
+
+/**
+ * replace font sizes in template in format `%FS7%`
+ * @param {string} previewStyleTemplate
+ * @param {number} factor - factor to multiply font size by
+ * @returns {string}
+ */
+function replaceFontSizes(previewStyleTemplate, factor) {
+  let template = previewStyleTemplate;
+  const startStr = '%FS';
+  const units = '';
+  const fractionDigits = 1;
+  const endStr = '%';
+  template = scaleVariablesInTemplate(template, startStr, endStr, factor, fractionDigits, units);
 
   return template;
 }
 
-// fix the HTML for tCore preview
-function convertPrintPreviewHtml(html, projectFont, baseSizePx) {
+/**
+ * replace page sizes in template in format `%PS18%`
+ * @param {string} previewStyleTemplate
+ * @param {number} factor - factor to multiply size by
+ * @returns {string}
+ */
+function replacePageSizes(previewStyleTemplate, factor) {
+  let template = previewStyleTemplate;
+  const startStr = '%PS';
+  const units = '';
+  const fractionDigits = 0;
+  const endStr = '%';
+  template = scaleVariablesInTemplate(template, startStr, endStr, factor, fractionDigits, units);
+
+  return template;
+}
+
+/**
+ * replace pixel sizes in template in format `%PX6%`
+ * @param {string} previewStyleTemplate
+ * @param {number} factor - factor to multiply size by
+ * @returns {string}
+ */
+function replacePixelSizes(previewStyleTemplate, factor) {
+  let template = previewStyleTemplate;
+  const startStr = '%PX';
+  const units = '';
+  const fractionDigits = 1;
+  const endStr = '%';
+  template = scaleVariablesInTemplate(template, startStr, endStr, factor, fractionDigits, units);
+
+  return template;
+}
+
+/**
+ * adjust the HTML for tCore preview
+ * @param {string} html - initial html
+ * @param {string} projectFont
+ * @param {number} baseSizePx
+ * @param {number} scale - scale to apply to everything
+ * @returns {string} - returns new html
+ */
+function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
   let publicBase;
 
   if (isProduction) {
@@ -80,7 +145,9 @@ function convertPrintPreviewHtml(html, projectFont, baseSizePx) {
   let html_ = html;
   const pagedPath = path.join(publicBase, './js/paged.polyfill.js');
   let previewStyleTemplate = fs.readFileSync(path.join(ASSETS_PATH, 'previewTemplate.css'), 'utf8');
-  previewStyleTemplate = replaceFontSizes(previewStyleTemplate, baseSizePx);
+  previewStyleTemplate = replaceFontSizes(previewStyleTemplate, baseSizePx*scale/7);
+  previewStyleTemplate = replacePageSizes(previewStyleTemplate, scale);
+  previewStyleTemplate = replacePixelSizes(previewStyleTemplate, scale);
   const startStyleStr = '<style>';
   const startStyle = html.indexOf(startStyleStr);
   const endStyleStr = '</style>';
@@ -127,6 +194,7 @@ function PreviewContent({
   const [documents, setDocuments] = useState([]);
   const [i18n, setI18n] = useState(i18n_default);
   const [fontSize, setFontSize] = useState(baseSizePx);
+  const [scale, setScale] = useState(1);
   const [tempFontSize, setTempFontSize] = useState(baseSizePx);
 
   const language = useMemo(() => {
@@ -252,19 +320,30 @@ function PreviewContent({
 
   let message;
 
-  function updateFont(text) {
+  function updatePreview(text) {
     let fontSize = parseFloat(tempFontSize || '');
+    let scale_ = parseFloat(scale || '');
 
     if (fontSize >= minFontSize) {
-      console.log(`setFont() - using size ${fontSize} from ${tempFontSize}`);
+      console.log(`updateFont() - using size ${fontSize} from ${tempFontSize}`);
     } else {
-      console.log(`setFont() - error size ${fontSize} from ${tempFontSize} is less than ${minFontSize}, limiting`);
+      console.log(`updateFont() - error size ${fontSize} from ${tempFontSize} is less than ${minFontSize}, limiting`);
       fontSize = minFontSize;
     }
     setFontSize(fontSize);
 
+    if (scale_ < 0.1) {
+      console.log(`updateFont() - scale ${scale_} is too low`);
+      scale_ = 0.1;
+    } else if (scale_ > 15) {
+      console.log(`updateFont() - scale ${scale_} is too high`);
+      scale_ = 15;
+    }
+    console.log(`updateFont() - using scale ${scale_} from ${scale}`);
+    setScale(scale_ + '');
+
     if (onRefresh) {
-      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize);
+      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize, scale_);
       onRefresh && onRefresh(html_);
     }
   }
@@ -273,18 +352,35 @@ function PreviewContent({
     message = 'Error rendering';
   } else if (html) {
     message = <div>
-      <div>{'Change Preview Font Size: '}</div>
-      <TextField
-        id={'font_size'}
-        defaultValue={`${fontSize}`}
-        style={{
-          width: '40px',
-          marginLeft: '20px',
-          marginRight: '20px',
-        }}
-        onChange={e => setTempFontSize(e.target.value)}
-      />
-      <button className='btn-prime' onClick={updateFont} >
+      <div>
+        {'Change Preview Font Size: '}
+        <TextField
+          id={'font_size'}
+          defaultValue={`${fontSize}`}
+          style={{
+            width: '40px',
+            marginLeft: '20px',
+            marginRight: '20px',
+          }}
+          onChange={e => setTempFontSize(e.target.value)}
+        />
+      </div>
+      <br/>
+      <div>
+        {'Change Preview Scale: '}
+        <TextField
+          id={'font_size'}
+          defaultValue={`${scale}`}
+          style={{
+            width: '40px',
+            marginLeft: '20px',
+            marginRight: '20px',
+          }}
+          onChange={e => setScale(e.target.value)}
+        />
+      </div>
+      <br/>
+      <button className='btn-prime' onClick={updatePreview} >
         {'Update Preview'}
       </button>
     </div>;
