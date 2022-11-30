@@ -33,6 +33,21 @@ const i18n_default = {
 };
 
 /**
+ * insert new string between startPos and endPos in initialStr
+ * @param {string} initialStr
+ * @param {number} startPos
+ * @param {number} endPos
+ * @param {string}insertStr
+ * @returns {string}
+ */
+function insertStr(initialStr, startPos, endPos, insertStr) {
+  const beginPart = initialStr.substring(0, startPos);
+  const endPart = initialStr.substring(endPos);
+  const finalStr = beginPart + insertStr + endPart;
+  return finalStr;
+}
+
+/**
  * replace variables in template marked by start and end, and scale the number there by factor
  * @param {string} template
  * @param {string} start - e.g. '%FS'
@@ -64,9 +79,7 @@ function scaleVariablesInTemplate(template, start, end, factor, fractionDigits, 
 
       const newSize = originalValue * factor;
       const newSizeStr = newSize.toFixed(fractionDigits);
-      const beginPart = template.substring(0, pos);
-      const endPart = template.substring(endNum + 1);
-      const newTemplate = beginPart + newSizeStr + units + endPart;
+      const newTemplate = insertStr(template, pos, endNum + end.length, newSizeStr + units);
       template = newTemplate;
     }
   }
@@ -149,14 +162,27 @@ function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
   previewStyleTemplate = replacePageSizes(previewStyleTemplate, scale);
   previewStyleTemplate = replacePixelSizes(previewStyleTemplate, scale);
   const startStyleStr = '<style>';
-  const startStyle = html.indexOf(startStyleStr);
   const endStyleStr = '</style>';
-  const endStyle = html.indexOf(endStyleStr, startStyle);
+  // start with default style
+  let customStyle = fs.readFileSync(path.join(ASSETS_PATH, 'previewStyles-default.css'), 'utf8');
 
-  if ((startStyle >= 0) && (endStyle >= 0)) {
-    const firstPart = html.substring(0, startStyle + startStyleStr.length);
-    const lastPart = html.substring(endStyle);
-    html_ = firstPart + '\n' + previewStyleTemplate + '\n' + lastPart;
+  if (projectFont) {
+    let styleName = '';
+
+    try {
+      styleName = `previewStyles-${projectFont}.css`;
+      const fontStyle = fs.readFileSync(path.join(ASSETS_PATH, styleName), 'utf8');
+      customStyle += '\n' + fontStyle;
+    } catch (e) {
+      console.warn(`convertPrintPreviewHtml() - could not load ${styleName} for projectFont ${projectFont}`);
+    }
+  }
+
+  const startStylePos = html.indexOf(startStyleStr);
+  const endStylePos = html.indexOf(endStyleStr, startStylePos);
+
+  if ((startStylePos >= 0) && (endStylePos >= 0)) {
+    html_ = insertStr(html_, startStylePos + startStyleStr.length, endStylePos, '\n' + previewStyleTemplate + '\n');
   }
 
   try {
@@ -172,7 +198,15 @@ function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
     headerPrefix += cssLink;
 
     // replace call to external js with local file load and insert path to stylesheet
-    html_ = html_.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', `${headerPrefix}\n<script src="file://${pagedPath}">`);
+    html_ = html_.replace('<script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js">', `<script src="file://${pagedPath}">\n`);
+
+    // now insert custom style
+    const pos = html_.indexOf(endStyleStr) + endStyleStr.length;
+
+    if (pos > 0) {
+      html_ = insertStr(html_, pos, pos, `\n<style>\n${customStyle}\n</style>\n`);
+    }
+
     return html_;
   } catch (e) {
     console.log(`convertPrintPreviewHtml() - could not read ${pagedPath}`);

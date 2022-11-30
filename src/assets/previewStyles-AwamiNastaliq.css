@@ -1,29 +1,6 @@
 /*
- set up font support
+ set up Awami Nastaliq font support
  */
-
-@font-face {
-  font-family: Noto Sans;
-  src: url(./fonts/NotoSans-Regular.ttf);
-  font-weight: normal;
-}
-@font-face {
-  font-family: Noto Sans;
-  font-style: italic;
-  src: url(./fonts/NotoSans-Italic.ttf);
-}
-@font-face {
-  font-family: Noto Sans;
-  font-weight: bold;
-  src: url(./fonts/NotoSans-Bold.ttf);
-}
-
-@font-face {
-  font-family: Noto Sans;
-  font-style: italic;
-  font-weight: bold;
-  src: url(./fonts/NotoSans-BoldItalic.ttf);
-}
 
 /* Awami Nastaliq - supports a wide variety of languages of Pakistan that are written with the sloping Nastaliq style. */
 @font-face {
@@ -34,7 +11,7 @@
 /*
   use Awami Nastaliq and fall back to Noto Sans
 */
- * {
+* {
   font-family: AwamiNastaliq, Noto Sans;
   font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
   -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;

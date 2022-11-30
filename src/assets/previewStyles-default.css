@@ -25,25 +25,19 @@
   src: url(./fonts/NotoSans-BoldItalic.ttf);
 }
 
-/* Padauk - special font for Myanmar (Burmese) */
+/*
+special font for Hebrew
+*/
 @font-face {
-  font-family: Padauk;
-  src: url(./fonts/complexScript/Padauk-Regular.woff);
+  font-family: Ezra;
+  src: url(./fonts/SILEOTSR.ttf);
   font-weight: normal;
-}
-/* Padauk bold - special font for Myanmar (Burmese) */
-@font-face {
-  font-family: Padauk;
-  src: url(./fonts/complexScript/Padauk-Bold.woff);
-  font-weight: bold;
+  unicode-range: U+0590-05FF;
 }
 
 /*
-  use Padauk and fall back to Noto Sans
+  use Ezra for Hebrew characters and then Noto Sans for other characters
 */
- * {
-  font-family: Padauk, Noto Sans;
-  -moz-font-feature-settings: "wtri" 1;
-  -webkit-font-feature-settings: "wtri" 1;
-  font-feature-settings: "wtri" 1;
+* {
+  font-family: Ezra, Noto Sans;
 }
