@@ -2,28 +2,8 @@
  set up font support
  */
 
-@font-face {
-  font-family: Noto Sans;
-  src: url(./fonts/NotoSans-Regular.ttf);
-  font-weight: normal;
-}
-@font-face {
-  font-family: Noto Sans;
-  font-style: italic;
-  src: url(./fonts/NotoSans-Italic.ttf);
-}
-@font-face {
-  font-family: Noto Sans;
-  font-weight: bold;
-  src: url(./fonts/NotoSans-Bold.ttf);
-}
-
-@font-face {
-  font-family: Noto Sans;
-  font-style: italic;
-  font-weight: bold;
-  src: url(./fonts/NotoSans-BoldItalic.ttf);
-}
+/* include default font setup */
+@import "previewStyles-default.css";
 
 /* Padauk - special font for Myanmar (Burmese) */
 @font-face {
