@@ -179,7 +179,7 @@ function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
 
     const styleName = `previewStyles-${projectFont}.css`;
     const cssPath = path.join(publicBase, styleName);
-    const cssLink = `<link rel="stylesheet" href="file://${cssPath}">\n`;
+    const cssLink = `<link rel="stylesheet" type="text/css" href="file://${cssPath}">\n`;
     headerPrefix += cssLink;
 
     // replace call to external js with local file load and insert path to stylesheet

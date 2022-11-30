@@ -15,6 +15,7 @@
 
   @bottom-center {
     content: counter(page);
+    font-size: %FS8%px;
   }
 
   @top-center {
@@ -60,6 +61,14 @@ h1, h2, h3, h4 {
   margin-bottom: %PX2%px;
 }
 
+h1 {
+  font-size: %FS2%em;
+}
+
+h3 {
+  font-size: %FS1.17%em;
+}
+
 #toc_ul li {
   list-style-type: none;
   overflow-x: hidden;
@@ -93,19 +102,19 @@ h1, h2, h3, h4 {
 }
 
 .leader {
-  font-size: %FS9%px;
+  font-size: %FS11%px;
 }
 
 p.runningHeader {
   position: running(heading);
   font-style: italic;
-  font-size: %FS8%px;
+  font-size: %FS10%px;
 }
 
 p.chapN {
   position: running(chapN);
   font-style: italic;
-  font-size: %FS8%px;
+  font-size: %FS10%px;
 }
 
 span.footnote {float: footnote; }
