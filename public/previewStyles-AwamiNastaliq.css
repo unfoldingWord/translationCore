@@ -22,10 +22,11 @@
  }
 
 /*
- TRICKY: the definition below fixes the rendering in Windows.  Not sure why that is,
-          but without this definition Windows will only use system fonts.  But this
-          enables the above fonts bundled in translation core.  Again, not sure why
-          this is needed for Windows, but MacOS does not need this.
+ TRICKY: the definition below fixes the rendering in Windows even though it is not
+          used on the print preview page.  Not sure why that is, but without this
+          definition Windows will only use default system font.  But this enables
+          the above fonts bundled in translation core.  Again, not sure why this
+          is needed for Windows, but MacOS does not need this.
  */
 .AwamiNastaliq-text {
   font-family: AwamiNastaliq, Noto Sans;
