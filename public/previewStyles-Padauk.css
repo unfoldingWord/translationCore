@@ -11,6 +11,7 @@
   src: url(./fonts/complexScript/Padauk-Regular.woff);
   font-weight: normal;
 }
+
 /* Padauk bold - special font for Myanmar (Burmese) */
 @font-face {
   font-family: Padauk;
@@ -26,4 +27,18 @@
   -moz-font-feature-settings: "wtri" 1;
   -webkit-font-feature-settings: "wtri" 1;
   font-feature-settings: "wtri" 1;
+}
+
+/*
+ TRICKY: the definition below fixes the rendering in Windows.  Not sure why that is,
+          but without this definition Windows will only use system fonts.  But this
+          enables the above fonts bundled in translation core.  Again, not sure why
+          this is needed for Windows, but MacOS does not need this.
+ */
+.Padauk-text {
+  font-family: Padauk, Noto Sans;
+  font-size: 130%;
+  font-feature-settings: "wtri" 1;
+  -moz-font-feature-settings: "wtri" 1;
+  -webkit-font-feature-settings: "wtri" 1;
 }

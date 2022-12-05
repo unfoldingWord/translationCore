@@ -20,3 +20,18 @@
   -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
   -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
  }
+
+/*
+ TRICKY: the definition below fixes the rendering in Windows.  Not sure why that is,
+          but without this definition Windows will only use system fonts.  But this
+          enables the above fonts bundled in translation core.  Again, not sure why
+          this is needed for Windows, but MacOS does not need this.
+ */
+.AwamiNastaliq-text {
+  font-family: AwamiNastaliq, Noto Sans;
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  font-size: 115%;
+  line-height: initial;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+}
