@@ -241,7 +241,10 @@
     "load_view_usfm_url": "Load Bible Resource (USFM)",
     "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
     "enter_resource_url": "Enter Resource URL",
-    "loading_usfm_url": "Loading : ${usfm_url}"
+    "loading_usfm_url": "Loading : ${usfm_url}",
+    "print_progress": "Progress: ${progress_percent}%",
+    "print_preview_option_scale": "Change Preview Scale: ",
+    "print_preview_option_font_size": "Change Preview Font Size: "
   },
   "project_validation": {
     "language_mismatch": "Language Name not valid for Code",
@@ -463,7 +466,9 @@
     "update_version": "Update Version",
     "ignore_button": "Ignore",
     "feedback_button": "Send Feedback",
-    "delete": "Delete"
+    "delete": "Delete",
+    "update_preview": "Update Preview",
+    "print_to_pdf": "Print to PDF"
   },
   "tool_card_categories": {
     "kt": "Key Terms",
