@@ -199,7 +199,7 @@ function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
 
 function PreviewContent({
   // eslint-disable-next-line react/prop-types
-  bookId, onRefresh, usfm, onError, onProgress, languageId, typeName, printImmediately, projectFont,
+  bookId, onRefresh, usfm, onError, onProgress, languageId, typeName, printImmediately, projectFont, translate,
 }) {
   const [submitPreview, setSubmitPreview] = useState(!!printImmediately);
   const [documents, setDocuments] = useState([]);
@@ -360,11 +360,11 @@ function PreviewContent({
   }
 
   if (errors?.length) {
-    message = 'Error rendering';
+    message = 'Error rendering!';
   } else if (html) {
     message = <div>
       <div>
-        {'Change Preview Font Size: '}
+        {translate('projects.print_preview_option_font_size')}
         <TextField
           id={'font_size'}
           defaultValue={`${fontSize}`}
@@ -378,9 +378,9 @@ function PreviewContent({
       </div>
       <br/>
       <div>
-        {'Change Preview Scale: '}
+        {translate('projects.print_preview_option_scale')}
         <TextField
-          id={'font_size'}
+          id={'page_scale'}
           defaultValue={`${scale}`}
           style={{
             width: '40px',
@@ -392,11 +392,11 @@ function PreviewContent({
       </div>
       <br/>
       <button className='btn-prime' onClick={updatePreview} >
-        {'Update Preview'}
+        {translate('buttons.update_preview')}
       </button>
     </div>;
   } else {
-    message = `Progress: ${progress}`;
+    message = translate('projects.print_progress', { progress_percent: progress });
   }
 
   return (
