@@ -242,6 +242,7 @@
     "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
     "enter_resource_url": "Enter Resource URL",
     "loading_usfm_url": "Loading : ${usfm_url}",
+    "print_preview": "Print Preview",
     "print_progress": "Progress: ${progress_percent}%",
     "print_preview_option_scale": "Change Preview Scale: ",
     "print_preview_option_font_size": "Change Preview Font Size: "

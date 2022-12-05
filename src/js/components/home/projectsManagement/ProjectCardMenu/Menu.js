@@ -139,7 +139,7 @@ class Menu extends React.Component {
               }}
             >
               <Glyphicon glyph='print' style={glyphStyle}/>
-              <div>{'Print Preview'}</div>
+              <div>{translate('projects.print_preview')}</div>
             </div>
           </div>
         </Popover>

@@ -12,6 +12,7 @@ import {
   Subheader,
   TextField,
 } from 'material-ui';
+// eslint-disable-next-line import/no-unresolved
 import MaterialTable from 'material-table';
 import env from 'tc-electron-env';
 import _ from 'lodash';
