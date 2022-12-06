@@ -52,6 +52,7 @@ describe('AlertModalActions.openOptionDialog', () => {
     const button1Text = 'button1 text';
     const button2Text = 'button2 text';
     const buttonLinkText = null;
+    const notCloseableAlert = false;
     const expectedAction = {
       type: consts.OPEN_OPTION_DIALOG,
       alertMessage,
@@ -60,6 +61,7 @@ describe('AlertModalActions.openOptionDialog', () => {
       button2Text,
       buttonLinkText,
       callback2,
+      notCloseableAlert,
     };
     expect(typeof alertMessage).toEqual('string');
     expect(typeof callback).toEqual('function');
@@ -81,6 +83,7 @@ describe('AlertModalActions.openOptionDialog with link button', () => {
     const button1Text = 'button1 text';
     const button2Text = 'button2 text';
     const buttonLinkText = 'link button text';
+    const notCloseableAlert = false;
     const expectedAction = {
       type: consts.OPEN_OPTION_DIALOG,
       alertMessage,
@@ -89,6 +92,7 @@ describe('AlertModalActions.openOptionDialog with link button', () => {
       button2Text,
       buttonLinkText,
       callback2,
+      notCloseableAlert,
     };
     expect(typeof alertMessage).toEqual('string');
     expect(typeof callback).toEqual('function');
