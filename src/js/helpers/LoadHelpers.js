@@ -2,8 +2,9 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import env from 'tc-electron-env';
+import { TC_PATH } from '../common/constants';
 // constants
-const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
+const DEFAULT_SAVE = path.join(env.home(), TC_PATH, 'projects');
 
 /**
  * Loads a json file.

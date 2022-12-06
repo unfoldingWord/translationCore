@@ -3,7 +3,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
-import env from 'tc-electron-env';
 import { resourcesHelpers } from 'tc-source-content-updater';
 import SimpleCache from '../helpers/SimpleCache';
 import {
@@ -25,12 +24,12 @@ import {
   ORIGINAL_LANGUAGE,
   TARGET_BIBLE,
   TARGET_LANGUAGE,
+  USER_RESOURCES_PATH,
 } from '../common/constants';
 import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
 
 // constants
-const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
 
 /**

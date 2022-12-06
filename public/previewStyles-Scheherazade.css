@@ -1,0 +1,44 @@
+/*
+ set up font support
+ */
+
+/* include default font setup */
+@import "previewStyles-default.css";
+
+/* Scheherazade - supports a wide range of Arabic characters, and therefore will handle many languages other than Arabic itself. */
+@font-face {
+  font-family: Scheherazade;
+  src: url(./fonts/complexScript/Scheherazade-Regular.woff);
+  font-weight: normal;
+}
+
+/* Scheherazade bold */
+@font-face {
+  font-family: Scheherazade;
+  src: url(./fonts/complexScript/Scheherazade-Bold.woff);
+  font-weight: bold;
+}
+
+/*
+  use Scheherazade and fall back to Noto Sans
+*/
+ * {
+  font-family: Scheherazade, Noto Sans;
+  font-size: 16px; /* default seems to be 13.3 */
+  -webkit-font-feature-settings: "cv12" 0;
+  -moz-font-feature-settings: "cv12" 0;
+  font-feature-settings: "cv12" 0;
+}
+
+/*
+ TRICKY: the definition below fixes the rendering in Windows even though it is not
+          used on the print preview page.  Not sure why that is, but without this
+          definition Windows will only use default system font.  But this enables
+          the above fonts bundled in translation core.  Again, not sure why this
+          is needed for Windows, but MacOS does not need this.
+ */
+.Scheherazade-text {
+  font-family: Scheherazade, Noto Sans;
+  font-feature-settings: "cv12" 0;
+  font-size: 150%;
+}

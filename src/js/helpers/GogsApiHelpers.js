@@ -2,7 +2,7 @@ import Gogs from 'gogs-client';
 import CryptoJS from 'crypto-js';
 import fs from 'fs-extra';
 import path from 'path-extra';
-import { DCS_BASE_URL } from '../common/constants';
+import { DCS_BASE_URL, USER } from '../common/constants';
 import Repo from './Repo';
 // constants
 const api = new Gogs(DCS_BASE_URL + '/api/v1'),
@@ -26,7 +26,7 @@ export function login(userObj) {
       let encryptedToken = CryptoJS.AES.encrypt(JSON.stringify(user), SECRET);
 
       try {
-        localStorage.setItem('user', encryptedToken);
+        localStorage.setItem(USER, encryptedToken);
       } catch (e) {
       //
       }
@@ -195,7 +195,7 @@ export const throwIfRemoteRepoExists = async (repoOwnerUrl) => {
  * from localstorage
  */
 export const getLocalUser = () => {
-  let loggedInUserEncrypted = localStorage.getItem('user');
+  let loggedInUserEncrypted = localStorage.getItem(USER);
   const bytes = CryptoJS.AES.decrypt(loggedInUserEncrypted.toString(), SECRET);
   const plaintext = bytes.toString(CryptoJS.enc.Utf8);
   return JSON.parse(plaintext);

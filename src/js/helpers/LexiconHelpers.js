@@ -1,9 +1,8 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
-import env from 'tc-electron-env';
+import { USER_RESOURCES_PATH } from '../common/constants';
 import ResourceAPI from './ResourceAPI';
 // constants
-const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore', 'resources');
 
 /**
  * get Lexicon Data

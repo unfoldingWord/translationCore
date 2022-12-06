@@ -5,7 +5,10 @@ import path from 'path-extra';
 //helpers
 import * as csvHelpers from '../js/helpers/csvHelpers';
 import {
-  USER_RESOURCES_PATH, WORD_ALIGNMENT, TRANSLATION_WORDS, TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
 } from '../js/common/constants';
 
 const checksPerformedPath = path.join(__dirname, 'fixtures/project/csv/checks_performed/fr_eph_text_ulb');
