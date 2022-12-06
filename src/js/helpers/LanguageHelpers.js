@@ -101,6 +101,7 @@ export const getLanguageCodes = () => {
         const entry = {
           code: code, name: name, ltr: ltr,
           namePrompt: name + ' [' + code + ']', idPrompt: code + ' (' + name + ')',
+          data: language,
         };
         localCodes[code] = entry;
         languageNamePrompts[entry.namePrompt] = entry;

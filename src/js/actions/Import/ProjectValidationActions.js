@@ -26,7 +26,11 @@ import {
   upfdateOverwritePermittedInProjectInformationCheckReducer,
 } from '../ProjectInformationCheckActions';
 // constants
-import { PROJECTS_PATH, IMPORTS_PATH } from '../../common/constants';
+import {
+  IMPORTS_PATH,
+  PROJECTS_PATH,
+  TC_PATH,
+} from '../../common/constants';
 
 /**
  * Action that call helpers to handle business
@@ -111,9 +115,9 @@ export const updateProjectFolderToNameSpecification = (projectPath) => ((dispatc
     const { manifest } = getState().projectDetailsReducer;
     const { selectedProjectFilename } = getState().localImportReducer;
     const newFilename = ProjectDetailsHelpers.generateNewProjectName(manifest);
-    const oldProjectNamePath = projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
+    const oldProjectNamePath = projectPath && projectPath.includes(path.join(TC_PATH, 'projects')) ?
       projectPath : path.join(IMPORTS_PATH, selectedProjectFilename);
-    const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join('translationCore', 'projects')) ?
+    const newProjectNamePath = path.join(projectPath && projectPath.includes(path.join(TC_PATH, 'projects')) ?
       PROJECTS_PATH : IMPORTS_PATH, newFilename);
 
     if (oldProjectNamePath.toLowerCase() !== newProjectNamePath.toLowerCase()) {

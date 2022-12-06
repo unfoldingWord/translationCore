@@ -2,6 +2,7 @@ import path from 'path-extra';
 import fs from 'fs-extra';
 import env from 'tc-electron-env';
 import Repo from '../Repo';
+import { TC_PATH } from '../../common/constants';
 
 /**
  * Generates the import path from a git url
@@ -16,7 +17,7 @@ export async function generateImportPath(url) {
     throw new Error(`The URL ${url} does not reference a valid project`);
   }
 
-  let importPath = path.join(env.home(), 'translationCore', 'imports', project.name);
+  let importPath = path.join(env.home(), TC_PATH, 'imports', project.name);
   const exists = await fs.pathExists(importPath);
 
   if (exists) {

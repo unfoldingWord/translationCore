@@ -32,6 +32,7 @@ import {
   APP_VERSION,
   LOG_FILES_PATH,
   LOCALE_DIR,
+  TC_PATH,
   TOOLS_DIR,
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
@@ -63,7 +64,7 @@ class Main extends Component {
       makeSureEnvInit('Main');
     }
 
-    const tCDir = path.join(env.home(), 'translationCore', 'projects');
+    const tCDir = path.join(env.home(), TC_PATH, 'projects');
     fs.ensureDirSync(tCDir);
 
     loadLocalization(LOCALE_DIR, appLanguage, initialize, addTranslationForLanguage, setActiveLanguage);
