@@ -3,13 +3,13 @@ import path from 'path-extra';
 import env from 'tc-electron-env';
 
 // helpers
-import { tc_LAST_OPENED_KEY } from '../common/constants';
+import { tc_LAST_OPENED_KEY, TC_PATH } from '../common/constants';
 import * as usfmHelpers from './usfmHelpers';
 import * as ProjectStructureValidationHelpers from './ProjectValidation/ProjectStructureValidationHelpers';
 import { getProjectSettings } from './ProjectSettingsHelpers';
 // constants
-const DEFAULT_SAVE = path.join(env.home(), 'translationCore', 'projects');
-const OLD_DEFAULT_SAVE = path.join(env.home(), 'translationCore');
+const DEFAULT_SAVE = path.join(env.home(), TC_PATH, 'projects');
+const OLD_DEFAULT_SAVE = path.join(env.home(), TC_PATH);
 
 /**
  * @description - Will get the directories inside of a directory and return them
