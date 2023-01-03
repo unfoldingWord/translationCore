@@ -1,0 +1,3470 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`update attributes of aligned words Captitalization change 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "For",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "γάρ",
+          "morph": "Gr,C,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G10630",
+          "word": "γὰρ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "the",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τὸν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "overseer",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἐπίσκοπος",
+          "morph": "Gr,N,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G19850",
+          "word": "ἐπίσκοπον",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "blameless",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀνέγκλητος",
+          "morph": "Gr,S,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G04100",
+          "word": "ἀνέγκλητον",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "be",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εἰμί",
+          "morph": "Gr,V,NPA....",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15100",
+          "word": "εἶναι",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "as",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὡς",
+          "morph": "Gr,C,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G56130",
+          "word": "ὡς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "God",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "θεός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G23160",
+          "word": "Θεοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "household",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "manager",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "οἰκονόμος",
+          "morph": "Gr,N,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G36230",
+          "word": "οἰκονόμον",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 5,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 1,
+          "occurrences": 5,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "arrogant",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "αὐθάδης",
+          "morph": "Gr,S,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G08290",
+          "word": "αὐθάδη",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 5,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 2,
+          "occurrences": 5,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "easily",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "angered",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὀργίλος",
+          "morph": "Gr,S,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G37110",
+          "word": "ὀργίλον",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 5,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 3,
+          "occurrences": 5,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "addicted",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "wine",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πάροινος",
+          "morph": "Gr,S,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G39430",
+          "word": "πάροινον",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 4,
+          "occurrences": 5,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 4,
+          "occurrences": 5,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "a",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "brawler",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πλήκτης",
+          "morph": "Gr,N,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G41310",
+          "word": "πλήκτην",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "and",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 5,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 5,
+          "occurrences": 5,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "a",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "greedy",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "man",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "αἰσχροκερδής",
+          "morph": "Gr,S,....AMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G01460",
+          "word": "αἰσχροκερδῆ",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words Drop Extra Aligned word 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "their",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "own",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἴδιος",
+          "morph": "Gr,E,....DMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G23980",
+          "word": "ἰδίοις",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 4,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "masters",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "δεσπότης",
+          "morph": "Gr,N,....DMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G12030",
+          "word": "δεσπόταις",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "are",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 4,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "be",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "subject",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὑποτάσσω",
+          "morph": "Gr,V,NPM....",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G52930",
+          "word": "ὑποτάσσεσθαι",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "in",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἐν",
+          "morph": "Gr,P,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G17220",
+          "word": "ἐν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "everything",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πᾶς",
+          "morph": "Gr,R,....DNP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G39560",
+          "word": "πᾶσιν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "pleasing",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εὐάρεστος",
+          "morph": "Gr,S,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G21010",
+          "word": "εὐαρέστους",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 4,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "be",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εἰμί",
+          "morph": "Gr,V,NPA....",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15100",
+          "word": "εἶναι",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "and",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 4,
+          "occurrences": 4,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "argue",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀντιλέγω",
+          "morph": "Gr,V,PPA.AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G04830",
+          "word": "ἀντιλέγοντας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Slaves",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "δοῦλος",
+          "morph": "Gr,N,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G14010",
+          "word": "Δούλους",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words Drop extra word bank word 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "the",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "Τοὺς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "younger",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "men",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "νεώτερος",
+          "morph": "Gr,A,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35125",
+          "word": "νεωτέρους",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "In",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "same",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "way",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὡσαύτως",
+          "morph": "Gr,D,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G56150",
+          "word": "ὡσαύτως",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "exhort",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "παρακαλέω",
+          "morph": "Gr,V,MPA2..S",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G38700",
+          "word": "παρακάλει",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "be",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "sensible",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "σωφρονέω",
+          "morph": "Gr,V,NPA....",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G49930",
+          "word": "σωφρονεῖν",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words Handle Verse Span 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "later",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "while",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "I",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "was",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "in",
+        },
+        Object {
+          "occurrence": 11,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "city",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "of",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Antioch",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "after",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὅτε",
+          "morph": "Gr,CS,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 2,
+          "strong": "G37530",
+          "word": "ὅτε",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "But",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "δέ",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 2,
+          "strong": "G11610",
+          "word": "δὲ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "went",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "came",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἔρχομαι",
+          "morph": "Gr,V,IAA3,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G20640",
+          "word": "ἦλθεν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Peter",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Peter",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Κηφᾶς",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G27860",
+          "word": "Κηφᾶς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "to",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εἰς",
+          "morph": "Gr,P,,,,,A,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15190",
+          "word": "εἰς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Antioch",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "there",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Ἀντιόχεια",
+          "morph": "Gr,N,,,,,AFS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G04900",
+          "word": "Ἀντιόχειαν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "directly",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "κατά",
+          "morph": "Gr,P,,,,,A,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G25960",
+          "word": "κατὰ",
+        },
+        Object {
+          "lemma": "πρόσωπον",
+          "morph": "Gr,N,,,,,ANS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G43830",
+          "word": "πρόσωπον",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "him",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "αὐτός",
+          "morph": "Gr,RP,,,3DMS,",
+          "occurrence": 1,
+          "occurrences": 2,
+          "strong": "G08460",
+          "word": "αὐτῷ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "I",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "told",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀνθίστημι",
+          "morph": "Gr,V,IAA1,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G04360",
+          "word": "ἀντέστην",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 6,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "that",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὅτι",
+          "morph": "Gr,CS,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G37540",
+          "word": "ὅτι",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "what",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "he",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "was",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "doing",
+        },
+        Object {
+          "occurrence": 6,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "was",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "wrong",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καταγινώσκω",
+          "morph": "Gr,V,PEP,NMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G26070",
+          "word": "κατεγνωσμένος",
+        },
+        Object {
+          "lemma": "εἰμί",
+          "morph": "Gr,V,IIA3,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15100",
+          "word": "ἦν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "This",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "is",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "what",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "happened",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "γάρ",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G10630",
+          "word": "γὰρ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "who",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "came",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "to",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Antioch",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἔρχομαι",
+          "morph": "Gr,V,NAA,,,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G20640",
+          "word": "ἐλθεῖν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "there",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "were",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "certain",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 8,
+          "type": "bottomWord",
+          "word": "Jewish",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "who",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "were",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "τις",
+          "morph": "Gr,RI,,,,AMP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G51000",
+          "word": "τινας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "sent",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "by",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀπό",
+          "morph": "Gr,P,,,,,G,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G05750",
+          "word": "ἀπὸ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "James",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "leader",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "of",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "in",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "Jerusalem",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Ἰάκωβος",
+          "morph": "Gr,N,,,,,GMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G23850",
+          "word": "Ἰακώβου",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "with",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "with",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μετά",
+          "morph": "Gr,P,,,,,G,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G33260",
+          "word": "μετὰ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 6,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,GNP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τῶν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "non",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 8,
+          "type": "bottomWord",
+          "word": "Jewish",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "there",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "non",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 8,
+          "type": "bottomWord",
+          "word": "Jewish",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἔθνος",
+          "morph": "Gr,N,,,,,GNP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G14840",
+          "word": "ἐθνῶν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "and",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "started",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "eating",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "regularly",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "συνεσθίω",
+          "morph": "Gr,V,IIA3,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G49060",
+          "word": "συνήσθιεν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "Later",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὅτε",
+          "morph": "Gr,CS,,,,,,,,",
+          "occurrence": 2,
+          "occurrences": 2,
+          "strong": "G37530",
+          "word": "ὅτε",
+        },
+        Object {
+          "lemma": "δέ",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 2,
+          "occurrences": 2,
+          "strong": "G11610",
+          "word": "δὲ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Peter",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "then",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "gradually",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "stopped",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "eating",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὑποστέλλω",
+          "morph": "Gr,V,IIA3,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G52880",
+          "word": "ὑπέστελλεν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "and",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 4,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "would",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "not",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "associate",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "with",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "them",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀφορίζω",
+          "morph": "Gr,V,IIA3,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G08730",
+          "word": "ἀφώριζεν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "he",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἑαυτοῦ",
+          "morph": "Gr,RE,,,3AMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G14380",
+          "word": "ἑαυτόν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "because",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "he",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "was",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "afraid",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "that",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "φοβέω",
+          "morph": "Gr,V,PPM,NMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G53990",
+          "word": "φοβούμενος",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 7,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "unbelieving",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "Jews",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "would",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "persecute",
+        },
+        Object {
+          "occurrence": 6,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,RD,,,,AMP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τοὺς",
+        },
+        Object {
+          "lemma": "ἐκ",
+          "morph": "Gr,P,,,,,G,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15370",
+          "word": "ἐκ",
+        },
+        Object {
+          "lemma": "περιτομή",
+          "morph": "Gr,N,,,,,GFS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G40610",
+          "word": "περιτομῆς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "Also",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,CC,,,,,,,,",
+          "occurrence": 2,
+          "occurrences": 4,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 3,
+          "occurrences": 4,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "acted",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "in",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "a",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "way",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "that",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "they",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "knew",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "was",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "not",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "right",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "along",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "with",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "type": "bottomWord",
+          "word": "when",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "they",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "separated",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "themselves",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "from",
+        },
+        Object {
+          "occurrence": 9,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "non",
+        },
+        Object {
+          "occurrence": 7,
+          "occurrences": 8,
+          "type": "bottomWord",
+          "word": "Jewish",
+        },
+        Object {
+          "occurrence": 8,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "συνυποκρίνομαι",
+          "morph": "Gr,V,IAP3,,P,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G49420",
+          "word": "συνυπεκρίθησαν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Peter",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "αὐτός",
+          "morph": "Gr,RP,,,3DMS,",
+          "occurrence": 2,
+          "occurrences": 2,
+          "strong": "G08460",
+          "word": "αὐτῷ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 8,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,NMP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "οἱ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "other",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "λοιπός",
+          "morph": "Gr,EQ,,,,NMP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G30620",
+          "word": "λοιποὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 6,
+          "occurrences": 8,
+          "type": "bottomWord",
+          "word": "Jewish",
+        },
+        Object {
+          "occurrence": 7,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "who",
+        },
+        Object {
+          "occurrence": 6,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "were",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "in",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "Antioch",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Ἰουδαῖος",
+          "morph": "Gr,NS,,,,NMP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G24530",
+          "word": "Ἰουδαῖοι",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "The",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "result",
+        },
+        Object {
+          "occurrence": 3,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "was",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "that",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὥστε",
+          "morph": "Gr,CS,,,,,,,,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G56200",
+          "word": "ὥστε",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "even",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,D,,,,,,,,,",
+          "occurrence": 4,
+          "occurrences": 4,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "Barnabas",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Βαρναβᾶς",
+          "morph": "Gr,N,,,,,NMS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G09210",
+          "word": "Βαρναβᾶς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 4,
+          "occurrences": 4,
+          "type": "bottomWord",
+          "word": "they",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "convinced",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "συναπάγω",
+          "morph": "Gr,V,IAP3,,S,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G48790",
+          "word": "συναπήχθη",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 3,
+          "type": "bottomWord",
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "stop",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "type": "bottomWord",
+          "word": "associating",
+        },
+        Object {
+          "occurrence": 6,
+          "occurrences": 6,
+          "type": "bottomWord",
+          "word": "with",
+        },
+        Object {
+          "occurrence": 10,
+          "occurrences": 11,
+          "type": "bottomWord",
+          "word": "the",
+        },
+        Object {
+          "occurrence": 5,
+          "occurrences": 5,
+          "type": "bottomWord",
+          "word": "non",
+        },
+        Object {
+          "occurrence": 8,
+          "occurrences": 8,
+          "type": "bottomWord",
+          "word": "Jewish",
+        },
+        Object {
+          "occurrence": 9,
+          "occurrences": 9,
+          "type": "bottomWord",
+          "word": "believers",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "αὐτός",
+          "morph": "Gr,RP,,,3GMP,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G08460",
+          "word": "αὐτῶν",
+        },
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,EA,,,,DFS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τῇ",
+        },
+        Object {
+          "lemma": "ὑπόκρισις",
+          "morph": "Gr,N,,,,,DFS,",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G52720",
+          "word": "ὑποκρίσει",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words Update words in word bank 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "temperate",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "νηφάλιος",
+          "morph": "Gr,S,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35240",
+          "word": "νηφαλίους",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "are",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "be",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εἰμί",
+          "morph": "Gr,V,NPA....",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15100",
+          "word": "εἶναι",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "dignified",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "σεμνός",
+          "morph": "Gr,S,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G45860",
+          "word": "σεμνούς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "sensible",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "σώφρων",
+          "morph": "Gr,S,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G49980",
+          "word": "σώφρονας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "sound",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὑγιαίνω",
+          "morph": "Gr,V,PPA.AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G51980",
+          "word": "ὑγιαίνοντας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 3,
+          "word": "in",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "faith",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....DFS",
+          "occurrence": 1,
+          "occurrences": 3,
+          "strong": "G35880",
+          "word": "τῇ",
+        },
+        Object {
+          "lemma": "πίστις",
+          "morph": "Gr,N,....DFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G41020",
+          "word": "πίστει",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 3,
+          "word": "in",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "love",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....DFS",
+          "occurrence": 2,
+          "occurrences": 3,
+          "strong": "G35880",
+          "word": "τῇ",
+        },
+        Object {
+          "lemma": "ἀγάπη",
+          "morph": "Gr,N,....DFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G00260",
+          "word": "ἀγάπῃ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Older",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "men",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πρεσβύτης",
+          "morph": "Gr,N,....AMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G42460",
+          "word": "Πρεσβύτας",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words fix broken strongs 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "be",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "sensible",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "σώφρων",
+          "morph": "Gr,S,....AFP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G49980",
+          "word": "σώφρονας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "pure",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἁγνός",
+          "morph": "Gr,S,....AFP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G00530",
+          "word": "ἁγνάς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "housekeepers",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "οἰκουργός",
+          "morph": "Gr,S,....AFP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G36260",
+          "word": "οἰκουργούς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "good",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀγαθός",
+          "morph": "Gr,S,....AFP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G00180",
+          "word": "ἀγαθάς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "and",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "subject",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὑποτάσσω",
+          "morph": "Gr,V,PPP.AFP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G52930",
+          "word": "ὑποτασσομένας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "their",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....DMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τοῖς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "own",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἴδιος",
+          "morph": "Gr,E,....DMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G23980",
+          "word": "ἰδίοις",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "to",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "husbands",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀνήρ",
+          "morph": "Gr,N,....DMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G04350",
+          "word": "ἀνδράσιν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "so",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "that",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἵνα",
+          "morph": "Gr,C,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G24430",
+          "word": "ἵνα",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "not",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "μή",
+          "morph": "Gr,D,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G33610",
+          "word": "μὴ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "the",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....NMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "ὁ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "word",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "λόγος",
+          "morph": "Gr,N,....NMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G30560",
+          "word": "λόγος",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "God",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τοῦ",
+        },
+        Object {
+          "lemma": "θεός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G23160",
+          "word": "Θεοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "may",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "be",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "insulted",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "βλασφημέω",
+          "morph": "Gr,V,SPP3..S",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G09870",
+          "word": "βλασφημῆται",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words lemma changed for ἡμῶν 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "To",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Titus",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Τίτος",
+          "morph": "Gr,N,....DMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G51030",
+          "word": "Τίτῳ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "true",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "γνήσιος",
+          "morph": "Gr,A,....DNS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G11030",
+          "word": "γνησίῳ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "a",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "son",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "τέκνον",
+          "morph": "Gr,N,....DNS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G50430",
+          "word": "τέκνῳ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "in",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "κατά",
+          "morph": "Gr,P,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G25960",
+          "word": "κατὰ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "common",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "κοινός",
+          "morph": "Gr,A,....AFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G28390",
+          "word": "κοινὴν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "a",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "faith",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πίστις",
+          "morph": "Gr,N,....AFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G41020",
+          "word": "πίστιν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Grace",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "χάρις",
+          "morph": "Gr,N,....NFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G54850",
+          "word": "χάρις",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "and",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,C,.......",
+          "occurrence": 1,
+          "occurrences": 2,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "peace",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εἰρήνη",
+          "morph": "Gr,N,....NFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15150",
+          "word": "εἰρήνη",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "from",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀπό",
+          "morph": "Gr,P,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G05750",
+          "word": "ἀπὸ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "God",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "θεός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G23160",
+          "word": "Θεοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Father",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πατήρ",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G39620",
+          "word": "Πατρὸς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "and",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,C,.......",
+          "occurrence": 2,
+          "occurrences": 2,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Christ",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "χριστός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G55470",
+          "word": "Χριστοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Jesus",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Ἰησοῦς",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G24240",
+          "word": "Ἰησοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Savior",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,E,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τοῦ",
+        },
+        Object {
+          "lemma": "σωτήρ",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G49900",
+          "word": "Σωτῆρος",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "our",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἡμῶν",
+          "morph": "Gr,R,...1G.P",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G14730",
+          "word": "ἡμῶν",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
+
+exports[`update attributes of aligned words punctuation changed in κατʼ 1`] = `
+Object {
+  "alignments": Array [
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Paul",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Παῦλος",
+          "morph": "Gr,N,....NMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G39720",
+          "word": "Παῦλος",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "a",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "servant",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "δοῦλος",
+          "morph": "Gr,N,....NMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G14010",
+          "word": "δοῦλος",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 5,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "God",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "θεός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 2,
+          "strong": "G23160",
+          "word": "Θεοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "an",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "apostle",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀπόστολος",
+          "morph": "Gr,N,....NMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G06520",
+          "word": "ἀπόστολος",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 2,
+          "word": "and",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "δέ",
+          "morph": "Gr,C,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G11610",
+          "word": "δὲ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 5,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Jesus",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "Ἰησοῦς",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G24240",
+          "word": "Ἰησοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "Christ",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "χριστός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G55470",
+          "word": "Χριστοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "for",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "κατά",
+          "morph": "Gr,P,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G25960",
+          "word": "κατὰ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 4,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "faith",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "πίστις",
+          "morph": "Gr,N,....AFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G41020",
+          "word": "πίστιν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 5,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 4,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "chosen",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "people",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἐκλεκτός",
+          "morph": "Gr,S,....GMP",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G15880",
+          "word": "ἐκλεκτῶν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 4,
+          "occurrences": 5,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "God",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "θεός",
+          "morph": "Gr,N,....GMS",
+          "occurrence": 2,
+          "occurrences": 2,
+          "strong": "G23160",
+          "word": "Θεοῦ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 2,
+          "occurrences": 2,
+          "word": "and",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "καί",
+          "morph": "Gr,C,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G25320",
+          "word": "καὶ",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 3,
+          "occurrences": 4,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "knowledge",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἐπίγνωσις",
+          "morph": "Gr,N,....AFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G19220",
+          "word": "ἐπίγνωσιν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 5,
+          "occurrences": 5,
+          "word": "of",
+        },
+        Object {
+          "occurrence": 4,
+          "occurrences": 4,
+          "word": "the",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "truth",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ἀλήθεια",
+          "morph": "Gr,N,....GFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G02250",
+          "word": "ἀληθείας",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "that",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "ὁ",
+          "morph": "Gr,R,....GFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G35880",
+          "word": "τῆς",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "godliness",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "εὐσέβεια",
+          "morph": "Gr,N,....AFS",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G21500",
+          "word": "εὐσέβειαν",
+        },
+      ],
+    },
+  ],
+  "wordBank": Array [],
+}
+`;
