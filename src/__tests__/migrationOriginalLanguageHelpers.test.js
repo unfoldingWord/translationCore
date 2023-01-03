@@ -1,5 +1,9 @@
 import _ from 'lodash';
-import { updateAlignedWordsFromOriginalForVerse } from '../js/helpers/migrationHelpers';
+import isEqual from 'deep-equal';
+import {
+  updateAlignedWordsFromOriginalForChapter,
+  updateAlignedWordsFromOriginalForVerse,
+} from '../js/helpers/migrateOriginalLanguageHelpers';
 
 const newGreek_json = Object.freeze(require('./fixtures/migrateAlignments/sr_greek_tit_1.json'));
 const alignments_json = Object.freeze(require('./fixtures/migrateAlignments/alignments_tit_1.json'));
@@ -167,5 +171,102 @@ describe('update attributes of aligned words',()=> {
     // expect(alignmentsWordList).toEqual(alignmentsWordListInitial);
     expect(alignmentsWordList).toMatchSnapshot();
   });
+});
 
+describe('update attributes of aligned words for whole chapter',()=> {
+  test('Update Entire Chapter', () => {
+    const expectedChanged = [
+      '2',
+      '6',
+      '9',
+      '11-13',
+      '14',
+      '15',
+      '16',
+      '18',
+      '19',
+      '20',
+      '21',
+    ];
+    const titusAlignments = _.cloneDeep(alignments3_json);
+    updateAlignedWordsFromOriginalForChapter(newGreek3_json, titusAlignments);
+    const verses = Object.keys(titusAlignments);
+    const changed = [];
+
+    for (const verse of verses) {
+      const alignmentsWordListInitial = alignments3_json[verse];
+      const alignmentsWordList = titusAlignments[verse];
+      const unchanged = isEqual(alignmentsWordList, alignmentsWordListInitial);
+
+      if (!unchanged) {
+        changed.push(verse);
+      }
+    }
+    expect(changed.sort()).toEqual(expectedChanged.sort());
+  });
+
+  test('Handle missing aligned verse', () => {
+    const deleteVerse = '14';
+    const expectedChanged = [
+      '2',
+      '6',
+      '9',
+      '11-13',
+      '15',
+      '16',
+      '18',
+      '19',
+      '20',
+      '21',
+    ];
+    let titusAlignments = _.cloneDeep(alignments3_json);
+    delete titusAlignments[deleteVerse];
+    updateAlignedWordsFromOriginalForChapter(newGreek3_json, titusAlignments);
+    const verses = Object.keys(titusAlignments);
+    const changed = [];
+
+    for (const verse of verses) {
+      const alignmentsWordListInitial = alignments3_json[verse];
+      const alignmentsWordList = titusAlignments[verse];
+      const unchanged = isEqual(alignmentsWordList, alignmentsWordListInitial);
+
+      if (!unchanged) {
+        changed.push(verse);
+      }
+    }
+    expect(changed.sort()).toEqual(expectedChanged.sort());
+  });
+
+  test('Handle missing original verse', () => {
+    const deleteVerse = '14';
+    const expectedChanged = [
+      '2',
+      '6',
+      '9',
+      '11-13',
+      '15',
+      '16',
+      '18',
+      '19',
+      '20',
+      '21',
+    ];
+    const titusAlignments = _.cloneDeep(alignments3_json);
+    const newGreek_json = _.cloneDeep(newGreek3_json);
+    delete newGreek_json[deleteVerse];
+    updateAlignedWordsFromOriginalForChapter(newGreek_json, titusAlignments);
+    const verses = Object.keys(titusAlignments);
+    const changed = [];
+
+    for (const verse of verses) {
+      const alignmentsWordListInitial = alignments3_json[verse];
+      const alignmentsWordList = titusAlignments[verse];
+      const unchanged = isEqual(alignmentsWordList, alignmentsWordListInitial);
+
+      if (!unchanged) {
+        changed.push(verse);
+      }
+    }
+    expect(changed.sort()).toEqual(expectedChanged.sort());
+  });
 });
