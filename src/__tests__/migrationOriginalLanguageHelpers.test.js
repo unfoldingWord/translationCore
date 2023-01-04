@@ -1,9 +1,17 @@
 import _ from 'lodash';
 import isEqual from 'deep-equal';
 import {
+  getLatestOriginalLanguageResource,
+  getProjectAlignments,
+  hasOriginalLanguageChanged,
+  hasOriginalLanguageChangedSub,
   updateAlignedWordsFromOriginalForChapter,
   updateAlignedWordsFromOriginalForVerse,
+  updateAlignedWordsFromOrigLanguage,
 } from '../js/helpers/migrateOriginalLanguageHelpers';
+import { CN_ORIG_LANG_OWNER, DEFAULT_ORIG_LANG_OWNER } from '../js/common/constants';
+
+jest.unmock('fs-extra');
 
 const newGreek_json = Object.freeze(require('./fixtures/migrateAlignments/sr_greek_tit_1.json'));
 const alignments_json = Object.freeze(require('./fixtures/migrateAlignments/alignments_tit_1.json'));
@@ -274,5 +282,157 @@ describe('update attributes of aligned words for whole chapter',()=> {
     }
     expect(changed.sort()).toEqual(expectedChanged.sort());
     expect(changedVerses.sort()).toEqual(expectedAttributesChanged.sort());
+  });
+});
+
+describe('check for changed original language versions',()=> {
+  test('test same wa version', () => {
+    const latestVersion = '0.30';
+    const projectVersion = latestVersion;
+    const changed = false;
+    const waOwner = 'Door43-Catalog';
+    const projectManifest = {
+      toolsSelectedOwners: { wordAlignment: waOwner },
+      tc_orig_lang_wordAlignment: projectVersion,
+    };
+    const latestOrigLangManifest = { version: latestVersion };
+    const expectedResults = {
+      changed,
+      owner: waOwner,
+      version: projectVersion,
+      latestVersion,
+      latestOrigLangManifest,
+      projectManifest,
+    };
+    const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('test missing wa owner', () => {
+    const latestVersion = '0.30';
+    const projectVersion = latestVersion;
+    const changed = false;
+    const projectManifest = { tc_orig_lang_wordAlignment: projectVersion };
+    const latestOrigLangManifest = { version: latestVersion };
+    const expectedResults = {
+      changed,
+      owner: DEFAULT_ORIG_LANG_OWNER,
+      version: projectVersion,
+      latestVersion,
+      latestOrigLangManifest,
+      projectManifest,
+    };
+    const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('test missing wa version', () => {
+    const latestVersion = '0.30';
+    const changed = true;
+    const waOwner = 'Door43-Catalog';
+    const projectManifest = { toolsSelectedOwners: { wordAlignment: waOwner } };
+    const latestOrigLangManifest = { version: latestVersion };
+    const expectedResults = {
+      changed,
+      owner: waOwner,
+      version: null,
+      latestVersion,
+      latestOrigLangManifest,
+      projectManifest,
+    };
+    const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('test missing original language resource', () => {
+    const latestVersion = null;
+    const projectVersion = '0.30';
+    const changed = false;
+    const waOwner = 'Door43-Catalog';
+    const projectManifest = {
+      toolsSelectedOwners: { wordAlignment: waOwner },
+      tc_orig_lang_wordAlignment: projectVersion,
+    };
+    const latestOrigLangManifest = null;
+    const expectedResults = {
+      changed,
+      owner: waOwner,
+      version: projectVersion,
+      latestVersion,
+      latestOrigLangManifest,
+      projectManifest,
+    };
+    const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('test missing project manifest', () => {
+    const latestVersion = '0.30';
+    const projectVersion = null;
+    const changed = false;
+    const waOwner = DEFAULT_ORIG_LANG_OWNER;
+    const projectManifest = null;
+    const latestOrigLangManifest = { version: latestVersion };
+    const expectedResults = {
+      changed,
+      owner: waOwner,
+      version: projectVersion,
+      latestVersion,
+      latestOrigLangManifest,
+      projectManifest,
+    };
+    const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+    expect(results).toEqual(expectedResults);
+  });
+
+  test('test other owner', () => {
+    const latestVersion = '0.30';
+    const projectVersion = latestVersion;
+    const changed = false;
+    const waOwner = 'other';
+    const projectManifest = {
+      toolsSelectedOwners: { wordAlignment: waOwner },
+      tc_orig_lang_wordAlignment: projectVersion,
+    };
+    const latestOrigLangManifest = { version: latestVersion };
+    const expectedResults = {
+      changed,
+      owner: CN_ORIG_LANG_OWNER,
+      version: projectVersion,
+      latestVersion,
+      latestOrigLangManifest,
+      projectManifest,
+    };
+    const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+    expect(results).toEqual(expectedResults);
+  });
+});
+
+describe.skip('update project Alignments',()=> {
+  test('Has project changed', () => {
+    const bookId = 'tit';
+    const projectPath = '/Users/blm/translationCore/projects/en_ultx_tit_book';
+    const resourcesPath = `/Users/blm/translationCore/resources`;
+    const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
+    expect(results.changed).toBeTruthy();
+  });
+
+  test('Get Latest Original Resources and alignments', () => {
+    const bookId = 'tit';
+    const projectPath = '/Users/blm/translationCore/projects/en_ultx_tit_book';
+    const resourcesPath = `/Users/blm/translationCore/resources`;
+    const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
+    const origBook = getLatestOriginalLanguageResource(bookId, results.owner, resourcesPath);
+    const alignments = getProjectAlignments(bookId, projectPath);
+    expect(Object.keys(alignments)).toEqual(Object.keys(origBook));
+    expect(Object.keys(origBook).length).toEqual(3);
+  });
+
+  test('Update alignments', () => {
+    const bookId = 'tit';
+    const projectPath = '/Users/blm/translationCore/projects/en_ultx_tit_book';
+    const resourcesPath = `/Users/blm/translationCore/resources`;
+    const chapterChanges = updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath);
+    expect(Object.keys(chapterChanges).length).toEqual(3);
   });
 });

@@ -1,7 +1,15 @@
+import path from 'path-extra';
+import fs from 'fs-extra';
 import { referenceHelpers } from 'bible-reference-range';
-import { DEFAULT_OWNER } from '../common/constants';
-import { getProjectManifest } from './ProjectMigration/manifestUtils';
+import { toInt } from 'tsv-groupdata-parser/lib/tsvToGroupData';
+import {
+  DEFAULT_OWNER,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
+import { getProjectManifest, saveProjectManifest } from './ProjectMigration/manifestUtils';
 import * as ResourcesHelpers from './ResourcesHelpers';
+import ResourceAPI from './ResourceAPI';
+import * as BibleHelpers from './bibleHelpers';
 
 const ignoreFields = [ 'tag', 'type', 'text' ];
 
@@ -285,10 +293,159 @@ export function updateAlignedWordsFromOriginalForChapter(originalLangChapter, al
   return changedVerses;
 }
 
-export function getCurrentOrigLanguageVersionOwner(projectPath) {
-  const manifest = getProjectManifest(projectPath);
+export function getCurrentOrigLanguageVersionOwner(manifest) {
   const waOwner = manifest?.toolsSelectedOwners?.wordAlignment || DEFAULT_OWNER;
   const owner = ResourcesHelpers.getOriginalLangOwner(waOwner);
-  const version = manifest?.tc_orig_lang_check_version_wordAlignment;
+  const version = manifest?.tc_orig_lang_wordAlignment || null;
   return { owner, version };
+}
+
+function getLatestVersionPath(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
+  const { languageId: olLanguageID, bibleId: olBibleId } = BibleHelpers.getOrigLangforBook(bookId);
+  const latestVersionPath = ResourceAPI.getLatestVersion(path.join(resourcesPath, olLanguageID, 'bibles', olBibleId), owner);
+  return latestVersionPath;
+}
+
+export function getLatestBibleVersionManifest(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
+  const latestVersionPath = getLatestVersionPath(bookId, owner, resourcesPath);
+  const manifest = getProjectManifest(latestVersionPath) || null;
+  return manifest;
+}
+
+/**
+ * check manifests to see if latest original language is different than project
+ * @param {Object|null} projectManifest
+ * @param {Object|null} latestOrigLangManifest
+ * @return {{owner: (String|null), latestOrigLangManifest: {}, latestVersion: (String|null), version: (String|null), changed: boolean, projectManifest: {}}}
+ */
+export function hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest) {
+  const { owner, version } = getCurrentOrigLanguageVersionOwner(projectManifest);
+  const latestVersion = latestOrigLangManifest?.version || null;
+  // check for changes after doing some sanity checks
+  const changed = !!(projectManifest && latestVersion && version !== latestVersion);
+  return {
+    changed,
+    owner,
+    version,
+    latestVersion,
+    latestOrigLangManifest,
+    projectManifest,
+  };
+}
+
+/**
+ * check to see if latest original language is different than project
+ * @param {String} projectPath
+ * @param {String} bookId
+ * @param {String} resourcesPath
+ * @return {{owner: (String|null), latestOrigLangManifest: {}, latestVersion: (String|null), version: (String|null), changed: boolean, projectManifest: {}}}
+ */
+export function hasOriginalLanguageChanged(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
+  const projectManifest = getProjectManifest(projectPath);
+  const { owner } = getCurrentOrigLanguageVersionOwner(projectManifest);
+  const latestOrigLangManifest = getLatestBibleVersionManifest(bookId, owner, resourcesPath);
+  const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
+  return results;
+}
+
+export function getLatestOriginalLanguageResource(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
+  const resourcePath = getLatestVersionPath(bookId, owner, resourcesPath);
+  const resourceBookPath = path.join(resourcePath, bookId);
+  const files = ResourcesHelpers.getFilesInResourcePath(resourceBookPath, '.json');
+  const origBook = {};
+
+  if (files?.length) {
+    for (const file of files) {
+      const filePath = path.join(resourceBookPath, file);
+
+      if (fs.existsSync(filePath)) {
+        const chapter = toInt(file);
+        origBook[chapter] = fs.readJsonSync(filePath);
+      }
+    }
+  }
+
+  return origBook;
+}
+
+function getAlignmentDataPath(projectPath, bookId) {
+  const alignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData', bookId);
+  return alignmentDataPath;
+}
+
+export function getProjectAlignments(bookId, projectPath) {
+  const alignmentDataPath = getAlignmentDataPath(projectPath, bookId);
+  const files = ResourcesHelpers.getFilesInResourcePath(alignmentDataPath, '.json');
+  const origBook = {};
+
+  if (files?.length) {
+    for (const file of files) {
+      const filePath = path.join(alignmentDataPath, file);
+
+      if (fs.existsSync(filePath)) {
+        const chapter = toInt(file);
+        origBook[chapter] = fs.readJsonSync(filePath);
+      }
+    }
+  }
+
+  return origBook;
+}
+
+export function updateAlignedWordsFromOriginalForBook(origBook, alignments, bookID) {
+  const changedChapters = {};
+
+  if (origBook) {
+    const chapters = Object.keys(origBook);
+
+    for (const chapter of chapters) {
+      const originalLangChapter = origBook[chapter];
+      const alignmentsChapter = alignments[chapter];
+
+      if (originalLangChapter && alignmentsChapter) {
+        const changes = updateAlignedWordsFromOriginalForChapter(originalLangChapter, alignmentsChapter);
+
+        if (changes?.length) {
+          changedChapters[chapter] = changes;
+        }
+      } else {
+        console.log(`updateAlignedWordsFromOriginalForBook(${bookID}) - missing chapter ${chapter} data OriginalLang = ${!!originalLangChapter}, alignments = ${alignmentsChapter}`);
+      }
+    }
+  }
+  return changedChapters;
+}
+
+export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath) {
+  const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
+  const origBook = getLatestOriginalLanguageResource(bookId, results.owner, resourcesPath);
+  const alignments = getProjectAlignments(bookId, projectPath);
+  const chapterChanges = updateAlignedWordsFromOriginalForBook(origBook, alignments, bookId);
+
+  if (Object.keys(chapterChanges).length) { // save changes
+    console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - updates made in refs:`, chapterChanges);
+
+    // update project manifest
+    const manifest = results.projectManifest;
+    manifest.tc_orig_lang_wordAlignment = results.latestVersion;
+
+    if (!manifest.toolsSelectedOwners) {
+      manifest.toolsSelectedOwners = {};
+    }
+
+    manifest.toolsSelectedOwners.wordAlignment = results.owner;
+    saveProjectManifest(projectPath, manifest);
+
+    const alignmentDataPath = getAlignmentDataPath(projectPath, bookId);
+    const chapters = Object.keys(alignments);
+
+    for (const chapter of chapters) {
+      const filePath = path.join(alignmentDataPath, `${chapter}.json`);
+      fs.outputJsonSync(filePath, alignments[chapter]);
+    }
+  } else {
+    console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - NO updates NEEDED`);
+  }
+
+  return chapterChanges;
 }
