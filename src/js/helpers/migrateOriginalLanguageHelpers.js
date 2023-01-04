@@ -1,4 +1,7 @@
 import { referenceHelpers } from 'bible-reference-range';
+import { DEFAULT_OWNER } from '../common/constants';
+import { getProjectManifest } from './ProjectMigration/manifestUtils';
+import * as ResourcesHelpers from './ResourcesHelpers';
 
 const ignoreFields = [ 'tag', 'type', 'text' ];
 
@@ -116,10 +119,10 @@ export function getAlignedWordListForVerse(chapterJson, verse) {
  * update the attributes for the aligned words from latest original language words
  * @param {array} originalLangWordList
  * @param {array} alignmentsWordList
- * @return {array} original words not in alignment
+ * @return {boolean} true if verse attributes updated
  */
 function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignmentsWordList) {
-  const extras = [];
+  let changed = false;
 
   for (const origWord of originalLangWordList) {
     const found = alignmentsWordList.find(item => (item.word === origWord.word) && (item.occurrence === origWord.occurrence) && (item.occurrences === origWord.occurrences));
@@ -130,15 +133,14 @@ function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignments
       for (const key of keys) {
         if (found[key] !== origWord[key]) {
           found[key] = origWord[key]; // update attribute
+          changed = true;
         }
       }
       delete found.unmatched;
-    } else {
-      extras.push(origWord);
     }
   }
 
-  return extras;
+  return changed;
 }
 
 /**
@@ -240,9 +242,10 @@ export function getBestMatchForVerse(originalLangChapter, alignmentsChapter, ver
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
  * @param {string|number} verse
- * @return {boolean} true if verse updated
+ * @return {boolean} true if verse attributes updated
  */
 export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse) {
+  let changed = false;
   const {
     verse: verse_,
     originalLangWordList,
@@ -250,28 +253,42 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
   } = getBestMatchForVerse(originalLangChapter, alignmentsChapter, verse);
 
   if (originalLangWordList?.length && alignmentsWordList?.length) {
-    updateAlignedWordsFromOriginalWordList(originalLangWordList, alignmentsWordList);
+    const changed_ = updateAlignedWordsFromOriginalWordList(originalLangWordList, alignmentsWordList);
+    changed = changed || changed_;
 
     if (alignmentsChapter?.[verse_]?.alignments) {
       // clear word bank so it will be regenerated
       alignmentsChapter[verse_].wordBank = [];
       removeExtraWordsFromAlignments(alignmentsChapter, verse_);
     }
-    return true;
   }
-  return false;
+  return changed;
 }
 
 /**
  * get the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
- * @return {boolean} true if verse updated
+ * @return {array} list of verses that had attributes changed
  */
 export function updateAlignedWordsFromOriginalForChapter(originalLangChapter, alignmentsChapter) {
+  const changedVerses = [];
   const verses = Object.keys(alignmentsChapter);
 
   for (const verse of verses) {
-    updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
+    const changed = updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
+
+    if (changed) {
+      changedVerses.push(verse);
+    }
   }
+  return changedVerses;
+}
+
+export function getCurrentOrigLanguageVersionOwner(projectPath) {
+  const manifest = getProjectManifest(projectPath);
+  const waOwner = manifest?.toolsSelectedOwners?.wordAlignment || DEFAULT_OWNER;
+  const owner = ResourcesHelpers.getOriginalLangOwner(waOwner);
+  const version = manifest?.tc_orig_lang_check_version_wordAlignment;
+  return { owner, version };
 }

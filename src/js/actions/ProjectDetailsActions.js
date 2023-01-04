@@ -41,6 +41,7 @@ import {
   TRANSLATION_WORDS,
   WORD_ALIGNMENT,
 } from '../common/constants';
+import { getCurrentOrigLanguageVersionOwner } from '../helpers/migrateOriginalLanguageHelpers';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
 const CONTINUE = 'CONTINUE';
@@ -208,8 +209,15 @@ export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = nu
     } else if (toolName === WORD_ALIGNMENT && ifGlChanged) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
       const previousOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(previousOwnerForTool);
       const newOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
+      let olOwnerChanged = previousOrigLangOwner !== newOrigLangOwner;
 
-      if (previousOrigLangOwner !== newOrigLangOwner) {
+      if (!olOwnerChanged) {
+        const projectDir = getProjectSaveLocation(state);
+        getCurrentOrigLanguageVersionOwner(projectDir);
+        console.log(projectDir);
+      }
+
+      if (olOwnerChanged) {
         console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
         const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId || 'mat', toolName, selectedGL, owner);
         dispatch(ResourcesActions.makeSureResourcesLoaded(resources, bookId));
