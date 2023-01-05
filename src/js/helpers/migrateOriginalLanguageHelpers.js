@@ -416,7 +416,7 @@ export function updateAlignedWordsFromOriginalForBook(origBook, alignments, book
   return changedChapters;
 }
 
-export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath) {
+export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
   const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
   const origBook = getLatestOriginalLanguageResource(bookId, results.owner, resourcesPath);
   const alignments = getProjectAlignments(bookId, projectPath);

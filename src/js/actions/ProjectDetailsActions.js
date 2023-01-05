@@ -41,7 +41,10 @@ import {
   TRANSLATION_WORDS,
   WORD_ALIGNMENT,
 } from '../common/constants';
-import { getCurrentOrigLanguageVersionOwner } from '../helpers/migrateOriginalLanguageHelpers';
+import {
+  hasOriginalLanguageChanged,
+  updateAlignedWordsFromOrigLanguage,
+} from '../helpers/migrateOriginalLanguageHelpers';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
 const CONTINUE = 'CONTINUE';
@@ -209,16 +212,23 @@ export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = nu
     } else if (toolName === WORD_ALIGNMENT && ifGlChanged) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
       const previousOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(previousOwnerForTool);
       const newOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
-      let olOwnerChanged = previousOrigLangOwner !== newOrigLangOwner;
+      let olChanged = previousOrigLangOwner !== newOrigLangOwner;
+      const projectPath = getProjectSaveLocation(state);
 
-      if (!olOwnerChanged) {
-        const projectDir = getProjectSaveLocation(state);
-        getCurrentOrigLanguageVersionOwner(projectDir);
-        console.log(projectDir);
+      if (!olChanged) { // if owner not changed, do more precise checking of version
+        const results = hasOriginalLanguageChanged(projectPath, bookId);
+
+        if (results.changed) {
+          console.log(`setProjectToolGL() - for wA tool Original Language Version changed from ${results.version} to  ${results.latestVersion}`);
+          olChanged = true;
+        }
+      } else {
+        console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
       }
 
-      if (olOwnerChanged) {
-        console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
+      if (olChanged) {
+        console.log(`setProjectToolGL() - for wA tool Original Language has changed, we need to update alignments`);
+        updateAlignedWordsFromOrigLanguage(projectPath, bookId);
         const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId || 'mat', toolName, selectedGL, owner);
         dispatch(ResourcesActions.makeSureResourcesLoaded(resources, bookId));
         dispatch(batchActions([
