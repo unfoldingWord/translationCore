@@ -116,7 +116,9 @@ export function prepareToolForLoading(toolName) {
           }
           newPaneSettings[i].owner = olOwner;
         }
-      } else if (pane.owner !== 'Door43-Catalog') {
+      }
+
+      if (pane.owner !== 'Door43-Catalog') {
         const langKey = resourcesHelpers.addOwnerToKey(pane.languageId, pane.owner);
         const langBibles = bibles[langKey];
 
