@@ -39,7 +39,12 @@ import {
   PROJECTS_PATH,
   TRANSLATION_NOTES,
   TRANSLATION_WORDS,
+  WORD_ALIGNMENT,
 } from '../common/constants';
+import {
+  hasOriginalLanguageChanged,
+  updateAlignedWordsFromOrigLanguage,
+} from '../helpers/migrateOriginalLanguageHelpers';
 import consts from './ActionTypes';
 import { connectToolApi } from './MyProjects/ProjectLoadingActions';
 const CONTINUE = 'CONTINUE';
@@ -161,9 +166,10 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
  * @param {string} toolName
  * @param {string} selectedGL
  * @param {string} owner
+ * @param {string} bookId
  * @return {(function(*, *): Promise<undefined>)|*}
  */
-export function setProjectToolGL(toolName, selectedGL, owner = null) {
+export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = null) {
   return async (dispatch, getState) => {
     if (typeof toolName !== 'string') {
       return Promise.reject(`Expected "toolName" to be a string but received ${typeof toolName} instead`);
@@ -180,7 +186,7 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
       owner = previousOwnerForTool;
     }
 
-    const ifGlChanged = (selectedGL !== previousGLForTool) ||
+    let ifGlChanged = (selectedGL !== previousGLForTool) ||
                         (owner !== previousOwnerForTool);
 
     dispatch({
@@ -203,6 +209,32 @@ export function setProjectToolGL(toolName, selectedGL, owner = null) {
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },
       ]));
+    } else if (toolName === WORD_ALIGNMENT && ifGlChanged) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
+      const previousOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(previousOwnerForTool);
+      const newOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
+      let olChanged = previousOrigLangOwner !== newOrigLangOwner;
+      const projectPath = getProjectSaveLocation(state);
+
+      if (!olChanged) { // if owner not changed, do more precise checking of version
+        const results = hasOriginalLanguageChanged(projectPath, bookId);
+
+        if (results.changed) {
+          console.log(`setProjectToolGL() - for wA tool Original Language Version changed from ${results.version} to  ${results.latestVersion}`);
+          olChanged = true;
+        }
+      } else {
+        console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
+      }
+
+      if (olChanged) {
+        console.log(`setProjectToolGL() - for wA tool Original Language has changed, we need to update alignments`);
+        updateAlignedWordsFromOrigLanguage(projectPath, bookId);
+        const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId || 'mat', toolName, selectedGL, owner);
+        dispatch(ResourcesActions.makeSureResourcesLoaded(resources, bookId));
+        dispatch(batchActions([
+          { type: consts.OPEN_TOOL, name: null },
+        ]));
+      }
     }
 
     if (ifGlChanged) { // if GL has been changed
