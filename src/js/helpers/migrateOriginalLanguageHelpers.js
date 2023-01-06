@@ -443,6 +443,7 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
       const filePath = path.join(alignmentDataPath, `${chapter}.json`);
       fs.outputJsonSync(filePath, alignments[chapter]);
     }
+    console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - Original Language Version changed from ${results.version} to  ${results.latestVersion}`);
   } else {
     console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - NO updates NEEDED`);
   }
