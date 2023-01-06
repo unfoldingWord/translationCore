@@ -106,7 +106,17 @@ export function prepareToolForLoading(toolName) {
     for (let i = 0; i < currentPaneSettings.length; i++) {
       const pane = currentPaneSettings[i];
 
-      if (pane.owner !== 'Door43-Catalog') {
+      if (pane.languageId === 'originalLanguage') {
+        const glOwner = getToolGlOwner(getState(), toolName);
+        const olOwner = getOriginalLangOwner(glOwner);
+
+        if (pane.owner !== olOwner) {
+          if (!newPaneSettings) {
+            newPaneSettings = _.clone(currentPaneSettings);
+          }
+          newPaneSettings[i].owner = olOwner;
+        }
+      } else if (pane.owner !== 'Door43-Catalog') {
         const langKey = resourcesHelpers.addOwnerToKey(pane.languageId, pane.owner);
         const langBibles = bibles[langKey];
 
