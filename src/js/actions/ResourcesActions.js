@@ -441,15 +441,12 @@ export const loadBookTranslations = (bookId, toolName = null) => (dispatch, getS
 };
 
 /**
- * Loads the translations of the source book required by the tool.
- * @param {string} bookId - the id of the source book to load
- * @param {string} toolName - the name of the tool for which the translations will be loaded.
- * @returns {Function}
+ * Loads the resources that are not already loaded.
+ * @param {array} resources
+ * @param {string} bookId
+ * @returns {(function(*, *): void)|*}
  */
-export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getState) => {
-  dispatch(updateOrigLangPaneSettings(bookId));
-
-  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
+export const makeSureResourcesLoaded = (resources, bookId) => (dispatch, getState) => {
   const bibles = getBibles(getState());
   // Filter out bible resources that are already in the resources reducer
   const filteredResources = resources.filter(resource => {
@@ -464,6 +461,19 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
     const resource = filteredResources[i];
     dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId, null, resource.owner));
   }
+};
+
+/**
+ * Loads the translations of the source book required by the tool.
+ * @param {string} bookId - the id of the source book to load
+ * @param {string} toolName - the name of the tool for which the translations will be loaded.
+ * @returns {Function}
+ */
+export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getState) => {
+  dispatch(updateOrigLangPaneSettings(bookId));
+
+  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
+  dispatch(makeSureResourcesLoaded(resources, bookId));
 };
 
 /**

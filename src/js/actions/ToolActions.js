@@ -106,24 +106,40 @@ export function prepareToolForLoading(toolName) {
     for (let i = 0; i < currentPaneSettings.length; i++) {
       const pane = currentPaneSettings[i];
 
-      if (pane.owner !== 'Door43-Catalog') {
-        const langKey = resourcesHelpers.addOwnerToKey(pane.languageId, pane.owner);
-        const langBibles = bibles[langKey];
+      if (pane.languageId === 'originalLanguage') {
+        const glOwner = getToolGlOwner(getState(), toolName);
+        const olOwner = getOriginalLangOwner(glOwner);
 
-        if (langBibles) {
-          const bible = langBibles[pane.bibleId];
+        if (pane.owner !== olOwner) {
+          if (!newPaneSettings) {
+            newPaneSettings = _.clone(currentPaneSettings);
+          }
+          newPaneSettings[i].owner = olOwner;
+          pane.owner = olOwner;
+        }
+      }
 
-          if (bible) {
-            const isPreRelease = bible.manifest?.stage === 'preprod';
+      const langKey = resourcesHelpers.addOwnerToKey(pane.languageId, pane.owner);
+      const langBibles = bibles[langKey];
+
+      if (langBibles) {
+        const bible = langBibles[pane.bibleId];
+
+        if (bible) {
+          const isPreRelease = bible.manifest?.stage === 'preprod';
+          const hasPreProdChanged = !!pane.isPreRelease !== isPreRelease;
+
+          if (isPreRelease || hasPreProdChanged) {
+            if (!newPaneSettings) {
+              newPaneSettings = _.clone(currentPaneSettings);
+            }
 
             if (isPreRelease) {
-              if (!newPaneSettings) {
-                newPaneSettings = _.clone(currentPaneSettings);
-                const translate = getTranslate(getState());
-                preReleaseStr = translate('pre_release');
-              }
-
+              const translate = getTranslate(getState());
+              preReleaseStr = translate('pre_release');
               newPaneSettings[i].isPreRelease = preReleaseStr;
+            } else {
+              delete newPaneSettings[i].isPreRelease;
             }
           }
         }
