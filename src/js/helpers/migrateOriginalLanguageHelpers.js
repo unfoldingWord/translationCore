@@ -79,8 +79,8 @@ function getOccurrencesForWordList(wordList) {
 
 /**
  * get the word list for the original language in the format used by alignment data
+ @param {array} verseObjects
  * @returns {*[]}
- * @param {array} verseObjects
  */
 function getOriginalLanguageListForVerseData(verseObjects) {
   const wordList = [];
@@ -186,15 +186,26 @@ function removeExtraWordsFromAlignments(alignmentsChapter, verse) {
   }
 }
 
-function isValidVerseSpan(verse) {
-  return referenceHelpers.isVerseSpan(verse) && !isNaN(referenceHelpers.toInt(verse));
+/**
+ * check if verseRef is a verse span
+ * @param verseRef
+ * @return {*|boolean}
+ */
+function isValidVerseSpan(verseRef) {
+  return referenceHelpers.isVerseSpan(verseRef) && !isNaN(referenceHelpers.toInt(verseRef));
 }
 
-function getVersesForSpan(verse, chapterData) {
-  // coerce to look like a book so we can use library
+/**
+ * get all verses included in verse range
+ * @param {string} verseRef - number to look up
+ * @param {object} chapterData
+ * @return {null|{verseObjects: *[]}}
+ */
+function getVersesForSpan(verseRef, chapterData) {
+  // coerce to look like a book so we can use library call
   const chapter = 1;
   const bookData = { [chapter]: chapterData };
-  const ref = `${chapter}:${verse}`;
+  const ref = `${chapter}:${verseRef}`;
   const verses = referenceHelpers.getVerses(bookData, ref);
 
   if (verses?.length) {
@@ -274,12 +285,12 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
 }
 
 /**
- * get the aligned word attributes for verse from latest original language
+ * for a chapter update the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
  * @return {array} list of verses that had attributes changed
  */
-export function updateAlignedWordsFromOriginalForChapter(originalLangChapter, alignmentsChapter) {
+export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter) {
   const changedVerses = [];
   const verses = Object.keys(alignmentsChapter);
 
@@ -293,6 +304,11 @@ export function updateAlignedWordsFromOriginalForChapter(originalLangChapter, al
   return changedVerses;
 }
 
+/**
+ * read from manifest the current GL owner and from that get the original language owner
+ * @param {string} manifest
+ * @return {{owner: (*|string), version: *}}
+ */
 export function getCurrentOrigLanguageVersionOwner(manifest) {
   const waOwner = manifest?.toolsSelectedOwners?.wordAlignment || DEFAULT_OWNER;
   const owner = ResourcesHelpers.getOriginalLangOwner(waOwner);
@@ -300,12 +316,26 @@ export function getCurrentOrigLanguageVersionOwner(manifest) {
   return { owner, version };
 }
 
+/**
+ * generate path to the latest original language
+ * @param {string} bookId
+ * @param {string} owner
+ * @param {string} resourcesPath
+ * @return {string}
+ */
 function getLatestVersionPath(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
   const { languageId: olLanguageID, bibleId: olBibleId } = BibleHelpers.getOrigLangforBook(bookId);
   const latestVersionPath = ResourceAPI.getLatestVersion(path.join(resourcesPath, olLanguageID, 'bibles', olBibleId), owner);
   return latestVersionPath;
 }
 
+/**
+ * get the manifest for the latest original language
+ * @param {string} bookId
+ * @param {string} owner
+ * @param {string} resourcesPath
+ * @return {*}
+ */
 export function getLatestBibleVersionManifest(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
   const latestVersionPath = getLatestVersionPath(bookId, owner, resourcesPath);
   const manifest = getProjectManifest(latestVersionPath) || null;
@@ -348,6 +378,13 @@ export function hasOriginalLanguageChanged(projectPath, bookId, resourcesPath = 
   return results;
 }
 
+/**
+ * read the latest original language for the owner and book
+ * @param {string} bookId
+ * @param {string} owner
+ * @param {string} resourcesPath
+ * @return {{}}
+ */
 export function getLatestOriginalLanguageResource(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
   const resourcePath = getLatestVersionPath(bookId, owner, resourcesPath);
   const resourceBookPath = path.join(resourcePath, bookId);
@@ -368,11 +405,23 @@ export function getLatestOriginalLanguageResource(bookId, owner, resourcesPath =
   return origBook;
 }
 
+/**
+ * generate the path to the alignment data for a project
+ * @param {string} projectPath
+ * @param {string} bookId
+ * @return {*}
+ */
 function getAlignmentDataPath(projectPath, bookId) {
   const alignmentDataPath = path.join(projectPath, '.apps', 'translationCore', 'alignmentData', bookId);
   return alignmentDataPath;
 }
 
+/**
+ * get current alignments for a project
+ * @param {string} bookId
+ * @param {string} projectPath
+ * @return {{}}
+ */
 export function getProjectAlignments(bookId, projectPath) {
   const alignmentDataPath = getAlignmentDataPath(projectPath, bookId);
   const files = ResourcesHelpers.getFilesInResourcePath(alignmentDataPath, '.json');
@@ -392,7 +441,14 @@ export function getProjectAlignments(bookId, projectPath) {
   return origBook;
 }
 
-export function updateAlignedWordsFromOriginalForBook(origBook, alignments, bookID) {
+/**
+ * for a book update the aligned word attributes for verse from latest original language
+ * @param {object} origBook
+ * @param {object} alignments
+ * @param {string} bookID
+ * @return {{}}
+ */
+export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments, bookID) {
   const changedChapters = {};
 
   if (origBook) {
@@ -403,7 +459,7 @@ export function updateAlignedWordsFromOriginalForBook(origBook, alignments, book
       const alignmentsChapter = alignments[chapter];
 
       if (originalLangChapter && alignmentsChapter) {
-        const changes = updateAlignedWordsFromOriginalForChapter(originalLangChapter, alignmentsChapter);
+        const changes = updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter);
 
         if (changes?.length) {
           changedChapters[chapter] = changes;
@@ -416,11 +472,19 @@ export function updateAlignedWordsFromOriginalForBook(origBook, alignments, book
   return changedChapters;
 }
 
+/**
+ * for a project, load alignments for project and original language for GL. Then update the aligned word attributes for
+ *   verse from latest original language
+ * @param {string} projectPath
+ * @param {string} bookId
+ * @param {string} resourcesPath
+ * @return {{}}
+ */
 export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
   const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
   const origBook = getLatestOriginalLanguageResource(bookId, results.owner, resourcesPath);
   const alignments = getProjectAlignments(bookId, projectPath);
-  const chapterChanges = updateAlignedWordsFromOriginalForBook(origBook, alignments, bookId);
+  const chapterChanges = updateAlignedWordAttribFromOriginalForBook(origBook, alignments, bookId);
 
   if (Object.keys(chapterChanges).length) { // save changes
     console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - updates made in refs:`, chapterChanges);
