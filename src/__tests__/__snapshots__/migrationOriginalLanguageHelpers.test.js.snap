@@ -395,6 +395,25 @@ Object {
         },
       ],
     },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "must",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "δέω",
+          "morph": "Gr,V,IPA3..S",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G12100",
+          "word": "Δεῖ",
+        },
+      ],
+    },
   ],
   "wordBank": Array [],
 }
@@ -3461,6 +3480,30 @@ Object {
           "occurrences": 1,
           "strong": "G21500",
           "word": "εὐσέβειαν",
+        },
+      ],
+    },
+    Object {
+      "bottomWords": Array [
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "agrees",
+        },
+        Object {
+          "occurrence": 1,
+          "occurrences": 1,
+          "word": "with",
+        },
+      ],
+      "topWords": Array [
+        Object {
+          "lemma": "κατά",
+          "morph": "Gr,P,.......",
+          "occurrence": 1,
+          "occurrences": 1,
+          "strong": "G25960",
+          "word": "κατʼ",
         },
       ],
     },
