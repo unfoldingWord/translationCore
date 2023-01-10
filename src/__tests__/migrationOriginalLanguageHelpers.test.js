@@ -71,7 +71,6 @@ describe('update attributes of aligned words',()=> {
     expect(alignmentsWordList).toMatchSnapshot();
   });
 
-
   test('fix broken strongs', () => {
     const verse = 5;
     const titusAlignments = _.cloneDeep(alignments2_json);
