@@ -5,7 +5,7 @@ import {
   getProjectAlignments,
   hasOriginalLanguageChanged,
   hasOriginalLanguageChangedSub,
-  updateAlignedWordsFromOriginalForChapter,
+  updateAlignedWordAttribFromOriginalForChapter,
   updateAlignedWordsFromOriginalForVerse,
   updateAlignedWordsFromOrigLanguage,
 } from '../js/helpers/migrateOriginalLanguageHelpers';
@@ -70,7 +70,6 @@ describe('update attributes of aligned words',()=> {
     // expect(alignmentsWordList).toEqual(alignmentsWordListInitial);
     expect(alignmentsWordList).toMatchSnapshot();
   });
-
 
   test('fix broken strongs', () => {
     const verse = 5;
@@ -198,7 +197,7 @@ describe('update attributes of aligned words for whole chapter',()=> {
     ];
     const expectedAttributesChanged = [ '11-13' ];
     const titusAlignments = _.cloneDeep(alignments3_json);
-    const changedVerses = updateAlignedWordsFromOriginalForChapter(newGreek3_json, titusAlignments);
+    const changedVerses = updateAlignedWordAttribFromOriginalForChapter(newGreek3_json, titusAlignments);
     const verses = Object.keys(titusAlignments);
     const changed = [];
 
@@ -232,7 +231,7 @@ describe('update attributes of aligned words for whole chapter',()=> {
     const expectedAttributesChanged = [ '11-13' ];
     let titusAlignments = _.cloneDeep(alignments3_json);
     delete titusAlignments[deleteVerse];
-    const changedVerses = updateAlignedWordsFromOriginalForChapter(newGreek3_json, titusAlignments);
+    const changedVerses = updateAlignedWordAttribFromOriginalForChapter(newGreek3_json, titusAlignments);
     const verses = Object.keys(titusAlignments);
     const changed = [];
 
@@ -267,7 +266,7 @@ describe('update attributes of aligned words for whole chapter',()=> {
     const titusAlignments = _.cloneDeep(alignments3_json);
     const newGreek_json = _.cloneDeep(newGreek3_json);
     delete newGreek_json[deleteVerse];
-    const changedVerses = updateAlignedWordsFromOriginalForChapter(newGreek_json, titusAlignments);
+    const changedVerses = updateAlignedWordAttribFromOriginalForChapter(newGreek_json, titusAlignments);
     const verses = Object.keys(titusAlignments);
     const changed = [];
 
