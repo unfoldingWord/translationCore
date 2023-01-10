@@ -1,5 +1,6 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
+import { normalizer } from 'string-punctuation-tokenizer';
 import { referenceHelpers } from 'bible-reference-range';
 import { toInt } from 'tsv-groupdata-parser/lib/tsvToGroupData';
 import {
@@ -10,8 +11,6 @@ import { getProjectManifest, saveProjectManifest } from './ProjectMigration/mani
 import * as ResourcesHelpers from './ResourcesHelpers';
 import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
-import { normalizer } from 'string-punctuation-tokenizer';
-import { QUOTE_MARK } from './ResourcesHelpers';
 
 const ignoreFields = [ 'tag', 'type', 'text' ];
 
@@ -125,14 +124,34 @@ export function getAlignedWordListForVerse(chapterJson, verseRef) {
   return wordList;
 }
 
+/**
+ * normalize word by doing unicode normalization, converting to lower case, and then fixing the trailing accent
+ * @param word
+ * @return {{length}}
+ */
 function normalize(word) {
   let word_ = normalizer(word || '');
   word_ = word_.toLowerCase();
+
+  if (word_.length) {
+    const lastCharPos = word_.length - 1;
+    const lastChar = word_[lastCharPos];
+
+    if (lastChar === ResourcesHelpers.QUOTE_MARK) { // handle invalid accent at end of word
+      word_ = word_.substring(0, lastCharPos) + '\u02BC';
+    }
+  }
+
   return word_;
 }
 
-function normalizeList(originalLangWordList, normalOrig) {
-  for (const origWord of originalLangWordList) {
+/**
+ * iterate through the word list normalizing words and then fixing occurrences using the normalized word text
+ * @param {array} originalWordList - list of words to normalize
+ * @param {array} normalOrig - array to populate with normalized words
+ */
+function normalizeList(originalWordList, normalOrig) {
+  for (const origWord of originalWordList) {
     const origWord_ = { // shallow copy
       ...origWord,
       word: normalize(origWord.word),
@@ -164,15 +183,6 @@ function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignments
       }
 
       const normalWord = normalAlign[i];
-      let word = normalWord.word;
-      const lastCharPos = word.length - 1;
-      const lastChar = word[lastCharPos];
-
-      if (lastChar === QUOTE_MARK) { // handle invalid accent at end of word
-        word = word.substring(0, lastCharPos) + '\u02BC';
-        normalWord.word = word;
-      }
-
       const foundPos = normalOrig.findIndex(item => (item.word === normalWord.word) && (item.occurrence === normalWord.occurrence) && (item.occurrences === normalWord.occurrences));
 
       if (foundPos >= 0) {
