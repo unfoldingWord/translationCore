@@ -13,6 +13,7 @@ import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
 
 const ignoreFields = [ 'tag', 'type', 'text' ];
+const ignoreOrig = [ 'tw' ];
 
 /**
  * extract words from wordlist
@@ -194,6 +195,10 @@ function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignments
       const keys = Object.keys(foundOrig);
 
       for (const key of keys) {
+        if (ignoreOrig.includes(key)) {
+          continue; // skip over ignored keys
+        }
+
         if (foundOrig[key] !== alignedWord[key]) {
           alignedWord[key] = foundOrig[key]; // update attribute
           changed = true;
