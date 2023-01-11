@@ -26,8 +26,14 @@ describe('update attributes of aligned words',()=> {
   test('punctuation changed in κατʼ', () => {
     const verse = 1;
     const titusAlignments = _.cloneDeep(alignments_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeTruthy();
+    expect(emptyAlignments).toBeTruthy();
     const alignmentsWordListInitial = alignments_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -38,8 +44,14 @@ describe('update attributes of aligned words',()=> {
   test('lemma changed for ἡμῶν', () => {
     const verse = 4;
     const titusAlignments = _.cloneDeep(alignments_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     const alignmentsWordListInitial = alignments_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -50,8 +62,14 @@ describe('update attributes of aligned words',()=> {
   test('Captitalization change', () => {
     const verse = 7;
     const titusAlignments = _.cloneDeep(alignments_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeTruthy();
+    expect(emptyAlignments).toBeTruthy();
     const alignmentsWordListInitial = alignments_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -62,8 +80,15 @@ describe('update attributes of aligned words',()=> {
   test('Update words in word bank', () => {
     const verse = 2;
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
+
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -74,8 +99,14 @@ describe('update attributes of aligned words',()=> {
   test('fix broken strongs', () => {
     const verse = 5;
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -86,8 +117,14 @@ describe('update attributes of aligned words',()=> {
   test('Drop extra word bank word', () => {
     const verse = 6;
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -98,8 +135,14 @@ describe('update attributes of aligned words',()=> {
   test('Drop Extra Aligned word', () => {
     const verse = 9;
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const changed = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeTruthy();
+    expect(emptyAlignments).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
@@ -110,8 +153,13 @@ describe('update attributes of aligned words',()=> {
   test('Invalid Verse num', () => {
     const verse = 0;
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     expect(changed).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
@@ -121,9 +169,14 @@ describe('update attributes of aligned words',()=> {
   test('Invalid Verse front', () => {
     const verse = 'front';
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(removedExtraWords).toBeFalsy();
     expect(changed).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).toEqual(alignmentsWordListInitial);
@@ -132,8 +185,13 @@ describe('update attributes of aligned words',()=> {
   test('Invalid Verse random', () => {
     const verse = 'random';
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     expect(changed).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
@@ -143,8 +201,13 @@ describe('update attributes of aligned words',()=> {
   test('Invalid Verse span front-after', () => {
     const verse = 'front-after';
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     expect(changed).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
@@ -154,8 +217,13 @@ describe('update attributes of aligned words',()=> {
   test('Invalid Verse span 15-17', () => {
     const verse = '15-17';
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     expect(changed).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
@@ -165,8 +233,13 @@ describe('update attributes of aligned words',()=> {
   test('Invalid Verse span 9,10', () => {
     const verse = '9,10';
     const titusAlignments = _.cloneDeep(alignments2_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek2_json, titusAlignments, verse);
     expect(removedExtraWords).toBeFalsy();
+    expect(emptyAlignments).toBeFalsy();
     expect(changed).toBeFalsy();
     const alignmentsWordListInitial = alignments2_json[verse];
     const alignmentsWordList = titusAlignments[verse];
@@ -176,9 +249,14 @@ describe('update attributes of aligned words',()=> {
   test('Handle Verse Span', () => {
     const verse = '11-13';
     const titusAlignments = _.cloneDeep(alignments3_json);
-    const { changed, removedExtraWords } = updateAlignedWordsFromOriginalForVerse(newGreek3_json, titusAlignments, verse);
-    expect( removedExtraWords ).toBeTruthy();
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(newGreek3_json, titusAlignments, verse);
     expect(changed).toBeTruthy();
+    expect(removedExtraWords).toBeTruthy();
+    expect(emptyAlignments).toBeTruthy();
     const alignmentsWordListInitial = alignments3_json[verse];
     const alignmentsWordList = titusAlignments[verse];
     expect(alignmentsWordList).not.toEqual(alignmentsWordListInitial);
