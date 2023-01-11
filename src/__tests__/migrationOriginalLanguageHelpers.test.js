@@ -301,9 +301,9 @@ describe('update attributes of aligned words for whole chapter',()=> {
       }
     }
     expect(changed.sort()).toEqual(expectedChanged.sort());
-    expect(changedVerses.sort()).toEqual(expectedAttributesChanged.sort());
-    expect(removedExtraWordsVerses.sort()).toEqual(expectedRemoved.sort());
-    expect(emptyAlignmentsVerses.sort()).toEqual(expectedRemoved.sort());
+    expect(getVerses(changedVerses)).toEqual(expectedAttributesChanged.sort());
+    expect(getVerses(removedExtraWordsVerses)).toEqual(expectedRemoved.sort());
+    expect(getVerses(emptyAlignmentsVerses)).toEqual(expectedRemoved.sort());
   });
 
   test('Handle missing aligned verse', () => {
@@ -342,9 +342,9 @@ describe('update attributes of aligned words for whole chapter',()=> {
       }
     }
     expect(changed.sort()).toEqual(expectedChanged.sort());
-    expect(changedVerses.sort()).toEqual(expectedAttributesChanged.sort());
-    expect(removedExtraWordsVerses.sort()).toEqual(expectedRemoved.sort());
-    expect(emptyAlignmentsVerses.sort()).toEqual(expectedRemoved.sort());
+    expect(getVerses(changedVerses)).toEqual(expectedAttributesChanged.sort());
+    expect(getVerses(removedExtraWordsVerses)).toEqual(expectedRemoved.sort());
+    expect(getVerses(emptyAlignmentsVerses)).toEqual(expectedRemoved.sort());
   });
 
   test('Handle missing original verse', () => {
@@ -384,9 +384,9 @@ describe('update attributes of aligned words for whole chapter',()=> {
       }
     }
     expect(changed.sort()).toEqual(expectedChanged.sort());
-    expect(changedVerses.sort()).toEqual(expectedAttributesChanged.sort());
-    expect(removedExtraWordsVerses.sort()).toEqual(expectedRemoved.sort());
-    expect(emptyAlignmentsVerses.sort()).toEqual(expectedRemoved.sort());
+    expect(getVerses(changedVerses)).toEqual(expectedAttributesChanged.sort());
+    expect(getVerses(removedExtraWordsVerses)).toEqual(expectedRemoved.sort());
+    expect(getVerses(emptyAlignmentsVerses)).toEqual(expectedRemoved.sort());
   });
 });
 
@@ -542,3 +542,13 @@ describe.skip('update project Alignments',()=> {
     expect(Object.keys(removedExtraWordsChapters).length).toEqual(100);
   });
 });
+
+//
+// Helpers
+//
+
+function getVerses(changedVerses) {
+  let verses_ = changedVerses.map(item => item.verse);
+  verses_ = verses_.sort();
+  return verses_;
+}

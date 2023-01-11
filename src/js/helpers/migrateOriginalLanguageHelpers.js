@@ -325,16 +325,29 @@ export function getBestMatchForVerse(originalLangChapter, alignmentsChapter, ver
 }
 
 /**
+ * if flag is true, increment and return count
+ * @param {number} count
+ * @param {number} flag
+ * @return {number} new count
+ */
+function increment(count, flag) {
+  if (flag) {
+    count++;
+  }
+  return count;
+}
+
+/**
  * get the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
  * @param {string|number} verse
- * @return {boolean} true if verse attributes updated
+ * @return {{removedExtraWords: number, emptyAlignments: number, changed: number}}
  */
 export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse) {
-  let changed = false;
-  let removedExtraWords = false;
-  let emptyAlignments = false;
+  let changed = 0;
+  let removedExtraWords = 0;
+  let emptyAlignments = 0;
   const {
     verse: verse_,
     originalLangWordList,
@@ -343,20 +356,14 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
 
   if (originalLangWordList?.length && alignmentsWordList?.length) {
     const changed_ = updateAlignedWordsFromOriginalWordList(originalLangWordList, alignmentsWordList);
-    changed = changed || changed_;
+    changed = increment(changed, changed_);
 
     if (alignmentsChapter?.[verse_]?.alignments) {
       // clear word bank so it will be regenerated
       alignmentsChapter[verse_].wordBank = [];
       const { extraWordFound, emptyAlignmentsFound } = removeExtraWordsFromAlignments(alignmentsChapter, verse_);
-
-      if (extraWordFound && !removedExtraWords) {
-        removedExtraWords = true;
-      }
-
-      if (emptyAlignmentsFound && !emptyAlignments) {
-        emptyAlignments = true;
-      }
+      removedExtraWords = increment(removedExtraWords, extraWordFound);
+      emptyAlignments = increment(emptyAlignments, emptyAlignmentsFound);
     }
   }
   return {
@@ -370,7 +377,7 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
  * for a chapter update the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
- * @return {array} list of verses that had attributes changed
+ * @return {{emptyAlignmentsVerses: *[], changedVerses: *[], removedExtraWordsVerses: *[]}}
  */
 export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter) {
   const changedVerses = [];
@@ -385,16 +392,16 @@ export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapte
       emptyAlignments,
     } = updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
 
-    if (emptyAlignments) {
-      emptyAlignmentsVerses.push(verse);
+    if (emptyAlignments > 0) {
+      emptyAlignmentsVerses.push({ verse, count: emptyAlignments });
     }
 
-    if (removedExtraWords) {
-      removedExtraWordsVerses.push(verse);
+    if (removedExtraWords > 0) {
+      removedExtraWordsVerses.push({ verse, count: removedExtraWords });
     }
 
-    if (changed) {
-      changedVerses.push(verse);
+    if (changed > 0) {
+      changedVerses.push({ verse, count: changed });
     }
   }
   return {
@@ -546,7 +553,7 @@ export function getProjectAlignments(bookId, projectPath) {
  * @param {object} origBook
  * @param {object} alignments
  * @param {string} bookID
- * @return {{}}
+ * @return {{removedExtraWordsChapters: {}, emptyAlignmentsChapters: {}, changedChapters: {}}}
  */
 export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments, bookID) {
   const changedChapters = {};
@@ -567,16 +574,18 @@ export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments,
           emptyAlignmentsVerses,
         } = updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter);
 
+        if (changedVerses?.length) {
+          changedChapters[chapter] = changedVerses;
+        }
+
         if (emptyAlignmentsVerses?.length) {
           emptyAlignmentsChapters[chapter] = emptyAlignmentsVerses;
         }
 
-        if (changedVerses?.length) {
+        if (removedExtraWordsVerses?.length) {
           removedExtraWordsChapters[chapter] = removedExtraWordsVerses;
         }
       } else {
-        console.log(`updateAlignedWordsFromOriginalForVerse() removed extra words from`);
-
         console.log(`updateAlignedWordsFromOriginalForBook(${bookID}) - missing chapter ${chapter} data OriginalLang = ${!!originalLangChapter}, alignments = ${alignmentsChapter}`);
       }
     }
@@ -594,7 +603,7 @@ export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments,
  * @param {string} projectPath
  * @param {string} bookId
  * @param {string} resourcesPath
- * @return {{}}
+ * @return {{removedExtraWordsChapters: {}, changedChapters: {}}}
  */
 export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
   const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
@@ -616,7 +625,7 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
     }
 
     if (emptyAlignmentsChaptersCount) {
-      console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - empty alignments removed in refs:`, emptyAlignmentsChaptersCount);
+      console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - empty alignments removed in refs:`, emptyAlignmentsChapters);
     }
 
     if (removedExtraWordsChaptersCount) {
