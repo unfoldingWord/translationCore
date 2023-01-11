@@ -359,7 +359,11 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
       }
     }
   }
-  return { changed, removedExtraWords, emptyAlignments };
+  return {
+    changed,
+    removedExtraWords,
+    emptyAlignments,
+  };
 }
 
 /**
@@ -375,7 +379,11 @@ export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapte
   const verses = Object.keys(alignmentsChapter);
 
   for (const verse of verses) {
-    const { changed, removedExtraWords, emptyAlignments } = updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
 
     if (emptyAlignments) {
       emptyAlignmentsVerses.push(verse);
@@ -389,7 +397,11 @@ export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapte
       changedVerses.push(verse);
     }
   }
-  return { changedVerses, removedExtraWordsVerses, emptyAlignmentsVerses };
+  return {
+    changedVerses,
+    removedExtraWordsVerses,
+    emptyAlignmentsVerses,
+  };
 }
 
 /**
@@ -569,7 +581,11 @@ export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments,
       }
     }
   }
-  return { changedChapters, removedExtraWordsChapters, emptyAlignmentsChapters };
+  return {
+    changedChapters,
+    removedExtraWordsChapters,
+    emptyAlignmentsChapters,
+  };
 }
 
 /**
