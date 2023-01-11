@@ -34,7 +34,7 @@ jobs:
 #       run: echo "$GITHUB_CONTEXT"
     - uses: actions/setup-node@v1
       with:
-        node-version: '16.4.2'
+        node-version: '16.14.2'
     - name: Node version
       run: |
         node --version
