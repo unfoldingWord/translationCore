@@ -209,7 +209,7 @@ export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = nu
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },
       ]));
-    } else if (toolName === WORD_ALIGNMENT && ifGlChanged) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
+    } else if (toolName === WORD_ALIGNMENT) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
       const previousOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(previousOwnerForTool);
       const newOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
       let olChanged = previousOrigLangOwner !== newOrigLangOwner;
