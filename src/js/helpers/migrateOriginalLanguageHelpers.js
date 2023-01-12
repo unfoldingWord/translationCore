@@ -648,9 +648,9 @@ export const updateAlignedWordsFromOrigLanguage = (projectPath, bookId, resource
 
   // update project manifest, first try to get from reducers
   let manifest = getProjectManifest(getState());
-  const manifestLoaded = manifest;
+  const manifestInReducer = manifest;
 
-  if (!manifestLoaded) {
+  if (!manifestInReducer) { // not in reducers, so use what we fetched from file
     manifest = results.projectManifest;
   }
   manifest.tc_orig_lang_wordAlignment = results.latestVersion;
@@ -661,7 +661,7 @@ export const updateAlignedWordsFromOrigLanguage = (projectPath, bookId, resource
 
   manifest.toolsSelectedOwners.wordAlignment = results.owner;
 
-  if (manifestLoaded) {
+  if (manifestInReducer) {
     console.log(`updateAlignedWordsFromOrigLanguage() - updating manifest in reducer`, manifest);
     dispatch(ProjectDetailsActions.setProjectManifest(manifest));
   } else {
