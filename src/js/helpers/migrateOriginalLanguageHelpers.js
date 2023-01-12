@@ -7,7 +7,9 @@ import {
   DEFAULT_OWNER,
   USER_RESOURCES_PATH,
 } from '../common/constants';
-import { getProjectManifest, saveProjectManifest } from './ProjectMigration/manifestUtils';
+import * as ProjectDetailsActions from '../actions/ProjectDetailsActions';
+import { getProjectManifest } from '../selectors';
+import * as manifestUtils from './ProjectMigration/manifestUtils';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
@@ -445,7 +447,7 @@ function getLatestVersionPath(bookId, owner, resourcesPath = USER_RESOURCES_PATH
  */
 export function getLatestBibleVersionManifest(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
   const latestVersionPath = getLatestVersionPath(bookId, owner, resourcesPath);
-  const manifest = getProjectManifest(latestVersionPath) || null;
+  const manifest = manifestUtils.getProjectManifest(latestVersionPath) || null;
   return manifest;
 }
 
@@ -478,7 +480,7 @@ export function hasOriginalLanguageChangedSub(projectManifest, latestOrigLangMan
  * @return {{owner: (String|null), latestOrigLangManifest: {}, latestVersion: (String|null), version: (String|null), changed: boolean, projectManifest: {}}}
  */
 export function hasOriginalLanguageChanged(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
-  const projectManifest = getProjectManifest(projectPath);
+  const projectManifest = manifestUtils.getProjectManifest(projectPath);
   const { owner } = getCurrentOrigLanguageVersionOwner(projectManifest);
   const latestOrigLangManifest = getLatestBibleVersionManifest(bookId, owner, resourcesPath);
   const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
@@ -605,7 +607,7 @@ export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments,
  * @param {string} resourcesPath
  * @return {{removedExtraWordsChapters: {}, changedChapters: {}}}
  */
-export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
+export const updateAlignedWordsFromOrigLanguage = (projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) => (dispatch, getState) => {
   const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
   const origBook = getLatestOriginalLanguageResource(bookId, results.owner, resourcesPath);
   const alignments = getProjectAlignments(bookId, projectPath);
@@ -644,8 +646,13 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
     console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - NO updates NEEDED`);
   }
 
-  // update project manifest
-  const manifest = results.projectManifest;
+  // update project manifest, first try to get from reducers
+  let manifest = getProjectManifest(getState());
+  const manifestInReducer = manifest;
+
+  if (!manifestInReducer) { // not in reducers, so use what we fetched from file
+    manifest = results.projectManifest;
+  }
   manifest.tc_orig_lang_wordAlignment = results.latestVersion;
 
   if (!manifest.toolsSelectedOwners) {
@@ -653,7 +660,14 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
   }
 
   manifest.toolsSelectedOwners.wordAlignment = results.owner;
-  saveProjectManifest(projectPath, manifest);
+
+  if (manifestInReducer) {
+    console.log(`updateAlignedWordsFromOrigLanguage() - updating manifest in reducer`, manifest);
+    dispatch(ProjectDetailsActions.setProjectManifest(manifest));
+  } else {
+    console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - saving directly to manifest`, manifest);
+    manifestUtils.saveProjectManifest(projectPath, manifest);
+  }
 
   return { changedChapters, removedExtraWordsChapters };
-}
+};
