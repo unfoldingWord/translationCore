@@ -219,16 +219,18 @@ export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = nu
         const results = hasOriginalLanguageChanged(projectPath, bookId);
 
         if (results.changed) {
-          console.log(`setProjectToolGL() - for wA tool Original Language Version changed from ${results.version} to  ${results.latestVersion}`);
+          console.log(`setProjectToolGL() - for wA tool Original Language Version CHANGED from ${results.version} to  ${results.latestVersion}`);
           olChanged = true;
+        } else {
+          console.log(`setProjectToolGL() - for wA tool Original Language Version unchanged`);
         }
       } else {
-        console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
+        console.log(`setProjectToolGL() - for wA tool Original Language Owner CHANGED`);
       }
 
       if (olChanged) {
         console.log(`setProjectToolGL() - for wA tool Original Language has changed, we need to update alignments`);
-        updateAlignedWordsFromOrigLanguage(projectPath, bookId);
+        dispatch(updateAlignedWordsFromOrigLanguage(projectPath, bookId));
         const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId || 'mat', toolName, selectedGL, owner);
         dispatch(ResourcesActions.makeSureResourcesLoaded(resources, bookId));
         dispatch(batchActions([
