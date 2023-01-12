@@ -632,17 +632,6 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
       console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - extra words removed in refs:`, removedExtraWordsChapters);
     }
 
-    // update project manifest
-    const manifest = results.projectManifest;
-    manifest.tc_orig_lang_wordAlignment = results.latestVersion;
-
-    if (!manifest.toolsSelectedOwners) {
-      manifest.toolsSelectedOwners = {};
-    }
-
-    manifest.toolsSelectedOwners.wordAlignment = results.owner;
-    saveProjectManifest(projectPath, manifest);
-
     const alignmentDataPath = getAlignmentDataPath(projectPath, bookId);
     const chapters = Object.keys(alignments);
 
@@ -654,6 +643,17 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
   } else {
     console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - NO updates NEEDED`);
   }
+
+  // update project manifest
+  const manifest = results.projectManifest;
+  manifest.tc_orig_lang_wordAlignment = results.latestVersion;
+
+  if (!manifest.toolsSelectedOwners) {
+    manifest.toolsSelectedOwners = {};
+  }
+
+  manifest.toolsSelectedOwners.wordAlignment = results.owner;
+  saveProjectManifest(projectPath, manifest);
 
   return { changedChapters, removedExtraWordsChapters };
 }
