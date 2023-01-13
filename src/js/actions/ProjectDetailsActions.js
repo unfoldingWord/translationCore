@@ -209,7 +209,7 @@ export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = nu
       dispatch(batchActions([
         { type: consts.OPEN_TOOL, name: null },
       ]));
-    } else if (toolName === WORD_ALIGNMENT && ifGlChanged) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
+    } else if (toolName === WORD_ALIGNMENT) { // the alignments are based on Original Language version, if owner is not D43, then the Original Language is used from unfoldingWord
       const previousOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(previousOwnerForTool);
       const newOrigLangOwner = ResourcesHelpers.getOriginalLangOwner(owner);
       let olChanged = previousOrigLangOwner !== newOrigLangOwner;
@@ -219,16 +219,18 @@ export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = nu
         const results = hasOriginalLanguageChanged(projectPath, bookId);
 
         if (results.changed) {
-          console.log(`setProjectToolGL() - for wA tool Original Language Version changed from ${results.version} to  ${results.latestVersion}`);
+          console.log(`setProjectToolGL() - for wA tool Original Language Version CHANGED from ${results.version} to  ${results.latestVersion}`);
           olChanged = true;
+        } else {
+          console.log(`setProjectToolGL() - for wA tool Original Language Version unchanged`);
         }
       } else {
-        console.log(`setProjectToolGL() - for wA tool Original Language Owner changed`);
+        console.log(`setProjectToolGL() - for wA tool Original Language Owner CHANGED`);
       }
 
       if (olChanged) {
         console.log(`setProjectToolGL() - for wA tool Original Language has changed, we need to update alignments`);
-        updateAlignedWordsFromOrigLanguage(projectPath, bookId);
+        dispatch(updateAlignedWordsFromOrigLanguage(projectPath, bookId));
         const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId || 'mat', toolName, selectedGL, owner);
         dispatch(ResourcesActions.makeSureResourcesLoaded(resources, bookId));
         dispatch(batchActions([

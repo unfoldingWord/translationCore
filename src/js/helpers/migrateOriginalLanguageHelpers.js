@@ -7,12 +7,15 @@ import {
   DEFAULT_OWNER,
   USER_RESOURCES_PATH,
 } from '../common/constants';
-import { getProjectManifest, saveProjectManifest } from './ProjectMigration/manifestUtils';
+import * as ProjectDetailsActions from '../actions/ProjectDetailsActions';
+import { getProjectManifest } from '../selectors';
+import * as manifestUtils from './ProjectMigration/manifestUtils';
 import * as ResourcesHelpers from './ResourcesHelpers';
 import ResourceAPI from './ResourceAPI';
 import * as BibleHelpers from './bibleHelpers';
 
 const ignoreFields = [ 'tag', 'type', 'text' ];
+const ignoreOrig = [ 'tw' ];
 
 /**
  * extract words from wordlist
@@ -194,6 +197,10 @@ function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignments
       const keys = Object.keys(foundOrig);
 
       for (const key of keys) {
+        if (ignoreOrig.includes(key)) {
+          continue; // skip over ignored keys
+        }
+
         if (foundOrig[key] !== alignedWord[key]) {
           alignedWord[key] = foundOrig[key]; // update attribute
           changed = true;
@@ -240,13 +247,13 @@ function removeExtraWordsFromAlignments(alignmentsChapter, verseRef) {
   }
 
   if (toRemove.length) {
-    for (let j = toRemove.length - 1; j >= 0; j--) {
+    for (let j = toRemove.length - 1; j >= 0; j--) { // reverse order so remaining indices not messed up by removals
       const removeIdx = toRemove[j];
       alignments.splice(removeIdx, 1);
     }
   }
 
-  return extraWordFound;
+  return { extraWordFound, emptyAlignmentsFound: !!toRemove.length };
 }
 
 /**
@@ -320,14 +327,29 @@ export function getBestMatchForVerse(originalLangChapter, alignmentsChapter, ver
 }
 
 /**
+ * if flag is true, increment and return count
+ * @param {number} count
+ * @param {number} flag
+ * @return {number} new count
+ */
+function increment(count, flag) {
+  if (flag) {
+    count++;
+  }
+  return count;
+}
+
+/**
  * get the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
  * @param {string|number} verse
- * @return {boolean} true if verse attributes updated
+ * @return {{removedExtraWords: number, emptyAlignments: number, changed: number}}
  */
 export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse) {
-  let changed = false;
+  let changed = 0;
+  let removedExtraWords = 0;
+  let emptyAlignments = 0;
   const {
     verse: verse_,
     originalLangWordList,
@@ -336,35 +358,59 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
 
   if (originalLangWordList?.length && alignmentsWordList?.length) {
     const changed_ = updateAlignedWordsFromOriginalWordList(originalLangWordList, alignmentsWordList);
-    changed = changed || changed_;
+    changed = increment(changed, changed_);
 
     if (alignmentsChapter?.[verse_]?.alignments) {
       // clear word bank so it will be regenerated
       alignmentsChapter[verse_].wordBank = [];
-      removeExtraWordsFromAlignments(alignmentsChapter, verse_);
+      const { extraWordFound, emptyAlignmentsFound } = removeExtraWordsFromAlignments(alignmentsChapter, verse_);
+      removedExtraWords = increment(removedExtraWords, extraWordFound);
+      emptyAlignments = increment(emptyAlignments, emptyAlignmentsFound);
     }
   }
-  return changed;
+  return {
+    changed,
+    removedExtraWords,
+    emptyAlignments,
+  };
 }
 
 /**
  * for a chapter update the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
- * @return {array} list of verses that had attributes changed
+ * @return {{emptyAlignmentsVerses: *[], changedVerses: *[], removedExtraWordsVerses: *[]}}
  */
 export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter) {
   const changedVerses = [];
+  const removedExtraWordsVerses = [];
+  const emptyAlignmentsVerses = [];
   const verses = Object.keys(alignmentsChapter);
 
   for (const verse of verses) {
-    const changed = updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
+    const {
+      changed,
+      removedExtraWords,
+      emptyAlignments,
+    } = updateAlignedWordsFromOriginalForVerse(originalLangChapter, alignmentsChapter, verse);
 
-    if (changed) {
-      changedVerses.push(verse);
+    if (emptyAlignments > 0) {
+      emptyAlignmentsVerses.push({ verse, count: emptyAlignments });
+    }
+
+    if (removedExtraWords > 0) {
+      removedExtraWordsVerses.push({ verse, count: removedExtraWords });
+    }
+
+    if (changed > 0) {
+      changedVerses.push({ verse, count: changed });
     }
   }
-  return changedVerses;
+  return {
+    changedVerses,
+    removedExtraWordsVerses,
+    emptyAlignmentsVerses,
+  };
 }
 
 /**
@@ -401,7 +447,7 @@ function getLatestVersionPath(bookId, owner, resourcesPath = USER_RESOURCES_PATH
  */
 export function getLatestBibleVersionManifest(bookId, owner, resourcesPath = USER_RESOURCES_PATH) {
   const latestVersionPath = getLatestVersionPath(bookId, owner, resourcesPath);
-  const manifest = getProjectManifest(latestVersionPath) || null;
+  const manifest = manifestUtils.getProjectManifest(latestVersionPath) || null;
   return manifest;
 }
 
@@ -434,7 +480,7 @@ export function hasOriginalLanguageChangedSub(projectManifest, latestOrigLangMan
  * @return {{owner: (String|null), latestOrigLangManifest: {}, latestVersion: (String|null), version: (String|null), changed: boolean, projectManifest: {}}}
  */
 export function hasOriginalLanguageChanged(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
-  const projectManifest = getProjectManifest(projectPath);
+  const projectManifest = manifestUtils.getProjectManifest(projectPath);
   const { owner } = getCurrentOrigLanguageVersionOwner(projectManifest);
   const latestOrigLangManifest = getLatestBibleVersionManifest(bookId, owner, resourcesPath);
   const results = hasOriginalLanguageChangedSub(projectManifest, latestOrigLangManifest);
@@ -509,10 +555,12 @@ export function getProjectAlignments(bookId, projectPath) {
  * @param {object} origBook
  * @param {object} alignments
  * @param {string} bookID
- * @return {{}}
+ * @return {{removedExtraWordsChapters: {}, emptyAlignmentsChapters: {}, changedChapters: {}}}
  */
 export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments, bookID) {
   const changedChapters = {};
+  const removedExtraWordsChapters = {};
+  const emptyAlignmentsChapters = {};
 
   if (origBook) {
     const chapters = Object.keys(origBook);
@@ -522,17 +570,33 @@ export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments,
       const alignmentsChapter = alignments[chapter];
 
       if (originalLangChapter && alignmentsChapter) {
-        const changes = updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter);
+        const {
+          changedVerses,
+          removedExtraWordsVerses,
+          emptyAlignmentsVerses,
+        } = updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter);
 
-        if (changes?.length) {
-          changedChapters[chapter] = changes;
+        if (changedVerses?.length) {
+          changedChapters[chapter] = changedVerses;
+        }
+
+        if (emptyAlignmentsVerses?.length) {
+          emptyAlignmentsChapters[chapter] = emptyAlignmentsVerses;
+        }
+
+        if (removedExtraWordsVerses?.length) {
+          removedExtraWordsChapters[chapter] = removedExtraWordsVerses;
         }
       } else {
         console.log(`updateAlignedWordsFromOriginalForBook(${bookID}) - missing chapter ${chapter} data OriginalLang = ${!!originalLangChapter}, alignments = ${alignmentsChapter}`);
       }
     }
   }
-  return changedChapters;
+  return {
+    changedChapters,
+    removedExtraWordsChapters,
+    emptyAlignmentsChapters,
+  };
 }
 
 /**
@@ -541,27 +605,34 @@ export function updateAlignedWordAttribFromOriginalForBook(origBook, alignments,
  * @param {string} projectPath
  * @param {string} bookId
  * @param {string} resourcesPath
- * @return {{}}
+ * @return {{removedExtraWordsChapters: {}, changedChapters: {}}}
  */
-export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) {
+export const updateAlignedWordsFromOrigLanguage = (projectPath, bookId, resourcesPath = USER_RESOURCES_PATH) => (dispatch, getState) => {
   const results = hasOriginalLanguageChanged(projectPath, bookId, resourcesPath);
   const origBook = getLatestOriginalLanguageResource(bookId, results.owner, resourcesPath);
   const alignments = getProjectAlignments(bookId, projectPath);
-  const chapterChanges = updateAlignedWordAttribFromOriginalForBook(origBook, alignments, bookId);
+  const {
+    changedChapters,
+    removedExtraWordsChapters,
+    emptyAlignmentsChapters,
+  } = updateAlignedWordAttribFromOriginalForBook(origBook, alignments, bookId);
 
-  if (Object.keys(chapterChanges).length) { // save changes
-    console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - updates made in refs:`, chapterChanges);
+  const changedChaptersCount = Object.keys(changedChapters).length;
+  const emptyAlignmentsChaptersCount = Object.keys(emptyAlignmentsChapters).length;
+  const removedExtraWordsChaptersCount = Object.keys(removedExtraWordsChapters).length;
 
-    // update project manifest
-    const manifest = results.projectManifest;
-    manifest.tc_orig_lang_wordAlignment = results.latestVersion;
-
-    if (!manifest.toolsSelectedOwners) {
-      manifest.toolsSelectedOwners = {};
+  if (changedChaptersCount || removedExtraWordsChaptersCount || emptyAlignmentsChaptersCount) { // save changes
+    if (changedChaptersCount) {
+      console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - alignment words updated in refs:`, changedChapters);
     }
 
-    manifest.toolsSelectedOwners.wordAlignment = results.owner;
-    saveProjectManifest(projectPath, manifest);
+    if (emptyAlignmentsChaptersCount) {
+      console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - empty alignments removed in refs:`, emptyAlignmentsChapters);
+    }
+
+    if (removedExtraWordsChaptersCount) {
+      console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - extra words removed in refs:`, removedExtraWordsChapters);
+    }
 
     const alignmentDataPath = getAlignmentDataPath(projectPath, bookId);
     const chapters = Object.keys(alignments);
@@ -575,5 +646,28 @@ export function updateAlignedWordsFromOrigLanguage(projectPath, bookId, resource
     console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - NO updates NEEDED`);
   }
 
-  return chapterChanges;
-}
+  // update project manifest, first try to get from reducers
+  let manifest = getProjectManifest(getState());
+  const manifestInReducer = manifest;
+
+  if (!manifestInReducer) { // not in reducers, so use what we fetched from file
+    manifest = results.projectManifest;
+  }
+  manifest.tc_orig_lang_wordAlignment = results.latestVersion;
+
+  if (!manifest.toolsSelectedOwners) {
+    manifest.toolsSelectedOwners = {};
+  }
+
+  manifest.toolsSelectedOwners.wordAlignment = results.owner;
+
+  if (manifestInReducer) {
+    console.log(`updateAlignedWordsFromOrigLanguage() - updating manifest in reducer`, manifest);
+    dispatch(ProjectDetailsActions.setProjectManifest(manifest));
+  } else {
+    console.log(`updateAlignedWordsFromOrigLanguage(${projectPath}) - saving directly to manifest`, manifest);
+    manifestUtils.saveProjectManifest(projectPath, manifest);
+  }
+
+  return { changedChapters, removedExtraWordsChapters };
+};
