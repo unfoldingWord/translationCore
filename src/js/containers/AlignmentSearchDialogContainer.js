@@ -1330,7 +1330,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     const resources = [];
     const bibles = [this.state.alignedBible];
 
-    if (this.state.searchTwords && this.state.alignedBible2) {
+    if (this.state.searchTwords && this.state.alignedBible2 && (this.state.alignedBible !== this.state.alignedBible2)) {
       bibles.push(this.state.alignedBible2);
     }
 
