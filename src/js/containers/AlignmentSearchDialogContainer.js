@@ -1307,7 +1307,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       removeIndices(resource);
     }
 
-    if (updateAlways || (resource?.version !== 'master')) {
+    if (resource && (updateAlways || (resource.version !== 'master'))) {
       resource.version = 'master';
       const newBiblekey = getKeyForBible(resource, ALIGNMENTS_KEY);
 
@@ -1330,7 +1330,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     const resources = [];
     const bibles = [this.state.alignedBible];
 
-    if (this.state.searchTwords) {
+    if (this.state.searchTwords && this.state.alignedBible2) {
       bibles.push(this.state.alignedBible2);
     }
 
