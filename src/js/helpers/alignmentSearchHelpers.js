@@ -159,7 +159,7 @@ export function regexSearch(keys, searchStr, flags) {
  */
 export function buildSearchRegex(search, fullWord, caseInsensitive, wordJoiner = false) {
   let flags = 'u'; // enable unicode support
-  search = xre.escape(normalizer(search)); // escape any special character we are trying to match
+  search = xre.escape(normalizer((search || '').trim())); // escape any special character we are trying to match
 
   if (search.includes('\\?') || search.includes('\\*')) { // check for wildcard characters
     search = search.replaceAll('\\?', '\\S{1}');
