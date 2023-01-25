@@ -1443,9 +1443,14 @@ class AlignmentSearchDialogContainer extends React.Component {
         searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
         searchRefs: !searchTwords && this.isSearchFieldSelected(SEARCH_REFS),
       };
+      let found = [];
 
-      // when
-      let found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+      try {
+        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+      } catch (e) {
+        console.error('AlignmentSearchDialogContainer - search error', e);
+        this.showMessage(`Search Error`);
+      }
 
       if (config.searchTwords) {
         getTwordALignments(found, state.alignedBible, bibles, ALIGNED_TEXT);
