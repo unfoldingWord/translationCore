@@ -217,7 +217,7 @@ function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignments
  * remove aligned words no longer in original language
  * @param {array} alignmentsChapter
  * @param {string|number} verseRef
- * @return {object} true if extra word found
+ * @return {boolean} true if extra word found
  */
 function removeExtraWordsFromAlignments(alignmentsChapter, verseRef) {
   const alignments = alignmentsChapter?.[verseRef]?.alignments || [];
