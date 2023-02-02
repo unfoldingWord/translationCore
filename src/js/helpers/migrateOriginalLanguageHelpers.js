@@ -217,7 +217,7 @@ function updateAlignedWordsFromOriginalWordList(originalLangWordList, alignments
  * remove aligned words no longer in original language
  * @param {array} alignmentsChapter
  * @param {string|number} verseRef
- * @return {boolean} true if extra word found
+ * @return {object} true if extra word found
  */
 function removeExtraWordsFromAlignments(alignmentsChapter, verseRef) {
   const alignments = alignmentsChapter?.[verseRef]?.alignments || [];
@@ -329,7 +329,7 @@ export function getBestMatchForVerse(originalLangChapter, alignmentsChapter, ver
 /**
  * if flag is true, increment and return count
  * @param {number} count
- * @param {number} flag
+ * @param {boolean} flag
  * @return {number} new count
  */
 function increment(count, flag) {
