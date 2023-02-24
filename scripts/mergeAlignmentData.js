@@ -15,7 +15,6 @@ const mergeAlignments = () => {
   // ];
   const alignmentsPath = path.join(ospath.home(), 'translationCore/alignmentData');
   let errors = false;
-  const alignments = {};
 
   try {
     let files = fs.readdirSync(alignmentsPath);
@@ -25,6 +24,7 @@ const mergeAlignments = () => {
         continue; // skip files not json
       }
 
+      const alignments = {};
       const filePath = path.join(alignmentsPath, file);
       const [ languageID, bible, owner, origLang, , tag] = file.split('_');
 
@@ -102,7 +102,11 @@ const mergeAlignments = () => {
         }
 
         // console.log(alignmentArray);
-        writeCsv(csvFilePath, alignmentArray);
+        if (alignmentArray.length) {
+          writeCsv(csvFilePath, alignmentArray);
+        } else {
+          console.log(`alignments empty for ${file}`);
+        }
       } else {
         console.error(`file not found ${filePath}`);
         errors = true;
