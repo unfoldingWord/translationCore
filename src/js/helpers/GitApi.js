@@ -19,7 +19,7 @@ export default function GitApi(directory) {
      * @param {function} callback - A callback to be run on complete.
      */
     init: function (callback) {
-      git.init(false, callback);
+      git.init(false, { '--initial-branch': '=master' }, callback);
     },
     /**
      * @description Pulls in from a remote branch.
