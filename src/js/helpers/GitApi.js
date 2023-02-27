@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import simpleGit from 'simple-git';
-import { DCS_BASE_URL } from '../common/constants';
+import { DCS_BASE_URL, defaultBranch } from '../common/constants';
 import * as GogsApiHelpers from './GogsApiHelpers';
 
 /**
@@ -17,9 +17,11 @@ export default function GitApi(directory) {
     /**
      * @description Initializes a git repository.
      * @param {function} callback - A callback to be run on complete.
+     * @param {array|object|null} options
      */
-    init: function (callback) {
-      git.init(false, { '--initial-branch': '=master' }, callback);
+    init: function (callback, options = null) {
+      const options_ = options || { '--initial-branch': defaultBranch };
+      git.init(false, options_, callback);
     },
     /**
      * @description Pulls in from a remote branch.
@@ -151,6 +153,12 @@ export default function GitApi(directory) {
     },
     revparse: function (options, callback) {
       return git.revparse(options, callback);
+    },
+    branchLocal: function (callback) {
+      return git.branchLocal(callback);
+    },
+    branch: function (options, callback) {
+      return git.branch(options, callback);
     },
     checkout: function (branch, callback) {
       if (!branch) {

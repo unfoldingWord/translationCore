@@ -17,6 +17,7 @@ export const GIT_ERROR_UNABLE_TO_CONNECT = 'Unable to connect to the server. Ple
 export const GIT_ERROR_PROJECT_NOT_FOUND = 'Project not found';
 export const GIT_ERROR_PUSH_NOT_FF = 'not a simple fast-forward';
 export const GIT_ERROR_REPO_ARCHIVED = 'repo is archived';
+export const GIT_ERROR_AMBIGUOUS_HEAD = 'ambiguous HEAD';
 export const NETWORK_ERROR_IP_ADDR_NOT_FOUND = 'ENOTFOUND';
 export const NETWORK_ERROR_TIMEOUT = 'connect ETIMEDOUT';
 export const NETWORK_ERROR_UNABLE_TO_ACCESS = 'unable to access';
@@ -63,13 +64,14 @@ export default class Repo {
    *
    * @param {string} dir - the directory to open
    * @param {object} [user] - the user object that contains names, passwords. and tokens
+   * @param {array|object|null} initOptions - options to use on git init
    * @returns {Promise<Repo>}
    */
-  static async open(dir, user = {}) {
+  static async open(dir, user = {}, initOptions= null) {
     const ok = await Repo.isRepo(dir);
 
     if (!ok) {
-      await Repo.init(dir);
+      await Repo.init(dir, initOptions);
     }
     return new Repo(dir, user);
   }
@@ -176,9 +178,10 @@ export default class Repo {
   /**
    * Initializes a new repository
    * @param {string} dir - the file path to the local repository
+   * @param {array|object|null} options
    * @return {Promise<void>}
    */
-  static init(dir) {
+  static init(dir, options = null) {
     const repo = GitApi(dir);
     return new Promise((resolve, reject) => {
       repo.init(err => {
@@ -188,7 +191,7 @@ export default class Repo {
         } else {
           resolve();
         }
-      });
+      }, options);
     });
   }
 
@@ -342,6 +345,83 @@ export default class Repo {
   }
 
   /**
+   * returns repo info
+   * @param {array|object|null} options
+   * @return {Promise<{owner: String, name: String, full_name: String, host: String, url: String}|null>}
+   */
+  async revParse(options) {
+    const repo = GitApi(this.dir);
+    const data = await new Promise((resolve, reject) => {
+      try {
+        repo.revparse(options,(err, data) => {
+          if (err) {
+            console.warn('Repo.revParse() - ERROR', err);
+            reject(convertGitErrorMessage(err));
+          } else {
+            resolve(data);
+          }
+        });
+      } catch (err) {
+        console.warn('Repo.revParse() - EXCEPTION', err);
+        reject(convertGitErrorMessage(err));
+      }
+    });
+
+    return data;
+  }
+
+  /**
+   * gets list of local branches
+   * @return {Promise<object>}
+   */
+  async branchLocal() {
+    const repo = GitApi(this.dir);
+    const data = await new Promise((resolve, reject) => {
+      try {
+        repo.branchLocal((err, data) => {
+          if (err) {
+            console.warn('Repo.branchLocal() - ERROR', err);
+            reject(convertGitErrorMessage(err));
+          } else {
+            resolve(data);
+          }
+        });
+      } catch (err) {
+        console.warn('Repo.branchLocal() - EXCEPTION', err);
+        reject(convertGitErrorMessage(err));
+      }
+    });
+
+    return data;
+  }
+
+  /**
+   * runs branch commands
+   * @param {array|object|null} options
+   * @return {Promise<object>}
+   */
+  async branch(options) {
+    const repo = GitApi(this.dir);
+    const data = await new Promise((resolve, reject) => {
+      try {
+        repo.branch(options,(err, data) => {
+          if (err) {
+            console.warn('Repo.branch() - ERROR', err);
+            reject(convertGitErrorMessage(err));
+          } else {
+            resolve(data);
+          }
+        });
+      } catch (err) {
+        console.warn('Repo.branch() - EXCEPTION', err);
+        reject(convertGitErrorMessage(err));
+      }
+    });
+
+    return data;
+  }
+
+  /**
    * Returns information regarding the registered remote
    * @param {string} [name="origin"] - the name of the remote
    * @returns {Promise<null|
@@ -435,9 +515,16 @@ export default class Repo {
  */
 export function convertGitErrorMessage(err, link) {
   console.warn('convertGitErrorMessage()', { err, link });
+
+  if (typeof err !== 'string') {
+    err = err?.toString();
+  }
+
   let errMessage = GIT_ERROR_UNKNOWN_PROBLEM + ': ' + err; // default message
 
-  if (err.includes('repo is archived')) {
+  if (err.includes('ambiguous argument \'HEAD\'')) {
+    errMessage = GIT_ERROR_AMBIGUOUS_HEAD;
+  } else if (err.includes('repo is archived')) {
     errMessage = GIT_ERROR_REPO_ARCHIVED;
   } else if (err.includes('fatal: unable to access')) {
     errMessage = GIT_ERROR_UNABLE_TO_CONNECT;
@@ -456,4 +543,161 @@ export function convertGitErrorMessage(err, link) {
   }
   console.warn('convertGitErrorMessage() returning message:', errMessage);
   return errMessage;
+}
+
+/**
+ * get the default branch for repo folder
+ * @param {string} repoFolder
+ * @return {Promise<{noCommitsYet: boolean, error: null, results: null}>}
+ */
+export async function getDefaultBranch(repoFolder) {
+  const repo = await Repo.open(repoFolder);
+  let results = null;
+  let error = null;
+  let noCommitsYet = false;
+
+  try {
+    // git rev-parse --abbrev-ref HEAD
+    results = await repo.revParse([ '--abbrev-ref', 'HEAD' ]);
+  } catch (e) {
+    error = e?.toString();
+    noCommitsYet = error === GIT_ERROR_AMBIGUOUS_HEAD;
+  }
+  return {
+    results,
+    error,
+    noCommitsYet,
+  };
+}
+
+export async function doesBranchExist(repoFolder, branch) {
+  const repo = await Repo.open(repoFolder);
+  let exists = false;
+  let error = null;
+
+  try {
+    const data = await repo.branchLocal();
+
+    for (const item of data?.all || []) {
+      if (item === branch) { // check if match
+        exists = true;
+        break;
+      }
+    }
+  } catch (e) {
+    error = e?.toString();
+  }
+  return {
+    exists,
+    error,
+  };
+}
+
+export async function getCurrentBranch(repoFolder) {
+  const repo = await Repo.open(repoFolder);
+  let error = null;
+  let data = null;
+
+  try {
+    data = await repo.branchLocal();
+  } catch (e) {
+    error = e?.toString();
+  }
+  return {
+    current: data?.current,
+    error,
+  };
+}
+
+export async function renameBranch(repoFolder, oldBranch, newBranch) {
+  const repo = await Repo.open(repoFolder);
+  let exists = false;
+  let error = null;
+
+  try {
+    // branch -m old-name new-name
+    await repo.branch(['-m', oldBranch, newBranch]);
+    const data = await repo.branchLocal();
+
+    for (const item of data?.all || []) {
+      if (item === oldBranch) {
+        console.warn(`renameBranch() - old branch ${oldBranch} still exists`);
+      }
+
+      if (item === newBranch) {
+        exists = true;
+        break;
+      }
+    }
+  } catch (e) {
+    error = e?.toString();
+  }
+
+  if (!exists) {
+    console.warn(`renameBranch() - rename branch ${oldBranch} to ${newBranch} FAILED`);
+  }
+  return {
+    success: exists,
+    error,
+  };
+}
+
+export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
+  let success = false;
+  let currentBranch = null;
+  let saved = false;
+  let renamed = false;
+  let error = null;
+
+  try {
+    let currentBr = await getCurrentBranch(repoFolder);
+    currentBranch = currentBr.current;
+
+    if (!currentBranch) {
+      const repo = await Repo.open(repoFolder);
+      await repo.save('initial save');
+      currentBr = await getCurrentBranch(repoFolder);
+      currentBranch = currentBr.current;
+      saved = true;
+    }
+
+    if (currentBranch === branchName) {
+      console.log(`makeSureWeAreUsingBranch(${branchName} - already in this branch, nothing to do`);
+      success = true;
+    } else {
+      let { exists } = await doesBranchExist(repoFolder, branchName);
+
+      if (exists) {
+        console.error(`makeSureWeAreUsingBranch(${branchName}) - already exists`);
+        error = `branch ${branchName} already exists`;
+      } else {
+        if (!saved) {
+          // save changes before rename
+          const repo = await Repo.open(repoFolder);
+          await repo.save('save before rename');
+        }
+
+        let brRename = await renameBranch(repoFolder, currentBranch, branchName);
+        success = brRename.success;
+        renamed = true;
+
+        if (success) {
+          let currentBr = await getCurrentBranch(repoFolder);
+
+          if (currentBr.current !== branchName) {
+            console.error(`makeSureWeAreUsingBranch() - current branch should be ${branchName}, but is ${currentBr.current}`);
+            success = false;
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.error(`makeSureWeAreUsingBranch() - ERROR renaming to ${branchName}`);
+    success = false;
+  }
+  return {
+    success,
+    renamed,
+    error,
+  };
 }
