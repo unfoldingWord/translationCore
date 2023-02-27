@@ -6,6 +6,7 @@ import Repo, {
   getCurrentBranch,
   getDefaultBranch,
 } from '../js/helpers/Repo';
+import {exec} from "child_process";
 
 jest.unmock('simple-git');
 jest.unmock('fs-extra');
@@ -31,6 +32,12 @@ describe('testing git branch operations', () => {
     if (fs.existsSync(tempFolder)) {
       fs.removeSync(tempFolder);
     }
+  });
+
+  it('git should be installed', async () => {
+    const version = await getGitVersion();
+    console.log('git version:', version);
+    expect(version).toBeTruthy();
   });
 
   it('git default init - should be error before first commit', async () => {
@@ -95,5 +102,15 @@ describe('testing git branch operations', () => {
     const currentBranch = currentBr.current;
     expect(repo).toBeTruthy();
     expect(currentBranch).toEqual(expectedfinalRepo);
+  });
+});
+
+const getGitVersion = () => new Promise((resolve, reject) => {
+  exec('git - c', (err, data) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(!!data);
+    }
   });
 });
