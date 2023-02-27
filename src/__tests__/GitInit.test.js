@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
@@ -6,7 +7,6 @@ import Repo, {
   getCurrentBranch,
   getDefaultBranch,
 } from '../js/helpers/Repo';
-import {exec} from "child_process";
 
 jest.unmock('simple-git');
 jest.unmock('fs-extra');
