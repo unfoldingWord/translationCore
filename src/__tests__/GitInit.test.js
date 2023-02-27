@@ -37,7 +37,7 @@ describe('testing git branch operations', () => {
   it('git should be installed', async () => {
     const version = await getGitVersion();
     console.log('git version:', version);
-    expect(version).toBeTruthy();
+    expect(version.length > 5).toBeTruthy();
   });
 
   it('git default init - should be error before first commit', async () => {
@@ -106,11 +106,11 @@ describe('testing git branch operations', () => {
 });
 
 const getGitVersion = () => new Promise((resolve, reject) => {
-  exec('git - c', (err, data) => {
+  exec('git -v', (err, data) => {
     if (err) {
       reject(err);
     } else {
-      resolve(!!data);
+      resolve(data.trim());
     }
   });
 });

@@ -39,6 +39,7 @@ jobs:
       run: |
         node --version
         npm --version
+        git --version
 
 #    - uses: actions/checkout@v2
 #    - name: Checkout submodules
