@@ -4,7 +4,7 @@ const git = jest.fn();
 git.status = jest.fn(cb => {
   cb();
 });
-git.init = jest.fn((bare, cb) => {
+git.init = jest.fn((bare, options, cb) => {
   cb && cb();
 });
 git.pull = jest.fn((remote, branch, cb) => {
@@ -34,7 +34,7 @@ git.addRemote = jest.fn((name, repo, cb) => {
 git.getRemotes = jest.fn((verbose, cb) => {
   cb(false, []);
 });
-git.checkout = jest.fn((branch, cb) => {
+git.checkout = jest.fn((branch, options, cb) => {
   cb();
 });
 git.mirror = jest.fn((url, path, cb) => {
