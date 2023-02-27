@@ -2,8 +2,8 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import Repo, {
+  getCurrentBranch,
   getDefaultBranch,
-  makeSureCurrentBranchHasName,
 } from '../js/helpers/Repo';
 
 jest.unmock('simple-git');
@@ -13,7 +13,7 @@ const importsFolder = path.join(ospath.home(), 'translationCore', 'imports');
 const tempFolder = path.join(importsFolder, 'tempFolder');
 const repoFolder = path.join(tempFolder, 'tempRepo');
 
-describe('testing branch operations', () => {
+describe('testing git branch operations', () => {
   beforeEach(() => {
     if (fs.existsSync(tempFolder)) {
       fs.removeSync(tempFolder);
@@ -32,15 +32,14 @@ describe('testing branch operations', () => {
     }
   });
 
-  it('check default init - should be error before first commit', async () => {
-    const repo = await Repo.open(repoFolder);
+  it('git default init - should be error before first commit', async () => {
+    await Repo.init(repoFolder);
     let { results, noCommitsYet } = await getDefaultBranch(repoFolder);
-    expect(repo.dir).toEqual(repoFolder);
     expect(noCommitsYet).toBeTruthy();
     expect(results).toEqual(null);
   });
 
-  it('check default init - should not be error after first commit', async () => {
+  it('git default init - should not be error after first commit', async () => {
     const expectedDefaultRepo = 'master';
     const repo = await Repo.open(repoFolder);
     await repo.save('testing first save');
@@ -50,7 +49,7 @@ describe('testing branch operations', () => {
     expect(results).toEqual(expectedDefaultRepo);
   });
 
-  it('check init with default of main - should not be error after first commit', async () => {
+  it('git init with default of main - should not be error after first commit', async () => {
     const expectedDefaultRepo = 'main';
     await Repo.init(repoFolder, { '--initial-branch': expectedDefaultRepo });
     const repo = await Repo.open(repoFolder);
@@ -61,22 +60,23 @@ describe('testing branch operations', () => {
     expect(results).toEqual(expectedDefaultRepo);
   });
 
-  it('check init with default of main - should rename to master branch', async () => {
+  it('git openSafe with default of main - should rename to master branch', async () => {
     const expectedDefaultRepo = 'main';
     const expectedfinalRepo = 'master';
-    await Repo.init(repoFolder, { '--initial-branch': expectedDefaultRepo });
-    let ensureBr = await makeSureCurrentBranchHasName(repoFolder, expectedfinalRepo);
-    expect(ensureBr.success).toBeTruthy();
-    expect(ensureBr.error).toBeFalsy();
-    expect(ensureBr.renamed).toBeTruthy();
+    const repo = await Repo.openSafe(repoFolder, { '--initial-branch': expectedDefaultRepo });
+    const currentBr = await getCurrentBranch(repoFolder);
+    const currentBranch = currentBr.current;
+    expect(repo).toBeTruthy();
+    expect(currentBranch).toEqual(expectedfinalRepo);
   });
 
-  it('check init with default of master - should not rename to master branch', async () => {
+  it('git init with default of master - should not rename to master branch', async () => {
     const expectedfinalRepo = 'master';
     await Repo.init(repoFolder);
-    let ensureBr = await makeSureCurrentBranchHasName(repoFolder, expectedfinalRepo);
-    expect(ensureBr.success).toBeTruthy();
-    expect(ensureBr.error).toBeFalsy();
-    expect(ensureBr.renamed).toBeFalsy();
+    const repo = await Repo.openSafe(repoFolder);
+    const currentBr = await getCurrentBranch(repoFolder);
+    const currentBranch = currentBr.current;
+    expect(repo).toBeTruthy();
+    expect(currentBranch).toEqual(expectedfinalRepo);
   });
 });

@@ -1,7 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import { DCS_BASE_URL } from '../common/constants';
+import {DCS_BASE_URL, defaultBranch} from '../common/constants';
 import GitApi, {
   getRemoteRepoHead,
   pushNewRepo,
@@ -74,6 +74,27 @@ export default class Repo {
       await Repo.init(dir, initOptions);
     }
     return new Repo(dir, user);
+  }
+
+  /**
+   * Returns an init'd instance of {@link Repo}.
+   * Use this to safely open directories that will receive git operations.
+   * also make sure we are using correct branch
+   * An {@link init} will be performed on plain directories.
+   *
+   * @param {string} dir - the directory to open
+   * @param {object} [user] - the user object that contains names, passwords. and tokens
+   * @param {array|object|null} initOptions - options to use on git init
+   * @returns {Promise<Repo>}
+   */
+  static async openSafe(dir, user = {}, initOptions= null) {
+    const repo = await Repo.open(dir, user, initOptions);
+    let ensureBr = await makeSureCurrentBranchHasName(dir, defaultBranch);
+
+    if (!ensureBr.success) {
+      console.error(`Repo.openSafe() - not currently on branch ${defaultBranch}`);
+    }
+    return repo;
   }
 
   /**
