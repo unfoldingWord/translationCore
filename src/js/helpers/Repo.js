@@ -1,7 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import fs from 'fs-extra';
 import path from 'path-extra';
-import {DCS_BASE_URL, defaultBranch} from '../common/constants';
+import { DCS_BASE_URL, defaultBranch } from '../common/constants';
 import GitApi, {
   getRemoteRepoHead,
   pushNewRepo,
