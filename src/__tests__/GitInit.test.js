@@ -2,6 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
 import Repo, {
+  createNewBranch,
   getCurrentBranch,
   getDefaultBranch,
 } from '../js/helpers/Repo';
@@ -70,11 +71,27 @@ describe('testing git branch operations', () => {
     expect(currentBranch).toEqual(expectedfinalRepo);
   });
 
-  it('git init with default of master - should not rename to master branch', async () => {
+  it('git openSafe with default of master - should not rename to master branch', async () => {
     const expectedfinalRepo = 'master';
     await Repo.init(repoFolder);
     const repo = await Repo.openSafe(repoFolder);
     const currentBr = await getCurrentBranch(repoFolder);
+    const currentBranch = currentBr.current;
+    expect(repo).toBeTruthy();
+    expect(currentBranch).toEqual(expectedfinalRepo);
+  });
+
+  it('git openSafe with both master and main - should change to master branch', async () => {
+    const expectedfinalRepo = 'master';
+    await Repo.init(repoFolder);
+    let repo = await Repo.open(repoFolder);
+    await repo.save('setup for testing');
+    const extraBranch = 'main';
+    await createNewBranch(repoFolder, extraBranch); // create a main branch and checkout
+    let currentBr = await getCurrentBranch(repoFolder);
+    expect(currentBr.current).toEqual(extraBranch);
+    repo = await Repo.openSafe(repoFolder);
+    currentBr = await getCurrentBranch(repoFolder);
     const currentBranch = currentBr.current;
     expect(repo).toBeTruthy();
     expect(currentBranch).toEqual(expectedfinalRepo);

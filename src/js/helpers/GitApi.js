@@ -160,12 +160,12 @@ export default function GitApi(directory) {
     branch: function (options, callback) {
       return git.branch(options, callback);
     },
-    checkout: function (branch, callback) {
+    checkout: function (branch, options, callback) {
       if (!branch) {
         callback('No branch');
         return;
       }
-      git.checkout(branch, callback);
+      git.checkout(branch, options, callback);
     },
     remote: function (optionsArray, callback) {
       return git.remote(optionsArray, callback);

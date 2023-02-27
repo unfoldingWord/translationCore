@@ -485,6 +485,26 @@ export default class Repo {
   }
 
   /**
+   * checkout branch
+   * @param {string} branch
+   * @param {array|object|null} options
+   * @return {Promise<unknown>}
+   */
+  checkout(branch, options = {}) {
+    const repo = GitApi(this.dir);
+    return new Promise((resolve, reject) => {
+      repo.checkout(branch, options, err => {
+        if (err) {
+          console.warn('Repo.checkout() - ERROR', err);
+          reject(err);
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+
+  /**
    * Saves all pending changes to the repo
    * @param {string} message - the commit message
    * @return {Promise<void>}
@@ -591,7 +611,13 @@ export async function getDefaultBranch(repoFolder) {
   };
 }
 
-export async function doesBranchExist(repoFolder, branch) {
+/**
+ * checks if there is a branch in the repo matching branchName
+ * @param {string} repoFolder
+ * @param {string} branchName
+ * @return {Promise<{exists: boolean, error: string|null}>}
+ */
+export async function doesBranchExist(repoFolder, branchName) {
   const repo = await Repo.open(repoFolder);
   let exists = false;
   let error = null;
@@ -600,7 +626,7 @@ export async function doesBranchExist(repoFolder, branch) {
     const data = await repo.branchLocal();
 
     for (const item of data?.all || []) {
-      if (item === branch) { // check if match
+      if (item === branchName) { // check if match
         exists = true;
         break;
       }
@@ -614,6 +640,11 @@ export async function doesBranchExist(repoFolder, branch) {
   };
 }
 
+/**
+ * gets the current branch name
+ * @param {string} repoFolder
+ * @return {Promise<{current: *, error: null}>}
+ */
 export async function getCurrentBranch(repoFolder) {
   const repo = await Repo.open(repoFolder);
   let error = null;
@@ -630,22 +661,29 @@ export async function getCurrentBranch(repoFolder) {
   };
 }
 
-export async function renameBranch(repoFolder, oldBranch, newBranch) {
+/**
+ * rename a branch from oldBranchName to newBranchName
+ * @param {string} repoFolder
+ * @param {string} oldBranchName
+ * @param {string} newBranchName
+ * @return {Promise<{success: boolean, error: null}>}
+ */
+export async function renameBranch(repoFolder, oldBranchName, newBranchName) {
   const repo = await Repo.open(repoFolder);
   let exists = false;
   let error = null;
 
   try {
     // branch -m old-name new-name
-    await repo.branch(['-m', oldBranch, newBranch]);
+    await repo.branch(['-m', oldBranchName, newBranchName]);
     const data = await repo.branchLocal();
 
     for (const item of data?.all || []) {
-      if (item === oldBranch) {
-        console.warn(`renameBranch() - old branch ${oldBranch} still exists`);
+      if (item === oldBranchName) {
+        console.warn(`renameBranch() - old branch ${oldBranchName} still exists`);
       }
 
-      if (item === newBranch) {
+      if (item === newBranchName) {
         exists = true;
         break;
       }
@@ -655,7 +693,7 @@ export async function renameBranch(repoFolder, oldBranch, newBranch) {
   }
 
   if (!exists) {
-    console.warn(`renameBranch() - rename branch ${oldBranch} to ${newBranch} FAILED`);
+    console.warn(`renameBranch() - rename branch ${oldBranchName} to ${newBranchName} FAILED`);
   }
   return {
     success: exists,
@@ -663,6 +701,40 @@ export async function renameBranch(repoFolder, oldBranch, newBranch) {
   };
 }
 
+/**
+ * creates a new branch that is a copy of the current branch
+ * @param {string} repoFolder
+ * @param {string} branchName
+ * @return {Promise<void>}
+ */
+export async function createNewBranch(repoFolder, branchName) {
+  const repo = await Repo.open(repoFolder);
+  await repo.branch(['-c', branchName]); // copy current branch to new branch
+  await repo.checkout(branchName); // change to new branch
+}
+
+/**
+ * change the branch to repoFolder
+ * @param {string} repoFolder
+ * @param {string} branchName
+ * @return {Promise<void>}
+ */
+export async function changeBranch(repoFolder, branchName) {
+  const repo = await Repo.open(repoFolder);
+  await repo.checkout(branchName);
+}
+
+/**
+ * makes sure that we are working in branchName.  Handles these cases:
+ * - if there is no branch name, we save changes (a commit in case there has not been any commits yet) and then we check the current branch name again
+ * - if current branch matches branchName, we do nothing
+ * - if current branch does not match branchName, we check if there is already a branch with branchName:
+ *   - if there is already a branch with branchName, then we save changes and change the current branch to branchName
+ *   - if there is not a branch with branchName, then we save changes and rename the current branch to branchName
+ * @param {string} repoFolder
+ * @param {string} branchName
+ * @return {Promise<{success: boolean, error: null|string, renamed: boolean}>}
+ */
 export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
   let success = false;
   let currentBranch = null;
@@ -689,8 +761,18 @@ export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
       let { exists } = await doesBranchExist(repoFolder, branchName);
 
       if (exists) {
-        console.error(`makeSureWeAreUsingBranch(${branchName}) - already exists`);
-        error = `branch ${branchName} already exists`;
+        console.warn(`makeSureWeAreUsingBranch(${branchName}) - already exists and is not current branch`);
+
+        if (!saved) {
+          const repo = await Repo.open(repoFolder);
+          // save changes before changing branch
+          await repo.save(`save before changing to ${branchName}`);
+        }
+
+        // change to branch
+        await changeBranch(repoFolder, branchName);
+        const currentBr = await getCurrentBranch(repoFolder);
+        success = currentBr.current === branchName;
       } else {
         if (!saved) {
           // save changes before rename
