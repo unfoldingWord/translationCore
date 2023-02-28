@@ -1,6 +1,6 @@
 import { exec } from 'child_process';
 import simpleGit from 'simple-git';
-import { DCS_BASE_URL, defaultBranch } from '../common/constants';
+import { DCS_BASE_URL } from '../common/constants';
 import * as GogsApiHelpers from './GogsApiHelpers';
 
 /**
