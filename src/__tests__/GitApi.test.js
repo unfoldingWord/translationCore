@@ -27,7 +27,7 @@ describe('simple bubble up methods', () => {
 
   it('bubbles up init', () => {
     git.init(cb);
-    expect(mocks.init).toBeCalledWith(false, { '--initial-branch': 'master' }, cb);
+    expect(mocks.init).toBeCalledWith(false, null, cb);
     expect(cb).toBeCalled();
   });
 
