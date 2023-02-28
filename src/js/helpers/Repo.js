@@ -295,7 +295,7 @@ export default class Repo {
    * @param {string} [branch="master"] - the branch to push
    * @return {Promise<void>}
    */
-  push(remote = 'origin', branch = 'master') {
+  push(remote = 'origin', branch = defaultBranch) {
     return new Promise(async (resolve, reject) => {
       try {
         const repoName = await getRepoNameInfo(this.dir, remote);
