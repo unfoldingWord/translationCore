@@ -27,7 +27,7 @@ describe('simple bubble up methods', () => {
 
   it('bubbles up init', () => {
     git.init(cb);
-    expect(mocks.init).toBeCalledWith(false, cb);
+    expect(mocks.init).toBeCalledWith(false, null, cb);
     expect(cb).toBeCalled();
   });
 
@@ -236,13 +236,13 @@ describe('checkout', () => {
   });
 
   test('with branch', () => {
-    git.checkout('branch', cb);
-    expect(mocks.checkout).toBeCalledWith('branch', cb);
+    git.checkout('branch', {}, cb);
+    expect(mocks.checkout).toBeCalledWith('branch', {}, cb);
     expect(cb).toBeCalled();
   });
 
   test('without branch', () => {
-    git.checkout(null, cb);
+    git.checkout(null, {}, cb);
     expect(mocks.checkout).not.toBeCalled();
     expect(cb).toBeCalledWith('No branch');
   });

@@ -17,9 +17,10 @@ export default function GitApi(directory) {
     /**
      * @description Initializes a git repository.
      * @param {function} callback - A callback to be run on complete.
+     * @param {array|object|null} options
      */
-    init: function (callback) {
-      git.init(false, callback);
+    init: function (callback, options = null) {
+      git.init(false, options, callback);
     },
     /**
      * @description Pulls in from a remote branch.
@@ -152,12 +153,18 @@ export default function GitApi(directory) {
     revparse: function (options, callback) {
       return git.revparse(options, callback);
     },
-    checkout: function (branch, callback) {
+    branchLocal: function (callback) {
+      return git.branchLocal(callback);
+    },
+    branch: function (options, callback) {
+      return git.branch(options, callback);
+    },
+    checkout: function (branch, options, callback) {
       if (!branch) {
         callback('No branch');
         return;
       }
-      git.checkout(branch, callback);
+      git.checkout(branch, options, callback);
     },
     remote: function (optionsArray, callback) {
       return git.remote(optionsArray, callback);

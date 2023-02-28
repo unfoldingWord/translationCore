@@ -329,7 +329,7 @@ export function setProjectBookIdAndBookName() {
     });
 
     if (bookId !== originalBookId) {
-      const repo = await Repo.open(projectSaveLocation, userdata);
+      const repo = await Repo.openSafe(projectSaveLocation, userdata);
       await repo.save('Saving new book id');
     }
   });
