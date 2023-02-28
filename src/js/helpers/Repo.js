@@ -758,7 +758,7 @@ export async function renameBranch(repoFolder, oldBranchName, newBranchName) {
  */
 export async function createNewBranch(repoFolder, branchName) {
   const repo = await Repo.open(repoFolder);
-  await repo.branch(['-c', branchName]); // copy current branch to new branch
+  await repo.branch([branchName]); // create new branch
   await repo.checkout(branchName); // change to new branch
 }
 
