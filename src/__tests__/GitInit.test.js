@@ -6,7 +6,6 @@ import Repo, {
   createNewBranch,
   getCurrentBranch,
   getDefaultBranch,
-  usingOlderVersion,
 } from '../js/helpers/Repo';
 import { defaultBranch } from '../js/common/constants';
 
@@ -37,7 +36,7 @@ describe('testing git branch operations', () => {
   });
 
   it('git should be installed', async () => {
-    const version = await getGitVersion();
+    const version = await Repo.gitVersion();
     console.log('git version:', version);
     expect(version.length > 5).toBeTruthy();
   });
@@ -45,6 +44,7 @@ describe('testing git branch operations', () => {
   it('git default init - should be error before first commit', async () => {
     await Repo.init(repoFolder);
     let { branch, noCommitsYet } = await getDefaultBranch(repoFolder);
+    const usingOlderVersion = Repo.usingOldGitVersion();
     const expectNoCommits = !usingOlderVersion; // will only see commits if we are using old git version - falls back code will do commit to set initial branch
     expect(noCommitsYet).toEqual(expectNoCommits);
     const expectDefaultBranch = usingOlderVersion ? defaultBranch : null;
@@ -109,12 +109,3 @@ describe('testing git branch operations', () => {
   });
 });
 
-const getGitVersion = () => new Promise((resolve, reject) => {
-  exec('git --version', (err, data) => {
-    if (err) {
-      reject(err);
-    } else {
-      resolve(data.trim());
-    }
-  });
-});

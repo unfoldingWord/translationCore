@@ -1,4 +1,5 @@
 /* eslint-disable no-async-promise-executor */
+import { exec } from 'child_process';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import { DCS_BASE_URL, defaultBranch } from '../common/constants';
@@ -28,7 +29,7 @@ export const NETWORK_ERROR_REMOTE_HUNG_UP = 'The remote end hung up';
 const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
 const projectRegExp = new RegExp(`^https?://${dcsHostname}/([^/]+)/([^/.]+)(\\.git)?$`);
 let doingSave = false;
-export let usingOlderVersion = false;
+let usingOlderVersion = false;
 
 /**
  * Checks if a string matches any of the expressions
@@ -107,6 +108,30 @@ export default class Repo {
   static isRepo(dir) {
     const gitPath = path.join(dir, '.git');
     return fs.pathExists(gitPath);
+  }
+
+  /**
+   * returns true if using an old version of git.  Useful for determining which features are supported
+   * @return {boolean}
+   */
+  static usingOldGitVersion() {
+    return usingOlderVersion;
+  }
+
+  /**
+   * function to read the version of git installed on the PC
+   * @return {Promise<string>}
+   */
+  static gitVersion() {
+    return new Promise( (resolve, reject) => {
+      exec('git --version', (err, data) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(data.trim());
+        }
+      });
+    });
   }
 
   /**
