@@ -17,6 +17,7 @@ export const GIT_ERROR_UNABLE_TO_CONNECT = 'Unable to connect to the server. Ple
 export const GIT_ERROR_PROJECT_NOT_FOUND = 'Project not found';
 export const GIT_ERROR_PUSH_NOT_FF = 'not a simple fast-forward';
 export const GIT_ERROR_REPO_ARCHIVED = 'repo is archived';
+export const GIT_ERROR_UNSUPPORTED_INITIAL_BRANCH = 'unsupported initial branch';
 export const GIT_ERROR_AMBIGUOUS_HEAD = 'ambiguous HEAD';
 export const NETWORK_ERROR_IP_ADDR_NOT_FOUND = 'ENOTFOUND';
 export const NETWORK_ERROR_TIMEOUT = 'connect ETIMEDOUT';
@@ -27,6 +28,7 @@ export const NETWORK_ERROR_REMOTE_HUNG_UP = 'The remote end hung up';
 const dcsHostname = (new URL(DCS_BASE_URL)).hostname;
 const projectRegExp = new RegExp(`^https?://${dcsHostname}/([^/]+)/([^/.]+)(\\.git)?$`);
 let doingSave = false;
+export let usingOlderVersion = false;
 
 /**
  * Checks if a string matches any of the expressions
@@ -197,16 +199,60 @@ export default class Repo {
   }
 
   /**
+   * Initializes a new repository with fallback if newer features are not supported
+   * @param {string} dir - the file path to the local repository
+   * @param {array|object|null} options
+   * @return {Promise<void>}
+   */
+  static async init(dir, options = null) {
+    try {
+      await Repo.initSub(dir, options);
+    } catch (err) {
+      if (!usingOlderVersion && err === GIT_ERROR_UNSUPPORTED_INITIAL_BRANCH ) {
+        console.log(`Repo.init() - older git init does not support setting default branch`);
+        usingOlderVersion = true;
+        await Repo.initSub(dir, options);
+      } else {
+        throw (err);
+      }
+    }
+  }
+
+  static async initSub(dir, options = null) {
+    const options_ = usingOlderVersion ? {} : options || { '--initial-branch': defaultBranch };
+    await Repo.initLowLevel(dir, options_);
+
+    if (usingOlderVersion) {
+      let { noCommitsYet } = await getDefaultBranch(dir);
+
+      if (noCommitsYet) { // make a commit so we can change branch name
+        console.log(`Repo.initSub() - no commits yet, so need to commit so we can identify current branch`);
+        const repo = await Repo.open(dir);
+        await repo.save('first save');
+        const defaultInitialBranch = options?.['--initial-branch'] || defaultBranch;
+        const currentBr = await getCurrentBranch(dir);
+        const currentBranch = currentBr.current;
+
+        if (defaultInitialBranch !== currentBranch) {
+          console.log(`Repo.initSub() - older git init and no commits yet, changing branch name from ${currentBranch} to ${defaultInitialBranch}`);
+          await renameBranch(dir, currentBranch, defaultInitialBranch);
+        }
+      }
+    }
+  }
+
+  /**
    * Initializes a new repository
    * @param {string} dir - the file path to the local repository
    * @param {array|object|null} options
    * @return {Promise<void>}
    */
-  static init(dir, options = null) {
+  static initLowLevel(dir, options = null) {
     const repo = GitApi(dir);
     return new Promise((resolve, reject) => {
       repo.init(err => {
         if (err) {
+          err = convertGitErrorMessage(err);
           console.warn('Repo.init() - ERROR', err);
           reject(err);
         } else {
@@ -563,7 +609,10 @@ export function convertGitErrorMessage(err, link) {
 
   let errMessage = GIT_ERROR_UNKNOWN_PROBLEM + ': ' + err; // default message
 
-  if (err.includes('ambiguous argument \'HEAD\'')) {
+  // 'unknown option `initial-branch=master'
+  if (err.includes('unknown option `initial-branch')) {
+    errMessage = GIT_ERROR_UNSUPPORTED_INITIAL_BRANCH;
+  } else if (err.includes('ambiguous argument \'HEAD\'')) {
     errMessage = GIT_ERROR_AMBIGUOUS_HEAD;
   } else if (err.includes('repo is archived')) {
     errMessage = GIT_ERROR_REPO_ARCHIVED;
@@ -774,6 +823,8 @@ export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
         const currentBr = await getCurrentBranch(repoFolder);
         success = currentBr.current === branchName;
       } else {
+        console.warn(`makeSureWeAreUsingBranch() - branch name needs to be renamed from ${currentBranch} to ${branchName}`);
+
         if (!saved) {
           // save changes before rename
           const repo = await Repo.open(repoFolder);

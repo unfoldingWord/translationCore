@@ -20,8 +20,7 @@ export default function GitApi(directory) {
      * @param {array|object|null} options
      */
     init: function (callback, options = null) {
-      const options_ = options || { '--initial-branch': defaultBranch };
-      git.init(false, options_, callback);
+      git.init(false, options, callback);
     },
     /**
      * @description Pulls in from a remote branch.

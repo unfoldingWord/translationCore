@@ -12,7 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // call system git to retrieve its version
-exec('git -v', (err, data) => {
+exec('git --version', (err, data) => {
   if (err) {
     console.error('System Git ERROR:', err);
   } else {

@@ -106,7 +106,7 @@ describe('testing git branch operations', () => {
 });
 
 const getGitVersion = () => new Promise((resolve, reject) => {
-  exec('git -v', (err, data) => {
+  exec('git --version', (err, data) => {
     if (err) {
       reject(err);
     } else {
