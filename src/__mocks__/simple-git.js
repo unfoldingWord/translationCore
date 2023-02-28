@@ -34,6 +34,9 @@ git.addRemote = jest.fn((name, repo, cb) => {
 git.branchLocal = jest.fn((cb) => {
   cb(null, { current: 'master' });
 });
+git.branch = jest.fn((options, cb) => {
+  cb(null, { current: 'master' });
+});
 git.getRemotes = jest.fn((verbose, cb) => {
   cb(false, []);
 });
