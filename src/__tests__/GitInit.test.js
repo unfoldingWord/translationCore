@@ -74,7 +74,7 @@ describe('testing git branch operations', () => {
   it('git openSafe with default of main - should rename to master branch', async () => {
     const expectedDefaultRepo = 'main';
     const expectedfinalRepo = 'master';
-    const repo = await Repo.openSafe(repoFolder, { '--initial-branch': expectedDefaultRepo });
+    const repo = await Repo.openSafe(repoFolder, {}, { '--initial-branch': expectedDefaultRepo });
     const currentBr = await getCurrentBranch(repoFolder);
     const currentBranch = currentBr.current;
     expect(repo).toBeTruthy();

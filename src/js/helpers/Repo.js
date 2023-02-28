@@ -769,7 +769,6 @@ export async function renameBranch(repoFolder, oldBranchName, newBranchName) {
 
       if (item === newBranchName) {
         exists = true;
-        break;
       }
     }
   } catch (e) {
@@ -778,6 +777,9 @@ export async function renameBranch(repoFolder, oldBranchName, newBranchName) {
 
   if (!exists) {
     console.warn(`renameBranch() - rename branch ${oldBranchName} to ${newBranchName} FAILED`);
+  } else {
+    // git branch --set-upstream-to <remote-branch>
+    await repo.branch(['--set-upstream-to', newBranchName]);
   }
   return {
     success: exists,
@@ -839,13 +841,13 @@ export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
     }
 
     if (currentBranch === branchName) {
-      console.log(`makeSureWeAreUsingBranch(${branchName} - already in this branch, nothing to do`);
+      console.log(`makeSureCurrentBranchHasName(${branchName} - already in this branch, nothing to do`);
       success = true;
     } else {
       let { exists } = await doesBranchExist(repoFolder, branchName);
 
       if (exists) {
-        console.warn(`makeSureWeAreUsingBranch(${branchName}) - already exists and is not current branch`);
+        console.warn(`makeSureCurrentBranchHasName(${branchName}) - already exists and is not current branch`);
 
         if (!saved) {
           const repo = await Repo.open(repoFolder);
@@ -858,7 +860,7 @@ export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
         const currentBr = await getCurrentBranch(repoFolder);
         success = currentBr.current === branchName;
       } else {
-        console.warn(`makeSureWeAreUsingBranch() - branch name needs to be renamed from ${currentBranch} to ${branchName}`);
+        console.warn(`makeSureCurrentBranchHasName() - branch name needs to be renamed from ${currentBranch} to ${branchName}`);
 
         if (!saved) {
           // save changes before rename
@@ -874,14 +876,14 @@ export async function makeSureCurrentBranchHasName(repoFolder, branchName) {
           let currentBr = await getCurrentBranch(repoFolder);
 
           if (currentBr.current !== branchName) {
-            console.error(`makeSureWeAreUsingBranch() - current branch should be ${branchName}, but is ${currentBr.current}`);
+            console.error(`makeSureCurrentBranchHasName() - current branch should be ${branchName}, but is ${currentBr.current}`);
             success = false;
           }
         }
       }
     }
   } catch (e) {
-    console.error(`makeSureWeAreUsingBranch() - ERROR renaming to ${branchName}`);
+    console.error(`makeSureCurrentBranchHasName() - ERROR renaming to ${branchName}`);
     success = false;
   }
   return {
