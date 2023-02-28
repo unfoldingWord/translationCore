@@ -199,30 +199,36 @@ export default class Repo {
   }
 
   /**
-   * Initializes a new repository with fallback if newer features are not supported
+   * Initializes a new repository with fallback to support for older git versions if newer features are not supported
    * @param {string} dir - the file path to the local repository
    * @param {array|object|null} options
    * @return {Promise<void>}
    */
   static async init(dir, options = null) {
     try {
-      await Repo.initSub(dir, options);
+      await Repo.initSub_(dir, options);
     } catch (err) {
       if (!usingOlderVersion && err === GIT_ERROR_UNSUPPORTED_INITIAL_BRANCH ) {
         console.log(`Repo.init() - older git init does not support setting default branch`);
         usingOlderVersion = true;
-        await Repo.initSub(dir, options);
+        await Repo.initSub_(dir, options);
       } else {
         throw (err);
       }
     }
   }
 
-  static async initSub(dir, options = null) {
-    const options_ = usingOlderVersion ? {} : options || { '--initial-branch': defaultBranch };
-    await Repo.initLowLevel(dir, options_);
+  /**
+   * init sub function that sets options based on initial branch features support by the git version
+   * @param {string} dir - the file path to the local repository
+   * @param {array|object|null} options
+   * @return {Promise<void>}
+   */
+  static async initSub_(dir, options = null) {
+    const options_ = usingOlderVersion ? {} : options || { '--initial-branch': defaultBranch }; // set options based on git version
+    await Repo.initLowLevel_(dir, options_);
 
-    if (usingOlderVersion) {
+    if (usingOlderVersion) { // use fallback code for older git versions
       let { noCommitsYet } = await getDefaultBranch(dir);
 
       if (noCommitsYet) { // make a commit so we can change branch name
@@ -242,12 +248,12 @@ export default class Repo {
   }
 
   /**
-   * Initializes a new repository
+   * low level function to Initialize a new repository
    * @param {string} dir - the file path to the local repository
    * @param {array|object|null} options
    * @return {Promise<void>}
    */
-  static initLowLevel(dir, options = null) {
+  static initLowLevel_(dir, options = null) {
     const repo = GitApi(dir);
     return new Promise((resolve, reject) => {
       repo.init(err => {
@@ -642,19 +648,19 @@ export function convertGitErrorMessage(err, link) {
  */
 export async function getDefaultBranch(repoFolder) {
   const repo = await Repo.open(repoFolder);
-  let results = null;
+  let branch = null;
   let error = null;
   let noCommitsYet = false;
 
   try {
     // git rev-parse --abbrev-ref HEAD
-    results = await repo.revParse([ '--abbrev-ref', 'HEAD' ]);
+    branch = await repo.revParse([ '--abbrev-ref', 'HEAD' ]);
   } catch (e) {
     error = e?.toString();
     noCommitsYet = error === GIT_ERROR_AMBIGUOUS_HEAD;
   }
   return {
-    results,
+    branch,
     error,
     noCommitsYet,
   };

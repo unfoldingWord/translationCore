@@ -6,7 +6,9 @@ import Repo, {
   createNewBranch,
   getCurrentBranch,
   getDefaultBranch,
+  usingOlderVersion,
 } from '../js/helpers/Repo';
+import { defaultBranch } from '../js/common/constants';
 
 jest.unmock('simple-git');
 jest.unmock('fs-extra');
@@ -42,19 +44,21 @@ describe('testing git branch operations', () => {
 
   it('git default init - should be error before first commit', async () => {
     await Repo.init(repoFolder);
-    let { results, noCommitsYet } = await getDefaultBranch(repoFolder);
-    expect(noCommitsYet).toBeTruthy();
-    expect(results).toEqual(null);
+    let { branch, noCommitsYet } = await getDefaultBranch(repoFolder);
+    const expectNoCommits = !usingOlderVersion; // will only see commits if we are using old git version - falls back code will do commit to set initial branch
+    expect(noCommitsYet).toEqual(expectNoCommits);
+    const expectDefaultBranch = usingOlderVersion ? defaultBranch : null;
+    expect(branch).toEqual(expectDefaultBranch);
   });
 
   it('git default init - should not be error after first commit', async () => {
     const expectedDefaultRepo = 'master';
     const repo = await Repo.open(repoFolder);
     await repo.save('testing first save');
-    let { results, noCommitsYet } = await getDefaultBranch(repoFolder);
+    let { branch, noCommitsYet } = await getDefaultBranch(repoFolder);
     expect(repo.dir).toEqual(repoFolder);
     expect(noCommitsYet).toBeFalsy();
-    expect(results).toEqual(expectedDefaultRepo);
+    expect(branch).toEqual(expectedDefaultRepo);
   });
 
   it('git init with default of main - should not be error after first commit', async () => {
@@ -62,10 +66,10 @@ describe('testing git branch operations', () => {
     await Repo.init(repoFolder, { '--initial-branch': expectedDefaultRepo });
     const repo = await Repo.open(repoFolder);
     await repo.save('testing first save');
-    let { results, noCommitsYet } = await getDefaultBranch(repoFolder);
+    let { branch, noCommitsYet } = await getDefaultBranch(repoFolder);
     expect(repo.dir).toEqual(repoFolder);
     expect(noCommitsYet).toBeFalsy();
-    expect(results).toEqual(expectedDefaultRepo);
+    expect(branch).toEqual(expectedDefaultRepo);
   });
 
   it('git openSafe with default of main - should rename to master branch', async () => {
