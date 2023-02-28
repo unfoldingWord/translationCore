@@ -1,4 +1,3 @@
-import { exec } from 'child_process';
 import fs from 'fs-extra';
 import path from 'path-extra';
 import ospath from 'ospath';
