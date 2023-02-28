@@ -453,8 +453,12 @@ export default class Repo {
       try {
         repo.revparse(options,(err, data) => {
           if (err) {
-            console.warn('Repo.revParse() - ERROR', err);
-            reject(convertGitErrorMessage(err));
+            err = convertGitErrorMessage(err);
+
+            if (err !== GIT_ERROR_AMBIGUOUS_HEAD) {
+              console.warn('Repo.revParse() - ERROR', err);
+            }
+            reject(err);
           } else {
             resolve(data);
           }
