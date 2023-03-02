@@ -3,7 +3,6 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import _ from 'lodash';
-import env from 'tc-electron-env';
 import { resourcesHelpers } from 'tc-source-content-updater';
 import SimpleCache from '../helpers/SimpleCache';
 import {
@@ -25,12 +24,12 @@ import {
   ORIGINAL_LANGUAGE,
   TARGET_BIBLE,
   TARGET_LANGUAGE,
+  USER_RESOURCES_PATH,
 } from '../common/constants';
 import * as SettingsActions from './SettingsActions';
 import consts from './ActionTypes';
 
 // constants
-const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 const bookCache = new SimpleCache();
 
 /**
@@ -442,15 +441,12 @@ export const loadBookTranslations = (bookId, toolName = null) => (dispatch, getS
 };
 
 /**
- * Loads the translations of the source book required by the tool.
- * @param {string} bookId - the id of the source book to load
- * @param {string} toolName - the name of the tool for which the translations will be loaded.
- * @returns {Function}
+ * Loads the resources that are not already loaded.
+ * @param {array} resources
+ * @param {string} bookId
+ * @returns {(function(*, *): void)|*}
  */
-export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getState) => {
-  dispatch(updateOrigLangPaneSettings(bookId));
-
-  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
+export const makeSureResourcesLoaded = (resources, bookId) => (dispatch, getState) => {
   const bibles = getBibles(getState());
   // Filter out bible resources that are already in the resources reducer
   const filteredResources = resources.filter(resource => {
@@ -465,6 +461,19 @@ export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getSt
     const resource = filteredResources[i];
     dispatch(loadBibleBook(resource.bibleId, bookId, resource.languageId, null, resource.owner));
   }
+};
+
+/**
+ * Loads the translations of the source book required by the tool.
+ * @param {string} bookId - the id of the source book to load
+ * @param {string} toolName - the name of the tool for which the translations will be loaded.
+ * @returns {Function}
+ */
+export const loadSourceBookTranslations = (bookId, toolName) => (dispatch, getState) => {
+  dispatch(updateOrigLangPaneSettings(bookId));
+
+  const resources = ResourcesHelpers.getResourcesNeededByTool(getState(), bookId, toolName);
+  dispatch(makeSureResourcesLoaded(resources, bookId));
 };
 
 /**

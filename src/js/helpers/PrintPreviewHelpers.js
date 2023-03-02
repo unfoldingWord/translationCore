@@ -33,13 +33,13 @@ function getUSfmFromProjectPath(projectPath) {
 
 export function doPrintPreview(projectPath) {
   return ((dispatch, getState) => new Promise((resolve, reject) => {
-    const PRINT_BUTTON = 'Print to PDF';
     let usfm;
     let alertMessage;
     let html;
     const translate = getTranslate(getState());
     const projectName = path.basename(projectPath);
     let previewWindow = null;
+    const PRINT_BUTTON = translate('buttons.print_to_pdf');
 
     try {
       dispatch(AlertModalActions.openAlertDialog('Rendering', true));
@@ -55,6 +55,7 @@ export function doPrintPreview(projectPath) {
         languageId={languageId}
         typeName={typeName}
         printImmediately={true}
+        translate={translate}
         projectFont={projectFont}
         onRefresh={(html_) => {
           console.log(`doPrintPreview() - Finished rendering to html: ${html_ && html_.substring(0, 200)}`); // TODO - limit text length

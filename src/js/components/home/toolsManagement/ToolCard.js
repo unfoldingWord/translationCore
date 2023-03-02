@@ -146,7 +146,7 @@ class ToolCard extends Component {
   selectionChange(selectedGL) {
     if (selectedGL && selectedGL.trim()) {
       const { owner, version: gl } = resourcesHelpers.splitVersionAndOwner(selectedGL.trim());
-      this.props.actions.setProjectToolGL(this.props.tool.name, gl, owner || DEFAULT_OWNER);
+      this.props.actions.setProjectToolGL(this.props.tool.name, gl, owner || DEFAULT_OWNER, this.props.bookId);
       this.setState({ selectedGL });
       this.loadProgress();
     }

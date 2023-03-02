@@ -5,11 +5,11 @@ import fs from 'fs-extra';
 import * as ProjectDetailsHelpers from '../js/helpers/ProjectDetailsHelpers';
 // constants
 import {
-  USER_RESOURCES_PATH,
-  PROJECT_INDEX_FOLDER_PATH,
   IMPORTS_PATH,
-  WORD_ALIGNMENT,
+  PROJECT_INDEX_FOLDER_PATH,
   TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
+  WORD_ALIGNMENT,
 } from '../js/common/constants';
 jest.mock('../js/helpers/Repo');
 jest.mock('material-ui/Checkbox');

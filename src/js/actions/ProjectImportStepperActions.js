@@ -2,8 +2,8 @@
 import path from 'path-extra';
 import { getTranslate, getProjectSaveLocation } from '../selectors';
 import { deleteProjectFromImportsFolder } from '../helpers/Import/ProjectImportFilesystemHelpers';
-import consts from './ActionTypes';
 // actions
+import { TC_PATH } from '../common/constants';
 import * as ProjectLoadingActions from './MyProjects/ProjectLoadingActions';
 import * as CopyrightCheckActions from './CopyrightCheckActions';
 import * as ProjectInformationCheckActions from './ProjectInformationCheckActions';
@@ -12,6 +12,7 @@ import * as MissingVersesActions from './MissingVersesActions';
 import * as MyProjectsActions from './MyProjects/MyProjectsActions';
 import * as AlertModalActions from './AlertModalActions';
 import * as ProjectImportStepperActions from './ProjectImportStepperActions';
+import consts from './ActionTypes';
 
 //Namespaces for each step to be referenced by
 const MERGE_CONFLICT_NAMESPACE = 'mergeConflictCheck';
@@ -195,7 +196,7 @@ export function cancelProjectValidationStepper() {
 export const confirmContinueOrCancelImportValidation = () => ((dispatch, getState) => {
   const translate = getTranslate(getState());
   const projectSaveLocation = getProjectSaveLocation(getState());
-  const isInProjectsFolder = projectSaveLocation.includes(path.join('translationCore', 'projects'));
+  const isInProjectsFolder = projectSaveLocation.includes(path.join(TC_PATH, 'projects'));
 
   if (isInProjectsFolder) {
     dispatch(cancelProjectValidationStepper());
