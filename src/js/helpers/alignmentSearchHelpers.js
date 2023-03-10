@@ -441,9 +441,24 @@ function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
 }
 
 /**
+ * search in field
+ * @param {string} field
+ * @param {object} tWordsIndex - contains index for tWords search
+ * @param {string} search - regex for search
+ * @param {string} flags - regex flags
+ * @param {array} found - add entries found to this array
+ */
+function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
+  const keys = Object.keys(tWordsIndex[field]);
+  const alignments = tWordsIndex[field];
+  const searchData = { keys, alignments };
+  searchAlignmentsAndAppend(search, flags, searchData, found);
+}
+
+/**
  * search one or more fields for searchStr and merge the match alignments together
  * @param {object} alignmentData - object that contains raw alignments and indices for search
- * @param {object} tWordsIndex
+ * @param {object} tWordsIndex - contains index for tWords search
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
  * @returns {*[]} - array of found alignments
@@ -454,24 +469,18 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
 
   if (config.searchTwords) {
     if (config.searchSource) {
-      const keys = Object.keys(tWordsIndex.quoteIndex);
-      const alignments = tWordsIndex.quoteIndex;
-      const searchData = { keys, alignments };
-      searchAlignmentsAndAppend(search, flags, searchData, found);
+      const field = 'quoteIndex';
+      searchAlignmentsForField(field, tWordsIndex, search, flags, found);
     }
 
     if (config.searchTarget) {
-      const keys = Object.keys(tWordsIndex.groupIndex);
-      const alignments = tWordsIndex.groupIndex;
-      const searchData = { keys, alignments };
-      searchAlignmentsAndAppend(search, flags, searchData, found);
+      const field = 'groupIndex';
+      searchAlignmentsForField(field, tWordsIndex, search, flags, found);
     }
 
     if (config.searchStrong) {
-      const keys = Object.keys(tWordsIndex.strongsIndex);
-      const alignments = tWordsIndex.strongsIndex;
-      const searchData = { keys, alignments };
-      searchAlignmentsAndAppend(search, flags, searchData, found);
+      const field = 'strongsIndex';
+      searchAlignmentsForField(field, tWordsIndex, search, flags, found);
     }
 
     const source = alignmentData.source.alignments;
