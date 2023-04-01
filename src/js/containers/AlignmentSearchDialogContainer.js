@@ -656,7 +656,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     let hidden = this.state.hide || {};
     hidden = Object.keys(hidden).map(key => hidden[key] && key).filter(i => i);
 
-    if (this.state.searchTwords || (hidden?.length && data?.length)) {
+    if (data?.length) {
       const mergedData = {};
       const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT, ALIGNED_TEXT, ALIGNED_TEXT2].filter(item => !hidden.includes(item));
 
@@ -1163,9 +1163,12 @@ class AlignmentSearchDialogContainer extends React.Component {
    * get twords index
    * @param {string} alignmentsKey - alignments key
    * @param {boolean} force - force index generation
+   * @param {boolean} secondAlignmentKey - if true then we load second alignments key
    */
-  loadTWordsIndex(alignmentsKey, force) {
-    if (this.state.searchTwords) {
+  loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
+    const stateKey = secondAlignmentKey ? 'tWordsIndex2' :'tWordsIndex';
+
+    if (alignmentsKey && this.state.searchTwords) {
       const resource = parseResourceKey(alignmentsKey);
       const res = addTwordsInfoToResource(resource, USER_RESOURCES_PATH);
 
@@ -1179,7 +1182,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       let tWordsIndex = getTwordsIndex(tWordsKey);
 
       if (tWordsIndex && !force) {
-        this.setState({ tWordsIndex });
+        this.setState({ [stateKey]: tWordsIndex });
       } else {
         const indexingMsg = 'Indexing translationWords:';
 
@@ -1189,7 +1192,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           console.log('tWords index finished');
           this.props.closeAlertDialog();
           saveTwordsIndex(tWordsKey, tWordsIndex);
-          this.setState({ tWordsIndex });
+          this.setState({ [stateKey]: tWordsIndex });
         });
       }
     }
