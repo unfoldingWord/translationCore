@@ -656,7 +656,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     let hidden = this.state.hide || {};
     hidden = Object.keys(hidden).map(key => hidden[key] && key).filter(i => i);
 
-    if (this.state.searchTwords || (hidden?.length && data?.length)) {
+    if (data?.length) {
       const mergedData = {};
       const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT, ALIGNED_TEXT, ALIGNED_TEXT2].filter(item => !hidden.includes(item));
 

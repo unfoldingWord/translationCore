@@ -30,7 +30,7 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex2';
+export const ALIGNMENTS_KEY = 'alignmentsIndex3';
 export const TWORDS_KEY = 'tWordsIndex';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
@@ -456,6 +456,41 @@ function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
 }
 
 /**
+ * combine multiple searches
+ * @param found
+ * @param foundMerged
+ * @returns {*[]}
+ */
+function mergeAlignmentMatches(found, foundMerged) {
+  function mergeKeys(mergedAlignment, merged, found_t, keys) {
+    for (const key of keys) {
+      mergedAlignment[key] = `${merged[key]} ; ${found_t[key]}`;
+    }
+  }
+
+  const matches = [];
+
+  for (const found_t of found) {
+    for (const merged of foundMerged) {
+      for (const ref of found_t.refs) {
+        for (const mRef of merged.refs) {
+          if (ref === mRef) {
+            const mergedAlignment = {
+              ...merged,
+              refs: [ref],
+            };
+            const mergeKeys_ = ['morph', 'sourceLemma', 'sourceText', 'strong', 'targetText'];
+            mergeKeys(mergedAlignment, merged, found_t, mergeKeys_);
+            matches.push(mergedAlignment);
+          }
+        }
+      }
+    }
+  }
+  return matches;
+}
+
+/**
  * search one or more fields for searchStr and merge the match alignments together
  * @param {object} alignmentData - object that contains raw alignments and indices for search
  * @param {object} tWordsIndex - contains index for tWords search
@@ -464,72 +499,89 @@ function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
  * @returns {*[]} - array of found alignments
  */
 export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, config) {
-  const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
-  let found = [];
+  let foundMerged = [];
+  const searchStrParts = searchStr.split(' ');
 
-  if (config.searchTwords) {
-    if (config.searchSource) {
-      const field = 'quoteIndex';
-      searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+  for (const searchStr of searchStrParts) { // do separate search for each word
+    if (!searchStr) {
+      continue;
     }
 
-    if (config.searchTarget) {
-      const field = 'groupIndex';
-      searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+    const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
+    let found = [];
+
+    if (config.searchTwords) {
+      if (config.searchSource) {
+        const field = 'quoteIndex';
+        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+      }
+
+      if (config.searchTarget) {
+        const field = 'groupIndex';
+        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+      }
+
+      if (config.searchStrong) {
+        const field = 'strongsIndex';
+        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+      }
+
+      const source = alignmentData.source.alignments;
+      const alignments = alignmentData.alignments;
+      const sourceKeys = Object.keys(source);
+
+      found = found?.map(index => {
+        const check = tWordsIndex.checks[index];
+        const contextId = check?.contextId;
+        const targetText = contextId?.groupId || '';
+        const sourceText = check?.quoteString || '';
+        const strong = check.strong;
+        const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
+
+        const newCheck = {
+          ...check,
+          targetText,
+          sourceText,
+          strong,
+          sourceLemma,
+          morph,
+        };
+
+        return newCheck;
+      });
+    } else {
+      if (config.searchTarget) {
+        searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
+      }
+
+      if (config.searchStrong) {
+        searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
+      }
+
+      if (config.searchLemma) {
+        searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
+      }
+
+      if (config.searchSource) {
+        searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
+      }
+
+      if (config.searchRefs) {
+        searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
+      }
+
+      found = found?.map(index => alignmentData.alignments[index]);
     }
 
-    if (config.searchStrong) {
-      const field = 'strongsIndex';
-      searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+    if (foundMerged?.length) {
+      const matches = mergeAlignmentMatches(found, foundMerged);
+      foundMerged = matches;
+    } else {
+      foundMerged = found;
     }
-
-    const source = alignmentData.source.alignments;
-    const alignments = alignmentData.alignments;
-    const sourceKeys = Object.keys(source);
-
-    found = found?.map(index => {
-      const check = tWordsIndex.checks[index];
-      const contextId = check?.contextId;
-      const targetText = contextId?.groupId || '';
-      const sourceText = check?.quoteString || '';
-      const strong = check.strong;
-      const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
-
-      const newCheck = {
-        ...check,
-        targetText,
-        sourceText,
-        strong,
-        sourceLemma,
-        morph,
-      };
-
-      return newCheck;
-    });
-  } else {
-    if (config.searchTarget) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
-    }
-
-    if (config.searchStrong) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
-    }
-
-    if (config.searchLemma) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
-    }
-
-    if (config.searchSource) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
-    }
-
-    if (config.searchRefs) {
-      searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
-    }
-
-    found = found?.map(index => alignmentData.alignments[index]);
   }
-  return found;
+
+  return foundMerged;
 }
 
 /**
@@ -902,16 +954,15 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
         }
 
         const sourceALignment = alignments_[sourceText];
-        let index;
+        let index = sourceALignment[targetText];
 
-        if (!sourceALignment[targetText]) {
+        if (!index) {
           alignment.refs = [ref];
           delete alignment.ref;
           index = uniqueAlignments.length;
           uniqueAlignments.push(alignment);
           sourceALignment[targetText] = [index];
         } else {
-          index = sourceALignment[targetText];
           const matchedAlignment = uniqueAlignments[index];
           matchedAlignment.refs.push(ref);
         }
@@ -1018,14 +1069,49 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
 /**
  * append an alignment to alignments
  * @param alignments
- * @param sourceText
+ * @param text
  * @param alignment
  */
-function appendToALignmentIndex(alignments, sourceText, alignment) {
-  if (!alignments[sourceText]) {
-    alignments[sourceText] = [];
+function appendToALignmentIndex(alignments, text, alignment) {
+  if (!alignments[text]) {
+    alignments[text] = [];
   }
-  alignments[sourceText].push(alignment);
+  alignments[text].push(alignment);
+}
+
+/**
+ * add position in verse to the word objects
+ * @param {array} foundWords - array to fill with found word
+ * @param {object[]} verseObjects
+ * @param {number} pos
+ * @returns {*}
+ */
+function addPosition(foundWords, verseObjects, pos) {
+  for (const vo of verseObjects) {
+    if (vo.type === 'word') {
+      vo.pos = pos++;
+      foundWords.push(vo);
+    }
+
+    if (vo.children) {
+      pos = addPosition(foundWords, vo.children, pos);
+    }
+  }
+  return pos;
+}
+
+function addUnalignedWords(words, bookAlignments, verseRef, reference) {
+  for (const word of words) {
+    bookAlignments.push({
+      sourceText: '',
+      sourceLemma: '',
+      strong: '',
+      morph: '',
+      targetText: word.word || word.text,
+      ref: verseRef,
+      reference,
+    });
+  }
 }
 
 /**
@@ -1040,77 +1126,68 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
     const chaptersObject = parsedUsfm.chapters;
     const bookId = manifest?.project?.id || selectedProjectFilename;
     const bookAlignments = [];
+    const chapters = Object.keys(chaptersObject);
 
-    Object.keys(chaptersObject).forEach((chapter) => {
+    for (const chapter of chapters) {
       const bibleChapter = {};
       const verses = Object.keys(chaptersObject[chapter]);
       const chapterRef = `${bookId} ${chapter}:`;
 
-      // check if chapter has alignment data
-      const alignmentIndex = verses.findIndex(verse => {
-        const verseParts = chaptersObject[chapter][verse];
-        let alignmentData = false;
-
-        for (let part of verseParts.verseObjects) {
-          if (part.type === 'milestone') {
-            alignmentData = true;
-            break;
-          }
-        }
-        return alignmentData;
-      });
-      const alignmentData = (alignmentIndex >= 0);
-
-      if (!alignmentData) {
-        return;
-      }
-
-      verses.forEach((verse) => {
+      for (const verse of verses) {
         const verseRef = `${chapterRef}${verse}`;
         const verseParts = chaptersObject[chapter][verse];
+        const foundWords = [];
+        addPosition(foundWords, verseParts.verseObjects, 0);
         let verseText = getUsfmForVerseContent(verseParts);
         bibleChapter[verse] = trimNewLine(verseText);
+        const object = wordaligner.unmerge(verseParts);
 
-        if (alignmentData) {
-          const object = wordaligner.unmerge(verseParts);
+        for (const alignment of object.alignment) {
+          const strongs = [];
+          const lemmas = [];
+          const targets = [];
+          const targetsPos = [];
+          const sources = [];
+          const morphs = [];
 
-          for (const alignment of object.alignment) {
-            const strongs = [];
-            const lemmas = [];
-            const targets = [];
-            const sources = [];
-            const morphs = [];
-
-            for (const originalWord of alignment.topWords) {
-              const {
-                strong,
-                lemma,
-                word,
-                morph,
-              } = originalWord;
-              strongs.push(strong);
-              lemmas.push(lemma);
-              sources.push(word);
-              morphs.push(morph);
-            }
-
-            for (const targetWord of alignment.bottomWords) {
-              targets.push(targetWord.word);
-            }
-            bookAlignments.push({
-              sourceText: normalizer(sources.join(' ')),
-              sourceLemma: normalizer(lemmas.join(' ')),
-              strong: strongs.join(' '),
-              morph: morphs.join(' '),
-              targetText: normalizer(targets.join(' ')),
-              ref: verseRef,
-              // eslint-disable-next-line object-curly-newline
-              reference: { bookId, chapter, verse },
-            });
+          for (const originalWord of alignment.topWords) {
+            const {
+              strong,
+              lemma,
+              word,
+              morph,
+            } = originalWord;
+            strongs.push(strong);
+            lemmas.push(lemma);
+            sources.push(word);
+            morphs.push(morph);
           }
+
+          for (const targetWord of alignment.bottomWords) {
+            targets.push(targetWord.word);
+            targetsPos.push(`${targetWord.pos}`);
+          }
+          bookAlignments.push({
+            sourceText: normalizer(sources.join(' ')),
+            sourceLemma: normalizer(lemmas.join(' ')),
+            strong: strongs.join(' '),
+            morph: morphs.join(' '),
+            targetText: normalizer(targets.join(' ')),
+            targetsPos: targetsPos.join(' '),
+            ref: verseRef,
+            // eslint-disable-next-line object-curly-newline
+            reference: { bookId, chapter, verse },
+          });
         }
-      });
-    });
+
+        if (object.wordBank?.length) {
+          const words = object.wordBank;
+          // eslint-disable-next-line object-curly-newline
+          const reference = { bookId, chapter, verse };
+          addUnalignedWords(words, bookAlignments, verseRef, reference);
+        }
+      }
+    }
 
     console.log(`getALignmentsFromJson() for book ${bookId}, ${bookAlignments.length} alignments`);
     return bookAlignments;
@@ -1312,11 +1389,11 @@ export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
  * @param {array} verseChunks
  */
 function convertVerseChunksToUSFM(verseChunks) {
-  verseChunks.forEach(chunk => {
+  for (const chunk of verseChunks) {
     if (typeof chunk.verseData !== 'string') {
       chunk.verseData = getUsfmForVerseContent(chunk.verseData);
     }
-  });
+  }
 }
 
 /**
@@ -1815,7 +1892,7 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
     return words;
   }
 
-  found.forEach(item => {
+  for (const item of found) {
     const contextId = item?.contextId;
     const reference = contextId?.reference;
     const ref = `${reference?.bookId} ${reference?.chapter}:${reference?.verse}`;
@@ -1827,6 +1904,5 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
       const alignedText = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
       item[saveAlignmentsKey] = alignedText.join(' ');
     }
-  });
+  }
 }
-
