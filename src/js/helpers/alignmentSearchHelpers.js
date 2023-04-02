@@ -590,7 +590,7 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, lastSearch, currentS
 /**
  * search one or more fields for searchStr and merge the match alignments together
  * @param {object} alignmentData - object that contains raw alignments and indices for search
- * @param {object} tWordsIndex - contains index for tWords search
+ * @param {object} tWordsIndex
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
  * @returns {*[]} - array of found alignments
@@ -608,11 +608,13 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
     const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
     let found = [];
 
-    if (config.searchTwords) {
-      if (config.searchSource) {
-        const field = 'quoteIndex';
-        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
-      }
+  if (config.searchTwords) {
+    if (config.searchSource) {
+      const keys = Object.keys(tWordsIndex.quoteIndex);
+      const alignments = tWordsIndex.quoteIndex;
+      const searchData = { keys, alignments };
+      searchAlignmentsAndAppend(search, flags, searchData, found);
+    }
 
       if (config.searchTarget) {
         const field = 'groupIndex';
