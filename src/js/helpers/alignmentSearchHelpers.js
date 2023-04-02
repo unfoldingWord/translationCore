@@ -30,7 +30,7 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex3';
+export const ALIGNMENTS_KEY = 'alignmentsIndex4';
 export const TWORDS_KEY = 'tWordsIndex';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
@@ -147,6 +147,19 @@ export function regexSearch(keys, searchStr, flags) {
   }
 
   return found;
+}
+
+/**
+ * do regex to see if text is match for searchStr/flags
+ * @param {string} text
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags for searching
+ * @returns {*[]}
+ */
+export function isMatch(text, searchStr, flags) {
+  const regex = xre(searchStr, flags);
+  const results = regex.test(text);
+  return results;
 }
 
 /**
@@ -455,13 +468,72 @@ function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
   searchAlignmentsAndAppend(search, flags, searchData, found);
 }
 
+function arePositionsAdjacent(fTPos, fmtPos) {
+  const positions = fmtPos && fmtPos.split(' ');
+  const lastPos = positions && positions[positions.length - 1];
+  const mPositions = fTPos && fTPos.split(' ');
+  const firstMPos = mPositions?.[0];
+
+  // noinspection EqualityComparisonWithCoercionJS
+  const adjacentAlignments = parseInt(lastPos) + 1 == firstMPos;
+  return {
+    positions,
+    firstMPos,
+    adjacentAlignments,
+  };
+}
+
+function areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged) {
+  let foundMatch = false;
+  let mTargetText = merged.targetText && merged.targetText.split(' ; ');
+  const lastText = mTargetText && mTargetText[mTargetText.length - 1];
+  mTargetText = lastText && lastText.split(' ');
+  mTargetText = mTargetText && mTargetText[mTargetText.length - 1];
+
+  if (mTargetText && isMatch(mTargetText, lastSearch, flags)) {
+    let targetText = found_t.targetText && found_t.targetText.split(' ; ');
+    const firstText = targetText && targetText[0];
+    targetText = firstText && firstText.split(' ')?.[0];
+    foundMatch = (targetText && isMatch(targetText, currentSearch, flags));
+  }
+  return foundMatch;
+}
+
+function areWordsAdjacentInTarget(positions, firstMPos, found_t, lastSearch, flags, currentSearch) {
+  let foundMatch = false;
+  const firstPos = positions[0];
+
+  // noinspection EqualityComparisonWithCoercionJS
+  if (firstMPos === firstPos) { // if both words in same alignment, check if adjacent
+    let targetWords = found_t.targetText && found_t.targetText.split(' ; ');
+    const lastTargetWords = targetWords && targetWords[targetWords.length - 1];
+    targetWords = lastTargetWords && lastTargetWords.split(' ');
+
+    for (let k = 0, l3 = (targetWords?.length || 0) - 1; k < l3; k++) {
+      const targetWord = targetWords[k];
+
+      if (isMatch(targetWord, lastSearch, flags)) {
+        if (isMatch(targetWords[k + 1], currentSearch, flags)) {
+          foundMatch = true;
+          break;
+        }
+      }
+    }
+  }
+  return foundMatch;
+}
+
 /**
  * combine multiple searches
- * @param found
- * @param foundMerged
+ * @param {object[]} found
+ * @param {object[]} foundMerged
+ * @param {boolean} inOrder
+ * @param {string} lastSearch
+ * @param {string} currentSearch
+ * @param {string} flags - regex flag
  * @returns {*[]}
  */
-function mergeAlignmentMatches(found, foundMerged) {
+function mergeAlignmentMatches(found, foundMerged, inOrder, lastSearch, currentSearch, flags ) {
   function mergeKeys(mergedAlignment, merged, found_t, keys) {
     for (const key of keys) {
       mergedAlignment[key] = `${merged[key]} ; ${found_t[key]}`;
@@ -472,9 +544,34 @@ function mergeAlignmentMatches(found, foundMerged) {
 
   for (const found_t of found) {
     for (const merged of foundMerged) {
-      for (const ref of found_t.refs) {
-        for (const mRef of merged.refs) {
+      for (let i = 0, l = found_t.refs.length; i < l; i++) {
+        const ref = found_t.refs[i];
+
+        for (let j = 0, l2 = merged.refs.length; j < l2; j++) {
+          const mRef = merged.refs[j];
+
           if (ref === mRef) {
+            if (inOrder) {
+              let foundMatch = false; // not certain yet if they are adjacent
+              const fTPos = found_t.targetsPos[i];
+              const fmtPos = merged.targetsPos[j];
+              const {
+                positions,
+                firstMPos,
+                adjacentAlignments,
+              } = arePositionsAdjacent(fTPos, fmtPos);
+
+              if (adjacentAlignments) {
+                foundMatch = areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged);
+              } else { // if not in order then may not be right match, try checking if both words are in same alignmnet string
+                foundMatch = areWordsAdjacentInTarget(positions, firstMPos, found_t, lastSearch, flags, currentSearch);
+              }
+
+              if (!foundMatch) { // skip if not a match
+                continue;
+              }
+            }
+
             const mergedAlignment = {
               ...merged,
               refs: [ref],
@@ -501,6 +598,7 @@ function mergeAlignmentMatches(found, foundMerged) {
 export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, config) {
   let foundMerged = [];
   const searchStrParts = searchStr.split(' ');
+  let lastSearch = null;
 
   for (const searchStr of searchStrParts) { // do separate search for each word
     if (!searchStr) {
@@ -574,11 +672,13 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
     }
 
     if (foundMerged?.length) {
-      const matches = mergeAlignmentMatches(found, foundMerged);
+      const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, lastSearch, search, flags);
       foundMerged = matches;
     } else {
       foundMerged = found;
     }
+
+    lastSearch = search;
   }
 
   return foundMerged;
@@ -958,6 +1058,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
 
         if (!index) {
           alignment.refs = [ref];
+          alignment.targetsPos = [alignment.targetsPos];
           delete alignment.ref;
           index = uniqueAlignments.length;
           uniqueAlignments.push(alignment);
@@ -965,6 +1066,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
         } else {
           const matchedAlignment = uniqueAlignments[index];
           matchedAlignment.refs.push(ref);
+          matchedAlignment.targetsPos.push(alignment.targetsPos);
         }
 
         let bookIndex = bibleIndex[r_.bookId];
@@ -1110,6 +1212,7 @@ function addUnalignedWords(words, bookAlignments, verseRef, reference) {
       targetText: word.word || word.text,
       ref: verseRef,
       reference,
+      targetsPos: `${word.pos}`,
     });
   }
 }
