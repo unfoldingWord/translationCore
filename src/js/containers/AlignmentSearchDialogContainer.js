@@ -160,6 +160,7 @@ const REFERENCES_LABEL = 'References Column';
 // const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
+const SEARCH_MATCH_WORDS_IN_ORDER = 'search_match_words_in_order';
 const SEARCH_HIDE_USFM = 'search_hide_usfm';
 const SEARCH_TWORDS = 'search_twords';
 const SEARCH_MASTER = 'search_master';
@@ -168,6 +169,7 @@ const CLEAR_INDEX_DATA = 'clear_index_data';
 
 const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
 const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
+const SEARCH_MATCH_WORDS_IN_ORDER_LABEL = 'Match Multiple Words in Order';
 const SEARCH_HIDE_USFM_LABEL = 'Hide USFM Markers';
 const SEARCH_TWORDS_LABEL = 'Search Translation Words';
 const SEARCH_MASTER_LABEL = 'Search Master Branch';
@@ -184,6 +186,11 @@ const searchOptions = [
     key: SEARCH_MATCH_WHOLE_WORD,
     label: SEARCH_MATCH_WHOLE_WORD_LABEL,
     stateKey: 'matchWholeWord',
+  },
+  {
+    key: SEARCH_MATCH_WORDS_IN_ORDER,
+    label: SEARCH_MATCH_WORDS_IN_ORDER_LABEL,
+    stateKey: 'inOrder',
   },
   {
     key: SEARCH_TWORDS,
@@ -275,6 +282,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       found: null,
       alignedBibles: [],
       alignedBible: null,
+      inOrder: false,
       hide: {},
     };
     this.setSearchStr = this.setSearchStr.bind(this);
@@ -1438,6 +1446,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       const searchTwords = state.searchTwords;
       const config = {
         fullWord: state.matchWholeWord,
+        inOrder: state.inOrder,
         caseInsensitive: !state.caseSensitive,
         searchTwords,
         searchLemma: !searchTwords && this.isSearchFieldSelected(SEARCH_LEMMA),
