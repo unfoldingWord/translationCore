@@ -468,6 +468,12 @@ function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
   searchAlignmentsAndAppend(search, flags, searchData, found);
 }
 
+/**
+ * make sure that words in the current match follow the words in the previous match
+ * @param {string} fTPos - for current match - all positions of target text separated by spaces
+ * @param {string} fmtPos - for previous match - all positions of target text separated by spaces
+ * @returns {{positions: *, firstMPos: *, adjacentAlignments: boolean}}
+ */
 function arePositionsAdjacent(fTPos, fmtPos) {
   const positions = fmtPos && fmtPos.split(' ');
   const lastPos = positions && positions[positions.length - 1];
@@ -483,6 +489,17 @@ function arePositionsAdjacent(fTPos, fmtPos) {
   };
 }
 
+/**
+ * when comparing word found in previous alignment with current alignment, make sure the previous
+ *   alignment ends with the previous word searched for and the current alignment begins with the
+ *   current word searched for
+ * @param {object} found_t - alignment we are testing for match with merged word
+ * @param {string} lastSearch - (xre string)
+ * @param {string} flags
+ * @param {string} currentSearch (xre string)
+ * @param {object} merged - previously found alignment
+ * @returns {boolean}
+ */
 function areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged) {
   let foundMatch = false;
   let mTargetText = merged.targetText && merged.targetText.split(' ; ');
@@ -499,7 +516,16 @@ function areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged) {
   return foundMatch;
 }
 
-function areWordsAdjacentInTarget(positions, firstMPos, found_t, lastSearch, flags, currentSearch) {
+/**
+ * make sure all the words being search for are in consecutive order
+ * @param {string[]} positions - of the words in the verse
+ * @param {string} firstMPos - beginning position of merged word
+ * @param {object} found_t - alignment we are testing for match with merged word
+ * @param {string[]} allSearches - all the searches to match in order (xre string)
+ * @param {string} flags - xre flags for search
+ * @returns {boolean}
+ */
+function areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, flags) {
   let foundMatch = false;
   const firstPos = positions[0];
 
@@ -508,15 +534,32 @@ function areWordsAdjacentInTarget(positions, firstMPos, found_t, lastSearch, fla
     let targetWords = found_t.targetText && found_t.targetText.split(' ; ');
     const lastTargetWords = targetWords && targetWords[targetWords.length - 1];
     targetWords = lastTargetWords && lastTargetWords.split(' ');
+    const searchesLength = allSearches.length;
+    const l = targetWords?.length;
 
-    for (let k = 0, l3 = (targetWords?.length || 0) - 1; k < l3; k++) {
-      const targetWord = targetWords[k];
+    for (let i = l - 1; i >= 0; i--) {
+      foundMatch = false;
 
-      if (isMatch(targetWord, lastSearch, flags)) {
-        if (isMatch(targetWords[k + 1], currentSearch, flags)) {
-          foundMatch = true;
+      for (let k = 0; k < searchesLength; k++) {
+        const currentSearch = allSearches[searchesLength - 1 - k]; // starting at end
+        const testIndex = i - k;
+
+        if (testIndex < 0) { // we hit the end
+          foundMatch = k >= 2; // as long as we match at least two words starting at beginning
           break;
         }
+
+        const targetWord = targetWords[testIndex];
+
+        if (!isMatch(targetWord, currentSearch, flags)) {
+          foundMatch = false;
+          break;
+        }
+        foundMatch = true;
+      }
+
+      if (foundMatch) {
+        break;
       }
     }
   }
@@ -528,19 +571,26 @@ function areWordsAdjacentInTarget(positions, firstMPos, found_t, lastSearch, fla
  * @param {object[]} found
  * @param {object[]} foundMerged
  * @param {boolean} inOrder
- * @param {string} lastSearch
+ * @param {string[]} previousSearches
  * @param {string} currentSearch
  * @param {string} flags - regex flag
  * @returns {*[]}
  */
-function mergeAlignmentMatches(found, foundMerged, inOrder, lastSearch, currentSearch, flags ) {
+function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, currentSearch, flags ) {
   function mergeKeys(mergedAlignment, merged, found_t, keys) {
     for (const key of keys) {
       mergedAlignment[key] = `${merged[key]} ; ${found_t[key]}`;
     }
   }
 
+  const lastSearch = previousSearches && previousSearches.length && previousSearches[previousSearches.length - 1];
+
+  if (!lastSearch) {
+    return found;
+  }
+
   const matches = [];
+  const allSearches = previousSearches.concat(currentSearch);
 
   for (const found_t of found) {
     for (const merged of foundMerged) {
@@ -564,7 +614,7 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, lastSearch, currentS
               if (adjacentAlignments) {
                 foundMatch = areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged);
               } else { // if not in order then may not be right match, try checking if both words are in same alignmnet string
-                foundMatch = areWordsAdjacentInTarget(positions, firstMPos, found_t, lastSearch, flags, currentSearch);
+                foundMatch = areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, flags);
               }
 
               if (!foundMatch) { // skip if not a match
@@ -572,9 +622,11 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, lastSearch, currentS
               }
             }
 
+            const targetsPosForMatch = found_t.targetsPos[i];
             const mergedAlignment = {
               ...merged,
               refs: [ref],
+              targetsPos: [targetsPosForMatch],
             };
             const mergeKeys_ = ['morph', 'sourceLemma', 'sourceText', 'strong', 'targetText'];
             mergeKeys(mergedAlignment, merged, found_t, mergeKeys_);
@@ -598,7 +650,7 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, lastSearch, currentS
 export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, config) {
   let foundMerged = [];
   const searchStrParts = searchStr.split(' ');
-  let lastSearch = null;
+  let previousSearches = [];
 
   for (const searchStr of searchStrParts) { // do separate search for each word
     if (!searchStr) {
@@ -672,13 +724,13 @@ export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, con
     }
 
     if (foundMerged?.length) {
-      const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, lastSearch, search, flags);
+      const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, previousSearches, search, flags);
       foundMerged = matches;
     } else {
       foundMerged = found;
     }
 
-    lastSearch = search;
+    previousSearches.push(search);
   }
 
   return foundMerged;
