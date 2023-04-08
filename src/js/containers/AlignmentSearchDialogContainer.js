@@ -289,8 +289,11 @@ class AlignmentSearchDialogContainer extends React.Component {
       found: null,
       alignedBibles: [],
       alignedBible: null,
+      alignedBible2: null,
+      alignmentData2: null,
       inOrder: false,
       hide: {},
+      dualSearch: false,
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
@@ -1261,12 +1264,12 @@ class AlignmentSearchDialogContainer extends React.Component {
     const searchType = [];
     // hide = this.state?.hide || {};
 
-    for (const item of showMenuItems) {
+    for (const item of showMenuItems) { // see what columns to display
       const selected = this.isItemPresent(values, item.key);
       hide[item.key] = !selected;
     }
 
-    for (const item of this.getSearchFieldOptions()) {
+    for (const item of this.getSearchFieldOptions()) { // see what fields to search
       const selected = this.isItemPresent(values, item);
 
       if (selected) {
@@ -1282,6 +1285,12 @@ class AlignmentSearchDialogContainer extends React.Component {
       const selected = this.isItemPresent(values, item.key);
       basicOptions[searchOption.stateKey] = selected;
     });
+
+    if (values.includes(SEARCH_DUAL) && !this.state.dualSearch) { // if toggling on dual search
+      // on toggle on of dual search, clear any previous bible 2 selections
+      basicOptions.alignedBible2 = null;
+      basicOptions.alignmentData2 = null;
+    }
 
     if (values.includes(SEARCH_MASTER) && !this.state.searchMaster) { // if toggling on searching of master branch
       this.loadAlignmentSearchOptions(true); // update the list first
@@ -1374,7 +1383,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       const resource = bibleKey && parseResourceKey(bibleKey);
 
       if (resource ) {
-        if (bibleKey === this.state.alignedBible) {
+        if ((bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2)) {
           resource.isPrimarySearchBible = true;
         }
         resource.version = 'master';
@@ -1392,7 +1401,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
     if (!resources.length) { // we didn't need to download, but make sure alignments selected
       for (const bibleKey of bibles) {
-        this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible));
+        this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
       }
       return;
     }
@@ -1450,6 +1459,7 @@ class AlignmentSearchDialogContainer extends React.Component {
   handleClose() {
     this.setState({
       alignmentData: null,
+      alignmentData2: null,
       alignedBibles: null,
       tWordsIndex: null,
       found: null,
