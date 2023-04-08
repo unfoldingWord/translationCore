@@ -158,6 +158,7 @@ const TARGET_TEXT_LABEL = 'Target Text Column';
 const MATCH_COUNT_LABEL = 'Match Count Column';
 const REFERENCES_LABEL = 'References Column';
 // const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
+const SEARCH_DUAL = 'search_dual';
 const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
 const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
 const SEARCH_MATCH_WORDS_IN_ORDER = 'search_match_words_in_order';
@@ -167,6 +168,7 @@ const SEARCH_MASTER = 'search_master';
 const REFRESH_MASTER = 'refresh_master';
 const CLEAR_INDEX_DATA = 'clear_index_data';
 
+const SEARCH_DUAL_LABEL = 'Dual Repo Searching';
 const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
 const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
 const SEARCH_MATCH_WORDS_IN_ORDER_LABEL = 'Match Multiple Words in Order';
@@ -196,6 +198,11 @@ const searchOptions = [
     key: SEARCH_TWORDS,
     label: SEARCH_TWORDS_LABEL,
     stateKey: 'searchTwords',
+  },
+  {
+    key: SEARCH_DUAL,
+    label: SEARCH_DUAL_LABEL,
+    stateKey: 'dualSearch',
   },
   {
     key: SEARCH_HIDE_USFM,
@@ -415,8 +422,9 @@ class AlignmentSearchDialogContainer extends React.Component {
    *    loaded for searching
    * @param {string} selectedBibleKey
    * @param {function} callback - when finished
+   * @param {number} searchNum - if number is two, then load for second search
    */
-  loadAlignmentData(selectedBibleKey, callback = null) {
+  loadAlignmentData(selectedBibleKey, callback = null, searchNum = 1) {
     if (selectedBibleKey) {
       console.log(`loadAlignmentData() - loading index for '${selectedBibleKey}'`);
       this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
@@ -436,7 +444,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               resource.alignmentCount = alignmentData?.alignments?.length;
               this.setState({ alignedBibles: this.state.alignedBibles });
               await this.showMessage('Doing one-time indexing of Bible for Search', true);
-              const success = this.loadIndexedAlignmentData(resource);
+              const success = this.loadIndexedAlignmentData(resource, searchNum);
               callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
             } else {
               console.error(`loadAlignmentData() - no alignments for ${selectedBibleKey}`);
@@ -444,7 +452,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             }
           } else {
             console.log(`loadAlignmentData() loaded cached alignment index for ${selectedBibleKey}`);
-            const success = this.loadIndexedAlignmentData(resource);
+            const success = this.loadIndexedAlignmentData(resource, searchNum);
             callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
           }
         } else {
@@ -503,9 +511,12 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * loads the indexed alignment data for resource and saves in state
    * @param {object} resource
+   * @param {number} searchNum - if number is two, then load for second search
    * @return {boolean} true if success
    */
-  loadIndexedAlignmentData(resource) {
+  loadIndexedAlignmentData(resource, searchNum = 1) {
+    const alignmentKey = (searchNum === 2) ? 'alignmentData2' : 'alignmentData';
+
     try {
       // check alignment data folder for indexed search data
       const resourcesIndexed = readDirectory(ALIGNMENT_DATA_PATH, false, true, '.json');
@@ -521,7 +532,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       if (alignmentData) {
         console.log('loadIndexedAlignmentData() - loaded alignment data');
         this.setState({
-          alignmentData,
+          [alignmentKey]: alignmentData,
           found: null,
         });
         return true;
@@ -1080,8 +1091,8 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @returns {[string]}
    */
   ignoreBooksForTestament() {
-    const ignoreBooks_ = this.state?.ignore || [];
-    const testament = this.state?.books || [];
+    let ignoreBooks_ = this.state?.ignore || [];
+    let testament = this.state?.books || [];
     const ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
     return ignoreBooks;
   }
@@ -1111,16 +1122,25 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} value - new selection
    */
   setSearchAlignedBible2(event, index, value) {
-    this.setState( { alignedBible2: value });
-    value && this.state.searchMaster && delay(100).then(() => this.downloadMasterIfMissing());
+    if (this.state.searchMaster) {
+      this.setState({ alignedBible2: value });
+      value && this.state.searchMaster && delay(100).then(() => {
+        this.downloadMasterIfMissing();
+        this.selectAlignedBookToSearch(value, 2);
+      });
+    } else {
+      this.selectAlignedBookToSearch(value, 2);
+    }
   }
 
   /**
    * select book and testament
    * @param {string} key
+   * @param {number} searchNum - if number is two, then load for second search
    */
-  selectAlignedBookToSearch(key) {
-    console.log(`selectAlignedBookToSearch(${key})`);
+  selectAlignedBookToSearch(key, searchNum = 1) {
+    console.log(`selectAlignedBookToSearch(${key}) for ${searchNum}`);
+    const alignmentKey = (searchNum === 2) ? 'alignedBible2' : 'alignedBible';
 
     if (key) {
       this.loadAlignmentData(key, (success, errorMessage) => {
@@ -1133,7 +1153,10 @@ class AlignmentSearchDialogContainer extends React.Component {
           let ignoreBooks = null;
           const isNT = origLang === NT_ORIG_LANG;
 
-          if (isNT) {
+          if (this.state.dualSearch) {
+            books = [...OT_BOOKS, ...NT_BOOKS];
+            ignoreBooks = [];
+          } else if (isNT) {
             books = NT_BOOKS;
             ignoreBooks = OT_BOOKS;
           } else {
@@ -1143,7 +1166,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
           console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
           this.setState({
-            alignedBible: key,
+            [alignmentKey]: key,
             books,
             ignoreBooks,
             isNT,
@@ -1158,7 +1181,7 @@ class AlignmentSearchDialogContainer extends React.Component {
             this.props.openAlertDialog(errorMessage);
           }
         }
-      });
+      }, searchNum);
     }
   }
 
@@ -1341,7 +1364,8 @@ class AlignmentSearchDialogContainer extends React.Component {
     const resources = [];
     const bibles = [this.state.alignedBible];
 
-    if (this.state.searchTwords && this.state.alignedBible2 && (this.state.alignedBible !== this.state.alignedBible2)) {
+    if (this.state.alignedBible2 && (this.state.searchTwords || this.state.dualSearch)
+      && (this.state.alignedBible !== this.state.alignedBible2)) {
       bibles.push(this.state.alignedBible2);
     }
 
@@ -1456,9 +1480,10 @@ class AlignmentSearchDialogContainer extends React.Component {
         searchRefs: !searchTwords && this.isSearchFieldSelected(SEARCH_REFS),
       };
       let found = [];
+      const alignmentData2 = state.dualSearch && state.alignmentData2 || null;
 
       try {
-        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config) || [];
+        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config, alignmentData2) || [];
       } catch (e) {
         console.error('AlignmentSearchDialogContainer - search error', e);
         this.showMessage(`Search Error`);
@@ -1714,7 +1739,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               </SelectField>
             </div>
           </div>
-          {this.state.searchTwords &&
+          {(this.state.searchTwords || this.state.dualSearch) &&
             <div style={{ display: 'flex' }}>
               <SelectField
                 id={'select_search_type'}

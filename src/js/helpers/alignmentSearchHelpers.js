@@ -641,99 +641,111 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, cu
 
 /**
  * search one or more fields for searchStr and merge the match alignments together
- * @param {object} alignmentData - object that contains raw alignments and indices for search
+ * @param {object} _alignmentData - object that contains raw alignments and indices for search
  * @param {object} tWordsIndex - contains index for tWords search
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
+ * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
  * @returns {*[]} - array of found alignments
  */
-export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, config) {
-  let foundMerged = [];
+export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2) {
   const searchStrParts = searchStr.split(' ');
   let previousSearches = [];
+  const alignmentDataArray = [ _alignmentData ];
+  const foundMatches = [];
 
-  for (const searchStr of searchStrParts) { // do separate search for each word
-    if (!searchStr) {
-      continue;
-    }
-
-    const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
-    let found = [];
-
-    if (config.searchTwords) {
-      if (config.searchSource) {
-        const field = 'quoteIndex';
-        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
-      }
-
-      if (config.searchTarget) {
-        const field = 'groupIndex';
-        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
-      }
-
-      if (config.searchStrong) {
-        const field = 'strongsIndex';
-        searchAlignmentsForField(field, tWordsIndex, search, flags, found);
-      }
-
-      const source = alignmentData.source.alignments;
-      const alignments = alignmentData.alignments;
-      const sourceKeys = Object.keys(source);
-
-      found = found?.map(index => {
-        const check = tWordsIndex.checks[index];
-        const contextId = check?.contextId;
-        const targetText = contextId?.groupId || '';
-        const sourceText = check?.quoteString || '';
-        const strong = check.strong;
-        const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
-
-        const newCheck = {
-          ...check,
-          targetText,
-          sourceText,
-          strong,
-          sourceLemma,
-          morph,
-        };
-
-        return newCheck;
-      });
-    } else {
-      if (config.searchTarget) {
-        searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
-      }
-
-      if (config.searchStrong) {
-        searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
-      }
-
-      if (config.searchLemma) {
-        searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
-      }
-
-      if (config.searchSource) {
-        searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
-      }
-
-      if (config.searchRefs) {
-        searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
-      }
-
-      found = found?.map(index => alignmentData.alignments[index]);
-    }
-
-    if (foundMerged?.length) {
-      const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, previousSearches, search, flags);
-      foundMerged = matches;
-    } else {
-      foundMerged = found;
-    }
-
-    previousSearches.push(search);
+  if (alignmentData2) {
+    alignmentDataArray.push(alignmentData2);
   }
 
-  return foundMerged;
+  for (const alignmentData of alignmentDataArray) {
+    let foundMerged = [];
+
+    for (const searchStr of searchStrParts) { // do separate search for each word
+      if (!searchStr) {
+        continue;
+      }
+
+      const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
+      let found = [];
+
+      if (config.searchTwords) {
+        if (config.searchSource) {
+          const field = 'quoteIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchTarget) {
+          const field = 'groupIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchStrong) {
+          const field = 'strongsIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        const source = alignmentData.source.alignments;
+        const alignments = alignmentData.alignments;
+        const sourceKeys = Object.keys(source);
+
+        found = found?.map(index => {
+          const check = tWordsIndex.checks[index];
+          const contextId = check?.contextId;
+          const targetText = contextId?.groupId || '';
+          const sourceText = check?.quoteString || '';
+          const strong = check.strong;
+          const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
+
+          const newCheck = {
+            ...check,
+            targetText,
+            sourceText,
+            strong,
+            sourceLemma,
+            morph,
+          };
+
+          return newCheck;
+        });
+      } else {
+        if (config.searchTarget) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
+        }
+
+        if (config.searchStrong) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
+        }
+
+        if (config.searchLemma) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
+        }
+
+        if (config.searchSource) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
+        }
+
+        if (config.searchRefs) {
+          searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
+        }
+
+        found = found?.map(index => alignmentData.alignments[index]);
+      }
+
+      if (foundMerged?.length) {
+        const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, previousSearches, search, flags);
+        foundMerged = matches;
+      } else {
+        foundMerged = found;
+      }
+
+      previousSearches.push(search);
+    }
+
+    Array.prototype.push.apply(foundMatches, foundMerged);
+  }
+
+  return foundMatches;
 }
 
 /**
