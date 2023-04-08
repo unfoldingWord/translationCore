@@ -650,7 +650,6 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, cu
  */
 export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2) {
   const searchStrParts = searchStr.split(' ');
-  let previousSearches = [];
   const alignmentDataArray = [ _alignmentData ];
   const foundMatches = [];
 
@@ -660,8 +659,11 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
 
   for (const alignmentData of alignmentDataArray) {
     let foundMerged = [];
+    let previousSearches = [];
 
-    for (const searchStr of searchStrParts) { // do separate search for each word
+    for (let i = 0, l = searchStrParts.length; i < l; i++) {
+      const searchStr = searchStrParts[i];
+
       if (!searchStr) {
         continue;
       }
@@ -732,7 +734,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
         found = found?.map(index => alignmentData.alignments[index]);
       }
 
-      if (foundMerged?.length) {
+      if (i) { // if not first pass
         const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, previousSearches, search, flags);
         foundMerged = matches;
       } else {

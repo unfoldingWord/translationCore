@@ -357,6 +357,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.showMessage('Loading Available Aligned Bibles', true).then(() => {
       this.loadAlignmentSearchOptions(this.state.searchMaster);
       this.selectAlignedBookToSearch(this.state.alignedBible);
+      this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
       console.log('loadAlignmentSearchOptions() - finished');
     });
   }
