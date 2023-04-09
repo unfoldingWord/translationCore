@@ -30,7 +30,7 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex2';
+export const ALIGNMENTS_KEY = 'alignmentsIndex4';
 export const TWORDS_KEY = 'tWordsIndex';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
@@ -150,6 +150,19 @@ export function regexSearch(keys, searchStr, flags) {
 }
 
 /**
+ * do regex to see if text is match for searchStr/flags
+ * @param {string} text
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags for searching
+ * @returns {*[]}
+ */
+export function isMatch(text, searchStr, flags) {
+  const regex = xre(searchStr, flags);
+  const results = regex.test(text);
+  return results;
+}
+
+/**
  * build regex search string based on flags
  * @param {string} search - string to search
  * @param {boolean} fullWord - if true do full word matching
@@ -159,7 +172,7 @@ export function regexSearch(keys, searchStr, flags) {
  */
 export function buildSearchRegex(search, fullWord, caseInsensitive, wordJoiner = false) {
   let flags = 'u'; // enable unicode support
-  search = xre.escape(normalizer(search)); // escape any special character we are trying to match
+  search = xre.escape(normalizer((search || '').trim())); // escape any special character we are trying to match
 
   if (search.includes('\\?') || search.includes('\\*')) { // check for wildcard characters
     search = search.replaceAll('\\?', '\\S{1}');
@@ -441,86 +454,300 @@ function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
 }
 
 /**
+ * search in field
+ * @param {string} field
+ * @param {object} tWordsIndex - contains index for tWords search
+ * @param {string} search - regex for search
+ * @param {string} flags - regex flags
+ * @param {array} found - add entries found to this array
+ */
+function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
+  const keys = Object.keys(tWordsIndex[field]);
+  const alignments = tWordsIndex[field];
+  const searchData = { keys, alignments };
+  searchAlignmentsAndAppend(search, flags, searchData, found);
+}
+
+/**
+ * make sure that words in the current match follow the words in the previous match
+ * @param {string} fTPos - for current match - all positions of target text separated by spaces
+ * @param {string} fmtPos - for previous match - all positions of target text separated by spaces
+ * @returns {{positions: *, firstMPos: *, adjacentAlignments: boolean}}
+ */
+function arePositionsAdjacent(fTPos, fmtPos) {
+  const positions = fmtPos && fmtPos.split(' ');
+  const lastPos = positions && positions[positions.length - 1];
+  const mPositions = fTPos && fTPos.split(' ');
+  const firstMPos = mPositions?.[0];
+
+  // noinspection EqualityComparisonWithCoercionJS
+  const adjacentAlignments = parseInt(lastPos) + 1 == firstMPos;
+  return {
+    positions,
+    firstMPos,
+    adjacentAlignments,
+  };
+}
+
+/**
+ * when comparing word found in previous alignment with current alignment, make sure the previous
+ *   alignment ends with the previous word searched for and the current alignment begins with the
+ *   current word searched for
+ * @param {object} found_t - alignment we are testing for match with merged word
+ * @param {string} lastSearch - (xre string)
+ * @param {string} flags
+ * @param {string} currentSearch (xre string)
+ * @param {object} merged - previously found alignment
+ * @returns {boolean}
+ */
+function areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged) {
+  let foundMatch = false;
+  let mTargetText = merged.targetText && merged.targetText.split(' ; ');
+  const lastText = mTargetText && mTargetText[mTargetText.length - 1];
+  mTargetText = lastText && lastText.split(' ');
+  mTargetText = mTargetText && mTargetText[mTargetText.length - 1];
+
+  if (mTargetText && isMatch(mTargetText, lastSearch, flags)) {
+    let targetText = found_t.targetText && found_t.targetText.split(' ; ');
+    const firstText = targetText && targetText[0];
+    targetText = firstText && firstText.split(' ')?.[0];
+    foundMatch = (targetText && isMatch(targetText, currentSearch, flags));
+  }
+  return foundMatch;
+}
+
+/**
+ * make sure all the words being search for are in consecutive order
+ * @param {string[]} positions - of the words in the verse
+ * @param {string} firstMPos - beginning position of merged word
+ * @param {object} found_t - alignment we are testing for match with merged word
+ * @param {string[]} allSearches - all the searches to match in order (xre string)
+ * @param {string} flags - xre flags for search
+ * @returns {boolean}
+ */
+function areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, flags) {
+  let foundMatch = false;
+  const firstPos = positions[0];
+
+  // noinspection EqualityComparisonWithCoercionJS
+  if (firstMPos === firstPos) { // if both words in same alignment, check if adjacent
+    let targetWords = found_t.targetText && found_t.targetText.split(' ; ');
+    const lastTargetWords = targetWords && targetWords[targetWords.length - 1];
+    targetWords = lastTargetWords && lastTargetWords.split(' ');
+    const searchesLength = allSearches.length;
+    const l = targetWords?.length;
+
+    for (let i = l - 1; i >= 0; i--) {
+      foundMatch = false;
+
+      for (let k = 0; k < searchesLength; k++) {
+        const currentSearch = allSearches[searchesLength - 1 - k]; // starting at end
+        const testIndex = i - k;
+
+        if (testIndex < 0) { // we hit the end
+          foundMatch = k >= 2; // as long as we match at least two words starting at beginning
+          break;
+        }
+
+        const targetWord = targetWords[testIndex];
+
+        if (!isMatch(targetWord, currentSearch, flags)) {
+          foundMatch = false;
+          break;
+        }
+        foundMatch = true;
+      }
+
+      if (foundMatch) {
+        break;
+      }
+    }
+  }
+  return foundMatch;
+}
+
+/**
+ * combine multiple searches
+ * @param {object[]} found
+ * @param {object[]} foundMerged
+ * @param {boolean} inOrder
+ * @param {string[]} previousSearches
+ * @param {string} currentSearch
+ * @param {string} flags - regex flag
+ * @returns {*[]}
+ */
+function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, currentSearch, flags ) {
+  function mergeKeys(mergedAlignment, merged, found_t, keys) {
+    for (const key of keys) {
+      mergedAlignment[key] = `${merged[key]} ; ${found_t[key]}`;
+    }
+  }
+
+  const lastSearch = previousSearches && previousSearches.length && previousSearches[previousSearches.length - 1];
+
+  if (!lastSearch) {
+    return found;
+  }
+
+  const matches = [];
+  const allSearches = previousSearches.concat(currentSearch);
+
+  for (const found_t of found) {
+    for (const merged of foundMerged) {
+      for (let i = 0, l = found_t.refs.length; i < l; i++) {
+        const ref = found_t.refs[i];
+
+        for (let j = 0, l2 = merged.refs.length; j < l2; j++) {
+          const mRef = merged.refs[j];
+
+          if (ref === mRef) {
+            if (inOrder) {
+              let foundMatch = false; // not certain yet if they are adjacent
+              const fTPos = found_t.targetsPos[i];
+              const fmtPos = merged.targetsPos[j];
+              const {
+                positions,
+                firstMPos,
+                adjacentAlignments,
+              } = arePositionsAdjacent(fTPos, fmtPos);
+
+              if (adjacentAlignments) {
+                foundMatch = areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged);
+              } else { // if not in order then may not be right match, try checking if both words are in same alignmnet string
+                foundMatch = areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, flags);
+              }
+
+              if (!foundMatch) { // skip if not a match
+                continue;
+              }
+            }
+
+            const targetsPosForMatch = found_t.targetsPos[i];
+            const mergedAlignment = {
+              ...merged,
+              refs: [ref],
+              targetsPos: [targetsPosForMatch],
+            };
+            const mergeKeys_ = ['morph', 'sourceLemma', 'sourceText', 'strong', 'targetText'];
+            mergeKeys(mergedAlignment, merged, found_t, mergeKeys_);
+            matches.push(mergedAlignment);
+          }
+        }
+      }
+    }
+  }
+  return matches;
+}
+
+/**
  * search one or more fields for searchStr and merge the match alignments together
- * @param {object} alignmentData - object that contains raw alignments and indices for search
- * @param {object} tWordsIndex
+ * @param {object} _alignmentData - object that contains raw alignments and indices for search
+ * @param {object} tWordsIndex - contains index for tWords search
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
+ * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
  * @returns {*[]} - array of found alignments
  */
-export function multiSearchAlignments(alignmentData, tWordsIndex, searchStr, config) {
-  const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
-  let found = [];
+export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2) {
+  const searchStrParts = searchStr.split(' ');
+  const alignmentDataArray = [ _alignmentData ];
+  const foundMatches = [];
 
-  if (config.searchTwords) {
-    if (config.searchSource) {
-      const keys = Object.keys(tWordsIndex.quoteIndex);
-      const alignments = tWordsIndex.quoteIndex;
-      const searchData = { keys, alignments };
-      searchAlignmentsAndAppend(search, flags, searchData, found);
-    }
-
-    if (config.searchTarget) {
-      const keys = Object.keys(tWordsIndex.groupIndex);
-      const alignments = tWordsIndex.groupIndex;
-      const searchData = { keys, alignments };
-      searchAlignmentsAndAppend(search, flags, searchData, found);
-    }
-
-    if (config.searchStrong) {
-      const keys = Object.keys(tWordsIndex.strongsIndex);
-      const alignments = tWordsIndex.strongsIndex;
-      const searchData = { keys, alignments };
-      searchAlignmentsAndAppend(search, flags, searchData, found);
-    }
-
-    const source = alignmentData.source.alignments;
-    const alignments = alignmentData.alignments;
-    const sourceKeys = Object.keys(source);
-
-    found = found?.map(index => {
-      const check = tWordsIndex.checks[index];
-      const contextId = check?.contextId;
-      const targetText = contextId?.groupId || '';
-      const sourceText = check?.quoteString || '';
-      const strong = check.strong;
-      const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
-
-      const newCheck = {
-        ...check,
-        targetText,
-        sourceText,
-        strong,
-        sourceLemma,
-        morph,
-      };
-
-      return newCheck;
-    });
-  } else {
-    if (config.searchTarget) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
-    }
-
-    if (config.searchStrong) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
-    }
-
-    if (config.searchLemma) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
-    }
-
-    if (config.searchSource) {
-      searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
-    }
-
-    if (config.searchRefs) {
-      searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
-    }
-
-    found = found?.map(index => alignmentData.alignments[index]);
+  if (alignmentData2) {
+    alignmentDataArray.push(alignmentData2);
   }
-  return found;
+
+  for (const alignmentData of alignmentDataArray) {
+    let foundMerged = [];
+    let previousSearches = [];
+
+    for (let i = 0, l = searchStrParts.length; i < l; i++) {
+      const searchStr = searchStrParts[i];
+
+      if (!searchStr) {
+        continue;
+      }
+
+      const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
+      let found = [];
+
+      if (config.searchTwords) {
+        if (config.searchSource) {
+          const field = 'quoteIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchTarget) {
+          const field = 'groupIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchStrong) {
+          const field = 'strongsIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        const source = alignmentData.source.alignments;
+        const alignments = alignmentData.alignments;
+        const sourceKeys = Object.keys(source);
+
+        found = found?.map(index => {
+          const check = tWordsIndex.checks[index];
+          const contextId = check?.contextId;
+          const targetText = contextId?.groupId || '';
+          const sourceText = check?.quoteString || '';
+          const strong = check.strong;
+          const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
+
+          const newCheck = {
+            ...check,
+            targetText,
+            sourceText,
+            strong,
+            sourceLemma,
+            morph,
+          };
+
+          return newCheck;
+        });
+      } else {
+        if (config.searchTarget) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
+        }
+
+        if (config.searchStrong) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
+        }
+
+        if (config.searchLemma) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
+        }
+
+        if (config.searchSource) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
+        }
+
+        if (config.searchRefs) {
+          searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
+        }
+
+        found = found?.map(index => alignmentData.alignments[index]);
+      }
+
+      if (i) { // if not first pass
+        const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, previousSearches, search, flags);
+        foundMerged = matches;
+      } else {
+        foundMerged = found;
+      }
+
+      previousSearches.push(search);
+    }
+
+    Array.prototype.push.apply(foundMatches, foundMerged);
+  }
+
+  return foundMatches;
 }
 
 /**
@@ -893,18 +1120,19 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
         }
 
         const sourceALignment = alignments_[sourceText];
-        let index;
+        let index = sourceALignment[targetText];
 
-        if (!sourceALignment[targetText]) {
+        if (!index) {
           alignment.refs = [ref];
+          alignment.targetsPos = [alignment.targetsPos];
           delete alignment.ref;
           index = uniqueAlignments.length;
           uniqueAlignments.push(alignment);
           sourceALignment[targetText] = [index];
         } else {
-          index = sourceALignment[targetText];
           const matchedAlignment = uniqueAlignments[index];
           matchedAlignment.refs.push(ref);
+          matchedAlignment.targetsPos.push(alignment.targetsPos);
         }
 
         let bookIndex = bibleIndex[r_.bookId];
@@ -1009,14 +1237,50 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
 /**
  * append an alignment to alignments
  * @param alignments
- * @param sourceText
+ * @param text
  * @param alignment
  */
-function appendToALignmentIndex(alignments, sourceText, alignment) {
-  if (!alignments[sourceText]) {
-    alignments[sourceText] = [];
+function appendToALignmentIndex(alignments, text, alignment) {
+  if (!alignments[text]) {
+    alignments[text] = [];
   }
-  alignments[sourceText].push(alignment);
+  alignments[text].push(alignment);
+}
+
+/**
+ * add position in verse to the word objects
+ * @param {array} foundWords - array to fill with found word
+ * @param {object[]} verseObjects
+ * @param {number} pos
+ * @returns {*}
+ */
+function addPosition(foundWords, verseObjects, pos) {
+  for (const vo of verseObjects) {
+    if (vo.type === 'word') {
+      vo.pos = pos++;
+      foundWords.push(vo);
+    }
+
+    if (vo.children) {
+      pos = addPosition(foundWords, vo.children, pos);
+    }
+  }
+  return pos;
+}
+
+function addUnalignedWords(words, bookAlignments, verseRef, reference) {
+  for (const word of words) {
+    bookAlignments.push({
+      sourceText: '',
+      sourceLemma: '',
+      strong: '',
+      morph: '',
+      targetText: word.word || word.text,
+      ref: verseRef,
+      reference,
+      targetsPos: `${word.pos}`,
+    });
+  }
 }
 
 /**
@@ -1031,77 +1295,68 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
     const chaptersObject = parsedUsfm.chapters;
     const bookId = manifest?.project?.id || selectedProjectFilename;
     const bookAlignments = [];
+    const chapters = Object.keys(chaptersObject);
 
-    Object.keys(chaptersObject).forEach((chapter) => {
+    for (const chapter of chapters) {
       const bibleChapter = {};
       const verses = Object.keys(chaptersObject[chapter]);
       const chapterRef = `${bookId} ${chapter}:`;
 
-      // check if chapter has alignment data
-      const alignmentIndex = verses.findIndex(verse => {
-        const verseParts = chaptersObject[chapter][verse];
-        let alignmentData = false;
-
-        for (let part of verseParts.verseObjects) {
-          if (part.type === 'milestone') {
-            alignmentData = true;
-            break;
-          }
-        }
-        return alignmentData;
-      });
-      const alignmentData = (alignmentIndex >= 0);
-
-      if (!alignmentData) {
-        return;
-      }
-
-      verses.forEach((verse) => {
+      for (const verse of verses) {
         const verseRef = `${chapterRef}${verse}`;
         const verseParts = chaptersObject[chapter][verse];
+        const foundWords = [];
+        addPosition(foundWords, verseParts.verseObjects, 0);
         let verseText = getUsfmForVerseContent(verseParts);
         bibleChapter[verse] = trimNewLine(verseText);
+        const object = wordaligner.unmerge(verseParts);
 
-        if (alignmentData) {
-          const object = wordaligner.unmerge(verseParts);
+        for (const alignment of object.alignment) {
+          const strongs = [];
+          const lemmas = [];
+          const targets = [];
+          const targetsPos = [];
+          const sources = [];
+          const morphs = [];
 
-          for (const alignment of object.alignment) {
-            const strongs = [];
-            const lemmas = [];
-            const targets = [];
-            const sources = [];
-            const morphs = [];
-
-            for (const originalWord of alignment.topWords) {
-              const {
-                strong,
-                lemma,
-                word,
-                morph,
-              } = originalWord;
-              strongs.push(strong);
-              lemmas.push(lemma);
-              sources.push(word);
-              morphs.push(morph);
-            }
-
-            for (const targetWord of alignment.bottomWords) {
-              targets.push(targetWord.word);
-            }
-            bookAlignments.push({
-              sourceText: normalizer(sources.join(' ')),
-              sourceLemma: normalizer(lemmas.join(' ')),
-              strong: strongs.join(' '),
-              morph: morphs.join(' '),
-              targetText: normalizer(targets.join(' ')),
-              ref: verseRef,
-              // eslint-disable-next-line object-curly-newline
-              reference: { bookId, chapter, verse },
-            });
+          for (const originalWord of alignment.topWords) {
+            const {
+              strong,
+              lemma,
+              word,
+              morph,
+            } = originalWord;
+            strongs.push(strong);
+            lemmas.push(lemma);
+            sources.push(word);
+            morphs.push(morph);
           }
+
+          for (const targetWord of alignment.bottomWords) {
+            targets.push(targetWord.word);
+            targetsPos.push(`${targetWord.pos}`);
+          }
+          bookAlignments.push({
+            sourceText: normalizer(sources.join(' ')),
+            sourceLemma: normalizer(lemmas.join(' ')),
+            strong: strongs.join(' '),
+            morph: morphs.join(' '),
+            targetText: normalizer(targets.join(' ')),
+            targetsPos: targetsPos.join(' '),
+            ref: verseRef,
+            // eslint-disable-next-line object-curly-newline
+            reference: { bookId, chapter, verse },
+          });
         }
-      });
-    });
+
+        if (object.wordBank?.length) {
+          const words = object.wordBank;
+          // eslint-disable-next-line object-curly-newline
+          const reference = { bookId, chapter, verse };
+          addUnalignedWords(words, bookAlignments, verseRef, reference);
+        }
+      }
+    }
 
     console.log(`getALignmentsFromJson() for book ${bookId}, ${bookAlignments.length} alignments`);
     return bookAlignments;
@@ -1303,11 +1558,11 @@ export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
  * @param {array} verseChunks
  */
 function convertVerseChunksToUSFM(verseChunks) {
-  verseChunks.forEach(chunk => {
+  for (const chunk of verseChunks) {
     if (typeof chunk.verseData !== 'string') {
       chunk.verseData = getUsfmForVerseContent(chunk.verseData);
     }
-  });
+  }
 }
 
 /**
@@ -1806,7 +2061,7 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
     return words;
   }
 
-  found.forEach(item => {
+  for (const item of found) {
     const contextId = item?.contextId;
     const reference = contextId?.reference;
     const ref = `${reference?.bookId} ${reference?.chapter}:${reference?.verse}`;
@@ -1818,6 +2073,5 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
       const alignedText = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
       item[saveAlignmentsKey] = alignedText.join(' ');
     }
-  });
+  }
 }
-
