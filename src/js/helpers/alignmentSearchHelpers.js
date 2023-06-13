@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import xre from 'xregexp';
 import React from 'react';
 import env from 'tc-electron-env';
-import { normalizer } from 'string-punctuation-tokenizer';
+import * as SPT from 'string-punctuation-tokenizer';
 import SourceContentUpdater, { resourcesHelpers, apiHelpers } from 'tc-source-content-updater';
 import wordaligner from 'word-aligner';
 import { getVerses } from 'bible-reference-range';
@@ -21,6 +21,7 @@ import {
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers';
+const normalizer = SPT.normalizer;
 
 // eslint-disable-next-line no-useless-escape
 const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)';
@@ -30,8 +31,8 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex4';
-export const TWORDS_KEY = 'tWordsIndex';
+export const ALIGNMENTS_KEY = 'alignmentsIndex5';
+export const TWORDS_KEY = 'tWordsIndex2';
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
@@ -1546,9 +1547,9 @@ export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
     if (fs.existsSync(biblePath)) {
       return getVerse(biblePath, ref, bibles, bibleId, rawFormat);
     }
-    console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath}`);
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath} because file does not exist`);
   } catch (e) {
-    console.log(`getVerseForKey() - could not fetch verse for ${bibleKey} - ${ref}`);
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleKey} - ${ref}`, e);
   }
   return '';
 }
@@ -1626,7 +1627,7 @@ export function getVerse(biblePath, ref, bibles, bibleKey, rawFormat = false) {
 
           return verses;
         } catch (e) {
-          console.log(`getVerse() - could not read ${chapterPath}`);
+          console.log(`getVerse() - could not read ${chapterPath}`, e);
         }
       }
     }
@@ -1852,7 +1853,7 @@ export function getTwordsIndex(key) {
       return fs.readJsonSync(filePath);
     }
   } catch (e) {
-    console.warn(`getTwordsIndex - cannot read ${filePath}`);
+    console.warn(`getTwordsIndex - cannot read ${filePath}`, e);
   }
   return null;
 }
@@ -1938,11 +1939,13 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
               for (const item of data) {
                 const contextId = item?.contextId;
                 const reference = contextId?.reference;
-                let quote = normalizer(contextId?.quote || '');
+                let quote = contextId?.quote;
 
                 if (Array.isArray(quote)) {
-                  const quote_ = quote.map(item => item.word);
+                  const quote_ = quote.map(item => normalizer(item.word || ''));
                   quote = quote_.join(' ');
+                } else {
+                  quote = normalizer(quote || '');
                 }
 
                 item.quoteString = quote;
@@ -1980,7 +1983,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
               }
               // console.log(data);
             } catch (e) {
-              console.warn(`could not read ${groupFilePath}`);
+              console.warn(`could not read ${groupFilePath}`, e);
             }
           }
         }
