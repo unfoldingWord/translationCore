@@ -1,0 +1,137 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Fundación Idiomas Puentes"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "Una traducción de licencia abierta, destinada a proporcionar una comprensión «funcional» de la Biblia. Aumenta la comprensión del texto por parte del traductor al traducir los términos teológicos como frases descriptivas.",
+    "format": "text/usfm3",
+    "identifier": "gst",
+    "issued": "2021-06-11",
+    "language": {
+      "title": "Español (Latin American Spanish)",
+      "identifier": "es-419",
+      "direction": "ltr"
+    },
+    "modified": "2021-06-11",
+    "publisher": "Idiomas Puentes",
+    "relation": [
+      "es-419/glt",
+      "es-419/tn",
+      "es-419/tq",
+      "es-419/ta",
+      "es-419/twl",
+      "es-419/tw",
+      "es-419/obs",
+      "es-419/obs-tn",
+      "hbo/uhb?v=2.1.25",
+      "el-x-koine/ugnt?v=0.25"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "38"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Texto Puente Simple",
+    "type": "bundle",
+    "version": "38.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "Idiomas Puentes"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Tito",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Fundación Idiomas Puentes"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "Una traducción de licencia abierta, destinada a proporcionar una comprensión «funcional» de la Biblia. Aumenta la comprensión del texto por parte del traductor al traducir los términos teológicos como frases descriptivas.",
+      "format": "text/usfm3",
+      "identifier": "gst",
+      "issued": "2021-06-11",
+      "language": {
+        "title": "Español (Latin American Spanish)",
+        "identifier": "es-419",
+        "direction": "ltr"
+      },
+      "modified": "2021-06-11",
+      "publisher": "Idiomas Puentes",
+      "relation": [
+        "es-419/glt",
+        "es-419/tn",
+        "es-419/tq",
+        "es-419/ta",
+        "es-419/twl",
+        "es-419/tw",
+        "es-419/obs",
+        "es-419/obs-tn",
+        "hbo/uhb?v=2.1.25",
+        "el-x-koine/ugnt?v=0.25"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "38"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Texto Puente Simple",
+      "type": "bundle",
+      "version": "38.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "Idiomas Puentes"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Tito",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "es-419",
+  "language_name": "Español (Latin American Spanish)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "Texto Puente Simple",
+  "remoteModifiedTime": "2023-04-14T05:39:06Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2023-04-14T05:39:06Z",
+  "usfm-js": "3.4.1",
+  "version": "38.1",
+  "modifiedTime": "2023-04-14T05:39:06Z",
+  "stage": "latest"
+}

@@ -1,0 +1,403 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "format": "text/usfm3",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Acsah Jacob",
+      "Amos Khokhar",
+      "Ashish Masih",
+      "Harka KHadka",
+      "Hind Prakash",
+      "Hum Lamtari",
+      "Jinu Jacob",
+      "Paul Rana",
+      "Rixon Reji",
+      "Tilak Basnet",
+      "Vipin Bhadran"
+    ],
+    "description": "An open-licensed translation, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+    "issued": "2023-04-21",
+    "modified": "2023-04-21",
+    "identifier": "gst",
+    "language": {
+      "identifier": "ne",
+      "title": "नेपाली (Nepali)",
+      "direction": "ltr"
+    },
+    "relation": [
+      "ne/glt",
+      "ne/tn",
+      "ne/tq",
+      "ne/tw",
+      "ne/ta",
+      "ne/obs-tn",
+      "ne/obs-tq",
+      "ne/ulb",
+      "ne/udb",
+      "hbo/uhb?v=2.1.30",
+      "el-x-koine/ugnt?v=0.30"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "publisher": "HTS",
+    "source": [
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "39"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Nepali GST - Greek Aligned",
+    "type": "bundle",
+    "version": "39.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS",
+      "Prof. Paul Rana, Theological seminary lecturer",
+      "Prof. Rameshwor Yadav,Theological seminary lecturer"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "रूथ",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "योना",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "मर्कूसले लेखेको सुसमाचार",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "लुका",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "१ कोरिन्थी",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "एफिसि",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "२ थेसलोनिकी",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "१ तिमोथी",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "२ तिमोथी",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीतसलाई पावलको पत्र",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "१ यूहन्‍ना",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "२ यूहन्‍ना",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "३ यूहन्‍ना",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "format": "text/usfm3",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Acsah Jacob",
+        "Amos Khokhar",
+        "Ashish Masih",
+        "Harka KHadka",
+        "Hind Prakash",
+        "Hum Lamtari",
+        "Jinu Jacob",
+        "Paul Rana",
+        "Rixon Reji",
+        "Tilak Basnet",
+        "Vipin Bhadran"
+      ],
+      "description": "An open-licensed translation, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+      "issued": "2023-04-21",
+      "modified": "2023-04-21",
+      "identifier": "gst",
+      "language": {
+        "identifier": "ne",
+        "title": "नेपाली (Nepali)",
+        "direction": "ltr"
+      },
+      "relation": [
+        "ne/glt",
+        "ne/tn",
+        "ne/tq",
+        "ne/tw",
+        "ne/ta",
+        "ne/obs-tn",
+        "ne/obs-tq",
+        "ne/ulb",
+        "ne/udb",
+        "hbo/uhb?v=2.1.30",
+        "el-x-koine/ugnt?v=0.30"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "publisher": "HTS",
+      "source": [
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "39"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Nepali GST - Greek Aligned",
+      "type": "bundle",
+      "version": "39.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS",
+        "Prof. Paul Rana, Theological seminary lecturer",
+        "Prof. Rameshwor Yadav,Theological seminary lecturer"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "रूथ",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "योना",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "मर्कूसले लेखेको सुसमाचार",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "लुका",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "१ कोरिन्थी",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "एफिसि",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "२ थेसलोनिकी",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "१ तिमोथी",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "२ तिमोथी",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "तीतसलाई पावलको पत्र",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "१ यूहन्‍ना",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "२ यूहन्‍ना",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "३ यूहन्‍ना",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ne",
+  "language_name": "नेपाली (Nepali)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "Nepali GST - Greek Aligned",
+  "remoteModifiedTime": "2023-05-01T19:32:47Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2023-05-01T19:32:47Z",
+  "usfm-js": "3.4.1",
+  "version": "39.1",
+  "modifiedTime": "2023-05-01T19:32:47Z",
+  "stage": "prod"
+}
