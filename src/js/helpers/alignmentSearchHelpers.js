@@ -1977,14 +1977,15 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
                 const chapter = reference?.chapter;
 
                 let strongs = contextId?.strong || [];
-                strongs = Array.isArray(strongs) ? strongs.join(' ') : '';
+                strongs = Array.isArray(strongs) ? strongs.join(' ') : strongs || '';
                 item.strong = strongs;
                 const strongsList = findItem(strongsIndex, strongs, true);
                 pushUnique(strongsList, location);
 
-                let lemma = contextId?.lemma || '';
+                let lemma = normalizeItem(contextId?.lemma || '');
+                lemma = Array.isArray(lemma) ? lemma.join(' ') : lemma || '';
                 item.lemma = lemma;
-                const lemmaList = findItem(lemmaIndex, lemma, false);
+                const lemmaList = findItem(lemmaIndex, lemma, true);
                 pushUnique(lemmaList, location);
 
                 const quoteList = findItem(quoteIndex, quote, true);
@@ -2017,6 +2018,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
       return {
         bibleIndex,
         groupIndex,
+        lemmaIndex,
         quoteIndex,
         strongsIndex,
         checks,
@@ -2095,3 +2097,16 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
     }
   }
 }
+
+function normalizeItem(item) {
+  let normalized;
+
+  if (Array.isArray(item)) {
+    normalized = item.map(item => normalizer(item || ''));
+  } else {
+    normalized = normalizer(item || '');
+  }
+
+  return normalized;
+}
+
