@@ -688,6 +688,11 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
           searchAlignmentsForField(field, tWordsIndex, search, flags, found);
         }
 
+        if (config.searchLemma) {
+          const field = 'lemmaIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
         const source = alignmentData.source.alignments;
         const alignments = alignmentData.alignments;
         const sourceKeys = Object.keys(source);
@@ -1311,6 +1316,8 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
         let verseText = getUsfmForVerseContent(verseParts);
         bibleChapter[verse] = trimNewLine(verseText);
         const object = wordaligner.unmerge(verseParts);
+        // eslint-disable-next-line object-curly-newline
+        const reference = { bookId, chapter, verse };
 
         for (const alignment of object.alignment) {
           const strongs = [];
@@ -1321,13 +1328,20 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
           const morphs = [];
 
           for (const originalWord of alignment.topWords) {
-            const {
+            let {
               strong,
               lemma,
               word,
               morph,
             } = originalWord;
             strongs.push(strong);
+
+            if (!lemma) {
+              if (!strong || !word) { // TRICKY - if no lemma, but we have a strong's, this is OK for Hebrew
+                console.warn(`Invalid original word`, { originalWord, reference });
+              }
+            }
+
             lemmas.push(lemma);
             sources.push(word);
             morphs.push(morph);
@@ -1345,15 +1359,12 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
             targetText: normalizer(targets.join(' ')),
             targetsPos: targetsPos.join(' '),
             ref: verseRef,
-            // eslint-disable-next-line object-curly-newline
-            reference: { bookId, chapter, verse },
+            reference,
           });
         }
 
         if (object.wordBank?.length) {
           const words = object.wordBank;
-          // eslint-disable-next-line object-curly-newline
-          const reference = { bookId, chapter, verse };
           addUnalignedWords(words, bookAlignments, verseRef, reference);
         }
       }
@@ -1893,6 +1904,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   const groupIndex = {};
   const quoteIndex = {};
   const strongsIndex = {};
+  const lemmaIndex = {};
   const alignmentIndex = {};
   const res = addTwordsInfoToResource(resource, resourcesFolder);
   const filterBooks = res.filterBooks;
@@ -1969,6 +1981,11 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
                 item.strong = strongs;
                 const strongsList = findItem(strongsIndex, strongs, true);
                 pushUnique(strongsList, location);
+
+                let lemma = contextId?.lemma || '';
+                item.lemma = lemma;
+                const lemmaList = findItem(lemmaIndex, lemma, false);
+                pushUnique(lemmaList, location);
 
                 const quoteList = findItem(quoteIndex, quote, true);
                 pushUnique(quoteList, location);

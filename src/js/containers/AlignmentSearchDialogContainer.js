@@ -127,6 +127,7 @@ const searchFieldOptions = [
   SEARCH_REFS,
 ];
 const searchFieldOptionsForTwords = [
+  SEARCH_LEMMA,
   SEARCH_SOURCE,
   SEARCH_STRONG,
   SEARCH_TARGET,
@@ -1484,7 +1485,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         inOrder: state.inOrder,
         caseInsensitive: !state.caseSensitive,
         searchTwords,
-        searchLemma: !searchTwords && this.isSearchFieldSelected(SEARCH_LEMMA),
+        searchLemma: this.isSearchFieldSelected(SEARCH_LEMMA),
         searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
         searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
         searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
