@@ -3,6 +3,7 @@
 import React, { forwardRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import fs from 'fs-extra';
 import path from 'path-extra';
 import {
   Divider,
@@ -73,7 +74,11 @@ import {
   removeIndices,
   saveTwordsIndex,
 } from '../helpers/alignmentSearchHelpers';
-import { ALIGNMENT_DATA_PATH, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  ALIGNMENT_DATA_PATH,
+  USER_HOME,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
 import { delay } from '../common/utils';
 import {
   closeAlertDialog,
@@ -88,6 +93,7 @@ import {
 } from '../common/BooksOfTheBible';
 import { showPopover } from '../actions/PopoverActions';
 import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
+import * as exportHelpers from '../helpers/exportHelpers';
 
 Menu.defaultProps.disableAutoFocus = true; // to prevent auto-scrolling
 
@@ -561,6 +567,72 @@ class AlignmentSearchDialogContainer extends React.Component {
     return currentsearchFieldOptions;
   }
 
+  saveTofile(data) {
+    const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
+    const fields = [
+      { id: 'sourceText', title: 'Source Text' },
+      { id: 'sourceLemma', title: 'Source Lemma' },
+      { id: 'morph', title: 'Source Morph' },
+      { id: 'strong', title: 'Source Strongs' },
+      { id: 'targetText', title: 'Target Text' },
+      { id: 'alignedText', title: 'Aligned Text' },
+      { id: 'count', title: 'Match Count' },
+      { id: 'refs', title: 'References' },
+      { id: 'config', title: 'Configuration' },
+    ];
+    const dataLines = [];
+    const configFields = [ 'alignedBible', 'alignedBible2', 'caseSensitive', 'dualSearch', 'hideUsfmMarkers', 'matchWholeword', 'searchMaster', 'searchStr', 'searchTwords', 'searchType'];
+    const config = {};
+
+    configFields.forEach(id => {
+      const value = this.state[id];
+      config[id] = `${value}`;
+    });
+
+    dataLines.push(fields.map(f => f.title).join('\t'));
+
+    for (let i = 0; i < data.length; i++) {
+      const item = data[i];
+
+      const fieldData = fields.map(field => {
+        let value = '';
+        const id = field.id;
+
+        if (id === 'config') {
+          if (i === 0) {
+            value = JSON.stringify(config);
+          }
+        } else {
+          value = (item[id] || '');
+
+          if (Array.isArray(value)) {
+            value = value.join('; ');
+          }
+        }
+
+        return `${value}`;
+      });
+
+      dataLines.push(fieldData.join('\t'));
+    }
+
+    const dataStr = dataLines.join('\n');
+
+    exportHelpers.getFilePath('searchResults', DOCUMENTS_PATH, 'tsv').then(pdfPath => {
+      console.log(`doPrint() - have TSV save path: ${pdfPath}`);
+
+      fs.writeFile(pdfPath, dataStr, (error) => {
+        if (error) {
+          console.error(`saveTofile() - save error`, error);
+        } else {
+          console.log(`Wrote TSV successfully to ${pdfPath}`);
+        }
+      });
+    }).catch(error => {
+      console.log(`Failed to select PDF path: `, error);
+    });
+  }
+
   /**
    * show search results in table
    * @returns {JSX.Element}
@@ -617,6 +689,13 @@ class AlignmentSearchDialogContainer extends React.Component {
         return (
           <>
             <div style={{ fontWeight: 'bold', color: 'black' }}> {message} </div>
+            <button onClick={() => this.saveTofile(data)}
+              className="btn-prime"
+              id="save_tsv_button"
+              style={{ alignSelf: 'center', marginTop: '20px' }}
+            >
+              {'Save to TSV File'}
+            </button>
             <MaterialTable
               columns={searchColumns.filter(item => item)}
               data={data}

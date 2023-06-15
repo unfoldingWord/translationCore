@@ -14,13 +14,18 @@ import {
   OT_ORIG_LANG,
   OT_ORIG_LANG_BIBLE,
 } from '../common/BooksOfTheBible';
-import { DEFAULT_ORIG_LANG_OWNER, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  DEFAULT_ORIG_LANG_OWNER,
+  DEFAULT_OWNER,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
 import {
   getUsfmForVerseContent,
   trimNewLine,
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers';
+import { getOriginalLangOwner } from './ResourcesHelpers';
 const normalizer = SPT.normalizer;
 
 // eslint-disable-next-line no-useless-escape
@@ -1036,6 +1041,32 @@ async function doCallback(callback, percent) {
 }
 
 /**
+ * read and parse the book USFM
+ * @param {string} latestVersionPath
+ * @param {string} bookId
+ * @return {{readBooks: boolean, chapters: {}}}
+ */
+function readBibleBook(latestVersionPath, bookId) {
+  let readBooks = false;
+  const bookPath = path.join(latestVersionPath, bookId);
+  const chapters = {};
+
+  if (fs.existsSync(bookPath)) {
+    const chapterFiles = fs.readdirSync(bookPath)
+      .filter(file => path.extname(file) === '.json');
+
+    for (const chapterFile of chapterFiles) {
+      const chapterPath = path.join(bookPath, chapterFile);
+      const chapterJson = fs.readJsonSync(chapterPath);
+      const c = path.parse(chapterPath).name;
+      chapters[c] = chapterJson;
+      readBooks = true;
+    }
+  }
+  return { readBooks, chapters };
+}
+
+/**
  * open Bible json data and extract alignment data for specific testament
  * @param {string} resourceFolder
  * @param {object} resource
@@ -1074,25 +1105,13 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
         const percent = ++count * 25 / total;
         // eslint-disable-next-line no-await-in-loop
         await doCallback(callback, percent);
-        const bookPath = path.join(latestVersionPath, bookId);
+        const { readBooks, chapters } = readBibleBook(latestVersionPath, bookId);
+        const parsedUsfm = {
+          chapters,
+          headers: [],
+        };
 
-        if (fs.existsSync(bookPath)) {
-          const chapters = {};
-          const parsedUsfm = {
-            chapters,
-            headers: [],
-          };
-
-          const chapterFiles = fs.readdirSync(bookPath)
-            .filter(file => path.extname(file) === '.json');
-
-          for (const chapterFile of chapterFiles) {
-            const chapterPath = path.join(bookPath, chapterFile);
-            const chapterJson = fs.readJsonSync(chapterPath);
-            const c = path.parse(chapterPath).name;
-            chapters[c] = chapterJson;
-          }
-
+        if (readBooks) {
           const manifest = {};
           // eslint-disable-next-line no-await-in-loop
           const bookAlignments = getALignmentsFromJson(parsedUsfm, manifest, bookId);
@@ -1887,6 +1906,90 @@ function findItem(object, item, newItemIsArray = false) {
 }
 
 /**
+ * search through verse objects to find alignment for quote and occurrence
+ * @param verseObjects
+ * @param {string} quote
+ * @param {number} occurrence
+ * @returns {string|null|*}
+ */
+function findWord(verseObjects, quote, occurrence, count = 1) {
+  let found = null;
+
+  for (const vo of verseObjects) {
+    if ((vo.type === 'word') && (normalizer(vo.text) === quote)) {
+      if (count >= occurrence) {
+        return { found: vo, count };
+      } else {
+        count++;
+      }
+    }
+
+    if (vo.children) {
+      const { found, count: _count } = findWord(vo.children, quote, occurrence, count);
+      count = _count;
+
+      if (found) {
+        return { found, count };
+      }
+    }
+  }
+  return { found, count };
+}
+
+/**
+ * find quote in original language bible and add strong and lemma info
+ * @param bible
+ * @param contextId
+ * @param reference
+ * @param biblePath
+ */
+function addOriginalLanguageInfo(bible, contextId, reference, biblePath) {
+  const {
+    bookId,
+    chapter,
+    verse,
+  } = reference;
+
+  let book = bible[bookId];
+
+  if (!book) {
+    const { readBooks, chapters } = readBibleBook(biblePath, bookId);
+
+    if (readBooks) {
+      book = chapters;
+      bible[bookId] = book;
+    }
+  }
+
+  if (book) {
+    const quote = contextId?.quote;
+    const quotes = Array.isArray(quote) ? quote : [{
+      word: quote,
+      occurrence: contextId?.occurrence || 1,
+    }];
+
+    let verseObjects = book[chapter]?.[verse]?.verseObjects;
+
+    if (verseObjects) {
+      const lemma = [];
+      const strong = [];
+
+      for (const quote of quotes) {
+        const { found } = findWord(verseObjects, normalizer(quote.word), quote.occurrence);
+
+        if (found) {
+          lemma.push(found.lemma);
+          strong.push(found.strong);
+        }
+      }
+
+      contextId.lemma = lemma;
+      contextId.strong = strong;
+    }
+  }
+}
+
+/**
  * index twords for resource
  * @param {string} resourcesFolder
  * @param {object} resource
@@ -1899,6 +2002,7 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   // for other owners:
   // ~/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
 
+  const bible = {};
   let checks = [];
   const bibleIndex = {};
   const groupIndex = {};
@@ -1907,9 +2011,20 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   const lemmaIndex = {};
   const alignmentIndex = {};
   const res = addTwordsInfoToResource(resource, resourcesFolder);
-  const filterBooks = res.filterBooks;
+  let filterBooks = res.filterBooks;
   const latestTWordsVersion = res.latestTWordsVersion;
   const latestTwordsPath = res.latestTwordsPath;
+
+  const usingDoor43 = (res.owner === DEFAULT_OWNER);
+  let biblePath = null;
+
+  if (!usingDoor43) {
+    const resourceId = (res.origLang === 'hbo') ? 'uhb' : 'ugnt';
+    const bibleVersionsPath = path.join(resourcesFolder, `${res.origLang}/bibles/${resourceId}`);
+    const origLangOwner = getOriginalLangOwner(resource.owner);
+    biblePath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, origLangOwner);
+    filterBooks = (res.origLang === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
+  }
 
   if (latestTWordsVersion) {
     await doCallback(callback, 0);
@@ -1951,6 +2066,11 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
               for (const item of data) {
                 const contextId = item?.contextId;
                 const reference = contextId?.reference;
+
+                if (!usingDoor43) {
+                  addOriginalLanguageInfo(bible, contextId, reference, biblePath);
+                }
+
                 let quote = contextId?.quote;
 
                 if (Array.isArray(quote)) {
