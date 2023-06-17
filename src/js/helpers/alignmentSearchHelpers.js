@@ -2031,13 +2031,13 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
 
     if (fs.existsSync(latestTwordsPath)) {
       console.log(`Found ${latestTWordsVersion}`);
-      const catagories = readDirectory(latestTwordsPath);
-      const catagoryStepSize = 100 / (catagories.length || 1);
+      const categories = readDirectory(latestTwordsPath);
+      const categoryStepSize = 100 / (categories.length || 1);
 
-      for (let i = 0; i < catagories.length; i++) {
-        const catagory = catagories[i];
-        const progressCatagory = i * catagoryStepSize;
-        const booksPath = path.join(latestTwordsPath, catagory, 'groups');
+      for (let i = 0; i < categories.length; i++) {
+        const category = categories[i];
+        const progressCategory = i * categoryStepSize;
+        const booksPath = path.join(latestTwordsPath, category, 'groups');
         let books = readDirectory(booksPath);
 
         if (filterBooks) {
@@ -2045,11 +2045,11 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
           books = filteredBooks;
         }
 
-        const bookStepSize = catagoryStepSize / (books.length || 1);
+        const bookStepSize = categoryStepSize / (books.length || 1);
 
         for (let j = 0; j < books.length; j++) {
           const bookId = books[j];
-          const bookProgress = j * bookStepSize + progressCatagory;
+          const bookProgress = j * bookStepSize + progressCategory;
           // eslint-disable-next-line no-await-in-loop
           await doCallback(callback, bookProgress);
           const bookPath = path.join(booksPath, bookId);
@@ -2085,10 +2085,10 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
                 const alignmentKey = `${groupId}_${quote}`;
                 let previousCheck = alignmentIndex[alignmentKey];
 
-                if (!previousCheck) {
+                if (!previousCheck) { // if this is a new check
                   item.refs = [reference];
                   checks.push(item);
-                } else {
+                } else { // if this check type already saved, add this reference
                   location = previousCheck;
                   const check = checks[previousCheck];
                   check.refs.push(reference);
@@ -2101,6 +2101,8 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
                 item.strong = strongs;
                 const strongsList = findItem(strongsIndex, strongs, true);
                 pushUnique(strongsList, location);
+
+                item.category = category;
 
                 let lemma = normalizeItem(contextId?.lemma || '');
                 lemma = Array.isArray(lemma) ? lemma.join(' ') : lemma || '';

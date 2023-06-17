@@ -580,6 +580,13 @@ class AlignmentSearchDialogContainer extends React.Component {
       { id: 'refs', title: 'References' },
       { id: 'config', title: 'Configuration' },
     ];
+
+    if (this.state.searchTwords) {
+      fields.unshift(
+        { id: 'category', title: 'Category' },
+      );
+    }
+
     const dataLines = [];
     const configFields = [ 'alignedBible', 'alignedBible2', 'caseSensitive', 'dualSearch', 'hideUsfmMarkers', 'matchWholeword', 'searchMaster', 'searchStr', 'searchTwords', 'searchType'];
     const config = {};
