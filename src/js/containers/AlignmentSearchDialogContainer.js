@@ -569,7 +569,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   saveTofile(data) {
     const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
-    const fields = [
+    const defaultFields = [
       { id: 'sourceText', title: 'Source Text' },
       { id: 'sourceLemma', title: 'Source Lemma' },
       { id: 'morph', title: 'Source Morph' },
@@ -580,12 +580,20 @@ class AlignmentSearchDialogContainer extends React.Component {
       { id: 'refs', title: 'References' },
       { id: 'config', title: 'Configuration' },
     ];
+    const tWordsFields = [
+      { id: 'sourceText', title: 'Source Text' },
+      { id: 'sourceLemma', title: 'Source Lemma' },
+      { id: 'morph', title: 'Source Morph' },
+      { id: 'strong', title: 'Source Strongs' },
+      { id: 'targetText', title: 'Translation Words' },
+      { id: 'alignedText', title: 'Aligned Text' },
+      { id: 'category', title: 'Category' },
+      { id: 'count', title: 'Match Count' },
+      { id: 'refs', title: 'References' },
+      { id: 'config', title: 'Configuration' },
+    ];
 
-    if (this.state.searchTwords) {
-      fields.unshift(
-        { id: 'category', title: 'Category' },
-      );
-    }
+    const fields = this.state.searchTwords ? tWordsFields : defaultFields;
 
     const dataLines = [];
     const configFields = [ 'alignedBible', 'alignedBible2', 'caseSensitive', 'dualSearch', 'hideUsfmMarkers', 'matchWholeword', 'searchMaster', 'searchStr', 'searchTwords', 'searchType'];
