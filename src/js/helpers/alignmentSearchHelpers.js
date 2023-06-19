@@ -36,8 +36,8 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex5';
-export const TWORDS_KEY = 'tWordsIndex2';
+export const ALIGNMENTS_KEY = 'alignmentsIndex5'; // increment the number each time the code changes and breaks compatibility with old index
+export const TWORDS_KEY = 'tWordsIndex2'; // increment the number each time the code changes and breaks compatibility with old index
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
@@ -1144,8 +1144,8 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           alignments_[sourceText] = {};
         }
 
-        const sourceALignment = alignments_[sourceText];
-        let index = sourceALignment[targetText];
+        const sourceAlignment = alignments_[sourceText];
+        let index = sourceAlignment[targetText];
 
         if (!index) {
           alignment.refs = [ref];
@@ -1153,7 +1153,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           delete alignment.ref;
           index = uniqueAlignments.length;
           uniqueAlignments.push(alignment);
-          sourceALignment[targetText] = [index];
+          sourceAlignment[targetText] = [index];
         } else {
           const matchedAlignment = uniqueAlignments[index];
           matchedAlignment.refs.push(ref);
@@ -1209,10 +1209,10 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           strong,
           targetText,
         } = alignment;
-        appendToALignmentIndex(sourceAlignments.alignments, sourceText, i);
-        appendToALignmentIndex(strongAlignments.alignments, strong, i);
-        appendToALignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
-        appendToALignmentIndex(targetAlignments.alignments, targetText, i);
+        appendToAlignmentIndex(sourceAlignments.alignments, sourceText, i);
+        appendToAlignmentIndex(strongAlignments.alignments, strong, i);
+        appendToAlignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
+        appendToAlignmentIndex(targetAlignments.alignments, targetText, i);
       }
 
       console.log(`getAlignmentsFromResource() for ${resource.origLang}, getting keys`);
@@ -1265,7 +1265,7 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
  * @param text
  * @param alignment
  */
-function appendToALignmentIndex(alignments, text, alignment) {
+function appendToAlignmentIndex(alignments, text, alignment) {
   if (!alignments[text]) {
     alignments[text] = [];
   }
