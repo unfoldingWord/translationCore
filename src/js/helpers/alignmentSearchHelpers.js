@@ -652,18 +652,26 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, cu
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
  * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
+ * @param {object} tWordsIndex2 - contains secondary index for tWords search
  * @returns {*[]} - array of found alignments
  */
-export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2) {
+export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2, tWordsIndex2) {
   const searchStrParts = searchStr.split(' ');
   const alignmentDataArray = [ _alignmentData ];
+  const tWordsIndexArray = [ tWordsIndex ];
   const foundMatches = [];
 
   if (alignmentData2) {
     alignmentDataArray.push(alignmentData2);
   }
 
-  for (const alignmentData of alignmentDataArray) {
+  if (tWordsIndex2) {
+    tWordsIndexArray.push(tWordsIndex2);
+  }
+
+  for (let j = 0; j < 2; j++) {
+    const alignmentData = alignmentDataArray[j];
+    const tWordsIndex = tWordsIndexArray[j];
     let foundMerged = [];
     let previousSearches = [];
 
@@ -677,7 +685,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
       const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
       let found = [];
 
-      if (config.searchTwords) {
+      if (config.searchTwords && tWordsIndex) {
         if (config.searchSource) {
           const field = 'quoteIndex';
           searchAlignmentsForField(field, tWordsIndex, search, flags, found);
@@ -721,7 +729,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
 
           return newCheck;
         });
-      } else {
+      } else if (alignmentData) {
         if (config.searchTarget) {
           searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
         }

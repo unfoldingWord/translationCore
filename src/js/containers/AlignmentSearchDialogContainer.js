@@ -1272,7 +1272,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           });
           this.props.closeAlertDialog();
           this.state.searchMaster && this.downloadMasterIfMissing();
-          this.loadTWordsIndex(key);
+          this.loadTWordsIndex(key, false, searchNum === 2);
         } else {
           console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
 
@@ -1428,6 +1428,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         this.state.searchMaster && this.downloadMasterIfMissing();
         this.loadAlignmentSearchOptionsWithUI();
         this.loadTWordsIndex(this.state.alignedBible);
+        this.loadTWordsIndex(this.state.alignedBible, false, true);
       });
     }
   }
@@ -1589,7 +1590,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       const alignmentData2 = state.dualSearch && state.alignmentData2 || null;
 
       try {
-        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config, alignmentData2) || [];
+        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config, alignmentData2, state.tWordsIndex2) || [];
       } catch (e) {
         console.error('AlignmentSearchDialogContainer - search error', e);
         this.showMessage(`Search Error`);
