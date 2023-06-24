@@ -73,6 +73,7 @@ import {
   readDirectory,
   removeIndices,
   saveTwordsIndex,
+  TWORDS_KEY,
 } from '../helpers/alignmentSearchHelpers';
 import {
   ALIGNMENT_DATA_PATH,
@@ -366,10 +367,31 @@ class AlignmentSearchDialogContainer extends React.Component {
     console.log('loadAlignmentSearchOptions() - starting');
     this.showMessage('Loading Available Aligned Bibles', true).then(() => {
       this.loadAlignmentSearchOptions(this.state.searchMaster);
-      this.selectAlignedBookToSearch(this.state.alignedBible);
-      this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
+      const unsupported = this.isSupportedAlignmentKey(this.state.alignedBible) || this.isSupportedAlignmentKey(this.state.alignedBible2);
+
+      if (unsupported) { // if either keys not supported then clear them
+        this.setState({ alignedBible: null, alignedBible2: null });
+      } else {
+        this.selectAlignedBookToSearch(this.state.alignedBible);
+        this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
+      }
       console.log('loadAlignmentSearchOptions() - finished');
     });
+  }
+
+  /**
+   * make sure alignment key is for current build
+   * @param {string} alignment
+   * @returns {boolean}
+   */
+  isSupportedAlignmentKey(alignment) {
+    let unsupported = true;
+
+    // if alignment key is set make sure it is compatible with current build
+    if (!alignment || alignment?.indexOf(ALIGNMENTS_KEY) > 0 || alignment?.indexOf(TWORDS_KEY) > 0) {
+      unsupported = false;
+    }
+    return unsupported;
   }
 
   /**
