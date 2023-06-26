@@ -302,6 +302,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       inOrder: false,
       hide: {},
       dualSearch: false,
+      updatingMaster: false,
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
@@ -335,6 +336,7 @@ class AlignmentSearchDialogContainer extends React.Component {
           }
 
           newState.found = null;
+          newState.updatingMaster = false;
           this.setState(newState);
         }
 
@@ -1489,86 +1491,101 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param download - if true, always download
    */
   updateMaster(message, download) {
-    const resources = [];
-    const bibles = [this.state.alignedBible];
+    if (!this.state.updatingMaster) {
+      this.setState({ updatingMaster: true });
 
-    if (this.state.alignedBible2 && (this.state.searchTwords || this.state.dualSearch)
-      && (this.state.alignedBible !== this.state.alignedBible2)) {
-      bibles.push(this.state.alignedBible2);
-    }
+      delay(100).then(() => {
+        this.downloadMasterIfMissing();
 
-    for (const bibleKey of bibles) {
-      const resource = bibleKey && parseResourceKey(bibleKey);
+        const resources = [];
+        const bibles = [this.state.alignedBible];
 
-      if (resource ) {
-        if ((bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2)) {
-          resource.isPrimarySearchBible = true;
+        if (this.state.alignedBible2 && (this.state.searchTwords || this.state.dualSearch)
+          && (this.state.alignedBible !== this.state.alignedBible2)) {
+          bibles.push(this.state.alignedBible2);
         }
-        resource.version = 'master';
-        resource.bibleKey = getKeyForBible(resource);
 
-        if (!download) {
-          if (isMasterResourceDownloaded(resource)) {
-            continue; // skip if already downloaded
+        for (const bibleKey of bibles) {
+          const resource = bibleKey && parseResourceKey(bibleKey);
+
+          if (resource) {
+            if ((bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2)) {
+              resource.isPrimarySearchBible = true;
+            }
+            resource.version = 'master';
+            resource.bibleKey = getKeyForBible(resource);
+
+            if (!download) {
+              if (isMasterResourceDownloaded(resource)) {
+                continue; // skip if already downloaded
+              }
+            }
+
+            resources.push(resource);
           }
         }
 
-        resources.push(resource);
-      }
-    }
-
-    if (!resources.length) { // we didn't need to download, but make sure alignments selected
-      for (const bibleKey of bibles) {
-        this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
-      }
-      return;
-    }
-
-    this.props.openOptionDialog(message,
-      (buttonPressed) => {
-        if (buttonPressed === OkButton) {
-          this.props.confirmOnlineAction(
-            async () => {
-              let error;
-              const folder = path.join(ALIGNMENT_DATA_DIR);
-
-              for (const resource_ of resources) {
-                console.log('Downloading', resource_);
-                await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
-                error = await downloadBible(resource_, folder);
-
-                if (error) {
-                  console.log(`Error downloading ${resource_.bibleKey}`, error);
-                  await this.showMessage(`Download Error: ${resource_.bibleKey}`);
-                  break;
-                }
-
-                this.loadAlignmentSearchOptions(true); // update the options
-                await delay(100);
-                this.updateBibleKeyToMaster(resource_.bibleKey, resource_.isPrimarySearchBible, true, true);
-                await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
-              }
-
-              if (!error) {
-                this.props.closeAlertDialog();
-              } else {
-                this.props.openOptionDialog(
-                  'Download error',
-                  () => this.props.closeAlertDialog(),
-                  'OK',
-                );
-              }
-            },
-            () => { // we do not want to go online
-              this.props.closeAlertDialog();
-            },
-          );
-        } else { // did not want to download now
-          this.props.closeAlertDialog();
+        if (!resources.length) { // we didn't need to download, but make sure alignments selected
+          for (const bibleKey of bibles) {
+            this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
+          }
+          this.setState({ updatingMaster: false });
+          return;
         }
-      },
-      OkButton,
-      CancelButton);
+
+        this.props.openOptionDialog(message,
+          (buttonPressed) => {
+            if (buttonPressed === OkButton) {
+              this.props.confirmOnlineAction(
+                async () => {
+                  let error;
+                  const folder = path.join(ALIGNMENT_DATA_DIR);
+
+                  for (const resource_ of resources) {
+                    console.log('Downloading', resource_);
+                    await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
+                    error = await downloadBible(resource_, folder);
+
+                    if (error) {
+                      console.log(`Error downloading ${resource_.bibleKey}`, error);
+                      await this.showMessage(`Download Error: ${resource_.bibleKey}`);
+                      break;
+                    }
+
+                    this.loadAlignmentSearchOptions(true); // update the options
+                    await delay(100);
+                    this.updateBibleKeyToMaster(resource_.bibleKey, resource_.isPrimarySearchBible, true, true);
+                    await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
+                  }
+
+                  this.setState({ updatingMaster: false });
+
+                  if (!error) {
+                    this.props.closeAlertDialog();
+                  } else {
+                    this.props.openOptionDialog(
+                      'Download error',
+                      () => this.props.closeAlertDialog(),
+                      'OK',
+                    );
+                  }
+                },
+                () => { // we do not want to go online
+                  this.setState({ updatingMaster: false });
+                  this.props.closeAlertDialog();
+                },
+              );
+            } else { // did not want to download now
+              this.setState({ updatingMaster: false });
+              this.props.closeAlertDialog();
+            }
+          },
+          OkButton,
+          CancelButton);
+      });
+    } else {
+      console.log(`updateMaster() - already updating`);
+    }
   }
 
   /**
