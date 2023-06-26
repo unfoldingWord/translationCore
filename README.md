@@ -49,4 +49,3 @@ Debugging App Startup Code
 - if you do not see under remote target `electron/js2c/browser_init` and an `inspect` link,
   make sure `Discover network targets` is selected and click `Configure` button.  Make sure `localhost:5656` is added under `Target discovery settings` and click `Done`.
 - Under remote target `electron/js2c/browser_init` click on `inspect` link.
-
