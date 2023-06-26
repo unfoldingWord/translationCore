@@ -482,24 +482,24 @@ class AlignmentSearchDialogContainer extends React.Component {
               this.setState({ alignedBibles: this.state.alignedBibles });
               await this.showMessage(indexingMsg, true);
               const success = this.loadIndexedAlignmentData(resource, searchNum);
-              callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
+              callback && await callback(success, `Failed loading index for '${selectedBibleKey}'`);
             } else {
               console.error(`loadAlignmentData() - no alignments for ${selectedBibleKey}`);
-              callback && callback(false, `No Alignments found in '${selectedBibleKey}'`);
+              callback && await callback(false, `No Alignments found in '${selectedBibleKey}'`);
             }
           } else {
             console.log(`loadAlignmentData() loaded cached alignment index for ${selectedBibleKey}`);
             const success = this.loadIndexedAlignmentData(resource, searchNum);
-            callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
+            callback && await callback(success, `Failed loading index for '${selectedBibleKey}'`);
           }
         } else {
           console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
-          callback && callback(false, `Could not find aligned bible for '${selectedBibleKey}'`);
+          callback && await callback(false, `Could not find aligned bible for '${selectedBibleKey}'`);
         }
       });
     } else {
       console.log('loadAlignmentData() no aligned bible');
-      callback && callback(false, `Invalid aligned bible ID: '${selectedBibleKey}'`);
+      callback && await callback(false, `Invalid aligned bible ID: '${selectedBibleKey}'`);
     }
   }
 
@@ -1300,7 +1300,9 @@ class AlignmentSearchDialogContainer extends React.Component {
               isNT,
             });
             this.props.closeAlertDialog();
+            console.log(`selectAlignedBookToSearch(${key}) - loading twords index`);
             await this.loadTWordsIndex(key, false, searchNum === 2);
+            console.log(`selectAlignedBookToSearch(${key}) - loaded twords index`);
             this.state.searchMaster && this.downloadMasterIfMissing();
           } else {
             console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
@@ -1309,6 +1311,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               this.props.openAlertDialog(errorMessage);
             }
           }
+          console.log(`selectAlignedBookToSearch(${key}) - finished loading alignment data`);
         }, searchNum);
         console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - indexing done`);
         this.setState({ selectingAlignments: false });
@@ -1331,6 +1334,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    */
   async loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
     const stateKey = secondAlignmentKey ? 'tWordsIndex2' :'tWordsIndex';
+    console.log(`loadTWordsIndex(${alignmentsKey}) - starting`);
 
     if (alignmentsKey && this.state.searchTwords) {
       const resource = parseResourceKey(alignmentsKey);
@@ -1339,6 +1343,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       if (!res) { // resource no longer present
         this.setState({ alignedBible: null });
         this.loadAlignmentSearchOptionsWithUI();
+        console.log(`loadTWordsIndex(${alignmentsKey}) - resource no longer present`);
         return;
       }
 
@@ -1346,15 +1351,17 @@ class AlignmentSearchDialogContainer extends React.Component {
       let tWordsIndex = getTwordsIndex(tWordsKey);
 
       if (tWordsIndex && !force) {
+        console.log(`loadTWordsIndex(${alignmentsKey}) - already have index`);
         this.setState({ [stateKey]: tWordsIndex });
       } else {
+        console.log(`loadTWordsIndex(${alignmentsKey}) - indexing tWords`);
         const indexingMsg = `Indexing translationWords for '${alignmentsKey}':`;
 
         const tWordsIndex = await indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
           await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
         });
 
-        console.log('tWords index finished');
+        console.log(`loadTWordsIndex(${alignmentsKey}) - tWords index finished`);
         this.props.closeAlertDialog();
         saveTwordsIndex(tWordsKey, tWordsIndex);
         this.setState({ [stateKey]: tWordsIndex });
