@@ -469,8 +469,8 @@ class AlignmentSearchDialogContainer extends React.Component {
 
         if (resource) {
           if (!resource.alignmentCount) {
-            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for '${selectedBibleKey}'`);
-            const indexingMsg = 'Doing one-time indexing of Bible for Search:';
+            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search of '${selectedBibleKey}'`);
+            const indexingMsg = `Doing one-time indexing of Bible for Search of '${selectedBibleKey}':`;
             await this.showMessage(indexingMsg, true);
             const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
               await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
@@ -480,7 +480,7 @@ class AlignmentSearchDialogContainer extends React.Component {
               console.log(`loadAlignmentData() - found ${alignmentData?.alignments?.length} alignments`);
               resource.alignmentCount = alignmentData?.alignments?.length;
               this.setState({ alignedBibles: this.state.alignedBibles });
-              await this.showMessage('Doing one-time indexing of Bible for Search', true);
+              await this.showMessage(indexingMsg, true);
               const success = this.loadIndexedAlignmentData(resource, searchNum);
               callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
             } else {
@@ -1348,7 +1348,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       if (tWordsIndex && !force) {
         this.setState({ [stateKey]: tWordsIndex });
       } else {
-        const indexingMsg = 'Indexing translationWords:';
+        const indexingMsg = `Indexing translationWords for '${alignmentsKey}':`;
 
         const tWordsIndex = await indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
           await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
