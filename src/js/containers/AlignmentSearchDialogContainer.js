@@ -303,6 +303,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       hide: {},
       dualSearch: false,
       updatingMaster: false,
+      selectingAlignments: false,
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
@@ -337,6 +338,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
           newState.found = null;
           newState.updatingMaster = false;
+          newState.selectingAlignments = false;
           this.setState(newState);
         }
 
@@ -365,17 +367,17 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * index downloaded bible resources to get available aligned bibles
    */
-  loadAlignmentSearchOptionsWithUI() {
+  async loadAlignmentSearchOptionsWithUI() {
     console.log('loadAlignmentSearchOptions() - starting');
-    this.showMessage('Loading Available Aligned Bibles', true).then(() => {
+    await this.showMessage('Loading Available Aligned Bibles', true).then(async () => {
       this.loadAlignmentSearchOptions(this.state.searchMaster);
       const unsupported = this.isSupportedAlignmentKey(this.state.alignedBible) || this.isSupportedAlignmentKey(this.state.alignedBible2);
 
       if (unsupported) { // if either keys not supported then clear them
         this.setState({ alignedBible: null, alignedBible2: null });
       } else {
-        this.selectAlignedBookToSearch(this.state.alignedBible);
-        this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
+        await this.selectAlignedBookToSearch(this.state.alignedBible);
+        await this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
       }
       console.log('loadAlignmentSearchOptions() - finished');
     });
@@ -459,10 +461,10 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {function} callback - when finished
    * @param {number} searchNum - if number is two, then load for second search
    */
-  loadAlignmentData(selectedBibleKey, callback = null, searchNum = 1) {
+  async loadAlignmentData(selectedBibleKey, callback = null, searchNum = 1) {
     if (selectedBibleKey) {
       console.log(`loadAlignmentData() - loading index for '${selectedBibleKey}'`);
-      this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
+      await this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
@@ -1261,50 +1263,58 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} key
    * @param {number} searchNum - if number is two, then load for second search
    */
-  selectAlignedBookToSearch(key, searchNum = 1) {
+  async selectAlignedBookToSearch(key, searchNum = 1) {
     console.log(`selectAlignedBookToSearch(${key}) for ${searchNum}`);
     const alignmentKey = (searchNum === 2) ? 'alignedBible2' : 'alignedBible';
 
     if (key) {
-      this.loadAlignmentData(key, (success, errorMessage) => {
-        bibles = {};
+      if (!this.state.selectingAlignments) {
+        this.setState({ selectingAlignments: true });
+        await delay(100);
+        await this.loadAlignmentData(key, async (success, errorMessage) => {
+          bibles = {};
 
-        if (success) {
-          //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
-          const [, , , origLang] = key.split('_');
-          let books = null;
-          let ignoreBooks = null;
-          const isNT = origLang === NT_ORIG_LANG;
+          if (success) {
+            //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+            const [, , , origLang] = key.split('_');
+            let books = null;
+            let ignoreBooks = null;
+            const isNT = origLang === NT_ORIG_LANG;
 
-          if (this.state.dualSearch) {
-            books = [...OT_BOOKS, ...NT_BOOKS];
-            ignoreBooks = [];
-          } else if (isNT) {
-            books = NT_BOOKS;
-            ignoreBooks = OT_BOOKS;
+            if (this.state.dualSearch) {
+              books = [...OT_BOOKS, ...NT_BOOKS];
+              ignoreBooks = [];
+            } else if (isNT) {
+              books = NT_BOOKS;
+              ignoreBooks = OT_BOOKS;
+            } else {
+              books = OT_BOOKS;
+              ignoreBooks = NT_BOOKS;
+            }
+
+            console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
+            this.setState({
+              [alignmentKey]: key,
+              books,
+              ignoreBooks,
+              isNT,
+            });
+            this.props.closeAlertDialog();
+            await this.loadTWordsIndex(key, false, searchNum === 2);
+            this.state.searchMaster && this.downloadMasterIfMissing();
           } else {
-            books = OT_BOOKS;
-            ignoreBooks = NT_BOOKS;
-          }
+            console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
 
-          console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
-          this.setState({
-            [alignmentKey]: key,
-            books,
-            ignoreBooks,
-            isNT,
-          });
-          this.props.closeAlertDialog();
-          this.state.searchMaster && this.downloadMasterIfMissing();
-          this.loadTWordsIndex(key, false, searchNum === 2);
-        } else {
-          console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
-
-          if (errorMessage) {
-            this.props.openAlertDialog(errorMessage);
+            if (errorMessage) {
+              this.props.openAlertDialog(errorMessage);
+            }
           }
-        }
-      }, searchNum);
+        }, searchNum);
+        console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - indexing done`);
+        this.setState({ selectingAlignments: false });
+      } else {
+        console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - already selecting`);
+      }
     }
   }
 
@@ -1319,7 +1329,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {boolean} force - force index generation
    * @param {boolean} secondAlignmentKey - if true then we load second alignments key
    */
-  loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
+  async loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
     const stateKey = secondAlignmentKey ? 'tWordsIndex2' :'tWordsIndex';
 
     if (alignmentsKey && this.state.searchTwords) {
@@ -1340,14 +1350,14 @@ class AlignmentSearchDialogContainer extends React.Component {
       } else {
         const indexingMsg = 'Indexing translationWords:';
 
-        indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
+        const tWordsIndex = await indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
           await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
-        }).then(tWordsIndex => {
-          console.log('tWords index finished');
-          this.props.closeAlertDialog();
-          saveTwordsIndex(tWordsKey, tWordsIndex);
-          this.setState({ [stateKey]: tWordsIndex });
         });
+
+        console.log('tWords index finished');
+        this.props.closeAlertDialog();
+        saveTwordsIndex(tWordsKey, tWordsIndex);
+        this.setState({ [stateKey]: tWordsIndex });
       }
     }
   }
@@ -1448,11 +1458,11 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState(types);
 
     if (types.searchTwords !== this.state.searchTwords) { // if changed, reload
-      delay(100).then(() => {
+      delay(100).then(async () => {
         this.state.searchMaster && this.downloadMasterIfMissing();
-        this.loadAlignmentSearchOptionsWithUI();
-        this.loadTWordsIndex(this.state.alignedBible);
-        this.loadTWordsIndex(this.state.alignedBible, false, true);
+        await this.loadAlignmentSearchOptionsWithUI();
+        await this.loadTWordsIndex(this.state.alignedBible);
+        await this.loadTWordsIndex(this.state.alignedBible, false, true);
       });
     }
   }
@@ -1464,7 +1474,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {boolean} removeOld
    * @param {boolean} updateAlways - if true, update key always, otherwise only update if current key in=s not master
    */
-  updateBibleKeyToMaster(bibleKey, isPrimarySearchBible, removeOld = false, updateAlways = false) {
+  async updateBibleKeyToMaster(bibleKey, isPrimarySearchBible, removeOld = false, updateAlways = false) {
     const resource = bibleKey && parseResourceKey(bibleKey);
 
     if (removeOld) {
@@ -1477,7 +1487,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       if (isMasterResourceDownloaded(resource)) {
         if (isPrimarySearchBible) {
-          this.selectAlignedBookToSearch(newBiblekey);
+          await this.selectAlignedBookToSearch(newBiblekey);
         } else {
           this.setState({ alignedBible2: newBiblekey });
         }
@@ -1494,7 +1504,7 @@ class AlignmentSearchDialogContainer extends React.Component {
     if (!this.state.updatingMaster) {
       this.setState({ updatingMaster: true });
 
-      delay(100).then(() => {
+      delay(100).then(async () => {
         this.downloadMasterIfMissing();
 
         const resources = [];
@@ -1527,7 +1537,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
         if (!resources.length) { // we didn't need to download, but make sure alignments selected
           for (const bibleKey of bibles) {
-            this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
+            await this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
           }
           this.setState({ updatingMaster: false });
           return;
