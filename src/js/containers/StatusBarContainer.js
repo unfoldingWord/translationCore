@@ -37,6 +37,8 @@ class StatusBarContainer extends React.Component {
       username,
       homeIsVisible,
       translate,
+      setOrderHelpsByRef,
+      orderHelpsByRef,
     } = this.props;
 
     return (
@@ -49,6 +51,8 @@ class StatusBarContainer extends React.Component {
             projectNickName={projectNickname}
             currentCheckNamespace={toolTitle}
             currentUser={username}
+            setOrderHelpsByRef={setOrderHelpsByRef}
+            orderHelpsByRef={orderHelpsByRef}
           />
         }
       </div>
@@ -76,6 +80,8 @@ StatusBarContainer.propTypes = {
   toolTitle: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   translate: PropTypes.func.isRequired,
+  orderHelpsByRef: PropTypes.bool,
+  setOrderHelpsByRef: PropTypes.func,
 };
 
 const mapStateToProps = (state) => ({

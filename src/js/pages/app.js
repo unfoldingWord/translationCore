@@ -36,6 +36,7 @@ import {
   TOOLS_DIR,
 } from '../common/constants';
 import ConfirmationDialog from '../middleware/confirmation/ConfirmationDialog';
+import { ORDER_HELPS_BY_REF, setSetting } from '../actions/SettingsActions';
 
 const NOT_TEST = process.env.NODE_ENV !== 'test';
 
@@ -82,7 +83,15 @@ class Main extends Component {
   }
 
   render() {
-    const { isLocaleLoaded } = this.props;
+    const {
+      isLocaleLoaded,
+      orderHelpsByRef,
+      setSetting,
+    } = this.props;
+
+    const setOrderHelpsByRef = (orderHelpsByRef) => {
+      setSetting(ORDER_HELPS_BY_REF, orderHelpsByRef);
+    };
 
     if (isLocaleLoaded) {
       const LocalizedStatusBarContainer = withLocale(StatusBarContainer);
@@ -99,7 +108,10 @@ class Main extends Component {
               padding: 0, display: 'flex', flexDirection: 'column', height: '100vh',
             }}>
               <Row style={{ margin: 0 }}>
-                <LocalizedStatusBarContainer/>
+                <LocalizedStatusBarContainer
+                  setOrderHelpsByRef={setOrderHelpsByRef}
+                  orderHelpsByRef={orderHelpsByRef}
+                />
               </Row>
               <BodyContainer />
             </Grid>
@@ -126,11 +138,14 @@ Main.propTypes = {
   appLanguage: PropTypes.any,
   loadTools: PropTypes.func.isRequired,
   initialize: PropTypes.func.isRequired,
+  orderHelpsByRef: PropTypes.bool,
+  setSetting: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
   isLocaleLoaded: getLocaleLoaded(state),
   appLanguage: getSetting(state, APP_LOCALE_SETTING),
+  orderHelpsByRef: !!getSetting(state, ORDER_HELPS_BY_REF),
 });
 
 const mapDispatchToProps = {
@@ -139,6 +154,7 @@ const mapDispatchToProps = {
   migrateResourcesFolder: MigrationActions.migrateResourcesFolder,
   loadLocalization,
   loadTools,
+  setSetting,
 };
 
 export default withLocalize(connect(

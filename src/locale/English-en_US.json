@@ -81,6 +81,8 @@
   "critical_error_warning": "Warning: A critical error has occurred!",
   "unknown_networking_error": "${app_name} has encountered an unknown communications error. If this problem continues, please send \"${user_feedback}\" which is an option on the \"${actions}\" button.",
   "pre_release": "Pre-Release",
+  "order_helps_by_ref": "Organize Checks by Reference",
+  "order_helps_by_group": "Organize Checks by Group",
   "updates": {
     "organization": "Organization",
     "resource": "Resource",

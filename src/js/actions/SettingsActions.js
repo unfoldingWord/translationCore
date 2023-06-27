@@ -1,5 +1,7 @@
 import types from './ActionTypes';
 
+export const ORDER_HELPS_BY_REF = 'orderHelpsByRef';
+
 /**
  * Adds or updates an application setting
  * @param {string} key the setting key
