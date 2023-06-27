@@ -793,20 +793,22 @@ class AlignmentSearchDialogContainer extends React.Component {
           message += ` - ignored books: ${ignoreBooks.join(',')}`;
         }
 
+        const buttonStyle = { alignSelf: 'center', marginTop: '20px', width: 'auto', paddingLeft: '4px', paddingRight: '4px' };
+
         return (
           <>
             <div style={{ fontWeight: 'bold', color: 'black' }}> {message} </div>
             <button onClick={() => this.saveToTsvfile(data)}
               className="btn-prime"
               id="save_tsv_button"
-              style={{ alignSelf: 'center', marginTop: '20px' }}
+              style={buttonStyle}
             >
               {'Save Search Results to TSV File'}
             </button>
             <button onClick={() => this.saveToJsonfile(data)}
               className="btn-prime"
               id="save_tsv_button"
-              style={{ alignSelf: 'center', marginTop: '20px' }}
+              style={buttonStyle}
             >
               {'Save Search Details to JSON File'}
             </button>
