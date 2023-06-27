@@ -593,7 +593,73 @@ class AlignmentSearchDialogContainer extends React.Component {
     return currentsearchFieldOptions;
   }
 
-  saveTofile(data) {
+  saveToJsonfile(data) {
+    const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
+
+    const defaultFields = [
+      { id: 'sourceText', source: 'Source Text' },
+      { id: 'sourceLemma', source: 'Source Lemma' },
+      { id: 'morph', source: 'Source Morph' },
+      { id: 'strong', source: 'Source Strongs' },
+      { id: 'targetText', source: 'Target Text' },
+      { id: 'alignedText', source: 'Aligned Text' },
+      { id: 'count', source: 'Match Count' },
+      { id: 'refs', source: 'References' },
+      { id: 'config', source: 'Configuration' },
+    ];
+    const tWordsFields = [
+      { id: 'refs', source: 'refs' },
+      { id: 'lemma', source: 'lemma' },
+      { id: 'strong', source: 'strong' },
+      { id: 'morph', source: 'morph' },
+      { id: 'alignedText', source: 'alignedText' },
+      { id: 'targetText', source: 'targetText' },
+      { id: 'targetAlignment', source: 'alignedText' },
+      { id: 'sourceAlignment', source: 'sourceText' },
+      { id: 'category', source: 'category' },
+      { id: 'tWord', source: 'contextId.groupId' },
+      { id: 'quote', source: 'contextId.quote' },
+      { id: 'count', source: 'count' },
+    ];
+
+    const newData = [];
+    const fields = this.state.searchTwords ? tWordsFields : defaultFields;
+
+    for (const item of data) {
+      const newItem = {};
+
+      for (const field of fields) {
+        const id = field.id;
+        let source = field.source?.split('.') || [];
+        let value = item;
+
+        for (const key of source) {
+          value = value[key];
+        }
+
+        newItem[id] = value;
+      }
+      newData.push(newItem);
+    }
+
+    const dataStr = JSON.stringify(newData, null, 2);
+
+    exportHelpers.getFilePath('searchResults', DOCUMENTS_PATH, 'json').then(pdfPath => {
+      console.log(`doPrint() - have TSV save path: ${pdfPath}`);
+
+      fs.writeFile(pdfPath, dataStr, (error) => {
+        if (error) {
+          console.error(`saveTofile() - save error`, error);
+        } else {
+          console.log(`Wrote TSV successfully to ${pdfPath}`);
+        }
+      });
+    }).catch(error => {
+      console.log(`Failed to select PDF path: `, error);
+    });
+  }
+
+  saveToTsvfile(data) {
     const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
     const defaultFields = [
       { id: 'sourceText', title: 'Source Text' },
@@ -730,12 +796,19 @@ class AlignmentSearchDialogContainer extends React.Component {
         return (
           <>
             <div style={{ fontWeight: 'bold', color: 'black' }}> {message} </div>
-            <button onClick={() => this.saveTofile(data)}
+            <button onClick={() => this.saveToTsvfile(data)}
               className="btn-prime"
               id="save_tsv_button"
               style={{ alignSelf: 'center', marginTop: '20px' }}
             >
-              {'Save to TSV File'}
+              {'Save Search Results to TSV File'}
+            </button>
+            <button onClick={() => this.saveToJsonfile(data)}
+              className="btn-prime"
+              id="save_tsv_button"
+              style={{ alignSelf: 'center', marginTop: '20px' }}
+            >
+              {'Save Search Details to JSON File'}
             </button>
             <MaterialTable
               columns={searchColumns.filter(item => item)}
