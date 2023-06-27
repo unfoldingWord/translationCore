@@ -595,17 +595,15 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   saveToJsonfile(data) {
     const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
-
     const defaultFields = [
-      { id: 'sourceText', source: 'Source Text' },
-      { id: 'sourceLemma', source: 'Source Lemma' },
-      { id: 'morph', source: 'Source Morph' },
-      { id: 'strong', source: 'Source Strongs' },
-      { id: 'targetText', source: 'Target Text' },
-      { id: 'alignedText', source: 'Aligned Text' },
-      { id: 'count', source: 'Match Count' },
-      { id: 'refs', source: 'References' },
-      { id: 'config', source: 'Configuration' },
+      { id: 'count', source: 'count' },
+      { id: 'morph', source: 'morph' },
+      { id: 'refs', source: 'refs' },
+      { id: 'lemma', source: 'sourceLemma' },
+      { id: 'sourceText', source: 'sourceText' },
+      { id: 'strong', source: 'strong' },
+      { id: 'targetText', source: 'targetText' },
+      { id: 'targetsPos', source: 'targetsPos' },
     ];
     const tWordsFields = [
       { id: 'refs', source: 'refs' },
@@ -634,7 +632,7 @@ class AlignmentSearchDialogContainer extends React.Component {
         let value = item;
 
         for (const key of source) {
-          value = value[key];
+          value = value[key] || '';
         }
 
         newItem[id] = value;
