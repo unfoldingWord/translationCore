@@ -3,6 +3,7 @@ const fonts = {
   'Padauk': { 'font': 'Padauk' },
   'Awami Nastaliq': { 'font': 'AwamiNastaliq' },
   'Scheherazade': { 'font': 'Scheherazade' },
+  'Charis SIL': { 'font': 'CharisSIL' },
   // Add more complex script fonts here, remember to load it in the css file and create a class with its font settings if necessary.
 };
 
