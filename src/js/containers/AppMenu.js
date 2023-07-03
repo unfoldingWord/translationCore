@@ -94,14 +94,7 @@ class AppMenu extends React.Component {
   }
 
   render() {
-    const {
-      variant,
-      translate,
-      orderHelpsByRef,
-      setOrderHelpsByRef,
-    } = this.props;
-    const orderingString = orderHelpsByRef ? translate('order_helps_by_group') : translate('order_helps_by_ref');
-
+    const { variant, translate } = this.props;
     return (
       <div>
         <PopoverMenu label={translate('actions')}
@@ -116,9 +109,6 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.openDialog(FEEDBACK)}
             primaryText={translate('user_feedback')}
             leftIcon={<FeedbackIcon/>}/>
-          <MenuItem onClick={() => setOrderHelpsByRef && setOrderHelpsByRef(!orderHelpsByRef)}
-            primaryText={orderingString}
-            leftIcon={<TranslateIcon/>}/>
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
             primaryText={translate('change_locale')}
             leftIcon={<TranslateIcon/>}/>
@@ -147,8 +137,6 @@ class AppMenu extends React.Component {
 AppMenu.propTypes = {
   translate: PropTypes.func.isRequired,
   variant: PropTypes.string,
-  orderHelpsByRef: PropTypes.bool,
-  setOrderHelpsByRef: PropTypes.func,
 };
 
 AppMenu.defaultProps = { variant: 'primary' };

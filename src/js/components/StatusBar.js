@@ -122,11 +122,7 @@ class StatusBar extends Component {
         margin: 'auto 0',
       },
     };
-    const {
-      translate,
-      setOrderHelpsByRef,
-      orderHelpsByRef,
-    } = this.props;
+    const { translate } = this.props;
     const project_max_length = 20;
     const { hoverProjectName, displayedProjectLabel } = ProjectDetailsHelpers.getProjectLabel(true, this.props.projectName,
       translate, this.props.projectNickName, project_max_length);
@@ -218,12 +214,7 @@ class StatusBar extends Component {
           </button>
         </div>
         <div style={styles.menu}>
-          <AppMenu
-            variant="dark"
-            translate={translate}
-            setOrderHelpsByRef={setOrderHelpsByRef}
-            orderHelpsByRef={orderHelpsByRef}
-          />
+          <AppMenu variant="dark" translate={translate}/>
         </div>
       </div>
     );
@@ -237,8 +228,6 @@ StatusBar.propTypes = {
   projectName: PropsTypes.string.isRequired,
   projectNickName: PropsTypes.string.isRequired,
   currentCheckNamespace: PropsTypes.string.isRequired,
-  orderHelpsByRef: PropsTypes.bool,
-  setOrderHelpsByRef: PropsTypes.func,
 };
 
 export default StatusBar;

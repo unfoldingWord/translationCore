@@ -17,9 +17,7 @@ import {
   getProjectNickname,
   getProjectName,
   getSelectedToolTitle,
-  getSetting,
 } from '../../../selectors';
-import { ORDER_HELPS_BY_REF, setSetting } from '../../../actions/SettingsActions';
 import HomeStep from './HomeStep';
 
 /**
@@ -46,8 +44,6 @@ class HomeStepper extends Component {
       projectNickname,
       goToStep,
       toolName,
-      setSetting,
-      orderHelpsByRef,
     } = this.props;
 
     const userLabel = isUserLoggedIn ? username : translate('user');
@@ -93,10 +89,6 @@ class HomeStepper extends Component {
       },
     };
 
-    const setOrderHelpsByRef = (orderHelpsByRef) => {
-      setSetting(ORDER_HELPS_BY_REF, orderHelpsByRef);
-    };
-
     return (
       <MuiThemeProvider>
         <Card>
@@ -113,11 +105,7 @@ class HomeStepper extends Component {
               ))}
             </Stepper>
             <div style={styles.menu}>
-              <AppMenu
-                translate={translate}
-                setOrderHelpsByRef={setOrderHelpsByRef}
-                orderHelpsByRef={orderHelpsByRef}
-              />
+              <AppMenu translate={translate}/>
             </div>
           </div>
         </Card>
@@ -137,8 +125,6 @@ HomeStepper.propTypes = {
   translate: PropTypes.func.isRequired,
   projectNickname: PropTypes.string,
   toolName: PropTypes.string,
-  orderHelpsByRef: PropTypes.bool,
-  setSetting: PropTypes.func,
 };
 
 const mapStateToProps = (state) => {
@@ -152,13 +138,9 @@ const mapStateToProps = (state) => {
     activeSteps: getActiveHomeScreenSteps(state),
     projectNickname: getProjectNickname(state),
     toolName: getSelectedToolTitle(state),
-    orderHelpsByRef: !!getSetting(state, ORDER_HELPS_BY_REF),
   };
 };
 
-const mapDispatchToProps = {
-  goToStep,
-  setSetting,
-};
+const mapDispatchToProps = { goToStep };
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeStepper);
