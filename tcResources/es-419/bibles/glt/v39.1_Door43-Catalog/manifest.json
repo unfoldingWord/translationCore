@@ -1,0 +1,137 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Fundación Idiomas Puentes"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "Una traducción de licencia abierta, destinada a proporcionar una comprensión de la Biblia «centrada en la forma». Aumenta la comprensión del traductor de la composición léxica y gramatical del texto subyacente al adherirse estrechamente al orden de las palabras y la estructura de los originales.",
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "issued": "2022-08-17",
+    "language": {
+      "title": "Español (Latin American Spanish)",
+      "identifier": "es-419",
+      "direction": "ltr"
+    },
+    "modified": "2022-08-17",
+    "publisher": "Idiomas Puentes",
+    "relation": [
+      "es-419/gst",
+      "es-419/tn",
+      "es-419/tq",
+      "es-419/ta",
+      "es-419/twl",
+      "es-419/tw",
+      "es-419/obs",
+      "es-419/obs-tn",
+      "hbo/uhb?v=2.1.25",
+      "el-x-koine/ugnt?v=0.25"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "39"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Texto Puente Literal",
+    "type": "bundle",
+    "version": "39.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "Idiomas Puentes"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Tito",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Fundación Idiomas Puentes"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "Una traducción de licencia abierta, destinada a proporcionar una comprensión de la Biblia «centrada en la forma». Aumenta la comprensión del traductor de la composición léxica y gramatical del texto subyacente al adherirse estrechamente al orden de las palabras y la estructura de los originales.",
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "issued": "2022-08-17",
+      "language": {
+        "title": "Español (Latin American Spanish)",
+        "identifier": "es-419",
+        "direction": "ltr"
+      },
+      "modified": "2022-08-17",
+      "publisher": "Idiomas Puentes",
+      "relation": [
+        "es-419/gst",
+        "es-419/tn",
+        "es-419/tq",
+        "es-419/ta",
+        "es-419/twl",
+        "es-419/tw",
+        "es-419/obs",
+        "es-419/obs-tn",
+        "hbo/uhb?v=2.1.25",
+        "el-x-koine/ugnt?v=0.25"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "39"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Texto Puente Literal",
+      "type": "bundle",
+      "version": "39.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "Idiomas Puentes"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Tito",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "es-419",
+  "language_name": "Español (Latin American Spanish)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "Texto Puente Literal",
+  "remoteModifiedTime": "2023-04-14T05:39:28Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2023-04-14T05:39:28Z",
+  "usfm-js": "3.4.2",
+  "version": "39.1",
+  "modifiedTime": "2023-04-14T05:39:28Z",
+  "stage": "latest"
+}
