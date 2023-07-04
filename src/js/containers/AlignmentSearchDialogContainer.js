@@ -73,6 +73,7 @@ import {
   readDirectory,
   removeIndices,
   saveTwordsIndex,
+  TWORDS_KEY,
 } from '../helpers/alignmentSearchHelpers';
 import {
   ALIGNMENT_DATA_PATH,
@@ -301,6 +302,8 @@ class AlignmentSearchDialogContainer extends React.Component {
       inOrder: false,
       hide: {},
       dualSearch: false,
+      updatingMaster: false,
+      selectingAlignments: false,
     };
     this.setSearchStr = this.setSearchStr.bind(this);
     this.startSearch = this.startSearch.bind(this);
@@ -334,6 +337,8 @@ class AlignmentSearchDialogContainer extends React.Component {
           }
 
           newState.found = null;
+          newState.updatingMaster = false;
+          newState.selectingAlignments = false;
           this.setState(newState);
         }
 
@@ -362,14 +367,35 @@ class AlignmentSearchDialogContainer extends React.Component {
   /**
    * index downloaded bible resources to get available aligned bibles
    */
-  loadAlignmentSearchOptionsWithUI() {
+  async loadAlignmentSearchOptionsWithUI() {
     console.log('loadAlignmentSearchOptions() - starting');
-    this.showMessage('Loading Available Aligned Bibles', true).then(() => {
+    await this.showMessage('Loading Available Aligned Bibles', true).then(async () => {
       this.loadAlignmentSearchOptions(this.state.searchMaster);
-      this.selectAlignedBookToSearch(this.state.alignedBible);
-      this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
+      const unsupported = this.isSupportedAlignmentKey(this.state.alignedBible) || this.isSupportedAlignmentKey(this.state.alignedBible2);
+
+      if (unsupported) { // if either keys not supported then clear them
+        this.setState({ alignedBible: null, alignedBible2: null });
+      } else {
+        await this.selectAlignedBookToSearch(this.state.alignedBible);
+        await this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
+      }
       console.log('loadAlignmentSearchOptions() - finished');
     });
+  }
+
+  /**
+   * make sure alignment key is for current build
+   * @param {string} alignment
+   * @returns {boolean}
+   */
+  isSupportedAlignmentKey(alignment) {
+    let unsupported = true;
+
+    // if alignment key is set make sure it is compatible with current build
+    if (!alignment || alignment?.indexOf(ALIGNMENTS_KEY) > 0 || alignment?.indexOf(TWORDS_KEY) > 0) {
+      unsupported = false;
+    }
+    return unsupported;
   }
 
   /**
@@ -435,16 +461,16 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {function} callback - when finished
    * @param {number} searchNum - if number is two, then load for second search
    */
-  loadAlignmentData(selectedBibleKey, callback = null, searchNum = 1) {
+  async loadAlignmentData(selectedBibleKey, callback = null, searchNum = 1) {
     if (selectedBibleKey) {
       console.log(`loadAlignmentData() - loading index for '${selectedBibleKey}'`);
-      this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
+      await this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
         const resource = this.getResourceForBible(selectedBibleKey);
 
         if (resource) {
           if (!resource.alignmentCount) {
-            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search for '${selectedBibleKey}'`);
-            const indexingMsg = 'Doing one-time indexing of Bible for Search:';
+            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search of '${selectedBibleKey}'`);
+            const indexingMsg = `Doing one-time indexing of Bible for Search of '${selectedBibleKey}':`;
             await this.showMessage(indexingMsg, true);
             const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
               await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
@@ -454,26 +480,26 @@ class AlignmentSearchDialogContainer extends React.Component {
               console.log(`loadAlignmentData() - found ${alignmentData?.alignments?.length} alignments`);
               resource.alignmentCount = alignmentData?.alignments?.length;
               this.setState({ alignedBibles: this.state.alignedBibles });
-              await this.showMessage('Doing one-time indexing of Bible for Search', true);
+              await this.showMessage(indexingMsg, true);
               const success = this.loadIndexedAlignmentData(resource, searchNum);
-              callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
+              callback && await callback(success, `Failed loading index for '${selectedBibleKey}'`);
             } else {
               console.error(`loadAlignmentData() - no alignments for ${selectedBibleKey}`);
-              callback && callback(false, `No Alignments found in '${selectedBibleKey}'`);
+              callback && await callback(false, `No Alignments found in '${selectedBibleKey}'`);
             }
           } else {
             console.log(`loadAlignmentData() loaded cached alignment index for ${selectedBibleKey}`);
             const success = this.loadIndexedAlignmentData(resource, searchNum);
-            callback && callback(success, `Failed loading index for '${selectedBibleKey}'`);
+            callback && await callback(success, `Failed loading index for '${selectedBibleKey}'`);
           }
         } else {
           console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
-          callback && callback(false, `Could not find aligned bible for '${selectedBibleKey}'`);
+          callback && await callback(false, `Could not find aligned bible for '${selectedBibleKey}'`);
         }
       });
     } else {
       console.log('loadAlignmentData() no aligned bible');
-      callback && callback(false, `Invalid aligned bible ID: '${selectedBibleKey}'`);
+      callback && await callback(false, `Invalid aligned bible ID: '${selectedBibleKey}'`);
     }
   }
 
@@ -567,9 +593,73 @@ class AlignmentSearchDialogContainer extends React.Component {
     return currentsearchFieldOptions;
   }
 
-  saveTofile(data) {
+  saveToJsonfile(data) {
     const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
-    const fields = [
+    const defaultFields = [
+      { id: 'count', source: 'count' },
+      { id: 'morph', source: 'morph' },
+      { id: 'refs', source: 'refs' },
+      { id: 'lemma', source: 'sourceLemma' },
+      { id: 'sourceText', source: 'sourceText' },
+      { id: 'strong', source: 'strong' },
+      { id: 'targetText', source: 'targetText' },
+      { id: 'targetsPos', source: 'targetsPos' },
+    ];
+    const tWordsFields = [
+      { id: 'refs', source: 'refs' },
+      { id: 'lemma', source: 'lemma' },
+      { id: 'strong', source: 'strong' },
+      { id: 'morph', source: 'morph' },
+      { id: 'alignedText', source: 'alignedText' },
+      { id: 'targetText', source: 'targetText' },
+      { id: 'targetAlignment', source: 'alignedText' },
+      { id: 'sourceAlignment', source: 'sourceText' },
+      { id: 'category', source: 'category' },
+      { id: 'tWord', source: 'contextId.groupId' },
+      { id: 'quote', source: 'contextId.quote' },
+      { id: 'count', source: 'count' },
+    ];
+
+    const newData = [];
+    const fields = this.state.searchTwords ? tWordsFields : defaultFields;
+
+    for (const item of data) {
+      const newItem = {};
+
+      for (const field of fields) {
+        const id = field.id;
+        let source = field.source?.split('.') || [];
+        let value = item;
+
+        for (const key of source) {
+          value = value[key] || '';
+        }
+
+        newItem[id] = value;
+      }
+      newData.push(newItem);
+    }
+
+    const dataStr = JSON.stringify(newData, null, 2);
+
+    exportHelpers.getFilePath('searchResults', DOCUMENTS_PATH, 'json').then(pdfPath => {
+      console.log(`doPrint() - have TSV save path: ${pdfPath}`);
+
+      fs.writeFile(pdfPath, dataStr, (error) => {
+        if (error) {
+          console.error(`saveTofile() - save error`, error);
+        } else {
+          console.log(`Wrote TSV successfully to ${pdfPath}`);
+        }
+      });
+    }).catch(error => {
+      console.log(`Failed to select PDF path: `, error);
+    });
+  }
+
+  saveToTsvfile(data) {
+    const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
+    const defaultFields = [
       { id: 'sourceText', title: 'Source Text' },
       { id: 'sourceLemma', title: 'Source Lemma' },
       { id: 'morph', title: 'Source Morph' },
@@ -580,6 +670,21 @@ class AlignmentSearchDialogContainer extends React.Component {
       { id: 'refs', title: 'References' },
       { id: 'config', title: 'Configuration' },
     ];
+    const tWordsFields = [
+      { id: 'sourceText', title: 'Source Text' },
+      { id: 'sourceLemma', title: 'Source Lemma' },
+      { id: 'morph', title: 'Source Morph' },
+      { id: 'strong', title: 'Source Strongs' },
+      { id: 'targetText', title: 'Translation Words' },
+      { id: 'alignedText', title: 'Aligned Text' },
+      { id: 'category', title: 'Category' },
+      { id: 'count', title: 'Match Count' },
+      { id: 'refs', title: 'References' },
+      { id: 'config', title: 'Configuration' },
+    ];
+
+    const fields = this.state.searchTwords ? tWordsFields : defaultFields;
+
     const dataLines = [];
     const configFields = [ 'alignedBible', 'alignedBible2', 'caseSensitive', 'dualSearch', 'hideUsfmMarkers', 'matchWholeword', 'searchMaster', 'searchStr', 'searchTwords', 'searchType'];
     const config = {};
@@ -686,15 +791,24 @@ class AlignmentSearchDialogContainer extends React.Component {
           message += ` - ignored books: ${ignoreBooks.join(',')}`;
         }
 
+        const buttonStyle = { alignSelf: 'center', marginTop: '20px', width: 'auto', paddingLeft: '4px', paddingRight: '4px' };
+
         return (
           <>
             <div style={{ fontWeight: 'bold', color: 'black' }}> {message} </div>
-            <button onClick={() => this.saveTofile(data)}
+            <button onClick={() => this.saveToTsvfile(data)}
               className="btn-prime"
               id="save_tsv_button"
-              style={{ alignSelf: 'center', marginTop: '20px' }}
+              style={buttonStyle}
             >
-              {'Save to TSV File'}
+              {'Save Search Results to TSV File'}
+            </button>
+            <button onClick={() => this.saveToJsonfile(data)}
+              className="btn-prime"
+              id="save_tsv_button"
+              style={buttonStyle}
+            >
+              {'Save Search Details to JSON File'}
             </button>
             <MaterialTable
               columns={searchColumns.filter(item => item)}
@@ -1222,50 +1336,61 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {string} key
    * @param {number} searchNum - if number is two, then load for second search
    */
-  selectAlignedBookToSearch(key, searchNum = 1) {
+  async selectAlignedBookToSearch(key, searchNum = 1) {
     console.log(`selectAlignedBookToSearch(${key}) for ${searchNum}`);
     const alignmentKey = (searchNum === 2) ? 'alignedBible2' : 'alignedBible';
 
     if (key) {
-      this.loadAlignmentData(key, (success, errorMessage) => {
-        bibles = {};
+      if (!this.state.selectingAlignments) {
+        this.setState({ selectingAlignments: true });
+        await delay(100);
+        await this.loadAlignmentData(key, async (success, errorMessage) => {
+          bibles = {};
 
-        if (success) {
-          //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
-          const [, , , origLang] = key.split('_');
-          let books = null;
-          let ignoreBooks = null;
-          const isNT = origLang === NT_ORIG_LANG;
+          if (success) {
+            //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+            const [, , , origLang] = key.split('_');
+            let books = null;
+            let ignoreBooks = null;
+            const isNT = origLang === NT_ORIG_LANG;
 
-          if (this.state.dualSearch) {
-            books = [...OT_BOOKS, ...NT_BOOKS];
-            ignoreBooks = [];
-          } else if (isNT) {
-            books = NT_BOOKS;
-            ignoreBooks = OT_BOOKS;
+            if (this.state.dualSearch) {
+              books = [...OT_BOOKS, ...NT_BOOKS];
+              ignoreBooks = [];
+            } else if (isNT) {
+              books = NT_BOOKS;
+              ignoreBooks = OT_BOOKS;
+            } else {
+              books = OT_BOOKS;
+              ignoreBooks = NT_BOOKS;
+            }
+
+            console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
+            this.setState({
+              [alignmentKey]: key,
+              books,
+              ignoreBooks,
+              isNT,
+            });
+            this.props.closeAlertDialog();
+            console.log(`selectAlignedBookToSearch(${key}) - loading twords index`);
+            await this.loadTWordsIndex(key, false, searchNum === 2);
+            console.log(`selectAlignedBookToSearch(${key}) - loaded twords index`);
+            this.state.searchMaster && this.downloadMasterIfMissing();
           } else {
-            books = OT_BOOKS;
-            ignoreBooks = NT_BOOKS;
-          }
+            console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
 
-          console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
-          this.setState({
-            [alignmentKey]: key,
-            books,
-            ignoreBooks,
-            isNT,
-          });
-          this.props.closeAlertDialog();
-          this.state.searchMaster && this.downloadMasterIfMissing();
-          this.loadTWordsIndex(key);
-        } else {
-          console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
-
-          if (errorMessage) {
-            this.props.openAlertDialog(errorMessage);
+            if (errorMessage) {
+              this.props.openAlertDialog(errorMessage);
+            }
           }
-        }
-      }, searchNum);
+          console.log(`selectAlignedBookToSearch(${key}) - finished loading alignment data`);
+        }, searchNum);
+        console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - indexing done`);
+        this.setState({ selectingAlignments: false });
+      } else {
+        console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - already selecting`);
+      }
     }
   }
 
@@ -1280,8 +1405,9 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {boolean} force - force index generation
    * @param {boolean} secondAlignmentKey - if true then we load second alignments key
    */
-  loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
+  async loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
     const stateKey = secondAlignmentKey ? 'tWordsIndex2' :'tWordsIndex';
+    console.log(`loadTWordsIndex(${alignmentsKey}) - starting`);
 
     if (alignmentsKey && this.state.searchTwords) {
       const resource = parseResourceKey(alignmentsKey);
@@ -1290,6 +1416,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       if (!res) { // resource no longer present
         this.setState({ alignedBible: null });
         this.loadAlignmentSearchOptionsWithUI();
+        console.log(`loadTWordsIndex(${alignmentsKey}) - resource no longer present`);
         return;
       }
 
@@ -1297,18 +1424,20 @@ class AlignmentSearchDialogContainer extends React.Component {
       let tWordsIndex = getTwordsIndex(tWordsKey);
 
       if (tWordsIndex && !force) {
+        console.log(`loadTWordsIndex(${alignmentsKey}) - already have index`);
         this.setState({ [stateKey]: tWordsIndex });
       } else {
-        const indexingMsg = 'Indexing translationWords:';
+        console.log(`loadTWordsIndex(${alignmentsKey}) - indexing tWords`);
+        const indexingMsg = `Indexing translationWords for '${alignmentsKey}':`;
 
-        indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
+        const tWordsIndex = await indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
           await this.showMessage(<> {indexingMsg} <br/>{`${100 - percent}% left`} </>, true);
-        }).then(tWordsIndex => {
-          console.log('tWords index finished');
-          this.props.closeAlertDialog();
-          saveTwordsIndex(tWordsKey, tWordsIndex);
-          this.setState({ [stateKey]: tWordsIndex });
         });
+
+        console.log(`loadTWordsIndex(${alignmentsKey}) - tWords index finished`);
+        this.props.closeAlertDialog();
+        saveTwordsIndex(tWordsKey, tWordsIndex);
+        this.setState({ [stateKey]: tWordsIndex });
       }
     }
   }
@@ -1409,10 +1538,11 @@ class AlignmentSearchDialogContainer extends React.Component {
     this.setState(types);
 
     if (types.searchTwords !== this.state.searchTwords) { // if changed, reload
-      delay(100).then(() => {
+      delay(100).then(async () => {
         this.state.searchMaster && this.downloadMasterIfMissing();
-        this.loadAlignmentSearchOptionsWithUI();
-        this.loadTWordsIndex(this.state.alignedBible);
+        await this.loadAlignmentSearchOptionsWithUI();
+        await this.loadTWordsIndex(this.state.alignedBible);
+        await this.loadTWordsIndex(this.state.alignedBible, false, true);
       });
     }
   }
@@ -1424,7 +1554,7 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param {boolean} removeOld
    * @param {boolean} updateAlways - if true, update key always, otherwise only update if current key in=s not master
    */
-  updateBibleKeyToMaster(bibleKey, isPrimarySearchBible, removeOld = false, updateAlways = false) {
+  async updateBibleKeyToMaster(bibleKey, isPrimarySearchBible, removeOld = false, updateAlways = false) {
     const resource = bibleKey && parseResourceKey(bibleKey);
 
     if (removeOld) {
@@ -1437,7 +1567,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
       if (isMasterResourceDownloaded(resource)) {
         if (isPrimarySearchBible) {
-          this.selectAlignedBookToSearch(newBiblekey);
+          await this.selectAlignedBookToSearch(newBiblekey);
         } else {
           this.setState({ alignedBible2: newBiblekey });
         }
@@ -1451,86 +1581,101 @@ class AlignmentSearchDialogContainer extends React.Component {
    * @param download - if true, always download
    */
   updateMaster(message, download) {
-    const resources = [];
-    const bibles = [this.state.alignedBible];
+    if (!this.state.updatingMaster) {
+      this.setState({ updatingMaster: true });
 
-    if (this.state.alignedBible2 && (this.state.searchTwords || this.state.dualSearch)
-      && (this.state.alignedBible !== this.state.alignedBible2)) {
-      bibles.push(this.state.alignedBible2);
-    }
+      delay(100).then(async () => {
+        this.downloadMasterIfMissing();
 
-    for (const bibleKey of bibles) {
-      const resource = bibleKey && parseResourceKey(bibleKey);
+        const resources = [];
+        const bibles = [this.state.alignedBible];
 
-      if (resource ) {
-        if ((bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2)) {
-          resource.isPrimarySearchBible = true;
+        if (this.state.alignedBible2 && (this.state.searchTwords || this.state.dualSearch)
+          && (this.state.alignedBible !== this.state.alignedBible2)) {
+          bibles.push(this.state.alignedBible2);
         }
-        resource.version = 'master';
-        resource.bibleKey = getKeyForBible(resource);
 
-        if (!download) {
-          if (isMasterResourceDownloaded(resource)) {
-            continue; // skip if already downloaded
+        for (const bibleKey of bibles) {
+          const resource = bibleKey && parseResourceKey(bibleKey);
+
+          if (resource) {
+            if ((bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2)) {
+              resource.isPrimarySearchBible = true;
+            }
+            resource.version = 'master';
+            resource.bibleKey = getKeyForBible(resource);
+
+            if (!download) {
+              if (isMasterResourceDownloaded(resource)) {
+                continue; // skip if already downloaded
+              }
+            }
+
+            resources.push(resource);
           }
         }
 
-        resources.push(resource);
-      }
-    }
-
-    if (!resources.length) { // we didn't need to download, but make sure alignments selected
-      for (const bibleKey of bibles) {
-        this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
-      }
-      return;
-    }
-
-    this.props.openOptionDialog(message,
-      (buttonPressed) => {
-        if (buttonPressed === OkButton) {
-          this.props.confirmOnlineAction(
-            async () => {
-              let error;
-              const folder = path.join(ALIGNMENT_DATA_DIR);
-
-              for (const resource_ of resources) {
-                console.log('Downloading', resource_);
-                await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
-                error = await downloadBible(resource_, folder);
-
-                if (error) {
-                  console.log(`Error downloading ${resource_.bibleKey}`, error);
-                  await this.showMessage(`Download Error: ${resource_.bibleKey}`);
-                  break;
-                }
-
-                this.loadAlignmentSearchOptions(true); // update the options
-                await delay(100);
-                this.updateBibleKeyToMaster(resource_.bibleKey, resource_.isPrimarySearchBible, true, true);
-                await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
-              }
-
-              if (!error) {
-                this.props.closeAlertDialog();
-              } else {
-                this.props.openOptionDialog(
-                  'Download error',
-                  () => this.props.closeAlertDialog(),
-                  'OK',
-                );
-              }
-            },
-            () => { // we do not want to go online
-              this.props.closeAlertDialog();
-            },
-          );
-        } else { // did not want to download now
-          this.props.closeAlertDialog();
+        if (!resources.length) { // we didn't need to download, but make sure alignments selected
+          for (const bibleKey of bibles) {
+            await this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
+          }
+          this.setState({ updatingMaster: false });
+          return;
         }
-      },
-      OkButton,
-      CancelButton);
+
+        this.props.openOptionDialog(message,
+          (buttonPressed) => {
+            if (buttonPressed === OkButton) {
+              this.props.confirmOnlineAction(
+                async () => {
+                  let error;
+                  const folder = path.join(ALIGNMENT_DATA_DIR);
+
+                  for (const resource_ of resources) {
+                    console.log('Downloading', resource_);
+                    await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
+                    error = await downloadBible(resource_, folder);
+
+                    if (error) {
+                      console.log(`Error downloading ${resource_.bibleKey}`, error);
+                      await this.showMessage(`Download Error: ${resource_.bibleKey}`);
+                      break;
+                    }
+
+                    this.loadAlignmentSearchOptions(true); // update the options
+                    await delay(100);
+                    this.updateBibleKeyToMaster(resource_.bibleKey, resource_.isPrimarySearchBible, true, true);
+                    await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
+                  }
+
+                  this.setState({ updatingMaster: false });
+
+                  if (!error) {
+                    this.props.closeAlertDialog();
+                  } else {
+                    this.props.openOptionDialog(
+                      'Download error',
+                      () => this.props.closeAlertDialog(),
+                      'OK',
+                    );
+                  }
+                },
+                () => { // we do not want to go online
+                  this.setState({ updatingMaster: false });
+                  this.props.closeAlertDialog();
+                },
+              );
+            } else { // did not want to download now
+              this.setState({ updatingMaster: false });
+              this.props.closeAlertDialog();
+            }
+          },
+          OkButton,
+          CancelButton);
+      });
+    } else {
+      console.log(`updateMaster() - already updating`);
+    }
   }
 
   /**
@@ -1574,7 +1719,7 @@ class AlignmentSearchDialogContainer extends React.Component {
       const alignmentData2 = state.dualSearch && state.alignmentData2 || null;
 
       try {
-        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config, alignmentData2) || [];
+        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config, alignmentData2, state.tWordsIndex2) || [];
       } catch (e) {
         console.error('AlignmentSearchDialogContainer - search error', e);
         this.showMessage(`Search Error`);

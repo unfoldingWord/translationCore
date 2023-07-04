@@ -36,8 +36,8 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex5';
-export const TWORDS_KEY = 'tWordsIndex2';
+export const ALIGNMENTS_KEY = 'alignmentsIndex5'; // increment the number each time the code changes and breaks compatibility with old index
+export const TWORDS_KEY = 'tWordsIndex2'; // increment the number each time the code changes and breaks compatibility with old index
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
@@ -652,18 +652,26 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, cu
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
  * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
+ * @param {object} tWordsIndex2 - contains secondary index for tWords search
  * @returns {*[]} - array of found alignments
  */
-export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2) {
+export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2, tWordsIndex2) {
   const searchStrParts = searchStr.split(' ');
   const alignmentDataArray = [ _alignmentData ];
+  const tWordsIndexArray = [ tWordsIndex ];
   const foundMatches = [];
 
   if (alignmentData2) {
     alignmentDataArray.push(alignmentData2);
   }
 
-  for (const alignmentData of alignmentDataArray) {
+  if (tWordsIndex2) {
+    tWordsIndexArray.push(tWordsIndex2);
+  }
+
+  for (let j = 0; j < 2; j++) {
+    const alignmentData = alignmentDataArray[j];
+    const tWordsIndex = tWordsIndexArray[j];
     let foundMerged = [];
     let previousSearches = [];
 
@@ -677,7 +685,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
       const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
       let found = [];
 
-      if (config.searchTwords) {
+      if (config.searchTwords && tWordsIndex) {
         if (config.searchSource) {
           const field = 'quoteIndex';
           searchAlignmentsForField(field, tWordsIndex, search, flags, found);
@@ -721,7 +729,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
 
           return newCheck;
         });
-      } else {
+      } else if (alignmentData) {
         if (config.searchTarget) {
           searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
         }
@@ -1144,8 +1152,8 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           alignments_[sourceText] = {};
         }
 
-        const sourceALignment = alignments_[sourceText];
-        let index = sourceALignment[targetText];
+        const sourceAlignment = alignments_[sourceText];
+        let index = sourceAlignment[targetText];
 
         if (!index) {
           alignment.refs = [ref];
@@ -1153,7 +1161,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           delete alignment.ref;
           index = uniqueAlignments.length;
           uniqueAlignments.push(alignment);
-          sourceALignment[targetText] = [index];
+          sourceAlignment[targetText] = [index];
         } else {
           const matchedAlignment = uniqueAlignments[index];
           matchedAlignment.refs.push(ref);
@@ -1209,10 +1217,10 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           strong,
           targetText,
         } = alignment;
-        appendToALignmentIndex(sourceAlignments.alignments, sourceText, i);
-        appendToALignmentIndex(strongAlignments.alignments, strong, i);
-        appendToALignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
-        appendToALignmentIndex(targetAlignments.alignments, targetText, i);
+        appendToAlignmentIndex(sourceAlignments.alignments, sourceText, i);
+        appendToAlignmentIndex(strongAlignments.alignments, strong, i);
+        appendToAlignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
+        appendToAlignmentIndex(targetAlignments.alignments, targetText, i);
       }
 
       console.log(`getAlignmentsFromResource() for ${resource.origLang}, getting keys`);
@@ -1265,7 +1273,7 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
  * @param text
  * @param alignment
  */
-function appendToALignmentIndex(alignments, text, alignment) {
+function appendToAlignmentIndex(alignments, text, alignment) {
   if (!alignments[text]) {
     alignments[text] = [];
   }
@@ -2001,150 +2009,155 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   // ~/translationCore/resources/el-x-koine/translationHelps/translationWords/v0.29_Door43-Catalog/kt/groups/1co
   // for other owners:
   // ~/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
+  try {
+    const bible = {};
+    let checks = [];
+    const bibleIndex = {};
+    const groupIndex = {};
+    const quoteIndex = {};
+    const strongsIndex = {};
+    const lemmaIndex = {};
+    const alignmentIndex = {};
+    const res = addTwordsInfoToResource(resource, resourcesFolder);
+    let filterBooks = res.filterBooks;
+    const latestTWordsVersion = res.latestTWordsVersion;
+    const latestTwordsPath = res.latestTwordsPath;
 
-  const bible = {};
-  let checks = [];
-  const bibleIndex = {};
-  const groupIndex = {};
-  const quoteIndex = {};
-  const strongsIndex = {};
-  const lemmaIndex = {};
-  const alignmentIndex = {};
-  const res = addTwordsInfoToResource(resource, resourcesFolder);
-  let filterBooks = res.filterBooks;
-  const latestTWordsVersion = res.latestTWordsVersion;
-  const latestTwordsPath = res.latestTwordsPath;
+    const usingDoor43 = (res.owner === DEFAULT_OWNER);
+    let biblePath = null;
 
-  const usingDoor43 = (res.owner === DEFAULT_OWNER);
-  let biblePath = null;
+    if (!usingDoor43) {
+      const resourceId = (res.origLang === 'hbo') ? 'uhb' : 'ugnt';
+      const bibleVersionsPath = path.join(resourcesFolder, `${res.origLang}/bibles/${resourceId}`);
+      const origLangOwner = getOriginalLangOwner(resource.owner);
+      biblePath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, origLangOwner);
+      filterBooks = (res.origLang === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
+    }
 
-  if (!usingDoor43) {
-    const resourceId = (res.origLang === 'hbo') ? 'uhb' : 'ugnt';
-    const bibleVersionsPath = path.join(resourcesFolder, `${res.origLang}/bibles/${resourceId}`);
-    const origLangOwner = getOriginalLangOwner(resource.owner);
-    biblePath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, origLangOwner);
-    filterBooks = (res.origLang === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
-  }
+    if (latestTWordsVersion) {
+      await doCallback(callback, 0);
 
-  if (latestTWordsVersion) {
-    await doCallback(callback, 0);
+      if (fs.existsSync(latestTwordsPath)) {
+        console.log(`indexTwords - Found ${latestTWordsVersion}`);
+        const categories = readDirectory(latestTwordsPath);
+        const categoryStepSize = 100 / (categories.length || 1);
 
-    if (fs.existsSync(latestTwordsPath)) {
-      console.log(`Found ${latestTWordsVersion}`);
-      const catagories = readDirectory(latestTwordsPath);
-      const catagoryStepSize = 100 / (catagories.length || 1);
+        for (let i = 0; i < categories.length; i++) {
+          const category = categories[i];
+          const progressCategory = i * categoryStepSize;
+          const booksPath = path.join(latestTwordsPath, category, 'groups');
+          let books = readDirectory(booksPath);
 
-      for (let i = 0; i < catagories.length; i++) {
-        const catagory = catagories[i];
-        const progressCatagory = i * catagoryStepSize;
-        const booksPath = path.join(latestTwordsPath, catagory, 'groups');
-        let books = readDirectory(booksPath);
+          if (filterBooks) {
+            const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
+            books = filteredBooks;
+          }
 
-        if (filterBooks) {
-          const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
-          books = filteredBooks;
-        }
+          const bookStepSize = categoryStepSize / (books.length || 1);
 
-        const bookStepSize = catagoryStepSize / (books.length || 1);
+          for (let j = 0; j < books.length; j++) {
+            const bookId = books[j];
+            const bookProgress = j * bookStepSize + progressCategory;
+            // eslint-disable-next-line no-await-in-loop
+            await doCallback(callback, bookProgress);
+            const bookPath = path.join(booksPath, bookId);
+            const groupFiles = readDirectory(bookPath, false, true, '.json');
 
-        for (let j = 0; j < books.length; j++) {
-          const bookId = books[j];
-          const bookProgress = j * bookStepSize + progressCatagory;
-          // eslint-disable-next-line no-await-in-loop
-          await doCallback(callback, bookProgress);
-          const bookPath = path.join(booksPath, bookId);
-          const groupFiles = readDirectory(bookPath, false, true, '.json');
+            for (const groupFile of groupFiles) {
+              const groupFilePath = path.join(bookPath, groupFile);
 
-          for (const groupFile of groupFiles) {
-            const groupFilePath = path.join(bookPath, groupFile);
+              try {
+                const data = fs.readJsonSync(groupFilePath);
+                const groupId = groupFile.split('.json')[0];
+                const groupList = findItem(groupIndex, groupId, true);
 
-            try {
-              const data = fs.readJsonSync(groupFilePath);
-              const groupId = groupFile.split('.json')[0];
-              const groupList = findItem(groupIndex, groupId, true);
+                for (const item of data) {
+                  const contextId = item?.contextId;
+                  const reference = contextId?.reference;
 
-              for (const item of data) {
-                const contextId = item?.contextId;
-                const reference = contextId?.reference;
+                  if (!usingDoor43) {
+                    addOriginalLanguageInfo(bible, contextId, reference, biblePath);
+                  }
 
-                if (!usingDoor43) {
-                  addOriginalLanguageInfo(bible, contextId, reference, biblePath);
+                  let quote = contextId?.quote;
+
+                  if (Array.isArray(quote)) {
+                    const quote_ = quote.map(item => normalizer(item.word || ''));
+                    quote = quote_.join(' ');
+                  } else {
+                    quote = normalizer(quote || '');
+                  }
+
+                  item.quoteString = quote;
+                  let location = checks.length;
+                  const alignmentKey = `${groupId}_${quote}`;
+                  let previousCheck = alignmentIndex[alignmentKey];
+
+                  if (!previousCheck) { // if this is a new check
+                    item.refs = [reference];
+                    checks.push(item);
+                  } else { // if this check type already saved, add this reference
+                    location = previousCheck;
+                    const check = checks[previousCheck];
+                    check.refs.push(reference);
+                  }
+
+                  const chapter = reference?.chapter;
+
+                  let strongs = contextId?.strong || [];
+                  strongs = Array.isArray(strongs) ? strongs.join(' ') : strongs || '';
+                  item.strong = strongs;
+                  const strongsList = findItem(strongsIndex, strongs, true);
+                  pushUnique(strongsList, location);
+
+                  item.category = category;
+
+                  let lemma = normalizeItem(contextId?.lemma || '');
+                  lemma = Array.isArray(lemma) ? lemma.join(' ') : lemma || '';
+                  item.lemma = lemma;
+                  const lemmaList = findItem(lemmaIndex, lemma, true);
+                  pushUnique(lemmaList, location);
+
+                  const quoteList = findItem(quoteIndex, quote, true);
+                  pushUnique(quoteList, location);
+
+                  const bookIndex = findItem(bibleIndex, bookId, false);
+                  const chapterIndex = findItem(bookIndex, chapter, false);
+                  const verse = reference?.verse;
+                  const verseList = findItem(chapterIndex, verse, true);
+
+                  pushUnique(verseList, location);
+                  pushUnique(groupList, location);
                 }
-
-                let quote = contextId?.quote;
-
-                if (Array.isArray(quote)) {
-                  const quote_ = quote.map(item => normalizer(item.word || ''));
-                  quote = quote_.join(' ');
-                } else {
-                  quote = normalizer(quote || '');
-                }
-
-                item.quoteString = quote;
-                let location = checks.length;
-                const alignmentKey = `${groupId}_${quote}`;
-                let previousCheck = alignmentIndex[alignmentKey];
-
-                if (!previousCheck) {
-                  item.refs = [reference];
-                  checks.push(item);
-                } else {
-                  location = previousCheck;
-                  const check = checks[previousCheck];
-                  check.refs.push(reference);
-                }
-
-                const chapter = reference?.chapter;
-
-                let strongs = contextId?.strong || [];
-                strongs = Array.isArray(strongs) ? strongs.join(' ') : strongs || '';
-                item.strong = strongs;
-                const strongsList = findItem(strongsIndex, strongs, true);
-                pushUnique(strongsList, location);
-
-                let lemma = normalizeItem(contextId?.lemma || '');
-                lemma = Array.isArray(lemma) ? lemma.join(' ') : lemma || '';
-                item.lemma = lemma;
-                const lemmaList = findItem(lemmaIndex, lemma, true);
-                pushUnique(lemmaList, location);
-
-                const quoteList = findItem(quoteIndex, quote, true);
-                pushUnique(quoteList, location);
-
-                const bookIndex = findItem(bibleIndex, bookId, false);
-                const chapterIndex = findItem(bookIndex, chapter, false);
-                const verse = reference?.verse;
-                const verseList = findItem(chapterIndex, verse, true);
-
-                pushUnique(verseList, location);
-                pushUnique(groupList, location);
+                // console.log(data);
+              } catch (e) {
+                console.warn(`indexTwords - could not read ${groupFilePath}`, e);
               }
-              // console.log(data);
-            } catch (e) {
-              console.warn(`could not read ${groupFilePath}`, e);
             }
           }
         }
+
+        const newChecks = checks.map(item => {
+          const refs = item.refs.map(r => `${r.bookId} ${r.chapter}:${r.verse}`);
+          item.refs = refs;
+          return item;
+        });
+
+        checks = newChecks;
+
+        return {
+          bibleIndex,
+          groupIndex,
+          lemmaIndex,
+          quoteIndex,
+          strongsIndex,
+          checks,
+          resource: res,
+        };
       }
-
-      const newChecks = checks.map(item => {
-        const refs = item.refs.map(r => `${r.bookId} ${r.chapter}:${r.verse}`);
-        item.refs = refs;
-        return item;
-      });
-
-      checks = newChecks;
-
-      return {
-        bibleIndex,
-        groupIndex,
-        lemmaIndex,
-        quoteIndex,
-        strongsIndex,
-        checks,
-        resource: res,
-      };
     }
+  } catch (e) {
+    console.warn(`indexTwords - error`, e);
   }
   return null;
 }
