@@ -52,27 +52,52 @@ body {
   font-weight: bold;
 }
 
+/* set up Noto Sans font */
 @font-face {
-    font-family: Noto Sans;
-    src: url(../fonts/NotoSans-Regular.ttf);
-    font-weight: normal;
+  font-family: Noto Sans;
+  src: url(../fonts/NotoSans-Regular.ttf);
+  font-weight: normal;
 }
 @font-face {
-    font-family: Noto Sans;
-    font-style: italic;
-    src: url(../fonts/NotoSans-Italic.ttf);
+  font-family: Noto Sans;
+  font-style: italic;
+  src: url(../fonts/NotoSans-Italic.ttf);
 }
 @font-face {
-    font-family: Noto Sans;
-    font-weight: bold;
-    src: url(../fonts/NotoSans-Bold.ttf);
+  font-family: Noto Sans;
+  font-weight: bold;
+  src: url(../fonts/NotoSans-Bold.ttf);
 }
 
 @font-face {
-    font-family: Noto Sans;
-    font-style: italic;
-    font-weight: bold;
-    src: url(../fonts/NotoSans-BoldItalic.ttf);
+  font-family: Noto Sans;
+  font-style: italic;
+  font-weight: bold;
+  src: url(../fonts/NotoSans-BoldItalic.ttf);
+}
+
+/* set up Charis SIL font */
+@font-face {
+  font-family: CharisSIL;
+  src: url(../fonts/CharisSIL-Regular.ttf);
+  font-weight: normal;
+}
+@font-face {
+  font-family: CharisSIL;
+  font-style: italic;
+  src: url(../fonts/CharisSIL-Italic.ttf);
+}
+@font-face {
+  font-family: CharisSIL;
+  font-weight: bold;
+  src: url(../fonts/CharisSIL-Bold.ttf);
+}
+
+@font-face {
+  font-family: CharisSIL;
+  font-style: italic;
+  font-weight: bold;
+  src: url(../fonts/CharisSIL-BoldItalic.ttf);
 }
 
 /* special font for Hebrew */
@@ -145,6 +170,12 @@ use Ezra for Hebrew characters and then Noto Sans for other characters
   font-feature-settings: "cv12" 0;
   font-size: 150%;
 }
+
+.CharisSIL-text {
+  font-family: CharisSIL, Noto Sans;
+  font-size: 100%;
+}
+
 /*
 Add new complex script font classes above.
 

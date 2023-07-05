@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import xre from 'xregexp';
 import React from 'react';
 import env from 'tc-electron-env';
-import { normalizer } from 'string-punctuation-tokenizer';
+import * as SPT from 'string-punctuation-tokenizer';
 import SourceContentUpdater, { resourcesHelpers, apiHelpers } from 'tc-source-content-updater';
 import wordaligner from 'word-aligner';
 import { getVerses } from 'bible-reference-range';
@@ -14,13 +14,19 @@ import {
   OT_ORIG_LANG,
   OT_ORIG_LANG_BIBLE,
 } from '../common/BooksOfTheBible';
-import { DEFAULT_ORIG_LANG_OWNER, USER_RESOURCES_PATH } from '../common/constants';
+import {
+  DEFAULT_ORIG_LANG_OWNER,
+  DEFAULT_OWNER,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
 import {
   getUsfmForVerseContent,
   trimNewLine,
 } from './FileConversionHelpers/UsfmFileConversionHelpers';
 import * as BibleHelpers from './bibleHelpers';
 import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers';
+import { getOriginalLangOwner } from './ResourcesHelpers';
+const normalizer = SPT.normalizer;
 
 // eslint-disable-next-line no-useless-escape
 const START_WORD_REGEX = '(?<=[\\s,.:;“"\'‘({]|^)';
@@ -30,8 +36,8 @@ const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
 const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
 // eslint-disable-next-line no-unused-vars
 const WORD_JOINER = '\u2060'; // U+2060
-export const ALIGNMENTS_KEY = 'alignmentsIndex4';
-export const TWORDS_KEY = 'tWordsIndex';
+export const ALIGNMENTS_KEY = 'alignmentsIndex5'; // increment the number each time the code changes and breaks compatibility with old index
+export const TWORDS_KEY = 'tWordsIndex2'; // increment the number each time the code changes and breaks compatibility with old index
 export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
 export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
 const TCORE_FOLDER = path.join(env.home(), 'translationCore');
@@ -646,18 +652,26 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, cu
  * @param {string} searchStr - string to match
  * @param {object} config - search configuration including search types and fields to search
  * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
+ * @param {object} tWordsIndex2 - contains secondary index for tWords search
  * @returns {*[]} - array of found alignments
  */
-export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2) {
+export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2, tWordsIndex2) {
   const searchStrParts = searchStr.split(' ');
   const alignmentDataArray = [ _alignmentData ];
+  const tWordsIndexArray = [ tWordsIndex ];
   const foundMatches = [];
 
   if (alignmentData2) {
     alignmentDataArray.push(alignmentData2);
   }
 
-  for (const alignmentData of alignmentDataArray) {
+  if (tWordsIndex2) {
+    tWordsIndexArray.push(tWordsIndex2);
+  }
+
+  for (let j = 0; j < 2; j++) {
+    const alignmentData = alignmentDataArray[j];
+    const tWordsIndex = tWordsIndexArray[j];
     let foundMerged = [];
     let previousSearches = [];
 
@@ -671,7 +685,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
       const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
       let found = [];
 
-      if (config.searchTwords) {
+      if (config.searchTwords && tWordsIndex) {
         if (config.searchSource) {
           const field = 'quoteIndex';
           searchAlignmentsForField(field, tWordsIndex, search, flags, found);
@@ -684,6 +698,11 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
 
         if (config.searchStrong) {
           const field = 'strongsIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchLemma) {
+          const field = 'lemmaIndex';
           searchAlignmentsForField(field, tWordsIndex, search, flags, found);
         }
 
@@ -710,7 +729,7 @@ export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, co
 
           return newCheck;
         });
-      } else {
+      } else if (alignmentData) {
         if (config.searchTarget) {
           searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
         }
@@ -1030,6 +1049,32 @@ async function doCallback(callback, percent) {
 }
 
 /**
+ * read and parse the book USFM
+ * @param {string} latestVersionPath
+ * @param {string} bookId
+ * @return {{readBooks: boolean, chapters: {}}}
+ */
+function readBibleBook(latestVersionPath, bookId) {
+  let readBooks = false;
+  const bookPath = path.join(latestVersionPath, bookId);
+  const chapters = {};
+
+  if (fs.existsSync(bookPath)) {
+    const chapterFiles = fs.readdirSync(bookPath)
+      .filter(file => path.extname(file) === '.json');
+
+    for (const chapterFile of chapterFiles) {
+      const chapterPath = path.join(bookPath, chapterFile);
+      const chapterJson = fs.readJsonSync(chapterPath);
+      const c = path.parse(chapterPath).name;
+      chapters[c] = chapterJson;
+      readBooks = true;
+    }
+  }
+  return { readBooks, chapters };
+}
+
+/**
  * open Bible json data and extract alignment data for specific testament
  * @param {string} resourceFolder
  * @param {object} resource
@@ -1068,25 +1113,13 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
         const percent = ++count * 25 / total;
         // eslint-disable-next-line no-await-in-loop
         await doCallback(callback, percent);
-        const bookPath = path.join(latestVersionPath, bookId);
+        const { readBooks, chapters } = readBibleBook(latestVersionPath, bookId);
+        const parsedUsfm = {
+          chapters,
+          headers: [],
+        };
 
-        if (fs.existsSync(bookPath)) {
-          const chapters = {};
-          const parsedUsfm = {
-            chapters,
-            headers: [],
-          };
-
-          const chapterFiles = fs.readdirSync(bookPath)
-            .filter(file => path.extname(file) === '.json');
-
-          for (const chapterFile of chapterFiles) {
-            const chapterPath = path.join(bookPath, chapterFile);
-            const chapterJson = fs.readJsonSync(chapterPath);
-            const c = path.parse(chapterPath).name;
-            chapters[c] = chapterJson;
-          }
-
+        if (readBooks) {
           const manifest = {};
           // eslint-disable-next-line no-await-in-loop
           const bookAlignments = getALignmentsFromJson(parsedUsfm, manifest, bookId);
@@ -1119,8 +1152,8 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           alignments_[sourceText] = {};
         }
 
-        const sourceALignment = alignments_[sourceText];
-        let index = sourceALignment[targetText];
+        const sourceAlignment = alignments_[sourceText];
+        let index = sourceAlignment[targetText];
 
         if (!index) {
           alignment.refs = [ref];
@@ -1128,7 +1161,7 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           delete alignment.ref;
           index = uniqueAlignments.length;
           uniqueAlignments.push(alignment);
-          sourceALignment[targetText] = [index];
+          sourceAlignment[targetText] = [index];
         } else {
           const matchedAlignment = uniqueAlignments[index];
           matchedAlignment.refs.push(ref);
@@ -1184,10 +1217,10 @@ export async function getAlignmentsFromResource(resourceFolder, resource, callba
           strong,
           targetText,
         } = alignment;
-        appendToALignmentIndex(sourceAlignments.alignments, sourceText, i);
-        appendToALignmentIndex(strongAlignments.alignments, strong, i);
-        appendToALignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
-        appendToALignmentIndex(targetAlignments.alignments, targetText, i);
+        appendToAlignmentIndex(sourceAlignments.alignments, sourceText, i);
+        appendToAlignmentIndex(strongAlignments.alignments, strong, i);
+        appendToAlignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
+        appendToAlignmentIndex(targetAlignments.alignments, targetText, i);
       }
 
       console.log(`getAlignmentsFromResource() for ${resource.origLang}, getting keys`);
@@ -1240,7 +1273,7 @@ export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
  * @param text
  * @param alignment
  */
-function appendToALignmentIndex(alignments, text, alignment) {
+function appendToAlignmentIndex(alignments, text, alignment) {
   if (!alignments[text]) {
     alignments[text] = [];
   }
@@ -1310,6 +1343,8 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
         let verseText = getUsfmForVerseContent(verseParts);
         bibleChapter[verse] = trimNewLine(verseText);
         const object = wordaligner.unmerge(verseParts);
+        // eslint-disable-next-line object-curly-newline
+        const reference = { bookId, chapter, verse };
 
         for (const alignment of object.alignment) {
           const strongs = [];
@@ -1320,13 +1355,20 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
           const morphs = [];
 
           for (const originalWord of alignment.topWords) {
-            const {
+            let {
               strong,
               lemma,
               word,
               morph,
             } = originalWord;
             strongs.push(strong);
+
+            if (!lemma) {
+              if (!strong || !word) { // TRICKY - if no lemma, but we have a strong's, this is OK for Hebrew
+                console.warn(`Invalid original word`, { originalWord, reference });
+              }
+            }
+
             lemmas.push(lemma);
             sources.push(word);
             morphs.push(morph);
@@ -1344,15 +1386,12 @@ const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) =>
             targetText: normalizer(targets.join(' ')),
             targetsPos: targetsPos.join(' '),
             ref: verseRef,
-            // eslint-disable-next-line object-curly-newline
-            reference: { bookId, chapter, verse },
+            reference,
           });
         }
 
         if (object.wordBank?.length) {
           const words = object.wordBank;
-          // eslint-disable-next-line object-curly-newline
-          const reference = { bookId, chapter, verse };
           addUnalignedWords(words, bookAlignments, verseRef, reference);
         }
       }
@@ -1546,9 +1585,9 @@ export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
     if (fs.existsSync(biblePath)) {
       return getVerse(biblePath, ref, bibles, bibleId, rawFormat);
     }
-    console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath}`);
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath} because file does not exist`);
   } catch (e) {
-    console.log(`getVerseForKey() - could not fetch verse for ${bibleKey} - ${ref}`);
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleKey} - ${ref}`, e);
   }
   return '';
 }
@@ -1626,7 +1665,7 @@ export function getVerse(biblePath, ref, bibles, bibleKey, rawFormat = false) {
 
           return verses;
         } catch (e) {
-          console.log(`getVerse() - could not read ${chapterPath}`);
+          console.log(`getVerse() - could not read ${chapterPath}`, e);
         }
       }
     }
@@ -1852,7 +1891,7 @@ export function getTwordsIndex(key) {
       return fs.readJsonSync(filePath);
     }
   } catch (e) {
-    console.warn(`getTwordsIndex - cannot read ${filePath}`);
+    console.warn(`getTwordsIndex - cannot read ${filePath}`, e);
   }
   return null;
 }
@@ -1875,6 +1914,90 @@ function findItem(object, item, newItemIsArray = false) {
 }
 
 /**
+ * search through verse objects to find alignment for quote and occurrence
+ * @param verseObjects
+ * @param {string} quote
+ * @param {number} occurrence
+ * @returns {string|null|*}
+ */
+function findWord(verseObjects, quote, occurrence, count = 1) {
+  let found = null;
+
+  for (const vo of verseObjects) {
+    if ((vo.type === 'word') && (normalizer(vo.text) === quote)) {
+      if (count >= occurrence) {
+        return { found: vo, count };
+      } else {
+        count++;
+      }
+    }
+
+    if (vo.children) {
+      const { found, count: _count } = findWord(vo.children, quote, occurrence, count);
+      count = _count;
+
+      if (found) {
+        return { found, count };
+      }
+    }
+  }
+  return { found, count };
+}
+
+/**
+ * find quote in original language bible and add strong and lemma info
+ * @param bible
+ * @param contextId
+ * @param reference
+ * @param biblePath
+ */
+function addOriginalLanguageInfo(bible, contextId, reference, biblePath) {
+  const {
+    bookId,
+    chapter,
+    verse,
+  } = reference;
+
+  let book = bible[bookId];
+
+  if (!book) {
+    const { readBooks, chapters } = readBibleBook(biblePath, bookId);
+
+    if (readBooks) {
+      book = chapters;
+      bible[bookId] = book;
+    }
+  }
+
+  if (book) {
+    const quote = contextId?.quote;
+    const quotes = Array.isArray(quote) ? quote : [{
+      word: quote,
+      occurrence: contextId?.occurrence || 1,
+    }];
+
+    let verseObjects = book[chapter]?.[verse]?.verseObjects;
+
+    if (verseObjects) {
+      const lemma = [];
+      const strong = [];
+
+      for (const quote of quotes) {
+        const { found } = findWord(verseObjects, normalizer(quote.word), quote.occurrence);
+
+        if (found) {
+          lemma.push(found.lemma);
+          strong.push(found.strong);
+        }
+      }
+
+      contextId.lemma = lemma;
+      contextId.strong = strong;
+    }
+  }
+}
+
+/**
  * index twords for resource
  * @param {string} resourcesFolder
  * @param {object} resource
@@ -1886,123 +2009,155 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
   // ~/translationCore/resources/el-x-koine/translationHelps/translationWords/v0.29_Door43-Catalog/kt/groups/1co
   // for other owners:
   // ~/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
+  try {
+    const bible = {};
+    let checks = [];
+    const bibleIndex = {};
+    const groupIndex = {};
+    const quoteIndex = {};
+    const strongsIndex = {};
+    const lemmaIndex = {};
+    const alignmentIndex = {};
+    const res = addTwordsInfoToResource(resource, resourcesFolder);
+    let filterBooks = res.filterBooks;
+    const latestTWordsVersion = res.latestTWordsVersion;
+    const latestTwordsPath = res.latestTwordsPath;
 
-  let checks = [];
-  const bibleIndex = {};
-  const groupIndex = {};
-  const quoteIndex = {};
-  const strongsIndex = {};
-  const alignmentIndex = {};
-  const res = addTwordsInfoToResource(resource, resourcesFolder);
-  const filterBooks = res.filterBooks;
-  const latestTWordsVersion = res.latestTWordsVersion;
-  const latestTwordsPath = res.latestTwordsPath;
+    const usingDoor43 = (res.owner === DEFAULT_OWNER);
+    let biblePath = null;
 
-  if (latestTWordsVersion) {
-    await doCallback(callback, 0);
+    if (!usingDoor43) {
+      const resourceId = (res.origLang === 'hbo') ? 'uhb' : 'ugnt';
+      const bibleVersionsPath = path.join(resourcesFolder, `${res.origLang}/bibles/${resourceId}`);
+      const origLangOwner = getOriginalLangOwner(resource.owner);
+      biblePath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, origLangOwner);
+      filterBooks = (res.origLang === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
+    }
 
-    if (fs.existsSync(latestTwordsPath)) {
-      console.log(`Found ${latestTWordsVersion}`);
-      const catagories = readDirectory(latestTwordsPath);
-      const catagoryStepSize = 100 / (catagories.length || 1);
+    if (latestTWordsVersion) {
+      await doCallback(callback, 0);
 
-      for (let i = 0; i < catagories.length; i++) {
-        const catagory = catagories[i];
-        const progressCatagory = i * catagoryStepSize;
-        const booksPath = path.join(latestTwordsPath, catagory, 'groups');
-        let books = readDirectory(booksPath);
+      if (fs.existsSync(latestTwordsPath)) {
+        console.log(`indexTwords - Found ${latestTWordsVersion}`);
+        const categories = readDirectory(latestTwordsPath);
+        const categoryStepSize = 100 / (categories.length || 1);
 
-        if (filterBooks) {
-          const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
-          books = filteredBooks;
-        }
+        for (let i = 0; i < categories.length; i++) {
+          const category = categories[i];
+          const progressCategory = i * categoryStepSize;
+          const booksPath = path.join(latestTwordsPath, category, 'groups');
+          let books = readDirectory(booksPath);
 
-        const bookStepSize = catagoryStepSize / (books.length || 1);
+          if (filterBooks) {
+            const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
+            books = filteredBooks;
+          }
 
-        for (let j = 0; j < books.length; j++) {
-          const bookId = books[j];
-          const bookProgress = j * bookStepSize + progressCatagory;
-          // eslint-disable-next-line no-await-in-loop
-          await doCallback(callback, bookProgress);
-          const bookPath = path.join(booksPath, bookId);
-          const groupFiles = readDirectory(bookPath, false, true, '.json');
+          const bookStepSize = categoryStepSize / (books.length || 1);
 
-          for (const groupFile of groupFiles) {
-            const groupFilePath = path.join(bookPath, groupFile);
+          for (let j = 0; j < books.length; j++) {
+            const bookId = books[j];
+            const bookProgress = j * bookStepSize + progressCategory;
+            // eslint-disable-next-line no-await-in-loop
+            await doCallback(callback, bookProgress);
+            const bookPath = path.join(booksPath, bookId);
+            const groupFiles = readDirectory(bookPath, false, true, '.json');
 
-            try {
-              const data = fs.readJsonSync(groupFilePath);
-              const groupId = groupFile.split('.json')[0];
-              const groupList = findItem(groupIndex, groupId, true);
+            for (const groupFile of groupFiles) {
+              const groupFilePath = path.join(bookPath, groupFile);
 
-              for (const item of data) {
-                const contextId = item?.contextId;
-                const reference = contextId?.reference;
-                let quote = normalizer(contextId?.quote || '');
+              try {
+                const data = fs.readJsonSync(groupFilePath);
+                const groupId = groupFile.split('.json')[0];
+                const groupList = findItem(groupIndex, groupId, true);
 
-                if (Array.isArray(quote)) {
-                  const quote_ = quote.map(item => item.word);
-                  quote = quote_.join(' ');
+                for (const item of data) {
+                  const contextId = item?.contextId;
+                  const reference = contextId?.reference;
+
+                  if (!usingDoor43) {
+                    addOriginalLanguageInfo(bible, contextId, reference, biblePath);
+                  }
+
+                  let quote = contextId?.quote;
+
+                  if (Array.isArray(quote)) {
+                    const quote_ = quote.map(item => normalizer(item.word || ''));
+                    quote = quote_.join(' ');
+                  } else {
+                    quote = normalizer(quote || '');
+                  }
+
+                  item.quoteString = quote;
+                  let location = checks.length;
+                  const alignmentKey = `${groupId}_${quote}`;
+                  let previousCheck = alignmentIndex[alignmentKey];
+
+                  if (!previousCheck) { // if this is a new check
+                    item.refs = [reference];
+                    checks.push(item);
+                  } else { // if this check type already saved, add this reference
+                    location = previousCheck;
+                    const check = checks[previousCheck];
+                    check.refs.push(reference);
+                  }
+
+                  const chapter = reference?.chapter;
+
+                  let strongs = contextId?.strong || [];
+                  strongs = Array.isArray(strongs) ? strongs.join(' ') : strongs || '';
+                  item.strong = strongs;
+                  const strongsList = findItem(strongsIndex, strongs, true);
+                  pushUnique(strongsList, location);
+
+                  item.category = category;
+
+                  let lemma = normalizeItem(contextId?.lemma || '');
+                  lemma = Array.isArray(lemma) ? lemma.join(' ') : lemma || '';
+                  item.lemma = lemma;
+                  const lemmaList = findItem(lemmaIndex, lemma, true);
+                  pushUnique(lemmaList, location);
+
+                  const quoteList = findItem(quoteIndex, quote, true);
+                  pushUnique(quoteList, location);
+
+                  const bookIndex = findItem(bibleIndex, bookId, false);
+                  const chapterIndex = findItem(bookIndex, chapter, false);
+                  const verse = reference?.verse;
+                  const verseList = findItem(chapterIndex, verse, true);
+
+                  pushUnique(verseList, location);
+                  pushUnique(groupList, location);
                 }
-
-                item.quoteString = quote;
-                let location = checks.length;
-                const alignmentKey = `${groupId}_${quote}`;
-                let previousCheck = alignmentIndex[alignmentKey];
-
-                if (!previousCheck) {
-                  item.refs = [reference];
-                  checks.push(item);
-                } else {
-                  location = previousCheck;
-                  const check = checks[previousCheck];
-                  check.refs.push(reference);
-                }
-
-                const chapter = reference?.chapter;
-
-                let strongs = contextId?.strong || [];
-                strongs = Array.isArray(strongs) ? strongs.join(' ') : '';
-                item.strong = strongs;
-                const strongsList = findItem(strongsIndex, strongs, true);
-                pushUnique(strongsList, location);
-
-                const quoteList = findItem(quoteIndex, quote, true);
-                pushUnique(quoteList, location);
-
-                const bookIndex = findItem(bibleIndex, bookId, false);
-                const chapterIndex = findItem(bookIndex, chapter, false);
-                const verse = reference?.verse;
-                const verseList = findItem(chapterIndex, verse, true);
-
-                pushUnique(verseList, location);
-                pushUnique(groupList, location);
+                // console.log(data);
+              } catch (e) {
+                console.warn(`indexTwords - could not read ${groupFilePath}`, e);
               }
-              // console.log(data);
-            } catch (e) {
-              console.warn(`could not read ${groupFilePath}`);
             }
           }
         }
+
+        const newChecks = checks.map(item => {
+          const refs = item.refs.map(r => `${r.bookId} ${r.chapter}:${r.verse}`);
+          item.refs = refs;
+          return item;
+        });
+
+        checks = newChecks;
+
+        return {
+          bibleIndex,
+          groupIndex,
+          lemmaIndex,
+          quoteIndex,
+          strongsIndex,
+          checks,
+          resource: res,
+        };
       }
-
-      const newChecks = checks.map(item => {
-        const refs = item.refs.map(r => `${r.bookId} ${r.chapter}:${r.verse}`);
-        item.refs = refs;
-        return item;
-      });
-
-      checks = newChecks;
-
-      return {
-        bibleIndex,
-        groupIndex,
-        quoteIndex,
-        strongsIndex,
-        checks,
-        resource: res,
-      };
     }
+  } catch (e) {
+    console.warn(`indexTwords - error`, e);
   }
   return null;
 }
@@ -2075,3 +2230,16 @@ export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
     }
   }
 }
+
+function normalizeItem(item) {
+  let normalized;
+
+  if (Array.isArray(item)) {
+    normalized = item.map(item => normalizer(item || ''));
+  } else {
+    normalized = normalizer(item || '');
+  }
+
+  return normalized;
+}
+
