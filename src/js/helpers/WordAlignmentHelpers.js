@@ -382,7 +382,7 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
         if (isExtraVerse) { // double check to make sure it is not in verse span
           for (let verse_ in chapterAlignmentJSON) {
             if (isVerseSpan(verse_)) {
-              const { low, hi } = verseHelpers.getVerseRangeFromSpan(verse_);
+              const { low, hi } = verseHelpers.getVerseSpanRange(verse_);
 
               if ((verseNum >= low) && (verseNum <= hi)) {
                 isExtraVerse = false;
