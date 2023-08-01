@@ -7,6 +7,7 @@ import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 import { getProjectSaveLocation, getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
 import { openAlertDialog } from '../AlertModalActions';
+import { TC_PATH } from '../../common/constants';
 import { closeProject } from './ProjectLoadingActions';
 
 /**
@@ -47,7 +48,7 @@ export const archiveProject = (projectPath) => (dispatch, getState) => {
  */
 const executeArchive = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
-  const archiveDir = path.join(env.home(), 'translationCore', '.archive');
+  const archiveDir = path.join(env.home(), TC_PATH, '.archive');
 
   // Close project
   const openedProjectPath = getProjectSaveLocation(getState());

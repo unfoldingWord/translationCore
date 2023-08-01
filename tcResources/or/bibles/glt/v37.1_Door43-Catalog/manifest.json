@@ -1,0 +1,509 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acsah Jacob",
+      "Dr. Bobby Chellapan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Vipin Bhadran"
+    ],
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "title": "GLT - Oriya",
+    "description": "",
+    "language": {
+      "identifier": "or",
+      "title": "ଓଡ଼ିଆ (Oriya)",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "37"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "relation": [
+      "or/glt",
+      "or/gst",
+      "or/irv",
+      "or/ulb",
+      "or/udb",
+      "or/obs",
+      "or/ta",
+      "or/tn",
+      "or/tq",
+      "or/tw",
+      "el-x-koine/ugnt?v=0.30",
+      "hbo/uhb?v=2.1.30"
+    ],
+    "publisher": "BCS",
+    "issued": "2023-01-04",
+    "modified": "2023-01-04",
+    "subject": "Aligned Bible",
+    "version": "37.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "ରୂତ",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ଯୂନସ",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ଲୂକ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଏଫିସୀୟ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଫିଲିପ୍ପୀୟ",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "କଲସୀୟ",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ପ୍ରଥମ ଥେସଲନୀକୀୟ",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "୧ ତୀମଥି",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "୨ ତୀମଥି",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ତୀତସଙ୍କ ନିକଟକୁ ପ୍ରେରିତ ପାଉଲଙ୍କ ପତ୍ର",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଫିଲୀମୋନ",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯାକୁବ",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "୧ ପିତର",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "୨ ପିତର",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "୨ ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯୋହନଙ୍କ ତୃତୀୟ ପତ୍ର",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯିହୂଦା",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acsah Jacob",
+        "Dr. Bobby Chellapan",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Vipin Bhadran"
+      ],
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "title": "GLT - Oriya",
+      "description": "",
+      "language": {
+        "identifier": "or",
+        "title": "ଓଡ଼ିଆ (Oriya)",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "37"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "relation": [
+        "or/glt",
+        "or/gst",
+        "or/irv",
+        "or/ulb",
+        "or/udb",
+        "or/obs",
+        "or/ta",
+        "or/tn",
+        "or/tq",
+        "or/tw",
+        "el-x-koine/ugnt?v=0.30",
+        "hbo/uhb?v=2.1.30"
+      ],
+      "publisher": "BCS",
+      "issued": "2023-01-04",
+      "modified": "2023-01-04",
+      "subject": "Aligned Bible",
+      "version": "37.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "ରୂତ",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ଯୂନସ",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ଲୂକ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଏଫିସୀୟ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଫିଲିପ୍ପୀୟ",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "କଲସୀୟ",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ପ୍ରଥମ ଥେସଲନୀକୀୟ",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "୧ ତୀମଥି",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "୨ ତୀମଥି",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ତୀତସଙ୍କ ନିକଟକୁ ପ୍ରେରିତ ପାଉଲଙ୍କ ପତ୍ର",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଫିଲୀମୋନ",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯାକୁବ",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "୧ ପିତର",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "୨ ପିତର",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "୨ ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯୋହନଙ୍କ ତୃତୀୟ ପତ୍ର",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯିହୂଦା",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "or",
+  "language_name": "ଓଡ଼ିଆ (Oriya)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "GLT - Oriya",
+  "remoteModifiedTime": "2023-01-31T22:15:54Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2023-01-31T22:15:54Z",
+  "usfm-js": "3.4.2",
+  "version": "37.1",
+  "modifiedTime": "2023-01-31T22:15:54Z",
+  "stage": "prod"
+}

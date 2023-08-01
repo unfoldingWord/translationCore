@@ -80,7 +80,7 @@
   "sending_feedback_failed": "Falha ao enviar comentário",
   "critical_error_warning": "Aviso: Ocorreu um erro crítico!",
   "unknown_networking_error": "${app_name} encontrou um erro de comunicação desconhecido. Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
-  "pre_release": "Pre-Release",
+  "pre_release": "Pré-lançamento",
   "updates": {
     "organization": "Organização",
     "resource": "Recurso",
@@ -237,11 +237,15 @@
     "dcs_create_new_conflict": "Criação de novo repositório falhou porque um repositório com este nome já existe.<br/><br/>Para ser permitido o upload do seu projeto para a ${door43}, você precisa ou renomear seu projeto local ou renomear seu Projeto ${door43}.",
     "unknown_download_networking_error": "${app_name} encontrou um erro de comunicação desconhecido tentando baixar o projeto de \"${project_url}\".<br/><br/>Se esse problema persistir, por favor, envie \"${user_feedback}\" que é uma opção no botão \"${actions}\".",
     "project_locked": "O projeto está travado em:<br/>'${file_path}'. Por favor, reinicie o computador e tente novamente.",
-    "known_download_networking_error": "O download do projeto ${project_url} falhou: ${error_message}",
+    "known_download_networking_error": "O download do projeto \"${project_url}\" falhou: ${error_message}",
     "load_view_usfm_url": "Carregar Recurso Bíblico",
-    "load_view_usfm_url_error": "The download of USFM \"${project_url}\" failed: ${error_message}",
+    "load_view_usfm_url_error": "O download do USFM \"${project_url}\" falhou: ${error_message}",
     "enter_resource_url": "Entre com a URL do recurso",
-    "loading_usfm_url": "Carregando : ${usfm_url}"
+    "loading_usfm_url": "Carregando : ${usfm_url}",
+    "print_preview": "Pré-visualização de impressão",
+    "print_progress": "Progresso: ${progress_percent}%",
+    "print_preview_option_scale": "Alerar escala de pré-visualização",
+    "print_preview_option_font_size": "Alterar tamanho da fonte da pré-visualização"
   },
   "project_validation": {
     "language_mismatch": "O Nome de Idioma não é válido para esse Código",
@@ -463,7 +467,9 @@
     "update_version": "Atualizar versão",
     "ignore_button": "Ignorar",
     "feedback_button": "Enviar comentário",
-    "delete": "Excluir"
+    "delete": "Excluir",
+    "update_preview": "Atualizar pré-visuaização",
+    "print_to_pdf": "Imprimir para PDF"
   },
   "tool_card_categories": {
     "kt": "Termos-Chave",

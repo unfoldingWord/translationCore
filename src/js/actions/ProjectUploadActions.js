@@ -72,7 +72,7 @@ export async function prepareProjectRepo(user, projectName, projectPath) {
       remoteRepo.name);
     console.info('uploadProject: Found remote Repo: ' + (remoteRepo.name || 'FAILED'));
 
-    repo = await Repo.open(projectPath, user);
+    repo = await Repo.openSafe(projectPath, user);
     await repo.addRemote(remoteUrl, 'origin');
     console.info('uploadProject: saving changes to git');
     await repo.save('Commit before upload');

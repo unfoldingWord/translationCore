@@ -21,6 +21,8 @@ jest.mock('../js/helpers/Repo', () =>
 
 const mockOpen = jest.fn((dir, user) => new Repo(dir, user));
 Repo.open = mockOpen; // add static to class
+const mockOpenSafe = jest.fn((dir, user) => new Repo(dir, user));
+Repo.openSafe = mockOpenSafe; // add static to class
 
 const projectPath = path.join('mock', 'path', 'to', 'project');
 const directoryToManifest = path.join(projectPath, 'manifest.json');
@@ -51,6 +53,7 @@ describe('Test ability to translate bookname into target language fom manifest g
 
   afterEach(() => {
     mockOpen.mockClear();
+    mockOpenSafe.mockClear();
     mockSave.mockClear();
   });
 
@@ -64,7 +67,8 @@ describe('Test ability to translate bookname into target language fom manifest g
 
     // then
     expect(results).toEqual(expectMigrate);
-    expect(mockOpen).toHaveBeenCalledTimes(1);
+    expect(mockOpen).toHaveBeenCalledTimes(0);
+    expect(mockOpenSafe).toHaveBeenCalledTimes(1);
     expect(mockSave).toHaveBeenCalledTimes(1);
   });
 
@@ -78,7 +82,8 @@ describe('Test ability to translate bookname into target language fom manifest g
 
     // then
     expect(results).toEqual(expectMigrate);
-    expect( mockOpen).toHaveBeenCalledTimes(1);
+    expect( mockOpen).toHaveBeenCalledTimes(0);
+    expect(mockOpenSafe).toHaveBeenCalledTimes(1);
     expect( mockSave).toHaveBeenCalledTimes(1);
   });
 
@@ -94,6 +99,7 @@ describe('Test ability to translate bookname into target language fom manifest g
     // then
     expect(results).toEqual(expectMigrate);
     expect( mockOpen).toHaveBeenCalledTimes(0);
+    expect(mockOpenSafe).toHaveBeenCalledTimes(0);
     expect( mockSave).toHaveBeenCalledTimes(0);
   });
 
@@ -108,7 +114,8 @@ describe('Test ability to translate bookname into target language fom manifest g
 
     // then
     expect(results).toEqual(expectMigrate); // NOTE: if tc_EDIT_VERSION_KEY is changed this will fail - set it back to original value
-    expect( mockOpen).toHaveBeenCalledTimes(1);
+    expect( mockOpen).toHaveBeenCalledTimes(0);
+    expect(mockOpenSafe).toHaveBeenCalledTimes(1);
     expect( mockSave).toHaveBeenCalledTimes(1);
   });
 });

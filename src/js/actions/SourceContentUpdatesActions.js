@@ -3,7 +3,6 @@
 import path from 'path-extra';
 import fs from 'fs-extra';
 import sourceContentUpdater, { apiHelpers } from 'tc-source-content-updater';
-import env from 'tc-electron-env';
 import {
   getCurrentToolName,
   getProjectSaveLocation,
@@ -18,7 +17,12 @@ import { getOrigLangforBook } from '../helpers/bibleHelpers';
 import * as Bible from '../common/BooksOfTheBible';
 import { sendUpdateResourceErrorFeedback } from '../helpers/FeedbackHelpers';
 // actions
-import { DEFAULT_ORIG_LANG_OWNER, USFMJS_VERSION } from '../common/constants';
+import {
+  DCS_BASE_URL,
+  DEFAULT_ORIG_LANG_OWNER,
+  USER_RESOURCES_PATH,
+  USFMJS_VERSION,
+} from '../common/constants';
 import { getCurrentPaneSetting } from '../helpers/SettingsHelpers';
 import { loadBookTranslations } from './ResourcesActions';
 import { updateResourcesForOpenTool } from './OriginalLanguageResourcesActions';
@@ -32,7 +36,6 @@ import { confirmOnlineAction } from './OnlineModeConfirmActions';
 import * as SettingsActions from './SettingsActions';
 // constants
 const SourceContentUpdater = new sourceContentUpdater();
-const USER_RESOURCES_PATH = path.join(env.home(), 'translationCore/resources');
 
 /**
  * Resets the state of the source content updates reducer.
@@ -263,7 +266,9 @@ export const downloadMissingResource = (resourceDetails) => (async (dispatch, ge
   if (navigator.onLine) {
     dispatch(confirmOnlineAction(async () => {
       dispatch(openAlertDialog(translate('updates.downloading_source_content_updates'), true));
-      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH)
+      const config = { DCS_BASE_URL };
+
+      await SourceContentUpdater.downloadAndProcessResource(resourceDetails, USER_RESOURCES_PATH, config)
         .then(async () => {
           updateSourceContentUpdaterManifest();
           dispatch(updateSourceContentUpdatesReducer());
@@ -444,6 +449,7 @@ export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRele
         filterByOwner: null,
         latestManifestKey,
         stage: preRelease ? 'preprod' : null,
+        DCS_BASE_URL,
       };
 
       await SourceContentUpdater.getLatestResources(localResourceList, config)

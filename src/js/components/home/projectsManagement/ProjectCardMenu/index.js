@@ -7,6 +7,7 @@ import { exportToCSV } from '../../../../actions/CSVExportActions';
 import { exportToUSFM } from '../../../../actions/USFMExportActions';
 import { archiveProject } from '../../../../actions/MyProjects/MyProjectsActions';
 import { promptForViewUrl } from '../../../../actions/MyProjects/ProjectLoadingActions';
+import { doPrintPreview } from '../../../../helpers/PrintPreviewHelpers';
 import Menu from './Menu';
 
 /**
@@ -24,6 +25,7 @@ class ProjectCardMenu extends React.Component {
       exportToUSFM,
       exportToCSV,
       promptForViewUrl,
+      doPrintPreview,
     } = this.props;
 
     function loadUrl() {
@@ -38,7 +40,9 @@ class ProjectCardMenu extends React.Component {
       onExportUSFM={exportToUSFM}
       onArchive={archiveProject}
       onLoadUrl={loadUrl}
-      projectSaveLocation={projectSaveLocation}/>;
+      projectSaveLocation={projectSaveLocation}
+      onPrintPreview={doPrintPreview}
+    />;
   }
 }
 
@@ -53,6 +57,7 @@ ProjectCardMenu.propTypes = {
   exportToCSV: PropTypes.func.isRequired,
   exportToUSFM: PropTypes.func.isRequired,
   promptForViewUrl: PropTypes.func.isRequired,
+  doPrintPreview: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = {
@@ -62,5 +67,6 @@ const mapDispatchToProps = {
   exportToCSV,
   exportToUSFM,
   promptForViewUrl,
+  doPrintPreview,
 };
 export default connect(null, mapDispatchToProps)(ProjectCardMenu);

@@ -44,7 +44,7 @@ const shouldRun = (projectPath) => {
 const run = async (projectPath) => {
   console.log(`migrateOldProjects.run(${projectPath})`);
   // do git commit
-  const repo = await Repo.open(projectPath);
+  const repo = await Repo.openSafe(projectPath);
   console.log('migrateSaveChangesInOldProjects.run() - doing git save');
   await repo.save(`Migrating Old Project`);
   console.log('migrateSaveChangesInOldProjects.run() - git save complete');
