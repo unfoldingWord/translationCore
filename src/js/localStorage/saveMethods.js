@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
 import * as CheckDataLoadActions from '../actions/CheckDataLoadActions';
-import { SETTINGS_PATH } from '../common/constants';
+import { LOCAL_USER, SETTINGS_PATH } from '../common/constants';
 
 const CHECKDATA_DIRECTORY = path.join('.apps', 'translationCore', 'checkData');
 
@@ -128,7 +128,7 @@ export function saveLocalUserdata(state) {
   let userdata = state.loginReducer.userdata;
 
   if (userdata.localUser) {
-    localStorage.setItem('localUser', JSON.stringify(userdata));
+    localStorage.setItem(LOCAL_USER, JSON.stringify(userdata));
   }
 }
 

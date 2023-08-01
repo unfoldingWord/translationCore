@@ -241,7 +241,11 @@
     "load_view_usfm_url": "Загрузить Библейский Ресурс (USFM)",
     "load_view_usfm_url_error": "Загрузка USFM \"${project_url}\" не удалась: ${error_message}",
     "enter_resource_url": "Введите URL ресурса",
-    "loading_usfm_url": "Загрузка: ${usfm_url}"
+    "loading_usfm_url": "Загрузка: ${usfm_url}",
+    "print_preview": "Предпросмотр печати",
+    "print_progress": "Прогресс: ${progress_percent}%",
+    "print_preview_option_scale": "Изменить масштаб просмотра: ",
+    "print_preview_option_font_size": "Изменить размер шрифта: "
   },
   "project_validation": {
     "language_mismatch": "Не действительный код для языка",
@@ -283,7 +287,7 @@
     },
     "conflicting_project": "Проект с таким идентификатором уже существует для этого языка и книги",
     "newer_project": "Этот проект был создан в более новой версии translationCore. Пожалуйста, обновите translationCore до последней версии и попробуйте снова.",
-    "newer_project_original_language": "This project was aligned using a newer version of the original language. Please update the original language resource and try again."
+    "newer_project_original_language": "Этот проект был выровнен с использованием более новой версии исходного языка. Пожалуйста, обновите исходный язык и повторите попытку."
   },
   "book_list": {
     "ot": {
@@ -460,10 +464,12 @@
     "contact_helpdesk": "Связаться со службой поддержки",
     "retry": "Повторить",
     "update": "Обновление до последней версии",
-    "update_version": "Update Version",
+    "update_version": "Обновить версию",
     "ignore_button": "Игнорировать",
     "feedback_button": "Отправить отзыв",
-    "delete": "Удалить"
+    "delete": "Удалить",
+    "update_preview": "Обновить предпросмотр",
+    "print_to_pdf": "Печать в PDF"
   },
   "tool_card_categories": {
     "kt": "Ключевые термины",

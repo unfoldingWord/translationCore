@@ -1,0 +1,575 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Acash Jacob",
+      "Antoney Raj",
+      "Cdr. Thomas Mathew",
+      "Dr. Bobby Chellappan",
+      "Hind Prakash",
+      "Jinu Jacob",
+      "Shojo John",
+      "Vipin Bhadran"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "",
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "issued": "2023-03-23",
+    "language": {
+      "direction": "ltr",
+      "identifier": "kn",
+      "title": "ಕನ್ನಡ (Kannada)"
+    },
+    "modified": "2023-03-23",
+    "publisher": "BCS",
+    "relation": [
+      "kn/glt",
+      "kn/gst",
+      "kn/irv",
+      "kn/iev",
+      "kn/ta",
+      "kn/tn",
+      "kn/tq",
+      "kn/tw",
+      "kn/ulb",
+      "kn/obs",
+      "kn/obs-tn",
+      "kn/obs-tq"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "hbk",
+        "language": "kn",
+        "version": "1951"
+      },
+      {
+        "identifier": "irv",
+        "language": "kn",
+        "version": "2020"
+      },
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "40"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Gateway Literal Text - Kannada",
+    "type": "bundle",
+    "version": "40.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "BCS"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "ರೂತ",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ಯೋನ",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ಲೂಕ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಯೋಹಾ",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಮೊದಲನೆಯ ಕೊರಿಂಥ",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಎಫೆಸದವರಿಗೆ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಪೌಲನು ಫಿಲಿಪ್ಪಿಯವರಿಗೆ ಬರೆದ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಪೌಲನು ಕೊಲೊಸ್ಸೆಯರಿಗೆ ಬರೆದ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಪೌಲನು ಥೆಸಲೋನಿಕದವರಿಗೆ ಬರೆದ ಮೊದಲನೆಯ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ಥೆಸ",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ತಿಮೊಥೆಯನಿಗೆ",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ತಿಮೊ",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ತೀತನಿಗೆ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಪೌಲನು ಫಿಲೆಮೋನನಿಗೆ ಬರೆದ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಯಾಕೋ",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ಪೇತ್ರ",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಪೇತ್ರನು ಬರೆದ ಎರಡನೆಯ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ಯೋಹಾ",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ಯೋಹಾ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 ಯೋಹಾ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ಯೂದನು ಬರೆದ ಪತ್ರಿಕೆ",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Acash Jacob",
+        "Antoney Raj",
+        "Cdr. Thomas Mathew",
+        "Dr. Bobby Chellappan",
+        "Hind Prakash",
+        "Jinu Jacob",
+        "Shojo John",
+        "Vipin Bhadran"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "",
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "issued": "2023-03-23",
+      "language": {
+        "direction": "ltr",
+        "identifier": "kn",
+        "title": "ಕನ್ನಡ (Kannada)"
+      },
+      "modified": "2023-03-23",
+      "publisher": "BCS",
+      "relation": [
+        "kn/glt",
+        "kn/gst",
+        "kn/irv",
+        "kn/iev",
+        "kn/ta",
+        "kn/tn",
+        "kn/tq",
+        "kn/tw",
+        "kn/ulb",
+        "kn/obs",
+        "kn/obs-tn",
+        "kn/obs-tq"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "hbk",
+          "language": "kn",
+          "version": "1951"
+        },
+        {
+          "identifier": "irv",
+          "language": "kn",
+          "version": "2020"
+        },
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "40"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Gateway Literal Text - Kannada",
+      "type": "bundle",
+      "version": "40.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "BCS"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "ರೂತ",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ಯೋನ",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ಲೂಕ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಯೋಹಾ",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಮೊದಲನೆಯ ಕೊರಿಂಥ",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಎಫೆಸದವರಿಗೆ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಪೌಲನು ಫಿಲಿಪ್ಪಿಯವರಿಗೆ ಬರೆದ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಪೌಲನು ಕೊಲೊಸ್ಸೆಯರಿಗೆ ಬರೆದ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಪೌಲನು ಥೆಸಲೋನಿಕದವರಿಗೆ ಬರೆದ ಮೊದಲನೆಯ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ಥೆಸ",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ತಿಮೊಥೆಯನಿಗೆ",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ತಿಮೊ",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ತೀತನಿಗೆ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಪೌಲನು ಫಿಲೆಮೋನನಿಗೆ ಬರೆದ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಯಾಕೋ",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ಪೇತ್ರ",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಪೇತ್ರನು ಬರೆದ ಎರಡನೆಯ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ಯೋಹಾ",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ಯೋಹಾ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 ಯೋಹಾ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ಯೂದನು ಬರೆದ ಪತ್ರಿಕೆ",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "kn",
+  "language_name": "ಕನ್ನಡ (Kannada)",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "Gateway Literal Text - Kannada",
+  "remoteModifiedTime": "2023-05-01T19:32:25Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2023-05-01T19:32:25Z",
+  "usfm-js": "3.4.2",
+  "version": "40.1",
+  "modifiedTime": "2023-05-01T19:32:25Z",
+  "stage": "prod"
+}

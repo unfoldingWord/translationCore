@@ -1,0 +1,38 @@
+/*
+ set up font support
+ */
+
+/* include default font setup */
+@import "previewStyles-default.css";
+
+/* Awami Nastaliq - supports a wide variety of languages of Pakistan that are written with the sloping Nastaliq style. */
+@font-face {
+  font-family: AwamiNastaliq;
+  src: url(./fonts/complexScript/AwamiNastaliq-Regular.woff);
+}
+
+/*
+  use Awami Nastaliq and fall back to Noto Sans
+*/
+ * {
+  font-family: AwamiNastaliq, Noto Sans;
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+ }
+
+/*
+ TRICKY: the definition below fixes the rendering in Windows even though it is not
+          used on the print preview page.  Not sure why that is, but without this
+          definition Windows will only use default system font.  But this enables
+          the above fonts bundled in translationCore.  Again, not sure why this
+          is needed for Windows, but MacOS does not need this.
+ */
+.AwamiNastaliq-text {
+  font-family: AwamiNastaliq, Noto Sans;
+  font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  font-size: 115%;
+  line-height: initial;
+  -webkit-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+  -moz-font-feature-settings: "hehk" 0, "hedo" 1, "cv78" 2, "hamz" 1, "shrt" 1;
+}

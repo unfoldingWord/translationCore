@@ -1,0 +1,45 @@
+/*
+ set up font support
+ */
+
+/* include default font setup */
+@import "previewStyles-default.css";
+
+/* Padauk - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(./fonts/complexScript/Padauk-Regular.woff);
+  font-weight: normal;
+}
+
+/* Padauk bold - special font for Myanmar (Burmese) */
+@font-face {
+  font-family: Padauk;
+  src: url(./fonts/complexScript/Padauk-Bold.woff);
+  font-weight: bold;
+}
+
+/*
+  use Padauk and fall back to Noto Sans
+*/
+ * {
+  font-family: Padauk, Noto Sans;
+  -moz-font-feature-settings: "wtri" 1;
+  -webkit-font-feature-settings: "wtri" 1;
+  font-feature-settings: "wtri" 1;
+}
+
+/*
+ TRICKY: the definition below fixes the rendering in Windows even though it is not
+          used on the print preview page.  Not sure why that is, but without this
+          definition Windows will only use default system font.  But this enables
+          the above fonts bundled in translationCore.  Again, not sure why this
+          is needed for Windows, but MacOS does not need this.
+ */
+.Padauk-text {
+  font-family: Padauk, Noto Sans;
+  font-size: 130%;
+  font-feature-settings: "wtri" 1;
+  -moz-font-feature-settings: "wtri" 1;
+  -webkit-font-feature-settings: "wtri" 1;
+}

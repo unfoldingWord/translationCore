@@ -34,11 +34,12 @@ jobs:
 #       run: echo "$GITHUB_CONTEXT"
     - uses: actions/setup-node@v1
       with:
-        node-version: '16.4.2'
+        node-version: '16.14.2'
     - name: Node version
       run: |
         node --version
         npm --version
+        git --version
 
 #    - uses: actions/checkout@v2
 #    - name: Checkout submodules
@@ -419,23 +420,6 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           npm run build-macos
 
-      #     arm64
-      - name: Set arm64 MAX artifact name
-        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
-
-      - name: Set arm64 LITE artifact name
-        if: ${{ env.TRIM == '1' }}
-        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
-
-      - name: bundle arm64 macOS
-        run: ./node_modules/.bin/gulp release-macos-arm64 --out=../artifacts/arm64/$ARTIFACT_ARM64
-
-      - uses: actions/upload-artifact@v1
-        name: Upload arm64 artifacts
-        with:
-          name: ${{ env.ARTIFACT_ARM64 }}
-          path: ../artifacts/arm64/
-
       #     x64
       - name: Set x64 MAX artifact name
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
@@ -452,6 +436,23 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_X64 }}
           path: ../artifacts/x64/
+
+      #     universal build
+      - name: Set universal MAX artifact name
+        run: echo "ARTIFACT_UNIV=$(echo "$APP_NAME-macos-universal-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
+
+      - name: Set universal LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_UNIV=$(echo "$APP_NAME-macos-universal-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
+
+      - name: bundle universal macOS
+        run: ./node_modules/.bin/gulp release-macos-universal --out=../artifacts/universal/$ARTIFACT_UNIV
+
+      - uses: actions/upload-artifact@v1
+        name: Upload universal artifacts
+        with:
+          name: ${{ env.ARTIFACT_UNIV }}
+          path: ../artifacts/universal/
 
   notify:
     name: Notify

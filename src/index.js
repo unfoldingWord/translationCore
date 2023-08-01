@@ -1,3 +1,4 @@
+import { exec } from 'child_process';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -10,6 +11,14 @@ if (process.env.NODE_ENV === 'production') {
   registerLogHandler(createElectronHandler('log-event'));
 }
 
+// call system git to retrieve its version
+exec('git --version', (err, data) => {
+  if (err) {
+    console.error('System Git ERROR:', err);
+  } else {
+    console.info('System Git Identifier:', data);
+  }
+});
 // log versions
 console.info('Electron', process.versions.electron);
 console.info('Chrome', process.versions.chrome);

@@ -14,7 +14,10 @@ import {
 } from '../ResourcesHelpers';
 // constants
 import {
-  PROJECTS_PATH, USER_RESOURCES_PATH, TRANSLATION_WORDS, TRANSLATION_NOTES,
+  PROJECTS_PATH,
+  TRANSLATION_WORDS,
+  TRANSLATION_NOTES,
+  USER_RESOURCES_PATH,
 } from '../../common/constants';
 
 describe('migrate tCore resources', () => {

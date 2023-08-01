@@ -277,7 +277,7 @@ export default class ProjectAPI {
    */
   getBookId() {
     const manifest = this.getManifest();
-    return manifest.project.id;
+    return manifest?.project?.id;
   }
 
   /**
@@ -287,11 +287,12 @@ export default class ProjectAPI {
    */
   getBookName() {
     const manifest = this.getManifest();
+    const bookName = manifest?.target_language?.book?.name;
 
-    if (manifest.target_language && manifest.target_language.book && manifest.target_language.book.name) {
-      return manifest.target_language.book.name;
+    if (bookName) {
+      return bookName;
     } else {
-      return manifest.project.name;
+      return manifest?.project?.name;
     }
   }
 
@@ -302,7 +303,7 @@ export default class ProjectAPI {
    */
   getResourceId() {
     const manifest = this.getManifest();
-    return manifest.resource.id;
+    return manifest?.resource?.id || '';
   }
 
   /**
@@ -311,7 +312,7 @@ export default class ProjectAPI {
    */
   getLanguageId() {
     const manifest = this.getManifest();
-    return manifest.target_language.id;
+    return manifest?.target_language?.id;
   }
 
   /**
