@@ -329,7 +329,7 @@ export function getBestMatchForVerse(originalLangChapter, alignmentsChapter, ver
 /**
  * if flag is true, increment and return count
  * @param {number} count
- * @param {number} flag
+ * @param {boolean} flag
  * @return {number} new count
  */
 function increment(count, flag) {

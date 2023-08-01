@@ -3,7 +3,9 @@ const fonts = {
   'Padauk': { 'font': 'Padauk' },
   'Awami Nastaliq': { 'font': 'AwamiNastaliq' },
   'Scheherazade': { 'font': 'Scheherazade' },
-  // Add more complex script fonts here, remember to load it in the css file and create a class with its font settings if necessary.
+  'Charis SIL': { 'font': 'CharisSIL' },
+  // To make more complex script fonts available to select, add them here.
+  //    Remember to copy the font files into the css folder and then create a class in styles.css (for example see `.AwamiNastaliq-text`).  Make sure to add the appropriate font settings.
 };
 
 export default fonts;
