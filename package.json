@@ -87,7 +87,7 @@
     "cross-env": "7.0.2",
     "css-loader": "3.4.2",
     "electron-devtools-installer": "^3.2.0",
-    "electronite": "25.3.2-graphite-beta",
+    "electronite": "25.3.2-graphite",
     "electronite-packager": "17.1.1-graphite",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
