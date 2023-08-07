@@ -84,7 +84,7 @@ function getOccurrencesForWordList(wordList) {
 /**
  * get the word list for the original language in the format used by alignment data
  @param {array} verseObjects
- * @returns {*[]}
+ * @returns {object[]}
  */
 function getOriginalLanguageListForVerseData(verseObjects) {
   const wordList = [];
@@ -97,7 +97,7 @@ function getOriginalLanguageListForVerseData(verseObjects) {
  * get the word list for the original language in the format used by alignment data
  * @param {object} chapterJson
  * @param {string|number} verseRef
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function getOrigLangWordListForVerse(chapterJson, verseRef) {
   const verseObjects = chapterJson?.[verseRef]?.verseObjects;
@@ -108,7 +108,7 @@ export function getOrigLangWordListForVerse(chapterJson, verseRef) {
  * get the word list for the aligned original words
  * @param {object} chapterJson
  * @param {string|number} verseRef
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function getAlignedWordListForVerse(chapterJson, verseRef) {
   const wordList = [];
@@ -129,8 +129,8 @@ export function getAlignedWordListForVerse(chapterJson, verseRef) {
 
 /**
  * normalize word by doing unicode normalization, converting to lower case, and then fixing the trailing accent
- * @param word
- * @return {{length}}
+ * @param {string} word
+ * @return {{string}}
  */
 function normalize(word) {
   let word_ = normalizer(word || '');
@@ -269,7 +269,7 @@ function isValidVerseSpan(verseRef) {
  * get all verses included in verse range
  * @param {string} verseRef - number to look up
  * @param {object} chapterData
- * @return {null|{verseObjects: *[]}}
+ * @return {null|{verseObjects: object[]}}
  */
 function getVersesForSpan(verseRef, chapterData) {
   // coerce to look like a book so we can use library call
@@ -379,7 +379,7 @@ export function updateAlignedWordsFromOriginalForVerse(originalLangChapter, alig
  * for a chapter update the aligned word attributes for verse from latest original language
  * @param {Object} originalLangChapter
  * @param {Object} alignmentsChapter
- * @return {{emptyAlignmentsVerses: *[], changedVerses: *[], removedExtraWordsVerses: *[]}}
+ * @return {{emptyAlignmentsVerses: object[], changedVerses: object[], removedExtraWordsVerses: object[]}}
  */
 export function updateAlignedWordAttribFromOriginalForChapter(originalLangChapter, alignmentsChapter) {
   const changedVerses = [];
