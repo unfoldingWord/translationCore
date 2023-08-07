@@ -70,6 +70,15 @@ jobs:
     - name: npm lint
       run: npm run lint
 
+    - name: jsdocs
+      run: npm run docs
+
+    - uses: actions/upload-artifact@v1
+      name: Upload jsdocs
+      with:
+        name: jsdocs
+        path: ./jsdoc/
+
   build-linux:
     name: Build Linux
     strategy:
