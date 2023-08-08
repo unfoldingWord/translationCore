@@ -189,7 +189,7 @@ export function getWordCountInVerse(verseAlignments, matchVerse, word) {
 /**
  * get all the alignments for verse from nested array (finds zaln objects)
  * @param {array} verseSpanAlignments
- * @return {*[]}
+ * @return {object[]}
  */
 export function getVerseAlignments(verseSpanAlignments) {
   let alignments = [];
