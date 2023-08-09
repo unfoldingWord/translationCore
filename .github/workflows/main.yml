@@ -78,11 +78,11 @@ jobs:
     - name: parsing jsdocs
       run: npm run doc
 
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      name: Update jsdocs
+    - name: Update jsdocs
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Apply jsdocs update
         file_pattern: 'docs/*'
+        commit_message: Apply jsdocs update
 
 #    - uses: actions/upload-artifact@v1
 #      name: Upload jsdocs
