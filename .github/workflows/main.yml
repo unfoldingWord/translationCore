@@ -39,9 +39,8 @@ jobs:
 
     - name: Update Git
       run: |
-        sudo apt-get update
-        sudo apt-get install git -y
-        sudo git --version
+        apt-get update
+        apt-get install git -y
         git --version
 
     - uses: actions/setup-node@v1
