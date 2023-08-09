@@ -54,9 +54,10 @@ jobs:
 #        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
     - name: Checkout codebase
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
       with:
         submodules: recursive
+        persist-credentials: true
 
     - name: npm install
       run: |
