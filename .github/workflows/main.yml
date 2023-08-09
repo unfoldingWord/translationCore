@@ -80,8 +80,8 @@ jobs:
     - uses: stefanzweifel/git-auto-commit-action@v4
       name: Update jsdocs
       with:
-          commit_message: Apply jsdocs update
-          file_pattern: 'docs/*'
+        commit_message: Apply jsdocs update
+        file_pattern: 'docs/*'
 
 #    - uses: actions/upload-artifact@v1
 #      name: Upload jsdocs
