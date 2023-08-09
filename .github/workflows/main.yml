@@ -39,9 +39,10 @@ jobs:
 
     - name: Update Git
       run: |
-        add-apt-repository ppa:git-core/ppa
-        apt-get update
-        apt-get install git
+        sudo add-apt-repository -y ppa:git-core/ppa
+        sudo apt-get update
+        sudo apt-get install git -y
+        sudo git --version
         git --version
 
     - uses: actions/setup-node@v1
