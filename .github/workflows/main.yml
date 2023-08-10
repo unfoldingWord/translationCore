@@ -55,6 +55,8 @@ jobs:
 #        git submodule sync --recursive
 #        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
+# we can update this to v3 once we have updated the git version to be compatible
+#
     - name: Checkout codebase
       uses: actions/checkout@v1
       with:
@@ -80,6 +82,8 @@ jobs:
     - name: parsing jsdocs
       run: npm run doc
 
+# we can enable this once we have updated the git version to be compatible
+#
 #    - name: Update jsdocs
 #      uses: stefanzweifel/git-auto-commit-action@v4
 #      with:
