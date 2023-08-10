@@ -82,13 +82,13 @@ jobs:
     - name: parsing jsdocs
       run: npm run doc
 
-# we can enable this once we have updated the git version to be compatible
-#
-#    - name: Update jsdocs
-#      uses: stefanzweifel/git-auto-commit-action@v4
-#      with:
-#        file_pattern: 'docs/*'
-#        commit_message: Apply jsdocs update
+    - name: Update jsdocs in branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        file_pattern: 'docs/*'
+        commit_message: Apply jsdocs update
+        skip_fetch: true
+        skip_checkout: true
 
     - uses: actions/upload-artifact@v1
       name: Upload jsdocs
