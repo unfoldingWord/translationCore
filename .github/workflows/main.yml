@@ -47,8 +47,6 @@ jobs:
         npm --version
         git --version
 
-# we can enable this once we have updated git
-#
 #    - uses: actions/checkout@v2
 #    - name: Checkout submodules
 #      shell: bash
@@ -58,7 +56,7 @@ jobs:
 #        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
     - name: Checkout codebase
-      uses: actions/checkout@v3
+      uses: actions/checkout@v1
       with:
         submodules: recursive
         persist-credentials: true
