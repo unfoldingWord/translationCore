@@ -37,12 +37,6 @@ jobs:
 #         GITHUB_CONTEXT: ${{ toJson(github) }}
 #       run: echo "$GITHUB_CONTEXT"
 
-    - name: Update Git
-      run: |
-        apt-get update
-        apt-get install git -y
-        git --version
-
     - uses: actions/setup-node@v1
       with:
         node-version: '16.14.2'
@@ -53,6 +47,8 @@ jobs:
         npm --version
         git --version
 
+# we can enable this once we have updated git
+#
 #    - uses: actions/checkout@v2
 #    - name: Checkout submodules
 #      shell: bash
