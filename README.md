@@ -34,8 +34,8 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 ## Documentation
 
 ### JS-Docs generated documentation:
-- last deployed to GitHub pages: [deployed JS-Docs](https://unfoldingword.github.io/translationCore/translationCore/index.html)
-- lasted local: [local JS-Docs](./docs/translationCore/index.html)
+- last deployed on GitHub pages: [deployed JS-Docs](https://unfoldingword.github.io/translationCore/translationCore/index.html)
+- current local: [local JS-Docs](./docs/translationCore/index.html)
 
 
 ## Debugging Main App
