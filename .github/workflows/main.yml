@@ -82,13 +82,18 @@ jobs:
     - name: parsing jsdocs
       run: npm run doc
 
-    - name: Update jsdocs in branch
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        file_pattern: 'docs/*'
-        commit_message: Apply jsdocs update
-        skip_fetch: true
-        skip_checkout: true
+# This may require update of git version to work properly.  Get this error:
+#   INPUT_PUSH_OPTIONS:
+#   fatal: could not read Username for 'https://github.com': No such device or address
+#   Error: Invalid status code: 128
+    
+#    - name: Update jsdocs in branch
+#      uses: stefanzweifel/git-auto-commit-action@v4
+#      with:
+#        file_pattern: 'docs/*'
+#        commit_message: Apply jsdocs update
+#        skip_fetch: true
+#        skip_checkout: true
 
     - uses: actions/upload-artifact@v1
       name: Upload jsdocs
