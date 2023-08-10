@@ -47,7 +47,7 @@ jobs:
       with:
         node-version: '16.14.2'
 
-    - name: Node version
+    - name: Get versions
       run: |
         node --version
         npm --version
@@ -86,17 +86,17 @@ jobs:
     - name: parsing jsdocs
       run: npm run doc
 
-    - name: Update jsdocs
-      uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        file_pattern: 'docs/*'
-        commit_message: Apply jsdocs update
-
-#    - uses: actions/upload-artifact@v1
-#      name: Upload jsdocs
+#    - name: Update jsdocs
+#      uses: stefanzweifel/git-auto-commit-action@v4
 #      with:
-#        name: jsdocs
-#        path: ./docs/
+#        file_pattern: 'docs/*'
+#        commit_message: Apply jsdocs update
+
+    - uses: actions/upload-artifact@v1
+      name: Upload jsdocs
+      with:
+        name: jsdocs
+        path: ./docs/
 
   build-linux:
     name: Build Linux
