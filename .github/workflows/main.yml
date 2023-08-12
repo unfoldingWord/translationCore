@@ -67,11 +67,7 @@ jobs:
         persist-credentials: true
 
     - name: npm install
-      run: |
-        # Fix for problem of cached files from older npm versions, move npm cache to temp directory
-        TMPDIR=$(mktemp -d)
-        echo "$TMPDIR"
-        npm ci --cache="$TMPDIR"
+      run: npm ci
 
     - name: npm test
       run: npm run ci-test
@@ -159,12 +155,7 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: |
-          # Fix for problem of cached files from older npm versions, move npm cache to temp directory
-          TMPDIR=$(mktemp -d)
-          echo "$TMPDIR"
-          npm ci --cache="$TMPDIR"
-          npm run update-env
+        run: npm ci
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
