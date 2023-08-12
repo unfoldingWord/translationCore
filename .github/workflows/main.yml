@@ -24,6 +24,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     container: photonomad/github_build:latest
+    # the Dockerfile used to create this image is here: https://github.com/unfoldingWord-dev/concourse-pipeline/blob/master/docker/Dockerfile
     env:
       CI: true
 
@@ -58,10 +59,8 @@ jobs:
 #        git submodule sync --recursive
 #        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
-# we can update this to v3 once we have updated the git version to be compatible
-#
     - name: Checkout codebase
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
       with:
         submodules: recursive
         persist-credentials: true
@@ -81,18 +80,13 @@ jobs:
     - name: parsing jsdocs
       run: npm run doc
 
-# This may require update of git version to work properly.  Get this error:
-#   INPUT_PUSH_OPTIONS:
-#   fatal: could not read Username for 'https://github.com': No such device or address
-#   Error: Invalid status code: 128
-
-#    - name: Update jsdocs in branch
-#      uses: stefanzweifel/git-auto-commit-action@v4
-#      with:
-#        file_pattern: 'docs/*'
-#        commit_message: Apply jsdocs update
-#        skip_fetch: true
-#        skip_checkout: true
+    - name: Update jsdocs in branch
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        file_pattern: 'docs/*'
+        commit_message: Apply jsdocs update
+        skip_fetch: true
+        skip_checkout: true
 
     - uses: actions/upload-artifact@v1
       name: Upload jsdocs
