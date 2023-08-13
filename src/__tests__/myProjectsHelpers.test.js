@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
 /* eslint-env jest */
 import path from 'path';
-// import ncp from 'ncp';
+import ncp from 'ncp';
 import fs from 'fs-extra';
 import * as myProjectsHelpers from '../js/helpers/myProjectsHelpers';
-import { ncp } from '../js/helpers/fileUtils';
 jest.unmock('fs-extra');
 jest.unmock('../js/helpers/GitApi');
 

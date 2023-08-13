@@ -82,7 +82,7 @@ describe('MergeConflictHelpers.checkUSFMForMergeConflicts', () => {
 });
 
 describe('MergeConflictHelpers.merge', () => {
-  const projectSaveLocation = path.join(__dirname, 'output/projects');
+  const projectSaveLocation = path.join(__dirname, 'output/tests/projects');
 
   beforeEach(() => {
     fs.ensureDirSync(projectSaveLocation);

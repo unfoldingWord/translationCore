@@ -73,16 +73,7 @@ jobs:
     - name: List permissions
       run: |
         set -x
-        echo "ls -als  /__w/translationCore/translationCore/src/__tests__"
-        ls -als  /__w/translationCore/translationCore/src/__tests__
-        echo "whoami"
-        whoami
-        echo "id -u -n"
-        id -u -n
-        echo "id -un"
-        id -un
-        echo "id -Gn"
-        id -Gn
+        # create output folder with permission for tests to use for temp results
         echo "mkdir ./src/__tests__/output"
         mkdir ./src/__tests__/output
         echo "chmod +w ./src/__tests__/output"
