@@ -78,6 +78,11 @@ jobs:
         whoami
         echo "id -u -n"
         id -u -n
+        echo "id -un"
+        id -un
+        echo "id -Gn"
+        id -Gn
+
 
     - name: npm test
       run: npm run ci-test
