@@ -28,7 +28,7 @@ afterEach(() => {
 describe('generateTargetBibleFromUSFMPath', () => {
   it('generates a target bible', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/id_tit_text_reg.usfm');
-    const projectPath = path.join(__dirname, 'output/tit_from_usfm');
+    const projectPath = path.join(__dirname, 'output/tests/tit_from_usfm');
     const manifest = {
       'project': { 'id': 'tit' },
       'target_language': {
@@ -47,7 +47,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
 
   it('fails to generate from missing usfm', () => {
     const usfmPath = path.join(__dirname, 'fixtures/usfm/valid/missing_file.usfm');
-    const projectPath = path.join(__dirname, 'output/missing_output');
+    const projectPath = path.join(__dirname, 'output/tests/missing_output');
     const manifest = {
       'project': { 'id': 'tit' },
       'target_language': {
@@ -125,7 +125,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
   it('generates a Bible from tstudio project with 00 folder', () => {
     const projectName = 'aaa_php_text_ulb';
     const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
-    const unzipPath = path.join(__dirname, 'output', projectName);
+    const unzipPath = path.join(__dirname, 'output/tests', projectName);
     const projectPath = path.join(unzipPath, projectName);
     const zip = new AdmZip(srcPath);
     zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
@@ -149,7 +149,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
   it('generates a Bible from tstudio project with front folder', () => {
     const projectName = 'en_php_text_reg';
     const srcPath = path.join(__dirname, 'fixtures/project/tstudio_project/' + projectName + '.tstudio');
-    const unzipPath = path.join(__dirname, 'output', projectName);
+    const unzipPath = path.join(__dirname, 'output/tests', projectName);
     const projectPath = path.join(unzipPath, projectName);
     const zip = new AdmZip(srcPath);
     zip.extractAllTo(unzipPath, /*overwrite*/true); // extract .tstudio project
