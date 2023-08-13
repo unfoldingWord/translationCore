@@ -82,38 +82,34 @@ describe('MergeConflictHelpers.checkUSFMForMergeConflicts', () => {
 });
 
 describe('MergeConflictHelpers.merge', () => {
-  const projectSaveLocation = path.join(__dirname, 'output/tests/projects');
+  const testWorkingLocation = path.join(__dirname, 'output/test');
 
   beforeEach(() => {
-    fs.ensureDirSync(projectSaveLocation);
+    fs.ensureDirSync(testWorkingLocation);
   });
 
   afterEach(() => {
-    fs.removeSync(projectSaveLocation);
+    fs.removeSync(testWorkingLocation);
   });
 
-  test('should successfully merge a seleceted merge conflict', () => {
-    let inputFile = oneMergeConflictsUSFMPath + '/php.usfm';
-    let outputFile = oneMergeConflictsUSFMPath + '/php-merged.usfm';
+  test('should successfully merge a selected merge conflict', () => {
+    const { inputFile, outputFile } = copyToTestFolder(oneMergeConflictsUSFMPath, testWorkingLocation, 'php.usfm', 'php-merged.usfm');
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
     MergeConflictHelpers.merge(oneMergeConflictsObject, inputFile, outputFile);
     expect(fs.readFileSync(outputFile).toString()).toBeTruthy();
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
-    fs.removeSync(outputFile);
   });
 
-  test('should successfully merge two seleceted merge conflicts', () => {
-    let inputFile = path.join(twoMergeConflictsUSFMPath, 'tit.usfm');
-    let outputFile = path.join(twoMergeConflictsUSFMPath, 'tit-merged.usfm');
+  test('should successfully merge two selected merge conflicts', () => {
+    const { inputFile, outputFile } = copyToTestFolder(twoMergeConflictsUSFMPath, testWorkingLocation, 'tit.usfm', 'tit-merged.usfm');
     let hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(inputFile);
     expect(hasMergeConflicts).toBeTruthy();
     MergeConflictHelpers.merge(twoMergeConflictsObject, inputFile, outputFile);
     expect(fs.readFileSync(outputFile).toString()).toBeTruthy();
     hasMergeConflicts = MergeConflictHelpers.checkUSFMForMergeConflicts(outputFile);
     expect(hasMergeConflicts).toBeFalsy();
-    fs.removeSync(outputFile);
   });
 });
 
@@ -190,3 +186,23 @@ describe('MergeConflictHelpers.getChapterFromVerseText', () => {
     expect(parsedMergeConflict).toBeUndefined();
   });
 });
+
+// ----------------
+// test utilities
+// ----------------
+
+/**
+ * copy input file to test folder and return full paths for copied file and for output file
+ * @param {string} testSourceFolders
+ * @param {string} testWorkingLocation
+ * @param {string} inputFileName
+ * @param {string }outputFileName
+ * @returns {{inputFile: string, outputFile: string}}
+ */
+function copyToTestFolder(testSourceFolders, testWorkingLocation, inputFileName, outputFileName) {
+  const _inputFile = path.join(testSourceFolders, inputFileName);
+  const inputFile = path.join(testWorkingLocation, inputFileName);
+  fs.copySync(_inputFile, inputFile);
+  const outputFile = path.join(testWorkingLocation, outputFileName);
+  return { inputFile, outputFile };
+}
