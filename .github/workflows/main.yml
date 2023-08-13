@@ -72,6 +72,7 @@ jobs:
 
     - name: List permissions
       run: |
+        set -x
         echo "ls -als  /__w/translationCore/translationCore/src/__tests__"
         ls -als  /__w/translationCore/translationCore/src/__tests__
         echo "whoami"
@@ -82,7 +83,10 @@ jobs:
         id -un
         echo "id -Gn"
         id -Gn
-
+        echo "mkdir ./src/__tests__/output"
+        mkdir ./src/__tests__/output
+        echo "chmod +w ./src/__tests__/output"
+        chmod +w ./src/__tests__/output
 
     - name: npm test
       run: npm run ci-test
