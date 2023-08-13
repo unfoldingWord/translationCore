@@ -113,7 +113,7 @@ function replacePageSizes(previewStyleTemplate, factor) {
   let template = previewStyleTemplate;
   const startStr = '%PS';
   const units = '';
-  const fractionDigits = 0;
+  const fractionDigits = 2;
   const endStr = '%';
   template = scaleVariablesInTemplate(template, startStr, endStr, factor, fractionDigits, units);
 
@@ -143,9 +143,10 @@ function replacePixelSizes(previewStyleTemplate, factor) {
  * @param {string} projectFont
  * @param {number} baseSizePx
  * @param {number} scale - scale to apply to everything
+ * @param {string} textDirection - direction for text (e.g. 'ltr' or 'rtl'
  * @returns {string} - returns new html
  */
-function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
+function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1, textDirection = 'ltr') {
   let publicBase;
 
   if (isProduction) {
@@ -161,6 +162,18 @@ function convertPrintPreviewHtml(html, projectFont, baseSizePx, scale=1) {
   previewStyleTemplate = replaceFontSizes(previewStyleTemplate, baseSizePx*scale/7);
   previewStyleTemplate = replacePageSizes(previewStyleTemplate, scale);
   previewStyleTemplate = replacePixelSizes(previewStyleTemplate, scale);
+
+  let CHAPTER_PADDING = 'padding-left';
+  let CHAPTER_FLOAT = 'right';
+
+  if (textDirection === 'ltr') {
+    CHAPTER_PADDING = 'padding-right';
+    CHAPTER_FLOAT = 'left';
+  }
+
+  previewStyleTemplate = previewStyleTemplate.replace('%CHAPTER_PADDING%', CHAPTER_PADDING);
+  previewStyleTemplate = previewStyleTemplate.replace('%CHAPTER_FLOAT%', CHAPTER_FLOAT);
+
   const startStyleStr = '<style>';
   const startStylePos = html.indexOf(startStyleStr);
   const endStyleStr = '</style>';
@@ -273,11 +286,11 @@ function PreviewContent({
 
   useEffect(() => {
     if (html && submitPreview && !running) {
-      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize);
+      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize, 1, textDirection);
       onRefresh && onRefresh(html_);
       setSubmitPreview(false);
     }
-  }, [html, submitPreview, running, projectFont, onRefresh, fontSize]);
+  }, [html, submitPreview, running, projectFont, onRefresh, fontSize, textDirection]);
 
   useEffect(() => {
     if ( !submitPreview ) {
@@ -354,7 +367,7 @@ function PreviewContent({
     setScale(scale_ + '');
 
     if (onRefresh) {
-      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize, scale_);
+      const html_ = convertPrintPreviewHtml(html, projectFont, fontSize, scale_, textDirection);
       onRefresh && onRefresh(html_);
     }
   }
