@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
 /* eslint-env jest */
 import path from 'path';
-import ncp from 'ncp';
+// import ncp from 'ncp';
 import fs from 'fs-extra';
 import * as myProjectsHelpers from '../js/helpers/myProjectsHelpers';
+import { ncp } from '../js/helpers/fileUtils';
 jest.unmock('fs-extra');
 jest.unmock('../js/helpers/GitApi');
 
@@ -51,6 +52,9 @@ describe('myProjectsHelpers.getProjectsFromFS 2', () => {
     out = path.join(__dirname, 'output', 'my_projects_fs');
     ncp(src, out, (err) => {
       if (err) {
+        console.log('ncp - copy error', err);
+        const files = fs.readdirSync(__dirname);
+        console.log('files found', files);
         reject(err);
       } else {
         resolve();

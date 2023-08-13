@@ -50,6 +50,8 @@ jobs:
         npm --version
         echo "git --version"
         git --version
+        echo "pwd"
+        pwd
 
 #    - uses: actions/checkout@v2
 #    - name: Checkout submodules
