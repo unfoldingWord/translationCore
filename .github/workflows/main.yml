@@ -70,6 +70,15 @@ jobs:
     - name: npm install
       run: npm ci
 
+    - name: List permissions
+      run: |
+        echo "ls -als  /__w/translationCore/translationCore/src/__tests__"
+        ls -als  /__w/translationCore/translationCore/src/__tests__
+        echo "whoami"
+        whoami
+        echo "id -u -n"
+        id -u -n
+
     - name: npm test
       run: npm run ci-test
 
