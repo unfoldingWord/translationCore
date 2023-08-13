@@ -86,7 +86,7 @@ jobs:
         echo "mkdir ./src/__tests__/output"
         mkdir ./src/__tests__/output
         echo "chmod +w ./src/__tests__/output"
-        chmod +w ./src/__tests__/output
+        chmod -R a+rwx ./src/__tests__/output
 
     - name: npm test
       run: npm run ci-test

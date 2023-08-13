@@ -9,7 +9,7 @@ jest.unmock('fs-extra');
 jest.unmock('../js/helpers/GitApi');
 
 const cleanOutput = () => {
-  const filePath = path.join(__dirname, 'output');
+  const filePath = path.join(__dirname, 'output/tests/');
 
   try {
     fs.emptyDirSync(filePath);
@@ -28,7 +28,7 @@ describe('myProjectsHelpers.getProjectsFromFS', () => {
   beforeAll(() => new Promise((resolve, reject) => {
     cleanOutput();
     let src = path.join(__dirname, 'fixtures', 'project', 'missingVerses');
-    out = path.join(__dirname, 'output','my_projects_fs');
+    out = path.join(__dirname, 'output/tests','my_projects_fs');
     ncp(src, out, (err) => {
       if (err) {
         reject(err);
@@ -49,7 +49,7 @@ describe('myProjectsHelpers.getProjectsFromFS 2', () => {
   beforeAll(() => new Promise((resolve, reject) => {
     cleanOutput();
     let src = path.join(__dirname, 'fixtures', 'project', 'projectVerification');
-    out = path.join(__dirname, 'output', 'my_projects_fs');
+    out = path.join(__dirname, 'output/tests', 'my_projects_fs');
     ncp(src, out, (err) => {
       if (err) {
         console.log('ncp - copy error', err);

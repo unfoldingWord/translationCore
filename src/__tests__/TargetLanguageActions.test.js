@@ -14,7 +14,7 @@ jest.mock('../js/selectors', () => ({
 }));
 
 const cleanOutput = () => {
-  fs.emptyDirSync(path.join(__dirname, 'output'));
+  fs.emptyDirSync(path.join(__dirname, 'output/tests'));
 };
 
 beforeEach(() => {
@@ -65,7 +65,7 @@ describe('generateTargetBibleFromUSFMPath', () => {
 describe('generateTargetBibleFromTstudioProjectPath', () => {
   it('generates a Bible', () => {
     const srcPath = path.join(__dirname, 'fixtures/project/full_project');
-    const projectPath = path.join(__dirname, 'output/generate_from_project');
+    const projectPath = path.join(__dirname, 'output/tests/generate_from_project');
     return new Promise((resolve, reject) => {
       // copy source to output for manipulation
       ncp(srcPath, projectPath, (err) => {
@@ -93,7 +93,7 @@ describe('generateTargetBibleFromTstudioProjectPath', () => {
 
   it('generates a Bible w/ single chunks', () => {
     const srcPath = path.join(__dirname, 'fixtures/project/single_chunks');
-    const projectPath = path.join(__dirname, 'output/single_chunks');
+    const projectPath = path.join(__dirname, 'output/tests/single_chunks');
     return new Promise((resolve, reject) => {
       // copy source to output for manipulation
       ncp(srcPath, projectPath, (err) => {
