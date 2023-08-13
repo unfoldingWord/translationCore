@@ -94,6 +94,7 @@ jobs:
         # enable permission to modify docs files
         echo "chmod -R a+rwx ./docs"
         chmod -R a+rwx ./docs
+        ls -als ./docs/translationCore/fonts
         # update jsdocs
         npm run doc
 
