@@ -196,7 +196,7 @@ describe('MergeConflictHelpers.getChapterFromVerseText', () => {
  * @param {string} testSourceFolders
  * @param {string} testWorkingLocation
  * @param {string} inputFileName
- * @param {string }outputFileName
+ * @param {string} outputFileName
  * @returns {{inputFile: string, outputFile: string}}
  */
 function copyToTestFolder(testSourceFolders, testWorkingLocation, inputFileName, outputFileName) {
