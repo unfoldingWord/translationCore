@@ -24,7 +24,7 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     container: photonomad/github_build:latest
-    # the Dockerfile used to create this image is here: https://github.com/unfoldingWord-dev/concourse-pipeline/blob/master/docker/Dockerfile
+    # the Dockerfile used to create this image is here: ./.github/workflows/docker/Dockerfile
     env:
       CI: true
 
