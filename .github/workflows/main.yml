@@ -78,9 +78,8 @@ jobs:
         mkdir ./src/__tests__/output
         echo "chmod -R a+rwx ./src/__tests__/output"
         chmod -R a+rwx ./src/__tests__/output
-        echo "git status"
-        git status
-        git config --global --add safe.directory .
+        echo "remove git owner error"
+        git config --global --add safe.directory /__w/translationCore/translationCore
 
     - name: npm test
       run: npm run ci-test
