@@ -101,7 +101,7 @@ jobs:
         # update jsdocs
         npm run doc
         echo "ls -als ./docs/translationCore"
-        ls -als ./docs/translationCore"
+        ls -als ./docs/translationCore
 
 #    - name: Update jsdocs in branch
 #      uses: stefanzweifel/git-auto-commit-action@v4
