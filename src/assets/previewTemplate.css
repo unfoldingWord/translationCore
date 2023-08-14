@@ -201,8 +201,10 @@ div.periphBody {
 .xt {font-weight: bold}
 
 .chapter {
-  padding-left: %PS0.25%em;
-  float: right;
+  /* for rtl: padding-left: %PS0.25%em; */
+  %CHAPTER_PADDING%: %PS0.25%em;
+  /* for rtl: float: right; */
+  float: %CHAPTER_FLOAT%;
   vertical-align: top;
   margin-top:0;
   margin-bottom: 0;

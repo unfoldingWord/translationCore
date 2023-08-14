@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [v3.5.1](https://github.com/unfoldingWord/translationCore/tree/v3.5.1) (2023-8-14)
+
+**Fixed bugs:**
+
+- For print, fix position of chapter numbers for rtl languages by moving them to the left side [\#7523](https://github.com/unfoldingWord/translationCore/issues/7523)
+
+
 ## [v3.5.0](https://github.com/unfoldingWord/translationCore/tree/v3.5.0) (2023-7-31)
 
 **Implemented enhancements:**
