@@ -96,7 +96,7 @@ jobs:
         rm -rf ./docs/*
         echo "chmod -R a+rwx ./docs"
         chmod -R a+rwx ./docs
-        ls -als ./docs/translationCore/fonts
+        ls -als ./docs
         # update jsdocs
         npm run doc
 
