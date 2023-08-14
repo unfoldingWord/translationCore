@@ -91,9 +91,9 @@ jobs:
     - name: Parsing jsdocs
       run: |
         set -x
-        # recreate docs folder with permission for jsdocs to write
-        echo "rm -rf ./docs/*"
-        rm -rf ./docs/*
+        # recreate jsdocs folder with permission for jsdocs to write
+        echo "rm -rf ./docs/translationCore"
+        rm -rf ./docs/translationCore
         echo "chmod -R a+rwx ./docs"
         chmod -R a+rwx ./docs
         ls -als ./docs
