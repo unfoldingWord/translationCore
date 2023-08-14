@@ -80,6 +80,7 @@ jobs:
         chmod -R a+rwx ./src/__tests__/output
         echo "git status"
         git status
+        git config --global --add safe.directory .
 
     - name: npm test
       run: npm run ci-test
