@@ -202,7 +202,7 @@ export function convertAlignmentFromVerseToVerseSpanSub(originalVerseSpanData, a
  * @param {object} originalChapterData
  * @param {object} alignedVerseObjects - aligned verse objects for current verse
  * @param {string|number} chapter - current data
- * @return {{verseObjects: *[]}} returns original language verses in verse span merged together
+ * @return {{verseObjects: object[]}} returns original language verses in verse span merged together
  */
 function convertAlignmentFromVerseToVerseSpan(verseSpan, originalChapterData, alignedVerseObjects, chapter) {
   const blankVerseAlignments = {};

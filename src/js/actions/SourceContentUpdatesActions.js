@@ -139,7 +139,7 @@ function getDownloadErrorList(errors, translate) {
  * @param {array} resourcesToDownload - list of resources to be downloaded.
  * @param {boolean} refreshUpdates
  * @param {boolean} preRelease
- * @returns {(function(*, *): Promise<void>)|*}
+ * @returns {(function(*, *): Promise<void>)}
  */
 export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false) {
   return (async (dispatch, getState) => {
@@ -318,7 +318,7 @@ export const promptUserAboutMissingResource = (resourceDetails) => (async (dispa
 /**
  * gets all the sub folders of folder
  * @param {string} folder
- * @returns {*[]}
+ * @return {string[]}
  */
 function readSubDirs(folder) {
   const alignmentFolders = [];
@@ -338,7 +338,7 @@ function readSubDirs(folder) {
 /**
  * gets all the sub folders of all the folders
  * @param {array} folders
- * @returns {[]}
+ * @returns {string[]}
  */
 function readSubDirsOfArray(folders) {
   let subFolders = [];
@@ -354,7 +354,7 @@ function readSubDirsOfArray(folders) {
 /**
  * gets all the paths to the versions of all resources in resourcesFolder
  * @param {string} resourcesFolder
- * @returns {*[]}
+ * @returns {string[]}
  */
 function getAllResourceVersions(resourcesFolder) {
   const languages = readSubDirs(resourcesFolder);
@@ -367,7 +367,7 @@ function getAllResourceVersions(resourcesFolder) {
 /**
  * get a list of all resources in resourcesFolder
  * @param {string} resourcesFolder
- * @returns {[]}
+ * @returns {object[]}
  */
 export function getAllResourceManifests(resourcesFolder) {
   let manifests = [];

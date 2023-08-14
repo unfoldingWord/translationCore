@@ -32,7 +32,7 @@ const multipleSelectionChangesPath = path.join(__dirname,
   'fixtures/project/csv/multiple_selection_changes/fr_ulb_tit_book');
 const projectOpenedAutographa = path.join(__dirname,
   'fixtures/project/csv/project_opened_autographa/ar_eph_text_ulb');
-const testOutputPath = path.join(__dirname, 'output');
+const testOutputPath = path.join(__dirname, 'output/tests');
 
 const fixtures = path.join(__dirname, 'fixtures');
 const project = path.join(fixtures, 'project');

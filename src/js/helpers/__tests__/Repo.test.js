@@ -34,6 +34,7 @@ describe('static methods', () => {
 
   it('check if the directory is isDirty', async () => {
     const dir = path.join(__dirname, '../../../../'); // use this repo as a benchmark
+    console.log('dirty folder path', dir);
     const user = 'dummy';
     let exceptionThrown = false;
     let data = null;
