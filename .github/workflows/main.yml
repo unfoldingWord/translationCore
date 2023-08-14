@@ -91,7 +91,9 @@ jobs:
     - name: Parsing jsdocs
       run: |
         set -x
-        # enable permission to modify docs files
+        # recreate docs folder with permission for jsdocs to write
+        echo "rm -rf ./docs/*"
+        rm -rf ./docs/*
         echo "chmod -R a+rwx ./docs"
         chmod -R a+rwx ./docs
         ls -als ./docs/translationCore/fonts
