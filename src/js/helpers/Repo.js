@@ -427,7 +427,7 @@ export default class Repo {
       }
 
       if (length) {
-        console.log(`hasChangedFilesForCheck(%{check}) - failed`, data[check])
+        console.log(`hasChangedFilesForCheck(%{check}) - failed`, data[check]);
         changed = true;
       }
     }
