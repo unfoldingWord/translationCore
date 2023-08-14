@@ -78,6 +78,8 @@ jobs:
         mkdir ./src/__tests__/output
         echo "chmod -R a+rwx ./src/__tests__/output"
         chmod -R a+rwx ./src/__tests__/output
+        echo "git status"
+        git status
 
     - name: npm test
       run: npm run ci-test
