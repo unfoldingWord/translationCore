@@ -1,5 +1,32 @@
 # Changelog
 
+
+## [v3.5.1](https://github.com/unfoldingWord/translationCore/tree/v3.5.1) (2023-8-14)
+
+**Fixed bugs:**
+
+- For print, fix position of chapter numbers for rtl languages by moving them to the left side [\#7523](https://github.com/unfoldingWord/translationCore/issues/7523)
+
+
+## [v3.5.0](https://github.com/unfoldingWord/translationCore/tree/v3.5.0) (2023-7-31)
+
+**Implemented enhancements:**
+
+- Add Print Preview and Pdf generation for projects [\#7456](https://github.com/unfoldingWord/translationCore/issues/7456)
+- Update to use Electronite v22.0.3 and add support for Mac Universal Builds [\#7443](https://github.com/unfoldingWord/translationCore/issues/7443)
+- Added the SIL Charis font [\#7506](https://github.com/unfoldingWord/translationCore/issues/7506)
+- Add support for navigating by reference to Translation Notes/Words [\#7502](https://github.com/unfoldingWord/translationCore/issues/7502)
+- EPIC: Support changing Greek Original Lang (e.g. SR Greek version of UGNT)  [\#7458](https://github.com/unfoldingWord/translationCore/issues/7458)
+- Add ability to use QA server  [\#7449](https://github.com/unfoldingWord/translationCore/issues/7449)
+
+**Fixed bugs:**
+
+- Export with alignments fails in tCore with empty verses [\#7511](https://github.com/unfoldingWord/translationCore/issues/7511)
+- Fix for git creating new projects with default branch of main instead of master [\#7487](https://github.com/unfoldingWord/translationCore/issues/7487)
+- Fix to update original language data in alignment data when project is opened  [\#7474](https://github.com/unfoldingWord/translationCore/issues/7474)
+- When User changes GLs, make sure the Original Language for appropriate org is shown in Scripture Pane [\#7470](https://github.com/unfoldingWord/translationCore/issues/7470)
+
+
 ## [v3.4.0](https://github.com/unfoldingWord/translationCore/tree/v3.4.0) (2022-9-22)
 
 **Implemented enhancements:**
