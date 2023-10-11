@@ -20,11 +20,15 @@ import * as exportHelpers from './exportHelpers';
 function getUSfmFromProjectPath(projectPath) {
   let usfm = getUsfm2ExportFile(projectPath);
 
-  if (usfm.indexOf('\\p') < 0) { // if missing paragraph marker
-    const pos = usfm.indexOf('\\c');
+  // make sure we have a paragraph marker before first verse
+  const pos = usfm.indexOf('\\v');
 
-    if (pos >= 0) {
-      const usfm_ = usfm.replaceAll('\\c', '\\p\n\\c');
+  if (pos >= 0) {
+    const initialText = usfm.substring(0, pos);
+    const ppos = initialText.indexOf('\\p');
+
+    if (ppos < 0) { // if missing initial paragraph marker before first verse, insert
+      const usfm_ = usfm.replace('\\v', '\\p\n\\v');
       usfm = usfm_;
     }
   }
