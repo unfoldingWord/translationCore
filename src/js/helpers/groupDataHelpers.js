@@ -4,6 +4,7 @@ import isEqual from 'deep-equal';
 import { STATIC_RESOURCES_PATH } from '../common/constants';
 import { getTranslation } from './localizationHelpers';
 import ResourceAPI from './ResourceAPI';
+import { getOrigLangforBook } from './bibleHelpers';
 
 function createGroupItem(bookId, chapter, verse, toolName) {
   return {
@@ -28,26 +29,38 @@ function createGroupItem(bookId, chapter, verse, toolName) {
  */
 export const generateChapterGroupData = (bookId, toolName, bookDataDir) => {
   let groupsData = [];
-  let ultPath = path.join(STATIC_RESOURCES_PATH, 'en', 'bibles', 'ult');
-  let versionPath = ResourceAPI.getLatestVersion(ultPath) || ultPath;
-  const ultIndexPath = path.join(versionPath, 'index.json');
+  const { languageId: origLang, bibleId: origBible } = getOrigLangforBook(bookId);
+  let origPath = path.join(STATIC_RESOURCES_PATH, origLang, 'bibles', origBible);
+  let versionPath = ResourceAPI.getLatestVersion(origPath) || origPath;
+  const origIndexPath = path.join(versionPath, 'index.json');
+  let chapters;
 
-  if (fs.existsSync(ultIndexPath)) { // make sure it doesn't crash if the path doesn't exist
-    const ultIndex = fs.readJsonSync(ultIndexPath); // the index of book/chapter/verses
-    const bookData = ultIndex[bookId]; // get the data in the index for the current book
+  if (fs.existsSync(origIndexPath)) { // make sure it doesn't crash if the path doesn't exist
+    const originalIndex = fs.readJsonSync(origIndexPath); // the index of book/chapter/verses
+    const bookData = originalIndex[bookId]; // get the data in the index for the current book
+    chapters = Object.keys(bookData);
 
-    groupsData = Array(bookData.chapters).fill().map((_, i) => { // create array from number of chapters
-      const chapter = i + 1; // index is 0 based, so add one for chapter number
-      const verses = bookData[chapter]; // get the number of verses in the chapter
-      return Array(verses).fill().map((_, i) => { // turn number of verses into array
-        const verse = i + 1; // index is 0 based, so add one for verse number
-        return createGroupItem(bookId, chapter, verse, toolName);
-      });
+    groupsData = chapters.map((chapter) => { // create array from number of chapters
+      const verses = bookData[chapter]; // get the verses for chapter
+      const verseList = Object.keys(verses);
+      const frontMatter = verses?.front > 0;
+      const frontIdx = verseList.indexOf('front');
+
+      if (frontMatter && frontIdx > 0) { // move front to top of verse list if not there
+        const front = verseList[frontIdx];
+        verseList.splice(frontIdx);
+        verseList.unshift(front);
+      } else if (!frontMatter && frontIdx >= 0) { // remove front from list
+        verseList.splice(frontIdx);
+      }
+
+      return verseList.map((verse) => // turn number of verses into array
+        createGroupItem(bookId, chapter, verse, toolName));
     });
 
     if (bookDataDir) {
       // look for verse spans in book data
-      for (let chapter = 1; chapter < bookData.chapters; chapter++) {
+      for (const chapter of chapters) {
         const chapterJson = fs.readJsonSync(path.join(bookDataDir, `${chapter}.json`));
 
         if (chapterJson) {
