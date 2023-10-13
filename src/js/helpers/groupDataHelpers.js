@@ -1,7 +1,7 @@
 import fs from 'fs-extra';
 import path from 'path-extra';
 import isEqual from 'deep-equal';
-import { STATIC_RESOURCES_PATH } from '../common/constants';
+import { USER_RESOURCES_PATH } from '../common/constants';
 import { getTranslation } from './localizationHelpers';
 import ResourceAPI from './ResourceAPI';
 import { getOrigLangforBook } from './bibleHelpers';
@@ -21,7 +21,6 @@ function createGroupItem(bookId, chapter, verse, toolName) {
 }
 
 /**
- * TODO: should this use the user's resources in the home dir instead of the static resources?
  * @description - Auto generate the chapter group data since more projects will use it
  * @param {String} bookId - id of the current book
  * @param {String} toolName - id of the current tool
@@ -30,7 +29,7 @@ function createGroupItem(bookId, chapter, verse, toolName) {
 export const generateChapterGroupData = (bookId, toolName, bookDataDir) => {
   let groupsData = [];
   const { languageId: origLang, bibleId: origBible } = getOrigLangforBook(bookId);
-  let origPath = path.join(STATIC_RESOURCES_PATH, origLang, 'bibles', origBible);
+  let origPath = path.join(USER_RESOURCES_PATH, origLang, 'bibles', origBible);
   let versionPath = ResourceAPI.getLatestVersion(origPath) || origPath;
   const origIndexPath = path.join(versionPath, 'index.json');
   let chapters;

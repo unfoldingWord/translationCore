@@ -1271,6 +1271,26 @@ export function removeOldThelps() {
 }
 
 /**
+ * remove old original language bibles
+ */
+export function removeOldOriginalBiblea() {
+  const greekOriginalBibleFolder = path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'bibles', Bible.NT_ORIG_LANG_BIBLE);
+  const hebrewOriginalBibleFolder = path.join(USER_RESOURCES_PATH, Bible.OT_ORIG_LANG, 'bibles', Bible.OT_ORIG_LANG_BIBLE);
+  const originalBibles = [greekOriginalBibleFolder, hebrewOriginalBibleFolder];
+
+  for (let originalBible of originalBibles) {
+    if (fs.existsSync(originalBible)) {
+      console.log(
+        `%c    removeOldBibles() - removing: ${originalBible}`,
+        'color: #00aced',
+      );
+
+      fs.removeSync(originalBible);
+    }
+  }
+}
+
+/**
  * move bibles from old grc resource folder
  */
 export function moveResourcesFromOldGrcFolder() {
