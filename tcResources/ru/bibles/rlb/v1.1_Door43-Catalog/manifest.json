@@ -1,0 +1,143 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "",
+    "format": "text/usfm3",
+    "identifier": "rlb",
+    "title": "Russion Literal Bible",
+    "subject": "Aligned Bible",
+    "description": "",
+    "language": {
+      "identifier": "ru",
+      "title": "Русский",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "rsb",
+        "language": "ru",
+        "version": "1"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Akhat Yarosh",
+      "zakbaku",
+      "Serhii Yarosh",
+      "Artur Musayelyan",
+      "Bakhtiyor Shodiev",
+      "serg.ignashin",
+      "Vladimir Shamrai",
+      "Ashot Muradyan",
+      "Anna Savitskaya",
+      "Door43 World Missions Community"
+    ],
+    "relation": [
+      "ru/tw",
+      "el-x-koine/ugnt"
+    ],
+    "publisher": "GeCraft, Russian Open Bible Committee",
+    "issued": "2019-05-15",
+    "modified": "2019-05-15",
+    "version": "1.1"
+  },
+  "checking": {
+    "checking_entity": [
+      "GeCraft",
+      "Russian Open Bible Committee"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Послание к Филимону",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "",
+      "format": "text/usfm3",
+      "identifier": "rlb",
+      "title": "Russion Literal Bible",
+      "subject": "Aligned Bible",
+      "description": "",
+      "language": {
+        "identifier": "ru",
+        "title": "Русский",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "rsb",
+          "language": "ru",
+          "version": "1"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Akhat Yarosh",
+        "zakbaku",
+        "Serhii Yarosh",
+        "Artur Musayelyan",
+        "Bakhtiyor Shodiev",
+        "serg.ignashin",
+        "Vladimir Shamrai",
+        "Ashot Muradyan",
+        "Anna Savitskaya",
+        "Door43 World Missions Community"
+      ],
+      "relation": [
+        "ru/tw",
+        "el-x-koine/ugnt"
+      ],
+      "publisher": "GeCraft, Russian Open Bible Committee",
+      "issued": "2019-05-15",
+      "modified": "2019-05-15",
+      "version": "1.1"
+    },
+    "checking": {
+      "checking_entity": [
+        "GeCraft",
+        "Russian Open Bible Committee"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Послание к Филимону",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ru",
+  "language_name": "Русский",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "rlb",
+  "resource_title": "Russion Literal Bible",
+  "remoteModifiedTime": "2022-04-22T00:17:16Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2022-04-22T00:17:16Z",
+  "usfm-js": "3.4.2",
+  "version": "1.1",
+  "modifiedTime": "2022-04-22T00:17:16Z",
+  "stage": "prod"
+}

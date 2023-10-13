@@ -1,0 +1,1431 @@
+{
+  "dublin_core": {
+    "type": "bundle",
+    "conformsto": "rc0.2",
+    "comment": "RSB originally published in 1876",
+    "format": "text/usfm3",
+    "identifier": "rsb",
+    "title": "Russian Synodal Bible",
+    "subject": "Aligned Bible",
+    "description": "Russian Synodal Bible aligned to unfoldingWord® Greek New Testament",
+    "language": {
+      "identifier": "ru",
+      "title": "Русский",
+      "direction": "ltr"
+    },
+    "source": [
+      {
+        "identifier": "rsb",
+        "language": "ru",
+        "version": "1876"
+      }
+    ],
+    "rights": "CC BY-SA 4.0",
+    "creator": "Door43 World Missions Community",
+    "contributor": [
+      "Dima Saifidinov",
+      "Maksim Murzamuratov",
+      "Samuel Kim"
+    ],
+    "relation": [
+      "ru/tw",
+      "el-x-koine/ugnt"
+    ],
+    "publisher": "GeCraft, Russian Open Bible Committee",
+    "issued": "2019-05-15",
+    "modified": "2019-05-15",
+    "version": "2"
+  },
+  "checking": {
+    "checking_entity": [
+      "Samuel (Elder Church of Kharkov)",
+      "GeCraft",
+      "Russian Open Bible Committee"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "gen",
+      "path": "./01-GEN.usfm",
+      "sort": 1,
+      "title": "Genesis",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "exo",
+      "path": "./02-EXO.usfm",
+      "sort": 2,
+      "title": "Exodus",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "lev",
+      "path": "./03-LEV.usfm",
+      "sort": 3,
+      "title": "Leviticus",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "num",
+      "path": "./04-NUM.usfm",
+      "sort": 4,
+      "title": "Numbers",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "deu",
+      "path": "./05-DEU.usfm",
+      "sort": 5,
+      "title": "Deuteronomy",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "jos",
+      "path": "./06-JOS.usfm",
+      "sort": 6,
+      "title": "Joshua",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "jdg",
+      "path": "./07-JDG.usfm",
+      "sort": 7,
+      "title": "Judges",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "rut",
+      "path": "./08-RUT.usfm",
+      "sort": 8,
+      "title": "Ruth",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "1sa",
+      "path": "./09-1SA.usfm",
+      "sort": 9,
+      "title": "1 Samuel",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "2sa",
+      "path": "./10-2SA.usfm",
+      "sort": 10,
+      "title": "2 Samuel",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "1ki",
+      "path": "./11-1KI.usfm",
+      "sort": 11,
+      "title": "1 Kings",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "2ki",
+      "path": "./12-2KI.usfm",
+      "sort": 12,
+      "title": "2 Kings",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "1ch",
+      "path": "./13-1CH.usfm",
+      "sort": 13,
+      "title": "1 Chronicles",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "2ch",
+      "path": "./14-2CH.usfm",
+      "sort": 14,
+      "title": "2 Chronicles",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "ezr",
+      "path": "./15-EZR.usfm",
+      "sort": 15,
+      "title": "Ezra",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "neh",
+      "path": "./16-NEH.usfm",
+      "sort": 16,
+      "title": "Nehemiah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "est",
+      "path": "./17-EST.usfm",
+      "sort": 17,
+      "title": "Esther",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "job",
+      "path": "./18-JOB.usfm",
+      "sort": 18,
+      "title": "Job",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "psa",
+      "path": "./19-PSA.usfm",
+      "sort": 19,
+      "title": "Psalms",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "pro",
+      "path": "./20-PRO.usfm",
+      "sort": 20,
+      "title": "Proverbs",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "ecc",
+      "path": "./21-ECC.usfm",
+      "sort": 21,
+      "title": "Ecclesiastes",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "sng",
+      "path": "./22-SNG.usfm",
+      "sort": 22,
+      "title": "Song of Solomon",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "isa",
+      "path": "./23-ISA.usfm",
+      "sort": 23,
+      "title": "Isaiah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "jer",
+      "path": "./24-JER.usfm",
+      "sort": 24,
+      "title": "Jeremiah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "lam",
+      "path": "./25-LAM.usfm",
+      "sort": 25,
+      "title": "Lamentations",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "ezk",
+      "path": "./26-EZK.usfm",
+      "sort": 26,
+      "title": "Ezekiel",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "dan",
+      "path": "./27-DAN.usfm",
+      "sort": 27,
+      "title": "Daniel",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "hos",
+      "path": "./28-HOS.usfm",
+      "sort": 28,
+      "title": "Hosea",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "jol",
+      "path": "./29-JOL.usfm",
+      "sort": 29,
+      "title": "Joel",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "amo",
+      "path": "./30-AMO.usfm",
+      "sort": 30,
+      "title": "Amos",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "oba",
+      "path": "./31-OBA.usfm",
+      "sort": 31,
+      "title": "Obadiah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "jon",
+      "path": "./32-JON.usfm",
+      "sort": 32,
+      "title": "Jonah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "mic",
+      "path": "./33-MIC.usfm",
+      "sort": 33,
+      "title": "Micah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "nam",
+      "path": "./34-NAM.usfm",
+      "sort": 34,
+      "title": "Nahum",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "hab",
+      "path": "./35-HAB.usfm",
+      "sort": 35,
+      "title": "Habakkuk",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "zep",
+      "path": "./36-ZEP.usfm",
+      "sort": 36,
+      "title": "Zephaniah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "hag",
+      "path": "./37-HAG.usfm",
+      "sort": 37,
+      "title": "Haggai",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "zec",
+      "path": "./38-ZEC.usfm",
+      "sort": 38,
+      "title": "Zechariah",
+      "versification": "ufw"
+    },
+    {
+      "categories": [
+        "bible-ot"
+      ],
+      "identifier": "mal",
+      "path": "./39-MAL.usfm",
+      "sort": 39,
+      "title": "Malachi",
+      "versification": "ufw"
+    },
+    {
+      "title": "1-ОЕ КОРИНФЯНАМ ",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1-ое Иоанна ",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1-ое Петра ",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1-ое Фессалоникийцам ",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Первое послание к Тимофею ",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2-ое Коринфянам ",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2-е Иоанна ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2-е Петра ",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1-е Фессалоникийцам ",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2-ое ТИМОФЕЮ ",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3-е Иоанна ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Деяния Апостолов ",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Колоссянам ",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Эфесянам ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Галатам ",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание Евреям ",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./59-HEB.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Иакова ",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "От Иоанна ",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "От Иуды ",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Лука ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Матфея ",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./41-MAT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "От Марка ",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание к Филимону. ",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание Филиппийцам ",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Откровение ",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./67-REV.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Римлянам ",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./46-ROM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Послание Титу ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "type": "bundle",
+      "conformsto": "rc0.2",
+      "comment": "RSB originally published in 1876",
+      "format": "text/usfm3",
+      "identifier": "rsb",
+      "title": "Russian Synodal Bible",
+      "subject": "Aligned Bible",
+      "description": "Russian Synodal Bible aligned to unfoldingWord® Greek New Testament",
+      "language": {
+        "identifier": "ru",
+        "title": "Русский",
+        "direction": "ltr"
+      },
+      "source": [
+        {
+          "identifier": "rsb",
+          "language": "ru",
+          "version": "1876"
+        }
+      ],
+      "rights": "CC BY-SA 4.0",
+      "creator": "Door43 World Missions Community",
+      "contributor": [
+        "Dima Saifidinov",
+        "Maksim Murzamuratov",
+        "Samuel Kim"
+      ],
+      "relation": [
+        "ru/tw",
+        "el-x-koine/ugnt"
+      ],
+      "publisher": "GeCraft, Russian Open Bible Committee",
+      "issued": "2019-05-15",
+      "modified": "2019-05-15",
+      "version": "2"
+    },
+    "checking": {
+      "checking_entity": [
+        "Samuel (Elder Church of Kharkov)",
+        "GeCraft",
+        "Russian Open Bible Committee"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "gen",
+        "path": "./01-GEN.usfm",
+        "sort": 1,
+        "title": "Genesis",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "exo",
+        "path": "./02-EXO.usfm",
+        "sort": 2,
+        "title": "Exodus",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "lev",
+        "path": "./03-LEV.usfm",
+        "sort": 3,
+        "title": "Leviticus",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "num",
+        "path": "./04-NUM.usfm",
+        "sort": 4,
+        "title": "Numbers",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "deu",
+        "path": "./05-DEU.usfm",
+        "sort": 5,
+        "title": "Deuteronomy",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "jos",
+        "path": "./06-JOS.usfm",
+        "sort": 6,
+        "title": "Joshua",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "jdg",
+        "path": "./07-JDG.usfm",
+        "sort": 7,
+        "title": "Judges",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "rut",
+        "path": "./08-RUT.usfm",
+        "sort": 8,
+        "title": "Ruth",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "1sa",
+        "path": "./09-1SA.usfm",
+        "sort": 9,
+        "title": "1 Samuel",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "2sa",
+        "path": "./10-2SA.usfm",
+        "sort": 10,
+        "title": "2 Samuel",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "1ki",
+        "path": "./11-1KI.usfm",
+        "sort": 11,
+        "title": "1 Kings",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "2ki",
+        "path": "./12-2KI.usfm",
+        "sort": 12,
+        "title": "2 Kings",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "1ch",
+        "path": "./13-1CH.usfm",
+        "sort": 13,
+        "title": "1 Chronicles",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "2ch",
+        "path": "./14-2CH.usfm",
+        "sort": 14,
+        "title": "2 Chronicles",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "ezr",
+        "path": "./15-EZR.usfm",
+        "sort": 15,
+        "title": "Ezra",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "neh",
+        "path": "./16-NEH.usfm",
+        "sort": 16,
+        "title": "Nehemiah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "est",
+        "path": "./17-EST.usfm",
+        "sort": 17,
+        "title": "Esther",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "job",
+        "path": "./18-JOB.usfm",
+        "sort": 18,
+        "title": "Job",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "psa",
+        "path": "./19-PSA.usfm",
+        "sort": 19,
+        "title": "Psalms",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "pro",
+        "path": "./20-PRO.usfm",
+        "sort": 20,
+        "title": "Proverbs",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "ecc",
+        "path": "./21-ECC.usfm",
+        "sort": 21,
+        "title": "Ecclesiastes",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "sng",
+        "path": "./22-SNG.usfm",
+        "sort": 22,
+        "title": "Song of Solomon",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "isa",
+        "path": "./23-ISA.usfm",
+        "sort": 23,
+        "title": "Isaiah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "jer",
+        "path": "./24-JER.usfm",
+        "sort": 24,
+        "title": "Jeremiah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "lam",
+        "path": "./25-LAM.usfm",
+        "sort": 25,
+        "title": "Lamentations",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "ezk",
+        "path": "./26-EZK.usfm",
+        "sort": 26,
+        "title": "Ezekiel",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "dan",
+        "path": "./27-DAN.usfm",
+        "sort": 27,
+        "title": "Daniel",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "hos",
+        "path": "./28-HOS.usfm",
+        "sort": 28,
+        "title": "Hosea",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "jol",
+        "path": "./29-JOL.usfm",
+        "sort": 29,
+        "title": "Joel",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "amo",
+        "path": "./30-AMO.usfm",
+        "sort": 30,
+        "title": "Amos",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "oba",
+        "path": "./31-OBA.usfm",
+        "sort": 31,
+        "title": "Obadiah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "jon",
+        "path": "./32-JON.usfm",
+        "sort": 32,
+        "title": "Jonah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "mic",
+        "path": "./33-MIC.usfm",
+        "sort": 33,
+        "title": "Micah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "nam",
+        "path": "./34-NAM.usfm",
+        "sort": 34,
+        "title": "Nahum",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "hab",
+        "path": "./35-HAB.usfm",
+        "sort": 35,
+        "title": "Habakkuk",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "zep",
+        "path": "./36-ZEP.usfm",
+        "sort": 36,
+        "title": "Zephaniah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "hag",
+        "path": "./37-HAG.usfm",
+        "sort": 37,
+        "title": "Haggai",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "zec",
+        "path": "./38-ZEC.usfm",
+        "sort": 38,
+        "title": "Zechariah",
+        "versification": "ufw"
+      },
+      {
+        "categories": [
+          "bible-ot"
+        ],
+        "identifier": "mal",
+        "path": "./39-MAL.usfm",
+        "sort": 39,
+        "title": "Malachi",
+        "versification": "ufw"
+      },
+      {
+        "title": "1-ОЕ КОРИНФЯНАМ ",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1-ое Иоанна ",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1-ое Петра ",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1-ое Фессалоникийцам ",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Первое послание к Тимофею ",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2-ое Коринфянам ",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 47,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2-е Иоанна ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2-е Петра ",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1-е Фессалоникийцам ",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2-ое ТИМОФЕЮ ",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3-е Иоанна ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Деяния Апостолов ",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Колоссянам ",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Эфесянам ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Галатам ",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 48,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание Евреям ",
+        "versification": "ufw",
+        "identifier": "heb",
+        "sort": 58,
+        "path": "./59-HEB.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Иакова ",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "От Иоанна ",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "От Иуды ",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Лука ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Матфея ",
+        "versification": "ufw",
+        "identifier": "mat",
+        "sort": 40,
+        "path": "./41-MAT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "От Марка ",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание к Филимону. ",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание Филиппийцам ",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Откровение ",
+        "versification": "ufw",
+        "identifier": "rev",
+        "sort": 66,
+        "path": "./67-REV.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Римлянам ",
+        "versification": "ufw",
+        "identifier": "rom",
+        "sort": 45,
+        "path": "./46-ROM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Послание Титу ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "ru",
+  "language_name": "Русский",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "rsb",
+  "resource_title": "Russian Synodal Bible",
+  "remoteModifiedTime": "2022-04-22T00:17:18Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2022-04-22T00:17:18Z",
+  "usfm-js": "3.4.2",
+  "version": "2",
+  "modifiedTime": "2022-04-22T00:17:18Z",
+  "stage": "prod"
+}
