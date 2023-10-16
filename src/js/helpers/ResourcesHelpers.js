@@ -1273,12 +1273,14 @@ export function removeOldThelps() {
 /**
  * remove old original language bibles
  */
-export function removeOldOriginalBiblea() {
-  const greekOriginalBibleFolder = path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'bibles', Bible.NT_ORIG_LANG_BIBLE);
-  const hebrewOriginalBibleFolder = path.join(USER_RESOURCES_PATH, Bible.OT_ORIG_LANG, 'bibles', Bible.OT_ORIG_LANG_BIBLE);
-  const originalBibles = [greekOriginalBibleFolder, hebrewOriginalBibleFolder];
+export function removeOldOriginalBibles() {
+  const originalBibleRes = [];
+  originalBibleRes.push(path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'bibles', Bible.NT_ORIG_LANG_BIBLE));
+  originalBibleRes.push(path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'translationHelps/translationWords'));
+  originalBibleRes.push(path.join(USER_RESOURCES_PATH, Bible.OT_ORIG_LANG, 'bibles', Bible.OT_ORIG_LANG_BIBLE));
+  originalBibleRes.push(path.join(USER_RESOURCES_PATH, Bible.OT_ORIG_LANG, 'translationHelps/translationWords'));
 
-  for (let originalBible of originalBibles) {
+  for (let originalBible of originalBibleRes) {
     if (fs.existsSync(originalBible)) {
       console.log(
         `%c    removeOldBibles() - removing: ${originalBible}`,

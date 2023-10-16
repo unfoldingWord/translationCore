@@ -4,7 +4,7 @@ import {
   copySourceContentUpdaterManifest,
   getMissingResources,
   moveResourcesFromOldGrcFolder,
-  removeOldOriginalBiblea,
+  removeOldOriginalBibles,
   removeOldThelps,
   removeOutDatedResources,
 } from '../helpers/ResourcesHelpers';
@@ -26,7 +26,7 @@ export function migrateResourcesFolder(removeOutDated = true) {
     if (areResourcesNewer()) {
       console.log('migrateResourcesFolder: copying newer resources');
       moveResourcesFromOldGrcFolder();
-      removeOldOriginalBiblea();
+      removeOldOriginalBibles();
       const removedResources = removeOldThelps();
 
       // TODO: this will be used in later issue to prompt user
