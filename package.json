@@ -1,8 +1,8 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.5.2",
-  "minCompatibleVersion": "3.5.2",
+  "version": "3.6.0",
+  "minCompatibleVersion": "3.6.0",
   "manifestVersion": "8",
   "description": "A bridge between TS and TM",
   "main": "main.js",
