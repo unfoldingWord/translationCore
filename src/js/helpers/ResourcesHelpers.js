@@ -60,6 +60,7 @@ import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 export const QUOTE_MARK = '\u2019';
 
+///////////////////////////////
 // ANSI Colors
 // const FgBlue = '\x1b[34m'; // set foreground color to Blue
 const Reset = '\x1b[0m'; // reset all ANSI commands
