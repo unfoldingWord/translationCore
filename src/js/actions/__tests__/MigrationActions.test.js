@@ -337,7 +337,7 @@ describe('migrate tCore resources', () => {
       // given
       mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
+      const expectedBibleVers = ['v0.2_Door43-Catalog'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'grc/bibles', bibleId, 'v0.1_Door43-Catalog'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);
@@ -356,7 +356,7 @@ describe('migrate tCore resources', () => {
       // given
       mockOtherTnsOlversions = ['v0.1_Door43-Catalog', 'v0.2_Door43-Catalog'];
       const expectedHelpsVers = false;
-      const expectedBibleVers = ['v0.2_Door43-Catalog', 'v0.3_Door43-Catalog'];
+      const expectedBibleVers = ['v0.2_Door43-Catalog'];
       const bibleId = 'ugnt';
       fs.copySync(path.join(STATIC_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.2_Door43-Catalog'), path.join(USER_RESOURCES_PATH, 'el-x-koine/bibles', bibleId, 'v0.3_Door43-Catalog'));
       const migrateResourcesFolder = MigrationActions.migrateResourcesFolder(false);

@@ -60,6 +60,22 @@ import { getContextIdPathFromIndex } from './contextIdHelpers';
 // constants
 export const QUOTE_MARK = '\u2019';
 
+///////////////////////////////
+// ANSI Colors
+// const FgBlue = '\x1b[34m'; // set foreground color to Blue
+const Reset = '\x1b[0m'; // reset all ANSI commands
+const FgCyan = '\x1b[36m'; // set foreground color to Cyan
+
+/**
+ * uses ANSI codes to colorize text in console and then does ANSI reset
+ * @param {string} msg - message to log
+ * @param {} highlight - ANSI code to use for highlighting, defaults to Cyan
+ * @constructor
+ */
+export function LogHighlighted(msg, highlight = FgCyan) {
+  console.log(`${highlight}${msg}${Reset}`);
+}
+
 /**
  * append owner to key
  * @param key
@@ -773,10 +789,7 @@ export const areResourcesNewer = () => {
     SOURCE_CONTENT_UPDATER_MANIFEST);
 
   if (!fs.existsSync(userSourceContentUpdaterManifestPath)) {
-    console.log(
-      `%c areResourcesNewer() - no source content manifest: ${userSourceContentUpdaterManifestPath}`,
-      'color: #00539C',
-    );
+    LogHighlighted(`  areResourcesNewer() - no source content manifest: ${userSourceContentUpdaterManifestPath}`);
     return true;
   }
 
@@ -796,19 +809,13 @@ export const areResourcesNewer = () => {
   const tCoreVersion = userManifest && userManifest[TC_VERSION];
 
   if (tCoreVersion !== APP_VERSION) { // TRICKY: for safety we refresh on any difference of version dates in case resources not compatible with newer or older version of tCore
-    console.log(
-      `%c areResourcesNewer() - tCore version changed from ${tCoreVersion} to ${APP_VERSION}, updating all`,
-      'color: #00539C',
-    );
+    LogHighlighted(`  areResourcesNewer() - tCore version changed from ${tCoreVersion} to ${APP_VERSION}, updating all`);
     return true;
   }
 
   const newer = bundledModified > userModified;
 
-  console.log(
-    `%c areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', NEWER - updating all' : ', NOT NEWER!'),
-    'color: #00539C',
-  );
+  LogHighlighted(`  areResourcesNewer() - resource modified time from ${userModified} to ${bundledModified}` + (newer ? ', NEWER - updating all' : ', NOT NEWER!'));
   return newer;
 };
 
@@ -1223,10 +1230,7 @@ function copyMissingSubfolders(source, destination, languageId) {
       const sourcePath = path.join(source, lexicon);
       const destinationPath = path.join(destination, lexicon);
       fs.copySync(sourcePath, destinationPath);
-      console.log(
-        `%c Copied ${languageId} lexicon from static lexicons to user resources path.`,
-        'color: #0D355A',
-      );
+      LogHighlighted(`  Copied ${languageId} lexicon from static lexicons to user resources path.`);
     }
   });
 }
@@ -1256,11 +1260,7 @@ export function removeOldThelps() {
       const helpsFolder = path.join(USER_RESOURCES_PATH, languageId, TRANSLATION_HELPS);
 
       if (fs.existsSync(helpsFolder)) {
-        console.log(
-          `%c    removeOldThelps() - removing: ${helpsFolder}`,
-          'color: #00aced',
-        );
-
+        LogHighlighted(`    removeOldThelps() - removing: ${helpsFolder}`);
         const removedFolders = getFilteredSubFolders(helpsFolder);
         removedResources[languageId] = { removedFolders, helpsFolder };
         fs.removeSync(helpsFolder);
@@ -1268,6 +1268,22 @@ export function removeOldThelps() {
     }
   }
   return removedResources;
+}
+
+/**
+ * remove old original language bibles
+ */
+export function removeOldOriginalBibles() {
+  const greekOriginalBibleFolder = path.join(USER_RESOURCES_PATH, Bible.NT_ORIG_LANG, 'bibles', Bible.NT_ORIG_LANG_BIBLE);
+  const hebrewOriginalBibleFolder = path.join(USER_RESOURCES_PATH, Bible.OT_ORIG_LANG, 'bibles', Bible.OT_ORIG_LANG_BIBLE);
+  const originalBibles = [greekOriginalBibleFolder, hebrewOriginalBibleFolder];
+
+  for (let originalBible of originalBibles) {
+    if (fs.existsSync(originalBible)) {
+      LogHighlighted(`    removeOldBibles() - removing: ${originalBible}`);
+      fs.removeSync(originalBible);
+    }
+  }
 }
 
 /**
@@ -1403,7 +1419,7 @@ export function getMissingResources() {
   const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
 
   for ( const languageId of tcResourcesLanguages) {
-    console.log(`%c Checking for missing ${languageId} resources`, 'color: #00539C');
+    LogHighlighted(`  Checking for missing ${languageId} resources`);
     const staticLanguageResource = path.join(STATIC_RESOURCES_PATH, languageId);
     const userLanguageResource = path.join(USER_RESOURCES_PATH, languageId);
     const resourceTypes = getFilteredSubFolders(staticLanguageResource);
@@ -1514,10 +1530,7 @@ export function getMissingResources() {
 function copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner = null) {
   if (!owner) {
     fs.copySync(staticResourcePath, userResourcePath);
-    console.log(
-      `%c    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`,
-      'color: #00aced',
-    );
+    LogHighlighted(`    Copied ${languageId}-${resourceId} from static ${resourceType} to user resources path.`);
   } else {
     const versions = ResourceAPI.listVersions(staticResourcePath, owner);
 
@@ -1525,10 +1538,7 @@ function copyAndExtractResource(staticResourcePath, userResourcePath, languageId
       const sourcePath = path.join(staticResourcePath, version);
       const destPath = path.join(userResourcePath, version);
       fs.copySync(sourcePath, destPath);
-      console.log(
-        `%c    Copied ${languageId}-${resourceId}-${version} from static ${resourceType} to user resources path.`,
-        'color: #00aced',
-      );
+      LogHighlighted(`    Copied ${languageId}-${resourceId}-${version} from static ${resourceType} to user resources path.`);
     }
   }
   // extract zipped contents
