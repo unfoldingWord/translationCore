@@ -189,7 +189,7 @@ export function getWordCountInVerse(verseAlignments, matchVerse, word) {
 /**
  * get all the alignments for verse from nested array (finds zaln objects)
  * @param {array} verseSpanAlignments
- * @return {*[]}
+ * @return {object[]}
  */
 export function getVerseAlignments(verseSpanAlignments) {
   let alignments = [];
@@ -402,9 +402,10 @@ export const convertAlignmentDataToUSFM = (wordAlignmentDataPath, projectTargetL
       //Iterate through verses of chapter alignment data,
       //and retrieve relevant information for conversion
       for (let verseNumber in chapterAlignmentJSON) {
-        if (!parseInt(verseNumber)) {
+        if ( (verseNumber !== 'front') && // only import integer based verses or front
+          !parseInt(verseNumber)) {
           continue;
-        } // only import integer based verses
+        }
 
         const verseAlignments = chapterAlignmentJSON[verseNumber];
         const targetVerse = targetLanguageChapterJSON[verseNumber];

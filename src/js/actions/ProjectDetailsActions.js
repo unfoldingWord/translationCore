@@ -167,7 +167,7 @@ export const updateToolProperties = (toolName) => (dispatch, getState) => {
  * @param {string} selectedGL
  * @param {string} owner
  * @param {string} bookId
- * @return {(function(*, *): Promise<undefined>)|*}
+ * @return {Promise<void>}
  */
 export function setProjectToolGL(toolName, selectedGL, owner = null, bookId = null) {
   return async (dispatch, getState) => {
