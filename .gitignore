@@ -15,13 +15,15 @@ test/output
 /static/
 /vendor
 /release
-/docs/
+# /docs/
 /.env
 /.vs/
 
 # just in case people are lazy while writing tests
 __tests__/output
 output/
+src/__tests__/output
+src/output/
 # Needed for Webstorm
 .idea
 *.iml

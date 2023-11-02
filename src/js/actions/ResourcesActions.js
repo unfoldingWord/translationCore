@@ -444,7 +444,7 @@ export const loadBookTranslations = (bookId, toolName = null) => (dispatch, getS
  * Loads the resources that are not already loaded.
  * @param {array} resources
  * @param {string} bookId
- * @returns {(function(*, *): void)|*}
+ * @returns {Promise<void>}
  */
 export const makeSureResourcesLoaded = (resources, bookId) => (dispatch, getState) => {
   const bibles = getBibles(getState());
