@@ -121,7 +121,7 @@ function fetchUrl(url) {
 async function getLatestRelease() {
   const latestReleaseUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/latest`;
   const isLiteInstall_ = true;
-  const installedVersion = '0.0.0';
+  const installedVersion = 'v0.0.0';
 
   const configs = {
     'macos': {
@@ -165,7 +165,7 @@ async function getLatestRelease() {
           if (!upToDate && (isLiteInstall_ !== isLiteRelease)) {
             console.log(`found tagName ${tagName} which is a fallback install since isLiteRelease=${isLiteRelease}`, update);
             const baseTagName = tagName.split('-')[0];
-            const sizeSuffix = isLiteRelease ? '-LITE' : '';
+            const sizeSuffix = isLiteInstall_ ? '-LITE' : '';
             const rightTagName = baseTagName + sizeSuffix;
             const tagUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/tags/${rightTagName}`;
             console.log(`getting release ${rightTagName}`, update);
@@ -190,3 +190,6 @@ async function getLatestRelease() {
 
   return {};
 }
+
+const installs = await getLatestRelease();
+console.log(installs)
