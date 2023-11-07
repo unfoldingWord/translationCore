@@ -85,6 +85,8 @@ export const generateChapterGroupData = (bookId, toolName, bookDataDir) => {
                     // remove
                     chapterData.splice(idx, 1);
                   }
+                } else {
+                  console.warn(`generateChapterGroupData() - verse span not found in ${toolName} ${bookId} ${chapter}:${verse}`);
                 }
               }
               groupsData[chapter-1] = chapterData;
