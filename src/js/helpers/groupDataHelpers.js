@@ -74,7 +74,8 @@ export const generateChapterGroupData = (bookId, toolName, bookDataDir) => {
               high = parseInt(high);
 
               for (let i = low; i <= high; i++) {
-                const idx = chapterData.findIndex(item => (item.contextId.reference.verse === i));
+                const idx = chapterData.findIndex(item => (
+                  item.contextId.reference.verse == i)); //Tricky we allow type coercion because verse may be in string format
 
                 if (idx >= 0) {
                   if (i === low) {
@@ -84,6 +85,8 @@ export const generateChapterGroupData = (bookId, toolName, bookDataDir) => {
                     // remove
                     chapterData.splice(idx, 1);
                   }
+                } else {
+                  console.warn(`generateChapterGroupData() - verse span not found in ${toolName} ${bookId} ${chapter}:${verse}`);
                 }
               }
               groupsData[chapter-1] = chapterData;
