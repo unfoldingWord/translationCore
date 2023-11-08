@@ -104,13 +104,13 @@ describe('Get update asset', () => {
       tag_name: '2.0.0',
       assets: [{
         extra_info: 'bar',
-        name: 'translationCore-macos-x64-2.0.0.exe',
+        name: 'translationCore-macos-universal-2.0.0.exe',
       }],
     };
     const expectedUpdate = {
       extra_info: 'bar',
       installed_version: '1.0.0',
-      name: 'translationCore-macos-x64-2.0.0.exe',
+      name: 'translationCore-macos-universal-2.0.0.exe',
       latest_version: '2.0.0',
     };
     const expectedUpToDate = false;
