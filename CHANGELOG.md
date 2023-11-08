@@ -1,5 +1,20 @@
 # Changelog
 
+## [v3.6.0](https://github.com/unfoldingWord/translationCore/tree/v3.5.0) (2023-11-1)
+
+**Implemented enhancements:**
+
+- In WordAlignment Tool - Add button to Clear/reset all the alignments [\#7543](https://github.com/unfoldingWord/translationCore/issues/7543)
+- In WordAlignment Tool - Add ability to Select multiple words at once in the word bank using shift-click on word [\#5885](https://github.com/unfoldingWord/translationCore/issues/5885)
+- In WordAlignment Tool - Add support for aligning chapter `headers` / `front matter` to tCore [\#7536](https://github.com/unfoldingWord/translationCore/issues/7536)
+
+
+## [v3.5.1](https://github.com/unfoldingWord/translationCore/tree/v3.5.1) (2023-8-14)
+
+**Fixed bugs:**
+
+- For print, fix position of chapter numbers for rtl languages by moving them to the left side [\#7523](https://github.com/unfoldingWord/translationCore/issues/7523)
+
 
 ## [v3.5.0](https://github.com/unfoldingWord/translationCore/tree/v3.5.0) (2023-7-31)
 

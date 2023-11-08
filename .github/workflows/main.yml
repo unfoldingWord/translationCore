@@ -23,23 +23,35 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: neutrinog/concourse-tasks:latest
+    container: photonomad/github_build:latest
+    # the Dockerfile used to create this image is here: ./.github/workflows/docker/Dockerfile
     env:
       CI: true
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
+      contents: write
 
     steps:
 #     - name: Dump GitHub context
 #       env:
 #         GITHUB_CONTEXT: ${{ toJson(github) }}
 #       run: echo "$GITHUB_CONTEXT"
+
     - uses: actions/setup-node@v1
       with:
         node-version: '16.14.2'
-    - name: Node version
+
+    - name: Get versions
       run: |
+        echo "node --version"
         node --version
+        echo "npm --version"
         npm --version
+        echo "git --version"
         git --version
+        echo "pwd"
+        pwd
 
 #    - uses: actions/checkout@v2
 #    - name: Checkout submodules
@@ -50,25 +62,62 @@ jobs:
 #        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
 
     - name: Checkout codebase
-      uses: actions/checkout@v1
+      uses: actions/checkout@v3
       with:
         submodules: recursive
+        persist-credentials: true
 
     - name: npm install
+      run: npm ci
+
+    - name: List permissions
       run: |
-        # Fix for problem of cached files from older npm versions, move npm cache to temp directory
-        TMPDIR=$(mktemp -d)
-        echo "$TMPDIR"
-        npm ci --cache="$TMPDIR"
+        set -x
+        # create output folder with permission for tests to use for temp results
+        echo "mkdir ./src/__tests__/output"
+        mkdir ./src/__tests__/output
+        echo "chmod -R a+rwx ./src/__tests__/output"
+        chmod -R a+rwx ./src/__tests__/output
+        echo "remove git owner error"
+        git config --global --add safe.directory /__w/translationCore/translationCore
 
     - name: npm test
       run: npm run ci-test
 
-    - name: upload coverage
+    - name: Upload coverage
       run: ./node_modules/.bin/codecov -t ${{ secrets.CODECOV_TOKEN }}
 
-    - name: npm lint
+    - name: Run lint
       run: npm run lint
+
+    - name: Parsing jsdocs
+      run: |
+        set -x
+        # remove jsdocs folder so it can be recreated
+        echo "rm -rf ./docs/translationCore"
+        rm -rf ./docs/translationCore
+        # give permission for jsdocs to be recreated in docs folder
+        echo "chmod -R a+rwx ./docs"
+        chmod -R a+rwx ./docs
+        ls -als ./docs
+        # update jsdocs
+        npm run doc
+        echo "ls -als ./docs/translationCore"
+        ls -als ./docs/translationCore
+
+#    - name: Update jsdocs in branch
+#      uses: stefanzweifel/git-auto-commit-action@v4
+#      with:
+#        file_pattern: 'docs/*'
+#        commit_message: Apply jsdocs update
+#        skip_fetch: true
+#        skip_checkout: true
+
+    - uses: actions/upload-artifact@v1
+      name: Upload jsdocs
+      with:
+        name: jsdocs
+        path: ./docs/
 
   build-linux:
     name: Build Linux
@@ -125,12 +174,7 @@ jobs:
           echo "BUILD=$HASH" >> .env.tmp
 
       - name: npm install
-        run: |
-          # Fix for problem of cached files from older npm versions, move npm cache to temp directory
-          TMPDIR=$(mktemp -d)
-          echo "$TMPDIR"
-          npm ci --cache="$TMPDIR"
-          npm run update-env
+        run: npm ci
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES

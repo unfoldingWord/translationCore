@@ -30,7 +30,7 @@
 }
 
 /*
-  use Awami Nastaliq and fall back to Noto Sans
+  use CharisSIL and fall back to Noto Sans
 */
  * {
   font-family: CharisSIL, Noto Sans;
@@ -43,7 +43,7 @@
           the above fonts bundled in translationCore.  Again, not sure why this
           is needed for Windows, but MacOS does not need this.
  */
-.AwamiNastaliq-text {
+.CharisSIL-text {
   font-family: CharisSIL, Noto Sans;
   font-size: 100%;
 }

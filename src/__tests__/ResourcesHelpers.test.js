@@ -14,9 +14,12 @@ import {
   STATIC_RESOURCES_PATH,
   TRANSLATION_WORDS,
 } from '../js/common/constants';
+import ProjectAPI from '../js/helpers/ProjectAPI';
 
 const resourcesDir = path.join(__dirname, 'fixtures', 'resources');
 const latestVersionTestDir = path.join('src', '__tests__', 'fixtures', 'latestVersionTest');
+const ust_1jn_dir = path.join(__dirname, 'fixtures/project/en_ust_1jn');
+const ust_1jn_TestDir = path.join('src', '__tests__', 'fixtures/project/en_ust_1jn');
 
 describe('ResourcesHelpers.', () => {
   beforeAll(() => {
@@ -25,6 +28,7 @@ describe('ResourcesHelpers.', () => {
     fs.__loadDirIntoMockFs(STATIC_RESOURCES_PATH, STATIC_RESOURCES_PATH);
     fs.__loadDirIntoMockFs(resourcesDir, resourcesDir);
     fs.__loadDirIntoMockFs(latestVersionTestDir, latestVersionTestDir);
+    fs.__loadDirIntoMockFs(ust_1jn_dir, ust_1jn_TestDir);
   });
 
   describe('chapterGroupsIndex', () => {
@@ -47,17 +51,47 @@ describe('ResourcesHelpers.', () => {
       expect(output[0].constructor).toBe(Array);
       expect(output[0].length).toEqual(16);
       expect(output[0][0].contextId.reference.bookId).toBe('tit');
-      expect(output[0][0].contextId.reference.chapter).toBe(1);
-      expect(output[0][0].contextId.reference.verse).toBe(1);
+      expect(output[0][0].contextId.reference.chapter).toBe('1');
+      expect(output[0][0].contextId.reference.verse).toBe('1');
       expect(output[0][0].contextId.tool).toBe('toolTemplate');
       expect(output[0][0].contextId.groupId).toBe('chapter_1');
       expect(output[2].constructor).toBe(Array);
       expect(output[2].length).toEqual(15);
       expect(output[2][14].contextId.reference.bookId).toBe('tit');
-      expect(output[2][14].contextId.reference.chapter).toBe(3);
-      expect(output[2][14].contextId.reference.verse).toBe(15);
+      expect(output[2][14].contextId.reference.chapter).toBe('3');
+      expect(output[2][14].contextId.reference.verse).toBe('15');
       expect(output[2][14].contextId.tool).toBe('toolTemplate');
       expect(output[2][14].contextId.groupId).toBe('chapter_3');
+    });
+
+    it('should work with verse span', () => {
+      const project = new ProjectAPI(ust_1jn_TestDir);
+      const bookDataDir = project.getBookDataDir();
+      const output = generateChapterGroupData('1jn', 'wordAlignment', bookDataDir);
+      expect(output.constructor).toBe(Array);
+      const chapterLength = 5;
+      expect(output.length).toEqual(chapterLength);
+      const testChapter = '3';
+      const chapter3 = output[2];
+      const expectedVerseCount = 23;
+      expect(chapter3.length).toEqual(expectedVerseCount);
+
+      for (let v = 0; v < expectedVerseCount; v++) {
+        const verseData = chapter3[v];
+        let expectedVerse = `${v+1}`;
+
+        if (v === 18) {
+          expectedVerse = '19-20';
+        } else if (v > 18) {
+          expectedVerse = `${v+2}`;
+        }
+
+        expect(verseData.contextId.reference.bookId).toBe('1jn');
+        expect(verseData.contextId.reference.chapter).toBe(testChapter);
+        expect(verseData.contextId.reference.verse).toBe(expectedVerse);
+        expect(verseData.contextId.tool).toBe('wordAlignment');
+        expect(verseData.contextId.groupId).toBe(`chapter_${testChapter}`);
+      }
     });
   });
 
