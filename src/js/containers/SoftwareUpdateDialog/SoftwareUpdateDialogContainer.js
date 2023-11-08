@@ -53,7 +53,7 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
   }
 
   if (osArch === 'arm64') {
-    fallbackPlatform = `${platformNames[osPlatform]}-x64`;
+    fallbackPlatform = `${platformNames[osPlatform]}-universal`;
   }
 
   const platform = `${platformNames[osPlatform]}-${osArch}`;
@@ -207,7 +207,7 @@ class SoftwareUpdateDialogContainer extends React.Component {
         if (!upToDate && (isLiteInstall_ !== isLiteRelease)) {
           console.log(`found tagName ${tagName} which is a fallback install since isLiteRelease=${isLiteRelease}`, update);
           const baseTagName = tagName.split('-')[0];
-          const sizeSuffix = isLiteRelease ? '-LITE' : '';
+          const sizeSuffix = isLiteInstall_ ? '-LITE' : '';
           const rightTagName = baseTagName + sizeSuffix;
           const tagUrl = `https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/tags/${rightTagName}`;
           console.log(`getting release ${rightTagName}`, update);
