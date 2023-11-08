@@ -53,7 +53,7 @@ export function getUpdateAsset(response, installedVersion, osArch, osPlatform) {
   }
 
   if (osArch === 'arm64') {
-    fallbackPlatform = `${platformNames[osPlatform]}-x64`;
+    fallbackPlatform = `${platformNames[osPlatform]}-universal`;
   }
 
   const platform = `${platformNames[osPlatform]}-${osArch}`;
