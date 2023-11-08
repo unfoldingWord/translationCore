@@ -1,8 +1,10 @@
-import semver from 'semver';
-import axios from 'axios';
+const semver = require('semver');
+const axios = require('axios');
 
 ////////////////////////////////////////////////
 // taken from SoftwareUpdateDialogContainer.js
+//
+// to debug: node --inspect-brk scripts/latest/getLatestTcore.js
 
 /**
  * Returns the correct update asset for this operating system.
@@ -105,12 +107,7 @@ function fetchUrl(url) {
       url,
     };
 
-    this.setState({
-      ...this.initialState,
-      cancelToken: source,
-    });
-
-    this.request = axios(request).then(response => {
+    axios(request).then(response => {
       resolve(response);
     }).catch(error => {
       reject(error);
@@ -191,5 +188,7 @@ async function getLatestRelease() {
   return {};
 }
 
-const installs = await getLatestRelease();
-console.log(installs)
+getLatestRelease().then(installs => {
+  console.log(installs);
+});
+

@@ -58,8 +58,8 @@ def get_update_asset(response, installed_version, os_arch, os_platform):
   up_to_date = False
 
   if update:
-    latest = version.parse(update['latest_version'])
-    installed = version.parse(update['installed_version'])
+    latest = getVersion(update['latest_version'])
+    installed = getVersion(update['installed_version'])
 
     if latest <= installed:
       # print(f"installed version {update['installed_version']} is up to date with release version {update['latest_version']}")
@@ -73,6 +73,23 @@ def get_update_asset(response, installed_version, os_arch, os_platform):
     'tag_name': tag_name,
     'is_lite_release': is_lite_release,
   }
+
+def remove_leading_v(version_string):
+  if version_string.startswith('v'):
+    return version_string[1:]
+  else:
+    return version_string
+
+def remove_after_dash(input_string):
+  if '-' in input_string:
+    return input_string.split('-')[0]
+  else:
+    return input_string
+
+def getVersion(version_):
+  versionStr = remove_leading_v(version_)
+  versionStr = remove_after_dash(versionStr)
+  return version.parse(versionStr)
 
 def fetch_url(url):
   response = requests.get(url)
