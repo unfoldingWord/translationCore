@@ -1,0 +1,67 @@
+{
+  "project": {
+    "id": "1jn",
+    "name": "1 John"
+  },
+  "resource": {
+    "id": "zzz",
+    "name": ""
+  },
+  "toolsSelectedGLs": {
+    "wordAlignment": "en"
+  },
+  "generator": {
+    "name": "tc-desktop",
+    "build": ""
+  },
+  "target_language": {
+    "id": "en",
+    "name": "English",
+    "direction": "ltr",
+    "book": {
+      "name": "1 John"
+    }
+  },
+  "ts_project": {
+    "id": "1jn",
+    "name": "1 John"
+  },
+  "type": {
+    "id": "text",
+    "name": "Text"
+  },
+  "source_translations": [
+    {
+      "language_id": "en",
+      "resource_id": "ult",
+      "checking_level": "",
+      "date_modified": "2023-11-07T15:26:10.056Z",
+      "version": ""
+    }
+  ],
+  "translators": [],
+  "checkers": [],
+  "time_created": "2023-11-07T15:26:10.056Z",
+  "tools": [],
+  "repo": "",
+  "tcInitialized": true,
+  "tc_version": 8,
+  "license": "CC0 1.0 Public Domain",
+  "projectFont": "default",
+  "tsv_relation": [
+    "en/ult?v=41",
+    "en/ust?v=40",
+    "hbo/uhb?v=2.1.30",
+    "el-x-koine/ugnt?v=0.30",
+    "en/ta?v=33",
+    "en/tq?v=38",
+    "en/tw?v=36"
+  ],
+  "tc_edit_version": "3.6.1",
+  "tc_min_compatible_version": "3.6.0",
+  "toolsSelectedOwners": {
+    "wordAlignment": "Door43-Catalog"
+  },
+  "tc_orig_lang_wordAlignment": "0.30",
+  "tc_orig_lang_check_version_wordAlignment": "0.30"
+}
