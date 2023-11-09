@@ -1009,7 +1009,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   /**
    * show a popup verse for at element
-   * @param {[string]} refs - bible references to display
+   * @param {string[]} refs - bible references to display
    * @param {number} index - current
    * @param {object} e - element to show popup for
    * @param {string} targetText - aligned target text
@@ -1133,7 +1133,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   /**
    * get list of available bibles for viewing content
-   * @returns {*[]}
+   * @returns {Object[]}
    */
   getAvailableBibles() {
     function keySort(a, b) {
@@ -1286,7 +1286,7 @@ class AlignmentSearchDialogContainer extends React.Component {
 
   /**
    * find any ignored books for current testament
-   * @returns {[string]}
+   * @returns {string[]}
    */
   ignoreBooksForTestament() {
     let ignoreBooks_ = this.state?.ignore || [];
