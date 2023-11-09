@@ -1,0 +1,2185 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+      containers/AlignmentSearchDialogContainer.js - Documentation
+  </title>
+
+  <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+  <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  mixpanel.init("1919205b2da72e4da3b9b6639b444d59");</script>
+  <!-- end Mixpanel -->
+</head>
+
+<body>
+  <svg style="display: none;">
+    <defs>
+      <symbol id="linkIcon" fill="#706d77" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="navicon-button x">
+    <div class="navicon"></div>
+  </label>
+
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="top-nav-wrapper">
+    <ul>
+      <li >
+        <a href="index.html">
+          
+            <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          
+          
+        </a>
+      </li>
+
+      
+      <li>
+        <div class="search-wrapper">
+          <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+
+          </svg>
+          <input type="text" placeholder="Search" class="search-input">
+        </div>
+      </li>
+      
+
+    </ul>
+  </div>
+
+  <nav>
+    <h3 class="reference-title">
+      translationCore
+    </h3>
+
+    <h3>Classes</h3><ul><li id="AgreementCheckbox-nav"><a href="AgreementCheckbox.html">AgreementCheckbox</a></li><li id="Alert-nav"><a href="Alert.html">Alert</a></li><li id="AlertPortal-nav"><a href="AlertPortal.html">AlertPortal</a></li><li id="Alerts-nav"><a href="Alerts.html">Alerts</a><ul class='methods'><li data-type="method" id="Alerts-handleOnCancel-nav"><a href="Alerts.html#handleOnCancel">handleOnCancel</a></li><li data-type="method" id="Alerts-handleOnConfirm-nav"><a href="Alerts.html#handleOnConfirm">handleOnConfirm</a></li><li data-type="method" id="Alerts-handleOnIgnore-nav"><a href="Alerts.html#handleOnIgnore">handleOnIgnore</a></li></ul></li><li id="AlignmentSearchDialogContainer-nav"><a href="AlignmentSearchDialogContainer.html">AlignmentSearchDialogContainer</a><ul class='methods'><li data-type="method" id="AlignmentSearchDialogContainer-changeFontSize-nav"><a href="AlignmentSearchDialogContainer.html#changeFontSize">changeFontSize</a></li><li data-type="method" id="AlignmentSearchDialogContainer-findSearchItem-nav"><a href="AlignmentSearchDialogContainer.html#findSearchItem">findSearchItem</a></li><li data-type="method" id="AlignmentSearchDialogContainer-formatData-nav"><a href="AlignmentSearchDialogContainer.html#formatData">formatData</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getAvailableBibles-nav"><a href="AlignmentSearchDialogContainer.html#getAvailableBibles">getAvailableBibles</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getColumnTitle-nav"><a href="AlignmentSearchDialogContainer.html#getColumnTitle">getColumnTitle</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getFontSize-nav"><a href="AlignmentSearchDialogContainer.html#getFontSize">getFontSize</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getLabelForBible-nav"><a href="AlignmentSearchDialogContainer.html#getLabelForBible">getLabelForBible</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getResourceForBible-nav"><a href="AlignmentSearchDialogContainer.html#getResourceForBible">getResourceForBible</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getSelectedOptions-nav"><a href="AlignmentSearchDialogContainer.html#getSelectedOptions">getSelectedOptions</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getVerseContent-nav"><a href="AlignmentSearchDialogContainer.html#getVerseContent">getVerseContent</a></li><li data-type="method" id="AlignmentSearchDialogContainer-handleClose-nav"><a href="AlignmentSearchDialogContainer.html#handleClose">handleClose</a></li><li data-type="method" id="AlignmentSearchDialogContainer-ignoreBooksForTestament-nav"><a href="AlignmentSearchDialogContainer.html#ignoreBooksForTestament">ignoreBooksForTestament</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isBookEnabled-nav"><a href="AlignmentSearchDialogContainer.html#isBookEnabled">isBookEnabled</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isItemPresent-nav"><a href="AlignmentSearchDialogContainer.html#isItemPresent">isItemPresent</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isSearchFieldSelected-nav"><a href="AlignmentSearchDialogContainer.html#isSearchFieldSelected">isSearchFieldSelected</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isSupportedAlignmentKey-nav"><a href="AlignmentSearchDialogContainer.html#isSupportedAlignmentKey">isSupportedAlignmentKey</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadAlignmentData-nav"><a href="AlignmentSearchDialogContainer.html#loadAlignmentData">loadAlignmentData</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadAlignmentSearchOptions-nav"><a href="AlignmentSearchDialogContainer.html#loadAlignmentSearchOptions">loadAlignmentSearchOptions</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadAlignmentSearchOptionsWithUI-nav"><a href="AlignmentSearchDialogContainer.html#loadAlignmentSearchOptionsWithUI">loadAlignmentSearchOptionsWithUI</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadIndexedAlignmentData-nav"><a href="AlignmentSearchDialogContainer.html#loadIndexedAlignmentData">loadIndexedAlignmentData</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadTWordsIndex-nav"><a href="AlignmentSearchDialogContainer.html#loadTWordsIndex">loadTWordsIndex</a></li><li data-type="method" id="AlignmentSearchDialogContainer-refreshPopUp-nav"><a href="AlignmentSearchDialogContainer.html#refreshPopUp">refreshPopUp</a></li><li data-type="method" id="AlignmentSearchDialogContainer-renderRefs-nav"><a href="AlignmentSearchDialogContainer.html#renderRefs">renderRefs</a></li><li data-type="method" id="AlignmentSearchDialogContainer-selectAlignedBookToSearch-nav"><a href="AlignmentSearchDialogContainer.html#selectAlignedBookToSearch">selectAlignedBookToSearch</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setAll-nav"><a href="AlignmentSearchDialogContainer.html#setAll">setAll</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchAlignedBible-nav"><a href="AlignmentSearchDialogContainer.html#setSearchAlignedBible">setSearchAlignedBible</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchAlignedBible2-nav"><a href="AlignmentSearchDialogContainer.html#setSearchAlignedBible2">setSearchAlignedBible2</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchFields-nav"><a href="AlignmentSearchDialogContainer.html#setSearchFields">setSearchFields</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchStr-nav"><a href="AlignmentSearchDialogContainer.html#setSearchStr">setSearchStr</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchTypes-nav"><a href="AlignmentSearchDialogContainer.html#setSearchTypes">setSearchTypes</a></li><li data-type="method" id="AlignmentSearchDialogContainer-showMessage-nav"><a href="AlignmentSearchDialogContainer.html#showMessage">showMessage</a></li><li data-type="method" id="AlignmentSearchDialogContainer-showPopUpVerse-nav"><a href="AlignmentSearchDialogContainer.html#showPopUpVerse">showPopUpVerse</a></li><li data-type="method" id="AlignmentSearchDialogContainer-showResults-nav"><a href="AlignmentSearchDialogContainer.html#showResults">showResults</a></li><li data-type="method" id="AlignmentSearchDialogContainer-startSearch-nav"><a href="AlignmentSearchDialogContainer.html#startSearch">startSearch</a></li><li data-type="method" id="AlignmentSearchDialogContainer-toggleBook-nav"><a href="AlignmentSearchDialogContainer.html#toggleBook">toggleBook</a></li><li data-type="method" id="AlignmentSearchDialogContainer-updateBibleKeyToMaster-nav"><a href="AlignmentSearchDialogContainer.html#updateBibleKeyToMaster">updateBibleKeyToMaster</a></li><li data-type="method" id="AlignmentSearchDialogContainer-updateMaster-nav"><a href="AlignmentSearchDialogContainer.html#updateMaster">updateMaster</a></li></ul></li><li id="AppMenu-nav"><a href="AppMenu.html">AppMenu</a><ul class='methods'><li data-type="method" id="AppMenu-closeDialog-nav"><a href="AppMenu.html#closeDialog">closeDialog</a></li><li data-type="method" id="AppMenu-isDialogOpen-nav"><a href="AppMenu.html#isDialogOpen">isDialogOpen</a></li><li data-type="method" id="AppMenu-openDialog-nav"><a href="AppMenu.html#openDialog">openDialog</a></li></ul></li><li id="BaseDialog-nav"><a href="BaseDialog.html">BaseDialog</a></li><li id="CategoryPicker-nav"><a href="CategoryPicker.html">CategoryPicker</a></li><li id="ColoredIcon-nav"><a href="ColoredIcon.html">ColoredIcon</a></li><li id="ConfirmationDialog-nav"><a href="ConfirmationDialog.html">ConfirmationDialog</a></li><li id="ContentUpdateDialog-nav"><a href="ContentUpdateDialog.html">ContentUpdateDialog</a></li><li id="ContentUpdatesDialogContainer-nav"><a href="ContentUpdatesDialogContainer.html">ContentUpdatesDialogContainer</a></li><li id="DownloadDialog-nav"><a href="DownloadDialog.html">DownloadDialog</a></li><li id="DownloadManager-nav"><a href="DownloadManager.html">DownloadManager</a><ul class='methods'><li data-type="method" id="DownloadManager-addItem-nav"><a href="DownloadManager.html#~addItem">addItem</a></li><li data-type="method" id="DownloadManager-getItem-nav"><a href="DownloadManager.html#~getItem">getItem</a></li></ul></li><li id="DownloadUpdateDialogContainer-nav"><a href="DownloadUpdateDialogContainer.html">DownloadUpdateDialogContainer</a><ul class='methods'><li data-type="method" id="DownloadUpdateDialogContainer-_cancelDownload-nav"><a href="DownloadUpdateDialogContainer.html#_cancelDownload">_cancelDownload</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_handleClose-nav"><a href="DownloadUpdateDialogContainer.html#_handleClose">_handleClose</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadError-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadError">_onDownloadError</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadProgress-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadProgress">_onDownloadProgress</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadStarted-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadStarted">_onDownloadStarted</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadSuccess-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadSuccess">_onDownloadSuccess</a></li></ul></li><li id="ErrorCount-nav"><a href="ErrorCount.html">ErrorCount</a></li><li id="ErrorDialog-nav"><a href="ErrorDialog.html">ErrorDialog</a></li><li id="FeedbackDialog-nav"><a href="FeedbackDialog.html">FeedbackDialog</a></li><li id="FeedbackDialogContainer-nav"><a href="FeedbackDialogContainer.html">FeedbackDialogContainer</a><ul class='methods'><li data-type="method" id="FeedbackDialogContainer-_submitFeedback-nav"><a href="FeedbackDialogContainer.html#_submitFeedback">_submitFeedback</a></li></ul></li><li id="HomeContainerContentWrapper-nav"><a href="HomeContainerContentWrapper.html">HomeContainerContentWrapper</a></li><li id="HomeScreenNavigation-nav"><a href="HomeScreenNavigation.html">HomeScreenNavigation</a></li><li id="HomeStep-nav"><a href="HomeStep.html">HomeStep</a></li><li id="HomeStepper-nav"><a href="HomeStepper.html">HomeStepper</a></li><li id="IgnorableAlert-nav"><a href="IgnorableAlert.html">IgnorableAlert</a></li><li id="InstanceStorage-nav"><a href="InstanceStorage.html">InstanceStorage</a><ul class='methods'><li data-type="method" id="InstanceStorage-key-nav"><a href="InstanceStorage.html#key">key</a></li></ul></li><li id="InstructionsCard-nav"><a href="InstructionsCard.html">InstructionsCard</a></li><li id="LanguageSelectField-nav"><a href="LanguageSelectField.html">LanguageSelectField</a></li><li id="LocaleSelectListContainer-nav"><a href="LocaleSelectListContainer.html">LocaleSelectListContainer</a></li><li id="LocaleSettingsDialogContainer-nav"><a href="LocaleSettingsDialogContainer.html">LocaleSettingsDialogContainer</a><ul class='methods'><li data-type="method" id="LocaleSettingsDialogContainer-_handleLanguageChange-nav"><a href="LocaleSettingsDialogContainer.html#_handleLanguageChange">_handleLanguageChange</a></li><li data-type="method" id="LocaleSettingsDialogContainer-_handleSave-nav"><a href="LocaleSettingsDialogContainer.html#_handleSave">_handleSave</a></li></ul></li><li id="LogHighlighted-nav"><a href="LogHighlighted.html">LogHighlighted</a></li><li id="LoginButtons-nav"><a href="LoginButtons.html">LoginButtons</a></li><li id="LoginDoor43Account-nav"><a href="LoginDoor43Account.html">LoginDoor43Account</a></li><li id="LoginTextFields-nav"><a href="LoginTextFields.html">LoginTextFields</a></li><li id="Menu-nav"><a href="Menu.html">Menu</a></li><li id="NavButton-nav"><a href="NavButton.html">NavButton</a></li><li id="PopoverMenu-nav"><a href="PopoverMenu.html">PopoverMenu</a><ul class='methods'><li data-type="method" id="PopoverMenu-_handleButtonOut-nav"><a href="PopoverMenu.html#_handleButtonOut">_handleButtonOut</a></li><li data-type="method" id="PopoverMenu-_handleButtonOver-nav"><a href="PopoverMenu.html#_handleButtonOver">_handleButtonOver</a></li><li data-type="method" id="PopoverMenu-_handleClick-nav"><a href="PopoverMenu.html#_handleClick">_handleClick</a></li><li data-type="method" id="PopoverMenu-_handleRequestClose-nav"><a href="PopoverMenu.html#_handleRequestClose">_handleRequestClose</a></li><li data-type="method" id="PopoverMenu-_hijackChildClick-nav"><a href="PopoverMenu.html#_hijackChildClick">_hijackChildClick</a></li></ul></li><li id="ProjectCardMenu-nav"><a href="ProjectCardMenu.html">ProjectCardMenu</a></li><li id="ProjectValidationContentWrapper-nav"><a href="ProjectValidationContentWrapper.html">ProjectValidationContentWrapper</a></li><li id="ResourceAPI-nav"><a href="ResourceAPI.html">ResourceAPI</a><ul class='methods'><li data-type="method" id="ResourceAPI-getLatestTranslationHelp-nav"><a href="ResourceAPI.html#getLatestTranslationHelp">getLatestTranslationHelp</a></li><li data-type="method" id="ResourceAPI-getTranslationHelps-nav"><a href="ResourceAPI.html#getTranslationHelps">getTranslationHelps</a></li><li data-type="method" id="ResourceAPI-compareVersions-nav"><a href="ResourceAPI.html#.compareVersions">compareVersions</a></li><li data-type="method" id="ResourceAPI-default-nav"><a href="ResourceAPI.html#.default">default</a></li><li data-type="method" id="ResourceAPI-getLatestVersion-nav"><a href="ResourceAPI.html#.getLatestVersion">getLatestVersion</a></li><li data-type="method" id="ResourceAPI-getLatestVersionsAndOwners-nav"><a href="ResourceAPI.html#.getLatestVersionsAndOwners">getLatestVersionsAndOwners</a></li><li data-type="method" id="ResourceAPI-listVersions-nav"><a href="ResourceAPI.html#.listVersions">listVersions</a></li></ul></li><li id="SoftwareUpdateContainer-nav"><a href="SoftwareUpdateContainer.html">SoftwareUpdateContainer</a></li><li id="SoftwareUpdateDialog-nav"><a href="SoftwareUpdateDialog.html">SoftwareUpdateDialog</a></li><li id="SoftwareUpdateDialogContainer-nav"><a href="SoftwareUpdateDialogContainer.html">SoftwareUpdateDialogContainer</a><ul class='methods'><li data-type="method" id="SoftwareUpdateDialogContainer-_fetchUrl-nav"><a href="SoftwareUpdateDialogContainer.html#_fetchUrl">_fetchUrl</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_handleClose-nav"><a href="SoftwareUpdateDialogContainer.html#_handleClose">_handleClose</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_handleSubmit-nav"><a href="SoftwareUpdateDialogContainer.html#_handleSubmit">_handleSubmit</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_startSoftwareCheck-nav"><a href="SoftwareUpdateDialogContainer.html#_startSoftwareCheck">_startSoftwareCheck</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_stopSoftwareCheck-nav"><a href="SoftwareUpdateDialogContainer.html#_stopSoftwareCheck">_stopSoftwareCheck</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-applyRelease-nav"><a href="SoftwareUpdateDialogContainer.html#applyRelease">applyRelease</a></li></ul></li><li id="SuccessDialog-nav"><a href="SuccessDialog.html">SuccessDialog</a></li><li id="UsernameInput-nav"><a href="UsernameInput.html">UsernameInput</a></li><li id="exports-nav"><a href="module.html#.exports">exports</a></li></ul><h3>Modules</h3><ul><li id="Actions_AlertModal-nav"><a href="module-Actions_AlertModal.html">Actions/AlertModal</a><ul class='methods'><li data-type="method" id="Actions_AlertModal-closeAlertDialog-nav"><a href="module-Actions_AlertModal.html#.closeAlertDialog">closeAlertDialog</a></li><li data-type="method" id="Actions_AlertModal-openAlertDialog-nav"><a href="module-Actions_AlertModal.html#.openAlertDialog">openAlertDialog</a></li><li data-type="method" id="Actions_AlertModal-openOptionDialog-nav"><a href="module-Actions_AlertModal.html#.openOptionDialog">openOptionDialog</a></li></ul></li></ul><h3 id="global-nav">Global</h3><ul><li><a href="global.html#BIBLE_BOOKS">BIBLE_BOOKS</a></li><li><a href="global.html#GlDropDownList">GlDropDownList</a></li><li><a href="global.html#INSTANCE_STORAGE">INSTANCE_STORAGE</a></li><li><a href="global.html#LOCAL_STORAGE">LOCAL_STORAGE</a></li><li><a href="global.html#SESSION_STORAGE">SESSION_STORAGE</a></li><li><a href="global.html#SETTINGS_PATH">SETTINGS_PATH</a></li><li><a href="global.html#TruncateAcronym">TruncateAcronym</a></li><li><a href="global.html#add">add</a></li><li><a href="global.html#addChapterFrontMatter">addChapterFrontMatter</a></li><li><a href="global.html#addFrontMatter">addFrontMatter</a></li><li><a href="global.html#addHeader">addHeader</a></li><li><a href="global.html#addLanguage">addLanguage</a></li><li><a href="global.html#addNewBible">addNewBible</a></li><li><a href="global.html#addObjectPropertyToManifest">addObjectPropertyToManifest</a></li><li><a href="global.html#addObjectPropertyToSettings">addObjectPropertyToSettings</a></li><li><a href="global.html#addOriginalLanguageInfo">addOriginalLanguageInfo</a></li><li><a href="global.html#addOwner">addOwner</a></li><li><a href="global.html#addPosition">addPosition</a></li><li><a href="global.html#addProjectValidationStep">addProjectValidationStep</a></li><li><a href="global.html#addRemote">addRemote</a></li><li><a href="global.html#addResource">addResource</a></li><li><a href="global.html#addStyles">addStyles</a></li><li><a href="global.html#alerts">alerts</a></li><li><a href="global.html#appendToAlignmentIndex">appendToAlignmentIndex</a></li><li><a href="global.html#archiveProject">archiveProject</a></li><li><a href="global.html#archiveSourceFiles">archiveSourceFiles</a></li><li><a href="global.html#arePositionsAdjacent">arePositionsAdjacent</a></li><li><a href="global.html#areQuotesEqual">areQuotesEqual</a></li><li><a href="global.html#areResourcesNewer">areResourcesNewer</a></li><li><a href="global.html#areStringsEqualCaseInsensitive">areStringsEqualCaseInsensitive</a></li><li><a href="global.html#areWordsAdjacent">areWordsAdjacent</a></li><li><a href="global.html#areWordsAdjacentInTarget">areWordsAdjacentInTarget</a></li><li><a href="global.html#arrayToWordList">arrayToWordList</a></li><li><a href="global.html#assignLicenseToOnlineImportedProject">assignLicenseToOnlineImportedProject</a></li><li><a href="global.html#bibleIdSort">bibleIdSort</a></li><li><a href="global.html#branch">branch</a></li><li><a href="global.html#branchLocal">branchLocal</a></li><li><a href="global.html#buildSearchRegex">buildSearchRegex</a></li><li><a href="global.html#calculateProgress">calculateProgress</a></li><li><a href="global.html#cancelAndCloseProjectInformationCheck">cancelAndCloseProjectInformationCheck</a></li><li><a href="global.html#changeBranch">changeBranch</a></li><li><a href="global.html#changeGitToPointToNewRepo">changeGitToPointToNewRepo</a></li><li><a href="global.html#checkBookReference">checkBookReference</a></li><li><a href="global.html#checkCheckers">checkCheckers</a></li><li><a href="global.html#checkForHelpsForBible">checkForHelpsForBible</a></li><li><a href="global.html#checkForNewLexicons">checkForNewLexicons</a></li><li><a href="global.html#checkForValidCategorySelections">checkForValidCategorySelections</a></li><li><a href="global.html#checkIfValidBetaProject">checkIfValidBetaProject</a></li><li><a href="global.html#checkIfWeNeedNewerOrigLangVersion">checkIfWeNeedNewerOrigLangVersion</a></li><li><a href="global.html#checkLanguageDetails">checkLanguageDetails</a></li><li><a href="global.html#checkProjectDetails">checkProjectDetails</a></li><li><a href="global.html#checkProjectForAlignments">checkProjectForAlignments</a></li><li><a href="global.html#checkProjectForMergeConflicts">checkProjectForMergeConflicts</a></li><li><a href="global.html#checkTranslators">checkTranslators</a></li><li><a href="global.html#checkUSFMForMergeConflicts">checkUSFMForMergeConflicts</a></li><li><a href="global.html#checkout">checkout</a></li><li><a href="global.html#cleanAlignmentMarkersFromString">cleanAlignmentMarkersFromString</a></li><li><a href="global.html#cleanupTmpPath">cleanupTmpPath</a></li><li><a href="global.html#clear">clear</a></li><li><a href="global.html#clearProjectInformationReducer">clearProjectInformationReducer</a></li><li><a href="global.html#clearRemote">clearRemote</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#closeAlert">closeAlert</a></li><li><a href="global.html#closeLoading">closeLoading</a></li><li><a href="global.html#closeProject">closeProject</a></li><li><a href="global.html#closeSoftwareUpdate">closeSoftwareUpdate</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#commit">commit</a></li><li><a href="global.html#confirmAction">confirmAction</a></li><li><a href="global.html#confirmContinueOrCancelImportValidation">confirmContinueOrCancelImportValidation</a></li><li><a href="global.html#confirmOnlineAction">confirmOnlineAction</a></li><li><a href="global.html#confirmationMiddleware">confirmationMiddleware</a></li><li><a href="global.html#connectToolApi">connectToolApi</a></li><li><a href="global.html#consolidateTwls">consolidateTwls</a></li><li><a href="global.html#content">content</a></li><li><a href="global.html#convert">convert</a></li><li><a href="global.html#convertAlignmentDataToUSFM">convertAlignmentDataToUSFM</a></li><li><a href="global.html#convertAlignmentFromVerseToVerseSpan">convertAlignmentFromVerseToVerseSpan</a></li><li><a href="global.html#convertAlignmentFromVerseToVerseSpanSub">convertAlignmentFromVerseToVerseSpanSub</a></li><li><a href="global.html#convertAlignmentsFromVerseSpansToVerse">convertAlignmentsFromVerseSpansToVerse</a></li><li><a href="global.html#convertAlignmentsFromVerseSpansToVerseSub">convertAlignmentsFromVerseSpansToVerseSub</a></li><li><a href="global.html#convertGitErrorMessage">convertGitErrorMessage</a></li><li><a href="global.html#convertPrintPreviewHtml">convertPrintPreviewHtml</a></li><li><a href="global.html#convertStrongstoStrong">convertStrongstoStrong</a></li><li><a href="global.html#convertToFullBookName">convertToFullBookName</a></li><li><a href="global.html#convertToProjectFormat">convertToProjectFormat</a></li><li><a href="global.html#convertVerseChunksToUSFM">convertVerseChunksToUSFM</a></li><li><a href="global.html#convertVerseDataToUSFM">convertVerseDataToUSFM</a></li><li><a href="global.html#copyGroupDataToProject">copyGroupDataToProject</a></li><li><a href="global.html#copyMissingSubfolders">copyMissingSubfolders</a></li><li><a href="global.html#copySourceContentUpdaterManifest">copySourceContentUpdaterManifest</a></li><li><a href="global.html#correctOccurrencesInAlignmentWords">correctOccurrencesInAlignmentWords</a></li><li><a href="global.html#createCheckArray">createCheckArray</a></li><li><a href="global.html#createLanguagesObjectFromResources">createLanguagesObjectFromResources</a></li><li><a href="global.html#createNewBranch">createNewBranch</a></li><li><a href="global.html#createNewRepo">createNewRepo</a></li><li><a href="global.html#createPreviewWindow">createPreviewWindow</a></li><li><a href="global.html#createRepo">createRepo</a></li><li><a href="global.html#createUSFMFromTsProject">createUSFMFromTsProject</a></li><li><a href="global.html#dataPath">dataPath</a></li><li><a href="global.html#dataPathExists">dataPathExists</a></li><li><a href="global.html#dataPathExistsSync">dataPathExistsSync</a></li><li><a href="global.html#dateFromTimestamp">dateFromTimestamp</a></li><li><a href="global.html#deleteCachedAlignmentData">deleteCachedAlignmentData</a></li><li><a href="global.html#deleteDataFile">deleteDataFile</a></li><li><a href="global.html#deleteDataFileSync">deleteDataFileSync</a></li><li><a href="global.html#deleteImportProjectForLink">deleteImportProjectForLink</a></li><li><a href="global.html#deleteImportsFolder">deleteImportsFolder</a></li><li><a href="global.html#deletePreReleaseResources">deletePreReleaseResources</a></li><li><a href="global.html#deleteProjectFromImportsFolder">deleteProjectFromImportsFolder</a></li><li><a href="global.html#detail">detail</a></li><li><a href="global.html#detectInvalidProjectStructure">detectInvalidProjectStructure</a></li><li><a href="global.html#dimScreen">dimScreen</a></li><li><a href="global.html#displayLoadingUSFMAlert">displayLoadingUSFMAlert</a></li><li><a href="global.html#displayOverwriteButton">displayOverwriteButton</a></li><li><a href="global.html#displayTools">displayTools</a></li><li><a href="global.html#displayUSFMExportFinishedDialog">displayUSFMExportFinishedDialog</a></li><li><a href="global.html#doDcsRenamePrompting">doDcsRenamePrompting</a></li><li><a href="global.html#doLocalProjectRenamePrompting">doLocalProjectRenamePrompting</a></li><li><a href="global.html#doPrint">doPrint</a></li><li><a href="global.html#doRenamePrompting">doRenamePrompting</a></li><li><a href="global.html#doValidationAndPrompting">doValidationAndPrompting</a></li><li><a href="global.html#doesBranchExist">doesBranchExist</a></li><li><a href="global.html#doesDcsProjectNameAlreadyExist">doesDcsProjectNameAlreadyExist</a></li><li><a href="global.html#doesProjectAlreadyExist">doesProjectAlreadyExist</a></li><li><a href="global.html#doesProjectNameMatchSpec">doesProjectNameMatchSpec</a></li><li><a href="global.html#doesRemoteRepoExist">doesRemoteRepoExist</a></li><li><a href="global.html#download">download</a></li><li><a href="global.html#downloadAndLoadViewUrl">downloadAndLoadViewUrl</a></li><li><a href="global.html#downloadAndLoadViewUrlWithFallback">downloadAndLoadViewUrlWithFallback</a></li><li><a href="global.html#downloadFromUrl">downloadFromUrl</a></li><li><a href="global.html#downloadMissingResource">downloadMissingResource</a></li><li><a href="global.html#downloadProject">downloadProject</a></li><li><a href="global.html#downloadSourceContentUpdates">downloadSourceContentUpdates</a></li><li><a href="global.html#encodeParam">encodeParam</a></li><li><a href="global.html#enhanceTranslation">enhanceTranslation</a></li><li><a href="global.html#ensureFileContentsJson">ensureFileContentsJson</a></li><li><a href="global.html#executeArchive">executeArchive</a></li><li><a href="global.html#explodeLocaleName">explodeLocaleName</a></li><li><a href="global.html#exportToCSV">exportToCSV</a></li><li><a href="global.html#exportToCSVZip">exportToCSVZip</a></li><li><a href="global.html#exportToUSFM">exportToUSFM</a></li><li><a href="global.html#extractAllResources">extractAllResources</a></li><li><a href="global.html#extractVersesFromChunk">extractVersesFromChunk</a></li><li><a href="global.html#extractZippedResourceContent">extractZippedResourceContent</a></li><li><a href="global.html#fillDefaultTools">fillDefaultTools</a></li><li><a href="global.html#filterAndSort">filterAndSort</a></li><li><a href="global.html#filterAvailableAlignedBibles">filterAvailableAlignedBibles</a></li><li><a href="global.html#finalize">finalize</a></li><li><a href="global.html#findAlert">findAlert</a></li><li><a href="global.html#findArticleFilePath">findArticleFilePath</a></li><li><a href="global.html#findBestMatchesForTargetText">findBestMatchesForTargetText</a></li><li><a href="global.html#findGroupDataItem">findGroupDataItem</a></li><li><a href="global.html#findItem">findItem</a></li><li><a href="global.html#findMissingVerses">findMissingVerses</a></li><li><a href="global.html#findRepo">findRepo</a></li><li><a href="global.html#findResourceIdAndNickname">findResourceIdAndNickname</a></li><li><a href="global.html#findUsfmTagInHeader">findUsfmTagInHeader</a></li><li><a href="global.html#findWord">findWord</a></li><li><a href="global.html#findWordsInWordList">findWordsInWordList</a></li><li><a href="global.html#fixBibleDataFolderName">fixBibleDataFolderName</a></li><li><a href="global.html#fixManifestVerThree">fixManifestVerThree</a></li><li><a href="global.html#fixOccurrencesInVerse">fixOccurrencesInVerse</a></li><li><a href="global.html#fixProjectAlignmentTopWords">fixProjectAlignmentTopWords</a></li><li><a href="global.html#fixProjectOccurrencesTopWords">fixProjectOccurrencesTopWords</a></li><li><a href="global.html#fix_tWords">fix_tWords</a></li><li><a href="global.html#flattenContextId">flattenContextId</a></li><li><a href="global.html#flattenNotesCategories">flattenNotesCategories</a></li><li><a href="global.html#generateCSVFile">generateCSVFile</a></li><li><a href="global.html#generateCSVString">generateCSVString</a></li><li><a href="global.html#generateChapterGroupData">generateChapterGroupData</a></li><li><a href="global.html#generateChapterGroupIndex">generateChapterGroupIndex</a></li><li><a href="global.html#generateImportPath">generateImportPath</a></li><li><a href="global.html#generateLoadPath">generateLoadPath</a></li><li><a href="global.html#generateManifest">generateManifest</a></li><li><a href="global.html#generateManifestForUsfm">generateManifestForUsfm</a></li><li><a href="global.html#generateManifestForUsfmProject">generateManifestForUsfmProject</a></li><li><a href="global.html#generateNewProjectName">generateNewProjectName</a></li><li><a href="global.html#generatePathToDataItems">generatePathToDataItems</a></li><li><a href="global.html#generateSavePath">generateSavePath</a></li><li><a href="global.html#generateTargetBibleFromTstudioProjectPath">generateTargetBibleFromTstudioProjectPath</a></li><li><a href="global.html#generateTargetBibleFromUSFMPath">generateTargetBibleFromUSFMPath</a></li><li><a href="global.html#generateTargetLanguageBibleFromUsfm">generateTargetLanguageBibleFromUsfm</a></li><li><a href="global.html#generateTimestamp">generateTimestamp</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getALignmentsFromJson">getALignmentsFromJson</a></li><li><a href="global.html#getActiveHomeScreenSteps">getActiveHomeScreenSteps</a></li><li><a href="global.html#getActiveLanguage">getActiveLanguage</a></li><li><a href="global.html#getActiveLocaleLanguage">getActiveLocaleLanguage</a></li><li><a href="global.html#getActiveSteps">getActiveSteps</a></li><li><a href="global.html#getAlertIsOpen">getAlertIsOpen</a></li><li><a href="global.html#getAlerts">getAlerts</a></li><li><a href="global.html#getAlignedBibles">getAlignedBibles</a></li><li><a href="global.html#getAlignedGLText">getAlignedGLText</a></li><li><a href="global.html#getAlignedTextFromBible">getAlignedTextFromBible</a></li><li><a href="global.html#getAlignedWordListForVerse">getAlignedWordListForVerse</a></li><li><a href="global.html#getAlignmentDataFromPath">getAlignmentDataFromPath</a></li><li><a href="global.html#getAlignmentDataPath">getAlignmentDataPath</a></li><li><a href="global.html#getAlignmentIndices">getAlignmentIndices</a></li><li><a href="global.html#getAlignmentPathsFromProject">getAlignmentPathsFromProject</a></li><li><a href="global.html#getAlignmentsFromDownloadedBible">getAlignmentsFromDownloadedBible</a></li><li><a href="global.html#getAlignmentsFromResource">getAlignmentsFromResource</a></li><li><a href="global.html#getAllCategoryMapping">getAllCategoryMapping</a></li><li><a href="global.html#getAllLanguageIdsFromResourceFolder">getAllLanguageIdsFromResourceFolder</a></li><li><a href="global.html#getAllResourceManifests">getAllResourceManifests</a></li><li><a href="global.html#getAllResourceVersions">getAllResourceVersions</a></li><li><a href="global.html#getAnchorTags">getAnchorTags</a></li><li><a href="global.html#getApplicationVersion">getApplicationVersion</a></li><li><a href="global.html#getArchBits">getArchBits</a></li><li><a href="global.html#getAvailableBibles">getAvailableBibles</a></li><li><a href="global.html#getAvailableCategories">getAvailableCategories</a></li><li><a href="global.html#getAvailableScripturePaneSelections">getAvailableScripturePaneSelections</a></li><li><a href="global.html#getBaseName">getBaseName</a></li><li><a href="global.html#getBestMatchForVerse">getBestMatchForVerse</a></li><li><a href="global.html#getBibleIndex">getBibleIndex</a></li><li><a href="global.html#getBibleManifest">getBibleManifest</a></li><li><a href="global.html#getBibles">getBibles</a></li><li><a href="global.html#getBookDataDir">getBookDataDir</a></li><li><a href="global.html#getBookId">getBookId</a></li><li><a href="global.html#getBookName">getBookName</a></li><li><a href="global.html#getBookTranslation">getBookTranslation</a></li><li><a href="global.html#getBookTranslationShort">getBookTranslationShort</a></li><li><a href="global.html#getCategoriesDir">getCategoriesDir</a></li><li><a href="global.html#getCategoriesPath">getCategoriesPath</a></li><li><a href="global.html#getCategoryGroupIds">getCategoryGroupIds</a></li><li><a href="global.html#getChapterFromVerseText">getChapterFromVerseText</a></li><li><a href="global.html#getCheckStateForCategory">getCheckStateForCategory</a></li><li><a href="global.html#getContextHash">getContextHash</a></li><li><a href="global.html#getContextIdPathFromIndex">getContextIdPathFromIndex</a></li><li><a href="global.html#getCount">getCount</a></li><li><a href="global.html#getCurrentBranch">getCurrentBranch</a></li><li><a href="global.html#getCurrentLog">getCurrentLog</a></li><li><a href="global.html#getCurrentManifestVersion">getCurrentManifestVersion</a></li><li><a href="global.html#getCurrentOrigLangVersionForTn">getCurrentOrigLangVersionForTn</a></li><li><a href="global.html#getCurrentOrigLanguageVersionOwner">getCurrentOrigLanguageVersionOwner</a></li><li><a href="global.html#getCurrentPaneSetting">getCurrentPaneSetting</a></li><li><a href="global.html#getCurrentTargetLanguageVerseFromAlignments">getCurrentTargetLanguageVerseFromAlignments</a></li><li><a href="global.html#getCurrentToolName">getCurrentToolName</a></li><li><a href="global.html#getDefaultBranch">getDefaultBranch</a></li><li><a href="global.html#getDefaultPath">getDefaultPath</a></li><li><a href="global.html#getDefaultTools">getDefaultTools</a></li><li><a href="global.html#getDetailsFromProjectName">getDetailsFromProjectName</a></li><li><a href="global.html#getDownloadErrorList">getDownloadErrorList</a></li><li><a href="global.html#getDuplicateProjectWarning">getDuplicateProjectWarning</a></li><li><a href="global.html#getEmail">getEmail</a></li><li><a href="global.html#getEmptyAlignmentData">getEmptyAlignmentData</a></li><li><a href="global.html#getErrorDetails">getErrorDetails</a></li><li><a href="global.html#getErrorFeedbackCategory">getErrorFeedbackCategory</a></li><li><a href="global.html#getErrorFeedbackExtraDetails">getErrorFeedbackExtraDetails</a></li><li><a href="global.html#getErrorFeedbackMessage">getErrorFeedbackMessage</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getExpectedBookVerses">getExpectedBookVerses</a></li><li><a href="global.html#getExportType">getExportType</a></li><li><a href="global.html#getFeedbackCloseCallback">getFeedbackCloseCallback</a></li><li><a href="global.html#getFeedbackDetailsForHelpDesk">getFeedbackDetailsForHelpDesk</a></li><li><a href="global.html#getFilePath">getFilePath</a></li><li><a href="global.html#getFilesInResourcePath">getFilesInResourcePath</a></li><li><a href="global.html#getFilteredSubFolders">getFilteredSubFolders</a></li><li><a href="global.html#getFoldersInResourceFolder">getFoldersInResourceFolder</a></li><li><a href="global.html#getFontList">getFontList</a></li><li><a href="global.html#getGLQuoteFromAlignedBible">getGLQuoteFromAlignedBible</a></li><li><a href="global.html#getGatewayLanguageCodeAndQuote">getGatewayLanguageCodeAndQuote</a></li><li><a href="global.html#getGatewayLanguageList">getGatewayLanguageList</a></li><li><a href="global.html#getGlRequirementsForTool">getGlRequirementsForTool</a></li><li><a href="global.html#getGroupData">getGroupData</a></li><li><a href="global.html#getGroupDataForVerse">getGroupDataForVerse</a></li><li><a href="global.html#getGroupName">getGroupName</a></li><li><a href="global.html#getGroupsData">getGroupsData</a></li><li><a href="global.html#getHeaderTag">getHeaderTag</a></li><li><a href="global.html#getHeaderTags">getHeaderTags</a></li><li><a href="global.html#getHomeScreenStep">getHomeScreenStep</a></li><li><a href="global.html#getInitialBibleDataFolderName">getInitialBibleDataFolderName</a></li><li><a href="global.html#getInvalidCountForTool">getInvalidCountForTool</a></li><li><a href="global.html#getIsHomeVisible">getIsHomeVisible</a></li><li><a href="global.html#getIsLoggedIn">getIsLoggedIn</a></li><li><a href="global.html#getIsNextStepDisabled">getIsNextStepDisabled</a></li><li><a href="global.html#getIsOverwritePermitted">getIsOverwritePermitted</a></li><li><a href="global.html#getIsProjectAlreadyImported">getIsProjectAlreadyImported</a></li><li><a href="global.html#getIsSoftwareUpdateOpen">getIsSoftwareUpdateOpen</a></li><li><a href="global.html#getIsUserLoggedIn">getIsUserLoggedIn</a></li><li><a href="global.html#getIsUsfmProject">getIsUsfmProject</a></li><li><a href="global.html#getJsonFilesInPath">getJsonFilesInPath</a></li><li><a href="global.html#getKeyForBible">getKeyForBible</a></li><li><a href="global.html#getLabelWithHover">getLabelWithHover</a></li><li><a href="global.html#getLanguageByCode">getLanguageByCode</a></li><li><a href="global.html#getLanguageByCodeSelection">getLanguageByCodeSelection</a></li><li><a href="global.html#getLanguageByName">getLanguageByName</a></li><li><a href="global.html#getLanguageByNameSelection">getLanguageByNameSelection</a></li><li><a href="global.html#getLanguageCodes">getLanguageCodes</a></li><li><a href="global.html#getLanguageId">getLanguageId</a></li><li><a href="global.html#getLanguageTranslation">getLanguageTranslation</a></li><li><a href="global.html#getLanguages">getLanguages</a></li><li><a href="global.html#getLanguagesSortedByCode">getLanguagesSortedByCode</a></li><li><a href="global.html#getLanguagesSortedByName">getLanguagesSortedByName</a></li><li><a href="global.html#getLatestBibleVersionManifest">getLatestBibleVersionManifest</a></li><li><a href="global.html#getLatestForChecks">getLatestForChecks</a></li><li><a href="global.html#getLatestOriginalLanguageResource">getLatestOriginalLanguageResource</a></li><li><a href="global.html#getLatestResourcesForTn">getLatestResourcesForTn</a></li><li><a href="global.html#getLatestVersion">getLatestVersion</a></li><li><a href="global.html#getLatestVersionPath">getLatestVersionPath</a></li><li><a href="global.html#getLexiconData">getLexiconData</a></li><li><a href="global.html#getListOfOutdatedSourceContent">getListOfOutdatedSourceContent</a></li><li><a href="global.html#getListOfSourceContentToUpdate">getListOfSourceContentToUpdate</a></li><li><a href="global.html#getLoadedCategories">getLoadedCategories</a></li><li><a href="global.html#getLocalUser">getLocalUser</a></li><li><a href="global.html#getLocaleLanguages">getLocaleLanguages</a></li><li><a href="global.html#getLocaleLoaded">getLocaleLoaded</a></li><li><a href="global.html#getLocalizedErrorMessage">getLocalizedErrorMessage</a></li><li><a href="global.html#getLocalizedErrorPrompt">getLocalizedErrorPrompt</a></li><li><a href="global.html#getLogFilePathForCurrentDate">getLogFilePathForCurrentDate</a></li><li><a href="global.html#getManifest">getManifest</a></li><li><a href="global.html#getManifestPath">getManifestPath</a></li><li><a href="global.html#getMasterResourcePath">getMasterResourcePath</a></li><li><a href="global.html#getMergeConflicts">getMergeConflicts</a></li><li><a href="global.html#getMissingResources">getMissingResources</a></li><li><a href="global.html#getMissingVerses">getMissingVerses</a></li><li><a href="global.html#getMorphData">getMorphData</a></li><li><a href="global.html#getMostRecentVersionInFolder">getMostRecentVersionInFolder</a></li><li><a href="global.html#getMyProjects">getMyProjects</a></li><li><a href="global.html#getName">getName</a></li><li><a href="global.html#getNames">getNames</a></li><li><a href="global.html#getNestedKey">getNestedKey</a></li><li><a href="global.html#getNextHomeScreenStepDisabled">getNextHomeScreenStepDisabled</a></li><li><a href="global.html#getNextProjectValidationStepDisabled">getNextProjectValidationStepDisabled</a></li><li><a href="global.html#getNickname">getNickname</a></li><li><a href="global.html#getOccurrences">getOccurrences</a></li><li><a href="global.html#getOccurrencesForWord">getOccurrencesForWord</a></li><li><a href="global.html#getOccurrencesForWordList">getOccurrencesForWordList</a></li><li><a href="global.html#getOlBookPath">getOlBookPath</a></li><li><a href="global.html#getOrigLangVersionInfoForTn">getOrigLangVersionInfoForTn</a></li><li><a href="global.html#getOrigLangWordListForVerse">getOrigLangWordListForVerse</a></li><li><a href="global.html#getOrigLangforBook">getOrigLangforBook</a></li><li><a href="global.html#getOriginalChapter">getOriginalChapter</a></li><li><a href="global.html#getOriginalChapterFromManifest">getOriginalChapterFromManifest</a></li><li><a href="global.html#getOriginalChapterFromResources">getOriginalChapterFromResources</a></li><li><a href="global.html#getOriginalLangOwner">getOriginalLangOwner</a></li><li><a href="global.html#getOriginalLanguageChapterResources">getOriginalLanguageChapterResources</a></li><li><a href="global.html#getOriginalLanguageId">getOriginalLanguageId</a></li><li><a href="global.html#getOriginalLanguageListForVerseData">getOriginalLanguageListForVerseData</a></li><li><a href="global.html#getOriginalVerse">getOriginalVerse</a></li><li><a href="global.html#getOriginalVerseFromResources">getOriginalVerseFromResources</a></li><li><a href="global.html#getParentCategory">getParentCategory</a></li><li><a href="global.html#getParsedUSFM">getParsedUSFM</a></li><li><a href="global.html#getProjectAlignments">getProjectAlignments</a></li><li><a href="global.html#getProjectBookId">getProjectBookId</a></li><li><a href="global.html#getProjectDirectories">getProjectDirectories</a></li><li><a href="global.html#getProjectHeaderData">getProjectHeaderData</a></li><li><a href="global.html#getProjectId">getProjectId</a></li><li><a href="global.html#getProjectInfo">getProjectInfo</a></li><li><a href="global.html#getProjectLabel">getProjectLabel</a></li><li><a href="global.html#getProjectManifest">getProjectManifest</a></li><li><a href="global.html#getProjectName">getProjectName</a></li><li><a href="global.html#getProjectNickname">getProjectNickname</a></li><li><a href="global.html#getProjectProgressForTools">getProjectProgressForTools</a></li><li><a href="global.html#getProjectSaveLocation">getProjectSaveLocation</a></li><li><a href="global.html#getProjectSettings">getProjectSettings</a></li><li><a href="global.html#getProjectToolProgress">getProjectToolProgress</a></li><li><a href="global.html#getProjectValidationStep">getProjectValidationStep</a></li><li><a href="global.html#getProjects">getProjects</a></li><li><a href="global.html#getProjectsByType">getProjectsByType</a></li><li><a href="global.html#getProjectsFromFolder">getProjectsFromFolder</a></li><li><a href="global.html#getQuoteAsArray">getQuoteAsArray</a></li><li><a href="global.html#getRawAlignmentsForVerseSpan">getRawAlignmentsForVerseSpan</a></li><li><a href="global.html#getReadOrderForTstudioFIles">getReadOrderForTstudioFIles</a></li><li><a href="global.html#getReferenceCount">getReferenceCount</a></li><li><a href="global.html#getRegularLabel">getRegularLabel</a></li><li><a href="global.html#getRemote">getRemote</a></li><li><a href="global.html#getRemoteRepoHead">getRemoteRepoHead</a></li><li><a href="global.html#getRepoNameInfo">getRepoNameInfo</a></li><li><a href="global.html#getRepoOwnerUrl">getRepoOwnerUrl</a></li><li><a href="global.html#getResourceDownloadsAlertMessage">getResourceDownloadsAlertMessage</a></li><li><a href="global.html#getResourceId">getResourceId</a></li><li><a href="global.html#getResourceIdWarning">getResourceIdWarning</a></li><li><a href="global.html#getResourcesNeededByTool">getResourcesNeededByTool</a></li><li><a href="global.html#getSafeErrorMessage">getSafeErrorMessage</a></li><li><a href="global.html#getSaveLocation">getSaveLocation</a></li><li><a href="global.html#getSavedRemote">getSavedRemote</a></li><li><a href="global.html#getSearchableAlignments">getSearchableAlignments</a></li><li><a href="global.html#getSelectedCategories">getSelectedCategories</a></li><li><a href="global.html#getSelectedTool">getSelectedTool</a></li><li><a href="global.html#getSelectedToolApi">getSelectedToolApi</a></li><li><a href="global.html#getSelectedToolContainer">getSelectedToolContainer</a></li><li><a href="global.html#getSelectedToolTitle">getSelectedToolTitle</a></li><li><a href="global.html#getSetting">getSetting</a></li><li><a href="global.html#getSettings">getSettings</a></li><li><a href="global.html#getShowOverwriteWarning">getShowOverwriteWarning</a></li><li><a href="global.html#getShowProjectInformationScreen">getShowProjectInformationScreen</a></li><li><a href="global.html#getSortedKeys">getSortedKeys</a></li><li><a href="global.html#getSourceBook">getSourceBook</a></li><li><a href="global.html#getSourceBookManifest">getSourceBookManifest</a></li><li><a href="global.html#getSourceContentUpdateCount">getSourceContentUpdateCount</a></li><li><a href="global.html#getSourceIndices">getSourceIndices</a></li><li><a href="global.html#getStep">getStep</a></li><li><a href="global.html#getSupportedGatewayLanguageResourcesList">getSupportedGatewayLanguageResourcesList</a></li><li><a href="global.html#getSupportingToolApis">getSupportingToolApis</a></li><li><a href="global.html#getTargetBook">getTargetBook</a></li><li><a href="global.html#getTargetChapter">getTargetChapter</a></li><li><a href="global.html#getTargetLanguageNameFromUsfm">getTargetLanguageNameFromUsfm</a></li><li><a href="global.html#getTargetLanguageVerse">getTargetLanguageVerse</a></li><li><a href="global.html#getTargetVerse">getTargetVerse</a></li><li><a href="global.html#getToggledGroupData">getToggledGroupData</a></li><li><a href="global.html#getTool">getTool</a></li><li><a href="global.html#getToolCardLaunchStatus">getToolCardLaunchStatus</a></li><li><a href="global.html#getToolCategories">getToolCategories</a></li><li><a href="global.html#getToolFolderNames">getToolFolderNames</a></li><li><a href="global.html#getToolGatewayLanguage">getToolGatewayLanguage</a></li><li><a href="global.html#getToolGlOwner">getToolGlOwner</a></li><li><a href="global.html#getToolGroupIndex">getToolGroupIndex</a></li><li><a href="global.html#getToolNames">getToolNames</a></li><li><a href="global.html#getToolProgress">getToolProgress</a></li><li><a href="global.html#getToolViewsAndAPIInitialState">getToolViewsAndAPIInitialState</a></li><li><a href="global.html#getTools">getTools</a></li><li><a href="global.html#getToolsByKey">getToolsByKey</a></li><li><a href="global.html#getTranslate">getTranslate</a></li><li><a href="global.html#getTranslation">getTranslation</a></li><li><a href="global.html#getTsvOLVersion">getTsvOLVersion</a></li><li><a href="global.html#getTwordALignments">getTwordALignments</a></li><li><a href="global.html#getTwordsIndex">getTwordsIndex</a></li><li><a href="global.html#getUSFMDetails">getUSFMDetails</a></li><li><a href="global.html#getUSfmFromProjectPath">getUSfmFromProjectPath</a></li><li><a href="global.html#getUniqueBookIds">getUniqueBookIds</a></li><li><a href="global.html#getUpdateAsset">getUpdateAsset</a></li><li><a href="global.html#getUserDoor43Url">getUserDoor43Url</a></li><li><a href="global.html#getUserEmail">getUserEmail</a></li><li><a href="global.html#getUserTokenDoor43Url">getUserTokenDoor43Url</a></li><li><a href="global.html#getUsername">getUsername</a></li><li><a href="global.html#getUsfm2ExportFile">getUsfm2ExportFile</a></li><li><a href="global.html#getUsfm3ExportFile">getUsfm3ExportFile</a></li><li><a href="global.html#getUsfmExportName">getUsfmExportName</a></li><li><a href="global.html#getUsfmForVerseContent">getUsfmForVerseContent</a></li><li><a href="global.html#getUsfmHeaderInfo">getUsfmHeaderInfo</a></li><li><a href="global.html#getValidGatewayBibles">getValidGatewayBibles</a></li><li><a href="global.html#getValidGatewayBiblesForTool">getValidGatewayBiblesForTool</a></li><li><a href="global.html#getValidResourcePath">getValidResourcePath</a></li><li><a href="global.html#getVerse">getVerse</a></li><li><a href="global.html#getVerseAlignments">getVerseAlignments</a></li><li><a href="global.html#getVerseForKey">getVerseForKey</a></li><li><a href="global.html#getVersesForSpan">getVersesForSpan</a></li><li><a href="global.html#getVersionFromManifest">getVersionFromManifest</a></li><li><a href="global.html#getVersionsInPath">getVersionsInPath</a></li><li><a href="global.html#getWordCountInVerse">getWordCountInVerse</a></li><li><a href="global.html#getWordText">getWordText</a></li><li><a href="global.html#gitErrorToLocalizedPrompt">gitErrorToLocalizedPrompt</a></li><li><a href="global.html#gitVersion">gitVersion</a></li><li><a href="global.html#goToStep">goToStep</a></li><li><a href="global.html#groupCategory">groupCategory</a></li><li><a href="global.html#groupCategoryTranslated">groupCategoryTranslated</a></li><li><a href="global.html#groupIsVisible">groupIsVisible</a></li><li><a href="global.html#groupItemIsVisible">groupItemIsVisible</a></li><li><a href="global.html#groupName">groupName</a></li><li><a href="global.html#handleDcsOperation">handleDcsOperation</a></li><li><a href="global.html#handleDcsRenameCollision">handleDcsRenameCollision</a></li><li><a href="global.html#handleDcsRenameCollisionPromise">handleDcsRenameCollisionPromise</a></li><li><a href="global.html#handleOverwriteWarning">handleOverwriteWarning</a></li><li><a href="global.html#hasAlignments">hasAlignments</a></li><li><a href="global.html#hasChangedFilesForCheck">hasChangedFilesForCheck</a></li><li><a href="global.html#hasGitHistoryForCurrentUser">hasGitHistoryForCurrentUser</a></li><li><a href="global.html#hasNewGroupsData">hasNewGroupsData</a></li><li><a href="global.html#hasOriginalLanguageChanged">hasOriginalLanguageChanged</a></li><li><a href="global.html#hasOriginalLanguageChangedSub">hasOriginalLanguageChangedSub</a></li><li><a href="global.html#hasValidHelps">hasValidHelps</a></li><li><a href="global.html#hasValidOL">hasValidOL</a></li><li><a href="global.html#heading">heading</a></li><li><a href="global.html#highlightSelectedTextInVerse">highlightSelectedTextInVerse</a></li><li><a href="global.html#ignoreAlert">ignoreAlert</a></li><li><a href="global.html#importCategoryGroupData">importCategoryGroupData</a></li><li><a href="global.html#increment">increment</a></li><li><a href="global.html#indexAlignments">indexAlignments</a></li><li><a href="global.html#indexTwords">indexTwords</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#initEnv">initEnv</a></li><li><a href="global.html#initLowLevel_">initLowLevel_</a></li><li><a href="global.html#initSub_">initSub_</a></li><li><a href="global.html#initializeProjectInformationCheckContinueButton">initializeProjectInformationCheckContinueButton</a></li><li><a href="global.html#initializeReducersForProjectImportValidation">initializeReducersForProjectImportValidation</a></li><li><a href="global.html#initializeReducersForProjectOpenValidation">initializeReducersForProjectOpenValidation</a></li><li><a href="global.html#initializeReducersForProjectValidation">initializeReducersForProjectValidation</a></li><li><a href="global.html#initiateProjectValidationStepper">initiateProjectValidationStepper</a></li><li><a href="global.html#injectFileLogging">injectFileLogging</a></li><li><a href="global.html#insertProjectInformationCheckToStepper">insertProjectInformationCheckToStepper</a></li><li><a href="global.html#insertStr">insertStr</a></li><li><a href="global.html#invalidateAlignment">invalidateAlignment</a></li><li><a href="global.html#isAttributeChanged">isAttributeChanged</a></li><li><a href="global.html#isCategoryLoaded">isCategoryLoaded</a></li><li><a href="global.html#isCheckUnique">isCheckUnique</a></li><li><a href="global.html#isDirectory">isDirectory</a></li><li><a href="global.html#isDirty">isDirty</a></li><li><a href="global.html#isGitInstalled">isGitInstalled</a></li><li><a href="global.html#isInvalidationAlertDisplaying">isInvalidationAlertDisplaying</a></li><li><a href="global.html#isLanguageCodeValid">isLanguageCodeValid</a></li><li><a href="global.html#isLiteInstall">isLiteInstall</a></li><li><a href="global.html#isMasterResourceDownloaded">isMasterResourceDownloaded</a></li><li><a href="global.html#isMatch">isMatch</a></li><li><a href="global.html#isMatched">isMatched</a></li><li><a href="global.html#isMatchingCheckInstance">isMatchingCheckInstance</a></li><li><a href="global.html#isNewTestament">isNewTestament</a></li><li><a href="global.html#isNotRegistered">isNotRegistered</a></li><li><a href="global.html#isOldTestament">isOldTestament</a></li><li><a href="global.html#isOriginalLanguage">isOriginalLanguage</a></li><li><a href="global.html#isOriginalLanguageBible">isOriginalLanguageBible</a></li><li><a href="global.html#isOverwritePermitted">isOverwritePermitted</a></li><li><a href="global.html#isProjectMissingVerses">isProjectMissingVerses</a></li><li><a href="global.html#isProjectSupported">isProjectSupported</a></li><li><a href="global.html#isRepo">isRepo</a></li><li><a href="global.html#isResourceIdValid">isResourceIdValid</a></li><li><a href="global.html#isSameVerse">isSameVerse</a></li><li><a href="global.html#isToolSupported">isToolSupported</a></li><li><a href="global.html#isToolUsingCurrentOriginalLanguage">isToolUsingCurrentOriginalLanguage</a></li><li><a href="global.html#isUSFMProject">isUSFMProject</a></li><li><a href="global.html#isValidBibleBook">isValidBibleBook</a></li><li><a href="global.html#isValidResource">isValidResource</a></li><li><a href="global.html#isValidVerseSpan">isValidVerseSpan</a></li><li><a href="global.html#isVerseAligned">isVerseAligned</a></li><li><a href="global.html#isVerseSpan">isVerseSpan</a></li><li><a href="global.html#key">key</a></li><li><a href="global.html#languagesObjectToResourcesArray">languagesObjectToResourcesArray</a></li><li><a href="global.html#length">length</a></li><li><a href="global.html#loadAlignments">loadAlignments</a></li><li><a href="global.html#loadArticleData">loadArticleData</a></li><li><a href="global.html#loadArticleDataAsync">loadArticleDataAsync</a></li><li><a href="global.html#loadBibleBook">loadBibleBook</a></li><li><a href="global.html#loadBiblesByLanguageId">loadBiblesByLanguageId</a></li><li><a href="global.html#loadBookResource">loadBookResource</a></li><li><a href="global.html#loadBookTranslations">loadBookTranslations</a></li><li><a href="global.html#loadChapterResource">loadChapterResource</a></li><li><a href="global.html#loadCheckData">loadCheckData</a></li><li><a href="global.html#loadCurrentCheckCategories">loadCurrentCheckCategories</a></li><li><a href="global.html#loadFile">loadFile</a></li><li><a href="global.html#loadFileAsync">loadFileAsync</a></li><li><a href="global.html#loadGroupsData">loadGroupsData</a></li><li><a href="global.html#loadInvalidCount">loadInvalidCount</a></li><li><a href="global.html#loadLexiconEntry">loadLexiconEntry</a></li><li><a href="global.html#loadLocalization">loadLocalization</a></li><li><a href="global.html#loadOlderOriginalLanguageResource">loadOlderOriginalLanguageResource</a></li><li><a href="global.html#loadProjectDataByType">loadProjectDataByType</a></li><li><a href="global.html#loadProjectDetails">loadProjectDetails</a></li><li><a href="global.html#loadProjectGroupData">loadProjectGroupData</a></li><li><a href="global.html#loadProjectGroupIndex">loadProjectGroupIndex</a></li><li><a href="global.html#loadProjectLicenseMarkdownFile">loadProjectLicenseMarkdownFile</a></li><li><a href="global.html#loadResourceArticle">loadResourceArticle</a></li><li><a href="global.html#loadSourceBookTranslations">loadSourceBookTranslations</a></li><li><a href="global.html#loadState">loadState</a></li><li><a href="global.html#loadTargetLanguageBook">loadTargetLanguageBook</a></li><li><a href="global.html#loadTool">loadTool</a></li><li><a href="global.html#loadToolGroupIndex">loadToolGroupIndex</a></li><li><a href="global.html#loadTools">loadTools</a></li><li><a href="global.html#loadToolsInDir">loadToolsInDir</a></li><li><a href="global.html#loadUSFMFile">loadUSFMFile</a></li><li><a href="global.html#loadUSFMFileAsync">loadUSFMFileAsync</a></li><li><a href="global.html#loadViewUrl">loadViewUrl</a></li><li><a href="global.html#localImport">localImport</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#makeDialogActions">makeDialogActions</a></li><li><a href="global.html#makeSureBiblesLoadedForTool">makeSureBiblesLoadedForTool</a></li><li><a href="global.html#makeSureCurrentBranchHasName">makeSureCurrentBranchHasName</a></li><li><a href="global.html#makeSureEnvInit">makeSureEnvInit</a></li><li><a href="global.html#makeSureProjectUnlocked">makeSureProjectUnlocked</a></li><li><a href="global.html#makeSureResourcesLoaded">makeSureResourcesLoaded</a></li><li><a href="global.html#makeSureUsfm3InHeader">makeSureUsfm3InHeader</a></li><li><a href="global.html#makeToolProps">makeToolProps</a></li><li><a href="global.html#manifestExists">manifestExists</a></li><li><a href="global.html#merge">merge</a></li><li><a href="global.html#mergeAlignmentMatches">mergeAlignmentMatches</a></li><li><a href="global.html#mergeOldProjectToNewProject">mergeOldProjectToNewProject</a></li><li><a href="global.html#mergeVerseData">mergeVerseData</a></li><li><a href="global.html#migrateChapterToVerseObjects">migrateChapterToVerseObjects</a></li><li><a href="global.html#migrateCurrentPaneSettings1">migrateCurrentPaneSettings1</a></li><li><a href="global.html#migrateCurrentPaneSettings2">migrateCurrentPaneSettings2</a></li><li><a href="global.html#migrateCurrentPaneSettings3">migrateCurrentPaneSettings3</a></li><li><a href="global.html#migrateCurrentPaneSettings4">migrateCurrentPaneSettings4</a></li><li><a href="global.html#migrateOldCheckingResourceData">migrateOldCheckingResourceData</a></li><li><a href="global.html#migrateProject">migrateProject</a></li><li><a href="global.html#migrateResourcesFolder">migrateResourcesFolder</a></li><li><a href="global.html#migrateSaveChangesInOldProjects">migrateSaveChangesInOldProjects</a></li><li><a href="global.html#migrateToAddTargetLanguageBookName">migrateToAddTargetLanguageBookName</a></li><li><a href="global.html#migrateToLanguageAwareCurrentPaneSettings">migrateToLanguageAwareCurrentPaneSettings</a></li><li><a href="global.html#migrateToVersion6">migrateToVersion6</a></li><li><a href="global.html#migrateToVersion7">migrateToVersion7</a></li><li><a href="global.html#migrateToVersion8">migrateToVersion8</a></li><li><a href="global.html#migrateToolsSettings">migrateToolsSettings</a></li><li><a href="global.html#mirror">mirror</a></li><li><a href="global.html#move">move</a></li><li><a href="global.html#moveProject">moveProject</a></li><li><a href="global.html#moveResourcesFromOldGrcFolder">moveResourcesFromOldGrcFolder</a></li><li><a href="global.html#multiSearchAlignments">multiSearchAlignments</a></li><li><a href="global.html#normalize">normalize</a></li><li><a href="global.html#normalizeList">normalizeList</a></li><li><a href="global.html#onMissingTranslation">onMissingTranslation</a></li><li><a href="global.html#onlineImport">onlineImport</a></li><li><a href="global.html#open">open</a></li><li><a href="global.html#openAlert">openAlert</a></li><li><a href="global.html#openIgnorableAlert">openIgnorableAlert</a></li><li><a href="global.html#openOnlyProjectDetailsScreen">openOnlyProjectDetailsScreen</a></li><li><a href="global.html#openProject">openProject</a></li><li><a href="global.html#openSafe">openSafe</a></li><li><a href="global.html#openSoftwareUpdate">openSoftwareUpdate</a></li><li><a href="global.html#openTool">openTool</a></li><li><a href="global.html#organizedInvalidatedCheckFiles">organizedInvalidatedCheckFiles</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseArticleAbstract">parseArticleAbstract</a></li><li><a href="global.html#parseMasterFileName">parseMasterFileName</a></li><li><a href="global.html#parseMergeConflictVersion">parseMergeConflictVersion</a></li><li><a href="global.html#parseMilestone">parseMilestone</a></li><li><a href="global.html#parseRemoteUrl">parseRemoteUrl</a></li><li><a href="global.html#parseRepoUrl">parseRepoUrl</a></li><li><a href="global.html#parseResourceKey">parseResourceKey</a></li><li><a href="global.html#parseUsfmDetails">parseUsfmDetails</a></li><li><a href="global.html#path">path</a></li><li><a href="global.html#pathExistsSync">pathExistsSync</a></li><li><a href="global.html#prepareProjectRepo">prepareProjectRepo</a></li><li><a href="global.html#prepareToolForLoading">prepareToolForLoading</a></li><li><a href="global.html#preserveNeededOrigLangVersions">preserveNeededOrigLangVersions</a></li><li><a href="global.html#printWindowContents">printWindowContents</a></li><li><a href="global.html#processChapter">processChapter</a></li><li><a href="global.html#projectExistsInProjectsFolder">projectExistsInProjectsFolder</a></li><li><a href="global.html#projectHasMergeConflicts">projectHasMergeConflicts</a></li><li><a href="global.html#projectHasMultipleBooks">projectHasMultipleBooks</a></li><li><a href="global.html#promptForInvalidCheckFeedback">promptForInvalidCheckFeedback</a></li><li><a href="global.html#promptMissingDetails">promptMissingDetails</a></li><li><a href="global.html#promptUserAboutMissingResource">promptUserAboutMissingResource</a></li><li><a href="global.html#pull">pull</a></li><li><a href="global.html#push">push</a></li><li><a href="global.html#pushNewRepo">pushNewRepo</a></li><li><a href="global.html#pushProjectRepo">pushProjectRepo</a></li><li><a href="global.html#pushUnique">pushUnique</a></li><li><a href="global.html#read">read</a></li><li><a href="global.html#readBibleBook">readBibleBook</a></li><li><a href="global.html#readCurrentContextIdSync">readCurrentContextIdSync</a></li><li><a href="global.html#readDataDir">readDataDir</a></li><li><a href="global.html#readDataDirSync">readDataDirSync</a></li><li><a href="global.html#readDataFile">readDataFile</a></li><li><a href="global.html#readDataFileSync">readDataFileSync</a></li><li><a href="global.html#readDirectory">readDirectory</a></li><li><a href="global.html#readFile">readFile</a></li><li><a href="global.html#readFileSync">readFileSync</a></li><li><a href="global.html#readJsonFile">readJsonFile</a></li><li><a href="global.html#readLatestChecks">readLatestChecks</a></li><li><a href="global.html#readSubDirs">readSubDirs</a></li><li><a href="global.html#readSubDirsOfArray">readSubDirsOfArray</a></li><li><a href="global.html#recoverFailedOnlineImport">recoverFailedOnlineImport</a></li><li><a href="global.html#regexSearch">regexSearch</a></li><li><a href="global.html#registerTool">registerTool</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeBibleFromList">removeBibleFromList</a></li><li><a href="global.html#removeExtraWordsFromAlignments">removeExtraWordsFromAlignments</a></li><li><a href="global.html#removeIndices">removeIndices</a></li><li><a href="global.html#removeOldOriginalBibles">removeOldOriginalBibles</a></li><li><a href="global.html#removeOldThelps">removeOldThelps</a></li><li><a href="global.html#removeOutDatedResources">removeOutDatedResources</a></li><li><a href="global.html#removeProjectValidationStep">removeProjectValidationStep</a></li><li><a href="global.html#removeRemote">removeRemote</a></li><li><a href="global.html#removeStaleCategoriesFromCurrent">removeStaleCategoriesFromCurrent</a></li><li><a href="global.html#renameBranch">renameBranch</a></li><li><a href="global.html#renameProject">renameProject</a></li><li><a href="global.html#renameRepo">renameRepo</a></li><li><a href="global.html#renameRepoLocally">renameRepoLocally</a></li><li><a href="global.html#replaceEllipsisInObjectArray">replaceEllipsisInObjectArray</a></li><li><a href="global.html#replaceEllipsisInObjectStr">replaceEllipsisInObjectStr</a></li><li><a href="global.html#replaceFontSizes">replaceFontSizes</a></li><li><a href="global.html#replacePageSizes">replacePageSizes</a></li><li><a href="global.html#replacePixelSizes">replacePixelSizes</a></li><li><a href="global.html#replaceWordsAndMilestones">replaceWordsAndMilestones</a></li><li><a href="global.html#resetAlignmentsForVerse">resetAlignmentsForVerse</a></li><li><a href="global.html#resetCategoryGroupIds">resetCategoryGroupIds</a></li><li><a href="global.html#resetLoadedCategories">resetLoadedCategories</a></li><li><a href="global.html#resetSourceContentUpdatesReducer">resetSourceContentUpdatesReducer</a></li><li><a href="global.html#revParse">revParse</a></li><li><a href="global.html#run">run</a></li><li><a href="global.html#sanitizeRemoteUrl">sanitizeRemoteUrl</a></li><li><a href="global.html#save">save</a></li><li><a href="global.html#saveAllCSVData">saveAllCSVData</a></li><li><a href="global.html#saveAndCloseProjectInformationCheckIfValid">saveAndCloseProjectInformationCheckIfValid</a></li><li><a href="global.html#saveChangesInOldProjects">saveChangesInOldProjects</a></li><li><a href="global.html#saveCheckingDetailsToProjectInformationReducer">saveCheckingDetailsToProjectInformationReducer</a></li><li><a href="global.html#saveCommentsToCSV">saveCommentsToCSV</a></li><li><a href="global.html#saveContextId">saveContextId</a></li><li><a href="global.html#saveData">saveData</a></li><li><a href="global.html#saveDebounced">saveDebounced</a></li><li><a href="global.html#saveGroupsToCSV">saveGroupsToCSV</a></li><li><a href="global.html#saveHeaders">saveHeaders</a></li><li><a href="global.html#saveProjectHeaderData">saveProjectHeaderData</a></li><li><a href="global.html#saveProjectLicense">saveProjectLicense</a></li><li><a href="global.html#saveProjectManifest">saveProjectManifest</a></li><li><a href="global.html#saveProjectSettings">saveProjectSettings</a></li><li><a href="global.html#saveRemindersToCSV">saveRemindersToCSV</a></li><li><a href="global.html#saveRemote">saveRemote</a></li><li><a href="global.html#saveResourcesUsed">saveResourcesUsed</a></li><li><a href="global.html#saveSelectionsToCSV">saveSelectionsToCSV</a></li><li><a href="global.html#saveState">saveState</a></li><li><a href="global.html#saveTargetBible">saveTargetBible</a></li><li><a href="global.html#saveTargetLanguage">saveTargetLanguage</a></li><li><a href="global.html#saveToolDataToCSV">saveToolDataToCSV</a></li><li><a href="global.html#saveUsfmVerse">saveUsfmVerse</a></li><li><a href="global.html#saveVerseEditsToCSV">saveVerseEditsToCSV</a></li><li><a href="global.html#scaleVariablesInTemplate">scaleVariablesInTemplate</a></li><li><a href="global.html#searchAlignments">searchAlignments</a></li><li><a href="global.html#searchAlignmentsAndAppend">searchAlignmentsAndAppend</a></li><li><a href="global.html#searchAlignmentsForField">searchAlignmentsForField</a></li><li><a href="global.html#searchAlignmentsSub">searchAlignmentsSub</a></li><li><a href="global.html#searchRefs">searchRefs</a></li><li><a href="global.html#searchRefsAndAppend">searchRefsAndAppend</a></li><li><a href="global.html#seeIfBookHasAlignments">seeIfBookHasAlignments</a></li><li><a href="global.html#selectLanguage">selectLanguage</a></li><li><a href="global.html#selectLocalProject">selectLocalProject</a></li><li><a href="global.html#selectProjectLicense">selectProjectLicense</a></li><li><a href="global.html#sendUpdateResourceErrorFeedback">sendUpdateResourceErrorFeedback</a></li><li><a href="global.html#set">set</a></li><li><a href="global.html#setActiveLanguageSafely">setActiveLanguageSafely</a></li><li><a href="global.html#setAllLanguageInfoInProjectInformationReducer">setAllLanguageInfoInProjectInformationReducer</a></li><li><a href="global.html#setAlreadyImportedInProjectInformationCheckReducer">setAlreadyImportedInProjectInformationCheckReducer</a></li><li><a href="global.html#setBookIDInProjectInformationReducer">setBookIDInProjectInformationReducer</a></li><li><a href="global.html#setCategoryGroupIds">setCategoryGroupIds</a></li><li><a href="global.html#setCategoryLoaded">setCategoryLoaded</a></li><li><a href="global.html#setCheckersInProjectInformationReducer">setCheckersInProjectInformationReducer</a></li><li><a href="global.html#setContributorsInProjectInformationReducer">setContributorsInProjectInformationReducer</a></li><li><a href="global.html#setCurrentCategories">setCurrentCategories</a></li><li><a href="global.html#setDefaultProjectCategories">setDefaultProjectCategories</a></li><li><a href="global.html#setDotEnv">setDotEnv</a></li><li><a href="global.html#setErrorFeedbackCategory">setErrorFeedbackCategory</a></li><li><a href="global.html#setErrorFeedbackDetails">setErrorFeedbackDetails</a></li><li><a href="global.html#setErrorFeedbackMessage">setErrorFeedbackMessage</a></li><li><a href="global.html#setFeedbackCloseCallback">setFeedbackCloseCallback</a></li><li><a href="global.html#setLanguage">setLanguage</a></li><li><a href="global.html#setLanguageDirectionInProjectInformationReducer">setLanguageDirectionInProjectInformationReducer</a></li><li><a href="global.html#setLanguageIdInProjectInformationReducer">setLanguageIdInProjectInformationReducer</a></li><li><a href="global.html#setLanguageNameInProjectInformationReducer">setLanguageNameInProjectInformationReducer</a></li><li><a href="global.html#setLocalImportInProjectInformationCheckReducer">setLocalImportInProjectInformationCheckReducer</a></li><li><a href="global.html#setLocaleLoaded">setLocaleLoaded</a></li><li><a href="global.html#setNicknameInProjectInformationReducer">setNicknameInProjectInformationReducer</a></li><li><a href="global.html#setOverwritePermittedInProjectInformationCheckReducer">setOverwritePermittedInProjectInformationCheckReducer</a></li><li><a href="global.html#setProjectDetailsInProjectInformationReducer">setProjectDetailsInProjectInformationReducer</a></li><li><a href="global.html#setProjectFontInProjectInformationReducer">setProjectFontInProjectInformationReducer</a></li><li><a href="global.html#setProjectManifest">setProjectManifest</a></li><li><a href="global.html#setProjectSettings">setProjectSettings</a></li><li><a href="global.html#setProjectToolGL">setProjectToolGL</a></li><li><a href="global.html#setResourceIDInProjectInformationReducer">setResourceIDInProjectInformationReducer</a></li><li><a href="global.html#setSaveLocation">setSaveLocation</a></li><li><a href="global.html#setSelectedCategories">setSelectedCategories</a></li><li><a href="global.html#setSetting">setSetting</a></li><li><a href="global.html#setSkipProjectNameCheckInProjectInformationCheckReducer">setSkipProjectNameCheckInProjectInformationCheckReducer</a></li><li><a href="global.html#setSystemLocale">setSystemLocale</a></li><li><a href="global.html#setToolSettings">setToolSettings</a></li><li><a href="global.html#setUpDefaultUSFMManifest">setUpDefaultUSFMManifest</a></li><li><a href="global.html#setUpManifest">setUpManifest</a></li><li><a href="global.html#setUpProjectDetails">setUpProjectDetails</a></li><li><a href="global.html#setUpSettings">setUpSettings</a></li><li><a href="global.html#setUpUSFMJSONObject">setUpUSFMJSONObject</a></li><li><a href="global.html#setUsfmProjectInProjectInformationCheckReducer">setUsfmProjectInProjectInformationCheckReducer</a></li><li><a href="global.html#setValuesForProjectValidation">setValuesForProjectValidation</a></li><li><a href="global.html#setVerseObjectsInAlignmentJSON">setVerseObjectsInAlignmentJSON</a></li><li><a href="global.html#setVersionInManifest">setVersionInManifest</a></li><li><a href="global.html#shouldProjectNameBeUpdated">shouldProjectNameBeUpdated</a></li><li><a href="global.html#shouldRun">shouldRun</a></li><li><a href="global.html#showAlert">showAlert</a></li><li><a href="global.html#showDcsRenameFailure">showDcsRenameFailure</a></li><li><a href="global.html#showDcsRenameFailurePromise">showDcsRenameFailurePromise</a></li><li><a href="global.html#showDialog">showDialog</a></li><li><a href="global.html#showElectronGitDialog">showElectronGitDialog</a></li><li><a href="global.html#showElectronGitSetup">showElectronGitSetup</a></li><li><a href="global.html#showErrorFeedbackDialog">showErrorFeedbackDialog</a></li><li><a href="global.html#showIgnorableAlert">showIgnorableAlert</a></li><li><a href="global.html#showIgnorableDialog">showIgnorableDialog</a></li><li><a href="global.html#showInvalidOrigLangVersionError">showInvalidOrigLangVersionError</a></li><li><a href="global.html#showInvalidVersionError">showInvalidVersionError</a></li><li><a href="global.html#showInvalidatedWarnings">showInvalidatedWarnings</a></li><li><a href="global.html#showLoading">showLoading</a></li><li><a href="global.html#showPreview">showPreview</a></li><li><a href="global.html#showRenamedDialog">showRenamedDialog</a></li><li><a href="global.html#sortByNamesCaseInsensitive">sortByNamesCaseInsensitive</a></li><li><a href="global.html#sortFilesByTstudioReadOrder">sortFilesByTstudioReadOrder</a></li><li><a href="global.html#sortMetadatas">sortMetadatas</a></li><li><a href="global.html#sortVersions">sortVersions</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#stepperActionCount">stepperActionCount</a></li><li><a href="global.html#storageAvailable">storageAvailable</a></li><li><a href="global.html#storeUSFMSaveLocation">storeUSFMSaveLocation</a></li><li><a href="global.html#stringifyArgs">stringifyArgs</a></li><li><a href="global.html#stringifyKey">stringifyKey</a></li><li><a href="global.html#stringifySafe">stringifySafe</a></li><li><a href="global.html#submitFeedback">submitFeedback</a></li><li><a href="global.html#targetBibleExists">targetBibleExists</a></li><li><a href="global.html#testForCheckingData">testForCheckingData</a></li><li><a href="global.html#testResourceByType">testResourceByType</a></li><li><a href="global.html#throwIfRemoteRepoExists">throwIfRemoteRepoExists</a></li><li><a href="global.html#timeFromTimestamp">timeFromTimestamp</a></li><li><a href="global.html#toggleHomeView">toggleHomeView</a></li><li><a href="global.html#toggleNextButton">toggleNextButton</a></li><li><a href="global.html#toggleProjectInformationCheckSaveButton">toggleProjectInformationCheckSaveButton</a></li><li><a href="global.html#toggleSetting">toggleSetting</a></li><li><a href="global.html#tools">tools</a></li><li><a href="global.html#toolsReducer">toolsReducer</a></li><li><a href="global.html#trimNewLine">trimNewLine</a></li><li><a href="global.html#type">type</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateAlignedWordAttribFromOriginalForBook">updateAlignedWordAttribFromOriginalForBook</a></li><li><a href="global.html#updateAlignedWordAttribFromOriginalForChapter">updateAlignedWordAttribFromOriginalForChapter</a></li><li><a href="global.html#updateAlignedWordsFromOrigLanguage">updateAlignedWordsFromOrigLanguage</a></li><li><a href="global.html#updateAlignedWordsFromOriginalForVerse">updateAlignedWordsFromOriginalForVerse</a></li><li><a href="global.html#updateAlignedWordsFromOriginalWordList">updateAlignedWordsFromOriginalWordList</a></li><li><a href="global.html#updateAlignments">updateAlignments</a></li><li><a href="global.html#updateAlignmentsForFile">updateAlignmentsForFile</a></li><li><a href="global.html#updateArray">updateArray</a></li><li><a href="global.html#updateCategoryGroupData">updateCategoryGroupData</a></li><li><a href="global.html#updateCategorySelection">updateCategorySelection</a></li><li><a href="global.html#updateCheckerName">updateCheckerName</a></li><li><a href="global.html#updateCheckingResourceData">updateCheckingResourceData</a></li><li><a href="global.html#updateContributorName">updateContributorName</a></li><li><a href="global.html#updateGitRemotes">updateGitRemotes</a></li><li><a href="global.html#updateGroupIndexForGl">updateGroupIndexForGl</a></li><li><a href="global.html#updateLanguage">updateLanguage</a></li><li><a href="global.html#updateMergeConflictNextButton">updateMergeConflictNextButton</a></li><li><a href="global.html#updateOrigLangPaneSettings">updateOrigLangPaneSettings</a></li><li><a href="global.html#updateProjectFolderToNameSpecification">updateProjectFolderToNameSpecification</a></li><li><a href="global.html#updateProjectLastOpened">updateProjectLastOpened</a></li><li><a href="global.html#updateProjectNameIfNecessary">updateProjectNameIfNecessary</a></li><li><a href="global.html#updateProjectNameIfNecessaryAndDoPrompting">updateProjectNameIfNecessaryAndDoPrompting</a></li><li><a href="global.html#updateProjectResourcesForTn">updateProjectResourcesForTn</a></li><li><a href="global.html#updateProjectVersion">updateProjectVersion</a></li><li><a href="global.html#updateResourcesForFile">updateResourcesForFile</a></li><li><a href="global.html#updateResourcesForOpenTool">updateResourcesForOpenTool</a></li><li><a href="global.html#updateSourceContentUpdaterManifest">updateSourceContentUpdaterManifest</a></li><li><a href="global.html#updateStepperIndex">updateStepperIndex</a></li><li><a href="global.html#updateSubcategorySelection">updateSubcategorySelection</a></li><li><a href="global.html#updateTargetVerse">updateTargetVerse</a></li><li><a href="global.html#updateToolProperties">updateToolProperties</a></li><li><a href="global.html#updateVersionSelection">updateVersionSelection</a></li><li><a href="global.html#upfdateOverwritePermittedInProjectInformationCheckReducer">upfdateOverwritePermittedInProjectInformationCheckReducer</a></li><li><a href="global.html#uploadProject">uploadProject</a></li><li><a href="global.html#useStableProp">useStableProp</a></li><li><a href="global.html#userTimestampObject">userTimestampObject</a></li><li><a href="global.html#usingOldGitVersion">usingOldGitVersion</a></li><li><a href="global.html#validate">validate</a></li><li><a href="global.html#validateBookId">validateBookId</a></li><li><a href="global.html#validateContextIdQuote">validateContextIdQuote</a></li><li><a href="global.html#validateProject">validateProject</a></li><li><a href="global.html#verifyAllRequiredFieldsAreCompleted">verifyAllRequiredFieldsAreCompleted</a></li><li><a href="global.html#verifyChunks">verifyChunks</a></li><li><a href="global.html#verifyProjectType">verifyProjectType</a></li><li><a href="global.html#verifyThisIsTCoreOrTStudioProject">verifyThisIsTCoreOrTStudioProject</a></li><li><a href="global.html#versionCompare">versionCompare</a></li><li><a href="global.html#visibleGroupItems">visibleGroupItems</a></li><li><a href="global.html#warnOnInvalidations">warnOnInvalidations</a></li><li><a href="global.html#withLocale">withLocale</a></li><li><a href="global.html#writeDataFile">writeDataFile</a></li><li><a href="global.html#writeDataFileSync">writeDataFileSync</a></li><li><a href="global.html#writeLogSync">writeLogSync</a></li><li><a href="global.html#writeToFS">writeToFS</a></li><li><a href="global.html#writeUSFM">writeUSFM</a></li><li><a href="global.html#zipCSVData">zipCSVData</a></li></ul>
+  </nav>
+
+  <div id="main">
+    
+      <h1 class="page-title">
+        containers/AlignmentSearchDialogContainer.js
+      </h1>
+    
+
+    
+      
+
+<section>
+  <article>
+    <pre class="prettyprint source linenums"><code>/* eslint-disable react/display-name,object-curly-newline */
+/* eslint-disable no-await-in-loop */
+import React, { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import fs from 'fs-extra';
+import path from 'path-extra';
+import {
+  Divider,
+  Menu,
+  MenuItem,
+  SelectField,
+  Subheader,
+  TextField,
+} from 'material-ui';
+import MaterialTable from 'material-table';
+import env from 'tc-electron-env';
+import _ from 'lodash';
+import AddBox from '@material-ui/icons/AddBox';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import ArrowDownward from '@material-ui/icons/ArrowDownward';
+// import ArrowUpward from '@material-ui/icons/ArrowUpward';
+import Check from '@material-ui/icons/Check';
+import ChevronLeft from '@material-ui/icons/ChevronLeft';
+import ChevronRight from '@material-ui/icons/ChevronRight';
+import Clear from '@material-ui/icons/Clear';
+import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteOutline from '@material-ui/icons/DeleteOutline';
+import Edit from '@material-ui/icons/Edit';
+import FilterList from '@material-ui/icons/FilterList';
+import FirstPage from '@material-ui/icons/FirstPage';
+import LastPage from '@material-ui/icons/LastPage';
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import Remove from '@material-ui/icons/Remove';
+import RemoveCircleOutlineIcon from '@material-ui/icons/RemoveCircleOutline';
+import SaveAlt from '@material-ui/icons/SaveAlt';
+import Search from '@material-ui/icons/Search';
+import ViewColumn from '@material-ui/icons/ViewColumn';
+import IconButton from '@material-ui/core/IconButton';
+
+import usfm from 'usfm-js';
+
+// selectors
+import { getProjectManifest, getSetting } from '../selectors';
+// actions
+// components
+import BaseDialog from '../components/dialogComponents/BaseDialog';
+// helpers
+import {
+  addTwordsInfoToResource,
+  ALIGNMENT_DATA_DIR,
+  ALIGNMENTS_KEY,
+  checkForHelpsForBible,
+  deleteCachedAlignmentData,
+  downloadBible,
+  getAlignmentsFromResource,
+  getAvailableBibles,
+  getKeyForBible,
+  getSearchableAlignments,
+  getTwordALignments,
+  getTwordsIndex,
+  getTwordsKey,
+  getVerseForKey,
+  highlightSelectedTextInVerse,
+  indexTwords,
+  isMasterResourceDownloaded,
+  loadAlignments,
+  multiSearchAlignments,
+  NT_BOOKS,
+  OT_BOOKS,
+  parseResourceKey,
+  readDirectory,
+  removeIndices,
+  saveTwordsIndex,
+  TWORDS_KEY,
+} from '../helpers/alignmentSearchHelpers';
+import {
+  ALIGNMENT_DATA_PATH,
+  USER_HOME,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
+import { delay } from '../common/utils';
+import {
+  closeAlertDialog,
+  openAlertDialog,
+  openOptionDialog,
+} from '../actions/AlertModalActions';
+import { setSetting } from '../actions/SettingsActions';
+import {
+  BIBLE_BOOKS,
+  BIBLES_ABBRV_INDEX,
+  NT_ORIG_LANG,
+} from '../common/BooksOfTheBible';
+import { showPopover } from '../actions/PopoverActions';
+import * as OnlineModeConfirmActions from '../actions/OnlineModeConfirmActions';
+import * as exportHelpers from '../helpers/exportHelpers';
+
+Menu.defaultProps.disableAutoFocus = true; // to prevent auto-scrolling
+
+const tableIcons = {
+  Add: forwardRef((props, ref) => &lt;AddBox {...props} ref={ref} />),
+  Check: forwardRef((props, ref) => &lt;Check {...props} ref={ref} />),
+  Clear: forwardRef((props, ref) => &lt;Clear {...props} ref={ref} />),
+  Delete: forwardRef((props, ref) => &lt;DeleteOutline {...props} ref={ref} />),
+  DetailPanel: forwardRef((props, ref) => &lt;ChevronRight {...props} ref={ref} />),
+  Edit: forwardRef((props, ref) => &lt;Edit {...props} ref={ref} />),
+  Export: forwardRef((props, ref) => &lt;SaveAlt {...props} ref={ref} />),
+  Filter: forwardRef((props, ref) => &lt;FilterList {...props} ref={ref} />),
+  FirstPage: forwardRef((props, ref) => &lt;FirstPage {...props} ref={ref} />),
+  LastPage: forwardRef((props, ref) => &lt;LastPage {...props} ref={ref} />),
+  NextPage: forwardRef((props, ref) => &lt;ChevronRight {...props} ref={ref} />),
+  PreviousPage: forwardRef((props, ref) => &lt;ChevronLeft {...props} ref={ref} />),
+  ResetSearch: forwardRef((props, ref) => &lt;Clear {...props} ref={ref} />),
+  Search: forwardRef((props, ref) => &lt;Search {...props} ref={ref} />),
+  SortArrow: forwardRef((props, ref) => &lt;ArrowDownward {...props} ref={ref} />),
+  ThirdStateCheck: forwardRef((props, ref) => &lt;Remove {...props} ref={ref} />),
+  ViewColumn: forwardRef((props, ref) => &lt;ViewColumn {...props} ref={ref} />),
+};
+
+const OkButton = 'OK';
+const CancelButton = 'CANCEL';
+
+const SEARCH_SOURCE = 'search_source';
+const SEARCH_LEMMA = 'search_lemma';
+const SEARCH_TARGET = 'search_target';
+const SEARCH_STRONG = 'search_strong';
+const SEARCH_REFS = 'search_refs';
+const searchFieldOptions = [
+  SEARCH_SOURCE,
+  SEARCH_LEMMA,
+  SEARCH_TARGET,
+  SEARCH_STRONG,
+  SEARCH_REFS,
+];
+const searchFieldOptionsForTwords = [
+  SEARCH_LEMMA,
+  SEARCH_SOURCE,
+  SEARCH_STRONG,
+  SEARCH_TARGET,
+];
+const searchFieldLabels = {
+  [SEARCH_SOURCE]: 'Search Source Words',
+  [SEARCH_LEMMA]: 'Search Lemma Words',
+  [SEARCH_TARGET]: 'Search Target Words',
+  [SEARCH_STRONG]: 'Search Strong\'s Numbers',
+  [SEARCH_REFS]: 'Search References',
+};
+
+// Results column options
+const SHOW_SOURCE_TEXT = 'sourceText';
+const SHOW_SOURCE_LEMMA = 'sourceLemma';
+const SHOW_STRONGS = 'strong';
+const SHOW_MORPH = 'morph';
+const SHOW_TARGET_TEXT = 'targetText';
+const SHOW_MATCH_COUNT = 'count';
+const SHOW_REFERENCES = 'refStr';
+const ALIGNED_TEXT = 'alignedText';
+const ALIGNED_TEXT2 = 'alignedText2';
+
+const SOURCE_TEXT_LABEL = 'Source Text Column';
+const SOURCE_LEMMA_LABEL = 'Source Lemma Column';
+const STRONGS_LABEL = 'Source Strong\'s Column';
+const SOURCE_MORPH_LABEL = 'Source Morph Column';
+const TARGET_TEXT_LABEL = 'Target Text Column';
+const MATCH_COUNT_LABEL = 'Match Count Column';
+const REFERENCES_LABEL = 'References Column';
+// const ALIGNED_TEXT_LABEL = 'Aligned Text Column';
+const SEARCH_DUAL = 'search_dual';
+const SEARCH_CASE_SENSITIVE = 'search_case_sensitive';
+const SEARCH_MATCH_WHOLE_WORD = 'search_match_whole_word';
+const SEARCH_MATCH_WORDS_IN_ORDER = 'search_match_words_in_order';
+const SEARCH_HIDE_USFM = 'search_hide_usfm';
+const SEARCH_TWORDS = 'search_twords';
+const SEARCH_MASTER = 'search_master';
+const REFRESH_MASTER = 'refresh_master';
+const CLEAR_INDEX_DATA = 'clear_index_data';
+
+const SEARCH_DUAL_LABEL = 'Dual Repo Searching';
+const SEARCH_CASE_SENSITIVE_LABEL = 'Case Sensitive';
+const SEARCH_MATCH_WHOLE_WORD_LABEL = 'Match Whole Word';
+const SEARCH_MATCH_WORDS_IN_ORDER_LABEL = 'Match Multiple Words in Order';
+const SEARCH_HIDE_USFM_LABEL = 'Hide USFM Markers';
+const SEARCH_TWORDS_LABEL = 'Search Translation Words';
+const SEARCH_MASTER_LABEL = 'Search Master Branch';
+const REFRESH_MASTER_LABEL = 'Refresh Master Branch';
+const CLEAR_INDEX_DATA_LABEL = 'Clear Index Data';
+
+const searchOptions = [
+  {
+    key: SEARCH_CASE_SENSITIVE,
+    label: SEARCH_CASE_SENSITIVE_LABEL,
+    stateKey: 'caseSensitive',
+  },
+  {
+    key: SEARCH_MATCH_WHOLE_WORD,
+    label: SEARCH_MATCH_WHOLE_WORD_LABEL,
+    stateKey: 'matchWholeWord',
+  },
+  {
+    key: SEARCH_MATCH_WORDS_IN_ORDER,
+    label: SEARCH_MATCH_WORDS_IN_ORDER_LABEL,
+    stateKey: 'inOrder',
+  },
+  {
+    key: SEARCH_TWORDS,
+    label: SEARCH_TWORDS_LABEL,
+    stateKey: 'searchTwords',
+  },
+  {
+    key: SEARCH_DUAL,
+    label: SEARCH_DUAL_LABEL,
+    stateKey: 'dualSearch',
+  },
+  {
+    key: SEARCH_HIDE_USFM,
+    label: SEARCH_HIDE_USFM_LABEL,
+    stateKey: 'hideUsfmMarkers',
+  },
+  {
+    key: SEARCH_MASTER,
+    label: SEARCH_MASTER_LABEL,
+    stateKey: 'searchMaster',
+  },
+];
+
+const searchOptionRefreshMaster = {
+  key: REFRESH_MASTER,
+  label: REFRESH_MASTER_LABEL,
+  stateKey: 'refreshMaster',
+};
+
+const searchOptionClearIndexData = {
+  key: CLEAR_INDEX_DATA,
+  label: CLEAR_INDEX_DATA_LABEL,
+  stateKey: 'clearIndex',
+};
+
+const SEARCH_SETTINGS_KEY = 'searchSettingsKey';
+
+const getShowTitle = label => `Show ${label}`;
+const showMenuItems = [
+  {
+    key: SHOW_SOURCE_TEXT,
+    label: getShowTitle(SOURCE_TEXT_LABEL),
+  },
+  {
+    key: SHOW_MORPH,
+    label: getShowTitle(SOURCE_MORPH_LABEL),
+  },
+  {
+    key: SHOW_SOURCE_LEMMA,
+    label: getShowTitle(SOURCE_LEMMA_LABEL),
+  },
+  {
+    key: SHOW_STRONGS,
+    label: getShowTitle(STRONGS_LABEL),
+  },
+  {
+    key: SHOW_TARGET_TEXT,
+    label: getShowTitle(TARGET_TEXT_LABEL),
+  },
+  {
+    key: SHOW_MATCH_COUNT,
+    label: getShowTitle(MATCH_COUNT_LABEL),
+  },
+  {
+    key: SHOW_REFERENCES,
+    label: getShowTitle(REFERENCES_LABEL),
+  },
+];
+
+let bibles = {};
+let popupLocation = null;
+
+/**
+ * Renders a dialog for user to do alignment search.
+ *
+ * @class
+ *
+ * @property {func} translate - the localization function
+ * @property {func} onClose - callback when the dialog is closed
+ * @property {bool} open - controls whether the dialog is open or closed
+ */
+class AlignmentSearchDialogContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      alignmentData: null,
+      searchStr: '',
+      searchType: [
+        SEARCH_SOURCE,
+        SEARCH_TARGET,
+      ],
+      caseSensitive: false,
+      matchWholeWord: false,
+      found: null,
+      alignedBibles: [],
+      alignedBible: null,
+      alignedBible2: null,
+      alignmentData2: null,
+      inOrder: false,
+      hide: {},
+      dualSearch: false,
+      updatingMaster: false,
+      selectingAlignments: false,
+    };
+    this.setSearchStr = this.setSearchStr.bind(this);
+    this.startSearch = this.startSearch.bind(this);
+    this.showResults = this.showResults.bind(this);
+    this.setSearchFields = this.setSearchFields.bind(this);
+    this.isSearchFieldSelected = this.isSearchFieldSelected.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+    this.setSearchTypes = this.setSearchTypes.bind(this);
+    this.getSelectedOptions = this.getSelectedOptions.bind(this);
+    this.setSearchAlignedBible = this.setSearchAlignedBible.bind(this);
+    this.setSearchAlignedBible2 = this.setSearchAlignedBible2.bind(this);
+    this.showMessage = this.showMessage.bind(this);
+    this.showColumnHidesMenu = this.showColumnHidesMenu.bind(this);
+    this.selectColumnHides = this.selectColumnHides.bind(this);
+    this.toggleBook = this.toggleBook.bind(this);
+    this.setAll = this.setAll.bind(this);
+    this.addBible = this.addBible.bind(this);
+    this.getVerseContent = this.getVerseContent.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.open) {
+      if (!prevProps.open) { // when dialog is opened
+        const savedState = this.props.savedSettings;
+
+        if (savedState &amp;&amp; Object.keys(savedState).length) {
+          const newState = _.cloneDeep(savedState);
+
+          if (!newState.hide) {
+            newState.hide = {};
+          }
+
+          newState.found = null;
+          newState.updatingMaster = false;
+          newState.selectingAlignments = false;
+          this.setState(newState);
+        }
+
+        delay(100).then(() => {
+          this.loadAlignmentSearchOptionsWithUI();
+        });
+      }
+    } else {
+      if (prevProps.open) { // if dialog closed
+        this.props.saveSettings(_.cloneDeep(this.state));
+      }
+    }
+  }
+
+  /**
+   * update message and delay for screen to update
+   * @param message
+   * @param loading
+   * @returns {Promise&lt;void>}
+   */
+  async showMessage(message, loading) {
+    this.props.openAlertDialog(message, loading);
+    await delay(100);
+  }
+
+  /**
+   * index downloaded bible resources to get available aligned bibles
+   */
+  async loadAlignmentSearchOptionsWithUI() {
+    console.log('loadAlignmentSearchOptions() - starting');
+    await this.showMessage('Loading Available Aligned Bibles', true).then(async () => {
+      this.loadAlignmentSearchOptions(this.state.searchMaster);
+      const unsupported = this.isSupportedAlignmentKey(this.state.alignedBible) || this.isSupportedAlignmentKey(this.state.alignedBible2);
+
+      if (unsupported) { // if either keys not supported then clear them
+        this.setState({ alignedBible: null, alignedBible2: null });
+      } else {
+        await this.selectAlignedBookToSearch(this.state.alignedBible);
+        await this.selectAlignedBookToSearch(this.state.alignedBible2, 2);
+      }
+      console.log('loadAlignmentSearchOptions() - finished');
+    });
+  }
+
+  /**
+   * make sure alignment key is for current build
+   * @param {string} alignment
+   * @returns {boolean}
+   */
+  isSupportedAlignmentKey(alignment) {
+    let unsupported = true;
+
+    // if alignment key is set make sure it is compatible with current build
+    if (!alignment || alignment?.indexOf(ALIGNMENTS_KEY) > 0 || alignment?.indexOf(TWORDS_KEY) > 0) {
+      unsupported = false;
+    }
+    return unsupported;
+  }
+
+  /**
+   * index downloaded bible resources to get available aligned bibles
+   * @param {boolean} useMaster - if true then include master branch alignments
+   */
+  loadAlignmentSearchOptions(useMaster) {
+    const tCorePath = path.join(env.home(), 'translationCore');
+    let alignedBibles = getSearchableAlignments(tCorePath, useMaster);
+    console.log(`loadAlignmentSearchOptions() - found ${alignedBibles?.length} aligned bible testaments`);
+    const alignedBibles_ = alignedBibles.map(bible => {
+      if (this.state.searchTwords) {
+        if (bible.owner !== 'Door43-Catalog') { // for now only door43 supported
+          if (!checkForHelpsForBible(bible)) {
+            return null;
+          }
+        }
+      }
+
+      if (!useMaster) {
+        if (bible.version === 'master') {
+          return null;
+        }
+      }
+
+      const key = getKeyForBible(bible, ALIGNMENTS_KEY);
+      const label = this.getLabelForBible(bible);
+      bible.key = key;
+      bible.label = label;
+      bible.isNT = bible.origLang === NT_ORIG_LANG;
+      return bible;
+    });
+
+    alignedBibles = alignedBibles_.filter(bible => bible);
+    alignedBibles = alignedBibles.sort((a, b) => a.key &lt; b.key ? -1 : 1);
+    this.props.closeAlertDialog();
+    this.setState({ alignedBibles });
+    console.log(`loadAlignmentSearchOptions() - current aligned bible ${this.state.alignedBible}`);
+  }
+
+  /**
+   * get user label for bible
+   * @param {object} bible
+   * @param {boolean} short - if true, remove original language
+   * @returns {string}
+   */
+  getLabelForBible(bible, short = false) {
+    let label;
+    const bibleId = bible.resourceId || bible.bibleId;
+
+    if (short) {
+      label = `${bible.languageId}_${bibleId}/${bible.owner} - ${bible.version}`;
+    } else {
+      label = `${bible.languageId}_${bibleId}/${bible.owner} - ${(bible.origLang)} - ${bible.version}`;
+    }
+    return label;
+  }
+
+  /**
+   * checks if selected bible has an index saved.  If not then an index is first created and saved.  Then the index is
+   *    loaded for searching
+   * @param {string} selectedBibleKey
+   * @param {function} callback - when finished
+   * @param {number} searchNum - if number is two, then load for second search
+   */
+  async loadAlignmentData(selectedBibleKey, callback = null, searchNum = 1) {
+    if (selectedBibleKey) {
+      console.log(`loadAlignmentData() - loading index for '${selectedBibleKey}'`);
+      await this.showMessage('Loading index of Bible alignments for Search', true).then(async () => {
+        const resource = this.getResourceForBible(selectedBibleKey);
+
+        if (resource) {
+          if (!resource.alignmentCount) {
+            console.log(`loadAlignmentData() - Doing one-time indexing of Bible for Search of '${selectedBibleKey}'`);
+            const indexingMsg = `Doing one-time indexing of Bible for Search of '${selectedBibleKey}':`;
+            await this.showMessage(indexingMsg, true);
+            const alignmentData = await getAlignmentsFromResource(USER_RESOURCES_PATH, resource, async (percent) => {
+              await this.showMessage(&lt;> {indexingMsg} &lt;br/>{`${100 - percent}% left`} &lt;/>, true);
+            });
+
+            if (alignmentData?.alignments?.length) {
+              console.log(`loadAlignmentData() - found ${alignmentData?.alignments?.length} alignments`);
+              resource.alignmentCount = alignmentData?.alignments?.length;
+              this.setState({ alignedBibles: this.state.alignedBibles });
+              await this.showMessage(indexingMsg, true);
+              const success = this.loadIndexedAlignmentData(resource, searchNum);
+              callback &amp;&amp; await callback(success, `Failed loading index for '${selectedBibleKey}'`);
+            } else {
+              console.error(`loadAlignmentData() - no alignments for ${selectedBibleKey}`);
+              callback &amp;&amp; await callback(false, `No Alignments found in '${selectedBibleKey}'`);
+            }
+          } else {
+            console.log(`loadAlignmentData() loaded cached alignment index for ${selectedBibleKey}`);
+            const success = this.loadIndexedAlignmentData(resource, searchNum);
+            callback &amp;&amp; await callback(success, `Failed loading index for '${selectedBibleKey}'`);
+          }
+        } else {
+          console.log(`loadAlignmentData() no aligned bible match found for ${selectedBibleKey}`);
+          callback &amp;&amp; await callback(false, `Could not find aligned bible for '${selectedBibleKey}'`);
+        }
+      });
+    } else {
+      console.log('loadAlignmentData() no aligned bible');
+      callback &amp;&amp; await callback(false, `Invalid aligned bible ID: '${selectedBibleKey}'`);
+    }
+  }
+
+  selectColumnHides(key) {
+    const newHide = {
+      ...(this.state?.hide || {}),
+    };
+    let currentState = newHide[key];
+    newHide[key] = !currentState;
+    this.setState({ hide: newHide });
+  }
+
+  showColumnHidesMenu() {
+    const hide = this.state?.hide || {};
+
+    this.props.openAlertDialog(
+      &lt;>
+        &lt;div> {'Enable Columns'} &lt;/div>
+        &lt;Menu>
+          {showMenuItems.map(item => {
+            const enabled = !hide[item.key];
+            return (
+              &lt;MenuItem
+                primaryText={item.label}
+                key={item.key}
+                onClick={() => this.selectColumnHides(item.key)}
+                checked={enabled}
+              />
+            );
+          })}
+        &lt;/Menu>
+      &lt;/>
+      , false);
+  }
+
+  /**
+   * searches aligned Bibles list for selected bible and returns resource data.
+   * @param {string} selectedBibleKey
+   * @returns {object|null} resource
+   */
+  getResourceForBible(selectedBibleKey) {
+    const resource = this.state.alignedBibles?.find(item => item.key === selectedBibleKey);
+    return resource;
+  }
+
+  /**
+   * loads the indexed alignment data for resource and saves in state
+   * @param {object} resource
+   * @param {number} searchNum - if number is two, then load for second search
+   * @return {boolean} true if success
+   */
+  loadIndexedAlignmentData(resource, searchNum = 1) {
+    const alignmentKey = (searchNum === 2) ? 'alignmentData2' : 'alignmentData';
+
+    try {
+      // check alignment data folder for indexed search data
+      const resourcesIndexed = readDirectory(ALIGNMENT_DATA_PATH, false, true, '.json');
+      let alignmentData;
+      const foundIndexPath = resourcesIndexed?.find((file) => file.indexOf(resource.key) === 0);
+
+      if (foundIndexPath) {
+        alignmentData = loadAlignments(path.join(ALIGNMENT_DATA_PATH, foundIndexPath));
+      } else {
+        console.log('loadIndexedAlignmentData() - did not find index');
+      }
+
+      if (alignmentData) {
+        console.log('loadIndexedAlignmentData() - loaded alignment data');
+        this.setState({
+          [alignmentKey]: alignmentData,
+          found: null,
+        });
+        return true;
+      } else {
+        this.props.openAlertDialog(`No Aligned Bible found for ${resource.label}`);
+        console.log('loadIndexedAlignmentData() - FAILED to load alignment data');
+        this.setState({
+          alignmentData: null,
+          found: null,
+        });
+        return false;
+      }
+    } catch (e) {
+      console.error('loadIndexedAlignmentData() - ERROR loading alignment data', e);
+      return false;
+    }
+  }
+
+  getSearchFieldOptions() {
+    const currentsearchFieldOptions = this.state.searchTwords ? searchFieldOptionsForTwords : searchFieldOptions;
+    return currentsearchFieldOptions;
+  }
+
+  saveToJsonfile(data) {
+    const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
+    const defaultFields = [
+      { id: 'count', source: 'count' },
+      { id: 'morph', source: 'morph' },
+      { id: 'refs', source: 'refs' },
+      { id: 'lemma', source: 'sourceLemma' },
+      { id: 'sourceText', source: 'sourceText' },
+      { id: 'strong', source: 'strong' },
+      { id: 'targetText', source: 'targetText' },
+      { id: 'targetsPos', source: 'targetsPos' },
+    ];
+    const tWordsFields = [
+      { id: 'refs', source: 'refs' },
+      { id: 'lemma', source: 'lemma' },
+      { id: 'strong', source: 'strong' },
+      { id: 'morph', source: 'morph' },
+      { id: 'alignedText', source: 'alignedText' },
+      { id: 'targetText', source: 'targetText' },
+      { id: 'targetAlignment', source: 'alignedText' },
+      { id: 'sourceAlignment', source: 'sourceText' },
+      { id: 'category', source: 'category' },
+      { id: 'tWord', source: 'contextId.groupId' },
+      { id: 'quote', source: 'contextId.quote' },
+      { id: 'count', source: 'count' },
+    ];
+
+    const newData = [];
+    const fields = this.state.searchTwords ? tWordsFields : defaultFields;
+
+    for (const item of data) {
+      const newItem = {};
+
+      for (const field of fields) {
+        const id = field.id;
+        let source = field.source?.split('.') || [];
+        let value = item;
+
+        for (const key of source) {
+          value = value[key] || '';
+        }
+
+        newItem[id] = value;
+      }
+      newData.push(newItem);
+    }
+
+    const dataStr = JSON.stringify(newData, null, 2);
+
+    exportHelpers.getFilePath('searchResults', DOCUMENTS_PATH, 'json').then(pdfPath => {
+      console.log(`doPrint() - have TSV save path: ${pdfPath}`);
+
+      fs.writeFile(pdfPath, dataStr, (error) => {
+        if (error) {
+          console.error(`saveTofile() - save error`, error);
+        } else {
+          console.log(`Wrote TSV successfully to ${pdfPath}`);
+        }
+      });
+    }).catch(error => {
+      console.log(`Failed to select PDF path: `, error);
+    });
+  }
+
+  saveToTsvfile(data) {
+    const DOCUMENTS_PATH = path.join(USER_HOME, 'Documents');
+    const defaultFields = [
+      { id: 'sourceText', title: 'Source Text' },
+      { id: 'sourceLemma', title: 'Source Lemma' },
+      { id: 'morph', title: 'Source Morph' },
+      { id: 'strong', title: 'Source Strongs' },
+      { id: 'targetText', title: 'Target Text' },
+      { id: 'alignedText', title: 'Aligned Text' },
+      { id: 'count', title: 'Match Count' },
+      { id: 'refs', title: 'References' },
+      { id: 'config', title: 'Configuration' },
+    ];
+    const tWordsFields = [
+      { id: 'sourceText', title: 'Source Text' },
+      { id: 'sourceLemma', title: 'Source Lemma' },
+      { id: 'morph', title: 'Source Morph' },
+      { id: 'strong', title: 'Source Strongs' },
+      { id: 'targetText', title: 'Translation Words' },
+      { id: 'alignedText', title: 'Aligned Text' },
+      { id: 'category', title: 'Category' },
+      { id: 'count', title: 'Match Count' },
+      { id: 'refs', title: 'References' },
+      { id: 'config', title: 'Configuration' },
+    ];
+
+    const fields = this.state.searchTwords ? tWordsFields : defaultFields;
+
+    const dataLines = [];
+    const configFields = [ 'alignedBible', 'alignedBible2', 'caseSensitive', 'dualSearch', 'hideUsfmMarkers', 'matchWholeword', 'searchMaster', 'searchStr', 'searchTwords', 'searchType'];
+    const config = {};
+
+    configFields.forEach(id => {
+      const value = this.state[id];
+      config[id] = `${value}`;
+    });
+
+    dataLines.push(fields.map(f => f.title).join('\t'));
+
+    for (let i = 0; i &lt; data.length; i++) {
+      const item = data[i];
+
+      const fieldData = fields.map(field => {
+        let value = '';
+        const id = field.id;
+
+        if (id === 'config') {
+          if (i === 0) {
+            value = JSON.stringify(config);
+          }
+        } else {
+          value = (item[id] || '');
+
+          if (Array.isArray(value)) {
+            value = value.join('; ');
+          }
+        }
+
+        return `${value}`;
+      });
+
+      dataLines.push(fieldData.join('\t'));
+    }
+
+    const dataStr = dataLines.join('\n');
+
+    exportHelpers.getFilePath('searchResults', DOCUMENTS_PATH, 'tsv').then(pdfPath => {
+      console.log(`doPrint() - have TSV save path: ${pdfPath}`);
+
+      fs.writeFile(pdfPath, dataStr, (error) => {
+        if (error) {
+          console.error(`saveTofile() - save error`, error);
+        } else {
+          console.log(`Wrote TSV successfully to ${pdfPath}`);
+        }
+      });
+    }).catch(error => {
+      console.log(`Failed to select PDF path: `, error);
+    });
+  }
+
+  /**
+   * show search results in table
+   * @returns {JSX.Element}
+   */
+  showResults() {
+    if (this.props.open &amp;&amp; this.state.found) { // if we have search results
+      if (this.state.found?.length) { // if search results are not empty, create table to show results
+        const ignoreBooks = this.ignoreBooksForTestament();
+        const data = this.formatData(ignoreBooks);
+        const columnStyles = {
+          cellStyle: {
+            fontSize: '16px',
+            fontFamily: 'Ezra, Noto Sans',
+          },
+        };
+        const originalLang = this.state.alignmentData?.origLang;
+        const originalStyles = {
+          cellStyle: {
+            fontSize: (originalLang === 'hbo') ? '27px' : '19px',
+            fontFamily: 'Ezra, Noto Sans',
+          },
+        };
+        const localization = {
+          toolbar: {
+            searchTooltip: 'Filter Results',
+            searchPlaceholder: 'Filter Results',
+          },
+        };
+        const hide = this.state?.hide || {};
+        const alignedColumn = this.getColumnTitle(this.state.alignedBible);
+        const alignedColumn2 = this.state.alignedBible2 ? this.getColumnTitle(this.state.alignedBible2) : '';
+        const searchColumns = [
+          !hide[SHOW_SOURCE_TEXT] &amp;&amp; { title: (SOURCE_TEXT_LABEL), field: SHOW_SOURCE_TEXT, ...originalStyles },
+          !hide[SHOW_SOURCE_LEMMA] &amp;&amp; { title: (SOURCE_LEMMA_LABEL), field: SHOW_SOURCE_LEMMA, ...originalStyles },
+          !hide[SHOW_MORPH] &amp;&amp; { title: (SOURCE_MORPH_LABEL), field: SHOW_MORPH, ...columnStyles },
+          !hide[SHOW_STRONGS] &amp;&amp; { title: (STRONGS_LABEL), field: SHOW_STRONGS, ...columnStyles },
+          !hide[SHOW_TARGET_TEXT] &amp;&amp; { title: (TARGET_TEXT_LABEL), field: SHOW_TARGET_TEXT, ...columnStyles },
+          this.state.searchTwords &amp;&amp; { title: (alignedColumn), field: ALIGNED_TEXT, ...columnStyles },
+          this.state.searchTwords &amp;&amp; alignedColumn2 &amp;&amp; { title: (alignedColumn2), field: ALIGNED_TEXT2, ...columnStyles },
+          !hide[SHOW_MATCH_COUNT] &amp;&amp; { title: (MATCH_COUNT_LABEL), field: SHOW_MATCH_COUNT, ...columnStyles },
+          !hide[SHOW_REFERENCES] &amp;&amp; {
+            title: (REFERENCES_LABEL),
+            field: SHOW_REFERENCES,
+            ...columnStyles,
+            render: rowData => &lt;> { this.renderRefs(rowData.refs, rowData.targetText) } &lt;/>,
+          },
+        ];
+        let message = `Found ${data?.length || 0} matches`;
+
+        if (ignoreBooks?.length) {
+          message += ` - ignored books: ${ignoreBooks.join(',')}`;
+        }
+
+        const buttonStyle = { alignSelf: 'center', marginTop: '20px', width: 'auto', paddingLeft: '4px', paddingRight: '4px' };
+
+        return (
+          &lt;>
+            &lt;div style={{ fontWeight: 'bold', color: 'black' }}> {message} &lt;/div>
+            &lt;button onClick={() => this.saveToTsvfile(data)}
+              className="btn-prime"
+              id="save_tsv_button"
+              style={buttonStyle}
+            >
+              {'Save Search Results to TSV File'}
+            &lt;/button>
+            &lt;button onClick={() => this.saveToJsonfile(data)}
+              className="btn-prime"
+              id="save_tsv_button"
+              style={buttonStyle}
+            >
+              {'Save Search Details to JSON File'}
+            &lt;/button>
+            &lt;MaterialTable
+              columns={searchColumns.filter(item => item)}
+              data={data}
+              title={'Search Results:'}
+              icons={tableIcons}
+              style={{ fontSize: '16px' }}
+              options={{
+                actionsCellStyle: { fontSize: '16px' },
+                filterCellStyle: { fontSize: '16px' },
+                headerStyle: {
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                },
+                rowStyle: { fontSize: '16px' },
+                searchFieldStyle: { fontSize: '16px' },
+                paging: false,
+              }}
+              localization={localization}
+            />
+          &lt;/>
+        );
+      } else { // if search results are empty, show message
+        return (
+          &lt;>
+            &lt;br/>
+            &lt;br/>
+            &lt;b>{'No results found!'}&lt;/b>
+          &lt;/>
+        );
+      }
+    } else { // if we don't have search results yet, prompt user that they need to do search
+      return (
+        &lt;>
+          &lt;br/>
+          &lt;br/>
+          &lt;b>{'Need to Start Search!'}&lt;/b>
+        &lt;/>
+      );
+    }
+  }
+
+  /**
+   * get title from bible key
+   * @param bibleKey
+   * @returns {string}
+   */
+  getColumnTitle(bibleKey) {
+    const bible_ = bibleKey?.split('_') || [];
+    const alignedBible = bible_.length > 1 ? bible_.slice(0, 2).join('_') : bible_[0];
+    const alignedColumn = `Aligned ${alignedBible} Column`;
+    return alignedColumn;
+  }
+
+  /**
+   * format data for display
+   * @param ignoreBooks
+   * @returns {*}
+   */
+  formatData(ignoreBooks) {
+    let data = this.state.found || [];
+    let hidden = this.state.hide || {};
+    hidden = Object.keys(hidden).map(key => hidden[key] &amp;&amp; key).filter(i => i);
+
+    if (data?.length) {
+      const mergedData = {};
+      const remainingColumns = [SHOW_SOURCE_TEXT, SHOW_MORPH, SHOW_SOURCE_LEMMA, SHOW_STRONGS, SHOW_TARGET_TEXT, ALIGNED_TEXT, ALIGNED_TEXT2].filter(item => !hidden.includes(item));
+
+      for (let i = 0; i &lt; data.length; i ++) {
+        const row = data[i];
+        const key = remainingColumns.map(key => (row[key] || '').toString()).join('&amp;');
+        const mergedDataItem = mergedData[key];
+
+        if (!mergedDataItem) {
+          mergedData[key] = row;
+          const newRefs = [];
+
+          for (const ref of row.refs) {
+            if (!newRefs.includes(ref)) {
+              newRefs.push(ref);
+            }
+          }
+
+          row.refs = newRefs;
+        } else {
+          let mergedRefs = mergedDataItem.refs;
+
+          if (!mergedRefs) {
+            mergedDataItem.refs = [];
+            mergedRefs = mergedDataItem.refs;
+          }
+
+          for (const ref of row.refs) {
+            if (!mergedRefs.includes(ref)) {
+              mergedRefs.push(ref);
+            }
+          }
+        }
+      }
+      data = Object.keys(mergedData).map(key => mergedData[key]);
+    }
+
+    function zeroAdjustLength(text, len) {
+      while (text.length &lt; len) {
+        text = '0' + text;
+      }
+      return text;
+    }
+
+    function normalizeRef(ref) {
+      let [bookId, ref_] = (ref || '').trim().split(' ');
+
+      if ( bookId &amp;&amp; ref_ ) {
+        let [chapter, verse] = ref_.split(':');
+
+        if (chapter &amp;&amp; verse) {
+          chapter = zeroAdjustLength(chapter, 3);
+          verse = zeroAdjustLength(verse, 3);
+          const bookNum = zeroAdjustLength(BIBLES_ABBRV_INDEX[bookId] || '', 3);
+          return `${bookNum}_${chapter}_${verse}`;
+        }
+      }
+      return null;
+    }
+
+    function bibleRefSort(a, b) {
+      const akey = normalizeRef(a);
+      const bkey = normalizeRef(b);
+      // eslint-disable-next-line no-nested-ternary
+      return akey &lt; bkey ? -1 : akey > bkey ? 1 : 0;
+    }
+
+    // ignore books from other testament also
+    const ignoreBooks_ = ignoreBooks.concat(this.state?.ignoreBooks || []);
+
+    data = data.map(item => {
+      let refs = item.refs;
+      let refs_ = refs.filter(refStr => refStr &amp;&amp; !ignoreBooks_.includes(refStr.split(' ')[0]));
+      refs = refs_.sort(bibleRefSort); // sort refs in canonical order
+
+      if (!refs || !refs.length) { // if no references left, then ignore
+        return null;
+      }
+
+      // eslint-disable-next-line react/jsx-key
+      // const refSpans = refs.map(refStr => &lt;span>{ refStr }&lt;/span> );
+      // const refStr = &lt;> { refSpans.join(';&amp;nbsp;') } &lt;/>;
+      const newItem = {
+        ...item,
+        refs,
+        count: refs?.length,
+      };
+      return newItem;
+    }).filter(item => item);
+    return data;
+  }
+
+  /**
+   * format refs array for output
+   * @param {array} refs
+   * @param {string} targetText - aligned target text
+   * @returns {JSX.Element}
+   */
+  renderRefs(refs, targetText) {
+    return &lt;div>
+      { refs.map((ref, i) => &lt;span
+        key={ i.toString() }
+        onClick={(e) => {
+          this.showPopUpVerse(refs, i, e, targetText);
+        }}
+      >
+        {ref + ';\u00A0'}
+      &lt;/span>)}
+    &lt;/div>;
+  }
+
+  /**
+   * scale the base font size by factor
+   * @param factor
+   * @returns {string}
+   */
+  getFontSize(factor) {
+    const baseFontSize = this.state.baseFontSize || 1;
+    const scaledFont = factor * baseFontSize;
+    return `${scaledFont.toFixed(2)}em`;
+  }
+
+  /**
+   * redraw the last popup with the new settings
+   */
+  refreshPopUp() {
+    if (popupLocation) {
+      delay(100).then(() => {
+        this.showPopUpVerse(popupLocation.refs, popupLocation.index, popupLocation.e, popupLocation.targetText);
+      });
+    }
+  }
+
+  /**
+   * show a popup verse for at element
+   * @param {string[]} refs - bible references to display
+   * @param {number} index - current
+   * @param {object} e - element to show popup for
+   * @param {string} targetText - aligned target text
+   */
+  showPopUpVerse(refs, index, e, targetText) {
+    popupLocation = { refs, index, e, targetText };
+    const popupTitlefontSize = this.getFontSize(1.1);
+    const subTitleFontSize = `1.3em`;
+    const verseFontSize = this.getFontSize(1);
+    const extraBibleKeys = this.state.extraBibleKeys || [];
+    const bibleKeys = [this.state.alignedBible];
+    const bibleChoices = this.getAvailableBibles();
+
+    for (const key of extraBibleKeys) {
+      if (!bibleKeys.includes(key)) {
+        const found = bibleChoices?.find(bible => bible.key === key);
+
+        if (found) {
+          bibleKeys.push(key);
+        }
+      }
+    }
+
+    const versesContent = bibleKeys.map((bibleKey, i) => {
+      const content = this.getVerseContent(bibleKey, popupTitlefontSize, refs[index], !i &amp;&amp; targetText);
+      return content;
+    });
+    const contentStyle = {
+      display: 'flex',
+      alignItems: 'left',
+      flexDirection: 'column',
+      fontSize: verseFontSize,
+    };
+    const content = &lt;div style={contentStyle}>
+      {/* eslint-disable-next-line arrow-body-style */}
+      {versesContent.map((item, pos) => {
+        return &lt;>
+          {(pos > 0) &amp;&amp;
+            &lt;>
+              &lt;hr style={{
+                border: '1px solid grey',
+                width: '-webkit-fill-available',
+                margin: '5px 0',
+              }}/>
+              &lt;span key={pos.toString()} style={{
+                display: 'flex',
+                width: 'auto',
+                justifyContent: 'space-between',
+              }}>
+                &lt;strong style={{
+                  fontSize: subTitleFontSize,
+                  marginBottom: '5px',
+                }}>{`${item.bibleLabel}`}&lt;/strong>
+                &lt;IconButton aria-label="delete"
+                  key={pos}
+                  style={{
+                    margin: '0 0 5px 5px',
+                    alignSelf: 'center',
+                  }}
+                  onClick={() => { // delete the bible key
+                    const key = item.bibleKey;
+                    let extraBibleKeys = [...(this.state.extraBibleKeys || [])];
+                    extraBibleKeys = extraBibleKeys.filter(key_ => key_ !== key);
+                    this.setState({ extraBibleKeys });
+                    this.refreshPopUp();
+                  }}
+                >
+                  &lt;DeleteIcon />
+                &lt;/IconButton>
+              &lt;/span>
+            &lt;/>
+          }
+          &lt;div> {item.verseContent} &lt;/div>
+        &lt;/>;
+      })}
+      &lt;button onClick={() => this.addBible(bibleChoices)}
+        className="btn-prime"
+        id="add_bible_button"
+        style={{ alignSelf: 'center', marginTop: '20px' }}
+      >
+        {'Add Bible'}
+      &lt;/button>
+    &lt;/div>;
+    const style = { maxWidth: '600px' };
+    const titleStyle = { display: 'flex', width: '-webkit-fill-available' };
+    this.props.showPopover(versesContent[0].Title, content, e.target, style, titleStyle);
+  }
+
+  addBible(bibleChoices) {
+    console.log('addBible() - Add Bible');
+
+    this.props.openAlertDialog(
+      &lt;>
+        &lt;div> {'Choose new Bible'} &lt;/div>
+        &lt;Menu
+          onItemClick={(event, menuItem, index) => {
+            const extraBibleKeys = [...(this.state.extraBibleKeys || [])];
+
+            if (!extraBibleKeys.includes(menuItem.key)) {
+              extraBibleKeys.push(menuItem.key);
+              this.setState({ extraBibleKeys });
+            }
+            this.props.closeAlertDialog();
+            this.refreshPopUp();
+          }}
+        >
+          {bibleChoices.map(item => (
+            &lt;MenuItem
+              style={{ lineHeight: '24px' }}
+              primaryText={item.label}
+              key={item.key}
+            />
+          ))}
+        &lt;/Menu>
+      &lt;/>,
+      false,
+      'CANCEL',
+      () => this.props.closeAlertDialog(),
+    );
+  }
+
+  /**
+   * get list of available bibles for viewing content
+   * @returns {Object[]}
+   */
+  getAvailableBibles() {
+    function keySort(a, b) {
+      const akey = a?.key;
+      const bkey = b?.key;
+      // eslint-disable-next-line no-nested-ternary
+      return akey &lt; bkey ? -1 : akey > bkey ? 1 : 0;
+    }
+
+    const resourceDir = path.join(env.home(), 'translationCore', 'resources');
+    let bibleOptions = getAvailableBibles(resourceDir, false) || [];
+
+    bibleOptions = bibleOptions.map(bible => {
+      const key = getKeyForBible(bible, ALIGNMENTS_KEY);
+      const label = this.getLabelForBible(bible, true);
+
+      return {
+        ...bible,
+        key,
+        label,
+      };
+    });
+    return bibleOptions.sort(keySort);
+  }
+
+  /**
+   * change font size for popup text
+   * @param up
+   */
+  changeFontSize(up) {
+    let baseFontSize = this.state.baseFontSize || 1;
+
+    if (up) {
+      baseFontSize *= 1.1;
+    } else {
+      baseFontSize /= 1.1;
+    }
+    console.log(`changeFontSize() - fontSize now ${baseFontSize}`);
+    this.setState({ baseFontSize });
+    this.refreshPopUp();
+  }
+
+  /**
+   * generate verse content to show for bible
+   * @param {string} bibleKey
+   * @param {string} fontSize
+   * @param {string} ref
+   * @param {string} targetText - aligned target text
+   * @returns {{verseContent: unknown[], Title: JSX.Element}}
+   */
+  getVerseContent(bibleKey, fontSize, ref, targetText) {
+    const bible = parseResourceKey(bibleKey);
+    const bibleLabel = this.getLabelForBible(bible, true);
+    const Title = (
+      &lt;>
+        &lt;strong style={{ fontSize }}>{`${ref} - ${bibleLabel}`}&lt;/strong>
+        &lt;IconButton aria-label="increase-font"
+          style = {{
+            justifySelf: 'flex-right',
+            marginLeft: 'auto',
+          }}
+          onClick={() => {
+            console.log('increase font');
+            this.changeFontSize(true);
+          }}
+        >
+          &lt;AddCircleOutlineIcon fontSize='large' />
+        &lt;/IconButton>
+        &lt;IconButton aria-label="decrease-font"
+          style = {{
+            justifySelf: 'flex-right',
+            marginRight: '10px',
+          }}
+          onClick={() => {
+            console.log('decrease font');
+            this.changeFontSize(false);
+          }}
+        >
+          &lt;RemoveCircleOutlineIcon fontSize='large' />
+        &lt;/IconButton>
+        &lt;IconButton aria-label="next-ref"
+          disabled={popupLocation.index &lt;= 0}
+          style = {{
+            justifySelf: 'flex-right',
+            marginRight: '10px',
+          }}
+          onClick={() => {
+            console.log('previous ref');
+            let i = (popupLocation.index || 0) - 1;
+
+            if (i &lt; 0) {
+              i = 0;
+            }
+            this.showPopUpVerse(popupLocation.refs, i, popupLocation.e, popupLocation.targetText);
+          }}
+        >
+          &lt;NavigateBeforeIcon fontSize='large' />
+        &lt;/IconButton>
+
+        &lt;IconButton aria-label="next-ref"
+          disabled={popupLocation.index >= popupLocation.refs?.length - 1}
+          style = {{
+            justifySelf: 'flex-right',
+            marginRight: '10px',
+          }}
+          onClick={() => {
+            console.log('next ref');
+            const refsCount = popupLocation.refs?.length || 0;
+            let i = (popupLocation.index || 0) + 1;
+
+            if (i >= refsCount) {
+              i = refsCount -1;
+            }
+            this.showPopUpVerse(popupLocation.refs, i, popupLocation.e, popupLocation.targetText);
+          }}
+        >
+          &lt;NavigateNextIcon fontSize='large' />
+        &lt;/IconButton>
+      &lt;/>
+    );
+    let verseText = '';
+    const verseData = getVerseForKey(bibleKey, ref, bibles);
+
+    if (Array.isArray(verseData)) {
+      if (verseData.length > 1) {
+        for (const verseItem of verseData) {
+          verseText += `${verseItem.chapter}:${verseItem.verse} - ${verseItem.verseData}\n`;
+        }
+      } else {
+        verseText = verseData[0].verseData;
+      }
+    }
+
+    if (!verseText) {
+      verseText = 'Error: no data found';
+    } else if (this.state.hideUsfmMarkers) {
+      const filtered = usfm.removeMarker(verseText).trim();
+      verseText = filtered;
+    }
+
+    const verseContent = highlightSelectedTextInVerse(verseText, targetText);
+
+    return {
+      Title,
+      verseContent,
+      bibleLabel,
+      bibleKey,
+    };
+  }
+
+  /**
+   * find any ignored books for current testament
+   * @returns {string[]}
+   */
+  ignoreBooksForTestament() {
+    let ignoreBooks_ = this.state?.ignore || [];
+    let testament = this.state?.books || [];
+    const ignoreBooks = ignoreBooks_.filter(bookId => testament.includes(bookId));
+    return ignoreBooks;
+  }
+
+  /**
+   * when user enters search string, save in state
+   * @param {string} search - new search string
+   */
+  setSearchStr(search) {
+    this.setState({ searchStr: search });
+  }
+
+  /**
+   * when user selects bible to search, save in state
+   * @param {object} event - unused
+   * @param index - unused
+   * @param {string} value - new selection
+   */
+  setSearchAlignedBible(event, index, value) {
+    this.selectAlignedBookToSearch(value);
+  }
+
+  /**
+   * when user selects bible to search, save in state
+   * @param {object} event - unused
+   * @param index - unused
+   * @param {string} value - new selection
+   */
+  setSearchAlignedBible2(event, index, value) {
+    if (this.state.searchMaster) {
+      this.setState({ alignedBible2: value });
+      value &amp;&amp; this.state.searchMaster &amp;&amp; delay(100).then(() => {
+        this.downloadMasterIfMissing();
+        this.selectAlignedBookToSearch(value, 2);
+      });
+    } else {
+      this.selectAlignedBookToSearch(value, 2);
+    }
+  }
+
+  /**
+   * select book and testament
+   * @param {string} key
+   * @param {number} searchNum - if number is two, then load for second search
+   */
+  async selectAlignedBookToSearch(key, searchNum = 1) {
+    console.log(`selectAlignedBookToSearch(${key}) for ${searchNum}`);
+    const alignmentKey = (searchNum === 2) ? 'alignedBible2' : 'alignedBible';
+
+    if (key) {
+      if (!this.state.selectingAlignments) {
+        this.setState({ selectingAlignments: true });
+        await delay(100);
+        await this.loadAlignmentData(key, async (success, errorMessage) => {
+          bibles = {};
+
+          if (success) {
+            //const key = `${bible.languageId}_${bible.resourceId}_${(encodeParam(bible.owner))}_${bible.origLang}_testament_${encodeParam(bible.version)}`;
+            const [, , , origLang] = key.split('_');
+            let books = null;
+            let ignoreBooks = null;
+            const isNT = origLang === NT_ORIG_LANG;
+
+            if (this.state.dualSearch) {
+              books = [...OT_BOOKS, ...NT_BOOKS];
+              ignoreBooks = [];
+            } else if (isNT) {
+              books = NT_BOOKS;
+              ignoreBooks = OT_BOOKS;
+            } else {
+              books = OT_BOOKS;
+              ignoreBooks = NT_BOOKS;
+            }
+
+            console.log(`selectAlignedBookToSearch(${key}) - setting bible`);
+            this.setState({
+              [alignmentKey]: key,
+              books,
+              ignoreBooks,
+              isNT,
+            });
+            this.props.closeAlertDialog();
+            console.log(`selectAlignedBookToSearch(${key}) - loading twords index`);
+            await this.loadTWordsIndex(key, false, searchNum === 2);
+            console.log(`selectAlignedBookToSearch(${key}) - loaded twords index`);
+            this.state.searchMaster &amp;&amp; this.downloadMasterIfMissing();
+          } else {
+            console.warn(`selectAlignedBookToSearch(${key}) - ERROR setting bible: ${errorMessage}`);
+
+            if (errorMessage) {
+              this.props.openAlertDialog(errorMessage);
+            }
+          }
+          console.log(`selectAlignedBookToSearch(${key}) - finished loading alignment data`);
+        }, searchNum);
+        console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - indexing done`);
+        this.setState({ selectingAlignments: false });
+      } else {
+        console.log(`selectAlignedBookToSearch(${key}) for ${searchNum} - already selecting`);
+      }
+    }
+  }
+
+  downloadMasterIfMissing() {
+    const message = 'Do you want to download the master branch of the aligned bibles currently selected?';
+    this.updateMaster(message, false);
+  }
+
+  /**
+   * get twords index
+   * @param {string} alignmentsKey - alignments key
+   * @param {boolean} force - force index generation
+   * @param {boolean} secondAlignmentKey - if true then we load second alignments key
+   */
+  async loadTWordsIndex(alignmentsKey, force = false, secondAlignmentKey = false) {
+    const stateKey = secondAlignmentKey ? 'tWordsIndex2' :'tWordsIndex';
+    console.log(`loadTWordsIndex(${alignmentsKey}) - starting`);
+
+    if (alignmentsKey &amp;&amp; this.state.searchTwords) {
+      const resource = parseResourceKey(alignmentsKey);
+      const res = addTwordsInfoToResource(resource, USER_RESOURCES_PATH);
+
+      if (!res) { // resource no longer present
+        this.setState({ alignedBible: null });
+        this.loadAlignmentSearchOptionsWithUI();
+        console.log(`loadTWordsIndex(${alignmentsKey}) - resource no longer present`);
+        return;
+      }
+
+      const tWordsKey = getTwordsKey(res);
+      let tWordsIndex = getTwordsIndex(tWordsKey);
+
+      if (tWordsIndex &amp;&amp; !force) {
+        console.log(`loadTWordsIndex(${alignmentsKey}) - already have index`);
+        this.setState({ [stateKey]: tWordsIndex });
+      } else {
+        console.log(`loadTWordsIndex(${alignmentsKey}) - indexing tWords`);
+        const indexingMsg = `Indexing translationWords for '${alignmentsKey}':`;
+
+        const tWordsIndex = await indexTwords(USER_RESOURCES_PATH, resource, async (percent) => {
+          await this.showMessage(&lt;> {indexingMsg} &lt;br/>{`${100 - percent}% left`} &lt;/>, true);
+        });
+
+        console.log(`loadTWordsIndex(${alignmentsKey}) - tWords index finished`);
+        this.props.closeAlertDialog();
+        saveTwordsIndex(tWordsKey, tWordsIndex);
+        this.setState({ [stateKey]: tWordsIndex });
+      }
+    }
+  }
+
+  /**
+   * when user updates fields to search, then save in state
+   * @param {object} event - unused
+   * @param {number} index - unused
+   * @param {string[]} values
+   */
+  setSearchFields(event, index, values) {
+    this.setState({ searchType: values });
+  }
+
+  /**
+   * iterate through search options to find a match for key
+   * @param {string} key
+   * @returns {{label: string, key: string, stateKey: string} | {label: string, key: string, stateKey: string}}
+   */
+  findSearchItem(key) {
+    const found = this.getSearchOptions().find(item => item.key === key);
+    return found;
+  }
+
+  /**
+   * when user updates search options (such as whole word or case insensitive), save in state
+   * @param event
+   * @param index
+   * @param values
+   */
+  setSearchTypes(event, index, values) {
+    const hide = {};
+    const searchType = [];
+    // hide = this.state?.hide || {};
+
+    for (const item of showMenuItems) { // see what columns to display
+      const selected = this.isItemPresent(values, item.key);
+      hide[item.key] = !selected;
+    }
+
+    for (const item of this.getSearchFieldOptions()) { // see what fields to search
+      const selected = this.isItemPresent(values, item);
+
+      if (selected) {
+        searchType.push(item);
+      }
+    }
+
+    // basic options
+    const basicOptions = {};
+
+    searchOptions.forEach(item => {
+      const searchOption = this.findSearchItem(item.key);
+      const selected = this.isItemPresent(values, item.key);
+      basicOptions[searchOption.stateKey] = selected;
+    });
+
+    if (values.includes(SEARCH_DUAL) &amp;&amp; !this.state.dualSearch) { // if toggling on dual search
+      // on toggle on of dual search, clear any previous bible 2 selections
+      basicOptions.alignedBible2 = null;
+      basicOptions.alignmentData2 = null;
+    }
+
+    if (values.includes(SEARCH_MASTER) &amp;&amp; !this.state.searchMaster) { // if toggling on searching of master branch
+      this.loadAlignmentSearchOptions(true); // update the list first
+
+      delay(100).then(() => {
+        this.downloadMasterIfMissing();
+      });
+    }
+
+    if (values.includes(REFRESH_MASTER)) {
+      const message = 'Do you want to refresh the master branch of the aligned bibles currently selected?';
+      this.updateMaster(message, true);
+    }
+
+    if (values.includes(CLEAR_INDEX_DATA)) {
+      this.props.openOptionDialog('Do you want do delete all cached alignment search data?  This clears out all alignment search data (new as well as old) and downloaded master branch data to free up disk space.  Alignments will be recreated for bibles you select for search.',
+        (buttonPressed) => {
+          if (buttonPressed === OkButton) {
+            deleteCachedAlignmentData();
+            this.handleClose();
+            this.props.closeAlertDialog();
+          } else { // did not want to delete
+            this.props.closeAlertDialog();
+          }
+        },
+        OkButton,
+        CancelButton);
+    }
+
+    const types = {
+      ...basicOptions,
+      hide,
+      searchType,
+    };
+
+    this.setState(types);
+
+    if (types.searchTwords !== this.state.searchTwords) { // if changed, reload
+      delay(100).then(async () => {
+        this.state.searchMaster &amp;&amp; this.downloadMasterIfMissing();
+        await this.loadAlignmentSearchOptionsWithUI();
+        await this.loadTWordsIndex(this.state.alignedBible);
+        await this.loadTWordsIndex(this.state.alignedBible, false, true);
+      });
+    }
+  }
+
+  /**
+   * if we downloaded or selected master
+   * @param bibleKey
+   * @param {boolean} isPrimarySearchBible
+   * @param {boolean} removeOld
+   * @param {boolean} updateAlways - if true, update key always, otherwise only update if current key in=s not master
+   */
+  async updateBibleKeyToMaster(bibleKey, isPrimarySearchBible, removeOld = false, updateAlways = false) {
+    const resource = bibleKey &amp;&amp; parseResourceKey(bibleKey);
+
+    if (removeOld) {
+      removeIndices(resource);
+    }
+
+    if (resource &amp;&amp; (updateAlways || (resource.version !== 'master'))) {
+      resource.version = 'master';
+      const newBiblekey = getKeyForBible(resource, ALIGNMENTS_KEY);
+
+      if (isMasterResourceDownloaded(resource)) {
+        if (isPrimarySearchBible) {
+          await this.selectAlignedBookToSearch(newBiblekey);
+        } else {
+          this.setState({ alignedBible2: newBiblekey });
+        }
+      }
+    }
+  }
+
+  /**
+   * confirm before download of resources
+   * @param message
+   * @param download - if true, always download
+   */
+  updateMaster(message, download) {
+    if (!this.state.updatingMaster) {
+      this.setState({ updatingMaster: true });
+
+      delay(100).then(async () => {
+        this.downloadMasterIfMissing();
+
+        const resources = [];
+        const bibles = [this.state.alignedBible];
+
+        if (this.state.alignedBible2 &amp;&amp; (this.state.searchTwords || this.state.dualSearch)
+          &amp;&amp; (this.state.alignedBible !== this.state.alignedBible2)) {
+          bibles.push(this.state.alignedBible2);
+        }
+
+        for (const bibleKey of bibles) {
+          const resource = bibleKey &amp;&amp; parseResourceKey(bibleKey);
+
+          if (resource) {
+            if ((bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2)) {
+              resource.isPrimarySearchBible = true;
+            }
+            resource.version = 'master';
+            resource.bibleKey = getKeyForBible(resource);
+
+            if (!download) {
+              if (isMasterResourceDownloaded(resource)) {
+                continue; // skip if already downloaded
+              }
+            }
+
+            resources.push(resource);
+          }
+        }
+
+        if (!resources.length) { // we didn't need to download, but make sure alignments selected
+          for (const bibleKey of bibles) {
+            await this.updateBibleKeyToMaster(bibleKey, (bibleKey === this.state.alignedBible) || (bibleKey === this.state.alignedBible2));
+          }
+          this.setState({ updatingMaster: false });
+          return;
+        }
+
+        this.props.openOptionDialog(message,
+          (buttonPressed) => {
+            if (buttonPressed === OkButton) {
+              this.props.confirmOnlineAction(
+                async () => {
+                  let error;
+                  const folder = path.join(ALIGNMENT_DATA_DIR);
+
+                  for (const resource_ of resources) {
+                    console.log('Downloading', resource_);
+                    await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
+                    error = await downloadBible(resource_, folder);
+
+                    if (error) {
+                      console.log(`Error downloading ${resource_.bibleKey}`, error);
+                      await this.showMessage(`Download Error: ${resource_.bibleKey}`);
+                      break;
+                    }
+
+                    this.loadAlignmentSearchOptions(true); // update the options
+                    await delay(100);
+                    this.updateBibleKeyToMaster(resource_.bibleKey, resource_.isPrimarySearchBible, true, true);
+                    await this.showMessage(`Downloading: ${resource_.bibleKey}`, true);
+                  }
+
+                  this.setState({ updatingMaster: false });
+
+                  if (!error) {
+                    this.props.closeAlertDialog();
+                  } else {
+                    this.props.openOptionDialog(
+                      'Download error',
+                      () => this.props.closeAlertDialog(),
+                      'OK',
+                    );
+                  }
+                },
+                () => { // we do not want to go online
+                  this.setState({ updatingMaster: false });
+                  this.props.closeAlertDialog();
+                },
+              );
+            } else { // did not want to download now
+              this.setState({ updatingMaster: false });
+              this.props.closeAlertDialog();
+            }
+          },
+          OkButton,
+          CancelButton);
+      });
+    } else {
+      console.log(`updateMaster() - already updating`);
+    }
+  }
+
+  /**
+   * when user clicks close, clear search results and call onClose
+   */
+  handleClose() {
+    this.setState({
+      alignmentData: null,
+      alignmentData2: null,
+      alignedBibles: null,
+      tWordsIndex: null,
+      found: null,
+    }); // clear data
+
+    const onClose = this.props.onClose;
+    onClose &amp;&amp; onClose();
+    bibles = {};
+  }
+
+  /**
+   * when user clicks search button, do search of indexed data
+   */
+  startSearch() {
+    console.log('AlignmentSearchDialogContainer - start search');
+    this.showMessage('Doing Search', true).then(() => {
+      this.setState({ found: null });
+      const state = this.state;
+      const searchTwords = state.searchTwords;
+      const config = {
+        fullWord: state.matchWholeWord,
+        inOrder: state.inOrder,
+        caseInsensitive: !state.caseSensitive,
+        searchTwords,
+        searchLemma: this.isSearchFieldSelected(SEARCH_LEMMA),
+        searchSource: this.isSearchFieldSelected(SEARCH_SOURCE),
+        searchTarget: this.isSearchFieldSelected(SEARCH_TARGET),
+        searchStrong: this.isSearchFieldSelected(SEARCH_STRONG),
+        searchRefs: !searchTwords &amp;&amp; this.isSearchFieldSelected(SEARCH_REFS),
+      };
+      let found = [];
+      const alignmentData2 = state.dualSearch &amp;&amp; state.alignmentData2 || null;
+
+      try {
+        found = multiSearchAlignments(state.alignmentData, state.tWordsIndex, state.searchStr, config, alignmentData2, state.tWordsIndex2) || [];
+      } catch (e) {
+        console.error('AlignmentSearchDialogContainer - search error', e);
+        this.showMessage(`Search Error`);
+      }
+
+      if (config.searchTwords) {
+        getTwordALignments(found, state.alignedBible, bibles, ALIGNED_TEXT);
+        getTwordALignments(found, state.alignedBible2, bibles, ALIGNED_TEXT2);
+      }
+
+      console.log(`AlignmentSearchDialogContainer - finished search, found ${found.length} items`);
+      delay(100).then(() => {
+        this.setState({ found });
+        this.props.closeAlertDialog();
+      });
+    });
+  }
+
+  /**
+   * check state data to see if search option is selected
+   * @param {string} key
+   * @returns {boolean}
+   */
+  isSearchFieldSelected(key) {
+    const searchType = this.state.searchType;
+    return this.isItemPresent(searchType, key);
+  }
+
+  /**
+   * check state data to see if search option is selected
+   * @param {string} key
+   * @returns {boolean}
+   */
+  isBookEnabled(key) {
+    const ignoredBooks = this.state.ignore || [];
+    const found = this.isItemPresent(ignoredBooks, key);
+    return !found;
+  }
+
+  /**
+   * check state data to see if search option is selected
+   * @param {string} key
+   * @returns {boolean}
+   */
+  toggleBook(key) {
+    const ignoredBooks = this.state.ignore || [];
+    const found = this.isItemPresent(ignoredBooks, key);
+    let newIgnore = [...ignoredBooks];
+
+    if (found) {
+      newIgnore = ignoredBooks.filter(item => item !== key);
+    } else {
+      newIgnore.push(key);
+    }
+    this.setState({ ignore: newIgnore });
+  }
+
+  /**
+   * set all or clear all books in bible
+   * @param {boolean} enable - if true then all books are enabled, otherwise all books are cleared
+   */
+  setAll(enable) {
+    let newIgnore = [...(this.state.ignore || [])];
+
+    for (const bible of this.state.books) {
+      if (enable) {
+        newIgnore = newIgnore.filter(item => item !== bible);
+      } else if (!newIgnore.includes(bible)) {
+        newIgnore.push(bible);
+      }
+    }
+    this.setState({ ignore: newIgnore });
+  }
+
+  /**
+   * search array to see if it contains key
+   * @param {string[]} array - to search
+   * @param {string} key
+   * @returns {boolean}
+   */
+  isItemPresent(array, key) {
+    return array &amp;&amp; array.indexOf(key) >= 0;
+  }
+
+  /**
+   * generate list of currently selected search options
+   * @param {string} options
+   * @returns {string[]}
+   */
+  getSelectedOptions(options) {
+    const hide = this.state?.hide || {};
+    let selections = options.map(item => !!this.state[item.stateKey] &amp;&amp; item.key);
+    selections = selections.filter(item => item);
+    let selections2 = showMenuItems.map(item => !hide[item.key] &amp;&amp; item.key);
+    selections2 = selections2.filter(item => item);
+    const searchType = this.state?.searchType || [];
+    let selections3 = searchFieldOptions.map(item => searchType.includes(item) &amp;&amp; item);
+    selections3 = selections3.filter(item => item);
+    selections = selections.concat(selections2);
+    selections = selections.concat(selections3);
+    return selections;
+  }
+
+  // get list of bibles for second aligned bible
+  getAlignedBibles2() {
+    let alignedBibles = [{
+      key: '',
+      label: '',
+    }];
+
+    if (this.state.alignedBibles?.length) {
+      alignedBibles = alignedBibles.concat(this.state.alignedBibles);
+    }
+    return alignedBibles;
+  }
+
+  render() {
+    const {
+      open,
+      translate,
+    } = this.props;
+
+    const fullScreen = { maxWidth: '100%', width: '100%' };
+    // const partialScreen = { maxWidth: '768px', width: '75%' };
+    const contentStyle = fullScreen;
+    const testament = this.state?.books || [];
+    const bookLabels = this.state?.isNT ? BIBLE_BOOKS.newTestament : BIBLE_BOOKS.oldTestament;
+
+    return (
+      &lt;BaseDialog
+        open={open}
+        primaryLabel={'Search'}
+        secondaryLabel={translate('buttons.close_button')}
+        primaryActionEnabled={!!(this.state.alignmentData &amp;&amp; this.state.searchStr)}
+        onSubmit={this.startSearch}
+        onClose={this.handleClose}
+        title={'Search Alignments'}
+        modal={false}
+        scrollableContent={true}
+        titleStyle={{ marginBottom: '0px' }}
+        contentStyle={contentStyle}
+      >
+        &lt;div>
+          &lt;TextField
+            defaultValue={this.state.searchStr}
+            multiLine
+            rowsMax={4}
+            id="search-input"
+            className="Filter Results"
+            floatingLabelText={'Enter Search String (can use * and ?)'}
+            // underlineFocusStyle={{ borderColor: 'var(--accent-color-dark)' }}
+            floatingLabelStyle={{
+              color: 'var(--text-color-dark)',
+              opacity: '0.3',
+              fontWeight: '500',
+            }}
+            onChange={e => this.setSearchStr(e.target.value)}
+            autoFocus={true}
+            style={{ width: '100%' }}
+          />
+          &lt;div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+            &lt;div style={{ display: 'flex' }}>
+              &lt;SelectField
+                id={'select_search_type'}
+                hintText="Select Bible to Search"
+                value={this.state.alignedBible}
+                style={{ width: '400px' }}
+                onChange={this.setSearchAlignedBible}
+              >
+                {
+                  this.state.alignedBibles?.map(item => (
+                    &lt;MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  ))
+                }
+              &lt;/SelectField>
+            &lt;/div>
+            &lt;div style={{ display: 'flex' }}>
+              &lt;SelectField
+                id={'select_search_option'}
+                hintText="Select search options"
+                value={this.getSelectedOptions(this.getSearchOptions())}
+                multiple
+                style={{ width: '350px', marginLeft: '20px', marginRight: '20px' }}
+                onChange={this.setSearchTypes}
+              >
+                {this.getSearchOptions().map(item => (
+                  &lt;MenuItem
+                    key={item.key}
+                    insetChildren={true}
+                    checked={this.state[item.stateKey]}
+                    value={item.key}
+                    primaryText={item.label}
+                  />
+                ))}
+                &lt;Divider />
+                &lt;Subheader inset={true}>{'Select Columns to Show:'}&lt;/Subheader>
+                {showMenuItems.map(item => {
+                  const hide = this.state?.hide || {};
+                  return (
+                    &lt;MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      checked={!hide[item.key]}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  );
+                })}
+                &lt;Divider />
+                &lt;Subheader inset={true}>{'Select Fields to Search:'}&lt;/Subheader>
+                {
+                  this.getSearchFieldOptions().map(item => (
+                    &lt;MenuItem
+                      key={item}
+                      insetChildren={true}
+                      checked={this.isSearchFieldSelected(item)}
+                      value={item}
+                      primaryText={searchFieldLabels[item]}
+                    />
+                  ))
+                }
+                &lt;Divider />
+                &lt;Subheader inset={true}>{'Select Books to Search:'}&lt;/Subheader>
+                &lt;MenuItem
+                  key={'all'}
+                  value={'all'}
+                  primaryText='*** Select All ***'
+                  onClick={() => this.setAll(true)}
+                />
+                &lt;MenuItem
+                  key={'none'}
+                  value={'none'}
+                  primaryText='*** Clear All ***'
+                  onClick={() => this.setAll(false)}
+                />
+                {
+                  testament.map(item => (
+                    &lt;MenuItem
+                      key={item}
+                      insetChildren={true}
+                      checked={this.isBookEnabled(item)}
+                      value={item}
+                      primaryText={bookLabels[item]}
+                      onClick={() => this.toggleBook(item)}
+                    />
+                  ))
+                }
+              &lt;/SelectField>
+            &lt;/div>
+          &lt;/div>
+          {(this.state.searchTwords || this.state.dualSearch) &amp;&amp;
+            &lt;div style={{ display: 'flex' }}>
+              &lt;SelectField
+                id={'select_search_type'}
+                hintText="Select Bible to Search"
+                value={this.state.alignedBible2 || ''}
+                style={{ width: '400px' }}
+                onChange={this.setSearchAlignedBible2}
+              >
+                {
+                  this.getAlignedBibles2()?.map(item => (
+                    &lt;MenuItem
+                      key={item.key}
+                      insetChildren={true}
+                      value={item.key}
+                      primaryText={item.label}
+                    />
+                  ))
+                }
+              &lt;/SelectField>
+            &lt;/div>
+          }
+          { this.showResults() }
+        &lt;/div>
+      &lt;/BaseDialog>
+    );
+  }
+
+  getSearchOptions() {
+    const searchOptions_ = [...searchOptions];
+
+    if (this.state.searchMaster) {
+      searchOptions_.push(searchOptionRefreshMaster);
+    }
+
+    searchOptions_.push(searchOptionClearIndexData);
+    return searchOptions_;
+  }
+}
+
+AlignmentSearchDialogContainer.propTypes = {
+  translate: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  manifest: PropTypes.object.isRequired,
+  openAlertDialog: PropTypes.func.isRequired,
+  openOptionDialog: PropTypes.func.isRequired,
+  closeAlertDialog: PropTypes.func.isRequired,
+  saveSettings: PropTypes.func.isRequired,
+  savedSettings: PropTypes.object.isRequired,
+  showPopover: PropTypes.func.isRequired,
+  confirmOnlineAction: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  manifest: getProjectManifest(state),
+  savedSettings: getSetting(state, SEARCH_SETTINGS_KEY),
+});
+
+const mapDispatchToProps = {
+  openAlertDialog: (alertMessage, loading, buttonText = null, callback = null) => openAlertDialog(alertMessage, loading, buttonText, callback),
+  openOptionDialog: (alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null, notCloseableAlert = false) => openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText, callback2, notCloseableAlert),
+  closeAlertDialog: () => closeAlertDialog(),
+  saveSettings: (value) => setSetting(SEARCH_SETTINGS_KEY, value),
+  showPopover: (title, bodyText, positionCoord, style = {}, titleStyle = {}, bodyStyle = {}) => showPopover(title, bodyText, positionCoord, style, titleStyle, bodyStyle),
+  confirmOnlineAction: (onConfirm, onCancel) => OnlineModeConfirmActions.confirmOnlineAction(onConfirm, onCancel),
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlignmentSearchDialogContainer);
+</code></pre>
+  </article>
+</section>
+
+    
+
+
+  </div>
+
+  <br class="clear">
+
+  <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a>
+  </footer>
+
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/pagelocation.js"></script>
+
+  
+  <script>
+    $(function () {
+      window.docsearch({
+        apiKey: 'f12d46ccb502a9c723d200abe3e3befd',
+        indexName: 'translation_core',
+        inputSelector: '.search-input',
+        debug: false, // Set debug to true if you want to inspect the dropdown
+        algoliaOptions: {
+          hitsPerPage: 7
+        }
+      });
+    });
+  </script>
+  
+
+</body>
+</html>

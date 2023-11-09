@@ -138,7 +138,7 @@ export function indexAlignments(alignments) {
  * @param {string[]} keys
  * @param {string} searchStr - string to match
  * @param {string} flags - regex flags for searching
- * @returns {*[]}
+ * @returns {string[]}
  */
 export function regexSearch(keys, searchStr, flags) {
   const found = [];
@@ -160,7 +160,7 @@ export function regexSearch(keys, searchStr, flags) {
  * @param {string} text
  * @param {string} searchStr - string to match
  * @param {string} flags - regex flags for searching
- * @returns {*[]}
+ * @returns {Object[]}
  */
 export function isMatch(text, searchStr, flags) {
   const regex = xre(searchStr, flags);
@@ -234,7 +234,7 @@ export function loadAlignments(alignmentsPath) {
  * @param {string} flags - regex flags
  * @param {string[]} objectKeys - keys for alignments object
  * @param {object} alignments - index alignments
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function searchAlignmentsSub(searchStr, flags, objectKeys, alignments) {
   const foundKeys = regexSearch(objectKeys, searchStr, flags);
@@ -254,7 +254,7 @@ export function searchAlignmentsSub(searchStr, flags, objectKeys, alignments) {
  * @param {string[]} objectKeys - keys for alignments object
  * @param {object} alignments - index alignments
  * @param {object[]} alignmentsArray - list of alignment data that has been indexed
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function searchRefs(searchStr, flags, objectKeys, alignments, alignmentsArray) {
   const refsAlignments = {};
@@ -286,7 +286,7 @@ export function searchRefs(searchStr, flags, objectKeys, alignments, alignmentsA
  * @param {boolean} caseInsensitive -if true do cse insensitive matching
  * @param {string[]} objectKeys - keys for alignments object
  * @param {object} alignments - index alignments
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function searchAlignments(searchStr, fullWord, caseInsensitive, objectKeys, alignments) {
   const { search, flags } = buildSearchRegex(searchStr, fullWord, caseInsensitive);
@@ -346,7 +346,7 @@ export function searchRefsAndAppend(searchStr, flags, searchData, found, alignme
  * look in source index for match to source text
  * @param {string} sourceText
  * @param {object} sourceIndex
- * @returns {*[]}
+ * @returns {object[]}
  */
 function getSourceIndices(sourceText, sourceIndex) {
   let indices;
@@ -580,7 +580,7 @@ function areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, fl
  * @param {string[]} previousSearches
  * @param {string} currentSearch
  * @param {string} flags - regex flag
- * @returns {*[]}
+ * @returns {object[]}
  */
 function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, currentSearch, flags ) {
   function mergeKeys(mergedAlignment, merged, found_t, keys) {
@@ -653,7 +653,7 @@ function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, cu
  * @param {object} config - search configuration including search types and fields to search
  * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
  * @param {object} tWordsIndex2 - contains secondary index for tWords search
- * @returns {*[]} - array of found alignments
+ * @returns {object[]} - array of found alignments
  */
 export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2, tWordsIndex2) {
   const searchStrParts = searchStr.split(' ');
@@ -785,7 +785,7 @@ export function getKeyForBible(bible, type = null) {
  * filter downloaded aligned bibles and remove those that did not actually have alignments in them (by checking alignment count in index)
  * @param {object[]} downloadedAlignedBibles - aligned bibles found in user resources
  * @param {object[]} indexedResources - indexed aligned bibles found in alignmentData folder
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources) {
   const filtered = [];
@@ -894,7 +894,7 @@ export function isMasterResourceDownloaded(resource) {
 /**
  * return list of indexed aligned bibles found in alignmentData folder
  * @param {string} alignmentDataDir - folder to search
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function getAlignmentIndices(alignmentDataDir) {
   const resources = [];
@@ -952,7 +952,7 @@ function isDirectory(dirPath) {
  * @param {boolean} foldersOnly - if true then only return folders
  * @param {boolean} sort - if true then sort the results
  * @param {string} extension - optional file extension to match
- * @returns {*[]|*}
+ * @returns {string[]|*}
  */
 export function readDirectory(dirPath, foldersOnly = true, sort = true, extension = null) {
   if (isDirectory(dirPath)) {
@@ -1079,7 +1079,7 @@ function readBibleBook(latestVersionPath, bookId) {
  * @param {string} resourceFolder
  * @param {object} resource
  * @param {function} callback - async callback function(percentProress:number)
- * @returns {{strongAlignments: {alignments: {}}, alignments: *[], lemmaAlignments: {alignments: {}}, targetAlignments: {alignments: {}}, sourceAlignments: {alignments: {}}}}
+ * @returns {{strongAlignments: {alignments: {}}, alignments: object[], lemmaAlignments: {alignments: {}}, targetAlignments: {alignments: {}}, sourceAlignments: {alignments: {}}}}
  */
 export async function getAlignmentsFromResource(resourceFolder, resource, callback = null) {
   const bibleIndex = {};
@@ -1418,7 +1418,7 @@ export function deleteCachedAlignmentData() {
  * get list of searchable bibles loaded in resources
  * @param {string} translationCoreFolder
  * @param {boolean} useMaster
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function getSearchableAlignments(translationCoreFolder, useMaster) {
   try {
@@ -1463,7 +1463,7 @@ export function getSearchableAlignments(translationCoreFolder, useMaster) {
  * aligned bibles found in user resources
  * @param {string} resourceDir - path to user resources
  * @param {boolean} alignedBiblesOnly - if true then filter for alignment
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function getAvailableBibles(resourceDir, alignedBiblesOnly = true) {
   const alignedBibles = [];
@@ -1533,7 +1533,7 @@ export function getAvailableBibles(resourceDir, alignedBiblesOnly = true) {
 /**
  * aligned bibles found in user resources
  * @param {string} resourceDir - path to user resources
- * @returns {*[]}
+ * @returns {object[]}
  */
 export function getAlignedBibles(resourceDir) {
   return getAvailableBibles(resourceDir, true);
@@ -1677,7 +1677,7 @@ export function getVerse(biblePath, ref, bibles, bibleKey, rawFormat = false) {
  * try to find closest matches for target text in verse text
  * @param targetText
  * @param verseText
- * @returns {{targetPos: *[], targetParts: *}}
+ * @returns {{targetPos: number[], targetParts: string[]}}
  */
 export function findBestMatchesForTargetText(targetText, verseText) {
   let targetParts = targetText.split(' ');
@@ -1739,7 +1739,7 @@ export function findBestMatchesForTargetText(targetText, verseText) {
  * add highlighting to verse
  * @param {string} verseText
  * @param {string} targetText
- * @returns {*[]}
+ * @returns {object|string[]}
  */
 export function highlightSelectedTextInVerse(verseText, targetText) {
   const verseParts = [];
@@ -2172,8 +2172,8 @@ export async function indexTwords(resourcesFolder, resource, callback = null) {
 export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
   /**
    * get array of words in verseObjects
-   * @param {array} verseObjects
-   * @returns {*[]}
+   * @param {object[]} verseObjects
+   * @returns {object[]}
    */
   function findWords(verseObjects) {
     let words = [];

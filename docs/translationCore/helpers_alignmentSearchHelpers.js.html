@@ -1,0 +1,2384 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+      helpers/alignmentSearchHelpers.js - Documentation
+  </title>
+
+  <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+  <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+  
+
+  <!-- start Mixpanel -->
+  <script type="text/javascript">(function(e,a){if(!a.__SV){var b=window;try{var c,l,i,j=b.location,g=j.hash;c=function(a,b){return(l=a.match(RegExp(b+"=([^&]*)")))?l[1]:null};g&&c(g,"state")&&(i=JSON.parse(decodeURIComponent(c(g,"state"))),"mpeditor"===i.action&&(b.sessionStorage.setItem("_mpcehash",g),history.replaceState(i.desiredHash||"",e.title,j.pathname+j.search)))}catch(m){}var k,h;window.mixpanel=a;a._i=[];a.init=function(b,c,f){function e(b,a){var c=a.split(".");2==c.length&&(b=b[c[0]],a=c[1]);b[a]=function(){b.push([a].concat(Array.prototype.slice.call(arguments,
+  0)))}}var d=a;"undefined"!==typeof f?d=a[f]=[]:f="mixpanel";d.people=d.people||[];d.toString=function(b){var a="mixpanel";"mixpanel"!==f&&(a+="."+f);b||(a+=" (stub)");return a};d.people.toString=function(){return d.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config reset people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+  for(h=0;h<k.length;h++)e(d,k[h]);a._i.push([b,c,f])};a.__SV=1.2;b=e.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";c=e.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.mixpanel||[]);
+  mixpanel.init("1919205b2da72e4da3b9b6639b444d59");</script>
+  <!-- end Mixpanel -->
+</head>
+
+<body>
+  <svg style="display: none;">
+    <defs>
+      <symbol id="linkIcon" fill="#706d77" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="navicon-button x">
+    <div class="navicon"></div>
+  </label>
+
+  <label for="nav-trigger" class="overlay"></label>
+
+  <div class="top-nav-wrapper">
+    <ul>
+      <li >
+        <a href="index.html">
+          
+            <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+              <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+          
+          
+        </a>
+      </li>
+
+      
+      <li>
+        <div class="search-wrapper">
+          <svg fill="#6D6D6D" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            <path d="M0 0h24v24H0z" fill="none"/>
+
+          </svg>
+          <input type="text" placeholder="Search" class="search-input">
+        </div>
+      </li>
+      
+
+    </ul>
+  </div>
+
+  <nav>
+    <h3 class="reference-title">
+      translationCore
+    </h3>
+
+    <h3>Classes</h3><ul><li id="AgreementCheckbox-nav"><a href="AgreementCheckbox.html">AgreementCheckbox</a></li><li id="Alert-nav"><a href="Alert.html">Alert</a></li><li id="AlertPortal-nav"><a href="AlertPortal.html">AlertPortal</a></li><li id="Alerts-nav"><a href="Alerts.html">Alerts</a><ul class='methods'><li data-type="method" id="Alerts-handleOnCancel-nav"><a href="Alerts.html#handleOnCancel">handleOnCancel</a></li><li data-type="method" id="Alerts-handleOnConfirm-nav"><a href="Alerts.html#handleOnConfirm">handleOnConfirm</a></li><li data-type="method" id="Alerts-handleOnIgnore-nav"><a href="Alerts.html#handleOnIgnore">handleOnIgnore</a></li></ul></li><li id="AlignmentSearchDialogContainer-nav"><a href="AlignmentSearchDialogContainer.html">AlignmentSearchDialogContainer</a><ul class='methods'><li data-type="method" id="AlignmentSearchDialogContainer-changeFontSize-nav"><a href="AlignmentSearchDialogContainer.html#changeFontSize">changeFontSize</a></li><li data-type="method" id="AlignmentSearchDialogContainer-findSearchItem-nav"><a href="AlignmentSearchDialogContainer.html#findSearchItem">findSearchItem</a></li><li data-type="method" id="AlignmentSearchDialogContainer-formatData-nav"><a href="AlignmentSearchDialogContainer.html#formatData">formatData</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getAvailableBibles-nav"><a href="AlignmentSearchDialogContainer.html#getAvailableBibles">getAvailableBibles</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getColumnTitle-nav"><a href="AlignmentSearchDialogContainer.html#getColumnTitle">getColumnTitle</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getFontSize-nav"><a href="AlignmentSearchDialogContainer.html#getFontSize">getFontSize</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getLabelForBible-nav"><a href="AlignmentSearchDialogContainer.html#getLabelForBible">getLabelForBible</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getResourceForBible-nav"><a href="AlignmentSearchDialogContainer.html#getResourceForBible">getResourceForBible</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getSelectedOptions-nav"><a href="AlignmentSearchDialogContainer.html#getSelectedOptions">getSelectedOptions</a></li><li data-type="method" id="AlignmentSearchDialogContainer-getVerseContent-nav"><a href="AlignmentSearchDialogContainer.html#getVerseContent">getVerseContent</a></li><li data-type="method" id="AlignmentSearchDialogContainer-handleClose-nav"><a href="AlignmentSearchDialogContainer.html#handleClose">handleClose</a></li><li data-type="method" id="AlignmentSearchDialogContainer-ignoreBooksForTestament-nav"><a href="AlignmentSearchDialogContainer.html#ignoreBooksForTestament">ignoreBooksForTestament</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isBookEnabled-nav"><a href="AlignmentSearchDialogContainer.html#isBookEnabled">isBookEnabled</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isItemPresent-nav"><a href="AlignmentSearchDialogContainer.html#isItemPresent">isItemPresent</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isSearchFieldSelected-nav"><a href="AlignmentSearchDialogContainer.html#isSearchFieldSelected">isSearchFieldSelected</a></li><li data-type="method" id="AlignmentSearchDialogContainer-isSupportedAlignmentKey-nav"><a href="AlignmentSearchDialogContainer.html#isSupportedAlignmentKey">isSupportedAlignmentKey</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadAlignmentData-nav"><a href="AlignmentSearchDialogContainer.html#loadAlignmentData">loadAlignmentData</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadAlignmentSearchOptions-nav"><a href="AlignmentSearchDialogContainer.html#loadAlignmentSearchOptions">loadAlignmentSearchOptions</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadAlignmentSearchOptionsWithUI-nav"><a href="AlignmentSearchDialogContainer.html#loadAlignmentSearchOptionsWithUI">loadAlignmentSearchOptionsWithUI</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadIndexedAlignmentData-nav"><a href="AlignmentSearchDialogContainer.html#loadIndexedAlignmentData">loadIndexedAlignmentData</a></li><li data-type="method" id="AlignmentSearchDialogContainer-loadTWordsIndex-nav"><a href="AlignmentSearchDialogContainer.html#loadTWordsIndex">loadTWordsIndex</a></li><li data-type="method" id="AlignmentSearchDialogContainer-refreshPopUp-nav"><a href="AlignmentSearchDialogContainer.html#refreshPopUp">refreshPopUp</a></li><li data-type="method" id="AlignmentSearchDialogContainer-renderRefs-nav"><a href="AlignmentSearchDialogContainer.html#renderRefs">renderRefs</a></li><li data-type="method" id="AlignmentSearchDialogContainer-selectAlignedBookToSearch-nav"><a href="AlignmentSearchDialogContainer.html#selectAlignedBookToSearch">selectAlignedBookToSearch</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setAll-nav"><a href="AlignmentSearchDialogContainer.html#setAll">setAll</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchAlignedBible-nav"><a href="AlignmentSearchDialogContainer.html#setSearchAlignedBible">setSearchAlignedBible</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchAlignedBible2-nav"><a href="AlignmentSearchDialogContainer.html#setSearchAlignedBible2">setSearchAlignedBible2</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchFields-nav"><a href="AlignmentSearchDialogContainer.html#setSearchFields">setSearchFields</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchStr-nav"><a href="AlignmentSearchDialogContainer.html#setSearchStr">setSearchStr</a></li><li data-type="method" id="AlignmentSearchDialogContainer-setSearchTypes-nav"><a href="AlignmentSearchDialogContainer.html#setSearchTypes">setSearchTypes</a></li><li data-type="method" id="AlignmentSearchDialogContainer-showMessage-nav"><a href="AlignmentSearchDialogContainer.html#showMessage">showMessage</a></li><li data-type="method" id="AlignmentSearchDialogContainer-showPopUpVerse-nav"><a href="AlignmentSearchDialogContainer.html#showPopUpVerse">showPopUpVerse</a></li><li data-type="method" id="AlignmentSearchDialogContainer-showResults-nav"><a href="AlignmentSearchDialogContainer.html#showResults">showResults</a></li><li data-type="method" id="AlignmentSearchDialogContainer-startSearch-nav"><a href="AlignmentSearchDialogContainer.html#startSearch">startSearch</a></li><li data-type="method" id="AlignmentSearchDialogContainer-toggleBook-nav"><a href="AlignmentSearchDialogContainer.html#toggleBook">toggleBook</a></li><li data-type="method" id="AlignmentSearchDialogContainer-updateBibleKeyToMaster-nav"><a href="AlignmentSearchDialogContainer.html#updateBibleKeyToMaster">updateBibleKeyToMaster</a></li><li data-type="method" id="AlignmentSearchDialogContainer-updateMaster-nav"><a href="AlignmentSearchDialogContainer.html#updateMaster">updateMaster</a></li></ul></li><li id="AppMenu-nav"><a href="AppMenu.html">AppMenu</a><ul class='methods'><li data-type="method" id="AppMenu-closeDialog-nav"><a href="AppMenu.html#closeDialog">closeDialog</a></li><li data-type="method" id="AppMenu-isDialogOpen-nav"><a href="AppMenu.html#isDialogOpen">isDialogOpen</a></li><li data-type="method" id="AppMenu-openDialog-nav"><a href="AppMenu.html#openDialog">openDialog</a></li></ul></li><li id="BaseDialog-nav"><a href="BaseDialog.html">BaseDialog</a></li><li id="CategoryPicker-nav"><a href="CategoryPicker.html">CategoryPicker</a></li><li id="ColoredIcon-nav"><a href="ColoredIcon.html">ColoredIcon</a></li><li id="ConfirmationDialog-nav"><a href="ConfirmationDialog.html">ConfirmationDialog</a></li><li id="ContentUpdateDialog-nav"><a href="ContentUpdateDialog.html">ContentUpdateDialog</a></li><li id="ContentUpdatesDialogContainer-nav"><a href="ContentUpdatesDialogContainer.html">ContentUpdatesDialogContainer</a></li><li id="DownloadDialog-nav"><a href="DownloadDialog.html">DownloadDialog</a></li><li id="DownloadManager-nav"><a href="DownloadManager.html">DownloadManager</a><ul class='methods'><li data-type="method" id="DownloadManager-addItem-nav"><a href="DownloadManager.html#~addItem">addItem</a></li><li data-type="method" id="DownloadManager-getItem-nav"><a href="DownloadManager.html#~getItem">getItem</a></li></ul></li><li id="DownloadUpdateDialogContainer-nav"><a href="DownloadUpdateDialogContainer.html">DownloadUpdateDialogContainer</a><ul class='methods'><li data-type="method" id="DownloadUpdateDialogContainer-_cancelDownload-nav"><a href="DownloadUpdateDialogContainer.html#_cancelDownload">_cancelDownload</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_handleClose-nav"><a href="DownloadUpdateDialogContainer.html#_handleClose">_handleClose</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadError-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadError">_onDownloadError</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadProgress-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadProgress">_onDownloadProgress</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadStarted-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadStarted">_onDownloadStarted</a></li><li data-type="method" id="DownloadUpdateDialogContainer-_onDownloadSuccess-nav"><a href="DownloadUpdateDialogContainer.html#_onDownloadSuccess">_onDownloadSuccess</a></li></ul></li><li id="ErrorCount-nav"><a href="ErrorCount.html">ErrorCount</a></li><li id="ErrorDialog-nav"><a href="ErrorDialog.html">ErrorDialog</a></li><li id="FeedbackDialog-nav"><a href="FeedbackDialog.html">FeedbackDialog</a></li><li id="FeedbackDialogContainer-nav"><a href="FeedbackDialogContainer.html">FeedbackDialogContainer</a><ul class='methods'><li data-type="method" id="FeedbackDialogContainer-_submitFeedback-nav"><a href="FeedbackDialogContainer.html#_submitFeedback">_submitFeedback</a></li></ul></li><li id="HomeContainerContentWrapper-nav"><a href="HomeContainerContentWrapper.html">HomeContainerContentWrapper</a></li><li id="HomeScreenNavigation-nav"><a href="HomeScreenNavigation.html">HomeScreenNavigation</a></li><li id="HomeStep-nav"><a href="HomeStep.html">HomeStep</a></li><li id="HomeStepper-nav"><a href="HomeStepper.html">HomeStepper</a></li><li id="IgnorableAlert-nav"><a href="IgnorableAlert.html">IgnorableAlert</a></li><li id="InstanceStorage-nav"><a href="InstanceStorage.html">InstanceStorage</a><ul class='methods'><li data-type="method" id="InstanceStorage-key-nav"><a href="InstanceStorage.html#key">key</a></li></ul></li><li id="InstructionsCard-nav"><a href="InstructionsCard.html">InstructionsCard</a></li><li id="LanguageSelectField-nav"><a href="LanguageSelectField.html">LanguageSelectField</a></li><li id="LocaleSelectListContainer-nav"><a href="LocaleSelectListContainer.html">LocaleSelectListContainer</a></li><li id="LocaleSettingsDialogContainer-nav"><a href="LocaleSettingsDialogContainer.html">LocaleSettingsDialogContainer</a><ul class='methods'><li data-type="method" id="LocaleSettingsDialogContainer-_handleLanguageChange-nav"><a href="LocaleSettingsDialogContainer.html#_handleLanguageChange">_handleLanguageChange</a></li><li data-type="method" id="LocaleSettingsDialogContainer-_handleSave-nav"><a href="LocaleSettingsDialogContainer.html#_handleSave">_handleSave</a></li></ul></li><li id="LogHighlighted-nav"><a href="LogHighlighted.html">LogHighlighted</a></li><li id="LoginButtons-nav"><a href="LoginButtons.html">LoginButtons</a></li><li id="LoginDoor43Account-nav"><a href="LoginDoor43Account.html">LoginDoor43Account</a></li><li id="LoginTextFields-nav"><a href="LoginTextFields.html">LoginTextFields</a></li><li id="Menu-nav"><a href="Menu.html">Menu</a></li><li id="NavButton-nav"><a href="NavButton.html">NavButton</a></li><li id="PopoverMenu-nav"><a href="PopoverMenu.html">PopoverMenu</a><ul class='methods'><li data-type="method" id="PopoverMenu-_handleButtonOut-nav"><a href="PopoverMenu.html#_handleButtonOut">_handleButtonOut</a></li><li data-type="method" id="PopoverMenu-_handleButtonOver-nav"><a href="PopoverMenu.html#_handleButtonOver">_handleButtonOver</a></li><li data-type="method" id="PopoverMenu-_handleClick-nav"><a href="PopoverMenu.html#_handleClick">_handleClick</a></li><li data-type="method" id="PopoverMenu-_handleRequestClose-nav"><a href="PopoverMenu.html#_handleRequestClose">_handleRequestClose</a></li><li data-type="method" id="PopoverMenu-_hijackChildClick-nav"><a href="PopoverMenu.html#_hijackChildClick">_hijackChildClick</a></li></ul></li><li id="ProjectCardMenu-nav"><a href="ProjectCardMenu.html">ProjectCardMenu</a></li><li id="ProjectValidationContentWrapper-nav"><a href="ProjectValidationContentWrapper.html">ProjectValidationContentWrapper</a></li><li id="ResourceAPI-nav"><a href="ResourceAPI.html">ResourceAPI</a><ul class='methods'><li data-type="method" id="ResourceAPI-getLatestTranslationHelp-nav"><a href="ResourceAPI.html#getLatestTranslationHelp">getLatestTranslationHelp</a></li><li data-type="method" id="ResourceAPI-getTranslationHelps-nav"><a href="ResourceAPI.html#getTranslationHelps">getTranslationHelps</a></li><li data-type="method" id="ResourceAPI-compareVersions-nav"><a href="ResourceAPI.html#.compareVersions">compareVersions</a></li><li data-type="method" id="ResourceAPI-default-nav"><a href="ResourceAPI.html#.default">default</a></li><li data-type="method" id="ResourceAPI-getLatestVersion-nav"><a href="ResourceAPI.html#.getLatestVersion">getLatestVersion</a></li><li data-type="method" id="ResourceAPI-getLatestVersionsAndOwners-nav"><a href="ResourceAPI.html#.getLatestVersionsAndOwners">getLatestVersionsAndOwners</a></li><li data-type="method" id="ResourceAPI-listVersions-nav"><a href="ResourceAPI.html#.listVersions">listVersions</a></li></ul></li><li id="SoftwareUpdateContainer-nav"><a href="SoftwareUpdateContainer.html">SoftwareUpdateContainer</a></li><li id="SoftwareUpdateDialog-nav"><a href="SoftwareUpdateDialog.html">SoftwareUpdateDialog</a></li><li id="SoftwareUpdateDialogContainer-nav"><a href="SoftwareUpdateDialogContainer.html">SoftwareUpdateDialogContainer</a><ul class='methods'><li data-type="method" id="SoftwareUpdateDialogContainer-_fetchUrl-nav"><a href="SoftwareUpdateDialogContainer.html#_fetchUrl">_fetchUrl</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_handleClose-nav"><a href="SoftwareUpdateDialogContainer.html#_handleClose">_handleClose</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_handleSubmit-nav"><a href="SoftwareUpdateDialogContainer.html#_handleSubmit">_handleSubmit</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_startSoftwareCheck-nav"><a href="SoftwareUpdateDialogContainer.html#_startSoftwareCheck">_startSoftwareCheck</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-_stopSoftwareCheck-nav"><a href="SoftwareUpdateDialogContainer.html#_stopSoftwareCheck">_stopSoftwareCheck</a></li><li data-type="method" id="SoftwareUpdateDialogContainer-applyRelease-nav"><a href="SoftwareUpdateDialogContainer.html#applyRelease">applyRelease</a></li></ul></li><li id="SuccessDialog-nav"><a href="SuccessDialog.html">SuccessDialog</a></li><li id="UsernameInput-nav"><a href="UsernameInput.html">UsernameInput</a></li><li id="exports-nav"><a href="module.html#.exports">exports</a></li></ul><h3>Modules</h3><ul><li id="Actions_AlertModal-nav"><a href="module-Actions_AlertModal.html">Actions/AlertModal</a><ul class='methods'><li data-type="method" id="Actions_AlertModal-closeAlertDialog-nav"><a href="module-Actions_AlertModal.html#.closeAlertDialog">closeAlertDialog</a></li><li data-type="method" id="Actions_AlertModal-openAlertDialog-nav"><a href="module-Actions_AlertModal.html#.openAlertDialog">openAlertDialog</a></li><li data-type="method" id="Actions_AlertModal-openOptionDialog-nav"><a href="module-Actions_AlertModal.html#.openOptionDialog">openOptionDialog</a></li></ul></li></ul><h3 id="global-nav">Global</h3><ul><li><a href="global.html#BIBLE_BOOKS">BIBLE_BOOKS</a></li><li><a href="global.html#GlDropDownList">GlDropDownList</a></li><li><a href="global.html#INSTANCE_STORAGE">INSTANCE_STORAGE</a></li><li><a href="global.html#LOCAL_STORAGE">LOCAL_STORAGE</a></li><li><a href="global.html#SESSION_STORAGE">SESSION_STORAGE</a></li><li><a href="global.html#SETTINGS_PATH">SETTINGS_PATH</a></li><li><a href="global.html#TruncateAcronym">TruncateAcronym</a></li><li><a href="global.html#add">add</a></li><li><a href="global.html#addChapterFrontMatter">addChapterFrontMatter</a></li><li><a href="global.html#addFrontMatter">addFrontMatter</a></li><li><a href="global.html#addHeader">addHeader</a></li><li><a href="global.html#addLanguage">addLanguage</a></li><li><a href="global.html#addNewBible">addNewBible</a></li><li><a href="global.html#addObjectPropertyToManifest">addObjectPropertyToManifest</a></li><li><a href="global.html#addObjectPropertyToSettings">addObjectPropertyToSettings</a></li><li><a href="global.html#addOriginalLanguageInfo">addOriginalLanguageInfo</a></li><li><a href="global.html#addOwner">addOwner</a></li><li><a href="global.html#addPosition">addPosition</a></li><li><a href="global.html#addProjectValidationStep">addProjectValidationStep</a></li><li><a href="global.html#addRemote">addRemote</a></li><li><a href="global.html#addResource">addResource</a></li><li><a href="global.html#addStyles">addStyles</a></li><li><a href="global.html#alerts">alerts</a></li><li><a href="global.html#appendToAlignmentIndex">appendToAlignmentIndex</a></li><li><a href="global.html#archiveProject">archiveProject</a></li><li><a href="global.html#archiveSourceFiles">archiveSourceFiles</a></li><li><a href="global.html#arePositionsAdjacent">arePositionsAdjacent</a></li><li><a href="global.html#areQuotesEqual">areQuotesEqual</a></li><li><a href="global.html#areResourcesNewer">areResourcesNewer</a></li><li><a href="global.html#areStringsEqualCaseInsensitive">areStringsEqualCaseInsensitive</a></li><li><a href="global.html#areWordsAdjacent">areWordsAdjacent</a></li><li><a href="global.html#areWordsAdjacentInTarget">areWordsAdjacentInTarget</a></li><li><a href="global.html#arrayToWordList">arrayToWordList</a></li><li><a href="global.html#assignLicenseToOnlineImportedProject">assignLicenseToOnlineImportedProject</a></li><li><a href="global.html#bibleIdSort">bibleIdSort</a></li><li><a href="global.html#branch">branch</a></li><li><a href="global.html#branchLocal">branchLocal</a></li><li><a href="global.html#buildSearchRegex">buildSearchRegex</a></li><li><a href="global.html#calculateProgress">calculateProgress</a></li><li><a href="global.html#cancelAndCloseProjectInformationCheck">cancelAndCloseProjectInformationCheck</a></li><li><a href="global.html#changeBranch">changeBranch</a></li><li><a href="global.html#changeGitToPointToNewRepo">changeGitToPointToNewRepo</a></li><li><a href="global.html#checkBookReference">checkBookReference</a></li><li><a href="global.html#checkCheckers">checkCheckers</a></li><li><a href="global.html#checkForHelpsForBible">checkForHelpsForBible</a></li><li><a href="global.html#checkForNewLexicons">checkForNewLexicons</a></li><li><a href="global.html#checkForValidCategorySelections">checkForValidCategorySelections</a></li><li><a href="global.html#checkIfValidBetaProject">checkIfValidBetaProject</a></li><li><a href="global.html#checkIfWeNeedNewerOrigLangVersion">checkIfWeNeedNewerOrigLangVersion</a></li><li><a href="global.html#checkLanguageDetails">checkLanguageDetails</a></li><li><a href="global.html#checkProjectDetails">checkProjectDetails</a></li><li><a href="global.html#checkProjectForAlignments">checkProjectForAlignments</a></li><li><a href="global.html#checkProjectForMergeConflicts">checkProjectForMergeConflicts</a></li><li><a href="global.html#checkTranslators">checkTranslators</a></li><li><a href="global.html#checkUSFMForMergeConflicts">checkUSFMForMergeConflicts</a></li><li><a href="global.html#checkout">checkout</a></li><li><a href="global.html#cleanAlignmentMarkersFromString">cleanAlignmentMarkersFromString</a></li><li><a href="global.html#cleanupTmpPath">cleanupTmpPath</a></li><li><a href="global.html#clear">clear</a></li><li><a href="global.html#clearProjectInformationReducer">clearProjectInformationReducer</a></li><li><a href="global.html#clearRemote">clearRemote</a></li><li><a href="global.html#clone">clone</a></li><li><a href="global.html#closeAlert">closeAlert</a></li><li><a href="global.html#closeLoading">closeLoading</a></li><li><a href="global.html#closeProject">closeProject</a></li><li><a href="global.html#closeSoftwareUpdate">closeSoftwareUpdate</a></li><li><a href="global.html#combineData">combineData</a></li><li><a href="global.html#commit">commit</a></li><li><a href="global.html#confirmAction">confirmAction</a></li><li><a href="global.html#confirmContinueOrCancelImportValidation">confirmContinueOrCancelImportValidation</a></li><li><a href="global.html#confirmOnlineAction">confirmOnlineAction</a></li><li><a href="global.html#confirmationMiddleware">confirmationMiddleware</a></li><li><a href="global.html#connectToolApi">connectToolApi</a></li><li><a href="global.html#consolidateTwls">consolidateTwls</a></li><li><a href="global.html#content">content</a></li><li><a href="global.html#convert">convert</a></li><li><a href="global.html#convertAlignmentDataToUSFM">convertAlignmentDataToUSFM</a></li><li><a href="global.html#convertAlignmentFromVerseToVerseSpan">convertAlignmentFromVerseToVerseSpan</a></li><li><a href="global.html#convertAlignmentFromVerseToVerseSpanSub">convertAlignmentFromVerseToVerseSpanSub</a></li><li><a href="global.html#convertAlignmentsFromVerseSpansToVerse">convertAlignmentsFromVerseSpansToVerse</a></li><li><a href="global.html#convertAlignmentsFromVerseSpansToVerseSub">convertAlignmentsFromVerseSpansToVerseSub</a></li><li><a href="global.html#convertGitErrorMessage">convertGitErrorMessage</a></li><li><a href="global.html#convertPrintPreviewHtml">convertPrintPreviewHtml</a></li><li><a href="global.html#convertStrongstoStrong">convertStrongstoStrong</a></li><li><a href="global.html#convertToFullBookName">convertToFullBookName</a></li><li><a href="global.html#convertToProjectFormat">convertToProjectFormat</a></li><li><a href="global.html#convertVerseChunksToUSFM">convertVerseChunksToUSFM</a></li><li><a href="global.html#convertVerseDataToUSFM">convertVerseDataToUSFM</a></li><li><a href="global.html#copyGroupDataToProject">copyGroupDataToProject</a></li><li><a href="global.html#copyMissingSubfolders">copyMissingSubfolders</a></li><li><a href="global.html#copySourceContentUpdaterManifest">copySourceContentUpdaterManifest</a></li><li><a href="global.html#correctOccurrencesInAlignmentWords">correctOccurrencesInAlignmentWords</a></li><li><a href="global.html#createCheckArray">createCheckArray</a></li><li><a href="global.html#createLanguagesObjectFromResources">createLanguagesObjectFromResources</a></li><li><a href="global.html#createNewBranch">createNewBranch</a></li><li><a href="global.html#createNewRepo">createNewRepo</a></li><li><a href="global.html#createPreviewWindow">createPreviewWindow</a></li><li><a href="global.html#createRepo">createRepo</a></li><li><a href="global.html#createUSFMFromTsProject">createUSFMFromTsProject</a></li><li><a href="global.html#dataPath">dataPath</a></li><li><a href="global.html#dataPathExists">dataPathExists</a></li><li><a href="global.html#dataPathExistsSync">dataPathExistsSync</a></li><li><a href="global.html#dateFromTimestamp">dateFromTimestamp</a></li><li><a href="global.html#deleteCachedAlignmentData">deleteCachedAlignmentData</a></li><li><a href="global.html#deleteDataFile">deleteDataFile</a></li><li><a href="global.html#deleteDataFileSync">deleteDataFileSync</a></li><li><a href="global.html#deleteImportProjectForLink">deleteImportProjectForLink</a></li><li><a href="global.html#deleteImportsFolder">deleteImportsFolder</a></li><li><a href="global.html#deletePreReleaseResources">deletePreReleaseResources</a></li><li><a href="global.html#deleteProjectFromImportsFolder">deleteProjectFromImportsFolder</a></li><li><a href="global.html#detail">detail</a></li><li><a href="global.html#detectInvalidProjectStructure">detectInvalidProjectStructure</a></li><li><a href="global.html#dimScreen">dimScreen</a></li><li><a href="global.html#displayLoadingUSFMAlert">displayLoadingUSFMAlert</a></li><li><a href="global.html#displayOverwriteButton">displayOverwriteButton</a></li><li><a href="global.html#displayTools">displayTools</a></li><li><a href="global.html#displayUSFMExportFinishedDialog">displayUSFMExportFinishedDialog</a></li><li><a href="global.html#doDcsRenamePrompting">doDcsRenamePrompting</a></li><li><a href="global.html#doLocalProjectRenamePrompting">doLocalProjectRenamePrompting</a></li><li><a href="global.html#doPrint">doPrint</a></li><li><a href="global.html#doRenamePrompting">doRenamePrompting</a></li><li><a href="global.html#doValidationAndPrompting">doValidationAndPrompting</a></li><li><a href="global.html#doesBranchExist">doesBranchExist</a></li><li><a href="global.html#doesDcsProjectNameAlreadyExist">doesDcsProjectNameAlreadyExist</a></li><li><a href="global.html#doesProjectAlreadyExist">doesProjectAlreadyExist</a></li><li><a href="global.html#doesProjectNameMatchSpec">doesProjectNameMatchSpec</a></li><li><a href="global.html#doesRemoteRepoExist">doesRemoteRepoExist</a></li><li><a href="global.html#download">download</a></li><li><a href="global.html#downloadAndLoadViewUrl">downloadAndLoadViewUrl</a></li><li><a href="global.html#downloadAndLoadViewUrlWithFallback">downloadAndLoadViewUrlWithFallback</a></li><li><a href="global.html#downloadFromUrl">downloadFromUrl</a></li><li><a href="global.html#downloadMissingResource">downloadMissingResource</a></li><li><a href="global.html#downloadProject">downloadProject</a></li><li><a href="global.html#downloadSourceContentUpdates">downloadSourceContentUpdates</a></li><li><a href="global.html#encodeParam">encodeParam</a></li><li><a href="global.html#enhanceTranslation">enhanceTranslation</a></li><li><a href="global.html#ensureFileContentsJson">ensureFileContentsJson</a></li><li><a href="global.html#executeArchive">executeArchive</a></li><li><a href="global.html#explodeLocaleName">explodeLocaleName</a></li><li><a href="global.html#exportToCSV">exportToCSV</a></li><li><a href="global.html#exportToCSVZip">exportToCSVZip</a></li><li><a href="global.html#exportToUSFM">exportToUSFM</a></li><li><a href="global.html#extractAllResources">extractAllResources</a></li><li><a href="global.html#extractVersesFromChunk">extractVersesFromChunk</a></li><li><a href="global.html#extractZippedResourceContent">extractZippedResourceContent</a></li><li><a href="global.html#fillDefaultTools">fillDefaultTools</a></li><li><a href="global.html#filterAndSort">filterAndSort</a></li><li><a href="global.html#filterAvailableAlignedBibles">filterAvailableAlignedBibles</a></li><li><a href="global.html#finalize">finalize</a></li><li><a href="global.html#findAlert">findAlert</a></li><li><a href="global.html#findArticleFilePath">findArticleFilePath</a></li><li><a href="global.html#findBestMatchesForTargetText">findBestMatchesForTargetText</a></li><li><a href="global.html#findGroupDataItem">findGroupDataItem</a></li><li><a href="global.html#findItem">findItem</a></li><li><a href="global.html#findMissingVerses">findMissingVerses</a></li><li><a href="global.html#findRepo">findRepo</a></li><li><a href="global.html#findResourceIdAndNickname">findResourceIdAndNickname</a></li><li><a href="global.html#findUsfmTagInHeader">findUsfmTagInHeader</a></li><li><a href="global.html#findWord">findWord</a></li><li><a href="global.html#findWordsInWordList">findWordsInWordList</a></li><li><a href="global.html#fixBibleDataFolderName">fixBibleDataFolderName</a></li><li><a href="global.html#fixManifestVerThree">fixManifestVerThree</a></li><li><a href="global.html#fixOccurrencesInVerse">fixOccurrencesInVerse</a></li><li><a href="global.html#fixProjectAlignmentTopWords">fixProjectAlignmentTopWords</a></li><li><a href="global.html#fixProjectOccurrencesTopWords">fixProjectOccurrencesTopWords</a></li><li><a href="global.html#fix_tWords">fix_tWords</a></li><li><a href="global.html#flattenContextId">flattenContextId</a></li><li><a href="global.html#flattenNotesCategories">flattenNotesCategories</a></li><li><a href="global.html#generateCSVFile">generateCSVFile</a></li><li><a href="global.html#generateCSVString">generateCSVString</a></li><li><a href="global.html#generateChapterGroupData">generateChapterGroupData</a></li><li><a href="global.html#generateChapterGroupIndex">generateChapterGroupIndex</a></li><li><a href="global.html#generateImportPath">generateImportPath</a></li><li><a href="global.html#generateLoadPath">generateLoadPath</a></li><li><a href="global.html#generateManifest">generateManifest</a></li><li><a href="global.html#generateManifestForUsfm">generateManifestForUsfm</a></li><li><a href="global.html#generateManifestForUsfmProject">generateManifestForUsfmProject</a></li><li><a href="global.html#generateNewProjectName">generateNewProjectName</a></li><li><a href="global.html#generatePathToDataItems">generatePathToDataItems</a></li><li><a href="global.html#generateSavePath">generateSavePath</a></li><li><a href="global.html#generateTargetBibleFromTstudioProjectPath">generateTargetBibleFromTstudioProjectPath</a></li><li><a href="global.html#generateTargetBibleFromUSFMPath">generateTargetBibleFromUSFMPath</a></li><li><a href="global.html#generateTargetLanguageBibleFromUsfm">generateTargetLanguageBibleFromUsfm</a></li><li><a href="global.html#generateTimestamp">generateTimestamp</a></li><li><a href="global.html#get">get</a></li><li><a href="global.html#getALignmentsFromJson">getALignmentsFromJson</a></li><li><a href="global.html#getActiveHomeScreenSteps">getActiveHomeScreenSteps</a></li><li><a href="global.html#getActiveLanguage">getActiveLanguage</a></li><li><a href="global.html#getActiveLocaleLanguage">getActiveLocaleLanguage</a></li><li><a href="global.html#getActiveSteps">getActiveSteps</a></li><li><a href="global.html#getAlertIsOpen">getAlertIsOpen</a></li><li><a href="global.html#getAlerts">getAlerts</a></li><li><a href="global.html#getAlignedBibles">getAlignedBibles</a></li><li><a href="global.html#getAlignedGLText">getAlignedGLText</a></li><li><a href="global.html#getAlignedTextFromBible">getAlignedTextFromBible</a></li><li><a href="global.html#getAlignedWordListForVerse">getAlignedWordListForVerse</a></li><li><a href="global.html#getAlignmentDataFromPath">getAlignmentDataFromPath</a></li><li><a href="global.html#getAlignmentDataPath">getAlignmentDataPath</a></li><li><a href="global.html#getAlignmentIndices">getAlignmentIndices</a></li><li><a href="global.html#getAlignmentPathsFromProject">getAlignmentPathsFromProject</a></li><li><a href="global.html#getAlignmentsFromDownloadedBible">getAlignmentsFromDownloadedBible</a></li><li><a href="global.html#getAlignmentsFromResource">getAlignmentsFromResource</a></li><li><a href="global.html#getAllCategoryMapping">getAllCategoryMapping</a></li><li><a href="global.html#getAllLanguageIdsFromResourceFolder">getAllLanguageIdsFromResourceFolder</a></li><li><a href="global.html#getAllResourceManifests">getAllResourceManifests</a></li><li><a href="global.html#getAllResourceVersions">getAllResourceVersions</a></li><li><a href="global.html#getAnchorTags">getAnchorTags</a></li><li><a href="global.html#getApplicationVersion">getApplicationVersion</a></li><li><a href="global.html#getArchBits">getArchBits</a></li><li><a href="global.html#getAvailableBibles">getAvailableBibles</a></li><li><a href="global.html#getAvailableCategories">getAvailableCategories</a></li><li><a href="global.html#getAvailableScripturePaneSelections">getAvailableScripturePaneSelections</a></li><li><a href="global.html#getBaseName">getBaseName</a></li><li><a href="global.html#getBestMatchForVerse">getBestMatchForVerse</a></li><li><a href="global.html#getBibleIndex">getBibleIndex</a></li><li><a href="global.html#getBibleManifest">getBibleManifest</a></li><li><a href="global.html#getBibles">getBibles</a></li><li><a href="global.html#getBookDataDir">getBookDataDir</a></li><li><a href="global.html#getBookId">getBookId</a></li><li><a href="global.html#getBookName">getBookName</a></li><li><a href="global.html#getBookTranslation">getBookTranslation</a></li><li><a href="global.html#getBookTranslationShort">getBookTranslationShort</a></li><li><a href="global.html#getCategoriesDir">getCategoriesDir</a></li><li><a href="global.html#getCategoriesPath">getCategoriesPath</a></li><li><a href="global.html#getCategoryGroupIds">getCategoryGroupIds</a></li><li><a href="global.html#getChapterFromVerseText">getChapterFromVerseText</a></li><li><a href="global.html#getCheckStateForCategory">getCheckStateForCategory</a></li><li><a href="global.html#getContextHash">getContextHash</a></li><li><a href="global.html#getContextIdPathFromIndex">getContextIdPathFromIndex</a></li><li><a href="global.html#getCount">getCount</a></li><li><a href="global.html#getCurrentBranch">getCurrentBranch</a></li><li><a href="global.html#getCurrentLog">getCurrentLog</a></li><li><a href="global.html#getCurrentManifestVersion">getCurrentManifestVersion</a></li><li><a href="global.html#getCurrentOrigLangVersionForTn">getCurrentOrigLangVersionForTn</a></li><li><a href="global.html#getCurrentOrigLanguageVersionOwner">getCurrentOrigLanguageVersionOwner</a></li><li><a href="global.html#getCurrentPaneSetting">getCurrentPaneSetting</a></li><li><a href="global.html#getCurrentTargetLanguageVerseFromAlignments">getCurrentTargetLanguageVerseFromAlignments</a></li><li><a href="global.html#getCurrentToolName">getCurrentToolName</a></li><li><a href="global.html#getDefaultBranch">getDefaultBranch</a></li><li><a href="global.html#getDefaultPath">getDefaultPath</a></li><li><a href="global.html#getDefaultTools">getDefaultTools</a></li><li><a href="global.html#getDetailsFromProjectName">getDetailsFromProjectName</a></li><li><a href="global.html#getDownloadErrorList">getDownloadErrorList</a></li><li><a href="global.html#getDuplicateProjectWarning">getDuplicateProjectWarning</a></li><li><a href="global.html#getEmail">getEmail</a></li><li><a href="global.html#getEmptyAlignmentData">getEmptyAlignmentData</a></li><li><a href="global.html#getErrorDetails">getErrorDetails</a></li><li><a href="global.html#getErrorFeedbackCategory">getErrorFeedbackCategory</a></li><li><a href="global.html#getErrorFeedbackExtraDetails">getErrorFeedbackExtraDetails</a></li><li><a href="global.html#getErrorFeedbackMessage">getErrorFeedbackMessage</a></li><li><a href="global.html#getErrorMessage">getErrorMessage</a></li><li><a href="global.html#getExpectedBookVerses">getExpectedBookVerses</a></li><li><a href="global.html#getExportType">getExportType</a></li><li><a href="global.html#getFeedbackCloseCallback">getFeedbackCloseCallback</a></li><li><a href="global.html#getFeedbackDetailsForHelpDesk">getFeedbackDetailsForHelpDesk</a></li><li><a href="global.html#getFilePath">getFilePath</a></li><li><a href="global.html#getFilesInResourcePath">getFilesInResourcePath</a></li><li><a href="global.html#getFilteredSubFolders">getFilteredSubFolders</a></li><li><a href="global.html#getFoldersInResourceFolder">getFoldersInResourceFolder</a></li><li><a href="global.html#getFontList">getFontList</a></li><li><a href="global.html#getGLQuoteFromAlignedBible">getGLQuoteFromAlignedBible</a></li><li><a href="global.html#getGatewayLanguageCodeAndQuote">getGatewayLanguageCodeAndQuote</a></li><li><a href="global.html#getGatewayLanguageList">getGatewayLanguageList</a></li><li><a href="global.html#getGlRequirementsForTool">getGlRequirementsForTool</a></li><li><a href="global.html#getGroupData">getGroupData</a></li><li><a href="global.html#getGroupDataForVerse">getGroupDataForVerse</a></li><li><a href="global.html#getGroupName">getGroupName</a></li><li><a href="global.html#getGroupsData">getGroupsData</a></li><li><a href="global.html#getHeaderTag">getHeaderTag</a></li><li><a href="global.html#getHeaderTags">getHeaderTags</a></li><li><a href="global.html#getHomeScreenStep">getHomeScreenStep</a></li><li><a href="global.html#getInitialBibleDataFolderName">getInitialBibleDataFolderName</a></li><li><a href="global.html#getInvalidCountForTool">getInvalidCountForTool</a></li><li><a href="global.html#getIsHomeVisible">getIsHomeVisible</a></li><li><a href="global.html#getIsLoggedIn">getIsLoggedIn</a></li><li><a href="global.html#getIsNextStepDisabled">getIsNextStepDisabled</a></li><li><a href="global.html#getIsOverwritePermitted">getIsOverwritePermitted</a></li><li><a href="global.html#getIsProjectAlreadyImported">getIsProjectAlreadyImported</a></li><li><a href="global.html#getIsSoftwareUpdateOpen">getIsSoftwareUpdateOpen</a></li><li><a href="global.html#getIsUserLoggedIn">getIsUserLoggedIn</a></li><li><a href="global.html#getIsUsfmProject">getIsUsfmProject</a></li><li><a href="global.html#getJsonFilesInPath">getJsonFilesInPath</a></li><li><a href="global.html#getKeyForBible">getKeyForBible</a></li><li><a href="global.html#getLabelWithHover">getLabelWithHover</a></li><li><a href="global.html#getLanguageByCode">getLanguageByCode</a></li><li><a href="global.html#getLanguageByCodeSelection">getLanguageByCodeSelection</a></li><li><a href="global.html#getLanguageByName">getLanguageByName</a></li><li><a href="global.html#getLanguageByNameSelection">getLanguageByNameSelection</a></li><li><a href="global.html#getLanguageCodes">getLanguageCodes</a></li><li><a href="global.html#getLanguageId">getLanguageId</a></li><li><a href="global.html#getLanguageTranslation">getLanguageTranslation</a></li><li><a href="global.html#getLanguages">getLanguages</a></li><li><a href="global.html#getLanguagesSortedByCode">getLanguagesSortedByCode</a></li><li><a href="global.html#getLanguagesSortedByName">getLanguagesSortedByName</a></li><li><a href="global.html#getLatestBibleVersionManifest">getLatestBibleVersionManifest</a></li><li><a href="global.html#getLatestForChecks">getLatestForChecks</a></li><li><a href="global.html#getLatestOriginalLanguageResource">getLatestOriginalLanguageResource</a></li><li><a href="global.html#getLatestResourcesForTn">getLatestResourcesForTn</a></li><li><a href="global.html#getLatestVersion">getLatestVersion</a></li><li><a href="global.html#getLatestVersionPath">getLatestVersionPath</a></li><li><a href="global.html#getLexiconData">getLexiconData</a></li><li><a href="global.html#getListOfOutdatedSourceContent">getListOfOutdatedSourceContent</a></li><li><a href="global.html#getListOfSourceContentToUpdate">getListOfSourceContentToUpdate</a></li><li><a href="global.html#getLoadedCategories">getLoadedCategories</a></li><li><a href="global.html#getLocalUser">getLocalUser</a></li><li><a href="global.html#getLocaleLanguages">getLocaleLanguages</a></li><li><a href="global.html#getLocaleLoaded">getLocaleLoaded</a></li><li><a href="global.html#getLocalizedErrorMessage">getLocalizedErrorMessage</a></li><li><a href="global.html#getLocalizedErrorPrompt">getLocalizedErrorPrompt</a></li><li><a href="global.html#getLogFilePathForCurrentDate">getLogFilePathForCurrentDate</a></li><li><a href="global.html#getManifest">getManifest</a></li><li><a href="global.html#getManifestPath">getManifestPath</a></li><li><a href="global.html#getMasterResourcePath">getMasterResourcePath</a></li><li><a href="global.html#getMergeConflicts">getMergeConflicts</a></li><li><a href="global.html#getMissingResources">getMissingResources</a></li><li><a href="global.html#getMissingVerses">getMissingVerses</a></li><li><a href="global.html#getMorphData">getMorphData</a></li><li><a href="global.html#getMostRecentVersionInFolder">getMostRecentVersionInFolder</a></li><li><a href="global.html#getMyProjects">getMyProjects</a></li><li><a href="global.html#getName">getName</a></li><li><a href="global.html#getNames">getNames</a></li><li><a href="global.html#getNestedKey">getNestedKey</a></li><li><a href="global.html#getNextHomeScreenStepDisabled">getNextHomeScreenStepDisabled</a></li><li><a href="global.html#getNextProjectValidationStepDisabled">getNextProjectValidationStepDisabled</a></li><li><a href="global.html#getNickname">getNickname</a></li><li><a href="global.html#getOccurrences">getOccurrences</a></li><li><a href="global.html#getOccurrencesForWord">getOccurrencesForWord</a></li><li><a href="global.html#getOccurrencesForWordList">getOccurrencesForWordList</a></li><li><a href="global.html#getOlBookPath">getOlBookPath</a></li><li><a href="global.html#getOrigLangVersionInfoForTn">getOrigLangVersionInfoForTn</a></li><li><a href="global.html#getOrigLangWordListForVerse">getOrigLangWordListForVerse</a></li><li><a href="global.html#getOrigLangforBook">getOrigLangforBook</a></li><li><a href="global.html#getOriginalChapter">getOriginalChapter</a></li><li><a href="global.html#getOriginalChapterFromManifest">getOriginalChapterFromManifest</a></li><li><a href="global.html#getOriginalChapterFromResources">getOriginalChapterFromResources</a></li><li><a href="global.html#getOriginalLangOwner">getOriginalLangOwner</a></li><li><a href="global.html#getOriginalLanguageChapterResources">getOriginalLanguageChapterResources</a></li><li><a href="global.html#getOriginalLanguageId">getOriginalLanguageId</a></li><li><a href="global.html#getOriginalLanguageListForVerseData">getOriginalLanguageListForVerseData</a></li><li><a href="global.html#getOriginalVerse">getOriginalVerse</a></li><li><a href="global.html#getOriginalVerseFromResources">getOriginalVerseFromResources</a></li><li><a href="global.html#getParentCategory">getParentCategory</a></li><li><a href="global.html#getParsedUSFM">getParsedUSFM</a></li><li><a href="global.html#getProjectAlignments">getProjectAlignments</a></li><li><a href="global.html#getProjectBookId">getProjectBookId</a></li><li><a href="global.html#getProjectDirectories">getProjectDirectories</a></li><li><a href="global.html#getProjectHeaderData">getProjectHeaderData</a></li><li><a href="global.html#getProjectId">getProjectId</a></li><li><a href="global.html#getProjectInfo">getProjectInfo</a></li><li><a href="global.html#getProjectLabel">getProjectLabel</a></li><li><a href="global.html#getProjectManifest">getProjectManifest</a></li><li><a href="global.html#getProjectName">getProjectName</a></li><li><a href="global.html#getProjectNickname">getProjectNickname</a></li><li><a href="global.html#getProjectProgressForTools">getProjectProgressForTools</a></li><li><a href="global.html#getProjectSaveLocation">getProjectSaveLocation</a></li><li><a href="global.html#getProjectSettings">getProjectSettings</a></li><li><a href="global.html#getProjectToolProgress">getProjectToolProgress</a></li><li><a href="global.html#getProjectValidationStep">getProjectValidationStep</a></li><li><a href="global.html#getProjects">getProjects</a></li><li><a href="global.html#getProjectsByType">getProjectsByType</a></li><li><a href="global.html#getProjectsFromFolder">getProjectsFromFolder</a></li><li><a href="global.html#getQuoteAsArray">getQuoteAsArray</a></li><li><a href="global.html#getRawAlignmentsForVerseSpan">getRawAlignmentsForVerseSpan</a></li><li><a href="global.html#getReadOrderForTstudioFIles">getReadOrderForTstudioFIles</a></li><li><a href="global.html#getReferenceCount">getReferenceCount</a></li><li><a href="global.html#getRegularLabel">getRegularLabel</a></li><li><a href="global.html#getRemote">getRemote</a></li><li><a href="global.html#getRemoteRepoHead">getRemoteRepoHead</a></li><li><a href="global.html#getRepoNameInfo">getRepoNameInfo</a></li><li><a href="global.html#getRepoOwnerUrl">getRepoOwnerUrl</a></li><li><a href="global.html#getResourceDownloadsAlertMessage">getResourceDownloadsAlertMessage</a></li><li><a href="global.html#getResourceId">getResourceId</a></li><li><a href="global.html#getResourceIdWarning">getResourceIdWarning</a></li><li><a href="global.html#getResourcesNeededByTool">getResourcesNeededByTool</a></li><li><a href="global.html#getSafeErrorMessage">getSafeErrorMessage</a></li><li><a href="global.html#getSaveLocation">getSaveLocation</a></li><li><a href="global.html#getSavedRemote">getSavedRemote</a></li><li><a href="global.html#getSearchableAlignments">getSearchableAlignments</a></li><li><a href="global.html#getSelectedCategories">getSelectedCategories</a></li><li><a href="global.html#getSelectedTool">getSelectedTool</a></li><li><a href="global.html#getSelectedToolApi">getSelectedToolApi</a></li><li><a href="global.html#getSelectedToolContainer">getSelectedToolContainer</a></li><li><a href="global.html#getSelectedToolTitle">getSelectedToolTitle</a></li><li><a href="global.html#getSetting">getSetting</a></li><li><a href="global.html#getSettings">getSettings</a></li><li><a href="global.html#getShowOverwriteWarning">getShowOverwriteWarning</a></li><li><a href="global.html#getShowProjectInformationScreen">getShowProjectInformationScreen</a></li><li><a href="global.html#getSortedKeys">getSortedKeys</a></li><li><a href="global.html#getSourceBook">getSourceBook</a></li><li><a href="global.html#getSourceBookManifest">getSourceBookManifest</a></li><li><a href="global.html#getSourceContentUpdateCount">getSourceContentUpdateCount</a></li><li><a href="global.html#getSourceIndices">getSourceIndices</a></li><li><a href="global.html#getStep">getStep</a></li><li><a href="global.html#getSupportedGatewayLanguageResourcesList">getSupportedGatewayLanguageResourcesList</a></li><li><a href="global.html#getSupportingToolApis">getSupportingToolApis</a></li><li><a href="global.html#getTargetBook">getTargetBook</a></li><li><a href="global.html#getTargetChapter">getTargetChapter</a></li><li><a href="global.html#getTargetLanguageNameFromUsfm">getTargetLanguageNameFromUsfm</a></li><li><a href="global.html#getTargetLanguageVerse">getTargetLanguageVerse</a></li><li><a href="global.html#getTargetVerse">getTargetVerse</a></li><li><a href="global.html#getToggledGroupData">getToggledGroupData</a></li><li><a href="global.html#getTool">getTool</a></li><li><a href="global.html#getToolCardLaunchStatus">getToolCardLaunchStatus</a></li><li><a href="global.html#getToolCategories">getToolCategories</a></li><li><a href="global.html#getToolFolderNames">getToolFolderNames</a></li><li><a href="global.html#getToolGatewayLanguage">getToolGatewayLanguage</a></li><li><a href="global.html#getToolGlOwner">getToolGlOwner</a></li><li><a href="global.html#getToolGroupIndex">getToolGroupIndex</a></li><li><a href="global.html#getToolNames">getToolNames</a></li><li><a href="global.html#getToolProgress">getToolProgress</a></li><li><a href="global.html#getToolViewsAndAPIInitialState">getToolViewsAndAPIInitialState</a></li><li><a href="global.html#getTools">getTools</a></li><li><a href="global.html#getToolsByKey">getToolsByKey</a></li><li><a href="global.html#getTranslate">getTranslate</a></li><li><a href="global.html#getTranslation">getTranslation</a></li><li><a href="global.html#getTsvOLVersion">getTsvOLVersion</a></li><li><a href="global.html#getTwordALignments">getTwordALignments</a></li><li><a href="global.html#getTwordsIndex">getTwordsIndex</a></li><li><a href="global.html#getUSFMDetails">getUSFMDetails</a></li><li><a href="global.html#getUSfmFromProjectPath">getUSfmFromProjectPath</a></li><li><a href="global.html#getUniqueBookIds">getUniqueBookIds</a></li><li><a href="global.html#getUpdateAsset">getUpdateAsset</a></li><li><a href="global.html#getUserDoor43Url">getUserDoor43Url</a></li><li><a href="global.html#getUserEmail">getUserEmail</a></li><li><a href="global.html#getUserTokenDoor43Url">getUserTokenDoor43Url</a></li><li><a href="global.html#getUsername">getUsername</a></li><li><a href="global.html#getUsfm2ExportFile">getUsfm2ExportFile</a></li><li><a href="global.html#getUsfm3ExportFile">getUsfm3ExportFile</a></li><li><a href="global.html#getUsfmExportName">getUsfmExportName</a></li><li><a href="global.html#getUsfmForVerseContent">getUsfmForVerseContent</a></li><li><a href="global.html#getUsfmHeaderInfo">getUsfmHeaderInfo</a></li><li><a href="global.html#getValidGatewayBibles">getValidGatewayBibles</a></li><li><a href="global.html#getValidGatewayBiblesForTool">getValidGatewayBiblesForTool</a></li><li><a href="global.html#getValidResourcePath">getValidResourcePath</a></li><li><a href="global.html#getVerse">getVerse</a></li><li><a href="global.html#getVerseAlignments">getVerseAlignments</a></li><li><a href="global.html#getVerseForKey">getVerseForKey</a></li><li><a href="global.html#getVersesForSpan">getVersesForSpan</a></li><li><a href="global.html#getVersionFromManifest">getVersionFromManifest</a></li><li><a href="global.html#getVersionsInPath">getVersionsInPath</a></li><li><a href="global.html#getWordCountInVerse">getWordCountInVerse</a></li><li><a href="global.html#getWordText">getWordText</a></li><li><a href="global.html#gitErrorToLocalizedPrompt">gitErrorToLocalizedPrompt</a></li><li><a href="global.html#gitVersion">gitVersion</a></li><li><a href="global.html#goToStep">goToStep</a></li><li><a href="global.html#groupCategory">groupCategory</a></li><li><a href="global.html#groupCategoryTranslated">groupCategoryTranslated</a></li><li><a href="global.html#groupIsVisible">groupIsVisible</a></li><li><a href="global.html#groupItemIsVisible">groupItemIsVisible</a></li><li><a href="global.html#groupName">groupName</a></li><li><a href="global.html#handleDcsOperation">handleDcsOperation</a></li><li><a href="global.html#handleDcsRenameCollision">handleDcsRenameCollision</a></li><li><a href="global.html#handleDcsRenameCollisionPromise">handleDcsRenameCollisionPromise</a></li><li><a href="global.html#handleOverwriteWarning">handleOverwriteWarning</a></li><li><a href="global.html#hasAlignments">hasAlignments</a></li><li><a href="global.html#hasChangedFilesForCheck">hasChangedFilesForCheck</a></li><li><a href="global.html#hasGitHistoryForCurrentUser">hasGitHistoryForCurrentUser</a></li><li><a href="global.html#hasNewGroupsData">hasNewGroupsData</a></li><li><a href="global.html#hasOriginalLanguageChanged">hasOriginalLanguageChanged</a></li><li><a href="global.html#hasOriginalLanguageChangedSub">hasOriginalLanguageChangedSub</a></li><li><a href="global.html#hasValidHelps">hasValidHelps</a></li><li><a href="global.html#hasValidOL">hasValidOL</a></li><li><a href="global.html#heading">heading</a></li><li><a href="global.html#highlightSelectedTextInVerse">highlightSelectedTextInVerse</a></li><li><a href="global.html#ignoreAlert">ignoreAlert</a></li><li><a href="global.html#importCategoryGroupData">importCategoryGroupData</a></li><li><a href="global.html#increment">increment</a></li><li><a href="global.html#indexAlignments">indexAlignments</a></li><li><a href="global.html#indexTwords">indexTwords</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#initEnv">initEnv</a></li><li><a href="global.html#initLowLevel_">initLowLevel_</a></li><li><a href="global.html#initSub_">initSub_</a></li><li><a href="global.html#initializeProjectInformationCheckContinueButton">initializeProjectInformationCheckContinueButton</a></li><li><a href="global.html#initializeReducersForProjectImportValidation">initializeReducersForProjectImportValidation</a></li><li><a href="global.html#initializeReducersForProjectOpenValidation">initializeReducersForProjectOpenValidation</a></li><li><a href="global.html#initializeReducersForProjectValidation">initializeReducersForProjectValidation</a></li><li><a href="global.html#initiateProjectValidationStepper">initiateProjectValidationStepper</a></li><li><a href="global.html#injectFileLogging">injectFileLogging</a></li><li><a href="global.html#insertProjectInformationCheckToStepper">insertProjectInformationCheckToStepper</a></li><li><a href="global.html#insertStr">insertStr</a></li><li><a href="global.html#invalidateAlignment">invalidateAlignment</a></li><li><a href="global.html#isAttributeChanged">isAttributeChanged</a></li><li><a href="global.html#isCategoryLoaded">isCategoryLoaded</a></li><li><a href="global.html#isCheckUnique">isCheckUnique</a></li><li><a href="global.html#isDirectory">isDirectory</a></li><li><a href="global.html#isDirty">isDirty</a></li><li><a href="global.html#isGitInstalled">isGitInstalled</a></li><li><a href="global.html#isInvalidationAlertDisplaying">isInvalidationAlertDisplaying</a></li><li><a href="global.html#isLanguageCodeValid">isLanguageCodeValid</a></li><li><a href="global.html#isLiteInstall">isLiteInstall</a></li><li><a href="global.html#isMasterResourceDownloaded">isMasterResourceDownloaded</a></li><li><a href="global.html#isMatch">isMatch</a></li><li><a href="global.html#isMatched">isMatched</a></li><li><a href="global.html#isMatchingCheckInstance">isMatchingCheckInstance</a></li><li><a href="global.html#isNewTestament">isNewTestament</a></li><li><a href="global.html#isNotRegistered">isNotRegistered</a></li><li><a href="global.html#isOldTestament">isOldTestament</a></li><li><a href="global.html#isOriginalLanguage">isOriginalLanguage</a></li><li><a href="global.html#isOriginalLanguageBible">isOriginalLanguageBible</a></li><li><a href="global.html#isOverwritePermitted">isOverwritePermitted</a></li><li><a href="global.html#isProjectMissingVerses">isProjectMissingVerses</a></li><li><a href="global.html#isProjectSupported">isProjectSupported</a></li><li><a href="global.html#isRepo">isRepo</a></li><li><a href="global.html#isResourceIdValid">isResourceIdValid</a></li><li><a href="global.html#isSameVerse">isSameVerse</a></li><li><a href="global.html#isToolSupported">isToolSupported</a></li><li><a href="global.html#isToolUsingCurrentOriginalLanguage">isToolUsingCurrentOriginalLanguage</a></li><li><a href="global.html#isUSFMProject">isUSFMProject</a></li><li><a href="global.html#isValidBibleBook">isValidBibleBook</a></li><li><a href="global.html#isValidResource">isValidResource</a></li><li><a href="global.html#isValidVerseSpan">isValidVerseSpan</a></li><li><a href="global.html#isVerseAligned">isVerseAligned</a></li><li><a href="global.html#isVerseSpan">isVerseSpan</a></li><li><a href="global.html#key">key</a></li><li><a href="global.html#languagesObjectToResourcesArray">languagesObjectToResourcesArray</a></li><li><a href="global.html#length">length</a></li><li><a href="global.html#loadAlignments">loadAlignments</a></li><li><a href="global.html#loadArticleData">loadArticleData</a></li><li><a href="global.html#loadArticleDataAsync">loadArticleDataAsync</a></li><li><a href="global.html#loadBibleBook">loadBibleBook</a></li><li><a href="global.html#loadBiblesByLanguageId">loadBiblesByLanguageId</a></li><li><a href="global.html#loadBookResource">loadBookResource</a></li><li><a href="global.html#loadBookTranslations">loadBookTranslations</a></li><li><a href="global.html#loadChapterResource">loadChapterResource</a></li><li><a href="global.html#loadCheckData">loadCheckData</a></li><li><a href="global.html#loadCurrentCheckCategories">loadCurrentCheckCategories</a></li><li><a href="global.html#loadFile">loadFile</a></li><li><a href="global.html#loadFileAsync">loadFileAsync</a></li><li><a href="global.html#loadGroupsData">loadGroupsData</a></li><li><a href="global.html#loadInvalidCount">loadInvalidCount</a></li><li><a href="global.html#loadLexiconEntry">loadLexiconEntry</a></li><li><a href="global.html#loadLocalization">loadLocalization</a></li><li><a href="global.html#loadOlderOriginalLanguageResource">loadOlderOriginalLanguageResource</a></li><li><a href="global.html#loadProjectDataByType">loadProjectDataByType</a></li><li><a href="global.html#loadProjectDetails">loadProjectDetails</a></li><li><a href="global.html#loadProjectGroupData">loadProjectGroupData</a></li><li><a href="global.html#loadProjectGroupIndex">loadProjectGroupIndex</a></li><li><a href="global.html#loadProjectLicenseMarkdownFile">loadProjectLicenseMarkdownFile</a></li><li><a href="global.html#loadResourceArticle">loadResourceArticle</a></li><li><a href="global.html#loadSourceBookTranslations">loadSourceBookTranslations</a></li><li><a href="global.html#loadState">loadState</a></li><li><a href="global.html#loadTargetLanguageBook">loadTargetLanguageBook</a></li><li><a href="global.html#loadTool">loadTool</a></li><li><a href="global.html#loadToolGroupIndex">loadToolGroupIndex</a></li><li><a href="global.html#loadTools">loadTools</a></li><li><a href="global.html#loadToolsInDir">loadToolsInDir</a></li><li><a href="global.html#loadUSFMFile">loadUSFMFile</a></li><li><a href="global.html#loadUSFMFileAsync">loadUSFMFileAsync</a></li><li><a href="global.html#loadViewUrl">loadViewUrl</a></li><li><a href="global.html#localImport">localImport</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#makeDialogActions">makeDialogActions</a></li><li><a href="global.html#makeSureBiblesLoadedForTool">makeSureBiblesLoadedForTool</a></li><li><a href="global.html#makeSureCurrentBranchHasName">makeSureCurrentBranchHasName</a></li><li><a href="global.html#makeSureEnvInit">makeSureEnvInit</a></li><li><a href="global.html#makeSureProjectUnlocked">makeSureProjectUnlocked</a></li><li><a href="global.html#makeSureResourcesLoaded">makeSureResourcesLoaded</a></li><li><a href="global.html#makeSureUsfm3InHeader">makeSureUsfm3InHeader</a></li><li><a href="global.html#makeToolProps">makeToolProps</a></li><li><a href="global.html#manifestExists">manifestExists</a></li><li><a href="global.html#merge">merge</a></li><li><a href="global.html#mergeAlignmentMatches">mergeAlignmentMatches</a></li><li><a href="global.html#mergeOldProjectToNewProject">mergeOldProjectToNewProject</a></li><li><a href="global.html#mergeVerseData">mergeVerseData</a></li><li><a href="global.html#migrateChapterToVerseObjects">migrateChapterToVerseObjects</a></li><li><a href="global.html#migrateCurrentPaneSettings1">migrateCurrentPaneSettings1</a></li><li><a href="global.html#migrateCurrentPaneSettings2">migrateCurrentPaneSettings2</a></li><li><a href="global.html#migrateCurrentPaneSettings3">migrateCurrentPaneSettings3</a></li><li><a href="global.html#migrateCurrentPaneSettings4">migrateCurrentPaneSettings4</a></li><li><a href="global.html#migrateOldCheckingResourceData">migrateOldCheckingResourceData</a></li><li><a href="global.html#migrateProject">migrateProject</a></li><li><a href="global.html#migrateResourcesFolder">migrateResourcesFolder</a></li><li><a href="global.html#migrateSaveChangesInOldProjects">migrateSaveChangesInOldProjects</a></li><li><a href="global.html#migrateToAddTargetLanguageBookName">migrateToAddTargetLanguageBookName</a></li><li><a href="global.html#migrateToLanguageAwareCurrentPaneSettings">migrateToLanguageAwareCurrentPaneSettings</a></li><li><a href="global.html#migrateToVersion6">migrateToVersion6</a></li><li><a href="global.html#migrateToVersion7">migrateToVersion7</a></li><li><a href="global.html#migrateToVersion8">migrateToVersion8</a></li><li><a href="global.html#migrateToolsSettings">migrateToolsSettings</a></li><li><a href="global.html#mirror">mirror</a></li><li><a href="global.html#move">move</a></li><li><a href="global.html#moveProject">moveProject</a></li><li><a href="global.html#moveResourcesFromOldGrcFolder">moveResourcesFromOldGrcFolder</a></li><li><a href="global.html#multiSearchAlignments">multiSearchAlignments</a></li><li><a href="global.html#normalize">normalize</a></li><li><a href="global.html#normalizeList">normalizeList</a></li><li><a href="global.html#onMissingTranslation">onMissingTranslation</a></li><li><a href="global.html#onlineImport">onlineImport</a></li><li><a href="global.html#open">open</a></li><li><a href="global.html#openAlert">openAlert</a></li><li><a href="global.html#openIgnorableAlert">openIgnorableAlert</a></li><li><a href="global.html#openOnlyProjectDetailsScreen">openOnlyProjectDetailsScreen</a></li><li><a href="global.html#openProject">openProject</a></li><li><a href="global.html#openSafe">openSafe</a></li><li><a href="global.html#openSoftwareUpdate">openSoftwareUpdate</a></li><li><a href="global.html#openTool">openTool</a></li><li><a href="global.html#organizedInvalidatedCheckFiles">organizedInvalidatedCheckFiles</a></li><li><a href="global.html#pad">pad</a></li><li><a href="global.html#parseArticleAbstract">parseArticleAbstract</a></li><li><a href="global.html#parseMasterFileName">parseMasterFileName</a></li><li><a href="global.html#parseMergeConflictVersion">parseMergeConflictVersion</a></li><li><a href="global.html#parseMilestone">parseMilestone</a></li><li><a href="global.html#parseRemoteUrl">parseRemoteUrl</a></li><li><a href="global.html#parseRepoUrl">parseRepoUrl</a></li><li><a href="global.html#parseResourceKey">parseResourceKey</a></li><li><a href="global.html#parseUsfmDetails">parseUsfmDetails</a></li><li><a href="global.html#path">path</a></li><li><a href="global.html#pathExistsSync">pathExistsSync</a></li><li><a href="global.html#prepareProjectRepo">prepareProjectRepo</a></li><li><a href="global.html#prepareToolForLoading">prepareToolForLoading</a></li><li><a href="global.html#preserveNeededOrigLangVersions">preserveNeededOrigLangVersions</a></li><li><a href="global.html#printWindowContents">printWindowContents</a></li><li><a href="global.html#processChapter">processChapter</a></li><li><a href="global.html#projectExistsInProjectsFolder">projectExistsInProjectsFolder</a></li><li><a href="global.html#projectHasMergeConflicts">projectHasMergeConflicts</a></li><li><a href="global.html#projectHasMultipleBooks">projectHasMultipleBooks</a></li><li><a href="global.html#promptForInvalidCheckFeedback">promptForInvalidCheckFeedback</a></li><li><a href="global.html#promptMissingDetails">promptMissingDetails</a></li><li><a href="global.html#promptUserAboutMissingResource">promptUserAboutMissingResource</a></li><li><a href="global.html#pull">pull</a></li><li><a href="global.html#push">push</a></li><li><a href="global.html#pushNewRepo">pushNewRepo</a></li><li><a href="global.html#pushProjectRepo">pushProjectRepo</a></li><li><a href="global.html#pushUnique">pushUnique</a></li><li><a href="global.html#read">read</a></li><li><a href="global.html#readBibleBook">readBibleBook</a></li><li><a href="global.html#readCurrentContextIdSync">readCurrentContextIdSync</a></li><li><a href="global.html#readDataDir">readDataDir</a></li><li><a href="global.html#readDataDirSync">readDataDirSync</a></li><li><a href="global.html#readDataFile">readDataFile</a></li><li><a href="global.html#readDataFileSync">readDataFileSync</a></li><li><a href="global.html#readDirectory">readDirectory</a></li><li><a href="global.html#readFile">readFile</a></li><li><a href="global.html#readFileSync">readFileSync</a></li><li><a href="global.html#readJsonFile">readJsonFile</a></li><li><a href="global.html#readLatestChecks">readLatestChecks</a></li><li><a href="global.html#readSubDirs">readSubDirs</a></li><li><a href="global.html#readSubDirsOfArray">readSubDirsOfArray</a></li><li><a href="global.html#recoverFailedOnlineImport">recoverFailedOnlineImport</a></li><li><a href="global.html#regexSearch">regexSearch</a></li><li><a href="global.html#registerTool">registerTool</a></li><li><a href="global.html#remove">remove</a></li><li><a href="global.html#removeBibleFromList">removeBibleFromList</a></li><li><a href="global.html#removeExtraWordsFromAlignments">removeExtraWordsFromAlignments</a></li><li><a href="global.html#removeIndices">removeIndices</a></li><li><a href="global.html#removeOldOriginalBibles">removeOldOriginalBibles</a></li><li><a href="global.html#removeOldThelps">removeOldThelps</a></li><li><a href="global.html#removeOutDatedResources">removeOutDatedResources</a></li><li><a href="global.html#removeProjectValidationStep">removeProjectValidationStep</a></li><li><a href="global.html#removeRemote">removeRemote</a></li><li><a href="global.html#removeStaleCategoriesFromCurrent">removeStaleCategoriesFromCurrent</a></li><li><a href="global.html#renameBranch">renameBranch</a></li><li><a href="global.html#renameProject">renameProject</a></li><li><a href="global.html#renameRepo">renameRepo</a></li><li><a href="global.html#renameRepoLocally">renameRepoLocally</a></li><li><a href="global.html#replaceEllipsisInObjectArray">replaceEllipsisInObjectArray</a></li><li><a href="global.html#replaceEllipsisInObjectStr">replaceEllipsisInObjectStr</a></li><li><a href="global.html#replaceFontSizes">replaceFontSizes</a></li><li><a href="global.html#replacePageSizes">replacePageSizes</a></li><li><a href="global.html#replacePixelSizes">replacePixelSizes</a></li><li><a href="global.html#replaceWordsAndMilestones">replaceWordsAndMilestones</a></li><li><a href="global.html#resetAlignmentsForVerse">resetAlignmentsForVerse</a></li><li><a href="global.html#resetCategoryGroupIds">resetCategoryGroupIds</a></li><li><a href="global.html#resetLoadedCategories">resetLoadedCategories</a></li><li><a href="global.html#resetSourceContentUpdatesReducer">resetSourceContentUpdatesReducer</a></li><li><a href="global.html#revParse">revParse</a></li><li><a href="global.html#run">run</a></li><li><a href="global.html#sanitizeRemoteUrl">sanitizeRemoteUrl</a></li><li><a href="global.html#save">save</a></li><li><a href="global.html#saveAllCSVData">saveAllCSVData</a></li><li><a href="global.html#saveAndCloseProjectInformationCheckIfValid">saveAndCloseProjectInformationCheckIfValid</a></li><li><a href="global.html#saveChangesInOldProjects">saveChangesInOldProjects</a></li><li><a href="global.html#saveCheckingDetailsToProjectInformationReducer">saveCheckingDetailsToProjectInformationReducer</a></li><li><a href="global.html#saveCommentsToCSV">saveCommentsToCSV</a></li><li><a href="global.html#saveContextId">saveContextId</a></li><li><a href="global.html#saveData">saveData</a></li><li><a href="global.html#saveDebounced">saveDebounced</a></li><li><a href="global.html#saveGroupsToCSV">saveGroupsToCSV</a></li><li><a href="global.html#saveHeaders">saveHeaders</a></li><li><a href="global.html#saveProjectHeaderData">saveProjectHeaderData</a></li><li><a href="global.html#saveProjectLicense">saveProjectLicense</a></li><li><a href="global.html#saveProjectManifest">saveProjectManifest</a></li><li><a href="global.html#saveProjectSettings">saveProjectSettings</a></li><li><a href="global.html#saveRemindersToCSV">saveRemindersToCSV</a></li><li><a href="global.html#saveRemote">saveRemote</a></li><li><a href="global.html#saveResourcesUsed">saveResourcesUsed</a></li><li><a href="global.html#saveSelectionsToCSV">saveSelectionsToCSV</a></li><li><a href="global.html#saveState">saveState</a></li><li><a href="global.html#saveTargetBible">saveTargetBible</a></li><li><a href="global.html#saveTargetLanguage">saveTargetLanguage</a></li><li><a href="global.html#saveToolDataToCSV">saveToolDataToCSV</a></li><li><a href="global.html#saveUsfmVerse">saveUsfmVerse</a></li><li><a href="global.html#saveVerseEditsToCSV">saveVerseEditsToCSV</a></li><li><a href="global.html#scaleVariablesInTemplate">scaleVariablesInTemplate</a></li><li><a href="global.html#searchAlignments">searchAlignments</a></li><li><a href="global.html#searchAlignmentsAndAppend">searchAlignmentsAndAppend</a></li><li><a href="global.html#searchAlignmentsForField">searchAlignmentsForField</a></li><li><a href="global.html#searchAlignmentsSub">searchAlignmentsSub</a></li><li><a href="global.html#searchRefs">searchRefs</a></li><li><a href="global.html#searchRefsAndAppend">searchRefsAndAppend</a></li><li><a href="global.html#seeIfBookHasAlignments">seeIfBookHasAlignments</a></li><li><a href="global.html#selectLanguage">selectLanguage</a></li><li><a href="global.html#selectLocalProject">selectLocalProject</a></li><li><a href="global.html#selectProjectLicense">selectProjectLicense</a></li><li><a href="global.html#sendUpdateResourceErrorFeedback">sendUpdateResourceErrorFeedback</a></li><li><a href="global.html#set">set</a></li><li><a href="global.html#setActiveLanguageSafely">setActiveLanguageSafely</a></li><li><a href="global.html#setAllLanguageInfoInProjectInformationReducer">setAllLanguageInfoInProjectInformationReducer</a></li><li><a href="global.html#setAlreadyImportedInProjectInformationCheckReducer">setAlreadyImportedInProjectInformationCheckReducer</a></li><li><a href="global.html#setBookIDInProjectInformationReducer">setBookIDInProjectInformationReducer</a></li><li><a href="global.html#setCategoryGroupIds">setCategoryGroupIds</a></li><li><a href="global.html#setCategoryLoaded">setCategoryLoaded</a></li><li><a href="global.html#setCheckersInProjectInformationReducer">setCheckersInProjectInformationReducer</a></li><li><a href="global.html#setContributorsInProjectInformationReducer">setContributorsInProjectInformationReducer</a></li><li><a href="global.html#setCurrentCategories">setCurrentCategories</a></li><li><a href="global.html#setDefaultProjectCategories">setDefaultProjectCategories</a></li><li><a href="global.html#setDotEnv">setDotEnv</a></li><li><a href="global.html#setErrorFeedbackCategory">setErrorFeedbackCategory</a></li><li><a href="global.html#setErrorFeedbackDetails">setErrorFeedbackDetails</a></li><li><a href="global.html#setErrorFeedbackMessage">setErrorFeedbackMessage</a></li><li><a href="global.html#setFeedbackCloseCallback">setFeedbackCloseCallback</a></li><li><a href="global.html#setLanguage">setLanguage</a></li><li><a href="global.html#setLanguageDirectionInProjectInformationReducer">setLanguageDirectionInProjectInformationReducer</a></li><li><a href="global.html#setLanguageIdInProjectInformationReducer">setLanguageIdInProjectInformationReducer</a></li><li><a href="global.html#setLanguageNameInProjectInformationReducer">setLanguageNameInProjectInformationReducer</a></li><li><a href="global.html#setLocalImportInProjectInformationCheckReducer">setLocalImportInProjectInformationCheckReducer</a></li><li><a href="global.html#setLocaleLoaded">setLocaleLoaded</a></li><li><a href="global.html#setNicknameInProjectInformationReducer">setNicknameInProjectInformationReducer</a></li><li><a href="global.html#setOverwritePermittedInProjectInformationCheckReducer">setOverwritePermittedInProjectInformationCheckReducer</a></li><li><a href="global.html#setProjectDetailsInProjectInformationReducer">setProjectDetailsInProjectInformationReducer</a></li><li><a href="global.html#setProjectFontInProjectInformationReducer">setProjectFontInProjectInformationReducer</a></li><li><a href="global.html#setProjectManifest">setProjectManifest</a></li><li><a href="global.html#setProjectSettings">setProjectSettings</a></li><li><a href="global.html#setProjectToolGL">setProjectToolGL</a></li><li><a href="global.html#setResourceIDInProjectInformationReducer">setResourceIDInProjectInformationReducer</a></li><li><a href="global.html#setSaveLocation">setSaveLocation</a></li><li><a href="global.html#setSelectedCategories">setSelectedCategories</a></li><li><a href="global.html#setSetting">setSetting</a></li><li><a href="global.html#setSkipProjectNameCheckInProjectInformationCheckReducer">setSkipProjectNameCheckInProjectInformationCheckReducer</a></li><li><a href="global.html#setSystemLocale">setSystemLocale</a></li><li><a href="global.html#setToolSettings">setToolSettings</a></li><li><a href="global.html#setUpDefaultUSFMManifest">setUpDefaultUSFMManifest</a></li><li><a href="global.html#setUpManifest">setUpManifest</a></li><li><a href="global.html#setUpProjectDetails">setUpProjectDetails</a></li><li><a href="global.html#setUpSettings">setUpSettings</a></li><li><a href="global.html#setUpUSFMJSONObject">setUpUSFMJSONObject</a></li><li><a href="global.html#setUsfmProjectInProjectInformationCheckReducer">setUsfmProjectInProjectInformationCheckReducer</a></li><li><a href="global.html#setValuesForProjectValidation">setValuesForProjectValidation</a></li><li><a href="global.html#setVerseObjectsInAlignmentJSON">setVerseObjectsInAlignmentJSON</a></li><li><a href="global.html#setVersionInManifest">setVersionInManifest</a></li><li><a href="global.html#shouldProjectNameBeUpdated">shouldProjectNameBeUpdated</a></li><li><a href="global.html#shouldRun">shouldRun</a></li><li><a href="global.html#showAlert">showAlert</a></li><li><a href="global.html#showDcsRenameFailure">showDcsRenameFailure</a></li><li><a href="global.html#showDcsRenameFailurePromise">showDcsRenameFailurePromise</a></li><li><a href="global.html#showDialog">showDialog</a></li><li><a href="global.html#showElectronGitDialog">showElectronGitDialog</a></li><li><a href="global.html#showElectronGitSetup">showElectronGitSetup</a></li><li><a href="global.html#showErrorFeedbackDialog">showErrorFeedbackDialog</a></li><li><a href="global.html#showIgnorableAlert">showIgnorableAlert</a></li><li><a href="global.html#showIgnorableDialog">showIgnorableDialog</a></li><li><a href="global.html#showInvalidOrigLangVersionError">showInvalidOrigLangVersionError</a></li><li><a href="global.html#showInvalidVersionError">showInvalidVersionError</a></li><li><a href="global.html#showInvalidatedWarnings">showInvalidatedWarnings</a></li><li><a href="global.html#showLoading">showLoading</a></li><li><a href="global.html#showPreview">showPreview</a></li><li><a href="global.html#showRenamedDialog">showRenamedDialog</a></li><li><a href="global.html#sortByNamesCaseInsensitive">sortByNamesCaseInsensitive</a></li><li><a href="global.html#sortFilesByTstudioReadOrder">sortFilesByTstudioReadOrder</a></li><li><a href="global.html#sortMetadatas">sortMetadatas</a></li><li><a href="global.html#sortVersions">sortVersions</a></li><li><a href="global.html#status">status</a></li><li><a href="global.html#stepperActionCount">stepperActionCount</a></li><li><a href="global.html#storageAvailable">storageAvailable</a></li><li><a href="global.html#storeUSFMSaveLocation">storeUSFMSaveLocation</a></li><li><a href="global.html#stringifyArgs">stringifyArgs</a></li><li><a href="global.html#stringifyKey">stringifyKey</a></li><li><a href="global.html#stringifySafe">stringifySafe</a></li><li><a href="global.html#submitFeedback">submitFeedback</a></li><li><a href="global.html#targetBibleExists">targetBibleExists</a></li><li><a href="global.html#testForCheckingData">testForCheckingData</a></li><li><a href="global.html#testResourceByType">testResourceByType</a></li><li><a href="global.html#throwIfRemoteRepoExists">throwIfRemoteRepoExists</a></li><li><a href="global.html#timeFromTimestamp">timeFromTimestamp</a></li><li><a href="global.html#toggleHomeView">toggleHomeView</a></li><li><a href="global.html#toggleNextButton">toggleNextButton</a></li><li><a href="global.html#toggleProjectInformationCheckSaveButton">toggleProjectInformationCheckSaveButton</a></li><li><a href="global.html#toggleSetting">toggleSetting</a></li><li><a href="global.html#tools">tools</a></li><li><a href="global.html#toolsReducer">toolsReducer</a></li><li><a href="global.html#trimNewLine">trimNewLine</a></li><li><a href="global.html#type">type</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateAlignedWordAttribFromOriginalForBook">updateAlignedWordAttribFromOriginalForBook</a></li><li><a href="global.html#updateAlignedWordAttribFromOriginalForChapter">updateAlignedWordAttribFromOriginalForChapter</a></li><li><a href="global.html#updateAlignedWordsFromOrigLanguage">updateAlignedWordsFromOrigLanguage</a></li><li><a href="global.html#updateAlignedWordsFromOriginalForVerse">updateAlignedWordsFromOriginalForVerse</a></li><li><a href="global.html#updateAlignedWordsFromOriginalWordList">updateAlignedWordsFromOriginalWordList</a></li><li><a href="global.html#updateAlignments">updateAlignments</a></li><li><a href="global.html#updateAlignmentsForFile">updateAlignmentsForFile</a></li><li><a href="global.html#updateArray">updateArray</a></li><li><a href="global.html#updateCategoryGroupData">updateCategoryGroupData</a></li><li><a href="global.html#updateCategorySelection">updateCategorySelection</a></li><li><a href="global.html#updateCheckerName">updateCheckerName</a></li><li><a href="global.html#updateCheckingResourceData">updateCheckingResourceData</a></li><li><a href="global.html#updateContributorName">updateContributorName</a></li><li><a href="global.html#updateGitRemotes">updateGitRemotes</a></li><li><a href="global.html#updateGroupIndexForGl">updateGroupIndexForGl</a></li><li><a href="global.html#updateLanguage">updateLanguage</a></li><li><a href="global.html#updateMergeConflictNextButton">updateMergeConflictNextButton</a></li><li><a href="global.html#updateOrigLangPaneSettings">updateOrigLangPaneSettings</a></li><li><a href="global.html#updateProjectFolderToNameSpecification">updateProjectFolderToNameSpecification</a></li><li><a href="global.html#updateProjectLastOpened">updateProjectLastOpened</a></li><li><a href="global.html#updateProjectNameIfNecessary">updateProjectNameIfNecessary</a></li><li><a href="global.html#updateProjectNameIfNecessaryAndDoPrompting">updateProjectNameIfNecessaryAndDoPrompting</a></li><li><a href="global.html#updateProjectResourcesForTn">updateProjectResourcesForTn</a></li><li><a href="global.html#updateProjectVersion">updateProjectVersion</a></li><li><a href="global.html#updateResourcesForFile">updateResourcesForFile</a></li><li><a href="global.html#updateResourcesForOpenTool">updateResourcesForOpenTool</a></li><li><a href="global.html#updateSourceContentUpdaterManifest">updateSourceContentUpdaterManifest</a></li><li><a href="global.html#updateStepperIndex">updateStepperIndex</a></li><li><a href="global.html#updateSubcategorySelection">updateSubcategorySelection</a></li><li><a href="global.html#updateTargetVerse">updateTargetVerse</a></li><li><a href="global.html#updateToolProperties">updateToolProperties</a></li><li><a href="global.html#updateVersionSelection">updateVersionSelection</a></li><li><a href="global.html#upfdateOverwritePermittedInProjectInformationCheckReducer">upfdateOverwritePermittedInProjectInformationCheckReducer</a></li><li><a href="global.html#uploadProject">uploadProject</a></li><li><a href="global.html#useStableProp">useStableProp</a></li><li><a href="global.html#userTimestampObject">userTimestampObject</a></li><li><a href="global.html#usingOldGitVersion">usingOldGitVersion</a></li><li><a href="global.html#validate">validate</a></li><li><a href="global.html#validateBookId">validateBookId</a></li><li><a href="global.html#validateContextIdQuote">validateContextIdQuote</a></li><li><a href="global.html#validateProject">validateProject</a></li><li><a href="global.html#verifyAllRequiredFieldsAreCompleted">verifyAllRequiredFieldsAreCompleted</a></li><li><a href="global.html#verifyChunks">verifyChunks</a></li><li><a href="global.html#verifyProjectType">verifyProjectType</a></li><li><a href="global.html#verifyThisIsTCoreOrTStudioProject">verifyThisIsTCoreOrTStudioProject</a></li><li><a href="global.html#versionCompare">versionCompare</a></li><li><a href="global.html#visibleGroupItems">visibleGroupItems</a></li><li><a href="global.html#warnOnInvalidations">warnOnInvalidations</a></li><li><a href="global.html#withLocale">withLocale</a></li><li><a href="global.html#writeDataFile">writeDataFile</a></li><li><a href="global.html#writeDataFileSync">writeDataFileSync</a></li><li><a href="global.html#writeLogSync">writeLogSync</a></li><li><a href="global.html#writeToFS">writeToFS</a></li><li><a href="global.html#writeUSFM">writeUSFM</a></li><li><a href="global.html#zipCSVData">zipCSVData</a></li></ul>
+  </nav>
+
+  <div id="main">
+    
+      <h1 class="page-title">
+        helpers/alignmentSearchHelpers.js
+      </h1>
+    
+
+    
+      
+
+<section>
+  <article>
+    <pre class="prettyprint source linenums"><code>import path from 'path-extra';
+import fs from 'fs-extra';
+import xre from 'xregexp';
+import React from 'react';
+import env from 'tc-electron-env';
+import * as SPT from 'string-punctuation-tokenizer';
+import SourceContentUpdater, { resourcesHelpers, apiHelpers } from 'tc-source-content-updater';
+import wordaligner from 'word-aligner';
+import { getVerses } from 'bible-reference-range';
+import {
+  BIBLE_BOOKS,
+  NT_ORIG_LANG,
+  NT_ORIG_LANG_BIBLE,
+  OT_ORIG_LANG,
+  OT_ORIG_LANG_BIBLE,
+} from '../common/BooksOfTheBible';
+import {
+  DEFAULT_ORIG_LANG_OWNER,
+  DEFAULT_OWNER,
+  USER_RESOURCES_PATH,
+} from '../common/constants';
+import {
+  getUsfmForVerseContent,
+  trimNewLine,
+} from './FileConversionHelpers/UsfmFileConversionHelpers';
+import * as BibleHelpers from './bibleHelpers';
+import { getMostRecentVersionInFolder } from './originalLanguageResourcesHelpers';
+import { getOriginalLangOwner } from './ResourcesHelpers';
+const normalizer = SPT.normalizer;
+
+// eslint-disable-next-line no-useless-escape
+const START_WORD_REGEX = '(?&lt;=[\\s,.:;“"\'‘({]|^)';
+const START_WORD_REGEX_WJ = '(?&lt;=[\\s,.:;“"\'‘({\\p{Cc}]|^)'; // same as START_WORD_REGEX with word-joiner
+// eslint-disable-next-line no-useless-escape
+const END_WORD_REGEX = '(?=[\\s,.:;“"\'‘!?)}]|$)';
+const END_WORD_REGEX_WJ = '(?=[\\s,.:;“"\'‘!?)}\\p{Cc}]|$)'; // same as END_WORD_REGEX with word-joiner
+// eslint-disable-next-line no-unused-vars
+const WORD_JOINER = '\u2060'; // U+2060
+export const ALIGNMENTS_KEY = 'alignmentsIndex5'; // increment the number each time the code changes and breaks compatibility with old index
+export const TWORDS_KEY = 'tWordsIndex2'; // increment the number each time the code changes and breaks compatibility with old index
+export const OT_BOOKS = Object.keys(BIBLE_BOOKS.oldTestament);
+export const NT_BOOKS = Object.keys(BIBLE_BOOKS.newTestament);
+const TCORE_FOLDER = path.join(env.home(), 'translationCore');
+export const ALIGNMENT_DATA_DIR = path.join(TCORE_FOLDER, 'alignmentData');
+export const MASTER_DOWNLOADS = path.join(ALIGNMENT_DATA_DIR, 'downloads');
+const MISSING_DATA_SYMBOL = '－';
+
+/**
+ * get keys for alignments and do sort by locale
+ * @param {object} alignments
+ * @param {string} langID - language to use for sorting
+ * @returns {string[]}
+ */
+export function getSortedKeys(alignments, langID) {
+  let keys = Object.keys(alignments);
+
+  keys = keys.sort(function (a, b) {
+    return a.localeCompare(b, langID, { sensitivity: 'base' });
+  });
+
+  return keys;
+}
+
+/**
+ * count total alignments in alignments object
+ * @param {object} alignments
+ * @returns {number} - total
+ */
+export function getCount(alignments) {
+  const keys = Object.keys(alignments);
+  let count = 0;
+
+  for (const key of keys) {
+    const alignments_ = alignments[key];
+    count += alignments_.length;
+  }
+  return count;
+}
+
+/**
+ * generate multiple indices for alignments:
+ *    by lemma
+ *    by target
+ *    by source
+ *    by strong's number
+ * @param {object} alignments
+ * @returns {{strongAlignments: {}, lemmaAlignments: {}, targetAlignments: {}, sourceAlignments: {}}}
+ */
+export function indexAlignments(alignments) {
+  const lemmaAlignments = {};
+  const targetAlignments = {};
+  const sourceAlignments = {};
+  const strongAlignments = {};
+  const sourceKeys = Object.keys(alignments);
+
+  for (const sourceKey of sourceKeys) {
+    if (!sourceAlignments[sourceKey]) {
+      sourceAlignments[sourceKey] = [];
+    }
+
+    const targetAlignments_ = alignments[sourceKey];
+    const targetKeys = Object.keys(targetAlignments_);
+
+    for (const targetKey of targetKeys) {
+      const targetAlignment = targetAlignments_[targetKey];
+      const sourceLemma = targetAlignment.sourceLemma;
+
+      if (!lemmaAlignments[sourceLemma]) {
+        lemmaAlignments[sourceLemma] = [];
+      }
+      lemmaAlignments[sourceLemma].push(targetAlignment);
+      const strong = targetAlignment.strong;
+
+      if (!strongAlignments[strong]) {
+        strongAlignments[strong] = [];
+      }
+      strongAlignments[strong].push(targetAlignment);
+      const targetText = targetAlignment.targetText;
+
+      if (!targetAlignments[targetText]) {
+        targetAlignments[targetText] = [];
+      }
+
+      targetAlignments[targetText].push(targetAlignment);
+      sourceAlignments[sourceKey].push(targetAlignment);
+    }
+  }
+  return {
+    lemmaAlignments,
+    targetAlignments,
+    sourceAlignments,
+    strongAlignments,
+  };
+}
+
+/**
+ * do regex search of keys for search string
+ * @param {string[]} keys
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags for searching
+ * @returns {string[]}
+ */
+export function regexSearch(keys, searchStr, flags) {
+  const found = [];
+  const regex = xre(searchStr, flags);
+
+  for (const key of keys) {
+    const results = regex.test(key);
+
+    if (results) {
+      found.push(key);
+    }
+  }
+
+  return found;
+}
+
+/**
+ * do regex to see if text is match for searchStr/flags
+ * @param {string} text
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags for searching
+ * @returns {Object[]}
+ */
+export function isMatch(text, searchStr, flags) {
+  const regex = xre(searchStr, flags);
+  const results = regex.test(text);
+  return results;
+}
+
+/**
+ * build regex search string based on flags
+ * @param {string} search - string to search
+ * @param {boolean} fullWord - if true do full word matching
+ * @param {boolean} caseInsensitive -if true do cse insensitive matching
+ * @param {boolean} wordJoiner - if true then split words at word-joiner character
+ * @returns {boolean} {{search: string, flags: string}}
+ */
+export function buildSearchRegex(search, fullWord, caseInsensitive, wordJoiner = false) {
+  let flags = 'u'; // enable unicode support
+  search = xre.escape(normalizer((search || '').trim())); // escape any special character we are trying to match
+
+  if (search.includes('\\?') || search.includes('\\*')) { // check for wildcard characters
+    search = search.replaceAll('\\?', '\\S{1}');
+    search = search.replaceAll('\\*', '\\S*');
+  }
+
+  if (fullWord) {
+    if (wordJoiner) {
+      search = `${START_WORD_REGEX_WJ}${search}${END_WORD_REGEX_WJ}`;
+    } else {
+      search = `${START_WORD_REGEX}${search}${END_WORD_REGEX}`;
+    }
+  }
+
+  if (caseInsensitive) {
+    flags += 'i';
+  }
+
+  return { search, flags };
+}
+
+/**
+ * load alignments from alignments json
+ * @param {string} alignmentsPath
+ * @returns {null|{targetLang: string, strong: ({}|{alignments: {}}|*), alignments, lemma: ({}|{alignments: {}}|*), origLang: string, descriptor: string, source: ({}|{alignments: {}}|*), target: ({}|{alignments: {}}|*)}}
+ */
+export function loadAlignments(alignmentsPath) {
+  try {
+    const alignments = fs.readJsonSync(alignmentsPath);
+    const baseName = path.parse(alignmentsPath).name;
+    const [targetLang, descriptor, origLang] = baseName.split('_');
+
+    return {
+      alignments: alignments.alignments,
+      bibleIndex: alignments.bibleIndex,
+      targetLang,
+      descriptor,
+      origLang,
+      target: alignments.targetAlignments,
+      lemma: alignments.lemmaAlignments,
+      source: alignments.sourceAlignments,
+      strong: alignments.strongAlignments,
+    };
+  } catch (e) {
+    console.warn(`loadAlignments() - could not read ${alignmentsPath}`);
+  }
+  return null;
+}
+
+/**
+ * search object keys for matches with search string, when match is found get matching alignment from alignments
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {string[]} objectKeys - keys for alignments object
+ * @param {object} alignments - index alignments
+ * @returns {object[]}
+ */
+export function searchAlignmentsSub(searchStr, flags, objectKeys, alignments) {
+  const foundKeys = regexSearch(objectKeys, searchStr, flags);
+  const foundAlignments = [];
+
+  for (const key of foundKeys) {
+    const alignments_ = alignments[key];
+    Array.prototype.push.apply(foundAlignments, alignments_);
+  }
+  return foundAlignments;
+}
+
+/**
+ * first convert alignment refs to refsStr and then search object keys for matches with search string, when match is found get matching alignment from alignments
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {string[]} objectKeys - keys for alignments object
+ * @param {object} alignments - index alignments
+ * @param {object[]} alignmentsArray - list of alignment data that has been indexed
+ * @returns {object[]}
+ */
+export function searchRefs(searchStr, flags, objectKeys, alignments, alignmentsArray) {
+  const refsAlignments = {};
+
+  // create refs alignments object
+  for (const key of objectKeys) {
+    const alignments_ = alignments[key];
+
+    for (const index of alignments_) {
+      const alignment = alignmentsArray[index];
+      const refs = alignment?.refs || [];
+      const refsStr = refs.join(' ');
+
+      if (!refsAlignments[refsStr]) {
+        refsAlignments[refsStr] = [];
+      }
+      refsAlignments[refsStr].push(index);
+    }
+  }
+
+  const foundAlignments = searchAlignmentsSub(searchStr, flags, Object.keys(refsAlignments), refsAlignments);
+  return foundAlignments;
+}
+
+/**
+ * search object keys for matches with search string, when match is found get matching alignment from alignments
+ * @param {string} searchStr - string to match
+ * @param {boolean} fullWord - if true do full word matching
+ * @param {boolean} caseInsensitive -if true do cse insensitive matching
+ * @param {string[]} objectKeys - keys for alignments object
+ * @param {object} alignments - index alignments
+ * @returns {object[]}
+ */
+export function searchAlignments(searchStr, fullWord, caseInsensitive, objectKeys, alignments) {
+  const { search, flags } = buildSearchRegex(searchStr, fullWord, caseInsensitive);
+  const foundAlignments = searchAlignmentsSub(search, flags, objectKeys, alignments);
+  return foundAlignments;
+}
+
+/**
+ * search searchData for matches with search string, merge found alignments into found
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {object} searchData - data to search
+ * @param {object[]} found - array to accumulate found alignments into if not duplicated
+ */
+export function searchAlignmentsAndAppend(searchStr, flags, searchData, found) {
+  const found_ = searchAlignmentsSub(searchStr, flags, searchData.keys, searchData.alignments);
+
+  if (found_.length) {
+    for (const item of found_) {
+      pushUnique(found, item);
+    }
+  }
+}
+
+/**
+ * push item if it is not already in array
+ * @param array
+ * @param item
+ */
+function pushUnique(array, item) {
+  const duplicate = array.includes(item); // ignore duplicates
+
+  if (!duplicate) {
+    array.push(item);
+  }
+}
+
+/**
+ * search references in search data and merge found alignments into found
+ * @param {string} searchStr - string to match
+ * @param {string} flags - regex flags
+ * @param {object} searchData - data to search
+ * @param {object[]} found - array to accumulate found alignments into if not duplicated
+ * @param {object[]} alignmentsArray - list of alignment data that has been indexed
+ */
+export function searchRefsAndAppend(searchStr, flags, searchData, found, alignmentsArray) {
+  const found_ = searchRefs(searchStr, flags, searchData.keys, searchData.alignments, alignmentsArray);
+
+  if (found_.length) {
+    for (const item of found_) {
+      pushUnique(found, item);
+    }
+  }
+}
+
+/**
+ * look in source index for match to source text
+ * @param {string} sourceText
+ * @param {object} sourceIndex
+ * @returns {object[]}
+ */
+function getSourceIndices(sourceText, sourceIndex) {
+  let indices;
+  let sourceAlignments = sourceIndex[sourceText];
+
+  // try to find matches in alignment data to get lemma and morph
+  if (sourceAlignments &amp;&amp; sourceAlignments.length) {
+    indices = [sourceAlignments[0]];
+  } else {
+    const sourceWords = sourceText.split(' ');
+    indices = [];
+
+    for (const sourceWord of sourceWords) {
+      sourceAlignments = sourceIndex[sourceWord];
+
+      if (sourceAlignments &amp;&amp; sourceAlignments.length) {
+        indices.push(sourceAlignments[0]);
+      } else {
+        indices.push(sourceWord);
+      }
+    }
+  }
+  return indices;
+}
+
+/**
+ * find the morph (and lemma) for sourceText
+ * @param {object} sourceIndex - alignment indices mapped by source text
+ * @param {string} sourceText
+ * @param {array} alignments
+ * @param {array} sourceKeys
+ * @returns {{sourceLemma: string, morph: string}}
+ */
+function getMorphData(sourceIndex, sourceText, alignments, sourceKeys) {
+  let indices = getSourceIndices(sourceText, sourceIndex);
+  let sourceLemma = [];
+  let morph = [];
+
+  for (const index of indices) {
+    if (index >= 0) {
+      const alignment_ = alignments[index];
+      morph.push(alignment_.morph);
+      sourceLemma.push(alignment_.sourceLemma);
+    } else {
+      let matchFound = false;
+      let wordJoiner = false;
+
+      while (!matchFound) {
+        let searchStr = index;
+
+        if (wordJoiner) {
+          const parts = searchStr.split(WORD_JOINER);
+          searchStr = parts[0];
+          let pos = 0;
+          let longestLength = searchStr.length;
+
+          for (let i = 1; i &lt;parts.length; i++) {
+            const part = parts[i];
+            const len = part.length;
+
+            if (len > longestLength) {
+              pos = i;
+              longestLength = len;
+            }
+          }
+
+          if (pos > 0) {
+            searchStr = parts[pos];
+          }
+        }
+
+        const { search, flags } = buildSearchRegex(searchStr, true, false, wordJoiner);
+        const found = searchAlignmentsSub(search, flags, sourceKeys, sourceIndex);
+
+        if (found &amp;&amp; found.length) {
+          const index_ = found[0];
+          const alignment_ = alignments[index_];
+          const sourceWords = alignment_.sourceText.split(' ');
+
+          for (let i = 0; i &lt; sourceWords.length; i++) {
+            const sourceWord = sourceWords[i];
+
+            if (sourceWord === index) {
+              matchFound = true;
+              const morph_ = alignment_.morph.split(' ')[i];
+              const lemma_ = alignment_.sourceLemma.split(' ')[i];
+              morph.push(morph_);
+              sourceLemma.push(lemma_);
+              break;
+            }
+          }
+        }
+
+        if (wordJoiner) {
+          break;
+        } else {
+          wordJoiner = true;
+        }
+      }
+
+      if (!matchFound) {
+        morph.push(MISSING_DATA_SYMBOL);
+        sourceLemma.push(MISSING_DATA_SYMBOL);
+      }
+    }
+  }
+
+  sourceLemma = sourceLemma.join(' ');
+  morph = morph.join(' ');
+  return { sourceLemma, morph };
+}
+
+/**
+ * search in field
+ * @param {string} field
+ * @param {object} tWordsIndex - contains index for tWords search
+ * @param {string} search - regex for search
+ * @param {string} flags - regex flags
+ * @param {array} found - add entries found to this array
+ */
+function searchAlignmentsForField(field, tWordsIndex, search, flags, found) {
+  const keys = Object.keys(tWordsIndex[field]);
+  const alignments = tWordsIndex[field];
+  const searchData = { keys, alignments };
+  searchAlignmentsAndAppend(search, flags, searchData, found);
+}
+
+/**
+ * make sure that words in the current match follow the words in the previous match
+ * @param {string} fTPos - for current match - all positions of target text separated by spaces
+ * @param {string} fmtPos - for previous match - all positions of target text separated by spaces
+ * @returns {{positions: *, firstMPos: *, adjacentAlignments: boolean}}
+ */
+function arePositionsAdjacent(fTPos, fmtPos) {
+  const positions = fmtPos &amp;&amp; fmtPos.split(' ');
+  const lastPos = positions &amp;&amp; positions[positions.length - 1];
+  const mPositions = fTPos &amp;&amp; fTPos.split(' ');
+  const firstMPos = mPositions?.[0];
+
+  // noinspection EqualityComparisonWithCoercionJS
+  const adjacentAlignments = parseInt(lastPos) + 1 == firstMPos;
+  return {
+    positions,
+    firstMPos,
+    adjacentAlignments,
+  };
+}
+
+/**
+ * when comparing word found in previous alignment with current alignment, make sure the previous
+ *   alignment ends with the previous word searched for and the current alignment begins with the
+ *   current word searched for
+ * @param {object} found_t - alignment we are testing for match with merged word
+ * @param {string} lastSearch - (xre string)
+ * @param {string} flags
+ * @param {string} currentSearch (xre string)
+ * @param {object} merged - previously found alignment
+ * @returns {boolean}
+ */
+function areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged) {
+  let foundMatch = false;
+  let mTargetText = merged.targetText &amp;&amp; merged.targetText.split(' ; ');
+  const lastText = mTargetText &amp;&amp; mTargetText[mTargetText.length - 1];
+  mTargetText = lastText &amp;&amp; lastText.split(' ');
+  mTargetText = mTargetText &amp;&amp; mTargetText[mTargetText.length - 1];
+
+  if (mTargetText &amp;&amp; isMatch(mTargetText, lastSearch, flags)) {
+    let targetText = found_t.targetText &amp;&amp; found_t.targetText.split(' ; ');
+    const firstText = targetText &amp;&amp; targetText[0];
+    targetText = firstText &amp;&amp; firstText.split(' ')?.[0];
+    foundMatch = (targetText &amp;&amp; isMatch(targetText, currentSearch, flags));
+  }
+  return foundMatch;
+}
+
+/**
+ * make sure all the words being search for are in consecutive order
+ * @param {string[]} positions - of the words in the verse
+ * @param {string} firstMPos - beginning position of merged word
+ * @param {object} found_t - alignment we are testing for match with merged word
+ * @param {string[]} allSearches - all the searches to match in order (xre string)
+ * @param {string} flags - xre flags for search
+ * @returns {boolean}
+ */
+function areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, flags) {
+  let foundMatch = false;
+  const firstPos = positions[0];
+
+  // noinspection EqualityComparisonWithCoercionJS
+  if (firstMPos === firstPos) { // if both words in same alignment, check if adjacent
+    let targetWords = found_t.targetText &amp;&amp; found_t.targetText.split(' ; ');
+    const lastTargetWords = targetWords &amp;&amp; targetWords[targetWords.length - 1];
+    targetWords = lastTargetWords &amp;&amp; lastTargetWords.split(' ');
+    const searchesLength = allSearches.length;
+    const l = targetWords?.length;
+
+    for (let i = l - 1; i >= 0; i--) {
+      foundMatch = false;
+
+      for (let k = 0; k &lt; searchesLength; k++) {
+        const currentSearch = allSearches[searchesLength - 1 - k]; // starting at end
+        const testIndex = i - k;
+
+        if (testIndex &lt; 0) { // we hit the end
+          foundMatch = k >= 2; // as long as we match at least two words starting at beginning
+          break;
+        }
+
+        const targetWord = targetWords[testIndex];
+
+        if (!isMatch(targetWord, currentSearch, flags)) {
+          foundMatch = false;
+          break;
+        }
+        foundMatch = true;
+      }
+
+      if (foundMatch) {
+        break;
+      }
+    }
+  }
+  return foundMatch;
+}
+
+/**
+ * combine multiple searches
+ * @param {object[]} found
+ * @param {object[]} foundMerged
+ * @param {boolean} inOrder
+ * @param {string[]} previousSearches
+ * @param {string} currentSearch
+ * @param {string} flags - regex flag
+ * @returns {object[]}
+ */
+function mergeAlignmentMatches(found, foundMerged, inOrder, previousSearches, currentSearch, flags ) {
+  function mergeKeys(mergedAlignment, merged, found_t, keys) {
+    for (const key of keys) {
+      mergedAlignment[key] = `${merged[key]} ; ${found_t[key]}`;
+    }
+  }
+
+  const lastSearch = previousSearches &amp;&amp; previousSearches.length &amp;&amp; previousSearches[previousSearches.length - 1];
+
+  if (!lastSearch) {
+    return found;
+  }
+
+  const matches = [];
+  const allSearches = previousSearches.concat(currentSearch);
+
+  for (const found_t of found) {
+    for (const merged of foundMerged) {
+      for (let i = 0, l = found_t.refs.length; i &lt; l; i++) {
+        const ref = found_t.refs[i];
+
+        for (let j = 0, l2 = merged.refs.length; j &lt; l2; j++) {
+          const mRef = merged.refs[j];
+
+          if (ref === mRef) {
+            if (inOrder) {
+              let foundMatch = false; // not certain yet if they are adjacent
+              const fTPos = found_t.targetsPos[i];
+              const fmtPos = merged.targetsPos[j];
+              const {
+                positions,
+                firstMPos,
+                adjacentAlignments,
+              } = arePositionsAdjacent(fTPos, fmtPos);
+
+              if (adjacentAlignments) {
+                foundMatch = areWordsAdjacent(found_t, lastSearch, flags, currentSearch, merged);
+              } else { // if not in order then may not be right match, try checking if both words are in same alignmnet string
+                foundMatch = areWordsAdjacentInTarget(positions, firstMPos, found_t, allSearches, flags);
+              }
+
+              if (!foundMatch) { // skip if not a match
+                continue;
+              }
+            }
+
+            const targetsPosForMatch = found_t.targetsPos[i];
+            const mergedAlignment = {
+              ...merged,
+              refs: [ref],
+              targetsPos: [targetsPosForMatch],
+            };
+            const mergeKeys_ = ['morph', 'sourceLemma', 'sourceText', 'strong', 'targetText'];
+            mergeKeys(mergedAlignment, merged, found_t, mergeKeys_);
+            matches.push(mergedAlignment);
+          }
+        }
+      }
+    }
+  }
+  return matches;
+}
+
+/**
+ * search one or more fields for searchStr and merge the match alignments together
+ * @param {object} _alignmentData - object that contains raw alignments and indices for search
+ * @param {object} tWordsIndex - contains index for tWords search
+ * @param {string} searchStr - string to match
+ * @param {object} config - search configuration including search types and fields to search
+ * @param {object} alignmentData2 - secondary object for searching that contains raw alignments and indices
+ * @param {object} tWordsIndex2 - contains secondary index for tWords search
+ * @returns {object[]} - array of found alignments
+ */
+export function multiSearchAlignments(_alignmentData, tWordsIndex, searchStr, config, alignmentData2, tWordsIndex2) {
+  const searchStrParts = searchStr.split(' ');
+  const alignmentDataArray = [ _alignmentData ];
+  const tWordsIndexArray = [ tWordsIndex ];
+  const foundMatches = [];
+
+  if (alignmentData2) {
+    alignmentDataArray.push(alignmentData2);
+  }
+
+  if (tWordsIndex2) {
+    tWordsIndexArray.push(tWordsIndex2);
+  }
+
+  for (let j = 0; j &lt; 2; j++) {
+    const alignmentData = alignmentDataArray[j];
+    const tWordsIndex = tWordsIndexArray[j];
+    let foundMerged = [];
+    let previousSearches = [];
+
+    for (let i = 0, l = searchStrParts.length; i &lt; l; i++) {
+      const searchStr = searchStrParts[i];
+
+      if (!searchStr) {
+        continue;
+      }
+
+      const { search, flags } = buildSearchRegex(searchStr, config.fullWord, config.caseInsensitive);
+      let found = [];
+
+      if (config.searchTwords &amp;&amp; tWordsIndex) {
+        if (config.searchSource) {
+          const field = 'quoteIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchTarget) {
+          const field = 'groupIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchStrong) {
+          const field = 'strongsIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        if (config.searchLemma) {
+          const field = 'lemmaIndex';
+          searchAlignmentsForField(field, tWordsIndex, search, flags, found);
+        }
+
+        const source = alignmentData.source.alignments;
+        const alignments = alignmentData.alignments;
+        const sourceKeys = Object.keys(source);
+
+        found = found?.map(index => {
+          const check = tWordsIndex.checks[index];
+          const contextId = check?.contextId;
+          const targetText = contextId?.groupId || '';
+          const sourceText = check?.quoteString || '';
+          const strong = check.strong;
+          const { sourceLemma, morph } = getMorphData(source, sourceText, alignments, sourceKeys);
+
+          const newCheck = {
+            ...check,
+            targetText,
+            sourceText,
+            strong,
+            sourceLemma,
+            morph,
+          };
+
+          return newCheck;
+        });
+      } else if (alignmentData) {
+        if (config.searchTarget) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.target, found);
+        }
+
+        if (config.searchStrong) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.strong, found);
+        }
+
+        if (config.searchLemma) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.lemma, found);
+        }
+
+        if (config.searchSource) {
+          searchAlignmentsAndAppend(search, flags, alignmentData.source, found);
+        }
+
+        if (config.searchRefs) {
+          searchRefsAndAppend(search, flags, alignmentData.source, found, alignmentData.alignments);
+        }
+
+        found = found?.map(index => alignmentData.alignments[index]);
+      }
+
+      if (i) { // if not first pass
+        const matches = mergeAlignmentMatches(found, foundMerged, config.inOrder, previousSearches, search, flags);
+        foundMerged = matches;
+      } else {
+        foundMerged = found;
+      }
+
+      previousSearches.push(search);
+    }
+
+    Array.prototype.push.apply(foundMatches, foundMerged);
+  }
+
+  return foundMatches;
+}
+
+/**
+ * generate a key to identify bible
+ * @param {object} bible
+ * @param {string} type
+ * @returns {string}
+ */
+export function getKeyForBible(bible, type = null) {
+  const bibleId = bible.resourceId || bible.bibleId;
+  const key = `${bible.languageId}_${bibleId}_${(encodeParam(bible.owner))}_${bible.origLang}_${type}_${encodeParam(bible.version)}`;
+  return key;
+}
+
+/**
+ * filter downloaded aligned bibles and remove those that did not actually have alignments in them (by checking alignment count in index)
+ * @param {object[]} downloadedAlignedBibles - aligned bibles found in user resources
+ * @param {object[]} indexedResources - indexed aligned bibles found in alignmentData folder
+ * @returns {object[]}
+ */
+export function filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources) {
+  const filtered = [];
+
+  for (const downloadedBible of downloadedAlignedBibles) {
+    for (let testament = 0; testament &lt;= 1; testament++) {
+      let origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
+
+      if ((downloadedBible.languageId === NT_ORIG_LANG) || (downloadedBible.languageId === OT_ORIG_LANG)) {
+        if (origLang !== downloadedBible.languageId) {
+          continue; // skip over incompatible testaments
+        }
+      }
+
+      const found = indexedResources.find(item => (
+        item.languageId === downloadedBible.languageId &amp;&amp;
+        item.resourceId === downloadedBible.bibleId &amp;&amp;
+        item.owner === downloadedBible.owner &amp;&amp;
+        item.origLang === origLang &amp;&amp;
+        item.version === downloadedBible.version
+      ));
+
+      if (found) {
+        if (found.alignmentCount) {
+          filtered.push(found);
+        }
+      } else {
+        const newResource = {
+          ...downloadedBible,
+          origLang,
+          resourceId: downloadedBible.bibleId,
+        };
+
+        filtered.push(newResource);
+      }
+    }
+  }
+  return filtered;
+}
+
+/**
+ * parse the resource key into resource object
+ * @param {string} name
+ * @returns {{owner: string, alignmentCount: string, resourceId: string, languageId: string, origLang: string, type: string, version: string}}
+ */
+export function parseResourceKey(name) {
+  const parts = (name || '').split('_');
+  let [
+    languageId,
+    resourceId,
+    owner,
+    origLang,
+    type,
+    version,
+    alignmentCount,
+  ] = parts;
+  owner = decodeURIComponent(owner);
+  version = decodeURIComponent(version);
+
+  return {
+    languageId,
+    resourceId,
+    owner,
+    origLang,
+    type,
+    version,
+    alignmentCount,
+  };
+}
+
+/**
+ * parse the master file name for resource details
+ * @param {string} fileName
+ * @returns {null|any}
+ */
+export function parseMasterFileName(fileName) {
+  const [owner, languageId, resourceId] = fileName?.split('_') || [];
+  return {
+    owner,
+    languageId,
+    resourceId,
+  };
+}
+
+/**
+ * get path to master resource in downloads folder
+ * @param {object} resource
+ * @returns {string}
+ */
+function getMasterResourcePath(resource) {
+  const resourcePath = path.join(MASTER_DOWNLOADS, `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+  return resourcePath;
+}
+
+/**
+ * check if master resource has been downloaded
+ * @param {object} resource
+ * @returns {null|any}
+ */
+export function isMasterResourceDownloaded(resource) {
+  const resourcePath = getMasterResourcePath(resource);
+  const exists = fs.existsSync(resourcePath);
+  return exists;
+}
+
+/**
+ * return list of indexed aligned bibles found in alignmentData folder
+ * @param {string} alignmentDataDir - folder to search
+ * @returns {object[]}
+ */
+export function getAlignmentIndices(alignmentDataDir) {
+  const resources = [];
+  const resourcesIndexed = readDirectory(alignmentDataDir, false, true, '.json');
+
+  for (const fileName of resourcesIndexed) {
+    // const fileFolder = path.join(resourcesIndexed, fileName);
+    // ~/translationCore/alignmentData/en_ult_unfoldingWord_hbo_testament_v0_275433.json
+    const name = path.parse(fileName).name;
+    let {
+      languageId,
+      resourceId,
+      owner,
+      origLang,
+      type,
+      version,
+      alignmentCount,
+    } = parseResourceKey(name);
+
+    if (type !== ALIGNMENTS_KEY) {
+      continue;
+    }
+
+    alignmentCount = parseInt(alignmentCount, 10);
+    resources.push({
+      languageId,
+      resourceId,
+      owner,
+      origLang,
+      version,
+      alignmentCount,
+    });
+  }
+  return resources;
+}
+
+/**
+ * test if dirPath is actually a folder
+ * @param {string} dirPath
+ * @returns {boolean|*} true if folder
+ */
+function isDirectory(dirPath) {
+  try {
+    if (fs.existsSync(dirPath)) {
+      return fs.statSync(dirPath).isDirectory();
+    }
+    // eslint-disable-next-line no-empty
+  } catch (e) { }
+  return false;
+}
+
+/**
+ * read the directory and filter by folders or file extensions
+ * @param {string} dirPath - path to folder to read
+ * @param {boolean} foldersOnly - if true then only return folders
+ * @param {boolean} sort - if true then sort the results
+ * @param {string} extension - optional file extension to match
+ * @returns {string[]|*}
+ */
+export function readDirectory(dirPath, foldersOnly = true, sort = true, extension = null) {
+  if (isDirectory(dirPath)) {
+    let content = fs.readdirSync(dirPath).filter(item => {
+      if (item === '.DS_Store') {
+        return false;
+      }
+
+      if (foldersOnly) {
+        return isDirectory(path.join(dirPath, item));
+      }
+
+      if (extension) {
+        const ext = path.parse(item).ext;
+        return ext === extension;
+      }
+      return true;
+    });
+
+    if (sort) {
+      content = content.sort();
+    }
+    return content;
+  }
+  return [];
+}
+
+export async function downloadBible(resource, alignmentsFolder) {
+  const sourceContentUpdater = new SourceContentUpdater();
+
+  if (!resource.version) {
+    const owner = resource.owner;
+    const retries = 5;
+    const stage = resource.stage !== 'prod' ? 'preprod' : undefined;
+    const resourceName = `${resource.languageId}_${resource.resourceId}`;
+    const latest = await apiHelpers.getLatestRelease(owner, resourceName, retries, stage);
+    const release = latest &amp;&amp; latest.release;
+    let version = release &amp;&amp; release.tag_name;
+
+    if (version) {
+      resource.version = version;
+    }
+  }
+
+  const destinationPath = path.join(MASTER_DOWNLOADS, `${resource.owner}_${resource.languageId}_${resource.resourceId}`);
+  let error = false;
+
+  try {
+    console.log('downloadBibles() - downloading resource', resource);
+    const resource_ = await sourceContentUpdater.downloadAndProcessResource(resource, destinationPath);
+    console.log('downloadBibles() - download done', resource_);
+  } catch (e) {
+    console.warn('downloadBibles() - download failed', e);
+    error = e;
+  }
+
+  // /Users/blm/translationCore/alignmentData/unfoldingWord_en_ult/en/bibles/ult/v40_unfoldingWord
+  const parentPath = path.join(destinationPath, `${resource.languageId}/bibles/${resource.resourceId}`);
+  const files = readDirectory(parentPath);
+  const bibleName = files[0];
+  const biblePath = path.join(parentPath, bibleName || 'unknown');
+  const destinationBiblePath = path.join(destinationPath, 'bible');
+
+  if (!error) {
+    if (fs.existsSync(destinationBiblePath)) {
+      fs.removeSync(destinationBiblePath);
+    }
+
+    if (fs.existsSync(biblePath)) {
+      fs.moveSync(biblePath, destinationBiblePath);
+    } else {
+      error = `Missing ${biblePath}`;
+    }
+  }
+  return error;
+}
+
+/**
+ * URI encode param and replace _ or . with URI codes to prevent problems parsing as key or filename
+ * @param {string} param
+ * @returns {string}
+ */
+export function encodeParam(param) {
+  let encoded = encodeURIComponent(param);
+  encoded = encoded.replaceAll('_', '%5F');
+  encoded = encoded.replaceAll('.', '%2E');
+  return encoded;
+}
+
+async function doCallback(callback, percent) {
+  if (callback) {
+    await callback(Math.round(percent));
+  }
+}
+
+/**
+ * read and parse the book USFM
+ * @param {string} latestVersionPath
+ * @param {string} bookId
+ * @return {{readBooks: boolean, chapters: {}}}
+ */
+function readBibleBook(latestVersionPath, bookId) {
+  let readBooks = false;
+  const bookPath = path.join(latestVersionPath, bookId);
+  const chapters = {};
+
+  if (fs.existsSync(bookPath)) {
+    const chapterFiles = fs.readdirSync(bookPath)
+      .filter(file => path.extname(file) === '.json');
+
+    for (const chapterFile of chapterFiles) {
+      const chapterPath = path.join(bookPath, chapterFile);
+      const chapterJson = fs.readJsonSync(chapterPath);
+      const c = path.parse(chapterPath).name;
+      chapters[c] = chapterJson;
+      readBooks = true;
+    }
+  }
+  return { readBooks, chapters };
+}
+
+/**
+ * open Bible json data and extract alignment data for specific testament
+ * @param {string} resourceFolder
+ * @param {object} resource
+ * @param {function} callback - async callback function(percentProress:number)
+ * @returns {{strongAlignments: {alignments: {}}, alignments: object[], lemmaAlignments: {alignments: {}}, targetAlignments: {alignments: {}}, sourceAlignments: {alignments: {}}}}
+ */
+export async function getAlignmentsFromResource(resourceFolder, resource, callback = null) {
+  const bibleIndex = {};
+
+  try {
+    let bibleVersionsPath, latestVersionPath;
+    // /Users/blm/translationCore/resources/en/bibles/ult/v40_Door43-Catalog
+    const alignmentsFolder = path.join(resourceFolder, '../alignmentData');
+
+    if (resource.version === 'master') {
+      bibleVersionsPath = MASTER_DOWNLOADS;
+      latestVersionPath = path.join(getMasterResourcePath(resource), 'bible');
+    } else {
+      bibleVersionsPath = path.join(resourceFolder, `${resource.languageId}/bibles/${resource.resourceId}`);
+      latestVersionPath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, resource.owner);
+      const latestVersion = resourcesHelpers.splitVersionAndOwner(path.parse(latestVersionPath).base || '').version;
+      resource.version = latestVersion;
+    }
+
+    if (!latestVersionPath) {
+      console.warn(`getAlignmentsFromResource() - no bibles found for ${resource.owner} in ${bibleVersionsPath}`);
+    } else {
+      let alignments = [];
+      console.log(`getAlignmentsFromResource() - get alignments for ${resource.origLang}`);
+      const books = resource.origLang === NT_ORIG_LANG ? Object.keys(BIBLE_BOOKS.newTestament) : Object.keys(BIBLE_BOOKS.oldTestament);
+
+      const total = books.length;
+      let count = -1;
+
+      for (const bookId of books) {
+        const percent = ++count * 25 / total;
+        // eslint-disable-next-line no-await-in-loop
+        await doCallback(callback, percent);
+        const { readBooks, chapters } = readBibleBook(latestVersionPath, bookId);
+        const parsedUsfm = {
+          chapters,
+          headers: [],
+        };
+
+        if (readBooks) {
+          const manifest = {};
+          // eslint-disable-next-line no-await-in-loop
+          const bookAlignments = getALignmentsFromJson(parsedUsfm, manifest, bookId);
+          Array.prototype.push.apply(alignments, bookAlignments);
+        }
+      }
+
+      // merge alignments
+      const alignments_ = {};
+      const uniqueAlignments = [];
+      let l = alignments.length;
+      let stepSize = Math.round(l / 5);
+
+      for (let i = 0; i &lt; l; i++) {
+        if (i % stepSize === 0) {
+          const percent = 25 + 25 * i / l;
+          // eslint-disable-next-line no-await-in-loop
+          await doCallback(callback, percent);
+        }
+
+        const alignment = alignments[i];
+        const {
+          sourceText,
+          targetText,
+          ref,
+          reference: r_,
+        } = alignment;
+
+        if (!alignments_[sourceText]) {
+          alignments_[sourceText] = {};
+        }
+
+        const sourceAlignment = alignments_[sourceText];
+        let index = sourceAlignment[targetText];
+
+        if (!index) {
+          alignment.refs = [ref];
+          alignment.targetsPos = [alignment.targetsPos];
+          delete alignment.ref;
+          index = uniqueAlignments.length;
+          uniqueAlignments.push(alignment);
+          sourceAlignment[targetText] = [index];
+        } else {
+          const matchedAlignment = uniqueAlignments[index];
+          matchedAlignment.refs.push(ref);
+          matchedAlignment.targetsPos.push(alignment.targetsPos);
+        }
+
+        let bookIndex = bibleIndex[r_.bookId];
+
+        if (!bookIndex) {
+          bookIndex = {};
+          bibleIndex[r_.bookId] = bookIndex;
+        }
+
+        let chapterIndex = bookIndex[r_.chapter];
+
+        if (!chapterIndex) {
+          chapterIndex = {};
+          bookIndex[r_.chapter] = chapterIndex;
+        }
+
+        let verseIndex = chapterIndex[r_.verse];
+
+        if (!verseIndex) {
+          verseIndex = [];
+          chapterIndex[r_.verse] = verseIndex;
+        }
+
+        verseIndex.push(index);
+      }
+
+      alignments = uniqueAlignments;
+
+      console.log(`getAlignmentsFromResource() for ${resource.origLang}, ${alignments.length} alignments, indexing`);
+      const outputFile = path.join(alignmentsFolder, `${resource.languageId}_${resource.resourceId}_${(encodeParam(resource.owner))}_${resource.origLang}_${ALIGNMENTS_KEY}_${encodeParam(resource.version)}_${alignments.length}.json`);
+      const lemmaAlignments = { alignments: {} };
+      const targetAlignments = { alignments: {} };
+      const sourceAlignments = { alignments: {} };
+      const strongAlignments = { alignments: {} };
+      l = alignments.length;
+      stepSize = Math.round(l / 5);
+
+      for (let i = 0; i &lt; l; i++) {
+        if (i % stepSize === 0) {
+          const percent = 50 + 25 * i / l;
+          // eslint-disable-next-line no-await-in-loop
+          await doCallback(callback, percent);
+        }
+
+        const alignment = alignments[i];
+        const {
+          sourceText,
+          sourceLemma,
+          strong,
+          targetText,
+        } = alignment;
+        appendToAlignmentIndex(sourceAlignments.alignments, sourceText, i);
+        appendToAlignmentIndex(strongAlignments.alignments, strong, i);
+        appendToAlignmentIndex(lemmaAlignments.alignments, sourceLemma, i);
+        appendToAlignmentIndex(targetAlignments.alignments, targetText, i);
+      }
+
+      console.log(`getAlignmentsFromResource() for ${resource.origLang}, getting keys`);
+      await doCallback(callback, 80);
+      strongAlignments.keys = getSortedKeys(strongAlignments.alignments, 'en');
+      await doCallback(callback, 82);
+      lemmaAlignments.keys = getSortedKeys(lemmaAlignments.alignments, resource.origLang);
+      await doCallback(callback, 84);
+      sourceAlignments.keys = getSortedKeys(sourceAlignments.alignments, resource.origLang);
+      await doCallback(callback, 90);
+      targetAlignments.keys = getSortedKeys(targetAlignments.alignments, resource.languageId);
+      await doCallback(callback, 95);
+      const alignmentData = {
+        alignments,
+        lemmaAlignments,
+        targetAlignments,
+        sourceAlignments,
+        strongAlignments,
+        bibleIndex,
+      };
+      fs.outputJsonSync(outputFile, alignmentData);
+      return alignmentData;
+    }
+  } catch (e) {
+    console.warn('getAlignmentsFromResource() - parsing alignments failed', e);
+  }
+}
+
+/**
+ * open Bible json data and extract alignment data for both testaments
+ * @param {string} resourceFolder
+ * @param {object} resource_
+ */
+export function getAlignmentsFromDownloadedBible(resourceFolder, resource_) {
+  for (let testament = 0; testament &lt;= 1; testament++) {
+    const origLang = testament ? NT_ORIG_LANG : OT_ORIG_LANG;
+    const resource = {
+      ...resource_,
+      origLang,
+    };
+    getAlignmentsFromResource(resourceFolder, resource);
+  }
+
+  console.log('done');
+}
+
+/**
+ * append an alignment to alignments
+ * @param alignments
+ * @param text
+ * @param alignment
+ */
+function appendToAlignmentIndex(alignments, text, alignment) {
+  if (!alignments[text]) {
+    alignments[text] = [];
+  }
+  alignments[text].push(alignment);
+}
+
+/**
+ * add position in verse to the word objects
+ * @param {array} foundWords - array to fill with found word
+ * @param {object[]} verseObjects
+ * @param {number} pos
+ * @returns {*}
+ */
+function addPosition(foundWords, verseObjects, pos) {
+  for (const vo of verseObjects) {
+    if (vo.type === 'word') {
+      vo.pos = pos++;
+      foundWords.push(vo);
+    }
+
+    if (vo.children) {
+      pos = addPosition(foundWords, vo.children, pos);
+    }
+  }
+  return pos;
+}
+
+function addUnalignedWords(words, bookAlignments, verseRef, reference) {
+  for (const word of words) {
+    bookAlignments.push({
+      sourceText: '',
+      sourceLemma: '',
+      strong: '',
+      morph: '',
+      targetText: word.word || word.text,
+      ref: verseRef,
+      reference,
+      targetsPos: `${word.pos}`,
+    });
+  }
+}
+
+/**
+ * generate the target language bible from parsed USFM and manifest data
+ * @param {Object} parsedUsfm - The object containing usfm parsed by chapters
+ * @param {Object} manifest
+ * @param {String} selectedProjectFilename
+ * @return {Promise&lt;any>}
+ */
+const getALignmentsFromJson = (parsedUsfm, manifest, selectedProjectFilename) => {
+  try {
+    const chaptersObject = parsedUsfm.chapters;
+    const bookId = manifest?.project?.id || selectedProjectFilename;
+    const bookAlignments = [];
+    const chapters = Object.keys(chaptersObject);
+
+    for (const chapter of chapters) {
+      const bibleChapter = {};
+      const verses = Object.keys(chaptersObject[chapter]);
+      const chapterRef = `${bookId} ${chapter}:`;
+
+      for (const verse of verses) {
+        const verseRef = `${chapterRef}${verse}`;
+        const verseParts = chaptersObject[chapter][verse];
+        const foundWords = [];
+        addPosition(foundWords, verseParts.verseObjects, 0);
+        let verseText = getUsfmForVerseContent(verseParts);
+        bibleChapter[verse] = trimNewLine(verseText);
+        const object = wordaligner.unmerge(verseParts);
+        // eslint-disable-next-line object-curly-newline
+        const reference = { bookId, chapter, verse };
+
+        for (const alignment of object.alignment) {
+          const strongs = [];
+          const lemmas = [];
+          const targets = [];
+          const targetsPos = [];
+          const sources = [];
+          const morphs = [];
+
+          for (const originalWord of alignment.topWords) {
+            let {
+              strong,
+              lemma,
+              word,
+              morph,
+            } = originalWord;
+            strongs.push(strong);
+
+            if (!lemma) {
+              if (!strong || !word) { // TRICKY - if no lemma, but we have a strong's, this is OK for Hebrew
+                console.warn(`Invalid original word`, { originalWord, reference });
+              }
+            }
+
+            lemmas.push(lemma);
+            sources.push(word);
+            morphs.push(morph);
+          }
+
+          for (const targetWord of alignment.bottomWords) {
+            targets.push(targetWord.word);
+            targetsPos.push(`${targetWord.pos}`);
+          }
+          bookAlignments.push({
+            sourceText: normalizer(sources.join(' ')),
+            sourceLemma: normalizer(lemmas.join(' ')),
+            strong: strongs.join(' '),
+            morph: morphs.join(' '),
+            targetText: normalizer(targets.join(' ')),
+            targetsPos: targetsPos.join(' '),
+            ref: verseRef,
+            reference,
+          });
+        }
+
+        if (object.wordBank?.length) {
+          const words = object.wordBank;
+          addUnalignedWords(words, bookAlignments, verseRef, reference);
+        }
+      }
+    }
+
+    console.log(`getALignmentsFromJson() for book ${bookId}, ${bookAlignments.length} alignments`);
+    return bookAlignments;
+  } catch (error) {
+    console.log('getALignmentsFromJson() error:', error);
+    throw (error);
+  }
+};
+
+/**
+ * deletes the alignment search indexes as well as master branch data
+ */
+export function deleteCachedAlignmentData() {
+  if (fs.existsSync(ALIGNMENT_DATA_DIR)) {
+    fs.removeSync(ALIGNMENT_DATA_DIR);
+  }
+}
+
+/**
+ * get list of searchable bibles loaded in resources
+ * @param {string} translationCoreFolder
+ * @param {boolean} useMaster
+ * @returns {object[]}
+ */
+export function getSearchableAlignments(translationCoreFolder, useMaster) {
+  try {
+    console.log('getSearchableAlignments() - getting aligned bibles');
+    const resourceDir = path.join(translationCoreFolder, 'resources');
+    const downloadedAlignedBibles = getAlignedBibles(resourceDir);
+
+    if (useMaster) {
+      const alignedMasterBibles = readDirectory(MASTER_DOWNLOADS);
+
+      for (const fileName of alignedMasterBibles) {
+        const version = 'master';
+        const {
+          owner,
+          languageId,
+          resourceId,
+        } = parseMasterFileName(fileName);
+
+        downloadedAlignedBibles.push({
+          languageId,
+          bibleId: resourceId,
+          owner,
+          version,
+          biblePath: path.join(MASTER_DOWNLOADS, fileName),
+        });
+      }
+    }
+
+    console.log('getSearchableAlignments() - getting alignment indexes for bibles');
+    const indexedResources = getAlignmentIndices(ALIGNMENT_DATA_DIR);
+
+    // filter selections
+    console.log('getSearchableAlignments() - filtering aligned bibles');
+    const filtered = filterAvailableAlignedBibles(downloadedAlignedBibles, indexedResources);
+    return filtered;
+  } catch (e) {
+    console.error('getSearchableAlignments() - could not load available bibles');
+  }
+}
+
+/**
+ * aligned bibles found in user resources
+ * @param {string} resourceDir - path to user resources
+ * @param {boolean} alignedBiblesOnly - if true then filter for alignment
+ * @returns {object[]}
+ */
+export function getAvailableBibles(resourceDir, alignedBiblesOnly = true) {
+  const alignedBibles = [];
+
+  try {
+    const languages = readDirectory(resourceDir, true, true, null);
+
+    for (const languageId of languages) {
+      const biblesFolder = path.join(resourceDir, languageId, 'bibles');
+      const bibles = readDirectory(biblesFolder, true, true, null);
+
+      for (const bibleId of bibles) {
+        const biblePath = path.join(biblesFolder, bibleId);
+        const owners = resourcesHelpers.getLatestVersionsAndOwners(biblePath) || {};
+
+        for (const owner of Object.keys(owners)) {
+          try {
+            const biblePath = owners[owner];
+            let manifest = null;
+            const manifestPath = path.join(biblePath, 'manifest.json');
+
+            if (fs.pathExistsSync(manifestPath)) {
+              manifest = fs.readJsonSync(manifestPath);
+            }
+
+            let useBible = false;
+            const subject = manifest?.subject;
+
+            if (alignedBiblesOnly) {
+              let isAligned = (subject === 'Aligned Bible');
+
+              if (!isAligned) { // check for original bibles
+                if ((languageId === NT_ORIG_LANG) || (languageId === OT_ORIG_LANG)) {
+                  if ((bibleId === NT_ORIG_LANG_BIBLE) || (bibleId === OT_ORIG_LANG_BIBLE)) {
+                    isAligned = true;
+                  }
+                }
+              }
+              useBible = isAligned;
+            } else {
+              useBible = !!subject;
+            }
+
+            const version = resourcesHelpers.splitVersionAndOwner(path.basename(biblePath))?.version;
+
+            if (useBible) {
+              alignedBibles.push({
+                languageId,
+                bibleId,
+                owner,
+                version,
+                biblePath,
+              });
+            }
+          } catch (e) {
+            console.error(`getAlignedBibles() - could not load ${biblePath} for ${owner}`, e);
+          }
+        }
+      }
+    }
+  } catch (e) {
+    console.error(`getAlignedBibles() - error getting bibles`, e);
+  }
+  return alignedBibles;
+}
+
+/**
+ * aligned bibles found in user resources
+ * @param {string} resourceDir - path to user resources
+ * @returns {object[]}
+ */
+export function getAlignedBibles(resourceDir) {
+  return getAvailableBibles(resourceDir, true);
+}
+
+/**
+ * check if translationWordsLink path
+ * @param bible
+ * @returns {boolean}
+ */
+export function checkForHelpsForBible(bible) {
+  const tHelpsPath = path.join(USER_RESOURCES_PATH, bible.languageId, 'translationHelps/translationWordsLinks');
+  const latestVersionPath = resourcesHelpers.getLatestVersionInPath(tHelpsPath, bible.owner);
+
+  if (latestVersionPath &amp;&amp; fs.existsSync(path.join(latestVersionPath, 'manifest.json'))) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * looks up verses for resource key and caches them
+ * @param {string} bibleKey
+ * @param {string} ref
+ * @param {object} bibles
+ * @param {boolean} rawFormat - if false, convert to usfm
+ */
+export function getVerseForKey(bibleKey, ref, bibles, rawFormat = false) {
+  try {
+    const resource = parseResourceKey(bibleKey);
+    const {
+      languageId,
+      resourceId,
+      owner,
+      version,
+    } = resource;
+    let biblePath, bibleVersion;
+
+    if (version === 'master') {
+      bibleVersion = version;
+      biblePath = path.join(getMasterResourcePath(resource), 'bible');
+    } else {
+      bibleVersion = resourcesHelpers.addOwnerToKey(version, owner);
+      biblePath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, bibleVersion);
+    }
+
+    const bibleId = `${resourceId}_${bibleVersion}`;
+
+    if (fs.existsSync(biblePath)) {
+      return getVerse(biblePath, ref, bibles, bibleId, rawFormat);
+    }
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleVersion} - ${ref} in path ${biblePath} because file does not exist`);
+  } catch (e) {
+    console.warn(`getVerseForKey() - could not fetch verse for ${bibleKey} - ${ref}`, e);
+  }
+  return '';
+}
+
+/**
+ * convert verse data in verse chunks array to USFM
+ * @param {array} verseChunks
+ */
+function convertVerseChunksToUSFM(verseChunks) {
+  for (const chunk of verseChunks) {
+    if (typeof chunk.verseData !== 'string') {
+      chunk.verseData = getUsfmForVerseContent(chunk.verseData);
+    }
+  }
+}
+
+/**
+ * looks up verses and caches them
+ * @param {string} biblePath
+ * @param {string} ref
+ * @param {object} bibles
+ * @param {string} bibleKey
+ * @param {boolean} rawFormat - if false, convert to usfm
+ */
+export function getVerse(biblePath, ref, bibles, bibleKey, rawFormat = false) {
+  const [bookId, ref_] = (ref || '').trim().split(' ');
+
+  if (!bibles[bibleKey]) {
+    bibles[bibleKey] = {};
+  }
+
+  const bible = bibles[bibleKey];
+
+  if ( bookId &amp;&amp; ref_ ) {
+    const [chapter, verse] = ref_.split(':');
+
+    if (chapter &amp;&amp; verse) {
+      if (bible?.[bookId]?.[chapter]) {
+        let verses = getVerses(bible?.[bookId], ref_);
+
+        if (!rawFormat) {
+          convertVerseChunksToUSFM(verses);
+        }
+
+        return verses;
+      }
+
+      if (!bible?.[bookId]) {
+        bible[bookId] = {};
+      }
+
+      const chapterPath = path.join(biblePath, bookId, chapter + '.json');
+
+      if (fs.existsSync(chapterPath)) {
+        try {
+          const chapterData = fs.readJsonSync(chapterPath);
+
+          if (chapterData) {
+            for (const verseRef of Object.keys(chapterData)) {
+              let verseData = chapterData[verseRef];
+
+              if (!bible?.[bookId]?.[chapter]) {
+                bible[bookId][chapter] = {};
+              }
+
+              bible[bookId][chapter][verseRef] = verseData;
+            }
+          }
+
+          let verses = getVerses(bible?.[bookId], ref_);
+
+          if (!rawFormat) {
+            convertVerseChunksToUSFM(verses);
+          }
+
+          return verses;
+        } catch (e) {
+          console.log(`getVerse() - could not read ${chapterPath}`, e);
+        }
+      }
+    }
+  }
+  return '';
+}
+
+/**
+ * try to find closest matches for target text in verse text
+ * @param targetText
+ * @param verseText
+ * @returns {{targetPos: number[], targetParts: string[]}}
+ */
+export function findBestMatchesForTargetText(targetText, verseText) {
+  let targetParts = targetText.split(' ');
+  let targetPos = [];
+  let targetSearchRegEx = [];
+  let pos_ = 0;
+  let aborted = false;
+
+  // find first position of words in verse
+  for (let i = 0; i &lt; targetParts.length; i++) {
+    const searchWord = targetParts[i];
+
+    if (!searchWord) {
+      break;
+    }
+
+    const { search, flags } = buildSearchRegex(searchWord, true, false);
+    const regex = xre(search, flags);
+    targetSearchRegEx.push(regex);
+    const results = xre.exec(verseText, regex, pos_);
+    let newPos = results?.index;
+
+    if (newPos >= 0) {
+      targetPos.push(newPos);
+      newPos += searchWord.length;
+      pos_ = newPos;
+    } else {
+      aborted = true;
+      break;
+    }
+  }
+
+  if (!aborted &amp;&amp; targetParts.length > 1) {
+    // nudge matched words closer to following word
+    for (let i = targetParts.length - 2; i >= 0; i--) {
+      const searchWord = targetParts[i];
+      let bestPos = targetPos[i];
+      const endPos = targetPos[i + 1] - searchWord.length;
+      const regex = targetSearchRegEx[i];
+
+      // eslint-disable-next-line no-constant-condition
+      while (true) {
+        const results = xre.exec(verseText, regex, bestPos + searchWord.length);
+        let newPos = results?.index;
+
+        if ((newPos >= 0) &amp;&amp; (newPos &lt;= endPos)) {
+          bestPos = newPos;
+          targetPos[i] = bestPos;
+        } else {
+          break;
+        }
+      }
+    }
+  }
+  return { targetParts, targetPos };
+}
+
+/**
+ * add highlighting to verse
+ * @param {string} verseText
+ * @param {string} targetText
+ * @returns {object|string[]}
+ */
+export function highlightSelectedTextInVerse(verseText, targetText) {
+  const verseParts = [];
+
+  if (targetText) {
+    // first try easy case
+    const pos = verseText.indexOf(targetText);
+
+    if (pos >= 0) {
+      verseParts.push(verseText.substring(0, pos));
+      verseParts.push(&lt;span style={ { backgroundColor: 'var(--highlight-color)' } }> {targetText} &lt;/span>);
+      verseParts.push(verseText.substring(pos + targetText.length));
+    } else {
+      const { targetParts, targetPos } = findBestMatchesForTargetText(targetText, verseText);
+      let lastPos = 0;
+
+      // break into parts with spans for target text
+      for (let i = 0; i &lt; targetPos.length; i++) {
+        const searchWord = targetParts[i];
+        const pos = targetPos[i];
+
+        if (pos >= 0) {
+          verseParts.push(verseText.substring(lastPos, pos));
+          verseParts.push(&lt;span style={{ backgroundColor: 'var(--highlight-color)' }}> {searchWord} &lt;/span>);
+          lastPos = pos + searchWord.length;
+        } else {
+          break;
+        }
+      }
+
+      if (lastPos &lt; verseText.length) {
+        verseParts.push(verseText.substring(lastPos));
+      }
+    }
+  } else {
+    verseParts.push(verseText);
+  }
+
+  const output = [];
+
+  for (let versePart of verseParts) {
+    if (typeof versePart === 'string') {
+      let pos = -1;
+
+      while ((pos = versePart.indexOf('\n')) >= 0) {
+        output.push(versePart.substring(0, pos));
+        output.push(&lt;br/>);
+        const remainder = versePart.substring(pos + 1);
+        versePart = remainder;
+      }
+      output.push(versePart);
+    } else {
+      output.push(versePart);
+    }
+  }
+
+  const verseContent = output.filter(item => item);
+  return verseContent;
+}
+
+export function addTwordsInfoToResource(resource, resourcesFolder) {
+  let tWordsLangID = resource.languageId;
+  let subFolder = 'translationWordsLinks';
+  let origLang = resource.origLang;
+  let filterBooks = null;
+
+  if (resource.owner === DEFAULT_ORIG_LANG_OWNER) {
+    if (!origLang) {
+      const olForBook = resource.origLang || BibleHelpers.getOrigLangforBook(resource.bookId);
+      origLang = olForBook.languageId;
+    }
+    subFolder = 'translationWords';
+    tWordsLangID = origLang;
+    filterBooks = (origLang === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
+  }
+
+  const tWordsPath = path.join(resourcesFolder, `${tWordsLangID}/translationHelps/${subFolder}`);
+
+  if (!fs.existsSync(tWordsPath)) {
+    return null;
+  }
+
+  const latestTWordsVersion = getMostRecentVersionInFolder(tWordsPath, resource.owner);
+  const latestTwordsPath = path.join(tWordsPath, latestTWordsVersion);
+
+  const res = {
+    ...resource,
+    origLang,
+    latestTWordsVersion,
+    tWordsLangID,
+    filterBooks,
+    latestTwordsPath,
+  };
+  return res;
+}
+
+/**
+ * remove Index file for resource
+ * @param resource
+ */
+export function removeIndices(resource) {
+  for (const origLang of [OT_ORIG_LANG, NT_ORIG_LANG]) {
+    const resource_ = {
+      ...resource,
+      origLang,
+    };
+
+    const key = getKeyForBible(resource_, ALIGNMENTS_KEY);
+    const indexFiles = readDirectory(ALIGNMENT_DATA_DIR, false, true, '.json');
+    const found = indexFiles.find(fileName_ => fileName_.includes(key));
+
+    if (found) {
+      const alignmentPath = path.join(ALIGNMENT_DATA_DIR, found);
+
+      if (fs.existsSync(alignmentPath)) {
+        console.log('removeIndices() - removing index: ' + alignmentPath);
+        fs.removeSync(alignmentPath);
+      }
+    }
+  }
+}
+
+export function getTwordsKey(resource) {
+  const key = `${resource.tWordsLangID}_${resource.origLang}_${resource.latestTWordsVersion}_${TWORDS_KEY}`;
+  return key;
+}
+
+export function getTwordsIndexFileName(key) {
+  return path.join(ALIGNMENT_DATA_DIR, `${key}.json`);
+}
+
+export function saveTwordsIndex(key, index) {
+  const filePath = getTwordsIndexFileName(key);
+  fs.outputJsonSync(filePath, index);
+}
+
+/**
+ * get saved search index for tWords
+ * @param {string} key
+ * @returns {null|*}
+ */
+export function getTwordsIndex(key) {
+  let filePath;
+
+  try {
+    filePath = getTwordsIndexFileName(key);
+
+    if (fs.existsSync(filePath)) {
+      return fs.readJsonSync(filePath);
+    }
+  } catch (e) {
+    console.warn(`getTwordsIndex - cannot read ${filePath}`, e);
+  }
+  return null;
+}
+
+/**
+ * find item in object, if not found then add newItem
+ * @param {object} object
+ * @param {*} item
+ * @param {boolean} newItemIsArray - if true then new item is an empty array, otherwise make it an empty object
+ * @returns {*}
+ */
+function findItem(object, item, newItemIsArray = false) {
+  let verseList = object[item];
+
+  if (!verseList) {
+    verseList = newItemIsArray ? [] : {};
+    object[item] = verseList;
+  }
+  return verseList;
+}
+
+/**
+ * search through verse objects to find alignment for quote and occurrence
+ * @param verseObjects
+ * @param {string} quote
+ * @param {number} occurrence
+ * @returns {string|null|*}
+ */
+function findWord(verseObjects, quote, occurrence, count = 1) {
+  let found = null;
+
+  for (const vo of verseObjects) {
+    if ((vo.type === 'word') &amp;&amp; (normalizer(vo.text) === quote)) {
+      if (count >= occurrence) {
+        return { found: vo, count };
+      } else {
+        count++;
+      }
+    }
+
+    if (vo.children) {
+      const { found, count: _count } = findWord(vo.children, quote, occurrence, count);
+      count = _count;
+
+      if (found) {
+        return { found, count };
+      }
+    }
+  }
+  return { found, count };
+}
+
+/**
+ * find quote in original language bible and add strong and lemma info
+ * @param bible
+ * @param contextId
+ * @param reference
+ * @param biblePath
+ */
+function addOriginalLanguageInfo(bible, contextId, reference, biblePath) {
+  const {
+    bookId,
+    chapter,
+    verse,
+  } = reference;
+
+  let book = bible[bookId];
+
+  if (!book) {
+    const { readBooks, chapters } = readBibleBook(biblePath, bookId);
+
+    if (readBooks) {
+      book = chapters;
+      bible[bookId] = book;
+    }
+  }
+
+  if (book) {
+    const quote = contextId?.quote;
+    const quotes = Array.isArray(quote) ? quote : [{
+      word: quote,
+      occurrence: contextId?.occurrence || 1,
+    }];
+
+    let verseObjects = book[chapter]?.[verse]?.verseObjects;
+
+    if (verseObjects) {
+      const lemma = [];
+      const strong = [];
+
+      for (const quote of quotes) {
+        const { found } = findWord(verseObjects, normalizer(quote.word), quote.occurrence);
+
+        if (found) {
+          lemma.push(found.lemma);
+          strong.push(found.strong);
+        }
+      }
+
+      contextId.lemma = lemma;
+      contextId.strong = strong;
+    }
+  }
+}
+
+/**
+ * index twords for resource
+ * @param {string} resourcesFolder
+ * @param {object} resource
+ * @param {function} callback - async callback function(percentProress:number)
+ * @returns {object}
+ */
+export async function indexTwords(resourcesFolder, resource, callback = null) {
+  // for D43-Catalog:
+  // ~/translationCore/resources/el-x-koine/translationHelps/translationWords/v0.29_Door43-Catalog/kt/groups/1co
+  // for other owners:
+  // ~/translationCore/resources/en/translationHelps/translationWordsLinks/v17_unfoldingWord/kt/groups/1ch
+  try {
+    const bible = {};
+    let checks = [];
+    const bibleIndex = {};
+    const groupIndex = {};
+    const quoteIndex = {};
+    const strongsIndex = {};
+    const lemmaIndex = {};
+    const alignmentIndex = {};
+    const res = addTwordsInfoToResource(resource, resourcesFolder);
+    let filterBooks = res.filterBooks;
+    const latestTWordsVersion = res.latestTWordsVersion;
+    const latestTwordsPath = res.latestTwordsPath;
+
+    const usingDoor43 = (res.owner === DEFAULT_OWNER);
+    let biblePath = null;
+
+    if (!usingDoor43) {
+      const resourceId = (res.origLang === 'hbo') ? 'uhb' : 'ugnt';
+      const bibleVersionsPath = path.join(resourcesFolder, `${res.origLang}/bibles/${resourceId}`);
+      const origLangOwner = getOriginalLangOwner(resource.owner);
+      biblePath = resourcesHelpers.getLatestVersionInPath(bibleVersionsPath, origLangOwner);
+      filterBooks = (res.origLang === OT_ORIG_LANG) ? OT_BOOKS : NT_BOOKS;
+    }
+
+    if (latestTWordsVersion) {
+      await doCallback(callback, 0);
+
+      if (fs.existsSync(latestTwordsPath)) {
+        console.log(`indexTwords - Found ${latestTWordsVersion}`);
+        const categories = readDirectory(latestTwordsPath);
+        const categoryStepSize = 100 / (categories.length || 1);
+
+        for (let i = 0; i &lt; categories.length; i++) {
+          const category = categories[i];
+          const progressCategory = i * categoryStepSize;
+          const booksPath = path.join(latestTwordsPath, category, 'groups');
+          let books = readDirectory(booksPath);
+
+          if (filterBooks) {
+            const filteredBooks = books.filter(bookId => filterBooks.includes(bookId));
+            books = filteredBooks;
+          }
+
+          const bookStepSize = categoryStepSize / (books.length || 1);
+
+          for (let j = 0; j &lt; books.length; j++) {
+            const bookId = books[j];
+            const bookProgress = j * bookStepSize + progressCategory;
+            // eslint-disable-next-line no-await-in-loop
+            await doCallback(callback, bookProgress);
+            const bookPath = path.join(booksPath, bookId);
+            const groupFiles = readDirectory(bookPath, false, true, '.json');
+
+            for (const groupFile of groupFiles) {
+              const groupFilePath = path.join(bookPath, groupFile);
+
+              try {
+                const data = fs.readJsonSync(groupFilePath);
+                const groupId = groupFile.split('.json')[0];
+                const groupList = findItem(groupIndex, groupId, true);
+
+                for (const item of data) {
+                  const contextId = item?.contextId;
+                  const reference = contextId?.reference;
+
+                  if (!usingDoor43) {
+                    addOriginalLanguageInfo(bible, contextId, reference, biblePath);
+                  }
+
+                  let quote = contextId?.quote;
+
+                  if (Array.isArray(quote)) {
+                    const quote_ = quote.map(item => normalizer(item.word || ''));
+                    quote = quote_.join(' ');
+                  } else {
+                    quote = normalizer(quote || '');
+                  }
+
+                  item.quoteString = quote;
+                  let location = checks.length;
+                  const alignmentKey = `${groupId}_${quote}`;
+                  let previousCheck = alignmentIndex[alignmentKey];
+
+                  if (!previousCheck) { // if this is a new check
+                    item.refs = [reference];
+                    checks.push(item);
+                  } else { // if this check type already saved, add this reference
+                    location = previousCheck;
+                    const check = checks[previousCheck];
+                    check.refs.push(reference);
+                  }
+
+                  const chapter = reference?.chapter;
+
+                  let strongs = contextId?.strong || [];
+                  strongs = Array.isArray(strongs) ? strongs.join(' ') : strongs || '';
+                  item.strong = strongs;
+                  const strongsList = findItem(strongsIndex, strongs, true);
+                  pushUnique(strongsList, location);
+
+                  item.category = category;
+
+                  let lemma = normalizeItem(contextId?.lemma || '');
+                  lemma = Array.isArray(lemma) ? lemma.join(' ') : lemma || '';
+                  item.lemma = lemma;
+                  const lemmaList = findItem(lemmaIndex, lemma, true);
+                  pushUnique(lemmaList, location);
+
+                  const quoteList = findItem(quoteIndex, quote, true);
+                  pushUnique(quoteList, location);
+
+                  const bookIndex = findItem(bibleIndex, bookId, false);
+                  const chapterIndex = findItem(bookIndex, chapter, false);
+                  const verse = reference?.verse;
+                  const verseList = findItem(chapterIndex, verse, true);
+
+                  pushUnique(verseList, location);
+                  pushUnique(groupList, location);
+                }
+                // console.log(data);
+              } catch (e) {
+                console.warn(`indexTwords - could not read ${groupFilePath}`, e);
+              }
+            }
+          }
+        }
+
+        const newChecks = checks.map(item => {
+          const refs = item.refs.map(r => `${r.bookId} ${r.chapter}:${r.verse}`);
+          item.refs = refs;
+          return item;
+        });
+
+        checks = newChecks;
+
+        return {
+          bibleIndex,
+          groupIndex,
+          lemmaIndex,
+          quoteIndex,
+          strongsIndex,
+          checks,
+          resource: res,
+        };
+      }
+    }
+  } catch (e) {
+    console.warn(`indexTwords - error`, e);
+  }
+  return null;
+}
+
+/**
+ * look up the aligned text for the twords found
+ * @param {array} found
+ * @param {string} bibleKey
+ * @param {object} bibles
+ * @param {string} saveAlignmentsKey - key to save alignements in
+ */
+export function getTwordALignments(found, bibleKey, bibles, saveAlignmentsKey) {
+  /**
+   * get array of words in verseObjects
+   * @param {object[]} verseObjects
+   * @returns {object[]}
+   */
+  function findWords(verseObjects) {
+    let words = [];
+
+    if (verseObjects?.length) {
+      for (const vo of verseObjects) {
+        if (vo.type === 'word') {
+          words.push(vo.text);
+        } else if (vo.children) {
+          const words_ = findWords(vo.children);
+          words = words.concat(words_);
+        }
+      }
+    }
+    return words;
+  }
+
+  /**
+   * search through verse objects to find alignment for quote and occurrence
+   * @param verseObjects
+   * @param {string} quote
+   * @param {number} occurrence
+   * @returns {string|null|*}
+   */
+  function findMatch(verseObjects, quote, occurrence) {
+    let words = [];
+
+    for (const vo of verseObjects) {
+      if ((vo.tag === 'zaln') &amp;&amp; (vo.content === quote) &amp;&amp; (vo.occurrence === occurrence)) {
+        const words_ = findWords(vo.children);
+        words = words.concat(words_);
+      } else if (vo.children) {
+        const words_ = findMatch(vo.children, quote, occurrence);
+
+        if (words_.length) {
+          words = words.concat(words_);
+        }
+      }
+    }
+    return words;
+  }
+
+  for (const item of found) {
+    const contextId = item?.contextId;
+    const reference = contextId?.reference;
+    const ref = `${reference?.bookId} ${reference?.chapter}:${reference?.verse}`;
+    const verses = getVerseForKey(bibleKey, ref, bibles, true);
+
+    if (verses?.length) {
+      const verseObjects = verses[0]?.verseData?.verseObjects || [];
+
+      const alignedText = findMatch(verseObjects, contextId?.quote, contextId?.occurrence);
+      item[saveAlignmentsKey] = alignedText.join(' ');
+    }
+  }
+}
+
+function normalizeItem(item) {
+  let normalized;
+
+  if (Array.isArray(item)) {
+    normalized = item.map(item => normalizer(item || ''));
+  } else {
+    normalized = normalizer(item || '');
+  }
+
+  return normalized;
+}
+
+</code></pre>
+  </article>
+</section>
+
+    
+
+
+  </div>
+
+  <br class="clear">
+
+  <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 4.0.2</a>
+  </footer>
+
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/pagelocation.js"></script>
+
+  
+  <script>
+    $(function () {
+      window.docsearch({
+        apiKey: 'f12d46ccb502a9c723d200abe3e3befd',
+        indexName: 'translation_core',
+        inputSelector: '.search-input',
+        debug: false, // Set debug to true if you want to inspect the dropdown
+        algoliaOptions: {
+          hitsPerPage: 7
+        }
+      });
+    });
+  </script>
+  
+
+</body>
+</html>
