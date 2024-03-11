@@ -1,5 +1,17 @@
 # Changelog
 
+
+## [v3.6.3](https://github.com/unfoldingWord/translationCore/tree/v3.6.3) (2024-03-11)
+
+**Implemented enhancements:**
+- Added Ukranian Localization
+
+**Fixed bugs:**
+
+- Fix tN download issues due to missing resources [\#7498](https://github.com/unfoldingWord/translationCore/issues/7498)
+- Fix blank screen when fa_gl resources are downloaded [\#7563](https://github.com/unfoldingWord/translationCore/issues/7563)
+
+
 ## [v3.6.2](https://github.com/unfoldingWord/translationCore/tree/v3.6.2) (2023-11-8)
 
 **Fixed bugs:**
