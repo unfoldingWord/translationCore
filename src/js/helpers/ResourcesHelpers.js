@@ -1416,114 +1416,118 @@ export function preserveNeededOrigLangVersions(languageId, resourceId, resourceP
  * restores missing resources by language and bible and lexicon
  */
 export function getMissingResources() {
-  const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
+  try {
+    const tcResourcesLanguages = getFilteredSubFolders(STATIC_RESOURCES_PATH);
 
-  for ( const languageId of tcResourcesLanguages) {
-    LogHighlighted(`  Checking for missing ${languageId} resources`);
-    const staticLanguageResource = path.join(STATIC_RESOURCES_PATH, languageId);
-    const userLanguageResource = path.join(USER_RESOURCES_PATH, languageId);
-    const resourceTypes = getFilteredSubFolders(staticLanguageResource);
+    for (const languageId of tcResourcesLanguages) {
+      LogHighlighted(`  Checking for missing ${languageId} resources`);
+      const staticLanguageResource = path.join(STATIC_RESOURCES_PATH, languageId);
+      const userLanguageResource = path.join(USER_RESOURCES_PATH, languageId);
+      const resourceTypes = getFilteredSubFolders(staticLanguageResource);
 
-    for ( const resourceType of resourceTypes) {// resourceType: bibles, lexicons or translationHelps
-      const resourceTypePath = path.join(staticLanguageResource, resourceType);
-      const resourceIds = getFilteredSubFolders(resourceTypePath);
+      for (const resourceType of resourceTypes) {// resourceType: bibles, lexicons or translationHelps
+        const resourceTypePath = path.join(staticLanguageResource, resourceType);
+        const resourceIds = getFilteredSubFolders(resourceTypePath);
 
-      for ( const resourceId of resourceIds) {// resourceId: udb, ult, ugl, translationWords, translationNotes
-        const userResourcePath = path.join(userLanguageResource, resourceType, resourceId);
-        const staticResourcePath = path.join(staticLanguageResource, resourceType, resourceId);
+        for (const resourceId of resourceIds) {// resourceId: udb, ult, ugl, translationWords, translationNotes
+          const userResourcePath = path.join(userLanguageResource, resourceType, resourceId);
+          const staticResourcePath = path.join(staticLanguageResource, resourceType, resourceId);
 
-        if (resourceType === 'lexicons') {
-          // check for lexicons packaged with tc executable.
-          checkForNewLexicons(languageId);
-          extractZippedResourceContent(userResourcePath, resourceType === 'bibles');
-        } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
-          copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
-        } else { // compare resources manifest modified time
-          const owners = ResourceAPI.getLatestVersionsAndOwners(staticResourcePath) || {};
-          const ownersKeys = Object.keys(owners);
+          if (resourceType === 'lexicons') {
+            // check for lexicons packaged with tc executable.
+            checkForNewLexicons(languageId);
+            extractZippedResourceContent(userResourcePath, resourceType === 'bibles');
+          } else if (!fs.existsSync(userResourcePath)) {// if resource isn't found in user resources folder.
+            copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType);
+          } else { // compare resources manifest modified time
+            const owners = ResourceAPI.getLatestVersionsAndOwners(staticResourcePath) || {};
+            const ownersKeys = Object.keys(owners);
 
-          if (!ownersKeys || !ownersKeys.length) {
-            console.warn(`getMissingResources() - Could not find latest for ${staticResourcePath}`);
-          }
-
-          for (const owner of ownersKeys) {
-            if (!owner) {
-              console.error(`getMissingResources() - skipping empty owner for ${staticResourcePath}`);
-              continue;
+            if (!ownersKeys || !ownersKeys.length) {
+              console.warn(`getMissingResources() - Could not find latest for ${staticResourcePath}`);
             }
 
-            const staticResourceVersionPath = owners[owner];
-            const version = path.basename(staticResourceVersionPath);
-            const userResourceVersionPath = path.join(userResourcePath, version);
-            const userResourceExists = fs.existsSync(userResourceVersionPath);
-            let isOldResource = false;
-            const filename = 'manifest.json';
-            const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
+            for (const owner of ownersKeys) {
+              if (!owner) {
+                console.error(`getMissingResources() - skipping empty owner for ${staticResourcePath}`);
+                continue;
+              }
 
-            if (userResourceExists) {
-              const userResourceManifestPath = path.join(userResourceVersionPath, filename);
+              const staticResourceVersionPath = owners[owner];
+              const version = path.basename(staticResourceVersionPath);
+              const userResourceVersionPath = path.join(userResourcePath, version);
+              const userResourceExists = fs.existsSync(userResourceVersionPath);
+              let isOldResource = false;
+              const filename = 'manifest.json';
+              const staticResourceManifestPath = path.join(staticResourceVersionPath, filename);
 
-              if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
-                const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
-                const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
-                isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
+              if (userResourceExists) {
+                const userResourceManifestPath = path.join(userResourceVersionPath, filename);
 
-                if (isOldResource) {
-                  console.log('getMissingResources() - userModifiedTime: ' + userModifiedTime);
-                  console.log('getMissingResources() - staticModifiedTime: ' + staticModifiedTime);
-                }
-              } else if (!fs.existsSync(userResourceManifestPath)) {
-                if (fs.existsSync(staticResourceManifestPath)) {
-                  console.log('getMissingResources() - missing user manifest: ' + userResourceManifestPath);
-                  console.log('getMissingResources() - but found static manifest: ' + staticResourceManifestPath);
-                  isOldResource = true;
-                } else { // if no manifest.json, fall back to checking versions
-                  const userVersion = path.basename(userResourceVersionPath);
-                  const staticVersion = path.basename(staticResourceVersionPath);
-                  isOldResource = ResourceAPI.compareVersions(userVersion, staticVersion) < 0;
+                if (fs.existsSync(userResourceManifestPath) && fs.existsSync(staticResourceManifestPath)) {
+                  const { catalog_modified_time: userModifiedTime } = fs.readJsonSync(userResourceManifestPath) || {};
+                  const { catalog_modified_time: staticModifiedTime } = fs.readJsonSync(staticResourceManifestPath) || {};
+                  isOldResource = !userModifiedTime || (userModifiedTime < staticModifiedTime);
 
                   if (isOldResource) {
-                    console.log('getMissingResources() - userVersion: ' + userVersion);
-                    console.log('getMissingResources() - staticVersion: ' + staticVersion);
+                    console.log('getMissingResources() - userModifiedTime: ' + userModifiedTime);
+                    console.log('getMissingResources() - staticModifiedTime: ' + staticModifiedTime);
+                  }
+                } else if (!fs.existsSync(userResourceManifestPath)) {
+                  if (fs.existsSync(staticResourceManifestPath)) {
+                    console.log('getMissingResources() - missing user manifest: ' + userResourceManifestPath);
+                    console.log('getMissingResources() - but found static manifest: ' + staticResourceManifestPath);
+                    isOldResource = true;
+                  } else { // if no manifest.json, fall back to checking versions
+                    const userVersion = path.basename(userResourceVersionPath);
+                    const staticVersion = path.basename(staticResourceVersionPath);
+                    isOldResource = ResourceAPI.compareVersions(userVersion, staticVersion) < 0;
+
+                    if (isOldResource) {
+                      console.log('getMissingResources() - userVersion: ' + userVersion);
+                      console.log('getMissingResources() - staticVersion: ' + staticVersion);
+                    }
                   }
                 }
-              }
-            } else { // resource folder was empty
-              isOldResource = true;
-            }
-
-            preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath, USER_RESOURCES_PATH);
-
-            if (isOldResource) {
-              console.log(`getMissingResources() - checking ${languageId} ${resourceId} ${owner} - no resource found`);
-
-              // if (deleteOldResources) {
-              //   console.log('getMissingResources() - deleting old resources folder: ' + userResourcePath);
-              //   fs.removeSync(userResourcePath);
-              // }
-              console.log('getMissingResources() - unzipping static resources');
-              copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
-            } else { // if folder empty, then copy over current resource
-              const versions = ResourceAPI.listVersions(userResourcePath, owner);
-              const emptyResourceFolder = !versions.length;
-              let installResource = emptyResourceFolder;
-
-              if (!emptyResourceFolder) { // make sure bundled version is installed
-                const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath, owner);
-                const bundledVersion = path.basename(staticResourceVersionPath);
-                const destinationPath = path.join(userResourcePath, bundledVersion);
-                installResource = !fs.existsSync(destinationPath);
+              } else { // resource folder was empty
+                isOldResource = true;
               }
 
-              if (installResource) {
-                console.log('getMissingResources() - unzipping missing static resources');
+              preserveNeededOrigLangVersions(languageId, resourceId, userResourcePath, USER_RESOURCES_PATH);
+
+              if (isOldResource) {
+                console.log(`getMissingResources() - checking ${languageId} ${resourceId} ${owner} - no resource found`);
+
+                // if (deleteOldResources) {
+                //   console.log('getMissingResources() - deleting old resources folder: ' + userResourcePath);
+                //   fs.removeSync(userResourcePath);
+                // }
+                console.log('getMissingResources() - unzipping static resources');
                 copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
+              } else { // if folder empty, then copy over current resource
+                const versions = ResourceAPI.listVersions(userResourcePath, owner);
+                const emptyResourceFolder = !versions.length;
+                let installResource = emptyResourceFolder;
+
+                if (!emptyResourceFolder) { // make sure bundled version is installed
+                  const staticResourceVersionPath = ResourceAPI.getLatestVersion(staticResourcePath, owner);
+                  const bundledVersion = path.basename(staticResourceVersionPath);
+                  const destinationPath = path.join(userResourcePath, bundledVersion);
+                  installResource = !fs.existsSync(destinationPath);
+                }
+
+                if (installResource) {
+                  console.log('getMissingResources() - unzipping missing static resources');
+                  copyAndExtractResource(staticResourcePath, userResourcePath, languageId, resourceId, resourceType, owner);
+                }
               }
             }
           }
         }
       }
     }
+  } catch (e) {
+    console.error(`getMissingResources() - exception occurred`, e);
   }
 }
 
