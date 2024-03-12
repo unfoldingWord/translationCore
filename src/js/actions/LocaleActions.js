@@ -127,7 +127,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
       if (!file.endsWith('.json')) {
         // don't warn if readme or NonTranslatable.js
         if (!file.endsWith('.md') && !file.endsWith('.js')) {
-          console.warn(`Skipping invalid localization file ${file}`);
+          console.warn(`loadLocalization() - Skipping invalid localization file ${file}`);
         }
         continue;
       }
@@ -148,7 +148,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
           translations[shortLangCode] = translation;
         }
       } catch (e) {
-        console.error(`Failed to load localization ${localeFile}: ${e}`);
+        console.error(`loadLocalization() - Failed to load localization ${localeFile}: ${e}`);
       }
     }
     return Promise.resolve({ languages, translations });
@@ -172,9 +172,17 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
     let languageCode = appLanguage;
 
     if (!translations[languageCode] && languageCode) {
+      console.log(`loadLocalization() - No exact match found for ${languageCode}`);
       const shortLocale = languageCode.split('_')[0];
-      const equivalentLocale = translations[shortLocale]['_']['locale'];
-      languageCode = equivalentLocale;
+      const equivalentLocale = translations[shortLocale]?.['_']?.['locale'];
+
+      if (equivalentLocale) {
+        console.log(`loadLocalization() - Falling back to ${equivalentLocale}`);
+        languageCode = equivalentLocale;
+      } else {
+        languageCode = 'en'; // default to `en` if shortLocale match not found
+        console.log(`loadLocalization() - No short match found for ${shortLocale}, Falling back to ${languageCode}`);
+      }
     }
 
     if (languageCode) {
@@ -190,7 +198,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
 
     if (appLanguage) {
       // set selected locale
-      console.log(`Saved locale: ${appLanguage}`);
+      console.log(`loadLocalization() - Saved locale: ${appLanguage}`);
 
       if (!setActiveLanguageSafely(dispatch, appLanguage, languages, translations, setActiveLanguage, addTranslationForLanguage)) {
         // fall back to system locale
@@ -203,7 +211,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
   }).then(() => {
     dispatch(setLocaleLoaded());
   }).catch(err => {
-    console.log('Failed to initialize localization', err);
+    console.error('loadLocalization() - Failed to initialize localization', err);
   });
 };
 

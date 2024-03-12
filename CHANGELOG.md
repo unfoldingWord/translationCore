@@ -1,5 +1,19 @@
 # Changelog
 
+## [v3.6.2](https://github.com/unfoldingWord/translationCore/tree/v3.6.2) (2023-11-8)
+
+**Fixed bugs:**
+
+- In WordAlignment tool, Bug in shift-click selects words already used [\#7555](https://github.com/unfoldingWord/translationCore/issues/7555)
+
+
+## [v3.6.1](https://github.com/unfoldingWord/translationCore/tree/v3.6.1) (2023-11-7)
+
+**Fixed bugs:**
+
+- Fix Verse Range support in WordAlignment Tool [\#7546](https://github.com/unfoldingWord/translationCore/issues/7546)
+
+
 ## [v3.6.0](https://github.com/unfoldingWord/translationCore/tree/v3.5.0) (2023-11-1)
 
 **Implemented enhancements:**
