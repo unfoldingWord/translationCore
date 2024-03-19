@@ -675,8 +675,8 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const sourceBook = getSourceBook(state, getOriginalLangOwner(gatewayLanguageOwner));
   const targetBook = getTargetBook(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
-  const expectedLanguage = LangHelpers.getLanguageByCode(gatewayLanguageCode);
-  const gatewayLanguageDirection = expectedLanguage.ltr ? 'ltr' : 'rtl';
+  const gl = LangHelpers.getLanguageByCode(gatewayLanguageCode);
+  const gatewayLanguageDirection = gl.ltr ? 'ltr' : 'rtl';
 
   return {
     //resource api

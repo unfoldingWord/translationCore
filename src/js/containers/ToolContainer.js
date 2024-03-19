@@ -90,8 +90,8 @@ class ToolContainer extends Component {
       currentLanguage: { code },
     } = nextProps;
 
-    const expectedLanguage = LangHelpers.getLanguageByCode(gatewayLanguageCode);
-    const gatewayLanguageDirection = expectedLanguage.ltr ? 'ltr' : 'rtl';
+    const gl = LangHelpers.getLanguageByCode(gatewayLanguageCode);
+    const gatewayLanguageDirection = gl.ltr ? 'ltr' : 'rtl';
 
     return {
       // project api
