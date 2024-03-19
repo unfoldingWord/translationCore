@@ -82,6 +82,7 @@ import { getUSFMDetails } from '../../helpers/usfmHelpers';
 import { confirmOnlineAction } from '../OnlineModeConfirmActions';
 import { getMostRecentVersionInFolder } from '../../helpers/originalLanguageResourcesHelpers';
 import { downloadMissingResource } from '../SourceContentUpdatesActions';
+import * as LangHelpers from '../../helpers/LanguageHelpers';
 
 export const promptForViewUrl = (projectSaveLocation, translate) => (dispatch, getState) => {
   dispatch(confirmOnlineAction(() => {
@@ -674,6 +675,8 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
   const sourceBook = getSourceBook(state, getOriginalLangOwner(gatewayLanguageOwner));
   const targetBook = getTargetBook(state);
   const gatewayLanguageCode = getToolGatewayLanguage(state, toolName);
+  const expectedLanguage = LangHelpers.getLanguageByCode(gatewayLanguageCode);
+  const gatewayLanguageDirection = expectedLanguage.ltr ? 'ltr' : 'rtl';
 
   return {
     //resource api
@@ -708,6 +711,7 @@ function makeToolProps(dispatch, state, projectDir, bookId, toolName) {
     bookId,
     toolName,
     gatewayLanguageCode,
+    gatewayLanguageDirection,
     gatewayLanguageOwner,
 
     contextId: {
