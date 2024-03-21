@@ -31,6 +31,7 @@ import complexScriptFonts from '../common/complexScriptFonts';
 import { addObjectPropertyToManifest } from '../actions/ProjectDetailsActions';
 import { getOriginalLangOwner } from '../helpers/ResourcesHelpers';
 import { DEFAULT_ORIG_LANG_OWNER } from '../common/constants';
+import * as LangHelpers from '../helpers/LanguageHelpers';
 
 const styles = {
   container: {
@@ -89,6 +90,9 @@ class ToolContainer extends Component {
       currentLanguage: { code },
     } = nextProps;
 
+    const gl = LangHelpers.getLanguageByCode(gatewayLanguageCode);
+    const gatewayLanguageDirection = gl.ltr ? 'ltr' : 'rtl';
+
     return {
       // project api
       project: projectApi,
@@ -115,6 +119,7 @@ class ToolContainer extends Component {
       projects,
       username,
       gatewayLanguageCode,
+      gatewayLanguageDirection,
       gatewayLanguageOwner,
 
       // project data
