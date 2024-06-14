@@ -55,6 +55,7 @@ export const SETTINGS_FOLDER = path.join(env.data(), TC_PATH);
 export const SETTINGS_PATH = path.join(SETTINGS_FOLDER, 'settings.json');
 export const ASSETS_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'assets') : path.join('./src/assets');
 export const PROJECT_LICENSES_PATH = isProduction ? path.join(STATIC_FOLDER_PATH, 'projectLicenses') : path.join('./src/assets/projectLicenses');
+export const ALIGNMENT_DATA_PATH = path.join(USER_HOME, 'translationCore', 'alignmentData');
 // string names
 export const TC_VERSION = 'tc_version';
 export const SOURCE_CONTENT_UPDATER_MANIFEST = 'source-content-updater-manifest.json';
