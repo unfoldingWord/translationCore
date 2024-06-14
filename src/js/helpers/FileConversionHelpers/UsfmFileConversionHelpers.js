@@ -103,7 +103,7 @@ export const getOriginalLanguageChapterResources = function (projectBibleID, cha
  * remove single trailing newline from end of string
  * @param text
  */
-const trimNewLine = function (text) {
+export const trimNewLine = function (text) {
   if (text && text.length) {
     let lastChar = text.substr(-1);
 
