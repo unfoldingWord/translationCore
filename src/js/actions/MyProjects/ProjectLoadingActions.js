@@ -2,7 +2,6 @@
 import React from 'react';
 import path from 'path-extra';
 import fs from 'fs-extra';
-import usfmjs from 'usfm-js';
 import { TextField } from 'material-ui';
 import { batchActions } from 'redux-batched-actions';
 import {
@@ -78,7 +77,7 @@ import {
   USER_RESOURCES_PATH,
   VIEW_DATA_PATH,
 } from '../../common/constants';
-import { getUSFMDetails } from '../../helpers/usfmHelpers';
+import { getParsedUSFM, getUSFMDetails } from '../../helpers/usfmHelpers';
 import { confirmOnlineAction } from '../OnlineModeConfirmActions';
 import { getMostRecentVersionInFolder } from '../../helpers/originalLanguageResourcesHelpers';
 import { downloadMissingResource } from '../SourceContentUpdatesActions';
@@ -325,7 +324,7 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (d
           let usfm = fs.readFileSync(viewUrlPath, 'utf8');
 
           if (usfm) {
-            const usfmObject = usfmjs.toJSON(usfm, { convertToInt: ['occurrence', 'occurrences'] });
+            const usfmObject = getParsedUSFM(usfm);
             const details = getUSFMDetails(usfmObject);
 
             if (bookId === details?.book?.id) {
