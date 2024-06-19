@@ -325,7 +325,7 @@ export const downloadAndLoadViewUrl = (viewUrl, bookId, projectName) => async (d
           let usfm = fs.readFileSync(viewUrlPath, 'utf8');
 
           if (usfm) {
-            const usfmObject = usfmjs.toJSON(usfm);
+            const usfmObject = usfmjs.toJSON(usfm, { convertToInt: ['occurrence', 'occurrences'] });
             const details = getUSFMDetails(usfmObject);
 
             if (bookId === details?.book?.id) {
