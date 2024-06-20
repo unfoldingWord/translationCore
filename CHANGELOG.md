@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [v3.6.5](https://github.com/unfoldingWord/translationCore/tree/v3.6.5) (2024-06-20)
+
+**Fixed bugs:**
+-  Highlights not working for a loaded Aligned Bible resource  [\#7576](https://github.com/unfoldingWord/translationCore/issues/7576)
+
+
+
 ## [v3.6.4](https://github.com/unfoldingWord/translationCore/tree/v3.6.4) (2024-03-21)
 
 **Fixed bugs:**
