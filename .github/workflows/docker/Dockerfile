@@ -1,4 +1,4 @@
-# Build commands
+# Build commands (run docker on x64 machine or emulated x64):
 # sudo docker login -u <dockerhub-user>
 # sudo docker build -t github_build .
 # sudo docker tag github_build <dockerhub-user>/github_build:latest
