@@ -125,8 +125,8 @@ jobs:
       matrix:
         trim: [ 0, 1 ]
     needs: test
-    runs-on: ubuntu-20.04
-    container: neutrinog/concourse-tasks:latest
+    runs-on: ubuntu-latest
+    container: photonomad/concourse-tasks:latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
