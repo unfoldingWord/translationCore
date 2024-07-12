@@ -4,7 +4,7 @@
 # sudo docker tag github_build <dockerhub-user>/github_build:latest
 # sudo docker push <dockerhub-user>/github_build:latest
 
-FROM node:16.4.2
+FROM node:16.14.2
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -14,7 +14,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get install -yq locales git zip unzip genisoimage wine wine32 wine64 libwine libwine:i386 innoextract software-properties-common
 
 # install npm
-RUN npm install -g npm@7.18.1
+RUN npm install -g npm@8.5.0
 
 # install inno setup
 RUN mkdir /tmp/inno && \
