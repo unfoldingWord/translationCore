@@ -23,7 +23,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: photonomad/concourse-tasks:latest
+    container: photonomad/github_build:latest
     # the Dockerfile used to create this image is here: ./.github/workflows/docker/Dockerfile
     env:
       CI: true
@@ -126,7 +126,7 @@ jobs:
         trim: [ 0, 1 ]
     needs: test
     runs-on: ubuntu-latest
-    container: photonomad/concourse-tasks:latest
+    container: photonomad/github_build:latest
     env:
       TC_HELP_DESK_TOKEN: ${{ secrets.TC_HELP_DESK_TOKEN }}
       TC_HELP_DESK_EMAIL: ${{ secrets.TC_HELP_DESK_EMAIL }}
