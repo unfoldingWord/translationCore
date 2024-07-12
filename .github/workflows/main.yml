@@ -23,7 +23,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
-    container: photonomad/github_build:latest
+    container: photonomad/concourse-tasks:latest
     # the Dockerfile used to create this image is here: ./.github/workflows/docker/Dockerfile
     env:
       CI: true
@@ -142,10 +142,16 @@ jobs:
       - name: TRIM setting
         run: echo "Trim value is $TRIM"
 
-      - name: Node version
+      - name: Get version
         run: |
+          echo "node --version"
           node --version
+          echo "npm --version"
           npm --version
+          echo "git --version"
+          git --version
+          echo "pwd"
+          pwd
 
 #      - uses: actions/checkout@v2
 #      - name: Checkout submodules
