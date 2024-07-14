@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [v3.6.4](https://github.com/unfoldingWord/translationCore/tree/v3.6.4) (2024-03-21)
+
+**Fixed bugs:**
+- TranslationAcademy pane shows RTL languages left aligned [\#7562](https://github.com/unfoldingWord/translationCore/issues/7562)
+
+
 ## [v3.6.3](https://github.com/unfoldingWord/translationCore/tree/v3.6.3) (2024-03-11)
 
 **Implemented enhancements:**
