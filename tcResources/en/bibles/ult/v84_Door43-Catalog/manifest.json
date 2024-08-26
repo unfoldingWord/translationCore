@@ -6,7 +6,7 @@
       "Scott Bayer",
       "Larry T Brooks, M.Div., Assemblies of God Theological Seminary",
       "Matt Carlton",
-      "George \"Drew\" Curley, M.Div., PhD, Professor of Biblical Languages",
+      "George “Drew” Curley, M.Div., PhD, Professor of Biblical Languages",
       "Dan Dennison",
       "Jamie Duguid",
       "Paul M Fahnestock, M.Div. Reformed Theological Seminary, D.Min. Pittsburgh Theological Seminary",
@@ -43,7 +43,7 @@
       "David Trombold, M. Div.",
       "Aaron Valdizan, M.Div., Th.M. in Old Testament, The Masters Seminary",
       "James Vigen",
-      "Hendrik \"Henry\" de Vries",
+      "Hendrik “Henry” de Vries",
       "Thomas Warren, M.Div., Trinity Evangelical Divinity School, D.Min, Reformed Theological Seminary",
       "Angela Westmoreland, M.A. in Theological Studies (Biblical Language track)",
       "Henry Whitney, BA Linguistics",
@@ -52,23 +52,23 @@
       "Door43 World Missions Community"
     ],
     "creator": "unfoldingWord",
-    "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+    "description": "An open-licensed update of the ASV, intended to provide a ‘form-centric’ understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
     "format": "text/usfm3",
     "identifier": "ult",
-    "issued": "2024-08-14",
+    "issued": "2022-10-11",
     "language": {
       "direction": "ltr",
       "identifier": "en",
       "title": "English"
     },
-    "modified": "2024-08-14",
+    "modified": "2022-10-11",
     "publisher": "unfoldingWord",
     "relation": [
-      "en/tw",
-      "en/tq",
-      "en/tn",
-      "hbo/uhb?v=2.1.30",
-      "el-x-koine/ugnt?v=0.34"
+      "en/tw?v=36",
+      "en/tq?v=38",
+      "en/tn?v=66",
+      "el-x-koine/ugnt?v=0.30",
+      "hbo/uhb?v=2.1.30"
     ],
     "rights": "CC BY-SA 4.0",
     "source": [
@@ -90,13 +90,13 @@
       {
         "identifier": "ult",
         "language": "en",
-        "version": "83.1"
+        "version": "36"
       }
     ],
     "subject": "Aligned Bible",
     "title": "unfoldingWord® Literal Text",
     "type": "bundle",
-    "version": "84"
+    "version": "41"
   },
   "checking": {
     "checking_entity": [
@@ -126,11 +126,121 @@
       ]
     },
     {
+      "title": "Leviticus",
+      "versification": "ufw",
+      "identifier": "lev",
+      "sort": 3,
+      "path": "./03-LEV.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Numbers",
+      "versification": "ufw",
+      "identifier": "num",
+      "sort": 4,
+      "path": "./04-NUM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Deuteronomy",
+      "versification": "ufw",
+      "identifier": "deu",
+      "sort": 5,
+      "path": "./05-DEU.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Joshua",
+      "versification": "ufw",
+      "identifier": "jos",
+      "sort": 6,
+      "path": "./06-JOS.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Judges",
+      "versification": "ufw",
+      "identifier": "jdg",
+      "sort": 7,
+      "path": "./07-JDG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
       "title": "Ruth",
       "versification": "ufw",
       "identifier": "rut",
       "sort": 8,
       "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 Samuel",
+      "versification": "ufw",
+      "identifier": "1sa",
+      "sort": 9,
+      "path": "./09-1SA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 Samuel",
+      "versification": "ufw",
+      "identifier": "2sa",
+      "sort": 10,
+      "path": "./10-2SA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 Kings",
+      "versification": "ufw",
+      "identifier": "1ki",
+      "sort": 11,
+      "path": "./11-1KI.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 Kings",
+      "versification": "ufw",
+      "identifier": "2ki",
+      "sort": 12,
+      "path": "./12-2KI.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "1 Chronicles",
+      "versification": "ufw",
+      "identifier": "1ch",
+      "sort": 13,
+      "path": "./13-1CH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "2 Chronicles",
+      "versification": "ufw",
+      "identifier": "2ch",
+      "sort": 14,
+      "path": "./14-2CH.usfm",
       "categories": [
         "bible-ot"
       ]
@@ -176,6 +286,16 @@
       ]
     },
     {
+      "title": "Psalms",
+      "versification": "ufw",
+      "identifier": "psa",
+      "sort": 19,
+      "path": "./19-PSA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
       "title": "Proverbs",
       "versification": "ufw",
       "identifier": "pro",
@@ -186,11 +306,101 @@
       ]
     },
     {
+      "title": "Ecclesiastes",
+      "versification": "ufw",
+      "identifier": "ecc",
+      "sort": 21,
+      "path": "./21-ECC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
       "title": "Song of Solomon",
       "versification": "ufw",
       "identifier": "sng",
       "sort": 22,
       "path": "./22-SNG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Isaiah",
+      "versification": "ufw",
+      "identifier": "isa",
+      "sort": 23,
+      "path": "./23-ISA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Jeremiah",
+      "versification": "ufw",
+      "identifier": "jer",
+      "sort": 24,
+      "path": "./24-JER.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Lamentations",
+      "versification": "ufw",
+      "identifier": "lam",
+      "sort": 25,
+      "path": "./25-LAM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Ezekiel",
+      "versification": "ufw",
+      "identifier": "ezk",
+      "sort": 26,
+      "path": "./26-EZK.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Daniel",
+      "versification": "ufw",
+      "identifier": "dan",
+      "sort": 27,
+      "path": "./27-DAN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Hosea",
+      "versification": "ufw",
+      "identifier": "hos",
+      "sort": 28,
+      "path": "./28-HOS.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Joel",
+      "versification": "ufw",
+      "identifier": "jol",
+      "sort": 29,
+      "path": "./29-JOL.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Amos",
+      "versification": "ufw",
+      "identifier": "amo",
+      "sort": 30,
+      "path": "./30-AMO.usfm",
       "categories": [
         "bible-ot"
       ]
@@ -216,6 +426,36 @@
       ]
     },
     {
+      "title": "Micah",
+      "versification": "ufw",
+      "identifier": "mic",
+      "sort": 33,
+      "path": "./33-MIC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Nahum",
+      "versification": "ufw",
+      "identifier": "nam",
+      "sort": 34,
+      "path": "./34-NAM.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Habakkuk",
+      "versification": "ufw",
+      "identifier": "hab",
+      "sort": 35,
+      "path": "./35-HAB.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
       "title": "Zephaniah",
       "versification": "ufw",
       "identifier": "zep",
@@ -231,6 +471,26 @@
       "identifier": "hag",
       "sort": 37,
       "path": "./37-HAG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Zechariah",
+      "versification": "ufw",
+      "identifier": "zec",
+      "sort": 38,
+      "path": "./38-ZEC.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Malachi",
+      "versification": "ufw",
+      "identifier": "mal",
+      "sort": 39,
+      "path": "./39-MAL.usfm",
       "categories": [
         "bible-ot"
       ]
@@ -514,7 +774,7 @@
         "Scott Bayer",
         "Larry T Brooks, M.Div., Assemblies of God Theological Seminary",
         "Matt Carlton",
-        "George \"Drew\" Curley, M.Div., PhD, Professor of Biblical Languages",
+        "George “Drew” Curley, M.Div., PhD, Professor of Biblical Languages",
         "Dan Dennison",
         "Jamie Duguid",
         "Paul M Fahnestock, M.Div. Reformed Theological Seminary, D.Min. Pittsburgh Theological Seminary",
@@ -551,7 +811,7 @@
         "David Trombold, M. Div.",
         "Aaron Valdizan, M.Div., Th.M. in Old Testament, The Masters Seminary",
         "James Vigen",
-        "Hendrik \"Henry\" de Vries",
+        "Hendrik “Henry” de Vries",
         "Thomas Warren, M.Div., Trinity Evangelical Divinity School, D.Min, Reformed Theological Seminary",
         "Angela Westmoreland, M.A. in Theological Studies (Biblical Language track)",
         "Henry Whitney, BA Linguistics",
@@ -560,23 +820,23 @@
         "Door43 World Missions Community"
       ],
       "creator": "unfoldingWord",
-      "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+      "description": "An open-licensed update of the ASV, intended to provide a ‘form-centric’ understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
       "format": "text/usfm3",
       "identifier": "ult",
-      "issued": "2024-08-14",
+      "issued": "2022-10-11",
       "language": {
         "direction": "ltr",
         "identifier": "en",
         "title": "English"
       },
-      "modified": "2024-08-14",
+      "modified": "2022-10-11",
       "publisher": "unfoldingWord",
       "relation": [
-        "en/tw",
-        "en/tq",
-        "en/tn",
-        "hbo/uhb?v=2.1.30",
-        "el-x-koine/ugnt?v=0.34"
+        "en/tw?v=36",
+        "en/tq?v=38",
+        "en/tn?v=66",
+        "el-x-koine/ugnt?v=0.30",
+        "hbo/uhb?v=2.1.30"
       ],
       "rights": "CC BY-SA 4.0",
       "source": [
@@ -598,13 +858,13 @@
         {
           "identifier": "ult",
           "language": "en",
-          "version": "83.1"
+          "version": "36"
         }
       ],
       "subject": "Aligned Bible",
       "title": "unfoldingWord® Literal Text",
       "type": "bundle",
-      "version": "84"
+      "version": "41"
     },
     "checking": {
       "checking_entity": [
@@ -634,11 +894,121 @@
         ]
       },
       {
+        "title": "Leviticus",
+        "versification": "ufw",
+        "identifier": "lev",
+        "sort": 3,
+        "path": "./03-LEV.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Numbers",
+        "versification": "ufw",
+        "identifier": "num",
+        "sort": 4,
+        "path": "./04-NUM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Deuteronomy",
+        "versification": "ufw",
+        "identifier": "deu",
+        "sort": 5,
+        "path": "./05-DEU.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Joshua",
+        "versification": "ufw",
+        "identifier": "jos",
+        "sort": 6,
+        "path": "./06-JOS.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Judges",
+        "versification": "ufw",
+        "identifier": "jdg",
+        "sort": 7,
+        "path": "./07-JDG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
         "title": "Ruth",
         "versification": "ufw",
         "identifier": "rut",
         "sort": 8,
         "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 Samuel",
+        "versification": "ufw",
+        "identifier": "1sa",
+        "sort": 9,
+        "path": "./09-1SA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 Samuel",
+        "versification": "ufw",
+        "identifier": "2sa",
+        "sort": 10,
+        "path": "./10-2SA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 Kings",
+        "versification": "ufw",
+        "identifier": "1ki",
+        "sort": 11,
+        "path": "./11-1KI.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 Kings",
+        "versification": "ufw",
+        "identifier": "2ki",
+        "sort": 12,
+        "path": "./12-2KI.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "1 Chronicles",
+        "versification": "ufw",
+        "identifier": "1ch",
+        "sort": 13,
+        "path": "./13-1CH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "2 Chronicles",
+        "versification": "ufw",
+        "identifier": "2ch",
+        "sort": 14,
+        "path": "./14-2CH.usfm",
         "categories": [
           "bible-ot"
         ]
@@ -684,6 +1054,16 @@
         ]
       },
       {
+        "title": "Psalms",
+        "versification": "ufw",
+        "identifier": "psa",
+        "sort": 19,
+        "path": "./19-PSA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
         "title": "Proverbs",
         "versification": "ufw",
         "identifier": "pro",
@@ -694,11 +1074,101 @@
         ]
       },
       {
+        "title": "Ecclesiastes",
+        "versification": "ufw",
+        "identifier": "ecc",
+        "sort": 21,
+        "path": "./21-ECC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
         "title": "Song of Solomon",
         "versification": "ufw",
         "identifier": "sng",
         "sort": 22,
         "path": "./22-SNG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Isaiah",
+        "versification": "ufw",
+        "identifier": "isa",
+        "sort": 23,
+        "path": "./23-ISA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Jeremiah",
+        "versification": "ufw",
+        "identifier": "jer",
+        "sort": 24,
+        "path": "./24-JER.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Lamentations",
+        "versification": "ufw",
+        "identifier": "lam",
+        "sort": 25,
+        "path": "./25-LAM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Ezekiel",
+        "versification": "ufw",
+        "identifier": "ezk",
+        "sort": 26,
+        "path": "./26-EZK.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Daniel",
+        "versification": "ufw",
+        "identifier": "dan",
+        "sort": 27,
+        "path": "./27-DAN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Hosea",
+        "versification": "ufw",
+        "identifier": "hos",
+        "sort": 28,
+        "path": "./28-HOS.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Joel",
+        "versification": "ufw",
+        "identifier": "jol",
+        "sort": 29,
+        "path": "./29-JOL.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Amos",
+        "versification": "ufw",
+        "identifier": "amo",
+        "sort": 30,
+        "path": "./30-AMO.usfm",
         "categories": [
           "bible-ot"
         ]
@@ -724,6 +1194,36 @@
         ]
       },
       {
+        "title": "Micah",
+        "versification": "ufw",
+        "identifier": "mic",
+        "sort": 33,
+        "path": "./33-MIC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Nahum",
+        "versification": "ufw",
+        "identifier": "nam",
+        "sort": 34,
+        "path": "./34-NAM.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Habakkuk",
+        "versification": "ufw",
+        "identifier": "hab",
+        "sort": 35,
+        "path": "./35-HAB.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
         "title": "Zephaniah",
         "versification": "ufw",
         "identifier": "zep",
@@ -739,6 +1239,26 @@
         "identifier": "hag",
         "sort": 37,
         "path": "./37-HAG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Zechariah",
+        "versification": "ufw",
+        "identifier": "zec",
+        "sort": 38,
+        "path": "./38-ZEC.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Malachi",
+        "versification": "ufw",
+        "identifier": "mal",
+        "sort": 39,
+        "path": "./39-MAL.usfm",
         "categories": [
           "bible-ot"
         ]
@@ -1021,11 +1541,11 @@
   "subject": "Aligned Bible",
   "resource_id": "ult",
   "resource_title": "unfoldingWord® Literal Text",
-  "remoteModifiedTime": "2024-08-14T22:39:15Z",
+  "remoteModifiedTime": "2022-10-13T21:43:45Z",
   "description": "Gateway Language",
-  "catalog_modified_time": "2024-08-14T22:39:15Z",
+  "catalog_modified_time": "2022-10-13T21:43:45Z",
   "usfm-js": "3.4.3",
   "version": "84",
-  "modifiedTime": "2024-08-14T22:39:15Z",
-  "stage": "prod"
+  "modifiedTime": "2022-10-13T21:43:45Z",
+  "stage": "latest"
 }

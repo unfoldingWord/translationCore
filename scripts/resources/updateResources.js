@@ -667,7 +667,7 @@ if (require.main === module) {
 
   const resourcesPath = otherParameters[0];
   const languages = otherParameters.slice(1);
-  const allAlignedBibles = findFlag(flags, '--allAlignedBibles');
+  const allAlignedBibles = findFlag(flags, '--allAlignedBibles'); // include all aligned bibles in package
   const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage'); // include original language resources from unfoldingWord org
   unfoldingWordOrg = findFlag(flags, '--unfoldingWordOrg'); // include all resources from unfoldingWord org
 
