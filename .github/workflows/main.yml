@@ -264,7 +264,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.4.2'
+          node-version: '16.14.2'
 
       - name: TRIM setting
         run: echo "Trim value is $TRIM"
@@ -396,7 +396,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '16.4.2'
+          node-version: '16.14.2'
 
       - name: TRIM setting
         run: echo "Trim value is $TRIM"

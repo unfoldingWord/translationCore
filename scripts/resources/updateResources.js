@@ -22,10 +22,12 @@ const filterByOwner = ['Door43-Catalog'];
 const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 const BIBLES_PATH = 'bibles';
 const TW_PATH = 'translationHelps/translationWords';
+const TWL_PATH = 'translationHelps/translationWordsLinks';
 const TA_PATH = 'translationHelps/translationAcademy';
 const TN_PATH = 'translationHelps/translationNotes';
 
 let okToZip = false;
+let unfoldingWordOrg = false
 
 /**
  * find resources to update
@@ -51,7 +53,8 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     checkForBrokenResources(localResourceList, resourcesPath);
     const filterByOwner_ = [...filterByOwner];
 
-    if (uWoriginalLanguage) {
+    const _UW = uWoriginalLanguage || unfoldingWordOrg;
+    if (_UW) {
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
@@ -67,9 +70,9 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       .then(async () => {
         let updateList = [];
 
-        if (uWoriginalLanguage) {
+        if (_UW) {
           for (const item of sourceContentUpdater.updatedCatalogResources) {
-            if (item.owner === UNFOLDING_WORD) {
+            if (!unfoldingWordOrg && item.owner === UNFOLDING_WORD) {
               const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
                 (item.languageId === 'hbo' && item.resourceId === 'uhb');
 
@@ -135,7 +138,11 @@ function getExpectedFileForResource(resource) {
   case 'translationWords':
     typePath = TW_PATH;
     break;
-  default:
+  case 'twl':
+  case 'translationWordsLinks':
+    typePath = TWL_PATH;
+    break;
+    default:
     // default to bible
     typePath = path.join(BIBLES_PATH, resource.resourceId);
     expectedFiles = ['index.json', 'manifest.json', 'books.zip'];
@@ -350,7 +357,7 @@ function validateResources(resourcesPath) {
       errors += `\nLexicons are invalid`;
     }
 
-    const validateResources = {
+    const _validateResources = {
       'Door43-Catalog': [
         'el-x-koine/bibles/ugnt',
         'el-x-koine/translationHelps/translationWords',
@@ -365,8 +372,16 @@ function validateResources(resourcesPath) {
       ],
     };
 
-    for (const owner of Object.keys(validateResources)) {
-      const resourcePaths_ = validateResources[owner];
+    if (unfoldingWordOrg) {
+      const _unfoldingWord = _validateResources.unfoldingWord
+      const unfoldingWord = {
+        ..._validateResources['Door43-Catalog'],
+        ..._unfoldingWord
+      }
+    }
+
+    for (const owner of Object.keys(_validateResources)) {
+      const resourcePaths_ = _validateResources[owner];
 
       for (const resourcePath of resourcePaths_) {
         const fullPath = path.join(resourcesPath, resourcePath);
@@ -554,6 +569,10 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
     return 1;
   }
 
+  if (unfoldingWordOrg) {
+    filterByOwner.push('unfoldingWord')
+  }
+
   if (areResourcesRecent(resourcesPath)) {
     console.log('executeResourcesUpdate() - Resources recently updated, so nothing to do');
   } else {
@@ -648,8 +667,9 @@ if (require.main === module) {
 
   const resourcesPath = otherParameters[0];
   const languages = otherParameters.slice(1);
-  const allAlignedBibles = findFlag(flags, '--allAlignedBibles');
-  const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage');
+  const allAlignedBibles = findFlag(flags, '--allAlignedBibles'); // include all aligned bibles in package
+  const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage'); // include original language resources from unfoldingWord org
+  unfoldingWordOrg = findFlag(flags, '--unfoldingWordOrg'); // include all resources from unfoldingWord org
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
