@@ -186,7 +186,7 @@
     "string-punctuation-tokenizer": "^2.2.0",
     "sudo-prompt": "6.2.1",
     "tc-electron-env": "0.10.0",
-    "tc-source-content-updater": "1.4.26",
+    "tc-source-content-updater": "1.4.27-beta",
     "tc-strings": "0.1.7",
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "6.2.9",
@@ -202,7 +202,7 @@
     "zip-folder": "1.0.0"
   },
   "engines": {
-    "node": ">=16.4.0",
+    "node": ">=16.14.0 <=16.21",
     "npm": ">=7.18.1"
   }
 }
