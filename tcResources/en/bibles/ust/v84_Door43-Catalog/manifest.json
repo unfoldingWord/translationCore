@@ -1,0 +1,1019 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Nicholas Alsop",
+      "Larry T Brooks, M.Div., Assemblies of God Theological Seminary",
+      "Matt Carlton",
+      "George \"Drew\" Curley, M.Div., PhD, Professor of Biblical Languages",
+      "Paul M Fahnestock, M.Div. Reformed Theological Seminary, D. Min. Pittsburgh Theological Seminary",
+      "Michael Francis",
+      "Laura Glassel, MA in Bible Translation",
+      "Kailey Gregory",
+      "Jesse Griffin, BA Biblical Studies, MA Biblical Languages",
+      "C. Harry Harriss, M.Div.",
+      "Alrick G. Headley, M.Div., Th.M.",
+      "Bram van den Heuvel, M.A.",
+      "John Huffman",
+      "D. Allen Hutchison, MA in Old Testament, MA in New Testament",
+      "Robert Hunt",
+      "Demsin Lachin",
+      "Jack Messarra",
+      "Gene Mullen",
+      "Adam W. Nagelvoort, M.Div. Academic Ministries, Columbia International University",
+      "Timothy Neu, Ph.D. Biblical Studies",
+      "Kristy Nickell",
+      "Tom Nickell",
+      "Elizabeth Oakes, BA in Religious Studies, Linguistics",
+      "Perry Oakes, PhD in Old Testament, MA in Linguistics",
+      "James N. Pohlig, M.Div., MA in Linguistics, D. Litt. in Biblical Languages",
+      "Ward Pyles, M.Div., Western Baptist Theological Seminary",
+      "Susan Quigley, MA in Linguistics",
+      "Dean Ropp",
+      "Joel D. Ruark, M.A.Th., Th.M., Ph.D. in Old Testament, University of Stellenbosch",
+      "Larry Sallee, Th.M Dallas Theological Seminary, D.Min. Columbia Biblical Seminary",
+      "Peter Smircich, BA Philosophy",
+      "Christopher Smith, M.A.T.S. Gordon-Conwell Theological Seminary, Ph.D. Boston College",
+      "Leonard Smith",
+      "Dave Statezni, BA Orig langs., M.Div. Fuller Theological Seminary",
+      "David Trombold, M. Div.",
+      "James Vigen",
+      "Hendrik &#65533;ÂÂHenry&#65533;ÂÂ de Vries",
+      "Thomas Warren, M.Div., Trinity Evangelical Divinity School, D.Min, Reformed Theological Seminary",
+      "Angela Westmoreland, M.A. in Theological Studies (Biblical Language track)",
+      "Henry Whitney, BA Linguistics",
+      "Benjamin Wright, MA Applied Linguistics, Dallas International University",
+      "Door43 World Missions Community"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator's understanding of the text by translating theological terms as descriptive phrases.",
+    "format": "text/usfm3",
+    "identifier": "ust",
+    "issued": "2024-08-14",
+    "language": {
+      "direction": "ltr",
+      "identifier": "en",
+      "title": "English"
+    },
+    "modified": "2024-08-14",
+    "publisher": "unfoldingWord",
+    "relation": [
+      "en/tw",
+      "en/tq",
+      "en/tn",
+      "hbo/uhb?v=2.1.30",
+      "el-x-koine/ugnt?v=0.34"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "t4t",
+        "language": "en",
+        "version": "2014"
+      },
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.26"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.26"
+      },
+      {
+        "identifier": "ust",
+        "language": "en",
+        "version": "83.1"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "unfoldingWord® Simplified Text",
+    "type": "bundle",
+    "version": "84"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Genesis",
+      "versification": "ufw",
+      "identifier": "gen",
+      "sort": 1,
+      "path": "./01-GEN.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Exodus",
+      "versification": "ufw",
+      "identifier": "exo",
+      "sort": 2,
+      "path": "./02-EXO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Ruth",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Ezra",
+      "versification": "ufw",
+      "identifier": "ezr",
+      "sort": 15,
+      "path": "./15-EZR.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Nehemiah",
+      "versification": "ufw",
+      "identifier": "neh",
+      "sort": 16,
+      "path": "./16-NEH.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Esther",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./17-EST.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Job",
+      "versification": "ufw",
+      "identifier": "job",
+      "sort": 18,
+      "path": "./18-JOB.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Proverbs",
+      "versification": "ufw",
+      "identifier": "pro",
+      "sort": 20,
+      "path": "./20-PRO.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Song of Solomon",
+      "versification": "ufw",
+      "identifier": "sng",
+      "sort": 22,
+      "path": "./22-SNG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Obadiah",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Jonah",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Zephaniah",
+      "versification": "ufw",
+      "identifier": "zep",
+      "sort": 36,
+      "path": "./36-ZEP.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Haggai",
+      "versification": "ufw",
+      "identifier": "hag",
+      "sort": 37,
+      "path": "./37-HAG.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "Matthew",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 40,
+      "path": "./41-MAT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Mark",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Luke",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 42,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "John",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 43,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Acts",
+      "versification": "ufw",
+      "identifier": "act",
+      "sort": 44,
+      "path": "./45-ACT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Romans",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 45,
+      "path": "./46-ROM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Corinthians",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 46,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Corinthians",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 47,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Galatians",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 48,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Ephesians",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 49,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Philippians",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 50,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Colossians",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 51,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Thessalonians",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 52,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Thessalonians",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 53,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Timothy",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Timothy",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Titus",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Philemon",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Hebrews",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 58,
+      "path": "./59-HEB.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "James",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Peter",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 60,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Peter",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 61,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 John",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 62,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 John",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 John",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Jude",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 65,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Revelation",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 66,
+      "path": "./67-REV.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Nicholas Alsop",
+        "Larry T Brooks, M.Div., Assemblies of God Theological Seminary",
+        "Matt Carlton",
+        "George \"Drew\" Curley, M.Div., PhD, Professor of Biblical Languages",
+        "Paul M Fahnestock, M.Div. Reformed Theological Seminary, D. Min. Pittsburgh Theological Seminary",
+        "Michael Francis",
+        "Laura Glassel, MA in Bible Translation",
+        "Kailey Gregory",
+        "Jesse Griffin, BA Biblical Studies, MA Biblical Languages",
+        "C. Harry Harriss, M.Div.",
+        "Alrick G. Headley, M.Div., Th.M.",
+        "Bram van den Heuvel, M.A.",
+        "John Huffman",
+        "D. Allen Hutchison, MA in Old Testament, MA in New Testament",
+        "Robert Hunt",
+        "Demsin Lachin",
+        "Jack Messarra",
+        "Gene Mullen",
+        "Adam W. Nagelvoort, M.Div. Academic Ministries, Columbia International University",
+        "Timothy Neu, Ph.D. Biblical Studies",
+        "Kristy Nickell",
+        "Tom Nickell",
+        "Elizabeth Oakes, BA in Religious Studies, Linguistics",
+        "Perry Oakes, PhD in Old Testament, MA in Linguistics",
+        "James N. Pohlig, M.Div., MA in Linguistics, D. Litt. in Biblical Languages",
+        "Ward Pyles, M.Div., Western Baptist Theological Seminary",
+        "Susan Quigley, MA in Linguistics",
+        "Dean Ropp",
+        "Joel D. Ruark, M.A.Th., Th.M., Ph.D. in Old Testament, University of Stellenbosch",
+        "Larry Sallee, Th.M Dallas Theological Seminary, D.Min. Columbia Biblical Seminary",
+        "Peter Smircich, BA Philosophy",
+        "Christopher Smith, M.A.T.S. Gordon-Conwell Theological Seminary, Ph.D. Boston College",
+        "Leonard Smith",
+        "Dave Statezni, BA Orig langs., M.Div. Fuller Theological Seminary",
+        "David Trombold, M. Div.",
+        "James Vigen",
+        "Hendrik &#65533;ÂÂHenry&#65533;ÂÂ de Vries",
+        "Thomas Warren, M.Div., Trinity Evangelical Divinity School, D.Min, Reformed Theological Seminary",
+        "Angela Westmoreland, M.A. in Theological Studies (Biblical Language track)",
+        "Henry Whitney, BA Linguistics",
+        "Benjamin Wright, MA Applied Linguistics, Dallas International University",
+        "Door43 World Missions Community"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator's understanding of the text by translating theological terms as descriptive phrases.",
+      "format": "text/usfm3",
+      "identifier": "ust",
+      "issued": "2024-08-14",
+      "language": {
+        "direction": "ltr",
+        "identifier": "en",
+        "title": "English"
+      },
+      "modified": "2024-08-14",
+      "publisher": "unfoldingWord",
+      "relation": [
+        "en/tw",
+        "en/tq",
+        "en/tn",
+        "hbo/uhb?v=2.1.30",
+        "el-x-koine/ugnt?v=0.34"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "t4t",
+          "language": "en",
+          "version": "2014"
+        },
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.26"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.26"
+        },
+        {
+          "identifier": "ust",
+          "language": "en",
+          "version": "83.1"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "unfoldingWord® Simplified Text",
+      "type": "bundle",
+      "version": "84"
+    },
+    "checking": {
+      "checking_entity": [
+        "unfoldingWord"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Genesis",
+        "versification": "ufw",
+        "identifier": "gen",
+        "sort": 1,
+        "path": "./01-GEN.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Exodus",
+        "versification": "ufw",
+        "identifier": "exo",
+        "sort": 2,
+        "path": "./02-EXO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Ruth",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Ezra",
+        "versification": "ufw",
+        "identifier": "ezr",
+        "sort": 15,
+        "path": "./15-EZR.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Nehemiah",
+        "versification": "ufw",
+        "identifier": "neh",
+        "sort": 16,
+        "path": "./16-NEH.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Esther",
+        "versification": "ufw",
+        "identifier": "est",
+        "sort": 17,
+        "path": "./17-EST.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Job",
+        "versification": "ufw",
+        "identifier": "job",
+        "sort": 18,
+        "path": "./18-JOB.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Proverbs",
+        "versification": "ufw",
+        "identifier": "pro",
+        "sort": 20,
+        "path": "./20-PRO.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Song of Solomon",
+        "versification": "ufw",
+        "identifier": "sng",
+        "sort": 22,
+        "path": "./22-SNG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Obadiah",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Jonah",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Zephaniah",
+        "versification": "ufw",
+        "identifier": "zep",
+        "sort": 36,
+        "path": "./36-ZEP.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Haggai",
+        "versification": "ufw",
+        "identifier": "hag",
+        "sort": 37,
+        "path": "./37-HAG.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "Matthew",
+        "versification": "ufw",
+        "identifier": "mat",
+        "sort": 40,
+        "path": "./41-MAT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Mark",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Luke",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 42,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "John",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 43,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Acts",
+        "versification": "ufw",
+        "identifier": "act",
+        "sort": 44,
+        "path": "./45-ACT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Romans",
+        "versification": "ufw",
+        "identifier": "rom",
+        "sort": 45,
+        "path": "./46-ROM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Corinthians",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 46,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Corinthians",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 47,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Galatians",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 48,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Ephesians",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 49,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Philippians",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 50,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Colossians",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 51,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Thessalonians",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 52,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Thessalonians",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 53,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Timothy",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Timothy",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Titus",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Philemon",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Hebrews",
+        "versification": "ufw",
+        "identifier": "heb",
+        "sort": 58,
+        "path": "./59-HEB.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "James",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Peter",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 60,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Peter",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 61,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 John",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 62,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 John",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 John",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Jude",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 65,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Revelation",
+        "versification": "ufw",
+        "identifier": "rev",
+        "sort": 66,
+        "path": "./67-REV.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "en",
+  "language_name": "English",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "ust",
+  "resource_title": "unfoldingWord® Simplified Text",
+  "remoteModifiedTime": "2024-08-14T22:39:19Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2024-08-14T22:39:19Z",
+  "usfm-js": "3.4.3",
+  "version": "84",
+  "modifiedTime": "2024-08-14T22:39:19Z",
+  "stage": "latest"
+}
