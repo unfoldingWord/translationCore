@@ -13,17 +13,17 @@
     "description": "An open-licensed, lexically tagged, morphologically parsed critical Greek New Testament with full apparatus. It enables the global Church to have access to the original texts of the New Testament.",
     "format": "text/usfm3",
     "identifier": "ugnt",
-    "issued": "2022-10-11",
+    "issued": "2023-09-26",
     "language": {
       "direction": "ltr",
       "identifier": "el-x-koine",
       "title": "Koine Greek"
     },
-    "modified": "2022-10-11",
+    "modified": "2023-09-26",
     "publisher": "unfoldingWord",
     "relation": [
-      "en/ult?v=41",
-      "en/ust?v=40"
+      "en/ult",
+      "en/ust"
     ],
     "rights": "CC BY-SA 4.0",
     "source": [
@@ -36,7 +36,7 @@
     "subject": "Greek New Testament",
     "title": "unfoldingWord® Greek New Testament",
     "type": "bundle",
-    "version": "0.30"
+    "version": "0.34"
   },
   "checking": {
     "checking_entity": [
@@ -331,17 +331,17 @@
       "description": "An open-licensed, lexically tagged, morphologically parsed critical Greek New Testament with full apparatus. It enables the global Church to have access to the original texts of the New Testament.",
       "format": "text/usfm3",
       "identifier": "ugnt",
-      "issued": "2022-10-11",
+      "issued": "2023-09-26",
       "language": {
         "direction": "ltr",
         "identifier": "el-x-koine",
         "title": "Koine Greek"
       },
-      "modified": "2022-10-11",
+      "modified": "2023-09-26",
       "publisher": "unfoldingWord",
       "relation": [
-        "en/ult?v=41",
-        "en/ust?v=40"
+        "en/ult",
+        "en/ust"
       ],
       "rights": "CC BY-SA 4.0",
       "source": [
@@ -354,7 +354,7 @@
       "subject": "Greek New Testament",
       "title": "unfoldingWord® Greek New Testament",
       "type": "bundle",
-      "version": "0.30"
+      "version": "0.34"
     },
     "checking": {
       "checking_entity": [

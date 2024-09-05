@@ -22,32 +22,32 @@
     "description": "A modular handbook that provides a condensed explanation of Bible translation and checking principles that the global Church has implicitly affirmed define trustworthy translations. It enables translators to learn how to create trustworthy translations of the Bible in their own language.",
     "format": "text/markdown",
     "identifier": "ta",
-    "issued": "2022-10-11",
+    "issued": "2024-08-14",
     "language": {
       "identifier": "en",
       "title": "English",
       "direction": "ltr"
     },
-    "modified": "2022-10-11",
+    "modified": "2024-08-14",
     "publisher": "unfoldingWord®",
     "relation": [
-      "en/ult?v=41",
-      "en/ust?v=40",
-      "en/tn?v=66",
-      "en/tw?v=36"
+      "en/ult",
+      "en/ust",
+      "en/tn",
+      "en/tw"
     ],
     "rights": "CC BY-SA 4.0",
     "source": [
       {
         "identifier": "ta",
         "language": "en",
-        "version": "28"
+        "version": "83"
       }
     ],
     "subject": "Translation Academy",
     "title": "unfoldingWord® Translation Academy",
     "type": "man",
-    "version": "33"
+    "version": "84"
   },
   "checking": {
     "checking_entity": [
