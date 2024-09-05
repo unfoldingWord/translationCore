@@ -11,6 +11,7 @@ const {
   default: SourceContentUpdater,
   apiHelpers,
   resourcesHelpers,
+  STAGE,
 } = require('tc-source-content-updater');
 const packagefile = require('../../package.json');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
@@ -29,6 +30,7 @@ const TN_PATH = 'translationHelps/translationNotes';
 
 let okToZip = false;
 let unfoldingWordOrg = false
+let preProd = false
 
 /**
  * remove load-after resources from updateList so no duplicate fetches
@@ -92,6 +94,10 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       filterByOwner: filterByOwner_,
       latestManifestKey,
     };
+
+    if (preProd) {
+      config.stage = STAGE.PRE_PROD
+    }
 
     okToZip = true;
 
@@ -755,6 +761,7 @@ if (require.main === module) {
   const allAlignedBibles = findFlag(flags, '--allAlignedBibles'); // include all aligned bibles in package
   const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage'); // include original language resources from unfoldingWord org
   unfoldingWordOrg = findFlag(flags, '--unfoldingWordOrg'); // include all resources from unfoldingWord org
+  preProd = findFlag(flags, '--preProd'); // include pre-release resources
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
