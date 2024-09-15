@@ -419,13 +419,14 @@ export const showInvalidOrigLangVersionError = (manifest) => (dispatch, getState
   const upgradeText = translate('buttons.update_version');
   const bookId = manifest?.project?.id || '';
   const { bibleId: origLangBibleId, languageId: origLangId } = BibleHelpers.getOrigLangforBook(bookId);
-  const origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
+  let origLangOwnerForWA = manifest?.toolsSelectedOwners?.wordAlignment;
+  origLangOwnerForWA = getOriginalLangOwner(origLangOwnerForWA || DEFAULT_ORIG_LANG_OWNER);
   const origLangEditVersionForWA = manifest?.tc_orig_lang_check_version_wordAlignment;
   const missingOLResource = {
     languageId: origLangId,
     resourceId: origLangBibleId,
     version: origLangEditVersionForWA || 'master',
-    owner: origLangOwnerForWA || DEFAULT_ORIG_LANG_OWNER,
+    owner: origLangOwnerForWA,
   };
 
   console.log(`showInvalidOrigLangVersionError() - get missing OL resource: ${JSON.stringify(missingOLResource)}`);
