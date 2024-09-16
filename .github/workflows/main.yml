@@ -113,11 +113,11 @@ jobs:
 #        skip_fetch: true
 #        skip_checkout: true
 
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       name: Upload jsdocs
       with:
         name: jsdocs
-        path: ./docs/
+        path: docs/
 
   build-linux:
     name: Build Linux
@@ -222,13 +222,13 @@ jobs:
         run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-linux-arm64-$APP_VERSION-LITE-$HASH.deb")" >> $GITHUB_ENV
 
       - name: bundle arm64 linux
-        run: ./node_modules/.bin/gulp release-linux-deb-arm64 --out=../artifacts/arm64/$ARTIFACT_ARM64
+        run: ./node_modules/.bin/gulp release-linux-deb-arm64 --out=artifacts/arm64/$ARTIFACT_ARM64
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         name: Upload arm64 artifacts
         with:
           name: ${{ env.ARTIFACT_ARM64 }}
-          path: ../artifacts/arm64/
+          path: artifacts/arm64/
 
       #     x64
       - name: Set x64 MAX artifact name
@@ -239,13 +239,13 @@ jobs:
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-linux-x64-$APP_VERSION-LITE-$HASH.deb")" >> $GITHUB_ENV
 
       - name: bundle x64 linux
-        run: ./node_modules/.bin/gulp release-linux-deb --out=../artifacts/x64/$ARTIFACT_X64
+        run: ./node_modules/.bin/gulp release-linux-deb --out=artifacts/x64/$ARTIFACT_X64
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         name: Upload x64 artifacts
         with:
           name: ${{ env.ARTIFACT_X64 }}
-          path: ../artifacts/x64/
+          path: artifacts/x64/
 
   build-windows:
     name: Build Windows
@@ -344,8 +344,8 @@ jobs:
 
       - name: bundle x64 windows
         run: |
-          echo "Generating executable ../artifacts/x64/${{ env.ARTIFACT_X64 }}"
-          ./node_modules/.bin/gulp release-win64 --out=../artifacts/x64/${{ env.ARTIFACT_X64 }}
+          echo "Generating executable artifacts/x64/${{ env.ARTIFACT_X64 }}"
+          ./node_modules/.bin/gulp release-win64 --out=artifacts/x64/${{ env.ARTIFACT_X64 }}
 
 #      - name: list directories
 #        run: |
@@ -353,11 +353,11 @@ jobs:
 #          dir ../
 #          dir ../artifacts
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         name: Upload x64 artifacts
         with:
           name: ${{ env.ARTIFACT_X64 }}
-          path: ../artifacts/x64/
+          path: artifacts/x64/
 #     x32
       - name: Set x32 MAX artifact name
         run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
@@ -370,14 +370,14 @@ jobs:
 
       - name: bundle x32 windows
         run: |
-          echo "Generating executable ../artifacts/x32/${{ env.ARTIFACT_X32 }}"
-          ./node_modules/.bin/gulp release-win32 --out=../artifacts/x32/${{ env.ARTIFACT_X32 }}
+          echo "Generating executable artifacts/x32/${{ env.ARTIFACT_X32 }}"
+          ./node_modules/.bin/gulp release-win32 --out=artifacts/x32/${{ env.ARTIFACT_X32 }}
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         name: Upload x32 artifacts
         with:
           name: ${{ env.ARTIFACT_X32 }}
-          path: ../artifacts/x32/
+          path: artifacts/x32/
 
   build-macos:
     name: Build macOS
@@ -479,13 +479,13 @@ jobs:
         run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: bundle x64 macOS
-        run: ./node_modules/.bin/gulp release-macos --out=../artifacts/x64/$ARTIFACT_X64
+        run: ./node_modules/.bin/gulp release-macos --out=artifacts/x64/$ARTIFACT_X64
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         name: Upload x64 artifacts
         with:
           name: ${{ env.ARTIFACT_X64 }}
-          path: ../artifacts/x64/
+          path: artifacts/x64/
 
       #     universal build
       - name: Set universal MAX artifact name
@@ -496,13 +496,13 @@ jobs:
         run: echo "ARTIFACT_UNIV=$(echo "$APP_NAME-macos-universal-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
 
       - name: bundle universal macOS
-        run: ./node_modules/.bin/gulp release-macos-universal --out=../artifacts/universal/$ARTIFACT_UNIV
+        run: ./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/$ARTIFACT_UNIV
 
-      - uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v4
         name: Upload universal artifacts
         with:
           name: ${{ env.ARTIFACT_UNIV }}
-          path: ../artifacts/universal/
+          path: artifacts/universal/
 
   notify:
     name: Notify
