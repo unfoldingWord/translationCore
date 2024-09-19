@@ -85,11 +85,17 @@ const ToolsCards = ({
               let tsvOLVersion = getTsvOLVersion(tsv_relation, resourceId);
               const { owner, version } = resourcesHelpers.splitVersionAndOwner(tsvOLVersion);
 
+              let neededVersion = 'v' + tsvOLVersion;
+
               if (!owner) { // make sure we have an owner for resource
-                tsvOLVersion += apiHelpers.OWNER_SEPARATOR + origLangOwner;
+                if (tsvOLVersion) {
+                  neededVersion = 'v' + tsvOLVersion + apiHelpers.OWNER_SEPARATOR + origLangOwner;
+                } else { // no original bible found
+                  neededVersion = 'master' + apiHelpers.OWNER_SEPARATOR + origLangOwner;
+                }
               }
 
-              const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, 'v' + tsvOLVersion);
+              const neededOLPath = path.join(USER_RESOURCES_PATH, languageId, 'bibles', resourceId, neededVersion);
 
               if (neededOLPath) {
                 isOLBookVersionMissing = tsvOLVersion && !fs.existsSync(neededOLPath);
