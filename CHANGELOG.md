@@ -1,6 +1,13 @@
 # Changelog
 
 
+
+## [v3.6.6](https://github.com/unfoldingWord/translationCore/tree/v3.6.6) (2024-09-18)
+
+**Fixed bugs:**
+-  Getting latest resources from Door43-Catalog broken due to changes on DCS  [\#7588](https://github.com/unfoldingWord/translationCore/issues/7588)
+
+
 ## [v3.6.5](https://github.com/unfoldingWord/translationCore/tree/v3.6.5) (2024-07-12)
 
 **Fixed bugs:**
