@@ -170,6 +170,68 @@ def json_to_html_table(json_data):
   html += '</table>'
   return html
 
+def getStr(key):
+  """
+  Retrieve the value from keyToText if the key exists.
+  If the key does not exist, return the key as default value.
+
+  :param key: The key to look for.
+  :return: The value associated with the key, or key as the default value.
+  """
+  keyToText = {
+    "macos": "MacOS",
+    "linux": "Linux",
+    "win": "Windows",
+    "x64": "x64",
+    "universal": "Universal",
+    "arm64": "ARM64",
+    "x32": "x86",
+    "lite": "Minimal Install",
+    "max": "Full Install"
+  }
+
+  return keyToText.get(key, key)
+
+#####################################################
+#  Captured html from the web page:
+"""
+<p class="" style="white-space:pre-wrap;">
+<strong>Full install</strong>
+<br>
+"Windows: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x64-3.6.6-MAX-635b02f.exe" target="">x64</a>
+ |
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x32-3.6.6-MAX-635b02f.exe" target="_blank">x86</a>
+<br>
+"MacOS: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-x64-3.6.6-MAX-635b02f.dmg" target=""> x64</a>
+ |
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-universal-3.6.6-MAX-635b02f.dmg" target="">Universal</a>
+<br>
+"Linux: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-linux-x64-3.6.6-MAX-635b02f.deb" target="">x64</a>
+ |
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.4/tC-linux-arm64-3.6.4-MAX-ee24062.deb" target="">ARM64</a>
+"""
+
+def json_to_html(json_data, key):
+  html = f'\n<p class="" style="white-space:pre-wrap;">\n<strong>{getStr(key)}</strong>\n'
+
+  for os in ["win", "macos", "linux"]:
+    # for os, arch_data in json_data.items():
+    archs = []
+    arch_data = json_data.get(os, [])
+    html += f'<br>\n"{getStr(os)}: "\n'
+
+    for arch, link in arch_data.items():
+      line = f'<a href="{link}" target="_blank">{getStr(arch)}</a>\n'
+      archs.append(line)
+
+    html += '" | "\n'.join(archs)
+
+  html += '</p>\n'
+  return html
+
 lite_installers = get_latest_release(True)
 max_installers = get_latest_release(False)
 installers = {
@@ -179,11 +241,14 @@ installers = {
 json_data = json.dumps(installers, indent=4)
 print(json_data)
 
-html = json_to_html_table(installers)
+html = json_to_html(max_installers, 'max')
+print (html)
+
+html = json_to_html(lite_installers, 'lite')
 print (html)
 
 #####################################################
-#  Output is in this format:
+#  JSON Output is in this format:
 """
 {
     "lite": {
