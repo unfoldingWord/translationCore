@@ -96,9 +96,8 @@ def fetch_url(url):
   response.raise_for_status()
   return response.json()
 
-def get_latest_release():
+def get_latest_release(is_lite_install_):
   latest_release_url = 'https://api.github.com/repos/unfoldingWord-dev/translationCore/releases/latest'
-  is_lite_install_ = True
   installed_version = 'v0.0.0'
 
   configs = {
@@ -159,23 +158,61 @@ def get_latest_release():
 
   return {}
 
-installers = get_latest_release()
+def json_to_html_table(json_data):
+  html = '<table border="1">\n'
+  html += '<tr><th>Version</th><th>OS</th><th>Architecture</th><th>Link</th></tr>\n'
+
+  for version, os_data in json_data.items():
+    for os, arch_data in os_data.items():
+      for arch, link in arch_data.items():
+        html += f'<tr><td>{version}</td><td>{os}</td><td>{arch}</td><td><a href="{link}">Download</a></td></tr>\n'
+
+  html += '</table>'
+  return html
+
+lite_installers = get_latest_release(True)
+max_installers = get_latest_release(False)
+installers = {
+  'lite': lite_installers,
+  'max': max_installers
+}
 json_data = json.dumps(installers, indent=4)
 print(json_data)
 
+html = json_to_html_table(installers)
+print (html)
+
 #####################################################
 #  Output is in this format:
-# {
-#   "macos": {
-#     "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.0-LITE/tC-macos-x64-3.6.0-LITE-2bc4476.dmg",
-#     "universal": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.0-LITE/tC-macos-universal-3.6.0-LITE-2bc4476.dmg"
-#   },
-#   "linux": {
-#     "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.0-LITE/tC-linux-x64-3.6.0-LITE-2bc4476.deb",
-#     "arm64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.0-LITE/tC-linux-arm64-3.6.0-LITE-2bc4476.deb"
-#   },
-#   "win": {
-#     "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.0-LITE/tC-win-x64-3.6.0-LITE-2bc4476.exe",
-#     "x32": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.0-LITE/tC-win-x32-3.6.0-LITE-2bc4476.exe"
-#   }
-# }
+"""
+{
+    "lite": {
+        "macos": {
+            "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-macos-x64-3.6.6-LITE-635b02f.dmg",
+            "universal": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-macos-universal-3.6.6-LITE-635b02f.dmg"
+        },
+        "linux": {
+            "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-linux-x64-3.6.6-LITE-635b02f.deb",
+            "arm64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-linux-arm64-3.6.6-LITE-635b02f.deb"
+        },
+        "win": {
+            "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-win-x64-3.6.6-LITE-635b02f.exe",
+            "x32": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-win-x32-3.6.6-LITE-635b02f.exe"
+        }
+    },
+    "max": {
+        "macos": {
+            "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-x64-3.6.6-MAX-635b02f.dmg",
+            "universal": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-universal-3.6.6-MAX-635b02f.dmg"
+        },
+        "linux": {
+            "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-linux-x64-3.6.6-MAX-635b02f.deb",
+            "arm64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-linux-arm64-3.6.6-MAX-635b02f.deb"
+        },
+        "win": {
+            "x64": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x64-3.6.6-MAX-635b02f.exe",
+            "x32": "https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x32-3.6.6-MAX-635b02f.exe"
+        }
+    }
+}
+"""
