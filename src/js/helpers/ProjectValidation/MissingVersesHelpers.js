@@ -79,7 +79,7 @@ export const getMissingVerses = (projectDir, bookAbbr, expectedVerses) => {
  */
 export function findMissingVerses(usfmFilePath, bookAbbr) {
   let expectedBookVerses = getExpectedBookVerses(bookAbbr);
-  return getMissingVerses(usfmFilePath, bookAbbr, expectedBookVerses);
+  return expectedBookVerses ? getMissingVerses(usfmFilePath, bookAbbr, expectedBookVerses) : {};
 }
 
 /**
