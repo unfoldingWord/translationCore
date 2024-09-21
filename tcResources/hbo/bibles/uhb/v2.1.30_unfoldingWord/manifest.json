@@ -885,11 +885,10 @@
   "subject": "Hebrew Old Testament",
   "resource_id": "uhb",
   "resource_title": "unfoldingWord® Hebrew Bible",
-  "remoteModifiedTime": "2022-10-11T22:54:12Z",
+  "remoteModifiedTime": "0001-01-01T00:00:00+00:00",
   "description": "Gateway Language",
-  "catalog_modified_time": "2022-10-11T22:54:12Z",
-  "usfm-js": "3.4.2",
+  "catalog_modified_time": "0001-01-01T00:00:00+00:00",
+  "usfm-js": "3.4.3",
   "version": "2.1.30",
-  "modifiedTime": "2022-10-11T22:54:12Z",
-  "stage": "prod"
+  "modifiedTime": "0001-01-01T00:00:00+00:00"
 }

@@ -11,9 +11,11 @@ const {
   default: SourceContentUpdater,
   apiHelpers,
   resourcesHelpers,
+  STAGE,
 } = require('tc-source-content-updater');
 const packagefile = require('../../package.json');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
+const { DOOR43_CATALOG, CN_CATALOG } = require("tc-source-content-updater/lib/helpers/apiHelpers");
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 // TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
@@ -22,10 +24,41 @@ const filterByOwner = ['Door43-Catalog'];
 const USFMJS_VERSION = packagefile?.dependencies?.['usfm-js'];
 const BIBLES_PATH = 'bibles';
 const TW_PATH = 'translationHelps/translationWords';
+const TWL_PATH = 'translationHelps/translationWordsLinks';
 const TA_PATH = 'translationHelps/translationAcademy';
 const TN_PATH = 'translationHelps/translationNotes';
 
 let okToZip = false;
+let unfoldingWordOrg = false
+let preProd = false
+
+/**
+ * remove load-after resources from updateList so no duplicate fetches
+ * @param {object[]} updateList
+ */
+function cleanUpLoadAfterResources(updateList) {
+  const resourcesWithLoadAfter = updateList.filter(resource => resource?.catalogEntry?.resource?.loadAfter);
+  for (const resource of resourcesWithLoadAfter) {
+    const loadAfter = resource?.catalogEntry?.resource?.loadAfter;
+    if (loadAfter?.length) {
+      for (const loadAfterResource of loadAfter) {
+        const languageId = loadAfterResource.languageId;
+        const owner = loadAfterResource.owner;
+        const resourceId = loadAfterResource.resourceId;
+        const version = loadAfterResource.version;
+        const index = updateList.findIndex(resource => (
+          resource.languageId === languageId &&
+          resource.owner === owner &&
+          resource.resourceId === resourceId &&
+          resource.version === version
+        ));
+        if (index >= 0) {
+          updateList.splice(index, 1);
+        }
+      }
+    }
+  }
+}
 
 /**
  * find resources to update
@@ -51,7 +84,8 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     checkForBrokenResources(localResourceList, resourcesPath);
     const filterByOwner_ = [...filterByOwner];
 
-    if (uWoriginalLanguage) {
+    const _UW = uWoriginalLanguage || unfoldingWordOrg;
+    if (_UW) {
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
@@ -61,15 +95,19 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       latestManifestKey,
     };
 
+    if (preProd) {
+      config.stage = STAGE.PRE_PROD
+    }
+
     okToZip = true;
 
     await sourceContentUpdater.getLatestResources(localResourceList, config)
       .then(async () => {
         let updateList = [];
 
-        if (uWoriginalLanguage) {
+        if (_UW) {
           for (const item of sourceContentUpdater.updatedCatalogResources) {
-            if (item.owner === UNFOLDING_WORD) {
+            if (!unfoldingWordOrg && item.owner === UNFOLDING_WORD) {
               const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
                 (item.languageId === 'hbo' && item.resourceId === 'uhb');
 
@@ -83,6 +121,8 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
         } else {
           updateList = sourceContentUpdater.updatedCatalogResources;
         }
+
+        cleanUpLoadAfterResources(updateList);
 
         await sourceContentUpdater.downloadResources(languages, resourcesPath,
           updateList, // list of static resources that are newer in catalog
@@ -135,7 +175,11 @@ function getExpectedFileForResource(resource) {
   case 'translationWords':
     typePath = TW_PATH;
     break;
-  default:
+  case 'twl':
+  case 'translationWordsLinks':
+    typePath = TWL_PATH;
+    break;
+    default:
     // default to bible
     typePath = path.join(BIBLES_PATH, resource.resourceId);
     expectedFiles = ['index.json', 'manifest.json', 'books.zip'];
@@ -350,7 +394,7 @@ function validateResources(resourcesPath) {
       errors += `\nLexicons are invalid`;
     }
 
-    const validateResources = {
+    const _validateResources = {
       'Door43-Catalog': [
         'el-x-koine/bibles/ugnt',
         'el-x-koine/translationHelps/translationWords',
@@ -365,8 +409,16 @@ function validateResources(resourcesPath) {
       ],
     };
 
-    for (const owner of Object.keys(validateResources)) {
-      const resourcePaths_ = validateResources[owner];
+    if (unfoldingWordOrg) {
+      const _unfoldingWord = _validateResources.unfoldingWord
+      const unfoldingWord = {
+        ..._validateResources['Door43-Catalog'],
+        ..._unfoldingWord
+      }
+    }
+
+    for (const owner of Object.keys(_validateResources)) {
+      const resourcePaths_ = _validateResources[owner];
 
       for (const resourcePath of resourcePaths_) {
         const fullPath = path.join(resourcesPath, resourcePath);
@@ -539,6 +591,58 @@ const areResourcesRecent = (resourcesPath) => {
 };
 
 /**
+ * check if resource is valid
+ * @param {string} fullPath
+ * @param {string} owner
+ * @returns {{latestVersionPath: (""|*), isValid: boolean, files: (""|*|Array)}}
+ */
+function isValidResource(fullPath, owner) {
+  const owners = getLatestVersionsAndOwners(fullPath) || {};
+  const latestVersionPath = owners && owners[owner];
+
+  const files = latestVersionPath && getFilesInResourcePath(latestVersionPath, '.zip', false, true);
+  return {
+    files,
+    isValid: !!files?.length,
+    latestVersionPath
+  };
+}
+
+/**
+ * check for missing tWords resources for original languages - for backwards compatibility in Door43-Catalog and tCore
+ *   Recover by copying english twl resource
+ * @param resourcesPath
+ */
+function fixForTwordsForOriginalLangs(resourcesPath) {
+  const tWordsPaths = [
+    'el-x-koine/translationHelps/translationWords',
+    'hbo/translationHelps/translationWords'
+  ];
+  for (const tWpath of tWordsPaths) {
+    const tWlPath = path.join(resourcesPath, tWpath);
+    const {isValid} = isValidResource(tWlPath, DOOR43_CATALOG);
+    if (!isValid) {
+      const fullPath_ = path.join(resourcesPath, 'en/translationHelps/translationWordsLinks');
+      for (const owner of [DOOR43_CATALOG, CN_CATALOG]) {
+        const {isValid: isValid_, latestVersionPath} = isValidResource(fullPath_, owner);
+        if (isValid_) {
+          let dest;
+          try {
+            versionName = path.parse(latestVersionPath).base;
+            versionName = versionName.replace(owner, DOOR43_CATALOG);
+            dest = path.join(tWlPath, versionName);
+            fs.copySync(latestVersionPath, dest);
+            break;
+          } catch (e) {
+            console.error(`Could not move ${latestVersionPath} to ${dest}`);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
  * do update of resources
  * @param {String} languages - languages to update resources
  * @param {String} resourcesPath
@@ -552,6 +656,10 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
   if (!USFMJS_VERSION) {
     console.error(`executeResourcesUpdate() - could not read usfm-js version`);
     return 1;
+  }
+
+  if (unfoldingWordOrg) {
+    filterByOwner.push('unfoldingWord')
   }
 
   if (areResourcesRecent(resourcesPath)) {
@@ -569,7 +677,7 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
 
     if (errors) {
       okToZip = false;
-      console.log('executeResourcesUpdate() - Errors on downloading updated resources!!', errors);
+      console.error('executeResourcesUpdate() - Errors on downloading updated resources!!', errors);
     }
 
     if (okToZip) {
@@ -582,14 +690,16 @@ const executeResourcesUpdate = async (languages, resourcesPath, allAlignedBibles
           errors += e.toString() + '\n';
         }
       });
-    }
 
-    const errors2 = validateResources(resourcesPath);
+      fixForTwordsForOriginalLangs(resourcesPath);
 
-    if (errors2) {
-      okToZip = false;
-      console.log('executeResourcesUpdate() - Errors on final validation!!', errors);
-      errors += '\n' + errors2;
+      const errors2 = validateResources(resourcesPath);
+
+      if (errors2) {
+        okToZip = false;
+        console.error('executeResourcesUpdate() - Errors on final validation!!', errors);
+        errors += '\n' + errors2;
+      }
     }
 
     if (!errors) {
@@ -648,8 +758,10 @@ if (require.main === module) {
 
   const resourcesPath = otherParameters[0];
   const languages = otherParameters.slice(1);
-  const allAlignedBibles = findFlag(flags, '--allAlignedBibles');
-  const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage');
+  const allAlignedBibles = findFlag(flags, '--allAlignedBibles'); // include all aligned bibles in package
+  const uWoriginalLanguage = findFlag(flags, '--uWoriginalLanguage'); // include original language resources from unfoldingWord org
+  unfoldingWordOrg = findFlag(flags, '--unfoldingWordOrg'); // include all resources from unfoldingWord org
+  preProd = findFlag(flags, '--preProd'); // include pre-release resources
 
   if (! fs.existsSync(resourcesPath)) {
     console.error('Directory does not exist: ' + resourcesPath);
