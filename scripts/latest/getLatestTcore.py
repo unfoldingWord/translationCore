@@ -1,10 +1,16 @@
+
+"""
+
+taken from SoftwareUpdateDialogContainer.js into getLatestTcore.js and converted with chatGPT
+then modified to get the links for all installer formats
+and the output tweak to generate html
+
+"""
+
 import json
 import requests
 import re
 from packaging import version
-
-###################################################
-# taken from SoftwareUpdateDialogContainer.js into getLatestTcore.js and converted with chatGPT
 
 def get_update_asset(response, installed_version, os_arch, os_platform):
   fallback_platform = None
@@ -192,27 +198,6 @@ def getStr(key):
 
   return keyToText.get(key, key)
 
-#####################################################
-#  Captured html from the web page:
-"""
-<p class="" style="white-space:pre-wrap;">
-<strong>Full install</strong>
-<br>
-"Windows: "
-<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x64-3.6.6-MAX-635b02f.exe" target="">x64</a>
- |
-<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x32-3.6.6-MAX-635b02f.exe" target="_blank">x86</a>
-<br>
-"MacOS: "
-<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-x64-3.6.6-MAX-635b02f.dmg" target=""> x64</a>
- |
-<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-universal-3.6.6-MAX-635b02f.dmg" target="">Universal</a>
-<br>
-"Linux: "
-<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-linux-x64-3.6.6-MAX-635b02f.deb" target="">x64</a>
- |
-<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.4/tC-linux-arm64-3.6.4-MAX-ee24062.deb" target="">ARM64</a>
-"""
 
 def json_to_html(json_data, key):
   html = f'\n<p class="" style="white-space:pre-wrap;">\n<strong>{getStr(key)}</strong>\n'
@@ -238,8 +223,10 @@ installers = {
   'lite': lite_installers,
   'max': max_installers
 }
-json_data = json.dumps(installers, indent=4)
-print(json_data)
+
+# for json output uncomment
+# json_data = json.dumps(installers, indent=4)
+# print(json_data)
 
 html = json_to_html(max_installers, 'max')
 print (html)
@@ -280,4 +267,47 @@ print (html)
         }
     }
 }
+"""
+
+#####################################################
+#  html output is in this format:
+"""
+<p class="" style="white-space:pre-wrap;">
+<strong>Full Install</strong>
+<br>
+"Windows: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x64-3.6.6-MAX-635b02f.exe" target="_blank">x64</a>
+" | "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-win-x32-3.6.6-MAX-635b02f.exe" target="_blank">x86</a>
+<br>
+"MacOS: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-x64-3.6.6-MAX-635b02f.dmg" target="_blank">x64</a>
+" | "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-macos-universal-3.6.6-MAX-635b02f.dmg" target="_blank">Universal</a>
+<br>
+"Linux: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-linux-x64-3.6.6-MAX-635b02f.deb" target="_blank">x64</a>
+" | "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6/tC-linux-arm64-3.6.6-MAX-635b02f.deb" target="_blank">ARM64</a>
+</p>
+
+
+<p class="" style="white-space:pre-wrap;">
+<strong>Minimal Install</strong>
+<br>
+"Windows: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-win-x64-3.6.6-LITE-635b02f.exe" target="_blank">x64</a>
+" | "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-win-x32-3.6.6-LITE-635b02f.exe" target="_blank">x86</a>
+<br>
+"MacOS: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-macos-x64-3.6.6-LITE-635b02f.dmg" target="_blank">x64</a>
+" | "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-macos-universal-3.6.6-LITE-635b02f.dmg" target="_blank">Universal</a>
+<br>
+"Linux: "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-linux-x64-3.6.6-LITE-635b02f.deb" target="_blank">x64</a>
+" | "
+<a href="https://github.com/unfoldingWord/translationCore/releases/download/v3.6.6-LITE/tC-linux-arm64-3.6.6-LITE-635b02f.deb" target="_blank">ARM64</a>
+</p>
 """
