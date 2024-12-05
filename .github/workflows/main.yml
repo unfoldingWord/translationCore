@@ -470,22 +470,22 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           npm run build-macos
 
-      #     x64
-      - name: Set x64 MAX artifact name
-        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
+      #     arm64
+      - name: Set arm64 MAX artifact name
+        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
 
-      - name: Set x64 LITE artifact name
+      - name: Set arm64 LITE artifact name
         if: ${{ env.TRIM == '1' }}
-        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
+        run: echo "ARTIFACT_ARM64=$(echo "$APP_NAME-macos-arm64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
 
-      - name: bundle x64 macOS
-        run: ./node_modules/.bin/gulp release-macos --out=artifacts/x64/$ARTIFACT_X64
+      - name: bundle arm64 macOS
+        run: ./node_modules/.bin/gulp release-macos-arm64 --out=artifacts/arm64/$ARTIFACT_ARM64
 
       - uses: actions/upload-artifact@v4
-        name: Upload x64 artifacts
+        name: Upload arm64 artifacts
         with:
-          name: ${{ env.ARTIFACT_X64 }}
-          path: artifacts/x64/
+          name: ${{ env.ARTIFACT_ARM64 }}
+          path: artifacts/arm64/
 
       #     universal build
       - name: Set universal MAX artifact name
