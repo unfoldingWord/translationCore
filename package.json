@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.6.6",
+  "version": "3.6.7",
   "minCompatibleVersion": "3.6.6",
   "manifestVersion": "8",
   "description": "A bridge between TS and TM",
@@ -162,6 +162,7 @@
     "react-dnd": "2.5.4",
     "react-dnd-html5-backend": "2.5.4",
     "react-dom": "16.8.6",
+    "react-hotkeys": "2.0.0",
     "react-localize-redux": "3.5.3",
     "react-redux": "5.1.1",
     "react-remarkable": "1.1.3",
