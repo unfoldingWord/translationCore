@@ -28,9 +28,11 @@ const TWL_PATH = 'translationHelps/translationWordsLinks';
 const TA_PATH = 'translationHelps/translationAcademy';
 const TN_PATH = 'translationHelps/translationNotes';
 
+const DOOR43_DEPRECATED = true;
+
 let okToZip = false;
-let unfoldingWordOrg = false
-let preProd = false
+let unfoldingWordOrg = false;
+let preProd = false;
 
 /**
  * remove load-after resources from updateList so no duplicate fetches
@@ -85,6 +87,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     const filterByOwner_ = [...filterByOwner];
 
     const _UW = uWoriginalLanguage || unfoldingWordOrg;
+
     if (_UW) {
       filterByOwner_.push(UNFOLDING_WORD);
     }
@@ -93,10 +96,12 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     const config = {
       filterByOwner: filterByOwner_,
       latestManifestKey,
+      ignoreDoor43Catalog: DOOR43_DEPRECATED,
+      topic: 'tc-ready',
     };
 
     if (preProd) {
-      config.stage = STAGE.PRE_PROD
+      config.stage = STAGE.PRE_PROD;
     }
 
     okToZip = true;
@@ -105,7 +110,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       .then(async () => {
         let updateList = [];
 
-        if (_UW) {
+        if (_UW && !DOOR43_DEPRECATED) {
           for (const item of sourceContentUpdater.updatedCatalogResources) {
             if (!unfoldingWordOrg && item.owner === UNFOLDING_WORD) {
               const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
@@ -394,28 +399,39 @@ function validateResources(resourcesPath) {
       errors += `\nLexicons are invalid`;
     }
 
-    const _validateResources = {
-      'Door43-Catalog': [
-        'el-x-koine/bibles/ugnt',
-        'el-x-koine/translationHelps/translationWords',
-        'en/bibles/ult',
-        'en/bibles/ust',
-        '/hbo/bibles/uhb',
-        'hbo/translationHelps/translationWords',
-      ],
-      'unfoldingWord': [
-        'el-x-koine/bibles/ugnt',
-        '/hbo/bibles/uhb',
-      ],
-    };
+    const BASE_REQUIRED_RESOURCES_DOOR43 = [
+      'el-x-koine/bibles/ugnt',
+      'el-x-koine/translationHelps/translationWords',
+      'en/bibles/ult',
+      'en/bibles/ust',
+      'hbo/bibles/uhb',
+      'hbo/translationHelps/translationWords',
+    ];
 
-    if (unfoldingWordOrg) {
-      const _unfoldingWord = _validateResources.unfoldingWord
-      const unfoldingWord = {
-        ..._validateResources['Door43-Catalog'],
-        ..._unfoldingWord
-      }
-    }
+    const BASE_REQUIRED_RESOURCES_UW = [
+      'el-x-koine/bibles/ugnt',
+      'en/translationHelps/translationAcademy',
+      'en/translationHelps/translationNotes',
+      'en/translationHelps/translationWords',
+      'en/translationHelps/translationWordsLinks',
+      'en/bibles/ult',
+      'en/bibles/ust',
+      'hbo/bibles/uhb',
+    ];
+
+    const BASE_REQUIRED_RESOURCES_FOR_OTHER_OWNERS = [
+      'el-x-koine/bibles/ugnt',
+      'hbo/bibles/uhb',
+    ];
+
+    const _validateResources = { 'Door43-Catalog': BASE_REQUIRED_RESOURCES_DOOR43 };
+
+    if (DOOR43_DEPRECATED) {
+      _validateResources.unfoldingWord = BASE_REQUIRED_RESOURCES_UW;
+      delete _validateResources['Door43-Catalog'];
+    } else if (unfoldingWordOrg) {
+      _validateResources.unfoldingWord = BASE_REQUIRED_RESOURCES_FOR_OTHER_OWNERS;
+    };
 
     for (const owner of Object.keys(_validateResources)) {
       const resourcePaths_ = _validateResources[owner];
