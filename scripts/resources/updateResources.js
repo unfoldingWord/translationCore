@@ -63,6 +63,35 @@ function cleanUpLoadAfterResources(updateList) {
 }
 
 /**
+ * strip list down to minimal resources if in filterOrg, original language and optionally English
+ * @param {object} sourceContentUpdater
+ * @param {string} filterOrg
+ * @param {string[]} updateList
+ * @param {boolean} addEnglishRes
+ */
+function filterOriginalLanguages(sourceContentUpdater, filterOrg, updateList, addEnglishRes) {
+  for (const item of sourceContentUpdater.updatedCatalogResources) {
+    if (!unfoldingWordOrg && item.owner === filterOrg) {
+      const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
+        (item.languageId === 'hbo' && item.resourceId === 'uhb');
+
+      if (!isOriginal) { // skip over any uw repos that are not original langs
+        if (!addEnglishRes) {
+          continue;
+        }
+
+        const isEnglish = (item.languageId === 'en');
+        if (!isEnglish) { // skip over any uw repos that are not english
+          continue;
+        }
+      }
+    }
+
+    updateList.push(item);
+  }
+}
+
+/**
  * find resources to update
  * @param {String} languages - languages to update resources
  * @param {String} resourcesPath
@@ -96,7 +125,7 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     const config = {
       filterByOwner: filterByOwner_,
       latestManifestKey,
-      ignoreDoor43Catalog: DOOR43_DEPRECATED,
+      // ignoreDoor43Catalog: DOOR43_DEPRECATED, /// perhaps eventually we can completely ignore
       topic: 'tc-ready',
     };
 
@@ -110,19 +139,10 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       .then(async () => {
         let updateList = [];
 
-        if (_UW && !DOOR43_DEPRECATED) {
-          for (const item of sourceContentUpdater.updatedCatalogResources) {
-            if (!unfoldingWordOrg && item.owner === UNFOLDING_WORD) {
-              const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
-                (item.languageId === 'hbo' && item.resourceId === 'uhb');
-
-              if (!isOriginal) { // skip over any uw repos that are not original langs
-                continue;
-              }
-            }
-
-            updateList.push(item);
-          }
+        if (_UW) {
+          const filterOrg = DOOR43_DEPRECATED ? DOOR43_CATALOG : UNFOLDING_WORD;
+          const addEnglishRes = DOOR43_DEPRECATED;
+          filterOriginalLanguages(sourceContentUpdater, filterOrg, updateList, addEnglishRes);
         } else {
           updateList = sourceContentUpdater.updatedCatalogResources;
         }
@@ -408,6 +428,14 @@ function validateResources(resourcesPath) {
       'hbo/translationHelps/translationWords',
     ];
 
+    const BASE_ORIG_LANG_RESOURCES_DOOR43 = [
+      'el-x-koine/bibles/ugnt',
+      'el-x-koine/translationHelps/translationWords',
+      'en/bibles/ult',
+      'hbo/bibles/uhb',
+      'hbo/translationHelps/translationWords',
+    ];
+
     const BASE_REQUIRED_RESOURCES_UW = [
       'el-x-koine/bibles/ugnt',
       'en/translationHelps/translationAcademy',
@@ -428,7 +456,7 @@ function validateResources(resourcesPath) {
 
     if (DOOR43_DEPRECATED) {
       _validateResources.unfoldingWord = BASE_REQUIRED_RESOURCES_UW;
-      delete _validateResources['Door43-Catalog'];
+      _validateResources['Door43-Catalog'] = BASE_ORIG_LANG_RESOURCES_DOOR43;
     } else if (unfoldingWordOrg) {
       _validateResources.unfoldingWord = BASE_REQUIRED_RESOURCES_FOR_OTHER_OWNERS;
     };
