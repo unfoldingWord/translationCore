@@ -138,7 +138,8 @@ function getDownloadErrorList(errors, translate) {
  * Downloads source content updates using the tc-source-content-updater.
  * @param {array} resourcesToDownload - list of resources to be downloaded.
  * @param {boolean} refreshUpdates
- * @param {boolean} preRelease
+ * @param {boolean} preRelease - if true include pre-release content
+ * @param {boolean} notTcReady - if true include content not tcReady
  * @returns {(function(*, *): Promise<void>)}
  */
 export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false, notTcReady = false) {
