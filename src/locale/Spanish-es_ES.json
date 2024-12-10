@@ -106,6 +106,7 @@
     "source_label": "Origen:",
     "local_timestamp": "Local:",
     "online_timestamp": "En línea:",
+    "show_recommended_resources": "Mostrar sólo los recursos recomendados",
     "update_error_reason_parse": "error de análisis",
     "update_error_reason_download": "error de descarga",
     "update_error_reason_missing_dependency": "falta dependencia"

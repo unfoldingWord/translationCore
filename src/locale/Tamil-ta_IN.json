@@ -106,6 +106,7 @@
     "source_label": "மூலம்:",
     "local_timestamp": "உள்ளூர்:",
     "online_timestamp": "ஆன்லைன்",
+    "show_recommended_resources": "Show Only Recommended Resources",
     "update_error_reason_parse": "parse error",
     "update_error_reason_download": "download error",
     "update_error_reason_missing_dependency": "missing dependency"
