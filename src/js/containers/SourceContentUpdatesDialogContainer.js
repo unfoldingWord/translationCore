@@ -110,7 +110,9 @@ export function getResourceDownloadsAlertMessage(translate, errorStr= '', feedba
 class ContentUpdatesDialogContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { languages: {}, preRelease: false };
+    this.state = {
+      languages: {}, preRelease: false, tcReady: true,
+    };
     this._handleClose = this._handleClose.bind(this);
     this._startContentUpdateCheck = this._startContentUpdateCheck.bind(this);
     this._handleDownload = this._handleDownload.bind(this);
@@ -118,6 +120,7 @@ class ContentUpdatesDialogContainer extends React.Component {
     this._handleListItemSelection = this._handleListItemSelection.bind(this);
     this.onSubitemSelection = this.onSubitemSelection.bind(this);
     this.togglePreRelease = this.togglePreRelease.bind(this);
+    this.toggleTcReady = this.toggleTcReady.bind(this);
     this.handleDeletePreRelease = this.handleDeletePreRelease.bind(this);
   }
 
@@ -149,10 +152,17 @@ class ContentUpdatesDialogContainer extends React.Component {
     this.props.deletePreReleasePrompt(this.props.translate, this._handleClose);
   }
 
+  toggleTcReady() {
+    const { getListOfSourceContentToUpdate, onClose } = this.props;
+    const tcReady = !this.state.tcReady;
+    getListOfSourceContentToUpdate(onClose, this.state.preRelease, tcReady);
+    this.setState({ tcReady });
+  }
+
   togglePreRelease() {
     const { getListOfSourceContentToUpdate, onClose } = this.props;
     const preRelease = !this.state.preRelease;
-    getListOfSourceContentToUpdate(onClose, preRelease);
+    getListOfSourceContentToUpdate(onClose, preRelease, this.state.tcReady);
     this.setState({ preRelease });
   }
 
@@ -205,7 +215,7 @@ class ContentUpdatesDialogContainer extends React.Component {
 
   _startContentUpdateCheck() {
     const { getListOfSourceContentToUpdate, onClose } = this.props;
-    getListOfSourceContentToUpdate(onClose, this.state.preRelease);
+    getListOfSourceContentToUpdate(onClose, this.state.preRelease, this.state.tcReady);
   }
 
   _handleDownload() {
@@ -237,6 +247,8 @@ class ContentUpdatesDialogContainer extends React.Component {
             preRelease={this.state.preRelease}
             togglePreRelease={this.togglePreRelease}
             deletePreReleasePrompt={this.handleDeletePreRelease}
+            tcReady={this.state.tcReady}
+            toggleTcReady={this.toggleTcReady}
           />
         </div>
       );

@@ -85,6 +85,8 @@ class ContentUpdateDialog extends React.Component {
       selectedLanguageResources,
       preRelease,
       togglePreRelease,
+      tcReady,
+      toggleTcReady,
       deletePreReleasePrompt,
     } = this.props;
 
@@ -94,6 +96,15 @@ class ContentUpdateDialog extends React.Component {
     const languagesSelectedList = Object.keys(selectedLanguageResources);
     const allChecked =
       JSON.stringify(availableLanguageIds) === JSON.stringify(languagesSelectedList);
+
+    const tcReadyStyle = {
+      ...styles.checkboxContainer,
+      marginBottom: 0,
+      marginTop: '20px',
+      marginLeft: '20%',
+      width: '70%',
+      fontSize: '16px',
+    };
 
     return (
       <BaseDialog
@@ -111,9 +122,17 @@ class ContentUpdateDialog extends React.Component {
         <div style={styles.content}>
           <div>
             <h4 style={styles.header}>
-              {translate(
-                'updates.select_the_gateway_language_content_to_download',
-              )}
+              {translate('updates.select_the_gateway_language_content_to_download')}
+              <div style={tcReadyStyle}>
+                <Checkbox
+                  label={translate('updates.show_recommended_resources')}
+                  checked={tcReady}
+                  onCheck={toggleTcReady}
+                  style={styles.checkbox}
+                  iconStyle={styles.checkboxIconStyle}
+                  labelStyle={styles.boldCheckboxLabelStyle}
+                />
+              </div>
             </h4>
             <Divider />
           </div>
@@ -203,6 +222,8 @@ ContentUpdateDialog.propTypes = {
   preRelease: PropTypes.bool.isRequired,
   togglePreRelease: PropTypes.func.isRequired,
   deletePreReleasePrompt: PropTypes.func.isRequired,
+  tcReady: PropTypes.bool.isRequired,
+  toggleTcReady: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;

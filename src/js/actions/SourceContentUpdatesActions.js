@@ -436,9 +436,9 @@ export const deletePreReleaseResources = (resourcesFolder) => ((dispatch, getSta
  * @param {function} closeSourceContentDialog - Hacky workaround to close the
  * source content dialog in the AppMenu state.
  * @param {boolean} preRelease - if true include pre-release content
- * @param {boolean} notTcReady - if true include content not tcReady
+ * @param {boolean} tcReady - if true include only tcReady content
  */
-export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease = false, notTcReady = false) {
+export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease = false, tcReady = true) {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(resetSourceContentUpdatesReducer());
@@ -454,7 +454,7 @@ export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRele
         DCS_BASE_URL,
       };
 
-      if (!notTcReady) {
+      if (tcReady) {
         config.ignoreDoor43Catalog = true;
         config.topic = 'tc-ready';
       }
