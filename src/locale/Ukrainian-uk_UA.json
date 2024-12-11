@@ -106,7 +106,7 @@
     "source_label": "Джерело:",
     "local_timestamp": "На пристрої:",
     "online_timestamp": "Онлайн:",
-    "show_recommended_resources": "Показати лише Рекомендовані ресурси",
+    "show_all_available_content": "Show All Available Content",
     "update_error_reason_parse": "помилка під час обробки",
     "update_error_reason_download": "помилка завантаження",
     "update_error_reason_missing_dependency": "відсутня залежність"

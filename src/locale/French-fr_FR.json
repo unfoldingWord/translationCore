@@ -106,7 +106,7 @@
     "source_label": "Source :",
     "local_timestamp": "Locale",
     "online_timestamp": "En ligne",
-    "show_recommended_resources": "Afficher uniquement les ressources recommandées",
+    "show_all_available_content": "Afficher tous les contenus disponibles",
     "update_error_reason_parse": "Erreur d'analyse",
     "update_error_reason_download": "Erreur de téléchargement",
     "update_error_reason_missing_dependency": "Dépendance manquante"
