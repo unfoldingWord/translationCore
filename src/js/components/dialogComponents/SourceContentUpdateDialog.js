@@ -102,7 +102,6 @@ class ContentUpdateDialog extends React.Component {
       marginBottom: 0,
       marginTop: '20px',
       marginLeft: '20%',
-      width: '70%',
       fontSize: '16px',
     };
 
@@ -128,7 +127,7 @@ class ContentUpdateDialog extends React.Component {
                   label={translate('updates.show_recommended_resources')}
                   checked={tcReady}
                   onCheck={toggleTcReady}
-                  style={styles.checkbox}
+                  style={{ textAlign: 'left' }}
                   iconStyle={styles.checkboxIconStyle}
                   labelStyle={styles.boldCheckboxLabelStyle}
                 />
