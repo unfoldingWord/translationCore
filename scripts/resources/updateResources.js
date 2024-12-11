@@ -15,7 +15,7 @@ const {
 } = require('tc-source-content-updater');
 const packagefile = require('../../package.json');
 const UpdateResourcesHelpers = require('./updateResourcesHelpers');
-const { DOOR43_CATALOG, CN_CATALOG } = require("tc-source-content-updater/lib/helpers/apiHelpers");
+const { DOOR43_CATALOG, CN_CATALOG, UNFOLDING_WORD } = require("tc-source-content-updater/lib/helpers/apiHelpers");
 const zipResourcesContent = require('./zipHelpers').zipResourcesContent;
 
 // TRICKY: with multi owner support of resources for now we want to restrict the bundled resources to these owners
@@ -28,9 +28,11 @@ const TWL_PATH = 'translationHelps/translationWordsLinks';
 const TA_PATH = 'translationHelps/translationAcademy';
 const TN_PATH = 'translationHelps/translationNotes';
 
+const DOOR43_DEPRECATED = true;
+
 let okToZip = false;
-let unfoldingWordOrg = false
-let preProd = false
+let unfoldingWordOrg = false;
+let preProd = false;
 
 /**
  * remove load-after resources from updateList so no duplicate fetches
@@ -60,6 +62,89 @@ function cleanUpLoadAfterResources(updateList) {
   }
 }
 
+function isCoreResource(item) {
+  const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
+    (item.languageId === 'hbo' && item.resourceId === 'uhb');
+
+  if (!isOriginal) { // skip over any uw repos that are not original langs
+    const isEnglish = (item.languageId === 'en');
+
+    if (!isEnglish) { // skip over any filterOrg repos that are not english
+      return false;
+    }
+
+    const coreRes = isAlignedBible(item) || isOtherResource(item);
+    return coreRes;
+  }
+  return true;
+}
+
+function isBibleResource(item) {
+  const subject = item.subject;
+  const isBible = subject.toUpperCase().includes('BIBLE');
+  return isBible;
+}
+
+function isOtherResource(item) {
+  const notBible = !isBibleResource(item);
+  return notBible;
+}
+
+function isKeyLanguageResource(item, keyLanguages) {
+  const isKeyLanguage = keyLanguages.includes(item.languageId);
+  let keep = false;
+
+  if (isKeyLanguage) {
+    keep = isCoreResource(item) || isAlignedBibleOrOtherResource(item);
+  }
+  return keep;
+}
+
+function isAlignedBibleOrOtherResource(item) {
+  return isAlignedBible(item) || isOtherResource(item);
+}
+
+function isAlignedBible(item) {
+  const match = 'Aligned_Bible'.toUpperCase();
+  const subject = item.subject;
+
+  if (subject.toUpperCase() === match) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * strip list down to minimal resources if in filterOrg, original language and optionally English
+ * @param {object} sourceContentUpdater
+ * @param {string} filterOrg
+ * @param {string[]} updateList
+ * @param {boolean} addEnglishRes
+ */
+function getNeededResources(sourceContentUpdater, updateList, keyLanguages) {
+  for (const item of sourceContentUpdater.updatedCatalogResources) {
+    let keep = false;
+
+    switch (item.owner) {
+    case DOOR43_CATALOG:
+      keep = isCoreResource(item);
+      break;
+
+    case UNFOLDING_WORD:
+      keep = isCoreResource(item) || isAlignedBible(item) || isKeyLanguageResource(item, keyLanguages);
+      break;
+
+    default: // other orgs
+      keep = isAlignedBible(item) || isKeyLanguageResource(item, keyLanguages);
+      break;
+    }
+
+    if (keep) {
+      updateList.push(item);
+    }
+  }
+}
+
 /**
  * find resources to update
  * @param {String} languages - languages to update resources
@@ -82,21 +167,30 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
 
     const localResourceList = apiHelpers.getLocalResourceList(resourcesPath);
     checkForBrokenResources(localResourceList, resourcesPath);
-    const filterByOwner_ = [...filterByOwner];
-
+    let filterByOwner_ = [...filterByOwner];
     const _UW = uWoriginalLanguage || unfoldingWordOrg;
+
     if (_UW) {
       filterByOwner_.push(UNFOLDING_WORD);
     }
 
+    if (DOOR43_DEPRECATED) { // turn off the owner filtering if DOOR43_DEPRECATED
+      filterByOwner_ = null;
+    }
+
     const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
     const config = {
-      filterByOwner: filterByOwner_,
       latestManifestKey,
+      // ignoreDoor43Catalog: DOOR43_DEPRECATED, /// perhaps eventually we can completely ignore
+      topic: 'tc-ready',
     };
 
+    if (filterByOwner_?.length) { // if not empty list
+      config.filterByOwner = filterByOwner_;
+    }
+
     if (preProd) {
-      config.stage = STAGE.PRE_PROD
+      config.stage = STAGE.PRE_PROD;
     }
 
     okToZip = true;
@@ -104,20 +198,10 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     await sourceContentUpdater.getLatestResources(localResourceList, config)
       .then(async () => {
         let updateList = [];
+        console.log(`Updated resources count is ${sourceContentUpdater.updatedCatalogResources?.length}`)
 
         if (_UW) {
-          for (const item of sourceContentUpdater.updatedCatalogResources) {
-            if (!unfoldingWordOrg && item.owner === UNFOLDING_WORD) {
-              const isOriginal = (item.languageId === 'el-x-koine' && item.resourceId === 'ugnt') ||
-                (item.languageId === 'hbo' && item.resourceId === 'uhb');
-
-              if (!isOriginal) { // skip over any uw repos that are not original langs
-                continue;
-              }
-            }
-
-            updateList.push(item);
-          }
+          getNeededResources(sourceContentUpdater, updateList, languages);
         } else {
           updateList = sourceContentUpdater.updatedCatalogResources;
         }
@@ -394,28 +478,47 @@ function validateResources(resourcesPath) {
       errors += `\nLexicons are invalid`;
     }
 
-    const _validateResources = {
-      'Door43-Catalog': [
-        'el-x-koine/bibles/ugnt',
-        'el-x-koine/translationHelps/translationWords',
-        'en/bibles/ult',
-        'en/bibles/ust',
-        '/hbo/bibles/uhb',
-        'hbo/translationHelps/translationWords',
-      ],
-      'unfoldingWord': [
-        'el-x-koine/bibles/ugnt',
-        '/hbo/bibles/uhb',
-      ],
-    };
+    const BASE_REQUIRED_RESOURCES_DOOR43 = [
+      'el-x-koine/bibles/ugnt',
+      'el-x-koine/translationHelps/translationWords',
+      'en/bibles/ult',
+      'en/bibles/ust',
+      'hbo/bibles/uhb',
+      'hbo/translationHelps/translationWords',
+    ];
 
-    if (unfoldingWordOrg) {
-      const _unfoldingWord = _validateResources.unfoldingWord
-      const unfoldingWord = {
-        ..._validateResources['Door43-Catalog'],
-        ..._unfoldingWord
-      }
-    }
+    const BASE_ORIG_LANG_RESOURCES_DOOR43 = [
+      'el-x-koine/bibles/ugnt',
+      'el-x-koine/translationHelps/translationWords',
+      'en/bibles/ult',
+      'hbo/bibles/uhb',
+      'hbo/translationHelps/translationWords',
+    ];
+
+    const BASE_REQUIRED_RESOURCES_UW = [
+      'el-x-koine/bibles/ugnt',
+      'en/translationHelps/translationAcademy',
+      'en/translationHelps/translationNotes',
+      'en/translationHelps/translationWords',
+      'en/translationHelps/translationWordsLinks',
+      'en/bibles/ult',
+      'en/bibles/ust',
+      'hbo/bibles/uhb',
+    ];
+
+    const BASE_REQUIRED_RESOURCES_FOR_OTHER_OWNERS = [
+      'el-x-koine/bibles/ugnt',
+      'hbo/bibles/uhb',
+    ];
+
+    const _validateResources = { 'Door43-Catalog': BASE_REQUIRED_RESOURCES_DOOR43 };
+
+    if (DOOR43_DEPRECATED) {
+      _validateResources.unfoldingWord = BASE_REQUIRED_RESOURCES_UW;
+      _validateResources['Door43-Catalog'] = BASE_ORIG_LANG_RESOURCES_DOOR43;
+    } else if (unfoldingWordOrg) {
+      _validateResources.unfoldingWord = BASE_REQUIRED_RESOURCES_FOR_OTHER_OWNERS;
+    };
 
     for (const owner of Object.keys(_validateResources)) {
       const resourcePaths_ = _validateResources[owner];

@@ -106,6 +106,7 @@
     "source_label": "Fonte:",
     "local_timestamp": "Local:",
     "online_timestamp": "Online:",
+    "show_all_available_content": "Mostrar todo o conteúdo disponível",
     "update_error_reason_parse": "erro de análise",
     "update_error_reason_download": "erro no download",
     "update_error_reason_missing_dependency": "dependência em falta"

@@ -106,6 +106,7 @@
     "source_label": "स्रोत:",
     "local_timestamp": "स्थानिक:",
     "online_timestamp": "ऑनलाइन:",
+    "show_all_available_content": "Show All Available Content",
     "update_error_reason_parse": "parse error",
     "update_error_reason_download": "download error",
     "update_error_reason_missing_dependency": "missing dependency"
