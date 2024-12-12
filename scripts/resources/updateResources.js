@@ -2,7 +2,7 @@
  * This script updates the resources in a given directory for the given languages
  * Syntax: node scripts/resources/updateResources.js <path to resources> <language> [language...]
  *
- * to debug: node --inspect-brk scripts/resources/updateResources.js  tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage
+ * to debug: node --inspect-brk scripts/resources/updateResources.js tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage --unfoldingWordOrg --preProd
  */
 require('babel-polyfill'); // required for async/await
 const path = require('path-extra');
