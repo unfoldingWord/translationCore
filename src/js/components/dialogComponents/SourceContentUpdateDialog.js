@@ -35,7 +35,7 @@ const styles = {
     fontWeight: 'normal',
   },
   boldCheckboxLabelStyle: { width: '100%' },
-  toggle: { marginTop: '6px' },
+  toggle: { marginTop: '6px', marginLeft: '15px' },
   toggleTrackStyle: { backgroundColor: 'lightgrey' },
   toggleThumbStyle: { backgroundColor: 'white' },
   toggleLabelStyle: {
