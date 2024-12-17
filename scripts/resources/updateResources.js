@@ -115,24 +115,44 @@ function isAlignedBible(item) {
   return false;
 }
 
+function checkForPreProdSubst(preProd, keep, item, preProdDcsResourceList, useItem) {
+  if (preProd && keep && item.languageId === 'en') {
+    // switch for preProdEquivalent
+    const match = preProdDcsResourceList.find(preItem => (
+      (item.languageId === preItem.languageId)
+      && (item.owner === preItem.owner)
+      && (item.resourceId === preItem.resourceId)
+    ));
+
+    if (match) {
+      useItem = match;
+    }
+  }
+  return useItem;
+}
+
 /**
  * strip list down to minimal resources if in filterOrg, original language and optionally English
- * @param {object} sourceContentUpdater
- * @param {string} filterOrg
- * @param {string[]} updateList
- * @param {boolean} addEnglishRes
+ * @param {object[]} dcsResourcesList
+ * @param {object[]} updateList
+ * @param {string[]} keyLanguages
+ * @param {boolean} preProd
+ * @param {object[]} preProdDcsResourceList
  */
-function getNeededResources(sourceContentUpdater, updateList, keyLanguages) {
-  for (const item of sourceContentUpdater.updatedCatalogResources) {
+function getNeededResources(dcsResourcesList, updateList, keyLanguages, preProd, preProdDcsResourceList) {
+  for (const item of dcsResourcesList) {
     let keep = false;
+    let useItem = item;
 
     switch (item.owner) {
     case DOOR43_CATALOG:
       keep = isCoreResource(item);
+      useItem = checkForPreProdSubst(preProd, keep, item, preProdDcsResourceList, useItem);
       break;
 
     case UNFOLDING_WORD:
       keep = isCoreResource(item) || isAlignedBible(item) || isKeyLanguageResource(item, keyLanguages);
+      useItem = checkForPreProdSubst(preProd, keep, item, preProdDcsResourceList, useItem);
       break;
 
     default: // other orgs
@@ -141,7 +161,7 @@ function getNeededResources(sourceContentUpdater, updateList, keyLanguages) {
     }
 
     if (keep) {
-      updateList.push(item);
+      updateList.push(useItem);
     }
   }
 }
@@ -190,46 +210,51 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
       config.filterByOwner = filterByOwner_;
     }
 
+    okToZip = true;
+    let preProdDcsResourceList = []
+
     if (preProd) {
       config.stage = STAGE.PRE_PROD;
+      await sourceContentUpdater.getLatestResources(localResourceList, config);
+      preProdDcsResourceList = [...sourceContentUpdater.updatedCatalogResources]
+      delete config.stage; // so next fetch will only get released
     }
 
-    okToZip = true;
+    await sourceContentUpdater.getLatestResources(localResourceList, config);
+    const dcsResourcesList = sourceContentUpdater.updatedCatalogResources
 
-    await sourceContentUpdater.getLatestResources(localResourceList, config)
-      .then(async () => {
-        let updateList = [];
-        console.log(`Updated resources count is ${sourceContentUpdater.updatedCatalogResources?.length}`)
+    let updateList = [];
+    console.log(`Updated resources count is ${sourceContentUpdater.updatedCatalogResources?.length}`);
 
-        if (_UW) {
-          getNeededResources(sourceContentUpdater, updateList, languages);
-        } else {
-          updateList = sourceContentUpdater.updatedCatalogResources;
+    if (_UW) {
+      getNeededResources(dcsResourcesList, updateList, languages, preProd, preProdDcsResourceList);
+    } else {
+      updateList = dcsResourcesList;
+    }
+
+    cleanUpLoadAfterResources(updateList);
+
+    await sourceContentUpdater.downloadResources(languages, resourcesPath,
+      updateList, // list of static resources that are newer in catalog
+      allAlignedBibles)
+      .then(resources => {
+        if (!resources || !resources.length) {
+          console.log('Resources are already up to date');
         }
 
-        cleanUpLoadAfterResources(updateList);
+        resources.forEach(resource => {
+          console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
+          const found = languages.find((language) => (language === resource.languageId));
 
-        await sourceContentUpdater.downloadResources(languages, resourcesPath,
-          updateList, // list of static resources that are newer in catalog
-          allAlignedBibles)
-          .then(resources => {
-            if (!resources || !resources.length) {
-              console.log('Resources are already up to date');
-            }
-
-            resources.forEach(resource => {
-              console.log('Updated resource \'' + resource.resourceId + '\' for language \'' + resource.languageId + '\' to v' + resource.version);
-              const found = languages.find((language) => (language === resource.languageId));
-
-              if (!found) { // if language for resource was not in original list, then add it for language list to zip up
-                languages.push(resource.languageId);
-              }
-            });
-          })
-          .catch(err => {
-            console.error(err);
-          });
+          if (!found) { // if language for resource was not in original list, then add it for language list to zip up
+            languages.push(resource.languageId);
+          }
+        });
+      })
+      .catch(err => {
+        console.error(err);
       });
+
     return sourceContentUpdater.getLatestDownloadErrorsStr();
   } catch (e) {
     const message = `Error getting latest resources: `;
