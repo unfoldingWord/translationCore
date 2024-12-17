@@ -152,11 +152,11 @@ function getNeededResources(dcsResourcesList, updateList, keyLanguages, preProd,
 
     case UNFOLDING_WORD:
       keep = isCoreResource(item) || isAlignedBible(item) || isKeyLanguageResource(item, keyLanguages);
+      useItem = checkForPreProdSubst(preProd, keep, item, preProdDcsResourceList, useItem);
       break;
 
     default: // other orgs
       keep = isAlignedBible(item) || isKeyLanguageResource(item, keyLanguages);
-      useItem = checkForPreProdSubst(preProd, keep, item, preProdDcsResourceList, useItem);
       break;
     }
 
