@@ -147,7 +147,6 @@ function getNeededResources(dcsResourcesList, updateList, keyLanguages, preProd,
     switch (item.owner) {
     case DOOR43_CATALOG:
       keep = isCoreResource(item);
-      useItem = checkForPreProdSubst(preProd, keep, item, preProdDcsResourceList, useItem);
       break;
 
     case UNFOLDING_WORD:
