@@ -11,6 +11,8 @@
 **Fixed bugs:**
 - Fix Critical Error screen when opening an old project aligned with the older version of Original language [\#7592](https://github.com/unfoldingWord/translationCore/issues/7592)
 
+
+
 ## [v3.6.6](https://github.com/unfoldingWord/translationCore/tree/v3.6.6) (2024-09-18)
 
 **Fixed bugs:**
