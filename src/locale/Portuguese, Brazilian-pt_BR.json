@@ -107,6 +107,8 @@
     "local_timestamp": "Local:",
     "online_timestamp": "Online:",
     "show_all_available_content": "Mostrar todo o conteúdo disponível",
+    "show_all_available_content_off_hint": "A lista atual mostra conteúdo comumente utilizado",
+    "show_all_available_content_on_hint": "A lista mostra todo o conteúdo disponível",
     "update_error_reason_parse": "erro de análise",
     "update_error_reason_download": "erro no download",
     "update_error_reason_missing_dependency": "dependência em falta"
