@@ -1176,14 +1176,18 @@ export function getFoldersInResourceFolder(resourcePath) {
  * @return {Array}
  */
 export function getFilesInResourcePath(resourcePath, ext=null) {
-  if (fs.lstatSync(resourcePath).isDirectory()) {
-    let files = fs.readdirSync(resourcePath).filter(file => {
-      if (ext) {
-        return path.extname(file) === ext;
-      }
-      return file !== '.DS_Store';
-    }); // filter out .DS_Store
-    return files;
+  try {
+    if (fs.existsSync(resourcePath)) {
+      let files = fs.readdirSync(resourcePath).filter(file => {
+        if (ext) {
+          return path.extname(file) === ext;
+        }
+        return file !== '.DS_Store';
+      }); // filter out .DS_Store
+      return files;
+    }
+  } catch (e) {
+    console.warn(`ResourceHelpers.getFilesInResourcePath() - invalid path: ${resourcePath}`,e);
   }
   return [];
 }

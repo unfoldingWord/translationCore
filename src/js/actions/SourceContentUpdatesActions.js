@@ -138,10 +138,11 @@ function getDownloadErrorList(errors, translate) {
  * Downloads source content updates using the tc-source-content-updater.
  * @param {array} resourcesToDownload - list of resources to be downloaded.
  * @param {boolean} refreshUpdates
- * @param {boolean} preRelease
+ * @param {boolean} preRelease - if true include pre-release content
+ * @param {boolean} notTcReady - if true include content not tcReady
  * @returns {(function(*, *): Promise<void>)}
  */
-export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false) {
+export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false, notTcReady = false) {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     const toolName = getCurrentToolName(getState());
@@ -435,8 +436,9 @@ export const deletePreReleaseResources = (resourcesFolder) => ((dispatch, getSta
  * @param {function} closeSourceContentDialog - Hacky workaround to close the
  * source content dialog in the AppMenu state.
  * @param {boolean} preRelease - if true include pre-release content
+ * @param {boolean} tcReady - if true include only tcReady content
  */
-export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease = false) {
+export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRelease = false, tcReady = true) {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     dispatch(resetSourceContentUpdatesReducer());
@@ -451,6 +453,11 @@ export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRele
         stage: preRelease ? 'preprod' : null,
         DCS_BASE_URL,
       };
+
+      if (tcReady) {
+        config.ignoreDoor43Catalog = true;
+        config.topic = 'tc-ready';
+      }
 
       await SourceContentUpdater.getLatestResources(localResourceList, config)
         .then(resources => {
