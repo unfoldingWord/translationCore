@@ -1,0 +1,88 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": null,
+    "creator": "Door43 World Missions Community",
+    "description": "A modular handbook that provides a condensed explanation of Bible translation and checking principles that the global Church has implicitly affirmed define trustworthy translations. It enables translators to learn how to create trustworthy translations of the Bible in their own language.",
+    "format": "text/markdown",
+    "identifier": "ta",
+    "issued": "2024-11-25",
+    "language": {
+      "identifier": "hi",
+      "title": "Hindi",
+      "direction": "ltr"
+    },
+    "modified": "2024-11-25",
+    "publisher": "BCS",
+    "relation": [
+      "hi/glt",
+      "hi/gst",
+      "hi/tn",
+      "hi/tw"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "ta",
+        "language": "en",
+        "version": "9"
+      }
+    ],
+    "subject": "Translation Academy",
+    "title": "अनुवाद अकादमी",
+    "type": "man",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "intro",
+      "path": "./intro",
+      "sort": 0,
+      "title": "Introduction to translationAcademy",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "process",
+      "path": "./process",
+      "sort": 1,
+      "title": "Process Manual",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "translate",
+      "path": "./translate",
+      "sort": 2,
+      "title": "Translation Manual",
+      "versification": null
+    },
+    {
+      "categories": [
+        "ta"
+      ],
+      "identifier": "checking",
+      "path": "./checking",
+      "sort": 3,
+      "title": "Checking Manual",
+      "versification": null
+    }
+  ],
+  "version": "4",
+  "catalog_modified_time": "2024-11-25T08:28:48Z",
+  "modifiedTime": "2024-11-25T08:28:48Z",
+  "stage": "prod"
+}
