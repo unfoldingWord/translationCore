@@ -1,0 +1,313 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "John Crosby",
+      "Budyo Pantoro",
+      "John Manuain"
+    ],
+    "creator": "Door43 World Missions Community",
+    "description": "Terjemahan berlisensi terbuka, yang dimaksudkan untuk memberikan  pemahaman 'fungsional' tentang Alkitab. Terjemahan ini meningkatkan  pemahaman penerjemah terhadap teks dengan menerjemahkan istilah teologis  sebagai frasa deskriptif.",
+    "format": "text/usfm3",
+    "identifier": "gst",
+    "issued": "2024-10-31",
+    "language": {
+      "direction": "ltr",
+      "identifier": "id",
+      "title": "Bahasa Indonesia"
+    },
+    "modified": "2024-10-31",
+    "publisher": "BAHTRAKU",
+    "relation": [
+      "id/gst",
+      "id/tw",
+      "id/tq",
+      "id/tn",
+      "hbo/uhb?v=2.1.25",
+      "el-x-koine/ugnt?v=0.25"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "t4t",
+        "language": "en",
+        "version": "2014"
+      },
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.17"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.18"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "BAHTRAKU Teks yang Disederhanakan",
+    "type": "bundle",
+    "version": "11"
+  },
+  "checking": {
+    "checking_entity": [
+      "BAHTRAKU"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "Colossians",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 52,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Thessalonians",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 53,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Thessalonians",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 54,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 Timothy",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 55,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Timothy",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 56,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Titus",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 57,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Philemon",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 58,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 Peter",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 62,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 John",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 65,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "John Crosby",
+        "Budyo Pantoro",
+        "John Manuain"
+      ],
+      "creator": "Door43 World Missions Community",
+      "description": "Terjemahan berlisensi terbuka, yang dimaksudkan untuk memberikan  pemahaman 'fungsional' tentang Alkitab. Terjemahan ini meningkatkan  pemahaman penerjemah terhadap teks dengan menerjemahkan istilah teologis  sebagai frasa deskriptif.",
+      "format": "text/usfm3",
+      "identifier": "gst",
+      "issued": "2024-10-31",
+      "language": {
+        "direction": "ltr",
+        "identifier": "id",
+        "title": "Bahasa Indonesia"
+      },
+      "modified": "2024-10-31",
+      "publisher": "BAHTRAKU",
+      "relation": [
+        "id/gst",
+        "id/tw",
+        "id/tq",
+        "id/tn",
+        "hbo/uhb?v=2.1.25",
+        "el-x-koine/ugnt?v=0.25"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "t4t",
+          "language": "en",
+          "version": "2014"
+        },
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.17"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.18"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "BAHTRAKU Teks yang Disederhanakan",
+      "type": "bundle",
+      "version": "11"
+    },
+    "checking": {
+      "checking_entity": [
+        "BAHTRAKU"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "Colossians",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 52,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Thessalonians",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 53,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Thessalonians",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 54,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 Timothy",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 55,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Timothy",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 56,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Titus",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 57,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "Philemon",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 58,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 Peter",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 62,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 John",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 65,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "id",
+  "language_name": "Bahasa Indonesia",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "gst",
+  "resource_title": "BAHTRAKU Teks yang Disederhanakan",
+  "remoteModifiedTime": "2024-10-31T08:18:54Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2024-10-31T08:18:54Z",
+  "usfm-js": "3.4.3",
+  "version": "11",
+  "modifiedTime": "2024-10-31T08:18:54Z",
+  "stage": "prod"
+}
