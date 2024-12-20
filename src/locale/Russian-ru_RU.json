@@ -106,6 +106,9 @@
     "source_label": "Источник:",
     "local_timestamp": "Локально:",
     "online_timestamp": "Онлайн:",
+    "show_all_available_content": "Показать все доступные материалы",
+    "show_all_available_content_off_hint": "Текущий список показывает широко используемый контент",
+    "show_all_available_content_on_hint": "Список показывает все доступные материалы",
     "update_error_reason_parse": "ошибка обработки",
     "update_error_reason_download": "ошибка при загрузке",
     "update_error_reason_missing_dependency": "зависимотси не обнаружены"

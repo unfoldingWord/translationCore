@@ -1,6 +1,24 @@
 # Changelog
 
 
+## [v3.6.7](https://github.com/unfoldingWord/translationCore/tree/v3.6.7) (2024-12-18)
+
+**Implemented enhancements:**
+- Updated Crowdin translations
+- Add shortcut Keys to WordAlignment [\#7601](https://github.com/unfoldingWord/translationCore/issues/7601)
+- Default to showing tC-ready content in the source content downloader [\#7604](https://github.com/unfoldingWord/translationCore/issues/7604)
+
+**Fixed bugs:**
+- Fix Critical Error screen when opening an old project aligned with the older version of Original language [\#7592](https://github.com/unfoldingWord/translationCore/issues/7592)
+
+
+
+## [v3.6.6](https://github.com/unfoldingWord/translationCore/tree/v3.6.6) (2024-09-18)
+
+**Fixed bugs:**
+-  Getting latest resources from Door43-Catalog broken due to changes on DCS  [\#7588](https://github.com/unfoldingWord/translationCore/issues/7588)
+
+
 ## [v3.6.5](https://github.com/unfoldingWord/translationCore/tree/v3.6.5) (2024-07-12)
 
 **Fixed bugs:**

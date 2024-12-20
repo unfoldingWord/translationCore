@@ -106,6 +106,9 @@
     "source_label": "ਸਰੋਤ:",
     "local_timestamp": "ਸਥਾਨਕ:",
     "online_timestamp": "ਆਨਲਾਈਨ",
+    "show_all_available_content": "Show All Available Content",
+    "show_all_available_content_off_hint": "The current list is showing commonly used content",
+    "show_all_available_content_on_hint": "The list shows all available content",
     "update_error_reason_parse": "parse error",
     "update_error_reason_download": "download error",
     "update_error_reason_missing_dependency": "missing dependency"
