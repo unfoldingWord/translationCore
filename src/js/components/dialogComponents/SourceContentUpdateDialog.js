@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
+import Toggle from 'material-ui/Toggle';
+import ReactTooltip from 'react-tooltip';
 import BaseDialog from './BaseDialog';
 import ResourceListItem from './ResourceListItem';
 
@@ -34,6 +36,17 @@ const styles = {
     fontWeight: 'normal',
   },
   boldCheckboxLabelStyle: { width: '100%' },
+  toggle: { marginTop: '6px', marginLeft: '15px' },
+  toggleTrackStyle: { backgroundColor: 'lightgrey' },
+  toggleThumbStyle: { backgroundColor: 'white' },
+  toggleLabelStyle: {
+    fontWeight: 'normal',
+    fontSize: '16px',
+    textAlign: 'left',
+    color: 'var(--reverse-color)',
+    width: 'fit-content',
+    marginRight: '6px',
+  },
   resourcesList: {},
   resourcesListItem: {
     display: 'flex',
@@ -85,6 +98,8 @@ class ContentUpdateDialog extends React.Component {
       selectedLanguageResources,
       preRelease,
       togglePreRelease,
+      tcReady,
+      toggleTcReady,
       deletePreReleasePrompt,
     } = this.props;
 
@@ -95,6 +110,9 @@ class ContentUpdateDialog extends React.Component {
     const allChecked =
       JSON.stringify(availableLanguageIds) === JSON.stringify(languagesSelectedList);
 
+    const tcReadyToggleHintKey = tcReady ? 'updates.show_all_available_content_off_hint' : 'updates.show_all_available_content_on_hint';
+    const tcReadyToggleHintText = translate(tcReadyToggleHintKey);
+
     return (
       <BaseDialog
         open={open}
@@ -103,7 +121,34 @@ class ContentUpdateDialog extends React.Component {
         primaryActionEnabled={languagesSelectedList.length > 0}
         onSubmit={onDownload}
         onClose={onClose}
-        title={translate('updates.update_gateway_language_content')}
+        title={
+          <div style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+            <div style={{ fontSize: '18px' }}>
+              {translate('updates.update_gateway_language_content')}
+            </div>
+            <div style={{ fontSize: '16px' }}>
+              <Toggle
+                label={translate('updates.show_all_available_content')}
+                labelPosition="right"
+                toggled={!tcReady}
+                onToggle={toggleTcReady}
+                style={styles.toggle}
+                trackStyle={styles.toggleTrackStyle}
+                trackSwitchedStyle={styles.toggleTrackStyle}
+                thumbStyle={styles.toggleThumbStyle}
+                thumbSwitchedStyle={styles.toggleThumbStyle}
+                labelStyle={styles.toggleLabelStyle}
+                data-tip={tcReadyToggleHintText}
+                data-type="light"
+              />
+              <ReactTooltip classname="light-tooltip" />
+            </div>
+          </div>
+        }
         modal={false}
         scrollableContent={true}
         titleStyle={{ marginBottom: '0px' }}
@@ -111,9 +156,7 @@ class ContentUpdateDialog extends React.Component {
         <div style={styles.content}>
           <div>
             <h4 style={styles.header}>
-              {translate(
-                'updates.select_the_gateway_language_content_to_download',
-              )}
+              {translate('updates.select_the_gateway_language_content_to_download')}
             </h4>
             <Divider />
           </div>
@@ -203,6 +246,8 @@ ContentUpdateDialog.propTypes = {
   preRelease: PropTypes.bool.isRequired,
   togglePreRelease: PropTypes.func.isRequired,
   deletePreReleasePrompt: PropTypes.func.isRequired,
+  tcReady: PropTypes.bool.isRequired,
+  toggleTcReady: PropTypes.func.isRequired,
 };
 
 export default ContentUpdateDialog;
