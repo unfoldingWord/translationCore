@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Checkbox from 'material-ui/Checkbox';
 import Divider from 'material-ui/Divider';
 import Toggle from 'material-ui/Toggle';
+import ReactTooltip from 'react-tooltip';
 import BaseDialog from './BaseDialog';
 import ResourceListItem from './ResourceListItem';
 
@@ -109,6 +110,9 @@ class ContentUpdateDialog extends React.Component {
     const allChecked =
       JSON.stringify(availableLanguageIds) === JSON.stringify(languagesSelectedList);
 
+    const tcReadyToggleHintKey = tcReady ? 'updates.show_all_available_content_off_hint' : 'updates.show_all_available_content_on_hint';
+    const tcReadyToggleHintText = translate(tcReadyToggleHintKey);
+
     return (
       <BaseDialog
         open={open}
@@ -138,7 +142,10 @@ class ContentUpdateDialog extends React.Component {
                 thumbStyle={styles.toggleThumbStyle}
                 thumbSwitchedStyle={styles.toggleThumbStyle}
                 labelStyle={styles.toggleLabelStyle}
+                data-tip={tcReadyToggleHintText}
+                data-type="light"
               />
+              <ReactTooltip classname="light-tooltip" />
             </div>
           </div>
         }
