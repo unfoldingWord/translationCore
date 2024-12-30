@@ -1,6 +1,12 @@
 # Changelog
 
 
+## [v3.6.8](https://github.com/unfoldingWord/translationCore/tree/v3.6.8) (2024-12-30)
+
+**Fixed bugs:**
+- Fix shortcut Keys in WordAlignment for Windows - change to use CTL-E/CMD-E [\#7601](https://github.com/unfoldingWord/translationCore/issues/7601)
+
+
 ## [v3.6.7](https://github.com/unfoldingWord/translationCore/tree/v3.6.7) (2024-12-18)
 
 **Implemented enhancements:**
