@@ -205,6 +205,7 @@ jobs:
         id: build
         run: |
           echo "Building $APP_VERSION-$HASH"
+          git config --global --add safe.directory /__w/translationCore/translationCore
           npm run build-linux
 
       #     arm64
