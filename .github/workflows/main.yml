@@ -205,6 +205,8 @@ jobs:
         id: build
         run: |
           echo "Building $APP_VERSION-$HASH"
+          chmod u+r /__w/translationCore/translationCore/electronite/cfg.json
+          chmod u+r electronite/cfg.json
           git config --global --add safe.directory /__w/translationCore/translationCore
           npm run build-linux
 
