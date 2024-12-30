@@ -181,7 +181,9 @@ jobs:
           curl --insecure https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
 
       - name: Before Update resources - save original manifest
-        run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
+        run: |
+          chmod 777 tcResources/source-content-updater-manifest.json
+          cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
 
       - name: Update resources
         if: env.UPDATE_RESOURCES
