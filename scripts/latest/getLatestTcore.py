@@ -231,8 +231,11 @@ installers = {
 html = json_to_html(max_installers, 'max')
 print (html)
 
-html = json_to_html(lite_installers, 'lite')
-print (html)
+try:
+  html = json_to_html(lite_installers, 'lite')
+  print (html)
+except:
+  print("No LITE builds")
 
 #####################################################
 #  JSON Output is in this format:
