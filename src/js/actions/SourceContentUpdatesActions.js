@@ -139,10 +139,9 @@ function getDownloadErrorList(errors, translate) {
  * @param {array} resourcesToDownload - list of resources to be downloaded.
  * @param {boolean} refreshUpdates
  * @param {boolean} preRelease - if true include pre-release content
- * @param {boolean} notTcReady - if true include content not tcReady
  * @returns {(function(*, *): Promise<void>)}
  */
-export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false, notTcReady = false) {
+export function downloadSourceContentUpdates(resourcesToDownload, refreshUpdates = false, preRelease = false) {
   return (async (dispatch, getState) => {
     const translate = getTranslate(getState());
     const toolName = getCurrentToolName(getState());
@@ -456,7 +455,7 @@ export function getListOfSourceContentToUpdate(closeSourceContentDialog, preRele
 
       if (tcReady) {
         config.ignoreDoor43Catalog = true;
-        config.topic = 'tc-ready';
+        config.topic = ['ready-for-use', 'tc-ready'];
       }
 
       await SourceContentUpdater.getLatestResources(localResourceList, config)

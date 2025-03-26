@@ -201,8 +201,8 @@ const updateResources = async (languages, resourcesPath, allAlignedBibles, uWori
     const latestManifestKey = { Bible: { 'usfm-js': USFMJS_VERSION } };
     const config = {
       latestManifestKey,
-      // ignoreDoor43Catalog: DOOR43_DEPRECATED, /// perhaps eventually we can completely ignore
-      topic: 'tc-ready',
+      // ignoreDoor43Catalog: DOOR43_DEPRECATED, // TODO: perhaps eventually we can completely ignore
+      topic: ['tc-ready', 'ready-for-use'],
     };
 
     if (filterByOwner_?.length) { // if not empty list
