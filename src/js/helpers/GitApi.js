@@ -38,6 +38,7 @@ export default function GitApi(directory) {
      * @param {function} callback - A callback to be run on complete.
      */
     push: function (remote, branch, callback) {
+      git.addConfig('http.postBuffer', '157286400'); // TRICKY - fixes issue with GITEA compatibility with MacOS Sonoma
       git.push(remote, branch, callback);
     },
     /**

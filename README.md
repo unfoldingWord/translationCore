@@ -55,3 +55,7 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
   make sure `Discover network targets` is selected and click `Configure` button.  Make sure `localhost:5656` is added under `Target discovery settings` and click `Done`.
 - Under remote target `electron/js2c/browser_init` click on `inspect` link.
 
+## Building app
+- example to build the app for mac: `npm i --legacy-peer-deps && npm run build-macos`
+  - or do `build-win` or `build-linux`
+- then to create installer for MacOS: `./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/tCore-macos-universal.dmg`
