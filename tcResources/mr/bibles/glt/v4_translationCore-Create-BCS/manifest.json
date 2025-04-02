@@ -1,0 +1,619 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": null,
+    "creator": "Door43 World Missions Community",
+    "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+    "format": "text/usfm3",
+    "identifier": "ult",
+    "issued": "2025-03-18",
+    "language": {
+      "direction": "ltr",
+      "identifier": "mr",
+      "title": "मराठी"
+    },
+    "modified": "2025-03-18",
+    "publisher": "translationCore-Create-BCS",
+    "relation": [
+      "mr/tw",
+      "mr/tq",
+      "mr/tn"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "asv",
+        "language": "en",
+        "version": "1901"
+      },
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.17"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.18"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "मराठी Literal Text",
+    "type": "bundle",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "2"
+  },
+  "projects": [
+    {
+      "title": "रूथ",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "योना",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "मार्क",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 42,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "लूक",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 43,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "योहान",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 44,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 करिंथकरांस",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 47,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 करिंथकरांस",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 48,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "इफिसकरांस",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 50,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "फिलिप्पैकरांस",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 51,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "कलस्सैकरांस",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 52,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 थेस्सलनीकाकरांस",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 53,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 थेस्सलनीकाकरांस",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 54,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 तीमथ्याला",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 55,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 तीमथ्याला",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 56,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीताला",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 57,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "फिलेमानाला",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 58,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "याकोब",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 60,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 पेत्र",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 61,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 पेत्र",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 62,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 योहान",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 63,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 योहान",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 64,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 योहान",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 65,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "गलतीकरांस",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 49,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ओबद्या",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "यहूदा",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 66,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": null,
+      "creator": "Door43 World Missions Community",
+      "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+      "format": "text/usfm3",
+      "identifier": "ult",
+      "issued": "2025-03-18",
+      "language": {
+        "direction": "ltr",
+        "identifier": "mr",
+        "title": "मराठी"
+      },
+      "modified": "2025-03-18",
+      "publisher": "translationCore-Create-BCS",
+      "relation": [
+        "mr/tw",
+        "mr/tq",
+        "mr/tn"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "asv",
+          "language": "en",
+          "version": "1901"
+        },
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.17"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.18"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "मराठी Literal Text",
+      "type": "bundle",
+      "version": "4"
+    },
+    "checking": {
+      "checking_entity": [
+        "unfoldingWord"
+      ],
+      "checking_level": "2"
+    },
+    "projects": [
+      {
+        "title": "रूथ",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "योना",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "मार्क",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 42,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "लूक",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 43,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "योहान",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 44,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 करिंथकरांस",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 47,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 करिंथकरांस",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 48,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "इफिसकरांस",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 50,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "फिलिप्पैकरांस",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 51,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "कलस्सैकरांस",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 52,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 थेस्सलनीकाकरांस",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 53,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 थेस्सलनीकाकरांस",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 54,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 तीमथ्याला",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 55,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 तीमथ्याला",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 56,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "तीताला",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 57,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "फिलेमानाला",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 58,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "याकोब",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 60,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 पेत्र",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 61,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 पेत्र",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 62,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 योहान",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 63,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 योहान",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 64,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 योहान",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 65,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "गलतीकरांस",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 49,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ओबद्या",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "यहूदा",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 66,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "mr",
+  "language_name": "मराठी",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "ult",
+  "resource_title": "मराठी Literal Text",
+  "remoteModifiedTime": "2025-03-18T13:37:03Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2025-03-18T13:37:03Z",
+  "usfm-js": "3.4.3",
+  "version": "4",
+  "modifiedTime": "2025-03-18T13:37:03Z",
+  "stage": "prod"
+}

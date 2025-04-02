@@ -1,0 +1,365 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": null,
+    "creator": "Door43 World Missions Community",
+    "description": "Open-licensed exegetical notes that provide historical, cultural, and linguistic information for translators. It provides translators and checkers with pertinent, just-in-time information to help them make the best possible translation decisions.",
+    "format": "text/tsv",
+    "identifier": "twl",
+    "issued": "2025-03-31",
+    "language": {
+      "direction": "ltr",
+      "identifier": "hi",
+      "title": "हिन्दी, हिंदी"
+    },
+    "modified": "2025-03-31",
+    "publisher": "BCS",
+    "relation": [
+      "el-x-koine/ugnt?v=0.18",
+      "hbo/uhb?v=2.1.17"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "twl",
+        "language": "en",
+        "version": "0"
+      }
+    ],
+    "subject": "TSV Translation Words Links",
+    "title": "बाइबल अनुवाद शब्दों के लिंक",
+    "type": "help",
+    "version": "5"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "2"
+  },
+  "projects": [
+    {
+      "title": "रूत",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./twl_RUT.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "एज्रा",
+      "versification": "ufw",
+      "identifier": "ezr",
+      "sort": 15,
+      "path": "./twl_EZR.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "नहेम्याह",
+      "versification": "ufw",
+      "identifier": "neh",
+      "sort": 16,
+      "path": "./twl_NEH.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "एस्तेर",
+      "versification": "ufw",
+      "identifier": "est",
+      "sort": 17,
+      "path": "./twl_EST.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ओबद्याह",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./twl_OBA.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "योना",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./twl_JON.tsv",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "मत्ती",
+      "versification": "ufw",
+      "identifier": "mat",
+      "sort": 41,
+      "path": "./twl_MAT.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "मरकुस",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 42,
+      "path": "./twl_MRK.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "लूका",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 43,
+      "path": "./twl_LUK.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "यूहन्ना",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 44,
+      "path": "./twl_JHN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "रोमियों",
+      "versification": "ufw",
+      "identifier": "rom",
+      "sort": 46,
+      "path": "./twl_ROM.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 कुरिन्थियों",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 47,
+      "path": "./twl_1CO.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 कुरिन्थियों",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 48,
+      "path": "./twl_2CO.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "गलातियों",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 49,
+      "path": "./twl_GAL.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "इफिसियों",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 50,
+      "path": "./twl_EPH.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "फिलिप्पियों",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 51,
+      "path": "./twl_PHP.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "कुलुस्सियों",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 52,
+      "path": "./twl_COL.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 थिस्सलुनीकियों",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 53,
+      "path": "./twl_1TH.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 थिस्सलुनीकियों",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 54,
+      "path": "./twl_2TH.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 तीमुथियुस",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 55,
+      "path": "./twl_1TI.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 तीमुथियुस",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 56,
+      "path": "./twl_2TI.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "तीतुस",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 57,
+      "path": "./twl_TIT.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "फिलेमोन",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 58,
+      "path": "./twl_PHM.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "इब्रानियों",
+      "versification": "ufw",
+      "identifier": "heb",
+      "sort": 59,
+      "path": "./twl_HEB.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "याकूब",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 60,
+      "path": "./twl_JAS.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 पतरस",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 61,
+      "path": "./twl_1PE.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 पतरस",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 62,
+      "path": "./twl_2PE.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 यूहन्ना",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 63,
+      "path": "./twl_1JN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 यूहन्ना",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 64,
+      "path": "./twl_2JN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 यूहन्ना",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 65,
+      "path": "./twl_3JN.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "यहूदा",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 66,
+      "path": "./twl_JUD.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "Revelation",
+      "versification": "ufw",
+      "identifier": "rev",
+      "sort": 67,
+      "path": "./twl_REV.tsv",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "version": "5",
+  "catalog_modified_time": "2025-03-31T14:54:14Z",
+  "modifiedTime": "2025-03-31T14:54:14Z"
+}

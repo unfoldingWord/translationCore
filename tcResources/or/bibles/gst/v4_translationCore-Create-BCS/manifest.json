@@ -1,0 +1,619 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": null,
+    "creator": "Door43 World Missions Community",
+    "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator’s understanding of the text by translating theological terms as descriptive phrases.",
+    "format": "text/usfm3",
+    "identifier": "ust",
+    "issued": "2025-03-19",
+    "language": {
+      "direction": "ltr",
+      "identifier": "or",
+      "title": "ଓଡ଼ିଆ"
+    },
+    "modified": "2025-03-19",
+    "publisher": "translationCore-Create-BCS",
+    "relation": [
+      "or/tw",
+      "or/tq",
+      "or/tn"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "t4t",
+        "language": "en",
+        "version": "2014"
+      },
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.17"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.18"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Simplified Text",
+    "type": "bundle",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "2"
+  },
+  "projects": [
+    {
+      "title": "ରୂତ",
+      "versification": "ufw",
+      "identifier": "rut",
+      "sort": 8,
+      "path": "./08-RUT.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ଯୂନସ",
+      "versification": "ufw",
+      "identifier": "jon",
+      "sort": 32,
+      "path": "./32-JON.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ମାର୍କ",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 42,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଲୂକ",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 43,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "jhn",
+      "sort": 44,
+      "path": "./44-JHN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 କରିନ୍ଥୀୟ",
+      "versification": "ufw",
+      "identifier": "1co",
+      "sort": 47,
+      "path": "./47-1CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 କରିନ୍ଥୀୟ",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 48,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଏଫିସୀୟ",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 50,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଫିଲିପ୍ପୀୟ",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 51,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "କଲସୀୟ",
+      "versification": "ufw",
+      "identifier": "col",
+      "sort": 52,
+      "path": "./52-COL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ଥେସଲନୀକୀୟ",
+      "versification": "ufw",
+      "identifier": "1th",
+      "sort": 53,
+      "path": "./53-1TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ଥେସଲନୀକୀୟ",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 54,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ତୀମଥି",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 55,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ତୀମଥି",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 56,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ତୀତସ",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 57,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଫିଲୀମୋନ",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 58,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଯାକୁବ",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 60,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ପିତର",
+      "versification": "ufw",
+      "identifier": "1pe",
+      "sort": 61,
+      "path": "./61-1PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ପିତର",
+      "versification": "ufw",
+      "identifier": "2pe",
+      "sort": 62,
+      "path": "./62-2PE.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 63,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 64,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 ଯୋହନ",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 65,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଗାଲାତୀୟ",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 49,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ଓବଦୀୟ",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "ଯିହୂଦା",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 66,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": null,
+      "creator": "Door43 World Missions Community",
+      "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator’s understanding of the text by translating theological terms as descriptive phrases.",
+      "format": "text/usfm3",
+      "identifier": "ust",
+      "issued": "2025-03-19",
+      "language": {
+        "direction": "ltr",
+        "identifier": "or",
+        "title": "ଓଡ଼ିଆ"
+      },
+      "modified": "2025-03-19",
+      "publisher": "translationCore-Create-BCS",
+      "relation": [
+        "or/tw",
+        "or/tq",
+        "or/tn"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "t4t",
+          "language": "en",
+          "version": "2014"
+        },
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.17"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.18"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Simplified Text",
+      "type": "bundle",
+      "version": "4"
+    },
+    "checking": {
+      "checking_entity": [
+        "unfoldingWord"
+      ],
+      "checking_level": "2"
+    },
+    "projects": [
+      {
+        "title": "ରୂତ",
+        "versification": "ufw",
+        "identifier": "rut",
+        "sort": 8,
+        "path": "./08-RUT.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ଯୂନସ",
+        "versification": "ufw",
+        "identifier": "jon",
+        "sort": 32,
+        "path": "./32-JON.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ମାର୍କ",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 42,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଲୂକ",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 43,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "jhn",
+        "sort": 44,
+        "path": "./44-JHN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 କରିନ୍ଥୀୟ",
+        "versification": "ufw",
+        "identifier": "1co",
+        "sort": 47,
+        "path": "./47-1CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 କରିନ୍ଥୀୟ",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 48,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଏଫିସୀୟ",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 50,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଫିଲିପ୍ପୀୟ",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 51,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "କଲସୀୟ",
+        "versification": "ufw",
+        "identifier": "col",
+        "sort": 52,
+        "path": "./52-COL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ଥେସଲନୀକୀୟ",
+        "versification": "ufw",
+        "identifier": "1th",
+        "sort": 53,
+        "path": "./53-1TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ଥେସଲନୀକୀୟ",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 54,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ତୀମଥି",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 55,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ତୀମଥି",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 56,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ତୀତସ",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 57,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଫିଲୀମୋନ",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 58,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଯାକୁବ",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 60,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ପିତର",
+        "versification": "ufw",
+        "identifier": "1pe",
+        "sort": 61,
+        "path": "./61-1PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ପିତର",
+        "versification": "ufw",
+        "identifier": "2pe",
+        "sort": 62,
+        "path": "./62-2PE.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 63,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 64,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 ଯୋହନ",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 65,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଗାଲାତୀୟ",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 49,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ଓବଦୀୟ",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "ଯିହୂଦା",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 66,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "or",
+  "language_name": "ଓଡ଼ିଆ",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "ust",
+  "resource_title": "Simplified Text",
+  "remoteModifiedTime": "2025-03-19T10:29:41Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2025-03-19T10:29:41Z",
+  "usfm-js": "3.4.3",
+  "version": "4",
+  "modifiedTime": "2025-03-19T10:29:41Z",
+  "stage": "prod"
+}
