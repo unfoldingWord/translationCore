@@ -9,7 +9,7 @@
 
 **Implemented enhancements:**
 - Add support for 'ready-for-use' topic on DCS [\#7638](https://github.com/unfoldingWord/translationCore/issues/7638)
-
+- CMD-W Shortcut key for displaying Expanded scripture pane [\#7628](https://github.com/unfoldingWord/translationCore/issues/7628)
 
 ## [v3.6.8](https://github.com/unfoldingWord/translationCore/tree/v3.6.8) (2024-12-30)
 
