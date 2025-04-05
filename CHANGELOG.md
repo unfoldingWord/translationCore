@@ -1,6 +1,16 @@
 # Changelog
 
 
+## [v3.6.10](https://github.com/unfoldingWord/translationCore/tree/v3.6.10) (2025-4-5)
+
+**Fixed bugs:**
+- User cannot upload new project to DCS [\#7639](https://github.com/unfoldingWord/translationCore/issues/7639)
+- In WordAlignment fixed CMD-N (Next Verse) Shortcut to navigate chapters in numerical order [\#7635](https://github.com/unfoldingWord/translationCore/issues/7635)
+
+**Implemented enhancements:**
+- Add support for 'ready-for-use' topic on DCS [\#7638](https://github.com/unfoldingWord/translationCore/issues/7638)
+
+
 ## [v3.6.8](https://github.com/unfoldingWord/translationCore/tree/v3.6.8) (2024-12-30)
 
 **Fixed bugs:**
