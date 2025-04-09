@@ -95,6 +95,8 @@ class BaseDialog extends React.Component {
       children,
       actions,
       scrollableContent,
+      style,
+      contentStyle,
     } = this.props;
 
     let dialogActions = actions
@@ -131,6 +133,8 @@ class BaseDialog extends React.Component {
           autoScrollBodyContent={scrollableContent}
           onRequestClose={onClose}
           actions={dialogActions}
+          style={style}
+          contentStyle={contentStyle}
         >
           {children}
         </Dialog>
@@ -154,6 +158,8 @@ BaseDialog.propTypes = {
   titleStyle: PropTypes.object,
   children: PropTypes.any,
   bodyStyle: PropTypes.object,
+  style: PropTypes.object,
+  contentStyle: PropTypes.object,
 };
 
 BaseDialog.defaultProps = {

@@ -5,17 +5,20 @@ import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import UpdateIcon from 'material-ui/svg-icons/action/update';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
+import SearchIcon from '@material-ui/icons/Search';
 import MenuItem from 'material-ui/MenuItem';
 import PopoverMenu from '../components/PopoverMenu';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
 import SourceContentUpdatesDialogContainer from './SourceContentUpdatesDialogContainer';
+import AlignmentSearchDialogContainer from './AlignmentSearchDialogContainer';
 
 const APP_UPDATE = 'app_update';
 const CONTENT_UPDATE = 'content_update';
 const FEEDBACK = 'feedback';
 const APP_LOCALE = 'app_locale';
+const APP_SEARCH = 'app_search';
 
 /**
  * This component renders the global application menu.
@@ -112,6 +115,9 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.openDialog(APP_LOCALE)}
             primaryText={translate('change_locale')}
             leftIcon={<TranslateIcon/>}/>
+          <MenuItem onClick={this.openDialog(APP_SEARCH)}
+            primaryText={'Search'}
+            leftIcon={<SearchIcon/>}/>
         </PopoverMenu>
 
         <FeedbackDialogContainer open={this.isDialogOpen(FEEDBACK)}
@@ -129,6 +135,10 @@ class AppMenu extends React.Component {
         <SourceContentUpdatesDialogContainer open={this.isDialogOpen(CONTENT_UPDATE)}
           translate={translate}
           onClose={this.closeDialog(CONTENT_UPDATE)}/>
+
+        <AlignmentSearchDialogContainer open={this.isDialogOpen(APP_SEARCH)}
+          translate={translate}
+          onClose={this.closeDialog(APP_SEARCH)}/>
       </div>
 
     );
