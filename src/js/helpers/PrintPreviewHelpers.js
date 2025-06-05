@@ -131,6 +131,7 @@ function createPreviewWindow(html) {
     width: 850,
     height: 900,
     webPreferences: {
+      sandbox: false,
       webSecurity: false, // have to do this to load local files
     },
   });
