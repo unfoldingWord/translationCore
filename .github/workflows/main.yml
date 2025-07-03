@@ -358,13 +358,12 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_X64 }}
           path: artifacts/x64/
-
-#     arm64
-      - name: Set arm64 MAX artifact name
-        run: echo "ARTIFACT_ARM64=$(echo "${{ env.APP_NAME }}-win-arm64-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+#     x32
+      - name: Set x32 MAX artifact name
+        run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
 
-      - name: Set arm64 LITE artifact name
+      - name: Set x32 LITE artifact name
         if: ${{ env.TRIM == '1' }}
         run: echo "ARTIFACT_ARM64=$(echo "${{ env.APP_NAME }}-win-arm64-${{ env.APP_VERSION }}-LITE-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
