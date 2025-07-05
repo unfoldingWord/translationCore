@@ -21,7 +21,7 @@
     "electronite-build": "electronite-packager ./build --out=dist --icon=src/images/icon.icns",
     "electronite-build-macos": "electronite-packager ./build --out=dist --arch=universal --icon=src/images/icon.icns",
     "electronite-build-linux": "electronite-packager ./build --out=dist --arch=x64,arm64 --icon=src/images/icon.icns",
-    "electronite-build-win": "electronite-packager ./build --out=dist --arch=ia32,x64 --icon=src/images/icon.ico",
+    "electronite-build-win": "electronite-packager ./build --out=dist --arch=ia32,x64,arm64 --icon=src/images/icon.ico",
     "react-start": "craco start",
     "react-build": "craco build",
     "build-main": "webpack --config electronite/webpack.config.js",

@@ -332,6 +332,7 @@ jobs:
         run: |
           echo "Building $APP_VERSION-$HASH"
           npm run build-win
+
 #     x64
       - name: Set x64 MAX artifact name
         run: echo "ARTIFACT_X64=$(echo "${{ env.APP_NAME }}-win-x64-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
@@ -358,12 +359,13 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_X64 }}
           path: artifacts/x64/
-#     x32
-      - name: Set x32 MAX artifact name
-        run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+
+      #     arm64
+      - name: Set arm64 MAX artifact name
+        run: echo "ARTIFACT_ARM64=$(echo "${{ env.APP_NAME }}-win-arm64-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
 
-      - name: Set x32 LITE artifact name
+      - name: Set arm64 LITE artifact name
         if: ${{ env.TRIM == '1' }}
         run: echo "ARTIFACT_ARM64=$(echo "${{ env.APP_NAME }}-win-arm64-${{ env.APP_VERSION }}-LITE-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
@@ -378,6 +380,27 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_ARM64 }}
           path: artifacts/arm64/
+
+      #     x32
+      - name: Set x32 MAX artifact name
+        run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set x32 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-LITE-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
+
+      - name: bundle x32 windows
+        run: |
+          echo "Generating executable artifacts/x32/${{ env.ARTIFACT_X32 }}"
+          ./node_modules/.bin/gulp release-win32 --out=artifacts/x32/${{ env.ARTIFACT_X32 }}
+
+      - uses: actions/upload-artifact@v4
+        name: Upload x32 artifacts
+        with:
+          name: ${{ env.ARTIFACT_X32 }}
+          path: artifacts/x32/
 
   build-macos:
     name: Build macOS
