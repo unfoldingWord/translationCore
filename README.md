@@ -59,3 +59,4 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 - example to build the app for mac: `npm i --legacy-peer-deps && npm run build-macos`
   - or do `build-win` or `build-linux`
 - then to create installer for MacOS: `./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/tCore-macos-universal.dmg`
+
