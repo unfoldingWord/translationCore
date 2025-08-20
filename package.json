@@ -48,7 +48,8 @@
     "update-apps": "git submodule foreach --recursive git checkout develop && git submodule foreach --recursive git pull",
     "update-attributions": "node scripts/attributions/generateAttributionData.js src/js/components/home/license/attributionData.json",
     "update-resources": "node scripts/resources/updateResources.js tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage --unfoldingWordOrg --preProd",
-    "update-version": "node ./scripts/versionScript.js"
+    "update-version": "node ./scripts/versionScript.js",
+    "get-latest-release-links": "python3 scripts/latest/getLatestTcore.py"
   },
   "repository": {
     "type": "git",

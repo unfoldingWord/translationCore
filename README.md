@@ -61,3 +61,4 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 - then to create installer for MacOS: `./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/tCore-macos-universal.dmg`
 
 Note: updating to Electronite v37.1.0
+
