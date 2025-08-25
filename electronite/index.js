@@ -99,6 +99,7 @@ function createMainWindow(qaMode = '') {
       contextIsolation: false,
       enableRemoteModule: true,
       additionalArguments,
+      sandbox: false,
     },
   };
 
@@ -160,6 +161,7 @@ function createSplashWindow() {
       contextIsolation: true,
       enableRemoteModule: true,
       preload: path.join(__dirname, 'preloadSplash.js'),
+      sandbox: false,
     },
     frame: false,
     show: true,
