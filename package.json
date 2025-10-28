@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.6.11",
+  "version": "3.6.12",
   "minCompatibleVersion": "3.6.6",
   "manifestVersion": "8",
   "description": "A bridge between TS and TM",
@@ -188,7 +188,7 @@
     "string-punctuation-tokenizer": "^2.2.0",
     "sudo-prompt": "6.2.1",
     "tc-electron-env": "0.10.0",
-    "tc-source-content-updater": "1.4.33",
+    "tc-source-content-updater": "1.4.34-beta.2",
     "tc-strings": "0.1.7",
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "6.2.10",
