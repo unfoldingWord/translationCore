@@ -109,6 +109,27 @@ const showElectronGitDialog = (dialog) => new Promise((resolve, reject) => {
 });
 
 /**
+ * Displays a dialog prompting users to download git.
+ * @param dialog the electron dialog object
+ * @return {Promise} resolves with affirmative, rejects with cancel
+ */
+const showElectronGitDialogMacOS = (dialog) => new Promise((resolve, reject) => {
+  dialog.showMessageBox({
+    'title': 'Install XCode Command-Line Tools',
+    'message': 'You must install XCode Command-Line Tools before using translationCore.\n' +
+      'Please install Git and try again.',
+    'buttons': [
+      'Close translationCore',
+    ],
+    'defaultId': 0, // select Close button
+  }, response => {
+    if (response === 0) {
+      reject();
+    }
+  });
+});
+
+/**
  * Displays the git setup screens if necessary.
  *
  * @param dialog the electron dialog object
@@ -129,8 +150,14 @@ const showElectronGitSetup = (dialog) => {
       //   return open('https://git-for-windows.github.io/');
       // });
     });
+  } else if (process.platform === 'darwin') {
+    console.log('MacOS needs command-line tools');
+    return showElectronGitDialogMacOS(dialog).then(() => {
+      console.log('Mac OS Quit');
+      return false;
+    });
   } else {
-    // make linux and macOS users install git manually
+    // make linux users install git manually
     return showElectronGitDialog(dialog).then(() => {
       console.log('Redirecting to Git download page');
       return open('https://git-scm.com/downloads');
