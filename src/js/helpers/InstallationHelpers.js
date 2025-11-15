@@ -96,7 +96,7 @@ function isXcodeCLTInstalled() {
     return false;
   }
 }
-module.exports = { isXcodeCLTInstalled };
+module.exports.isXcodeCLTInstalled = isXcodeCLTInstalled;
 
 /**
  * Checks if the Xcode license agreement has been accepted on macOS.
@@ -110,19 +110,54 @@ module.exports = { isXcodeCLTInstalled };
  */
 function hasAcceptedXcodeLicense() {
   if (os.platform() !== 'darwin') {
-    // Not macOS â€“ Xcode not applicable
+    // Not macOS - Xcode not applicable
     return true;
   }
 
+  // First, determine what the active developer directory is.
+  // If it's CommandLineTools, then full Xcode is not selected/installed;
+  // in that case, there is no Xcode license to accept, so treat as OK.
+  try {
+    // run `xcode-select -p`
+    const devDir = execSync('xcode-select -p', {
+      stdio: ['ignore', 'pipe', 'ignore'],
+      encoding: 'utf8',
+    }).trim();
+
+    if (devDir && devDir.includes('CommandLineTools')) {
+      // Only CLT are installed / active. The `xcodebuild -license` check
+      // is not applicable here, so don't block the user.
+      console.log('hasAcceptedXcodeLicense() - command line tools are being used');
+      return true;
+    }
+  } catch (e) {
+    // If xcode-select itself fails, fall through to the xcodebuild check.
+    console.warn('hasAcceptedXcodeLicense() - xcode-select failed, continuing with xcodebuild check', e);
+  }
+
+  // At this point, a full Xcode should be active (or we couldn't verify).
   // `xcodebuild -license check` returns:
   //   exitCode 0 -> license accepted
   //   non-zero   -> license not accepted or xcodebuild missing
   const result = spawnSync('xcodebuild', ['-license', 'check'], { stdio: 'ignore' });
 
-  // If xcodebuild is missing or the command fails, status will be non-zero.
-  return result.status === 0;
+  if (result.error && result.error.code === 'ENOENT') {
+    // xcodebuild is not found at all; treat as "no Xcode installed" and don't block.
+    console.error('hasAcceptedXcodeLicense() - xcodebuild not found; assuming no Xcode installed');
+    return true;
+  }
+
+  // If xcodebuild is present and returns non-zero, the license has not been accepted.
+  const accepted = result.status === 0;
+
+  if (!accepted) {
+    console.error('hasAcceptedXcodeLicense() - Xcode license has NOT been accepted');
+  } else {
+    console.log('hasAcceptedXcodeLicense() - Xcode license has been accepted');
+  }
+  return accepted;
 }
-module.exports = { hasAcceptedXcodeLicense };
+module.exports.hasAcceptedXcodeLicense = hasAcceptedXcodeLicense;
 
 /**
  * Returns the bits supported by the processor. e.g. 32/64
