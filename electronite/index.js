@@ -123,7 +123,10 @@ function createMainWindow(qaMode = '') {
         if (!hasAcceptedXcodeLicense()) {
           console.log('createMainWindow() - xcode license has not been accepted.');
           return showAcceptScodeLicenseDialogMacOS(dialog).then(() => {
+            console.log('createMainWindow() - accept license.');
+            // acceptXcodeLicense().then(() => { // disabled because it doesn't prompt user
             app.quit();
+            // });
           }).catch(() => {
             app.quit();
           });

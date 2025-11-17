@@ -50,8 +50,14 @@ module.exports.downloadWinGit = downloadWinGit;
  * @return {Promise.<bool>} returns true if git is available
  */
 const isGitInstalled = () => new Promise((resolve) => {
-  exec('git', (err, data) => {
-    resolve(!!data);
+  exec('git', (err, stdout, stderr) => {
+    if (err || stderr) {
+      console.error(`isGitInstalled() - ERROR`, stderr, err);
+    } else {
+      console.log(`isGitInstalled() - succeeded`, stdout);
+    }
+
+    resolve(!!stdout);
   });
 });
 module.exports.isGitInstalled = isGitInstalled;
@@ -71,23 +77,25 @@ function isXcodeCLTInstalled() {
 
   try {
     // `xcode-select -p` returns the path to the active developer directory
-    const output = execSync('xcode-select -p', {
+    const devDir = execSync('xcode-select -p', {
       stdio: ['ignore', 'pipe', 'ignore'],
       encoding: 'utf8',
     }).trim();
 
     // Basic sanity check: path should not be empty and should look like a directory
-    let validPath = output &&
-      output.length > 0;
+    let validPath = devDir &&
+      devDir.length > 0;
 
     if (validPath) {
-      validPath = fs.existsSync(output);
+      validPath = fs.existsSync(devDir);
 
       if (!validPath) {
         console.error('areXcodeCLTInstalled() - command line tools are not present');
       } else {
-        console.error('areXcodeCLTInstalled() - xcode-select failed');
+        console.log('areXcodeCLTInstalled() - command line tools are at', devDir);
       }
+    } else {
+      console.error('areXcodeCLTInstalled() - \'xcode-select -p\' failed');
     }
 
     return Boolean(validPath);
@@ -143,7 +151,7 @@ function hasAcceptedXcodeLicense() {
 
   if (result.error && result.error.code === 'ENOENT') {
     // xcodebuild is not found at all; treat as "no Xcode installed" and don't block.
-    console.error('hasAcceptedXcodeLicense() - xcodebuild not found; assuming no Xcode installed');
+    console.error('hasAcceptedXcodeLicense() - xcodebuild not found; assuming no Xcode installed', result);
     return true;
   }
 
@@ -151,13 +159,108 @@ function hasAcceptedXcodeLicense() {
   const accepted = result.status === 0;
 
   if (!accepted) {
-    console.error('hasAcceptedXcodeLicense() - Xcode license has NOT been accepted');
+    console.error('hasAcceptedXcodeLicense() - Xcode license has NOT been accepted', result);
   } else {
-    console.log('hasAcceptedXcodeLicense() - Xcode license has been accepted');
+    console.log('hasAcceptedXcodeLicense() - Xcode license has been accepted', result);
   }
   return accepted;
 }
 module.exports.hasAcceptedXcodeLicense = hasAcceptedXcodeLicense;
+
+/**
+ * Starts the interactive Xcode license acceptance process on macOS.
+ *
+ * This runs `xcodebuild -license` in a child process, which presents Apple's
+ * interactive license text and prompt. The user must review and accept the
+ * license manually in the terminal UI; this function cannot auto-accept it.
+ *
+ * On success (exit code 0), the promise resolves `true`. On failure or
+ * non-macOS platforms, it resolves `false`. If `xcodebuild` is missing, it
+ * also resolves `false`.
+ *
+ * NOTE: This should be called from a context where a terminal/TTY is
+ * available (e.g., started from your Electron main process on macOS).
+ *
+ * @return {Promise<boolean>}
+ */
+function acceptXcodeLicense() {
+  return new Promise((resolve) => {
+    if (os.platform() !== 'darwin') {
+      console.log('acceptXcodeLicense() - non-macOS platform, nothing to do');
+      return resolve(true);
+    }
+
+    console.log('acceptXcodeLicense() - starting `xcodebuild -license`');
+
+    // TODO - fix this:
+
+    // TRY 1 FAILED
+        // const child = spawn('xcodebuild', ['-license'], {
+        //   stdio: 'inherit', // let user interact with the license UI
+        // });
+        //
+        // child.on('error', (error) => {
+        //   console.error('acceptXcodeLicense() - failed to start xcodebuild', error);
+        //   resolve(false);
+        // });
+        //
+        // child.on('exit', (code) => {
+        //   if (code === 0) {
+        //     console.log('acceptXcodeLicense() - user accepted the Xcode license');
+        //     resolve(true);
+        //   } else {
+        //     console.error(`acceptXcodeLicense() - xcodebuild exited with code ${code}`);
+        //     resolve(false);
+        //   }
+        // });
+
+    // TRY 2 FAILED
+        // exec(`osascript -e 'tell application "Terminal"
+        //     do script "sudo xcodebuild -license; read -n 1 -s -r -p \\"Press any key to close...\\""
+        //     activate
+        // end tell'`);
+  });
+}
+module.exports.acceptXcodeLicense = acceptXcodeLicense;
+
+/**
+ * Attempts to install Xcode Command Line Tools on macOS.
+ *
+ * This runs `xcode-select --install`, which will prompt the user with the
+ * standard Apple GUI installer. The call is fire-and-forget: it resolves
+ * as soon as the command has been successfully spawned, not when the
+ * installation is complete.
+ *
+ * On non-macOS platforms, this is a no-op that resolves immediately.
+ *
+ * @return {Promise<void>}
+ */
+function installXcodeCLTmacOS() {
+  return new Promise((resolve, reject) => {
+    if (os.platform() !== 'darwin') {
+      console.log('installXcodeCLTmacOS() - non-macOS platform, skipping');
+      return resolve();
+    }
+
+    try {
+      // Use exec so macOS can show the GUI installer dialog.
+      exec('xcode-select --install', (error, stdout, stderr) => {
+        if (error) {
+          console.error('installXcodeCLTmacOS() - failed to start installer', error, stderr);
+          return reject(error);
+        }
+
+        console.log('installXcodeCLTmacOS() - installer command started', stdout);
+        // The actual install continues in the background; we just confirm the command started.
+        return resolve();
+      });
+    } catch (e) {
+      console.error('installXcodeCLTmacOS() - unexpected error', e);
+      reject(e);
+    }
+  });
+}
+module.exports.installXcodeCLT = installXcodeCLTmacOS;
 
 /**
  * Returns the bits supported by the processor. e.g. 32/64
@@ -205,13 +308,13 @@ const showElectronGitDialog = (dialog) => new Promise((resolve, reject) => {
       'Download Git',
       'Close translationCore',
     ],
-    'defaultId': 0, // select download button
-    'cancelId': 1,
+    'defaultId': 0, // button choice 'Download Git'
+    'cancelId': 1, // button choice Close app
   }, response => {
     if (response === 0) {
-      resolve();
+      resolve(); // return yes to 'Download Git'
     } else {
-      reject();
+      reject(); // close app
     }
   });
 });
@@ -227,12 +330,16 @@ const showElectronGitDialogMacOS = (dialog) => new Promise((resolve, reject) => 
     'message': 'You must install XCode Command-Line Tools before using translationCore.\n\n' +
       'You can install them by running `xcode-select --install` in Terminal.',
     'buttons': [
+      'install XCode Command-Line Tools',
       'Close translationCore',
     ],
-    'defaultId': 0, // select Close button
+    'defaultId': 0, // button choice 'install XCode Command-Line Tools'
+    'cancelId': 1, // button choice Close button
   }, response => {
     if (response === 0) {
-      reject();
+      resolve(); // return yes to 'install XCode Command-Line Tools'
+    } else {
+      reject(); // close app
     }
   });
 });
@@ -256,11 +363,16 @@ const showAcceptScodeLicenseDialogMacOS = (dialog) => new Promise((resolve, reje
     'buttons': [
       'Close translationCore',
     ],
-    'defaultId': 0, // select Close button
+    'defaultId': 0,
   }, response => {
-    if (response === 0) {
-      reject();
-    }
+    console.log('response',response);
+
+    reject();
+    // if (response === 0) {
+    //   resolve(); // return yes to `Accept the Xcode License Agreement'
+    // } else {
+    //   reject(); // close app
+    // }
   });
 });
 module.exports.showAcceptScodeLicenseDialogMacOS = showAcceptScodeLicenseDialogMacOS;
@@ -289,8 +401,8 @@ const showElectronGitSetup = (dialog) => {
   } else if (process.platform === 'darwin') {
     console.log('MacOS needs command-line tools');
     return showElectronGitDialogMacOS(dialog).then(() => {
-      console.log('Mac OS Quit');
-      return false;
+      console.log('MacOS install command-line tools');
+      return installXcodeCLTmacOS();
     });
   } else {
     // make linux users install git manually
