@@ -195,30 +195,30 @@ function acceptXcodeLicense() {
     // TODO - fix this:
 
     // TRY 1 FAILED
-        // const child = spawn('xcodebuild', ['-license'], {
-        //   stdio: 'inherit', // let user interact with the license UI
-        // });
-        //
-        // child.on('error', (error) => {
-        //   console.error('acceptXcodeLicense() - failed to start xcodebuild', error);
-        //   resolve(false);
-        // });
-        //
-        // child.on('exit', (code) => {
-        //   if (code === 0) {
-        //     console.log('acceptXcodeLicense() - user accepted the Xcode license');
-        //     resolve(true);
-        //   } else {
-        //     console.error(`acceptXcodeLicense() - xcodebuild exited with code ${code}`);
-        //     resolve(false);
-        //   }
-        // });
+    // const child = spawn('xcodebuild', ['-license'], {
+    //   stdio: 'inherit', // let user interact with the license UI
+    // });
+    //
+    // child.on('error', (error) => {
+    //   console.error('acceptXcodeLicense() - failed to start xcodebuild', error);
+    //   resolve(false);
+    // });
+    //
+    // child.on('exit', (code) => {
+    //   if (code === 0) {
+    //     console.log('acceptXcodeLicense() - user accepted the Xcode license');
+    //     resolve(true);
+    //   } else {
+    //     console.error(`acceptXcodeLicense() - xcodebuild exited with code ${code}`);
+    //     resolve(false);
+    //   }
+    // });
 
     // TRY 2 FAILED
-        // exec(`osascript -e 'tell application "Terminal"
-        //     do script "sudo xcodebuild -license; read -n 1 -s -r -p \\"Press any key to close...\\""
-        //     activate
-        // end tell'`);
+    // exec(`osascript -e 'tell application "Terminal"
+    //     do script "sudo xcodebuild -license; read -n 1 -s -r -p \\"Press any key to close...\\""
+    //     activate
+    // end tell'`);
   });
 }
 module.exports.acceptXcodeLicense = acceptXcodeLicense;
