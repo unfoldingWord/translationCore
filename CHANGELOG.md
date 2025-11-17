@@ -1,5 +1,14 @@
 # Changelog
 
+## [v3.6.12](https://github.com/unfoldingWord/translationCore/tree/v3.6.10) (2025-11-17)
+
+**Fixed bugs:**
+- tCore install failure on with Ubuntu 24.04 [\#7646](https://github.com/unfoldingWord/translationCore/issues/7646)
+- Fix checking for git support on MacOS [\#7646](https://github.com/unfoldingWord/translationCore/issues/7646)
+
+**Implemented enhancements:**
+- Added support for scripture burrito [\#7648](https://github.com/unfoldingWord/translationCore/issues/7648)
+
 
 ## [v3.6.10](https://github.com/unfoldingWord/translationCore/tree/v3.6.10) (2025-4-5)
 
