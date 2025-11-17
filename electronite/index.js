@@ -1,3 +1,4 @@
+const os = require('os');
 const {
   app, dialog, ipcMain, BrowserWindow, Menu,
 } = require('electronite');
@@ -6,7 +7,13 @@ const path = require('path-extra');
 const fs = require('fs-extra');
 const { download } = require('@neutrinog/electron-dl');
 const p = require('../package.json');
-const { isGitInstalled, showElectronGitSetup } = require('../src/js/helpers/InstallationHelpers');
+const {
+  hasAcceptedXcodeLicense,
+  isGitInstalled,
+  isXcodeCLTInstalled,
+  showAcceptScodeLicenseDialogMacOS,
+  showElectronGitSetup,
+} = require('../src/js/helpers/InstallationHelpers');
 const DownloadManager = require('../src/js/DownloadManager');
 const { BUILD } = require('./build.json');
 const { config } = require('./cfg.json');
@@ -109,6 +116,24 @@ function createMainWindow(qaMode = '') {
   }
 
   isGitInstalled().then(installed => {
+    if (installed && os.platform() === 'darwin') { // for MacOS, also make sure xcode tools are installed
+      installed = isXcodeCLTInstalled();
+
+      if (installed) {
+        if (!hasAcceptedXcodeLicense()) {
+          console.log('createMainWindow() - xcode license has not been accepted.');
+          return showAcceptScodeLicenseDialogMacOS(dialog).then(() => {
+            console.log('createMainWindow() - accept license.');
+            // acceptXcodeLicense().then(() => { // disabled because it doesn't prompt user
+            app.quit();
+            // });
+          }).catch(() => {
+            app.quit();
+          });
+        }
+      }
+    }
+
     if (installed) {
       console.log('createMainWindow() - Git is installed.');
     } else {
