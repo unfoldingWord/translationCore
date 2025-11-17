@@ -242,6 +242,7 @@ function installXcodeCLTmacOS() {
       return resolve();
     }
 
+    // TODO: this does not work - terminal is not opened
     try {
       // Use exec so macOS can show the GUI installer dialog.
       exec('xcode-select --install', (error, stdout, stderr) => {
@@ -330,16 +331,12 @@ const showElectronGitDialogMacOS = (dialog) => new Promise((resolve, reject) => 
     'message': 'You must install XCode Command-Line Tools before using translationCore.\n\n' +
       'You can install them by running `xcode-select --install` in Terminal.',
     'buttons': [
-      'install XCode Command-Line Tools',
       'Close translationCore',
     ],
-    'defaultId': 0, // button choice 'install XCode Command-Line Tools'
-    'cancelId': 1, // button choice Close button
+    'defaultId': 0, // select Close button
   }, response => {
     if (response === 0) {
-      resolve(); // return yes to 'install XCode Command-Line Tools'
-    } else {
-      reject(); // close app
+      reject();
     }
   });
 });
@@ -402,7 +399,8 @@ const showElectronGitSetup = (dialog) => {
     console.log('MacOS needs command-line tools');
     return showElectronGitDialogMacOS(dialog).then(() => {
       console.log('MacOS install command-line tools');
-      return installXcodeCLTmacOS();
+      // return installXcodeCLTmacOS();
+      return false;
     });
   } else {
     // make linux users install git manually
