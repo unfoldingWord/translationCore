@@ -79,3 +79,50 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
   // Success alert
   dispatch(openAlertDialog(translate('projects.archive_complete')));
 };
+
+/**
+ * Export the project after the user confirms.
+ * Archived projects can be restored at a later time.
+ * @param projectPath {string} the path to the project that will be archived.
+ */
+export const exportProject = (projectPath) => (dispatch, getState) => {
+  const translate = getTranslate(getState());
+
+  // Display confirmation
+  dispatch(confirmAction({
+    message: translate('projects.confirm_export'),
+    confirmButtonText: translate('projects.export_project'),
+  }, executeExport(projectPath)));
+};
+
+/**
+ * Immediately archives a project and removes it from the project list.
+ */
+const executeExport = (projectPath) => async (dispatch, getState) => {
+  const translate = getTranslate(getState());
+  const archiveDir = path.join(env.home(), TC_PATH, 'export');
+  let destinationPath = '';
+
+  const openedProjectPath = getProjectSaveLocation(getState());
+
+  // Close project
+  if (projectPath === openedProjectPath) {
+    dispatch(closeProject());
+  }
+
+  // Archive project
+  try {
+    // TRICKY: macOS does not support `:` in file names, so convert them and the macOS `/` to `-`.
+    const timestamp = (new Date()).toISOString().replace(/[:/]/g, '_');
+    await fs.ensureDir(archiveDir);
+    destinationPath = path.join(archiveDir, `${path.basename(projectPath)}-${timestamp}`);
+    await fs.copy(projectPath, destinationPath);
+  } catch (e) {
+    console.error(`Could not archive ${projectPath}`, e);
+    dispatch(openAlertDialog(translate('projects.exportfailed')));
+    return;
+  }
+
+  // Success alert
+  dispatch(openAlertDialog(translate('projects.export_complete', { path: destinationPath })));
+};
