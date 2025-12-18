@@ -2,17 +2,19 @@ import path from 'path-extra';
 import env from 'tc-electron-env';
 import fs from 'fs-extra';
 import zipFolder from 'zip-folder';
+import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
 import consts from '../ActionTypes';
 // helpers
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 import { getProjectSaveLocation, getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
 import { openAlertDialog } from '../AlertModalActions';
-import { TC_PATH } from '../../common/constants';
+import { DCS_BASE_URL, TC_PATH } from '../../common/constants';
 import { loadSettings } from '../../localStorage/loadMethods';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getAlignedUsfm } from '../WordAlignmentActions';
 import * as WordAlignmentHelpers from '../../helpers/WordAlignmentHelpers';
+import * as bibleHelpers from '../../helpers/bibleHelpers';
 import { closeProject } from './ProjectLoadingActions';
 
 /**
@@ -115,6 +117,31 @@ export const zipFolderToFile = (folderToZip, zipPath) => new Promise((resolve, r
   });
 });
 
+export function getDcsUrl(owner, languageId, resourceId, version = 'master') {
+  const resourceName = `${languageId}_${resourceId}`;
+  const version_ = (version !== 'master') ? apiHelpers.formatVersionWithV(version) : version;
+  const baseUrl = DCS_BASE_URL;
+  const downloadUrl = `${baseUrl}/${owner}/${resourceName}/archive/${version_}.zip`;
+  return downloadUrl;
+}
+
+export function addDcsUrl(resources, tag, owner, languageId, resourceId, version) {
+  if (owner && languageId && resourceId) {
+    try {
+      const url = getDcsUrl(owner, languageId, resourceId, version);
+      resources[tag] = url;
+    } catch (e) {
+      console.error(`addDcsUrl() - resource error - Could not push DCS Url`, e,
+        {
+          owner,
+          languageId,
+          resourceId,
+          version,
+        });
+    }
+  }
+}
+
 /**
  * Immediately archives a project and removes it from the project list.
  */
@@ -123,7 +150,7 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
   const archiveDir = path.join(env.home(), TC_PATH, 'export');
   let destinationPath = '';
   const openedProjectPath = getProjectSaveLocation(getState());
-  const resources = [];
+  const resources = {};
 
   // Close project
   if (projectPath === openedProjectPath) {
@@ -147,11 +174,94 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
 
     // add resources to manifest
     manifest.externalResources = resources;
+    const scriptures = [];
+    const currentPaneSettings = settings?.toolsSettings?.ScripturePane?.currentPaneSettings || [];
 
-    // save updated
+    for (const currentPane of currentPaneSettings) {
+      const owner = currentPane.owner;
+      const languageId = currentPane.languageId;
+
+      // skip non-repo resources
+      if (languageId === 'targetLanguage' || languageId === 'originalLanguage') {
+        continue;
+      };
+
+      const resourceId = `${languageId}_${currentPane.bibleId}`;
+      const resource = `https://git.door43.org/${owner}/${resourceId}`;
+      scriptures.push(resource);
+    }
+
+    if (manifest.view_url) {
+      scriptures.push(manifest.view_url);
+    }
+
+    if (scriptures.length > 0) {
+      resources.scriptures = scriptures;
+    }
+
+    const bookId = manifest.project?.id;
+    const originalResource = bibleHelpers.getOrigLangforBook(bookId);
+    const toolsSelectedOwners = manifest.toolsSelectedOwners;
+    const toolsSelectedGLs = manifest.toolsSelectedGLs;
+
+
+    /////////////////
+    // translationNotes
+
+    let gatewayLangOwner = toolsSelectedOwners?.translationNotes;
+    let originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+    let gatewayLang = toolsSelectedGLs?.translationNotes;
+    let gatewayLangTag = `tc_${gatewayLang}_check_version_translationNotes`;
+    let gatewayLangKey = manifest[gatewayLangTag];
+    let gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
+    let version = gatewayLangInfo.version;
+    let owner = gatewayLangInfo.owner || gatewayLangOwner;
+    addDcsUrl(resources, 'tNotesGateway', owner, gatewayLang, 'tn', version);
+    addDcsUrl(resources, 'tAcademyGateway', owner, gatewayLang, 'ta');
+
+    let originalLangKey = manifest['tc_orig_lang_check_version_translationNotes'];
+    let originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
+    version = originalLangInfo.version;
+    owner = originalLangInfo.owner || originalLangOwner;
+    addDcsUrl(resources, 'tNotesOriginalLang', owner, originalResource.languageId, originalResource.bibleId, version);
+
+
+    /////////////////
+    // translationWords
+
+    gatewayLangOwner = toolsSelectedOwners?.translationWords;
+    originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+    gatewayLang = toolsSelectedGLs?.translationWords;
+    gatewayLangTag = `tc_${gatewayLang}_check_version_translationWords`;
+    gatewayLangKey = manifest[gatewayLangTag];
+    gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
+    version = gatewayLangInfo.version;
+    owner = gatewayLangInfo.owner || gatewayLangOwner;
+    addDcsUrl(resources, 'tWordsGateway', owner, gatewayLang, 'tw', version);
+
+    originalLangKey = manifest['tc_orig_lang_check_version_translationWords'];
+    originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
+    version = originalLangInfo.version;
+    owner = originalLangInfo.owner || originalLangOwner;
+    addDcsUrl(resources, 'tWordsOriginalLang', owner, originalResource.languageId, originalResource.bibleId, version);
+
+    /////////////////
+    // wordAlignment
+
+    gatewayLangOwner = toolsSelectedOwners?.wordAlignment;
+    originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+
+    originalLangKey = manifest['tc_orig_lang_check_version_wordAlignment'];
+    originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
+    version = originalLangInfo.version;
+    owner = originalLangInfo.owner || originalLangOwner;
+    addDcsUrl(resources, 'waOriginalLang', owner, originalResource.languageId, originalResource.bibleId, version);
+
+    // save updated alignment data
     const usfm = await getAlignedUsfm(projectPath, manifest);
-    const toolsProjectPath = path.join(projectPath, 'tools');
-    const usfmFilePath = path.join(toolsProjectPath, projectName + '.usfm');
+    const waPath = path.join(exportProjectPath, 'wordAlignments');
+    fs.ensureDirSync(waPath);
+    const usfmFilePath = path.join(waPath, projectName + '.usfm');
     WordAlignmentHelpers.writeToFS(usfmFilePath, usfm);
 
     manifestHelpers.setUpManifest(exportProjectPath, manifest); // save updated manifest
