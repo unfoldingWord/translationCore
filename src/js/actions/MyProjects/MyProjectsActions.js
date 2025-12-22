@@ -157,7 +157,7 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
     dispatch(closeProject());
   }
 
-  // Archive project
+  // Export project
   try {
     // TRICKY: macOS does not support `:` in file names, so convert them and the macOS `/` to `-`.
     const timestamp = (new Date()).toISOString().replace(/[:/]/g, '_');
@@ -165,7 +165,12 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
     const projectName = path.basename(projectPath);
     const exportProjectName = `${projectName}-${timestamp}`;
     const exportProjectPath = path.join(archiveDir, exportProjectName);
-    await fs.copy(projectPath, exportProjectPath);
+
+    await fs.copy(projectPath, exportProjectPath, {
+      filter: () => true, // Include all files and folders, including hidden ones
+      // eslint-disable-next-line object-curly-newline
+    });
+
     const manifest = manifestHelpers.getProjectManifest(projectPath);
 
     // add settings to manifest
