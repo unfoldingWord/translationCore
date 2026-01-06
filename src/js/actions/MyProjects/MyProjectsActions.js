@@ -110,6 +110,7 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
 export const zipFolderToFile = (folderToZip, zipPath) => new Promise((resolve, reject) => {
   zipFolder(folderToZip, zipPath, (err) => {
     if (err) {
+      console.error('zipFolderToFile() - Could not create zip file.', err);
       reject('zipFolderToFile() - Could not create zip file.');
     } else {
       resolve(true);
@@ -143,6 +144,34 @@ export function addDcsUrl(resources, tag, owner, languageId, resourceId, version
 }
 
 /**
+ * Recursively removes leading dots from folder names to avoid issues with zip libraries
+ * @param {string} basePath - The base path containing folders
+ */
+const removeDotPrefixFromFolders = (basePath) => {
+  const items = fs.readdirSync(basePath);
+
+  items.forEach(item => {
+    const itemPath = path.join(basePath, item);
+    const stat = fs.statSync(itemPath);
+
+    if (stat.isDirectory()) {
+      let currentPath = itemPath;
+
+      // If directory starts with dot, rename it
+      if (item.startsWith('.')) {
+        const newName = item.substring(1); // Remove the leading dot
+        const newPath = path.join(basePath, newName);
+        fs.moveSync(itemPath, newPath);
+        currentPath = newPath;
+      }
+
+      // Recursively process subdirectories
+      removeDotPrefixFromFolders(currentPath);
+    }
+  });
+};
+
+/**
  * Immediately archives a project and removes it from the project list.
  */
 const executeExport = (projectPath) => async (dispatch, getState) => {
@@ -167,7 +196,14 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
     const exportProjectPath = path.join(archiveDir, exportProjectName);
 
     await fs.copy(projectPath, exportProjectPath, {
-      filter: () => true, // Include all files and folders, including hidden ones
+      filter: (file) => {
+        const baseName = path.basename(file);
+
+        if ((baseName !== '.git') && (baseName !== '.DS_Store')) {
+          return true;
+        }
+        return false;
+      }, // Include all files and folders, except for excluded folder names
       // eslint-disable-next-line object-curly-newline
     });
 
@@ -270,6 +306,8 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
     WordAlignmentHelpers.writeToFS(usfmFilePath, usfm);
 
     manifestHelpers.setUpManifest(exportProjectPath, manifest); // save updated manifest
+
+    removeDotPrefixFromFolders(exportProjectPath);
 
     // zip exported project
     const zipFileName = path.join(archiveDir, exportProjectName + '.zip');
