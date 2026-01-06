@@ -32,15 +32,16 @@ class Menu extends React.Component {
 
   render() {
     const {
-      projectSaveLocation,
-      translate,
       onArchive,
+      onEdit,
       onExportCSV,
       onExportUSFM,
-      onUpload,
-      onEdit,
+      onExportZip,
       onLoadUrl,
       onPrintPreview,
+      onUpload,
+      projectSaveLocation,
+      translate,
       user,
     } = this.props;
     const menuItemStyle = {
@@ -141,6 +142,16 @@ class Menu extends React.Component {
               <Glyphicon glyph='print' style={glyphStyle}/>
               <div>{translate('projects.print_preview')}</div>
             </div>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                onExportZip(projectSaveLocation);
+              }}
+            >
+              <Glyphicon glyph='export' style={glyphStyle}/>
+              <div>{translate('projects.export_project')}</div>
+            </div>
           </div>
         </Popover>
       </div>
@@ -155,6 +166,7 @@ Menu.propTypes = {
   onEdit: PropTypes.func.isRequired,
   onArchive: PropTypes.func.isRequired,
   onUpload: PropTypes.func.isRequired,
+  onExportZip: PropTypes.func.isRequired,
   onExportCSV: PropTypes.func.isRequired,
   onExportUSFM: PropTypes.func.isRequired,
   onLoadUrl: PropTypes.func.isRequired,

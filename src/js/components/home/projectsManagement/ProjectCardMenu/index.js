@@ -5,7 +5,7 @@ import { openOnlyProjectDetailsScreen } from '../../../../actions/ProjectInforma
 import { uploadProject } from '../../../../actions/ProjectUploadActions';
 import { exportToCSV } from '../../../../actions/CSVExportActions';
 import { exportToUSFM } from '../../../../actions/USFMExportActions';
-import { archiveProject } from '../../../../actions/MyProjects/MyProjectsActions';
+import { archiveProject, exportProject } from '../../../../actions/MyProjects/MyProjectsActions';
 import { promptForViewUrl } from '../../../../actions/MyProjects/ProjectLoadingActions';
 import { doPrintPreview } from '../../../../helpers/PrintPreviewHelpers';
 import Menu from './Menu';
@@ -16,16 +16,17 @@ import Menu from './Menu';
 class ProjectCardMenu extends React.Component {
   render() {
     const {
-      user,
-      projectSaveLocation,
-      translate,
-      openOnlyProjectDetailsScreen,
-      uploadProject,
-      archiveProject,
-      exportToUSFM,
-      exportToCSV,
-      promptForViewUrl,
       doPrintPreview,
+      archiveProject,
+      exportProject,
+      exportToCSV,
+      exportToUSFM,
+      openOnlyProjectDetailsScreen,
+      projectSaveLocation,
+      promptForViewUrl,
+      translate,
+      uploadProject,
+      user,
     } = this.props;
 
     function loadUrl() {
@@ -33,40 +34,42 @@ class ProjectCardMenu extends React.Component {
     }
 
     return <Menu user={user}
-      translate={translate}
+      onArchive={archiveProject}
       onEdit={openOnlyProjectDetailsScreen}
-      onUpload={uploadProject}
       onExportCSV={exportToCSV}
       onExportUSFM={exportToUSFM}
-      onArchive={archiveProject}
+      onExportZip={exportProject}
       onLoadUrl={loadUrl}
-      projectSaveLocation={projectSaveLocation}
+      onUpload={uploadProject}
       onPrintPreview={doPrintPreview}
+      projectSaveLocation={projectSaveLocation}
+      translate={translate}
     />;
   }
 }
 
 ProjectCardMenu.propTypes = {
-  user: PropTypes.any.isRequired,
-  projectSaveLocation: PropTypes.string.isRequired,
-  translate: PropTypes.func.isRequired,
-
-  openOnlyProjectDetailsScreen: PropTypes.func.isRequired,
   archiveProject: PropTypes.func.isRequired,
-  uploadProject: PropTypes.func.isRequired,
+  doPrintPreview: PropTypes.func.isRequired,
+  exportProject: PropTypes.func.isRequired,
   exportToCSV: PropTypes.func.isRequired,
   exportToUSFM: PropTypes.func.isRequired,
+  openOnlyProjectDetailsScreen: PropTypes.func.isRequired,
+  projectSaveLocation: PropTypes.string.isRequired,
   promptForViewUrl: PropTypes.func.isRequired,
-  doPrintPreview: PropTypes.func.isRequired,
+  translate: PropTypes.func.isRequired,
+  uploadProject: PropTypes.func.isRequired,
+  user: PropTypes.any.isRequired,
 };
 
 const mapDispatchToProps = {
-  openOnlyProjectDetailsScreen,
-  uploadProject,
   archiveProject,
+  doPrintPreview,
+  exportProject,
   exportToCSV,
   exportToUSFM,
+  openOnlyProjectDetailsScreen,
   promptForViewUrl,
-  doPrintPreview,
+  uploadProject,
 };
 export default connect(null, mapDispatchToProps)(ProjectCardMenu);
