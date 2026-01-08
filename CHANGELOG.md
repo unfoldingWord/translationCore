@@ -1,6 +1,15 @@
 # Changelog
 
 
+## [v3.7.0](https://github.com/unfoldingWord/translationCore/tree/v3.7.0) (2026-1-8)
+
+**Fixed bugs:**
+- Unable to download tN and tW resources from SB folder stucture [\#7648](https://github.com/unfoldingWord/translationCore/issues/7648)
+- Fix to detect missing xCode development tools on MacOS [\#7649](https://github.com/unfoldingWord/translationCore/issues/7649)
+
+**Implemented enhancements:**
+- Added option to export project as zip file (tC 4.0 support) [\#7655](https://github.com/unfoldingWord/translationCore/issues/7655)
+
 ## [v3.6.10](https://github.com/unfoldingWord/translationCore/tree/v3.6.10) (2025-4-5)
 
 **Fixed bugs:**
