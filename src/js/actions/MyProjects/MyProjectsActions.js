@@ -118,6 +118,14 @@ export const zipFolderToFile = (folderToZip, zipPath) => new Promise((resolve, r
   });
 });
 
+/**
+ * Generates a DCS (Door43 Content Service) download URL for a resource
+ * @param {string} owner - The owner/organization of the resource (e.g., 'unfoldingWord', 'Door43-Catalog')
+ * @param {string} languageId - The language identifier (e.g., 'en', 'es', 'hi')
+ * @param {string} resourceId - The resource identifier (e.g., 'tn', 'tw', 'ta')
+ * @param {string} [version='master'] - The version/tag of the resource, defaults to 'master'
+ * @return {string} The complete DCS download URL for the resource archive
+ */
 export function getDcsUrl(owner, languageId, resourceId, version = 'master') {
   const resourceName = `${languageId}_${resourceId}`;
   const version_ = (version !== 'master') ? apiHelpers.formatVersionWithV(version) : version;
@@ -126,6 +134,15 @@ export function getDcsUrl(owner, languageId, resourceId, version = 'master') {
   return downloadUrl;
 }
 
+/**
+ * @description - Add DCS Url to resources object generated from owner, languageId, resourceId, version
+ * @param {object} resources - Object to add the DCS Url to
+ * @param {string} tag - Tag to use for the DCS Url
+ * @param {string} owner - The owner/organization of the resource (e.g., 'unfoldingWord', 'Door43-Catalog')
+ * @param {string} languageId - The language identifier (e.g., 'en', 'es', 'hi')
+ * @param {string} resourceId - The resource identifier (e.g., 'tn', 'tw', 'ta')
+ * @param {string} version - The version/tag of the resource, defaults to 'master' if undefined
+ */
 export function addDcsUrl(resources, tag, owner, languageId, resourceId, version) {
   if (owner && languageId && resourceId) {
     try {
