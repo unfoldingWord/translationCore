@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.6.13",
+  "version": "3.6.16",
   "minCompatibleVersion": "3.6.6",
   "manifestVersion": "8",
   "description": "A bridge between TS and TM",
@@ -88,7 +88,7 @@
     "cross-env": "7.0.2",
     "css-loader": "3.4.2",
     "electron-devtools-installer": "^3.2.0",
-    "electronite": "39.2.6-graphite",
+    "electronite": "38.7.1-graphite-beta.2",
     "electronite-packager": "17.1.1-graphite",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.8.0",
