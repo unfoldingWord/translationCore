@@ -199,20 +199,20 @@ def getStr(key):
   return keyToText.get(key, key)
 
 
-def json_to_html(json_data, key):
-  html = f'\n<p class="" style="white-space:pre-wrap;">\n<strong>{getStr(key)}</strong>\n'
+def json_to_html(json_data, key, style_extra=''):
+  html = f'\n<p class="" style="margin: 0px; color: black; line-height: 1.3em; font-weight: 400; {style_extra}">\n<strong>{getStr(key)}</strong>\n'
 
   for os in ["win", "macos", "linux"]:
     # for os, arch_data in json_data.items():
     archs = []
     arch_data = json_data.get(os, [])
-    html += f'<br>\n"{getStr(os)}: "\n'
+    html += f'<br>\n{getStr(os)}: \n'
 
     for arch, link in arch_data.items():
-      line = f'<a href="{link}" target="_blank">{getStr(arch)}</a>\n'
+      line = f'<a href="{link}" target="_blank" style="color: #5c7bc8">{getStr(arch)}</a>\n'
       archs.append(line)
 
-    html += '" | "\n'.join(archs)
+    html += ' | \n'.join(archs)
 
   html += '</p>\n'
   return html
@@ -228,8 +228,9 @@ installers = {
 # json_data = json.dumps(installers, indent=4)
 # print(json_data)
 
-html = json_to_html(max_installers, 'max')
+html = json_to_html(max_installers, 'max', style_extra='margin-top: -30px;')
 print (html)
+print ('<br>')
 
 try:
   html = json_to_html(lite_installers, 'lite')

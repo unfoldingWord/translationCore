@@ -1,7 +1,7 @@
 {
   "name": "translationCore",
   "productName": "translationCore",
-  "version": "3.6.10-search",
+  "version": "3.7.0-search",
   "minCompatibleVersion": "3.6.6",
   "manifestVersion": "8",
   "description": "A bridge between TS and TM",
@@ -48,7 +48,8 @@
     "update-apps": "git submodule foreach --recursive git checkout develop && git submodule foreach --recursive git pull",
     "update-attributions": "node scripts/attributions/generateAttributionData.js src/js/components/home/license/attributionData.json",
     "update-resources": "node scripts/resources/updateResources.js tcResources en hi el-x-koine hbo --allAlignedBibles --uWoriginalLanguage --unfoldingWordOrg --preProd",
-    "update-version": "node ./scripts/versionScript.js"
+    "update-version": "node ./scripts/versionScript.js",
+    "get-latest-release-links": "python3 scripts/latest/getLatestTcore.py"
   },
   "repository": {
     "type": "git",
@@ -188,7 +189,7 @@
     "string-punctuation-tokenizer": "^2.2.0",
     "sudo-prompt": "6.2.1",
     "tc-electron-env": "0.10.0",
-    "tc-source-content-updater": "1.4.33",
+    "tc-source-content-updater": "1.4.34",
     "tc-strings": "0.1.7",
     "tc-tool": "4.1.0",
     "tc-ui-toolkit": "6.2.10",

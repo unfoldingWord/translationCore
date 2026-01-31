@@ -9,6 +9,26 @@ import * as USFMExportActions from './USFMExportActions';
 import * as AlertModalActions from './AlertModalActions';
 
 /**
+ * Retrieves and converts alignment data to USFM format for a given project.
+ *
+ * @param {string} projectPath - The file path to the project's main directory.
+ * @param {Object} manifest - The project manifest containing metadata, including the project ID.
+ * @return {Promise<string>} A promise that resolves to a string containing the USFM-formatted text with alignments.
+ */
+export async function getAlignedUsfm(projectPath, manifest) {
+  // Get paths for alignment conversion
+  const {
+    wordAlignmentDataPath, projectTargetLanguagePath, chapters,
+  } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
+  exportHelpers.makeSureUsfm3InHeader(projectPath, manifest);
+
+  // Convert alignments from the filesystem under the project alignments folder
+  const usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
+    wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectPath, manifest.project.id);
+  return usfm;
+}
+
+/**
  * Wrapper for exporting project alignment data to usfm.
  * TODO: the alignment to usfm conversion will eventually get abstracted to a separate module.
  * @param {string} projectPath - Full path to the users project to be exported
@@ -19,19 +39,12 @@ import * as AlertModalActions from './AlertModalActions';
 export const getUsfm3ExportFile = (projectPath, output = false, resetAlignments = false) => (dispatch, getState) => new Promise(async (resolve, reject) => {
   console.info('getUsfm3ExportFile()');
   const translate = getTranslate(getState());
-  // Get path for alignment conversion
-  const {
-    wordAlignmentDataPath, projectTargetLanguagePath, chapters,
-  } = WordAlignmentHelpers.getAlignmentPathsFromProject(projectPath);
-  const manifest = manifestHelpers.getProjectManifest(projectPath);
-  exportHelpers.makeSureUsfm3InHeader(projectPath, manifest);
-  // Convert alignments from the filesystem under the project alignments folder
   console.info('getUsfm3ExportFile: Saving Alignments to USFM');
   let usfm = null;
+  const manifest = manifestHelpers.getProjectManifest(projectPath);
 
   try {
-    usfm = await WordAlignmentHelpers.convertAlignmentDataToUSFM(
-      wordAlignmentDataPath, projectTargetLanguagePath, chapters, projectPath, manifest.project.id);
+    usfm = await getAlignedUsfm(projectPath, manifest);
   } catch (e) {
     if (e && e.error && e.error.type === 'InvalidatedAlignments') {
       console.info('Error converting alignment, prompting user to fix it.');
