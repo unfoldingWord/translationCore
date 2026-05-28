@@ -186,7 +186,7 @@ jobs:
         if: env.UPDATE_RESOURCES
         run: |
           # TODO: remove this fix for expired certs on uw website - hack for curl crash on invalid certs, added --insecure param
-          curl --insecure https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+          curl --insecure https://git.door43.org/api/v1/languages/langnames.json > src/assets/langnames.json
 
       - name: Before Update resources - save original manifest
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
@@ -304,7 +304,7 @@ jobs:
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
-        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+        run: curl https://git.door43.org/api/v1/languages/langnames.json > src/assets/langnames.json
 
       - name: Before Update resources - save original manifest
         shell: bash
@@ -444,7 +444,7 @@ jobs:
 
       - name: Download latest language names
         if: env.UPDATE_RESOURCES
-        run: curl https://td.unfoldingword.org/exports/langnames.json > src/assets/langnames.json
+        run: curl https://git.door43.org/api/v1/languages/langnames.json > src/assets/langnames.json
 
       - name: Before Update resources - save original manifest
         run: cp tcResources/source-content-updater-manifest.json source-content-updater-manifest.json.orig
