@@ -16,6 +16,7 @@ import { getAlignedUsfm } from '../WordAlignmentActions';
 import * as WordAlignmentHelpers from '../../helpers/WordAlignmentHelpers';
 import * as bibleHelpers from '../../helpers/bibleHelpers';
 import { closeProject } from './ProjectLoadingActions';
+import * as LoadHelpers from '../../helpers/LoadHelpers';
 
 /**
  * With the list of project directories, generates an array of project detail objects
@@ -95,7 +96,11 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 export const exportProject = (projectPath) => (dispatch, getState) => {
   const translate = getTranslate(getState());
 
-  // TODO verify checking links
+  // const openedProjectPath = getProjectSaveLocation(getState());
+  console.log('exportProject() - projectPath:', projectPath);
+  const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
+  console.log('exportProject() - manifest:', manifest);
+
   // Display confirmation
   dispatch(confirmAction({
     message: translate('projects.confirm_export'),
