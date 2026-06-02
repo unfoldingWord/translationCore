@@ -15,8 +15,8 @@ import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getAlignedUsfm } from '../WordAlignmentActions';
 import * as WordAlignmentHelpers from '../../helpers/WordAlignmentHelpers';
 import * as bibleHelpers from '../../helpers/bibleHelpers';
-import { closeProject } from './ProjectLoadingActions';
 import * as LoadHelpers from '../../helpers/LoadHelpers';
+import { closeProject } from './ProjectLoadingActions';
 
 /**
  * With the list of project directories, generates an array of project detail objects
@@ -124,6 +124,14 @@ export const zipFolderToFile = (folderToZip, zipPath) => new Promise((resolve, r
   });
 });
 
+/**
+ * Generates a DCS (Door43 Content Service) URL for downloading a resource archive.
+ * @param {string} owner - The owner/organization of the resource repository
+ * @param {string} languageId - The language identifier (e.g., 'en', 'es')
+ * @param {string} resourceId - The resource identifier (e.g., 'tn', 'tw', 'ulb')
+ * @param {string} [version='master'] - The version/branch to download (defaults to 'master')
+ * @returns {string} The complete download URL for the resource archive
+ */
 export function getDcsUrl(owner, languageId, resourceId, version = 'master') {
   const resourceName = `${languageId}_${resourceId}`;
   const version_ = (version !== 'master') ? apiHelpers.formatVersionWithV(version) : version;
@@ -132,18 +140,56 @@ export function getDcsUrl(owner, languageId, resourceId, version = 'master') {
   return downloadUrl;
 }
 
-export function addDcsUrl(resources, tag, owner, languageId, resourceId, version) {
+/**
+ * Safely generates a DCS URL with error handling.
+ * This function wraps getDcsUrl() and provides null-safe validation before attempting
+ * to generate the URL. If any required parameter is missing, it returns null instead of throwing.
+ *
+ * @param {Object} resources - The resources object (not used in current implementation)
+ * @param {string} tag - The resource tag/key (not used in current implementation)
+ * @param {string} owner - The owner/organization of the resource repository
+ * @param {string} languageId - The language identifier (e.g., 'en', 'es')
+ * @param {string} resourceId - The resource identifier (e.g., 'tn', 'tw', 'ulb')
+ * @param {string} version - The version/branch of the resource
+ * @returns {string|null} The complete download URL for the resource archive, or null if generation fails
+ */
+export function getDcsUrlRugged( tag, owner, languageId, resourceId, version) {
   if (owner && languageId && resourceId) {
     try {
       const url = getDcsUrl(owner, languageId, resourceId, version);
-      resources[tag] = url;
+      return url;
     } catch (e) {
-      console.error(`addDcsUrl() - resource error - Could not push DCS Url`, e,
+      console.error(`getDcsUrlRugged() - resource error - Could not generate DCS Url`, e,
         {
           owner,
           languageId,
           resourceId,
           version,
+        });
+    }
+  }
+  return null;
+}
+
+/**
+ * Adds a DCS (Door43 Content Service) URL to the resources object using the specified tag as the key.
+ * This function safely assigns the URL to the resources object with error handling to prevent
+ * failures from propagating.
+ *
+ * @param {Object} resources - The resources object that will store the URL mapping
+ * @param {string} tag - The key/tag used to identify this resource in the resources object
+ * @param {string} url - The DCS URL to be stored
+ * @returns {void}
+ */
+export function addDcsUrl(resources, tag, url) {
+  if (resources && tag && url) {
+    try {
+      resources[tag] = url;
+    } catch (e) {
+      console.error(`addDcsUrl() - resource error - Could not push DCS Url`, e,
+        {
+          tag,
+          url,
         });
     }
   }
@@ -176,6 +222,236 @@ const removeDotPrefixFromFolders = (basePath) => {
     }
   });
 };
+
+/**
+ * Extracts and organizes tool-related information from the project manifest.
+ * Determines the original language resource based on the book ID and retrieves
+ * the selected owners and gateway languages for various translation tools.
+ *
+ * @param {Object} manifest - The project manifest containing project metadata and tool settings
+ * @param {Object} manifest.project - Project information
+ * @param {string} manifest.project.id - The book ID used to determine original language
+ * @param {Object} manifest.toolsSelectedOwners - Selected resource owners for each tool
+ * @param {Object} manifest.toolsSelectedGLs - Selected gateway languages for each tool
+ * @returns {Object} Object containing original resource info and tool selections
+ * @returns {Object} return.originalResource - Original language resource with languageId and bibleId
+ * @returns {Object} return.toolsSelectedOwners - Selected owners for translation tools
+ * @returns {Object} return.toolsSelectedGLs - Selected gateway languages for translation tools
+ */
+function getToolsInfo(manifest) {
+  const bookId = manifest.project?.id;
+  const originalResource = bibleHelpers.getOrigLangforBook(bookId);
+  const toolsSelectedOwners = manifest.toolsSelectedOwners;
+  const toolsSelectedGLs = manifest.toolsSelectedGLs;
+  return {
+    originalResource,
+    toolsSelectedOwners,
+    toolsSelectedGLs,
+  };
+}
+
+/**
+ * Retrieves and constructs resource information for Translation Notes in the gateway language.
+ * Determines the appropriate owner, language, and version for Translation Notes and Translation Academy
+ * resources, and generates DCS URLs for downloading these resources.
+ *
+ * @param {Object} toolsSelectedOwners - Selected resource owners for each tool
+ * @param {string} toolsSelectedOwners.translationNotes - Owner selected for Translation Notes
+ * @param {Object} toolsSelectedGLs - Selected gateway languages for each tool
+ * @param {string} toolsSelectedGLs.translationNotes - Gateway language selected for Translation Notes
+ * @param {Object} manifest - Project manifest containing version information
+ * @returns {Object} Object containing Translation Notes resource information
+ * @returns {string} return.gatewayLangOwner - Owner for gateway language resources
+ * @returns {string} return.originalLangOwner - Owner for original language resources
+ * @returns {string} return.gatewayLang - Gateway language identifier
+ * @returns {string} return.gatewayLangTag - Manifest key for gateway language version
+ * @returns {string} return.gatewayLangKey - Full version key from manifest
+ * @returns {Object} return.gatewayLangInfo - Parsed version and owner information
+ * @returns {string} return.version - Resource version
+ * @returns {string} return.owner - Final owner for the resource
+ * @returns {string} return.tNotesTag - Tag for Translation Notes resource
+ * @returns {string} return.tNotesUrl - Download URL for Translation Notes
+ * @returns {string} return.tAcademyTag - Tag for Translation Academy resource
+ * @returns {string} return.tAcademyUrl - Download URL for Translation Academy
+ */
+function getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest) {
+  const gatewayLangOwner = toolsSelectedOwners?.translationNotes;
+  const originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+  const gatewayLang = toolsSelectedGLs?.translationNotes;
+  const gatewayLangTag = `tc_${gatewayLang}_check_version_translationNotes`;
+  const gatewayLangKey = manifest[gatewayLangTag];
+  const gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
+  const version = gatewayLangInfo.version;
+  const owner = gatewayLangInfo.owner || gatewayLangOwner;
+  const tNotesTag = 'tNotesGateway';
+  const tNotesUrl = getDcsUrlRugged(tNotesTag, owner, gatewayLang, 'tn', version);
+  const tAcademyTag = 'tAcademyGateway';
+  const tAcademyUrl = getDcsUrlRugged(tAcademyTag, owner, gatewayLang, 'ta');
+
+  return {
+    gatewayLangOwner,
+    originalLangOwner,
+    gatewayLang,
+    gatewayLangTag,
+    gatewayLangKey,
+    gatewayLangInfo,
+    version,
+    owner,
+    tNotesTag,
+    tNotesUrl,
+    tAcademyTag,
+    tAcademyUrl,
+  };
+}
+
+/**
+ * Retrieves and constructs resource information for Translation Notes in the original language.
+ * Extracts version information from the manifest and generates the DCS URL for downloading
+ * the original language Translation Notes resource.
+ *
+ * @param {Object} manifest - Project manifest containing version information
+ * @param {string} manifest.tc_orig_lang_check_version_translationNotes - Version key for original language Translation Notes
+ * @param {string} originalLangOwner - Owner for original language resources
+ * @param {Object} originalResource - Original language resource information
+ * @param {string} originalResource.languageId - Original language identifier (e.g., 'hbo', 'el-x-koine')
+ * @param {string} originalResource.bibleId - Original language Bible identifier (e.g., 'uhb', 'ugnt')
+ * @returns {Object} Object containing original language Translation Notes information
+ * @returns {string} return.originalLangKey - Version key from manifest
+ * @returns {Object} return.originalLangInfo - Parsed version and owner information
+ * @returns {string} return.version - Resource version
+ * @returns {string} return.owner - Final owner for the resource
+ * @returns {string} return.tNotesOriginalLangTag - Tag for original language Translation Notes
+ * @returns {string} return.tNotesOriginalLangUrl - Download URL for original language Translation Notes
+ */
+function getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource) {
+  const originalLangKey = manifest['tc_orig_lang_check_version_translationNotes'];
+  const originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
+  const version = originalLangInfo.version;
+  const owner = originalLangInfo.owner || originalLangOwner;
+  const tNotesOriginalLangTag = 'tNotesOriginalLang';
+  const tNotesOriginalLangUrl = getDcsUrlRugged(tNotesOriginalLangTag, owner, originalResource.languageId, originalResource.bibleId, version);
+
+  return {
+    originalLangKey,
+    originalLangInfo,
+    version,
+    owner,
+    tNotesOriginalLangTag,
+    tNotesOriginalLangUrl,
+  };
+}
+
+/**
+ * Retrieves and constructs resource information for Translation Words in the gateway language.
+ * Determines the appropriate owner, language, and version for Translation Words resources,
+ * and generates the DCS URL for downloading these resources.
+ *
+ * @param {Object} toolsSelectedOwners - Selected resource owners for each tool
+ * @param {string} toolsSelectedOwners.translationWords - Owner selected for Translation Words
+ * @param {Object} toolsSelectedGLs - Selected gateway languages for each tool
+ * @param {string} toolsSelectedGLs.translationWords - Gateway language selected for Translation Words
+ * @param {Object} manifest - Project manifest containing version information
+ * @returns {Object} Object containing Translation Words resource information
+ * @returns {string} return.originalLangOwner - Owner for original language resources
+ * @returns {string} return.gatewayLang - Gateway language identifier
+ * @returns {string} return.version - Resource version
+ * @returns {string} return.owner - Final owner for the resource
+ * @returns {string} return.tWordsTag - Tag for Translation Words resource
+ * @returns {string} return.tWordsUrl - Download URL for Translation Words
+ */
+function getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest) {
+  const gatewayLangOwner = toolsSelectedOwners?.translationWords;
+  const originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+  const gatewayLang = toolsSelectedGLs?.translationWords;
+  const gatewayLangTag = `tc_${gatewayLang}_check_version_translationWords`;
+  const gatewayLangKey = manifest[gatewayLangTag];
+  const gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
+  const version = gatewayLangInfo.version;
+  const owner = gatewayLangInfo.owner || gatewayLangOwner;
+  const tWordsTag = 'tWordsGateway';
+  const tWordsUrl = getDcsUrlRugged(tWordsTag, owner, gatewayLang, 'tw', version);
+
+  return {
+    originalLangOwner,
+    gatewayLang,
+    version,
+    owner,
+    tWordsTag,
+    tWordsUrl,
+  };
+}
+
+/**
+ * Retrieves and constructs resource information for Translation Words in the original language.
+ * Extracts version information from the manifest and generates the DCS URL for downloading
+ * the original language Translation Words resource.
+ *
+ * @param {Object} manifest - Project manifest containing version information
+ * @param {string} manifest.tc_orig_lang_check_version_translationWords - Version key for original language Translation Words
+ * @param {string} originalLangOwner - Owner for original language resources
+ * @param {Object} originalResource - Original language resource information
+ * @param {string} originalResource.languageId - Original language identifier (e.g., 'hbo', 'el-x-koine')
+ * @param {string} originalResource.bibleId - Original language Bible identifier (e.g., 'uhb', 'ugnt')
+ * @returns {Object} Object containing original language Translation Words information
+ * @returns {string} return.version - Resource version
+ * @returns {string} return.owner - Final owner for the resource
+ * @returns {string} return.tWordsOriginalLangTag - Tag for original language Translation Words
+ * @returns {string} return.tWordsOriginalLangUrl - Download URL for original language Translation Words
+ */
+function getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource) {
+  const originalLangKey = manifest['tc_orig_lang_check_version_translationWords'];
+  const originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
+  const version = originalLangInfo.version;
+  const owner = originalLangInfo.owner || originalLangOwner;
+  const tWordsOriginalLangTag = 'tWordsOriginalLang';
+  const tWordsOriginalLangUrl = getDcsUrlRugged(tWordsOriginalLangTag, owner, originalResource.languageId, originalResource.bibleId, version);
+
+  return {
+    version,
+    owner,
+    tWordsOriginalLangTag,
+    tWordsOriginalLangUrl,
+  };
+}
+
+/**
+ * Retrieves and constructs resource information for Word Alignment in the original language.
+ * Determines the appropriate owner and extracts version information from the manifest,
+ * then generates the DCS URL for downloading the original language Word Alignment resource.
+ *
+ * @param {Object} toolsSelectedOwners - Selected resource owners for each tool
+ * @param {string} toolsSelectedOwners.wordAlignment - Owner selected for Word Alignment
+ * @param {Object} manifest - Project manifest containing version information
+ * @param {string} manifest.tc_orig_lang_check_version_wordAlignment - Version key for original language Word Alignment
+ * @param {Object} originalResource - Original language resource information
+ * @param {string} originalResource.languageId - Original language identifier (e.g., 'hbo', 'el-x-koine')
+ * @param {string} originalResource.bibleId - Original language Bible identifier (e.g., 'uhb', 'ugnt')
+ * @returns {Object} Object containing original language Word Alignment information
+ * @returns {string} return.originalLangOwner - Owner for original language resources
+ * @returns {string} return.version - Resource version
+ * @returns {string} return.owner - Final owner for the resource
+ * @returns {string} return.wordALignmentOriginalLangTag - Tag for original language Word Alignment
+ * @returns {string} return.wordALignmentOriginalLangUrl - Download URL for original language Word Alignment
+ */
+function getWordAlignmentOriginalLanguageInfo(toolsSelectedOwners, manifest, originalResource) {
+  const gatewayLangOwner = toolsSelectedOwners?.wordAlignment;
+  const originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+
+  const originalLangKey = manifest['tc_orig_lang_check_version_wordAlignment'];
+  const originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
+  const version = originalLangInfo.version;
+  const owner = originalLangInfo.owner || originalLangOwner;
+  const wordALignmentOriginalLangTag = 'waOriginalLang';
+  const wordALignmentOriginalLangUrl = getDcsUrlRugged(wordALignmentOriginalLangTag, owner, originalResource.languageId, originalResource.bibleId, version);
+
+  return {
+    originalLangOwner,
+    version,
+    owner,
+    wordALignmentOriginalLangTag,
+    wordALignmentOriginalLangUrl,
+  };
+}
 
 /**
  * Immediately archives a project and removes it from the project list.
@@ -246,63 +522,53 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       resources.scriptures = scriptures;
     }
 
-    const bookId = manifest.project?.id;
-    const originalResource = bibleHelpers.getOrigLangforBook(bookId);
-    const toolsSelectedOwners = manifest.toolsSelectedOwners;
-    const toolsSelectedGLs = manifest.toolsSelectedGLs;
+    const {
+      originalResource,
+      toolsSelectedOwners,
+      toolsSelectedGLs,
+    } = getToolsInfo(manifest);
 
 
     /////////////////
     // translationNotes
+    const {
+      originalLangOwner,
+      tNotesTag,
+      tNotesUrl,
+      tAcademyTag,
+      tAcademyUrl,
+    } = getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+    addDcsUrl(resources, tNotesTag, tNotesUrl);
+    addDcsUrl(resources, tAcademyTag, tAcademyUrl);
 
-    let gatewayLangOwner = toolsSelectedOwners?.translationNotes;
-    let originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
-    let gatewayLang = toolsSelectedGLs?.translationNotes;
-    let gatewayLangTag = `tc_${gatewayLang}_check_version_translationNotes`;
-    let gatewayLangKey = manifest[gatewayLangTag];
-    let gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
-    let version = gatewayLangInfo.version;
-    let owner = gatewayLangInfo.owner || gatewayLangOwner;
-    addDcsUrl(resources, 'tNotesGateway', owner, gatewayLang, 'tn', version);
-    addDcsUrl(resources, 'tAcademyGateway', owner, gatewayLang, 'ta');
-
-    let originalLangKey = manifest['tc_orig_lang_check_version_translationNotes'];
-    let originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
-    version = originalLangInfo.version;
-    owner = originalLangInfo.owner || originalLangOwner;
-    addDcsUrl(resources, 'tNotesOriginalLang', owner, originalResource.languageId, originalResource.bibleId, version);
+    const {
+      tNotesOriginalLangTag,
+      tNotesOriginalLangUrl,
+    } = getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
+    addDcsUrl(resources, tNotesOriginalLangTag, tNotesOriginalLangUrl);
 
 
     /////////////////
     // translationWords
+    const {
+      tWordsTag,
+      tWordsUrl,
+    } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+    addDcsUrl(resources, tWordsTag, tWordsUrl);
 
-    gatewayLangOwner = toolsSelectedOwners?.translationWords;
-    originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
-    gatewayLang = toolsSelectedGLs?.translationWords;
-    gatewayLangTag = `tc_${gatewayLang}_check_version_translationWords`;
-    gatewayLangKey = manifest[gatewayLangTag];
-    gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
-    version = gatewayLangInfo.version;
-    owner = gatewayLangInfo.owner || gatewayLangOwner;
-    addDcsUrl(resources, 'tWordsGateway', owner, gatewayLang, 'tw', version);
-
-    originalLangKey = manifest['tc_orig_lang_check_version_translationWords'];
-    originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
-    version = originalLangInfo.version;
-    owner = originalLangInfo.owner || originalLangOwner;
-    addDcsUrl(resources, 'tWordsOriginalLang', owner, originalResource.languageId, originalResource.bibleId, version);
+    const {
+      tWordsOriginalLangTag,
+      tWordsOriginalLangUrl,
+    } = getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
+    addDcsUrl(resources, tWordsOriginalLangTag, tWordsOriginalLangUrl);
 
     /////////////////
     // wordAlignment
-
-    gatewayLangOwner = toolsSelectedOwners?.wordAlignment;
-    originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
-
-    originalLangKey = manifest['tc_orig_lang_check_version_wordAlignment'];
-    originalLangInfo = resourcesHelpers.splitVersionAndOwner(originalLangKey);
-    version = originalLangInfo.version;
-    owner = originalLangInfo.owner || originalLangOwner;
-    addDcsUrl(resources, 'waOriginalLang', owner, originalResource.languageId, originalResource.bibleId, version);
+    const {
+      wordALignmentOriginalLangTag,
+      wordALignmentOriginalLangUrl,
+    } = getWordAlignmentOriginalLanguageInfo(toolsSelectedOwners, manifest, originalResource);
+    addDcsUrl(resources, wordALignmentOriginalLangTag, wordALignmentOriginalLangUrl);
 
     // save updated alignment data
     const usfm = await getAlignedUsfm(projectPath, manifest);
