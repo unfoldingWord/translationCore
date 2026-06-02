@@ -95,6 +95,7 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 export const exportProject = (projectPath) => (dispatch, getState) => {
   const translate = getTranslate(getState());
 
+  // TODO verify checking links
   // Display confirmation
   dispatch(confirmAction({
     message: translate('projects.confirm_export'),
