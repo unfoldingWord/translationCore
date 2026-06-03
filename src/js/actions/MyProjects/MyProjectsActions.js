@@ -101,6 +101,46 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
   const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   console.log('exportProject() - manifest:', manifest);
 
+  const {
+    originalResource,
+    toolsSelectedOwners,
+    toolsSelectedGLs,
+  } = getToolsInfo(manifest);
+
+  let twRessourcesFound = false;
+  let tnResourcesFound = false;
+
+  /////////////////
+  // verify have translationNotes resources
+  const {
+    originalLangOwner,
+    tNotesUrl,
+    tAcademyUrl,
+  } = getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+
+  const {
+    tNotesOriginalLangUrl,
+  } = getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
+
+  if (tNotesUrl && tAcademyUrl && tNotesOriginalLangUrl) {
+    tnResourcesFound = true;
+  }
+
+  /////////////////
+  // verify have translationWords resources
+
+  const {
+    tWordsUrl,
+  } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+
+  const {
+    tWordsOriginalLangUrl,
+  } = getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
+
+  if (tWordsUrl && tWordsOriginalLangUrl) {
+    twRessourcesFound = true;
+  }
+
   // Display confirmation
   dispatch(confirmAction({
     message: translate('projects.confirm_export'),
