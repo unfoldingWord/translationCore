@@ -9,13 +9,20 @@ import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 import { getProjectSaveLocation, getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
 import { openAlertDialog } from '../AlertModalActions';
-import { DCS_BASE_URL, TC_PATH } from '../../common/constants';
+import {
+  DCS_BASE_URL,
+  TC_PATH,
+  TRANSLATION_NOTES,
+  TRANSLATION_WORDS,
+  WORD_ALIGNMENT,
+} from '../../common/constants';
 import { loadSettings } from '../../localStorage/loadMethods';
 import * as manifestHelpers from '../../helpers/manifestHelpers';
 import { getAlignedUsfm } from '../WordAlignmentActions';
 import * as WordAlignmentHelpers from '../../helpers/WordAlignmentHelpers';
 import * as bibleHelpers from '../../helpers/bibleHelpers';
 import * as LoadHelpers from '../../helpers/LoadHelpers';
+import * as gatewayLanguageHelpers from '../../helpers/gatewayLanguageHelpers';
 import * as ProjectLoadingActions from './ProjectLoadingActions';
 
 /**
@@ -89,11 +96,29 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 };
 
 /**
+ * Opens a project by name and handles success/error states.
+ *
+ * @param {string} projectName - The name of the project to open
+ * @param {Function} dispatch - Redux dispatch function
+ * @returns {Promise<boolean>} Returns true if the project was opened successfully, false otherwise
+ */
+async function openProject(projectName, dispatch) {
+  try {
+    await dispatch(ProjectLoadingActions.openProject(projectName));
+    console.log(`openProject() - Project '${projectName}' opened successfully`);
+    return true;
+  } catch (e) {
+    console.error(`openProject() - Could not open project '${projectName}'`, e);
+  }
+  return false;
+}
+
+/**
  * Export the project after the user confirms.
  * Archived projects can be restored at a later time.
  * @param projectPath {string} the path to the project that will be archived.
  */
-export const exportProject = (projectPath) => (dispatch, getState) => {
+export const exportProject = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
 
   console.log('exportProject() - projectPath:', projectPath);
@@ -104,7 +129,8 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
   console.log('exportProject() - exportResourceInfo:', exportResourceInfo);
 
   if (!exportResourceInfo.tWordsRessourcesFound || !exportResourceInfo.tNoteResourcesFound
-    || !exportResourceInfo.wordAlignmentRessourcesFound) {
+    || !exportResourceInfo.wordAlignmentRessourcesFound
+  ){
     if (!exportResourceInfo.tWordsRessourcesFound) {
       console.log('exportProject() - tWords Resources Not Found:');
     }
@@ -117,26 +143,37 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
       console.log('exportProject() - wordAlignment Resources Not Found:');
     }
 
+    const bookId = manifest.project?.id;
+    // eslint-disable-next-line no-unused-vars
+    const tnLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, TRANSLATION_NOTES);
+    // eslint-disable-next-line no-unused-vars
+    const twLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, TRANSLATION_WORDS);
+    // eslint-disable-next-line no-unused-vars
+    const waLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, WORD_ALIGNMENT);
+
     const loadedProject = getProjectSaveLocation(getState());
+    let openProjectFlag = false;
 
     if (loadedProject === projectPath) {
       console.log(`exportProject() - currentProject is same as projectPath '${projectPath}'`);
+      openProjectFlag = true;
     } else {
       console.log(`exportProject() - currentProject '${loadedProject}' is different from projectPath '${projectPath}'`);
-      const projectName = path.basename(projectPath);
-
-      try {
-        dispatch(ProjectLoadingActions.openProject(projectName)).then(() => {
-          console.log(`exportProject() - Project '${projectName}' opened successfully`);
-        });
-      } catch (e) {
-        console.error(`exportProject() - Could not open project '${projectName}'`, e);
-      }
-
-      return;
+      openProjectFlag = true;
     }
-  }
 
+    if (openProjectFlag) {
+      const projectName = path.basename(projectPath);
+      const success = await openProject(projectName, dispatch);
+
+      if (success) {
+        console.log(`exportProject() - Project '${projectName}' opened successfully`);
+      } else {
+        console.error(`exportProject() - Project '${projectName}' could not be opened`);
+      }
+    }
+    return;
+  }
 
 
   // Display confirmation
@@ -167,6 +204,8 @@ function getExportResourceInfo(manifest) {
   // translationNotes resources
 
   const {
+    gatewayLangOwner: tNotesGatewayLangOwner,
+    gatewayLang: tNotesGatewayLang,
     originalLangOwner,
     tNotesTag,
     tNotesUrl,
@@ -179,7 +218,13 @@ function getExportResourceInfo(manifest) {
     tNotesOriginalLangUrl,
   } = getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
 
-  if (tNotesUrl && tAcademyUrl && tNotesOriginalLangUrl) {
+  if (
+    tNotesUrl
+    && tAcademyUrl
+    && tNotesOriginalLangUrl
+    && tNotesGatewayLangOwner
+    && tNotesGatewayLang
+  ) {
     tNoteResourcesFound = true;
   }
 
@@ -187,6 +232,8 @@ function getExportResourceInfo(manifest) {
   // translationWords resources
 
   const {
+    gatewayLangOwner: tWordsGatewayLangOwner,
+    gatewayLang: tWordsGatewayLang,
     tWordsTag,
     tWordsUrl,
   } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
@@ -196,7 +243,12 @@ function getExportResourceInfo(manifest) {
     tWordsOriginalLangUrl,
   } = getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
 
-  if (tWordsUrl && tWordsOriginalLangUrl) {
+  if (
+    tWordsUrl
+    && tWordsOriginalLangUrl
+    && tWordsGatewayLangOwner
+    && tWordsGatewayLang
+  ) {
     tWordsRessourcesFound = true;
   }
 

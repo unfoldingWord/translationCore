@@ -149,6 +149,11 @@ export function getGatewayLanguageList(bookId = null, toolName = null) {
     }
     return lang;
   });
+
+  if (!supportedLanguages?.length) {
+    console.log(`getGatewayLanguageList() - no supported languages found for ${toolName}`);
+  }
+
   return sortByNamesCaseInsensitive(supportedLanguages.filter(lang => lang));
 }
 
@@ -543,7 +548,7 @@ export function getValidGatewayBibles(langCode, bookId, glRequirements = {}, bib
     }
   }
 
-  if (bibles.length && !foundBible) {
+  if (bibles?.length && !foundBible) {
     console.log(`getValidGatewayBibles() - For ${langCode}, ${bookId} - bibles ${JSON.stringify(bibles)} found, but none are valid for ${toolName}`);
   }
   return validBibles;
