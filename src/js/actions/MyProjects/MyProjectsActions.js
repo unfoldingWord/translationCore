@@ -16,7 +16,7 @@ import { getAlignedUsfm } from '../WordAlignmentActions';
 import * as WordAlignmentHelpers from '../../helpers/WordAlignmentHelpers';
 import * as bibleHelpers from '../../helpers/bibleHelpers';
 import * as LoadHelpers from '../../helpers/LoadHelpers';
-import { closeProject } from './ProjectLoadingActions';
+import * as ProjectLoadingActions from './ProjectLoadingActions';
 
 /**
  * With the list of project directories, generates an array of project detail objects
@@ -62,7 +62,7 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
   const openedProjectPath = getProjectSaveLocation(getState());
 
   if (projectPath === openedProjectPath) {
-    dispatch(closeProject());
+    dispatch(ProjectLoadingActions.closeProject());
   }
 
   // Archive project
@@ -96,7 +96,6 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 export const exportProject = (projectPath) => (dispatch, getState) => {
   const translate = getTranslate(getState());
 
-  // const openedProjectPath = getProjectSaveLocation(getState());
   console.log('exportProject() - projectPath:', projectPath);
   const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   console.log('exportProject() - manifest:', manifest);
@@ -104,17 +103,41 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
   const exportResourceInfo = getExportResourceInfo(manifest);
   console.log('exportProject() - exportResourceInfo:', exportResourceInfo);
 
-  if (!exportResourceInfo.tWordsRessourcesFound) {
-    console.log('exportProject() - tWords Ressources Not Found:');
+  if (!exportResourceInfo.tWordsRessourcesFound || !exportResourceInfo.tNoteResourcesFound
+    || !exportResourceInfo.wordAlignmentRessourcesFound) {
+    if (!exportResourceInfo.tWordsRessourcesFound) {
+      console.log('exportProject() - tWords Resources Not Found:');
+    }
+
+    if (!exportResourceInfo.tNoteResourcesFound) {
+      console.log('exportProject() - tNotes Resources Not Found:');
+    }
+
+    if (!exportResourceInfo.wordAlignmentRessourcesFound) {
+      console.log('exportProject() - wordAlignment Resources Not Found:');
+    }
+
+    const loadedProject = getProjectSaveLocation(getState());
+
+    if (loadedProject === projectPath) {
+      console.log(`exportProject() - currentProject is same as projectPath '${projectPath}'`);
+    } else {
+      console.log(`exportProject() - currentProject '${loadedProject}' is different from projectPath '${projectPath}'`);
+      const projectName = path.basename(projectPath);
+
+      try {
+        dispatch(ProjectLoadingActions.openProject(projectName)).then(() => {
+          console.log(`exportProject() - Project '${projectName}' opened successfully`);
+        });
+      } catch (e) {
+        console.error(`exportProject() - Could not open project '${projectName}'`, e);
+      }
+
+      return;
+    }
   }
 
-  if (!exportResourceInfo.tNoteResourcesFound) {
-    console.log('exportProject() - tNotes Ressources Not Found:');
-  }
 
-  if (!exportResourceInfo.wordAlignmentRessourcesFound) {
-    console.log('exportProject() - wordAlignment Ressources Not Found:');
-  }
 
   // Display confirmation
   dispatch(confirmAction({
@@ -569,7 +592,7 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
 
   // Close project
   if (projectPath === openedProjectPath) {
-    dispatch(closeProject());
+    dispatch(ProjectLoadingActions.closeProject());
   }
 
   // Export project

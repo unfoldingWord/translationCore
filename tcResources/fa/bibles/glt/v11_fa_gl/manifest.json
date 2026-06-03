@@ -1,0 +1,287 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": [
+      "Door43 World Missions Community"
+    ],
+    "creator": "fa_gl",
+    "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+    "format": "text/usfm3",
+    "identifier": "glt",
+    "issued": "2025-04-11",
+    "language": {
+      "identifier": "fa",
+      "title": "فارسی",
+      "direction": "rtl"
+    },
+    "modified": "2025-04-11",
+    "publisher": "fa_gl",
+    "relation": [
+      "fa/tw",
+      "fa/tq",
+      "fa/tn",
+      "el-x-koine/ugnt?v=0.34",
+      "hbo/uhb?v=2.1.31"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.26"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.26"
+      },
+      {
+        "identifier": "ult",
+        "language": "en",
+        "version": "84"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Persian Literal Text",
+    "type": "bundle",
+    "version": "11"
+  },
+  "checking": {
+    "checking_entity": [
+      "fa_gl"
+    ],
+    "checking_level": "3"
+  },
+  "projects": [
+    {
+      "title": "مَرقُس",
+      "versification": "ufw",
+      "identifier": "mrk",
+      "sort": 41,
+      "path": "./42-MRK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "اوّل تیموتائوس",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 54,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "دوّم تیموتائوس",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 55,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "تیتوس",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 56,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "فیلیمون",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 57,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "یعقوب",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 59,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "دوّم یوحنا",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 63,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "سوّم یوحنا",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 64,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": [
+        "Door43 World Missions Community"
+      ],
+      "creator": "fa_gl",
+      "description": "An open-licensed update of the ASV, intended to provide a 'form-centric' understanding of the Bible. It increases the translator's understanding of the lexical and grammatical composition of the underlying text by adhering closely to the word order and structure of the originals.",
+      "format": "text/usfm3",
+      "identifier": "glt",
+      "issued": "2025-04-11",
+      "language": {
+        "identifier": "fa",
+        "title": "فارسی",
+        "direction": "rtl"
+      },
+      "modified": "2025-04-11",
+      "publisher": "fa_gl",
+      "relation": [
+        "fa/tw",
+        "fa/tq",
+        "fa/tn",
+        "el-x-koine/ugnt?v=0.34",
+        "hbo/uhb?v=2.1.31"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.26"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.26"
+        },
+        {
+          "identifier": "ult",
+          "language": "en",
+          "version": "84"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Persian Literal Text",
+      "type": "bundle",
+      "version": "11"
+    },
+    "checking": {
+      "checking_entity": [
+        "fa_gl"
+      ],
+      "checking_level": "3"
+    },
+    "projects": [
+      {
+        "title": "مَرقُس",
+        "versification": "ufw",
+        "identifier": "mrk",
+        "sort": 41,
+        "path": "./42-MRK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "اوّل تیموتائوس",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 54,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "دوّم تیموتائوس",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 55,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "تیتوس",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 56,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "فیلیمون",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 57,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "یعقوب",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 59,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "دوّم یوحنا",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 63,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "سوّم یوحنا",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 64,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "fa",
+  "language_name": "فارسی",
+  "direction": "rtl",
+  "subject": "Aligned Bible",
+  "resource_id": "glt",
+  "resource_title": "Persian Literal Text",
+  "remoteModifiedTime": "2025-04-11T14:25:28Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2025-04-11T14:25:28Z",
+  "usfm-js": "3.5.0",
+  "version": "11",
+  "modifiedTime": "2025-04-11T14:25:28Z",
+  "stage": "prod"
+}
