@@ -3,6 +3,7 @@ import env from 'tc-electron-env';
 import fs from 'fs-extra';
 import zipFolder from 'zip-folder';
 import { apiHelpers, resourcesHelpers } from 'tc-source-content-updater';
+import { delay } from '../../common/utils';
 import consts from '../ActionTypes';
 // helpers
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
@@ -96,19 +97,19 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 };
 
 /**
- * Opens a project by name and handles success/error states.
+ * Loads a project by name and opens tools configuration.
  *
  * @param {string} projectName - The name of the project to open
  * @param {Function} dispatch - Redux dispatch function
  * @returns {Promise<boolean>} Returns true if the project was opened successfully, false otherwise
  */
-async function openProject(projectName, dispatch) {
+async function loadProjectAndOpenTools(projectName, dispatch) {
   try {
     await dispatch(ProjectLoadingActions.openProject(projectName));
-    console.log(`openProject() - Project '${projectName}' opened successfully`);
+    console.log(`loadProjectAndOpenTools() - Project '${projectName}' opened successfully`);
     return true;
   } catch (e) {
-    console.error(`openProject() - Could not open project '${projectName}'`, e);
+    console.error(`loadProjectAndOpenTools() - Could not open project '${projectName}'`, e);
   }
   return false;
 }
@@ -146,10 +147,21 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
     const bookId = manifest.project?.id;
     // eslint-disable-next-line no-unused-vars
     const tnLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, TRANSLATION_NOTES);
+    await delay(100);
     // eslint-disable-next-line no-unused-vars
     const twLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, TRANSLATION_WORDS);
+    await delay(100);
     // eslint-disable-next-line no-unused-vars
     const waLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, WORD_ALIGNMENT);
+    await delay(100);
+
+    const haveAllGLs = (tnLanguages?.length && twLanguages?.length && waLanguages?.length);
+
+    if (!haveAllGLs) {
+      console.log('exportProject() - Not all gateway languages found for project:', projectPath);
+      // TODO - show error message - need to load gateway language resources
+      return;
+    }
 
     const loadedProject = getProjectSaveLocation(getState());
     let openProjectFlag = false;
@@ -162,9 +174,11 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
       openProjectFlag = true;
     }
 
+    // TODO - show message that user needs to select gateway languages
+
     if (openProjectFlag) {
       const projectName = path.basename(projectPath);
-      const success = await openProject(projectName, dispatch);
+      const success = await loadProjectAndOpenTools(projectName, dispatch);
 
       if (success) {
         console.log(`exportProject() - Project '${projectName}' opened successfully`);
