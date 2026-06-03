@@ -101,44 +101,19 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
   const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
   console.log('exportProject() - manifest:', manifest);
 
-  const {
-    originalResource,
-    toolsSelectedOwners,
-    toolsSelectedGLs,
-  } = getToolsInfo(manifest);
+  const exportResourceInfo = getExportResourceInfo(manifest);
+  console.log('exportProject() - exportResourceInfo:', exportResourceInfo);
 
-  let twRessourcesFound = false;
-  let tnResourcesFound = false;
-
-  /////////////////
-  // verify have translationNotes resources
-  const {
-    originalLangOwner,
-    tNotesUrl,
-    tAcademyUrl,
-  } = getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
-
-  const {
-    tNotesOriginalLangUrl,
-  } = getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
-
-  if (tNotesUrl && tAcademyUrl && tNotesOriginalLangUrl) {
-    tnResourcesFound = true;
+  if (!exportResourceInfo.tWordsRessourcesFound) {
+    console.log('exportProject() - tWords Ressources Not Found:');
   }
 
-  /////////////////
-  // verify have translationWords resources
+  if (!exportResourceInfo.tNoteResourcesFound) {
+    console.log('exportProject() - tNotes Ressources Not Found:');
+  }
 
-  const {
-    tWordsUrl,
-  } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
-
-  const {
-    tWordsOriginalLangUrl,
-  } = getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
-
-  if (tWordsUrl && tWordsOriginalLangUrl) {
-    twRessourcesFound = true;
+  if (!exportResourceInfo.wordAlignmentRessourcesFound) {
+    console.log('exportProject() - wordAlignment Ressources Not Found:');
   }
 
   // Display confirmation
@@ -147,6 +122,95 @@ export const exportProject = (projectPath) => (dispatch, getState) => {
     confirmButtonText: translate('projects.export_project'),
   }, executeExport(projectPath)));
 };
+
+/**
+ * Gets export resource information and availability flags from the project manifest.
+ *
+ * @param {Object} manifest - Project manifest
+ * @returns {Object} Resource information and resource availability flags
+ */
+function getExportResourceInfo(manifest) {
+  const {
+    originalResource,
+    toolsSelectedOwners,
+    toolsSelectedGLs,
+  } = getToolsInfo(manifest);
+
+  let tWordsRessourcesFound = false;
+  let tNoteResourcesFound = false;
+  let wordAlignmentRessourcesFound = false;
+
+  /////////////////////////////
+  // translationNotes resources
+
+  const {
+    originalLangOwner,
+    tNotesTag,
+    tNotesUrl,
+    tAcademyTag,
+    tAcademyUrl,
+  } = getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+
+  const {
+    tNotesOriginalLangTag,
+    tNotesOriginalLangUrl,
+  } = getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
+
+  if (tNotesUrl && tAcademyUrl && tNotesOriginalLangUrl) {
+    tNoteResourcesFound = true;
+  }
+
+  /////////////////////////////
+  // translationWords resources
+
+  const {
+    tWordsTag,
+    tWordsUrl,
+  } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+
+  const {
+    tWordsOriginalLangTag,
+    tWordsOriginalLangUrl,
+  } = getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
+
+  if (tWordsUrl && tWordsOriginalLangUrl) {
+    tWordsRessourcesFound = true;
+  }
+
+  /////////////////////////////
+  // wordAlignment resources
+
+  const {
+    wordALignmentOriginalLangTag,
+    wordALignmentOriginalLangUrl,
+  } = getWordAlignmentOriginalLanguageInfo(toolsSelectedOwners, manifest, originalResource);
+
+  if (wordALignmentOriginalLangUrl) {
+    wordAlignmentRessourcesFound = true;
+  }
+
+  return {
+    originalResource,
+    toolsSelectedOwners,
+    toolsSelectedGLs,
+    tWordsRessourcesFound,
+    tNoteResourcesFound,
+    wordAlignmentRessourcesFound,
+    originalLangOwner,
+    tNotesTag,
+    tNotesUrl,
+    tAcademyTag,
+    tAcademyUrl,
+    tNotesOriginalLangTag,
+    tNotesOriginalLangUrl,
+    tWordsTag,
+    tWordsUrl,
+    tWordsOriginalLangTag,
+    tWordsOriginalLangUrl,
+    wordALignmentOriginalLangTag,
+    wordALignmentOriginalLangUrl,
+  };
+}
 
 /**
  * @description - Zip a folder to zipPath
@@ -563,51 +627,24 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
     }
 
     const {
-      originalResource,
-      toolsSelectedOwners,
-      toolsSelectedGLs,
-    } = getToolsInfo(manifest);
-
-
-    /////////////////
-    // translationNotes
-    const {
-      originalLangOwner,
       tNotesTag,
       tNotesUrl,
       tAcademyTag,
       tAcademyUrl,
-    } = getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
-    addDcsUrl(resources, tNotesTag, tNotesUrl);
-    addDcsUrl(resources, tAcademyTag, tAcademyUrl);
-
-    const {
       tNotesOriginalLangTag,
       tNotesOriginalLangUrl,
-    } = getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
-    addDcsUrl(resources, tNotesOriginalLangTag, tNotesOriginalLangUrl);
-
-
-    /////////////////
-    // translationWords
-    const {
       tWordsTag,
       tWordsUrl,
-    } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
-    addDcsUrl(resources, tWordsTag, tWordsUrl);
-
-    const {
       tWordsOriginalLangTag,
       tWordsOriginalLangUrl,
-    } = getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, originalResource);
-    addDcsUrl(resources, tWordsOriginalLangTag, tWordsOriginalLangUrl);
-
-    /////////////////
-    // wordAlignment
-    const {
       wordALignmentOriginalLangTag,
       wordALignmentOriginalLangUrl,
-    } = getWordAlignmentOriginalLanguageInfo(toolsSelectedOwners, manifest, originalResource);
+    } = getExportResourceInfo(manifest);
+    addDcsUrl(resources, tNotesTag, tNotesUrl);
+    addDcsUrl(resources, tAcademyTag, tAcademyUrl);
+    addDcsUrl(resources, tNotesOriginalLangTag, tNotesOriginalLangUrl);
+    addDcsUrl(resources, tWordsTag, tWordsUrl);
+    addDcsUrl(resources, tWordsOriginalLangTag, tWordsOriginalLangUrl);
     addDcsUrl(resources, wordALignmentOriginalLangTag, wordALignmentOriginalLangUrl);
 
     // save updated alignment data
