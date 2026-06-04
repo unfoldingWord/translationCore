@@ -1,3 +1,4 @@
+import React from 'react';
 import path from 'path-extra';
 import env from 'tc-electron-env';
 import fs from 'fs-extra';
@@ -9,7 +10,12 @@ import consts from '../ActionTypes';
 import * as myProjectsHelpers from '../../helpers/myProjectsHelpers';
 import { getProjectSaveLocation, getTranslate } from '../../selectors';
 import { confirmAction } from '../../middleware/confirmation/confirmationMiddleware';
-import { openAlertDialog } from '../AlertModalActions';
+import {
+  openAlertDialog,
+  openOptionDialog,
+  closeAlertDialog,
+} from '../AlertModalActions';
+import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import {
   DCS_BASE_URL,
   TC_PATH,
@@ -98,12 +104,16 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 
 /**
  * Loads a project by name and opens tools configuration.
+ * This is a thunk action creator that returns an async function accepting dispatch.
+ * It attempts to open the specified project and logs the result.
  *
  * @param {string} projectName - The name of the project to open
- * @param {Function} dispatch - Redux dispatch function
- * @returns {Promise<boolean>} Returns true if the project was opened successfully, false otherwise
+ * @returns {Function} A thunk function that accepts dispatch and returns a Promise<boolean>
+ * @example
+ * dispatch(loadProjectAndOpenTools('my-project'))
+ *   .then(success => console.log('Project opened:', success));
  */
-async function loadProjectAndOpenTools(projectName, dispatch) {
+const loadProjectAndOpenTools = (projectName) => async (dispatch) => {
   try {
     await dispatch(ProjectLoadingActions.openProject(projectName));
     console.log(`loadProjectAndOpenTools() - Project '${projectName}' opened successfully`);
@@ -112,6 +122,98 @@ async function loadProjectAndOpenTools(projectName, dispatch) {
     console.error(`loadProjectAndOpenTools() - Could not open project '${projectName}'`, e);
   }
   return false;
+};
+
+function showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages) {
+  let selectedLanguage = tnLanguages[0];
+  const selectText = translate('buttons.select_button');
+  const cancelText = translate('buttons.cancel_button');
+
+  const setSelectedLanguage = (languageCode) => {
+    selectedLanguage = tnLanguages.find(lang => lang.lc === languageCode) || selectedLanguage;
+  };
+
+  const callback = (buttonPressed) => {
+    dispatch(closeAlertDialog());
+
+    if (buttonPressed === selectText && selectedLanguage) {
+      const bookId = manifest.project?.id;
+
+      dispatch(ProjectDetailsActions.setProjectToolGL(
+        TRANSLATION_NOTES,
+        selectedLanguage.lc,
+        selectedLanguage.owner,
+        bookId,
+      ));
+    }
+  };
+
+  dispatch(openOptionDialog(
+    <div>
+      <div>{translate('projects.select_missing_resource', { project_name: projectName })}</div>
+      <div style={{
+        width: '500px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: '16px',
+      }}>
+        <select
+          defaultValue={selectedLanguage.lc}
+          onChange={e => setSelectedLanguage(e.target.value)}
+          style={{
+            width: '100%',
+            padding: '8px',
+            fontSize: '16px',
+          }}
+        >
+          {tnLanguages.map(lang => (
+            <option key={`${lang.lc}_${lang.owner}`} value={lang.lc}>
+              {lang.namePrompt}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>,
+    callback,
+    selectText,
+    cancelText,
+  ));
+}
+
+const selectMissingResources = (projectPath, manifest, tnLanguages, twLanguages, waLanguages) => (dispatch, getState) => {
+  const translate = getTranslate(getState());
+  const projectName = path.basename(projectPath);
+
+  if (tnLanguages?.length) {
+    showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages);
+  }
+};
+
+/**
+ * Generates a localized, comma-separated list of missing tool names.
+ * @param {Function} translate - Translation function
+ * @param {boolean} tNotesMissing - Whether Translation Notes are missing
+ * @param {boolean} tWordsMissing - Whether Translation Words are missing
+ * @param {boolean} wordAlignmentMissing - Whether Word Alignment is missing
+ * @returns {string} Comma-separated list of missing tool names
+ */
+function getToolStrings(translate, tNotesMissing, tWordsMissing, wordAlignmentMissing) {
+  const toolList = [];
+
+  if (tNotesMissing) {
+    toolList.push(translate('tools.translation_notes'));
+  }
+
+  if (tWordsMissing) {
+    toolList.push(translate('tools.translation_words'));
+  }
+
+  if (wordAlignmentMissing) {
+    toolList.push(translate('tools.word_alignment'));
+  }
+
+  return toolList.join(', ');
 }
 
 /**
@@ -121,6 +223,7 @@ async function loadProjectAndOpenTools(projectName, dispatch) {
  */
 export const exportProject = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
+  const projectName = path.basename(projectPath);
 
   console.log('exportProject() - projectPath:', projectPath);
   const manifest = LoadHelpers.loadFile(projectPath, 'manifest.json');
@@ -128,38 +231,54 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
 
   const exportResourceInfo = getExportResourceInfo(manifest);
   console.log('exportProject() - exportResourceInfo:', exportResourceInfo);
+  const {
+    tWordsRessourcesFound,
+    tNoteResourcesFound,
+    wordAlignmentRessourcesFound,
+  } = exportResourceInfo;
 
-  if (!exportResourceInfo.tWordsRessourcesFound || !exportResourceInfo.tNoteResourcesFound
-    || !exportResourceInfo.wordAlignmentRessourcesFound
+  if (!tWordsRessourcesFound || !tNoteResourcesFound
+    || !wordAlignmentRessourcesFound
   ){
-    if (!exportResourceInfo.tWordsRessourcesFound) {
+    if (!tWordsRessourcesFound) {
       console.log('exportProject() - tWords Resources Not Found:');
     }
 
-    if (!exportResourceInfo.tNoteResourcesFound) {
+    if (!tNoteResourcesFound) {
       console.log('exportProject() - tNotes Resources Not Found:');
     }
 
-    if (!exportResourceInfo.wordAlignmentRessourcesFound) {
+    if (!wordAlignmentRessourcesFound) {
       console.log('exportProject() - wordAlignment Resources Not Found:');
     }
 
     const bookId = manifest.project?.id;
     // eslint-disable-next-line no-unused-vars
     const tnLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, TRANSLATION_NOTES);
+    console.log('exportProject() - tnLanguages:', tnLanguages);
     await delay(100);
     // eslint-disable-next-line no-unused-vars
     const twLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, TRANSLATION_WORDS);
+    console.log('exportProject() - twLanguages:', twLanguages);
     await delay(100);
     // eslint-disable-next-line no-unused-vars
     const waLanguages = gatewayLanguageHelpers.getGatewayLanguageList(bookId, WORD_ALIGNMENT);
+    console.log('exportProject() - waLanguages:', waLanguages);
     await delay(100);
 
     const haveAllGLs = (tnLanguages?.length && twLanguages?.length && waLanguages?.length);
 
     if (!haveAllGLs) {
       console.log('exportProject() - Not all gateway languages found for project:', projectPath);
-      // TODO - show error message - need to load gateway language resources
+      const toolsMissingStr = getToolStrings(translate, !tnLanguages?.length, !twLanguages?.length, !waLanguages?.length);
+      const messageStr = translate('projects.export_resources_incomplete',
+        { tools: toolsMissingStr, project_name: projectName });
+
+      dispatch(confirmAction({
+        message: messageStr,
+        confirmButtonText: translate('buttons.select_resources'),
+      }, loadProjectAndOpenTools(projectName)));
+
       return;
     }
 
@@ -174,17 +293,15 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
       openProjectFlag = true;
     }
 
-    // TODO - show message that user needs to select gateway languages
-
     if (openProjectFlag) {
-      const projectName = path.basename(projectPath);
-      const success = await loadProjectAndOpenTools(projectName, dispatch);
+      const toolsMissingStr = getToolStrings(translate, !tNoteResourcesFound, !tWordsRessourcesFound);
+      const messageStr = translate('projects.export_gl_not_selected',
+        { tools: toolsMissingStr, project_name: projectName });
 
-      if (success) {
-        console.log(`exportProject() - Project '${projectName}' opened successfully`);
-      } else {
-        console.error(`exportProject() - Project '${projectName}' could not be opened`);
-      }
+      dispatch(confirmAction({
+        message: messageStr,
+        confirmButtonText: translate('buttons.open_tools_button'),
+      }, selectMissingResources(projectPath, manifest, tnLanguages, twLanguages, waLanguages)));
     }
     return;
   }
@@ -338,15 +455,14 @@ export function getDcsUrl(owner, languageId, resourceId, version = 'master') {
  * This function wraps getDcsUrl() and provides null-safe validation before attempting
  * to generate the URL. If any required parameter is missing, it returns null instead of throwing.
  *
- * @param {Object} resources - The resources object (not used in current implementation)
- * @param {string} tag - The resource tag/key (not used in current implementation)
+ * @param {string} tag - The resource tag/key used for error logging purposes (not used in URL generation)
  * @param {string} owner - The owner/organization of the resource repository
  * @param {string} languageId - The language identifier (e.g., 'en', 'es')
  * @param {string} resourceId - The resource identifier (e.g., 'tn', 'tw', 'ulb')
  * @param {string} version - The version/branch of the resource
  * @returns {string|null} The complete download URL for the resource archive, or null if generation fails
  */
-export function getDcsUrlRugged( tag, owner, languageId, resourceId, version) {
+export function getDcsUrlRugged(tag, owner, languageId, resourceId, version) {
   if (owner && languageId && resourceId) {
     try {
       const url = getDcsUrl(owner, languageId, resourceId, version);
@@ -700,7 +816,7 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       // skip non-repo resources
       if (languageId === 'targetLanguage' || languageId === 'originalLanguage') {
         continue;
-      };
+      }
 
       const resourceId = `${languageId}_${currentPane.bibleId}`;
       const resource = `https://git.door43.org/${owner}/${resourceId}`;
