@@ -162,7 +162,7 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
     const selectText = translate('buttons.select_button');
     const cancelText = translate('buttons.cancel_button');
     const toolNameStr = translate(toolName);
-    const message = translate('projects.select_gateway_language', {tool_name: toolNameStr});
+    const message = translate('projects.select_gateway_language', { tool_name: toolNameStr });
 
     const setSelectedLanguage = (languageCode) => {
       selectedLanguage = languages.find(lang => lang.lc === languageCode) || selectedLanguage;
@@ -347,7 +347,7 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
     }
 
     if (openProjectFlag) {
-      const toolsMissingStr = getToolStrings(translate, !tNoteResourcesFound, !tWordsRessourcesFound);
+      const toolsMissingStr = getToolStrings(translate, !tNoteResourcesFound, !tWordsRessourcesFound, !wordAlignmentRessourcesFound);
       const messageStr = translate('projects.export_gl_not_selected',
         { tools: toolsMissingStr, project_name: projectName });
 
