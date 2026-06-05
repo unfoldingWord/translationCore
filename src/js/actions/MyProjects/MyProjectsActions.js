@@ -15,7 +15,6 @@ import {
   openOptionDialog,
   closeAlertDialog,
 } from '../AlertModalActions';
-import * as ProjectDetailsActions from '../ProjectDetailsActions';
 import {
   DCS_BASE_URL,
   TC_PATH,
@@ -124,69 +123,123 @@ const loadProjectAndOpenTools = (projectName) => async (dispatch) => {
   return false;
 };
 
-function showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages) {
-  let selectedLanguage = tnLanguages[0];
-  const selectText = translate('buttons.select_button');
-  const cancelText = translate('buttons.cancel_button');
-
-  const setSelectedLanguage = (languageCode) => {
-    selectedLanguage = tnLanguages.find(lang => lang.lc === languageCode) || selectedLanguage;
-  };
-
-  const callback = (buttonPressed) => {
-    dispatch(closeAlertDialog());
-
-    if (buttonPressed === selectText && selectedLanguage) {
-      const bookId = manifest.project?.id;
-
-      dispatch(ProjectDetailsActions.setProjectToolGL(
-        TRANSLATION_NOTES,
-        selectedLanguage.lc,
-        selectedLanguage.owner,
-        bookId,
-      ));
-    }
-  };
-
-  dispatch(openOptionDialog(
-    <div>
-      <div>{translate('projects.select_missing_resource', { project_name: projectName })}</div>
-      <div style={{
-        width: '500px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginTop: '16px',
-      }}>
-        <select
-          defaultValue={selectedLanguage.lc}
-          onChange={e => setSelectedLanguage(e.target.value)}
-          style={{
-            width: '100%',
-            padding: '8px',
-            fontSize: '16px',
-          }}
-        >
-          {tnLanguages.map(lang => (
-            <option key={`${lang.lc}_${lang.owner}`} value={lang.lc}>
-              {lang.namePrompt}
-            </option>
-          ))}
-        </select>
-      </div>
-    </div>,
-    callback,
-    selectText,
-    cancelText,
-  ));
+/**
+ * Displays a dialog for selecting a missing resource language.
+ * This function wraps the promise-based dialog implementation and returns the selected language.
+ *
+ * @param {Function} dispatch - Redux dispatch function for triggering actions
+ * @param {Function} translate - Translation function for localizing UI text
+ * @param {string} projectName - Name of the project requiring resource selection
+ * @param {Object} manifest - Project manifest containing resource configuration
+ * @param {Array<Object>} languages - Array of available language objects with language code and display information
+ * @param {string} toolName - Translation key for the tool name to display in the dialog
+ * @returns {Promise<Object|null>} Promise that resolves to the selected language object or null if cancelled
+ */
+function showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, languages, toolName) {
+  return showMissingResourceSelectionDialogPromise(dispatch, translate, projectName, languages, toolName)
+    .then((selectedLanguage) => selectedLanguage);
 }
 
-const selectMissingResources = (projectPath, manifest, tnLanguages, twLanguages, waLanguages) => (dispatch, getState) => {
+/**
+ * Creates and displays a modal dialog for selecting a missing resource language from a list.
+ * The dialog presents a dropdown menu with available languages and allows the user to confirm
+ * or cancel the selection. The promise resolves when the user makes a choice.
+ *
+ * @param {Function} dispatch - Redux dispatch function for triggering actions
+ * @param {Function} translate - Translation function for localizing UI text
+ * @param {string} projectName - Name of the project requiring resource selection
+ * @param {Array<Object>} languages - Array of available language objects
+ * @param {string} languages[].lc - Language code identifier
+ * @param {string} languages[].owner - Owner of the language resource
+ * @param {string} languages[].namePrompt - Display name for the language option
+ * @param {string} toolName - Translation key for the tool name to display in the dialog
+ * @returns {Promise<Object|null>} Promise that resolves to the selected language object when user clicks Select,
+ *                                  or null when user clicks Cancel
+ */
+function showMissingResourceSelectionDialogPromise(dispatch, translate, projectName, languages, toolName) {
+  return new Promise((resolve) => {
+    let selectedLanguage = languages[0];
+    const selectText = translate('buttons.select_button');
+    const cancelText = translate('buttons.cancel_button');
+    const toolNameStr = translate(toolName);
+    const message = translate('projects.select_gateway_language', {tool_name: toolNameStr});
+
+    const setSelectedLanguage = (languageCode) => {
+      selectedLanguage = languages.find(lang => lang.lc === languageCode) || selectedLanguage;
+    };
+
+    const callback = (buttonPressed) => {
+      dispatch(closeAlertDialog());
+
+      if (buttonPressed === selectText && selectedLanguage) {
+        resolve(selectedLanguage);
+        return;
+      }
+
+      resolve(null);
+    };
+
+    dispatch(openOptionDialog(
+      <div>
+        <div>{message}</div>
+        <div style={{
+          width: '500px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginTop: '16px',
+        }}>
+          <select
+            defaultValue={selectedLanguage.lc}
+            onChange={e => setSelectedLanguage(e.target.value)}
+            style={{
+              width: '100%',
+              padding: '8px',
+              fontSize: '16px',
+            }}
+          >
+            {languages.map(lang => (
+              <option key={`${lang.lc}_${lang.owner}`} value={lang.lc}>
+                {lang.namePrompt}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>,
+      callback,
+      selectText,
+      cancelText,
+    ));
+  });
+}
+
+/**
+ * Initiates the process of selecting missing resources for a project.
+ * This is a thunk action creator that sequentially prompts the user to select gateway languages
+ * for Translation Notes, Translation Words, and Word Alignment resources if they are missing.
+ * Each dialog is displayed only if the corresponding language array is populated.
+ *
+ * @param {string} projectPath - File system path to the project directory
+ * @param {Object} manifest - Project manifest containing resource configuration
+ * @param {Array<Object>} tnLanguages - Array of available Translation Notes gateway languages
+ * @param {Array<Object>} twLanguages - Array of available Translation Words gateway languages
+ * @param {Array<Object>} waLanguages - Array of available Word Alignment gateway languages
+ * @returns {Function} Thunk function that accepts dispatch and getState, returns Promise<void>
+ */
+const selectMissingResources = (projectPath, manifest, tnLanguages, twLanguages, waLanguages) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const projectName = path.basename(projectPath);
 
   if (tnLanguages?.length) {
-    showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages);
+    await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
+  }
+
+  if (twLanguages?.length) {
+    await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
+  }
+
+  if (waLanguages?.length) {
+    await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
   }
 };
 
