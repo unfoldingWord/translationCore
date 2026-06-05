@@ -170,6 +170,7 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
 
     const callback = (buttonPressed) => {
       dispatch(closeAlertDialog());
+      delay(500);
 
       if (buttonPressed === selectText && selectedLanguage) {
         resolve(selectedLanguage);
@@ -179,6 +180,7 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
       resolve(null);
     };
 
+    delay(1000);
     dispatch(openOptionDialog(
       <div>
         <div>{message}</div>
@@ -193,7 +195,7 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
             defaultValue={selectedLanguage.lc}
             onChange={e => setSelectedLanguage(e.target.value)}
             style={{
-              width: '100%',
+              width: '70%',
               padding: '8px',
               fontSize: '16px',
             }}
@@ -226,19 +228,19 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
  * @param {Array<Object>} waLanguages - Array of available Word Alignment gateway languages
  * @returns {Function} Thunk function that accepts dispatch and getState, returns Promise<void>
  */
-const selectMissingResources = (projectPath, manifest, tnLanguages, twLanguages, waLanguages) => async (dispatch, getState) => {
+const selectMissingResources = (projectPath, manifest, tNoteResourcesFound, tnLanguages, tWordsRessourcesFound, twLanguages, wordAlignmentRessourcesFound, waLanguages) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const projectName = path.basename(projectPath);
 
-  if (tnLanguages?.length) {
+  if (!tNoteResourcesFound) {
     await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
   }
 
-  if (twLanguages?.length) {
+  if (!tWordsRessourcesFound) {
     await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
   }
 
-  if (waLanguages?.length) {
+  if (!wordAlignmentRessourcesFound) {
     await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
   }
 };
@@ -329,7 +331,7 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
 
       dispatch(confirmAction({
         message: messageStr,
-        confirmButtonText: translate('buttons.select_resources'),
+        confirmButtonText: translate('buttons.open_tools_button'),
       }, loadProjectAndOpenTools(projectName)));
 
       return;
@@ -353,8 +355,8 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
 
       dispatch(confirmAction({
         message: messageStr,
-        confirmButtonText: translate('buttons.open_tools_button'),
-      }, selectMissingResources(projectPath, manifest, tnLanguages, twLanguages, waLanguages)));
+        confirmButtonText: translate('buttons.select_resources'),
+      }, selectMissingResources(projectPath, manifest, tNoteResourcesFound, tnLanguages, tWordsRessourcesFound, twLanguages, wordAlignmentRessourcesFound, waLanguages)));
     }
     return;
   }
