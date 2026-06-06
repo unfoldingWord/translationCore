@@ -50,6 +50,34 @@ function cloneValue(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function sortKeysLikeReference(referenceObject, localeObject) {
+  const sortedObject = {};
+
+  Object.keys(referenceObject).forEach((key) => {
+    if (!Object.prototype.hasOwnProperty.call(localeObject, key)) {
+      return;
+    }
+
+    if (
+      isPlainObject(referenceObject[key]) &&
+      isPlainObject(localeObject[key])
+    ) {
+      sortedObject[key] = sortKeysLikeReference(referenceObject[key], localeObject[key]);
+      return;
+    }
+
+    sortedObject[key] = localeObject[key];
+  });
+
+  Object.keys(localeObject).forEach((key) => {
+    if (!Object.prototype.hasOwnProperty.call(sortedObject, key)) {
+      sortedObject[key] = localeObject[key];
+    }
+  });
+
+  return sortedObject;
+}
+
 function copyMissingKeysFromBase(baseObject, localeObject) {
   let changed = false;
 
@@ -135,11 +163,11 @@ function findExtraKeys(baseObject, compareObject, currentPath = '') {
 }
 
 function main() {
-  const baseLocalPath = path.join(localeDir, referenceFileName);
-  const baseLocale = readJson(baseLocalPath);
+  const referenceLocalPath = path.join(localeDir, referenceFileName);
+  const referenceLocale = readJson(referenceLocalPath);
 
-  if (!baseLocale) {
-    writeLog(`Failed to read base locale file: ${baseLocalPath}`);
+  if (!referenceLocale) {
+    writeLog(`Failed to read base locale file: ${referenceLocalPath}`);
     process.exit(1);
   }
 
@@ -164,14 +192,15 @@ function main() {
       return;
     }
 
-    const missingKeys = findMissingKeys(baseLocale, locale);
-    const extraKeys = findExtraKeys(baseLocale, locale);
+    const missingKeys = findMissingKeys(referenceLocale, locale);
+    const extraKeys = findExtraKeys(referenceLocale, locale);
 
     if (copyMissingKeys && missingKeys.length > 0) {
-      const changed = copyMissingKeysFromBase(baseLocale, locale);
+      const changed = copyMissingKeysFromBase(referenceLocale, locale);
 
       if (changed) {
-        fs.writeFileSync(filePath, `${JSON.stringify(locale, null, 2)}\n`, 'utf8');
+        const sortedLocale = sortKeysLikeReference(referenceLocale, locale);
+        fs.writeFileSync(filePath, `${JSON.stringify(sortedLocale, null, 2)}\n`, 'utf8');
         writeLog(`${fileName}: copied missing key(s) from base locale`);
       }
     }
