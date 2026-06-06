@@ -1,3 +1,26 @@
+/**
+ * Locale Key Checker
+ *
+ * This script validates locale (translation) JSON files against a reference locale file.
+ * It checks for missing keys, extra keys, and optionally copies missing keys from the reference file.
+ *
+ * Usage:
+ *   node scripts/locale/check-locale-keys.js <referenceFileName> <baseFilePath> [--copy-missing-keys]
+ *
+ * Arguments:
+ *   referenceFileName - Name of the reference locale file (e.g., English-en_US.json)
+ *   baseFilePath - Path to the directory containing locale files
+ *   --copy-missing-keys - Optional flag to copy missing keys from reference to other locale files
+ *
+ * Example:
+ *   node scripts/locale/check-locale-keys.js English-en_US.json src/locale
+ *   node scripts/locale/check-locale-keys.js English-en_US.json src/locale --copy-missing-keys
+ *
+ * Output:
+ *   Creates a locale-check.log file in the current working directory with results
+ *   Exit code 1 if there are missing or extra keys, 0 otherwise
+ */
+
 /* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
@@ -8,6 +31,10 @@ const baseFilePath = process.argv[3];
 const copyMissingKeys = process.argv.includes('--copy-missing-keys');
 const checkLogFilePath = path.resolve(process.cwd(), 'locale-check.log');
 
+/**
+ * Writes a message to both the log file and console
+ * @param {string} message - The message to write (defaults to empty string)
+ */
 function writeLog(message = '') {
   fs.appendFileSync(checkLogFilePath, `${message}\n`, 'utf8');
   console.log(message);
@@ -29,6 +56,11 @@ const resolvedBaseFilePath = path.resolve(baseFilePath);
 writeLog(`Checking base locale file: ${resolvedBaseFilePath}`);
 writeLog(`Copy missing keys: ${copyMissingKeys ? 'enabled' : 'disabled'}`);
 
+/**
+ * Checks if a value is a plain object (not an array or null)
+ * @param {*} value - The value to check
+ * @returns {boolean} True if value is a plain object
+ */
 function isPlainObject(value) {
   return (
     value !== null &&
@@ -37,6 +69,11 @@ function isPlainObject(value) {
   );
 }
 
+/**
+ * Reads and parses a JSON file
+ * @param {string} filePath - Path to the JSON file
+ * @returns {Object|undefined} Parsed JSON object, or undefined if reading/parsing fails
+ */
 function readJson(filePath) {
   try {
     return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -46,13 +83,26 @@ function readJson(filePath) {
   }
 }
 
+/**
+ * Deep clones a value using JSON serialization
+ * @param {*} value - The value to clone
+ * @returns {*} Deep cloned copy of the value
+ */
 function cloneValue(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+/**
+ * Sorts the keys of a locale object to match the order of keys in a reference object
+ * Keys present in referenceObject are placed first, followed by any extra keys from localeObject
+ * @param {Object} referenceObject - The reference object defining the desired key order
+ * @param {Object} localeObject - The object to sort
+ * @returns {Object} New object with keys sorted to match reference
+ */
 function sortKeysLikeReference(referenceObject, localeObject) {
   const sortedObject = {};
 
+  // First, add keys that exist in reference in reference order
   Object.keys(referenceObject).forEach((key) => {
     if (!Object.prototype.hasOwnProperty.call(localeObject, key)) {
       return;
@@ -69,6 +119,7 @@ function sortKeysLikeReference(referenceObject, localeObject) {
     sortedObject[key] = localeObject[key];
   });
 
+  // Then add any extra keys not in reference
   Object.keys(localeObject).forEach((key) => {
     if (!Object.prototype.hasOwnProperty.call(sortedObject, key)) {
       sortedObject[key] = localeObject[key];
@@ -78,6 +129,13 @@ function sortKeysLikeReference(referenceObject, localeObject) {
   return sortedObject;
 }
 
+/**
+ * Recursively copies missing keys from baseObject to localeObject
+ * Modifies localeObject in place
+ * @param {Object} baseObject - The reference object containing all required keys
+ * @param {Object} localeObject - The object to update with missing keys
+ * @returns {boolean} True if any keys were added or modified
+ */
 function copyMissingKeysFromBase(baseObject, localeObject) {
   let changed = false;
 
@@ -104,6 +162,13 @@ function copyMissingKeysFromBase(baseObject, localeObject) {
   return changed;
 }
 
+/**
+ * Recursively finds keys that exist in baseObject but are missing in compareObject
+ * @param {Object} baseObject - The reference object containing expected keys
+ * @param {Object} compareObject - The object to compare against
+ * @param {string} currentPath - Current path prefix for nested keys (used in recursion)
+ * @returns {string[]} Array of missing key paths in dot notation (e.g., "parent.child.key")
+ */
 function findMissingKeys(baseObject, compareObject, currentPath = '') {
   const missingKeys = [];
 
@@ -133,6 +198,13 @@ function findMissingKeys(baseObject, compareObject, currentPath = '') {
   return missingKeys;
 }
 
+/**
+ * Recursively finds keys that exist in compareObject but not in baseObject
+ * @param {Object} baseObject - The reference object containing expected keys
+ * @param {Object} compareObject - The object to check for extra keys
+ * @param {string} currentPath - Current path prefix for nested keys (used in recursion)
+ * @returns {string[]} Array of extra key paths in dot notation (e.g., "parent.child.key")
+ */
 function findExtraKeys(baseObject, compareObject, currentPath = '') {
   const extraKeys = [];
 
@@ -162,6 +234,12 @@ function findExtraKeys(baseObject, compareObject, currentPath = '') {
   return extraKeys;
 }
 
+/**
+ * Main execution function
+ * Validates all locale files in the directory against the reference locale file
+ * Optionally copies missing keys if --copy-missing-keys flag is provided
+ * Writes results to log file and sets appropriate exit code
+ */
 function main() {
   const referenceLocalPath = path.join(localeDir, referenceFileName);
   const referenceLocale = readJson(referenceLocalPath);

@@ -233,15 +233,24 @@ const selectMissingResources = (projectPath, manifest, tNoteResourcesFound, tnLa
   const projectName = path.basename(projectPath);
 
   if (!tNoteResourcesFound) {
-    await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
+    const selectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
+    if (selectedLanguage) {
+      console.log(selectedLanguage);
+    }
   }
 
   if (!tWordsRessourcesFound) {
-    await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
+    const selectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
+    if (selectedLanguage) {
+      console.log(selectedLanguage);
+    }
   }
 
   if (!wordAlignmentRessourcesFound) {
-    await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
+    const selectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
+    if (selectedLanguage) {
+      console.log(selectedLanguage);
+    }
   }
 };
 
