@@ -438,6 +438,8 @@ function getExportResourceInfo(manifest) {
     gatewayLang: tWordsGatewayLang,
     tWordsTag,
     tWordsUrl,
+    tWordsListTag,
+    tWordsListUrl,
   } = getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
 
   const {
@@ -482,6 +484,8 @@ function getExportResourceInfo(manifest) {
     tNotesOriginalLangUrl,
     tWordsTag,
     tWordsUrl,
+    tWordsListTag,
+    tWordsListUrl,
     tWordsOriginalLangTag,
     tWordsOriginalLangUrl,
     wordALignmentOriginalLangTag,
@@ -741,7 +745,8 @@ function getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, or
  */
 function getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, manifest) {
   const gatewayLangOwner = toolsSelectedOwners?.translationWords;
-  const originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
+  const isNotDoor43 = gatewayLangOwner !== apiHelpers.DOOR43_CATALOG;
+  const originalLangOwner = isNotDoor43 ? 'unfoldingWord' : gatewayLangOwner;
   const gatewayLang = toolsSelectedGLs?.translationWords;
   const gatewayLangTag = `tc_${gatewayLang}_check_version_translationWords`;
   const gatewayLangKey = manifest[gatewayLangTag];
@@ -750,6 +755,9 @@ function getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, 
   const owner = gatewayLangInfo.owner || gatewayLangOwner;
   const tWordsTag = 'tWordsGateway';
   const tWordsUrl = getDcsUrlRugged(tWordsTag, owner, gatewayLang, 'tw', version);
+  const tWordsListTag = 'tWordsListGateway';
+  let tWordsListUrl;
+  tWordsListUrl = isNotDoor43 ? getDcsUrlRugged(tWordsTag, owner, gatewayLang, 'twl', version) : undefined;
 
   return {
     originalLangOwner,
@@ -758,6 +766,8 @@ function getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, 
     owner,
     tWordsTag,
     tWordsUrl,
+    tWordsListTag,
+    tWordsListUrl,
   };
 }
 
@@ -911,6 +921,8 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       tNotesOriginalLangUrl,
       tWordsTag,
       tWordsUrl,
+      tWordsListTag,
+      tWordsListUrl,
       tWordsOriginalLangTag,
       tWordsOriginalLangUrl,
       wordALignmentOriginalLangTag,
@@ -921,6 +933,11 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
     addDcsUrl(resources, tNotesOriginalLangTag, tNotesOriginalLangUrl);
     addDcsUrl(resources, tWordsTag, tWordsUrl);
     addDcsUrl(resources, tWordsOriginalLangTag, tWordsOriginalLangUrl);
+
+    if (tWordsListUrl) {
+      addDcsUrl(resources, tWordsListTag, tWordsListUrl);
+    }
+
     addDcsUrl(resources, wordALignmentOriginalLangTag, wordALignmentOriginalLangUrl);
 
     // save updated alignment data
