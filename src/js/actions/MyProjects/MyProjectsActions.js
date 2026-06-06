@@ -164,8 +164,8 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
     const toolNameStr = translate(toolName);
     const message = translate('projects.select_gateway_language', { tool_name: toolNameStr });
 
-    const setSelectedLanguage = (languageCode) => {
-      selectedLanguage = languages.find(lang => lang.lc === languageCode) || selectedLanguage;
+    const setSelectedLanguage = (selectedValue) => {
+      selectedLanguage = languages.find(lang => `${lang.lc}_${lang.owner}` === selectedValue) || selectedLanguage;
     };
 
     const callback = (buttonPressed) => {
@@ -200,11 +200,14 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
               fontSize: '16px',
             }}
           >
-            {languages.map(lang => (
-              <option key={`${lang.lc}_${lang.owner}`} value={lang.lc}>
-                {lang.namePrompt}
-              </option>
-            ))}
+            {languages.map(lang => {
+              let key = `${lang.lc}_${lang.owner}`;
+              return (
+                <option key={key} value={key}>
+                  {lang.owner + ' - ' + lang.namePrompt}
+                </option>
+              );
+            })}
           </select>
         </div>
       </div>,
@@ -231,25 +234,29 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
 const selectMissingResources = (projectPath, manifest, tNoteResourcesFound, tnLanguages, tWordsRessourcesFound, twLanguages, wordAlignmentRessourcesFound, waLanguages) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const projectName = path.basename(projectPath);
+  let tNotesSelectedLanguage, tWordsSelectedLanguage, wordAlignmentSelectedLanguage;
 
   if (!tNoteResourcesFound) {
-    const selectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
-    if (selectedLanguage) {
-      console.log(selectedLanguage);
+    tNotesSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
+
+    if (tNotesSelectedLanguage) {
+      console.log('tNotes Selected language', tNotesSelectedLanguage);
     }
   }
 
   if (!tWordsRessourcesFound) {
-    const selectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
-    if (selectedLanguage) {
-      console.log(selectedLanguage);
+    tWordsSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
+
+    if (tWordsSelectedLanguage) {
+      console.log('tWordsSelectedLanguage', tWordsSelectedLanguage);
     }
   }
 
   if (!wordAlignmentRessourcesFound) {
-    const selectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
-    if (selectedLanguage) {
-      console.log(selectedLanguage);
+    wordAlignmentSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
+
+    if (wordAlignmentSelectedLanguage) {
+      console.log('wordAlignementSelectedLanguage', wordAlignmentSelectedLanguage);
     }
   }
 };
