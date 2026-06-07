@@ -18,8 +18,10 @@ import {
 import {
   DCS_BASE_URL,
   TC_PATH,
+  TRANSLATION_HELPS,
   TRANSLATION_NOTES,
   TRANSLATION_WORDS,
+  USER_RESOURCES_PATH,
   WORD_ALIGNMENT,
 } from '../../common/constants';
 import { loadSettings } from '../../localStorage/loadMethods';
@@ -29,6 +31,7 @@ import * as WordAlignmentHelpers from '../../helpers/WordAlignmentHelpers';
 import * as bibleHelpers from '../../helpers/bibleHelpers';
 import * as LoadHelpers from '../../helpers/LoadHelpers';
 import * as gatewayLanguageHelpers from '../../helpers/gatewayLanguageHelpers';
+import { getMostRecentVersionInFolder } from '../../helpers/originalLanguageResourcesHelpers';
 import * as ProjectLoadingActions from './ProjectLoadingActions';
 
 /**
@@ -218,6 +221,81 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
   });
 }
 
+function saveNewGlForTnotes(manifest, gatewayLang, glOwner) {
+  const toolsSelectedGLs = manifest.toolsSelectedGLs || {};
+  toolsSelectedGLs.translationNotes = gatewayLang;
+  manifest.toolsSelectedGLs = toolsSelectedGLs;
+
+  const resourcesPath = path.join(USER_RESOURCES_PATH, gatewayLang, TRANSLATION_HELPS, TRANSLATION_NOTES);
+  let glVersion;
+
+  if (fs.existsSync(resourcesPath)) {
+    glVersion = getMostRecentVersionInFolder(resourcesPath, glOwner) || '';
+  }
+
+  if (glVersion) {
+    const { version } = resourcesHelpers.splitVersionAndOwner(glVersion);
+    glVersion = version;
+  }
+
+  if (glVersion) {
+    const gatewayLangTag = getGatewayLangTagForTNotes(gatewayLang);
+    manifest[gatewayLangTag] = glVersion;
+    const toolsSelectedOwners = manifest.toolsSelectedOwners || {};
+    toolsSelectedOwners.translationNotes = glOwner;
+    manifest.toolsSelectedOwners = toolsSelectedOwners;
+    return false;
+  } else {
+    return true; // error
+  }
+}
+
+function saveNewGlForTwords(manifest, gatewayLang, glOwner) {
+  const toolsSelectedGLs = manifest.toolsSelectedGLs || {};
+  toolsSelectedGLs.translationWords = gatewayLang;
+  manifest.toolsSelectedGLs = toolsSelectedGLs;
+
+  const resourcesPath = path.join(USER_RESOURCES_PATH, gatewayLang, TRANSLATION_HELPS, TRANSLATION_WORDS);
+  let glVersion;
+
+  if (fs.existsSync(resourcesPath)) {
+    glVersion = getMostRecentVersionInFolder(resourcesPath, glOwner) || '';
+  }
+
+  if (glVersion) {
+    const { version } = resourcesHelpers.splitVersionAndOwner(glVersion);
+    glVersion = version;
+  }
+
+  if (glVersion) {
+    const gatewayLangTag = getGatewayLangTagForTWords(gatewayLang);
+    manifest[gatewayLangTag] = glVersion;
+    const toolsSelectedOwners = manifest.toolsSelectedOwners || {};
+    toolsSelectedOwners.translationWords = glOwner;
+    manifest.toolsSelectedOwners = toolsSelectedOwners;
+    return false;
+  } else {
+    return true; // error
+  }
+}
+
+function saveNewGlForWA(manifest, gatewayLang, glOwner, gatewayLangVersion) {
+  const toolsSelectedGLs = manifest.toolsSelectedGLs || {};
+  toolsSelectedGLs.wordAlignment = gatewayLang;
+  manifest.toolsSelectedGLs = toolsSelectedGLs;
+
+  if (gatewayLangVersion) {
+    const gatewayLangTag = getGatewayLangTagForWordAligner(gatewayLang);
+    manifest[gatewayLangTag] = gatewayLangVersion;
+    const toolsSelectedOwners = manifest.toolsSelectedOwners || {};
+    toolsSelectedOwners.wordAlignment = glOwner;
+    manifest.toolsSelectedOwners = toolsSelectedOwners;
+    return false;
+  } else {
+    return true;
+  }
+}
+
 /**
  * Initiates the process of selecting missing resources for a project.
  * This is a thunk action creator that sequentially prompts the user to select gateway languages
@@ -231,16 +309,23 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
  * @param {Array<Object>} waLanguages - Array of available Word Alignment gateway languages
  * @returns {Function} Thunk function that accepts dispatch and getState, returns Promise<void>
  */
-const selectMissingResources = (projectPath, manifest, tNoteResourcesFound, tnLanguages, tWordsRessourcesFound, twLanguages, wordAlignmentRessourcesFound, waLanguages) => async (dispatch, getState) => {
+const selectMissingResources = (projectPath, manifest,
+  tNoteResourcesFound, tnLanguages,
+  tWordsRessourcesFound, twLanguages,
+  wordAlignmentRessourcesFound, waLanguages) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const projectName = path.basename(projectPath);
   let tNotesSelectedLanguage, tWordsSelectedLanguage, wordAlignmentSelectedLanguage;
+  let error = false;
 
   if (!tNoteResourcesFound) {
     tNotesSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
 
     if (tNotesSelectedLanguage) {
       console.log('tNotes Selected language', tNotesSelectedLanguage);
+      const gatewayLang = tNotesSelectedLanguage.code || tNotesSelectedLanguage.lc;
+      const glOwner = tNotesSelectedLanguage.owner;
+      error = error || saveNewGlForTnotes(manifest, gatewayLang, glOwner);
     }
   }
 
@@ -249,6 +334,9 @@ const selectMissingResources = (projectPath, manifest, tNoteResourcesFound, tnLa
 
     if (tWordsSelectedLanguage) {
       console.log('tWordsSelectedLanguage', tWordsSelectedLanguage);
+      const gatewayLang = tWordsSelectedLanguage.code || tWordsSelectedLanguage.lc;
+      const glOwner = tWordsSelectedLanguage.owner;
+      error = error || saveNewGlForTwords(manifest, gatewayLang, glOwner);
     }
   }
 
@@ -257,8 +345,16 @@ const selectMissingResources = (projectPath, manifest, tNoteResourcesFound, tnLa
 
     if (wordAlignmentSelectedLanguage) {
       console.log('wordAlignementSelectedLanguage', wordAlignmentSelectedLanguage);
+      const gatewayLang = wordAlignmentSelectedLanguage.code || wordAlignmentSelectedLanguage.lc;
+      const glOwner = wordAlignmentSelectedLanguage.owner;
+      error = error || saveNewGlForWA(manifest, gatewayLang, glOwner);
     }
   }
+
+  if (!error) {
+    //TODO save
+  }
+  return error;
 };
 
 /**
@@ -460,11 +556,22 @@ function getExportResourceInfo(manifest) {
   // wordAlignment resources
 
   const {
+    gatewayLangOwner: wordAlignmentGatewayLangOwner,
+    gatewayLang: wordAlignmentGatewayLang,
+    gatewayLangVersion: wordAlignmentGatewayLangVersion,
+  } = getWordAlignmentInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
+
+  const {
     wordALignmentOriginalLangTag,
     wordALignmentOriginalLangUrl,
   } = getWordAlignmentOriginalLanguageInfo(toolsSelectedOwners, manifest, originalResource);
 
-  if (wordALignmentOriginalLangUrl) {
+  if (
+    wordALignmentOriginalLangUrl
+    && wordAlignmentGatewayLangOwner
+    && wordAlignmentGatewayLang
+    && wordAlignmentGatewayLangVersion
+  ) {
     wordAlignmentRessourcesFound = true;
   }
 
@@ -488,6 +595,9 @@ function getExportResourceInfo(manifest) {
     tWordsListUrl,
     tWordsOriginalLangTag,
     tWordsOriginalLangUrl,
+    wordAlignmentGatewayLangOwner,
+    wordAlignmentGatewayLang,
+    wordAlignmentGatewayLangVersion,
     wordALignmentOriginalLangTag,
     wordALignmentOriginalLangUrl,
   };
@@ -634,6 +744,10 @@ function getToolsInfo(manifest) {
   };
 }
 
+function getGatewayLangTagForTNotes(gatewayLang) {
+  return `tc_${gatewayLang}_check_version_translationNotes`;
+}
+
 /**
  * Retrieves and constructs resource information for Translation Notes in the gateway language.
  * Determines the appropriate owner, language, and version for Translation Notes and Translation Academy
@@ -662,7 +776,7 @@ function getTranslationNotesResourceInfo(toolsSelectedOwners, toolsSelectedGLs, 
   const gatewayLangOwner = toolsSelectedOwners?.translationNotes;
   const originalLangOwner = (gatewayLangOwner !== 'Door43-Catalog') ? 'unfoldingWord' : gatewayLangOwner;
   const gatewayLang = toolsSelectedGLs?.translationNotes;
-  const gatewayLangTag = `tc_${gatewayLang}_check_version_translationNotes`;
+  const gatewayLangTag = getGatewayLangTagForTNotes(gatewayLang);
   const gatewayLangKey = manifest[gatewayLangTag];
   const gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
   const version = gatewayLangInfo.version;
@@ -725,6 +839,14 @@ function getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, or
   };
 }
 
+function getGatewayLangTagForTWords(gatewayLang) {
+  return `tc_${gatewayLang}_check_version_translationWords`;
+}
+
+function getGatewayLangTagForWordAligner(gatewayLang) {
+  return `tc_${gatewayLang}_check_version_wordAlignment`;
+}
+
 /**
  * Retrieves and constructs resource information for Translation Words in the gateway language.
  * Determines the appropriate owner, language, and version for Translation Words resources,
@@ -748,7 +870,7 @@ function getTranslationWordsResourceInfo(toolsSelectedOwners, toolsSelectedGLs, 
   const isNotDoor43 = gatewayLangOwner !== apiHelpers.DOOR43_CATALOG;
   const originalLangOwner = isNotDoor43 ? 'unfoldingWord' : gatewayLangOwner;
   const gatewayLang = toolsSelectedGLs?.translationWords;
-  const gatewayLangTag = `tc_${gatewayLang}_check_version_translationWords`;
+  const gatewayLangTag = getGatewayLangTagForTWords(gatewayLang);
   const gatewayLangKey = manifest[gatewayLangTag];
   const gatewayLangInfo = resourcesHelpers.splitVersionAndOwner(gatewayLangKey);
   const version = gatewayLangInfo.version;
@@ -801,6 +923,29 @@ function getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, or
     owner,
     tWordsOriginalLangTag,
     tWordsOriginalLangUrl,
+  };
+}
+
+function getWordAlignmentInfo(toolsSelectedOwners, toolsSelectedGLs, manifest) {
+  const gatewayLangOwner = toolsSelectedOwners?.wordAlignment;
+  const gatewayLang = toolsSelectedGLs?.wordAlignment;
+
+  const resourcesPath = path.join(USER_RESOURCES_PATH, gatewayLang, TRANSLATION_HELPS, WORD_ALIGNMENT);
+  let gatewayLangVersion;
+
+  if (fs.existsSync(resourcesPath)) {
+    gatewayLangVersion = getMostRecentVersionInFolder(resourcesPath, gatewayLangOwner) || '';
+  }
+
+  if (gatewayLangVersion) {
+    const { version } = resourcesHelpers.splitVersionAndOwner(gatewayLangVersion);
+    gatewayLangVersion = version;
+  }
+
+  return {
+    gatewayLangOwner,
+    gatewayLang,
+    gatewayLangVersion,
   };
 }
 
@@ -925,6 +1070,9 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       tWordsListUrl,
       tWordsOriginalLangTag,
       tWordsOriginalLangUrl,
+      wordAlignmentGatewayLangOwner,
+      wordAlignmentGatewayLang,
+      wordAlignmentGatewayLangVersion,
       wordALignmentOriginalLangTag,
       wordALignmentOriginalLangUrl,
     } = getExportResourceInfo(manifest);
@@ -938,6 +1086,9 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       addDcsUrl(resources, tWordsListTag, tWordsListUrl);
     }
 
+    const wordALignmentLangTag = getGatewayLangTagForWordAligner(wordAlignmentGatewayLang);
+    const wordAlignmentUrl = getDcsUrlRugged(wordALignmentLangTag, wordAlignmentGatewayLangOwner, wordAlignmentGatewayLang, 'wa', wordAlignmentGatewayLangVersion);
+    addDcsUrl(resources, wordALignmentLangTag, wordAlignmentUrl);
     addDcsUrl(resources, wordALignmentOriginalLangTag, wordALignmentOriginalLangUrl);
 
     // save updated alignment data
