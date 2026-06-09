@@ -399,7 +399,7 @@ const selectMissingResources = (projectPath, manifest,
   if (error) {
     console.warn('selectMissingResources() - Error setting resources:', error);
     dispatch(openAlertDialog(translate('projects.export_failed_error', { error })));
-  } else {
+  } else { // no error so continue with export
     dispatch(executeExport);
   }
   return error;

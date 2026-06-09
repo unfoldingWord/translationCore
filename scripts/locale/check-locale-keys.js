@@ -5,16 +5,18 @@
  * It checks for missing keys, extra keys, and optionally copies missing keys from the reference file.
  *
  * Usage:
- *   node scripts/locale/check-locale-keys.js <referenceFileName> <baseFilePath> [--copy-missing-keys]
+ *   node scripts/locale/check-locale-keys.js <referenceFileName> <baseFilePath> [--copy-missing-keys] [--log-file <fileNameOrPath>]
  *
  * Arguments:
  *   referenceFileName - Name of the reference locale file (e.g., English-en_US.json)
  *   baseFilePath - Path to the directory containing locale files
  *   --copy-missing-keys - Optional flag to copy missing keys from reference to other locale files
+ *   --log-file - Optional log file name or path (defaults to locale-check.log)
  *
  * Example:
  *   node scripts/locale/check-locale-keys.js English-en_US.json src/locale
  *   node scripts/locale/check-locale-keys.js English-en_US.json src/locale --copy-missing-keys
+ *   node scripts/locale/check-locale-keys.js English-en_US.json src/locale --log-file locale-check-fr.log
  *
  * Output:
  *   Creates a locale-check.log file in the current working directory with results
@@ -29,7 +31,9 @@ const referenceFileName = process.argv[2];
 console.log(`baseFileName: ${referenceFileName}`);
 const baseFilePath = process.argv[3];
 const copyMissingKeys = process.argv.includes('--copy-missing-keys');
-const checkLogFilePath = path.resolve(process.cwd(), 'locale-check.log');
+const logFileFlagIndex = process.argv.indexOf('--log-file');
+const logFileName = logFileFlagIndex !== -1 ? process.argv[logFileFlagIndex + 1] : 'locale-check.log';
+const checkLogFilePath = path.resolve(process.cwd(), logFileName);
 
 /**
  * Writes a message to both the log file and console
@@ -44,10 +48,11 @@ fs.writeFileSync(checkLogFilePath, '', 'utf8');
 
 writeLog(`baseFileName: ${referenceFileName}`);
 
-if (!referenceFileName || !baseFilePath) {
-  writeLog('Usage: node scripts/check-locale-keys.js <referenceFileName> <baseFilePath> [--copy-missing-keys]');
+if (!referenceFileName || !baseFilePath || (logFileFlagIndex !== -1 && !logFileName)) {
+  writeLog('Usage: node scripts/check-locale-keys.js <referenceFileName> <baseFilePath> [--copy-missing-keys] [--log-file <fileNameOrPath>]');
   writeLog('Example: node scripts/check-locale-keys.js English-en_US.json src/locale/English-en_US.json');
   writeLog('Example with copying missing keys: node scripts/check-locale-keys.js English-en_US.json src/locale/English-en_US.json --copy-missing-keys');
+  writeLog('Example with custom log file: node scripts/check-locale-keys.js English-en_US.json src/locale/English-en_US.json --log-file locale-check-fr.log');
   process.exit(1);
 }
 
@@ -310,7 +315,10 @@ function main() {
   if (totalMissingKeys > 0 || totalExtraKeys > 0) {
     writeLog(`\nTotal missing keys: ${totalMissingKeys}`);
     writeLog(`Total extra keys: ${totalExtraKeys}`);
-    process.exitCode = 1;
+
+    if (!copyMissingKeys) {
+      process.exitCode = 1;
+    }
   } else {
     writeLog('\nAll locale files match the base locale keys.');
   }
