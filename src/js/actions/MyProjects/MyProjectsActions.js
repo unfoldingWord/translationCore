@@ -221,6 +221,16 @@ function showMissingResourceSelectionDialogPromise(dispatch, translate, projectN
   });
 }
 
+/**
+ * Saves the selected Translation Notes gateway language and version to the project manifest.
+ * Updates the manifest with the gateway language selection, retrieves the most recent version
+ * for the specified owner, and stores the resource information.
+ *
+ * @param {Object} manifest - Project manifest object to be updated (mutated in place)
+ * @param {string} gatewayLang - Gateway language code (e.g., 'en', 'es')
+ * @param {string} glOwner - Owner/organization of the gateway language resource
+ * @returns {boolean} Returns true if an error occurred (no version found), false if successful
+ */
 function saveNewGlForTnotes(manifest, gatewayLang, glOwner) {
   const toolsSelectedGLs = manifest.toolsSelectedGLs || {};
   toolsSelectedGLs.translationNotes = gatewayLang;
@@ -246,10 +256,20 @@ function saveNewGlForTnotes(manifest, gatewayLang, glOwner) {
     manifest.toolsSelectedOwners = toolsSelectedOwners;
     return false;
   } else {
-    return true; // error
+    return 'Failed to save Gateway Language for Translation Notes';
   }
 }
 
+/**
+ * Saves the selected Translation Words gateway language and version to the project manifest.
+ * Updates the manifest with the gateway language selection, retrieves the most recent version
+ * for the specified owner, and stores the resource information.
+ *
+ * @param {Object} manifest - Project manifest object to be updated (mutated in place)
+ * @param {string} gatewayLang - Gateway language code (e.g., 'en', 'es')
+ * @param {string} glOwner - Owner/organization of the gateway language resource
+ * @returns {boolean} Returns true if an error occurred (no version found), false if successful
+ */
 function saveNewGlForTwords(manifest, gatewayLang, glOwner) {
   const toolsSelectedGLs = manifest.toolsSelectedGLs || {};
   toolsSelectedGLs.translationWords = gatewayLang;
@@ -275,10 +295,21 @@ function saveNewGlForTwords(manifest, gatewayLang, glOwner) {
     manifest.toolsSelectedOwners = toolsSelectedOwners;
     return false;
   } else {
-    return true; // error
+    return 'Failed to save Gateway Language for Translation Words';
   }
 }
 
+/**
+ * Saves the selected Word Alignment gateway language and version to the project manifest.
+ * Updates the manifest with the gateway language selection and stores the provided version
+ * and owner information.
+ *
+ * @param {Object} manifest - Project manifest object to be updated (mutated in place)
+ * @param {string} gatewayLang - Gateway language code (e.g., 'en', 'es')
+ * @param {string} glOwner - Owner/organization of the gateway language resource
+ * @param {string} gatewayLangVersion - Version of the Word Alignment resource
+ * @returns {boolean} Returns true if an error occurred (no version provided), false if successful
+ */
 function saveNewGlForWA(manifest, gatewayLang, glOwner, gatewayLangVersion) {
   const toolsSelectedGLs = manifest.toolsSelectedGLs || {};
   toolsSelectedGLs.wordAlignment = gatewayLang;
@@ -292,7 +323,7 @@ function saveNewGlForWA(manifest, gatewayLang, glOwner, gatewayLangVersion) {
     manifest.toolsSelectedOwners = toolsSelectedOwners;
     return false;
   } else {
-    return true;
+    return 'Failed to save Gateway Language for Word Alignment';
   }
 }
 
@@ -313,46 +344,63 @@ const selectMissingResources = (projectPath, manifest,
   tNoteResourcesFound, tnLanguages,
   tWordsRessourcesFound, twLanguages,
   wordAlignmentRessourcesFound, waLanguages) => async (dispatch, getState) => {
-  const translate = getTranslate(getState());
-  const projectName = path.basename(projectPath);
-  let tNotesSelectedLanguage, tWordsSelectedLanguage, wordAlignmentSelectedLanguage;
   let error = false;
+  const translate = getTranslate(getState());
 
-  if (!tNoteResourcesFound) {
-    tNotesSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
+  try {
+    const projectName = path.basename(projectPath);
+    let tNotesSelectedLanguage, tWordsSelectedLanguage, wordAlignmentSelectedLanguage;
 
-    if (tNotesSelectedLanguage) {
-      console.log('tNotes Selected language', tNotesSelectedLanguage);
-      const gatewayLang = tNotesSelectedLanguage.code || tNotesSelectedLanguage.lc;
-      const glOwner = tNotesSelectedLanguage.owner;
-      error = error || saveNewGlForTnotes(manifest, gatewayLang, glOwner);
+    if (!tNoteResourcesFound) {
+      tNotesSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
+
+      if (tNotesSelectedLanguage) {
+        console.log('tNotes Selected language', tNotesSelectedLanguage);
+        const gatewayLang = tNotesSelectedLanguage.code || tNotesSelectedLanguage.lc;
+        const glOwner = tNotesSelectedLanguage.owner;
+        error = error || saveNewGlForTnotes(manifest, gatewayLang, glOwner);
+      }
     }
+
+    if (!tWordsRessourcesFound && !error) {
+      tWordsSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
+
+      if (tWordsSelectedLanguage) {
+        console.log('tWordsSelectedLanguage', tWordsSelectedLanguage);
+        const gatewayLang = tWordsSelectedLanguage.code || tWordsSelectedLanguage.lc;
+        const glOwner = tWordsSelectedLanguage.owner;
+        error = error || saveNewGlForTwords(manifest, gatewayLang, glOwner);
+      }
+    }
+
+    if (!wordAlignmentRessourcesFound && !error) {
+      wordAlignmentSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
+
+      if (wordAlignmentSelectedLanguage) {
+        console.log('wordAlignementSelectedLanguage', wordAlignmentSelectedLanguage);
+        const gatewayLang = wordAlignmentSelectedLanguage.code || wordAlignmentSelectedLanguage.lc;
+        const glOwner = wordAlignmentSelectedLanguage.owner;
+        error = error || saveNewGlForWA(manifest, gatewayLang, glOwner);
+      }
+    }
+
+    if (!error) {
+      const manifestPath = path.join(projectPath, 'manifest.json');
+      const oldManifestPath = `${manifestPath}.old`;
+
+      await fs.copy(manifestPath, oldManifestPath);
+      manifestHelpers.setUpManifest(projectPath, manifest);
+    }
+  } catch (e) {
+    console.error('selectMissingResources() - Error setting resources:', e);
+    error = e;
   }
 
-  if (!tWordsRessourcesFound) {
-    tWordsSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
-
-    if (tWordsSelectedLanguage) {
-      console.log('tWordsSelectedLanguage', tWordsSelectedLanguage);
-      const gatewayLang = tWordsSelectedLanguage.code || tWordsSelectedLanguage.lc;
-      const glOwner = tWordsSelectedLanguage.owner;
-      error = error || saveNewGlForTwords(manifest, gatewayLang, glOwner);
-    }
-  }
-
-  if (!wordAlignmentRessourcesFound) {
-    wordAlignmentSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
-
-    if (wordAlignmentSelectedLanguage) {
-      console.log('wordAlignementSelectedLanguage', wordAlignmentSelectedLanguage);
-      const gatewayLang = wordAlignmentSelectedLanguage.code || wordAlignmentSelectedLanguage.lc;
-      const glOwner = wordAlignmentSelectedLanguage.owner;
-      error = error || saveNewGlForWA(manifest, gatewayLang, glOwner);
-    }
-  }
-
-  if (!error) {
-    //TODO save
+  if (error) {
+    console.warn('selectMissingResources() - Error setting resources:', error);
+    dispatch(openAlertDialog(translate('projects.export_failed_error', { error })));
+  } else {
+    dispatch(executeExport);
   }
   return error;
 };
@@ -744,8 +792,34 @@ function getToolsInfo(manifest) {
   };
 }
 
+/**
+ * Generates a manifest key for storing the Translation Notes gateway language version.
+ *
+ * @param {string} gatewayLang - Gateway language code (e.g., 'en', 'es')
+ * @returns {string} Manifest key in the format `tc_{gatewayLang}_check_version_translationNotes`
+ */
 function getGatewayLangTagForTNotes(gatewayLang) {
   return `tc_${gatewayLang}_check_version_translationNotes`;
+}
+
+/**
+ * Generates a manifest key for storing the Translation Words gateway language version.
+ *
+ * @param {string} gatewayLang - Gateway language code (e.g., 'en', 'es')
+ * @returns {string} Manifest key in the format `tc_{gatewayLang}_check_version_translationWords`
+ */
+function getGatewayLangTagForTWords(gatewayLang) {
+  return `tc_${gatewayLang}_check_version_translationWords`;
+}
+
+/**
+ * Generates a manifest key for storing the Word Alignment gateway language version.
+ *
+ * @param {string} gatewayLang - Gateway language code (e.g., 'en', 'es')
+ * @returns {string} Manifest key in the format `tc_{gatewayLang}_check_version_wordAlignment`
+ */
+function getGatewayLangTagForWordAligner(gatewayLang) {
+  return `tc_${gatewayLang}_check_version_wordAlignment`;
 }
 
 /**
@@ -839,14 +913,6 @@ function getTranslationNotesOriginalLanguageInfo(manifest, originalLangOwner, or
   };
 }
 
-function getGatewayLangTagForTWords(gatewayLang) {
-  return `tc_${gatewayLang}_check_version_translationWords`;
-}
-
-function getGatewayLangTagForWordAligner(gatewayLang) {
-  return `tc_${gatewayLang}_check_version_wordAlignment`;
-}
-
 /**
  * Retrieves and constructs resource information for Translation Words in the gateway language.
  * Determines the appropriate owner, language, and version for Translation Words resources,
@@ -926,6 +992,21 @@ function getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, or
   };
 }
 
+/**
+ * Retrieves Word Alignment resource information from the project manifest.
+ * Extracts the gateway language owner and code, then searches for the most recent
+ * version of the Word Alignment resource in the local file system.
+ *
+ * @param {Object} toolsSelectedOwners - Selected resource owners for each tool
+ * @param {string} toolsSelectedOwners.wordAlignment - Owner selected for Word Alignment
+ * @param {Object} toolsSelectedGLs - Selected gateway languages for each tool
+ * @param {string} toolsSelectedGLs.wordAlignment - Gateway language selected for Word Alignment
+ * @param {Object} manifest - Project manifest containing resource configuration (not currently used)
+ * @returns {Object} Object containing Word Alignment resource information
+ * @returns {string} return.gatewayLangOwner - Owner for Word Alignment gateway language resource
+ * @returns {string} return.gatewayLang - Gateway language identifier
+ * @returns {string} return.gatewayLangVersion - Version of the Word Alignment resource, or empty string if not found
+ */
 function getWordAlignmentInfo(toolsSelectedOwners, toolsSelectedGLs, manifest) {
   const gatewayLangOwner = toolsSelectedOwners?.wordAlignment;
   const gatewayLang = toolsSelectedGLs?.wordAlignment;

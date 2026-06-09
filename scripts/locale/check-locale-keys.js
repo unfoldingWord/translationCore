@@ -243,6 +243,7 @@ function findExtraKeys(baseObject, compareObject, currentPath = '') {
 function main() {
   const referenceLocalPath = path.join(localeDir, referenceFileName);
   const referenceLocale = readJson(referenceLocalPath);
+  const ignoreFiles = [referenceFileName, '.DS_Store', 'nonTranslatable.json'];
 
   if (!referenceLocale) {
     writeLog(`Failed to read base locale file: ${referenceLocalPath}`);
@@ -253,7 +254,7 @@ function main() {
     .readdirSync(localeDir)
     .filter((fileName) => (
       fileName.endsWith('.json') &&
-      fileName !== referenceFileName
+      !ignoreFiles.includes(fileName)
     ))
     .sort();
 
