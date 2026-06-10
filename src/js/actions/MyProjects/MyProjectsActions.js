@@ -359,6 +359,8 @@ const selectMissingResources = (projectPath, manifest,
         const gatewayLang = tNotesSelectedLanguage.code || tNotesSelectedLanguage.lc;
         const glOwner = tNotesSelectedLanguage.owner;
         error = error || saveNewGlForTnotes(manifest, gatewayLang, glOwner);
+      } else {
+        error = 'No Translation Notes gateway language selected';
       }
     }
 
@@ -370,6 +372,8 @@ const selectMissingResources = (projectPath, manifest,
         const gatewayLang = tWordsSelectedLanguage.code || tWordsSelectedLanguage.lc;
         const glOwner = tWordsSelectedLanguage.owner;
         error = error || saveNewGlForTwords(manifest, gatewayLang, glOwner);
+      } else {
+        error = 'No Translation Words gateway language selected';
       }
     }
 
@@ -381,6 +385,8 @@ const selectMissingResources = (projectPath, manifest,
         const gatewayLang = wordAlignmentSelectedLanguage.code || wordAlignmentSelectedLanguage.lc;
         const glOwner = wordAlignmentSelectedLanguage.owner;
         error = error || saveNewGlForWA(manifest, gatewayLang, glOwner);
+      } else {
+        error = 'No Word Alignment gateway language selected';
       }
     }
 
@@ -397,7 +403,7 @@ const selectMissingResources = (projectPath, manifest,
   }
 
   if (error) {
-    console.warn('selectMissingResources() - Error setting resources:', error);
+    console.error('selectMissingResources() - Error setting resources:', error);
     dispatch(openAlertDialog(translate('projects.export_failed_error', { error })));
   } else { // no error so continue with export
     dispatch(executeExport);
@@ -606,7 +612,6 @@ function getExportResourceInfo(manifest) {
   const {
     gatewayLangOwner: wordAlignmentGatewayLangOwner,
     gatewayLang: wordAlignmentGatewayLang,
-    gatewayLangVersion: wordAlignmentGatewayLangVersion,
   } = getWordAlignmentInfo(toolsSelectedOwners, toolsSelectedGLs, manifest);
 
   const {
@@ -618,7 +623,6 @@ function getExportResourceInfo(manifest) {
     wordALignmentOriginalLangUrl
     && wordAlignmentGatewayLangOwner
     && wordAlignmentGatewayLang
-    && wordAlignmentGatewayLangVersion
   ) {
     wordAlignmentRessourcesFound = true;
   }
@@ -645,7 +649,6 @@ function getExportResourceInfo(manifest) {
     tWordsOriginalLangUrl,
     wordAlignmentGatewayLangOwner,
     wordAlignmentGatewayLang,
-    wordAlignmentGatewayLangVersion,
     wordALignmentOriginalLangTag,
     wordALignmentOriginalLangUrl,
   };
@@ -994,8 +997,7 @@ function getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, or
 
 /**
  * Retrieves Word Alignment resource information from the project manifest.
- * Extracts the gateway language owner and code, then searches for the most recent
- * version of the Word Alignment resource in the local file system.
+ * Extracts the gateway language owner and code.
  *
  * @param {Object} toolsSelectedOwners - Selected resource owners for each tool
  * @param {string} toolsSelectedOwners.wordAlignment - Owner selected for Word Alignment
@@ -1005,28 +1007,14 @@ function getTranslationWordsOriginalLanguageInfo(manifest, originalLangOwner, or
  * @returns {Object} Object containing Word Alignment resource information
  * @returns {string} return.gatewayLangOwner - Owner for Word Alignment gateway language resource
  * @returns {string} return.gatewayLang - Gateway language identifier
- * @returns {string} return.gatewayLangVersion - Version of the Word Alignment resource, or empty string if not found
  */
 function getWordAlignmentInfo(toolsSelectedOwners, toolsSelectedGLs, manifest) {
   const gatewayLangOwner = toolsSelectedOwners?.wordAlignment;
   const gatewayLang = toolsSelectedGLs?.wordAlignment;
 
-  const resourcesPath = path.join(USER_RESOURCES_PATH, gatewayLang, TRANSLATION_HELPS, WORD_ALIGNMENT);
-  let gatewayLangVersion;
-
-  if (fs.existsSync(resourcesPath)) {
-    gatewayLangVersion = getMostRecentVersionInFolder(resourcesPath, gatewayLangOwner) || '';
-  }
-
-  if (gatewayLangVersion) {
-    const { version } = resourcesHelpers.splitVersionAndOwner(gatewayLangVersion);
-    gatewayLangVersion = version;
-  }
-
   return {
     gatewayLangOwner,
     gatewayLang,
-    gatewayLangVersion,
   };
 }
 
@@ -1151,9 +1139,7 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       tWordsListUrl,
       tWordsOriginalLangTag,
       tWordsOriginalLangUrl,
-      wordAlignmentGatewayLangOwner,
       wordAlignmentGatewayLang,
-      wordAlignmentGatewayLangVersion,
       wordALignmentOriginalLangTag,
       wordALignmentOriginalLangUrl,
     } = getExportResourceInfo(manifest);
@@ -1167,9 +1153,6 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       addDcsUrl(resources, tWordsListTag, tWordsListUrl);
     }
 
-    const wordALignmentLangTag = getGatewayLangTagForWordAligner(wordAlignmentGatewayLang);
-    const wordAlignmentUrl = getDcsUrlRugged(wordALignmentLangTag, wordAlignmentGatewayLangOwner, wordAlignmentGatewayLang, 'wa', wordAlignmentGatewayLangVersion);
-    addDcsUrl(resources, wordALignmentLangTag, wordAlignmentUrl);
     addDcsUrl(resources, wordALignmentOriginalLangTag, wordALignmentOriginalLangUrl);
 
     // save updated alignment data
