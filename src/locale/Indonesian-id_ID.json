@@ -160,7 +160,7 @@
     "export": "Export",
     "export_project": "Export To Zip",
     "export_failed": "The project could not be Exported.",
-    "export_complete": "The project was successfully Export. Find export file at:<br/>${path}",
+    "export_complete": "The project was successfully Exported. Find export file at:<br/>${path}",
     "export_resources_incomplete": "The project '${project_name}' cannot be Exported. Some checking resources are missing. You will need to download checking resources for: ${tools}",
     "export_gl_not_selected": "The project '${project_name}' cannot be Exported. Gateway Languages are not selected for all tools. You will need to select Gateway Language for: ${tools}",
     "select_gateway_language": "Select the Gateway Language for '${tool_name}'",

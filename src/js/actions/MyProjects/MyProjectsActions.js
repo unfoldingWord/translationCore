@@ -78,7 +78,8 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
   const openedProjectPath = getProjectSaveLocation(getState());
 
   if (projectPath === openedProjectPath) {
-    dispatch(ProjectLoadingActions.closeProject());
+    console.log(`executeArchive() - closing project ${openedProjectPath}`);
+    await dispatch(ProjectLoadingActions.closeProject());
   }
 
   // Archive project
@@ -95,7 +96,7 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
   }
 
   // Update reducers
-  dispatch({
+  await dispatch({
     type: consts.ARCHIVE_PROJECT,
     path: projectPath,
   });
@@ -115,8 +116,16 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
  * dispatch(loadProjectAndOpenTools('my-project'))
  *   .then(success => console.log('Project opened:', success));
  */
-const loadProjectAndOpenTools = (projectName) => async (dispatch) => {
+const loadProjectAndOpenTools = (projectName, projectPath) => async (dispatch, getState) => {
   try {
+    // close project if project is open
+    const openedProjectPath = getProjectSaveLocation(getState());
+
+    if (openedProjectPath && openedProjectPath !== projectPath) {
+      console.log(`loadProjectAndOpenTools() - closing project ${openedProjectPath}`);
+      await dispatch(ProjectLoadingActions.closeProject());
+    }
+
     await dispatch(ProjectLoadingActions.openProject(projectName));
     console.log(`loadProjectAndOpenTools() - Project '${projectName}' opened successfully`);
     return true;
@@ -346,8 +355,15 @@ const selectMissingResources = (projectPath, manifest,
   wordAlignmentRessourcesFound, waLanguages) => async (dispatch, getState) => {
   let error = false;
   const translate = getTranslate(getState());
+  const openedProjectPath = getProjectSaveLocation(getState());
 
   try {
+    // Close project
+    if (projectPath === openedProjectPath) {
+      console.log(`selectMissingResources() - closing project ${openedProjectPath}`);
+      await dispatch(ProjectLoadingActions.closeProject());
+    }
+
     const projectName = path.basename(projectPath);
     let tNotesSelectedLanguage, tWordsSelectedLanguage, wordAlignmentSelectedLanguage;
 
@@ -355,7 +371,7 @@ const selectMissingResources = (projectPath, manifest,
       tNotesSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, tnLanguages, 'tools.translation_notes');
 
       if (tNotesSelectedLanguage) {
-        console.log('tNotes Selected language', tNotesSelectedLanguage);
+        console.log('selectMissingResources() - tNotes Selected language', tNotesSelectedLanguage);
         const gatewayLang = tNotesSelectedLanguage.code || tNotesSelectedLanguage.lc;
         const glOwner = tNotesSelectedLanguage.owner;
         error = error || saveNewGlForTnotes(manifest, gatewayLang, glOwner);
@@ -368,7 +384,7 @@ const selectMissingResources = (projectPath, manifest,
       tWordsSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, twLanguages, 'tools.translation_words');
 
       if (tWordsSelectedLanguage) {
-        console.log('tWordsSelectedLanguage', tWordsSelectedLanguage);
+        console.log('selectMissingResources() - tWords Selected Language', tWordsSelectedLanguage);
         const gatewayLang = tWordsSelectedLanguage.code || tWordsSelectedLanguage.lc;
         const glOwner = tWordsSelectedLanguage.owner;
         error = error || saveNewGlForTwords(manifest, gatewayLang, glOwner);
@@ -381,7 +397,8 @@ const selectMissingResources = (projectPath, manifest,
       wordAlignmentSelectedLanguage = await showMissingResourceSelectionDialog(dispatch, translate, projectName, manifest, waLanguages, 'tools.word_alignment');
 
       if (wordAlignmentSelectedLanguage) {
-        console.log('wordAlignementSelectedLanguage', wordAlignmentSelectedLanguage);
+        console.log('selectMissingResources() - wordAlignment Selected Language', wordAlignmentSelectedLanguage);
+
         const gatewayLang = wordAlignmentSelectedLanguage.code || wordAlignmentSelectedLanguage.lc;
         const glOwner = wordAlignmentSelectedLanguage.owner;
         error = error || saveNewGlForWA(manifest, gatewayLang, glOwner);
@@ -406,7 +423,7 @@ const selectMissingResources = (projectPath, manifest,
     console.error('selectMissingResources() - Error setting resources:', error);
     dispatch(openAlertDialog(translate('projects.export_failed_error', { error })));
   } else { // no error so continue with export
-    dispatch(executeExport);
+    dispatch(executeExport(projectPath));
   }
   return error;
 };
@@ -498,7 +515,7 @@ export const exportProject = (projectPath) => async (dispatch, getState) => {
       dispatch(confirmAction({
         message: messageStr,
         confirmButtonText: translate('buttons.open_tools_button'),
-      }, loadProjectAndOpenTools(projectName)));
+      }, loadProjectAndOpenTools(projectName, projectPath)));
 
       return;
     }
@@ -1064,13 +1081,7 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
   const archiveDir = path.join(env.home(), TC_PATH, 'export');
   let destinationPath = '';
-  const openedProjectPath = getProjectSaveLocation(getState());
   const resources = {};
-
-  // Close project
-  if (projectPath === openedProjectPath) {
-    dispatch(ProjectLoadingActions.closeProject());
-  }
 
   // Export project
   try {
@@ -1139,7 +1150,6 @@ const executeExport = (projectPath) => async (dispatch, getState) => {
       tWordsListUrl,
       tWordsOriginalLangTag,
       tWordsOriginalLangUrl,
-      wordAlignmentGatewayLang,
       wordALignmentOriginalLangTag,
       wordALignmentOriginalLangUrl,
     } = getExportResourceInfo(manifest);
