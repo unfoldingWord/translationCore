@@ -108,12 +108,15 @@ const executeArchive = (projectPath) => async (dispatch, getState) => {
 /**
  * Loads a project by name and opens tools configuration.
  * This is a thunk action creator that returns an async function accepting dispatch.
- * It attempts to open the specified project and logs the result.
+ * It attempts to close any currently open project if different from the target,
+ * then opens the specified project and logs the result.
  *
  * @param {string} projectName - The name of the project to open
- * @returns {Function} A thunk function that accepts dispatch and returns a Promise<boolean>
+ * @param {string} projectPath - The file system path to the project directory
+ * @returns {Function} A thunk function that accepts dispatch and getState, returns Promise<boolean>
+ *                     resolving to true if successful, false on error
  * @example
- * dispatch(loadProjectAndOpenTools('my-project'))
+ * dispatch(loadProjectAndOpenTools('my-project', '/path/to/project'))
  *   .then(success => console.log('Project opened:', success));
  */
 const loadProjectAndOpenTools = (projectName, projectPath) => async (dispatch, getState) => {
@@ -340,14 +343,28 @@ function saveNewGlForWA(manifest, gatewayLang, glOwner, gatewayLangVersion) {
  * Initiates the process of selecting missing resources for a project.
  * This is a thunk action creator that sequentially prompts the user to select gateway languages
  * for Translation Notes, Translation Words, and Word Alignment resources if they are missing.
- * Each dialog is displayed only if the corresponding language array is populated.
+ * Each dialog is displayed only if the corresponding resource is not found.
+ * After resource selection, the manifest is updated and the project export proceeds.
  *
  * @param {string} projectPath - File system path to the project directory
- * @param {Object} manifest - Project manifest containing resource configuration
+ * @param {Object} manifest - Project manifest containing resource configuration (mutated in place)
+ * @param {boolean} tNoteResourcesFound - Whether Translation Notes resources are already present
  * @param {Array<Object>} tnLanguages - Array of available Translation Notes gateway languages
+ * @param {string} tnLanguages[].lc - Language code identifier
+ * @param {string} tnLanguages[].code - Alternative language code identifier
+ * @param {string} tnLanguages[].owner - Owner of the language resource
+ * @param {boolean} tWordsRessourcesFound - Whether Translation Words resources are already present
  * @param {Array<Object>} twLanguages - Array of available Translation Words gateway languages
+ * @param {string} twLanguages[].lc - Language code identifier
+ * @param {string} twLanguages[].code - Alternative language code identifier
+ * @param {string} twLanguages[].owner - Owner of the language resource
+ * @param {boolean} wordAlignmentRessourcesFound - Whether Word Alignment resources are already present
  * @param {Array<Object>} waLanguages - Array of available Word Alignment gateway languages
- * @returns {Function} Thunk function that accepts dispatch and getState, returns Promise<void>
+ * @param {string} waLanguages[].lc - Language code identifier
+ * @param {string} waLanguages[].code - Alternative language code identifier
+ * @param {string} waLanguages[].owner - Owner of the language resource
+ * @returns {Function} Thunk function that accepts dispatch and getState
+ * @returns {Promise<boolean|string>} Promise resolving to false if successful, or an error string/object if failed
  */
 const selectMissingResources = (projectPath, manifest,
   tNoteResourcesFound, tnLanguages,
