@@ -3,7 +3,9 @@ import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import { getLocalizedErrorPrompt, onlineImport, recoverFailedOnlineImport } from '../OnlineImportWorkflowActions';
+import {
+  getLocalizedErrorPrompt, onlineImport, recoverFailedOnlineImport,
+} from '../OnlineImportWorkflowActions';
 import * as ProjectDetailsActions from '../../ProjectDetailsActions';
 // helpers
 import { IMPORTS_PATH, DCS_BASE_URL } from '../../../common/constants';
