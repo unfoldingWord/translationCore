@@ -557,15 +557,22 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
             if (!hasRunOnce) {
               hasRunOnce = true;
               delay(500).then(() => { // wait for UI to update and alert to close
-                const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-                console.log('handleOverwriteWarning() - doing overwrite/merge');
-                ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
-                fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
-                fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
-                dispatch(setSaveLocation(oldProjectPath));
-                // TRICKY: resolve only after the merge/replace has finished so callers do not
-                // open the project while it is still being swapped out underneath them.
-                resolve(true);
+                try {
+                  const oldProjectPath = path.join(PROJECTS_PATH, projectName);
+                  console.log('handleOverwriteWarning() - doing overwrite/merge');
+                  ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
+                  fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+                  fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
+                  dispatch(setSaveLocation(oldProjectPath));
+                  // TRICKY: resolve only after the merge/replace has finished so callers do not
+                  // open the project while it is still being swapped out underneath them.
+                  resolve(true);
+                } catch (e) {
+                  // TRICKY: settle the promise on failure so the awaiting import flow cleans up
+                  // instead of hanging forever.
+                  console.error('handleOverwriteWarning() - overwrite/merge failed', e);
+                  resolve(false);
+                }
               });
             }
           } else { // if cancel
