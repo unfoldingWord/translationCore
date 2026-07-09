@@ -3,8 +3,15 @@ import path from 'path-extra';
 import {
   mergeLocalIntoRemoteClone, mergeManifests, unionCheckData,
 } from '../js/helpers/ProjectSyncHelpers';
+import { copyAlignmentData } from '../js/helpers/ProjectOverwriteHelpers';
 
 jest.mock('fs-extra');
+// spy on copyAlignmentData (its own remote-wins behavior is covered in ProjectOverwriteHelpers.test.js);
+// here we only verify mergeLocalIntoRemoteClone delegates to it with the right directories.
+jest.mock('../js/helpers/ProjectOverwriteHelpers', () => ({
+  ...require.requireActual('../js/helpers/ProjectOverwriteHelpers'),
+  copyAlignmentData: jest.fn(),
+}));
 
 const localPath = path.join('projects', 'en_tit');
 const clonePath = path.join('imports', 'en_tit');
@@ -112,23 +119,26 @@ describe('ProjectSyncHelpers.mergeLocalIntoRemoteClone', () => {
     expect(fs.existsSync(path.join(clonePath, '.temp_apps'))).toBeFalsy(); // temp dir cleaned up
   });
 
-  it('overlays remote alignment data where remote verses have alignments', () => {
+  it('uses local .apps as the base and overlays the remote alignment dir via copyAlignmentData', () => {
     // given
-    const localAlignments = {
-      1: { alignments: [{ bottomWords: ['local'] }] },
-      2: { alignments: [{ bottomWords: ['local'] }] },
-    };
+    const localAlignments = { 1: { alignments: [{ bottomWords: ['local'] }] } };
     const remoteAlignments = { 1: { alignments: [{ bottomWords: ['remote'] }] } };
     fs.outputJsonSync(path.join(localPath, '.apps', 'translationCore', 'alignmentData', 'tit', '1.json'), localAlignments);
     fs.outputJsonSync(path.join(clonePath, '.apps', 'translationCore', 'alignmentData', 'tit', '1.json'), remoteAlignments);
+    copyAlignmentData.mockClear();
     const dispatch = jest.fn();
 
     // when
     mergeLocalIntoRemoteClone(localPath, clonePath, 'user', dispatch);
 
     // then
-    const merged = fs.readJsonSync(path.join(clonePath, '.apps', 'translationCore', 'alignmentData', 'tit', '1.json'));
-    expect(merged[1].alignments[0].bottomWords).toEqual(['remote']); // remote alignment wins where it has alignments
-    expect(merged[2].alignments[0].bottomWords).toEqual(['local']); // local kept elsewhere
+    // local .apps becomes the base of the clone (the remote alignment file is replaced by local before overlay)
+    expect(fs.readJsonSync(path.join(clonePath, '.apps', 'translationCore', 'alignmentData', 'tit', '1.json'))[1].alignments[0].bottomWords).toEqual(['local']);
+    // the remote alignment directory (saved aside under .temp_apps) is overlaid onto the local base
+    expect(copyAlignmentData).toHaveBeenCalledWith(
+      path.join(clonePath, '.temp_apps', 'translationCore', 'alignmentData', 'tit'),
+      path.join(clonePath, '.apps', 'translationCore', 'alignmentData', 'tit'),
+    );
+    expect(fs.existsSync(path.join(clonePath, '.temp_apps'))).toBeFalsy(); // temp dir cleaned up
   });
 });
