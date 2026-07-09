@@ -111,7 +111,7 @@ export async function pushProjectRepo(repo) {
  * @param {String} projectPath - Path to the project to upload
  * @return {Promise<void>}
  */
-async function saveChangesInOldProjects(projectPath) {
+export async function saveChangesInOldProjects(projectPath) {
   try {
     await migrateSaveChangesInOldProjects(projectPath);
   } catch (e) {

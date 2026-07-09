@@ -255,6 +255,13 @@ export const pushRepo = (projectPath, user, fullName, branch = 'master') => new 
  * @returns {Promise<boolean>} true if sha is in the history of HEAD
  */
 export const isCommitInHistory = (projectPath, sha) => new Promise((resolve) => {
+  // TRICKY: sha is derived from remote output, so validate it is a real hash before
+  // interpolating it into a shell command.
+  if (!/^[0-9a-f]{7,40}$/i.test(sha || '')) {
+    resolve(false);
+    return;
+  }
+
   exec(`git merge-base --is-ancestor ${sha} HEAD`, { cwd: projectPath }, (err) => {
     resolve(!err); // exit code 0 => sha is an ancestor of HEAD
   });

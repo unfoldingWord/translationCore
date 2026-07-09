@@ -13,7 +13,6 @@ import * as WordAlignmentActions from '../actions/WordAlignmentActions';
 import Repo, {
   convertGitErrorMessage, GIT_ERROR_PUSH_NOT_FF, GIT_ERROR_PUSH_DENIED,
 } from '../helpers/Repo.js';
-import migrateSaveChangesInOldProjects from '../helpers/ProjectMigration/migrateSaveChangesInOldProjects';
 import migrateProject from '../helpers/ProjectMigration';
 import {
   getSavedRemote,
@@ -34,6 +33,7 @@ import {
   uploadProject,
   gitErrorToLocalizedPrompt,
   makeSureProjectUnlocked,
+  saveChangesInOldProjects,
   showStatus,
 } from './ProjectUploadActions';
 
@@ -52,7 +52,18 @@ export async function getProjectRemoteInfo(projectPath) {
   }
 
   const url = remote && remote.refs && (remote.refs.push || remote.refs.fetch);
-  return Repo.parseRemoteUrl(Repo.sanitizeRemoteUrl(url));
+  const info = Repo.parseRemoteUrl(Repo.sanitizeRemoteUrl(url));
+
+  // TRICKY: the remote url comes from the project's local git config, which is not trusted.
+  // Only accept DCS owner/name made of safe characters so they cannot be used to inject shell
+  // arguments when later passed to git commands (clone, ls-remote, push).
+  const safeName = /^[A-Za-z0-9._-]+$/;
+
+  if (info && (!safeName.test(info.owner) || !safeName.test(info.name))) {
+    console.warn('getProjectRemoteInfo() - ignoring remote with unsafe owner/name', info.full_name);
+    return null;
+  }
+  return info;
 }
 
 /**
@@ -101,58 +112,51 @@ export function syncProject(projectPath, user, onLine = navigator.onLine) {
         try {
           if (!user.token) {
             const message = translate('users.session_invalid');
-            return dispatch(AlertModalActions.openAlertDialog(message, false));
+            dispatch(AlertModalActions.openAlertDialog(message, false));
+            return resolve();
           }
+
+          // prompts the user to upload the project (as a fallback) and does so if confirmed
+          const promptUploadThenResolve = async (messageKey) => {
+            const doUpload = await dispatch(confirmSyncPrompt(
+              translate(messageKey, { project_name: projectName, door43 }),
+              translate('buttons.upload_button'),
+              translate('buttons.cancel_button')));
+
+            if (doUpload) {
+              await dispatch(uploadProject(projectPath, user, onLine));
+            }
+            return resolve();
+          };
 
           const remoteInfo = await getProjectRemoteInfo(projectPath);
 
           if (!remoteInfo) { // project has never been uploaded to Door43
-            const doUpload = await dispatch(confirmSyncPrompt(
-              translate('projects.sync_no_remote_prompt', { project_name: projectName, door43 }),
-              translate('buttons.upload_button'),
-              translate('buttons.cancel_button')));
-
-            if (doUpload) {
-              await dispatch(uploadProject(projectPath, user, onLine));
-            }
-            return resolve();
+            return promptUploadThenResolve('projects.sync_no_remote_prompt');
           }
 
           const remoteUrl = remoteInfo.url;
-          const remoteExists = await Repo.doesRemoteRepoExist(remoteUrl);
 
-          if (!remoteExists) { // remote repo was deleted or renamed
-            const doUpload = await dispatch(confirmSyncPrompt(
-              translate('projects.sync_remote_missing_prompt', { project_name: projectName, door43 }),
-              translate('buttons.upload_button'),
-              translate('buttons.cancel_button')));
-
-            if (doUpload) {
-              await dispatch(uploadProject(projectPath, user, onLine));
-            }
-            return resolve();
+          if (!await Repo.doesRemoteRepoExist(remoteUrl)) { // remote repo was deleted or renamed
+            return promptUploadThenResolve('projects.sync_remote_missing_prompt');
           }
 
           await delay(500);
           dispatch(showStatus(translate('projects.loading_project_alert')));
           // commit local state, same steps as upload
           makeSureProjectUnlocked(projectPath);
-
-          try {
-            await migrateSaveChangesInOldProjects(projectPath);
-          } catch (e) {
-            console.error('syncProject: migrateSaveChangesInOldProjects() - migration error', e);
-          }
+          await saveChangesInOldProjects(projectPath);
           console.info('syncProject: saving alignments');
           const usfmPath = path.join(projectPath, projectName + '.usfm');
           await dispatch(WordAlignmentActions.getUsfm3ExportFile(projectPath, usfmPath));
           const repo = await Repo.openSafe(projectPath, user);
           await repo.save('Commit before sync');
 
-          // fast path: if the remote has nothing we don't have, we can just push
+          // fast path: if the remote has nothing we don't have, we can just push.
+          // An empty remote (no commits) also has nothing to merge, so treat it as an ancestor.
           const remoteHead = await getRemoteRepoHead(remoteUrl);
           const remoteHeadSha = (remoteHead || '').trim().split(/\s+/)[0];
-          const remoteIsAncestor = remoteHeadSha ? await isCommitInHistory(projectPath, remoteHeadSha) : false;
+          const remoteIsAncestor = !remoteHeadSha || await isCommitInHistory(projectPath, remoteHeadSha);
 
           if (!remoteIsAncestor) { // remote has changes we don't have - merge them in
             const confirmed = await dispatch(confirmSyncPrompt(
