@@ -563,8 +563,10 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
                 fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
                 fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
                 dispatch(setSaveLocation(oldProjectPath));
+                // TRICKY: resolve only after the merge/replace has finished so callers do not
+                // open the project while it is still being swapped out underneath them.
+                resolve(true);
               });
-              resolve(true);
             }
           } else { // if cancel
             dispatch(AlertModalActions.closeAlertDialog());
