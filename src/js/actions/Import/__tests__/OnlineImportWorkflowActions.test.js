@@ -3,10 +3,14 @@ import thunk from 'redux-thunk';
 import fs from 'fs-extra';
 import path from 'path-extra';
 // actions
-import { getLocalizedErrorPrompt, recoverFailedOnlineImport } from '../OnlineImportWorkflowActions';
+import {
+  getLocalizedErrorPrompt, onlineImport, recoverFailedOnlineImport,
+} from '../OnlineImportWorkflowActions';
+import * as ProjectDetailsActions from '../../ProjectDetailsActions';
 // helpers
 import { IMPORTS_PATH, DCS_BASE_URL } from '../../../common/constants';
 import * as REPO from '../../../helpers/Repo';
+import * as ProjectDetailsHelpers from '../../../helpers/ProjectDetailsHelpers';
 jest.mock('fs-extra');
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -42,12 +46,36 @@ jest.mock('../../MyProjects/MyProjectsActions', () => ({ getMyProjects: () => ({
 jest.mock('../../MyProjects/ProjectLoadingActions', () => ({
   closeProject: () => ({ type: 'CLEAR_LAST_PROJECT' }),
   displayTools: jest.fn(() => ({ type: 'DISPLAY_TOOLS' })),
+  openProject: jest.fn(() => ({ type: 'OPEN_PROJECT' })),
+  showInvalidVersionError: jest.fn(() => ({ type: 'SHOW_INVALID_VERSION_ERROR' })),
 }));
 jest.mock('../../../helpers/TargetLanguageHelpers', ()=> ({
   generateTargetBibleFromTstudioProjectPath: () => {},
   targetBibleExists:() => false,
 }));
-jest.mock('../../../helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({ ensureSupportedVersion: () => {} }));
+jest.mock('../../../helpers/ProjectValidation/ProjectStructureValidationHelpers', () => ({
+  ensureSupportedVersion: () => {},
+  isProjectSupported: () => Promise.resolve(true),
+}));
+jest.mock('../../../helpers/Import/OnlineImportWorkflowHelpers', () => ({
+  generateImportPath: jest.fn(() => Promise.resolve(require('path-extra').join(require('../../../common/constants').IMPORTS_PATH, 'es-419_tit_text_ulb'))),
+  verifyThisIsTCoreOrTStudioProject: jest.fn(() => true),
+}));
+jest.mock('../../../helpers/CopyrightCheckHelpers', () => ({ assignLicenseToOnlineImportedProject: jest.fn(() => Promise.resolve()) }));
+jest.mock('../../../helpers/Import/ProjectImportFilesystemHelpers', () => ({
+  deleteImportsFolder: jest.fn(() => Promise.resolve()),
+  deleteProjectFromImportsFolder: jest.fn(),
+}));
+jest.mock('../../ProjectDetailsActions', () => ({
+  ...require.requireActual('../../ProjectDetailsActions'),
+  updateProjectNameIfNecessary: jest.fn(),
+  handleOverwriteWarning: jest.fn(),
+  doRenamePrompting: jest.fn(() => () => Promise.resolve()),
+}));
+jest.mock('../../../helpers/ProjectDetailsHelpers', () => ({
+  ...require.requireActual('../../../helpers/ProjectDetailsHelpers'),
+  doesProjectAlreadyExist: jest.fn(),
+}));
 
 const mock_translate = (t, opts) => {
   if (opts) {
@@ -106,6 +134,92 @@ describe('OnlineImportWorkflowActions.onlineImport', () => {
     const store = mockStore(initialState);
     store.dispatch(recoverFailedOnlineImport('import failed'));
     expect(store.getActions()).toMatchSnapshot();
+  });
+});
+
+describe('OnlineImportWorkflowActions.onlineImport overwrite handling', () => {
+  let initialState = {};
+
+  beforeEach(() => {
+    fs.__resetMockFS();
+    jest.spyOn(REPO.default, 'clone').mockImplementation(() => Promise.resolve());
+    ProjectDetailsActions.updateProjectNameIfNecessary.mockImplementation((results) => () => {
+      results.repoRenamed = false;
+      results.repoExists = false;
+      results.newRepoName = importProjectName;
+      return Promise.resolve();
+    });
+    ProjectDetailsActions.handleOverwriteWarning.mockReset();
+    ProjectDetailsHelpers.doesProjectAlreadyExist.mockReset();
+    initialState = {
+      importOnlineReducer: { importLink: STANDARD_PROJECT },
+      settingsReducer: { onlineMode: true },
+      projectDetailsReducer: {
+        manifest: {},
+        projectSaveLocation: path.join(IMPORTS_PATH, importProjectName),
+      },
+      localImportReducer: { selectedProjectFilename: importProjectName },
+      loginReducer: { userdata: { username: 'johndoe' } },
+      projectInformationCheckReducer: {},
+      projectValidationReducer: {},
+    };
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  it('when project does not exist locally, should move project without overwrite prompt', async () => {
+    // given
+    ProjectDetailsHelpers.doesProjectAlreadyExist.mockReturnValue(false);
+    const store = mockStore(initialState);
+
+    // when
+    await store.dispatch(onlineImport());
+
+    // then
+    const actionTypes = store.getActions().map((action) => action.type);
+    expect(ProjectDetailsActions.handleOverwriteWarning).not.toHaveBeenCalled();
+    expect(actionTypes).toContain('MOVE');
+    expect(actionTypes).toContain('OPEN_PROJECT');
+  });
+
+  it('when project exists locally and user confirms overwrite, should merge instead of move', async () => {
+    // given
+    ProjectDetailsHelpers.doesProjectAlreadyExist.mockReturnValue(true);
+    ProjectDetailsActions.handleOverwriteWarning.mockImplementation(() => () => Promise.resolve(true));
+    const store = mockStore(initialState);
+
+    // when
+    await store.dispatch(onlineImport());
+
+    // then
+    const actionTypes = store.getActions().map((action) => action.type);
+    expect(ProjectDetailsActions.handleOverwriteWarning).toHaveBeenCalledTimes(1);
+    expect(ProjectDetailsActions.handleOverwriteWarning).toHaveBeenCalledWith(path.join(IMPORTS_PATH, importProjectName), importProjectName);
+    expect(actionTypes).not.toContain('MOVE');
+    expect(actionTypes).toContain('OPEN_PROJECT');
+  });
+
+  it('when project exists locally and user cancels overwrite, should clean up and not open project', async () => {
+    // given
+    ProjectDetailsHelpers.doesProjectAlreadyExist.mockReturnValue(true);
+    ProjectDetailsActions.handleOverwriteWarning.mockImplementation(() => () => Promise.resolve(false));
+    const { deleteProjectFromImportsFolder } = require('../../../helpers/Import/ProjectImportFilesystemHelpers');
+    deleteProjectFromImportsFolder.mockClear();
+    const store = mockStore(initialState);
+
+    // when
+    await store.dispatch(onlineImport());
+
+    // then
+    const actionTypes = store.getActions().map((action) => action.type);
+    expect(ProjectDetailsActions.handleOverwriteWarning).toHaveBeenCalledTimes(1);
+    expect(actionTypes).not.toContain('MOVE');
+    expect(actionTypes).not.toContain('OPEN_PROJECT');
+    expect(actionTypes).toContain('CLEAR_LAST_PROJECT'); // project was closed
+    expect(actionTypes).toContain('TOGGLE_PROJECT_VALIDATION_STEPPER'); // stepper was canceled
+    expect(deleteProjectFromImportsFolder).toHaveBeenCalledWith(importProjectName);
   });
 });
 
