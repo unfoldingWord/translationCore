@@ -158,13 +158,37 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName });
         await delay(200);
       }
-      await dispatch(ProjectImportFilesystemActions.move());
 
-      if (renamingResults.repoRenamed) {
-        await dispatch(ProjectDetailsActions.doRenamePrompting());
-        const message = translate('projects.preparing_project_alert');
-        dispatch(showStatus(message)); // reshow  busy dialog after rename prompting
-        await delay(300);
+      let success = false;
+
+      if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
+        success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
+        await delay(200);
+      } else {
+        await dispatch(ProjectImportFilesystemActions.move());
+
+        if (renamingResults.repoRenamed) {
+          await dispatch(ProjectDetailsActions.doRenamePrompting());
+          const message = translate('projects.preparing_project_alert');
+          dispatch(showStatus(message)); // reshow  busy dialog after rename prompting
+          await delay(300);
+        }
+        success = true;
+      }
+
+      if (!success) { // overwrite was canceled by the user - clean up the import
+        console.log('onlineImport() - import canceled by user');
+        // TRICKY: clear last project first to avoid triggering auto-saving.
+        dispatch(closeProject());
+        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
+        deleteProjectFromImportsFolder(selectedProjectFilename);
+
+        if (projectSaveLocation) { // may have been renamed during validation
+          deleteProjectFromImportsFolder(path.basename(projectSaveLocation));
+        }
+        dispatch(AlertModalActions.closeAlertDialog());
+        resolve();
+        return;
       }
       dispatch(MyProjectsActions.getMyProjects());
 
