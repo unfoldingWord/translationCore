@@ -162,8 +162,23 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
       let success = false;
 
       if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
-        success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
+        success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName, true));
         await delay(200);
+
+        if (success === 'rename') {
+          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
+          await dispatch(ProjectValidationActions.validateProject(projectSaveLocation));
+          const renameResults = {};
+          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renameResults));
+          const { projectDetailsReducer: { projectSaveLocation: renamedPath } } = getState();
+
+          if (renameResults.repoRenamed) {
+            dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: renamedPath });
+            dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renameResults.newRepoName });
+          }
+          await dispatch(ProjectImportFilesystemActions.move());
+          success = true;
+        }
       } else {
         await dispatch(ProjectImportFilesystemActions.move());
 

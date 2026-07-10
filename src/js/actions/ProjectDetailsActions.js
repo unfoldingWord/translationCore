@@ -530,11 +530,12 @@ export function updateProjectNameIfNecessaryAndDoPrompting() {
  * handles the prompting for overwrite/merge of project
  * @return {Promise} - Returns a promise
  */
-export function handleOverwriteWarning(newProjectPath, projectName) {
+export function handleOverwriteWarning(newProjectPath, projectName, allowRename = false) {
   return (dispatch, getState) => new Promise(async (resolve) => {
     const translate = getTranslate(getState());
     const confirmText = translate('buttons.overwrite_project');
     const cancelText = translate('buttons.cancel_import_button');
+    const renameText = allowRename ? translate('buttons.rename_import') : null;
     let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
 
     if (!fs.existsSync(path.join(newProjectPath, '.apps'))) {
@@ -566,6 +567,9 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
               });
               resolve(true);
             }
+          } else if (result === renameText) {
+            dispatch(AlertModalActions.closeAlertDialog());
+            resolve('rename');
           } else { // if cancel
             dispatch(AlertModalActions.closeAlertDialog());
             resolve(false);
@@ -573,6 +577,7 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
         },
         cancelText,
         confirmText,
+        renameText,
       ),
     );
   });
