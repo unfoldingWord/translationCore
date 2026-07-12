@@ -577,6 +577,9 @@ export function handleOverwriteWarning(newProjectPath, projectName, allowRename 
         },
         cancelText,
         confirmText,
+        null,
+        null,
+        false,
         renameText,
       ),
     );

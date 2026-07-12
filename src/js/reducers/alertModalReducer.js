@@ -37,6 +37,7 @@ const alertModalReducer = (state = initialState, action) => {
       callback: action.callback,
       callback2: action.callback2,
       notCloseableAlert: action.notCloseableAlert,
+      button3: action.button3Text,
     };
   case consts.CLOSE_ALERT_DIALOG:
     return initialState;

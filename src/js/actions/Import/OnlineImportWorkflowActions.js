@@ -37,7 +37,12 @@ import {
 import { delay } from '../../common/utils';
 import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpers/Import/ProjectImportFilesystemHelpers';
 //constants
-import { tc_MIN_VERSION_ERROR, IMPORTS_PATH } from '../../common/constants';
+import {
+  IMPORTS_PATH,
+  PROJECTS_PATH,
+  tc_MIN_VERSION_ERROR,
+} from '../../common/constants';
+import { localImport } from './LocalImportWorkflowActions';
 
 /**
  * try to download project by doing git clone into directory
@@ -129,6 +134,43 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
       await isProjectSupported(importProjectPath, translate);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
       await migrateProject(importProjectPath, link, getUsername(getState()));
+
+      const renamingResults = {};
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
+      const { projectDetailsReducer: { projectSaveLocation } } = getState();
+      const destProjectName = renamingResults.repoRenamed ? renamingResults.newRepoName : selectedProjectFilename;
+      const destinationPath = path.join(PROJECTS_PATH, destProjectName);
+      const projectExists = fs.existsSync(destinationPath);
+
+      if (projectExists) {
+        console.log('onlineImport() - project already exists at destination path: ' + destinationPath);
+        let success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, destProjectName, true));
+        await delay(200);
+
+        if (success === 'rename') {
+          console.log('onlineImport() - user selected rename project');
+          // continue workflow
+        } else if (success === true) {
+          console.log('onlineImport() - user selected overwrite project');
+          const usfmFilePath = path.join(importPath, destProjectName + '.usfm');
+
+          if (!fs.existsSync(usfmFilePath)) {
+            throw new Error('USFM file not found at destination path: ' + usfmFilePath);
+          }
+
+          await delay(100);
+          dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, usfmFilePath });
+          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, destinationPath });
+          // TODO import USFM from import - might be too much here
+          await dispatch(localImport());
+
+          resolve();
+        } else {
+          console.log('onlineImport() - user canceled import');
+          throw new Error('User canceled import');
+        }
+      }
+
       // assign CC BY-SA license to projects imported from door43
       await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
       console.log('onlineImport() - start project validation');
@@ -149,66 +191,29 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
         await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
       }
 
-      const renamingResults = {};
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
-      const { projectDetailsReducer: { projectSaveLocation } } = getState();
-
       if (renamingResults.repoRenamed) {
         dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation });
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName });
         await delay(200);
       }
+      await dispatch(ProjectImportFilesystemActions.move());
 
-      let success = false;
-
-      if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
-        success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName, true));
-        await delay(200);
-
-        if (success === 'rename') {
-          dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(false));
-          await dispatch(ProjectValidationActions.validateProject(projectSaveLocation));
-          const renameResults = {};
-          await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renameResults));
-          const { projectDetailsReducer: { projectSaveLocation: renamedPath } } = getState();
-
-          if (renameResults.repoRenamed) {
-            dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: renamedPath });
-            dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renameResults.newRepoName });
-          }
-          await dispatch(ProjectImportFilesystemActions.move());
-          success = true;
-        }
-      } else {
-        await dispatch(ProjectImportFilesystemActions.move());
-
-        if (renamingResults.repoRenamed) {
-          await dispatch(ProjectDetailsActions.doRenamePrompting());
-          const message = translate('projects.preparing_project_alert');
-          dispatch(showStatus(message)); // reshow  busy dialog after rename prompting
-          await delay(300);
-        }
-        success = true;
+      if (renamingResults.repoRenamed) {
+        await dispatch(ProjectDetailsActions.doRenamePrompting());
+        const message = translate('projects.preparing_project_alert');
+        dispatch(showStatus(message)); // reshow  busy dialog after rename prompting
+        await delay(300);
       }
 
-      if (success) {
-        dispatch(MyProjectsActions.getMyProjects());
+      dispatch(MyProjectsActions.getMyProjects());
 
-        // TODO: refactor this onlineImport method to remove project opening logic so we are not duplicating logic.
+      // TODO: refactor this onlineImport method to remove project opening logic so we are not duplicating logic.
 
-        const finalProjectPath = getProjectSaveLocation(getState());
-        console.log('onlineImport() - project import complete: ' + finalProjectPath);
-        await dispatch(openProject(path.basename(finalProjectPath), true));
-        dispatch(AlertModalActions.closeAlertDialog());
-        resolve();
-      } else {
-        // User canceled the overwrite dialog - clean up the downloaded import
-        dispatch(closeProject());
-        dispatch(ProjectImportStepperActions.cancelProjectValidationStepper());
-        dispatch({ type: 'LOADED_ONLINE_FAILED' });
-        deleteProjectFromImportsFolder(renamingResults.newRepoName);
-        resolve();
-      }
+      const finalProjectPath = getProjectSaveLocation(getState());
+      console.log('onlineImport() - project import complete: ' + finalProjectPath);
+      await dispatch(openProject(path.basename(finalProjectPath), true));
+      dispatch(AlertModalActions.closeAlertDialog());
+      resolve();
     } catch (error) { // Catch all errors in nested functions above
       console.log('onlineImport() - import error:');
 
