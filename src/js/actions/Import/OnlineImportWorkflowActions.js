@@ -42,7 +42,7 @@ import {
   PROJECTS_PATH,
   tc_MIN_VERSION_ERROR,
 } from '../../common/constants';
-import { localImport } from './LocalImportWorkflowActions';
+import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
 
 /**
  * try to download project by doing git clone into directory
@@ -62,35 +62,96 @@ async function downloadProject(url, importPath, translate) {
 }
 
 /**
- * Imports the overwritten online project from its generated USFM file.
- * This function handles the import of a project that already exists locally by:
+ * Imports and overwrites an existing local project with an online project from DCS by converting its USFM file.
+ * This function handles the complete workflow for overwriting a project that already exists locally by:
  * 1. Verifying the USFM file exists at the expected location
- * 2. Updating the source project path to point to the USFM file
- * 3. Setting the destination filename for the import
- * 4. Triggering the local import workflow to complete the import process
+ * 2. Moving the import folder to a temporary location to prevent it from being overwritten during conversion
+ * 3. Converting the USFM file to tCore project format
+ * 4. Migrating the project to the latest version
+ * 5. Validating the converted project
+ * 6. Merging the old project's .apps folder with the new project to preserve user data
+ * 7. Replacing the old project with the new one
+ * 8. Opening the newly imported project
  *
  * @param {Function} dispatch - Redux dispatch function for triggering actions
  * @param {String} importPath - Path to the temporary import directory containing the USFM file
  * @param {String} destProjectName - Name of the destination project (without extension)
- * @param {String} destinationPath - Full path where the project will be saved in the PROJECTS folder
- * @return {Promise<void>} Resolves when the import workflow has been initiated
- * @throws {Error} If the USFM file does not exist at the expected path
+ * @param {String} destinationPath - Full path where the project will be saved in the PROJECTS folder (currently unused)
+ * @param {Function} translate - Translation function for localizing user-facing messages
+ * @param {Function} getState - Redux getState function for accessing current application state
+ * @return {Promise<void>} Resolves when the import workflow has been completed and project is opened
+ * @throws {Error} If the USFM file does not exist at the expected path, or if any step in the import
+ *                  process fails
  */
-async function overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath) {
-  const usfmFilePath = path.join(importPath, destProjectName + '.usfm');
+async function overwriteProjectUsfmFromDCS(
+  dispatch,
+  importPath,
+  destProjectName,
+  destinationPath,
+  translate,
+  getState,
+) {
+  console.log('overwriteProjectUsfmFromDCS - Overwriting project USFM from DCS');
+  let usfmFilePath = path.join(importPath, destProjectName + '.usfm');
 
   if (!fs.existsSync(usfmFilePath)) {
     throw new Error('USFM file not found at destination path: ' + usfmFilePath);
   }
 
   await delay(100);
-  dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath});
-  dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destinationPath});
-  await delay(200);
-  // TODO import USFM from import - might be too much here
-  await dispatch(localImport());
-}
 
+  try {
+    // move the folder to temp spot so it doesn't get clobbered
+    const tempFolder = 'temp_' + importPath;
+    fs.moveSync(importPath, tempFolder);
+    usfmFilePath = path.join(tempFolder, destProjectName + '.usfm');
+
+    console.log('overwriteProjectUsfmFromDCS() - converting project');
+    dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_ellipsis'), true));
+    const projectInfo = await FileConversionHelpers.convert(usfmFilePath, destProjectName);
+    const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(destProjectName, importPath);
+    await migrateProject(importPath, null, getUsername(getState()));
+    console.log('overwriteProjectUsfmFromDCS() - start project validation');
+    dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
+    await dispatch(ProjectValidationActions.validateProject(importPath));
+    const manifest = getProjectManifest(getState());
+    const updatedImportPath = getProjectSaveLocation(getState());
+    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
+
+    dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath });
+    dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destProjectName });
+
+    await delay(200);
+    console.log('overwriteProjectUsfmFromDCS() - validation done');
+
+    const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
+    console.log('handleOverwriteWarning() - doing overwrite/merge');
+    ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
+    fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+    fs.moveSync(importPath, oldProjectPath); // replace it with new project
+    dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
+    dispatch(AlertModalActions.closeAlertDialog());
+    dispatch(MyProjectsActions.getMyProjects());
+
+    // TODO: refactor this localImport method to remove project opening logic so we are not duplicating logic.
+
+    const finalProjectPath = getProjectSaveLocation(getState());
+    console.log('localImport() - project import complete: ' + finalProjectPath);
+    await dispatch(openProject(path.basename(finalProjectPath), true));
+    await delay(100);
+  } catch (error) {
+    console.log('overwriteProjectUsfmFromDCS() - ERROR:', error);
+    const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
+    const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.local_import_error', {
+      fromPath: usfmFilePath,
+      toPath: oldProjectPath,
+    }));
+    console.log('overwriteProjectUsfmFromDCS() - ERROR:', errorMessage);
+    dispatch(AlertModalActions.closeAlertDialog());
+    await delay(100);
+    throw error;
+  }
+}
 
 /**
  * convert error message to localized message and determine if known or unknown
@@ -183,7 +244,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
           // continue workflow
         } else if (success === true) {
           console.log('onlineImport() - user selected overwrite project');
-          await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath);
+          await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
 
           resolve();
         } else {
