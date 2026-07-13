@@ -33,8 +33,8 @@ export function openAlertDialog(alertMessage, loading, buttonText = null, callba
  * @param {Boolean} notCloseableAlert - boolean to make the alert not closeable. (optional - if not present alert is closeable by clicking the x otherwise the x doesn't show up)
  * @return {Object} action content.
  */
-export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null, notCloseableAlert = false, buttonText3 = null) {
-  return {
+export function openOptionDialog(alertMessage, callback, button1Text, button2Text, buttonLinkText = null, callback2 = null, notCloseableAlert = false, button3Text = null) {
+  const alertConfig = {
     type: consts.OPEN_OPTION_DIALOG,
     alertMessage,
     callback,
@@ -43,8 +43,10 @@ export function openOptionDialog(alertMessage, callback, button1Text, button2Tex
     button2Text,
     buttonLinkText,
     notCloseableAlert,
-    buttonText3,
+    button3Text,
   };
+  console.log('alertConfig', alertConfig);
+  return alertConfig;
 }
 
 /**

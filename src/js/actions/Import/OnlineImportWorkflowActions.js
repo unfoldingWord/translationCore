@@ -159,8 +159,9 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
           }
 
           await delay(100);
-          dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, usfmFilePath });
-          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, destinationPath });
+          dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath });
+          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destinationPath });
+          await delay(200);
           // TODO import USFM from import - might be too much here
           await dispatch(localImport());
 

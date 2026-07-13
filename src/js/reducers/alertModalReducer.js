@@ -10,6 +10,7 @@ const initialState = {
   callback: null,
   callback2: null,
   notCloseableAlert: false,
+  button3: null,
 };
 
 const alertModalReducer = (state = initialState, action) => {
