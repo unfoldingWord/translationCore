@@ -81,7 +81,6 @@ class Alert extends Component {
       );
     }
 
-
     if (button1 && buttonLink) {
       buttonActions.unshift(
         <button

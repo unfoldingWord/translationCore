@@ -62,6 +62,37 @@ async function downloadProject(url, importPath, translate) {
 }
 
 /**
+ * Imports the overwritten online project from its generated USFM file.
+ * This function handles the import of a project that already exists locally by:
+ * 1. Verifying the USFM file exists at the expected location
+ * 2. Updating the source project path to point to the USFM file
+ * 3. Setting the destination filename for the import
+ * 4. Triggering the local import workflow to complete the import process
+ *
+ * @param {Function} dispatch - Redux dispatch function for triggering actions
+ * @param {String} importPath - Path to the temporary import directory containing the USFM file
+ * @param {String} destProjectName - Name of the destination project (without extension)
+ * @param {String} destinationPath - Full path where the project will be saved in the PROJECTS folder
+ * @return {Promise<void>} Resolves when the import workflow has been initiated
+ * @throws {Error} If the USFM file does not exist at the expected path
+ */
+async function overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath) {
+  const usfmFilePath = path.join(importPath, destProjectName + '.usfm');
+
+  if (!fs.existsSync(usfmFilePath)) {
+    throw new Error('USFM file not found at destination path: ' + usfmFilePath);
+  }
+
+  await delay(100);
+  dispatch({type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath});
+  dispatch({type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destinationPath});
+  await delay(200);
+  // TODO import USFM from import - might be too much here
+  await dispatch(localImport());
+}
+
+
+/**
  * convert error message to localized message and determine if known or unknown
  * @param {String|Object} error
  * @param {String} projectUrl
@@ -144,7 +175,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
 
       if (projectExists) {
         console.log('onlineImport() - project already exists at destination path: ' + destinationPath);
-        let success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, destProjectName, true));
+        let success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, destProjectName, null, true));
         await delay(200);
 
         if (success === 'rename') {
@@ -152,18 +183,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
           // continue workflow
         } else if (success === true) {
           console.log('onlineImport() - user selected overwrite project');
-          const usfmFilePath = path.join(importPath, destProjectName + '.usfm');
-
-          if (!fs.existsSync(usfmFilePath)) {
-            throw new Error('USFM file not found at destination path: ' + usfmFilePath);
-          }
-
-          await delay(100);
-          dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath });
-          dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destinationPath });
-          await delay(200);
-          // TODO import USFM from import - might be too much here
-          await dispatch(localImport());
+          await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath);
 
           resolve();
         } else {
