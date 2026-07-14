@@ -125,7 +125,7 @@ async function overwriteProjectUsfmFromDCS(
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
     ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
     ProjectOverwriteHelpers.mergeOldProjectToNewProjectExtra(oldProjectPath, importPath);
-    const mergedManifest = getManifestFromPath(oldProjectPath); // get the manifest
+    const mergedManifest = getManifestFromPath(oldProjectPath); // get a copy of the manifest
     const finalProjectPath = oldProjectPath;
 
     await delay(100);
