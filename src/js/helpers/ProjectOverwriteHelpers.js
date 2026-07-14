@@ -11,12 +11,36 @@ import { loadProjectGroupData } from './ResourcesHelpers';
 import { generateTimestamp } from './index';
 
 
+/**
+ * Copies a single file from source path to destination path.
+ * If the source file does not exist, logs a warning and skips the operation.
+ *
+ * @param {string} sourcePath - The source directory path
+ * @param {string} destinationPath - The destination directory path
+ * @param {string} fileName - The name of the file to copy
+ * @private
+ */
 function copyFile_(sourcePath, destinationPath, fileName) {
   const sourceFile = path.join(sourcePath, fileName);
   const destinationFile = path.join(destinationPath, fileName);
-  fs.copySync(sourceFile, destinationFile, { overwrite: true });
+
+  if (fs.existsSync(sourceFile)) {
+    fs.copySync(sourceFile, destinationFile, { overwrite: true });
+  } else {
+    console.warn(`mergeOldProjectToNewProject - source file not found: ${sourceFile}, skipping`);
+  }
 }
 
+/**
+ * Merges additional project files from an old project to a newly imported version.
+ * This function complements mergeOldProjectToNewProject by copying files that were not
+ * already copied by the main merge operation. Specifically copies manifest.json,
+ * settings.json, and LICENSE.md files.
+ *
+ * @param {string} oldProjectPath - Absolute path to the existing project directory
+ * @param {string} newProjectPath - Absolute path to the newly imported project directory
+ * @returns {void}
+ */
 export const mergeOldProjectToNewProjectExtra = (oldProjectPath, newProjectPath) => {
   console.log(`mergeOldProjectToNewProjectExtra(${newProjectPath})`);
 

@@ -97,7 +97,7 @@ async function overwriteProjectUsfmFromDCS(
   let usfmFilePath = path.join(importPath, destProjectName + '.usfm');
 
   if (!fs.existsSync(usfmFilePath)) {
-    throw new Error('USFM file not found at destination path: ' + usfmFilePath);
+    throw new Error('overwriteProjectUsfmFromDCS - USFM file not found at destination path: ' + usfmFilePath);
   }
 
   await delay(100);
@@ -120,10 +120,15 @@ async function overwriteProjectUsfmFromDCS(
     dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destProjectName });
     await delay(200);
 
-    console.log('handleOverwriteWarning() - doing overwrite/merge - new bible data into existing project');
+    console.log('overwriteProjectUsfmFromDCS() - doing overwrite/merge - new bible data into existing project');
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
     ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
     ProjectOverwriteHelpers.mergeOldProjectToNewProjectExtra(oldProjectPath, importPath);
+    const finalProjectPath = oldProjectPath;
+
+    await delay(100);
+    dispatch(closeProject());
+    await delay(200);
 
     console.log('overwriteProjectUsfmFromDCS() - replacing old project with merged project: ' + oldProjectPath + ' with ' + importPath + '');
     fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
@@ -132,9 +137,9 @@ async function overwriteProjectUsfmFromDCS(
     dispatch(AlertModalActions.closeAlertDialog());
     dispatch(MyProjectsActions.getMyProjects());
 
-    const finalProjectPath = getProjectSaveLocation(getState());
-    console.log('localImport() - project import complete: ' + finalProjectPath);
+    console.log('overwriteProjectUsfmFromDCS() - project import complete: ' + finalProjectPath);
     await dispatch(openProject(path.basename(finalProjectPath), true));
+
     await delay(100);
     return;
   } catch (error) {
