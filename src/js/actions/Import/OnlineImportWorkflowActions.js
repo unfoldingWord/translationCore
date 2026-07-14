@@ -127,19 +127,21 @@ async function overwriteProjectUsfmFromDCS(
     const finalProjectPath = oldProjectPath;
 
     await delay(100);
-    dispatch(closeProject());
-    await delay(200);
 
     console.log('overwriteProjectUsfmFromDCS() - replacing old project with merged project: ' + oldProjectPath + ' with ' + importPath + '');
     fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
     fs.moveSync(importPath, oldProjectPath); // replace it with new project
-    dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
     dispatch(AlertModalActions.closeAlertDialog());
+    await delay(100);
+
     dispatch(MyProjectsActions.getMyProjects());
+    await delay(100);
 
     console.log('overwriteProjectUsfmFromDCS() - project import complete: ' + finalProjectPath);
-    await dispatch(openProject(path.basename(finalProjectPath), true));
+    dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
+    await delay(100);
 
+    await dispatch(openProject(path.basename(finalProjectPath), true));
     await delay(100);
     return;
   } catch (error) {
@@ -248,7 +250,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
         } else if (success === true) {
           console.log('onlineImport() - user selected overwrite project');
           await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
-          resolve();
+          return resolve();
         } else {
           console.log('onlineImport() - user canceled import');
           throw new Error('User canceled import');
@@ -297,7 +299,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
       console.log('onlineImport() - project import complete: ' + finalProjectPath);
       await dispatch(openProject(path.basename(finalProjectPath), true));
       dispatch(AlertModalActions.closeAlertDialog());
-      resolve();
+      return resolve();
     } catch (error) { // Catch all errors in nested functions above
       console.log('onlineImport() - import error:');
 

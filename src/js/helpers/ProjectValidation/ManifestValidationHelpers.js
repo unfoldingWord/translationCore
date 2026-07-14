@@ -12,6 +12,7 @@ export function manifestExists(projectPath) {
     if (exists) {
       resolve(true);
     } else {
+      console.warn('Unable to find the manifest for project '+ projectPath +'. It will not be loaded.');
       reject('Unable to find the manifest for project '+path.basename(projectPath)+'. It will not be loaded.');
     }
   });
