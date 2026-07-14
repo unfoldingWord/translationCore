@@ -43,6 +43,7 @@ import {
   tc_MIN_VERSION_ERROR,
 } from '../../common/constants';
 import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
+import { getManifestFromPath } from '../../helpers/ResourcesHelpers';
 
 /**
  * Downloads a project from a remote Git repository by cloning it to a local directory.
@@ -124,6 +125,7 @@ async function overwriteProjectUsfmFromDCS(
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
     ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
     ProjectOverwriteHelpers.mergeOldProjectToNewProjectExtra(oldProjectPath, importPath);
+    const mergedManifest = getManifestFromPath(oldProjectPath); // get the manifest
     const finalProjectPath = oldProjectPath;
 
     await delay(100);
@@ -139,6 +141,7 @@ async function overwriteProjectUsfmFromDCS(
 
     console.log('overwriteProjectUsfmFromDCS() - project import complete: ' + finalProjectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
+    dispatch(ProjectDetailsActions.setProjectManifest(mergedManifest)); // restore manifest in reducer in case fields have been clobbered
     await delay(100);
 
     await dispatch(openProject(path.basename(finalProjectPath), true));
