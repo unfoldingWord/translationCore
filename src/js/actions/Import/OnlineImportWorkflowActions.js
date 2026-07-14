@@ -338,8 +338,12 @@ export const recoverFailedOnlineImport = (errorMessage) => (dispatch) => {
 };
 
 /**
- * TODO: this does not need to be an action.
+ * Redux thunk action that deletes an imported project folder from the imports directory.
+ * Retrieves the import link from the Redux state, parses it to extract the project name,
+ * and deletes the corresponding project folder from the imports directory.
+ *
  * @description - delete project (for link) from import folder
+ * @returns {Function} A Redux thunk function that accepts (dispatch, getState) parameters
  */
 export function deleteImportProjectForLink() {
   return ((dispatch, getState) => {
@@ -356,6 +360,12 @@ export function deleteImportProjectForLink() {
   });
 }
 
+/**
+ * Redux action creator that clears the import link from the application state.
+ * Dispatches an action to reset the importLink to an empty string.
+ *
+ * @returns {{type: string, importLink: string}} Redux action object with IMPORT_LINK type and empty importLink
+ */
 export function clearLink() {
   return {
     type: consts.IMPORT_LINK,
@@ -363,6 +373,13 @@ export function clearLink() {
   };
 }
 
+/**
+ * Redux action creator that sets the import link in the application state.
+ * Dispatches an action to update the importLink with the provided URL.
+ *
+ * @param {string} importLink - The Git repository URL to store for importing (e.g., DCS or Door43 URL)
+ * @returns {{type: string, importLink: string}} Redux action object with IMPORT_LINK type and the provided importLink
+ */
 export function getLink(importLink) {
   return {
     type: consts.IMPORT_LINK,

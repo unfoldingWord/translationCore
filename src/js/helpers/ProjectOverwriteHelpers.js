@@ -20,14 +20,14 @@ import { generateTimestamp } from './index';
  * @param {string} fileName - The name of the file to copy
  * @private
  */
-function copyFile_(sourcePath, destinationPath, fileName) {
+function safeCopyFile(sourcePath, destinationPath, fileName) {
   const sourceFile = path.join(sourcePath, fileName);
   const destinationFile = path.join(destinationPath, fileName);
 
   if (fs.existsSync(sourceFile)) {
     fs.copySync(sourceFile, destinationFile, { overwrite: true });
   } else {
-    console.warn(`mergeOldProjectToNewProject - source file not found: ${sourceFile}, skipping`);
+    console.warn(`safeCopyFile - source file not found: ${sourceFile}, skipping`);
   }
 }
 
@@ -46,9 +46,9 @@ export const mergeOldProjectToNewProjectExtra = (oldProjectPath, newProjectPath)
 
   if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
     // copying data files over that were not already copied by mergeOldProjectToNewProject to make it a complete merge
-    copyFile_(oldProjectPath, newProjectPath, 'manifest.json');
-    copyFile_(oldProjectPath, newProjectPath, 'settings.json');
-    copyFile_(oldProjectPath, newProjectPath, 'LICENSE.md');
+    safeCopyFile(oldProjectPath, newProjectPath, 'manifest.json');
+    safeCopyFile(oldProjectPath, newProjectPath, 'settings.json');
+    safeCopyFile(oldProjectPath, newProjectPath, 'LICENSE.md');
   }
 };
 
@@ -136,6 +136,16 @@ export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, user
   }
 };
 
+/**
+ * Copies alignment data from source directory to destination directory, merging with existing data.
+ * When alignment data exists in both locations, the source data overwrites destination data only if
+ * the source verse has actual word alignments (bottomWords.length > 0).
+ *
+ * @param {string} fromDir - Source directory path containing alignment JSON files
+ * @param {string} toDir - Destination directory path where alignment data will be copied/merged
+ * @returns {void}
+ * @private
+ */
 export const copyAlignmentData = (fromDir, toDir) => {
   let fromFiles = fs.readdirSync(fromDir).filter(file => path.extname(file) === '.json').sort();
   let toFiles = [];
@@ -174,13 +184,35 @@ export const copyAlignmentData = (fromDir, toDir) => {
   });
 };
 
+/**
+ * Retrieves the book ID from a project's manifest file.
+ *
+ * @param {string} projectPath - Absolute path to the project directory
+ * @returns {string} The book ID (e.g., 'gen', 'mat', etc.) from manifest.project.id
+ */
 export const getBookId = (projectPath) => {
   const manifest = fs.readJsonSync(path.join(projectPath, 'manifest.json'));
   return manifest.project.id;
 };
 
+/**
+ * Extracts the project name from its directory path.
+ *
+ * @param {string} projectPath - Absolute path to the project directory
+ * @returns {string} The basename of the project path (project directory name)
+ */
 export const getProjectName = (projectPath) => path.basename(projectPath);
 
+/**
+ * Creates verse edit records for all verses that have changed between old and new project versions.
+ * Compares verse content between old and new projects, creates external edit records for changes,
+ * and validates/invalidates selections for all tools when verses are modified.
+ *
+ * @param {string} oldProjectPath - Absolute path to the existing project directory
+ * @param {string} newProjectPath - Absolute path to the newly imported project directory
+ * @param {string} userName - Name of the current user performing the operation
+ * @returns {Function} Redux thunk function that dispatches actions
+ */
 export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPath, userName) => (dispatch, getState) => {
   const bookId = getBookId(newProjectPath);
   const oldBiblePath = path.join(oldProjectPath, bookId);
@@ -219,6 +251,20 @@ export const createVerseEditsForAllChangedVerses = (oldProjectPath, newProjectPa
   });
 };
 
+/**
+ * Validates and invalidates selections for a specific tool when verses have been modified.
+ * Checks each selection against the current verse text and clears invalid selections.
+ * When selections are invalidated, creates records in both 'invalidated' and 'selections' checkData folders.
+ *
+ * @param {string} projectSaveLocation - Absolute path to the project directory
+ * @param {number|string} chapter - Chapter number where selections are being validated
+ * @param {number|string} verse - Verse number where selections are being validated
+ * @param {string} bookId - Book identifier (e.g., 'gen', 'mat')
+ * @param {string} targetVerse - Current verse text content to validate selections against
+ * @param {string} userName - Name of the current user performing the validation
+ * @param {string} toolName - Name of the tool whose selections are being validated
+ * @returns {Function} Redux thunk function that dispatches actions when selections are invalidated
+ */
 export function validateSelectionsForTool(projectSaveLocation, chapter, verse, bookId, targetVerse, userName, toolName) {
   return (dispatch, getState) => {
     const contextId = {
@@ -290,6 +336,16 @@ export function validateSelectionsForTool(projectSaveLocation, chapter, verse, b
   };
 }
 
+/**
+ * Writes check data to disk with a timestamped filename.
+ * Adds a modifiedTimestamp to the payload and saves it as a JSON file.
+ * Colons and quotes in the timestamp are replaced with underscores for filesystem compatibility.
+ *
+ * @param {Object} [payload={}] - The check data object to write
+ * @param {string} checkPath - Directory path where the check data file will be saved
+ * @returns {void}
+ * @private
+ */
 function writeCheckData(payload = {}, checkPath) {
   const modifiedTimestamp = generateTimestamp();
   const newFilename = modifiedTimestamp + '.json';
@@ -297,6 +353,20 @@ function writeCheckData(payload = {}, checkPath) {
   fs.outputJSONSync(path.join(checkPath, newFilename.replace(/[:"]/g, '_')), payload);
 }
 
+/**
+ * Creates a verse edit record for an external (non-tC) edit to a verse.
+ * Records both the before and after state of the verse along with metadata.
+ * The edit is marked as '[External edit]' to distinguish it from in-app edits.
+ *
+ * @param {string} projectPath - Absolute path to the project directory
+ * @param {string} verseBefore - Original verse text before the external edit
+ * @param {string} verseAfter - Modified verse text after the external edit
+ * @param {string} bookId - Book identifier (e.g., 'gen', 'mat')
+ * @param {number|string} chapter - Chapter number where the edit occurred
+ * @param {number|string} verse - Verse number where the edit occurred
+ * @param {string} userName - Name of the user associated with the import/merge operation
+ * @returns {void}
+ */
 export const createExternalVerseEdit = (projectPath, verseBefore, verseAfter, bookId, chapter, verse, userName) => {
   const verseEdit = {
     verseBefore,
@@ -352,6 +422,18 @@ export function getGroupDataForVerse(groupsData, contextId) {
   return filteredGroupData;
 }
 
+/**
+ * Retrieves the most recent selections object for a specific verse, optionally filtered by quote.
+ * Searches the selections checkData directory for the given verse reference and returns the
+ * latest selection file. If a quote is provided, only returns selections matching that quote.
+ *
+ * @param {string} bookId - Book identifier (e.g., 'gen', 'mat')
+ * @param {number|string} chapter - Chapter number
+ * @param {number|string} verse - Verse number
+ * @param {string} projectSaveLocation - Absolute path to the project directory
+ * @param {string} [quote=''] - Optional quote text to filter selections by
+ * @returns {Object|null} The selections object from the most recent matching file, or null if none found
+ */
 export function getSelectionsFromChapterAndVerseCombo(bookId, chapter, verse, projectSaveLocation, quote = '') {
   let selectionsObject = null;
   const contextId = {
