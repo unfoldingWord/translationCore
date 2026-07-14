@@ -45,11 +45,13 @@ import {
 import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
 
 /**
- * try to download project by doing git clone into directory
- * @param {String} url
- * @param {String} importPath
- * @param {Function} translate
- * @return {Promise<void>}
+ * Downloads a project from a remote Git repository by cloning it to a local directory.
+ *
+ * @param {string} url - The Git repository URL to clone from (e.g., HTTPS or SSH URL)
+ * @param {string} importPath - The local file system path where the repository should be cloned
+ * @param {Function} translate - Translation function for localizing error messages
+ * @return {Promise<void>} Resolves when the clone operation completes successfully
+ * @throws {string} Localized error message if the clone operation fails
  */
 async function downloadProject(url, importPath, translate) {
   try {
@@ -74,14 +76,14 @@ async function downloadProject(url, importPath, translate) {
  * 8. Opening the newly imported project
  *
  * @param {Function} dispatch - Redux dispatch function for triggering actions
- * @param {String} importPath - Path to the temporary import directory containing the USFM file
- * @param {String} destProjectName - Name of the destination project (without extension)
- * @param {String} destinationPath - Full path where the project will be saved in the PROJECTS folder (currently unused)
+ * @param {string} importPath - Path to the temporary import directory containing the USFM file
+ * @param {string} destProjectName - Name of the destination project (without extension)
+ * @param {string} destinationPath - Full path where the project will be saved in the PROJECTS folder (currently unused)
  * @param {Function} translate - Translation function for localizing user-facing messages
  * @param {Function} getState - Redux getState function for accessing current application state
  * @return {Promise<void>} Resolves when the import workflow has been completed and project is opened
  * @throws {Error} If the USFM file does not exist at the expected path, or if any step in the import
- *                  process fails
+ *                 process fails (rethrows the original error after cleanup)
  */
 async function overwriteProjectUsfmFromDCS(
   dispatch,
@@ -102,43 +104,39 @@ async function overwriteProjectUsfmFromDCS(
 
   try {
     // move the folder to temp spot so it doesn't get clobbered
-    const tempFolder = 'temp_' + importPath;
+    const tempFolder = path.join(importPath, '..', 'temp_' + destProjectName);
     fs.moveSync(importPath, tempFolder);
     usfmFilePath = path.join(tempFolder, destProjectName + '.usfm');
 
     console.log('overwriteProjectUsfmFromDCS() - converting project');
     dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_ellipsis'), true));
     const projectInfo = await FileConversionHelpers.convert(usfmFilePath, destProjectName);
+    console.log('overwriteProjectUsfmFromDCS() - converting project', projectInfo);
     const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(destProjectName, importPath);
+    console.log('overwriteProjectUsfmFromDCS() - converting project', initialBibleDataFolderName);
     await migrateProject(importPath, null, getUsername(getState()));
-    console.log('overwriteProjectUsfmFromDCS() - start project validation');
-    dispatch(ProjectValidationActions.initializeReducersForProjectImportValidation(true, projectInfo.usfmProject));
-    await dispatch(ProjectValidationActions.validateProject(importPath));
-    const manifest = getProjectManifest(getState());
-    const updatedImportPath = getProjectSaveLocation(getState());
-    ProjectDetailsHelpers.fixBibleDataFolderName(manifest, initialBibleDataFolderName, updatedImportPath);
 
     dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath });
     dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destProjectName });
-
     await delay(200);
-    console.log('overwriteProjectUsfmFromDCS() - validation done');
 
+    console.log('handleOverwriteWarning() - doing overwrite/merge - new bible data into existing project');
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
-    console.log('handleOverwriteWarning() - doing overwrite/merge');
     ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
+    ProjectOverwriteHelpers.mergeOldProjectToNewProjectExtra(oldProjectPath, importPath);
+
+    console.log('overwriteProjectUsfmFromDCS() - replacing old project with merged project: ' + oldProjectPath + ' with ' + importPath + '');
     fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
     fs.moveSync(importPath, oldProjectPath); // replace it with new project
     dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
     dispatch(AlertModalActions.closeAlertDialog());
     dispatch(MyProjectsActions.getMyProjects());
 
-    // TODO: refactor this localImport method to remove project opening logic so we are not duplicating logic.
-
     const finalProjectPath = getProjectSaveLocation(getState());
     console.log('localImport() - project import complete: ' + finalProjectPath);
     await dispatch(openProject(path.basename(finalProjectPath), true));
     await delay(100);
+    return;
   } catch (error) {
     console.log('overwriteProjectUsfmFromDCS() - ERROR:', error);
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
@@ -245,7 +243,6 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
         } else if (success === true) {
           console.log('onlineImport() - user selected overwrite project');
           await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
-
           resolve();
         } else {
           console.log('onlineImport() - user canceled import');

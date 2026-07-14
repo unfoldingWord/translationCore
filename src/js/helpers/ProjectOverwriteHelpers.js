@@ -10,11 +10,34 @@ import { getTranslate, getToolsByKey } from '../selectors';
 import { loadProjectGroupData } from './ResourcesHelpers';
 import { generateTimestamp } from './index';
 
+
+function copyFile_(sourcePath, destinationPath, fileName) {
+  const sourceFile = path.join(sourcePath, fileName);
+  const destinationFile = path.join(destinationPath, fileName);
+  fs.copySync(sourceFile, destinationFile, { overwrite: true });
+}
+
+export const mergeOldProjectToNewProjectExtra = (oldProjectPath, newProjectPath) => {
+  console.log(`mergeOldProjectToNewProjectExtra(${newProjectPath})`);
+
+  if (fs.existsSync(oldProjectPath) && fs.existsSync(newProjectPath)) {
+    // copying data files over that were not already copied by mergeOldProjectToNewProject to make it a complete merge
+    copyFile_(oldProjectPath, newProjectPath, 'manifest.json');
+    copyFile_(oldProjectPath, newProjectPath, 'settings.json');
+    copyFile_(oldProjectPath, newProjectPath, 'LICENSE.md');
+  }
+};
+
 /**
- * @description Copies existing project checks from the old project path to the new project path
- * @param {String} oldProjectPath
- * @param {String} newProjectPath
- * @param {function} translate
+ * @description Merges an existing project with a newly imported version of the same project.
+ * Copies .apps data (including checks and alignment data), merges manifest files (checkers and translators),
+ * preserves .git history, and creates verse edits for all changed verses.
+ * @param {String} oldProjectPath - Absolute path to the existing project directory
+ * @param {String} newProjectPath - Absolute path to the newly imported project directory
+ * @param {String} userName - Name of the current user performing the merge
+ * @param {Function} dispatch - Redux dispatch function for triggering actions
+ * @throws {Error} Logs errors to console if merge operation fails
+ * @returns {void}
  */
 export const mergeOldProjectToNewProject = (oldProjectPath, newProjectPath, userName, dispatch) => {
   console.log(`mergeOldProjectToNewProject(${newProjectPath})`);
