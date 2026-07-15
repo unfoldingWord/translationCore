@@ -97,8 +97,8 @@ export function searchByQuery(query, onLine = navigator.onLine) {
 /**
  * repeatedly fetches pages from buildUrl until a page comes back short of SEARCH_PAGE_LIMIT items,
  * since DCS paginates results and caps each response at that limit
- * @param {(page: number) => string} buildUrl
- * @param {(json: any) => Array} extractItems
+ * @param {function(number): string} buildUrl - Function that takes a page number and returns a URL string
+ * @param {function(*): Array} extractItems - Function that takes JSON and returns an array of items
  * @return {Promise<Array>} combined items from every page
  */
 async function fetchAllPages(buildUrl, extractItems) {
