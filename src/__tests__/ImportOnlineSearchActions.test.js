@@ -71,7 +71,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   });
 
   test('ImportOnlineSearchActions.searchReposByUser with user should display list of repos for mannytest', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos&limit=100', repos);
 
     const expectedActions = [
       {
@@ -93,7 +93,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   });
 
   test('ImportOnlineSearchActions.searchReposByUser with user and bookId should display list of repos for mannytest with the specified bookId', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos&limit=100', repos);
 
     const expectedActions = [
       {
@@ -134,7 +134,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   });
 
   test('ImportOnlineSearchActions.searchReposByUser with user and bookId and laguageId should return display repos for mannytest with the specified languageId & bookId', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos&limit=100', repos);
 
     const expectedActions = [
       {

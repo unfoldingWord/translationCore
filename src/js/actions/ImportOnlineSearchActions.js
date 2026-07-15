@@ -42,7 +42,7 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
     dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
 
     try {
-      const response = await fetch(`${DCS_BASE_URL}/api/v1/users/${user}/repos`);
+      const response = await fetch(`${DCS_BASE_URL}/api/v1/users/${user}/repos&limit=100`);
       let repos = await response.json();
       repos = filterReposBy(repos, firstFilter, secondFilter);
       dispatch({

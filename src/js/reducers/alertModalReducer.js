@@ -33,6 +33,7 @@ const alertModalReducer = (state = initialState, action) => {
       button2: null,
       buttonLink: null,
       callback: action.callback,
+      button3: null,
     };
   case consts.OPEN_OPTION_DIALOG:
     return {
