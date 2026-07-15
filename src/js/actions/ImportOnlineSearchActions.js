@@ -5,6 +5,9 @@ import consts from './ActionTypes';
 // actions
 import * as AlertModalActions from './AlertModalActions';
 
+const SEARCH_PAGE_SIZE = 50;
+const SEARCH_RESULTS_MAX = 100;
+
 export function searchReposByQuery(query) {
   return (dispatch) => {
     if (query) {
@@ -34,9 +37,6 @@ export function searchReposByQuery(query) {
     }
   };
 }
-
-const SEARCH_PAGE_SIZE = 50;
-const SEARCH_RESULTS_MAX = 100;
 
 export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
