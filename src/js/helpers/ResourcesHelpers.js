@@ -1660,3 +1660,18 @@ export function getOriginalLangOwner(owner) {
   const origLanOwner = (owner === DEFAULT_ORIG_LANG_OWNER) ? owner : CN_ORIG_LANG_OWNER;
   return origLanOwner;
 }
+
+/**
+ * Retrieves the manifest object from a project directory.
+ *
+ * @param {string} PROJECT_PATH - The absolute path to the project directory containing manifest.json
+ * @returns {Object|null} The parsed manifest object from the manifest.json file, or null if the file does not exist
+ */
+export const getManifestFromPath = function (PROJECT_PATH) {
+  const manifest_path = path.join(PROJECT_PATH, 'manifest.json');
+
+  if (fs.existsSync(manifest_path)) {
+    return fs.readJsonSync(manifest_path);
+  }
+  return null;
+};

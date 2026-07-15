@@ -7,7 +7,6 @@ import { batchActions } from 'redux-batched-actions';
 // actions
 import {
   getTranslate,
-  getUsername,
   getProjectSaveLocation,
   getToolCategories,
   getToolsByKey,
@@ -26,7 +25,6 @@ import { prepareToolForLoading } from '../actions/ToolActions';
 // helpers
 import * as bibleHelpers from '../helpers/bibleHelpers';
 import * as ProjectDetailsHelpers from '../helpers/ProjectDetailsHelpers';
-import * as ProjectOverwriteHelpers from '../helpers/ProjectOverwriteHelpers';
 import * as GogsApiHelpers from '../helpers/GogsApiHelpers';
 import * as ResourcesHelpers from '../helpers/ResourcesHelpers';
 import { delay } from '../common/utils';
@@ -36,7 +34,6 @@ import ProjectAPI from '../helpers/ProjectAPI';
 // constants
 import {
   DEFAULT_OWNER,
-  PROJECTS_PATH,
   TRANSLATION_NOTES,
   TRANSLATION_WORDS,
   WORD_ALIGNMENT,
@@ -527,14 +524,26 @@ export function updateProjectNameIfNecessaryAndDoPrompting() {
 }
 
 /**
- * handles the prompting for overwrite/merge of project
- * @return {Promise} - Returns a promise
+ * Handles the prompting for overwrite/merge/rename of an existing project.
+ * Displays a dialog to the user when attempting to import a project that already exists,
+ * giving them options to overwrite, cancel, or optionally rename the project.
+ *
+ * @param {string} newProjectPath - The full file system path where the project would be saved
+ * @param {string} projectName - The name of the project being imported
+ * @param {function|null} OkCallback - Optional callback function to execute if user chooses to overwrite.
+ *                                      Called with newProjectPath as parameter.
+ * @param {boolean} allowRename - If true, displays a third "Rename" button option in the dialog
+ * @return {function} Redux thunk that returns a Promise which resolves to:
+ *                    - true if user chose to overwrite
+ *                    - 'rename' if user chose to rename
+ *                    - false if user cancelled
  */
-export function handleOverwriteWarning(newProjectPath, projectName) {
+export function handleOverwriteWarning(newProjectPath, projectName, OkCallback = null, allowRename = false) {
   return (dispatch, getState) => new Promise(async (resolve) => {
     const translate = getTranslate(getState());
     const confirmText = translate('buttons.overwrite_project');
     const cancelText = translate('buttons.cancel_import_button');
+    const renameText = allowRename ? translate('buttons.rename_import') : null;
     let overwriteMessage = translate('projects.project_overwrite_has_alignment_message');
 
     if (!fs.existsSync(path.join(newProjectPath, '.apps'))) {
@@ -556,16 +565,12 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
 
             if (!hasRunOnce) {
               hasRunOnce = true;
-              delay(500).then(() => { // wait for UI to update and alert to close
-                const oldProjectPath = path.join(PROJECTS_PATH, projectName);
-                console.log('handleOverwriteWarning() - doing overwrite/merge');
-                ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
-                fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
-                fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
-                dispatch(setSaveLocation(oldProjectPath));
-              });
+              OkCallback && OkCallback(newProjectPath);
               resolve(true);
             }
+          } else if (result === renameText) {
+            dispatch(AlertModalActions.closeAlertDialog());
+            resolve('rename');
           } else { // if cancel
             dispatch(AlertModalActions.closeAlertDialog());
             resolve(false);
@@ -573,6 +578,10 @@ export function handleOverwriteWarning(newProjectPath, projectName) {
         },
         cancelText,
         confirmText,
+        null,
+        null,
+        false,
+        renameText,
       ),
     );
   });
@@ -863,7 +872,7 @@ export function handleDcsRenameCollision(createNew, doLocalProjectRenamePromptin
  * @param {String} projectSaveLocation
  * @param {String} projectName
  * @param {Function} callback
- * @return {Promise)
+ * @return {Promise}
  */
 export function doLocalProjectRenamePrompting(projectSaveLocation, projectName, callback) {
   return ((dispatch, getState) => new Promise((resolve) => {

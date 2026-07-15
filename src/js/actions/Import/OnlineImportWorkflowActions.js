@@ -37,14 +37,71 @@ import {
 import { delay } from '../../common/utils';
 import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpers/Import/ProjectImportFilesystemHelpers';
 //constants
-import { tc_MIN_VERSION_ERROR, IMPORTS_PATH } from '../../common/constants';
+import {
+  IMPORTS_PATH,
+  PROJECTS_PATH,
+  tc_MIN_VERSION_ERROR,
+} from '../../common/constants';
+import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
+import { getManifestFromPath } from '../../helpers/ResourcesHelpers';
+
 
 /**
- * try to download project by doing git clone into directory
- * @param {String} url
- * @param {String} importPath
- * @param {Function} translate
- * @return {Promise<void>}
+ * Retrieves the manifest object and project path for a given project name.
+ *
+ * @param {string} destProjectName - The name of the destination project (without path)
+ * @returns {{manifest: Object|null, manifestPath: string}} An object containing:
+ *   - manifest: The parsed manifest object from manifest.json, or null if not found
+ *   - manifestPath: The full path to the project directory
+ */
+function getProjectsManifest(destProjectName) {
+  const projectPath = path.join(PROJECTS_PATH, destProjectName);
+
+  const checkManifest = getManifestFromPath(projectPath); // get a copy of the manifest
+  return {
+    manifest: checkManifest,
+    manifestPath: projectPath,
+  };
+}
+
+/**
+ * Verifies that a project's manifest contains a valid resource ID.
+ *
+ * @param {string} destProjectName - The name of the destination project to verify
+ * @returns {boolean} True if the manifest contains a valid resource.id property, false otherwise
+ */
+function verifyManifestResourceId(destProjectName) {
+  const { manifest: checkManifest } = getProjectsManifest(destProjectName);
+  const valid = checkManifest?.resource?.id;
+  return !!valid;
+}
+
+/**
+ * Verifies that a project's manifest has a valid resource ID and throws an error if invalid.
+ * This function is used to ensure data integrity before performing operations on a project.
+ *
+ * @param {string} destProjectName - The name of the destination project to verify
+ * @throws {Error} If the manifest does not contain a valid resource.id property
+ */
+function verifyManifestResource(destProjectName) {
+  const valid = verifyManifestResourceId(destProjectName);
+
+  if (!valid) {
+    const { manifest, manifestPath } = getProjectsManifest(destProjectName);
+    const message = `verifyManifestResource - resource id broken for ${manifestPath}`;
+    console.error(message, manifest);
+    throw new Error(message);
+  }
+}
+
+/**
+ * Downloads a project from a remote Git repository by cloning it to a local directory.
+ *
+ * @param {string} url - The Git repository URL to clone from (e.g., HTTPS or SSH URL)
+ * @param {string} importPath - The local file system path where the repository should be cloned
+ * @param {Function} translate - Translation function for localizing error messages
+ * @return {Promise<void>} Resolves when the clone operation completes successfully
+ * @throws {string} Localized error message if the clone operation fails
  */
 async function downloadProject(url, importPath, translate) {
   try {
@@ -53,6 +110,106 @@ async function downloadProject(url, importPath, translate) {
     console.error('downloadProject() error', e);
     const message = getLocalizedErrorPrompt(e, url, translate);
     throw message;
+  }
+}
+
+/**
+ * Imports and overwrites an existing local project with an online project from DCS by converting its USFM file.
+ * This function handles the complete workflow for overwriting a project that already exists locally by:
+ * 1. Verifying the USFM file exists at the expected location
+ * 2. Moving the import folder to a temporary location to prevent it from being overwritten during conversion
+ * 3. Converting the USFM file to tCore project format
+ * 4. Migrating the project to the latest version
+ * 5. Validating the converted project
+ * 6. Merging the old project's .apps folder with the new project to preserve user data
+ * 7. Replacing the old project with the new one
+ * 8. Opening the newly imported project
+ *
+ * @param {Function} dispatch - Redux dispatch function for triggering actions
+ * @param {string} importPath - Path to the temporary import directory containing the USFM file
+ * @param {string} destProjectName - Name of the destination project (without extension)
+ * @param {string} destinationPath - Full path where the project will be saved in the PROJECTS folder (currently unused)
+ * @param {Function} translate - Translation function for localizing user-facing messages
+ * @param {Function} getState - Redux getState function for accessing current application state
+ * @return {Promise<void>} Resolves when the import workflow has been completed and project is opened
+ * @throws {Error} If the USFM file does not exist at the expected path, or if any step in the import
+ *                 process fails (rethrows the original error after cleanup)
+ */
+async function overwriteProjectUsfmFromDCS(
+  dispatch,
+  importPath,
+  destProjectName,
+  destinationPath,
+  translate,
+  getState,
+) {
+  console.log('overwriteProjectUsfmFromDCS - Overwriting project USFM from DCS');
+  let usfmFilePath = path.join(importPath, destProjectName + '.usfm');
+
+  if (!fs.existsSync(usfmFilePath)) {
+    throw new Error('overwriteProjectUsfmFromDCS - USFM file not found at destination path: ' + usfmFilePath);
+  }
+
+  await delay(100);
+
+  try {
+    // move the folder to temp spot so it doesn't get clobbered
+    const tempFolder = path.join(importPath, '..', 'temp_' + destProjectName);
+    fs.moveSync(importPath, tempFolder);
+    usfmFilePath = path.join(tempFolder, destProjectName + '.usfm');
+    verifyManifestResource(destProjectName);
+
+    console.log('overwriteProjectUsfmFromDCS() - converting project');
+    dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_ellipsis'), true));
+    const projectInfo = await FileConversionHelpers.convert(usfmFilePath, destProjectName);
+    console.log('overwriteProjectUsfmFromDCS() - converting project', projectInfo);
+    const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(destProjectName, importPath);
+    console.log('overwriteProjectUsfmFromDCS() - converting project', initialBibleDataFolderName);
+    await migrateProject(importPath, null, getUsername(getState()));
+
+    dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath });
+    dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destProjectName });
+    await delay(200);
+
+    console.log('overwriteProjectUsfmFromDCS() - doing overwrite/merge - new bible data into existing project');
+    const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
+    const sourceManifest = getManifestFromPath(oldProjectPath); // get initial contents of the manifest since merging can clobber fields
+    ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
+    ProjectOverwriteHelpers.mergeOldProjectToNewProjectExtra(oldProjectPath, importPath);
+    const finalProjectPath = oldProjectPath;
+
+    await delay(100);
+
+    console.log('overwriteProjectUsfmFromDCS() - replacing old project with merged project: ' + oldProjectPath + ' with ' + importPath + '');
+    fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+    fs.moveSync(importPath, oldProjectPath); // replace it with new project
+    dispatch(AlertModalActions.closeAlertDialog());
+    await delay(100);
+
+    dispatch(MyProjectsActions.getMyProjects());
+    await delay(100);
+
+    console.log('overwriteProjectUsfmFromDCS() - project import complete: ' + finalProjectPath);
+    dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
+    dispatch(ProjectDetailsActions.setProjectManifest(sourceManifest)); // restore manifest in reducer in case fields have been clobbered
+    await delay(100);
+
+    verifyManifestResource(destProjectName);
+    await dispatch(openProject(path.basename(finalProjectPath), true));
+    await delay(100);
+    verifyManifestResource(destProjectName);
+    return;
+  } catch (error) {
+    console.log('overwriteProjectUsfmFromDCS() - ERROR:', error);
+    const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
+    const errorMessage = FileConversionHelpers.getSafeErrorMessage(error, translate('projects.local_import_error', {
+      fromPath: usfmFilePath,
+      toPath: oldProjectPath,
+    }));
+    console.log('overwriteProjectUsfmFromDCS() - ERROR:', errorMessage);
+    dispatch(AlertModalActions.closeAlertDialog());
+    await delay(100);
+    throw error;
   }
 }
 
@@ -129,6 +286,32 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
       await isProjectSupported(importProjectPath, translate);
       const initialBibleDataFolderName = ProjectDetailsHelpers.getInitialBibleDataFolderName(selectedProjectFilename, importProjectPath);
       await migrateProject(importProjectPath, link, getUsername(getState()));
+
+      const renamingResults = {};
+      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
+      const { projectDetailsReducer: { projectSaveLocation } } = getState();
+      const destProjectName = renamingResults.repoRenamed ? renamingResults.newRepoName : selectedProjectFilename;
+      const destinationPath = path.join(PROJECTS_PATH, destProjectName);
+      const projectExists = fs.existsSync(destinationPath);
+
+      if (projectExists) {
+        console.log('onlineImport() - project already exists at destination path: ' + destinationPath);
+        let success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, destProjectName, null, true));
+        await delay(200);
+
+        if (success === 'rename') {
+          console.log('onlineImport() - user selected rename project');
+          // continue workflow
+        } else if (success === true) {
+          console.log('onlineImport() - user selected overwrite project');
+          await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
+          return resolve();
+        } else {
+          console.log('onlineImport() - user canceled import');
+          throw new Error('User canceled import');
+        }
+      }
+
       // assign CC BY-SA license to projects imported from door43
       await CopyrightCheckHelpers.assignLicenseToOnlineImportedProject(importProjectPath);
       console.log('onlineImport() - start project validation');
@@ -149,10 +332,6 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
         await dispatch(ProjectValidationActions.validateProject(updatedImportPath));
       }
 
-      const renamingResults = {};
-      await dispatch(ProjectDetailsActions.updateProjectNameIfNecessary(renamingResults));
-      const { projectDetailsReducer: { projectSaveLocation } } = getState();
-
       if (renamingResults.repoRenamed) {
         dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: projectSaveLocation });
         dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: renamingResults.newRepoName });
@@ -166,6 +345,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
         dispatch(showStatus(message)); // reshow  busy dialog after rename prompting
         await delay(300);
       }
+
       dispatch(MyProjectsActions.getMyProjects());
 
       // TODO: refactor this onlineImport method to remove project opening logic so we are not duplicating logic.
@@ -174,7 +354,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
       console.log('onlineImport() - project import complete: ' + finalProjectPath);
       await dispatch(openProject(path.basename(finalProjectPath), true));
       dispatch(AlertModalActions.closeAlertDialog());
-      resolve();
+      return resolve();
     } catch (error) { // Catch all errors in nested functions above
       console.log('onlineImport() - import error:');
 
@@ -210,8 +390,12 @@ export const recoverFailedOnlineImport = (errorMessage) => (dispatch) => {
 };
 
 /**
- * TODO: this does not need to be an action.
+ * Redux thunk action that deletes an imported project folder from the imports directory.
+ * Retrieves the import link from the Redux state, parses it to extract the project name,
+ * and deletes the corresponding project folder from the imports directory.
+ *
  * @description - delete project (for link) from import folder
+ * @returns {Function} A Redux thunk function that accepts (dispatch, getState) parameters
  */
 export function deleteImportProjectForLink() {
   return ((dispatch, getState) => {
@@ -228,6 +412,12 @@ export function deleteImportProjectForLink() {
   });
 }
 
+/**
+ * Redux action creator that clears the import link from the application state.
+ * Dispatches an action to reset the importLink to an empty string.
+ *
+ * @returns {{type: string, importLink: string}} Redux action object with IMPORT_LINK type and empty importLink
+ */
 export function clearLink() {
   return {
     type: consts.IMPORT_LINK,
@@ -235,6 +425,13 @@ export function clearLink() {
   };
 }
 
+/**
+ * Redux action creator that sets the import link in the application state.
+ * Dispatches an action to update the importLink with the provided URL.
+ *
+ * @param {string} importLink - The Git repository URL to store for importing (e.g., DCS or Door43 URL)
+ * @returns {{type: string, importLink: string}} Redux action object with IMPORT_LINK type and the provided importLink
+ */
 export function getLink(importLink) {
   return {
     type: consts.IMPORT_LINK,

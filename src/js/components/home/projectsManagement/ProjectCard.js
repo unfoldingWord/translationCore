@@ -64,7 +64,7 @@ class ProjectCard extends React.Component {
       target_language,
       isSelected,
     } = this.props.projectDetails;
-    const targetLanguageBookName = target_language.book && target_language.book.name ? target_language.book.name : null;
+    const targetLanguageBookName = target_language?.book?.name || null;
 
     let cardDetails = [
       {
@@ -79,9 +79,9 @@ class ProjectCard extends React.Component {
       },
       {
         translateIcon: true,
-        text: target_language.name && target_language.id
+        text: target_language?.name && target_language?.id
           ? TruncateAcronym(
-            target_language.name, target_language.id, 23)
+            target_language?.name, target_language?.id, 23)
           : 'No language info found',
       },
     ];

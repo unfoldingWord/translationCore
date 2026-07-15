@@ -9,12 +9,17 @@ import * as UsfmFileConversionHelpers from './UsfmFileConversionHelpers';
 import * as ZipFileConversionHelpers from './ZipFileConversionHelpers';
 
 /**
- * convert project to tCore format, resolve returns object identifying import type
- * @param sourceProjectPath
- * @param selectedProjectFilename
- * @return {Promise<any>}
+ * Converts a project file to tCore format by detecting its type and applying the appropriate conversion.
+ * Supports USFM files (.usfm, .sfm, .txt) and translationStudio/tCore archives (.tstudio, .tcore).
+ *
+ * @param {string} sourceProjectPath - The full file path to the project file to be converted
+ * @param {string} selectedProjectFilename - The desired name for the converted project (without extension)
+ * @return {Promise<Object>} A promise that resolves with projectInfo object containing:
+ *   - {boolean} usfmProject - true if source was a USFM file, false if it was a .tstudio/.tcore archive
+ * @throws {React.Element} JSX error element if the file extension is not recognized as valid
+ * @throws {Error} Any error thrown during the conversion process by helper functions
  */
-export const convert = (sourceProjectPath, selectedProjectFilename) => new Promise (async (resolve, reject) => {
+export const convert = (sourceProjectPath, selectedProjectFilename) => new Promise(async (resolve, reject) => {
   try {
     const projectInfo = {};
 

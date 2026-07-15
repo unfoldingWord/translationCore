@@ -18,6 +18,7 @@ class Alert extends Component {
       button2,
       buttonLink,
       notCloseableAlert,
+      button3,
     } = this.props.alertModalReducer;
     let { closeAlertDialog } = this.props.actions;
     const { translate } = this.props;
@@ -25,7 +26,7 @@ class Alert extends Component {
     const buttonActions = [
       <button
         key={1}
-        label={translate('buttons.cancel_button')}
+        label={translate('buttons.ok_button')}
         className="btn-prime"
         disabled={alertDialogLoading && !button1}
         autoFocus
@@ -38,7 +39,33 @@ class Alert extends Component {
       </button>,
     ];
 
-    if (button1 && button2) {
+    if (button1 && button2 && button3) {
+      const callback_ = callback2 || callback;
+
+      buttonActions.unshift(
+        <button
+          label={translate('buttons.cancel_button')}
+          className="btn-second"
+          disabled={alertDialogLoading}
+          onClick={callback_ ? () => {
+            callback_(button2);
+          } : closeAlertDialog}
+        > {button2}
+        </button>,
+      );
+
+      buttonActions.unshift(
+        <button
+          label={button3}
+          className="btn-second"
+          disabled={alertDialogLoading}
+          onClick={callback_ ? () => {
+            callback_(button3);
+          } : closeAlertDialog}
+        > {button3}
+        </button>,
+      );
+    } else if (button1 && button2) {
       const callback_ = callback2 || callback;
 
       buttonActions.unshift(

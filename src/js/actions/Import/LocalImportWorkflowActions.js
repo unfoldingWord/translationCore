@@ -2,6 +2,7 @@
 import React from 'react';
 import path from 'path-extra';
 import { ipcRenderer } from 'electronite';
+import fs from 'fs-extra';
 import consts from '../ActionTypes';
 // actions
 import * as BodyUIActions from '../BodyUIActions';
@@ -23,8 +24,10 @@ import { deleteImportsFolder, deleteProjectFromImportsFolder } from '../../helpe
 import migrateProject from '../../helpers/ProjectMigration';
 import { delay } from '../../common/utils';
 // constants
-import { IMPORTS_PATH } from '../../common/constants';
+import { IMPORTS_PATH, PROJECTS_PATH } from '../../common/constants';
+import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
 import * as ProjectImportFilesystemActions from './ProjectImportFilesystemActions';
+
 export const ALERT_MESSAGE = (
   <div>
     No file was selected. Please click on the
@@ -84,7 +87,18 @@ export const localImport = () => async (dispatch, getState) => {
     let success = false;
 
     if (ProjectDetailsHelpers.doesProjectAlreadyExist(renamingResults.newRepoName)) {
-      success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(projectSaveLocation, renamingResults.newRepoName));
+      success = await dispatch(ProjectDetailsActions.handleOverwriteWarning(
+        projectSaveLocation,
+        renamingResults.newRepoName,
+        async (newProjectPath) => { // callback to run if user selects overwrite
+          await delay(500); // wait for UI to update and alert to close
+          const oldProjectPath = path.join(PROJECTS_PATH, projectName);
+          console.log('handleOverwriteWarning() - doing overwrite/merge');
+          ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, newProjectPath, getUsername(getState()), dispatch);
+          fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
+          fs.moveSync(newProjectPath, oldProjectPath); // replace it with new project
+          dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
+        }));
       await delay(200);
     } else {
       await dispatch(ProjectImportFilesystemActions.move());
