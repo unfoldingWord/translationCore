@@ -44,6 +44,7 @@ import {
 } from '../../common/constants';
 import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
 import { getManifestFromPath } from '../../helpers/ResourcesHelpers';
+import * as manifestUtils from '../../helpers/ProjectMigration/manifestUtils';
 
 /**
  * Downloads a project from a remote Git repository by cloning it to a local directory.
@@ -123,9 +124,10 @@ async function overwriteProjectUsfmFromDCS(
 
     console.log('overwriteProjectUsfmFromDCS() - doing overwrite/merge - new bible data into existing project');
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
+    const sourceManifest = getManifestFromPath(oldProjectPath); // get a copy of the manifest
     ProjectOverwriteHelpers.mergeOldProjectToNewProject(oldProjectPath, importPath, getUsername(getState()), dispatch);
+    manifestUtils.saveProjectManifest(oldProjectPath, sourceManifest); // restore the manifest to overwrite the breakage caused by manifest merge in mergeOldProjectToNewProject()
     ProjectOverwriteHelpers.mergeOldProjectToNewProjectExtra(oldProjectPath, importPath);
-    const mergedManifest = getManifestFromPath(oldProjectPath); // get a copy of the manifest
     const finalProjectPath = oldProjectPath;
 
     await delay(100);
@@ -141,11 +143,16 @@ async function overwriteProjectUsfmFromDCS(
 
     console.log('overwriteProjectUsfmFromDCS() - project import complete: ' + finalProjectPath);
     dispatch(ProjectDetailsActions.setSaveLocation(oldProjectPath));
-    dispatch(ProjectDetailsActions.setProjectManifest(mergedManifest)); // restore manifest in reducer in case fields have been clobbered
     await delay(100);
 
     await dispatch(openProject(path.basename(finalProjectPath), true));
     await delay(100);
+    const newMergedManifest = getManifestFromPath(oldProjectPath); // get a copy of the manifest
+
+    if (newMergedManifest !== sourceManifest) {
+      console.warn('overwriteProjectUsfmFromDCS - newMergedManifest changed', newMergedManifest, sourceManifest);
+    }
+
     return;
   } catch (error) {
     console.log('overwriteProjectUsfmFromDCS() - ERROR:', error);
