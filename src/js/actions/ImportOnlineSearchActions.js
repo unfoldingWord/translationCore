@@ -35,6 +35,8 @@ export function searchReposByQuery(query) {
   };
 }
 
+const SEARCH_PAGE_LIMIT = 50;
+
 export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
 
@@ -42,8 +44,8 @@ export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navi
     dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
 
     try {
-      const response = await fetch(`${DCS_BASE_URL}/api/v1/users/${user}/repos`);
-      let repos = await response.json();
+      let repos = await fetchAllUserRepoPages(user);
+
       repos = filterReposBy(repos, firstFilter, secondFilter);
       dispatch({
         type: consts.SET_REPOS_DATA,
@@ -71,12 +73,11 @@ export function searchByQuery(query, onLine = navigator.onLine) {
       dispatch(AlertModalActions.openAlertDialog(translate('projects.searching_alert'), true));
 
       try {
-        const response = await fetch(`${DCS_BASE_URL}/api/v1/repos/search?q=${query}&uid=0&limit=100`);
-        const json = await response.json();
+        const repos = await fetchAllSearchResultPages(query);
 
         dispatch({
           type: consts.SET_REPOS_DATA,
-          repos: json.data,
+          repos,
         });
       } catch (e) {
         // Failed to find repo for user specified therefore clear repos list in the reducer.
@@ -90,6 +91,58 @@ export function searchByQuery(query, onLine = navigator.onLine) {
       dispatch(AlertModalActions.openAlertDialog(translate('no_internet')));
     }
   };
+}
+
+/**
+ * repeatedly fetches pages from buildUrl until a page comes back short of SEARCH_PAGE_LIMIT items,
+ * since DCS paginates results and caps each response at that limit
+ * @param {(page: number) => string} buildUrl
+ * @param {(json: any) => Array} extractItems
+ * @return {Promise<Array>} combined items from every page
+ */
+async function fetchAllPages(buildUrl, extractItems) {
+  let items = [];
+  let page = 1;
+  let fetchedFullPage = true;
+
+  // each page's fetch depends on knowing whether the previous page was full, so this can't be parallelized
+  /* eslint-disable no-await-in-loop */
+  while (fetchedFullPage) {
+    const url = buildUrl(page);
+    console.log(`fetchAllPages - searching ${url}`);
+    const response = await fetch(url);
+    const json = await response.json();
+    const data = extractItems(json);
+
+    items = items.concat(data);
+    fetchedFullPage = data.length === SEARCH_PAGE_LIMIT;
+    page++;
+  }
+  return items;
+}
+
+/**
+ * fetches all pages of repo search results for the given query
+ * @param {string} query
+ * @return {Promise<Array>} combined repos from every page
+ */
+function fetchAllSearchResultPages(query) {
+  return fetchAllPages(
+    (page) => `${DCS_BASE_URL}/api/v1/repos/search?q=${query}&uid=0&limit=${SEARCH_PAGE_LIMIT}&page=${page}`,
+    (json) => (Array.isArray(json.data) ? json.data : []),
+  );
+}
+
+/**
+ * fetches all pages of repos owned by the given user
+ * @param {string} user
+ * @return {Promise<Array>} combined repos from every page
+ */
+function fetchAllUserRepoPages(user) {
+  return fetchAllPages(
+    (page) => `${DCS_BASE_URL}/api/v1/users/${user}/repos?limit=${SEARCH_PAGE_LIMIT}&page=${page}`,
+    (json) => (Array.isArray(json) ? json : []),
+  );
 }
 
 function filterReposBy(repos, firstFilter, secondFilter) {

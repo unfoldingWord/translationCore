@@ -71,7 +71,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   });
 
   test('ImportOnlineSearchActions.searchReposByUser with user should display list of repos for mannytest', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos?limit=100&page=1', repos);
 
     const expectedActions = [
       {
@@ -93,7 +93,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   });
 
   test('ImportOnlineSearchActions.searchReposByUser with user and bookId should display list of repos for mannytest with the specified bookId', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos?limit=100&page=1', repos);
 
     const expectedActions = [
       {
@@ -134,7 +134,7 @@ describe('ImportOnlineSearchActions async actions', () => {
   });
 
   test('ImportOnlineSearchActions.searchReposByUser with user and bookId and laguageId should return display repos for mannytest with the specified languageId & bookId', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos', repos);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos?limit=100&page=1', repos);
 
     const expectedActions = [
       {
@@ -174,8 +174,27 @@ describe('ImportOnlineSearchActions async actions', () => {
     });
   });
 
+  test('ImportOnlineSearchActions.searchReposByUser should fetch and combine all pages when the first page is full', () => {
+    const makeRepo = (id) => ({
+      id, name: `repo_${id}`, full_name: `owner/repo_${id}`,
+    });
+    const fullPage = Array.from({ length: 100 }, (_, i) => makeRepo(i));
+    const partialPage = [makeRepo(100), makeRepo(101)];
+
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos?limit=100&page=1', fullPage);
+    fetchMock.getOnce('https://git.door43.org/api/v1/users/mannytest/repos?limit=100&page=2', partialPage);
+
+    const store = mockStore({ repos: [] });
+
+    return store.dispatch(ImportOnlineSearchActions.searchReposByUser('mannytest')).then(() => {
+      const setReposAction = store.getActions().find((action) => action.type === consts.SET_REPOS_DATA);
+
+      expect(setReposAction.repos).toEqual(fullPage.concat(partialPage));
+    });
+  });
+
   test('ImportOnlineSearchActions.searchByQuery with search query should display repos with the specified query criteria', () => {
-    fetchMock.getOnce('https://git.door43.org/api/v1/repos/search?q=hi_tit&uid=0&limit=100', {
+    fetchMock.getOnce('https://git.door43.org/api/v1/repos/search?q=hi_tit&uid=0&limit=100&page=1', {
       data: [
         {
           'id': 11341,
@@ -232,6 +251,25 @@ describe('ImportOnlineSearchActions async actions', () => {
 
     return store.dispatch(ImportOnlineSearchActions.searchByQuery('hi_tit')).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+
+  test('ImportOnlineSearchActions.searchByQuery should fetch and combine all pages when the first page is full', () => {
+    const makeRepo = (id) => ({
+      id, name: `repo_${id}`, full_name: `owner/repo_${id}`,
+    });
+    const fullPage = Array.from({ length: 100 }, (_, i) => makeRepo(i));
+    const partialPage = [makeRepo(100), makeRepo(101)];
+
+    fetchMock.getOnce('https://git.door43.org/api/v1/repos/search?q=hi_tit&uid=0&limit=100&page=1', { data: fullPage });
+    fetchMock.getOnce('https://git.door43.org/api/v1/repos/search?q=hi_tit&uid=0&limit=100&page=2', { data: partialPage });
+
+    const store = mockStore({ repos: [] });
+
+    return store.dispatch(ImportOnlineSearchActions.searchByQuery('hi_tit')).then(() => {
+      const setReposAction = store.getActions().find((action) => action.type === consts.SET_REPOS_DATA);
+
+      expect(setReposAction.repos).toEqual(fullPage.concat(partialPage));
     });
   });
 
