@@ -35,7 +35,8 @@ export function searchReposByQuery(query) {
   };
 }
 
-const SEARCH_PAGE_LIMIT = 50;
+const SEARCH_PAGE_SIZE = 50;
+const SEARCH_RESULTS_MAX = 100;
 
 export const searchReposByUser = (user, firstFilter, secondFilter, onLine = navigator.onLine) => async (dispatch, getState) => {
   const translate = getTranslate(getState());
@@ -107,7 +108,7 @@ async function fetchAllPages(buildUrl, extractItems) {
 
   // each page's fetch depends on knowing whether the previous page was full, so this can't be parallelized
   /* eslint-disable no-await-in-loop */
-  while (fetchedFullPage) {
+  while (fetchedFullPage && (items.length < SEARCH_RESULTS_MAX)) {
     const url = buildUrl(page);
     console.log(`fetchAllPages - searching ${url}`);
     const response = await fetch(url);
@@ -115,7 +116,7 @@ async function fetchAllPages(buildUrl, extractItems) {
     const data = extractItems(json);
 
     items = items.concat(data);
-    fetchedFullPage = data.length === SEARCH_PAGE_LIMIT;
+    fetchedFullPage = data.length === SEARCH_PAGE_SIZE;
     page++;
   }
   return items;
@@ -128,7 +129,7 @@ async function fetchAllPages(buildUrl, extractItems) {
  */
 function fetchAllSearchResultPages(query) {
   return fetchAllPages(
-    (page) => `${DCS_BASE_URL}/api/v1/repos/search?q=${query}&uid=0&limit=${SEARCH_PAGE_LIMIT}&page=${page}`,
+    (page) => `${DCS_BASE_URL}/api/v1/repos/search?q=${query}&uid=0&limit=${SEARCH_PAGE_SIZE}&page=${page}`,
     (json) => (Array.isArray(json.data) ? json.data : []),
   );
 }
@@ -140,7 +141,7 @@ function fetchAllSearchResultPages(query) {
  */
 function fetchAllUserRepoPages(user) {
   return fetchAllPages(
-    (page) => `${DCS_BASE_URL}/api/v1/users/${user}/repos?limit=${SEARCH_PAGE_LIMIT}&page=${page}`,
+    (page) => `${DCS_BASE_URL}/api/v1/users/${user}/repos?limit=${SEARCH_PAGE_SIZE}&page=${page}`,
     (json) => (Array.isArray(json) ? json : []),
   );
 }
