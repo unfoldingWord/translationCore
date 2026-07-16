@@ -225,12 +225,45 @@ export const getRepoNameInfo = (projectPath, remote = 'origin') => new Promise((
  * @param {string} repoName
  * @param {string} branch
  */
-export const pushNewRepo = (projectPath, user, repoName, branch = 'master') => new Promise((resolve) => {
+export const pushNewRepo = (projectPath, user, repoName, branch = 'master') =>
+  pushRepo(projectPath, user, user.username + '/' + repoName, branch);
+
+/**
+ * @description Runs a git push command to a repo owned by fullName (owner/name), using the
+ * logged in user's token. Unlike pushNewRepo this does not assume the repo is owned by the
+ * logged in user, so it supports pushing to a shared/collaborator repo.
+ * @param {string} projectPath The location of the repository root folder
+ * @param {Object} user
+ * @param {string} fullName the owner/name of the remote repo
+ * @param {string} branch
+ * @return {Promise<*>} resolves with the push response (truthy only on error)
+ */
+export const pushRepo = (projectPath, user, fullName, branch = 'master') => new Promise((resolve) => {
   const git = GitApi(projectPath);
-  const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, user.username + '/' + repoName);
+  const newRemote = GogsApiHelpers.getUserTokenDoor43Url(user, fullName);
 
   git.push(newRemote, branch, (res) => {
     resolve(res);
+  });
+});
+
+/**
+ * @description Determines if the given commit is an ancestor of HEAD (i.e. already in the
+ * local history). Used to detect whether the remote HEAD has commits we do not have yet.
+ * @param {string} projectPath The location of the repository root folder
+ * @param {string} sha the commit hash to check
+ * @returns {Promise<boolean>} true if sha is in the history of HEAD
+ */
+export const isCommitInHistory = (projectPath, sha) => new Promise((resolve) => {
+  // TRICKY: sha is derived from remote output, so validate it is a real hash before
+  // interpolating it into a shell command.
+  if (!/^[0-9a-f]{7,40}$/i.test(sha || '')) {
+    resolve(false);
+    return;
+  }
+
+  exec(`git merge-base --is-ancestor ${sha} HEAD`, { cwd: projectPath }, (err) => {
+    resolve(!err); // exit code 0 => sha is an ancestor of HEAD
   });
 });
 

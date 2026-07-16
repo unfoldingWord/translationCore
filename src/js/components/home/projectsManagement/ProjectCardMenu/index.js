@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { openOnlyProjectDetailsScreen } from '../../../../actions/ProjectInformationCheckActions';
 import { uploadProject } from '../../../../actions/ProjectUploadActions';
+import { syncProject } from '../../../../actions/ProjectSyncActions';
 import { exportToCSV } from '../../../../actions/CSVExportActions';
 import { exportToUSFM } from '../../../../actions/USFMExportActions';
 import { archiveProject, exportProject } from '../../../../actions/MyProjects/MyProjectsActions';
@@ -24,6 +25,7 @@ class ProjectCardMenu extends React.Component {
       openOnlyProjectDetailsScreen,
       projectSaveLocation,
       promptForViewUrl,
+      syncProject,
       translate,
       uploadProject,
       user,
@@ -41,6 +43,7 @@ class ProjectCardMenu extends React.Component {
       onExportZip={exportProject}
       onLoadUrl={loadUrl}
       onUpload={uploadProject}
+      onSync={syncProject}
       onPrintPreview={doPrintPreview}
       projectSaveLocation={projectSaveLocation}
       translate={translate}
@@ -57,6 +60,7 @@ ProjectCardMenu.propTypes = {
   openOnlyProjectDetailsScreen: PropTypes.func.isRequired,
   projectSaveLocation: PropTypes.string.isRequired,
   promptForViewUrl: PropTypes.func.isRequired,
+  syncProject: PropTypes.func.isRequired,
   translate: PropTypes.func.isRequired,
   uploadProject: PropTypes.func.isRequired,
   user: PropTypes.any.isRequired,
@@ -70,6 +74,7 @@ const mapDispatchToProps = {
   exportToUSFM,
   openOnlyProjectDetailsScreen,
   promptForViewUrl,
+  syncProject,
   uploadProject,
 };
 export default connect(null, mapDispatchToProps)(ProjectCardMenu);

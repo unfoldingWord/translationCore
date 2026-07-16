@@ -16,6 +16,7 @@ describe('Test ProjectCardMenu component', () => {
           onExportUSFM={() => jest.fn()}
           onExportCSV={() => jest.fn()}
           onUpload={() => jest.fn()}
+          onSync={() => jest.fn()}
           user={{}}/>
       </MuiThemeProvider>,
     ).toJSON();

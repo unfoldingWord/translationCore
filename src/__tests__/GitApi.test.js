@@ -2,6 +2,8 @@ import path from 'path-extra';
 import GitApi, {
   getRepoNameInfo,
   pushNewRepo,
+  pushRepo,
+  isCommitInHistory,
   renameRepoLocally,
   getRemoteRepoHead,
   getSavedRemote,
@@ -279,6 +281,69 @@ describe('GitApi.pushNewRepo', () => {
     return pushNewRepo('./', user, repoName).then(() => {
       expect(mocks.push).toHaveBeenCalledWith(
         'https://DUMMY_TOKEN@git.door43.org/DUMMY_USER/DUMMY_REPO.git', 'master', expect.any(Function));
+    });
+  });
+});
+
+describe('GitApi.pushRepo', () => {
+  const mocks = require('simple-git').mocks;
+
+  it('should push to an arbitrary owner/name using the user token', () => {
+    expect.assertions(1);
+    const user = {
+      username: 'DUMMY_USER',
+      token: 'DUMMY_TOKEN',
+    };
+    const fullName = 'OTHER_OWNER/DUMMY_REPO';
+    return pushRepo('./', user, fullName).then(() => {
+      expect(mocks.push).toHaveBeenCalledWith(
+        'https://DUMMY_TOKEN@git.door43.org/OTHER_OWNER/DUMMY_REPO.git', 'master', expect.any(Function));
+    });
+  });
+
+  it('should resolve with the push response so callers can detect errors', () => {
+    expect.assertions(1);
+    const user = { username: 'DUMMY_USER', token: 'DUMMY_TOKEN' };
+    mocks.push.mockImplementationOnce((remote, branch, callback) => callback('push error'));
+    return pushRepo('./', user, 'OWNER/REPO').then((res) => {
+      expect(res).toBe('push error');
+    });
+  });
+});
+
+describe('GitApi.isCommitInHistory', () => {
+  const sha = '0123456789abcdef0123456789abcdef01234567';
+
+  it('should resolve true when merge-base --is-ancestor succeeds', () => {
+    expect.assertions(2);
+    const cp = require('child_process');
+    cp.exec.mockImplementationOnce((cmd, opts, callback) => callback(null));
+    return isCommitInHistory('./', sha).then((res) => {
+      expect(cp.exec).toHaveBeenLastCalledWith(
+        `git merge-base --is-ancestor ${sha} HEAD`,
+        { cwd: './' },
+        expect.any(Function),
+      );
+      expect(res).toBe(true);
+    });
+  });
+
+  it('should resolve false when merge-base --is-ancestor exits non-zero', () => {
+    expect.assertions(1);
+    const cp = require('child_process');
+    cp.exec.mockImplementationOnce((cmd, opts, callback) => callback(new Error('exit 1')));
+    return isCommitInHistory('./', sha).then((res) => {
+      expect(res).toBe(false);
+    });
+  });
+
+  it('should resolve false without shelling out for a non-hash sha', () => {
+    expect.assertions(2);
+    const cp = require('child_process');
+    cp.exec.mockClear();
+    return isCommitInHistory('./', '$(rm -rf /)').then((res) => {
+      expect(res).toBe(false);
+      expect(cp.exec).not.toHaveBeenCalled();
     });
   });
 });

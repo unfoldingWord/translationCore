@@ -17,6 +17,7 @@ export const GIT_ERROR_UNKNOWN_PROBLEM = 'An unknown problem occurred during imp
 export const GIT_ERROR_UNABLE_TO_CONNECT = 'Unable to connect to the server. Please check your Internet connection.';
 export const GIT_ERROR_PROJECT_NOT_FOUND = 'Project not found';
 export const GIT_ERROR_PUSH_NOT_FF = 'not a simple fast-forward';
+export const GIT_ERROR_PUSH_DENIED = 'push access denied';
 export const GIT_ERROR_REPO_ARCHIVED = 'repo is archived';
 export const GIT_ERROR_UNSUPPORTED_INITIAL_BRANCH = 'unsupported initial branch';
 export const GIT_ERROR_AMBIGUOUS_HEAD = 'ambiguous HEAD';
@@ -664,6 +665,8 @@ export function convertGitErrorMessage(err, link) {
     // TRICKY: get above error on MacOS Monterey if user is not in git configuration and project is not found.
     //    For some reason it prompts for username even though this is an unauthenticated clone.
     errMessage = GIT_ERROR_PROJECT_NOT_FOUND + ': \'' + link + '\'';
+  } else if (err.includes('403') || err.includes('remote: Permission') || err.includes('push access denied') || err.includes('Forbidden')) {
+    errMessage = GIT_ERROR_PUSH_DENIED;
   } else if (err.includes('error: failed to push some refs')) {
     errMessage = GIT_ERROR_PUSH_NOT_FF;
   }

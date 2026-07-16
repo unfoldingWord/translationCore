@@ -25,7 +25,7 @@ export const GIT_INDEX_LOCK = 'Could not remove git index.lock from repo';
  * makes sure that project does not have a git index.lock.  If so it tries to remove it.  Throws exception if cannot be removed.
  * @param {string} projectPath
  */
-function makeSureProjectUnlocked(projectPath) {
+export function makeSureProjectUnlocked(projectPath) {
   // check for git index.lock file
   const lockPath = path.join(projectPath, '.git/index.lock');
   let lockExists = false;
@@ -111,7 +111,7 @@ export async function pushProjectRepo(repo) {
  * @param {String} projectPath - Path to the project to upload
  * @return {Promise<void>}
  */
-async function saveChangesInOldProjects(projectPath) {
+export async function saveChangesInOldProjects(projectPath) {
   try {
     await migrateSaveChangesInOldProjects(projectPath);
   } catch (e) {

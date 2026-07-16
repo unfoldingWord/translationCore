@@ -39,6 +39,7 @@ class Menu extends React.Component {
       onExportZip,
       onLoadUrl,
       onPrintPreview,
+      onSync,
       onUpload,
       projectSaveLocation,
       translate,
@@ -96,6 +97,18 @@ class Menu extends React.Component {
             >
               <Glyphicon glyph='cloud-upload' style={glyphStyle}/>
               <div>{translate('projects.upload_to_d43',
+                { door43: translate('_.door43') })}</div>
+            </div>
+            <hr style={{ margin: '4px 0 0 0' }}/>
+            <div
+              style={menuItemStyle}
+              onClick={() => {
+                this.handleRequestClose();
+                onSync(projectSaveLocation, user);
+              }}
+            >
+              <Glyphicon glyph='refresh' style={glyphStyle}/>
+              <div>{translate('projects.sync_with_d43',
                 { door43: translate('_.door43') })}</div>
             </div>
             <hr style={{ margin: '4px 0 0 0' }}/>
@@ -166,6 +179,7 @@ Menu.propTypes = {
   onEdit: PropTypes.func.isRequired,
   onArchive: PropTypes.func.isRequired,
   onUpload: PropTypes.func.isRequired,
+  onSync: PropTypes.func.isRequired,
   onExportZip: PropTypes.func.isRequired,
   onExportCSV: PropTypes.func.isRequired,
   onExportUSFM: PropTypes.func.isRequired,
