@@ -106,18 +106,29 @@ export function doesDcsProjectNameAlreadyExist(newFilename, userdata) {
 }
 
 /**
- * separate book and language
- * @param projectName
- * @return {{bookId: string, languageId: *}}
+ * Extracts project details from a project name string.
+ * Parses project names in various formats (e.g., "en_act", "aaw_php_text_reg", "en_ult_tit_book")
+ * to extract language ID, resource ID, and book information.
+ *
+ * @param {string} projectName - The project name to parse (format: languageId_resourceId_bookId_type)
+ * @param {Function} translate - Translation function used to retrieve localized book names.
+ *                               Defaults to identity function (k=>k) if not provided.
+ * @return {{bookId: string, languageId: string, bookName: string, resourceId: string}} Object containing:
+ *         - bookId: The Bible book identifier (e.g., "tit", "act") or empty string if not found
+ *         - languageId: The language identifier from the first part of the project name
+ *         - bookName: The localized name of the book or empty string if not found
+ *         - resourceId: The resource identifier from the second part of the project name
  */
 export function getDetailsFromProjectName(projectName, translate) {
   let bookId = '';
   let bookName = '';
   let languageId = '';
+  let resourceId = '';
 
   if (projectName) {
     const parts = projectName.split('_');
     languageId = parts[0];
+    resourceId = (parts?.length >= 4) ? parts[1] : '';
 
     // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
     for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
@@ -132,9 +143,52 @@ export function getDetailsFromProjectName(projectName, translate) {
     }
   }
   return {
-    bookId, languageId, bookName,
+    bookId,
+    languageId,
+    bookName,
+    resourceId,
   };
 }
+
+/**
+ * Extracts minimal project details from a project name string.
+ * Parses project names in various formats (e.g., "en_act", "aaw_php_text_reg", "en_ult_tit_book")
+ * to extract language ID, resource ID, and book ID. This is a lightweight version that doesn't
+ * require translation functions or book name lookups.
+ *
+ * @param {string} projectName - The project name to parse (format: languageId_resourceId_bookId_type)
+ * @return {{bookId: string, languageId: string, resourceId: string}} Object containing:
+ *         - bookId: The Bible book identifier (e.g., "tit", "act") or empty string if not found
+ *         - languageId: The language identifier from the first part of the project name
+ *         - resourceId: The resource identifier from the second part of the project name (if present in 4+ part names)
+ */
+export function getDetailsFromProjectNameMini(projectName) {
+  let bookId = '';
+  let languageId = '';
+  let resourceId = '';
+
+  if (projectName) {
+    const parts = projectName.split('_');
+    languageId = parts[0];
+    resourceId = (parts?.length >= 4) ? parts[1] : '';
+
+    // we can have a bunch of old formats (e.g. en_act, aaw_php_text_reg) and new format (en_ult_tit_book)
+    for (let i = 1; i < parts.length; i++) { // iteratively try the fields to see if valid book ids
+      const possibleBookId = parts[i].toLowerCase();
+
+      if (BibleHelpers.isValidBibleBook(possibleBookId)) {
+        bookId = possibleBookId;
+        break;
+      }
+    }
+  }
+  return {
+    bookId,
+    languageId,
+    resourceId,
+  };
+}
+
 /**
  * generate new project name to match spec
  * @param manifest

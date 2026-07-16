@@ -31,6 +31,7 @@ import {
   DEFAULT_OWNER,
   DEFAULT_ORIG_LANG_OWNER,
   ORIGINAL_LANGUAGE,
+  PROJECTS_PATH,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   STATIC_RESOURCES_PATH,
   toolCardCategories,
@@ -1675,3 +1676,17 @@ export const getManifestFromPath = function (PROJECT_PATH) {
   }
   return null;
 };
+
+/**
+ * Retrieves the manifest object for a given project name from the projects directory.
+ *
+ * @param {string} destProjectName - The name of the destination project (without path)
+ * @returns {Object|null} The parsed manifest object from manifest.json, or null if not found
+ */
+export function getProjectsManifestFromProjects(destProjectName) {
+  const projectPath = path.join(PROJECTS_PATH, destProjectName);
+
+  const checkManifest = getManifestFromPath(projectPath); // get a copy of the manifest
+  return checkManifest;
+}
+
