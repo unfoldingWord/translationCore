@@ -43,6 +43,7 @@ import {
   TRANSLATION_ACADEMY,
   USER_RESOURCES_PATH,
   USFMJS_VERSION,
+  PROJECTS_PATH,
 } from '../common/constants';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
@@ -1675,3 +1676,17 @@ export const getManifestFromPath = function (PROJECT_PATH) {
   }
   return null;
 };
+
+/**
+ * Retrieves the manifest object for a given project name from the projects directory.
+ *
+ * @param {string} destProjectName - The name of the destination project (without path)
+ * @returns {Object|null} The parsed manifest object from manifest.json, or null if not found
+ */
+export function getProjectsManifestFromProjects(destProjectName) {
+  const projectPath = path.join(PROJECTS_PATH, destProjectName);
+
+  const checkManifest = getManifestFromPath(projectPath); // get a copy of the manifest
+  return checkManifest;
+}
+

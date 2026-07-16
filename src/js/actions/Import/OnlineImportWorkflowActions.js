@@ -43,53 +43,46 @@ import {
   tc_MIN_VERSION_ERROR,
 } from '../../common/constants';
 import * as ProjectOverwriteHelpers from '../../helpers/ProjectOverwriteHelpers';
-import { getManifestFromPath } from '../../helpers/ResourcesHelpers';
+import { getManifestFromPath, getProjectsManifestFromProjects } from '../../helpers/ResourcesHelpers';
 
 
 /**
- * Retrieves the manifest object and project path for a given project name.
- *
- * @param {string} destProjectName - The name of the destination project (without path)
- * @returns {{manifest: Object|null, manifestPath: string}} An object containing:
- *   - manifest: The parsed manifest object from manifest.json, or null if not found
- *   - manifestPath: The full path to the project directory
- */
-function getProjectsManifest(destProjectName) {
-  const projectPath = path.join(PROJECTS_PATH, destProjectName);
-
-  const checkManifest = getManifestFromPath(projectPath); // get a copy of the manifest
-  return {
-    manifest: checkManifest,
-    manifestPath: projectPath,
-  };
-}
-
-/**
- * Verifies that a project's manifest contains a valid resource ID.
+ * Verifies that a project's manifest has a valid resource ID without throwing an error.
+ * This function checks the manifest for data integrity and logs validation results.
  *
  * @param {string} destProjectName - The name of the destination project to verify
+ * @param {number} count - A counter value used for logging/debugging purposes to track verification attempts
  * @returns {boolean} True if the manifest contains a valid resource.id property, false otherwise
  */
-function verifyManifestResourceId(destProjectName) {
-  const { manifest: checkManifest } = getProjectsManifest(destProjectName);
-  const valid = checkManifest?.resource?.id;
-  return !!valid;
+function verifyManifestResourceNoError(destProjectName, count) {
+  console.log(`verifyManifestResourceNoError - ${count} - ${destProjectName}`);
+  const checkManifest = getProjectsManifestFromProjects(destProjectName);
+  console.log(`verifyManifestResource checkManifest`, checkManifest);
+  const valid = !!checkManifest?.resource?.id;
+  console.log(`verifyManifestResource valid=${valid}`);
+
+  if (!valid) {
+    const message = `verifyManifestResource - resource id broken for ${destProjectName}`;
+    console.error(message);
+  }
+  return valid;
 }
 
 /**
  * Verifies that a project's manifest has a valid resource ID and throws an error if invalid.
- * This function is used to ensure data integrity before performing operations on a project.
+ * This function ensures data integrity before performing operations on a project by validating
+ * the manifest and throwing an exception if validation fails.
  *
  * @param {string} destProjectName - The name of the destination project to verify
+ * @param {number} count - A counter value used for logging/debugging purposes to track verification attempts
  * @throws {Error} If the manifest does not contain a valid resource.id property
  */
-function verifyManifestResource(destProjectName) {
-  const valid = verifyManifestResourceId(destProjectName);
+function verifyManifestResource(destProjectName, count) {
+  const valid = verifyManifestResourceNoError(destProjectName, count);
 
   if (!valid) {
-    const { manifest, manifestPath } = getProjectsManifest(destProjectName);
-    const message = `verifyManifestResource - resource id broken for ${manifestPath}`;
-    console.error(message, manifest);
+    const message = `verifyManifestResource - ${count} - resource id broken for ${destProjectName}`;
+    console.error(message);
     throw new Error(message);
   }
 }
@@ -150,14 +143,17 @@ async function overwriteProjectUsfmFromDCS(
     throw new Error('overwriteProjectUsfmFromDCS - USFM file not found at destination path: ' + usfmFilePath);
   }
 
-  await delay(100);
+  await delay(200);
 
   try {
     // move the folder to temp spot so it doesn't get clobbered
     const tempFolder = path.join(importPath, '..', 'temp_' + destProjectName);
     fs.moveSync(importPath, tempFolder);
     usfmFilePath = path.join(tempFolder, destProjectName + '.usfm');
-    verifyManifestResource(destProjectName);
+
+    await delay(200);
+    const importManifest = getManifestFromPath(tempFolder); // get initial contents of the manifest since merging can clobber fields
+    await delay(200);
 
     console.log('overwriteProjectUsfmFromDCS() - converting project');
     dispatch(AlertModalActions.openAlertDialog(translate('projects.loading_ellipsis'), true));
@@ -169,7 +165,7 @@ async function overwriteProjectUsfmFromDCS(
 
     dispatch({ type: consts.UPDATE_SOURCE_PROJECT_PATH, sourceProjectPath: usfmFilePath });
     dispatch({ type: consts.UPDATE_SELECTED_PROJECT_FILENAME, selectedProjectFilename: destProjectName });
-    await delay(200);
+    await delay(100);
 
     console.log('overwriteProjectUsfmFromDCS() - doing overwrite/merge - new bible data into existing project');
     const oldProjectPath = path.join(PROJECTS_PATH, destProjectName);
@@ -179,6 +175,24 @@ async function overwriteProjectUsfmFromDCS(
     const finalProjectPath = oldProjectPath;
 
     await delay(100);
+
+    if (sourceManifest && !sourceManifest?.resource?.id) { // if manifest is broken and missing resourceId
+      console.log('overwriteProjectUsfmFromDCS - repairing resource ID');
+
+      if (importManifest?.resource?.id) {
+        const resource = importManifest.resource;
+        sourceManifest.resource = resource;
+      } else { // try parsing project name
+        const details = ProjectDetailsHelpers.getDetailsFromProjectNameMini();
+
+        if (details?.resourceId) {
+          const resource = sourceManifest?.resource || {};
+          resource.id = details.resourceId.toUpperCase();
+          sourceManifest.resource = resource;
+        }
+      }
+      console.log(`overwriteProjectUsfmFromDCS - resource ID is now ${sourceManifest?.resource?.id}`);
+    }
 
     console.log('overwriteProjectUsfmFromDCS() - replacing old project with merged project: ' + oldProjectPath + ' with ' + importPath + '');
     fs.removeSync(oldProjectPath); // don't need the oldProjectPath any more now that .apps was merged in
@@ -194,7 +208,6 @@ async function overwriteProjectUsfmFromDCS(
     dispatch(ProjectDetailsActions.setProjectManifest(sourceManifest)); // restore manifest in reducer in case fields have been clobbered
     await delay(100);
 
-    verifyManifestResource(destProjectName);
     await dispatch(openProject(path.basename(finalProjectPath), true));
     await delay(100);
     verifyManifestResource(destProjectName);
@@ -304,7 +317,13 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
           // continue workflow
         } else if (success === true) {
           console.log('onlineImport() - user selected overwrite project');
-          await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
+
+          try {
+            await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
+          } catch (e) {
+            console.log('onlineImport() - overwrite error', e);
+            throw e;
+          }
           return resolve();
         } else {
           console.log('onlineImport() - user canceled import');
