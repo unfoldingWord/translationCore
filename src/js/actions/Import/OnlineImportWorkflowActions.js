@@ -179,10 +179,10 @@ async function overwriteProjectUsfmFromDCS(
     if (sourceManifest && !sourceManifest?.resource?.id) { // if manifest is broken and missing resourceId
       console.log('overwriteProjectUsfmFromDCS - repairing resource ID');
 
-      if (importManifest?.resource?.id) {
+      if (importManifest?.resource?.id) { // if we have resource ID from DCS repo, then use it
         const resource = importManifest.resource;
         sourceManifest.resource = resource;
-      } else { // try parsing project name
+      } else { // try parsing project name to get resource ID
         const details = ProjectDetailsHelpers.getDetailsFromProjectNameMini();
 
         if (details?.resourceId) {
@@ -321,7 +321,7 @@ export const onlineImport = () => (dispatch, getState) => new Promise((resolve, 
           try {
             await overwriteProjectUsfmFromDCS(dispatch, importPath, destProjectName, destinationPath, translate, getState);
           } catch (e) {
-            console.log('onlineImport() - overwrite error', e);
+            console.log('onlineImport() - DCS overwrite error', e);
             throw e;
           }
           return resolve();

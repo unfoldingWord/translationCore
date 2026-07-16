@@ -31,6 +31,7 @@ import {
   DEFAULT_OWNER,
   DEFAULT_ORIG_LANG_OWNER,
   ORIGINAL_LANGUAGE,
+  PROJECTS_PATH,
   SOURCE_CONTENT_UPDATER_MANIFEST,
   STATIC_RESOURCES_PATH,
   toolCardCategories,
@@ -43,7 +44,6 @@ import {
   TRANSLATION_ACADEMY,
   USER_RESOURCES_PATH,
   USFMJS_VERSION,
-  PROJECTS_PATH,
 } from '../common/constants';
 // helpers
 import * as BibleHelpers from './bibleHelpers';
