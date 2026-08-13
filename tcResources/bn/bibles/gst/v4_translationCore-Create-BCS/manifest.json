@@ -1,0 +1,439 @@
+{
+  "dublin_core": {
+    "conformsto": "rc0.2",
+    "contributor": null,
+    "creator": "BCS",
+    "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator’s understanding of the text by translating theological terms as descriptive phrases.",
+    "format": "text/usfm3",
+    "identifier": "ust",
+    "issued": "2025-04-09",
+    "language": {
+      "direction": "ltr",
+      "identifier": "bn",
+      "title": "বাংলা"
+    },
+    "modified": "2025-04-09",
+    "publisher": "BCS",
+    "relation": [
+      "bn/tw",
+      "bn/tq",
+      "bn/tn"
+    ],
+    "rights": "CC BY-SA 4.0",
+    "source": [
+      {
+        "identifier": "t4t",
+        "language": "en",
+        "version": "2014"
+      },
+      {
+        "identifier": "uhb",
+        "language": "hbo",
+        "version": "2.1.17"
+      },
+      {
+        "identifier": "ugnt",
+        "language": "el-x-koine",
+        "version": "0.18"
+      }
+    ],
+    "subject": "Aligned Bible",
+    "title": "Simplified Text",
+    "type": "bundle",
+    "version": "4"
+  },
+  "checking": {
+    "checking_entity": [
+      "unfoldingWord"
+    ],
+    "checking_level": "2"
+  },
+  "projects": [
+    {
+      "title": "ওবদিয়",
+      "versification": "ufw",
+      "identifier": "oba",
+      "sort": 31,
+      "path": "./31-OBA.usfm",
+      "categories": [
+        "bible-ot"
+      ]
+    },
+    {
+      "title": "লুক",
+      "versification": "ufw",
+      "identifier": "luk",
+      "sort": 43,
+      "path": "./43-LUK.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 করিন্থীয়",
+      "versification": "ufw",
+      "identifier": "2co",
+      "sort": 48,
+      "path": "./48-2CO.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "গালাতীয়",
+      "versification": "ufw",
+      "identifier": "gal",
+      "sort": 49,
+      "path": "./49-GAL.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ইফিষীয়",
+      "versification": "ufw",
+      "identifier": "eph",
+      "sort": 50,
+      "path": "./50-EPH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ফিলিপীয়",
+      "versification": "ufw",
+      "identifier": "php",
+      "sort": 51,
+      "path": "./51-PHP.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 থিষলনীকীয়",
+      "versification": "ufw",
+      "identifier": "2th",
+      "sort": 54,
+      "path": "./54-2TH.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 তীমথিয়",
+      "versification": "ufw",
+      "identifier": "1ti",
+      "sort": 55,
+      "path": "./55-1TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 তীমথিয়",
+      "versification": "ufw",
+      "identifier": "2ti",
+      "sort": 56,
+      "path": "./56-2TI.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "তীত",
+      "versification": "ufw",
+      "identifier": "tit",
+      "sort": 57,
+      "path": "./57-TIT.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "ফিলীমন",
+      "versification": "ufw",
+      "identifier": "phm",
+      "sort": 58,
+      "path": "./58-PHM.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "যাকোব",
+      "versification": "ufw",
+      "identifier": "jas",
+      "sort": 60,
+      "path": "./60-JAS.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "1 যোহন",
+      "versification": "ufw",
+      "identifier": "1jn",
+      "sort": 63,
+      "path": "./63-1JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "2 যোহন",
+      "versification": "ufw",
+      "identifier": "2jn",
+      "sort": 64,
+      "path": "./64-2JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "3 যোহন",
+      "versification": "ufw",
+      "identifier": "3jn",
+      "sort": 65,
+      "path": "./65-3JN.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    },
+    {
+      "title": "যিহূদা",
+      "versification": "ufw",
+      "identifier": "jud",
+      "sort": 66,
+      "path": "./66-JUD.usfm",
+      "categories": [
+        "bible-nt"
+      ]
+    }
+  ],
+  "original_manifest": {
+    "dublin_core": {
+      "conformsto": "rc0.2",
+      "contributor": null,
+      "creator": "BCS",
+      "description": "An open-licensed translation, intended to provide a 'functional' understanding of the Bible. It increases the translator’s understanding of the text by translating theological terms as descriptive phrases.",
+      "format": "text/usfm3",
+      "identifier": "ust",
+      "issued": "2025-04-09",
+      "language": {
+        "direction": "ltr",
+        "identifier": "bn",
+        "title": "বাংলা"
+      },
+      "modified": "2025-04-09",
+      "publisher": "BCS",
+      "relation": [
+        "bn/tw",
+        "bn/tq",
+        "bn/tn"
+      ],
+      "rights": "CC BY-SA 4.0",
+      "source": [
+        {
+          "identifier": "t4t",
+          "language": "en",
+          "version": "2014"
+        },
+        {
+          "identifier": "uhb",
+          "language": "hbo",
+          "version": "2.1.17"
+        },
+        {
+          "identifier": "ugnt",
+          "language": "el-x-koine",
+          "version": "0.18"
+        }
+      ],
+      "subject": "Aligned Bible",
+      "title": "Simplified Text",
+      "type": "bundle",
+      "version": "4"
+    },
+    "checking": {
+      "checking_entity": [
+        "unfoldingWord"
+      ],
+      "checking_level": "2"
+    },
+    "projects": [
+      {
+        "title": "ওবদিয়",
+        "versification": "ufw",
+        "identifier": "oba",
+        "sort": 31,
+        "path": "./31-OBA.usfm",
+        "categories": [
+          "bible-ot"
+        ]
+      },
+      {
+        "title": "লুক",
+        "versification": "ufw",
+        "identifier": "luk",
+        "sort": 43,
+        "path": "./43-LUK.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 করিন্থীয়",
+        "versification": "ufw",
+        "identifier": "2co",
+        "sort": 48,
+        "path": "./48-2CO.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "গালাতীয়",
+        "versification": "ufw",
+        "identifier": "gal",
+        "sort": 49,
+        "path": "./49-GAL.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ইফিষীয়",
+        "versification": "ufw",
+        "identifier": "eph",
+        "sort": 50,
+        "path": "./50-EPH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ফিলিপীয়",
+        "versification": "ufw",
+        "identifier": "php",
+        "sort": 51,
+        "path": "./51-PHP.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 থিষলনীকীয়",
+        "versification": "ufw",
+        "identifier": "2th",
+        "sort": 54,
+        "path": "./54-2TH.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 তীমথিয়",
+        "versification": "ufw",
+        "identifier": "1ti",
+        "sort": 55,
+        "path": "./55-1TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 তীমথিয়",
+        "versification": "ufw",
+        "identifier": "2ti",
+        "sort": 56,
+        "path": "./56-2TI.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "তীত",
+        "versification": "ufw",
+        "identifier": "tit",
+        "sort": 57,
+        "path": "./57-TIT.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "ফিলীমন",
+        "versification": "ufw",
+        "identifier": "phm",
+        "sort": 58,
+        "path": "./58-PHM.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "যাকোব",
+        "versification": "ufw",
+        "identifier": "jas",
+        "sort": 60,
+        "path": "./60-JAS.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "1 যোহন",
+        "versification": "ufw",
+        "identifier": "1jn",
+        "sort": 63,
+        "path": "./63-1JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "2 যোহন",
+        "versification": "ufw",
+        "identifier": "2jn",
+        "sort": 64,
+        "path": "./64-2JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "3 যোহন",
+        "versification": "ufw",
+        "identifier": "3jn",
+        "sort": 65,
+        "path": "./65-3JN.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      },
+      {
+        "title": "যিহূদা",
+        "versification": "ufw",
+        "identifier": "jud",
+        "sort": 66,
+        "path": "./66-JUD.usfm",
+        "categories": [
+          "bible-nt"
+        ]
+      }
+    ]
+  },
+  "language_id": "bn",
+  "language_name": "বাংলা",
+  "direction": "ltr",
+  "subject": "Aligned Bible",
+  "resource_id": "ust",
+  "resource_title": "Simplified Text",
+  "remoteModifiedTime": "2025-04-09T14:05:43Z",
+  "description": "Gateway Language",
+  "catalog_modified_time": "2025-04-09T14:05:43Z",
+  "usfm-js": "3.5.0",
+  "version": "4",
+  "modifiedTime": "2025-04-09T14:05:43Z",
+  "stage": "prod"
+}

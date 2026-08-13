@@ -347,7 +347,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   test('null project name should not crash', () => {
     const projectName = null;
     const expectedResults = {
-      'bookId': '', 'bookName': '', 'languageId': '',
+      'bookId': '', 'bookName': '', 'languageId': '', 'resourceId': '',
     };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
@@ -357,7 +357,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   test('empty project name should not crash', () => {
     const projectName = '';
     const expectedResults = {
-      'bookId': '', 'bookName': '', 'languageId': '',
+      'bookId': '', 'bookName': '', 'languageId': '', 'resourceId': '',
     };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
@@ -367,7 +367,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   test('short name should succeed', () => {
     const projectName = 'en_tit';
     const expectedResults = {
-      'bookId': 'tit', 'bookName': 'book_list.nt.tit', 'languageId': 'en',
+      'bookId': 'tit', 'bookName': 'book_list.nt.tit', 'languageId': 'en', 'resourceId': '',
     };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
@@ -377,7 +377,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   test('old tStudio format name should succeed', () => {
     const projectName = 'aaw_php_text_reg';
     const expectedResults = {
-      'bookId': 'php', 'bookName': 'book_list.nt.php', 'languageId': 'aaw',
+      'bookId': 'php', 'bookName': 'book_list.nt.php', 'languageId': 'aaw', 'resourceId': 'php',
     };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);
@@ -387,7 +387,7 @@ describe('ProjectDetailsHelpers.getDetailsFromProjectName', () => {
   test('new format name should succeed', () => {
     const projectName = 'el_ult_tit_book';
     const expectedResults = {
-      'bookId': 'tit', 'bookName': 'book_list.nt.tit', 'languageId': 'el',
+      'bookId': 'tit', 'bookName': 'book_list.nt.tit', 'languageId': 'el', 'resourceId': 'ult',
     };
 
     let results = ProjectDetailsHelpers.getDetailsFromProjectName(projectName);

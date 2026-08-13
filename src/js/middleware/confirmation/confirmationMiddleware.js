@@ -5,6 +5,8 @@
  * that need some sort of confirmation. Without this middleware you would need a reducer for
  * each confirmation case.
  *
+ * This state controls the ConfirmationDialog.js
+ *
  * To add confirmation to your actions you need to add a `meta` field to the action object.
  * This works well if you don't have any side-effects.
  * ```
