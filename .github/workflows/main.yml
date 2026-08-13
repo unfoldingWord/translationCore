@@ -359,7 +359,29 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_X64 }}
           path: artifacts/x64/
-#     x32
+
+      #     arm64
+      - name: Set arm64 MAX artifact name
+        run: echo "ARTIFACT_ARM64=$(echo "${{ env.APP_NAME }}-win-arm64-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Set arm64 LITE artifact name
+        if: ${{ env.TRIM == '1' }}
+        run: echo "ARTIFACT_ARM64=$(echo "${{ env.APP_NAME }}-win-arm64-${{ env.APP_VERSION }}-LITE-${{ env.HASH }}.exe")" >> $GITHUB_ENV
+        shell: bash
+
+      - name: bundle arm64 windows
+        run: |
+          echo "Generating executable artifacts/arm64/${{ env.ARTIFACT_ARM64 }}"
+          ./node_modules/.bin/gulp release-win32 --out=artifacts/arm64/${{ env.ARTIFACT_ARM64 }}
+
+      - uses: actions/upload-artifact@v4
+        name: Upload arm64 artifacts
+        with:
+          name: ${{ env.ARTIFACT_ARM64 }}
+          path: artifacts/arm64/
+
+      #     x32
       - name: Set x32 MAX artifact name
         run: echo "ARTIFACT_X32=$(echo "${{ env.APP_NAME }}-win-x32-${{ env.APP_VERSION }}-MAX-${{ env.HASH }}.exe")" >> $GITHUB_ENV
         shell: bash
@@ -471,22 +493,22 @@ jobs:
           echo "Building $APP_VERSION-$HASH"
           npm run build-macos
 
-      #     x64
-      - name: Set x64 MAX artifact name
-        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
-
-      - name: Set x64 LITE artifact name
-        if: ${{ env.TRIM == '1' }}
-        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
-
-      - name: bundle x64 macOS
-        run: ./node_modules/.bin/gulp release-macos --out=artifacts/x64/$ARTIFACT_X64
-
-      - uses: actions/upload-artifact@v4
-        name: Upload x64 artifacts
-        with:
-          name: ${{ env.ARTIFACT_X64 }}
-          path: artifacts/x64/
+#      #     x64
+#      - name: Set x64 MAX artifact name
+#        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-MAX-$HASH.dmg")" >> $GITHUB_ENV
+#
+#      - name: Set x64 LITE artifact name
+#        if: ${{ env.TRIM == '1' }}
+#        run: echo "ARTIFACT_X64=$(echo "$APP_NAME-macos-x64-$APP_VERSION-LITE-$HASH.dmg")" >> $GITHUB_ENV
+#
+#      - name: bundle x64 macOS
+#        run: ./node_modules/.bin/gulp release-macos --out=artifacts/x64/$ARTIFACT_X64
+#
+#      - uses: actions/upload-artifact@v4
+#        name: Upload x64 artifacts
+#        with:
+#          name: ${{ env.ARTIFACT_X64 }}
+#          path: artifacts/x64/
 
       #     universal build
       - name: Set universal MAX artifact name
