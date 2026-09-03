@@ -16,6 +16,8 @@ const {
   getWindow,
 } = require('./electronWindows');
 const MenuTemplate = require('./MenuTemplate').template;
+const { queryLmStudioFromMainProcess } = require('./queryLmStudioFromMainProcess');
+
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 const MAIN_WINDOW_ID = 'main';
@@ -32,6 +34,18 @@ let helperWindow;
 let splashScreen;
 
 const downloadManager = new DownloadManager();
+
+function exposeLmStudioQueryToMainWindow(window) {
+  ipcMain.removeHandler('lm-studio:query');
+  // eslint-disable-next-line require-await
+  ipcMain.handle('lm-studio:query', async (event, query, options = {}) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('lm-studio:query is only available from the main window');
+    }
+
+    return queryLmStudioFromMainProcess(query, options);
+  });
+}
 
 function getHome() {
   let home =app.getPath('home');
@@ -103,6 +117,7 @@ function createMainWindow(qaMode = '') {
   };
 
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
+  exposeLmStudioQueryToMainWindow(mainWindow);
 
   if (process.env.DEVELOPER_MODE === 'true' || process.env.developer_mode === 'true') {
     mainWindow.webContents.openDevTools();
