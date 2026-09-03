@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import { Grid, Row } from 'react-bootstrap';
+import { ipcRenderer } from 'electronite';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
 import env, { getBuild } from 'tc-electron-env';
@@ -44,6 +45,18 @@ if (NOT_TEST) {
   injectFileLogging(LOG_FILES_PATH, version);
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
 }
+
+if (window && !window.lmStudio) {
+  console.log('creating window.lmStudio since it does not exist on window');
+  window.lmStudio = { query: (query, options = {}) => ipcRenderer.invoke('lm-studio:query', query, options) };
+}
+
+const isLmStudioQueryAvailable =
+  typeof window !== 'undefined' &&
+  typeof window.lmStudio?.query === 'function';
+
+console.log('isLmStudioQueryAvailable', isLmStudioQueryAvailable);
+
 
 class Main extends Component {
   componentDidMount() {

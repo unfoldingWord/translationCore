@@ -36,6 +36,7 @@ let splashScreen;
 const downloadManager = new DownloadManager();
 
 function exposeLmStudioQueryToMainWindow(window) {
+  console.log(`exposeLmStudioQueryToMainWindow`);
   ipcMain.removeHandler('lm-studio:query');
   // eslint-disable-next-line require-await
   ipcMain.handle('lm-studio:query', async (event, query, options = {}) => {
@@ -112,6 +113,7 @@ function createMainWindow(qaMode = '') {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
+      preload: path.join(__dirname, 'preloadLmStudio.js'),
       additionalArguments,
     },
   };

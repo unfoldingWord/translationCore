@@ -24,6 +24,7 @@ function streamChatMessageFromMainProcess(
 ) {
   return new Promise((resolve, reject) => {
     const url = new URL('/v1/chat/completions', baseUrl);
+    console.log( 'streamChatMessageFromMainProcess - request url', url);
 
     const body = JSON.stringify({
       model,
@@ -138,15 +139,15 @@ function streamChatMessageFromMainProcess(
  */
 async function queryLmStudioFromMainProcess(query, options = {}) {
   const {
-    baseUrl = 'http://localhost:1234',
-    model = 'local-model',
-    temperature = 0.7,
-    maxTokens = 4096,
-    enableThinking = false,
-    systemPrompt = 'You are a helpful assistant.',
+    baseUrl,
+    model,
+    temperature,
+    maxTokens,
+    enableThinking,
+    systemPrompt,
   } = options;
 
-  console.log(`Query with options`, options);
+  console.log('Query with options', query, options);
 
   const finalQuery = enableThinking ? query : `${query}\n/no_think`;
   const startTime = Date.now();
@@ -171,7 +172,11 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     throw new Error('Unexpected LM Studio response shape: received empty content');
   }
 
-  return replyText;
+  return {
+    actualModel,
+    elapsed,
+    replyText,
+  };
 }
 
 module.exports = {
