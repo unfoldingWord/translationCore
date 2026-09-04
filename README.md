@@ -63,7 +63,7 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 
 ## Developer Notes
 
-- **translationCore startup**
+- **translationCore Startup:**
   - Electronite starts up calling electronite/index.js
     - Creates a splash window using public/splash.html until MainWindow is ready to show
     - MainWindow created in electronite/electronWindows.js loading public/index.html
@@ -81,23 +81,56 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 - **Starting App:** shows WelcomeSplash which waits for user to click `"Get Started!"` button.
 
 
-- **Select project:** src/js/actions/MyProjects/ProjectLoadingActions.js - openProject - initializes tools
+- **Select Project:** src/js/actions/MyProjects/ProjectLoadingActions.js - openProject - initializes tools
   - Calls src/js/helpers/ResourcesHelpers.js - copyGroupDataToProject() - which copies from resource data to project index.
     - calls project.hasNewGroupsData()
   - src/js/helpers/ResourcesHelpers.js - migrateOldCheckingResourceData() - iterates through project index data to make sure it is up to date with records in checkData
   - connectToolApi() - prepares properties to send to tool
 
 
-- **Tool card:**
+- **Tool Card:**
   - For GL selection see src/js/components/home/toolsManagement/ToolCard.js - selectionChange()
     - Calls src/js/actions/ProjectDetailsActions.js - setProjectToolGL()
 
 
-- **Launching tools:** UI calls src/js/actions/ToolActions.js - openTool()
+- **Launching Tools:** UI calls src/js/actions/ToolActions.js - openTool()
   - Which calls `dispatch({type:types.OPEN_TOOL,name});` and then `BodyUIActions.toggleHomeView(false)` which enables ToolContainer
 
 
-- **Passing data to tool:**
+- **Passing Data to Tool:**
   - Calls ProgramLoadingActions.connectToolApi() which calls:
     - ProgramLoadingActions.makeToolProps() to load data to transfer to tool
     - tool.api.triggerWillConnect() to transfer data to tools
+
+
+- **How tCore determines Valid Gateway Language selections to Tools**
+- tC Calls gatewayLanguageHelpers.getGatewayLanguageList() to get list of GLs/owners that meet the requirements for a tool.
+  - See getGlRequirementsForTool() for requirements:
+
+  - Requirements to show up in GL list:
+    - tN: for language to show up as a GL option in tN tool - needs original language, tA, aligned bible (which includes current book)
+      - GL needs:
+        - Aligned Bible with minimum checking level 3, and current book must be present and aligned
+        - tA
+        - tN
+
+      - OrigLang
+        - Bible with minimum checking level 2
+
+    - tW: for language to show up as a GL option in tW tool -  original language, needs aligned bible (which includes current book)
+      - GL needs:
+        - Aligned Bible with minimum checking level 3, and current book must be present and aligned
+        - tW with minimum checking level 2
+        - tWL if owner not door43-Catalog
+
+      - OrigLang
+        - Bible with minimum checking level 2
+        - tW
+
+    - WA: for language to show up as a GL option in wA tool - needs:
+      - GL needs:
+        - Bible with minimum checking level 3, and current book must be present and aligned
+        - Lexicon (even if only en is available) - not usually an issue unless the en lexicon was accidently deleted from build
+
+      - OrigLang
+        - Bible with minimum checking level 2
