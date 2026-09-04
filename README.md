@@ -38,6 +38,12 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 - current local: [local JS-Docs](./docs/translationCore/index.html)
 
 
+## Building app locally
+- example to build the app for mac: `npm i --legacy-peer-deps && npm run build-macos`
+  - or do `build-win` or `build-linux`
+- then to create installer for MacOS: `./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/tCore-macos-universal.dmg`
+
+
 ## Debugging Main App
 
 - first time do: `npm run load-apps`
@@ -55,8 +61,43 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
   make sure `Discover network targets` is selected and click `Configure` button.  Make sure `localhost:5656` is added under `Target discovery settings` and click `Done`.
 - Under remote target `electron/js2c/browser_init` click on `inspect` link.
 
-## Building app
-- example to build the app for mac: `npm i --legacy-peer-deps && npm run build-macos`
-  - or do `build-win` or `build-linux`
-- then to create installer for MacOS: `./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/tCore-macos-universal.dmg`
+## Developer Notes
 
+- **translationCore startup**
+  - Electronite starts up calling electronite/index.js
+    - Creates a splash window using public/splash.html until MainWindow is ready to show
+    - MainWindow created in electronite/electronWindows.js loading public/index.html
+      - Startup then goes:
+        - src/js/pages/index.js
+        - src/js/pages/root.js
+        - In src/js/pages/app.js Main component initializes calling:
+          - loadLocalization()
+          - loadTools();
+          - src/js/actions/MigrationActions.js - migrateResourcesFolder() - all the resource updates happen here
+            } Calls moveResourcesFromOldGrcFolder() and getMissingResources()
+          - migrateToolsSettings();
+
+
+- **Starting App:** shows WelcomeSplash which waits for user to click `"Get Started!"` button.
+
+
+- **Select project:** src/js/actions/MyProjects/ProjectLoadingActions.js - openProject - initializes tools
+  - Calls src/js/helpers/ResourcesHelpers.js - copyGroupDataToProject() - which copies from resource data to project index.
+    - calls project.hasNewGroupsData()
+  - src/js/helpers/ResourcesHelpers.js - migrateOldCheckingResourceData() - iterates through project index data to make sure it is up to date with records in checkData
+  - connectToolApi() - prepares properties to send to tool
+
+
+- **Tool card:**
+  - For GL selection see src/js/components/home/toolsManagement/ToolCard.js - selectionChange()
+    - Calls src/js/actions/ProjectDetailsActions.js - setProjectToolGL()
+
+
+- **Launching tools:** UI calls src/js/actions/ToolActions.js - openTool()
+  - Which calls `dispatch({type:types.OPEN_TOOL,name});` and then `BodyUIActions.toggleHomeView(false)` which enables ToolContainer
+
+
+- **Passing data to tool:**
+  - Calls ProgramLoadingActions.connectToolApi() which calls:
+    - ProgramLoadingActions.makeToolProps() to load data to transfer to tool
+    - tool.api.triggerWillConnect() to transfer data to tools
