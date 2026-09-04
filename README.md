@@ -104,33 +104,63 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 
 
 - **How tCore determines Valid Gateway Language selections to Tools**
-- tC Calls gatewayLanguageHelpers.getGatewayLanguageList() to get list of GLs/owners that meet the requirements for a tool.
-  - See getGlRequirementsForTool() for requirements:
+  - tC Calls gatewayLanguageHelpers.getGatewayLanguageList() to get list of GLs/owners that meet the requirements for a tool.
+    - See getGlRequirementsForTool() for requirements:
 
-  - Requirements to show up in GL list:
-    - tN: for language to show up as a GL option in tN tool - needs original language, tA, aligned bible (which includes current book)
-      - GL needs:
-        - Aligned Bible with minimum checking level 3, and current book must be present and aligned
-        - tA
-        - tN
+    - Requirements to show up in GL list:
+      - tN: for language to show up as a GL option in tN tool - needs original language, tA, aligned bible (which includes current book)
+        - GL needs:
+          - Aligned Bible with minimum checking level 3, and current book must be present and aligned
+          - tA
+          - tN
 
-      - OrigLang
-        - Bible with minimum checking level 2
+        - OrigLang
+          - Bible with minimum checking level 2
 
-    - tW: for language to show up as a GL option in tW tool -  original language, needs aligned bible (which includes current book)
-      - GL needs:
-        - Aligned Bible with minimum checking level 3, and current book must be present and aligned
-        - tW with minimum checking level 2
-        - tWL if owner not door43-Catalog
+      - tW: for language to show up as a GL option in tW tool -  original language, needs aligned bible (which includes current book)
+        - GL needs:
+          - Aligned Bible with minimum checking level 3, and current book must be present and aligned
+          - tW with minimum checking level 2
+          - tWL if owner not door43-Catalog
 
-      - OrigLang
-        - Bible with minimum checking level 2
-        - tW
+        - OrigLang
+          - Bible with minimum checking level 2
+          - tW
 
-    - WA: for language to show up as a GL option in wA tool - needs:
-      - GL needs:
-        - Bible with minimum checking level 3, and current book must be present and aligned
-        - Lexicon (even if only en is available) - not usually an issue unless the en lexicon was accidently deleted from build
+      - WA: for language to show up as a GL option in wA tool - needs:
+        - GL needs:
+          - Bible with minimum checking level 3, and current book must be present and aligned
+          - Lexicon (even if only en is available) - not usually an issue unless the en lexicon was accidently deleted from build
 
-      - OrigLang
-        - Bible with minimum checking level 2
+        - OrigLang
+          - Bible with minimum checking level 2
+
+
+- **Troubleshooting Missing Gateway Language Selections**
+  - check the tCore logs (either from console or )
+  - there will be log entries such as below. This example indicates that the checking level is not high enough (see notes above for required checking levels for each tool).
+
+
+```
+isValidResource() - /Users/blm0/translationCore/resources/bn/bibles/glt/v4_translationCore-Create-BCS, gal - invalid, manifest missing = false, book missing = false, insufficient checking level = true
+getValidGatewayBibles() - For owner translationCore-Create-BCS, glt, bn, gal - is NOT a VALID aligned bible for wordAlignment, isBibleValidSource = true, missingBook = false, missingAlignments = false
+```
+
+
+- **Available Bibles in Tools**
+  - Tc-ui-toolkit calls getAvailableScripturePaneSelections() - to get list of resources to add (find call to `resourceList.push(resource);` in tCore).  This creates array of objects in format:
+
+```
+  resource = {
+    bookId,
+    bibleId,
+    languageId,
+    manifest,
+    owner,
+  };
+```
+
+
+- When new bible selected:
+  - ScripturePane.addNewBibleResource() calls makeSureBiblesLoadedForTool() to make sure bibles are loaded
+  - This is mapped to dispatch in ToolContainer in tCore, and each tool passes the function to ScripturePane in ScripturePaneContainer
