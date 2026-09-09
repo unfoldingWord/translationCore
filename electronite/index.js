@@ -16,7 +16,10 @@ const {
   getWindow,
 } = require('./electronWindows');
 const MenuTemplate = require('./MenuTemplate').template;
-const { queryLmStudioFromMainProcess } = require('./queryLmStudioFromMainProcess');
+const {
+  getAvailableLmStudioModelsFromMainProcess,
+  queryLmStudioFromMainProcess,
+} = require('./queryLmStudioFromMainProcess');
 
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
@@ -38,6 +41,8 @@ const downloadManager = new DownloadManager();
 function exposeLmStudioQueryToMainWindow(window) {
   console.log(`exposeLmStudioQueryToMainWindow`);
   ipcMain.removeHandler('lm-studio:query');
+  ipcMain.removeHandler('lm-studio:get-available-models');
+
   // eslint-disable-next-line require-await
   ipcMain.handle('lm-studio:query', async (event, query, options = {}) => {
     if (!window || event.sender !== window.webContents) {
@@ -45,6 +50,15 @@ function exposeLmStudioQueryToMainWindow(window) {
     }
 
     return queryLmStudioFromMainProcess(query, options);
+  });
+
+  // eslint-disable-next-line require-await
+  ipcMain.handle('lm-studio:get-available-models', async (event, options = {}) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('lm-studio:get-available-models is only available from the main window');
+    }
+
+    return getAvailableLmStudioModelsFromMainProcess(options);
   });
 }
 

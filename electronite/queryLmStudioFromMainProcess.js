@@ -2,6 +2,74 @@ const http = require('http');
 const https = require('https');
 
 /**
+ * Gets the list of available models from an LM Studio server.
+ *
+ * @param {Object} [options={}] - Configuration options
+ * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
+ * @returns {Promise<Array>} List of available LM Studio models
+ * @throws {Error} If the request fails or the response shape is unexpected
+ */
+function getAvailableLmStudioModelsFromMainProcess(options = {}) {
+  const {
+    baseUrl = 'http://localhost:1234',
+  } = options;
+
+  return new Promise((resolve, reject) => {
+    const url = new URL('/v1/models', baseUrl);
+    console.log('getAvailableLmStudioModelsFromMainProcess - request url', url);
+
+    const requestOptions = {
+      method: 'GET',
+      hostname: url.hostname,
+      port: url.port,
+      path: `${url.pathname}${url.search}`,
+      headers: {
+        Accept: 'application/json',
+      },
+    };
+
+    const transport = url.protocol === 'https:' ? https : http;
+
+    const req = transport.request(requestOptions, response => {
+      let responseText = '';
+
+      response.setEncoding('utf8');
+
+      response.on('data', chunk => {
+        responseText += chunk;
+      });
+
+      response.on('end', () => {
+        if (response.statusCode < 200 || response.statusCode >= 300) {
+          reject(new Error(`LM Studio models request failed (${response.statusCode}): ${responseText}`));
+          return;
+        }
+
+        try {
+          const parsedResponse = JSON.parse(responseText);
+          const models = parsedResponse?.data;
+
+          if (!Array.isArray(models)) {
+            reject(new Error('Unexpected LM Studio models response shape: expected data array'));
+            return;
+          }
+
+          resolve(models);
+        } catch (error) {
+          reject(new Error(`Failed to parse LM Studio models response: ${error.message}`));
+        }
+      });
+    });
+
+    req.on('error', error => {
+      reject(new Error(`Failed to reach LM Studio server at ${url.href}: ${error.message}`));
+    });
+
+    req.end();
+  });
+}
+
+/**
  * Streams a chat completion request to an LM Studio server from the Electron main process.
  *
  * @param {string} baseUrl - Base URL of the LM Studio server, e.g. 'http://localhost:1234'
@@ -180,5 +248,6 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
 }
 
 module.exports = {
+  getAvailableLmStudioModelsFromMainProcess,
   queryLmStudioFromMainProcess,
 };

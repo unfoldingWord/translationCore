@@ -4,4 +4,7 @@ const { ipcRenderer } = require('electronite');
 
 console.log(`started preloadLmStudio`);
 
-window.lmStudio = { query: (query, options = {}) => ipcRenderer.invoke('lm-studio:query', query, options) };
+window.lmStudio = {
+  query: (query, options = {}) => ipcRenderer.invoke('lm-studio:query', query, options),
+  getAvailableModels: (options = {}) => ipcRenderer.invoke('lm-studio:get-available-models', options),
+};
