@@ -17,6 +17,7 @@ const {
 } = require('./electronWindows');
 const MenuTemplate = require('./MenuTemplate').template;
 const {
+  getApiLmStudioFromMainProcess,
   getAvailableLmStudioModelsFromMainProcess,
   queryLmStudioFromMainProcess,
 } = require('./queryLmStudioFromMainProcess');
@@ -42,6 +43,7 @@ function exposeLmStudioQueryToMainWindow(window) {
   console.log(`exposeLmStudioQueryToMainWindow`);
   ipcMain.removeHandler('lm-studio:query');
   ipcMain.removeHandler('lm-studio:get-available-models');
+  ipcMain.removeHandler('lm-studio:get-api');
 
   // eslint-disable-next-line require-await
   ipcMain.handle('lm-studio:query', async (event, query, options = {}) => {
@@ -59,6 +61,15 @@ function exposeLmStudioQueryToMainWindow(window) {
     }
 
     return getAvailableLmStudioModelsFromMainProcess(options);
+  });
+
+  // eslint-disable-next-line require-await
+  ipcMain.handle('lm-studio:get-api', async (event, options = {}, apiUrlPath) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('lm-studio:get-api is only available from the main window');
+    }
+
+    return getApiLmStudioFromMainProcess(options, apiUrlPath);
   });
 }
 

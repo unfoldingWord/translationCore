@@ -48,7 +48,12 @@ if (NOT_TEST) {
 
 if (window && !window.lmStudio) {
   console.log('creating window.lmStudio since it does not exist on window');
-  window.lmStudio = { query: (query, options = {}) => ipcRenderer.invoke('lm-studio:query', query, options) };
+
+  window.lmStudio = {
+    getApi: (options = {}) => ipcRenderer.invoke('lm-studio:get-api', options),
+    getAvailableModels: (options = {}) => ipcRenderer.invoke('lm-studio:get-available-models', options),
+    query: (query, options = {}) => ipcRenderer.invoke('lm-studio:query', query, options),
+  };
 }
 
 const isLmStudioQueryAvailable =

@@ -2,21 +2,22 @@ const http = require('http');
 const https = require('https');
 
 /**
- * Gets the list of available models from an LM Studio server.
+ * Makes a GET request to the LM Studio API from the Electron main process.
  *
- * @param {Object} [options={}] - Configuration options
+ * @param {Object} options - Configuration options
  * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
- * @returns {Promise<Array>} List of available LM Studio models
- * @throws {Error} If the request fails or the response shape is unexpected
+ * @param {string} apiUrlPath - API endpoint path to request (e.g., '/v1/models')
+ * @returns {Promise<Array>} Promise that resolves with the data array from the API response
+ * @throws {Error} If the request fails, the response status is not 2xx, or the response shape is unexpected
  */
-function getAvailableLmStudioModelsFromMainProcess(options = {}) {
+function getApiLmStudioFromMainProcess(options, apiUrlPath) {
   const {
     baseUrl = 'http://localhost:1234',
   } = options;
 
   return new Promise((resolve, reject) => {
-    const url = new URL('/v1/models', baseUrl);
-    console.log('getAvailableLmStudioModelsFromMainProcess - request url', url);
+    const url = new URL(apiUrlPath, baseUrl);
+    console.log('getApiLmStudioFromMainProcess - request parameters', { url, options });
 
     const requestOptions = {
       method: 'GET',
@@ -67,6 +68,20 @@ function getAvailableLmStudioModelsFromMainProcess(options = {}) {
 
     req.end();
   });
+}
+
+/**
+ * Gets the list of available models from an LM Studio server.
+ *
+ * @param {Object} [options={}] - Configuration options
+ * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
+ * @returns {Promise<Array>} List of available LM Studio models
+ * @throws {Error} If the request fails or the response shape is unexpected
+ */
+function getAvailableLmStudioModelsFromMainProcess(options = {}) {
+  let apiUrlPath = '/v1/models';
+  console.log('getAvailableLmStudioModelsFromMainProcess - request model with options', options);
+  return getApiLmStudioFromMainProcess(options, apiUrlPath);
 }
 
 /**
@@ -248,6 +263,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
 }
 
 module.exports = {
+  getApiLmStudioFromMainProcess,
   getAvailableLmStudioModelsFromMainProcess,
   queryLmStudioFromMainProcess,
 };
