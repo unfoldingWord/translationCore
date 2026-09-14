@@ -109,7 +109,7 @@ function streamChatMessageFromMainProcess(
     const url = new URL('/v1/chat/completions', baseUrl);
     console.log( 'streamChatMessageFromMainProcess - request url', url);
 
-    const body = JSON.stringify({
+    const body = {
       model,
       messages: [
         { role: 'system', content: systemPrompt },
@@ -119,7 +119,10 @@ function streamChatMessageFromMainProcess(
       max_tokens: maxTokens,
       stream: true,
       chat_template_kwargs: { enable_thinking: enableThinking },
-    });
+    };
+    const bodyStr = JSON.stringify(body);
+
+    // console.log('streamChatMessageFromMainProcess - request bodyStr', bodyStr);
 
     const requestOptions = {
       method: 'POST',
@@ -128,7 +131,7 @@ function streamChatMessageFromMainProcess(
       path: `${url.pathname}${url.search}`,
       headers: {
         'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(body),
+        'Content-Length': Buffer.byteLength(bodyStr),
       },
     };
 
@@ -201,7 +204,7 @@ function streamChatMessageFromMainProcess(
       reject(new Error(`Failed to reach LM Studio server at ${url.href}: ${error.message}`));
     });
 
-    req.write(body);
+    req.write(bodyStr);
     req.end();
   });
 }
@@ -226,13 +229,14 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     model,
     temperature,
     maxTokens,
-    enableThinking,
+    enable_thinking,
     systemPrompt,
   } = options;
 
   console.log('Query with options', query, options);
 
-  const finalQuery = enableThinking ? query : `${query}\n/no_think`;
+  const finalQuery = enable_thinking ? query : `/no_think\n${query}`;
+  const finalSystemPrompt = enable_thinking ? systemPrompt : `/no_think\n${systemPrompt}`;
   const startTime = Date.now();
 
   const {
@@ -241,18 +245,20 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
   } = await streamChatMessageFromMainProcess(
     baseUrl,
     model,
-    systemPrompt,
+    finalSystemPrompt,
     finalQuery,
     temperature,
     maxTokens,
-    enableThinking,
+    enable_thinking,
   );
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
-  console.log(`Query using model "${actualModel || model}" took ${elapsed}s`);
+  console.log(`Query using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
 
   if (!replyText) {
-    throw new Error('Unexpected LM Studio response shape: received empty content');
+    const message = 'Unexpected LM Studio response shape: received empty content';
+    console.error(message);
+    throw new Error(message);
   }
 
   return {
