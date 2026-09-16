@@ -107,7 +107,7 @@ function streamChatMessageFromMainProcess(
 ) {
   return new Promise((resolve, reject) => {
     const url = new URL('/v1/chat/completions', baseUrl);
-    console.log( 'streamChatMessageFromMainProcess - request url', url);
+    console.log( 'streamChatMessageFromMainProcess - request url', url?.origin);
 
     const body = {
       model,
@@ -233,10 +233,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     systemPrompt,
   } = options;
 
-  console.log('Query with options', query, options);
-
-  const finalQuery = enable_thinking ? query : `/no_think\n${query}`;
-  const finalSystemPrompt = enable_thinking ? systemPrompt : `/no_think\n${systemPrompt}`;
+  // console.log('queryLmStudioFromMainProcess - Query with options', query, options);
   const startTime = Date.now();
 
   const {
@@ -245,15 +242,16 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
   } = await streamChatMessageFromMainProcess(
     baseUrl,
     model,
-    finalSystemPrompt,
-    finalQuery,
+    systemPrompt,
+    query,
     temperature,
     maxTokens,
     enable_thinking,
   );
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
-  console.log(`Query using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
+  // console.log(`Query finished using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
+  console.log(`queryLmStudioFromMainProcess - finished using model "${actualModel || model}" took ${elapsed}s`);
 
   if (!replyText) {
     const message = 'Unexpected LM Studio response shape: received empty content';
