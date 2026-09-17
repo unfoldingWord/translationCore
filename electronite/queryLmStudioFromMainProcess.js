@@ -48,7 +48,7 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
 
         try {
           const parsedResponse = JSON.parse(responseText);
-          const models = parsedResponse?.data;
+          const models = parsedResponse && parsedResponse.data;
 
           if (!Array.isArray(models)) {
             reject(new Error('Unexpected LM Studio models response shape: expected data array'));
@@ -107,7 +107,7 @@ function streamChatMessageFromMainProcess(
 ) {
   return new Promise((resolve, reject) => {
     const url = new URL('/v1/chat/completions', baseUrl);
-    console.log( 'streamChatMessageFromMainProcess - request url', url?.origin);
+    console.log( 'streamChatMessageFromMainProcess - request url', url && url.origin);
 
     const body = {
       model,
@@ -181,10 +181,13 @@ function streamChatMessageFromMainProcess(
 
           try {
             const parsedChunk = JSON.parse(dataStr);
-            actualModel = actualModel || parsedChunk?.model || '';
+            actualModel = actualModel || (parsedChunk && parsedChunk.model) || '';
 
-            const delta = parsedChunk?.choices?.[0]?.delta;
-            const text = delta?.content || delta?.reasoning_content;
+            const delta = parsedChunk
+              && parsedChunk.choices
+              && parsedChunk.choices[0]
+              && parsedChunk.choices[0].delta;
+            const text = delta && (delta.content || delta.reasoning_content);
 
             if (text) {
               replyText += text;
