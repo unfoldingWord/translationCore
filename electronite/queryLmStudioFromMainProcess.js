@@ -107,7 +107,7 @@ function streamChatMessageFromMainProcess(
 ) {
   return new Promise((resolve, reject) => {
     const url = new URL('/v1/chat/completions', baseUrl);
-    console.log( 'streamChatMessageFromMainProcess - request url', url && url.origin);
+    // console.log( 'streamChatMessageFromMainProcess - request url', url && url.origin);
 
     const body = {
       model,
@@ -254,7 +254,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
   // console.log(`Query finished using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
-  console.log(`queryLmStudioFromMainProcess - finished using model "${actualModel || model}" took ${elapsed}s`);
+  // console.log(`queryLmStudioFromMainProcess - finished using model "${actualModel || model}" took ${elapsed}s`);
 
   if (!replyText) {
     const message = 'Unexpected LM Studio response shape: received empty content';
