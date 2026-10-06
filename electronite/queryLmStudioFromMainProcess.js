@@ -106,8 +106,14 @@ function streamChatMessageFromMainProcess(
   enableThinking,
 ) {
   return new Promise((resolve, reject) => {
-    const url = new URL('/v1/chat/completions', baseUrl);
-    // console.log( 'streamChatMessageFromMainProcess - request url', url && url.origin);
+    let url = null;
+
+    try {
+      url = new URL('/v1/chat/completions', baseUrl);
+    } catch (e) {
+      console.log( 'streamChatMessageFromMainProcess - URL error baseUrl:', baseUrl, e);
+      throw e;
+    }
 
     const body = {
       model,
