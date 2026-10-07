@@ -2,10 +2,46 @@ const http = require('http');
 const https = require('https');
 
 /**
+ * Builds the authorization headers for an LM Studio request.
+ *
+ * @param {string} [apiToken] - API token to send as a bearer token. Ignored when empty.
+ * @returns {Object} Headers to merge into the request headers (empty when no token is given)
+ */
+function getAuthHeaders(apiToken) {
+  const token = typeof apiToken === 'string' ? apiToken.trim() : '';
+
+  if (!token) {
+    return {};
+  }
+
+  // tokens may already carry a scheme prefix (e.g. 'Bearer abc')
+  const value = /^\S+\s+\S/.test(token) ? token : `Bearer ${token}`;
+  return { Authorization: value };
+}
+
+/**
+ * Copies options with the API token masked so it is never written to the logs.
+ *
+ * @param {Object} [options={}] - Configuration options
+ * @returns {Object} Options safe to log
+ */
+function redactOptions(options = {}) {
+  if (!options.apiToken) {
+    return options;
+  }
+
+  return {
+    ...options,
+    apiToken: '***',
+  };
+}
+
+/**
  * Makes a GET request to the LM Studio API from the Electron main process.
  *
  * @param {Object} options - Configuration options
  * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
+ * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
  * @param {string} apiUrlPath - API endpoint path to request (e.g., '/v1/models')
  * @returns {Promise<Array>} Promise that resolves with the data array from the API response
  * @throws {Error} If the request fails, the response status is not 2xx, or the response shape is unexpected
@@ -13,11 +49,12 @@ const https = require('https');
 function getApiLmStudioFromMainProcess(options, apiUrlPath) {
   const {
     baseUrl = 'http://localhost:1234',
+    apiToken,
   } = options;
 
   return new Promise((resolve, reject) => {
     const url = new URL(apiUrlPath, baseUrl);
-    console.log('getApiLmStudioFromMainProcess - request parameters', { url, options });
+    console.log('getApiLmStudioFromMainProcess - request parameters', { url, options: redactOptions(options) });
 
     const requestOptions = {
       method: 'GET',
@@ -26,6 +63,7 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
       path: `${url.pathname}${url.search}`,
       headers: {
         Accept: 'application/json',
+        ...getAuthHeaders(apiToken),
       },
     };
 
@@ -75,12 +113,13 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
  *
  * @param {Object} [options={}] - Configuration options
  * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
+ * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
  * @returns {Promise<Array>} List of available LM Studio models
  * @throws {Error} If the request fails or the response shape is unexpected
  */
 function getAvailableLmStudioModelsFromMainProcess(options = {}) {
   let apiUrlPath = '/v1/models';
-  console.log('getAvailableLmStudioModelsFromMainProcess - request model with options', options);
+  console.log('getAvailableLmStudioModelsFromMainProcess - request model with options', redactOptions(options));
   return getApiLmStudioFromMainProcess(options, apiUrlPath);
 }
 
@@ -94,6 +133,7 @@ function getAvailableLmStudioModelsFromMainProcess(options = {}) {
  * @param {number} temperature - Sampling temperature
  * @param {number} maxTokens - Maximum response tokens
  * @param {boolean} enableThinking - Whether to enable thinking mode
+ * @param {string} [apiToken] - API token sent as a bearer token in the Authorization header
  * @returns {Promise<{replyText: string, actualModel: string}>}
  */
 function streamChatMessageFromMainProcess(
@@ -104,6 +144,7 @@ function streamChatMessageFromMainProcess(
   temperature,
   maxTokens,
   enableThinking,
+  apiToken,
 ) {
   return new Promise((resolve, reject) => {
     let url = null;
@@ -138,6 +179,7 @@ function streamChatMessageFromMainProcess(
       headers: {
         'Content-Type': 'application/json',
         'Content-Length': Buffer.byteLength(bodyStr),
+        ...getAuthHeaders(apiToken),
       },
     };
 
@@ -229,6 +271,7 @@ function streamChatMessageFromMainProcess(
  * @param {number} [options.maxTokens=4096] - Maximum response tokens
  * @param {boolean} [options.enableThinking=false] - Whether to enable thinking mode
  * @param {string} [options.systemPrompt='You are a helpful assistant.'] - System prompt
+ * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
  * @returns {Promise<string>} The AI model's response text
  * @throws {Error} If the response is empty or the request fails
  */
@@ -240,6 +283,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     maxTokens,
     enable_thinking,
     systemPrompt,
+    apiToken,
   } = options;
 
   // console.log('queryLmStudioFromMainProcess - Query with options', query, options);
@@ -256,6 +300,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     temperature,
     maxTokens,
     enable_thinking,
+    apiToken,
   );
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
