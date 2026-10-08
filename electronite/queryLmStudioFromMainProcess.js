@@ -215,8 +215,12 @@ function streamChatMessageFromMainProcess({
         const lines = buffer.split('\n');
         buffer = lines.pop() || '';
 
+        // console.log(`${lines.length} lines`);
+
         for (const line of lines) {
           const trimmed = line.trim();
+
+          // console.log(trimmed);
 
           if (!trimmed || !trimmed.startsWith('data: ')) {
             continue;
@@ -242,10 +246,17 @@ function streamChatMessageFromMainProcess({
 
             if (delta && delta.content) {
               replyText += delta.content;
+              // console.log(`delta.content = ${delta.content}`, replyText);
             }
 
             if (delta && delta.reasoning_content) {
               reasoningText += delta.reasoning_content;
+              // console.log(`delta.reasoning_content = ${delta.reasoning_content}`, reasoningText);
+            }
+
+            if (delta && delta.reasoning) {
+              reasoningText += delta.reasoning;
+              // console.log(`delta.reasoning = ${delta.reasoning}`, reasoningText);
             }
           } catch (error) {
             // Ignore malformed SSE chunks.
@@ -317,7 +328,9 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
   // console.log(`Query finished using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
   // console.log(`queryLmStudioFromMainProcess - finished using model "${actualModel || model}" took ${elapsed}s`);
 
-  if (!replyText) {
+  const replyText_ = replyText || reasoningText;
+
+  if (!replyText_) {
     const message = 'Unexpected LM Studio response shape: received empty content';
     console.error(message);
     throw new Error(message);
@@ -327,7 +340,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     actualModel,
     elapsed,
     reasoningText,
-    replyText,
+    replyText: replyText_,
   };
 }
 
