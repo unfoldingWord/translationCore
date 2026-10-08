@@ -126,17 +126,18 @@ function getAvailableLmStudioModelsFromMainProcess(options = {}) {
 /**
  * Streams a chat completion request to an LM Studio server from the Electron main process.
  *
- * @param {string} baseUrl - Base URL of the LM Studio server, e.g. 'http://localhost:1234'
- * @param {string} model - Model identifier configured in LM Studio
- * @param {string} systemPrompt - System prompt
- * @param {string} query - User prompt
- * @param {number} temperature - Sampling temperature
- * @param {number} maxTokens - Maximum response tokens
- * @param {boolean} enableThinking - Whether to enable thinking mode
- * @param {string} [apiToken] - API token sent as a bearer token in the Authorization header
- * @returns {Promise<{replyText: string, actualModel: string}>}
+ * @param {Object} options - Request options
+ * @param {string} options.baseUrl - Base URL of the LM Studio server, e.g. 'http://localhost:1234'
+ * @param {string} options.model - Model identifier configured in LM Studio
+ * @param {string} options.systemPrompt - System prompt
+ * @param {string} options.query - User prompt
+ * @param {number} options.temperature - Sampling temperature
+ * @param {number} options.maxTokens - Maximum response tokens
+ * @param {boolean} options.enableThinking - Whether to enable thinking mode
+ * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
+ * @returns {Promise<{replyText: string, reasoningText: string, actualModel: string}>}
  */
-function streamChatMessageFromMainProcess(
+function streamChatMessageFromMainProcess({
   baseUrl,
   model,
   systemPrompt,
@@ -145,7 +146,7 @@ function streamChatMessageFromMainProcess(
   maxTokens,
   enableThinking,
   apiToken,
-) {
+}) {
   return new Promise((resolve, reject) => {
     let url = null;
 
@@ -187,6 +188,7 @@ function streamChatMessageFromMainProcess(
 
     const req = transport.request(requestOptions, response => {
       let replyText = '';
+      let reasoningText = '';
       let buffer = '';
       let actualModel = '';
       let errorText = '';
@@ -223,7 +225,9 @@ function streamChatMessageFromMainProcess(
           const dataStr = trimmed.slice(6);
 
           if (dataStr === '[DONE]') {
-            resolve({ replyText, actualModel });
+            resolve({
+              replyText, reasoningText, actualModel,
+            });
             return;
           }
 
@@ -235,10 +239,13 @@ function streamChatMessageFromMainProcess(
               && parsedChunk.choices
               && parsedChunk.choices[0]
               && parsedChunk.choices[0].delta;
-            const text = delta && (delta.content || delta.reasoning_content);
 
-            if (text) {
-              replyText += text;
+            if (delta && delta.content) {
+              replyText += delta.content;
+            }
+
+            if (delta && delta.reasoning_content) {
+              reasoningText += delta.reasoning_content;
             }
           } catch (error) {
             // Ignore malformed SSE chunks.
@@ -247,7 +254,9 @@ function streamChatMessageFromMainProcess(
       });
 
       response.on('end', () => {
-        resolve({ replyText, actualModel });
+        resolve({
+          replyText, reasoningText, actualModel,
+        });
       });
     });
 
@@ -291,17 +300,18 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
 
   const {
     replyText,
+    reasoningText,
     actualModel,
-  } = await streamChatMessageFromMainProcess(
+  } = await streamChatMessageFromMainProcess({
     baseUrl,
     model,
     systemPrompt,
     query,
     temperature,
     maxTokens,
-    enable_thinking,
+    enableThinking: enable_thinking,
     apiToken,
-  );
+  });
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
   // console.log(`Query finished using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
@@ -316,6 +326,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
   return {
     actualModel,
     elapsed,
+    reasoningText,
     replyText,
   };
 }
