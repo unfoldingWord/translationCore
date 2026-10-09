@@ -37,14 +37,14 @@ function redactOptions(options = {}) {
 }
 
 /**
- * Makes a GET request to the LM Studio API from the Electron main process.
+ * Makes a GET request to an LM Studio API endpoint from the Electron main process.
  *
- * @param {Object} options - Configuration options
- * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
- * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
- * @param {string} apiUrlPath - API endpoint path to request (e.g., '/v1/models')
- * @returns {Promise<Array>} Promise that resolves with the data array from the API response
- * @throws {Error} If the request fails, the response status is not 2xx, or the response shape is unexpected
+ * @param {Object} options - Request configuration options.
+ * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server.
+ * @param {string} [options.apiToken] - Optional API token. Sent in the Authorization header as a bearer token unless it already includes an auth scheme.
+ * @param {string} apiUrlPath - API endpoint path to request, such as '/v1/models'.
+ * @returns {Promise<Object>} Promise that resolves with the data Object from the parsed API response.
+ * @throws {Error} If the server cannot be reached, the response status is not 2xx, or the response body cannot be parsed as JSON.
  */
 function getApiLmStudioFromMainProcess(options, apiUrlPath) {
   const {
@@ -80,22 +80,20 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
 
       response.on('end', () => {
         if (response.statusCode < 200 || response.statusCode >= 300) {
-          reject(new Error(`LM Studio models request failed (${response.statusCode}): ${responseText}`));
+          reject(new Error(`getApiLmStudioFromMainProcess - data request failed (${response.statusCode}): ${responseText}`));
           return;
         }
 
         try {
           const parsedResponse = JSON.parse(responseText);
-          const models = parsedResponse && parsedResponse.data;
-
-          if (!Array.isArray(models)) {
-            reject(new Error('Unexpected LM Studio models response shape: expected data array'));
-            return;
-          }
-
-          resolve(models);
+          // console.log('getApiLmStudioFromMainProcess - response response:', parsedResponse);
+          const responseData = parsedResponse && parsedResponse.data;
+          // console.log('getApiLmStudioFromMainProcess - responseData:', responseData);
+          resolve(responseData);
         } catch (error) {
-          reject(new Error(`Failed to parse LM Studio models response: ${error.message}`));
+          const message = `Failed to parse LM Studio response: ${error.message}`;
+          console.error(`getApiLmStudioFromMainProcess - error: ${message}`, responseText);
+          reject(new Error(message));
         }
       });
     });
@@ -117,10 +115,18 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
  * @returns {Promise<Array>} List of available LM Studio models
  * @throws {Error} If the request fails or the response shape is unexpected
  */
-function getAvailableLmStudioModelsFromMainProcess(options = {}) {
+async function getAvailableLmStudioModelsFromMainProcess(options = {}) {
   let apiUrlPath = '/v1/models';
-  console.log('getAvailableLmStudioModelsFromMainProcess - request model with options', redactOptions(options));
-  return getApiLmStudioFromMainProcess(options, apiUrlPath);
+  // console.log('getAvailableLmStudioModelsFromMainProcess - request model with options', redactOptions(options));
+  const models = await getApiLmStudioFromMainProcess(options, apiUrlPath);
+  // console.log('getAvailableLmStudioModelsFromMainProcess - models:', models);
+
+  if (!Array.isArray(models)) {
+    throw new Error('getAvailableLmStudioModelsFromMainProcess - Unexpected LM Studio models response shape: expected data array', models);
+  }
+
+  // console.log('getAvailableLmStudioModelsFromMainProcess - SUCCESS:', models);
+  return models;
 }
 
 /**
@@ -146,12 +152,18 @@ function streamChatMessageFromMainProcess({
   maxTokens,
   enableThinking,
   apiToken,
+  repeatedChat = false,
 }) {
   return new Promise((resolve, reject) => {
     let url = null;
 
     try {
-      url = new URL('/v1/chat/completions', baseUrl);
+      if (repeatedChat) {
+        url = new URL('/api/v1/chat', baseUrl); // LM Studio API
+      } else { // single chat
+        url = new URL('/v1/chat/completions', baseUrl); // open AI compatible
+      }
+      // console.log( 'streamChatMessageFromMainProcess - URL :', url.toString());
     } catch (e) {
       console.log( 'streamChatMessageFromMainProcess - URL error baseUrl:', baseUrl, e);
       throw e;
@@ -159,15 +171,32 @@ function streamChatMessageFromMainProcess({
 
     const body = {
       model,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: query },
-      ],
       temperature,
-      max_tokens: maxTokens,
       stream: true,
-      chat_template_kwargs: { enable_thinking: enableThinking },
     };
+
+    if (repeatedChat) {
+      body.input = query;
+      body.max_output_tokens = maxTokens;
+      // body.reasoning = enableThinking ? 'on' : 'off';
+
+      if (systemPrompt) {
+        body.system_prompt = systemPrompt;
+      }
+    } else { // single chat
+      body.max_tokens = maxTokens;
+      body.chat_template_kwargs = { enable_thinking: enableThinking };
+      // body.reasoning = enableThinking ? 'on' : 'off';
+
+      body.messages = [ ];
+
+      if (systemPrompt) {
+        body.messages.push({ role: 'system', content: systemPrompt });
+      }
+
+      body.messages.push({ role: 'user', content: query });
+    }
+
     const bodyStr = JSON.stringify(body);
 
     // console.log('streamChatMessageFromMainProcess - request bodyStr', bodyStr);
