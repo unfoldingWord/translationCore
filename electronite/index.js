@@ -17,10 +17,10 @@ const {
 } = require('./electronWindows');
 const MenuTemplate = require('./MenuTemplate').template;
 const {
-  getApiLmStudioFromMainProcess,
-  getAvailableLmStudioModelsFromMainProcess,
-  queryLmStudioFromMainProcess,
-} = require('./queryLmStudioFromMainProcess');
+  getAiApiFromMainProcess,
+  getAvailableAiApiModelsFromMainProcess,
+  queryAiApiFromMainProcess,
+} = require('./queryAiApisFromMainProcess');
 
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
@@ -39,37 +39,37 @@ let splashScreen;
 
 const downloadManager = new DownloadManager();
 
-function exposeLmStudioQueryToMainWindow(window) {
-  console.log(`exposeLmStudioQueryToMainWindow`);
-  ipcMain.removeHandler('lm-studio:query');
-  ipcMain.removeHandler('lm-studio:get-available-models');
-  ipcMain.removeHandler('lm-studio:get-api');
+function exposeAiApiQueryToMainWindow(window) {
+  console.log(`exposeAiApiQueryToMainWindow`);
+  ipcMain.removeHandler('ai-apis:query');
+  ipcMain.removeHandler('ai-apis:get-available-models');
+  ipcMain.removeHandler('ai-apis:get-api');
 
   // eslint-disable-next-line require-await
-  ipcMain.handle('lm-studio:query', async (event, query, options = {}) => {
+  ipcMain.handle('ai-apis:query', async (event, query, options = {}) => {
     if (!window || event.sender !== window.webContents) {
-      throw new Error('lm-studio:query is only available from the main window');
+      throw new Error('ai-apis:query is only available from the main window');
     }
 
-    return queryLmStudioFromMainProcess(query, options);
+    return queryAiApiFromMainProcess(query, options);
   });
 
   // eslint-disable-next-line require-await
-  ipcMain.handle('lm-studio:get-available-models', async (event, options = {}) => {
+  ipcMain.handle('ai-apis:get-available-models', async (event, options = {}) => {
     if (!window || event.sender !== window.webContents) {
-      throw new Error('lm-studio:get-available-models is only available from the main window');
+      throw new Error('ai-apis:get-available-models is only available from the main window');
     }
 
-    return getAvailableLmStudioModelsFromMainProcess(options);
+    return getAvailableAiApiModelsFromMainProcess(options);
   });
 
   // eslint-disable-next-line require-await
-  ipcMain.handle('lm-studio:get-api', async (event, options = {}, apiUrlPath) => {
+  ipcMain.handle('ai-apis:get-api', async (event, options = {}, apiUrlPath) => {
     if (!window || event.sender !== window.webContents) {
-      throw new Error('lm-studio:get-api is only available from the main window');
+      throw new Error('ai-apis:get-api is only available from the main window');
     }
 
-    return getApiLmStudioFromMainProcess(options, apiUrlPath);
+    return getAiApiFromMainProcess(options, apiUrlPath);
   });
 }
 
@@ -138,13 +138,13 @@ function createMainWindow(qaMode = '') {
       nodeIntegration: true,
       contextIsolation: false,
       enableRemoteModule: true,
-      preload: path.join(__dirname, 'preloadLmStudio.js'),
+      preload: path.join(__dirname, 'preloadAiApi.js'),
       additionalArguments,
     },
   };
 
   mainWindow = createWindow(MAIN_WINDOW_ID, windowOptions);
-  exposeLmStudioQueryToMainWindow(mainWindow);
+  exposeAiApiQueryToMainWindow(mainWindow);
 
   if (process.env.DEVELOPER_MODE === 'true' || process.env.developer_mode === 'true') {
     mainWindow.webContents.openDevTools();

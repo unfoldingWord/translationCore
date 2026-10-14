@@ -46,15 +46,17 @@ function redactOptions(options = {}) {
  * @returns {Promise<Object>} Promise that resolves with the data Object from the parsed API response.
  * @throws {Error} If the server cannot be reached, the response status is not 2xx, or the response body cannot be parsed as JSON.
  */
-function getApiLmStudioFromMainProcess(options, apiUrlPath) {
+function getAiApiFromMainProcess(options, apiUrlPath) {
   const {
     baseUrl = 'http://localhost:1234',
     apiToken,
   } = options;
 
   return new Promise((resolve, reject) => {
-    const url = new URL(apiUrlPath, baseUrl);
-    console.log('getApiLmStudioFromMainProcess - request parameters', { url, options: redactOptions(options) });
+    const baseUrl_ = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
+    const url = new URL(apiUrlPath, baseUrl_);
+    console.log('getAiApiFromMainProcess - URL params', { apiUrlPath, baseUrl1: baseUrl_ });
+    console.log('getAiApiFromMainProcess - request parameters', { url, options: redactOptions(options) });
 
     const requestOptions = {
       method: 'GET',
@@ -66,6 +68,8 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
         ...getAuthHeaders(apiToken),
       },
     };
+
+    console.log('getAiApiFromMainProcess - requestOptions:', requestOptions);
 
     const transport = url.protocol === 'https:' ? https : http;
 
@@ -80,26 +84,30 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
 
       response.on('end', () => {
         if (response.statusCode < 200 || response.statusCode >= 300) {
-          reject(new Error(`getApiLmStudioFromMainProcess - data request failed (${response.statusCode}): ${responseText}`));
+          const message1 = `getAiApiFromMainProcess - data request failed (${response.statusCode}): ${responseText}`;
+          console.warn(message1 + ' responseText:', responseText);
+          reject(new Error(message1));
           return;
         }
 
         try {
           const parsedResponse = JSON.parse(responseText);
-          // console.log('getApiLmStudioFromMainProcess - response response:', parsedResponse);
+          // console.log('getAiApiFromMainProcess - response response:', parsedResponse);
           const responseData = parsedResponse && parsedResponse.data;
-          // console.log('getApiLmStudioFromMainProcess - responseData:', responseData);
+          // console.log('getAiApiFromMainProcess - responseData:', responseData);
           resolve(responseData);
         } catch (error) {
           const message = `Failed to parse LM Studio response: ${error.message}`;
-          console.error(`getApiLmStudioFromMainProcess - error: ${message}`, responseText);
+          console.error(`getAiApiFromMainProcess - error: ${message}`, responseText);
           reject(new Error(message));
         }
       });
     });
 
     req.on('error', error => {
-      reject(new Error(`Failed to reach LM Studio server at ${url.href}: ${error.message}`));
+      const message = `Failed to reach LM Studio server at ${url.href}: ${error.message}`;
+      console.warn(message);
+      reject(new Error(message));
     });
 
     req.end();
@@ -115,17 +123,17 @@ function getApiLmStudioFromMainProcess(options, apiUrlPath) {
  * @returns {Promise<Array>} List of available LM Studio models
  * @throws {Error} If the request fails or the response shape is unexpected
  */
-async function getAvailableLmStudioModelsFromMainProcess(options = {}) {
-  let apiUrlPath = '/v1/models';
-  // console.log('getAvailableLmStudioModelsFromMainProcess - request model with options', redactOptions(options));
-  const models = await getApiLmStudioFromMainProcess(options, apiUrlPath);
-  // console.log('getAvailableLmStudioModelsFromMainProcess - models:', models);
+async function getAvailableAiApiModelsFromMainProcess(options = {}) {
+  let apiUrlPath = 'v1/models?limit=100';
+  // console.log('getAvailableAiApiModelsFromMainProcess - request model with options', redactOptions(options));
+  const models = await getAiApiFromMainProcess(options, apiUrlPath);
+  // console.log('getAvailableAiApiModelsFromMainProcess - models:', models);
 
   if (!Array.isArray(models)) {
-    throw new Error('getAvailableLmStudioModelsFromMainProcess - Unexpected LM Studio models response shape: expected data array', models);
+    throw new Error('getAvailableAiApiModelsFromMainProcess - Unexpected LM Studio models response shape: expected data array', models);
   }
 
-  // console.log('getAvailableLmStudioModelsFromMainProcess - SUCCESS:', models);
+  // console.log('getAvailableAiApiModelsFromMainProcess - SUCCESS:', models);
   return models;
 }
 
@@ -156,16 +164,17 @@ function streamChatMessageFromMainProcess({
 }) {
   return new Promise((resolve, reject) => {
     let url = null;
+    const baseUrl_ = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
     try {
       if (repeatedChat) {
-        url = new URL('/api/v1/chat', baseUrl); // LM Studio API
+        url = new URL('api/v1/chat', baseUrl_); // LM Studio API
       } else { // single chat
-        url = new URL('/v1/chat/completions', baseUrl); // open AI compatible
+        url = new URL('v1/chat/completions', baseUrl_); // open AI compatible
       }
       // console.log( 'streamChatMessageFromMainProcess - URL :', url.toString());
     } catch (e) {
-      console.log( 'streamChatMessageFromMainProcess - URL error baseUrl:', baseUrl, e);
+      console.log( 'streamChatMessageFromMainProcess - URL error baseUrl:', baseUrl_, e);
       throw e;
     }
 
@@ -324,7 +333,7 @@ function streamChatMessageFromMainProcess({
  * @returns {Promise<string>} The AI model's response text
  * @throws {Error} If the response is empty or the request fails
  */
-async function queryLmStudioFromMainProcess(query, options = {}) {
+async function queryAiApiFromMainProcess(query, options = {}) {
   const {
     baseUrl,
     model,
@@ -335,7 +344,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
     apiToken,
   } = options;
 
-  // console.log('queryLmStudioFromMainProcess - Query with options', query, options);
+  // console.log('queryAiApiFromMainProcess - Query with options', query, options);
   const startTime = Date.now();
 
   const {
@@ -355,7 +364,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
   // console.log(`Query finished using model "${actualModel || model}" took ${elapsed}s, reply`, replyText);
-  // console.log(`queryLmStudioFromMainProcess - finished using model "${actualModel || model}" took ${elapsed}s`);
+  // console.log(`queryAiApiFromMainProcess - finished using model "${actualModel || model}" took ${elapsed}s`);
 
   const replyText_ = replyText || reasoningText;
 
@@ -374,7 +383,7 @@ async function queryLmStudioFromMainProcess(query, options = {}) {
 }
 
 module.exports = {
-  getApiLmStudioFromMainProcess,
-  getAvailableLmStudioModelsFromMainProcess,
-  queryLmStudioFromMainProcess,
+  getAiApiFromMainProcess,
+  getAvailableAiApiModelsFromMainProcess,
+  queryAiApiFromMainProcess,
 };

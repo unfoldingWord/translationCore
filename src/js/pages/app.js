@@ -49,18 +49,28 @@ if (NOT_TEST) {
 if (window && !window.lmStudio) {
   console.log('creating window.lmStudio since it does not exist on window');
 
-  window.lmStudio = {
-    getApi: (options = {}) => ipcRenderer.invoke('lm-studio:get-api', options),
-    getAvailableModels: (options = {}) => ipcRenderer.invoke('lm-studio:get-available-models', options),
-    query: (query, options = {}) => ipcRenderer.invoke('lm-studio:query', query, options),
+  window.lmStudio = { // older API
+    getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
+    getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
+    query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
   };
 }
 
-const isLmStudioQueryAvailable =
-  typeof window !== 'undefined' &&
-  typeof window.lmStudio?.query === 'function';
+if (window && !window.AiAPIs) {
+  console.log('creating window.AiAPIs since it does not exist on window');
 
-console.log('isLmStudioQueryAvailable', isLmStudioQueryAvailable);
+  window.AiAPIs = {
+    getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
+    getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
+    query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
+  };
+}
+
+const isAiApiQueryAvailable =
+  typeof window !== 'undefined' &&
+  typeof window.AiApi?.query === 'function';
+
+console.log('isAiApiQueryAvailable', isAiApiQueryAvailable);
 
 
 class Main extends Component {
