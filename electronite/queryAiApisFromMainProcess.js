@@ -92,9 +92,9 @@ function getAiApiFromMainProcess(options, apiUrlPath) {
 
         try {
           const parsedResponse = JSON.parse(responseText);
-          // console.log('getAiApiFromMainProcess - response response:', parsedResponse);
+          console.log('getAiApiFromMainProcess - response response:', parsedResponse);
           const responseData = parsedResponse && parsedResponse.data;
-          // console.log('getAiApiFromMainProcess - responseData:', responseData);
+          console.log('getAiApiFromMainProcess - responseData:', responseData);
           resolve(responseData);
         } catch (error) {
           const message = `Failed to parse LM Studio response: ${error.message}`;
@@ -124,7 +124,7 @@ function getAiApiFromMainProcess(options, apiUrlPath) {
  * @throws {Error} If the request fails or the response shape is unexpected
  */
 async function getAvailableAiApiModelsFromMainProcess(options = {}) {
-  let apiUrlPath = 'v1/models?limit=100';
+  let apiUrlPath = 'v1/models?limit=500';
   // console.log('getAvailableAiApiModelsFromMainProcess - request model with options', redactOptions(options));
   const models = await getAiApiFromMainProcess(options, apiUrlPath);
   // console.log('getAvailableAiApiModelsFromMainProcess - models:', models);

@@ -49,7 +49,7 @@ if (NOT_TEST) {
 if (window && !window.lmStudio) {
   console.log('creating window.lmStudio since it does not exist on window');
 
-  window.lmStudio = { // older API
+  window.lmStudio = { // older API, should use AiAPIs in future
     getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
     getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
     query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
