@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import { Grid, Row } from 'react-bootstrap';
+import { ipcRenderer } from 'electronite';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
 import env, { getBuild } from 'tc-electron-env';
@@ -44,6 +45,33 @@ if (NOT_TEST) {
   injectFileLogging(LOG_FILES_PATH, version);
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
 }
+
+if (window && !window.lmStudio) {
+  console.log('creating window.lmStudio since it does not exist on window');
+
+  window.lmStudio = { // older API, should use AiAPIs in future
+    getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
+    getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
+    query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
+  };
+}
+
+if (window && !window.AiAPIs) {
+  console.log('creating window.AiAPIs since it does not exist on window');
+
+  window.AiAPIs = {
+    getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
+    getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
+    query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
+  };
+}
+
+const isAiApiQueryAvailable =
+  typeof window !== 'undefined' &&
+  typeof window.AiApi?.query === 'function';
+
+console.log('isAiApiQueryAvailable', isAiApiQueryAvailable);
+
 
 class Main extends Component {
   componentDidMount() {
