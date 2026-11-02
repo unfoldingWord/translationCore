@@ -26,7 +26,7 @@ npm run lint            # ESLint check
 npm run lint:fix        # ESLint auto-fix
 npm run build-macos     # Universal + x64 Mac build
 npm run build-linux     # x64 + arm64 Linux build
-npm run build-win       # ia32 + x64 Windows build
+npm run build-win       # x64 + arm64 Windows build
 ```
 
 To run a single test, pass the path directly:
