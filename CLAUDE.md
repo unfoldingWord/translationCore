@@ -45,6 +45,12 @@ After a Mac build, create the DMG:
 - `electronite/index.js` — Main process: window management, download manager, DCS (Door43 Content Service / git.door43.org) integration, ipcMain handlers.
 - `src/index.js` — Renderer process React entry point.
 
+**AI API bridge (suggestions support):** The renderer reaches OpenAI-compatible AI servers (e.g. LM Studio) through the main process over IPC.
+- `electronite/queryAiApisFromMainProcess.js` — HTTP(S) calls: `getAiApiFromMainProcess`, `getAvailableAiApiModelsFromMainProcess`, `queryAiApiFromMainProcess` (streams chat via `streamChatMessageFromMainProcess`: OpenAI-compatible `v1/chat/completions` for a single chat, the LM Studio `api/v1/chat` endpoint when `repeatedChat` is set). Models come from `v1/models?limit=500`. Adds an optional bearer `apiToken` and redacts it with `redactOptions` before logging.
+- `electronite/index.js` → `exposeAiApiQueryToMainWindow()` registers the `ai-apis:query`, `ai-apis:get-available-models` and `ai-apis:get-api` IPC handlers. They reject calls from any window other than the main window.
+- `electronite/preloadAiApi.js` — preload for the main window. It exposes `window.AiAPIs` (`getApi`, `getAvailableModels`, `query`) and the legacy alias `window.lmStudio`.
+- The caller is `checking-tool-wrapper` (`lib/utils/autoCheckingUtils.js` in the installed build), not code in this repo.
+
 **Frontend:** React + Redux. State is organized in `src/js/`:
 - `actions/` — Redux action creators (thunks, async operations)
 - `reducers/` — Redux reducers
@@ -66,9 +72,9 @@ Tools communicate with the host app via a defined API documented in `API.md`.
 2. `electronite/webpack.config.js` bundles the main process separately (target: electron-main).
 3. `electronite-packager` packages the combined output per platform.
 
-**Resources:** `tcResources/` holds Bible resources (en, el-x-koine, hbo, hi). `npm run minimal-resources` loads just en + original languages; `npm run update-resources` refreshes all.
+**Resources:** `tcResources/` holds Bible resources per language (en, el-x-koine, hbo, hi, and other gateway languages). `npm run minimal-resources` loads just en + original languages; `npm run update-resources` refreshes all.
 
-**Localization:** `src/locale/` contains 29 language JSON files. Use `npm run find:missing-locale` / `npm run find:extra-locale` to audit translation keys. Crowdin is used for community translations.
+**Localization:** `src/locale/` contains 25 language JSON files. Use `npm run find:missing-locale` / `npm run find:extra-locale` to audit translation keys. Crowdin is used for community translations.
 
 ## Code Conventions
 
@@ -85,3 +91,24 @@ Branch naming: `feature-GITHUB_USERNAME-ISSUE_NUMBER` or `feature-GITHUB_USERNAM
 PRs target `develop`. Before submitting: merge `develop` locally, test thoroughly.
 
 CI runs on push to `master`, `develop`, `release-*`, `sandbox-*` branches and on all PRs.
+
+## Dependency Modules from unfoldingWord
+
+These are regular `dependencies` in `package.json`. When behavior depends on one of them, read the installed code in `node_modules/<pkg>`, which matches the installed version. Don't assume the GitHub default branch matches. These modules are under our control and may need changes to implement features or fix bugs.
+
+During feature work, `checking-tool-wrapper` and `tc-ui-toolkit` are often pinned to local `.tgz` builds (e.g. `/Users/.../checking-tool-wrapper-7.4.12-beta.N.tgz`). Recent commits bump both together. Reinstall with `npm i --legacy-peer-deps` after changing them.
+
+| Package | Version | Imported in (outside `src/tC_apps/`) |
+|---|---|---|
+| [checking-tool-wrapper](https://github.com/unfoldingWord/checking-tool-wrapper) | local tgz (7.4.12-beta) | `actions/CSVExportActions.js`, `helpers/FeedbackHelpers.js`, `helpers/csvHelpers.js`; also used by the tW/tN tools |
+| [tc-ui-toolkit](https://github.com/unfoldingWord/tc-ui-toolkit) | local tgz (6.2.11-beta) | `helpers/gatewayLanguageHelpers.js`, `helpers/WordAlignmentHelpers.js` |
+| [tc-source-content-updater](https://github.com/unfoldingWord/tc-source-content-updater) | 1.4.34 | `actions/ResourcesActions.js`, `actions/SourceContentUpdatesActions.js`, `actions/ToolActions.js`, project-loading actions, tool cards |
+| [usfm-js](https://github.com/unfoldingWord/usfm-js) | 3.5.0 | `helpers/usfmHelpers.js`, `actions/USFMExportActions.js`, import/merge/migration helpers |
+| [word-aligner](https://github.com/unfoldingWord/word-aligner) | 1.1.1 | `helpers/WordAlignmentHelpers.js`, `helpers/ProjectValidation/MergeConflictHelpers.js`, `helpers/FileConversionHelpers/UsfmFileConversionHelpers.js` |
+| [tc-electron-env](https://github.com/unfoldingWord/tc-electron-env) | 0.10.0 | `common/constants.js`, `pages/app.js`, several actions |
+| [tsv-groupdata-parser](https://github.com/unfoldingWord/tsv-groupdata-parser) | 1.1.0 | `helpers/toolCardBoxesHelpers.js`, `helpers/migrateOriginalLanguageHelpers.js` |
+| [string-punctuation-tokenizer](https://github.com/unfoldingWord/string-punctuation-tokenizer) | ^2.2.0 | `helpers/migrateOriginalLanguageHelpers.js` |
+| [bible-reference-range](https://github.com/unfoldingWord/bible-reference-range) | 1.0.1 | `helpers/migrateOriginalLanguageHelpers.js` |
+| [tc-tool](https://github.com/translationCoreApps/tc-tool) | 4.1.0 | Not imported directly in `src/js`; used by the checking tools in `src/tC_apps/` |
+| [tc-strings](https://github.com/unfoldingWord/tc-strings) | 0.1.7 | Not imported directly in `src/js` |
+| [wordmap](https://github.com/unfoldingWord/wordmap) / [wordmap-lexer](https://github.com/unfoldingWord/wordmap-lexer) | 0.8.2 / 0.3.6 | Not imported directly in `src/js`; used by `wordAlignment` |
