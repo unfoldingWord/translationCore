@@ -45,10 +45,11 @@ After a Mac build, create the DMG:
 - `electronite/index.js` — Main process: window management, download manager, DCS (Door43 Content Service / git.door43.org) integration, ipcMain handlers.
 - `src/index.js` — Renderer process React entry point.
 
-**AI API bridge (suggestions support):** The renderer reaches OpenAI-compatible AI servers (e.g. LM Studio) through the main process over IPC.
+**AI API bridge (suggestions support):** The renderer reaches OpenAI-compatible AI servers (e.g. LM Studio) through the main process over IPC (exposed to app through `window.AiAPIs`).
 - `electronite/queryAiApisFromMainProcess.js` — HTTP(S) calls: `getAiApiFromMainProcess`, `getAvailableAiApiModelsFromMainProcess`, `queryAiApiFromMainProcess` (streams chat via `streamChatMessageFromMainProcess`: OpenAI-compatible `v1/chat/completions` for a single chat, the LM Studio `api/v1/chat` endpoint when `repeatedChat` is set). Models come from `v1/models?limit=500`. Adds an optional bearer `apiToken` and redacts it with `redactOptions` before logging.
 - `electronite/index.js` → `exposeAiApiQueryToMainWindow()` registers the `ai-apis:query`, `ai-apis:get-available-models` and `ai-apis:get-api` IPC handlers. They reject calls from any window other than the main window.
 - `electronite/preloadAiApi.js` — preload for the main window. It exposes `window.AiAPIs` (`getApi`, `getAvailableModels`, `query`) and the legacy alias `window.lmStudio`.
+- `src/js/pages/app.js` - on app startup has fallback check to make sure `window.AiAPIs` is initialized.  This may just be paranoia since it should already be set in `electronite/preloadAiApi.js`.
 - The caller is `checking-tool-wrapper` (`lib/utils/autoCheckingUtils.js` in the installed build), not code in this repo.
 
 **Frontend:** React + Redux. State is organized in `src/js/`:
