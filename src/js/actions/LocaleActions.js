@@ -180,7 +180,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
         console.log(`loadLocalization() - Falling back to ${equivalentLocale}`);
         languageCode = equivalentLocale;
       } else {
-        languageCode = 'en'; // default to `en` if shortLocale match not found
+        languageCode = DEFAULT_LOCALE; // default to DEFAULT_LOCALE if shortLocale match not found
         console.log(`loadLocalization() - No short match found for ${shortLocale}, Falling back to ${languageCode}`);
       }
     }
@@ -237,7 +237,8 @@ const setSystemLocale = (dispatch, languages, translations, setActiveLanguage, a
  * @param {array} languages a list of loaded languages
  * @param {object} translations a dictionary of loaded translations
  * @param {function} setActiveLanguage
- * @return {boolean} returns true of the language was successfully set.
+ * @param {function} addTranslationForLanguage
+ * @return {boolean} returns true if the language (or DEFAULT_LOCALE as a fallback) was successfully set.
  */
 const setActiveLanguageSafely = (dispatch, locale, languages, translations, setActiveLanguage, addTranslationForLanguage) => {
   const shortLocale = locale.split('_')[0];
@@ -254,8 +255,14 @@ const setActiveLanguageSafely = (dispatch, locale, languages, translations, setA
     dispatch(setActiveLanguage(equivalentLocale));
     moment.locale(equivalentLocale); // set locale of moment
     addTranslationForLanguage(translations[equivalentLocale], equivalentLocale);
+  } else if (_.indexOf(languages, DEFAULT_LOCALE) >= 0) {
+    // no match, so fall back to the default locale
+    console.warn(`No translations found for locale: ${locale}, falling back to ${DEFAULT_LOCALE}`);
+    dispatch(setActiveLanguage(DEFAULT_LOCALE));
+    moment.locale(DEFAULT_LOCALE); // set locale of moment
+    addTranslationForLanguage(translations[DEFAULT_LOCALE], DEFAULT_LOCALE);
   } else {
-    console.error(`No translations found for locale: ${locale}`);
+    console.error(`No translations found for locale: ${locale} or default locale: ${DEFAULT_LOCALE}`);
     return false;
   }
   return true;
