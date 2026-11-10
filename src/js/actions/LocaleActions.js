@@ -180,7 +180,7 @@ export const loadLocalization = (localeDir, appLanguage = null, initialize, addT
         console.log(`loadLocalization() - Falling back to ${equivalentLocale}`);
         languageCode = equivalentLocale;
       } else {
-        languageCode = DEFAULT_LOCALE; // default to DEFAULT_LOCALE if shortLocale match not found
+        languageCode = 'en'; // default to `en` if shortLocale match not found
         console.log(`loadLocalization() - No short match found for ${shortLocale}, Falling back to ${languageCode}`);
       }
     }
