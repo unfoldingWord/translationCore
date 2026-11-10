@@ -160,51 +160,36 @@ function streamChatMessageFromMainProcess({
   maxTokens,
   enableThinking,
   apiToken,
-  repeatedChat = false,
 }) {
   return new Promise((resolve, reject) => {
     let url = null;
     const baseUrl_ = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 
     try {
-      if (repeatedChat) {
-        url = new URL('api/v1/chat', baseUrl_); // LM Studio API
-      } else { // single chat
-        url = new URL('v1/chat/completions', baseUrl_); // open AI compatible
-      }
+      // OpenAI-compatible endpoint. Keep systemPrompt identical across calls so the
+      // server's prompt-prefix cache can reuse it.
+      url = new URL('v1/chat/completions', baseUrl_);
       // console.log( 'streamChatMessageFromMainProcess - URL :', url.toString());
     } catch (e) {
       console.log( 'streamChatMessageFromMainProcess - URL error baseUrl:', baseUrl_, e);
-      throw e;
+      reject(e);
+      return;
     }
 
     const body = {
       model,
       temperature,
       stream: true,
+      max_tokens: maxTokens,
+      chat_template_kwargs: { enable_thinking: enableThinking },
+      messages: [],
     };
 
-    if (repeatedChat) {
-      body.input = query;
-      body.max_output_tokens = maxTokens;
-      // body.reasoning = enableThinking ? 'on' : 'off';
-
-      if (systemPrompt) {
-        body.system_prompt = systemPrompt;
-      }
-    } else { // single chat
-      body.max_tokens = maxTokens;
-      body.chat_template_kwargs = { enable_thinking: enableThinking };
-      // body.reasoning = enableThinking ? 'on' : 'off';
-
-      body.messages = [ ];
-
-      if (systemPrompt) {
-        body.messages.push({ role: 'system', content: systemPrompt });
-      }
-
-      body.messages.push({ role: 'user', content: query });
+    if (systemPrompt) {
+      body.messages.push({ role: 'system', content: systemPrompt });
     }
+
+    body.messages.push({ role: 'user', content: query });
 
     const bodyStr = JSON.stringify(body);
 
