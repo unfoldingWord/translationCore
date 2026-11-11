@@ -138,6 +138,19 @@ async function getAvailableAiApiModelsFromMainProcess(options = {}) {
 }
 
 /**
+ * Returns the extra request body fields to merge into a chat completion request.
+ *
+ * @param {Object} [extraParams] - Extra request body fields from the caller
+ * @returns {Object} The extra fields, or an empty object when extraParams is missing or not a plain object
+ */
+function getExtraParams(extraParams) {
+  if (!extraParams || typeof extraParams !== 'object' || Array.isArray(extraParams)) {
+    return {};
+  }
+  return extraParams;
+}
+
+/**
  * Streams a chat completion request to an LM Studio server from the Electron main process.
  *
  * @param {Object} options - Request options
@@ -149,6 +162,9 @@ async function getAvailableAiApiModelsFromMainProcess(options = {}) {
  * @param {number} options.maxTokens - Maximum response tokens
  * @param {boolean} options.enableThinking - Whether to enable thinking mode
  * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
+ * @param {Object} [options.extraParams] - Extra request body fields (e.g. seed, stop, top_p, response_format).
+ *   They are applied after temperature, max_tokens and chat_template_kwargs, so they can override those;
+ *   a key set to undefined is left out of the request. They cannot override model, stream or messages.
  * @returns {Promise<{replyText: string, reasoningText: string, actualModel: string}>}
  */
 function streamChatMessageFromMainProcess({
@@ -160,6 +176,7 @@ function streamChatMessageFromMainProcess({
   maxTokens,
   enableThinking,
   apiToken,
+  extraParams,
 }) {
   return new Promise((resolve, reject) => {
     let url = null;
@@ -177,11 +194,13 @@ function streamChatMessageFromMainProcess({
     }
 
     const body = {
-      model,
       temperature,
-      stream: true,
       max_tokens: maxTokens,
       chat_template_kwargs: { enable_thinking: enableThinking },
+      ...getExtraParams(extraParams),
+      // these are always set by this function and cannot be overridden
+      model,
+      stream: true,
       messages: [],
     };
 
@@ -315,6 +334,8 @@ function streamChatMessageFromMainProcess({
  * @param {boolean} [options.enableThinking=false] - Whether to enable thinking mode
  * @param {string} [options.systemPrompt='You are a helpful assistant.'] - System prompt
  * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
+ * @param {Object} [options.extraParams] - Extra request body fields, e.g. `{ seed: 42, stop: ['```'] }`.
+ *   See streamChatMessageFromMainProcess for how they are merged.
  * @returns {Promise<string>} The AI model's response text
  * @throws {Error} If the response is empty or the request fails
  */
@@ -327,6 +348,7 @@ async function queryAiApiFromMainProcess(query, options = {}) {
     enable_thinking,
     systemPrompt,
     apiToken,
+    extraParams,
   } = options;
 
   // console.log('queryAiApiFromMainProcess - Query with options', query, options);
@@ -345,6 +367,7 @@ async function queryAiApiFromMainProcess(query, options = {}) {
     maxTokens,
     enableThinking: enable_thinking,
     apiToken,
+    extraParams,
   });
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
