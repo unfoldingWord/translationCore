@@ -26,7 +26,7 @@ Status: draft, updated 2026-11-23. Sizes measured from llama.cpp release `b12651
 | macOS x64 DMG | `darwin-x64` (CPU) | 28 MB | ~12 MB |
 | macOS universal DMG | `darwin-arm64` (Metal) + `darwin-x64` | ~60 MB | ~24 MB |
 | Linux x64 deb | Vulkan, 2 CPU variants | 72 MB | ~25 MB |
-| Linux arm64 deb | Vulkan, 2 CPU variants (arm64 variants differ; pick baseline + one) | ~55 MB (estimated) | ~20 MB |
+| Linux arm64 deb | Vulkan, `armv8.0_1` CPU variant only | 60 MB | ~20 MB (estimated) |
 | Windows x64 | Vulkan, 2 CPU variants | 75 MB | ~26 MB |
 | Windows ia32 | **none** (no upstream build) | — | — |
 
@@ -39,7 +39,22 @@ The model is the real size. A usable GGUF model is 1–5 GB, so download it at r
 
 ## Steps
 
-### 1. Fetch script (`scripts/fetch-llama-server.js`)
+### 1. Fetch script (`scripts/fetch-llama-server.js`) — implemented
+Usage: `npm run fetch-llama-server` (targets for the host OS), `-- --all`, `-- --targets=linux-x64`,
+`-- --force`, `-- --update-checksums` (after bumping `llamaCppTag`). Checksums are in
+`scripts/llama-server-checksums.json`, taken from GitHub's published sha256 digests. Re-runs skip targets
+that are already up to date (stamp file `.llama-server.json` in each folder). Found during implementation:
+- The files to keep are chosen by pattern, not a fixed list: `llama-server`, `LICENSE*`, and every shared
+  library except the other tools' `*-impl` libraries and the dropped CPU variants. Checked that every
+  dependency of the kept files is present for all 5 targets.
+- **Windows needs the MSVC runtime** (`msvcp140.dll`, `vcruntime140.dll`, `vcruntime140_1.dll`), which the
+  upstream zip doesn't include. On Windows (CI) the script copies them from System32 next to
+  `llama-server.exe` (app-local deployment). On other OSes it prints a warning.
+- The Windows zip has no llama.cpp `LICENSE`, so the script downloads it from the tagged source.
+- Measured: darwin-arm64 31.9 MB, darwin-x64 28.3 MB, linux-x64 71.7 MB, linux-arm64 59.6 MB,
+  win32-x64 75.0 MB (plus ~1.5 MB of MSVC DLLs).
+
+Original design notes:
 - Pin the version in `package.json` (e.g. `"llamaCppTag": "b12651"`) and keep SHA-256 checksums in a
   committed file.
 - Upstream assets per target:
@@ -53,29 +68,54 @@ The model is the real size. A usable GGUF model is 1–5 GB, so download it at r
   Include llama.cpp's MIT `LICENSE`.
 - Keep the `.dylib` / `.so` version symlinks (e.g. `libllama.1.dylib → libllama.1.0.0.dylib`).
   Recreate them if the copy method doesn't keep them.
-- Add `vendor/` to `.gitignore`. It is already in the packager ignore list in `gulpfile.js`, which is fine
-  because the files go in through `--extra-resource`.
+- `/vendor` is already in `.gitignore` and in the packager ignore list in `gulpfile.js`, so the fetched files
+  never go through the packager. `vendor/` is also where the Windows installer picks up the Git installer
+  (`scripts/win_installer.iss`), so keep everything under the `vendor/llama-server/` subfolder.
 
-### 2. Packaging
-- Right now `electronite-build-*` in `package.json` packages several archs in one call (`--arch=x64,arm64`),
-  and `--extra-resource` can't change per arch. Split these into one packager call per arch:
-  - Linux/Windows: `--extra-resource=vendor/llama-server/<plat>-<arch>`, which becomes
-    `resources/<plat>-<arch>/` (or stage into a `llama-server/` parent first so the path is
-    `resources/llama-server/<plat>-<arch>/`).
-  - macOS x64: just `darwin-x64`.
-  - macOS universal: **both** `darwin-arm64` and `darwin-x64`, identical in the arm64 and x64 halves of the
-    app. Files present in only one half make `@electron/universal` fail.
-- **macOS universal needs an `x64ArchFiles` rule.** `@electron/universal` 1.3.4 (installed) throws
-  `Detected file "..." that's the same in both x64 and arm64 builds and not covered by the x64ArchFiles rule`
-  for any Mach-O file that is identical in both halves. Pass
-  `osxUniversal: { x64ArchFiles: 'Contents/Resources/llama-server/**' }` (`electronite-packager`
-  `src/universal.js` forwards `osxUniversal`). Check whether the CLI accepts
-  `--osx-universal.x64ArchFiles=...`. If not, switch the macOS build to the packager API, as `gulpfile.js`
-  already does. Note: a `lipo`-combined set would hit the same check, so this rule is needed either way.
-- Check that the gulp `release-*` tasks (dmg, deb, Windows installer) still find the `dist/` folders under
-  the same names, and that the deb keeps the executable bit.
-- Linux deb: add `libvulkan1` and `mesa-vulkan-drivers` to the deb's dependencies (recommends).
-  `libggml-vulkan.so` links `libvulkan.so.1`.
+### 2. Packaging: copy after packaging (`scripts/add-llama-server.js`)
+The llama-server files are copied into each packaged app **after** `electronite-packager` finishes and
+**before** the gulp `release-*` tasks build the DMG, deb or Windows installer.
+
+Why this way:
+- **No change to the packager calls.** The `electronite-build-*` scripts in `package.json` stay as they are,
+  multi-arch (`--arch=x64,arm64`, `--arch=universal,x64`, `--arch=ia32,x64`). There's no per-arch split and
+  no `--extra-resource`.
+- **No `x64ArchFiles` rule.** The files are added after `@electron/universal` merges the two halves, so its
+  identical-Mach-O check never sees them.
+
+How it works:
+- Append it to the build scripts, e.g. `"build-macos": "npm run prebuild && npm run electronite-build-macos && node scripts/add-llama-server.js"`
+  (same for `build-linux` and `build-win`). The CI build steps (`npm run build-*`) then need no change.
+- Walk the `dist/translationCore-<platform>-<arch>/` folders that exist (`BUILD_DIR` + `p.name` in
+  `gulpfile.js`) and copy:
+
+  | Packaged folder | Copied from `vendor/llama-server/` | Destination inside the app |
+  |---|---|---|
+  | `translationCore-darwin-x64` | `darwin-x64` | `translationCore.app/Contents/Resources/llama-server/darwin-x64/` |
+  | `translationCore-darwin-universal` | `darwin-arm64` + `darwin-x64` | `translationCore.app/Contents/Resources/llama-server/<each>/` |
+  | `translationCore-darwin-arm64` (if ever built) | `darwin-arm64` | same pattern |
+  | `translationCore-linux-x64` | `linux-x64` | `resources/llama-server/linux-x64/` |
+  | `translationCore-linux-arm64` | `linux-arm64` | `resources/llama-server/linux-arm64/` |
+  | `translationCore-win32-x64` | `win32-x64` | `resources/llama-server/win32-x64/` |
+  | `translationCore-win32-ia32` | — | skipped (no upstream build) |
+
+  Find the `.app` name by listing the folder instead of hard-coding `translationCore.app`.
+- Copy with `fs-extra` `copy` (keeps symlinks by default) and set the exec bit on `llama-server` on
+  macOS/Linux. Fail the build if a source folder is missing for a packaged folder that should have one.
+- **Smoke test** (open question 3): after copying, run `llama-server --version` for whichever copies the
+  CI runner can execute. That's `darwin-arm64` on `macos-latest` (plus `darwin-x64` if Rosetta is installed),
+  `linux-x64` on the Linux job, and `win32-x64` on Windows. `linux-arm64` can't run on the x64 runner, so only
+  check its files are present and the right architecture (`file`). Fail the build on a non-zero exit.
+- Downstream release steps, already checked:
+  - The deb tasks (`release-linux-deb*`) copy the whole build folder with `ncp`, which keeps symlinks and
+    file modes.
+  - `scripts/osx/makedmg.sh` packs the whole `.app`.
+  - The Windows installer (`scripts/win_installer.iss`) includes `{#BuildPath}` with `recursesubdirs`.
+- Linux deb: add `Recommends: libvulkan1, mesa-vulkan-drivers` to `scripts/deb/DEBIAN/control`
+  (`libggml-vulkan.so` links `libvulkan.so.1`), and raise `Installed-Size`.
+- **Future macOS signing:** the copy has to happen before signing, so packager-driven signing (`osxSign`)
+  won't cover these files. Signing would become its own step after this script, signing the nested
+  binaries first and then the `.app`.
 
 ### 3. Main process (`electronite/llamaServerManager.js`)
 - Find the binary folder:
@@ -102,6 +142,7 @@ The model is the real size. A usable GGUF model is 1–5 GB, so download it at r
 ### 5. CI (`.github/workflows/main.yml`)
 - Add a step before `npm run build-*` in each of the three build jobs (`build-linux`, `build-windows`,
   `build-macos`) to run the fetch script, cached with `actions/cache` keyed on the pinned version.
+- The copy and smoke test run inside `npm run build-*` (step 2), so the existing build steps need no change.
 
 ## Platform risks
 - **Windows ia32:** no upstream build. Building it from source for x86 isn't officially supported.
@@ -118,7 +159,13 @@ The model is the real size. A usable GGUF model is 1–5 GB, so download it at r
 
 ## Open questions
 1. Which arm64 CPU variants to keep for Linux arm64. Check the `ubuntu-vulkan-arm64` file list.
+  - answer: support the variant the Electron supports.
 2. Does the `electronite-packager` CLI accept `--osx-universal.x64ArchFiles`, or does the macOS build
    need to move to the packager API?
+  - answer: no longer relevant. The plan switched to copying after packaging (step 2), so no
+    `x64ArchFiles` rule is needed. For the record, the CLI does accept
+    `--osx-universal.x64ArchFiles=...` (verified against the installed `electronite-packager`), if adding
+    files during packaging is ever needed again.
 3. Unverified: the downloaded binaries weren't run locally (the auto-mode safety check blocked it).
    Smoke-test `llama-server --version` on each platform in CI.
+  - answer: yes add this on build.

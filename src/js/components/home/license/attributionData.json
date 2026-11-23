@@ -5,17 +5,51 @@
     "electron": {
       "repository": "https://github.com/electron/electron",
       "license": "MIT",
-      "version": "3.0.11"
+      "version": "25.3.2"
+    },
+    "llama.cpp": {
+      "repository": "https://github.com/ggml-org/llama.cpp",
+      "license": "MIT",
+      "version": "b12651"
+    },
+    "LLVM OpenMP runtime": {
+      "repository": "https://github.com/llvm/llvm-project/tree/main/openmp",
+      "license": "Apache-2.0 WITH LLVM-exception"
+    },
+    "bootstrap": {
+      "repository": "https://github.com/twbs/bootstrap",
+      "license": "MIT",
+      "version": "3.3.6"
+    },
+    "normalize.css": {
+      "repository": "https://github.com/necolas/normalize.css",
+      "license": "MIT",
+      "version": "3.0.3"
+    },
+    "hint.css": {
+      "repository": "https://github.com/chinchang/hint.css",
+      "license": "MIT",
+      "version": "2.5.0"
+    },
+    "@electron/remote": {
+      "license": "MIT",
+      "repository": "https://github.com/electron/remote",
+      "version": "2.0.7"
     },
     "material-ui": {
       "license": "MIT",
       "repository": "https://github.com/mui-org/material-ui",
-      "version": "3.8.3"
+      "version": "4.12.3"
     },
     "electron-dl": {
       "license": "MIT",
       "repository": "https://github.com/sindresorhus/electron-dl",
       "version": "1.11.1"
+    },
+    "@sendgrid/mail": {
+      "license": "MIT",
+      "repository": "https://github.com/sendgrid/sendgrid-nodejs",
+      "version": "6.4.0"
     },
     "adm-zip": {
       "license": "MIT",
@@ -25,7 +59,7 @@
     "agentkeepalive": {
       "license": "MIT",
       "repository": "https://github.com/node-modules/agentkeepalive",
-      "version": "4.0.0"
+      "version": "4.1.0"
     },
     "archiver": {
       "license": "MIT",
@@ -35,57 +69,12 @@
     "axios": {
       "license": "MIT",
       "repository": "https://github.com/axios/axios",
-      "version": "0.18.0"
-    },
-    "babel-plugin-jest-hoist": {
-      "license": "MIT",
-      "repository": "https://github.com/facebook/jest",
-      "version": "21.2.0"
-    },
-    "babel-plugin-transform-async-to-generator": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-async-to-generator",
-      "version": "6.24.1"
-    },
-    "babel-plugin-transform-class-properties": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-class-properties",
-      "version": "6.24.1"
-    },
-    "babel-plugin-transform-decorators-legacy": {
-      "license": "MIT",
-      "repository": "https://github.com/loganfsmyth/babel-plugin-transform-decorators-legacy",
-      "version": "1.3.4"
-    },
-    "babel-plugin-transform-object-rest-spread": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-object-rest-spread",
-      "version": "6.26.0"
-    },
-    "babel-plugin-transform-runtime": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-runtime",
-      "version": "6.23.0"
+      "version": "0.19.1"
     },
     "babel-polyfill": {
       "license": "MIT",
       "repository": "https://github.com/babel/babel/tree/master/packages/babel-polyfill",
       "version": "6.26.0"
-    },
-    "babel-preset-env": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel-preset-env",
-      "version": "1.7.0"
-    },
-    "babel-preset-es2015": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel/tree/master/packages/babel-preset-es2015",
-      "version": "6.24.1"
-    },
-    "babel-preset-react": {
-      "license": "MIT",
-      "repository": "https://github.com/babel/babel/tree/master/packages/babel-preset-react",
-      "version": "6.24.1"
     },
     "crypto-js": {
       "license": "MIT",
@@ -102,25 +91,15 @@
       "repository": "http://github.com/substack/node-deep-equal",
       "version": "1.0.1"
     },
+    "deep-freeze": {
+      "license": "public domain",
+      "repository": "https://github.com/substack/deep-freeze",
+      "version": "0.0.1"
+    },
     "dotenv": {
       "license": "BSD-2-Clause",
       "repository": "https://github.com/motdotla/dotenv",
       "version": "6.2.0"
-    },
-    "electron-compile": {
-      "license": "MIT",
-      "repository": "https://github.com/paulcbetts/electron-compile",
-      "version": "6.4.4"
-    },
-    "electron-prebuilt-compile": {
-      "license": "MIT",
-      "repository": "https://github.com/paulcbetts/electron-prebuilt-compile",
-      "version": "4.0.0"
-    },
-    "enzyme-to-json": {
-      "license": "MIT",
-      "repository": "https://github.com/adriantoine/enzyme-to-json",
-      "version": "3.3.5"
     },
     "follow-redirects": {
       "license": "MIT",
@@ -145,7 +124,7 @@
     "lodash": {
       "license": "MIT",
       "repository": "https://github.com/lodash/lodash",
-      "version": "4.17.11"
+      "version": "4.17.19"
     },
     "memoize-one": {
       "license": "MIT",
@@ -195,7 +174,7 @@
     "react": {
       "license": "MIT",
       "repository": "https://github.com/facebook/react",
-      "version": "16.8.6"
+      "version": "16.14.0"
     },
     "react-bootstrap": {
       "license": "MIT",
@@ -222,14 +201,19 @@
       "repository": "https://github.com/facebook/react",
       "version": "16.8.6"
     },
+    "react-hotkeys": {
+      "license": "ISC",
+      "repository": "https://github.com/greena13/react-hotkeys",
+      "version": "2.0.0"
+    },
     "react-localize-redux": {
       "license": "MIT",
       "repository": "https://github.com/ryandrewjohnson/react-localize-redux",
-      "version": "2.15.1"
+      "version": "3.5.3"
     },
     "react-redux": {
       "license": "MIT",
-      "repository": "https://github.com/github:reduxjs/react-redux",
+      "repository": "https://github.com/reduxjs/react-redux",
       "version": "5.1.1"
     },
     "react-remarkable": {
@@ -305,7 +289,7 @@
     "rimraf": {
       "license": "ISC",
       "repository": "https://github.com/isaacs/rimraf",
-      "version": "2.6.2"
+      "version": "2.6.3"
     },
     "semver": {
       "license": "ISC",
@@ -315,7 +299,7 @@
     "simple-git": {
       "license": "MIT",
       "repository": "https://github.com/steveukx/git-js",
-      "version": "1.43.0"
+      "version": "2.48.0"
     },
     "sudo-prompt": {
       "license": "MIT",
@@ -346,17 +330,123 @@
       "license": "Apache 2",
       "repository": "https://github.com/sole/node-zip-folder",
       "version": "1.0.0"
+    },
+    "@babel/runtime": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel",
+      "version": "7.14.6"
+    },
+    "isEqual": {
+      "license": "ISC",
+      "repository": "https://npmjs.com/package/isEqual",
+      "version": "1.0.3"
+    },
+    "marked": {
+      "license": "MIT",
+      "repository": "https://github.com/markedjs/marked",
+      "version": "0.6.2"
+    },
+    "proskomma": {
+      "license": "MIT",
+      "repository": "https://github.com/mvahowe/proskomma-js",
+      "version": "0.6.12"
+    },
+    "proskomma-render-pdf": {
+      "license": "MIT",
+      "repository": "https://github.com/Proskomma/proskomma-render-pdf",
+      "version": "0.6.8"
+    },
+    "use-deep-compare": {
+      "license": "MIT",
+      "repository": "https://github.com/sandiiarov/use-deep-compare",
+      "version": "1.1.0"
+    },
+    "babel-runtime": {
+      "license": "MIT",
+      "repository": "https://github.com/babel/babel/tree/master/packages/babel-runtime",
+      "version": "6.26.0"
+    },
+    "path": {
+      "license": "MIT",
+      "repository": "https://github.com/jinder/path",
+      "version": "0.12.7"
+    },
+    "transform-runtime": {
+      "license": "ISC",
+      "repository": "https://npmjs.com/package/transform-runtime",
+      "version": "0.0.0"
+    },
+    "promise-parallel-throttle": {
+      "license": "MIT",
+      "repository": "https://github.com/DJWassink/Promise-parallel-throttle",
+      "version": "3.3.0"
+    },
+    "request": {
+      "license": "Apache-2.0",
+      "repository": "https://github.com/request/request",
+      "version": "2.88.2"
+    },
+    "url": {
+      "license": "MIT",
+      "repository": "https://github.com/defunctzombie/node-url",
+      "version": "0.11.0"
+    },
+    "react-draggable": {
+      "license": "MIT",
+      "repository": "https://github.com/mzabriskie/react-draggable",
+      "version": "3.3.2"
+    },
+    "tsvtojson": {
+      "license": "MIT",
+      "repository": "https://github.com/AungMyoKyaw/tsvtojson",
+      "version": "1.0.1"
+    },
+    "lodash.clonedeep": {
+      "license": "MIT",
+      "repository": "https://github.com/lodash/lodash",
+      "version": "4.5.0"
+    },
+    "yargs": {
+      "license": "MIT",
+      "repository": "http://github.com/yargs/yargs",
+      "version": "11.1.1"
     }
   },
   "fonts": {
     "Noto Sans": {
-      "license": "SIL Open Font License",
-      "repository": "https://github.com/googlefonts/noto-fonts"
+      "license": "SIL Open Font License 1.1",
+      "repository": "https://github.com/notofonts/latin-greek-cyrillic",
+      "version": "1.06"
+    },
+    "Charis SIL": {
+      "license": "SIL Open Font License 1.1",
+      "repository": "https://software.sil.org/charis",
+      "version": "6.200"
     },
     "SIL Ezra Font": {
-      "license": "SIL Open Font License",
-      "repository": "http://software.sil.org/ezra",
+      "license": "SIL Open Font License 1.1",
+      "repository": "https://software.sil.org/ezra",
       "version": "2.51"
+    },
+    "Padauk": {
+      "license": "SIL Open Font License 1.1",
+      "repository": "https://software.sil.org/padauk",
+      "version": "4.000"
+    },
+    "Awami Nastaliq": {
+      "license": "SIL Open Font License 1.1",
+      "repository": "https://software.sil.org/awami",
+      "version": "2.000"
+    },
+    "Scheherazade": {
+      "license": "SIL Open Font License 1.1",
+      "repository": "https://software.sil.org/scheherazade",
+      "version": "2.100"
+    },
+    "Glyphicons Halflings": {
+      "license": "MIT",
+      "repository": "https://getbootstrap.com/docs/3.3/components/#glyphicons",
+      "version": "1.009"
     }
   }
 }
