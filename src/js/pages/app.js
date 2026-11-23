@@ -63,6 +63,12 @@ if (window && !window.AiAPIs) {
     getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
     getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
     query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
+    localServer: { // bundled llama-server, see electronite/preloadAiApi.js
+      start: (options = {}) => ipcRenderer.invoke('ai-apis:local-server-start', options),
+      stop: () => ipcRenderer.invoke('ai-apis:local-server-stop'),
+      getStatus: () => ipcRenderer.invoke('ai-apis:local-server-status'),
+      getModels: () => ipcRenderer.invoke('ai-apis:local-server-models'),
+    },
   };
 }
 

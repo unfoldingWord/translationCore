@@ -77,6 +77,16 @@ Tools communicate with the host app via a defined API documented in `API.md`.
 
 **Localization:** `src/locale/` contains 25 language JSON files. Use `npm run find:missing-locale` / `npm run find:extra-locale` to audit translation keys. Crowdin is used for community translations.
 
+**Fonts:** Font files are in `src/fonts/` (complex-script fonts in `src/fonts/complexScript/`). They are loaded by `@font-face` rules in `src/css/styles.css` and in `public/previewStyles-*.css` (one stylesheet per print-preview font). `src/js/common/complexScriptFonts.js` maps the complex-script fonts. `styles.css` also imports vendored CSS from `src/css/` (Bootstrap 3.3.6 with Glyphicons Halflings, hint.css). `font-awesome.min.css` is not imported and its fonts aren't in the repo.
+
+**License attributions (About → Licenses screen):** `src/js/components/home/license/attributionData.json` is generated. Don't edit it by hand. Edit `scripts/attributions/attributionHelpers.js` and run `npm run update-attributions`.
+- `staticPackages`: things not found in npm dependencies: Electron (version read from the installed `electronite`), llama.cpp (version from `llamaCppTag` in `package.json`), the LLVM OpenMP runtime (Windows `libomp.dll`), and the vendored CSS libraries.
+- `staticFonts`: every bundled font. Versions are from the font files' name tables. Add an entry whenever a font is added to `src/fonts/`.
+- npm packages are collected automatically from `package.json` dependencies, from `src/tC_apps/*/package.json`, and from the dependencies of our own packages. Our own packages (in `ignorePackages`, or with a `unfoldingWord`, `unfoldingWord-dev` or `translationCoreApps` GitHub repository) aren't listed themselves. Build/test-only packages are skipped (`buildOnlyPackages`, `@types/*`). Use `packageRename` for forks.
+- Re-run `npm run update-attributions` after adding or upgrading dependencies, fonts, vendored CSS or bundled binaries. `src/__tests__/Licenses.test.js` checks that the rendered screen matches.
+
+**Bundled llama-server:** `npm run fetch-llama-server` downloads the pinned llama.cpp release (`llamaCppTag` in `package.json`, checksums in `scripts/llama-server-checksums.json`) into `vendor/llama-server/<platform>-<arch>/`. See `plan/embed-llama-server.md` for the packaging plan.
+
 ## Code Conventions
 
 - 2-space indent, single quotes, LF line endings (enforced by `.editorconfig` and ESLint)

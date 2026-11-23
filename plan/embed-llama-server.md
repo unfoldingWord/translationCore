@@ -72,7 +72,15 @@ Original design notes:
   never go through the packager. `vendor/` is also where the Windows installer picks up the Git installer
   (`scripts/win_installer.iss`), so keep everything under the `vendor/llama-server/` subfolder.
 
-### 2. Packaging: copy after packaging (`scripts/add-llama-server.js`)
+### 2. Packaging: copy after packaging (`scripts/add-llama-server.js`) — implemented
+Status: `build-macos`, `build-linux` and `build-win` now run
+`prebuild → fetch-llama-server → electronite-build-* → add-llama-server`, so the fetch also happens inside
+the build and CI only needs an optional `actions/cache` on `vendor/llama-server/.cache` (step 5).
+`add-llama-server` options: `--dist=<dir>`, `--no-smoke-test` (or `LLAMA_SERVER_SKIP_SMOKE_TEST=1`).
+It reads each executable's header (Mach-O/ELF/PE) to check its architecture, so `file` isn't needed.
+The deb `control` file now has `Recommends: libvulkan1, mesa-vulkan-drivers` and `Installed-Size: 557000`.
+Tested against mock `dist/` folders for all 6 targets; the smoke test hasn't been run locally yet.
+
 The llama-server files are copied into each packaged app **after** `electronite-packager` finishes and
 **before** the gulp `release-*` tasks build the DMG, deb or Windows installer.
 
@@ -117,7 +125,30 @@ How it works:
   won't cover these files. Signing would become its own step after this script, signing the nested
   binaries first and then the `.app`.
 
-### 3. Main process (`electronite/llamaServerManager.js`)
+### 3. Main process (`electronite/llamaServerManager.js`) — implemented
+Status: `LlamaServerManager` (start/stop/getStatus/stopSync) is wired into `electronite/index.js`. It adds the IPC
+handlers `ai-apis:local-server-start|stop|status` (main window only) and stops the server on `will-quit`.
+The renderer gets `window.AiAPIs.localServer.{start, stop, getStatus}` (and `features.localServer: true`) from
+`preloadAiApi.js`, with the same fallback in `src/js/pages/app.js`. Each start generates a random API key and
+passes it through the `LLAMA_API_KEY` env var, so it isn't visible on the command line. Callers pass the
+returned `baseUrl` and `apiToken` to `query` / `getAvailableModels`. The server is started with `--no-ui` and
+`--alias <model file name>`. Unit tests (`src/__tests__/llamaServerManager.test.js`) use a fake spawn. Not yet
+run against a real llama-server and model.
+
+Update: the server now runs in **router mode** over `~/translationCore/models`
+(`--models-dir <dir> --models-max 1`), replacing the single `--model` mode. `/v1/models` lists every model
+there, and the model named in a request is loaded on demand. It's started in its own process group (not on
+Windows) so stopping it also stops the per-model child processes. On Windows, `taskkill /t` does the same.
+- `query` / `getAvailableModels` accept `localServer: true`. The server is started on demand and
+  `baseUrl` / `apiToken` are filled in. If `model` isn't in the folder and there's exactly one model there, that
+  model is used. `getAvailableModels({ localServer: true })` returns the server's `/v1/models` list, or the
+  scanned folder (same shape) while stopped.
+- New `localServer.getModels()`. `getStatus()` now includes `modelsDir` and `models`.
+- To verify with a real server: does the router pass the API key to its child processes (`LLAMA_API_KEY` is
+  inherited), and are the model ids what `scanModelsDir` predicts (file name without `.gguf`, folder name for
+  folders)?
+
+Original design notes:
 - Find the binary folder:
   - Packaged builds: `path.join(process.resourcesPath, 'llama-server', <platform>-<arch>)`.
   - Dev: `vendor/llama-server/<platform>-<arch>`.

@@ -3,7 +3,8 @@ Version: 1.0.0
 Maintainer: unfoldingWord <info@unfoldingword.org>
 Section: editors
 Architecture: all
-Installed-Size: 484454
+Installed-Size: 557000
+Recommends: libvulkan1, mesa-vulkan-drivers
 Vcs-Git: https://github.com/unfoldingWord-dev/translationCore
 Description: translationCore (tC) is an open source platform for checking and managing Bible translation projects.
  tC provides an extensible interface that enables, among other things,

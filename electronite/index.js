@@ -21,6 +21,7 @@ const {
   getAvailableAiApiModelsFromMainProcess,
   queryAiApiFromMainProcess,
 } = require('./queryAiApisFromMainProcess');
+const { LlamaServerManager } = require('./llamaServerManager');
 
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
@@ -39,18 +40,72 @@ let splashScreen;
 
 const downloadManager = new DownloadManager();
 
+// bundled llama-server: copied into resources/llama-server by scripts/add-llama-server.js when packaged,
+// fetched into vendor/llama-server by scripts/fetch-llama-server.js for development
+const llamaServer = new LlamaServerManager({
+  serverRoot: app.isPackaged ?
+    path.join(process.resourcesPath, 'llama-server') :
+    path.join(app.getAppPath(), 'vendor', 'llama-server'),
+  // the models llama-server can use: .gguf files (or folders of them) in ~/translationCore/models
+  modelsDir: path.join(getHome() || '', 'translationCore', 'models'),
+  runningUnderARM64Translation: app.runningUnderARM64Translation,
+});
+
 function exposeAiApiQueryToMainWindow(window) {
   console.log(`exposeAiApiQueryToMainWindow`);
   ipcMain.removeHandler('ai-apis:query');
   ipcMain.removeHandler('ai-apis:get-available-models');
   ipcMain.removeHandler('ai-apis:get-api');
+  ipcMain.removeHandler('ai-apis:local-server-start');
+  ipcMain.removeHandler('ai-apis:local-server-stop');
+  ipcMain.removeHandler('ai-apis:local-server-status');
+  ipcMain.removeHandler('ai-apis:local-server-models');
 
   // eslint-disable-next-line require-await
+  ipcMain.handle('ai-apis:local-server-models', async (event) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:local-server-models is only available from the main window');
+    }
+
+    return llamaServer.getModels();
+  });
+
+  // the bundled llama-server - see llamaServerManager.js
+  // eslint-disable-next-line require-await
+  ipcMain.handle('ai-apis:local-server-start', async (event, options = {}) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:local-server-start is only available from the main window');
+    }
+
+    return llamaServer.start(options);
+  });
+
+  // eslint-disable-next-line require-await
+  ipcMain.handle('ai-apis:local-server-stop', async (event) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:local-server-stop is only available from the main window');
+    }
+
+    return llamaServer.stop();
+  });
+
+  // eslint-disable-next-line require-await
+  ipcMain.handle('ai-apis:local-server-status', async (event) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:local-server-status is only available from the main window');
+    }
+
+    return llamaServer.getStatus();
+  });
+
   ipcMain.handle('ai-apis:query', async (event, query, options = {}) => {
     if (!window || event.sender !== window.webContents) {
       throw new Error('ai-apis:query is only available from the main window');
     }
 
+    if (options.localServer) { // use the bundled llama-server, starting it if needed
+      return queryAiApiFromMainProcess(query, await llamaServer.getClientOptions(options));
+    }
     return queryAiApiFromMainProcess(query, options);
   });
 
@@ -60,6 +115,9 @@ function exposeAiApiQueryToMainWindow(window) {
       throw new Error('ai-apis:get-available-models is only available from the main window');
     }
 
+    if (options.localServer) { // the models in ~/translationCore/models
+      return llamaServer.getModels();
+    }
     return getAvailableAiApiModelsFromMainProcess(options);
   });
 
@@ -276,6 +334,11 @@ app.on('window-all-closed', () => {
   // if (process.platform !== 'darwin') {
   app.quit();
   // }
+});
+
+// don't leave llama-server running (and holding the model in memory) after tC exits
+app.on('will-quit', () => {
+  llamaServer.stopSync();
 });
 
 app.on('activate', () => {

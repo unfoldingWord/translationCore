@@ -1,0 +1,649 @@
+/**
+ * Starts, monitors and stops the llama-server bundled with the app (see scripts/fetch-llama-server.js and
+ * scripts/add-llama-server.js), so AI suggestions can run on a local model without LM Studio.
+ *
+ * llama-server runs in router mode over the models folder (~/translationCore/models): `/v1/models` lists every
+ * model there, and the model named in a chat request is loaded on demand (one at a time by default, the least
+ * recently used one is unloaded to make room).
+ *
+ * The server listens on 127.0.0.1 on a free port and requires a random API key generated at each start, so
+ * other programs and web pages on the machine can't use it. Callers either pass `localServer: true` in the
+ * AiAPIs options (electronite/index.js fills in the URL and key), or take `baseUrl` and `apiToken` from
+ * `getStatus()`.
+ */
+const { spawn, spawnSync } = require('child_process');
+const crypto = require('crypto');
+const fs = require('fs');
+const http = require('http');
+const net = require('net');
+const path = require('path');
+
+const HOST = '127.0.0.1';
+const DEFAULT_START_TIMEOUT_MS = 60 * 1000; // router mode doesn't load a model at startup
+const DEFAULT_MODELS_MAX = 1; // models loaded at once - each can take several GB of (GPU) memory
+const HEALTH_POLL_INTERVAL_MS = 500;
+const STOP_TIMEOUT_MS = 5000;
+const LOG_LINES_KEPT = 200;
+const SHARD_PATTERN = /-(\d{5})-of-\d{5}$/; // split models: name-00001-of-00003.gguf
+
+/**
+ * Picks the vendor/llama-server target folder name for this machine.
+ * @param {string} platform - process.platform
+ * @param {string} arch - process.arch
+ * @param {boolean} runningUnderARM64Translation - app.runningUnderARM64Translation (macOS/Windows)
+ * @return {string[]} target folder names, best first
+ */
+function getTargetCandidates(platform, arch, runningUnderARM64Translation) {
+  if (platform === 'darwin') {
+    // under Rosetta process.arch is x64 on an Apple Silicon Mac, but the arm64 build (with Metal) runs natively
+    const isArmMac = arch === 'arm64' || runningUnderARM64Translation;
+    return isArmMac ? ['darwin-arm64', 'darwin-x64'] : ['darwin-x64'];
+  }
+
+  if (platform === 'linux' && (arch === 'x64' || arch === 'arm64')) {
+    return [`linux-${arch}`];
+  }
+
+  if (platform === 'win32' && arch === 'x64') {
+    return ['win32-x64'];
+  }
+  return []; // e.g. Windows ia32 has no upstream build
+}
+
+/**
+ * @param {string} platform
+ * @return {string} llama-server executable file name
+ */
+function getExeName(platform) {
+  return platform === 'win32' ? 'llama-server.exe' : 'llama-server';
+}
+
+/**
+ * Builds the llama-server command line (router mode over the models folder).
+ * @param {object} options - see LlamaServerManager.start()
+ * @param {string} modelsDir
+ * @param {number} port
+ * @return {string[]}
+ */
+function buildServerArgs(options, modelsDir, port) {
+  const args = [
+    '--models-dir', modelsDir,
+    '--models-max', String(options.modelsMax || DEFAULT_MODELS_MAX),
+    '--host', HOST,
+    '--port', String(port),
+    '--no-ui', // the built-in web UI isn't needed
+  ];
+
+  if (options.contextSize) {
+    args.push('--ctx-size', String(options.contextSize));
+  }
+
+  if (options.cpuOnly) {
+    args.push('--n-gpu-layers', '0'); // for GPUs or drivers that crash or give garbage
+  } else if (options.gpuLayers !== undefined && options.gpuLayers !== null) {
+    args.push('--n-gpu-layers', String(options.gpuLayers));
+  }
+
+  if (Array.isArray(options.extraArgs)) {
+    args.push(...options.extraArgs.map(String));
+  }
+  return args;
+}
+
+/**
+ * Lists the models in the models folder the way llama-server's router finds them: .gguf files at the top
+ * level (multimodal projector files and the later parts of split models excluded), and sub folders holding
+ * .gguf files (multimodal or split models).
+ * @param {string} modelsDir
+ * @return {Array<{id: string, path: string, size: number}>} sorted by id
+ */
+function scanModelsDir(modelsDir) {
+  let entries;
+
+  try {
+    entries = fs.readdirSync(modelsDir, { withFileTypes: true });
+  } catch (e) {
+    return []; // no models folder yet
+  }
+
+  const isModelFile = name => name.toLowerCase().endsWith('.gguf') && !name.toLowerCase().startsWith('mmproj');
+  const models = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(modelsDir, entry.name);
+
+    if (entry.isDirectory()) {
+      let files = [];
+
+      try {
+        files = fs.readdirSync(fullPath).filter(isModelFile);
+      } catch (e) {
+        // unreadable folder
+      }
+
+      if (files.length) {
+        const size = files.reduce((sum, f) => sum + fs.statSync(path.join(fullPath, f)).size, 0);
+
+        models.push({
+          id: entry.name, path: fullPath, size,
+        });
+      }
+    } else if (entry.isFile() && isModelFile(entry.name)) {
+      const base = entry.name.slice(0, -'.gguf'.length);
+      const shard = base.match(SHARD_PATTERN);
+
+      if (shard && shard[1] !== '00001') {
+        continue; // only list a split model once
+      }
+      models.push({
+        id: shard ? base.replace(SHARD_PATTERN, '') : base,
+        path: fullPath,
+        size: fs.statSync(fullPath).size,
+      });
+    }
+  }
+  return models.sort((a, b) => a.id.localeCompare(b.id));
+}
+
+/**
+ * @return {Promise<number>} a free TCP port on 127.0.0.1
+ */
+function getFreePort() {
+  return new Promise((resolve, reject) => {
+    const server = net.createServer();
+    server.unref();
+    server.on('error', reject);
+    server.listen(0, HOST, () => {
+      const { port } = server.address();
+      server.close(() => resolve(port));
+    });
+  });
+}
+
+/**
+ * GET a path from the local server.
+ * @param {number} port
+ * @param {string} urlPath
+ * @param {string|null} apiToken
+ * @param {number} [timeout=2000]
+ * @return {Promise<{status: number, body: string}>} status 0 if the server can't be reached
+ */
+function httpGet(port, urlPath, apiToken, timeout = 2000) {
+  return new Promise((resolve) => {
+    const headers = apiToken ? { Authorization: `Bearer ${apiToken}` } : {};
+    const req = http.get({
+      host: HOST, port, path: urlPath, headers, timeout,
+    }, (res) => {
+      let body = '';
+      res.setEncoding('utf8');
+      res.on('data', (chunk) => {
+        body += chunk;
+      });
+      res.on('end', () => resolve({ status: res.statusCode, body }));
+    });
+    req.on('timeout', () => req.destroy());
+    req.on('error', () => resolve({ status: 0, body: '' }));
+  });
+}
+
+/**
+ * @param {number} ms
+ * @return {Promise<void>}
+ */
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+class LlamaServerManager {
+  /**
+   * @param {object} config
+   * @param {string} config.serverRoot - folder holding the <platform>-<arch> llama-server folders
+   *   (process.resourcesPath/llama-server when packaged, vendor/llama-server in development)
+   * @param {string} config.modelsDir - folder holding the .gguf models (~/translationCore/models)
+   * @param {string} [config.platform=process.platform]
+   * @param {string} [config.arch=process.arch]
+   * @param {boolean} [config.runningUnderARM64Translation=false]
+   * @param {function} [config.spawnFn=child_process.spawn] - for tests
+   * @param {boolean} [config.useProcessGroup=true] - start llama-server in its own process group (not on
+   *   Windows), so stopping it also stops the per-model processes the router starts. Off in tests.
+   */
+  constructor({
+    serverRoot,
+    modelsDir,
+    platform = process.platform,
+    arch = process.arch,
+    runningUnderARM64Translation = false,
+    spawnFn = spawn,
+    useProcessGroup = true,
+  }) {
+    this.serverRoot = serverRoot;
+    this.modelsDir = modelsDir;
+    this.platform = platform;
+    this.arch = arch;
+    this.runningUnderARM64Translation = !!runningUnderARM64Translation;
+    this.spawnFn = spawnFn;
+    this.useProcessGroup = useProcessGroup && platform !== 'win32';
+
+    this.proc = null;
+    this.state = 'stopped'; // 'stopped' | 'starting' | 'running' | 'stopping'
+    this.port = null;
+    this.apiToken = null;
+    this.options = null;
+    this.lastError = null;
+    this.logLines = [];
+    this.startPromise = null;
+    this.version = undefined;
+  }
+
+  /**
+   * @return {string|null} folder holding llama-server for this machine, or null if none is bundled
+   */
+  getServerDir() {
+    const candidates = getTargetCandidates(this.platform, this.arch, this.runningUnderARM64Translation);
+    const exe = getExeName(this.platform);
+
+    for (const target of candidates) {
+      const dir = path.join(this.serverRoot, target);
+
+      if (fs.existsSync(path.join(dir, exe))) {
+        return dir;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * @return {string|null} full path of the llama-server executable, or null if none is bundled
+   */
+  getExePath() {
+    const dir = this.getServerDir();
+    return dir ? path.join(dir, getExeName(this.platform)) : null;
+  }
+
+  /**
+   * @return {boolean} true if a llama-server build is bundled for this machine
+   */
+  isAvailable() {
+    return !!this.getServerDir();
+  }
+
+  /**
+   * Reads the bundled llama.cpp version from the stamp file written by scripts/fetch-llama-server.js.
+   * @return {string|null} e.g. 'b12651'
+   */
+  getVersion() {
+    if (this.version === undefined) {
+      this.version = null;
+      const dir = this.getServerDir();
+
+      try {
+        if (dir) {
+          this.version = JSON.parse(fs.readFileSync(path.join(dir, '.llama-server.json'), 'utf8')).tag || null;
+        }
+      } catch (e) {
+        // no stamp file (e.g. a hand-copied build)
+      }
+    }
+    return this.version;
+  }
+
+  /**
+   * @return {{available: boolean, state: string, baseUrl: string|null, apiToken: string|null,
+   *   modelsDir: string, models: Array<{id: string, path: string, size: number}>, pid: number|null,
+   *   version: string|null, lastError: string|null, log: string[]}}
+   */
+  getStatus() {
+    const running = this.state === 'running';
+    return {
+      available: this.isAvailable(),
+      state: this.state,
+      baseUrl: running ? `http://${HOST}:${this.port}` : null,
+      apiToken: running ? this.apiToken : null,
+      modelsDir: this.modelsDir,
+      models: scanModelsDir(this.modelsDir),
+      pid: this.proc ? this.proc.pid : null,
+      version: this.getVersion(),
+      lastError: this.lastError,
+      log: this.logLines.slice(-50),
+    };
+  }
+
+  /**
+   * Lists the models. While the server is running this is its `/v1/models` list (which also reports whether
+   * each model is loaded); otherwise the models found in the models folder, in the same shape.
+   * @return {Promise<Array<object>>} OpenAI-style model objects with at least `id`
+   */
+  async getModels() {
+    if (this.state === 'running') {
+      const { status, body } = await httpGet(this.port, '/v1/models', this.apiToken, 10000);
+
+      if (status === 200) {
+        try {
+          const data = JSON.parse(body).data;
+
+          if (Array.isArray(data)) {
+            return data;
+          }
+        } catch (e) {
+          // fall back to scanning the folder
+        }
+      }
+      this.log(`couldn't get /v1/models (HTTP ${status}), listing the models folder instead`);
+    }
+
+    return scanModelsDir(this.modelsDir).map(model => ({
+      id: model.id,
+      object: 'model',
+      owned_by: 'llamacpp',
+      path: model.path,
+      size: model.size,
+    }));
+  }
+
+  /**
+   * Starts llama-server over the models folder, or returns the running server if it already has the same
+   * options. A server running with different options is restarted.
+   * @param {object} [options]
+   * @param {number} [options.modelsMax=1] - models loaded at once
+   * @param {number} [options.contextSize] - context size in tokens (default: from the model)
+   * @param {number|string} [options.gpuLayers] - layers to offload to the GPU (default: llama-server's choice)
+   * @param {boolean} [options.cpuOnly] - don't use the GPU
+   * @param {string[]} [options.extraArgs] - more llama-server command line arguments
+   * @param {number} [options.startTimeoutMs] - how long to wait for the server to be ready
+   * @return {Promise<object>} status (see getStatus()) once the server is ready
+   */
+  async start(options = {}) {
+    const normalized = this.validateOptions(options);
+
+    if (this.state === 'starting' && this.startPromise && this.sameOptions(normalized)) {
+      return this.startPromise;
+    }
+
+    if (this.state === 'running' && this.sameOptions(normalized)) {
+      return this.getStatus();
+    }
+
+    if (this.proc) {
+      await this.stop();
+    }
+
+    this.startPromise = this.launch(normalized);
+
+    try {
+      return await this.startPromise;
+    } finally {
+      this.startPromise = null;
+    }
+  }
+
+  /**
+   * Starts the server with the current options (or defaults) unless it's already running or starting.
+   * @return {Promise<object>} status
+   */
+  ensureRunning() {
+    if (this.state === 'running') {
+      return Promise.resolve(this.getStatus());
+    }
+
+    if (this.state === 'starting' && this.startPromise) {
+      return this.startPromise;
+    }
+    return this.start(this.options || {});
+  }
+
+  /**
+   * Turns AiAPIs options with `localServer: true` into options for the OpenAI-compatible client: starts the
+   * server if needed and fills in `baseUrl` and `apiToken`. When `model` isn't one of the models in the
+   * folder and there's only one model there, that model is used.
+   * @param {object} options - AiAPIs options
+   * @return {Promise<object>} options for queryAiApisFromMainProcess.js
+   */
+  async getClientOptions(options = {}) {
+    const { localServer, ...clientOptions } = options; // eslint-disable-line no-unused-vars
+    const status = await this.ensureRunning();
+    const ids = status.models.map(m => m.id);
+
+    if (!ids.includes(clientOptions.model) && ids.length === 1) {
+      clientOptions.model = ids[0];
+    }
+    return {
+      ...clientOptions, baseUrl: status.baseUrl, apiToken: status.apiToken,
+    };
+  }
+
+  /**
+   * @param {object} options
+   * @return {object} options to use
+   * @throws {Error} if llama-server isn't bundled or the options are invalid
+   */
+  validateOptions(options) {
+    if (!this.isAvailable()) {
+      throw new Error(`llama-server is not available for ${this.platform}-${this.arch}`);
+    }
+
+    if (!this.modelsDir) {
+      throw new Error('No models folder configured for llama-server');
+    }
+
+    if (options.extraArgs !== undefined && !Array.isArray(options.extraArgs)) {
+      throw new Error('options.extraArgs must be an array of strings');
+    }
+    return { ...options };
+  }
+
+  /**
+   * @param {object} options
+   * @return {boolean} true if the current/starting server uses the same options
+   */
+  sameOptions(options) {
+    const { startTimeoutMs, ...a } = options; // eslint-disable-line no-unused-vars
+    const { startTimeoutMs: _, ...b } = this.options || {}; // eslint-disable-line no-unused-vars
+    return JSON.stringify(a) === JSON.stringify(b);
+  }
+
+  /**
+   * Spawns llama-server and waits until /health reports it ready.
+   * @param {object} options
+   * @return {Promise<object>} status
+   */
+  async launch(options) {
+    const exe = this.getExePath();
+    fs.mkdirSync(this.modelsDir, { recursive: true }); // so users can find where to put models
+    const port = await getFreePort();
+    const apiToken = crypto.randomBytes(24).toString('hex');
+    const args = buildServerArgs(options, this.modelsDir, port);
+
+    this.options = options;
+    this.port = port;
+    this.apiToken = apiToken;
+    this.lastError = null;
+    this.logLines = [];
+    this.state = 'starting';
+    this.log(`starting ${exe} ${args.join(' ')}`);
+
+    const proc = this.spawnFn(exe, args, {
+      cwd: path.dirname(exe),
+      // the key goes in the environment rather than on the command line, which other users can see
+      env: { ...process.env, LLAMA_API_KEY: apiToken },
+      stdio: ['ignore', 'pipe', 'pipe'],
+      windowsHide: true,
+      detached: this.useProcessGroup,
+    });
+    this.proc = proc;
+
+    const onOutput = (data) => {
+      String(data).split(/\r?\n/).filter(Boolean).forEach(line => this.log(line));
+    };
+
+    if (proc.stdout) {
+      proc.stdout.on('data', onOutput);
+    }
+
+    if (proc.stderr) {
+      proc.stderr.on('data', onOutput);
+    }
+
+    let exitInfo = null;
+
+    proc.on('error', (err) => {
+      exitInfo = { error: err };
+      this.log(`failed to start: ${err.message}`);
+    });
+    proc.on('exit', (code, signal) => {
+      exitInfo = exitInfo || { code, signal };
+      this.onExit(proc, code, signal);
+    });
+
+    const timeoutMs = options.startTimeoutMs || DEFAULT_START_TIMEOUT_MS;
+    const deadline = Date.now() + timeoutMs;
+
+    while (Date.now() < deadline) {
+      if (exitInfo || this.proc !== proc) {
+        let reason = 'was stopped';
+
+        if (exitInfo && exitInfo.error) {
+          reason = exitInfo.error.message;
+        } else if (exitInfo) {
+          reason = `exited with ${exitInfo.signal ? `signal ${exitInfo.signal}` : `code ${exitInfo.code}`}`;
+        }
+
+        const error = new Error(`llama-server ${reason} while starting.\n${this.logLines.slice(-20).join('\n')}`);
+        this.lastError = error.message;
+        throw error;
+      }
+
+      // polling until the server is up, so these waits are sequential on purpose
+      // eslint-disable-next-line no-await-in-loop
+      const { status } = await httpGet(port, '/health', null);
+
+      if (status === 200) {
+        if (this.proc !== proc) {
+          continue; // stopped while we were checking
+        }
+        this.state = 'running';
+        this.log(`ready at http://${HOST}:${port}`);
+        return this.getStatus();
+      }
+      // eslint-disable-next-line no-await-in-loop
+      await delay(HEALTH_POLL_INTERVAL_MS);
+    }
+
+    await this.stop();
+    this.lastError = `llama-server did not become ready within ${Math.round(timeoutMs / 1000)}s`;
+    throw new Error(this.lastError);
+  }
+
+  /**
+   * @param {ChildProcess} proc
+   * @param {number|null} code
+   * @param {string|null} signal
+   */
+  onExit(proc, code, signal) {
+    if (this.proc !== proc) {
+      return; // an older process we already replaced
+    }
+
+    const expected = this.state === 'stopping';
+    this.log(`exited (${signal ? `signal ${signal}` : `code ${code}`})`);
+
+    if (!expected && this.state === 'running') {
+      this.lastError = `llama-server stopped unexpectedly (${signal ? `signal ${signal}` : `code ${code}`})`;
+    }
+    this.proc = null;
+    this.state = 'stopped';
+    this.port = null;
+    this.apiToken = null;
+  }
+
+  /**
+   * Signals llama-server and, when it runs in its own process group, the model processes it started.
+   * @param {ChildProcess} proc
+   * @param {string} [signal='SIGTERM']
+   */
+  signal(proc, signal = 'SIGTERM') {
+    if (this.useProcessGroup && proc.pid) {
+      try {
+        process.kill(-proc.pid, signal); // negative pid: the whole process group
+        return;
+      } catch (e) {
+        // group already gone, fall through to the main process
+      }
+    }
+    proc.kill(signal);
+  }
+
+  /**
+   * Stops the server, waiting for it to exit (force-killing it if it doesn't exit in time).
+   * @return {Promise<object>} status
+   */
+  async stop() {
+    const proc = this.proc;
+
+    if (!proc) {
+      this.state = 'stopped';
+      return this.getStatus();
+    }
+
+    this.state = 'stopping';
+    const exited = new Promise(resolve => proc.once('exit', resolve));
+    this.signal(proc, 'SIGTERM'); // on Windows this terminates the process
+
+    const timedOut = await Promise.race([
+      exited.then(() => false),
+      delay(STOP_TIMEOUT_MS).then(() => true),
+    ]);
+
+    if (timedOut && this.proc === proc) {
+      this.log('did not exit in time, killing');
+      this.signal(proc, 'SIGKILL');
+      await Promise.race([exited, delay(STOP_TIMEOUT_MS)]);
+    }
+
+    if (this.proc === proc) { // no exit event (shouldn't happen), clean up anyway
+      this.onExit(proc, null, 'SIGKILL');
+    }
+    return this.getStatus();
+  }
+
+  /**
+   * Kills the server and its model processes immediately, for use while the app is quitting.
+   */
+  stopSync() {
+    const proc = this.proc;
+
+    if (!proc) {
+      return;
+    }
+    this.state = 'stopping';
+
+    try {
+      if (this.platform === 'win32') {
+        // /t also ends the model processes the router started
+        spawnSync('taskkill', ['/pid', String(proc.pid), '/t', '/f'], { windowsHide: true });
+      } else {
+        this.signal(proc, 'SIGKILL');
+      }
+    } catch (e) {
+      // already gone
+    }
+  }
+
+  /**
+   * @param {string} line
+   */
+  log(line) {
+    console.log(`llama-server: ${line}`);
+    this.logLines.push(line);
+
+    if (this.logLines.length > LOG_LINES_KEPT) {
+      this.logLines.splice(0, this.logLines.length - LOG_LINES_KEPT);
+    }
+  }
+}
+
+module.exports = {
+  LlamaServerManager,
+  getTargetCandidates,
+  buildServerArgs,
+  scanModelsDir,
+};
