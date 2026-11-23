@@ -153,7 +153,10 @@ Windows) so stopping it also stops the per-model child processes. On Windows, `t
   now also uses. A PID file (`<userData>/llama-server.pid`) records the running server. On the next launch,
   `cleanupOrphan()` (called on `ready`) kills a server left behind by a crash, but only if that pid is still a
   `llama-server` process (`ps` / `tasklist`), since pids get reused.
-- To verify with a real server: does the router pass the API key to its child processes (`LLAMA_API_KEY` is
+- **Verified with a real server (macOS arm64, b12651):** listing models and a query with `localServer: true`
+  work with one model in the folder, so the API key does reach the router's per-model process. With two
+  models, the default choice (no `model`) and switching between models by `model` id also work.
+- Original open questions: does the router pass the API key to its child processes (`LLAMA_API_KEY` is
   inherited), and are the model ids what `scanModelsDir` predicts (file name without `.gguf`, folder name for
   folders)?
 

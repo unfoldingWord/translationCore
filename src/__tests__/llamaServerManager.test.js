@@ -300,23 +300,46 @@ describe('LlamaServerManager', () => {
     expect(calls[0].proc.kill).toHaveBeenCalled();
   });
 
-  test('getClientOptions starts the server and fills in the URL, key and only model', async () => {
-    writeFile(path.join(fixture.modelsDir, 'qwen3-8b.gguf'));
-    const { spawnFn, calls } = makeFakeSpawn({ loadingPolls: 0 });
+  test('getClientOptions starts the server and fills in the URL, key and a model', async () => {
+    const serverModels = [
+      {
+        id: 'gemma-3-4b', object: 'model', status: { value: 'unloaded' },
+      },
+      {
+        id: 'qwen3-8b', object: 'model', status: { value: 'unloaded' },
+      },
+    ];
+    const { spawnFn, calls } = makeFakeSpawn({ loadingPolls: 0, models: serverModels });
     const manager = makeManager({ spawnFn });
 
+    // no model (or the generic 'local-model'): the first model, since none is loaded
     const options = await manager.getClientOptions({
       localServer: true, model: 'local-model', temperature: 0.2,
     });
 
     expect(options).toEqual({
-      model: 'qwen3-8b', temperature: 0.2, baseUrl: manager.getStatus().baseUrl, apiToken: manager.getStatus().apiToken,
+      model: 'gemma-3-4b', temperature: 0.2, baseUrl: manager.getStatus().baseUrl, apiToken: manager.getStatus().apiToken,
     });
 
-    // a named model is kept when there are several
-    writeFile(path.join(fixture.modelsDir, 'gemma-3-4b.gguf'));
+    // prefers the model that is already loaded
+    serverModels[1].status.value = 'loaded';
+    expect((await manager.getClientOptions({ localServer: true })).model).toBe('qwen3-8b');
+
+    // a named model is kept
     expect((await manager.getClientOptions({ localServer: true, model: 'gemma-3-4b' })).model).toBe('gemma-3-4b');
+
+    // an unknown model is an error that lists the available ones
+    await expect(manager.getClientOptions({ localServer: true, model: 'llama-70b' }))
+      .rejects.toThrow('Available models: gemma-3-4b, qwen3-8b');
     expect(calls).toHaveLength(1);
+    await manager.stop();
+  });
+
+  test('getClientOptions explains when there are no models', async () => {
+    const { spawnFn } = makeFakeSpawn({ loadingPolls: 0, models: [] });
+    const manager = makeManager({ spawnFn });
+
+    await expect(manager.getClientOptions({ localServer: true })).rejects.toThrow('No models found');
     await manager.stop();
   });
 

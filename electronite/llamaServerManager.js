@@ -28,6 +28,18 @@ const HEALTH_POLL_INTERVAL_MS = 500;
 const STOP_TIMEOUT_MS = 5000;
 const LOG_LINES_KEPT = 200;
 const SHARD_PATTERN = /-(\d{5})-of-\d{5}$/; // split models: name-00001-of-00003.gguf
+// model name clients send when they don't care which model (the LM Studio convention)
+const GENERIC_MODEL_NAME = 'local-model';
+
+/**
+ * @param {object} model - entry from llama-server's router /v1/models
+ * @return {boolean} true if the router reports the model as loaded
+ */
+function isModelLoaded(model) {
+  const status = model && model.status;
+  return (status && typeof status === 'object' ? status.value : status) === 'loaded';
+}
+
 // another program can take the free port between picking it and llama-server binding it; then try a new port
 const MAX_START_ATTEMPTS = 3;
 const PORT_IN_USE_PATTERN = /address already in use|couldn't bind|could not bind|failed to bind/i;
@@ -461,18 +473,33 @@ class LlamaServerManager {
 
   /**
    * Turns AiAPIs options with `localServer: true` into options for the OpenAI-compatible client: starts the
-   * server if needed and fills in `baseUrl` and `apiToken`. When `model` isn't one of the models in the
-   * folder and there's only one model there, that model is used.
+   * server if needed and fills in `baseUrl` and `apiToken`.
+   *
+   * llama-server's router needs a model name in every request. When `model` is missing (or the generic
+   * 'local-model'), the model that is already loaded is used, otherwise the first model in the list.
    * @param {object} options - AiAPIs options
    * @return {Promise<object>} options for queryAiApisFromMainProcess.js
+   * @throws {Error} if there are no models, or `model` names one that isn't in the models folder
    */
   async getClientOptions(options = {}) {
     const { localServer, ...clientOptions } = options; // eslint-disable-line no-unused-vars
     const status = await this.ensureRunning();
-    const ids = status.models.map(m => m.id);
+    const models = await this.getModels(); // the server's own ids, so they match what it accepts
+    const ids = models.map(m => m.id);
+    const requested = clientOptions.model;
 
-    if (!ids.includes(clientOptions.model) && ids.length === 1) {
-      clientOptions.model = ids[0];
+    if (!ids.length) {
+      throw new Error(`No models found in ${this.modelsDir}. Add a .gguf model file there.`);
+    }
+
+    if (requested && requested !== GENERIC_MODEL_NAME) {
+      if (!ids.includes(requested)) {
+        throw new Error(`Model "${requested}" is not in ${this.modelsDir}. Available models: ${ids.join(', ')}`);
+      }
+    } else {
+      const loaded = models.find(isModelLoaded);
+      clientOptions.model = (loaded || models[0]).id;
+      this.log(`no model requested, using ${clientOptions.model}`);
     }
     return {
       ...clientOptions, baseUrl: status.baseUrl, apiToken: status.apiToken,
