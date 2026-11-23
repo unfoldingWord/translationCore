@@ -150,6 +150,31 @@ function getExtraParams(extraParams) {
   return extraParams;
 }
 
+/** roles a chat message may have in `options.messages` */
+const CHAT_MESSAGE_ROLES = ['system', 'user', 'assistant'];
+
+/**
+ * Checks a list of chat messages and copies it: a non-empty array of
+ * `{ role: 'system' | 'user' | 'assistant', content: string }` ending in a user message. Anything
+ * else gives null, so the request is built from `systemPrompt` and `query` as before.
+ *
+ * @param {*} messages - the list to check
+ * @returns {Array<{role: string, content: string}>|null} a copy holding only `role` and `content`
+ */
+function getValidChatMessages(messages) {
+  if (!Array.isArray(messages) || !messages.length) {
+    return null;
+  }
+
+  const valid = messages.every(message => CHAT_MESSAGE_ROLES.includes(message && message.role) &&
+    typeof message.content === 'string');
+
+  if (!valid || messages[messages.length - 1].role !== 'user') {
+    return null;
+  }
+  return messages.map(({ role, content }) => ({ role, content }));
+}
+
 /**
  * Streams a chat completion request to an LM Studio server from the Electron main process.
  *
@@ -165,6 +190,9 @@ function getExtraParams(extraParams) {
  * @param {Object} [options.extraParams] - Extra request body fields (e.g. seed, stop, top_p, response_format).
  *   They are applied after temperature, max_tokens and chat_template_kwargs, so they can override those;
  *   a key set to undefined is left out of the request. They cannot override model, stream or messages.
+ * @param {Array<{role: string, content: string}>} [options.messages] - Chat messages to send in place
+ *   of `systemPrompt` and `query`, e.g. worked examples as earlier user/assistant turns. Used only when
+ *   valid (see getValidChatMessages); the caller adds any `/no_think` directive.
  * @returns {Promise<{replyText: string, reasoningText: string, actualModel: string}>}
  */
 function streamChatMessageFromMainProcess({
@@ -177,6 +205,7 @@ function streamChatMessageFromMainProcess({
   enableThinking,
   apiToken,
   extraParams,
+  messages,
 }) {
   return new Promise((resolve, reject) => {
     let url = null;
@@ -204,11 +233,17 @@ function streamChatMessageFromMainProcess({
       messages: [],
     };
 
-    if (systemPrompt) {
-      body.messages.push({ role: 'system', content: systemPrompt });
-    }
+    const validMessages = getValidChatMessages(messages);
 
-    body.messages.push({ role: 'user', content: query });
+    if (validMessages) {
+      body.messages = validMessages;
+    } else {
+      if (systemPrompt) {
+        body.messages.push({ role: 'system', content: systemPrompt });
+      }
+
+      body.messages.push({ role: 'user', content: query });
+    }
 
     const bodyStr = JSON.stringify(body);
 
@@ -336,6 +371,9 @@ function streamChatMessageFromMainProcess({
  * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
  * @param {Object} [options.extraParams] - Extra request body fields, e.g. `{ seed: 42, stop: ['```'] }`.
  *   See streamChatMessageFromMainProcess for how they are merged.
+ * @param {Array<{role: string, content: string}>} [options.messages] - Chat messages sent in place of
+ *   `systemPrompt` and `query` when valid. Callers can tell this version supports them from
+ *   `window.AiAPIs.features.messages` (electronite/preloadAiApi.js).
  * @returns {Promise<string>} The AI model's response text
  * @throws {Error} If the response is empty or the request fails
  */
@@ -349,6 +387,7 @@ async function queryAiApiFromMainProcess(query, options = {}) {
     systemPrompt,
     apiToken,
     extraParams,
+    messages,
   } = options;
 
   // console.log('queryAiApiFromMainProcess - Query with options', query, options);
@@ -368,6 +407,7 @@ async function queryAiApiFromMainProcess(query, options = {}) {
     enableThinking: enable_thinking,
     apiToken,
     extraParams,
+    messages,
   });
 
   const elapsed = ((Date.now() - startTime) / 1000).toFixed(2);
