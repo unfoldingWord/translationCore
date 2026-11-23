@@ -48,12 +48,15 @@ function writeFile(file, size = 1) {
  * @param {number} [behavior.loadingPolls=1]
  * @param {number} [behavior.exitCode] - exit with this code right away instead of serving
  * @param {Array} [behavior.models] - the /v1/models list
- * @return {{spawnFn: function, calls: Array}}
+ * @param {number} [behavior.portTakenCalls=0] - for this many calls, another program (a server that answers
+ *   /health but has a different API key) grabs the port first and llama-server exits failing to bind it
+ * @return {{spawnFn: function, calls: Array, intruders: Array}}
  */
 function makeFakeSpawn({
-  loadingPolls = 1, exitCode, models = [],
+  loadingPolls = 1, exitCode, models = [], portTakenCalls = 0,
 } = {}) {
   const calls = [];
+  const intruders = [];
 
   const spawnFn = (exe, args, options) => {
     const proc = new EventEmitter();
@@ -63,6 +66,21 @@ function makeFakeSpawn({
     calls.push({
       exe, args, options, proc,
     });
+
+    if (calls.length <= portTakenCalls) {
+      const intruder = http.createServer((req, res) => {
+        res.statusCode = req.url === '/health' ? 200 : 401;
+        res.end();
+      });
+      intruders.push(intruder);
+      intruder.listen(Number(args[args.indexOf('--port') + 1]), '127.0.0.1', () => {
+        setTimeout(() => {
+          proc.stderr.emit('data', 'error: couldn\'t bind HTTP server socket\n');
+          proc.emit('exit', 1, null);
+        }, 600); // after the manager has seen the intruder's /health
+      });
+      return proc;
+    }
 
     if (exitCode !== undefined) {
       setTimeout(() => {
@@ -97,7 +115,28 @@ function makeFakeSpawn({
     });
     return proc;
   };
-  return { spawnFn, calls };
+  return {
+    spawnFn, calls, intruders,
+  };
+}
+
+/**
+ * @param {Array<http.Server>} servers
+ * @return {Promise<void>}
+ */
+function closeAll(servers) {
+  return Promise.all(servers.map(s => new Promise(resolve => s.close(() => resolve()))));
+}
+
+/**
+ * Starts a real long-running process (node) through the given command path, and returns it.
+ * @param {string} command
+ * @return {ChildProcess}
+ */
+function startSleeper(command) {
+  // eslint-disable-next-line global-require
+  const { spawn } = jest.requireActual('child_process');
+  return spawn(command, ['-e', 'setTimeout(() => {}, 60000)'], { stdio: 'ignore' });
 }
 
 describe('getTargetCandidates', () => {
@@ -295,12 +334,62 @@ describe('LlamaServerManager', () => {
   });
 
   test('reports the log when llama-server exits while starting', async () => {
-    const { spawnFn } = makeFakeSpawn({ exitCode: 1 });
+    const { spawnFn, calls } = makeFakeSpawn({ exitCode: 1 });
     const manager = makeManager({ spawnFn });
 
     await expect(manager.start()).rejects.toThrow(/exited with code 1[\s\S]*failed to initialize router models/);
     expect(manager.getStatus()).toEqual(expect.objectContaining({ state: 'stopped' }));
     expect(manager.getStatus().lastError).toContain('failed to initialize router models');
+    expect(calls).toHaveLength(1); // not a port problem, so no retry
+  });
+
+  test('retries with a new port when another program takes the port first', async () => {
+    const {
+      spawnFn, calls, intruders,
+    } = makeFakeSpawn({ loadingPolls: 0, portTakenCalls: 2 });
+    const manager = makeManager({ spawnFn });
+
+    try {
+      const status = await manager.start();
+      expect(status.state).toBe('running');
+      expect(calls).toHaveLength(3);
+      const ports = calls.map(c => c.args[c.args.indexOf('--port') + 1]);
+      expect(new Set(ports).size).toBe(3);
+      // the intruder answered /health, but without our API key it wasn't taken for our server
+      expect(status.baseUrl).toBe(`http://127.0.0.1:${ports[2]}`);
+      await manager.stop();
+    } finally {
+      await closeAll(intruders);
+    }
+  });
+
+  test('gives up after 3 attempts when the port keeps being taken', async () => {
+    const {
+      spawnFn, calls, intruders,
+    } = makeFakeSpawn({ portTakenCalls: 5 });
+    const manager = makeManager({ spawnFn });
+
+    try {
+      await expect(manager.start()).rejects.toThrow(/couldn't bind/);
+      expect(calls).toHaveLength(3);
+    } finally {
+      await closeAll(intruders);
+    }
+  });
+
+  test('records the pid while running and removes it when stopped', async () => {
+    const pidFile = path.join(fixture.root, 'userData', 'llama-server.pid');
+    const { spawnFn } = makeFakeSpawn({ loadingPolls: 0 });
+    const manager = makeManager({ spawnFn, pidFile });
+
+    await manager.start();
+    expect(JSON.parse(fs.readFileSync(pidFile, 'utf8'))).toEqual(expect.objectContaining({ pid: 4242, processGroup: false }));
+    await manager.stop();
+    expect(fs.existsSync(pidFile)).toBe(false);
+
+    await manager.start();
+    manager.stopSync(); // quitting: the file goes even without an exit event
+    expect(fs.existsSync(pidFile)).toBe(false);
   });
 
   test('records an unexpected exit after starting', async () => {
@@ -311,5 +400,59 @@ describe('LlamaServerManager', () => {
     await new Promise(resolve => calls[0].proc.server.close(resolve));
     calls[0].proc.emit('exit', null, 'SIGSEGV');
     expect(manager.getStatus()).toEqual(expect.objectContaining({ state: 'stopped', lastError: expect.stringContaining('SIGSEGV') }));
+  });
+  describe('cleanupOrphan', () => {
+    const exitOf = proc => new Promise(resolve => {
+      if (proc.exitCode !== null || proc.signalCode !== null) {
+        resolve();
+      } else {
+        proc.once('exit', () => resolve());
+      }
+    });
+
+    test('does nothing without a pid file, and removes a stale one', () => {
+      const pidFile = path.join(fixture.root, 'llama-server.pid');
+      const manager = makeManager({ pidFile });
+      expect(manager.cleanupOrphan()).toBe(false);
+
+      fs.writeFileSync(pidFile, JSON.stringify({ pid: 999999999 })); // no such process
+      expect(manager.cleanupOrphan()).toBe(false);
+      expect(fs.existsSync(pidFile)).toBe(false);
+    });
+
+    test('does not kill a process that is not llama-server (reused pid)', async () => {
+      const pidFile = path.join(fixture.root, 'llama-server.pid');
+      const sleeper = startSleeper(process.execPath);
+
+      try {
+        fs.writeFileSync(pidFile, JSON.stringify({ pid: sleeper.pid, processGroup: false }));
+        expect(makeManager({ pidFile, platform: process.platform }).cleanupOrphan()).toBe(false);
+        expect(sleeper.exitCode).toBeNull();
+        expect(fs.existsSync(pidFile)).toBe(false);
+      } finally {
+        sleeper.kill();
+        await exitOf(sleeper);
+      }
+    });
+
+    (process.platform === 'win32' ? test.skip : test)('kills a llama-server left behind by a crash', async () => {
+      const pidFile = path.join(fixture.root, 'llama-server.pid');
+      const fakeServer = path.join(fixture.root, 'bin', 'llama-server');
+      fs.mkdirSync(path.dirname(fakeServer));
+      fs.symlinkSync(process.execPath, fakeServer); // shows up as "llama-server" in the process list
+      const orphan = startSleeper(fakeServer);
+      const exited = exitOf(orphan);
+
+      try {
+        await new Promise(resolve => setTimeout(resolve, 200)); // let it start
+        fs.writeFileSync(pidFile, JSON.stringify({ pid: orphan.pid, processGroup: false }));
+        expect(makeManager({ pidFile, platform: process.platform }).cleanupOrphan()).toBe(true);
+        await exited;
+        expect(orphan.signalCode).toBe('SIGKILL');
+        expect(fs.existsSync(pidFile)).toBe(false);
+      } finally {
+        orphan.kill();
+      }
+    });
   });
 });

@@ -48,6 +48,8 @@ const llamaServer = new LlamaServerManager({
     path.join(app.getAppPath(), 'vendor', 'llama-server'),
   // the models llama-server can use: .gguf files (or folders of them) in ~/translationCore/models
   modelsDir: path.join(getHome() || '', 'translationCore', 'models'),
+  // records the running server so one left behind by a crash is stopped on the next launch
+  pidFile: path.join(app.getPath('userData'), 'llama-server.pid'),
   runningUnderARM64Translation: app.runningUnderARM64Translation,
 });
 
@@ -341,6 +343,11 @@ app.on('will-quit', () => {
   llamaServer.stopSync();
 });
 
+// also covers app.exit() and other exits that skip will-quit (stopSync does nothing if already stopped)
+process.on('exit', () => {
+  llamaServer.stopSync();
+});
+
 app.on('activate', () => {
   // on macOS it is common to re-create a window even after all windows have been closed
   if (mainWindow === null) {
@@ -350,6 +357,8 @@ app.on('activate', () => {
 
 // create main BrowserWindow with a splash screen when electron is ready
 app.on('ready', () => {
+  // stop a llama-server left running if tC crashed or was killed last time
+  llamaServer.cleanupOrphan();
   console.log('ready - creating splash screen');
   createSplashWindow();
   setTimeout(function () {

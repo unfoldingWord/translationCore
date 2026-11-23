@@ -144,6 +144,15 @@ Windows) so stopping it also stops the per-model child processes. On Windows, `t
   model is used. `getAvailableModels({ localServer: true })` returns the server's `/v1/models` list, or the
   scanned folder (same shape) while stopped.
 - New `localServer.getModels()`. `getStatus()` now includes `modelsDir` and `models`.
+- **Port retry:** if llama-server exits while starting and the port is now held by another program
+  (or its log says it couldn't bind), start tries again on a new free port, up to 3 attempts. Readiness requires
+  both `/health` 200 and an authenticated `/v1/models` 200, so another program answering `/health` on the port
+  isn't mistaken for our server.
+- **Stopping with tC:** `stopSync()` runs on `will-quit` and on `process.on('exit')` (covers `app.exit()`).
+  On Mac/Linux it kills the process group; on Windows `taskkill /t /f` kills the process tree, which `stop()`
+  now also uses. A PID file (`<userData>/llama-server.pid`) records the running server. On the next launch,
+  `cleanupOrphan()` (called on `ready`) kills a server left behind by a crash, but only if that pid is still a
+  `llama-server` process (`ps` / `tasklist`), since pids get reused.
 - To verify with a real server: does the router pass the API key to its child processes (`LLAMA_API_KEY` is
   inherited), and are the model ids what `scanModelsDir` predicts (file name without `.gguf`, folder name for
   folders)?

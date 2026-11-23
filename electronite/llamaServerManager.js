@@ -10,6 +10,9 @@
  * other programs and web pages on the machine can't use it. Callers either pass `localServer: true` in the
  * AiAPIs options (electronite/index.js fills in the URL and key), or take `baseUrl` and `apiToken` from
  * `getStatus()`.
+ *
+ * The server is stopped when tC quits (`stopSync()` from electronite/index.js). If tC crashes or is killed
+ * before it can do that, the PID file lets `cleanupOrphan()` stop the leftover server on the next launch.
  */
 const { spawn, spawnSync } = require('child_process');
 const crypto = require('crypto');
@@ -25,6 +28,47 @@ const HEALTH_POLL_INTERVAL_MS = 500;
 const STOP_TIMEOUT_MS = 5000;
 const LOG_LINES_KEPT = 200;
 const SHARD_PATTERN = /-(\d{5})-of-\d{5}$/; // split models: name-00001-of-00003.gguf
+// another program can take the free port between picking it and llama-server binding it; then try a new port
+const MAX_START_ATTEMPTS = 3;
+const PORT_IN_USE_PATTERN = /address already in use|couldn't bind|could not bind|failed to bind/i;
+
+/**
+ * @param {number} port
+ * @return {Promise<boolean>} true if nothing is listening on the port on 127.0.0.1
+ */
+function isPortFree(port) {
+  return new Promise((resolve) => {
+    const server = net.createServer();
+    server.unref();
+    server.once('error', () => resolve(false));
+    server.listen(port, HOST, () => server.close(() => resolve(true)));
+  });
+}
+
+/**
+ * @param {number} pid
+ * @return {boolean} true if a process with this pid exists
+ */
+function isProcessAlive(pid) {
+  try {
+    process.kill(pid, 0); // signal 0 only checks
+    return true;
+  } catch (e) {
+    return e.code === 'EPERM'; // exists, but belongs to someone else
+  }
+}
+
+/**
+ * @param {number} pid
+ * @param {string} platform
+ * @return {string} the process's command line (or image name on Windows), '' if unknown
+ */
+function getProcessCommand(pid, platform) {
+  const result = platform === 'win32' ?
+    spawnSync('tasklist', ['/FI', `PID eq ${pid}`, '/FO', 'CSV', '/NH'], { encoding: 'utf8', windowsHide: true }) :
+    spawnSync('ps', ['-p', String(pid), '-o', 'command='], { encoding: 'utf8' });
+  return (result.stdout || '').trim();
+}
 
 /**
  * Picks the vendor/llama-server target folder name for this machine.
@@ -206,6 +250,8 @@ class LlamaServerManager {
    * @param {function} [config.spawnFn=child_process.spawn] - for tests
    * @param {boolean} [config.useProcessGroup=true] - start llama-server in its own process group (not on
    *   Windows), so stopping it also stops the per-model processes the router starts. Off in tests.
+   * @param {string} [config.pidFile] - where to record the running server's pid, so a server left behind by
+   *   a crash can be stopped on the next launch (see cleanupOrphan())
    */
   constructor({
     serverRoot,
@@ -215,9 +261,11 @@ class LlamaServerManager {
     runningUnderARM64Translation = false,
     spawnFn = spawn,
     useProcessGroup = true,
+    pidFile = null,
   }) {
     this.serverRoot = serverRoot;
     this.modelsDir = modelsDir;
+    this.pidFile = pidFile;
     this.platform = platform;
     this.arch = arch;
     this.runningUnderARM64Translation = !!runningUnderARM64Translation;
@@ -367,12 +415,32 @@ class LlamaServerManager {
       await this.stop();
     }
 
-    this.startPromise = this.launch(normalized);
+    this.startPromise = this.launchWithRetries(normalized);
 
     try {
       return await this.startPromise;
     } finally {
       this.startPromise = null;
+    }
+  }
+
+  /**
+   * Launches the server, trying a new port if another program took the chosen one before llama-server
+   * could bind it.
+   * @param {object} options
+   * @return {Promise<object>} status
+   */
+  async launchWithRetries(options) {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        // eslint-disable-next-line no-await-in-loop
+        return await this.launch(options);
+      } catch (err) {
+        if (!err.portInUse || attempt >= MAX_START_ATTEMPTS) {
+          throw err;
+        }
+        this.log(`port was taken, retrying with a new port (attempt ${attempt + 1} of ${MAX_START_ATTEMPTS})`);
+      }
     }
   }
 
@@ -470,6 +538,7 @@ class LlamaServerManager {
       detached: this.useProcessGroup,
     });
     this.proc = proc;
+    this.writePidFile(proc, exe);
 
     const onOutput = (data) => {
       String(data).split(/\r?\n/).filter(Boolean).forEach(line => this.log(line));
@@ -508,6 +577,12 @@ class LlamaServerManager {
         }
 
         const error = new Error(`llama-server ${reason} while starting.\n${this.logLines.slice(-20).join('\n')}`);
+
+        if (exitInfo && !exitInfo.error) {
+          // it couldn't bind the port if it says so, or if something else is listening there now
+          // eslint-disable-next-line no-await-in-loop
+          error.portInUse = PORT_IN_USE_PATTERN.test(this.logLines.join('\n')) || !(await isPortFree(port));
+        }
         this.lastError = error.message;
         throw error;
       }
@@ -515,10 +590,13 @@ class LlamaServerManager {
       // polling until the server is up, so these waits are sequential on purpose
       // eslint-disable-next-line no-await-in-loop
       const { status } = await httpGet(port, '/health', null);
+      // make sure it's our server answering, not another program that took the port: only ours has the key
+      // eslint-disable-next-line no-await-in-loop
+      const isOurs = status === 200 && (await httpGet(port, '/v1/models', apiToken, 10000)).status === 200;
 
-      if (status === 200) {
-        if (this.proc !== proc) {
-          continue; // stopped while we were checking
+      if (isOurs) {
+        if (this.proc !== proc || exitInfo) {
+          continue; // stopped or exited while we were checking
         }
         this.state = 'running';
         this.log(`ready at http://${HOST}:${port}`);
@@ -553,14 +631,108 @@ class LlamaServerManager {
     this.state = 'stopped';
     this.port = null;
     this.apiToken = null;
+    this.removePidFile(proc.pid);
   }
 
   /**
-   * Signals llama-server and, when it runs in its own process group, the model processes it started.
+   * Records the running server so a crash of tC doesn't leave it running unnoticed.
+   * @param {ChildProcess} proc
+   * @param {string} exe
+   */
+  writePidFile(proc, exe) {
+    if (!this.pidFile || !proc.pid) {
+      return;
+    }
+
+    try {
+      fs.mkdirSync(path.dirname(this.pidFile), { recursive: true });
+      fs.writeFileSync(this.pidFile, JSON.stringify({
+        pid: proc.pid, exe, processGroup: this.useProcessGroup, startedAt: new Date().toISOString(),
+      }));
+    } catch (e) {
+      this.log(`couldn't write ${this.pidFile}: ${e.message}`);
+    }
+  }
+
+  /**
+   * @param {number} [pid] - only remove the file if it is for this pid
+   */
+  removePidFile(pid) {
+    if (!this.pidFile) {
+      return;
+    }
+
+    try {
+      if (pid) {
+        const recorded = JSON.parse(fs.readFileSync(this.pidFile, 'utf8'));
+
+        if (recorded.pid !== pid) {
+          return;
+        }
+      }
+      fs.unlinkSync(this.pidFile);
+    } catch (e) {
+      // no file
+    }
+  }
+
+  /**
+   * Stops a llama-server left running by an earlier tC session that crashed or was killed before it could
+   * stop it. Only kills the recorded process if it is still a llama-server (pids get reused). Call it once at
+   * startup, before starting the server.
+   * @return {boolean} true if a leftover server was stopped
+   */
+  cleanupOrphan() {
+    if (!this.pidFile || !fs.existsSync(this.pidFile)) {
+      return false;
+    }
+
+    let recorded = null;
+
+    try {
+      recorded = JSON.parse(fs.readFileSync(this.pidFile, 'utf8'));
+    } catch (e) {
+      // unreadable, just remove it
+    }
+
+    const pid = recorded && recorded.pid;
+    let killed = false;
+
+    if (pid && pid !== process.pid && !(this.proc && this.proc.pid === pid) && isProcessAlive(pid) &&
+      getProcessCommand(pid, this.platform).toLowerCase().includes('llama-server')) {
+      this.log(`stopping llama-server (pid ${pid}) left running by an earlier session`);
+
+      try {
+        if (this.platform === 'win32') {
+          spawnSync('taskkill', ['/pid', String(pid), '/t', '/f'], { windowsHide: true });
+        } else {
+          process.kill(recorded.processGroup ? -pid : pid, 'SIGKILL');
+        }
+        killed = true;
+      } catch (e) {
+        this.log(`couldn't stop pid ${pid}: ${e.message}`);
+      }
+    }
+    this.removePidFile();
+    return killed;
+  }
+
+  /**
+   * Signals llama-server and the model processes it started (its process group, or its process tree on
+   * Windows).
    * @param {ChildProcess} proc
    * @param {string} [signal='SIGTERM']
    */
   signal(proc, signal = 'SIGTERM') {
+    if (this.platform === 'win32' && proc.pid) {
+      // Windows has no signals: end the whole tree, or the router's model processes would be left running
+      const result = spawnSync('taskkill', ['/pid', String(proc.pid), '/t', '/f'], { windowsHide: true });
+
+      if (result.status === 0) {
+        return;
+      }
+    }
+
     if (this.useProcessGroup && proc.pid) {
       try {
         process.kill(-proc.pid, signal); // negative pid: the whole process group
@@ -617,15 +789,12 @@ class LlamaServerManager {
     this.state = 'stopping';
 
     try {
-      if (this.platform === 'win32') {
-        // /t also ends the model processes the router started
-        spawnSync('taskkill', ['/pid', String(proc.pid), '/t', '/f'], { windowsHide: true });
-      } else {
-        this.signal(proc, 'SIGKILL');
-      }
+      this.signal(proc, 'SIGKILL'); // on Windows: taskkill of the whole tree
     } catch (e) {
       // already gone
     }
+    // the app is exiting, so there may be no exit event to clean up after
+    this.removePidFile(proc.pid);
   }
 
   /**
