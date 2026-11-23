@@ -47,9 +47,18 @@ After a Mac build, create the DMG:
 
 **AI API bridge (suggestions support):** The renderer reaches OpenAI-compatible AI servers (e.g. LM Studio) through the main process over IPC (exposed to app through `window.AiAPIs`).
 - `electronite/queryAiApisFromMainProcess.js` — HTTP(S) calls: `getAiApiFromMainProcess`, `getAvailableAiApiModelsFromMainProcess`, `queryAiApiFromMainProcess` (streams chat via `streamChatMessageFromMainProcess` to the OpenAI-compatible `v1/chat/completions` endpoint). Each request is stateless. A repeated system prompt is reused through the server's prompt-prefix caching (automatic in LM Studio/llama.cpp, and in OpenAI for prompts of 1024+ tokens), so keep `systemPrompt` identical across calls and put per-check content in the user query. Models come from `v1/models?limit=500`. Adds an optional bearer `apiToken` and redacts it with `redactOptions` before logging.
-- `electronite/index.js` → `exposeAiApiQueryToMainWindow()` registers the `ai-apis:query`, `ai-apis:get-available-models` and `ai-apis:get-api` IPC handlers. They reject calls from any window other than the main window.
-- `electronite/preloadAiApi.js` — preload for the main window. It exposes `window.AiAPIs` (`getApi`, `getAvailableModels`, `query`) and the legacy alias `window.lmStudio`.
-- `src/js/pages/app.js` - on app startup has fallback check to make sure `window.AiAPIs` is initialized.  This may just be paranoia since it should already be set in `electronite/preloadAiApi.js`.
+- `electronite/index.js` → `exposeAiApiQueryToMainWindow()` registers the `ai-apis:query`, `ai-apis:get-available-models`, `ai-apis:get-api` and `ai-apis:local-server-start|stop|status|models` IPC handlers. They reject calls from any window other than the main window. When the options for `query` or `get-available-models` include `localServer: true`, the call is routed to the bundled llama-server (below).
+- `electronite/preloadAiApi.js` — preload for the main window. It exposes `window.AiAPIs` (`getApi`, `getAvailableModels`, `query`, `localServer.{start, stop, getStatus, getModels}`, and `features` = `{ messages, localServer }`) and the legacy alias `window.lmStudio`. Callers check `features` to tell this bridge from older ones.
+- `src/js/pages/app.js` - on app startup has fallback check to make sure `window.AiAPIs` is initialized.  This may just be paranoia since it should already be set in `electronite/preloadAiApi.js`. Keep its functions in step with the preload.
+- `electronite/llamaServerManager.js` — `LlamaServerManager` runs the bundled llama-server in **router mode** over `~/translationCore/models` (`--models-dir`, `--models-max 1`). `/v1/models` lists every model there, and the model named in a request is loaded on demand.
+  - Model ids are the `.gguf` file name without the extension. A subfolder of `.gguf` files (for multimodal or split models) is one model named after the folder. `mmproj*` files and later shards aren't listed.
+  - The server starts on demand. `query(text, { localServer: true, model })` fills in `baseUrl` and `apiToken` (`getClientOptions()`). With no `model` (or `'local-model'`) it uses the loaded model, otherwise the first one. An unknown model name throws an error listing the available ids.
+  - `getAvailableModels({ localServer: true })` returns the server's `/v1/models` (with load `status`), or the scanned folder in the same shape while the server is stopped.
+  - It listens on `127.0.0.1` on a free port picked at each start. If another program takes the port first, it retries with a new port, up to 3 times. It's ready only when `/health` and an authenticated `/v1/models` both succeed.
+  - A random API key is generated per start and passed in the `LLAMA_API_KEY` env var, so it isn't on the command line. The router passes it on to its per-model processes (verified).
+  - The binary folder is chosen by platform/arch (`getTargetCandidates`). Apple Silicon uses `darwin-arm64` even under Rosetta. There is no build for Windows ia32 (`getStatus().available` is false). It loads from `process.resourcesPath/llama-server` when packaged and `vendor/llama-server` in development.
+  - Stopping: `stopSync()` runs on `will-quit` and `process.on('exit')`. It kills the process group on Mac/Linux, or the process tree with `taskkill /t /f` on Windows, so the router's per-model processes go too. `<userData>/llama-server.pid` records the running server, and `cleanupOrphan()` on `ready` kills one left behind by a crash, but only if that pid is still a `llama-server`.
+  - Tests: `src/__tests__/llamaServerManager.test.js` uses a fake spawn (an HTTP server standing in for llama-server), so no real binary runs.
 - The caller is `checking-tool-wrapper` (`lib/utils/autoCheckingUtils.js` in the installed build), not code in this repo.
 
 **Frontend:** React + Redux. State is organized in `src/js/`:
@@ -85,7 +94,13 @@ Tools communicate with the host app via a defined API documented in `API.md`.
 - npm packages are collected automatically from `package.json` dependencies, from `src/tC_apps/*/package.json`, and from the dependencies of our own packages. Our own packages (in `ignorePackages`, or with a `unfoldingWord`, `unfoldingWord-dev` or `translationCoreApps` GitHub repository) aren't listed themselves. Build/test-only packages are skipped (`buildOnlyPackages`, `@types/*`). Use `packageRename` for forks.
 - Re-run `npm run update-attributions` after adding or upgrading dependencies, fonts, vendored CSS or bundled binaries. `src/__tests__/Licenses.test.js` checks that the rendered screen matches.
 
-**Bundled llama-server:** `npm run fetch-llama-server` downloads the pinned llama.cpp release (`llamaCppTag` in `package.json`, checksums in `scripts/llama-server-checksums.json`) into `vendor/llama-server/<platform>-<arch>/`. See `plan/embed-llama-server.md` for the packaging plan.
+**Bundled llama-server (build):** `build-macos|linux|win` run `prebuild → fetch-llama-server → electronite-build-* → add-llama-server`.
+- `scripts/fetch-llama-server.js` (`npm run fetch-llama-server`, `-- --all`, `-- --targets=…`, `-- --force`) downloads the pinned llama.cpp release (`llamaCppTag` in `package.json`) into `vendor/llama-server/<platform>-<arch>/`. It verifies checksums against `scripts/llama-server-checksums.json` (refresh with `-- --update-checksums` after bumping the tag) and keeps only the server, its libraries and licenses.
+- Builds per platform:
+  - Windows x64, Linux x64 and Linux arm64 use the Vulkan builds, trimmed to baseline CPU variants. On Windows, the script adds the MSVC runtime DLLs from System32.
+  - macOS uses the upstream arm64 (Metal) and x64 builds. The universal app bundles both, and the manager picks one at runtime.
+- `scripts/add-llama-server.js` copies them into each packaged app in `dist/` after packaging: `Contents/Resources/llama-server/` on Mac, `resources/llama-server/` elsewhere. Copying after packaging means the universal-app merge never sees them. It then smoke-tests `llama-server --version` for the binaries the machine can run (`--no-smoke-test` or `LLAMA_SERVER_SKIP_SMOKE_TEST=1` to skip).
+- The deb recommends `libvulkan1` and `mesa-vulkan-drivers`. Re-run `npm run update-attributions` after bumping llama.cpp. See `plan/embed-llama-server.md` for decisions and status.
 
 ## Code Conventions
 
