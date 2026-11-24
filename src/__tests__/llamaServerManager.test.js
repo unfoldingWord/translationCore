@@ -150,6 +150,8 @@ describe('getTargetCandidates', () => {
     expect(getTargetCandidates('linux', 'x64', false)).toEqual(['linux-x64']);
     expect(getTargetCandidates('linux', 'arm64', false)).toEqual(['linux-arm64']);
     expect(getTargetCandidates('win32', 'x64', false)).toEqual(['win32-x64']);
+    expect(getTargetCandidates('win32', 'arm64', false)).toEqual(['win32-arm64']);
+    expect(getTargetCandidates('win32', 'x64', true)).toEqual(['win32-arm64', 'win32-x64']);
     expect(getTargetCandidates('win32', 'ia32', false)).toEqual([]);
   });
 });

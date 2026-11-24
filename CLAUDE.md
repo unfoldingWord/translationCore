@@ -26,7 +26,7 @@ npm run lint            # ESLint check
 npm run lint:fix        # ESLint auto-fix
 npm run build-macos     # Universal + x64 Mac build
 npm run build-linux     # x64 + arm64 Linux build
-npm run build-win       # ia32 + x64 Windows build
+npm run build-win       # x64 + arm64 Windows build
 ```
 
 To run a single test, pass the path directly:
@@ -56,7 +56,7 @@ After a Mac build, create the DMG:
   - `getAvailableModels({ localServer: true })` returns the server's `/v1/models` (with load `status`), or the scanned folder in the same shape while the server is stopped. Either way, each model has `size` in bytes from the folder; a split model's size is all of its parts.
   - It listens on `127.0.0.1` on a free port picked at each start. If another program takes the port first, it retries with a new port, up to 3 times. It's ready only when `/health` and an authenticated `/v1/models` both succeed.
   - A random API key is generated per start and passed in the `LLAMA_API_KEY` env var, so it isn't on the command line. The router passes it on to its per-model processes (verified).
-  - The binary folder is chosen by platform/arch (`getTargetCandidates`). Apple Silicon uses `darwin-arm64` even under Rosetta. There is no build for Windows ia32 (`getStatus().available` is false). It loads from `process.resourcesPath/llama-server` when packaged and `vendor/llama-server` in development.
+  - The binary folder is chosen by platform/arch (`getTargetCandidates`). Apple Silicon uses `darwin-arm64` even under Rosetta. Windows arm64 uses `win32-arm64`; the x64 app on an arm64 PC falls back to its bundled `win32-x64`, which runs emulated. There is no build for Windows ia32 (`getStatus().available` is false). It loads from `process.resourcesPath/llama-server` when packaged and `vendor/llama-server` in development.
   - Stopping: `stopSync()` runs on `will-quit` and `process.on('exit')`. It kills the process group on Mac/Linux, or the process tree with `taskkill /t /f` on Windows, so the router's per-model processes go too. `<userData>/llama-server.pid` records the running server, and `cleanupOrphan()` on `ready` kills one left behind by a crash, but only if that pid is still a `llama-server`.
   - Tests: `src/__tests__/llamaServerManager.test.js` uses a fake spawn (an HTTP server standing in for llama-server), so no real binary runs.
 - `electronite/modelUpdater.js` — "Check for model updates" in the Actions menu (`AppMenu`). It compares the `.gguf` files in `~/translationCore/models` with the `.gguf` assets of a GitHub release (`MODELS_RELEASE`: `unfoldingWord/checking-tool-wrapper` `v0.9.0-beta`; bump the tag to publish new models). `EXTRA_MODELS` lists other models to offer, hard-coded with size, SHA-256 and a commit-pinned URL. For now that's `Qwen3-4B-Instruct-2507-Q4_K_M.gguf`, LM Studio's `qwen/qwen3-4b-2507`, from Hugging Face. A release model with the same name wins.
@@ -112,7 +112,7 @@ After adding, renaming or removing strings:
 **Bundled llama-server (build):** `build-macos|linux|win` run `prebuild → fetch-llama-server → electronite-build-* → add-llama-server`.
 - `scripts/fetch-llama-server.js` (`npm run fetch-llama-server`, `-- --all`, `-- --targets=…`, `-- --force`) downloads the pinned llama.cpp release (`llamaCppTag` in `package.json`) into `vendor/llama-server/<platform>-<arch>/`. It verifies checksums against `scripts/llama-server-checksums.json` (refresh with `-- --update-checksums` after bumping the tag) and keeps only the server, its libraries and licenses.
 - Builds per platform:
-  - Windows x64, Linux x64 and Linux arm64 use the Vulkan builds, trimmed to baseline CPU variants. On Windows, the script adds the MSVC runtime DLLs from System32.
+  - Windows x64, Windows arm64, Linux x64 and Linux arm64 use the Vulkan builds, trimmed to baseline CPU variants (Windows arm64 has a single `ggml-cpu.dll`). On Windows, the script adds the MSVC runtime DLLs for each target's arch: from System32 when it matches the build machine, otherwise from Visual Studio's `VC/Redist/MSVC/<version>/<arch>` (found with `vswhere`). So the x64 CI runner needs the VS arm64 build tools. `add-llama-server.js` fails if any DLL's arch doesn't match the target.
   - macOS uses the upstream arm64 (Metal) and x64 builds. The universal app bundles both, and the manager picks one at runtime.
 - `scripts/add-llama-server.js` copies them into each packaged app in `dist/` after packaging: `Contents/Resources/llama-server/` on Mac, `resources/llama-server/` elsewhere. Copying after packaging means the universal-app merge never sees them. It then smoke-tests `llama-server --version` for the binaries the machine can run (`--no-smoke-test` or `LLAMA_SERVER_SKIP_SMOKE_TEST=1` to skip).
 - The upstream Linux builds need glibc 2.34+, `libssl3` and `libgomp1` (Ubuntu 22.04+, Debian 12+). The deb recommends those plus `libvulkan1` and `mesa-vulkan-drivers`. The CI container (Debian buster) can't run them, so on Linux the smoke test only warns when a system library is missing or too old. Re-run `npm run update-attributions` after bumping llama.cpp. See `plan/embed-llama-server.md` for decisions and status.

@@ -32,6 +32,7 @@ const PACKAGED_TARGETS = {
   'linux-x64': ['linux-x64'],
   'linux-arm64': ['linux-arm64'],
   'win32-x64': ['win32-x64'],
+  'win32-arm64': ['win32-arm64'],
   'win32-ia32': [],
 };
 
@@ -42,6 +43,7 @@ const TARGET_ARCH = {
   'linux-x64': 'x64',
   'linux-arm64': 'arm64',
   'win32-x64': 'x64',
+  'win32-arm64': 'arm64',
 };
 
 /**
@@ -265,6 +267,15 @@ function verifyCopy(dir, target) {
 
     if (fs.lstatSync(p).isSymbolicLink() && !fs.existsSync(p)) {
       throw new Error(`${target}: dangling symlink ${name} in ${dir}`);
+    }
+
+    // a DLL of the wrong architecture (e.g. x64 MSVC runtime in the arm64 build) only fails when loaded
+    if (/\.dll$/i.test(name)) {
+      const dllArch = getBinaryArch(p);
+
+      if (dllArch !== TARGET_ARCH[target]) {
+        throw new Error(`${target}: ${name} is built for ${dllArch}, expected ${TARGET_ARCH[target]}`);
+      }
     }
   }
 }

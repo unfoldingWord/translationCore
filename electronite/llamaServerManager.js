@@ -100,8 +100,15 @@ function getTargetCandidates(platform, arch, runningUnderARM64Translation) {
     return [`linux-${arch}`];
   }
 
-  if (platform === 'win32' && arch === 'x64') {
-    return ['win32-x64'];
+  if (platform === 'win32') {
+    if (arch === 'arm64') {
+      return ['win32-arm64'];
+    }
+
+    if (arch === 'x64') {
+      // the x64 app on an arm64 PC (under emulation) only bundles the x64 build, which also runs emulated
+      return runningUnderARM64Translation ? ['win32-arm64', 'win32-x64'] : ['win32-x64'];
+    }
   }
   return []; // e.g. Windows ia32 has no upstream build
 }

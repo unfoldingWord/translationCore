@@ -18,7 +18,7 @@ const fs = require('fs');
 const https = require('https');
 const os = require('os');
 const path = require('path');
-const { execFileSync } = require('child_process');
+const { execFileSync, spawnSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..');
 const REPO = 'ggml-org/llama.cpp';
@@ -39,14 +39,16 @@ const TARGETS = {
   'linux-x64': { asset: 'bin-ubuntu-vulkan-x64.tar.gz', cpuVariants: ['x64', 'haswell'] },
   // armv8.0 baseline only - matches the minimum CPU Electron supports on Linux arm64
   'linux-arm64': { asset: 'bin-ubuntu-vulkan-arm64.tar.gz', cpuVariants: ['armv8.0_1'] },
-  'win32-x64': { asset: 'bin-win-vulkan-x64.zip', cpuVariants: ['x64', 'haswell'], msvcRuntime: true },
+  'win32-x64': { asset: 'bin-win-vulkan-x64.zip', cpuVariants: ['x64', 'haswell'], msvcRuntime: 'x64' },
+  // a single ggml-cpu.dll, no CPU variants
+  'win32-arm64': { asset: 'bin-win-vulkan-arm64.zip', cpuVariants: null, msvcRuntime: 'arm64' },
 };
 
 // targets fetched by default, matching what each OS builds in CI
 const DEFAULT_TARGETS = {
   darwin: ['darwin-arm64', 'darwin-x64'],
   linux: ['linux-x64', 'linux-arm64'],
-  win32: ['win32-x64'],
+  win32: ['win32-x64', 'win32-arm64'],
 };
 
 // MSVC runtime DLLs imported by the Windows build but not shipped in the upstream zip
@@ -385,29 +387,79 @@ function copyServerFiles(srcDir, destDir, cpuVariants) {
 }
 
 /**
- * Copies the MSVC runtime DLLs from System32 next to llama-server.exe (app-local deployment), so it runs on
- * machines without the Visual C++ Redistributable. Only possible when running on 64-bit Windows.
+ * Finds the Visual Studio redist folder holding the MSVC runtime DLLs for arch
+ * (VC/Redist/MSVC/<version>/<arch>/Microsoft.VC14x.CRT), newest version first.
+ * @param {string} arch - 'x64' or 'arm64'
+ * @return {string|null}
+ */
+function findVsRedistDir(arch) {
+  const programFilesX86 = process.env['ProgramFiles(x86)'] || 'C:\\Program Files (x86)';
+  const vswhere = path.join(programFilesX86, 'Microsoft Visual Studio', 'Installer', 'vswhere.exe');
+
+  if (!fs.existsSync(vswhere)) {
+    return null;
+  }
+
+  const result = spawnSync(vswhere, ['-all', '-products', '*', '-property', 'installationPath'], { encoding: 'utf8' });
+  const installs = (result.stdout || '').split(/\r?\n/).map(s => s.trim()).filter(Boolean);
+  const byVersion = (a, b) => b.localeCompare(a, undefined, { numeric: true });
+
+  for (const install of installs) {
+    const msvcDir = path.join(install, 'VC', 'Redist', 'MSVC');
+
+    if (!fs.existsSync(msvcDir)) {
+      continue;
+    }
+
+    for (const version of fs.readdirSync(msvcDir).sort(byVersion)) {
+      const archDir = path.join(msvcDir, version, arch);
+      const crt = fs.existsSync(archDir) &&
+        fs.readdirSync(archDir).sort(byVersion).find(name => /^Microsoft\.VC\d+\.CRT$/.test(name));
+
+      if (crt && fs.existsSync(path.join(archDir, crt, 'vcruntime140.dll'))) {
+        return path.join(archDir, crt);
+      }
+    }
+  }
+  return null;
+}
+
+/**
+ * Copies the MSVC runtime DLLs next to llama-server.exe (app-local deployment), so it runs on machines without
+ * the Visual C++ Redistributable. They come from System32 when building on Windows of the same architecture,
+ * otherwise (e.g. arm64 on an x64 machine) from Visual Studio's redist folder.
  * @param {string} destDir
+ * @param {string} arch - 'x64' or 'arm64'
  * @return {boolean} true if copied
  */
-function addMsvcRuntime(destDir) {
+function addMsvcRuntime(destDir, arch) {
   if (process.platform !== 'win32') {
     console.warn('  WARNING: not on Windows, so the MSVC runtime DLLs were not added. llama-server.exe will ' +
       `need the Visual C++ Redistributable (${MSVC_RUNTIME_DLLS.join(', ')}).`);
     return false;
   }
 
-  const system32 = path.join(process.env.SystemRoot || 'C:\\Windows', 'System32');
+  const srcDir = arch === process.arch ?
+    path.join(process.env.SystemRoot || 'C:\\Windows', 'System32') :
+    findVsRedistDir(arch);
 
-  for (const dll of MSVC_RUNTIME_DLLS) {
-    const src = path.join(system32, dll);
+  if (!srcDir) {
+    throw new Error(`MSVC runtime DLLs for ${arch} not found. Install the Visual Studio ${arch} build tools ` +
+      `(they include VC/Redist/MSVC/<version>/${arch}).`);
+  }
+
+  // vcruntime140_1.dll holds x64-only exception handling. Nothing in the arm64 build imports it.
+  const dlls = MSVC_RUNTIME_DLLS.filter(dll => arch === 'x64' || dll !== 'vcruntime140_1.dll');
+
+  for (const dll of dlls) {
+    const src = path.join(srcDir, dll);
 
     if (!fs.existsSync(src)) {
       throw new Error(`MSVC runtime DLL not found: ${src}`);
     }
     fs.copyFileSync(src, path.join(destDir, dll));
   }
-  console.log(`  added ${MSVC_RUNTIME_DLLS.join(', ')} from ${system32}`);
+  console.log(`  added ${dlls.join(', ')} from ${srcDir}`);
   return true;
 }
 
@@ -490,7 +542,7 @@ async function fetchTarget(tag, target, checksums, force) {
     fs.rmSync(destDir, { recursive: true, force: true });
     fs.mkdirSync(destDir, { recursive: true });
     const copied = copyServerFiles(serverDir, destDir, cpuVariants);
-    const addedMsvc = msvcRuntime ? addMsvcRuntime(destDir) : false;
+    const addedMsvc = msvcRuntime ? addMsvcRuntime(destDir, msvcRuntime) : false;
 
     if (!copied.includes('LICENSE')) {
       // the Windows zip ships only the OpenMP license, so get llama.cpp's MIT license from the tagged source
