@@ -191,10 +191,18 @@ function scanModelsDir(modelsDir) {
       if (shard && shard[1] !== '00001') {
         continue; // only list a split model once
       }
+
+      const id = shard ? base.replace(SHARD_PATTERN, '') : base;
+      // a split model's size is all of its parts
+      const files = shard ?
+        entries.filter(other => other.isFile() && isModelFile(other.name) &&
+          other.name.slice(0, -'.gguf'.length).replace(SHARD_PATTERN, '') === id &&
+          SHARD_PATTERN.test(other.name.slice(0, -'.gguf'.length))) :
+        [entry];
+      const size = files.reduce((sum, f) => sum + fs.statSync(path.join(modelsDir, f.name)).size, 0);
+
       models.push({
-        id: shard ? base.replace(SHARD_PATTERN, '') : base,
-        path: fullPath,
-        size: fs.statSync(fullPath).size,
+        id, path: fullPath, size,
       });
     }
   }
@@ -370,7 +378,8 @@ class LlamaServerManager {
 
   /**
    * Lists the models. While the server is running this is its `/v1/models` list (which also reports whether
-   * each model is loaded); otherwise the models found in the models folder, in the same shape.
+   * each model is loaded); otherwise the models found in the models folder, in the same shape. Either way each
+   * model has `size` (bytes, all parts of a split model) when its file is in the models folder.
    * @return {Promise<Array<object>>} OpenAI-style model objects with at least `id`
    */
   async getModels() {
@@ -382,7 +391,13 @@ class LlamaServerManager {
           const data = JSON.parse(body).data;
 
           if (Array.isArray(data)) {
-            return data;
+            // the server doesn't report sizes, so add them from the models folder
+            const scanned = scanModelsDir(this.modelsDir);
+
+            return data.map((model) => {
+              const found = scanned.find(m => m.id === (model && model.id));
+              return found && model.size === undefined ? { ...model, size: found.size } : model;
+            });
           }
         } catch (e) {
           // fall back to scanning the folder

@@ -43,10 +43,11 @@ function redactOptions(options = {}) {
  * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server.
  * @param {string} [options.apiToken] - Optional API token. Sent in the Authorization header as a bearer token unless it already includes an auth scheme.
  * @param {string} apiUrlPath - API endpoint path to request, such as '/v1/models'.
- * @returns {Promise<Object>} Promise that resolves with the data Object from the parsed API response.
+ * @param {string} [dataKey='data'] - field of the response to resolve with (LM Studio's native API uses 'models').
+ * @returns {Promise<Object>} Promise that resolves with the `dataKey` field of the parsed API response.
  * @throws {Error} If the server cannot be reached, the response status is not 2xx, or the response body cannot be parsed as JSON.
  */
-function getAiApiFromMainProcess(options, apiUrlPath) {
+function getAiApiFromMainProcess(options, apiUrlPath, dataKey = 'data') {
   const {
     baseUrl = 'http://localhost:1234',
     apiToken,
@@ -93,7 +94,7 @@ function getAiApiFromMainProcess(options, apiUrlPath) {
         try {
           const parsedResponse = JSON.parse(responseText);
           console.log('getAiApiFromMainProcess - response response:', parsedResponse);
-          const responseData = parsedResponse && parsedResponse.data;
+          const responseData = parsedResponse && parsedResponse[dataKey];
           console.log('getAiApiFromMainProcess - responseData:', responseData);
           resolve(responseData);
         } catch (error) {
@@ -115,22 +116,55 @@ function getAiApiFromMainProcess(options, apiUrlPath) {
 }
 
 /**
+ * Gets the model sizes from LM Studio's native REST API (`api/v1/models`, which has `size_bytes`; its `key` is
+ * the model id used by the OpenAI-compatible API). Other servers don't have this API.
+ *
+ * @param {Object} options - same as getAvailableAiApiModelsFromMainProcess()
+ * @returns {Promise<Object>} sizes in bytes by model id, empty if they aren't available
+ */
+async function getAiApiModelSizes(options) {
+  try {
+    const nativeModels = await getAiApiFromMainProcess(options, 'api/v1/models', 'models');
+    const sizes = {};
+
+    for (const model of Array.isArray(nativeModels) ? nativeModels : []) {
+      if (model && model.key && typeof model.size_bytes === 'number') {
+        sizes[model.key] = model.size_bytes;
+      }
+    }
+    return sizes;
+  } catch (e) {
+    return {}; // not LM Studio (or an older version) - sizes are unknown
+  }
+}
+
+/**
  * Gets the list of available models from an LM Studio server.
  *
  * @param {Object} [options={}] - Configuration options
  * @param {string} [options.baseUrl='http://localhost:1234'] - Base URL of the LM Studio server
  * @param {string} [options.apiToken] - API token sent as a bearer token in the Authorization header
- * @returns {Promise<Array>} List of available LM Studio models
+ * @returns {Promise<Array>} List of available models. Each has `size` (bytes) when the server reports it (LM
+ *   Studio's native API).
  * @throws {Error} If the request fails or the response shape is unexpected
  */
 async function getAvailableAiApiModelsFromMainProcess(options = {}) {
   let apiUrlPath = 'v1/models?limit=500';
   // console.log('getAvailableAiApiModelsFromMainProcess - request model with options', redactOptions(options));
-  const models = await getAiApiFromMainProcess(options, apiUrlPath);
+  const [models, sizes] = await Promise.all([
+    getAiApiFromMainProcess(options, apiUrlPath),
+    getAiApiModelSizes(options),
+  ]);
   // console.log('getAvailableAiApiModelsFromMainProcess - models:', models);
 
   if (!Array.isArray(models)) {
     throw new Error('getAvailableAiApiModelsFromMainProcess - Unexpected LM Studio models response shape: expected data array', models);
+  }
+
+  for (const model of models) {
+    if (model && model.size === undefined && sizes[model.id] !== undefined) {
+      model.size = sizes[model.id];
+    }
   }
 
   // console.log('getAvailableAiApiModelsFromMainProcess - SUCCESS:', models);

@@ -203,7 +203,7 @@ describe('scanModelsDir', () => {
 
     expect(scanModelsDir(dir)).toEqual([
       {
-        id: 'big-model', path: path.join(dir, 'big-model-00001-of-00002.gguf'), size: 5,
+        id: 'big-model', path: path.join(dir, 'big-model-00001-of-00002.gguf'), size: 10, // both parts
       },
       {
         id: 'gemma-3-4b', path: path.join(dir, 'gemma-3-4b'), size: 7,
@@ -286,8 +286,10 @@ describe('LlamaServerManager', () => {
     expect(calls[0].options.env.LLAMA_API_KEY).toBe(status.apiToken);
     expect(calls[0].args).not.toContain(status.apiToken);
 
-    // /v1/models from the running server, using the API key
+    // /v1/models from the running server, using the API key, with sizes from the models folder
     expect(await manager.getModels()).toEqual(serverModels);
+    writeFile(path.join(fixture.modelsDir, 'qwen3-8b.gguf'), 6);
+    expect(await manager.getModels()).toEqual([{ ...serverModels[0], size: 6 }]);
 
     // same options: no restart
     const again = await manager.start();
