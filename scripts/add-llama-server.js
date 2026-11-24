@@ -194,6 +194,21 @@ function canRun(target) {
 }
 
 /**
+ * True when the dynamic loader couldn't start the binary because a system library is missing or too old.
+ * Libraries we ship are copied next to the binary and checked by verifyCopy, so this is the host's fault.
+ * @param {string} output - stdout + stderr of the failed run
+ * @return {boolean}
+ */
+function isHostLibraryFailure(output) {
+  const missing = output.match(/error while loading shared libraries: (\S+?):/);
+
+  if (missing && !/^lib(ggml|llama|mtmd)/.test(missing[1])) {
+    return true;
+  }
+  return /version `(GLIBC|GLIBCXX|CXXABI|OPENSSL)_[\d.]+' not found/.test(output);
+}
+
+/**
  * Runs `llama-server --version` and fails if it doesn't exit cleanly.
  * @param {string} dir - folder holding the llama-server copy inside the packaged app
  * @param {string} target
@@ -208,6 +223,13 @@ function smokeTest(dir, target) {
   const output = `${result.stdout || ''}${result.stderr || ''}`.trim();
 
   if (result.error || result.status !== 0) {
+    if (platform === 'linux' && isHostLibraryFailure(output)) {
+      // the build machine is missing libraries the binary needs at runtime (e.g. an older distro without
+      // libssl3 or glibc 2.34), so it can't run here. That says nothing about the packaged files.
+      console.warn(`  ${target}: smoke test skipped, this machine lacks libraries llama-server needs:\n${output}`);
+      return;
+    }
+
     throw new Error(`${target}: smoke test failed (${result.error ? result.error.message : `exit ${result.status}`})` +
       (output ? `:\n${output}` : ''));
   }

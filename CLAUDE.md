@@ -115,7 +115,7 @@ After adding, renaming or removing strings:
   - Windows x64, Linux x64 and Linux arm64 use the Vulkan builds, trimmed to baseline CPU variants. On Windows, the script adds the MSVC runtime DLLs from System32.
   - macOS uses the upstream arm64 (Metal) and x64 builds. The universal app bundles both, and the manager picks one at runtime.
 - `scripts/add-llama-server.js` copies them into each packaged app in `dist/` after packaging: `Contents/Resources/llama-server/` on Mac, `resources/llama-server/` elsewhere. Copying after packaging means the universal-app merge never sees them. It then smoke-tests `llama-server --version` for the binaries the machine can run (`--no-smoke-test` or `LLAMA_SERVER_SKIP_SMOKE_TEST=1` to skip).
-- The deb recommends `libvulkan1` and `mesa-vulkan-drivers`. Re-run `npm run update-attributions` after bumping llama.cpp. See `plan/embed-llama-server.md` for decisions and status.
+- The upstream Linux builds need glibc 2.34+, `libssl3` and `libgomp1` (Ubuntu 22.04+, Debian 12+). The deb recommends those plus `libvulkan1` and `mesa-vulkan-drivers`. The CI container (Debian buster) can't run them, so on Linux the smoke test only warns when a system library is missing or too old. Re-run `npm run update-attributions` after bumping llama.cpp. See `plan/embed-llama-server.md` for decisions and status.
 
 ## Code Conventions
 
