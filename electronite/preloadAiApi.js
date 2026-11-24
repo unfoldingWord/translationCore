@@ -1,6 +1,8 @@
 // Preload Script - set variables to be used by splash screen
 
-const { ipcRenderer } = require('electronite');
+// TRICKY: use the built-in 'electron' module, not 'electronite' - preloads are copied into the build without
+// bundling, and the packaged app has no node_modules (see preloadSplash.js)
+const { ipcRenderer } = require('electron');
 
 console.log(`started preloadAiApi`);
 
