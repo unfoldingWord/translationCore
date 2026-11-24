@@ -22,6 +22,11 @@ const {
   queryAiApiFromMainProcess,
 } = require('./queryAiApisFromMainProcess');
 const { LlamaServerManager } = require('./llamaServerManager');
+const {
+  checkForModelUpdates,
+  createCancelToken,
+  downloadModels,
+} = require('./modelUpdater');
 
 const DCS_BASE_URL = 'https://git.door43.org'; //TODO: this is also defined in constants.js, in future need to move definition to common place
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
@@ -53,6 +58,8 @@ const llamaServer = new LlamaServerManager({
   runningUnderARM64Translation: app.runningUnderARM64Translation,
 });
 
+let modelDownloadSignal = null; // cancel token for the model download in progress
+
 function exposeAiApiQueryToMainWindow(window) {
   console.log(`exposeAiApiQueryToMainWindow`);
   ipcMain.removeHandler('ai-apis:query');
@@ -62,6 +69,9 @@ function exposeAiApiQueryToMainWindow(window) {
   ipcMain.removeHandler('ai-apis:local-server-stop');
   ipcMain.removeHandler('ai-apis:local-server-status');
   ipcMain.removeHandler('ai-apis:local-server-models');
+  ipcMain.removeHandler('ai-apis:models-check-updates');
+  ipcMain.removeHandler('ai-apis:models-download');
+  ipcMain.removeHandler('ai-apis:models-cancel-download');
 
   // eslint-disable-next-line require-await
   ipcMain.handle('ai-apis:local-server-models', async (event) => {
@@ -130,6 +140,58 @@ function exposeAiApiQueryToMainWindow(window) {
     }
 
     return getAiApiFromMainProcess(options, apiUrlPath);
+  });
+
+  // model updates from the GitHub release - see modelUpdater.js
+  // eslint-disable-next-line require-await
+  ipcMain.handle('ai-apis:models-check-updates', async (event) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:models-check-updates is only available from the main window');
+    }
+
+    return checkForModelUpdates({ modelsDir: llamaServer.modelsDir });
+  });
+
+  ipcMain.handle('ai-apis:models-download', async (event, models = []) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:models-download is only available from the main window');
+    }
+
+    if (modelDownloadSignal) {
+      throw new Error('A model download is already in progress');
+    }
+
+    const signal = createCancelToken();
+    modelDownloadSignal = signal;
+
+    try {
+      return await downloadModels(models, {
+        modelsDir: llamaServer.modelsDir,
+        signal,
+        onProgress: (progress) => {
+          if (!event.sender.isDestroyed()) {
+            event.sender.send('ai-apis:models-download-progress', progress);
+          }
+        },
+        // stop llama-server before replacing a model it may have open - it restarts on the next query
+        beforeReplace: () => llamaServer.stop(),
+      });
+    } finally {
+      modelDownloadSignal = null;
+    }
+  });
+
+  // eslint-disable-next-line require-await
+  ipcMain.handle('ai-apis:models-cancel-download', async (event) => {
+    if (!window || event.sender !== window.webContents) {
+      throw new Error('ai-apis:models-cancel-download is only available from the main window');
+    }
+
+    if (modelDownloadSignal) {
+      modelDownloadSignal.cancel();
+      return true;
+    }
+    return false;
   });
 }
 

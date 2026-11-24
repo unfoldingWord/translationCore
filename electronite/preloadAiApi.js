@@ -14,7 +14,11 @@ console.log(`started preloadAiApi`);
 // it (the server starts on demand), and `model` set to one of the model ids. `localServer.start/stop/getStatus/
 // getModels` control it directly. Check `(await localServer.getStatus()).available` - it isn't bundled for
 // every platform.
-const AI_API_FEATURES = Object.freeze({ messages: true, localServer: true });
+// `modelUpdates` - `models.checkForUpdates()` compares ~/translationCore/models with the models in the GitHub release
+// (modelUpdater.js), and `models.download(updates, onProgress)` downloads the chosen ones.
+const AI_API_FEATURES = Object.freeze({
+  messages: true, localServer: true, modelUpdates: true,
+});
 
 const localServer = Object.freeze({
   start: (options = {}) => ipcRenderer.invoke('ai-apis:local-server-start', options),
@@ -23,11 +27,27 @@ const localServer = Object.freeze({
   getModels: () => ipcRenderer.invoke('ai-apis:local-server-models'),
 });
 
+const models = Object.freeze({
+  checkForUpdates: () => ipcRenderer.invoke('ai-apis:models-check-updates'),
+  download: async (updates, onProgress) => {
+    const listener = (event, progress) => onProgress && onProgress(progress);
+    ipcRenderer.on('ai-apis:models-download-progress', listener);
+
+    try {
+      return await ipcRenderer.invoke('ai-apis:models-download', updates);
+    } finally {
+      ipcRenderer.removeListener('ai-apis:models-download-progress', listener);
+    }
+  },
+  cancelDownload: () => ipcRenderer.invoke('ai-apis:models-cancel-download'),
+});
+
 window.lmStudio = {
   getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
   getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
   query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
   localServer,
+  models,
   features: AI_API_FEATURES,
 };
 
@@ -36,6 +56,7 @@ window.AiAPIs = {
   getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
   query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
   localServer,
+  models,
   features: AI_API_FEATURES,
 };
 

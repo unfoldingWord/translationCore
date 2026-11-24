@@ -48,7 +48,9 @@ if (NOT_TEST) {
 
 // fallback AI bridge in case the preload didn't set it up - keep in step with electronite/preloadAiApi.js
 if (window && (!window.lmStudio || !window.AiAPIs)) {
-  const AI_API_FEATURES = Object.freeze({ messages: true, localServer: true });
+  const AI_API_FEATURES = Object.freeze({
+    messages: true, localServer: true, modelUpdates: true,
+  });
 
   const localServer = Object.freeze({ // bundled llama-server
     start: (options = {}) => ipcRenderer.invoke('ai-apis:local-server-start', options),
@@ -57,11 +59,27 @@ if (window && (!window.lmStudio || !window.AiAPIs)) {
     getModels: () => ipcRenderer.invoke('ai-apis:local-server-models'),
   });
 
+  const models = Object.freeze({ // model updates from the GitHub release
+    checkForUpdates: () => ipcRenderer.invoke('ai-apis:models-check-updates'),
+    download: async (updates, onProgress) => {
+      const listener = (event, progress) => onProgress && onProgress(progress);
+      ipcRenderer.on('ai-apis:models-download-progress', listener);
+
+      try {
+        return await ipcRenderer.invoke('ai-apis:models-download', updates);
+      } finally {
+        ipcRenderer.removeListener('ai-apis:models-download-progress', listener);
+      }
+    },
+    cancelDownload: () => ipcRenderer.invoke('ai-apis:models-cancel-download'),
+  });
+
   const makeAiApi = () => ({
     getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
     getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
     query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
     localServer,
+    models,
     features: AI_API_FEATURES,
   });
 

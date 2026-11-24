@@ -59,6 +59,12 @@ After a Mac build, create the DMG:
   - The binary folder is chosen by platform/arch (`getTargetCandidates`). Apple Silicon uses `darwin-arm64` even under Rosetta. There is no build for Windows ia32 (`getStatus().available` is false). It loads from `process.resourcesPath/llama-server` when packaged and `vendor/llama-server` in development.
   - Stopping: `stopSync()` runs on `will-quit` and `process.on('exit')`. It kills the process group on Mac/Linux, or the process tree with `taskkill /t /f` on Windows, so the router's per-model processes go too. `<userData>/llama-server.pid` records the running server, and `cleanupOrphan()` on `ready` kills one left behind by a crash, but only if that pid is still a `llama-server`.
   - Tests: `src/__tests__/llamaServerManager.test.js` uses a fake spawn (an HTTP server standing in for llama-server), so no real binary runs.
+- `electronite/modelUpdater.js` — "Check for model updates" in the Actions menu (`AppMenu`). It compares the `.gguf` files in `~/translationCore/models` with the `.gguf` assets of a GitHub release (`MODELS_RELEASE`: `unfoldingWord/checking-tool-wrapper` `v0.9.0-beta`; bump the tag to publish new models).
+  - A model needs updating when it's missing or its SHA-256 differs from the asset's `digest` (size only, if there's no digest). Local hashes are cached in `<models>/.model-digests.json` by size and mtime.
+  - Downloads go to `<name>.download`, are checked against the size and digest, and then renamed into place. llama-server is stopped first if it's replacing an existing model.
+  - IPC: `ai-apis:models-check-updates`, `ai-apis:models-download` (progress on `ai-apis:models-download-progress`) and `ai-apis:models-cancel-download`. These are exposed as `AiAPIs.models.{checkForUpdates, download(updates, onProgress), cancelDownload}` with `features.modelUpdates`.
+  - UI: `actions/ModelUpdatesActions.js`, `containers/ModelUpdatesDialogContainer.js` and `components/dialogComponents/ModelUpdateDialog.js`.
+  - Tests: `src/__tests__/modelUpdater.test.js` uses a local HTTP server in place of GitHub.
 - The caller is `checking-tool-wrapper` (`lib/utils/autoCheckingUtils.js` in the installed build), not code in this repo.
 
 **Frontend:** React + Redux. State is organized in `src/js/`:
