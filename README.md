@@ -69,7 +69,7 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 
 translationCore can get AI suggestions from an OpenAI-compatible server (such as LM Studio), or from a llama-server bundled with the app.
 
-- **Models:** the bundled server uses the `.gguf` models in `~/translationCore/models`. Use **Actions → Check for model updates** to download missing or changed models from the [AI models release](https://github.com/unfoldingWord/checking-tool-wrapper/releases/tag/v0.9.0-beta).
+- **Models:** the bundled server uses the `.gguf` models in `~/translationCore/models`. Use **Actions → Check for model updates** to download missing or changed models from the [AI models release](https://github.com/unfoldingWord/checking-tool-wrapper/releases/tag/v0.9.0-beta). The list also includes [Qwen3-4B-Instruct-2507 Q4_K_M](https://huggingface.co/lmstudio-community/Qwen3-4B-Instruct-2507-GGUF), which is hard-coded in `EXTRA_MODELS` in `electronite/modelUpdater.js`.
 - **Development:** run `npm run fetch-llama-server` once to download llama-server into `vendor/llama-server/`. Without it, the local server reports `available: false`.
 - **Testing from the console:** open the developer tools in the main window and run:
 

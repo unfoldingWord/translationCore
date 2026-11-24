@@ -22,6 +22,19 @@ const MODELS_RELEASE = Object.freeze({
   repo: 'checking-tool-wrapper',
   tag: 'v0.9.0-beta',
 });
+// models offered in addition to the release's (hard-coded for now). The URL is pinned to a commit so the file
+// can't change under the SHA-256. A release model with the same name takes precedence.
+const EXTRA_MODELS = Object.freeze([
+  Object.freeze({
+    // LM Studio's `qwen/qwen3-4b-2507` - https://huggingface.co/lmstudio-community/Qwen3-4B-Instruct-2507-GGUF
+    name: 'Qwen3-4B-Instruct-2507-Q4_K_M.gguf',
+    size: 2497280448,
+    sha256: '8cdb57cbb880d313736a9bc4e3d3d2485f145b5e19cf33783746e753e82641fc',
+    url: 'https://huggingface.co/lmstudio-community/Qwen3-4B-Instruct-2507-GGUF/resolve/'
+      + '4edb920b6f14e3b9284d4502a6485103d72cde05/Qwen3-4B-Instruct-2507-Q4_K_M.gguf',
+    updatedAt: '2025-08-06T15:39:11.000Z',
+  }),
+]);
 const DIGEST_CACHE_FILE = '.model-digests.json';
 const DOWNLOAD_SUFFIX = '.download';
 const USER_AGENT = 'translationCore';
@@ -192,21 +205,30 @@ async function getLocalSha256(modelsDir, name, stats, cache) {
 }
 
 /**
- * Compares the models in the release with the ones in the models folder.
+ * Compares the models in the release (plus EXTRA_MODELS) with the ones in the models folder.
  * @param {object} options
  * @param {string} options.modelsDir
  * @param {string} [options.releaseUrl]
+ * @param {Array<object>} [options.extraModels=EXTRA_MODELS] - other models to offer (name, size, sha256, url,
+ *   updatedAt)
  * @return {Promise<{release: {tag: string, name: string}, updates: Array<object>, upToDate: Array<object>}>}
  *   `updates` are the release models that are missing (`status: 'missing'`) or different (`status: 'changed'`),
  *   each with `local: { size, modified }` when installed. `upToDate` are the ones that match.
  */
-async function checkForModelUpdates({ modelsDir, releaseUrl }) {
+async function checkForModelUpdates({
+  modelsDir, releaseUrl, extraModels = EXTRA_MODELS,
+}) {
   const release = await getReleaseModels({ releaseUrl });
+  const releaseNames = new Set(release.models.map(model => model.name));
+  const models = [
+    ...release.models,
+    ...extraModels.filter(model => !releaseNames.has(model.name)),
+  ];
   const cache = readDigestCache(modelsDir);
   const updates = [];
   const upToDate = [];
 
-  for (const model of release.models) {
+  for (const model of models) {
     let stats = null;
 
     try {
@@ -389,6 +411,7 @@ async function downloadModels(models, {
 
 module.exports = {
   MODELS_RELEASE,
+  EXTRA_MODELS,
   getReleaseApiUrl,
   getReleaseModels,
   checkForModelUpdates,

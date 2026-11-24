@@ -5,6 +5,7 @@ import http from 'http';
 import os from 'os';
 import path from 'path';
 import {
+  EXTRA_MODELS,
   checkForModelUpdates,
   createCancelToken,
   downloadModels,
@@ -24,12 +25,14 @@ const MODEL_C = Buffer.from('model C - new');
  * @param {object} [behavior]
  * @param {object} [behavior.assetBodies] - override what an asset serves, by name
  * @param {boolean} [behavior.hang] - asset downloads send part of the file and then stall
- * @return {Promise<{baseUrl: string, releaseUrl: string, close: function, requests: string[]}>}
+ * @return {Promise<{baseUrl: string, releaseUrl: string, extraFiles: object, close: function,
+ *   requests: string[]}>} add to `extraFiles` to serve a file at /assets/<name> without listing it
  */
 async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
   const files = {
     'a.gguf': MODEL_A, 'b.gguf': MODEL_B, 'c.gguf': MODEL_C,
   };
+  const extraFiles = {}; // served, but not listed in the release
   const requests = [];
   let baseUrl;
 
@@ -65,8 +68,10 @@ async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
 
     const asset = /^\/assets\/(.+)$/.exec(req.url);
 
-    if (asset && files[asset[1]]) {
-      const body = assetBodies[asset[1]] || files[asset[1]];
+    const assetData = asset && (files[asset[1]] || extraFiles[asset[1]]);
+
+    if (assetData) {
+      const body = assetBodies[asset[1]] || assetData;
       res.writeHead(200, { 'Content-Length': body.length });
 
       if (hang) {
@@ -85,6 +90,7 @@ async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
   return {
     baseUrl,
     releaseUrl: `${baseUrl}/release`,
+    extraFiles,
     requests,
     close: () => new Promise((resolve) => {
       server.closeAllConnections && server.closeAllConnections();
@@ -130,7 +136,9 @@ describe('modelUpdater', () => {
     github = await startFakeGitHub();
     modelsDir = makeModelsDir();
 
-    const result = await checkForModelUpdates({ modelsDir, releaseUrl: github.releaseUrl });
+    const result = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+    });
 
     expect(result.release).toEqual({ tag: 'v0.9.0-beta', name: 'AI Models - Beta' });
     expect(result.updates.map(m => [m.name, m.status])).toEqual([['a.gguf', 'changed'], ['c.gguf', 'missing']]);
@@ -155,7 +163,9 @@ describe('modelUpdater', () => {
       },
     }));
 
-    const result = await checkForModelUpdates({ modelsDir, releaseUrl: github.releaseUrl });
+    const result = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+    });
 
     expect(result.updates.map(m => m.name)).toContain('b.gguf');
   });
@@ -168,10 +178,57 @@ describe('modelUpdater', () => {
       .rejects.toThrow('HTTP 404');
   });
 
+  test('EXTRA_MODELS are complete and pinned to a commit', () => {
+    expect(EXTRA_MODELS.map(m => m.name)).toContain('Qwen3-4B-Instruct-2507-Q4_K_M.gguf');
+
+    for (const model of EXTRA_MODELS) {
+      expect(model.name).toMatch(/\.gguf$/);
+      expect(model.size).toBeGreaterThan(0);
+      expect(model.sha256).toMatch(/^[0-9a-f]{64}$/);
+      expect(model.url).toMatch(/^https:\/\/huggingface\.co\/.+\/resolve\/[0-9a-f]{40}\//);
+      expect(model.url.endsWith(`/${model.name}`)).toBe(true);
+    }
+  });
+
+  test('checkForModelUpdates() also offers the extra models, and downloads them', async () => {
+    github = await startFakeGitHub();
+    modelsDir = makeModelsDir();
+    const extra = Buffer.from('extra model');
+    const extraModels = [
+      {
+        name: 'extra.gguf',
+        size: extra.length,
+        sha256: sha256(extra),
+        url: `${github.baseUrl}/redirect/extra.gguf`,
+        updatedAt: '2025-08-06T15:39:11.000Z',
+      },
+      { // same name as a release model - the release's entry wins
+        name: 'b.gguf', size: 1, sha256: 'f'.repeat(64), url: `${github.baseUrl}/x`, updatedAt: '',
+      },
+    ];
+    github.extraFiles['extra.gguf'] = extra;
+
+    const { updates, upToDate } = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels,
+    });
+
+    expect(updates.map(m => [m.name, m.status])).toEqual([
+      ['a.gguf', 'changed'], ['c.gguf', 'missing'], ['extra.gguf', 'missing'],
+    ]);
+    expect(upToDate.map(m => m.name)).toEqual(['b.gguf']);
+
+    const result = await downloadModels(updates.filter(m => m.name === 'extra.gguf'), { modelsDir });
+
+    expect(result.downloaded).toEqual(['extra.gguf']);
+    expect(fs.readFileSync(path.join(modelsDir, 'extra.gguf'))).toEqual(extra);
+  });
+
   test('downloadModels() downloads, verifies and replaces models, and reports progress', async () => {
     github = await startFakeGitHub();
     modelsDir = makeModelsDir();
-    const { updates } = await checkForModelUpdates({ modelsDir, releaseUrl: github.releaseUrl });
+    const { updates } = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+    });
     const progress = [];
     const replaced = [];
 
@@ -193,14 +250,18 @@ describe('modelUpdater', () => {
     expect(fs.readdirSync(modelsDir).filter(f => f.endsWith('.download'))).toEqual([]);
 
     // now everything is current, using the hashes saved by the download
-    const recheck = await checkForModelUpdates({ modelsDir, releaseUrl: github.releaseUrl });
+    const recheck = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+    });
     expect(recheck.updates).toEqual([]);
   });
 
   test('downloadModels() keeps the old model when the download doesn\'t match the digest', async () => {
     github = await startFakeGitHub({ assetBodies: { 'a.gguf': Buffer.from('model A vX') } }); // same size
     modelsDir = makeModelsDir();
-    const { updates } = await checkForModelUpdates({ modelsDir, releaseUrl: github.releaseUrl });
+    const { updates } = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+    });
 
     const result = await downloadModels(updates.filter(m => m.name === 'a.gguf'), { modelsDir });
 
@@ -213,7 +274,9 @@ describe('modelUpdater', () => {
   test('downloadModels() stops and cleans up when cancelled', async () => {
     github = await startFakeGitHub({ hang: true });
     modelsDir = makeModelsDir();
-    const { updates } = await checkForModelUpdates({ modelsDir, releaseUrl: github.releaseUrl });
+    const { updates } = await checkForModelUpdates({
+      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+    });
     const signal = createCancelToken();
 
     const download = downloadModels(updates, {
