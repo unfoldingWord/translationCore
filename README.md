@@ -31,6 +31,16 @@ For more information see page for contributors: [Contributing](https://github.co
 This application has been localized into a number of languages.
 You can view progress or help translate at [Crowdin](https://crowdin.com/project/translationcore).
 
+### Changing localized strings (developers)
+
+1. Add or change strings only in `src/locale/English-en_US.json`. In code, use `translate('section.key')` with a literal key.
+2. Run `npm run find:missing-locale` to find keys used in `src/js` that aren't in the English file. Run `npm run find:extra-locale` to find English keys that no code uses.
+3. Run `npm run locales:tc-copy-missing` to copy new keys into the other `src/locale/*.json` files. They get the English text until Crowdin translates them.
+   - For the checking tools, use `locales:wa-copy-missing`, `locales:tw-copy-missing` or `locales:tn-copy-missing`. These change the tool's submodule, so commit there.
+   - `npm run locales:update-all` runs all four.
+   - `npm run locales:do-compare` only reports missing and extra keys.
+4. Commit the locale files, but not the `locale-check-*.log` files the scripts write to the repo root.
+
 ## Documentation
 
 ### JS-Docs generated documentation:
@@ -39,9 +49,12 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 
 
 ## Building app locally
+- Use Node 16 (`>=16.14.0 <16.15`). With newer Node versions, the React build fails with `ERR_OSSL_EVP_UNSUPPORTED`.
 - example to build the app for mac: `npm i --legacy-peer-deps && npm run build-macos`
   - or do `build-win` or `build-linux`
+  - the build downloads the pinned llama-server (`llamaCppTag` in `package.json`) and bundles it in the app
 - then to create installer for MacOS: `./node_modules/.bin/gulp release-macos-universal --out=artifacts/universal/tCore-macos-universal.dmg`
+- Files the main process loads by path, such as preload scripts, aren't bundled by webpack. Add them to the copy list in `craco.config.js`, or the packaged app can't find them.
 
 
 ## Debugging Main App
@@ -51,6 +64,28 @@ You can view progress or help translate at [Crowdin](https://crowdin.com/project
 - after you get to the "Get Started" Page you can launch Chromium debugger by:
   - on Windows or Linux do Control-Shift-I
   - on Mac doing Command-Option-I
+
+## AI Suggestions and the Local AI Server
+
+translationCore can get AI suggestions from an OpenAI-compatible server (such as LM Studio), or from a llama-server bundled with the app.
+
+- **Models:** the bundled server uses the `.gguf` models in `~/translationCore/models`. Use **Actions → Check for model updates** to download missing or changed models from the [AI models release](https://github.com/unfoldingWord/checking-tool-wrapper/releases/tag/v0.9.0-beta).
+- **Development:** run `npm run fetch-llama-server` once to download llama-server into `vendor/llama-server/`. Without it, the local server reports `available: false`.
+- **Testing from the console:** open the developer tools in the main window and run:
+
+```js
+await AiAPIs.localServer.getStatus();                    // available: true
+await AiAPIs.getAvailableModels({ localServer: true });  // the models in ~/translationCore/models
+await AiAPIs.query('Reply with the single word: hello', {
+  localServer: true,
+  model: 'uw-tw-qwen3-0.6b-Q6_K', // model id = .gguf file name without the extension
+});                                                      // { replyText, reasoningText, actualModel }
+await AiAPIs.localServer.stop();
+```
+
+- llama-server only scans the models folder when it starts. If you add or remove a model by hand while it's running, run `await AiAPIs.localServer.stop()`. The next query starts it again with the new list. Downloads from "Check for model updates" do this automatically.
+
+See `CLAUDE.md` and `plan/embed-llama-server.md` for details.
 
 ## Debugging App Startup Code
 

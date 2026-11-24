@@ -90,7 +90,16 @@ Tools communicate with the host app via a defined API documented in `API.md`.
 
 **Resources:** `tcResources/` holds Bible resources per language (en, el-x-koine, hbo, hi, and other gateway languages). `npm run minimal-resources` loads just en + original languages; `npm run update-resources` refreshes all.
 
-**Localization:** `src/locale/` contains 25 language JSON files. Use `npm run find:missing-locale` / `npm run find:extra-locale` to audit translation keys. Crowdin is used for community translations.
+**Localization:** `src/locale/` contains 25 language JSON files. `English-en_US.json` is the reference, and Crowdin is used for community translations. Each checking tool has its own locale folder at `src/tC_apps/<tool>/src/locale/`.
+
+After adding, renaming or removing strings:
+1. Edit only `English-en_US.json`. Call strings as `translate('section.key')` with a literal key, so the find scripts can see them.
+2. `npm run find:missing-locale` lists `translate('…')` keys in `src/js` that aren't in the English file. `npm run find:extra-locale` lists English keys that no code uses. Keys used only from strings built at runtime show up as "extra", so check before deleting them.
+3. `npm run locales:tc-copy-missing` copies any key missing from the other `src/locale/*.json` files over from English, as English text for Crowdin to translate later. It rewrites those files in English key order and logs to `locale-check-tC.log`. Extra keys are only reported, never removed.
+   - After changing a tool's English file, run `locales:wa-copy-missing`, `locales:tw-copy-missing` or `locales:tn-copy-missing`. Those edit the submodule, so commit there.
+   - `npm run locales:update-all` runs all four.
+   - `npm run locales:do-compare` reports missing and extra keys without changing anything. It exits with 1 if any are found.
+4. Commit the changed locale files. Don't commit the `locale-check-*.log` files, which are written to the repo root and aren't gitignored.
 
 **Fonts:** Font files are in `src/fonts/` (complex-script fonts in `src/fonts/complexScript/`). They are loaded by `@font-face` rules in `src/css/styles.css` and in `public/previewStyles-*.css` (one stylesheet per print-preview font). `src/js/common/complexScriptFonts.js` maps the complex-script fonts. `styles.css` also imports vendored CSS from `src/css/` (Bootstrap 3.3.6 with Glyphicons Halflings, hint.css). `font-awesome.min.css` is not imported and its fonts aren't in the repo.
 
