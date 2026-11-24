@@ -61,7 +61,7 @@ After a Mac build, create the DMG:
   - Tests: `src/__tests__/llamaServerManager.test.js` uses a fake spawn (an HTTP server standing in for llama-server), so no real binary runs.
 - `electronite/modelUpdater.js` — "Check for model updates" in the Actions menu (`AppMenu`). It compares the `.gguf` files in `~/translationCore/models` with the `.gguf` assets of a GitHub release (`MODELS_RELEASE`: `unfoldingWord/checking-tool-wrapper` `v0.9.0-beta`; bump the tag to publish new models).
   - A model needs updating when it's missing or its SHA-256 differs from the asset's `digest` (size only, if there's no digest). Local hashes are cached in `<models>/.model-digests.json` by size and mtime.
-  - Downloads go to `<name>.download`, are checked against the size and digest, and then renamed into place. llama-server is stopped first if it's replacing an existing model.
+  - Downloads go to `<name>.download`, are checked against the size and digest, and then renamed into place. llama-server is stopped before an existing model is replaced. It's also stopped after any download, because the router only scans `--models-dir` at startup (verified). Otherwise its `/v1/models` wouldn't list the new models. The next query starts it again.
   - IPC: `ai-apis:models-check-updates`, `ai-apis:models-download` (progress on `ai-apis:models-download-progress`) and `ai-apis:models-cancel-download`. These are exposed as `AiAPIs.models.{checkForUpdates, download(updates, onProgress), cancelDownload}` with `features.modelUpdates`.
   - UI: `actions/ModelUpdatesActions.js`, `containers/ModelUpdatesDialogContainer.js` and `components/dialogComponents/ModelUpdateDialog.js`.
   - Tests: `src/__tests__/modelUpdater.test.js` uses a local HTTP server in place of GitHub.

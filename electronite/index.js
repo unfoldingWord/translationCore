@@ -165,7 +165,7 @@ function exposeAiApiQueryToMainWindow(window) {
     modelDownloadSignal = signal;
 
     try {
-      return await downloadModels(models, {
+      const result = await downloadModels(models, {
         modelsDir: llamaServer.modelsDir,
         signal,
         onProgress: (progress) => {
@@ -176,6 +176,13 @@ function exposeAiApiQueryToMainWindow(window) {
         // stop llama-server before replacing a model it may have open - it restarts on the next query
         beforeReplace: () => llamaServer.stop(),
       });
+
+      if (result.downloaded.length) {
+        // llama-server only scans the models folder when it starts, so stop it to have new models listed
+        // (getModels() scans the folder while it's stopped, and the next query starts it again)
+        await llamaServer.stop();
+      }
+      return result;
     } finally {
       modelDownloadSignal = null;
     }
