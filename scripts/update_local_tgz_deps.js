@@ -11,7 +11,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const PACKAGE_JSON = path.join(ROOT, 'package.json');
-const PACKAGES = ['checking-tool-wrapper', 'tc-ui-toolkit'];
+const PACKAGES = ['checking-tool-wrapper', 'tc-ui-toolkit', 'tc-source-content-updater'];
 
 const args = process.argv.slice(2);
 const dryRun = args.includes('--dry-run');

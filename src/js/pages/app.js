@@ -46,38 +46,51 @@ if (NOT_TEST) {
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
 }
 
-if (window && !window.lmStudio) {
-  console.log('creating window.lmStudio since it does not exist on window');
+// fallback AI bridge in case the preload didn't set it up - keep in step with electronite/preloadAiApi.js
+if (window && (!window.lmStudio || !window.AiAPIs)) {
+  const AI_API_FEATURES = Object.freeze({ messages: true, localServer: true });
 
-  window.lmStudio = { // older API, should use AiAPIs in future
+  const localServer = Object.freeze({ // bundled llama-server
+    start: (options = {}) => ipcRenderer.invoke('ai-apis:local-server-start', options),
+    stop: () => ipcRenderer.invoke('ai-apis:local-server-stop'),
+    getStatus: () => ipcRenderer.invoke('ai-apis:local-server-status'),
+    getModels: () => ipcRenderer.invoke('ai-apis:local-server-models'),
+  });
+
+  const makeAiApi = () => ({
     getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
     getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
     query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
-  };
-}
+    localServer,
+    features: AI_API_FEATURES,
+  });
 
-if (window && !window.AiAPIs) {
-  console.log('creating window.AiAPIs since it does not exist on window');
+  if (!window.lmStudio) {
+    console.log('creating window.lmStudio since it does not exist on window');
+    window.lmStudio = makeAiApi(); // older API, should use AiAPIs in future
+  }
 
-  window.AiAPIs = {
-    getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
-    getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
-    query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
-    localServer: { // bundled llama-server, see electronite/preloadAiApi.js
-      start: (options = {}) => ipcRenderer.invoke('ai-apis:local-server-start', options),
-      stop: () => ipcRenderer.invoke('ai-apis:local-server-stop'),
-      getStatus: () => ipcRenderer.invoke('ai-apis:local-server-status'),
-      getModels: () => ipcRenderer.invoke('ai-apis:local-server-models'),
-    },
-  };
+  if (!window.AiAPIs) {
+    console.log('creating window.AiAPIs since it does not exist on window');
+    window.AiAPIs = makeAiApi();
+  }
 }
 
 const isAiApiQueryAvailable =
   typeof window !== 'undefined' &&
-  typeof window.AiApi?.query === 'function';
+  typeof window.AiAPIs?.query === 'function';
 
 console.log('isAiApiQueryAvailable', isAiApiQueryAvailable);
 
+if (isAiApiQueryAvailable) {
+  (async () => {
+    const ai = window.AiAPIs;
+    console.log('Checking for local AI server\nfeatures', ai.features);
+
+    console.log('status', await ai.localServer.getStatus()); //  expect available: true
+    console.log('models', await ai.getAvailableModels({ localServer: true }));
+  })().catch(e => console.error('AI test failed:', e));
+}
 
 class Main extends Component {
   componentDidMount() {
