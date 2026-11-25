@@ -16,12 +16,14 @@ const http = require('http');
 const https = require('https');
 const path = require('path');
 
-// the release that holds the current models - bump the tag to publish new models to users
-const MODELS_RELEASE = Object.freeze({
+// the repo whose releases hold the models. The newest published release with a `v*-llms` title (e.g.
+// 'v0.9.0-llms - uw LLM Models - Beta') is used - publish a new one to send new models to users.
+const MODELS_REPO = Object.freeze({
   owner: 'unfoldingWord',
   repo: 'checking-tool-wrapper',
-  tag: 'v0.9.0-beta',
 });
+// a word in the release title starting with `v` and ending with `-llms`
+const MODELS_RELEASE_TITLE = /(^|\s)v\S*-llms(?=\s|$)/i;
 // models offered in addition to the release's (hard-coded for now). The URL is pinned to a commit so the file
 // can't change under the SHA-256. A release model with the same name takes precedence.
 const EXTRA_MODELS = Object.freeze([
@@ -43,11 +45,11 @@ const REQUEST_TIMEOUT_MS = 30 * 1000; // with no data received
 const PROGRESS_INTERVAL_MS = 250;
 
 /**
- * @param {{owner: string, repo: string, tag: string}} release
- * @return {string} GitHub API URL for the release
+ * @param {{owner: string, repo: string}} repo
+ * @return {string} GitHub API URL listing the repo's releases (newest first)
  */
-function getReleaseApiUrl(release = MODELS_RELEASE) {
-  return `https://api.github.com/repos/${release.owner}/${release.repo}/releases/tags/${encodeURIComponent(release.tag)}`;
+function getReleasesApiUrl(repo = MODELS_REPO) {
+  return `https://api.github.com/repos/${repo.owner}/${repo.repo}/releases?per_page=100`;
 }
 
 /**
@@ -120,14 +122,32 @@ function parseSha256Digest(digest) {
 }
 
 /**
- * Lists the `.gguf` files in a GitHub release.
+ * Picks the models release: the most recently published (not draft) release with a `v*-llms` title.
+ * @param {Array<object>} releases - from the GitHub releases API
+ * @return {object|null}
+ */
+function findModelsRelease(releases) {
+  const time = release => Date.parse(release.published_at || release.created_at) || 0;
+
+  return (releases || [])
+    .filter(release => !release.draft && MODELS_RELEASE_TITLE.test(release.name || ''))
+    .sort((a, b) => time(b) - time(a))[0] || null;
+}
+
+/**
+ * Lists the `.gguf` files in the models release (see findModelsRelease()).
  * @param {object} [options]
- * @param {string} [options.releaseUrl] - GitHub API URL for the release (default: MODELS_RELEASE)
+ * @param {string} [options.releasesUrl] - GitHub API URL listing the releases (default: MODELS_REPO)
  * @return {Promise<{tag: string, name: string, models: Array<{name: string, size: number, sha256: string|null,
  *   url: string, updatedAt: string}>}>}
  */
-async function getReleaseModels({ releaseUrl = getReleaseApiUrl() } = {}) {
-  const release = await getJson(releaseUrl);
+async function getReleaseModels({ releasesUrl = getReleasesApiUrl() } = {}) {
+  const release = findModelsRelease(await getJson(releasesUrl));
+
+  if (!release) {
+    throw new Error(`No release with a "v*-llms" title found at ${releasesUrl}`);
+  }
+
   const models = (release.assets || [])
     .filter(asset => /\.gguf$/i.test(asset.name))
     .map(asset => ({
@@ -208,7 +228,7 @@ async function getLocalSha256(modelsDir, name, stats, cache) {
  * Compares the models in the release (plus EXTRA_MODELS) with the ones in the models folder.
  * @param {object} options
  * @param {string} options.modelsDir
- * @param {string} [options.releaseUrl]
+ * @param {string} [options.releasesUrl]
  * @param {Array<object>} [options.extraModels=EXTRA_MODELS] - other models to offer (name, size, sha256, url,
  *   updatedAt)
  * @return {Promise<{release: {tag: string, name: string}, updates: Array<object>, upToDate: Array<object>}>}
@@ -216,9 +236,9 @@ async function getLocalSha256(modelsDir, name, stats, cache) {
  *   each with `local: { size, modified }` when installed. `upToDate` are the ones that match.
  */
 async function checkForModelUpdates({
-  modelsDir, releaseUrl, extraModels = EXTRA_MODELS,
+  modelsDir, releasesUrl, extraModels = EXTRA_MODELS,
 }) {
-  const release = await getReleaseModels({ releaseUrl });
+  const release = await getReleaseModels({ releasesUrl });
   const releaseNames = new Set(release.models.map(model => model.name));
   const models = [
     ...release.models,
@@ -410,9 +430,10 @@ async function downloadModels(models, {
 }
 
 module.exports = {
-  MODELS_RELEASE,
+  MODELS_REPO,
   EXTRA_MODELS,
-  getReleaseApiUrl,
+  findModelsRelease,
+  getReleasesApiUrl,
   getReleaseModels,
   checkForModelUpdates,
   createCancelToken,

@@ -9,7 +9,8 @@ import {
   checkForModelUpdates,
   createCancelToken,
   downloadModels,
-  getReleaseApiUrl,
+  findModelsRelease,
+  getReleasesApiUrl,
   parseSha256Digest,
 } from '../../electronite/modelUpdater';
 
@@ -20,12 +21,12 @@ const MODEL_B = Buffer.from('model B, the same as installed');
 const MODEL_C = Buffer.from('model C - new');
 
 /**
- * Starts a local server standing in for GitHub: the release JSON at /release, assets at /assets/<name>
+ * Starts a local server standing in for GitHub: the releases list at /releases (the models release among others), assets at /assets/<name>
  * (redirected through /redirect/<name>, like GitHub's storage redirect).
  * @param {object} [behavior]
  * @param {object} [behavior.assetBodies] - override what an asset serves, by name
  * @param {boolean} [behavior.hang] - asset downloads send part of the file and then stall
- * @return {Promise<{baseUrl: string, releaseUrl: string, extraFiles: object, close: function,
+ * @return {Promise<{baseUrl: string, releasesUrl: string, extraFiles: object, close: function,
  *   requests: string[]}>} add to `extraFiles` to serve a file at /assets/<name> without listing it
  */
 async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
@@ -39,7 +40,15 @@ async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
   const server = http.createServer((req, res) => {
     requests.push(req.url);
 
-    if (req.url === '/release') {
+    if (req.url === '/releases-without-models') {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify([{
+        tag_name: 'v7.0.0', name: 'v7.0.0', published_at: '2026-11-20T00:00:00Z', assets: [],
+      }]));
+      return;
+    }
+
+    if (req.url === '/releases') {
       const assets = Object.entries(files).map(([name, data]) => ({
         name,
         size: data.length,
@@ -52,9 +61,17 @@ async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
         name: 'README.md', size: 1, digest: null, browser_download_url: `${baseUrl}/x`, updated_at: '',
       });
       res.setHeader('Content-Type', 'application/json');
-      res.end(JSON.stringify({
-        tag_name: 'v0.9.0-beta', name: 'AI Models - Beta', assets,
-      }));
+      res.end(JSON.stringify([
+        { // newer, but not a models release
+          tag_name: 'v7.0.0', name: 'v7.0.0', published_at: '2026-11-20T00:00:00Z', assets: [],
+        },
+        {
+          tag_name: 'v0.9.0-beta', name: 'v0.9.0-llms - AI Models - Beta', published_at: '2026-11-19T16:14:03Z', assets,
+        },
+        { // an older models release
+          tag_name: 'v0.8.0', name: 'v0.8.0-llms', published_at: '2026-10-01T00:00:00Z', assets: [],
+        },
+      ]));
       return;
     }
 
@@ -89,7 +106,7 @@ async function startFakeGitHub({ assetBodies = {}, hang = false } = {}) {
   baseUrl = `http://127.0.0.1:${server.address().port}`;
   return {
     baseUrl,
-    releaseUrl: `${baseUrl}/release`,
+    releasesUrl: `${baseUrl}/releases`,
     extraFiles,
     requests,
     close: () => new Promise((resolve) => {
@@ -119,11 +136,36 @@ describe('modelUpdater', () => {
     modelsDir && fs.rmSync(modelsDir, { recursive: true, force: true });
   });
 
-  test('getReleaseApiUrl() points at the release tag', () => {
-    expect(getReleaseApiUrl({
-      owner: 'o', repo: 'r', tag: 'v1.0',
-    }))
-      .toEqual('https://api.github.com/repos/o/r/releases/tags/v1.0');
+  test('getReleasesApiUrl() points at the repo\'s releases', () => {
+    expect(getReleasesApiUrl({ owner: 'o', repo: 'r' }))
+      .toEqual('https://api.github.com/repos/o/r/releases?per_page=100');
+  });
+
+  test('findModelsRelease() picks the newest published release with a v*-llms title', () => {
+    const release = (name, publishedAt, extra = {}) => ({
+      name, tag_name: name, published_at: publishedAt, ...extra,
+    });
+    const releases = [
+      release('v2.0.0', '2026-12-01T00:00:00Z'),
+      release('v1.1.0-llms', '2026-11-01T00:00:00Z'),
+      release('v1.2.0-llms - draft', '2026-11-15T00:00:00Z', { draft: true }),
+      release('v1.0.0-llms - uw LLM Models', '2026-10-01T00:00:00Z'),
+      release('my-llms', '2026-11-20T00:00:00Z'),
+      release('v1.3.0-llmsx', '2026-11-20T00:00:00Z'),
+    ];
+
+    expect(findModelsRelease(releases).name).toEqual('v1.1.0-llms');
+    expect(findModelsRelease(releases.slice(3)).name).toEqual('v1.0.0-llms - uw LLM Models');
+    expect(findModelsRelease([release('v2.0.0', '2026-12-01T00:00:00Z')])).toBeNull();
+    expect(findModelsRelease([])).toBeNull();
+  });
+
+  test('checkForModelUpdates() rejects when there is no models release', async () => {
+    github = await startFakeGitHub();
+    modelsDir = makeModelsDir();
+
+    await expect(checkForModelUpdates({ modelsDir, releasesUrl: `${github.baseUrl}/releases-without-models` }))
+      .rejects.toThrow('No release with a "v*-llms" title');
   });
 
   test('parseSha256Digest() accepts only sha256 digests', () => {
@@ -137,10 +179,10 @@ describe('modelUpdater', () => {
     modelsDir = makeModelsDir();
 
     const result = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+      modelsDir, releasesUrl: github.releasesUrl, extraModels: [],
     });
 
-    expect(result.release).toEqual({ tag: 'v0.9.0-beta', name: 'AI Models - Beta' });
+    expect(result.release).toEqual({ tag: 'v0.9.0-beta', name: 'v0.9.0-llms - AI Models - Beta' });
     expect(result.updates.map(m => [m.name, m.status])).toEqual([['a.gguf', 'changed'], ['c.gguf', 'missing']]);
     expect(result.upToDate.map(m => m.name)).toEqual(['b.gguf']);
     expect(result.updates[0].local.size).toEqual(10);
@@ -164,7 +206,7 @@ describe('modelUpdater', () => {
     }));
 
     const result = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+      modelsDir, releasesUrl: github.releasesUrl, extraModels: [],
     });
 
     expect(result.updates.map(m => m.name)).toContain('b.gguf');
@@ -174,7 +216,7 @@ describe('modelUpdater', () => {
     github = await startFakeGitHub();
     modelsDir = makeModelsDir();
 
-    await expect(checkForModelUpdates({ modelsDir, releaseUrl: `${github.baseUrl}/missing` }))
+    await expect(checkForModelUpdates({ modelsDir, releasesUrl: `${github.baseUrl}/missing` }))
       .rejects.toThrow('HTTP 404');
   });
 
@@ -209,7 +251,7 @@ describe('modelUpdater', () => {
     github.extraFiles['extra.gguf'] = extra;
 
     const { updates, upToDate } = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels,
+      modelsDir, releasesUrl: github.releasesUrl, extraModels,
     });
 
     expect(updates.map(m => [m.name, m.status])).toEqual([
@@ -227,7 +269,7 @@ describe('modelUpdater', () => {
     github = await startFakeGitHub();
     modelsDir = makeModelsDir();
     const { updates } = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+      modelsDir, releasesUrl: github.releasesUrl, extraModels: [],
     });
     const progress = [];
     const replaced = [];
@@ -251,7 +293,7 @@ describe('modelUpdater', () => {
 
     // now everything is current, using the hashes saved by the download
     const recheck = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+      modelsDir, releasesUrl: github.releasesUrl, extraModels: [],
     });
     expect(recheck.updates).toEqual([]);
   });
@@ -260,7 +302,7 @@ describe('modelUpdater', () => {
     github = await startFakeGitHub({ assetBodies: { 'a.gguf': Buffer.from('model A vX') } }); // same size
     modelsDir = makeModelsDir();
     const { updates } = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+      modelsDir, releasesUrl: github.releasesUrl, extraModels: [],
     });
 
     const result = await downloadModels(updates.filter(m => m.name === 'a.gguf'), { modelsDir });
@@ -275,7 +317,7 @@ describe('modelUpdater', () => {
     github = await startFakeGitHub({ hang: true });
     modelsDir = makeModelsDir();
     const { updates } = await checkForModelUpdates({
-      modelsDir, releaseUrl: github.releaseUrl, extraModels: [],
+      modelsDir, releasesUrl: github.releasesUrl, extraModels: [],
     });
     const signal = createCancelToken();
 
