@@ -98,15 +98,15 @@ const isAiApiQueryAvailable =
   typeof window !== 'undefined' &&
   typeof window.AiAPIs?.query === 'function';
 
-console.log('isAiApiQueryAvailable', isAiApiQueryAvailable);
+console.log('window.AiAPIs - isAiApiQueryAvailable', isAiApiQueryAvailable);
 
 if (isAiApiQueryAvailable) {
   (async () => {
     const ai = window.AiAPIs;
     console.log('Checking for local AI server\nfeatures', ai.features);
 
-    console.log('status', await ai.localServer.getStatus()); //  expect available: true
-    console.log('models', await ai.getAvailableModels({ localServer: true }));
+    console.log('window.AiAPIs - status', await ai.localServer.getStatus()); //  expect available: true
+    console.log('window.AiAPIs - models', await ai.getAvailableModels({ localServer: true }));
   })().catch(e => console.error('AI test failed:', e));
 }
 

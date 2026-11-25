@@ -11,6 +11,27 @@ export function getModelsApi() {
 }
 
 /**
+ * Model updates only matter when the bundled llama-server can run here (it isn't bundled for every platform,
+ * e.g. Windows ia32).
+ * @return {Promise<boolean>} true if the models API exists and the local server is available
+ */
+export async function isLocalServerAvailable() {
+  const ai = typeof window !== 'undefined' ? (window.AiAPIs || null) : null;
+
+  if (!getModelsApi() || !ai.features.localServer || typeof ai.localServer?.getStatus !== 'function') {
+    return false;
+  }
+
+  try {
+    const status = await ai.localServer.getStatus();
+    return !!(status && status.available);
+  } catch (e) {
+    console.warn('isLocalServerAvailable() - could not get the local server status', e);
+    return false;
+  }
+}
+
+/**
  * @param {number} bytes
  * @return {string} e.g. '1.2 GB'
  */
