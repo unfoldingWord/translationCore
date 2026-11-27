@@ -1,0 +1,11 @@
+{
+  "tag": "b12651",
+  "assets": {
+    "llama-b12651-bin-macos-arm64.tar.gz": "264fd872de61679c45ad57e1e21c2a2a54e29b35734ecf3d50f24166447ab8d2",
+    "llama-b12651-bin-macos-x64.tar.gz": "34c19771545479a783d3b68c446383ab703033890c052d3ff0b860a5c9f59e56",
+    "llama-b12651-bin-ubuntu-vulkan-x64.tar.gz": "0bbcf2093f15c64c8a9bf54b809c9b2c812b982992dc2fbc9b36720c1d32cf13",
+    "llama-b12651-bin-ubuntu-vulkan-arm64.tar.gz": "138f97d9d448b7a55c4b839366bba6e2ac7fba634f9160c9a4775a2051a1c7cb",
+    "llama-b12651-bin-win-vulkan-x64.zip": "e58fa9a137d8046c69334005ad6fb3e904ddc7e56f2a61ad1b844335826ef3f4",
+    "llama-b12651-bin-win-vulkan-arm64.zip": "430849ca03a2a891baa90091670df45f29b90c2ec445aab2ad7d830ff423303c"
+  }
+}

@@ -13,6 +13,7 @@ module.exports = (mode) => {
     { from: './package.json', to: 'package.json' },
     { from: './electronite/cfg.json', to: 'cfg.json' },
     { from: './electronite/preloadSplash.js', to: 'preloadSplash.js' },
+    { from: './electronite/preloadAiApi.js', to: 'preloadAiApi.js' },
   ];
 
   return {

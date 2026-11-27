@@ -4,6 +4,7 @@ import fs from 'fs-extra';
 import PropTypes from 'prop-types';
 import path from 'path-extra';
 import { Grid, Row } from 'react-bootstrap';
+import { ipcRenderer } from 'electronite';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { withLocalize } from 'react-localize-redux';
 import env, { getBuild } from 'tc-electron-env';
@@ -43,6 +44,70 @@ if (NOT_TEST) {
   const version = `v${APP_VERSION} (${getBuild()})`;
   injectFileLogging(LOG_FILES_PATH, version);
   console.log('SYSTEM INFO:\n' + getOsInfoStr());
+}
+
+// fallback AI bridge in case the preload didn't set it up - keep in step with electronite/preloadAiApi.js
+if (window && (!window.lmStudio || !window.AiAPIs)) {
+  const AI_API_FEATURES = Object.freeze({
+    messages: true, localServer: true, modelUpdates: true,
+  });
+
+  const localServer = Object.freeze({ // bundled llama-server
+    start: (options = {}) => ipcRenderer.invoke('ai-apis:local-server-start', options),
+    stop: () => ipcRenderer.invoke('ai-apis:local-server-stop'),
+    getStatus: () => ipcRenderer.invoke('ai-apis:local-server-status'),
+    getModels: () => ipcRenderer.invoke('ai-apis:local-server-models'),
+  });
+
+  const models = Object.freeze({ // model updates from the GitHub release
+    checkForUpdates: () => ipcRenderer.invoke('ai-apis:models-check-updates'),
+    download: async (updates, onProgress) => {
+      const listener = (event, progress) => onProgress && onProgress(progress);
+      ipcRenderer.on('ai-apis:models-download-progress', listener);
+
+      try {
+        return await ipcRenderer.invoke('ai-apis:models-download', updates);
+      } finally {
+        ipcRenderer.removeListener('ai-apis:models-download-progress', listener);
+      }
+    },
+    cancelDownload: () => ipcRenderer.invoke('ai-apis:models-cancel-download'),
+  });
+
+  const makeAiApi = () => ({
+    getApi: (options = {}) => ipcRenderer.invoke('ai-apis:get-api', options),
+    getAvailableModels: (options = {}) => ipcRenderer.invoke('ai-apis:get-available-models', options),
+    query: (query, options = {}) => ipcRenderer.invoke('ai-apis:query', query, options),
+    localServer,
+    models,
+    features: AI_API_FEATURES,
+  });
+
+  if (!window.lmStudio) {
+    console.log('creating window.lmStudio since it does not exist on window');
+    window.lmStudio = makeAiApi(); // older API, should use AiAPIs in future
+  }
+
+  if (!window.AiAPIs) {
+    console.log('creating window.AiAPIs since it does not exist on window');
+    window.AiAPIs = makeAiApi();
+  }
+}
+
+const isAiApiQueryAvailable =
+  typeof window !== 'undefined' &&
+  typeof window.AiAPIs?.query === 'function';
+
+console.log('window.AiAPIs - isAiApiQueryAvailable', isAiApiQueryAvailable);
+
+if (isAiApiQueryAvailable) {
+  (async () => {
+    const ai = window.AiAPIs;
+    console.log('Checking for local AI server\nfeatures', ai.features);
+
+    console.log('window.AiAPIs - status', await ai.localServer.getStatus()); //  expect available: true
+    console.log('window.AiAPIs - models', await ai.getAvailableModels({ localServer: true }));
+  })().catch(e => console.error('AI test failed:', e));
 }
 
 class Main extends Component {

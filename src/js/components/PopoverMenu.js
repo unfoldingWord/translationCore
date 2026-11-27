@@ -144,8 +144,10 @@ class PopoverMenu extends React.Component {
     } = this.props;
     const { anchorEl, open } = this.state;
 
-    let childrenWithAutoClose = React.Children.map(children, child =>
-      React.cloneElement(child, { onClick: this._hijackChildClick(child) }));
+    // skip children rendered conditionally as false/null
+    let childrenWithAutoClose = React.Children.map(children, child => (React.isValidElement(child) ?
+      React.cloneElement(child, { onClick: this._hijackChildClick(child) }) :
+      child));
 
     const styles = makeStyles(this.props, this.state);
 

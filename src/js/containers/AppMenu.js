@@ -4,16 +4,20 @@ import TranslateIcon from 'material-ui/svg-icons/action/translate';
 import FeedbackIcon from 'material-ui/svg-icons/action/question-answer';
 import SyncIcon from 'material-ui/svg-icons/notification/sync';
 import UpdateIcon from 'material-ui/svg-icons/action/update';
+import CloudDownloadIcon from 'material-ui/svg-icons/file/cloud-download';
 import SettingsIcon from 'material-ui/svg-icons/action/settings';
 import MenuItem from 'material-ui/MenuItem';
 import PopoverMenu from '../components/PopoverMenu';
+import { isLocalServerAvailable } from '../actions/ModelUpdatesActions';
 import LocaleSettingsDialogContainer from './LocaleSettingsDialogContainer';
 import FeedbackDialogContainer from './FeedbackDialogContainer';
 import SoftwareUpdatesDialog from './SoftwareUpdateDialog';
 import SourceContentUpdatesDialogContainer from './SourceContentUpdatesDialogContainer';
+import ModelUpdatesDialogContainer from './ModelUpdatesDialogContainer';
 
 const APP_UPDATE = 'app_update';
 const CONTENT_UPDATE = 'content_update';
+const MODEL_UPDATE = 'model_update';
 const FEEDBACK = 'feedback';
 const APP_LOCALE = 'app_locale';
 
@@ -35,10 +39,25 @@ class AppMenu extends React.Component {
       dialog: {
         [APP_UPDATE]: false,
         [CONTENT_UPDATE]: false,
+        [MODEL_UPDATE]: false,
         [FEEDBACK]: false,
         [APP_LOCALE]: false,
       },
+      localServerAvailable: false, // model updates are only offered when the bundled llama-server can run
     };
+  }
+
+  async componentDidMount() {
+    this._isMounted = true;
+    const localServerAvailable = await isLocalServerAvailable();
+
+    if (this._isMounted) {
+      this.setState({ localServerAvailable });
+    }
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   componentDidCatch(error, info) {
@@ -106,6 +125,11 @@ class AppMenu extends React.Component {
           <MenuItem onClick={this.openDialog(CONTENT_UPDATE)}
             primaryText={translate('updates.check_for_content_updates')}
             leftIcon={<UpdateIcon/>}/>
+          {this.state.localServerAvailable && (
+            <MenuItem onClick={this.openDialog(MODEL_UPDATE)}
+              primaryText={translate('updates.check_for_model_updates')}
+              leftIcon={<CloudDownloadIcon/>}/>
+          )}
           <MenuItem onClick={this.openDialog(FEEDBACK)}
             primaryText={translate('user_feedback')}
             leftIcon={<FeedbackIcon/>}/>
@@ -129,6 +153,10 @@ class AppMenu extends React.Component {
         <SourceContentUpdatesDialogContainer open={this.isDialogOpen(CONTENT_UPDATE)}
           translate={translate}
           onClose={this.closeDialog(CONTENT_UPDATE)}/>
+
+        <ModelUpdatesDialogContainer open={this.isDialogOpen(MODEL_UPDATE)}
+          translate={translate}
+          onClose={this.closeDialog(MODEL_UPDATE)}/>
       </div>
 
     );

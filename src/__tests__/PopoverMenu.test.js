@@ -87,4 +87,15 @@ describe('events', () => {
     wrapper.simulate('click');
     expect(wrapper.state('open')).toEqual(true);
   });
+
+  test('skips children rendered conditionally as false or null', () => {
+    const wrapper = shallow(
+      <PopoverMenu label="menu">
+        <div className="shown"/>
+        {false}
+        {null}
+      </PopoverMenu>,
+    );
+    expect(wrapper.find('.shown').length).toEqual(1);
+  });
 });

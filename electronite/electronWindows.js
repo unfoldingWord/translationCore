@@ -81,9 +81,10 @@ function defineWindow(windowId, options = {}) {
   windows[windowId] = window;
 
   // attach crash listener
-  window.webContents.on('crashed', (event, killed) => {
+  // 'crashed' was removed in Electron 29; 'render-process-gone' replaces it
+  window.webContents.on('render-process-gone', (event, details) => {
     console.error(
-      `Window ${windowId} ${killed ? 'was killed' : 'has crashed'}.`, event);
+      `Window ${windowId} ${details.reason === 'killed' ? 'was killed' : 'has crashed'} (${details.reason}).`, details);
     windows[windowId] = null;
   });
 

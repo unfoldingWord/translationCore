@@ -1,0 +1,72 @@
+ ▐▛███▛█   Claude Code v2.1.326
+▝▜██████▀  Opus 5.5 · Claude Team
+ ▝▝   ▝▝   ~/Development/Electron/translationCore
+
+
+❯ test from translationCore console that llama API isworking                    
+
+⏺ Login expired · Please run /login
+
+❯ /login                                                                        
+  ⎿  Login successful
+
+❯ test from translationCore console that llama API is working                   
+  ⎿  30 skills available
+
+  Listed 1 directory, ran 2 shell commands (ctrl+o to expand)
+
+⏺ The dev tree has no llama-server binary (vendor/llama-server/ is missing), so
+  the local server would report available: false. I'll fetch the binary for this
+  Mac first.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ The llama-server binary wasn't in the dev tree, so I downloaded it with npm 
+  run fetch-llama-server into vendor/llama-server/darwin-arm64 (also
+  darwin-x64). Running llama-server --version worked: build 12651. Your models
+  folder has two models: uw-tw-qwen3-0.6b-Q6_K and uw-tw-qwen3-1.7b-Q5_K_M.
+
+  I haven't run anything in the app yet, so the console test hasn't been done.
+  If translationCore is already open, restart it so the server manager finds the
+  new binary. Then open DevTools (View → Toggle Developer Tools) in the main 
+  window and paste this. It's only allowed from the main window:
+
+  (async () => {
+    const ai = window.AiAPIs;
+    console.log('features', ai.features);
+
+    console.log('status (before)', await ai.localServer.getStatus());   //  expect available: true
+    console.log('models', await ai.getAvailableModels({ localServer: true }));
+
+    console.time('query');
+    const res = await ai.query('Reply with the single word: hello', {
+      localServer: true,
+      model: 'uw-tw-qwen3-0.6b-Q6_K',
+      systemPrompt: 'You are a helpful assistant.',
+    });
+    console.timeEnd('query');
+    console.log('result', res);   // { replyText, reasoningText, actualModel }
+
+    console.log('status (after)', await ai.localServer.getStatus());     //   should show running + port
+  })().catch(e => console.error('AI test failed:', e));
+
+  What a pass looks like:
+  - features is { messages: true, localServer: true }.
+  - getStatus().available is true.
+  - models lists both ids.
+  - result.replyText isn't empty, and actualModel is the 0.6b model.
+
+  The first query takes longer because the server starts and loads the model.
+
+  Some things to check if it doesn't pass:
+  - available: false means the app didn't find vendor/llama-server/darwin-arm64.
+    Make sure you restarted the app after the download.
+  - An error that says "only available from the main window" means DevTools is
+    attached to a different window.
+  - Qwen3 may put its thinking in reasoningText, which can leave replyText
+    short. That's expected.
+  - To stop the server afterward, run await AiAPIs.localServer.stop().
+
+  If you paste the console output back to me, I can help read it.
+
+✻ Cogitated for 30s · done 8:49 AM

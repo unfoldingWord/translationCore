@@ -502,9 +502,9 @@ gulp.task('release-win64', () => {
 });
 
 /**
- * Releases a Windows x32 build
+ * Releases a Windows arm64 build
  */
-gulp.task('release-win32', () => {
+gulp.task('release-win-arm64', () => {
   const p = require('./package');
 
   const outPath = argv.out;
@@ -513,13 +513,13 @@ gulp.task('release-win32', () => {
     throw new Error('The --out argument is required.');
   }
 
-  const buildPath = BUILD_DIR + p.name + '-win32-ia32/';
+  const buildPath = BUILD_DIR + p.name + '-win32-arm64/';
 
   if (!fs.existsSync(buildPath)) {
     throw new Error(`The build path "${buildPath}" does not exist`);
   }
 
-  return releaseWindows('32', buildPath, path.normalize(outPath));
+  return releaseWindows('arm64', buildPath, path.normalize(outPath));
 });
 
 const GIT_VERSION = '2.35.1';
@@ -527,7 +527,7 @@ const GIT_PATCH_LEVEL = '.2';
 
 /**
  * Releases a windows build
- * @param {string} arch - the os architecture (e.g. 64 or 32)
+ * @param {string} arch - the os architecture ('64' or 'arm64')
  * @param {string} src - the build directory
  * @param {string} dest - the release file path
  * @return {Promise<never>}
@@ -570,11 +570,12 @@ const releaseWindows = (arch, src, dest) => {
   mkdirp.sync(destDir);
   // TRICKY: the iss script cannot take the .exe extension on the file name
   const file = path.basename(dest, '.exe');
-  let cmd = `${isccPath} scripts/win_installer.iss /DArch=${arch === '64'
-    ? 'x64'
-    : 'x86'} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion}${gitPatch} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
+  const innoArch = arch === 'arm64' ? 'arm64' : 'x64';
+  // TRICKY: Git for Windows 2.35.x has no native arm64 installer, so arm64 bundles the 64-bit (x64) Git, which runs under emulation
+  const gitArch = '64';
+  let cmd = `${isccPath} scripts/win_installer.iss /DArch=${innoArch} /DRootPath=../ /DVersion=${p.version} /DGitVersion=${gitVersion}${gitPatch} /DDestFile=${file} /DDestDir=${destDir} /DBuildDir=${BUILD_DIR} /q`;
 
-  return downloadWinGit(gitVersion, arch, gitPatch).then(() => new Promise(function (resolve, reject) {
+  return downloadWinGit(gitVersion, gitArch, gitPatch).then(() => new Promise(function (resolve, reject) {
     console.log(`Generating ${arch} bit windows installer`);
     console.log(`executing: \n${cmd}\n`);
     exec(cmd, function (err) {

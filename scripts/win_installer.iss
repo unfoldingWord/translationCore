@@ -25,10 +25,11 @@
 #ifndef Arch
   #define Arch "x64"
 #endif
-#if Arch == "x86"
-  #define GitExecutable "Git-" + GitVersion + "-32-bit.exe"
-  #define BuildPath RootPath + BuildDir + "translationCore-win32-ia32\*.*"
-  #define GitInstaller "win32_git_installer.iss"
+#if Arch == "arm64"
+  ; Git for Windows has no native arm64 installer for this version, so use x64 Git (runs under emulation)
+  #define GitExecutable "Git-" + GitVersion + "-64-bit.exe"
+  #define BuildPath RootPath + BuildDir + "translationCore-win32-arm64\*.*"
+  #define GitInstaller "win64_git_installer.iss"
 #else
   #define GitExecutable "Git-" + GitVersion + "-64-bit.exe"
   #define BuildPath RootPath + BuildDir + "translationCore-win32-x64\*.*"
@@ -62,9 +63,9 @@ SetupIconFile={#RootPath}src\images\icon.ico
 Compression=lzma
 SolidCompression=yes
 LicenseFile={#MyLicenseFile}
-#if Arch == "x86"
-ArchitecturesAllowed=x86 arm64
-  #define   OSBITS 32
+#if Arch == "arm64"
+ArchitecturesAllowed=arm64
+  #define OSBITS 64
 #else
 ArchitecturesAllowed=x64 arm64
   #define OSBITS 64
