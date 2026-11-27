@@ -301,11 +301,6 @@
       "repository": "https://github.com/steveukx/git-js",
       "version": "2.48.0"
     },
-    "sudo-prompt": {
-      "license": "MIT",
-      "repository": "https://github.com/jorangreef/sudo-prompt",
-      "version": "6.2.1"
-    },
     "truncate-utf8-bytes": {
       "license": "WTFPL",
       "repository": "https://github.com/parshap/truncate-utf8-bytes",
